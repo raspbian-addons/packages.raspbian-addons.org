@@ -40,7 +40,7 @@ for my $suite (@suites) {
 	tie %packages_all_db, "DB_File", "packages_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
-	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/non-free/{,debian-installer/}binary-*/Packages.gz|";
+	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/*/{,debian-installer/}binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
