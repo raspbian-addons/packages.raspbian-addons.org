@@ -21,7 +21,7 @@
 
 use strict;
 
-my $what = $1 ? "non-free" : "*";
+my $what = $ARGV[0] ? "non-free" : "*";
 # max. distinct results for a given package postfix
 my $MAX_PACKAGE_POSTFIXES = 100;
 
@@ -99,7 +99,7 @@ for my $suite (@suites) {
 		$packages_small{$data{'package'}} .= "$suite $data{'architecture'} ".
 			"$section $subsection $data{'priority'} $data{'version'} $sdescr\000";
 		$sources_packages{$src} .=
-			"$data{'package'} $data{'architecture'} $data{'version'}\000";
+			"$suite $data{'package'} $data{'version'} $data{'architecture'}\000";
 	}
 
 	untie %packages_all_db;

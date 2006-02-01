@@ -21,7 +21,10 @@
 
 use strict;
 
+my $what = $ARGV[0] ? "non-free" : "*";
+
 use DB_File;
+my %sources_small = ();
 
 my @suites = ('oldstable', 'stable', 'testing', 'unstable', 'experimental');
 
@@ -34,7 +37,7 @@ for my $suite (@suites) {
 	tie %sources_all_db, "DB_File", "sources_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
-	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/*/source/Sources.gz|";
+	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/$what/source/Sources.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
@@ -50,11 +53,30 @@ for my $suite (@suites) {
 		}
 		$sources_all_db{"$data{'package'} $data{'version'}"}
 			= $data;
+		my $section = 'main';
+		my $subsection = $data{section};
+		if ($data{section} && ($data{section} =~ m=/=o)) {
+		    ($section, $subsection) = split m=/=o, $data{section}, 2;
+		}
+		$sources_small{$data{'package'}} .=
+			"$suite $section $subsection $data{'priority'} $data{'version'}\000";
 	}
 
 	untie %sources_all_db;
 }
 
+print "Writing databases...\n";
+my %sources_small_db;
+tie %sources_small_db, "DB_File", "sources_small.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%sources_small)) {
+	$v =~ s/.$//s;
+	$sources_small_db{$k} = $v;
+}
+untie %sources_small_db;
+
 for my $suite (@suites) {
 	rename("sources_all_$suite.db.new", "sources_all_$suite.db");
 }
+rename("sources_small.db.new", "sources_small.db");
