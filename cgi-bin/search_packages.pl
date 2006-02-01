@@ -221,6 +221,38 @@ if ($searchon eq 'names') {
 	    }
 	}
     }
+} elsif ($searchon eq 'sourcenames') {
+ 
+    $keyword = lc $keyword unless $case_bool;
+    
+    my $obj = tie my %packages, 'DB_File', "$DBDIR/sources_small.db", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/sources_small.db: $!";
+    
+    if ($exact) {
+	my $result = $packages{$keyword};
+	foreach (split /\000/, $result) {
+	    my @data = split ( /\s/, $_, 5 );
+	    print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	    if ($suites{$data[0]} && $sections{$data[1]}) {
+		print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+		push @results, [ $keyword, @data ];
+	    }
+	}
+    } else {
+	while (my ($pkg, $result) = each %packages) {
+            #what's faster? I can't really see a difference
+	    (index($pkg, $keyword) >= 0) or next;
+	    #$pkg =~ /\Q$keyword\E/ or next;
+	    foreach (split /\000/, $packages{$pkg}) {
+		my @data = split ( /\s/, $_, 5 );
+		print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+		if ($suites{$data[0]} && $sections{$data[1]}) {
+		    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+		    push @results, [ $pkg , @data ];
+		}
+	    }
+	}
+    }
 }
 
 my $st1 = new Benchmark;
@@ -357,14 +389,14 @@ unless ($search_on_sources) {
     }
 } else {
     foreach (@results) {
-        my ($package, $suite, $section, $version, $binaries);
+        my ($package, $suite, $section, $subsection, $priority,
+            $version, $binaries) = @$_;
 	
 	$pkgs{$package}{$suite} = $version;
-	$sect{$package}{$suite}{source} = 'subsection';
+	$sect{$package}{$suite}{source} = $subsection;
 	$part{$package}{$suite}{source} = $section unless $section eq 'main';
 
 	$binaries{$package}{$suite} = [ sort split( /\s*,\s*/, $binaries ) ];
-
     }
 
     if ($format eq 'html') {
@@ -387,12 +419,12 @@ unless ($search_on_sources) {
 		    print "<br>Binary packages: ";
 		    my @bp_links;
 		    foreach my $bp (@{$binaries{$pkg}{$ver}}) {
-			my $sect = find_section($bp, $ver, $part{$pkg}{$ver}{source}||'main') || '';
-			$sect =~ s,^(non-free|contrib)/,,;
-			$sect =~ s,^non-US.*$,non-US,,;
+			my $sect = 'section';
+			
 			my $bp_link;
 			if ($sect) {
-			    $bp_link = sprintf "<a href=\"$ROOT/%s/%s/%s\">%s</a>", $ver, $sect, uri_escape( $bp ),  $bp;
+			    $bp_link = sprintf( "<a href=\"$ROOT/%s/%s/%s\">%s</a>",
+						$ver, $sect, uri_escape( $bp ),  $bp );
 			} else {
 			    $bp_link = $bp;
 			}
@@ -443,7 +475,9 @@ sub printindexline {
     my $index_line;
     if ($no_results > $results_per_page) {
 	
-	$index_line = prevlink($input,\%params)." | ".indexline( $input, \%params, $no_results)." | ".nextlink($input,\%params, $no_results);
+	$index_line = prevlink($input,\%params)." | ".
+	    indexline( $input, \%params, $no_results)." | ".
+	    nextlink($input,\%params, $no_results);
 	
 	print "<p style=\"text-align:center\">$index_line</p>";
     }
