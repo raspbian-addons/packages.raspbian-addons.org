@@ -177,6 +177,7 @@ my $search_on_sources = 0;
 
 my $st0 = new Benchmark;
 my @results;
+my $too_much_hits;
 if ($searchon eq 'sourcenames') {
     $search_on_sources = 1;
 }
@@ -187,6 +188,34 @@ my %archs = map { $_ => 1 } @archs;
 
 print "DEBUG: suites=@suites, sections=@sections, archs=@archs<br>" if $debug > 2;
 
+sub read_entry {
+    my ($hash, $key, $results) = @_;
+    my $result = $hash->{$key};
+    foreach (split /\000/, $result) {
+	my @data = split ( /\s/, $_, 7 );
+	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
+	    && $sections{$data[2]}) {
+	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+	    push @$results, [ $key, @data ];
+	}
+    }
+}
+sub read_src_entry {
+    my ($hash, $key, $results) = @_;
+    my $result = $hash->{$key};
+
+    foreach (split /\000/, $result) {
+	my @data = split ( /\s/, $_, 5 );
+	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	if ($suites{$data[0]} && $sections{$data[1]}) {
+	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+	    push @$results, [ $key, @data ];
+	}
+    }
+}
+
+
 if ($searchon eq 'names') {
 
     $keyword = lc $keyword unless $case_bool;
@@ -195,30 +224,36 @@ if ($searchon eq 'names') {
 	or die "couldn't tie DB $DBDIR/packages_small.db: $!";
     
     if ($exact) {
-	my $result = $packages{$keyword};
-	foreach (split /\000/, $result) {
-	    my @data = split ( /\s/, $_, 7 );
-	    print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-	    if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
-		&& $sections{$data[2]}) {
-		print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
-		push @results, [ $keyword, @data ];
-	    }
-	}
+	read_entry( \%packages, $keyword, \@results );
     } else {
-	while (my ($pkg, $result) = each %packages) {
-            #what's faster? I can't really see a difference
-	    (index($pkg, $keyword) >= 0) or next;
-	    #$pkg =~ /\Q$keyword\E/ or next;
-	    foreach (split /\000/, $packages{$pkg}) {
-		my @data = split ( /\s/, $_, 7 );
-		print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-		if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
-		    && $sections{$data[2]}) {
-		    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
-		    push @results, [ $pkg , @data ];
+	my ($key, $prefixes) = ($keyword, '');
+	my %pkgs;
+	my $p_obj = tie my %pref, 'DB_File', "$DBDIR/package_postfixes.db", O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie postfix db $DBDIR/package_postfixes.db: $!";
+	$p_obj->seq( $key, $prefixes, R_CURSOR );
+	do {
+            if ($prefixes =~ /^\001(\d+)/o) {
+                $too_much_hits += $1;
+            } else {
+		print "DEBUG: add word $key<br>" if $debug > 2;
+		$pkgs{$key}++;
+		foreach (split /\000/o, $prefixes) {
+		    print "DEBUG: add word $_$key<br>" if $debug > 2;
+		    $pkgs{$_.$key}++;
 		}
 	    }
+	} while (($p_obj->seq( $key, $prefixes, R_NEXT ) == 0)
+		 && (index($key, $keyword) >= 0)
+		 && !$too_much_hits
+		 && (keys %pkgs < 100));
+        
+        my $no_results = keys %pkgs;
+        if ($too_much_hits || ($no_results >= 100)) {
+	    $too_much_hits += $no_results;
+	    %pkgs = ( $keyword => 1 );
+	}
+	foreach my $pkg (sort keys %pkgs) {
+	    read_entry( \%packages, $pkg, \@results );
 	}
     }
 } elsif ($searchon eq 'sourcenames') {
@@ -229,21 +264,13 @@ if ($searchon eq 'names') {
 	or die "couldn't tie DB $DBDIR/sources_small.db: $!";
     
     if ($exact) {
-	my $result = $packages{$keyword};
-	foreach (split /\000/, $result) {
-	    my @data = split ( /\s/, $_, 5 );
-	    print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-	    if ($suites{$data[0]} && $sections{$data[1]}) {
-		print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
-		push @results, [ $keyword, @data ];
-	    }
-	}
+	read_src_entry( \%packages, $keyword, \@results );
     } else {
 	while (my ($pkg, $result) = each %packages) {
             #what's faster? I can't really see a difference
 	    (index($pkg, $keyword) >= 0) or next;
 	    #$pkg =~ /\Q$keyword\E/ or next;
-	    foreach (split /\000/, $packages{$pkg}) {
+	    foreach (split /\000/, $result) {
 		my @data = split ( /\s/, $_, 5 );
 		print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
 		if ($suites{$data[0]} && $sections{$data[1]}) {
@@ -274,6 +301,10 @@ if ($format eq 'html') {
 	my $exact_wording = $exact ? "" : " (including subword matching)";
 	print "<p>You have searched for <em>$keyword_enc</em> in packages names and descriptions in $suite_wording, $section_wording, and $arch_wording$exact_wording.</p>";
     }
+}
+
+if ($too_much_hits) {
+print "<p><strong>Your search was too wide so we will only display exact matches. At least <em>$too_much_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.</strong></p>";
 }
 
 if (!@results) {
