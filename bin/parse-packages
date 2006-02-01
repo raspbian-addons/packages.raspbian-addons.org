@@ -21,8 +21,14 @@
 
 use strict;
 
+my $what = $1 ? "non-free" : "*";
+# max. distinct results for a given package postfix
+my $MAX_PACKAGE_POSTFIXES = 100;
+
 use DB_File;
 my %packages_small = ();
+my %package_names = ();
+my %package_postfixes = ();
 my %sources_packages = ();
 my %descriptions = ();
 my @descriptions = ("we count lines one-based\000");
@@ -40,7 +46,7 @@ for my $suite (@suites) {
 	tie %packages_all_db, "DB_File", "packages_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
-	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/*/{,debian-installer/}binary-*/Packages.gz|";
+	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
@@ -60,6 +66,7 @@ for my $suite (@suites) {
 		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
 			= $data;
 
+		$package_names{$data{'package'}} = 1;
 		my $src = $data{'package'};
 		my $srcversion = $data{'version'};
 		if ($data{'source'}) {
@@ -147,6 +154,30 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 close DESCR;
 untie %descriptions_db;
 
+# package names stuff:
+for my $pkg (keys %package_names) {
+	for (my $i=0;$i<length($pkg)-1;$i++) {
+		my $before = substr($pkg, 0, $i);
+		my $after = substr($pkg, $i);
+		$package_postfixes{$after} .= "$before\0";
+	}
+}
+my %package_postfixes_db;
+tie %package_postfixes_db, "DB_File", "package_postfixes.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%package_postfixes)) {
+	$v =~ s/.$//s;
+	my $nr = $v;
+	$nr =~ s/[^\000]//g;
+	$nr = length($nr) + 1; # < number of hits
+	if ($nr > $MAX_PACKAGE_POSTFIXES) {
+		$v = "\001" . $nr;
+	}
+	$package_postfixes_db{$k} = $v;
+}
+untie %package_postfixes_db;
+
 rename("packages_small.db.new", "packages_small.db");
 rename("sources_packages.db.new", "sources_packages.db");
 for my $suite (@suites) {
@@ -156,3 +187,4 @@ rename("packages_descriptions.db.new", "packages_descriptions.db");
 rename("descriptions_packages.db.new", "descriptions_packages.db");
 rename("descriptions.txt.new", "descriptions.txt");
 rename("descriptions.db.new", "descriptions.db");
+rename("package_postfixes.db.new", "package_postfixes.db");
