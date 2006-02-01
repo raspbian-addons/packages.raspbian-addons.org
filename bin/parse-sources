@@ -1,0 +1,60 @@
+#!/usr/bin/perl -w
+# Convert Sources.gz files into Sleepycat db files for efficient usage of
+# data
+#
+# $Id$
+#
+# Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+use strict;
+
+use DB_File;
+
+my @suites = ('oldstable', 'stable', 'testing', 'unstable', 'experimental');
+
+$/ = "";
+
+for my $suite (@suites) {
+
+	print "Reading $suite...\n";
+	my %sources_all_db;
+	tie %sources_all_db, "DB_File", "sources_all_$suite.db.new",
+		O_RDWR|O_CREAT, 0666, $DB_BTREE
+		or die "Error creating DB: $!";
+	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/non-free/source/Sources.gz|";
+	while (<PKG>) {
+		next if /^\s*$/;
+		my $data = "";
+		my %data = ();
+		chomp;
+		s/\n /\377/g;
+		while (/^(\S+):\s*(.*)\s*$/mg) {
+			my ($key, $value) = ($1, $2);
+			$value =~ s/\377/\n /g;
+			$data .= "$key: $value\n";
+			$key =~ tr [A-Z] [a-z];
+			$data{$key} = $value;
+		}
+		$sources_all_db{"$data{'package'} $data{'version'}"}
+			= $data;
+	}
+
+	untie %sources_all_db;
+}
+
+for my $suite (@suites) {
+	rename("sources_all_$suite.db.new", "sources_all_$suite.db");
+}

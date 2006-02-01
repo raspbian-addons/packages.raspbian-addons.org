@@ -1,0 +1,158 @@
+#!/usr/bin/perl -w
+# Convert Packages.gz files into Sleepycat db files for efficient usage of
+# data
+#
+# $Id$
+#
+# Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+use strict;
+
+use DB_File;
+my %packages_small = ();
+my %sources_packages = ();
+my %descriptions = ();
+my @descriptions = ("we count lines one-based\000");
+my %packages_descriptions = ();
+my %descriptions_packages = ();
+
+my @suites = ('oldstable', 'stable', 'testing', 'unstable', 'experimental');
+
+$/ = "";
+
+for my $suite (@suites) {
+
+	print "Reading $suite...\n";
+	my %packages_all_db;
+	tie %packages_all_db, "DB_File", "packages_all_$suite.db.new",
+		O_RDWR|O_CREAT, 0666, $DB_BTREE
+		or die "Error creating DB: $!";
+	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/non-free/{,debian-installer/}binary-*/Packages.gz|";
+	while (<PKG>) {
+		next if /^\s*$/;
+		my $data = "";
+		my %data = ();
+		chomp;
+		s/\n /\377/g;
+		#s/\376\377\s*\376\377/\376\377/og;
+		while (/^(\S+):\s*(.*)\s*$/mg) {
+			my ($key, $value) = ($1, $2);
+			$value =~ s/\377/\n /g;
+			$data .= "$key: $value\n";
+			$key =~ tr [A-Z] [a-z];
+			$data{$key} = $value;
+		}
+		# Skip double package
+		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
+		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
+			= $data;
+
+		my $src = $data{'package'};
+		my $srcversion = $data{'version'};
+		if ($data{'source'}) {
+			$src = $data{'source'};
+			if ($src =~ /(\S+) \((\S+)\)/) {
+				$src = $1;
+				$srcversion = $2;
+			}
+		}
+		my $descr = $data{'description'};
+		my $did = undef;
+		if (exists($descriptions{$descr})) {
+			$did  = $descriptions{$descr};
+		} else {
+			$did = 1 + $#descriptions;
+			$descriptions[$did] = $descr;
+			$descriptions{$descr} = $did;
+		}
+		$packages_descriptions{"$data{'package'} $data{'version'} $data{'architecture'}"} = $did;
+		$descriptions_packages{$did} .=
+			"$data{'package'} $data{'version'} $data{'architecture'}\000";
+
+		my $sdescr = $descr;
+		$sdescr =~ s/\n.*//s;
+		$packages_small{$data{'package'}} .= "$suite $data{'architecture'} ".
+			"$data{'section'} $data{'priority'} $data{'version'} $sdescr\000";
+		$sources_packages{$src} .=
+			"$data{'package'} $data{'architecture'} $data{'version'}\000";
+	}
+
+	untie %packages_all_db;
+}
+
+print "Writing databases...\n";
+my %packages_small_db;
+tie %packages_small_db, "DB_File", "packages_small.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%packages_small)) {
+	$v =~ s/.$//s;
+	$packages_small_db{$k} = $v;
+}
+untie %packages_small_db;
+
+my %sources_packages_db;
+tie %sources_packages_db, "DB_File", "sources_packages.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%sources_packages)) {
+	$v =~ s/.$//s;
+	$sources_packages_db{$k} = $v;
+}
+untie %sources_packages_db;
+
+my %packages_descriptions_db;
+tie %packages_descriptions_db, "DB_File", "packages_descriptions.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%packages_descriptions)) {
+	$packages_descriptions_db{$k} = $v;
+}
+untie %packages_descriptions_db;
+
+my %descriptions_packages_db;
+tie %descriptions_packages_db, "DB_File", "descriptions_packages.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%descriptions_packages)) {
+	$v =~ s/.$//s;
+	$descriptions_packages_db{$k} = $v;
+}
+untie %descriptions_packages_db;
+
+my %descriptions_db;
+tie %descriptions_db, "DB_File", "descriptions.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+open DESCR, "> descriptions.txt" or die "Error creating descriptions textfile";
+for (my $i=1; $i<= $#descriptions; $i++) {
+	my $null_d = $descriptions[$i];
+	$null_d =~ s/\n/\000/g;
+	print DESCR "$null_d\n";
+	$descriptions_db{$i} = $descriptions[$i];
+}
+close DESCR;
+untie %descriptions_db;
+
+rename("packages_small.db.new", "packages_small.db");
+rename("sources_packages.db.new", "sources_packages.db");
+for my $suite (@suites) {
+	rename("packages_all_$suite.db.new", "packages_all_$suite.db");
+}
+rename("packages_descriptions.db.new", "packages_descriptions.db");
+rename("descriptions_packages.db.new", "descriptions_packages.db");
+rename("descriptions.txt.new", "descriptions.txt");
+rename("descriptions.db.new", "descriptions.db");
