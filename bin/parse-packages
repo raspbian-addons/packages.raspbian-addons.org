@@ -68,13 +68,9 @@ for my $suite (@suites) {
 
 		$package_names{$data{'package'}} = 1;
 		my $src = $data{'package'};
-		my $srcversion = $data{'version'};
 		if ($data{'source'}) {
 			$src = $data{'source'};
-			if ($src =~ /(\S+) \((\S+)\)/) {
-				$src = $1;
-				$srcversion = $2;
-			}
+			$src =~ s/ .*//; # strip version info
 		}
 		my $descr = $data{'description'};
 		my $did = undef;
