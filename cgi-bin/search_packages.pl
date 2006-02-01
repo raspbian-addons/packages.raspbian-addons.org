@@ -191,24 +191,46 @@ if ($searchon eq 'names') {
 
     $keyword = lc $keyword unless $case_bool;
     
-    my %packages;
-    tie %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
+    my $obj = tie my %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
 	or die "couldn't tie DB $DBDIR/packages_small.db: $!";
     
-    my $result = $packages{$keyword};
-    foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 6 );
-        #FIXME, should be done on db generation
-	if ($data[2] =~ m,/,) {
-	    $data[2] =~ s,/.*$,,;
-	} else {
-	    $data[2] = 'main';
+    if ($exact) {
+	my $result = $packages{$keyword};
+	foreach (split /\000/, $result) {
+	    my @data = split ( /\s/, $_, 6 );
+	    #FIXME, should be done on db generation
+	    if ($data[2] =~ m,/,) {
+		$data[2] =~ s,/.*$,,;
+	    } else {
+		$data[2] = 'main';
+	    }
+	    print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	    if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
+		&& $sections{$data[2]}) {
+		print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+		push @results, [ $keyword, @data ];
+	    }
 	}
-	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-	if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
-	    && $sections{$data[2]}) {
-	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
-	    push @results, [ $keyword, @data ];
+    } else {
+	while (my ($pkg, $result) = each %packages) {
+            #what's faster? I can't really see a difference
+	    (index($pkg, $keyword) >= 0) or next;
+	    #$pkg =~ /\Q$keyword\E/ or next;
+	    foreach (split /\000/, $packages{$pkg}) {
+		my @data = split ( /\s/, $_, 6 );
+		#FIXME, should be done on db generation
+		if ($data[2] =~ m,/,) {
+		    $data[2] =~ s,/.*$,,;
+		} else {
+		    $data[2] = 'main';
+		}
+		print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+		if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
+		    && $sections{$data[2]}) {
+		    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+		    push @results, [ $pkg , @data ];
+		}
+	    }
 	}
     }
 }
