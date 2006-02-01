@@ -197,13 +197,7 @@ if ($searchon eq 'names') {
     if ($exact) {
 	my $result = $packages{$keyword};
 	foreach (split /\000/, $result) {
-	    my @data = split ( /\s/, $_, 6 );
-	    #FIXME, should be done on db generation
-	    if ($data[2] =~ m,/,) {
-		$data[2] =~ s,/.*$,,;
-	    } else {
-		$data[2] = 'main';
-	    }
+	    my @data = split ( /\s/, $_, 7 );
 	    print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
 	    if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
 		&& $sections{$data[2]}) {
@@ -217,13 +211,7 @@ if ($searchon eq 'names') {
 	    (index($pkg, $keyword) >= 0) or next;
 	    #$pkg =~ /\Q$keyword\E/ or next;
 	    foreach (split /\000/, $packages{$pkg}) {
-		my @data = split ( /\s/, $_, 6 );
-		#FIXME, should be done on db generation
-		if ($data[2] =~ m,/,) {
-		    $data[2] =~ s,/.*$,,;
-		} else {
-		    $data[2] = 'main';
-		}
+		my @data = split ( /\s/, $_, 7 );
 		print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
 		if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
 		    && $sections{$data[2]}) {
@@ -300,11 +288,12 @@ my (%pkgs, %sect, %part, %desc, %binaries);
 
 unless ($search_on_sources) {
     foreach (@results) {
-	my ($pkg_t, $suite, $arch, $section, $priority, $version, $desc) = @$_;
+	my ($pkg_t, $suite, $arch, $section, $subsection,
+            $priority, $version, $desc) = @$_;
 	
 	my ($package) = $pkg_t =~ m/^(.+)/; # untaint
 	$pkgs{$package}{$suite}{$version}{$arch} = 1;
-	$sect{$package}{$suite}{$version} = 'subsection';
+	$sect{$package}{$suite}{$version} = $subsection;
 	$part{$package}{$suite}{$version} = $section unless $section eq 'main';
 	
 	$desc{$package}{$suite}{$version} = $desc;

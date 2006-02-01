@@ -91,8 +91,13 @@ for my $suite (@suites) {
 
 		my $sdescr = $descr;
 		$sdescr =~ s/\n.*//s;
+		my $section = 'main';
+		my $subsection = $data{section};
+		if ($data{section} && ($data{section} =~ m=/=o)) {
+		    ($section, $subsection) = split m=/=o, $data{section}, 2;
+		}
 		$packages_small{$data{'package'}} .= "$suite $data{'architecture'} ".
-			"$data{'section'} $data{'priority'} $data{'version'} $sdescr\000";
+			"$section $subsection $data{'priority'} $data{'version'} $sdescr\000";
 		$sources_packages{$src} .=
 			"$data{'package'} $data{'architecture'} $data{'version'}\000";
 	}
