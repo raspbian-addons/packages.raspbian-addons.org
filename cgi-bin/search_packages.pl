@@ -6,15 +6,14 @@
 # Copyright (C) 2000, 2001 Josip Rodin
 # Copyright (C) 2001 Adam Heath
 # Copyright (C) 2004 Martin Schulze
-# Copyright (C) 2004 Frank Lichtenheld
+# Copyright (C) 2004-2006 Frank Lichtenheld
 #
 # use is allowed under the terms of the GNU Public License (GPL)                              
 # see http://www.fsf.org/copyleft/gpl.html for a copy of the license
 
-require 5.001;
 use strict;
 use CGI qw( -oldstyle_urls );
-#use CGI::Carp qw( fatalsToBrowser );
+use CGI::Carp qw( fatalsToBrowser );
 use POSIX;
 use URI::Escape;
 use HTML::Entities;
@@ -28,7 +27,6 @@ use Packages::Search qw( :all );
 use Packages::HTML ();
 
 my $thisscript = "search_packages.pl";
-my $use_grep = 1;
 my $HOME = "http://www.debian.org";
 my $ROOT = "";
 my $SEARCHPAGE = "http://packages.debian.org/";
@@ -38,6 +36,10 @@ my @SECTIONS = qw( main contrib non-free );
 my @ARCHIVES = qw( us security installer );
 my @ARCHITECTURES = qw( alpha amd64 arm hppa hurd-i386 i386 ia64
 			kfreebsd-i386 mips mipsel powerpc s390 sparc );
+my %SUITES = map { $_ => 1 } @SUITES;
+my %SECTIONS = map { $_ => 1 } @SECTIONS;
+my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
+my %ARCHITECTURES = map { $_ => 1 } @ARCHITECTURES;
 
 $ENV{PATH} = "/bin:/usr/bin";
 
@@ -46,7 +48,7 @@ my $input = new CGI;
 
 my $pet0 = new Benchmark;
 # use this to disable debugging in production mode completly
-my $debug_allowed = 0;
+my $debug_allowed = 1;
 my $debug = $debug_allowed && $input->param("debug");
 $Search::Param::debug = 1 if $debug > 1;
 
@@ -54,6 +56,22 @@ $Search::Param::debug = 1 if $debug > 1;
 print $input->header if $debug;
 # print $input->dump;
 # exit;
+
+if (my $path = $input->param('path')) {
+    my @components = map { lc $_ } split /\//, $path;
+
+    foreach (@components) {
+	if ($SUITES{$_}) {
+	    $input->param('suite', $_);
+	} elsif ($SECTIONS{$_}) {
+	    $input->param('section', $_);
+	} elsif ($ARCHIVES{$_}) {
+	    $input->param('archive', $_);
+	}elsif ($ARCHITECTURES{$_}) {
+	    $input->param('arch', $_);
+	}
+    }
+}
 
 my %params_def = ( keywords => { default => undef, match => '^\s*([-+\@\w\/.:]+)\s*$' },
 		   suite => { default => 'stable', match => '^(\w+)$',
@@ -145,7 +163,8 @@ print Packages::HTML::header( title => 'Package Search Results' ,
 # read the configuration
 my $topdir;
 if (!open (C, "../config.sh")) {
-    print "\nInternal Error: Cannot open configuration file.\n\n" if $format eq 'html';
+    print "\nInternal Error: Cannot open configuration file.\n\n"
+if $format eq 'html';
     exit 0;
 }
 while (<C>) {
@@ -153,172 +172,45 @@ while (<C>) {
 }
 close (C);
 
-my $FLATDIR = $topdir . "/files/flat";
+my $DBDIR = $topdir . "/files/db";
 my $search_on_sources = 0;
 
-my %descr;
-my %sections;
-
-sub find_desc
-{
-    my $pkg = shift;
-    my $suite = shift;
-    my $part = shift;
-    my $descr = '';
-
-    unless (exists $descr{$suite}{$part}) {
-	$descr{$suite}{$part} = {};
-	tie %{$descr{$suite}{$part}}, 'DB_File', "$FLATDIR/$suite/$part/Description", O_RDONLY
-	    or return "Error while loading descriptions database: $!";
-    }
-
-    return $descr{$suite}{$part}{$pkg};
-}
-
-sub find_section
-{
-    my $pkg = shift;
-    my $suite = shift;
-    my $part = shift;
-    my $section = '';
-
-    unless (exists $sections{$suite}{$part}) {
-	$sections{$suite}{$part} = {};
-	tie %{$sections{$suite}{$part}}, 'DB_File', "$FLATDIR/$suite/$part/Section", O_RDONLY
-	    or return undef;
-    }
-
-    return $sections{$suite}{$part}{$pkg};
-}
-
 my $st0 = new Benchmark;
-tie my %cache, 'DB_File', "$topdir/files/search.cache/search.cache", O_RDWR|O_CREAT or $use_cache = 0;
-my $cached;
 my @results;
-my $cache_key = $keyword.$exact.$subword.$searchon.$suites_param.$sections_param.$archs_param;
 if ($searchon eq 'sourcenames') {
     $search_on_sources = 1;
 }
-if ($use_cache && ($cached = $cache{$cache_key})) {
-    @results = split /\n/, $cached;
-    print "DEBUG: Used cached results<br><pre>$cached</pre>" if $debug;
-} else {
-    my $searchkeyword = $keyword;
-    my $grep_searchkeyword = $keyword;
-    $searchkeyword =~ s/[.]/\\./;
-    if (($searchon eq 'names') || ($searchon eq 'sourcenames')) {
-	# asserting that all package names are lower case
-	$searchkeyword = lc($searchkeyword) unless $case_bool;
-	$case_bool = 1;
-	$grep_searchkeyword = "^[^ ]*$searchkeyword" unless $exact;
-	$searchkeyword = "^\\S*$searchkeyword" unless $exact;
-    } else {
-	$grep_searchkeyword = "\\(^$searchkeyword\\b\\|\\b$searchkeyword\\b\\)"
-	    if $subword != 1;
-	$searchkeyword = "\\b$searchkeyword\\b"
-	    if $subword != 1;
-    }
+
+my %suites = map { $_ => 1 } @suites;
+my %sections = map { $_ => 1 } @sections;
+my %archs = map { $_ => 1 } @archs;
+
+print "DEBUG: suites=@suites, sections=@sections, archs=@archs<br>" if $debug > 2;
+
+if ($searchon eq 'names') {
+
+    $keyword = lc $keyword unless $case_bool;
     
-# FIXME
-# check if the Packages files are there
-#my @files = glob ("$fdir/$file");
-#if ($#files == -1) {
-# XXX has to be updated for new architectures
-#    if ($format eq 'html') {
-#	if (($version eq "stable" and $arch =~ /^(hurd|sh)$/)
-#	    || ($version eq "oldstable" and $arch =~ /^amd64$/)) {
-#	    print "Error: the $arch architecture didn't exist in $version.<br>\n"
-#		."Please go back and choose a different distribution.\n";
-#	} else {
-#	    print "Error: Packages/Sources file not found.<br>\n"
-#		."If the problem persists, please inform $ENV{SERVER_ADMIN}.\n";
-#	    printf "<p>$file</p>";
-#	}
-#	&printfooter;
-#    }
-#    exit;
-#}
-
-    my @files;
-    foreach my $s (@suites) {
-	foreach my $sec (@sections) {
-	    foreach my $a (@archs) {
-		foreach my $archive (@ARCHIVES) {
-		    if (($searchon eq 'names' or $searchon eq 'sourcenames')
-			and $exact) {
-			my ( %packages, $file );
-			if ($search_on_sources) {
-			    $file = "$FLATDIR/$s/$sec/Sources.$archive.db";
-			} else {
-			    $file = "$FLATDIR/$s/$sec/Packages-$a.$archive.db";
-			}
-			if (-f $file) {
-			    print "DEBUG: Use file $file<br>"
-				if $debug > 1;
-			    
-			    tie %packages, 'DB_File', $file, O_RDONLY
-				or die "Couldn't open packages file $file: $!";
-			    
-			    if (my $data = $packages{$searchkeyword}) {
-				print "DEBUG: Found result $data<br>"
-				    if $debug > 1;		
-				push @results, "$file:$data";
-			    }
-			}
-		    } else {
-			my $file;
-			if ($search_on_sources) {
-			    $file = "$FLATDIR/$s/$sec/Sources.$archive";
-			} else {
-			    $file = "$FLATDIR/$s/$sec/Packages-$a.$archive";
-			}
-			if (-f $file) {
-			    print "DEBUG: Use file $file<br>"
-				if $debug > 1;
-			    
-			    # use_grep is currently way faster, though
-			    # I can't pinpoint exactly why, yet
-			    # most probably the perl regexes are
-			    # slow compared to the simpler grep
-			    # regexes
-			    unless ($use_grep) {
-				open my $pkg_fh, '<', $file
-				    or die "Couldn't open packages file $file: $!";
-				
-				foreach (<$pkg_fh>) {
-				    if (/$searchkeyword/o) {
-					print "DEBUG: Found result $_<br>"
-					    if $debug > 1;
-
-					push @results, "$file:$_";
-				    }
-				}
-			    } else {			    
-				push @files, $file;
-			    }
-			}
-		    }    
-		}
-	    }
+    my %packages;
+    tie %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/packages_small.db: $!";
+    
+    my $result = $packages{$keyword};
+    foreach (split /\000/, $result) {
+	my @data = split ( /\s/, $_, 6 );
+        #FIXME, should be done on db generation
+	if ($data[2] =~ m,/,) {
+	    $data[2] =~ s,/.*$,,;
+	} else {
+	    $data[2] = 'main';
+	}
+	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
+	    && $sections{$data[2]}) {
+	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+	    push @results, [ $keyword, @data ];
 	}
     }
-
-    if ($use_grep) {
-	if (@files) {
-	    my @grep = ( 'grep', '-H' );
-	    push @grep, '-i' unless $case_bool;
-	    push @grep, $grep_searchkeyword;
-	    push @grep, @files;
-	    
-	    print "DEBUG: starting grep command '".
-		substr("@grep",0,100)."[...]'<br>" if $debug;
-	    open my $grep_out, '-|', @grep or
-		die "grep failed: $!";
-	    @results = <$grep_out>;
-	}
-    }
-	
-    $cache{$cache_key} = join "", @results;
 }
 
 my $st1 = new Benchmark;
@@ -383,35 +275,30 @@ if (!@results) {
 }
 
 my (%pkgs, %sect, %part, %desc, %binaries);
-my (@colon, $package, $pkg_t, $section, $ver, $arch, $foo, $binaries);
 
 unless ($search_on_sources) {
-    foreach my $line (@results) {
-	@colon = split (/:/, $line);
-	($pkg_t, $section, $ver, $arch, $foo) = split (/ /, $#colon >1 ? $colon[1].":".$colon[2]:$colon[1], 5);
-	$section =~ s,^(non-free|contrib)/,,;
-	$section =~ s,^non-US.*$,non-US,,;
-	my ($dist,$part,undef) = $colon[0] =~ m,.*/([^/]+)/([^/]+)/Packages-([^\.]+)\.,; #$1=stable, $2=main, $3=alpha
-
-	($package) = $pkg_t =~ m/^(.+)/; # untaint
-	$pkgs{$package}{$dist}{$ver}{$arch} = 1;
-	$sect{$package}{$dist}{$ver} = $section;
-	$part{$package}{$dist}{$ver} = $part unless $part eq 'main';
-
-	$desc{$package}{$dist}{$ver} = find_desc ($package, $dist, $part) if (! exists $desc{$package}{$dist}{$ver});
+    foreach (@results) {
+	my ($pkg_t, $suite, $arch, $section, $priority, $version, $desc) = @$_;
+	
+	my ($package) = $pkg_t =~ m/^(.+)/; # untaint
+	$pkgs{$package}{$suite}{$version}{$arch} = 1;
+	$sect{$package}{$suite}{$version} = 'subsection';
+	$part{$package}{$suite}{$version} = $section unless $section eq 'main';
+	
+	$desc{$package}{$suite}{$version} = $desc;
 
     }
 
     if ($format eq 'html') {
 	my ($start, $end) = multipageheader( scalar keys %pkgs );
 	my $count = 0;
-
+	
 	foreach my $pkg (sort keys %pkgs) {
 	    $count++;
 	    next if $count < $start or $count > $end;
 	    printf "<h3>Package %s</h3>\n", $pkg;
 	    print "<ul>\n";
-	    foreach $ver (@SUITES) {
+	    foreach my $ver (@SUITES) {
 		if (exists $pkgs{$pkg}{$ver}) {
 		    my @versions = version_sort keys %{$pkgs{$pkg}{$ver}};
 		    my $part_str = "";
@@ -436,7 +323,7 @@ unless ($search_on_sources) {
 	$rdf->addns( debpkg => 'http://packages.debian.org/xml/01-debian-packages-rdf' );
 	my @triples;
 	foreach my $pkg (sort keys %pkgs) {
-	    foreach $ver (@DISTS) {
+	    foreach my $ver (@DISTS) {
 		if (exists $pkgs{$pkg}{$ver}) {
 		    my @versions = version_sort keys %{$pkgs{$pkg}{$ver}};
 		    foreach my $version (@versions) {
@@ -458,18 +345,12 @@ unless ($search_on_sources) {
 	print $rdf->serialise(@triples);
     }
 } else {
-    foreach my $line (@results) {
-	chomp($line);
-	@colon = split (/:/, $line);
-	($package, $section, $ver, $binaries) = split (/ /, $#colon >1 ? $colon[1].":".$colon[2]:$colon[1], 4);
-	$section =~ s,^(non-free|contrib)/,,;
-	$section =~ s,^non-US.*$,non-US,,;
-	$colon[0] =~ m,.*/([^/]+)/([^/]+)/Sources\.,; #$1=stable, $2=main
+    foreach (@results) {
+        my ($package, $suite, $section, $version, $binaries);
 	
-	my ($suite, $part) = ($1, $2);
-	$pkgs{$package}{$suite} = $ver;
-	$sect{$package}{$suite}{source} = $section;
-	$part{$package}{$suite}{source} = $part unless $part eq 'main';
+	$pkgs{$package}{$suite} = $version;
+	$sect{$package}{$suite}{source} = 'subsection';
+	$part{$package}{$suite}{source} = $section unless $section eq 'main';
 
 	$binaries{$package}{$suite} = [ sort split( /\s*,\s*/, $binaries ) ];
 
@@ -484,7 +365,7 @@ unless ($search_on_sources) {
 	    next if ($count < $start) or ($count > $end);
 	    printf "<h3>Source package %s</h3>\n", $pkg;
 	    print "<ul>\n";
-	    foreach $ver (@DISTS) {
+	    foreach my $ver (@SUITES) {
 		if (exists $pkgs{$pkg}{$ver}) {
 		    my $part_str = "";
 		    if ($part{$pkg}{$ver}{source}) {
@@ -518,7 +399,7 @@ unless ($search_on_sources) {
 	$rdf->addns( debpkg => 'http://packages.debian.org/xml/01-debian-packages-rdf' );
 	my @triples;
 	foreach my $pkg (sort keys %pkgs) {
-	    foreach $ver (@DISTS) {
+	    foreach my $ver (@SUITES) {
 		if (exists $pkgs{$pkg}{$ver}) {
 		    my $id = "$ROOT/$ver/source/$pkg";
 
