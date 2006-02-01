@@ -6,11 +6,15 @@ use warnings;
 use URI::Escape;
 use HTML::Entities;
 
-use Packages::Util;
-use Packages::I18N::Locale;
-use Packages::I18N::Languages;
-use Packages::I18N::LanguageNames;
-use Generated::Strings qw( gettext dgettext );
+#use Packages::Util;
+#use Packages::I18N::Locale;
+#use Packages::I18N::Languages;
+#use Packages::I18N::LanguageNames;
+#use Generated::Strings qw( gettext dgettext );
+
+# dummy routines
+sub get_charset { return "utf-8" };
+sub gettext { return $_[0]; };
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( header title trailer file_changed time_stamp
