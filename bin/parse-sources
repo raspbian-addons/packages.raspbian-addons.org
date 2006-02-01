@@ -58,6 +58,7 @@ for my $suite (@suites) {
 		if ($data{section} && ($data{section} =~ m=/=o)) {
 		    ($section, $subsection) = split m=/=o, $data{section}, 2;
 		}
+		$data{'priority'} = "-" if not exists($data{'priority'});
 		$sources_small{$data{'package'}} .=
 			"$suite $section $subsection $data{'priority'} $data{'version'}\000";
 	}
