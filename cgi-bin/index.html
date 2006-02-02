@@ -1,0 +1,112 @@
+<h2><a name="search_packages" id="search_packages">Search package directories</a></h2>
+<form method="GET" action="search">
+<p>
+<label for="kw">Keyword:</label>
+<input type="text" size="30" name="keywords" id="kw">
+<input type="submit" value="Search"> <input type="reset" value="Reset">
+<br>
+Search on:
+<input type="radio" name="searchon" value="names" id="onlynames" checked="checked">
+<label for="onlynames">Package names only</label>&nbsp;&nbsp;
+<input type="radio" name="searchon" value="all" id="descs">
+
+<label for="descs">Descriptions</label>
+<input type="radio" name="searchon" value="sourcenames" id="src">
+<label for="src">Source package names</label>
+<br>
+Distribution:
+<select name="version">
+  <option value="experimental">experimental</option>
+
+  <option value="unstable">unstable</option>
+  <option value="testing">testing</option>
+  <option value="stable">stable</option>
+  <option value="oldstable">oldstable</option>
+  <option value="all" selected="selected">any</option>
+</select>
+Section:
+
+<select name="release">
+  <option value="main">main</option>
+  <option value="contrib">contrib</option>
+  <option value="non-free">non-free</option>
+  <option value="non-us">non-US</option>
+  <option value="all" selected="selected">any</option>
+</select>
+
+</p>
+</form>
+<p>There are shortcuts for some searches available:</p>
+<ul>
+      <li><code>http://packages.debian.org/<var>name</var></code> for
+      the search on package names.</li>
+      <li><code>http://packages.debian.org/src:<var>name</var></code>
+      for the search on source package names.</li>
+
+</ul>
+<HR>
+<h2><a name="search_contents" id="search_contents">Search the contents of packages</a></h2>
+<P>This search engine allows you to search the contents of Debian
+distributions for any files (or just parts of file names) that are
+part of packages.
+You can also get a full list of files in a given package.
+<BR>
+<form method="GET" action="http://packages.debian.org/cgi-bin/search_contents.pl">
+<p>
+<label for="keyword">Keyword:</label>
+<input type="text" size="30" name="word" id="keyword"> &nbsp;
+<input type="submit" value="Search">
+&nbsp;<input type="reset" value="Reset">
+<br>
+Display:
+<br>
+
+<input type="radio" name="searchmode" value="searchfiles" id="searchfiles" checked="checked">
+  <label for="searchfiles">packages that contain files named like this</label>
+<br>
+<input type="radio" name="searchmode" value="searchfilesanddirs" id="searchfilesanddirs">
+  <label for="searchfilesanddirs">packages that contain files or directories named like this</label>
+<br>
+<input type="radio" name="searchmode" value="searchword" id="searchword">
+  <label for="searchword">packages that contain files or directories whose names contain the keyword</label>
+<br>
+<input type="radio" name="searchmode" value="filelist" id="filelist">
+  <label for="filelist">all files in this package</label>
+
+<br>
+<label for="casesens">Case sensitive:</label>
+<select name="case" id="casesens">
+  <option value="insensitive" selected="selected">no</option>
+  <option value="sensitive">yes</option>
+</select>
+<label for="distro">Distribution:</label>
+<select name="version" id="distro">
+  <option value="oldstable">oldstable</option>
+
+  <option value="stable" selected="selected">stable</option>
+  <option value="testing">testing</option>
+  <option value="unstable">unstable</option>
+</select>
+<label for="architecture">Architecture:</label>
+<select name="arch" id="architecture">
+  <option value="i386" selected="selected">Intel x86</option>
+  <option value="m68k">Motorola 680x0</option>
+
+  <option value="alpha">Alpha</option>
+  <option value="amd64">AMD64</option>
+  <option value="sparc">SPARC</option>
+  <option value="powerpc">PowerPC</option>
+  <option value="arm">ARM</option>
+  <option value="hppa">HP PA/RISC</option>
+
+  <option value="ia64">Intel IA-64</option>
+  <option value="mips">MIPS</option>
+  <option value="mipsel">MIPS (DEC)</option>
+  <option value="s390">IBM S/390</option>
+  <option value="hurd-i386">Hurd (i386)</option>
+</select>
+</p>
+
+</form>
+<div class="clr"></div>
+</div> <!-- end inner -->
