@@ -129,6 +129,8 @@ for my $entry (@results) {
 
 print "Available in ".(join ', ', keys %allsuites)."\n";
 
+&printfooter;
+
 sub read_entry {
     my ($key, $results, $allsuites) = @_;
     my $result = $packages{$key};
