@@ -597,6 +597,10 @@ print <<END;
 </div>
 END
 
+my $pete = new Benchmark;
+my $petd = timediff($pete, $pet0);
+print "Total page evaluation took ".timestr($petd)."<br>"
+    if $debug_allowed;
 print $input->end_html;
 }
 
