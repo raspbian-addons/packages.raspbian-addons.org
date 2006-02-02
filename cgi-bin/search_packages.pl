@@ -31,7 +31,6 @@ my $HOME = "http://www.debian.org";
 my $ROOT = "";
 my $SEARCHPAGE = "http://packages.debian.org/";
 my @SUITES = qw( oldstable stable testing unstable experimental );
-my @DISTS = @SUITES;
 my @SECTIONS = qw( main contrib non-free );
 my @ARCHIVES = qw( us security installer );
 my @ARCHITECTURES = qw( alpha amd64 arm hppa hurd-i386 i386 ia64
@@ -45,7 +44,7 @@ $ENV{PATH} = "/bin:/usr/bin";
 
 # Read in all the variables set by the form
 my $input;
-if ($ARGV[0] eq 'php') {
+if ($ARGV[0] && ($ARGV[0] eq 'php')) {
 	$input = new CGI(\*STDIN);
 } else {
 	$input = new CGI;
@@ -131,6 +130,7 @@ my @sections = @{$params{values}{section}{final}};
 my @archs = @{$params{values}{arch}{final}};
 my $page = $params{values}{page}{final};
 my $results_per_page = $params{values}{number}{final};
+my %opts = ( case_bool => $case_bool, exact => $exact );
 
 # for URL construction
 my $suites_param = join ',', @{$params{values}{suite}{no_replace}};
@@ -192,7 +192,8 @@ my %suites = map { $_ => 1 } @suites;
 my %sections = map { $_ => 1 } @sections;
 my %archs = map { $_ => 1 } @archs;
 
-print "DEBUG: suites=@suites, sections=@sections, archs=@archs<br>" if $debug > 2;
+print "DEBUG: suites=@suites, sections=@sections, archs=@archs<br>"
+    if $debug > 2;
 
 sub read_entry {
     my ($hash, $key, $results) = @_;
@@ -221,14 +222,15 @@ sub read_src_entry {
     }
 }
 sub do_names_search {
-    my ($keyword, $file, $postfix_file, $read_entry) = @_;
+    my ($keyword, $file, $postfix_file, $read_entry, $opts) = @_;
+    my @results;
 
-    $keyword = lc $keyword unless $case_bool;
+    $keyword = lc $keyword unless $opts->{case_bool};
     
     my $obj = tie my %packages, 'DB_File', "$DBDIR/$file", O_RDONLY, 0666, $DB_BTREE
 	or die "couldn't tie DB $DBDIR/$file: $!";
     
-    if ($exact) {
+    if ($opts->{exact}) {
 	&$read_entry( \%packages, $keyword, \@results );
     } else {
 	my ($key, $prefixes) = ($keyword, '');
@@ -259,20 +261,16 @@ sub do_names_search {
 	    &$read_entry( \%packages, $pkg, \@results );
 	}
     }
+    return \@results;
 }
-
-if ($searchon eq 'names') {
-    do_names_search( $keyword, 'packages_small.db',
-		     'package_postfixes.db', \&read_entry );
-} elsif ($searchon eq 'sourcenames') {
-    do_names_search( $keyword, 'sources_small.db',
-		     'source_postfixes.db', \&read_src_entry );
-} else {
+sub do_fulltext_search {
+    my ($keword, $file, $mapping, $lookup, $read_entry, $opts) = @_;
+    my @results;
 
     my @lines;
     my $regex;
-    if ($case_bool) {
-	if ($exact) {
+    if ($opts->{case_bool}) {
+	if ($opts->{exact}) {
 	    $regex = qr/\b\Q$keyword\E\b/o;
 	} else {
 	    $regex = qr/\Q$keyword\E/o;
@@ -285,7 +283,8 @@ if ($searchon eq 'names') {
 	}
     }
 
-    open DESC, '<', "$DBDIR/descriptions.txt" or die "couldn't open $DBDIR/descriptions.txt: $!";
+    open DESC, '<', "$DBDIR/$file"
+	or die "couldn't open $DBDIR/$file: $!";
     while (<DESC>) {
 	$_ =~ $regex or next;
 	print "DEBUG: Matched line $.<br>" if $debug > 2;
@@ -293,10 +292,10 @@ if ($searchon eq 'names') {
     }
     close DESC;
 
-    my $obj = tie my %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/packages_small.db: $!";
-    my $obj = tie my %did2pkg, 'DB_File', "$DBDIR/descriptions_packages.db", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/descriptions_packages.db: $!";
+    tie my %packages, 'DB_File', "$DBDIR/$lookup", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/$lookup: $!";
+    tie my %did2pkg, 'DB_File', "$DBDIR/$mapping", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/$mapping: $!";
 
     my %tmp_results;
     foreach my $l (@lines) {
@@ -308,8 +307,27 @@ if ($searchon eq 'names') {
 	}
     }
     foreach my $pkg (keys %tmp_results) {
-	read_entry( \%packages, $pkg, \@results ); 
+	&$read_entry( \%packages, $pkg, \@results ); 
     }
+    return \@results;
+}
+
+if ($searchon eq 'names') {
+    push @results, @{ do_names_search( $keyword, 'packages_small.db',
+				       'package_postfixes.db',
+				       \&read_entry, \%opts ) };
+} elsif ($searchon eq 'sourcenames') {
+    push @results, @{ do_names_search( $keyword, 'sources_small.db',
+				       'source_postfixes.db',
+				       \&read_src_entry, \%opts ) };
+} else {
+    push @results, @{ do_names_search( $keyword, 'packages_small.db',
+				       'package_postfixes.db',
+				       \&read_entry, \%opts ) };
+    push @results, @{ do_fulltext_search( $keyword, 'descriptions.txt',
+					  'descriptions_packages.db',
+					  'packages_small.db',
+					  \&read_entry, \%opts ) };
 }
 
 my $st1 = new Benchmark;
@@ -427,7 +445,7 @@ unless ($search_on_sources) {
 	$rdf->addns( debpkg => 'http://packages.debian.org/xml/01-debian-packages-rdf' );
 	my @triples;
 	foreach my $pkg (sort keys %pkgs) {
-	    foreach my $ver (@DISTS) {
+	    foreach my $ver (@SUITES) {
 		if (exists $pkgs{$pkg}{$ver}) {
 		    my @versions = version_sort keys %{$pkgs{$pkg}{$ver}};
 		    foreach my $version (@versions) {
