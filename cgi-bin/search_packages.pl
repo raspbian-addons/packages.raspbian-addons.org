@@ -55,7 +55,7 @@ my $pet0 = new Benchmark;
 my $debug_allowed = 1;
 my $debug = $debug_allowed && $input->param("debug");
 $debug = 0 if not defined($debug);
-$Search::Param::debug = 1 if $debug > 1;
+$Packages::Search::debug = 1 if $debug > 1;
 
 # If you want, just print out a list of all of the variables and exit.
 print $input->header if $debug;
@@ -79,7 +79,7 @@ if (my $path = $input->param('path')) {
 }
 
 my ( $format, $keyword, $case, $subword, $exact, $searchon,
-     @suites, @sections, @archs  );
+     @suites, @sections, @archs );
 
 my %params_def = ( keywords => { default => undef,
 				 match => '^\s*([-+\@\w\/.:]+)\s*$',
@@ -131,6 +131,9 @@ if ($params{errors}{keywords}) {
 
 my $case_bool = ( $case !~ /insensitive/ );
 $exact = !$subword unless defined $exact;
+$opts{h_suites} = { map { $_ => 1 } @suites };
+$opts{h_sections} = { map { $_ => 1 } @sections };
+$opts{h_archs} = { map { $_ => 1 } @archs };
 
 # for URL construction
 my $suites_param = join ',', @{$params{values}{suite}{no_replace}};
@@ -188,34 +191,27 @@ if ($searchon eq 'sourcenames') {
     $search_on_sources = 1;
 }
 
-my %suites = map { $_ => 1 } @suites;
-my %sections = map { $_ => 1 } @sections;
-my %archs = map { $_ => 1 } @archs;
-
-print "DEBUG: suites=@suites, sections=@sections, archs=@archs<br>"
-    if $debug > 2;
-
 sub read_entry {
-    my ($hash, $key, $results) = @_;
-    my $result = $hash->{$key};
+    my ($hash, $key, $results, $opts) = @_;
+    my $result = $hash->{$key} || '';
     foreach (split /\000/, $result) {
 	my @data = split ( /\s/, $_, 7 );
 	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-	if ($suites{$data[0]} && ($archs{$data[1]} || $data[1] eq 'all')
-	    && $sections{$data[2]}) {
+	if ($opts->{h_suites}{$data[0]}
+	    && ($opts->{h_archs}{$data[1]} || $data[1] eq 'all')
+	    && $opts->{h_sections}{$data[2]}) {
 	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
 	    push @$results, [ $key, @data ];
 	}
     }
 }
 sub read_src_entry {
-    my ($hash, $key, $results) = @_;
-    my $result = $hash->{$key};
-
+    my ($hash, $key, $results, $opts) = @_;
+    my $result = $hash->{$key} || '';
     foreach (split /\000/, $result) {
 	my @data = split ( /\s/, $_, 5 );
 	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-	if ($suites{$data[0]} && $sections{$data[1]}) {
+	if ($opts->{h_suites}{$data[0]} && $opts->{h_sections}{$data[1]}) {
 	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
 	    push @$results, [ $key, @data ];
 	}
@@ -231,7 +227,7 @@ sub do_names_search {
 	or die "couldn't tie DB $DBDIR/$file: $!";
     
     if ($opts->{exact}) {
-	&$read_entry( \%packages, $keyword, \@results );
+	&$read_entry( \%packages, $keyword, \@results, $opts );
     } else {
 	my ($key, $prefixes) = ($keyword, '');
 	my %pkgs;
@@ -258,7 +254,7 @@ sub do_names_search {
 	    %pkgs = ( $keyword => 1 );
 	}
 	foreach my $pkg (sort keys %pkgs) {
-	    &$read_entry( \%packages, $pkg, \@results );
+	    &$read_entry( \%packages, $pkg, \@results, $opts );
 	}
     }
     return \@results;
@@ -302,14 +298,33 @@ sub do_fulltext_search {
 	my $result = $did2pkg{$l};
 	foreach (split /\000/o, $result) {
 	    my @data = split /\s/, $_, 3;
-	    next unless $archs{$data[2]};
+	    next unless $opts->{h_archs}{$data[2]};
 	    $tmp_results{$data[0]}++;
 	}
     }
     foreach my $pkg (keys %tmp_results) {
-	&$read_entry( \%packages, $pkg, \@results ); 
+	&$read_entry( \%packages, $pkg, \@results, $opts );
     }
     return \@results;
+}
+
+sub find_binaries {
+    my ($pkg, $suite) = @_;
+
+    tie my %src2bin, 'DB_File', "$DBDIR/sources_packages.db", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't open $DBDIR/sources_packages.db: $!";
+
+    my $bins = $src2bin{$pkg} || '';
+    my %bins;
+    foreach (split /\000/o, $bins) {
+	my @data = split /\s/, $_, 4;
+
+	if ($data[0] eq $suite) {
+	    $bins{$data[1]}++;
+	}
+    }
+
+    return [ keys %bins ];
 }
 
 if ($searchon eq 'names') {
@@ -408,7 +423,6 @@ unless ($search_on_sources) {
 	$part{$package}{$suite}{$version} = $section unless $section eq 'main';
 	
 	$desc{$package}{$suite}{$version} = $desc;
-
     }
 
     if ($format eq 'html') {
@@ -469,13 +483,13 @@ unless ($search_on_sources) {
 } else {
     foreach (@results) {
         my ($package, $suite, $section, $subsection, $priority,
-            $version, $binaries) = @$_;
+            $version) = @$_;
 	
 	$pkgs{$package}{$suite} = $version;
 	$sect{$package}{$suite}{source} = $subsection;
 	$part{$package}{$suite}{source} = $section unless $section eq 'main';
 
-	$binaries{$package}{$suite} = [ sort split( /\s*,\s*/, $binaries ) ];
+	$binaries{$package}{$suite} = find_binaries( $package, $suite );
     }
 
     if ($format eq 'html') {
@@ -498,15 +512,8 @@ unless ($search_on_sources) {
 		    print "<br>Binary packages: ";
 		    my @bp_links;
 		    foreach my $bp (@{$binaries{$pkg}{$ver}}) {
-			my $sect = 'section';
-			
-			my $bp_link;
-			if ($sect) {
-			    $bp_link = sprintf( "<a href=\"$ROOT/%s/%s/%s\">%s</a>",
-						$ver, $sect, uri_escape( $bp ),  $bp );
-			} else {
-			    $bp_link = $bp;
-			}
+			my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",
+					       $ver, uri_escape( $bp ),  $bp );
 			push @bp_links, $bp_link;
 		    }
 		    print join( ", ", @bp_links );
