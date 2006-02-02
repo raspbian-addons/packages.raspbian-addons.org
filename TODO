@@ -1,0 +1,21 @@
+search_packages.pl:
+- all searches:
+  - Display "$pkg ($section) shortdesc from stable (or if not available, testing, unstable, ...)"
+    tersely on one line each, with "#foo" links to what's currently displayed.
+  - The 'extended' can maybe also have full descriptions then (maybe add did
+	to _small.db?)
+- exact package searches
+- substring searches on packages:
+  - don't do exact lookups, but use '^' prefix token
+  - only do for >= 2 characters
+  - don't allow whitespace in it, warn when people use common wildcards like
+	*, ?, ^, $ (not possible)
+  - When overflow, iterate the first couple of packages that *start* with the
+	substring, if any? Maybe list those first, and only then real substring
+	search?
+  - In db, add "abc: too many matches" to postfixes when there's a "abcd: 90
+	matches" and abce: 90 matches"
+
+- fulltext search:
+  - Max 100 results
+  - Better exact=1 performance by indexing per word?
