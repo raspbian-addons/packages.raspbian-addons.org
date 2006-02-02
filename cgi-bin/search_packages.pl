@@ -367,7 +367,7 @@ if ($format eq 'html') {
 }
 
 if ($too_many_hits) {
-print "<p><strong>Your search was too wide so we will only display exact matches. At least <em>$too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.</strong></p>";
+    print "<p><strong>Your search was too wide so we will only display exact matches. At least <em>$too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.</strong></p>";
 }
 
 if (!@results) {
@@ -453,32 +453,6 @@ unless ($search_on_sources) {
 	    }
 	    print "</ul>\n";
 	}
-    } elsif ($format eq 'xml') {
-	require RDF::Simple::Serialiser;
-	my $rdf = new RDF::Simple::Serialiser;
-	$rdf->addns( debpkg => 'http://packages.debian.org/xml/01-debian-packages-rdf' );
-	my @triples;
-	foreach my $pkg (sort keys %pkgs) {
-	    foreach my $ver (@SUITES) {
-		if (exists $pkgs{$pkg}{$ver}) {
-		    my @versions = version_sort keys %{$pkgs{$pkg}{$ver}};
-		    foreach my $version (@versions) {
-			my $id = "$ROOT/$ver/$sect{$pkg}{$ver}{$version}/$pkg/$version";
-			push @triples, [ $id, 'debpkg:package', $pkg ];
-			push @triples, [ $id, 'debpkg:version', $version ];
-			push @triples, [ $id, 'debpkg:section', $sect{$pkg}{$ver}{$version}, ];
-			push @triples, [ $id, 'debpkg:suite', $ver ];
-			push @triples, [ $id, 'debpkg:shortdesc', $desc{$pkg}{$ver}{$version} ];
-			push @triples, [ $id, 'debpkg:part', $part{$pkg}{$ver}{$version} || 'main' ];
-			foreach my $arch (sort keys %{$pkgs{$pkg}{$ver}{$version}}) {
-			    push @triples, [ $id, 'debpkg:architecture', $arch ];
-			}
-		    }
-		}
-	    }
-	}
-	
-	print $rdf->serialise(@triples);
     }
 } else {
     foreach (@results) {
@@ -522,29 +496,6 @@ unless ($search_on_sources) {
 	    }
 	    print "</ul>\n";
 	}
-    } elsif ($format eq 'xml') {
-	require RDF::Simple::Serialiser;
-	my $rdf = new RDF::Simple::Serialiser;
-	$rdf->addns( debpkg => 'http://packages.debian.org/xml/01-debian-packages-rdf' );
-	my @triples;
-	foreach my $pkg (sort keys %pkgs) {
-	    foreach my $ver (@SUITES) {
-		if (exists $pkgs{$pkg}{$ver}) {
-		    my $id = "$ROOT/$ver/source/$pkg";
-
-		    push @triples, [ $id, 'debpkg:package', $pkg ];
-		    push @triples, [ $id, 'debpkg:type', 'source' ];
-		    push @triples, [ $id, 'debpkg:section', $sect{$pkg}{$ver}{source} ];
-		    push @triples, [ $id, 'debpkg:version', $pkgs{$pkg}{$ver} ];
-		    push @triples, [ $id, 'debpkg:part', $part{$pkg}{$ver}{source} || 'main' ];
-		    
-		    foreach my $bp (@{$binaries{$pkg}{$ver}}) {
-			push @triples, [ $id, 'debpkg:binary', $bp ];
-		    }
-		}
-	    }
-	}
-	print $rdf->serialise(@triples);
     }
 }
 
