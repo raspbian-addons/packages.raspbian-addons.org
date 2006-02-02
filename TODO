@@ -4,6 +4,10 @@ search_packages.pl:
     tersely on one line each, with "#foo" links to what's currently displayed.
   - The 'extended' can maybe also have full descriptions then (maybe add did
 	to _small.db?)
+  - Unify exact & subword -- reduce naming confusion with 'exact' meaning
+	either "exactly the same" or "full word"
+  - When doing substring searches, hilight with html backgroup color (css of
+	course) the search term
 - exact package searches
 - substring searches on packages:
   - don't do exact lookups, but use '^' prefix token
@@ -19,6 +23,8 @@ search_packages.pl:
 - fulltext search:
   - Max 100 results
   - Better exact=1 performance by indexing per word?
+  - drop case-sensitive from options, descriptions.txt all lowercase and without
+	punctuation, such that instead of =~ //, indexof can be used
 
 General:
 - Try to break everything with empty/short searches
