@@ -21,20 +21,37 @@ function go($script)
 	echo "<pre>".htmlspecialchars($stderr);
 	echo "</pre>";
 }
+
+$SUITES = array('oldstable', 'stable', 'testing', 'unstable', 'experimental');
 $pi = substr($_SERVER["PATH_INFO"], 1);
-if ($pi == '') {
+$elems = explode('/', $pi);
+if (!$elems) {
 	readfile("index.html");
 	exit;
 } elseif ($pi == 'search') {
 	go("search_packages.pl");
-} elseif (substr($pi, 0, 8) == 'package/') {
+} elseif ($elems[0] == 'package' && count($elems) == 2) {
 	$_GET['searchon'] = 'names';
-	$_GET['keywords'] = substr($pi, 8);
+	$_GET['keywords'] = $elems[1];
 	$_GET['suite'] = 'all';
 	$_GET['exact'] = 1;
 	go("search_packages.pl");
+} elseif ($elems[0] == 'source' && count($elems) == 2) {
+	$_GET['searchon'] = 'sourcenames';
+	$_GET['keywords'] = $elems[1];
+	$_GET['suite'] = 'all';
+	$_GET['exact'] = 1;
+	go("search_packages.pl");
+} elseif (in_array($elems[0], $SUITES) && count($elems) == 2) {
+	$_GET['package'] = $elems[1];
+	$_GET['suite'] = $elems[0];
+	go("show_package.pl");
+} elseif (in_array($elems[0], $SUITES) && count($elems) == 3) {
+	header("Location: http://merkel.debian.org/~jeroen/pdo/$elems[0]/".urlencode($elems[2]));
+	exit;
 } elseif (substr($pi, 0, 4) == 'src:') {
 	header("Location: http://merkel.debian.org/~jeroen/pdo/source/".urlencode(substr($pi,4)));
+	exit;
 } elseif (!eregi('[^a-z0-9+.-]', $pi)) {
 	header("Location: http://merkel.debian.org/~jeroen/pdo/package/".urlencode($pi));
 	exit;
