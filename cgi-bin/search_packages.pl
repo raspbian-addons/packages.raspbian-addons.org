@@ -236,21 +236,20 @@ sub do_names_search {
 	my $p_obj = tie my %pref, 'DB_File', "$DBDIR/$postfix_file", O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie postfix db $DBDIR/$postfix_file: $!";
 	$p_obj->seq( $key, $prefixes, R_CURSOR );
-	do {
+	while (index($key, $keyword) >= 0) {
             if ($prefixes =~ /^\001(\d+)/o) {
                 $too_much_hits += $1;
             } else {
-		print "DEBUG: add word $key<br>" if $debug > 2;
-		$pkgs{$key}++;
 		foreach (split /\000/o, $prefixes) {
+		    $_ = '' if $_ eq '^';
 		    print "DEBUG: add word $_$key<br>" if $debug > 2;
 		    $pkgs{$_.$key}++;
 		}
 	    }
-	} while (($p_obj->seq( $key, $prefixes, R_NEXT ) == 0)
-		 && (index($key, $keyword) >= 0)
-		 && !$too_much_hits
-		 && (keys %pkgs < 100));
+	    last if $p_obj->seq( $key, $prefixes, R_NEXT ) != 0;
+	    last if $too_much_hits;
+	    last if keys %pkgs < 100;
+	}
         
         my $no_results = keys %pkgs;
         if ($too_much_hits || ($no_results >= 100)) {
@@ -601,3 +600,5 @@ END
 
 print $input->end_html;
 }
+
+# vim: ts=8 sw=4
