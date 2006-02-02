@@ -1,5 +1,5 @@
 #!/usr/bin/perl -wT
-#
+# $Id$
 # search_packages.pl -- CGI interface to the Packages files on packages.debian.org
 #
 # Copyright (C) 1998 James Treacy
