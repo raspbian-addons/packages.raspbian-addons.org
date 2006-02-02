@@ -183,7 +183,7 @@ my $search_on_sources = 0;
 
 my $st0 = new Benchmark;
 my @results;
-my $too_much_hits;
+my $too_many_hits;
 if ($searchon eq 'sourcenames') {
     $search_on_sources = 1;
 }
@@ -238,7 +238,7 @@ sub do_names_search {
 	$p_obj->seq( $key, $prefixes, R_CURSOR );
 	while (index($key, $keyword) >= 0) {
             if ($prefixes =~ /^\001(\d+)/o) {
-                $too_much_hits += $1;
+                $too_many_hits += $1;
             } else {
 		foreach (split /\000/o, $prefixes) {
 		    $_ = '' if $_ eq '^';
@@ -247,13 +247,12 @@ sub do_names_search {
 		}
 	    }
 	    last if $p_obj->seq( $key, $prefixes, R_NEXT ) != 0;
-	    last if $too_much_hits;
-	    last if keys %pkgs < 100;
+	    last if $too_many_hits or keys %pkgs >= 100;
 	}
         
         my $no_results = keys %pkgs;
-        if ($too_much_hits || ($no_results >= 100)) {
-	    $too_much_hits += $no_results;
+        if ($too_many_hits || ($no_results >= 100)) {
+	    $too_many_hits += $no_results;
 	    %pkgs = ( $keyword => 1 );
 	}
 	foreach my $pkg (sort keys %pkgs) {
@@ -334,8 +333,8 @@ if ($format eq 'html') {
     }
 }
 
-if ($too_much_hits) {
-print "<p><strong>Your search was too wide so we will only display exact matches. At least <em>$too_much_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.</strong></p>";
+if ($too_many_hits) {
+print "<p><strong>Your search was too wide so we will only display exact matches. At least <em>$too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.</strong></p>";
 }
 
 if (!@results) {
