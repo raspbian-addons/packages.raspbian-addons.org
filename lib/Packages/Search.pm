@@ -69,7 +69,7 @@ our %page_params = ( page => { default => DEFAULT_PAGE,
 our $debug = 0;
 
 sub parse_params {
-    my ( $cgi, $params_def ) = @_;
+    my ( $cgi, $params_def, $opts ) = @_;
 
     my %params_ret = ( values => {}, errors => {} );
     my %params;
@@ -159,13 +159,18 @@ sub parse_params {
 		no_replace => \@p_value_no_replace,
 		final => \@p_value,
 	    };
+	    @{$params_def->{$param}{var}} = @p_value
+		if $params_def->{$param}{var};
 	} else {
 	    $params_ret{values}{$param} = {
 		orig => $p_value_orig,
 		no_replace => $p_value_no_replace[0],
 		final => $p_value[0],
 	    };
+	    ${$params_def->{$param}{var}} = $p_value[0]
+		if $params_def->{$param}{var};
 	}
+	$opts->{$param} = $params_ret{values}{$param}{final} if $opts;
     }
 
     if ($USE_PAGED_MODE) {

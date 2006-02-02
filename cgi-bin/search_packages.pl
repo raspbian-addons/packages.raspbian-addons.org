@@ -28,7 +28,7 @@ use Packages::HTML ();
 
 my $thisscript = $Packages::HTML::SEARCH_CGI;
 my $HOME = "http://www.debian.org";
-my $ROOT = "http://merkel.debian.org/~jeroen/pdo";
+my $ROOT = "";
 my $SEARCHPAGE = "http://packages.debian.org/";
 my @SUITES = qw( oldstable stable testing unstable experimental );
 my @SECTIONS = qw( main contrib non-free );
@@ -78,30 +78,42 @@ if (my $path = $input->param('path')) {
     }
 }
 
-my %params_def = ( keywords => { default => undef, match => '^\s*([-+\@\w\/.:]+)\s*$' },
+my ( $format, $keyword, $case, $subword, $exact, $searchon,
+     @suites, @sections, @archs  );
+
+my %params_def = ( keywords => { default => undef,
+				 match => '^\s*([-+\@\w\/.:]+)\s*$',
+				 var => \$keyword },
 		   suite => { default => 'stable', match => '^(\w+)$',
 			      alias => 'version', array => ',',
+			      var => \@suites,
 			      replace => { all => \@SUITES } },
-		   case => { default => 'insensitive', match => '^(\w+)$' },
-		   official => { default => 0, match => '^(\w+)$' },
-		   use_cache => { default => 1, match => '^(\w+)$' },
-		   subword => { default => 0, match => '^(\w+)$' },
-		   exact => { default => undef, match => '^(\w+)$' },
-		   searchon => { default => 'all', match => '^(\w+)$' },
+		   case => { default => 'insensitive', match => '^(\w+)$',
+			     var => \$case },
+#		   official => { default => 0, match => '^(\w+)$' },
+#		   use_cache => { default => 1, match => '^(\w+)$' },
+		   subword => { default => 0, match => '^(\w+)$',
+				var => \$subword },
+		   exact => { default => undef, match => '^(\w+)$',
+			      var => \$exact },
+		   searchon => { default => 'all', match => '^(\w+)$',
+				 var => \$searchon },
 		   section => { default => 'all', match => '^([\w-]+)$',
 				alias => 'release', array => ',',
+				var => \@sections,
 				replace => { all => \@SECTIONS } },
 		   arch => { default => 'any', match => '^(\w+)$',
-			     array => ',', replace =>
+			     array => ',', var => \@archs, replace =>
 			     { any => \@ARCHITECTURES } },
 		   archive => { default => 'all', match => '^(\w+)$',
 				array => ',', replace =>
 				{ all => \@ARCHIVES } },
-		   format => { default => 'html', match => '^(\w+)$' },
+		   format => { default => 'html', match => '^(\w+)$',
+                               var => \$format },
 		   );
-my %params = Packages::Search::parse_params( $input, \%params_def );
+my %opts;
+my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
 
-my $format = $params{values}{format}{final};
 #XXX: Don't use alternative output formats yet
 $format = 'html';
 
@@ -116,21 +128,9 @@ if ($params{errors}{keywords}) {
     print "Error: keyword not valid or missing" if $format eq 'html';
     exit 0;
 }
-my $keyword = $params{values}{keywords}{final};
-my @suites = @{$params{values}{suite}{final}};
-my $official = $params{values}{official}{final};
-my $use_cache = $params{values}{use_cache}{final};
-my $case = $params{values}{case}{final};
+
 my $case_bool = ( $case !~ /insensitive/ );
-my $subword = $params{values}{subword}{final};
-my $exact = $params{values}{exact}{final};
 $exact = !$subword unless defined $exact;
-my $searchon = $params{values}{searchon}{final};
-my @sections = @{$params{values}{section}{final}};
-my @archs = @{$params{values}{arch}{final}};
-my $page = $params{values}{page}{final};
-my $results_per_page = $params{values}{number}{final};
-my %opts = ( case_bool => $case_bool, exact => $exact );
 
 # for URL construction
 my $suites_param = join ',', @{$params{values}{suite}{no_replace}};
@@ -552,7 +552,7 @@ sub printindexline {
     my $no_results = shift;
 
     my $index_line;
-    if ($no_results > $results_per_page) {
+    if ($no_results > $opts{number}) {
 	
 	$index_line = prevlink($input,\%params)." | ".
 	    indexline( $input, \%params, $no_results)." | ".
@@ -566,10 +566,10 @@ sub multipageheader {
     my $no_results = shift;
 
     my ($start, $end);
-    if ($results_per_page =~ /^all$/i) {
+    if ($opts{number} =~ /^all$/i) {
 	$start = 1;
 	$end = $no_results;
-	$results_per_page = $no_results;
+	$opts{number} = $no_results;
     } else {
 	$start = Packages::Search::start( \%params );
 	$end = Packages::Search::end( \%params );
@@ -589,7 +589,7 @@ sub multipageheader {
 	print "<p>Results per page: ";
 	my @resperpagelinks;
 	for (50, 100, 200) {
-	    if ($results_per_page == $_) {
+	    if ($opts{number} == $_) {
 		push @resperpagelinks, $_;
 	    } else {
 		push @resperpagelinks, resperpagelink($input,\%params,$_);
