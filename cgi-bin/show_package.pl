@@ -121,13 +121,37 @@ my $obj2 = tie my %packages_all, 'DB_File', "$DBDIR/packages_all_$suite.db", O_R
 my %allsuites = ();
 my @results = ();
 
+
 &read_entry( $package, \@results, \%allsuites );
+
+if (keys %allsuites == 0) {
+    print "No such package";
+    print "{insert link to search page with substring search}";
+    exit;
+}
+
+# sort is gross -- only fails for experimental though
+for (sort keys %allsuites) {
+    if ($suite eq $_) {
+	print "<strong>$_</strong> | ";
+    } else {
+	print "<a href=\"../$_/".uri_escape($package)."\">$_</a> | ";
+    }
+}
+print "<br>";
+if (not exists $allsuites{$suite}) {
+    print "Package not available in this suite";
+    exit;
+}
+
 for my $entry (@results) {
     print join ":", @$entry;
     print "<br>\n";
+    my ($foo, $arch, $section, $subsection,
+	$priority, $version) = @$entry;
+    print "<pre>".$packages_all{"$package $arch $version"}."</pre>";
 }
 
-print "Available in ".(join ', ', keys %allsuites)."\n";
 
 &printfooter;
 
