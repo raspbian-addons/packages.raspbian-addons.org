@@ -57,11 +57,6 @@ my $debug = $debug_allowed && $input->param("debug");
 $debug = 0 if not defined($debug);
 #$Packages::Search::debug = 1 if $debug > 1;
 
-# If you want, just print out a list of all of the variables and exit.
-#print $input->header if $debug;
-# print $input->dump;
-# exit;
-
 if (my $path = $input->param('path')) {
     my @components = map { lc $_ } split /\//, $path;
 
@@ -116,12 +111,8 @@ my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
 
 #XXX: Don't use alternative output formats yet
 $format = 'html';
-
 if ($format eq 'html') {
     print $input->header;
-} elsif ($format eq 'xml') {
-#    print $input->header( -type=>'application/rdf+xml' );
-    print $input->header( -type=>'text/plain' );
 }
 
 my (@errors, @debug, @msgs, @hints);
@@ -454,99 +445,106 @@ print_msgs;
 print_errors;
 print_hints;
 print_debug;
+&print_results;
+&printfooter;
 
-my (%pkgs, %sect, %part, %desc, %binaries);
+sub print_results {
+    return unless @results;
 
-unless ($search_on_sources) {
-    foreach (@results) {
-	my ($pkg_t, $suite, $arch, $section, $subsection,
-            $priority, $version, $desc) = @$_;
-	
-	my ($package) = $pkg_t =~ m/^(.+)/; # untaint
-	$pkgs{$package}{$suite}{$version}{$arch} = 1;
-	$sect{$package}{$suite}{$version} = $subsection;
-	$part{$package}{$suite}{$version} = $section unless $section eq 'main';
-	
-	$desc{$package}{$suite}{$version} = $desc;
-    }
+    my (%pkgs, %sect, %part, %desc, %binaries);
 
-    if ($format eq 'html') {
-	my ($start, $end) = multipageheader( scalar keys %pkgs );
-	my $count = 0;
+    unless ($search_on_sources) {
+	foreach (@results) {
+	    my ($pkg_t, $suite, $arch, $section, $subsection,
+		$priority, $version, $desc) = @$_;
 	
-	foreach my $pkg (sort keys %pkgs) {
-	    $count++;
-	    next if $count < $start or $count > $end;
-	    printf "<h3>Package %s</h3>\n", $pkg;
-	    print "<ul>\n";
-	    foreach my $ver (@SUITES) {
-		if (exists $pkgs{$pkg}{$ver}) {
-		    my @versions = version_sort keys %{$pkgs{$pkg}{$ver}};
-		    my $part_str = "";
-		    if ($part{$pkg}{$ver}{$versions[0]}) {
-			$part_str = "[<span style=\"color:red\">$part{$pkg}{$ver}{$versions[0]}</span>]";
+	    my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
+	    $pkgs{$pkg}{$suite}{$version}{$arch} = 1;
+	    $sect{$pkg}{$suite}{$version} = $subsection;
+	    $part{$pkg}{$suite}{$version} = $section
+		unless $section eq 'main';
+	    
+	    $desc{$pkg}{$suite}{$version} = $desc;
+	}
+
+	if ($format eq 'html') {
+	    my ($start, $end) = multipageheader( scalar keys %pkgs );
+	    my $count = 0;
+	
+	    foreach my $pkg (sort keys %pkgs) {
+		$count++;
+		next if $count < $start or $count > $end;
+		printf "<h3>Package %s</h3>\n", $pkg;
+		print "<ul>\n";
+		foreach my $suite (@SUITES) {
+		    if (exists $pkgs{$pkg}{$suite}) {
+			my @versions = version_sort keys %{$pkgs{$pkg}{$suite}};
+			my $part_str = "";
+			if ($part{$pkg}{$suite}{$versions[0]}) {
+			    $part_str = "[<span style=\"color:red\">$part{$pkg}{$suite}{$versions[0]}</span>]";
+			}
+			printf "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
+			$suite, $pkg, $suite, $sect{$pkg}{$suite}{$versions[0]},
+			$desc{$pkg}{$suite}{$versions[0]}, $part_str;
+			
+			foreach my $v (@versions) {
+			    printf "<br>%s: %s\n",
+			    $v, join (" ", (sort keys %{$pkgs{$pkg}{$suite}{$v}}) );
+			}
+			print "</li>\n";
 		    }
-		    printf "<li><a href=\"$ROOT/%s/%s/%s\">%s</a> (%s): %s   %s\n",
-		    $ver, $sect{$pkg}{$ver}{$versions[0]}, $pkg, $ver, $sect{$pkg}{$ver}{$versions[0]}, $desc{$pkg}{$ver}{$versions[0]}, $part_str;
-		    
-		    foreach my $v (@versions) {
-			printf "<br>%s: %s\n",
-			$v, join (" ", (sort keys %{$pkgs{$pkg}{$ver}{$v}}) );
-		    }
-		    print "</li>\n";
 		}
+		print "</ul>\n";
 	    }
-	    print "</ul>\n";
+	}
+    } else {
+	foreach (@results) {
+	    my ($pkg, $suite, $section, $subsection, $priority,
+		$version) = @$_;
+	
+	    $pkgs{$pkg}{$suite} = $version;
+	    $sect{$pkg}{$suite}{source} = $subsection;
+	    $part{$pkg}{$suite}{source} = $section
+		unless $section eq 'main';
+
+	    $binaries{$pkg}{$suite} = find_binaries( $pkg, $suite );
+	}
+
+	if ($format eq 'html') {
+	    my ($start, $end) = multipageheader( scalar keys %pkgs );
+	    my $count = 0;
+	    
+	    foreach my $pkg (sort keys %pkgs) {
+		$count++;
+		next if ($count < $start) or ($count > $end);
+		printf "<h3>Source package %s</h3>\n", $pkg;
+		print "<ul>\n";
+		foreach my $suite (@SUITES) {
+		    if (exists $pkgs{$pkg}{$suite}) {
+			my $part_str = "";
+			if ($part{$pkg}{$suite}{source}) {
+			    $part_str = "[<span style=\"color:red\">$part{$pkg}{$suite}{source}</span>]";
+			}
+			printf( "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s",
+				$suite, $pkg, $suite, $sect{$pkg}{$suite}{source},
+				$pkgs{$pkg}{$suite}, $part_str );
+			
+			print "<br>Binary packages: ";
+			my @bp_links;
+			foreach my $bp (@{$binaries{$pkg}{$suite}}) {
+			    my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",
+						   $suite, uri_escape( $bp ),  $bp );
+			    push @bp_links, $bp_link;
+			}
+			print join( ", ", @bp_links );
+			print "</li>\n";
+		    }
+		}
+		print "</ul>\n";
+	    }
 	}
     }
-} else {
-    foreach (@results) {
-        my ($package, $suite, $section, $subsection, $priority,
-            $version) = @$_;
-	
-	$pkgs{$package}{$suite} = $version;
-	$sect{$package}{$suite}{source} = $subsection;
-	$part{$package}{$suite}{source} = $section unless $section eq 'main';
-
-	$binaries{$package}{$suite} = find_binaries( $package, $suite );
-    }
-
-    if ($format eq 'html') {
-	my ($start, $end) = multipageheader( scalar keys %pkgs );
-	my $count = 0;
-	
-	foreach my $pkg (sort keys %pkgs) {
-	    $count++;
-	    next if ($count < $start) or ($count > $end);
-	    printf "<h3>Source package %s</h3>\n", $pkg;
-	    print "<ul>\n";
-	    foreach my $ver (@SUITES) {
-		if (exists $pkgs{$pkg}{$ver}) {
-		    my $part_str = "";
-		    if ($part{$pkg}{$ver}{source}) {
-			$part_str = "[<span style=\"color:red\">$part{$pkg}{$ver}{source}</span>]";
-		    }
-		    printf "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s", $ver, $pkg, $ver, $sect{$pkg}{$ver}{source}, $pkgs{$pkg}{$ver}, $part_str;
-		    
-		    print "<br>Binary packages: ";
-		    my @bp_links;
-		    foreach my $bp (@{$binaries{$pkg}{$ver}}) {
-			my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",
-					       $ver, uri_escape( $bp ),  $bp );
-			push @bp_links, $bp_link;
-		    }
-		    print join( ", ", @bp_links );
-		    print "</li>\n";
-		}
-	    }
-	    print "</ul>\n";
-	}
-    }
-}
-
-if ($format eq 'html') {
-    &printindexline( scalar keys %pkgs );
-    &printfooter;
+    printindexline( scalar keys %pkgs );
 }
 
 exit;
@@ -609,20 +607,15 @@ sub multipageheader {
 }
 
 sub printfooter {
-print <<END;
-</div>
 
-<hr class="hidecss">
-<p style="text-align:right;font-size:small;font-stlye:italic"><a href="$SEARCHPAGE">Packages search page</a></p>
+    my $pete = new Benchmark;
+    my $petd = timediff($pete, $pet0);
+    print "Total page evaluation took ".timestr($petd)."<br>"
+	if $debug_allowed;
 
-</div>
-END
-
-my $pete = new Benchmark;
-my $petd = timediff($pete, $pet0);
-print "Total page evaluation took ".timestr($petd)."<br>"
-    if $debug_allowed;
-print $input->end_html;
+    my $trailer = Packages::HTML::trailer( $ROOT );
+    $trailer =~ s/LAST_MODIFIED_DATE/gmtime()/e; #FIXME
+    print $trailer;
 }
 
 # vim: ts=8 sw=4
