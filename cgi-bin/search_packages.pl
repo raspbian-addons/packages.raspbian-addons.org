@@ -214,22 +214,21 @@ sub read_src_entry {
 	}
     }
 }
-
-
-if ($searchon eq 'names') {
+sub do_names_search {
+    my ($keyword, $file, $postfix_file, $read_entry) = @_;
 
     $keyword = lc $keyword unless $case_bool;
     
-    my $obj = tie my %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/packages_small.db: $!";
+    my $obj = tie my %packages, 'DB_File', "$DBDIR/$file", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/$file: $!";
     
     if ($exact) {
-	read_entry( \%packages, $keyword, \@results );
+	&$read_entry( \%packages, $keyword, \@results );
     } else {
 	my ($key, $prefixes) = ($keyword, '');
 	my %pkgs;
-	my $p_obj = tie my %pref, 'DB_File', "$DBDIR/package_postfixes.db", O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie postfix db $DBDIR/package_postfixes.db: $!";
+	my $p_obj = tie my %pref, 'DB_File', "$DBDIR/$postfix_file", O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie postfix db $DBDIR/$postfix_file: $!";
 	$p_obj->seq( $key, $prefixes, R_CURSOR );
 	do {
             if ($prefixes =~ /^\001(\d+)/o) {
@@ -253,33 +252,17 @@ if ($searchon eq 'names') {
 	    %pkgs = ( $keyword => 1 );
 	}
 	foreach my $pkg (sort keys %pkgs) {
-	    read_entry( \%packages, $pkg, \@results );
+	    &$read_entry( \%packages, $pkg, \@results );
 	}
     }
+}
+
+if ($searchon eq 'names') {
+    do_names_search( $keyword, 'packages_small.db',
+		     'package_postfixes.db', \&read_entry );
 } elsif ($searchon eq 'sourcenames') {
- 
-    $keyword = lc $keyword unless $case_bool;
-    
-    my $obj = tie my %packages, 'DB_File', "$DBDIR/sources_small.db", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/sources_small.db: $!";
-    
-    if ($exact) {
-	read_src_entry( \%packages, $keyword, \@results );
-    } else {
-	while (my ($pkg, $result) = each %packages) {
-            #what's faster? I can't really see a difference
-	    (index($pkg, $keyword) >= 0) or next;
-	    #$pkg =~ /\Q$keyword\E/ or next;
-	    foreach (split /\000/, $result) {
-		my @data = split ( /\s/, $_, 5 );
-		print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
-		if ($suites{$data[0]} && $sections{$data[1]}) {
-		    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
-		    push @results, [ $pkg , @data ];
-		}
-	    }
-	}
-    }
+    do_names_search( $keyword, 'sources_small.db',
+		     'source_postfixes.db', \&read_src_entry );
 } else {
 
     my @lines;
