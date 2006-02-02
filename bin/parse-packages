@@ -154,9 +154,10 @@ tie %descriptions_db, "DB_File", "descriptions.db.new",
 	or die "Error creating DB: $!";
 open DESCR, "> descriptions.txt" or die "Error creating descriptions textfile";
 for (my $i=1; $i<= $#descriptions; $i++) {
-	my $null_d = $descriptions[$i];
-	$null_d =~ s/\n/\000/g;
-	print DESCR "$null_d\n";
+	my $plain_description = $descriptions[$i];
+	$plain_description =~ s/\n .\n/ /og;
+	$plain_description =~ s/[\n \t]+/ /og;
+	print DESCR "$plain_description\n";
 	$descriptions_db{$i} = $descriptions[$i];
 }
 close DESCR;
