@@ -23,15 +23,17 @@ our @EXPORT = qw( header title trailer file_changed time_stamp
 		  pdeplegend pkg_list pmoreinfo );
 
 our $HOME = "http://www.debian.org";
+our $ROOT = "http://merkel.debian.org/~jeroen/pdo"; # <-- config.sh?!
 our $CONTACT_MAIL = 'debian-www@lists.debian.org';
 our $WEBMASTER_MAIL = 'webmaster@debian.org';
-our $SEARCH_PAGE = "http://packages.debian.org/";
-our $CGI_ROOT = "http://packages.debian.org/cgi-bin";
+our $SEARCH_PAGE = "$ROOT/";
+our $SEARCH_CGI = "$ROOT/search";
+our $CGI_ROOT = "$ROOT/cgi-bin";
 our $CN_HELP_URL = "${HOME}/intro/cn";
 our $CHANGELOG_URL = '/changelogs';
 our $COPYRIGHT_URL = '/changelogs';
-our $SEARCH_URL = '/cgi-bin/search_packages.pl?searchon=names&amp;version=all&amp;exact=1&amp;keywords=';
-our $SRC_SEARCH_URL = '/cgi-bin/search_packages.pl?searchon=sourcenames&amp;version=all&amp;exact=1&amp;keywords=';
+our $SEARCH_URL = "$ROOT/search/";
+our $SRC_SEARCH_URL = "$SEARCH_CGI?searchon=sourcenames&amp;version=all&amp;exact=1&amp;keywords=";
 our $BUG_URL = 'http://bugs.debian.org/';
 our $SRC_BUG_URL = 'http://bugs.debian.org/src:';
 our $QA_URL = 'http://packages.qa.debian.org/';
@@ -292,7 +294,7 @@ sub header {
 				 sourcenames => "", );
 	$checked_searchon{$values{searchon}} = "checked=\"checked\"";
 	$search_in_header = <<MENU;
-<form method="GET" action="$CGI_ROOT/search_packages.pl">
+<form method="GET" action="$SEARCH_CGI">
 <div id="hpacketsearch">
 <input type="hidden" name="suite" value="$values{suite}">
 <input type="hidden" name="subword" value="$values{subword}">
