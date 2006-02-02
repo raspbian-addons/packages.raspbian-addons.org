@@ -28,7 +28,7 @@ use Packages::HTML ();
 
 my $thisscript = $Packages::HTML::SEARCH_CGI;
 my $HOME = "http://www.debian.org";
-my $ROOT = "";
+my $ROOT = "http://merkel.debian.org/~jeroen/pdo";
 my $SEARCHPAGE = "http://packages.debian.org/";
 my @SUITES = qw( oldstable stable testing unstable experimental );
 my @SECTIONS = qw( main contrib non-free );
