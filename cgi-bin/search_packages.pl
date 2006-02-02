@@ -55,10 +55,10 @@ my $pet0 = new Benchmark;
 my $debug_allowed = 1;
 my $debug = $debug_allowed && $input->param("debug");
 $debug = 0 if not defined($debug);
-$Packages::Search::debug = 1 if $debug > 1;
+#$Packages::Search::debug = 1 if $debug > 1;
 
 # If you want, just print out a list of all of the variables and exit.
-print $input->header if $debug;
+#print $input->header if $debug;
 # print $input->dump;
 # exit;
 
@@ -124,9 +124,54 @@ if ($format eq 'html') {
     print $input->header( -type=>'text/plain' );
 }
 
+my (@errors, @debug, @msgs, @hints);
+sub error {
+    push @errors, $_[0];
+}
+sub hint {
+    push @hints, $_[0];
+}
+sub debug {
+    my $lvl = $_[1] || 0;
+    push(@debug, $_[0]) if $debug > $lvl;
+}
+sub msg {
+    push @msgs, $_[0];
+}
+sub print_errors {
+    return unless @errors;
+    print '<div>';
+    foreach (@errors) {
+	print "<p style=\"background-color:#F99;font-weight:bold;padding:0.5em;margin:0;\">$_</p>";
+    }
+    print '</div>';
+}
+sub print_debug {
+    return unless $debug && @debug;
+    print '<div style="font-size:80%";border:solid thin grey">';
+    print '<h2>Debugging:</h2><pre>';
+    foreach (@debug) {
+	print "$_\n";
+    }
+    print '</pre></div>';
+
+}
+sub print_hints {
+    return unless @hints;
+    print '<div>';
+    foreach (@hints) {
+	print "<p style=\"background-color:#FF9;padding:0.5em;margin:0\">$_</p>";
+    }
+    print '</div>';
+}
+sub print_msgs {
+    foreach (@msgs) {
+	print "<p>$_</p>";
+    }
+}
+
 if ($params{errors}{keywords}) {
-    print "Error: keyword not valid or missing" if $format eq 'html';
-    exit 0;
+    error( "Error: keyword not valid or missing" );
 }
 
 my $case_bool = ( $case !~ /insensitive/ );
@@ -148,36 +193,16 @@ my $sections_enc = encode_entities join ', ', @{$params{values}{section}{no_repl
 my $archs_enc = encode_entities join ', ',  @{$params{values}{arch}{no_replace}};
 my $pet1 = new Benchmark;
 my $petd = timediff($pet1, $pet0);
-print "DEBUG: Parameter evaluation took ".timestr($petd)."<br>" if $debug;
-
-if ($format eq 'html') {
-print Packages::HTML::header( title => 'Package Search Results' ,
-			      lang => 'en',
-			      title_tag => 'Debian Package Search Results',
-			      print_title_above => 1,
-			      print_search_field => 'packages',
-			      search_field_values => { 
-				  keywords => $keyword_enc,
-				  searchon => $searchon,
-				  arch => $archs_enc,
-				  suite => $suites_enc,
-				  section => $sections_enc,
-				  subword => $subword,
-				  exact => $exact,
-				  case => $case,
-				  },
-			      );
-}
+debug( "Parameter evaluation took ".timestr($petd) );
 
 # read the configuration
 my $topdir;
 if (!open (C, "../config.sh")) {
-    print "\nInternal Error: Cannot open configuration file.\n\n"
-if $format eq 'html';
-    exit 0;
+    error( "Internal Error: Cannot open configuration file." );
 }
 while (<C>) {
-    $topdir = $1 if (/^\s*topdir="?(.*)"?\s*$/);
+    $topdir = $1 if /^\s*topdir="?(.*)"?\s*$/;
+    $ROOT = $1 if /^\s*root="?(.*)"?\s*$/;
 }
 close (C);
 
@@ -191,16 +216,35 @@ if ($searchon eq 'sourcenames') {
     $search_on_sources = 1;
 }
 
+sub print_header {
+    print Packages::HTML::header( title => 'Package Search Results' ,
+				  lang => 'en',
+				  title_tag => 'Debian Package Search Results',
+				  print_title_above => 1,
+				  print_search_field => 'packages',
+				  search_field_values => { 
+				      keywords => $keyword_enc,
+				      searchon => $searchon,
+				      arch => $archs_enc,
+				      suite => $suites_enc,
+				      section => $sections_enc,
+				      subword => $subword,
+				      exact => $exact,
+				      case => $case,
+				  },
+				  );
+}
+
 sub read_entry {
     my ($hash, $key, $results, $opts) = @_;
     my $result = $hash->{$key} || '';
     foreach (split /\000/, $result) {
 	my @data = split ( /\s/, $_, 7 );
-	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	debug( "Considering entry ".join( ':', @data), 2);
 	if ($opts->{h_suites}{$data[0]}
 	    && ($opts->{h_archs}{$data[1]} || $data[1] eq 'all')
 	    && $opts->{h_sections}{$data[2]}) {
-	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+	    debug( "Using entry ".join( ':', @data), 2);
 	    push @$results, [ $key, @data ];
 	}
     }
@@ -210,9 +254,9 @@ sub read_src_entry {
     my $result = $hash->{$key} || '';
     foreach (split /\000/, $result) {
 	my @data = split ( /\s/, $_, 5 );
-	print "DEBUG: Considering entry ".join( ':', @data)."<br>" if $debug > 2;
+	debug( "Considering entry ".join( ':', @data), 2);
 	if ($opts->{h_suites}{$data[0]} && $opts->{h_sections}{$data[1]}) {
-	    print "DEBUG: Using entry ".join( ':', @data)."<br>" if $debug > 2;
+	    debug( "Using entry ".join( ':', @data), 2);
 	    push @$results, [ $key, @data ];
 	}
     }
@@ -240,7 +284,7 @@ sub do_names_search {
             } else {
 		foreach (split /\000/o, $prefixes) {
 		    $_ = '' if $_ eq '^';
-		    print "DEBUG: add word $_$key<br>" if $debug > 2;
+		    debug( "add word $_$key", 2);
 		    $pkgs{$_.$key}++;
 		}
 	    }
@@ -272,7 +316,7 @@ sub do_fulltext_search {
 	    $regex = qr/\Q$keyword\E/o;
 	}
     } else {
-	if ($exact) {
+	if ($opts->{exact}) {
 	    $regex = qr/\b\Q$keyword\E\b/io;
 	} else {
 	    $regex = qr/\Q$keyword\E/io;
@@ -283,7 +327,7 @@ sub do_fulltext_search {
 	or die "couldn't open $DBDIR/$file: $!";
     while (<DESC>) {
 	$_ =~ $regex or next;
-	print "DEBUG: Matched line $.<br>" if $debug > 2;
+	debug( "Matched line $.", 2);
 	push @lines, $.;
     }
     close DESC;
@@ -347,7 +391,7 @@ if ($searchon eq 'names') {
 
 my $st1 = new Benchmark;
 my $std = timediff($st1, $st0);
-print "DEBUG: Search took ".timestr($std)."<br>" if $debug;
+debug( "Search took ".timestr($std) );
 
 if ($format eq 'html') {
     my $suite_wording = $suites_enc eq "all" ? "all suites"
@@ -359,15 +403,15 @@ if ($format eq 'html') {
     if (($searchon eq "names") || ($searchon eq 'sourcenames')) {
 	my $source_wording = $search_on_sources ? "source " : "";
 	my $exact_wording = $exact ? "named" : "that names contain";
-	print "<p>You have searched for ${source_wording}packages $exact_wording <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording.</p>";
+	msg( "You have searched for ${source_wording}packages $exact_wording <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording." );
     } else {
 	my $exact_wording = $exact ? "" : " (including subword matching)";
-	print "<p>You have searched for <em>$keyword_enc</em> in packages names and descriptions in $suite_wording, $section_wording, and $arch_wording$exact_wording.</p>";
+	msg( "You have searched for <em>$keyword_enc</em> in packages names and descriptions in $suite_wording, $section_wording, and $arch_wording$exact_wording." );
     }
 }
 
 if ($too_many_hits) {
-    print "<p><strong>Your search was too wide so we will only display exact matches. At least <em>$too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.</strong></p>";
+    error( "Your search was too wide so we will only display exact matches. At least <em>$too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." );
 }
 
 if (!@results) {
@@ -378,37 +422,38 @@ if (!@results) {
 	    if (($suites_enc eq 'all')
 		&& ($archs_enc eq 'any')
 		&& ($sections_enc eq 'all')) {
-		print "<p><strong>Can't find that package.</strong></p>\n";
+		error( "Can't find that package." );
 	    } else {
-		print "<p><strong>Can't find that package, at least not in that suite ".
-		    ( $search_on_sources ? "" : " and on that architecture" ).
-		    ".</strong></p>\n";
+		error( "Can't find that package, at least not in that suite ".
+		    ( $search_on_sources ? "" : " and on that architecture" ) )
 	    }
 	    
 	    if ($exact) {
-		$printed = 1;
-		print "<p>You have searched only for exact matches of the package name. You can try to search for <a href=\"$thisscript?exact=0&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">package names that contain your search string</a>.</p>";
+		hint( "You have searched only for exact matches of the package name. You can try to search for <a href=\"$thisscript?exact=0&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">package names that contain your search string</a>." );
 	    }
 	} else {
 	    if (($suites_enc eq 'all')
 		&& ($archs_enc eq 'any')
 		&& ($sections_enc eq 'all')) {
-		print "<p><strong>Can't find that string.</strong></p>\n";
+		error( "Can't find that string." );
 	    } else {
-		print "<p><strong>Can't find that string, at least not in that suite ($suites_enc, section $sections_enc) and on that architecture ($archs_enc).</strong></p>\n";
+		error( "Can't find that string, at least not in that suite ($suites_enc, section $sections_enc) and on that architecture ($archs_enc)." );
 	    }
 	    
 	    unless ($subword) {
-		$printed = 1;
-		print "<p>You have searched only for words exactly matching your keywords. You can try to search <a href=\"$thisscript?subword=1&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">allowing subword matching</a>.</p>";
+		hint( "You have searched only for words exactly matching your keywords. You can try to search <a href=\"$thisscript?subword=1&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">allowing subword matching</a>." );
 	    }
 	}
-	print "<p>".( $printed ? "Or you" : "You" )." can try a different search on the <a href=\"$SEARCHPAGE#search_packages\">Packages search page</a>.</p>";
-	
-	&printfooter;
+	hint( ( @hints ? "Or you" : "You" )." can try a different search on the <a href=\"$SEARCHPAGE#search_packages\">Packages search page</a>." );
+	    
     }
-    exit;
 }
+
+print_header;    
+print_msgs;
+print_errors;
+print_hints;
+print_debug;
 
 my (%pkgs, %sect, %part, %desc, %binaries);
 
