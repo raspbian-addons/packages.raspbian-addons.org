@@ -26,6 +26,7 @@ use lib "../lib";
 use Deb::Versions;
 use Packages::Search qw( :all );
 use Packages::HTML ();
+use Packages::Page ();
 
 my $HOME = "http://www.debian.org";
 my $ROOT = "";
@@ -40,7 +41,6 @@ my %SUITES = map { $_ => 1 } @SUITES;
 my %SECTIONS = map { $_ => 1 } @SECTIONS;
 my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
 my %ARCHITECTURES = map { $_ => 1 } @ARCHITECTURES;
-
 
 
 $ENV{PATH} = "/bin:/usr/bin";
@@ -111,10 +111,15 @@ if $format eq 'html';
 }
 while (<C>) {
     $topdir = $1 if (/^\s*topdir="?(.*)"?\s*$/);
+    $ROOT = $1 if /^\s*root="?(.*)"?\s*$/;
 }
 close (C);
 
 my $DBDIR = $topdir . "/files/db";
+my $DL_URL = "$package/download";
+my $FILELIST_URL = "$package/files";
+my $DDPO_URL = "http://qa.debian.org/developer.php?email=";
+
 
 my $obj1 = tie my %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
     or die "couldn't tie DB $DBDIR/packages_small.db: $!";
@@ -158,6 +163,8 @@ for my $entry (@results) {
 
 sub showpackage {
     my ( $pkg ) = @_;
+
+    my $env;
     
     my $name = $pkg->get_name;
     
@@ -194,8 +201,6 @@ sub showpackage {
 		|| $env->{db}->is_translated( $name, $d->{version},
 					      ${$versions{v2a}{$d->{version}}}[0],
 					      $lang )) {
-	    $files->delete_file( $filename )
-		if $files->file_exists( $filename );
 	    next;
 	}
 	progress() if $env->{opts}{progress};
@@ -349,11 +354,6 @@ sub showpackage {
 					      $l );
 	}
 	$package_page .= trailer( '../..', $name, $lang, @tr_langs );
-	
-	#
-	# write file
-	#
-	$files->update_file( $filename, $package_page );
 	
 	#
 	# create data sheet

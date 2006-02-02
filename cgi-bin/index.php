@@ -25,7 +25,7 @@ function go($script)
 $SUITES = array('oldstable', 'stable', 'testing', 'unstable', 'experimental');
 $pi = substr($_SERVER["PATH_INFO"], 1);
 $elems = explode('/', $pi);
-if (!$elems) {
+if ($pi == "") {
 	readfile("index.html");
 	exit;
 } elseif ($pi == 'search') {
