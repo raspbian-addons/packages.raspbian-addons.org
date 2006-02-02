@@ -53,18 +53,14 @@ for my $suite (@suites) {
 		my %data = ();
 		chomp;
 		s/\n /\377/g;
-		#s/\376\377\s*\376\377/\376\377/og;
 		while (/^(\S+):\s*(.*)\s*$/mg) {
 			my ($key, $value) = ($1, $2);
 			$value =~ s/\377/\n /g;
-			$data .= "$key: $value\n";
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
 		# Skip double package
 		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
-		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
-			= $data;
 
 		$package_names{$data{'package'}} = 1;
 		my $src = $data{'package'};
@@ -72,6 +68,7 @@ for my $suite (@suites) {
 			$src = $data{'source'};
 			$src =~ s/ .*//; # strip version info
 		}
+		$data{'source'} = $src;
 		my $descr = $data{'description'};
 		my $did = undef;
 		if (exists($descriptions{$descr})) {
@@ -81,6 +78,7 @@ for my $suite (@suites) {
 			$descriptions[$did] = $descr;
 			$descriptions{$descr} = $did;
 		}
+		$data{'description'} = $did;
 		$packages_descriptions{"$data{'package'} $data{'version'} $data{'architecture'}"} = $did;
 		$descriptions_packages{$did} .=
 			"$data{'package'} $data{'version'} $data{'architecture'}\000";
@@ -92,10 +90,19 @@ for my $suite (@suites) {
 		if ($data{section} && ($data{section} =~ m=/=o)) {
 		    ($section, $subsection) = split m=/=o, $data{section}, 2;
 		}
+		$data{'section'} = $section;
+		$data{'subsection'} = $subsection;
 		$packages_small{$data{'package'}} .= "$suite $data{'architecture'} ".
 			"$section $subsection $data{'priority'} $data{'version'} $sdescr\000";
 		$sources_packages{$src} .=
 			"$suite $data{'package'} $data{'version'} $data{'architecture'}\000";
+		while (my ($key, $value) = each (%data)) {
+			next if $key eq 'package' or $key eq 'version' or $key eq 'architecture'
+				or $key eq 'maintainer';
+			$data .= "$key: $value\n";
+		}
+		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
+			= $data;
 	}
 
 	untie %packages_all_db;
