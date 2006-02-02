@@ -168,6 +168,7 @@ for my $pkg (keys %package_names) {
 	for (my $i=0;$i<length($pkg)-1;$i++) {
 		my $before = substr($pkg, 0, $i);
 		my $after = substr($pkg, $i);
+		$before = "^" if $before eq ""; # otherwise split doesn't work properly
 		$package_postfixes{$after} .= "$before\0";
 	}
 }
