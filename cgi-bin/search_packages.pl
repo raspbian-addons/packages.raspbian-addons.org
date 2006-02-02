@@ -44,12 +44,18 @@ my %ARCHITECTURES = map { $_ => 1 } @ARCHITECTURES;
 $ENV{PATH} = "/bin:/usr/bin";
 
 # Read in all the variables set by the form
-my $input = new CGI;
+my $input;
+if ($ARGV[0] eq 'php') {
+	$input = new CGI(\*STDIN);
+} else {
+	$input = new CGI;
+}
 
 my $pet0 = new Benchmark;
 # use this to disable debugging in production mode completly
 my $debug_allowed = 1;
 my $debug = $debug_allowed && $input->param("debug");
+$debug = 0 if not defined($debug);
 $Search::Param::debug = 1 if $debug > 1;
 
 # If you want, just print out a list of all of the variables and exit.
