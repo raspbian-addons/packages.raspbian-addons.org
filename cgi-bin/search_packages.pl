@@ -280,6 +280,49 @@ if ($searchon eq 'names') {
 	    }
 	}
     }
+} else {
+
+    my @lines;
+    my $regex;
+    if ($case_bool) {
+	if ($exact) {
+	    $regex = qr/\b\Q$keyword\E\b/o;
+	} else {
+	    $regex = qr/\Q$keyword\E/o;
+	}
+    } else {
+	if ($exact) {
+	    $regex = qr/\b\Q$keyword\E\b/io;
+	} else {
+	    $regex = qr/\Q$keyword\E/io;
+	}
+    }
+
+    open DESC, '<', "$DBDIR/descriptions.txt" or die "couldn't open $DBDIR/descriptions.txt: $!";
+    while (<DESC>) {
+	$_ =~ $regex or next;
+	print "DEBUG: Matched line $.<br>" if $debug > 2;
+	push @lines, $.;
+    }
+    close DESC;
+
+    my $obj = tie my %packages, 'DB_File', "$DBDIR/packages_small.db", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/packages_small.db: $!";
+    my $obj = tie my %did2pkg, 'DB_File', "$DBDIR/descriptions_packages.db", O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/descriptions_packages.db: $!";
+
+    my %tmp_results;
+    foreach my $l (@lines) {
+	my $result = $did2pkg{$l};
+	foreach (split /\000/o, $result) {
+	    my @data = split /\s/, $_, 3;
+	    next unless $archs{$data[2]};
+	    $tmp_results{$data[0]}++;
+	}
+    }
+    foreach my $pkg (keys %tmp_results) {
+	read_entry( \%packages, $pkg, \@results ); 
+    }
 }
 
 my $st1 = new Benchmark;
