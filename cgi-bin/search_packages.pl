@@ -26,7 +26,7 @@ use Deb::Versions;
 use Packages::Search qw( :all );
 use Packages::HTML ();
 
-my $thisscript = "search_packages.pl";
+my $thisscript = $Packages::HTML::SEARCH_CGI;
 my $HOME = "http://www.debian.org";
 my $ROOT = "";
 my $SEARCHPAGE = "http://packages.debian.org/";
