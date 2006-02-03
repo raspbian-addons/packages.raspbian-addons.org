@@ -22,24 +22,11 @@ our @EXPORT = qw( header title trailer file_changed time_stamp
 		  ds_begin ds_item ds_end note title marker pdesc
 		  pdeplegend pkg_list pmoreinfo );
 
-our $HOME = "http://www.debian.org";
-our $ROOT = "http://merkel.debian.org/~jeroen/pdo"; # <-- config.sh?!
-our $CONTACT_MAIL = 'debian-www@lists.debian.org';
-our $WEBMASTER_MAIL = 'webmaster@debian.org';
-our $SEARCH_PAGE = "$ROOT/";
-our $SEARCH_CGI = "$ROOT/search";
-our $CGI_ROOT = "$ROOT/cgi-bin";
-our $CN_HELP_URL = "${HOME}/intro/cn";
+our ( $HOME, $ROOT, $CONTACT_MAIL, $WEBMASTER_MAIL,
+      $SEARCH_PAGE, $SEARCH_CGI, $SEARCH_URL,
+      $SRC_SEARCH_URL, $CONTENTS_SEARCH_CGI,
+      $CN_HELP_URL, $BUG_URL, $SRC_BUG_URL, $QA_URL );
 our $CHANGELOG_URL = '/changelogs';
-our $COPYRIGHT_URL = '/changelogs';
-our $SEARCH_URL = "$ROOT/search/";
-our $SRC_SEARCH_URL = "$SEARCH_CGI?searchon=sourcenames&amp;version=all&amp;exact=1&amp;keywords=";
-our $BUG_URL = 'http://bugs.debian.org/';
-our $SRC_BUG_URL = 'http://bugs.debian.org/src:';
-our $QA_URL = 'http://packages.qa.debian.org/';
-
-
-my %img_trans = ( pt_BR => "pt", pt_PT => "pt", sv_SE => "sv" );
 
 sub img {
     my ( $root, $url, $src, $alt, %attr ) = @_; 
@@ -197,7 +184,7 @@ sub pmoreinfo {
 	    $src_dir =~ s,pool/non-US,pool,o;
 	    $str .= "<br>".sprintf( gettext( "View the <a href=\"%s\">Debian changelog</a>" ),
 				    "$CHANGELOG_URL/$src_dir/$src_basename/changelog" )."<br>\n";
-	    my $copyright_url = "$COPYRIGHT_URL/$src_dir/$src_basename/";
+	    my $copyright_url = "$CHANGELOG_URL/$src_dir/$src_basename/";
 	    $copyright_url .= ( $is_source ? 'copyright' : "$name.copyright" );
 
 	    $str .= sprintf( gettext( "View the <a href=\"%s\">copyright file</a>" ),
@@ -296,6 +283,7 @@ sub header {
 	$search_in_header = <<MENU;
 <form method="GET" action="$SEARCH_CGI">
 <div id="hpacketsearch">
+<input type="hidden" name="debug" value="$values{debug}">
 <input type="hidden" name="suite" value="$values{suite}">
 <input type="hidden" name="subword" value="$values{subword}">
 <input type="hidden" name="exact" value="$values{exact}">
@@ -327,8 +315,9 @@ MENU
 				   filelist => "", );
 	$checked_searchmode{$values{searchmode}} = "checked=\"checked\"";
 	$search_in_header = <<MENU;
-<form method="GET" action="$CGI_ROOT/search_contents.pl">
+<form method="GET" action="$CONTENTS_SEARCH_CGI">
 <div id="hpacketsearch">
+<input type="hidden" name="debug" value="$values{debug}" />
 <input type="hidden" name="version" value="$values{version}" />
 <input type="hidden" name="arch" value="$values{arch}" />
 <input type="hidden" name="case" value="$values{case}" />
@@ -357,7 +346,6 @@ MENU
     my $KEYWORDS_LINE = "<meta name=\"Keywords\" content=\"debian, $keywords $title_keywords\">";
     
     my $LANG = $params{lang};
-    my $img_lang = $img_trans{$LANG} || $LANG;
     my $charset = get_charset($LANG);
     my $txt = <<HEAD;
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">

@@ -20,25 +20,12 @@ use HTML::Entities;
 use DB_File;
 use Benchmark;
 
-use lib "../lib";
-
 use Deb::Versions;
+use Packages::CGI;
 use Packages::Search qw( :all );
 use Packages::HTML ();
 
-my $thisscript = $Packages::HTML::SEARCH_CGI;
-my $HOME = "http://www.debian.org";
-my $ROOT = "";
-my $SEARCHPAGE = "http://packages.debian.org/";
-my @SUITES = qw( oldstable stable testing unstable experimental );
-my @SECTIONS = qw( main contrib non-free );
-my @ARCHIVES = qw( us security installer );
-my @ARCHITECTURES = qw( alpha amd64 arm hppa hurd-i386 i386 ia64
-			kfreebsd-i386 mips mipsel powerpc s390 sparc );
-my %SUITES = map { $_ => 1 } @SUITES;
-my %SECTIONS = map { $_ => 1 } @SECTIONS;
-my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
-my %ARCHITECTURES = map { $_ => 1 } @ARCHITECTURES;
+&Packages::CGI::reset;
 
 $ENV{PATH} = "/bin:/usr/bin";
 
@@ -51,22 +38,60 @@ if ($ARGV[0] && ($ARGV[0] eq 'php')) {
 }
 
 my $pet0 = new Benchmark;
+my $tet0 = new Benchmark;
 # use this to disable debugging in production mode completly
 my $debug_allowed = 1;
 my $debug = $debug_allowed && $input->param("debug");
-$debug = 0 if not defined($debug);
-#$Packages::Search::debug = 1 if $debug > 1;
+$debug = 0 if !defined($debug) || $debug !~ /^\d+$/o;
+$Packages::CGI::debug = $debug;
+
+# read the configuration
+our $config_read_time ||= 0;
+our $db_read_time ||= 0;
+our $topdir;
+our $ROOT;
+our @SUITES;
+our @SECTIONS;
+our @ARCHITECTURES;
+
+# FIXME: move to own module
+my $modtime = (stat( "../config.sh" ))[9];
+if ($modtime > $config_read_time) {
+    if (!open (C, '<', "../config.sh")) {
+	error( "Internal Error: Cannot open configuration file." );
+    }
+    while (<C>) {
+	chomp;
+	$topdir = $1 if /^\s*topdir="?([^\"]*)"?\s*$/o;
+	$ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
+	$Packages::HTML::HOME = $1 if /^\s*home="?([^\"]*)"?\s*$/o;
+	$Packages::HTML::SEARCH_CGI = $1 if /^\s*searchcgi="?([^\"]*)"?\s*$/o;
+	$Packages::HTML::SEARCH_PAGE = $1 if /^\s*searchpage="?([^\"]*)"?\s*$/o;
+	$Packages::HTML::WEBMASTER_MAIL = $1 if /^\s*webmaster="?([^\"]*)"?\s*$/o;
+	$Packages::HTML::CONTACT_MAIL = $1 if /^\s*contact="?([^\"]*)"?\s*$/o;
+	@SUITES = split(/\s+/, $1) if /^\s*suites="?([^\"]*)"?\s*$/o;
+	@SECTIONS = split(/\s+/, $1) if /^\s*sections="?([^\"]*)"?\s*$/o;
+	@ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
+    }
+    close (C);
+    debug( "read config ($modtime > $config_read_time)" );
+    $config_read_time = $modtime;
+}
+my $DBDIR = $topdir . "/files/db";
+my $thisscript = $Packages::HTML::SEARCH_CGI;
 
 if (my $path = $input->param('path')) {
     my @components = map { lc $_ } split /\//, $path;
+
+    my %SUITES = map { $_ => 1 } @SUITES;
+    my %SECTIONS = map { $_ => 1 } @SECTIONS;
+    my %ARCHITECTURES = map { $_ => 1 } @ARCHITECTURES;
 
     foreach (@components) {
 	if ($SUITES{$_}) {
 	    $input->param('suite', $_);
 	} elsif ($SECTIONS{$_}) {
 	    $input->param('section', $_);
-	} elsif ($ARCHIVES{$_}) {
-	    $input->param('archive', $_);
 	}elsif ($ARCHITECTURES{$_}) {
 	    $input->param('arch', $_);
 	}
@@ -85,8 +110,7 @@ my %params_def = ( keywords => { default => undef,
 			      replace => { all => \@SUITES } },
 		   case => { default => 'insensitive', match => '^(\w+)$',
 			     var => \$case },
-#		   official => { default => 0, match => '^(\w+)$' },
-#		   use_cache => { default => 1, match => '^(\w+)$' },
+		   official => { default => 0, match => '^(\w+)$' },
 		   subword => { default => 0, match => '^(\w+)$',
 				var => \$subword },
 		   exact => { default => undef, match => '^(\w+)$',
@@ -100,9 +124,6 @@ my %params_def = ( keywords => { default => undef,
 		   arch => { default => 'any', match => '^(\w+)$',
 			     array => ',', var => \@archs, replace =>
 			     { any => \@ARCHITECTURES } },
-		   archive => { default => 'all', match => '^(\w+)$',
-				array => ',', replace =>
-				{ all => \@ARCHIVES } },
 		   format => { default => 'html', match => '^(\w+)$',
                                var => \$format },
 		   );
@@ -115,54 +136,10 @@ if ($format eq 'html') {
     print $input->header;
 }
 
-my (@errors, @debug, @msgs, @hints);
-sub error {
-    push @errors, $_[0];
-}
-sub hint {
-    push @hints, $_[0];
-}
-sub debug {
-    my $lvl = $_[1] || 0;
-    push(@debug, $_[0]) if $debug > $lvl;
-}
-sub msg {
-    push @msgs, $_[0];
-}
-sub print_errors {
-    return unless @errors;
-    print '<div>';
-    foreach (@errors) {
-	print "<p style=\"background-color:#F99;font-weight:bold;padding:0.5em;margin:0;\">$_</p>";
-    }
-    print '</div>';
-}
-sub print_debug {
-    return unless $debug && @debug;
-    print '<div style="font-size:80%";border:solid thin grey">';
-    print '<h2>Debugging:</h2><pre>';
-    foreach (@debug) {
-	print "$_\n";
-    }
-    print '</pre></div>';
-
-}
-sub print_hints {
-    return unless @hints;
-    print '<div>';
-    foreach (@hints) {
-	print "<p style=\"background-color:#FF9;padding:0.5em;margin:0\">$_</p>";
-    }
-    print '</div>';
-}
-sub print_msgs {
-    foreach (@msgs) {
-	print "<p>$_</p>";
-    }
-}
-
 if ($params{errors}{keywords}) {
-    error( "Error: keyword not valid or missing" );
+    fatal_error( "keyword not valid or missing" );
+} elsif (length($keyword) < 2) {
+    fatal_error( "keyword too short (keywords need to have at least two characters)" );
 }
 
 my $case_bool = ( $case !~ /insensitive/ );
@@ -177,7 +154,7 @@ my $sections_param = join ',', @{$params{values}{section}{no_replace}};
 my $archs_param = join ',', @{$params{values}{arch}{no_replace}};
 
 # for output
-my $keyword_enc = encode_entities $keyword;
+my $keyword_enc = encode_entities $keyword || '';
 my $searchon_enc = encode_entities $searchon;
 my $suites_enc = encode_entities join ', ', @{$params{values}{suite}{no_replace}};
 my $sections_enc = encode_entities join ', ', @{$params{values}{section}{no_replace}};
@@ -186,198 +163,56 @@ my $pet1 = new Benchmark;
 my $petd = timediff($pet1, $pet0);
 debug( "Parameter evaluation took ".timestr($petd) );
 
-# read the configuration
-my $topdir;
-if (!open (C, "../config.sh")) {
-    error( "Internal Error: Cannot open configuration file." );
-}
-while (<C>) {
-    $topdir = $1 if /^\s*topdir="?(.*)"?\s*$/;
-    $ROOT = $1 if /^\s*root="?(.*)"?\s*$/;
-}
-close (C);
-
-my $DBDIR = $topdir . "/files/db";
-my $search_on_sources = 0;
-
 my $st0 = new Benchmark;
 my @results;
-my $too_many_hits;
-if ($searchon eq 'sourcenames') {
-    $search_on_sources = 1;
-}
 
-sub print_header {
-    print Packages::HTML::header( title => 'Package Search Results' ,
-				  lang => 'en',
-				  title_tag => 'Debian Package Search Results',
-				  print_title_above => 1,
-				  print_search_field => 'packages',
-				  search_field_values => { 
-				      keywords => $keyword_enc,
-				      searchon => $searchon,
-				      arch => $archs_enc,
-				      suite => $suites_enc,
-				      section => $sections_enc,
-				      subword => $subword,
-				      exact => $exact,
-				      case => $case,
-				  },
-				  );
-}
+our ($obj, $s_obj, $p_obj, $sp_obj,
+     %packages, %sources, %postf, %spostf, %src2bin, %did2pkg );
 
-sub read_entry {
-    my ($hash, $key, $results, $opts) = @_;
-    my $result = $hash->{$key} || '';
-    foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 7 );
-	debug( "Considering entry ".join( ':', @data), 2);
-	if ($opts->{h_suites}{$data[0]}
-	    && ($opts->{h_archs}{$data[1]} || $data[1] eq 'all')
-	    && $opts->{h_sections}{$data[2]}) {
-	    debug( "Using entry ".join( ':', @data), 2);
-	    push @$results, [ $key, @data ];
-	}
+unless (@Packages::CGI::fatal_errors) {
+
+    my $dbmodtime = (stat("$DBDIR/packages_small.db"))[9];
+    if ($dbmodtime > $db_read_time) {
+	$obj = tie %packages, 'DB_File', "$DBDIR/packages_small.db",
+	O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie DB $DBDIR/packages_small.db: $!";
+	$s_obj = tie %sources, 'DB_File', "$DBDIR/sources_small.db",
+	O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie DB $DBDIR/sources_small.db: $!";
+	$p_obj = tie %postf, 'DB_File', "$DBDIR/package_postfixes.db",
+	O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie postfix db $DBDIR/package_postfixes.db: $!";
+	$sp_obj = tie %spostf, 'DB_File', "$DBDIR/source_postfixes.db",
+	O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie postfix db $DBDIR/source_postfixes.db: $!";
+	tie %src2bin, 'DB_File', "$DBDIR/sources_packages.db",
+	O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't open $DBDIR/sources_packages.db: $!";
+	tie %did2pkg, 'DB_File', "$DBDIR/descriptions_packages.db",
+	O_RDONLY, 0666, $DB_BTREE
+	    or die "couldn't tie DB $DBDIR/descriptions_packages.db: $!";
+	
+	debug( "tied databases ($dbmodtime > $db_read_time)" );
+	$db_read_time = $dbmodtime;
     }
-}
-sub read_src_entry {
-    my ($hash, $key, $results, $opts) = @_;
-    my $result = $hash->{$key} || '';
-    foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 5 );
-	debug( "Considering entry ".join( ':', @data), 2);
-	if ($opts->{h_suites}{$data[0]} && $opts->{h_sections}{$data[1]}) {
-	    debug( "Using entry ".join( ':', @data), 2);
-	    push @$results, [ $key, @data ];
-	}
-    }
-}
-sub do_names_search {
-    my ($keyword, $file, $postfix_file, $read_entry, $opts) = @_;
-    my @results;
 
-    $keyword = lc $keyword unless $opts->{case_bool};
-    
-    my $obj = tie my %packages, 'DB_File', "$DBDIR/$file", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/$file: $!";
-    
-    if ($opts->{exact}) {
-	&$read_entry( \%packages, $keyword, \@results, $opts );
+    if ($searchon eq 'names') {
+	push @results, @{ do_names_search( $keyword, \%packages,
+					   $p_obj,
+					   \&read_entry, \%opts ) };
+    } elsif ($searchon eq 'sourcenames') {
+	push @results, @{ do_names_search( $keyword, \%sources,
+					   $sp_obj,
+					   \&read_src_entry, \%opts ) };
     } else {
-	my ($key, $prefixes) = ($keyword, '');
-	my %pkgs;
-	my $p_obj = tie my %pref, 'DB_File', "$DBDIR/$postfix_file", O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie postfix db $DBDIR/$postfix_file: $!";
-	$p_obj->seq( $key, $prefixes, R_CURSOR );
-	while (index($key, $keyword) >= 0) {
-            if ($prefixes =~ /^\001(\d+)/o) {
-                $too_many_hits += $1;
-            } else {
-		foreach (split /\000/o, $prefixes) {
-		    $_ = '' if $_ eq '^';
-		    debug( "add word $_$key", 2);
-		    $pkgs{$_.$key}++;
-		}
-	    }
-	    last if $p_obj->seq( $key, $prefixes, R_NEXT ) != 0;
-	    last if $too_many_hits or keys %pkgs >= 100;
-	}
-        
-        my $no_results = keys %pkgs;
-        if ($too_many_hits || ($no_results >= 100)) {
-	    $too_many_hits += $no_results;
-	    %pkgs = ( $keyword => 1 );
-	}
-	foreach my $pkg (sort keys %pkgs) {
-	    &$read_entry( \%packages, $pkg, \@results, $opts );
-	}
+	push @results, @{ do_names_search( $keyword, \%packages,
+					   $p_obj,
+					   \&read_entry, \%opts ) };
+	push @results, @{ do_fulltext_search( $keyword, "$DBDIR/descriptions.txt",
+					      \%did2pkg,
+					      \%packages,
+					      \&read_entry, \%opts ) };
     }
-    return \@results;
-}
-sub do_fulltext_search {
-    my ($keword, $file, $mapping, $lookup, $read_entry, $opts) = @_;
-    my @results;
-
-    my @lines;
-    my $regex;
-    if ($opts->{case_bool}) {
-	if ($opts->{exact}) {
-	    $regex = qr/\b\Q$keyword\E\b/o;
-	} else {
-	    $regex = qr/\Q$keyword\E/o;
-	}
-    } else {
-	if ($opts->{exact}) {
-	    $regex = qr/\b\Q$keyword\E\b/io;
-	} else {
-	    $regex = qr/\Q$keyword\E/io;
-	}
-    }
-
-    open DESC, '<', "$DBDIR/$file"
-	or die "couldn't open $DBDIR/$file: $!";
-    while (<DESC>) {
-	$_ =~ $regex or next;
-	debug( "Matched line $.", 2);
-	push @lines, $.;
-    }
-    close DESC;
-
-    tie my %packages, 'DB_File', "$DBDIR/$lookup", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/$lookup: $!";
-    tie my %did2pkg, 'DB_File', "$DBDIR/$mapping", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/$mapping: $!";
-
-    my %tmp_results;
-    foreach my $l (@lines) {
-	my $result = $did2pkg{$l};
-	foreach (split /\000/o, $result) {
-	    my @data = split /\s/, $_, 3;
-	    next unless $opts->{h_archs}{$data[2]};
-	    $tmp_results{$data[0]}++;
-	}
-    }
-    foreach my $pkg (keys %tmp_results) {
-	&$read_entry( \%packages, $pkg, \@results, $opts );
-    }
-    return \@results;
-}
-
-sub find_binaries {
-    my ($pkg, $suite) = @_;
-
-    tie my %src2bin, 'DB_File', "$DBDIR/sources_packages.db", O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't open $DBDIR/sources_packages.db: $!";
-
-    my $bins = $src2bin{$pkg} || '';
-    my %bins;
-    foreach (split /\000/o, $bins) {
-	my @data = split /\s/, $_, 4;
-
-	if ($data[0] eq $suite) {
-	    $bins{$data[1]}++;
-	}
-    }
-
-    return [ keys %bins ];
-}
-
-if ($searchon eq 'names') {
-    push @results, @{ do_names_search( $keyword, 'packages_small.db',
-				       'package_postfixes.db',
-				       \&read_entry, \%opts ) };
-} elsif ($searchon eq 'sourcenames') {
-    push @results, @{ do_names_search( $keyword, 'sources_small.db',
-				       'source_postfixes.db',
-				       \&read_src_entry, \%opts ) };
-} else {
-    push @results, @{ do_names_search( $keyword, 'packages_small.db',
-				       'package_postfixes.db',
-				       \&read_entry, \%opts ) };
-    push @results, @{ do_fulltext_search( $keyword, 'descriptions.txt',
-					  'descriptions_packages.db',
-					  'packages_small.db',
-					  \&read_entry, \%opts ) };
 }
 
 my $st1 = new Benchmark;
@@ -392,7 +227,7 @@ if ($format eq 'html') {
     my $arch_wording = $archs_enc eq 'any' ? "all architectures"
 	: "architecture(s) <em>$archs_enc</em>";
     if (($searchon eq "names") || ($searchon eq 'sourcenames')) {
-	my $source_wording = $search_on_sources ? "source " : "";
+	my $source_wording = ( $searchon eq 'sourcenames' ) ? "source " : "";
 	my $exact_wording = $exact ? "named" : "that names contain";
 	msg( "You have searched for ${source_wording}packages $exact_wording <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording." );
     } else {
@@ -401,11 +236,11 @@ if ($format eq 'html') {
     }
 }
 
-if ($too_many_hits) {
-    error( "Your search was too wide so we will only display exact matches. At least <em>$too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." );
+if ($Packages::Search::too_many_hits) {
+    error( "Your search was too wide so we will only display exact matches. At least <em>$Packages::Search::too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." );
 }
 
-if (!@results) {
+if (!@Packages::CGI::fatal_errors && !@results) {
     if ($format eq 'html') {
 	my $keyword_esc = uri_escape( $keyword );
 	my $printed = 0;
@@ -416,10 +251,11 @@ if (!@results) {
 		error( "Can't find that package." );
 	    } else {
 		error( "Can't find that package, at least not in that suite ".
-		    ( $search_on_sources ? "" : " and on that architecture" ) )
+		    ( ( $searchon eq 'sourcenames' ) ? "" : " and on that architecture" ) )
 	    }
 	    
 	    if ($exact) {
+		$printed++;
 		hint( "You have searched only for exact matches of the package name. You can try to search for <a href=\"$thisscript?exact=0&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">package names that contain your search string</a>." );
 	    }
 	} else {
@@ -432,28 +268,40 @@ if (!@results) {
 	    }
 	    
 	    unless ($subword) {
+		$printed++;
 		hint( "You have searched only for words exactly matching your keywords. You can try to search <a href=\"$thisscript?subword=1&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">allowing subword matching</a>." );
 	    }
 	}
-	hint( ( @hints ? "Or you" : "You" )." can try a different search on the <a href=\"$SEARCHPAGE#search_packages\">Packages search page</a>." );
+	hint( ( $printed ? "Or you" : "You" )." can try a different search on the <a href=\"$Packages::HTML::SEARCH_PAGE#search_packages\">Packages search page</a>." );
 	    
     }
 }
 
-print_header;    
-print_msgs;
-print_errors;
-print_hints;
-print_debug;
-&print_results;
-&printfooter;
-
-sub print_results {
-    return unless @results;
-
+print Packages::HTML::header( title => 'Package Search Results' ,
+			      lang => 'en',
+			      title_tag => 'Debian Package Search Results',
+			      print_title_above => 1,
+			      print_search_field => 'packages',
+			      search_field_values => { 
+				  keywords => $keyword_enc,
+				  searchon => $searchon,
+				  arch => $archs_enc,
+				  suite => $suites_enc,
+				  section => $sections_enc,
+				  subword => $subword,
+				  exact => $exact,
+				  case => $case,
+				  debug => $debug,
+			      },
+			      );
+print_msgs();
+print_errors();
+print_hints();
+print_debug();
+if (@results) {
     my (%pkgs, %sect, %part, %desc, %binaries);
 
-    unless ($search_on_sources) {
+    unless ($opts{searchon} eq 'sourcenames') {
 	foreach (@results) {
 	    my ($pkg_t, $suite, $arch, $section, $subsection,
 		$priority, $version, $desc) = @$_;
@@ -467,8 +315,8 @@ sub print_results {
 	    $desc{$pkg}{$suite}{$version} = $desc;
 	}
 
-	if ($format eq 'html') {
-	    my ($start, $end) = multipageheader( scalar keys %pkgs );
+	if ($opts{format} eq 'html') {
+	    my ($start, $end) = multipageheader( $input, scalar keys %pkgs, \%opts );
 	    my $count = 0;
 	
 	    foreach my $pkg (sort keys %pkgs) {
@@ -507,11 +355,11 @@ sub print_results {
 	    $part{$pkg}{$suite}{source} = $section
 		unless $section eq 'main';
 
-	    $binaries{$pkg}{$suite} = find_binaries( $pkg, $suite );
+	    $binaries{$pkg}{$suite} = find_binaries( $pkg, $suite, \%src2bin );
 	}
 
-	if ($format eq 'html') {
-	    my ($start, $end) = multipageheader( scalar keys %pkgs );
+	if ($opts{format} eq 'html') {
+	    my ($start, $end) = multipageheader( $input, scalar keys %pkgs, \%opts );
 	    my $count = 0;
 	    
 	    foreach my $pkg (sort keys %pkgs) {
@@ -544,78 +392,16 @@ sub print_results {
 	    }
 	}
     }
-    printindexline( scalar keys %pkgs );
+    printindexline( $input, scalar keys %pkgs, \%opts );
 }
+#print_results(\@results, \%opts) if @results;;
+my $tet1 = new Benchmark;
+my $tetd = timediff($tet1, $tet0);
+print "Total page evaluation took ".timestr($petd)."<br>"
+    if $debug_allowed;
 
-exit;
-
-sub printindexline {
-    my $no_results = shift;
-
-    my $index_line;
-    if ($no_results > $opts{number}) {
-	
-	$index_line = prevlink($input,\%params)." | ".
-	    indexline( $input, \%params, $no_results)." | ".
-	    nextlink($input,\%params, $no_results);
-	
-	print "<p style=\"text-align:center\">$index_line</p>";
-    }
-}
-
-sub multipageheader {
-    my $no_results = shift;
-
-    my ($start, $end);
-    if ($opts{number} =~ /^all$/i) {
-	$start = 1;
-	$end = $no_results;
-	$opts{number} = $no_results;
-    } else {
-	$start = Packages::Search::start( \%params );
-	$end = Packages::Search::end( \%params );
-	if ($end > $no_results) { $end = $no_results; }
-    }
-
-    print "<p>Found <em>$no_results</em> matching packages,";
-    if ($end == $start) {
-	print " displaying package $end.</p>";
-    } else {
-	print " displaying packages $start to $end.</p>";
-    }
-
-    printindexline( $no_results );
-
-    if ($no_results > 100) {
-	print "<p>Results per page: ";
-	my @resperpagelinks;
-	for (50, 100, 200) {
-	    if ($opts{number} == $_) {
-		push @resperpagelinks, $_;
-	    } else {
-		push @resperpagelinks, resperpagelink($input,\%params,$_);
-	    }
-	}
-	if ($params{values}{number}{final} =~ /^all$/i) {
-	    push @resperpagelinks, "all";
-	} else {
-	    push @resperpagelinks, resperpagelink($input, \%params,"all");
-	}
-	print join( " | ", @resperpagelinks )."</p>";
-    }
-    return ( $start, $end );
-}
-
-sub printfooter {
-
-    my $pete = new Benchmark;
-    my $petd = timediff($pete, $pet0);
-    print "Total page evaluation took ".timestr($petd)."<br>"
-	if $debug_allowed;
-
-    my $trailer = Packages::HTML::trailer( $ROOT );
-    $trailer =~ s/LAST_MODIFIED_DATE/gmtime()/e; #FIXME
-    print $trailer;
-}
+my $trailer = Packages::HTML::trailer( $ROOT );
+$trailer =~ s/LAST_MODIFIED_DATE/gmtime()/e; #FIXME
+print $trailer;
 
 # vim: ts=8 sw=4

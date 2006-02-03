@@ -46,14 +46,19 @@ use warnings;
 use CGI qw( -oldstyle_urls );
 use POSIX;
 use HTML::Entities;
+use DB_File;
 
 use Deb::Versions;
+use Packages::CGI;
 use Exporter;
 
 our @ISA = qw( Exporter );
 
 our @EXPORT_OK = qw( nextlink prevlink indexline
-                     resperpagelink );
+                     resperpagelink
+		     read_entry read_src_entry find_binaries
+		     do_names_search do_fulltext_search
+		     printindexline multipageheader );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $VERSION = 0.01;
@@ -66,7 +71,7 @@ our %page_params = ( page => { default => DEFAULT_PAGE,
                      number => { default => DEFAULT_RES_PER_PAGE,
                                  match => '(\d+)' } );
 
-our $debug = 0;
+our $too_many_hits = 0;
 
 sub parse_params {
     my ( $cgi, $params_def, $opts ) = @_;
@@ -74,7 +79,7 @@ sub parse_params {
     my %params_ret = ( values => {}, errors => {} );
     my %params;
     if ($USE_PAGED_MODE) {
-        print "DEBUG: Use PAGED_MODE<br>" if $debug;
+        debug( "Use PAGED_MODE", 2 );
         %params = %$params_def;
         foreach (keys %page_params) {
             delete $params{$_};
@@ -86,7 +91,7 @@ sub parse_params {
 
     foreach my $param ( keys %params ) {
 	
-	print "<hr><p>DEBUG: Param <strong>$param</strong><br>" if $debug;
+	debug( "Param <strong>$param</strong>", 2 );
 
 	my $p_value_orig = $cgi->param($param);
 
@@ -94,18 +99,17 @@ sub parse_params {
 	    && defined $params_def->{$param}{alias}
 	    && defined $cgi->param($params_def->{$param}{alias})) {
 	    $p_value_orig = $cgi->param($params_def->{$param}{alias});
-	    print "DEBUG: Used alias <strong>$params_def->{$param}{alias}</strong><br>"
-		if $debug;
+	    debug( "Used alias <strong>$params_def->{$param}{alias}</strong>",
+		   2 );
 	}
 
 	my @p_value = ($p_value_orig);
 
-	print "DEBUG: Value (Orig) ".($p_value_orig||"")."<br>" if $debug;
+	debug( "Value (Orig) ".($p_value_orig||""), 2 );
 
 	if ($params_def->{$param}{array} && defined $p_value_orig) {
 	    @p_value = split /$params_def->{$param}{array}/, $p_value_orig;
-	    print "DEBUG: Value (Array Split) ".
-		join('##',@p_value)."<br>" if $debug;
+	    debug( "Value (Array Split) ". join('##',@p_value), 2 );
 	}
 
 	if ($params_def->{$param}{match} && defined $p_value_orig) {
@@ -115,8 +119,7 @@ sub parse_params {
 	}
 	@p_value = grep { defined $_ } @p_value;
 
-	print "DEBUG: Value (Match) ".
-	    join('##',@p_value)."<br>" if $debug;
+	debug( "Value (Match) ". join('##',@p_value), 2 );
 
 	unless (@p_value) {
 	    if (defined $params{$param}{default}) {
@@ -128,8 +131,7 @@ sub parse_params {
 	    }
 	}
 
-	print "DEBUG: Value (Default) ".
-	    join('##',@p_value)."<br>" if $debug;
+	debug( "Value (Default) ". join('##',@p_value), 2 );
 	my @p_value_no_replace = @p_value;
 
 	if ($params{$param}{replace} && @p_value) {
@@ -150,8 +152,7 @@ sub parse_params {
 	    }
 	}
 	
-	print "DEBUG: Value (Final) ".
-	    join('##',@p_value)."<br>" if $debug;
+	debug( "Value (Final) ". join('##',@p_value), 2 );
 
 	if ($params_def->{$param}{array}) {
 	    $params_ret{values}{$param} = {
@@ -196,9 +197,11 @@ sub start {
 sub end {
     my $params = shift;
 
-    my $page = $params->{values}{page}{final}
+    use Data::Dumper;
+    debug( "end: ".Dumper($params) );
+    my $page = $params->{page}
     || DEFAULT_PAGE;
-    my $res_per_page = $params->{values}{number}{final}
+    my $res_per_page = $params->{number}
     || DEFAULT_RES_PER_PAGE;
 
     return $page * $res_per_page;
@@ -208,9 +211,9 @@ sub indexline {
     my ($cgi, $params, $num_res) = @_;
 
     my $index_line = "";
-    my $page = $params->{values}{page}{final}
+    my $page = $params->{page}
     || DEFAULT_PAGE;
-    my $res_per_page = $params->{values}{number}{final}
+    my $res_per_page = $params->{number}
     || DEFAULT_RES_PER_PAGE;
     my $numpages = ceil($num_res /
                         $res_per_page);
@@ -232,10 +235,10 @@ sub indexline {
 sub nextlink {
     my ($cgi, $params, $no_results ) = @_;
 
-    my $page = $params->{values}{page}{final}
+    my $page = $params->{page}
     || DEFAULT_PAGE;
     $page++;
-    my $res_per_page = $params->{values}{number}{final}
+    my $res_per_page = $params->{number}
     || DEFAULT_RES_PER_PAGE;
 
     if ((($page-1)*$res_per_page + 1) > $no_results) {
@@ -249,14 +252,14 @@ sub nextlink {
 sub prevlink {
     my ($cgi, $params ) = @_;
 
-    my $page = $params->{values}{page}{final}
+    my $page = $params->{page}
     || DEFAULT_PAGE;
     $page--;
     if (!$page) {
         return "&lt;&lt;";
     }
 
-    my $res_per_page = $params->{values}{number}{final}
+    my $res_per_page = $params->{number}
     || DEFAULT_RES_PER_PAGE;
 
     return "<a href=\"".encode_entities($cgi->self_url).
@@ -275,6 +278,187 @@ sub resperpagelink {
 
     return "<a href=\"".encode_entities($cgi->self_url).
         "&amp;page=$page&amp;number=$res_per_page\">$res_per_page</a>";
+}
+
+sub printindexline {
+    my ( $input, $no_results, $opts ) = @_;
+
+    my $index_line;
+    if ($no_results > $opts->{number}) {
+	
+	$index_line = prevlink( $input, $opts)." | ".
+	    indexline( $input, $opts, $no_results)." | ".
+	    nextlink( $input, $opts, $no_results);
+	
+	print "<p style=\"text-align:center\">$index_line</p>";
+    }
+}
+
+sub multipageheader {
+    my ( $input, $no_results, $opts ) = @_;
+
+    my ($start, $end);
+    if ($opts->{number} =~ /^all$/i) {
+	$start = 1;
+	$end = $no_results;
+	$opts->{number} = $no_results;
+	$opts->{number_all}++;
+    } else {
+	$start = Packages::Search::start( $opts );
+	$end = Packages::Search::end( $opts );
+	if ($end > $no_results) { $end = $no_results; }
+    }
+
+    print "<p>Found <em>$no_results</em> matching packages,";
+    if ($end == $start) {
+	print " displaying package $end.</p>";
+    } else {
+	print " displaying packages $start to $end.</p>";
+    }
+
+    printindexline( $input, $no_results, $opts );
+
+    if ($no_results > 100) {
+	print "<p>Results per page: ";
+	my @resperpagelinks;
+	for (50, 100, 200) {
+	    if ($opts->{number} == $_) {
+		push @resperpagelinks, $_;
+	    } else {
+		push @resperpagelinks, resperpagelink($input,$opts,$_);
+	    }
+	}
+	if ($opts->{number_all}) {
+	    push @resperpagelinks, "all";
+	} else {
+	    push @resperpagelinks, resperpagelink($input, $opts, "all");
+	}
+	print join( " | ", @resperpagelinks )."</p>";
+    }
+    return ( $start, $end );
+}
+
+sub read_entry {
+    my ($hash, $key, $results, $opts) = @_;
+    my $result = $hash->{$key} || '';
+    foreach (split /\000/, $result) {
+	my @data = split ( /\s/, $_, 7 );
+	debug( "Considering entry ".join( ':', @data), 2);
+	if ($opts->{h_suites}{$data[0]}
+	    && ($opts->{h_archs}{$data[1]} || $data[1] eq 'all')
+	    && $opts->{h_sections}{$data[2]}) {
+	    debug( "Using entry ".join( ':', @data), 2);
+	    push @$results, [ $key, @data ];
+	}
+    }
+}
+sub read_src_entry {
+    my ($hash, $key, $results, $opts) = @_;
+    my $result = $hash->{$key} || '';
+    foreach (split /\000/, $result) {
+	my @data = split ( /\s/, $_, 5 );
+	debug( "Considering entry ".join( ':', @data), 2);
+	if ($opts->{h_suites}{$data[0]} && $opts->{h_sections}{$data[1]}) {
+	    debug( "Using entry ".join( ':', @data), 2);
+	    push @$results, [ $key, @data ];
+	}
+    }
+}
+sub do_names_search {
+    my ($keyword, $packages, $postfixes, $read_entry, $opts) = @_;
+    my @results;
+
+    $keyword = lc $keyword unless $opts->{case_bool};
+        
+    if ($opts->{exact}) {
+	&$read_entry( $packages, $keyword, \@results, $opts );
+    } else {
+	my ($key, $prefixes) = ($keyword, '');
+	my %pkgs;
+	$postfixes->seq( $key, $prefixes, R_CURSOR );
+	while (index($key, $keyword) >= 0) {
+            if ($prefixes =~ /^\001(\d+)/o) {
+                $too_many_hits += $1;
+            } else {
+		foreach (split /\000/o, $prefixes) {
+		    $_ = '' if $_ eq '^';
+		    debug( "add word $_$key", 2);
+		    $pkgs{$_.$key}++;
+		}
+	    }
+	    last if $postfixes->seq( $key, $prefixes, R_NEXT ) != 0;
+	    last if $too_many_hits or keys %pkgs >= 100;
+	}
+        
+        my $no_results = keys %pkgs;
+        if ($too_many_hits || ($no_results >= 100)) {
+	    $too_many_hits += $no_results;
+	    %pkgs = ( $keyword => 1 );
+	}
+	foreach my $pkg (sort keys %pkgs) {
+	    &$read_entry( $packages, $pkg, \@results, $opts );
+	}
+    }
+    return \@results;
+}
+sub do_fulltext_search {
+    my ($keyword, $file, $did2pkg, $packages, $read_entry, $opts) = @_;
+    my @results;
+
+    my @lines;
+    my $regex;
+    if ($opts->{case_bool}) {
+	if ($opts->{exact}) {
+	    $regex = qr/\b\Q$keyword\E\b/o;
+	} else {
+	    $regex = qr/\Q$keyword\E/o;
+	}
+    } else {
+	if ($opts->{exact}) {
+	    $regex = qr/\b\Q$keyword\E\b/io;
+	} else {
+	    $regex = qr/\Q$keyword\E/io;
+	}
+    }
+
+    open DESC, '<', "$file"
+	or die "couldn't open $file: $!";
+    while (<DESC>) {
+	$_ =~ $regex or next;
+	debug( "Matched line $.", 2);
+	push @lines, $.;
+    }
+    close DESC;
+
+    my %tmp_results;
+    foreach my $l (@lines) {
+	my $result = $did2pkg->{$l};
+	foreach (split /\000/o, $result) {
+	    my @data = split /\s/, $_, 3;
+	    next unless $opts->{h_archs}{$data[2]};
+	    $tmp_results{$data[0]}++;
+	}
+    }
+    foreach my $pkg (keys %tmp_results) {
+	&$read_entry( $packages, $pkg, \@results, $opts );
+    }
+    return \@results;
+}
+
+sub find_binaries {
+    my ($pkg, $suite, $src2bin) = @_;
+
+    my $bins = $src2bin->{$pkg} || '';
+    my %bins;
+    foreach (split /\000/o, $bins) {
+	my @data = split /\s/, $_, 4;
+
+	if ($data[0] eq $suite) {
+	    $bins{$data[1]}++;
+	}
+    }
+
+    return [ keys %bins ];
 }
 
 

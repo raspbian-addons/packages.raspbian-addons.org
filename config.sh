@@ -30,12 +30,20 @@ volatile_ftpsite=http://volatile.debian.net/debian-volatile
 amd64_ftpsite=http://amd64.debian.net/debian
 kfreebsd_ftpsite=http://kfreebsd-gnu.debian.net/debian
 
+root=""
+searchpage="http://packages.debian.net/"
+searchcgi="/cgi-bin/search_packages.pl"
+webmaster=webmaster@debian.org
+contact=debian-www@lists.debian.org
+home="http://www.debian.org"
+
 # Architectures
 #
 polangs="de fi nl fr uk"
 ddtplangs="de cs da eo es fi fr hu it ja nl pl pt_BR pt_PT ru sk sv_SE uk"
-parts="main contrib non-free"
-dists="oldstable stable testing unstable"
+sections="main contrib non-free"
+suites="oldstable stable testing unstable"
+architectures="alpha amd64 arm hppa hurd-i386 i386 ia64 kfreebsd-i386 m68k mips mipsel powerpc s390 sparc"
 arch_oldstable="alpha arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
 arch_stable="${arch_oldstable} amd64"
 arch_testing="${arch_stable}"
