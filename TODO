@@ -10,8 +10,6 @@ search_packages.pl:
 	course) the search term
 - exact package searches
 - substring searches on packages:
-  - don't do exact lookups, but use '^' prefix token
-  - only do for >= 2 characters
   - don't allow whitespace in it, warn when people use common wildcards like
 	*, ?, ^, $ (not possible)
   - When overflow, iterate the first couple of packages that *start* with the
