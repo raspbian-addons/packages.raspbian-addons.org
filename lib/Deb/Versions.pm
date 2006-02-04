@@ -66,7 +66,7 @@ use strict;
 use Exporter;
 
 our @ISA = qw( Exporter );
-our @EXPORT = qw( version_cmp version_sort );
+our @EXPORT = qw( version_cmp version_sort suites_cmp suites_sort );
 
 our $VERSION = v1.0.0;
 
@@ -151,6 +151,22 @@ sub _lcmp {
     }
     return length( $v1 ) <=> length( $v2 );
 }
+
+our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
+		       etch testing testing-proposed-updates sid unstable
+		       experimental warty hoary hoary-backports breezy
+		       breezy-backports dapper );
+my $i = 100;
+our %suites_sort = map { $_ => $i-- } @SUITES_SORT;
+
+sub suites_cmp {
+    return ($suites_sort{$_[0]} <=> $suites_sort{$_[1]});
+}
+
+sub suites_sort {
+    return sort { suites_cmp( $b, $a ) } @_;
+}
+
 
 1;
 __END__
