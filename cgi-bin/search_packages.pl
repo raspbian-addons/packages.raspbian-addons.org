@@ -406,7 +406,7 @@ if (@results) {
 #print_results(\@results, \%opts) if @results;;
 my $tet1 = new Benchmark;
 my $tetd = timediff($tet1, $tet0);
-print "Total page evaluation took ".timestr($petd)."<br>"
+print "Total page evaluation took ".timestr($tetd)."<br>"
     if $debug_allowed;
 
 my $trailer = Packages::HTML::trailer( $ROOT );
