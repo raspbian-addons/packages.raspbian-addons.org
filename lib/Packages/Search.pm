@@ -342,11 +342,11 @@ sub read_entry {
     my ($hash, $key, $results, $opts) = @_;
     my $result = $hash->{$key} || '';
     foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 7 );
+	my @data = split ( /\s/, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2);
-	if ($opts->{h_suites}{$data[0]}
-	    && ($opts->{h_archs}{$data[1]} || $data[1] eq 'all')
-	    && $opts->{h_sections}{$data[2]}) {
+	if ($opts->{h_archives}{$data[0]} && $opts->{h_suites}{$data[1]}
+	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all')
+	    && $opts->{h_sections}{$data[3]}) {
 	    debug( "Using entry ".join( ':', @data), 2);
 	    push @$results, [ $key, @data ];
 	}
@@ -356,9 +356,11 @@ sub read_src_entry {
     my ($hash, $key, $results, $opts) = @_;
     my $result = $hash->{$key} || '';
     foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 5 );
+	my @data = split ( /\s/, $_, 6 );
 	debug( "Considering entry ".join( ':', @data), 2);
-	if ($opts->{h_suites}{$data[0]} && $opts->{h_sections}{$data[1]}) {
+	if ($opts->{h_archives}{$data[0]}
+	    && $opts->{h_suites}{$data[1]}
+	    && $opts->{h_sections}{$data[2]}) {
 	    debug( "Using entry ".join( ':', @data), 2);
 	    push @$results, [ $key, @data ];
 	}
@@ -446,15 +448,16 @@ sub do_fulltext_search {
 }
 
 sub find_binaries {
-    my ($pkg, $suite, $src2bin) = @_;
+    my ($pkg, $archive, $suite, $src2bin) = @_;
 
     my $bins = $src2bin->{$pkg} || '';
     my %bins;
     foreach (split /\000/o, $bins) {
-	my @data = split /\s/, $_, 4;
+	my @data = split /\s/, $_, 5;
 
-	if ($data[0] eq $suite) {
-	    $bins{$data[1]}++;
+	if (($data[0] eq $archive)
+	    && ($data[1] eq $suite)) {
+	    $bins{$data[2]}++;
 	}
     }
 

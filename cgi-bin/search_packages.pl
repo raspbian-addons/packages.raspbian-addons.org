@@ -48,19 +48,16 @@ $Packages::CGI::debug = $debug;
 # read the configuration
 our $config_read_time ||= 0;
 our $db_read_time ||= 0;
-our $topdir;
-our $ROOT;
-our @SUITES;
-our @SECTIONS;
-our @ARCHITECTURES;
+our ( $topdir, $ROOT, @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES );
 
 # FIXME: move to own module
 my $modtime = (stat( "../config.sh" ))[9];
 if ($modtime > $config_read_time) {
     if (!open (C, '<', "../config.sh")) {
-	error( "Internal Error: Cannot open configuration file." );
+	error( "Internal: Cannot open configuration file." );
     }
     while (<C>) {
+	next if /^\s*\#/o;
 	chomp;
 	$topdir = $1 if /^\s*topdir="?([^\"]*)"?\s*$/o;
 	$ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
@@ -71,6 +68,7 @@ if ($modtime > $config_read_time) {
 	$Packages::HTML::CONTACT_MAIL = $1 if /^\s*contact="?([^\"]*)"?\s*$/o;
 	@SUITES = split(/\s+/, $1) if /^\s*suites="?([^\"]*)"?\s*$/o;
 	@SECTIONS = split(/\s+/, $1) if /^\s*sections="?([^\"]*)"?\s*$/o;
+	@ARCHIVES = split(/\s+/, $1) if /^\s*archives="?([^\"]*)"?\s*$/o;
 	@ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
     }
     close (C);
@@ -85,6 +83,7 @@ if (my $path = $input->param('path')) {
 
     my %SUITES = map { $_ => 1 } @SUITES;
     my %SECTIONS = map { $_ => 1 } @SECTIONS;
+    my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
     my %ARCHITECTURES = map { $_ => 1 } @ARCHITECTURES;
 
     foreach (@components) {
@@ -92,41 +91,46 @@ if (my $path = $input->param('path')) {
 	    $input->param('suite', $_);
 	} elsif ($SECTIONS{$_}) {
 	    $input->param('section', $_);
-	}elsif ($ARCHITECTURES{$_}) {
+	} elsif ($ARCHIVES{$_}) {
+	    $input->param('archive', $_);
+	} elsif ($ARCHITECTURES{$_}) {
 	    $input->param('arch', $_);
 	}
     }
 }
 
 my ( $format, $keyword, $case, $subword, $exact, $searchon,
-     @suites, @sections, @archs );
+     @suites, @sections, @archives, @archs );
 
-my %params_def = ( keywords => { default => undef,
-				 match => '^\s*([-+\@\w\/.:]+)\s*$',
-				 var => \$keyword },
-		   suite => { default => 'stable', match => '^(\w+)$',
-			      alias => 'version', array => ',',
-			      var => \@suites,
-			      replace => { all => \@SUITES } },
-		   case => { default => 'insensitive', match => '^(\w+)$',
-			     var => \$case },
-		   official => { default => 0, match => '^(\w+)$' },
-		   subword => { default => 0, match => '^(\w+)$',
-				var => \$subword },
-		   exact => { default => undef, match => '^(\w+)$',
-			      var => \$exact },
-		   searchon => { default => 'all', match => '^(\w+)$',
-				 var => \$searchon },
-		   section => { default => 'all', match => '^([\w-]+)$',
-				alias => 'release', array => ',',
-				var => \@sections,
-				replace => { all => \@SECTIONS } },
-		   arch => { default => 'any', match => '^(\w+)$',
-			     array => ',', var => \@archs, replace =>
-			     { any => \@ARCHITECTURES } },
-		   format => { default => 'html', match => '^(\w+)$',
-                               var => \$format },
-		   );
+# my %params_def = ( keywords => { default => undef,
+# 				 match => '^\s*([-+\@\w\/.:]+)\s*$',
+# 				 var => \$keyword },
+# 		   suite => { default => 'stable', match => '^([\w-]+)$',
+# 			      alias => 'version', array => ',',
+# 			      var => \@suites,
+# 			      replace => { all => \@SUITES } },
+# 		   archive => { default => 'all', match => '^([\w-]+)$',
+# 				array => ',', var => \@archives,
+# 				replace => { all => \@ARCHIVES } },
+# 		   case => { default => 'insensitive', match => '^(\w+)$',
+# 			     var => \$case },
+# 		   official => { default => 0, match => '^(\w+)$' },
+# 		   subword => { default => 0, match => '^(\w+)$',
+# 				var => \$subword },
+# 		   exact => { default => undef, match => '^(\w+)$',
+# 			      var => \$exact },
+# 		   searchon => { default => 'all', match => '^(\w+)$',
+# 				 var => \$searchon },
+# 		   section => { default => 'all', match => '^([\w-]+)$',
+# 				alias => 'release', array => ',',
+# 				var => \@sections,
+# 				replace => { all => \@SECTIONS } },
+# 		   arch => { default => 'any', match => '^(\w+)$',
+# 			     array => ',', var => \@archs, replace =>
+# 			     { any => \@ARCHITECTURES } },
+# 		   format => { default => 'html', match => '^(\w+)$',
+#                                var => \$format },
+# 		   );
 my %opts;
 my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
 
@@ -146,6 +150,7 @@ my $case_bool = ( $case !~ /insensitive/ );
 $exact = !$subword unless defined $exact;
 $opts{h_suites} = { map { $_ => 1 } @suites };
 $opts{h_sections} = { map { $_ => 1 } @sections };
+$opts{h_archives} = { map { $_ => 1 } @archives };
 $opts{h_archs} = { map { $_ => 1 } @archs };
 
 # for URL construction
@@ -299,20 +304,20 @@ print_errors();
 print_hints();
 print_debug();
 if (@results) {
-    my (%pkgs, %sect, %part, %desc, %binaries);
+    my (%pkgs, %subsect, %sect, %desc, %binaries);
 
     unless ($opts{searchon} eq 'sourcenames') {
 	foreach (@results) {
-	    my ($pkg_t, $suite, $arch, $section, $subsection,
+	    my ($pkg_t, $archive, $suite, $arch, $section, $subsection,
 		$priority, $version, $desc) = @$_;
 	
 	    my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
-	    $pkgs{$pkg}{$suite}{$version}{$arch} = 1;
-	    $sect{$pkg}{$suite}{$version} = $subsection;
-	    $part{$pkg}{$suite}{$version} = $section
+	    $pkgs{$pkg}{$suite}{$archive}{$version}{$arch} = 1;
+	    $subsect{$pkg}{$suite}{$archive}{$version} = $subsection;
+	    $sect{$pkg}{$suite}{$archive}{$version} = $section
 		unless $section eq 'main';
 	    
-	    $desc{$pkg}{$suite}{$version} = $desc;
+	    $desc{$pkg}{$suite}{$archive}{$version} = $desc;
 	}
 
 	if ($opts{format} eq 'html') {
@@ -325,21 +330,23 @@ if (@results) {
 		printf "<h3>Package %s</h3>\n", $pkg;
 		print "<ul>\n";
 		foreach my $suite (@SUITES) {
-		    if (exists $pkgs{$pkg}{$suite}) {
-			my @versions = version_sort keys %{$pkgs{$pkg}{$suite}};
-			my $part_str = "";
-			if ($part{$pkg}{$suite}{$versions[0]}) {
-			    $part_str = "[<span style=\"color:red\">$part{$pkg}{$suite}{$versions[0]}</span>]";
+		    foreach my $archive (@ARCHIVES) {
+			if (exists $pkgs{$pkg}{$suite}{$archive}) {
+			    my @versions = version_sort keys %{$pkgs{$pkg}{$suite}{$archive}};
+			    my $origin_str = "";
+			    if ($sect{$pkg}{$suite}{$archive}{$versions[0]}) {
+				$origin_str .= " [<span style=\"color:red\">$sect{$pkg}{$suite}{$versions[0]}</span>]";
+			    }
+			    printf "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
+			    $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect{$pkg}{$suite}{$archive}{$versions[0]},
+			    $desc{$pkg}{$suite}{$archive}{$versions[0]}, $origin_str;
+			    
+			    foreach my $v (@versions) {
+				printf "<br>%s: %s\n",
+				$v, join (" ", (sort keys %{$pkgs{$pkg}{$suite}{$archive}{$v}}) );
+			    }
+			    print "</li>\n";
 			}
-			printf "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
-			$suite, $pkg, $suite, $sect{$pkg}{$suite}{$versions[0]},
-			$desc{$pkg}{$suite}{$versions[0]}, $part_str;
-			
-			foreach my $v (@versions) {
-			    printf "<br>%s: %s\n",
-			    $v, join (" ", (sort keys %{$pkgs{$pkg}{$suite}{$v}}) );
-			}
-			print "</li>\n";
 		    }
 		}
 		print "</ul>\n";
@@ -347,15 +354,15 @@ if (@results) {
 	}
     } else {
 	foreach (@results) {
-	    my ($pkg, $suite, $section, $subsection, $priority,
+	    my ($pkg, $archive, $suite, $section, $subsection, $priority,
 		$version) = @$_;
 	
-	    $pkgs{$pkg}{$suite} = $version;
-	    $sect{$pkg}{$suite}{source} = $subsection;
-	    $part{$pkg}{$suite}{source} = $section
+	    $pkgs{$pkg}{$suite}{$archive} = $version;
+	    $subsect{$pkg}{$suite}{$archive}{source} = $subsection;
+	    $sect{$pkg}{$suite}{$archive}{source} = $section
 		unless $section eq 'main';
 
-	    $binaries{$pkg}{$suite} = find_binaries( $pkg, $suite, \%src2bin );
+	    $binaries{$pkg}{$suite}{$archive} = find_binaries( $pkg, $archive, $suite, \%src2bin );
 	}
 
 	if ($opts{format} eq 'html') {
@@ -368,24 +375,26 @@ if (@results) {
 		printf "<h3>Source package %s</h3>\n", $pkg;
 		print "<ul>\n";
 		foreach my $suite (@SUITES) {
-		    if (exists $pkgs{$pkg}{$suite}) {
-			my $part_str = "";
-			if ($part{$pkg}{$suite}{source}) {
-			    $part_str = "[<span style=\"color:red\">$part{$pkg}{$suite}{source}</span>]";
+		    foreach my $archive (@ARCHIVES) {
+			if (exists $pkgs{$pkg}{$suite}{$archive}) {
+			    my $origin_str = "";
+			    if ($sect{$pkg}{$suite}{$archive}{source}) {
+				$origin_str .= " [<span style=\"color:red\">$sect{$pkg}{$suite}{$archive}{source}</span>]";
+			    }
+			    printf( "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s",
+				    $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect{$pkg}{$suite}{$archive}{source},
+				    $pkgs{$pkg}{$suite}{$archive}, $origin_str );
+			    
+			    print "<br>Binary packages: ";
+			    my @bp_links;
+			    foreach my $bp (@{$binaries{$pkg}{$suite}{$archive}}) {
+				my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",
+						       $suite.(($archive ne 'us')?"/$archive":''), uri_escape( $bp ),  $bp );
+				push @bp_links, $bp_link;
+			    }
+			    print join( ", ", @bp_links );
+			    print "</li>\n";
 			}
-			printf( "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s",
-				$suite, $pkg, $suite, $sect{$pkg}{$suite}{source},
-				$pkgs{$pkg}{$suite}, $part_str );
-			
-			print "<br>Binary packages: ";
-			my @bp_links;
-			foreach my $bp (@{$binaries{$pkg}{$suite}}) {
-			    my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",
-						   $suite, uri_escape( $bp ),  $bp );
-			    push @bp_links, $bp_link;
-			}
-			print join( ", ", @bp_links );
-			print "</li>\n";
 		    }
 		}
 		print "</ul>\n";

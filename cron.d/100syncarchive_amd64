@@ -1,0 +1,25 @@
+#! /bin/bash
+
+. `dirname $0`/../config.sh
+
+test -d ${archivedir} || mkdir -p ${archivedir}
+cd ${archivedir}
+
+# Main archive
+#
+arch=amd64
+
+for dist in stable testing unstable
+  do
+  for part in ${parts} main/debian-installer
+    do
+    echo retrieve Packages $dist/$part/$arch
+    test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
+    (cd us/${dist}/${part}/binary-${arch} &&
+	wget -q -N ${amd64_ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+  done
+  echo retrieve Contents $dist/$arch
+  (cd us/${dist} &&
+      wget -q -N ${amd64_ftpsite}/dists/${dist}/Contents-${arch}.gz)
+done
+

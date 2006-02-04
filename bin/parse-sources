@@ -30,18 +30,20 @@ my %sources_small = ();
 my %source_names = ();
 my %source_postfixes = ();
 
+my @archives = ( 'us', 'non-US', 'security', 'volatile', 'backports' );
 my @suites = ('oldstable', 'stable', 'testing', 'unstable', 'experimental');
 
 $/ = "";
 
-for my $suite (@suites) {
+for my $archive (@archives) {
+    for my $suite (@suites) {
 
-	print "Reading $suite...\n";
+	print "Reading $archive/$suite...\n";
 	my %sources_all_db;
 	tie %sources_all_db, "DB_File", "sources_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
-	open PKG, "zcat /org/ftp.debian.org/ftp/dists/$suite/$what/source/Sources.gz|";
+	open PKG, "zcat /org/packages.debian.org/archive/$archive/$suite/$what/source/Sources.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
@@ -55,22 +57,24 @@ for my $suite (@suites) {
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
+		$data .= "Archive: $archive\n";
 		$sources_all_db{"$data{'package'} $data{'version'}"}
 			= $data;
 
 		$source_names{$data{'package'}} = 1;
 
 		my $section = 'main';
-		my $subsection = $data{section};
+		my $subsection = $data{section} || '-';
 		if ($data{section} && ($data{section} =~ m=/=o)) {
 		    ($section, $subsection) = split m=/=o, $data{section}, 2;
 		}
 		$data{'priority'} = "-" if not exists($data{'priority'});
 		$sources_small{$data{'package'}} .=
-			"$suite $section $subsection $data{'priority'} $data{'version'}\000";
+			"$archive $suite $section $subsection $data{'priority'} $data{'version'}\000";
 	}
 
 	untie %sources_all_db;
+    }
 }
 
 print "Writing databases...\n";

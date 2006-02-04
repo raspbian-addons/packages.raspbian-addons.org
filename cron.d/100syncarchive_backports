@@ -1,0 +1,33 @@
+#!/bin/bash
+
+. `dirname $0`/../config.sh
+
+test -d ${archivedir} || mkdir -p ${archivedir}
+cd ${archivedir}
+
+# backports archive
+#
+for dist in stable
+do
+    foo=\$arch_${dist//-/_}
+    for arch in `eval echo $foo`
+    do
+      for part in ${parts}
+      do
+	echo retrieve Packages $dist/$part/backports/$arch
+	test -d backports/${dist}/${part}/binary-${arch} || mkdir -p backports/${dist}/${part}/binary-${arch}
+	(cd backports/${dist}/${part}/binary-${arch} &&
+	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/${part}/binary-${arch}/Packages.gz)
+      done
+      echo retrieve Contents $dist/$arch
+      (cd backports/${dist} &&
+	  wget -q -N ${backports_ftpsite}/dists/sarge-backports/Contents-${arch}.gz)
+    done
+    for part in ${parts}
+    do
+        echo retrieve Sources $dist/$part/backports
+        test -d backports/${dist}/${part}/source || mkdir -p backports/${dist}/${part}/source
+        (cd backports/${dist}/${part}/source &&
+            wget -q -N ${backports_ftpsite}/dists/sarge-backports/${part}/source/Sources.gz)
+    done
+done
