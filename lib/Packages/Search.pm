@@ -56,7 +56,8 @@ our @ISA = qw( Exporter );
 
 our @EXPORT_OK = qw( nextlink prevlink indexline
                      resperpagelink
-		     read_entry read_entry_all read_src_entry find_binaries
+		     read_entry read_entry_all read_entry_simple
+		     read_src_entry find_binaries
 		     do_names_search do_fulltext_search
 		     printindexline multipageheader );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
@@ -341,8 +342,8 @@ sub multipageheader {
 sub read_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
     my $result = $hash->{$key} || '';
-    foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 8 );
+    foreach (split /\000/o, $result) {
+	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2);
 	if ($opts->{h_archives}{$data[0]} && $opts->{h_suites}{$data[1]}
 	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all')
@@ -359,11 +360,23 @@ sub read_entry {
     my @non_results;
     read_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
+sub read_entry_simple {
+    my ($hash, $key, $suite) = @_;
+    my $result = $hash->{$key} || '';
+    foreach (split /\000/o, $result) {
+	my @data = split ( /\s/o, $_, 8 );
+	debug( "Considering entry ".join( ':', @data), 2);
+	if ($data[1] eq $suite) {
+	    debug( "Using entry ".join( ':', @data), 2);
+	    return \@data;
+	}
+    }
+}
 sub read_src_entry {
     my ($hash, $key, $results, $opts) = @_;
     my $result = $hash->{$key} || '';
-    foreach (split /\000/, $result) {
-	my @data = split ( /\s/, $_, 6 );
+    foreach (split /\000/o, $result) {
+	my @data = split ( /\s/o, $_, 6 );
 	debug( "Considering entry ".join( ':', @data), 2);
 	if ($opts->{h_archives}{$data[0]}
 	    && $opts->{h_suites}{$data[1]}

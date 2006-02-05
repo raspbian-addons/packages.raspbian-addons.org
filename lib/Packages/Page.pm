@@ -32,27 +32,17 @@ sub new {
 sub merge_data {
     my ($self, $pkg, $version, $architecture, $data) = @_;
 
-    local $/ = "";
-    my $strio = IO::String->new($data);
-    my $merged = 0;
-    while (<$strio>) {
-        next if /^\s*$/;
-        my %data = ( package => $pkg,
+    my %data = ( package => $pkg,
 		     version => $version,
 		     architecture => $architecture );
-        chomp;
-        s/\n /\377/g;
-        while (/^(\S+):\s*(.*)\s*$/mg) {
-            my ($key, $value) = ($1, $2);
-            $value =~ s/\377/\n /g;
-            $key =~ tr [A-Z] [a-z];
-            $data{$key} = $value;
-        }
-#	debug( "Merge package:\n".Dumper(\%data), 3 );
-        $merged += $self->merge_package( \%data );
+    chomp($data);
+    while ($data =~ /^(\S+):\s*(.*)\s*$/mg) {
+	my ($key, $value) = ($1, $2);
+	$key =~ tr [A-Z] [a-z];
+	$data{$key} = $value;
     }
-    close DATA;
-    return $merged;
+#	debug( "Merge package:\n".Dumper(\%data), 3 );
+    return $self->merge_package( \%data );
 }
 
 sub gettext { return $_[0]; }
@@ -76,22 +66,13 @@ sub split_name_mail {
 sub add_src_data {
     my ($self, $src, $version, $data) = @_;
 
-    local $/ = "";
-    my $strio = IO::String->new($data);
-    my %data;
-    while (<$strio>) {
-        next if /^\s*$/;
-        chomp;
-	%data = ();
-        s/\n /\377/g;
-        while (/^(\S+):\s*(.*)\s*$/mg) {
-            my ($key, $value) = ($1, $2);
-            $value =~ s/\377/\n /g;
-            $key =~ tr [A-Z] [a-z];
-            $data{$key} = $value;
-        }
+    chomp($data);
+    my %data = ();
+    while ($data =~ /^(\S+):\s*(.*)\s*$/mg) {
+	my ($key, $value) = ($1, $2);
+	$key =~ tr [A-Z] [a-z];
+	$data{$key} = $value;
     }
-    close DATA;
 
     $self->{src}{name} = $src;
     $self->{src}{version} = $version;
@@ -103,6 +84,7 @@ sub add_src_data {
             push @{$self->{src}{files}}, [ split( /\s+/, $sf) ];
         }
     }
+    $self->{src}{directory} = $data{directory};
     my @uploaders;
     if ($data{maintainer} ||= '') {
 	push @uploaders, [ split_name_mail( $data{maintainer} ) ];

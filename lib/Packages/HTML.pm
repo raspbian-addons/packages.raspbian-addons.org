@@ -7,7 +7,7 @@ use URI::Escape;
 use HTML::Entities;
 
 use Packages::CGI;
-use Packages::Search qw( read_entry );
+use Packages::Search qw( read_entry_simple );
 
 #use Packages::Util;
 #use Packages::I18N::Locale;
@@ -82,44 +82,44 @@ sub pdeplegend {
     return $str;
 }
 
-sub pkg_list {
-    my ( $pkgs, $lang, $env ) = @_;
+# sub pkg_list {
+#     my ( $pkgs, $lang, $env ) = @_;
 
-    my $str = "";
-    foreach my $p ( @$pkgs ) {
-	my $p_pkg = $env->{db}->get_pkg( $p );
+#     my $str = "";
+#     foreach my $p ( @$pkgs ) {
+# 	my $p_pkg = $env->{db}->get_pkg( $p );
 
-	if ( $p_pkg ) {
-	    if ($p_pkg->is_virtual) {
-		$str .= "<dt><a href=\"../virtual/$p\">$p</a></dt>\n".
-		    "\t<dd>".gettext("Virtual package")."</dd>\n";
-	    } else {
-		my %subsections = $p_pkg->get_arch_fields( 'section',
-							   $env->{archs} );
-		my $subsection = $subsections{max_unique};
-		my %desc_md5s = $p_pkg->get_arch_fields( 'description-md5', 
-							 $env->{archs} );
-		my $short_desc = conv_desc( $lang,
-					    encode_entities( $env->{db}->get_short_desc( $desc_md5s{max_unique}, $lang ), "<>&\"" ) );
-		$str .= "<dt><a href=\"../$subsection/$p\">$p</a></dt>\n".
-		    "\t<dd>$short_desc</dd>\n";
-	    }
-	} else {
-	    $str .= "<dt>$p</dt>\n\t<dd>".gettext("Not available")."</dd>\n";
-	}
-    }
-    if ($str) {
-	$str = "<dl>$str</dl>\n";
-    }
+# 	if ( $p_pkg ) {
+# 	    if ($p_pkg->is_virtual) {
+# 		$str .= "<dt><a href=\"../virtual/$p\">$p</a></dt>\n".
+# 		    "\t<dd>".gettext("Virtual package")."</dd>\n";
+# 	    } else {
+# 		my %subsections = $p_pkg->get_arch_fields( 'section',
+# 							   $env->{archs} );
+# 		my $subsection = $subsections{max_unique};
+# 		my %desc_md5s = $p_pkg->get_arch_fields( 'description-md5', 
+# 							 $env->{archs} );
+# 		my $short_desc = conv_desc( $lang,
+# 					    encode_entities( $env->{db}->get_short_desc( $desc_md5s{max_unique}, $lang ), "<>&\"" ) );
+# 		$str .= "<dt><a href=\"../$subsection/$p\">$p</a></dt>\n".
+# 		    "\t<dd>$short_desc</dd>\n";
+# 	    }
+# 	} else {
+# 	    $str .= "<dt>$p</dt>\n\t<dd>".gettext("Not available")."</dd>\n";
+# 	}
+#     }
+#     if ($str) {
+# 	$str = "<dl>$str</dl>\n";
+#     }
 
-    return $str;
-}
+#     return $str;
+# }
 
 sub pmoreinfo {
     my %info = @_;
     
     my $name = $info{name} or return;
-#    my $env = $info{env} or return;
+    my $env = $info{env} or return;
     my $page = $info{data} or return;
     my $is_source = $info{is_source};
 
@@ -135,6 +135,8 @@ sub pmoreinfo {
     }
 	
     my $source = $page->get_src( 'name' );
+    my $source_version = $page->get_src( 'version' );
+    my $src_dir = $page->get_src('directory');
     if ($info{sourcedownload}) {
 	my $files = $page->get_src( 'files' );
 	$str .= gettext( "Source Package:" );
@@ -146,15 +148,15 @@ sub pmoreinfo {
 	} else {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = @$_;
-# 		if ($d->{is_security}) {
-# 		    $str .= "<a href=\"$env->{opts}{security_site}/$d->{src_directory}/$src_file_name\">[";
-# 		} elsif ($d->{is_volatile}) {
-# 		    $str .= "<a href=\"$env->{opts}{volatile_site}/$d->{src_directory}/$src_file_name\">[";
-# 		} elsif ($d->{is_nonus}) {
-# 		    $str .= "<a href=\"$env->{opts}{nonus_site}/$d->{src_directory}/$src_file_name\">[";
-# 		} else {
-# 		    $str .= "<a href=\"$env->{opts}{debian_site}/$d->{src_directory}/$src_file_name\">[";
-# 		}
+		for ($page->get_newest('archive')) {
+		    /security/o && do {
+			$str .= "<a href=\"$env->{security}/$src_dir/$src_file_name\">["; last };
+		    /volatile/o && do {
+			$str .= "<a href=\"$env->{volatile}/$src_dir/$src_file_name\">["; last };
+		    /non-us/io && do {
+			$str .= "<a href=\"$env->{nonus_site}/$src_dir/$src_file_name\">["; last };
+ 		    $str .= "<a href=\"$env->{us}/$src_dir/$src_file_name\">[";
+ 		}
 		if ($src_file_name =~ /dsc$/) {
 		    $str .= "dsc";
 		} else {
@@ -167,22 +169,21 @@ sub pmoreinfo {
 #		if ($src_version ne $version) && !$src_version_given_in_control;
     }
 
-#     if ($info{changesandcopy}) {
-# 	if ( $d->{src_directory} ) {
-# 	    my $src_dir = $d->{src_directory};
-# 	    (my $src_basename = $d->{src_version}) =~ s,^\d+:,,; # strip epoche
-# 	    $src_basename = "$d->{src_name}_$src_basename";
-# 	    $src_dir =~ s,pool/updates,pool,o;
-# 	    $src_dir =~ s,pool/non-US,pool,o;
-# 	    $str .= "<br>".sprintf( gettext( "View the <a href=\"%s\">Debian changelog</a>" ),
-# 				    "$CHANGELOG_URL/$src_dir/$src_basename/changelog" )."<br>\n";
-# 	    my $copyright_url = "$CHANGELOG_URL/$src_dir/$src_basename/";
-# 	    $copyright_url .= ( $is_source ? 'copyright' : "$name.copyright" );
+    if ($info{changesandcopy}) {
+	if ( $src_dir ) {
+	    (my $src_basename = $source_version) =~ s,^\d+:,,; # strip epoche
+	    $src_basename = "${source}_$src_basename";
+	    $src_dir =~ s,pool/updates,pool,o;
+	    $src_dir =~ s,pool/non-US,pool,o;
+	    $str .= "<br>".sprintf( gettext( "View the <a href=\"%s\">Debian changelog</a>" ),
+				    "$CHANGELOG_URL/$src_dir/$src_basename/changelog" )."<br>\n";
+	    my $copyright_url = "$CHANGELOG_URL/$src_dir/$src_basename/";
+	    $copyright_url .= ( $is_source ? 'copyright' : "$name.copyright" );
 
-# 	    $str .= sprintf( gettext( "View the <a href=\"%s\">copyright file</a>" ),
-# 			     $copyright_url )."</p>";
-# 	}
-#    }
+	    $str .= sprintf( gettext( "View the <a href=\"%s\">copyright file</a>" ),
+			     $copyright_url )."</p>";
+	}
+   }
 
     if ($info{maintainers}) {
 	my @uploaders = @{$page->get_src( 'uploaders' )};
@@ -284,13 +285,16 @@ sub print_deps {
 	    $pkg_version = "($pkg_version)" if $pkg_version;
 	    
 	    my @results;
-	    read_entry( $packages, $p_name, \@results, $opts);
-	    if ( @results ) {
+	    my %short_descs;
+	    my $short_desc = $short_descs{$p_name} ||
+		(read_entry_simple( $packages, $p_name, $opts->{suite}))->[-1];
+	    if ( $short_desc ) {
 		if ( $is_old_pkgs ) {
 		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
 		} else {
-		    my $short_desc = encode_entities( $results[0][-1], "<>&\"" );
+		    $short_descs{$p_name} ||= $short_desc;
+		    $short_desc = encode_entities( $short_desc, "<>&\"" );
 		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}

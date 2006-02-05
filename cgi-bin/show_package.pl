@@ -50,7 +50,8 @@ $Packages::CGI::debug = $debug;
 # read the configuration
 our $config_read_time ||= 0;
 our $db_read_time ||= 0;
-our ( $topdir, $ROOT, @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES );
+our ( $topdir, $ROOT, @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
+      %FTP_SITES );
 
 # FIXME: move to own module
 my $modtime = (stat( "../config.sh" ))[9];
@@ -71,6 +72,8 @@ if ($modtime > $config_read_time) {
 	$Packages::HTML::BUG_URL = $1 if /^\s*bug_url="?([^\"]*)"?\s*$/o;
 	$Packages::HTML::SRC_BUG_URL = $1 if /^\s*src_bug_url="?([^\"]*)"?\s*$/o;
 	$Packages::HTML::QA_URL = $1 if /^\s*qa_url="?([^\"]*)"?\s*$/o;
+	$FTP_SITES{us} = $1 if /^\s*ftpsite="?([^\"]*)"?\s*$/o;
+	$FTP_SITES{$1} = $2 if /^\s*(\w+)_ftpsite="?([^\"]*)"?\s*$/o;
 	@SUITES = split(/\s+/, $1) if /^\s*suites="?([^\"]*)"?\s*$/o;
 	@SECTIONS = split(/\s+/, $1) if /^\s*sections="?([^\"]*)"?\s*$/o;
 	@ARCHIVES = split(/\s+/, $1) if /^\s*archives="?([^\"]*)"?\s*$/o;
@@ -280,7 +283,8 @@ unless (@Packages::CGI::fatal_errors) {
  	    #
  	    # display dependencies
  	    #
- 	    my $dep_list = print_deps( \%packages, \%opts, $pkg,
+	    my $dep_list;
+ 	    $dep_list = print_deps( \%packages, \%opts, $pkg,
 				       $page->get_dep_field('depends'),
 				       'depends' );
  	    $dep_list .= print_deps( \%packages, \%opts, $pkg,
@@ -302,62 +306,63 @@ unless (@Packages::CGI::fatal_errors) {
  					     [ 'sug',  gettext( 'suggests' ) ], );
 		
  		$package_page .= $dep_list;
- 		$package_page .= "</div> <!-- end pdeps -->\n";
-
-		#
-		# Download package
-		#
-		my $encodedpack = uri_escape( $pkg );
-		$package_page .= "<div id=\"pdownload\">";
-		$package_page .= sprintf( "<h2>".gettext( "Download %s\n" )."</h2>",
-					  $pkg ) ;
-		$package_page .= "<table border=\"1\" summary=\"".gettext("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
-		$package_page .= "<caption class=\"hidecss\">".gettext("Download for all available architectures")."</caption>\n";
-		$package_page .= "<tr>\n";
-		$package_page .= "<th>".gettext("Architecture")."</th><th>".gettext("Files")."</th><th>".gettext( "Package Size")."</th><th>".gettext("Installed Size")."</th></tr>\n";
-		foreach my $a ( @archs ) {
-		    $package_page .= "<tr>\n";
-		    $package_page .=  "<th><a href=\"$DL_URL?arch=$a";
-		    $package_page .=  "&amp;file=".uri_escape($filenames->{$a});
-		    $package_page .=  "&amp;md5sum=$file_md5sums->{$a}";
-		    $package_page .=  "&amp;arch=$a";
-		    # there was at least one package with two
-		    # different source packages on different
-		    # archs where one had a security update
-		    # and the other one not
-		    for ($archives->{$a}) {
-			/security/o &&  do {
-			    $package_page .=  "&amp;type=security"; last };
-			/volatile/o &&  do {
-			    $package_page .=  "&amp;type=volatile"; last };
-			/non-us/io  &&  do {
-			    $package_page .=  "&amp;type=nonus"; last };
-			$package_page .=  "&amp;type=main";
-		    }
-		    $package_page .=  "\">$a</a></th>\n";
-		    $package_page .= "<td>";
-		    if ( $suite ne "experimental" ) {
-			$package_page .= sprintf( "[<a href=\"%s\">".gettext( "list of files" )."</a>]\n", "$FILELIST_URL$encodedpkg&amp;version=$suite&amp;arch=$a", $pkg );
-		    } else {
-			$package_page .= gettext( "no current information" );
-		    }
-		    $package_page .= "</td>\n<td>";
-		    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10;
-		    $package_page .= "</td>\n<td>";
-		    $package_page .=  $sizes_inst->{$a};
-		    $package_page .= "</td>\n</tr>";
-		}
-		$package_page .= "</table><p>".gettext ( "Size is measured in kBytes." )."</p>\n";
-		$package_page .= "</div> <!-- end pdownload -->\n";
-	    
-		#
-		# more information
-		#
-		$package_page .= pmoreinfo( name => $pkg, data => $page,
-					    bugreports => 1, sourcedownload => 1,
-					    changesandcopy => 0, maintainers => 1,
-					    search => 1 );
+		$package_page .= "</div> <!-- end pdeps -->\n";
 	    }
+
+	    #
+	    # Download package
+	    #
+	    my $encodedpack = uri_escape( $pkg );
+	    $package_page .= "<div id=\"pdownload\">";
+	    $package_page .= sprintf( "<h2>".gettext( "Download %s\n" )."</h2>",
+				      $pkg ) ;
+	    $package_page .= "<table border=\"1\" summary=\"".gettext("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
+	    $package_page .= "<caption class=\"hidecss\">".gettext("Download for all available architectures")."</caption>\n";
+	    $package_page .= "<tr>\n";
+	    $package_page .= "<th>".gettext("Architecture")."</th><th>".gettext("Files")."</th><th>".gettext( "Package Size")."</th><th>".gettext("Installed Size")."</th></tr>\n";
+	    foreach my $a ( @archs ) {
+		$package_page .= "<tr>\n";
+		$package_page .=  "<th><a href=\"$DL_URL?arch=$a";
+		$package_page .=  "&amp;file=".uri_escape($filenames->{$a});
+		$package_page .=  "&amp;md5sum=$file_md5sums->{$a}";
+		$package_page .=  "&amp;arch=$a";
+		# there was at least one package with two
+		# different source packages on different
+		# archs where one had a security update
+		# and the other one not
+		for ($archives->{$a}) {
+		    /security/o &&  do {
+			$package_page .=  "&amp;type=security"; last };
+		    /volatile/o &&  do {
+			$package_page .=  "&amp;type=volatile"; last };
+		    /non-us/io  &&  do {
+			$package_page .=  "&amp;type=nonus"; last };
+		    $package_page .=  "&amp;type=main";
+		}
+		$package_page .=  "\">$a</a></th>\n";
+		$package_page .= "<td>";
+		if ( $suite ne "experimental" ) {
+		    $package_page .= sprintf( "[<a href=\"%s\">".gettext( "list of files" )."</a>]\n", "$FILELIST_URL$encodedpkg&amp;version=$suite&amp;arch=$a", $pkg );
+		} else {
+		    $package_page .= gettext( "no current information" );
+		}
+		$package_page .= "</td>\n<td>";
+		$package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10;
+		$package_page .= "</td>\n<td>";
+		$package_page .=  $sizes_inst->{$a};
+		$package_page .= "</td>\n</tr>";
+	    }
+	    $package_page .= "</table><p>".gettext ( "Size is measured in kBytes." )."</p>\n";
+	    $package_page .= "</div> <!-- end pdownload -->\n";
+	    
+	    #
+	    # more information
+	    #
+	    $package_page .= pmoreinfo( name => $pkg, data => $page,
+					env => \%FTP_SITES,
+					bugreports => 1, sourcedownload => 1,
+					changesandcopy => 1, maintainers => 1,
+					search => 1 );
 	}
     }
 }
