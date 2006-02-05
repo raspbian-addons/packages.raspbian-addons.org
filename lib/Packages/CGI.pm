@@ -2,15 +2,16 @@ package Packages::CGI;
 
 use Exporter;
 our @ISA = qw( Exporter );
-our @EXPORT = qw( fatal_error error hint debug msg
-		  print_errors print_hints print_debug print_msgs );
+our @EXPORT = qw( fatal_error error hint debug msg note
+		  print_errors print_hints print_debug print_msgs
+		  print_notes );
 
 our $debug = 0;
 
-our (@fatal_errors, @errors, @debug, @msgs, @hints);
+our (@fatal_errors, @errors, @debug, @msgs, @hints, @notes);
 
 sub reset {
-    @fatal_errors = @errors = @debug = @msgs = @hints = ();
+    @fatal_errors = @errors = @debug = @msgs = @hints = @notes = ();
 }
 
 sub fatal_error {
@@ -29,6 +30,9 @@ sub debug {
 sub msg {
     push @msgs, $_[0];
 }
+sub notes {
+    push @notes, [ @_ ];
+}
 sub print_errors {
     return unless @fatal_errors || @errors;
     print '<div style="background-color:#F99;font-weight:bold;padding:0.5em;margin:0;">';
@@ -45,7 +49,6 @@ sub print_debug {
 	print "$_\n";
     }
     print '</pre></div>';
-
 }
 sub print_hints {
     return unless @hints;
@@ -58,6 +61,20 @@ sub print_hints {
 sub print_msgs {
     foreach (@msgs) {
 	print "<p>$_</p>";
+    }
+}
+sub print_notes {
+    foreach (@notes) {
+	my ( $title, $note ) = @$_;
+	my $str = "";
+
+	if ($note) {
+	    $str .= "<h2 class=\"pred\">$title</h2>";
+	} else {
+	    $note = $title;
+	}
+	$str .= "<p>$note</p>";
+	return $str;
     }
 }
 

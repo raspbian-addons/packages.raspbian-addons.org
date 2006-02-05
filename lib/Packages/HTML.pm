@@ -6,6 +6,9 @@ use warnings;
 use URI::Escape;
 use HTML::Entities;
 
+use Packages::CGI;
+use Packages::Search qw( read_entry );
+
 #use Packages::Util;
 #use Packages::I18N::Locale;
 #use Packages::I18N::Languages;
@@ -20,7 +23,7 @@ our @ISA = qw( Exporter );
 our @EXPORT = qw( header title trailer file_changed time_stamp
 		  read_md5_hash write_md5_hash simple_menu
 		  ds_begin ds_item ds_end note title marker pdesc
-		  pdeplegend pkg_list pmoreinfo );
+		  pdeplegend pkg_list pmoreinfo print_deps );
 
 our ( $HOME, $ROOT, $CONTACT_MAIL, $WEBMASTER_MAIL,
       $SEARCH_PAGE, $SEARCH_CGI, $SEARCH_URL,
@@ -53,19 +56,6 @@ sub title {
 
 sub marker {
     return "[<span class=\"pred\">$_[0]</span>]";
-}
-
-sub note {
-    my ( $title, $note ) = @_;
-    my $str = "";
-
-    if ($note) {
-	$str .= "<h2 class=\"pred\">$title</h2>";
-    } else {
-	$note = $title;
-    }
-    $str .= "<p>$note</p>";
-    return $str;
 }
 
 sub pdesc {
@@ -129,8 +119,8 @@ sub pmoreinfo {
     my %info = @_;
     
     my $name = $info{name} or return;
-    my $env = $info{env} or return;
-    my $d = $info{data} or return;
+#    my $env = $info{env} or return;
+    my $page = $info{data} or return;
     my $is_source = $info{is_source};
 
     my $str = "<div id=\"pmoreinfo\">";
@@ -144,25 +134,27 @@ sub pmoreinfo {
 			 $bug_url.$name, $name );
     }
 	
+    my $source = $page->get_src( 'name' );
     if ($info{sourcedownload}) {
+	my $files = $page->get_src( 'files' );
 	$str .= gettext( "Source Package:" );
-	$str .= " <a href=\"../source/$d->{src_name}\">$d->{src_name}</a>, ".
+	$str .= " <a href=\"../source/$source\">$source</a>, ".
 	    gettext( "Download" ).":\n";
 
-	unless ($d->{src_files}) {
+	unless (@$files) {
 	    $str .= gettext( "Not found" );
 	} else {
-	    foreach( @{$d->{src_files}} ) {
+	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = @$_;
-		if ($d->{is_security}) {
-		    $str .= "<a href=\"$env->{opts}{security_site}/$d->{src_directory}/$src_file_name\">[";
-		} elsif ($d->{is_volatile}) {
-		    $str .= "<a href=\"$env->{opts}{volatile_site}/$d->{src_directory}/$src_file_name\">[";
-		} elsif ($d->{is_nonus}) {
-		    $str .= "<a href=\"$env->{opts}{nonus_site}/$d->{src_directory}/$src_file_name\">[";
-		} else {
-		    $str .= "<a href=\"$env->{opts}{debian_site}/$d->{src_directory}/$src_file_name\">[";
-		}
+# 		if ($d->{is_security}) {
+# 		    $str .= "<a href=\"$env->{opts}{security_site}/$d->{src_directory}/$src_file_name\">[";
+# 		} elsif ($d->{is_volatile}) {
+# 		    $str .= "<a href=\"$env->{opts}{volatile_site}/$d->{src_directory}/$src_file_name\">[";
+# 		} elsif ($d->{is_nonus}) {
+# 		    $str .= "<a href=\"$env->{opts}{nonus_site}/$d->{src_directory}/$src_file_name\">[";
+# 		} else {
+# 		    $str .= "<a href=\"$env->{opts}{debian_site}/$d->{src_directory}/$src_file_name\">[";
+# 		}
 		if ($src_file_name =~ /dsc$/) {
 		    $str .= "dsc";
 		} else {
@@ -175,25 +167,25 @@ sub pmoreinfo {
 #		if ($src_version ne $version) && !$src_version_given_in_control;
     }
 
-    if ($info{changesandcopy}) {
-	if ( $d->{src_directory} ) {
-	    my $src_dir = $d->{src_directory};
-	    (my $src_basename = $d->{src_version}) =~ s,^\d+:,,; # strip epoche
-	    $src_basename = "$d->{src_name}_$src_basename";
-	    $src_dir =~ s,pool/updates,pool,o;
-	    $src_dir =~ s,pool/non-US,pool,o;
-	    $str .= "<br>".sprintf( gettext( "View the <a href=\"%s\">Debian changelog</a>" ),
-				    "$CHANGELOG_URL/$src_dir/$src_basename/changelog" )."<br>\n";
-	    my $copyright_url = "$CHANGELOG_URL/$src_dir/$src_basename/";
-	    $copyright_url .= ( $is_source ? 'copyright' : "$name.copyright" );
+#     if ($info{changesandcopy}) {
+# 	if ( $d->{src_directory} ) {
+# 	    my $src_dir = $d->{src_directory};
+# 	    (my $src_basename = $d->{src_version}) =~ s,^\d+:,,; # strip epoche
+# 	    $src_basename = "$d->{src_name}_$src_basename";
+# 	    $src_dir =~ s,pool/updates,pool,o;
+# 	    $src_dir =~ s,pool/non-US,pool,o;
+# 	    $str .= "<br>".sprintf( gettext( "View the <a href=\"%s\">Debian changelog</a>" ),
+# 				    "$CHANGELOG_URL/$src_dir/$src_basename/changelog" )."<br>\n";
+# 	    my $copyright_url = "$CHANGELOG_URL/$src_dir/$src_basename/";
+# 	    $copyright_url .= ( $is_source ? 'copyright' : "$name.copyright" );
 
-	    $str .= sprintf( gettext( "View the <a href=\"%s\">copyright file</a>" ),
-			     $copyright_url )."</p>";
-	}
-    }
+# 	    $str .= sprintf( gettext( "View the <a href=\"%s\">copyright file</a>" ),
+# 			     $copyright_url )."</p>";
+# 	}
+#    }
 
     if ($info{maintainers}) {
-	my @uploaders = @{$d->{uploaders}};
+	my @uploaders = @{$page->get_src( 'uploaders' )};
 	foreach (@uploaders) {
 	    $_->[0] = encode_entities( $_->[0], '&<>' );
 	}
@@ -215,7 +207,7 @@ sub pmoreinfo {
 	    $str .= "<p>\n$up_str ";
 	}
 
-	$str .= sprintf( gettext( "See the <a href=\"%s\">developer information for %s</a>." )."</p>", $QA_URL.$d->{src_name}, $name );
+	$str .= sprintf( gettext( "See the <a href=\"%s\">developer information for %s</a>." )."</p>", $QA_URL.$source, $name );
     }
 
     if ($info{search}) {
@@ -227,6 +219,152 @@ sub pmoreinfo {
     $str .= "</div> <!-- end pmoreinfo -->\n";
     return $str;
 }
+
+sub dep_item {
+    my ( $link, $name, $info, $desc ) = @_;
+    my $post_link = '';
+    if ($link) {
+	$link = "<a href=\"$link\">";
+	$post_link = '</a>';
+    } else {
+	$link = '';
+    }
+    if ($info) {
+	$info = " $info";
+    } else {
+	$info = '';
+    }
+    if ($desc) {
+	$desc = "</dt><dd>$desc</dd>";
+    } else {
+	$desc = '</dt>';
+    }
+
+    return "$link$name$post_link$info$desc";
+} # end dep_item
+
+sub print_deps {
+    my ( $packages, $opts, $pkg, $relations, $type) = @_;
+    my %dep_type = ('depends' => 'dep', 'recommends' => 'rec', 
+		    'suggests' => 'sug');
+    my $res = "<ul class=\"ul$dep_type{$type}\">\n";
+    my $first = 1;
+
+#    use Data::Dumper;
+#    debug( "print_deps called:\n".Dumper( $pkg, $relations, \$type ), 3 );
+
+    foreach my $rel (@$relations) {
+	my $is_old_pkgs = $rel->[0];
+	my @res_pkgs = ();
+
+	if ($is_old_pkgs)  {
+	    $res .= "<dt>";
+	} else {
+	    if ($first) {
+		$res .= "<li>";
+		$first = 0;
+	    } else {
+		$res .= "</dl></li>\n<li>";
+	    }
+	    $res .= "<dl><dt><img class=\"hidecss\" src=\"../../Pics/$dep_type{$type}.gif\" alt=\"[$dep_type{$type}]\"> ";
+	}
+
+	foreach my $rel_alt ( @$rel ) {
+	    next unless ref($rel_alt);
+	    my ( $p_name, $pkg_version, $arch_neg,
+		 $arch_str, $subsection, $available ) = @$rel_alt;
+
+	    if ($arch_str) {
+		if ($arch_neg) {
+		    $arch_str = " [".gettext("not")." $arch_str]";
+		} else {
+		    $arch_str = " [$arch_str]";
+		}
+	    }
+	    $pkg_version = "($pkg_version)" if $pkg_version;
+	    
+	    my @results;
+	    read_entry( $packages, $p_name, \@results, $opts);
+	    if ( @results ) {
+		if ( $is_old_pkgs ) {
+		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
+					      $p_name, "$pkg_version$arch_str" );
+		} else {
+		    my $short_desc = encode_entities( $results[0][-1], "<>&\"" );
+		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
+					      $p_name, "$pkg_version$arch_str", $short_desc );
+		}
+	    } elsif ( $is_old_pkgs ) {
+		push @res_pkgs, dep_item( undef, $p_name, "$pkg_version$arch_str" );
+	    } else {
+		my $short_desc = gettext( "Package not available" );
+		push @res_pkgs, dep_item( undef, $p_name, "$pkg_version$arch_str", $short_desc );
+	    }
+	    
+	}
+	
+	$res .= "\n".join( "<dt>".gettext( "or" )." ", @res_pkgs )."\n";
+    }
+    if (@$relations) {
+	$res .= "</dl></li>\n";
+	$res .= "</ul>\n";
+    } else {
+	$res = "";
+    }
+    return $res;
+} # end print_deps
+
+# sub print_src_deps {
+#     my ( $env, $lang, $pkg, $version, $type) = @_;
+#     my %dep_type = ('build-depends' => 'adep', 'build-depends-indep' => 'idep' );
+#     my $found = 0;
+#     my $res = "<ul class=\"ul$dep_type{$type}\">\n";
+#     foreach my $dep ( @{$pkg->{versions}{$version}{$type}} ) {
+#         $found = 1;
+# 	my @res_pkgs;
+# 	$res .= "<li><dl><dt><img class=\"hidecss\" src=\"../../Pics/$dep_type{$type}.gif\" alt=\"[$dep_type{$type}]\"> ";
+# 	foreach my $or_dep ( @$dep ) {
+# 	    my $p_name = $or_dep->[0];
+# 	    my $p = $env->{db}->get_pkg( $p_name );
+# 	    my $p_version = $or_dep->[1] ? "(".encode_entities( $or_dep->[1] ).
+# 		" $or_dep->[2]) " : "";
+# 	    my $not = gettext( "not" );
+# 	    if ($or_dep->[3]) {
+# 		$or_dep->[3] =~ s/\s+/, /go;
+# 		# as either all or no archs have to be prepended with
+# 		# exlamation marks, convert the first and delete the others
+# 		$or_dep->[3] =~ s/!\s*/$not /o;
+# 		$or_dep->[3] =~ s/!\s*//go;
+# 	    }
+# 	    my $arch_str = $or_dep->[3] ? " [$or_dep->[3]]" : "";
+# 	    if ( $p ) {
+# 		if ( $p->is_virtual ) {
+# 		    my $short_desc = gettext( "Virtual package" );
+# 		    push @res_pkgs, dep_item( "../virtual/$p_name", $p_name, "$p_version$arch_str", $short_desc );
+# 		} else {
+# 		    my %sections = $p->get_arch_fields( 'section',
+# 							$env->{archs} );
+# 		    my $section = $sections{max_unique};
+# 		    my %desc_md5s = $p->get_arch_fields( 'description-md5', 
+# 							 $env->{archs} );
+# 		    my $short_desc = conv_desc( $lang, encode_entities( $env->{db}->get_short_desc( $desc_md5s{max_unique}, $lang ), "<>&\"" ) );
+# 		    push @res_pkgs, dep_item( "../$section/$p_name", $p_name, "$p_version$arch_str", $short_desc );
+# 		}
+# 	    } else {
+# 		my $short_desc = gettext( "Package not available" );
+# 		push @res_pkgs, dep_item( undef, $p_name, "$p_version$arch_str", $short_desc );
+# 	    }
+# 	}
+# 	$res .= "\n".join( "<dt>\n".gettext( "or" )." ", @res_pkgs )."</dl></li>\n";
+#     }
+#     if ($found) {
+#         $res .= "\n</ul>";
+#     } else {
+#         $res = "";
+#     }
+#     return $res;
+# } # end print_src_deps
+
 
 my $ds_begin = '<dl>';
 my $ds_item_desc  = '<dt>';

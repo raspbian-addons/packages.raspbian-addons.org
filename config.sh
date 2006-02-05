@@ -37,6 +37,9 @@ searchcgi="/cgi-bin/search_packages.pl"
 webmaster=webmaster@debian.org
 contact=debian-www@lists.debian.org
 home="http://www.debian.org"
+bug_url="http://bugs.debian.org/"
+src_bug_url="http://bugs.debian.org/src:"
+qa_url="http://packages.qa.debian.org/"
 
 # Architectures
 #

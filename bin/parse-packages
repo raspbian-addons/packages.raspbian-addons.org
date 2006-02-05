@@ -66,11 +66,14 @@ for my $archive (@archives) {
 
 		$package_names{$data{'package'}} = 1;
 		my $src = $data{'package'};
+		my $src_version = '';
 		if ($data{'source'}) {
 			$src = $data{'source'};
-			$src =~ s/ .*//; # strip version info
+			$src_version = $1
+			    if $src =~ s/\s+\(\s*=\s*(.*)\).*//; # strip version info
 		}
 		$data{'source'} = $src;
+		$data{'source-version'} = $src_version;
 		my $descr = $data{'description'};
 		my $did = undef;
 		if (exists($descriptions{$descr})) {

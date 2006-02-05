@@ -1,6 +1,12 @@
 package Packages::Page;
 
+use strict;
+use warnings;
+
+use Data::Dumper;
 use Deb::Versions;
+use Packages::CGI;
+use IO::String;
 
 our $ARCHIVE_DEFAULT = '';
 our $SECTION_DEFAULT = 'main';
@@ -24,15 +30,16 @@ sub new {
 }
 
 sub merge_data {
-    my ($self, $data) = @_;
+    my ($self, $pkg, $version, $architecture, $data) = @_;
 
     local $/ = "";
-    open DATA, '<', \$data
-        or return;
+    my $strio = IO::String->new($data);
     my $merged = 0;
-    while (<DATA>) {
+    while (<$strio>) {
         next if /^\s*$/;
-        my %data = ();
+        my %data = ( package => $pkg,
+		     version => $version,
+		     architecture => $architecture );
         chomp;
         s/\n /\377/g;
         while (/^(\S+):\s*(.*)\s*$/mg) {
@@ -41,25 +48,96 @@ sub merge_data {
             $key =~ tr [A-Z] [a-z];
             $data{$key} = $value;
         }
+#	debug( "Merge package:\n".Dumper(\%data), 3 );
         $merged += $self->merge_package( \%data );
     }
     close DATA;
     return $merged;
 }
 
-our @TAKE_NEWEST = qw( description essential priority section subsection tags );
-our @STORE_ALL = qw( version source installed-size size filename md5sum
+sub gettext { return $_[0]; }
+sub split_name_mail {
+    my $string = shift;
+    my ( $name, $email );
+    if ($string =~ /(.*?)\s*<(.*)>/o) {
+        $name =  $1;
+        $email = $2;
+    } elsif ($string =~ /^[\w.-]*@[\w.-]*$/o) {
+        $name =  $string;
+        $email = $string;
+    } else {
+        $name = gettext( 'package has bad maintainer field' );
+        $email = '';
+    }
+    $name =~ s/\s+$//o;
+    return ($name, $email);
+}
+
+sub add_src_data {
+    my ($self, $src, $version, $data) = @_;
+
+    local $/ = "";
+    my $strio = IO::String->new($data);
+    my %data;
+    while (<$strio>) {
+        next if /^\s*$/;
+        chomp;
+	%data = ();
+        s/\n /\377/g;
+        while (/^(\S+):\s*(.*)\s*$/mg) {
+            my ($key, $value) = ($1, $2);
+            $value =~ s/\377/\n /g;
+            $key =~ tr [A-Z] [a-z];
+            $data{$key} = $value;
+        }
+    }
+    close DATA;
+
+    $self->{src}{name} = $src;
+    $self->{src}{version} = $version;
+    if ($data{files}) {
+	$data{files} =~ s/\A\s*//o; # remove leading spaces
+	$self->{src}{files} = [];
+        foreach my $sf ( split( /\n\s*/, $data{files} ) ) {
+            # md5, size, name
+            push @{$self->{src}{files}}, [ split( /\s+/, $sf) ];
+        }
+    }
+    my @uploaders;
+    if ($data{maintainer} ||= '') {
+	push @uploaders, [ split_name_mail( $data{maintainer} ) ];
+    }
+    if ($data{uploaders}) {
+        my @up_tmp = split( /\s*,\s*/,
+                            $data{uploaders} );
+        foreach my $up (@up_tmp) {
+            if ($up ne $data{maintainer}) { # weed out duplicates
+                push @uploaders, [ split_name_mail( $up ) ];
+            }
+        }
+    }
+    $self->{src}{uploaders} = \@uploaders;
+
+    return 1;
+}
+
+our @TAKE_NEWEST = qw( description essential priority section subsection tag
+		       archive source source-version );
+our @STORE_ALL = qw( version source source-version installed-size size
+		     filename md5sum
 		     origin bugs suite archive section );
 our @DEP_FIELDS = qw( depends pre-depends recommends suggests enhances
 		      provides conflicts );
 sub merge_package {
     my ($self, $data) = @_;
 
-    ($data{package} && $data{version} && $data{architecture}) || return;
-    $self->{package} ||= $data{package};
-    ($self->{package} eq $data{package}) || return;
+    ($data->{package} && $data->{version} && $data->{architecture}) || return;
+    $self->{package} ||= $data->{package};
+    ($self->{package} eq $data->{package}) || return;
+    debug( "merge package $data->{package}/$data->{version}/$data->{architecture} into $self (".($self->{newest}||'').")", 2 );
 
     unless ($self->{newest}) {
+	debug( "package $data->{package}/$data->{version}/$data->{architecture} is first to merge", 3 );
 	foreach my $key (@TAKE_NEWEST) {
 	    $self->{data}{$key} = $data->{$key};
 	}
@@ -75,13 +153,16 @@ sub merge_package {
         return 1;
     }
 
-    if (my $is_newest =
+    debug( "package $data->{package}/$data->{version}/$data->{architecture} is subsequent merge", 3 );
+    my $is_newest;
+    if ($is_newest =
 	(version_cmp( $data->{version}, $self->{newest} ) > 0)) {
 	$self->{newest} = $data->{version};
 	foreach my $key (@TAKE_NEWEST) {
 	    $self->{data}{$key} = $data->{$key};
 	}
     }
+    debug( "is_newest= ".($is_newest||0), 3 );
     if (!$self->{versions}{$data->{architecture}}
 	|| $is_newest
 	|| (version_cmp( $data->{version},
@@ -95,6 +176,7 @@ sub merge_package {
 	}
     }
     
+    return 1;
 }
 
 sub normalize_dependencies {
@@ -128,19 +210,36 @@ sub parse_deps {
     return (\@dep_and_norm, \@dep_and);
 }
 
+sub get_newest {
+    my ($self, $field) = @_;
+
+    return $self->{data}{$field};
+}
+sub get_src {
+    my ($self, $field) = @_;
+    
+    return $self->{src}{$field};
+}
+
+sub get_architectures {
+    my ($self) = @_;
+
+    return keys %{$self->{versions}};
+}
+
 sub get_arch_field {
     my ($self, $field) = @_;
 
-    my @result;
+    my %result;
     foreach (sort keys %{$self->{versions}}) {
-	push(@result, $self->{versions}{$_}{$field})
-	    if $self->{versions}{$_}{$field};
+	$result{$_} = $self->{versions}{$_}{$field}
+	if $self->{versions}{$_}{$field};
     }
 
-    return \@result;
+    return \%result;
 }
 
-sub get_version_string {
+sub get_versions {
     my ($self) = @_;
 
     my %versions;
@@ -150,7 +249,15 @@ sub get_version_string {
 	push @{$versions{$version}}, $_;
     }
 
-    my @versions = version_sort keys %versions;
+    return \%versions;
+}
+
+sub get_version_string {
+    my ($self) = @_;
+
+    my $versions = $self->get_versions;
+    my @versions = version_sort keys %$versions;
+    my (@v_str, $v_str, $v_str_arch);
     if ( scalar @versions == 1 ) {
 	@v_str = ( [ $versions[0], undef ] );
 	$v_str = $versions[0];
@@ -158,8 +265,8 @@ sub get_version_string {
     } else {
 	my @v_str_arch;
 	foreach ( @versions ) {
-	    push @v_str, [ $_, $versions{$_} ];
-	    push @v_str_arch, "$_ [".join(', ', @{$versions{$_}})."]";
+	    push @v_str, [ $_, $versions->{$_} ];
+	    push @v_str_arch, "$_ [".join(', ', @{$versions->{$_}})."]";
 	}
 	$v_str_arch = join( ", ", @v_str_arch );
 	$v_str = join( ", ",  @versions );
@@ -171,19 +278,20 @@ sub get_version_string {
 sub get_dep_field {
     my ($self, $dep_field) = @_;
 
-    my @architectures = ( keys %{$self->{versions}} );
+    my @architectures = $self->get_architectures;
 
     my ( %dep_pkgs, %arch_deps );
     foreach my $a ( @architectures ) {
 	next unless exists $self->{dep_fields}{$a}{$dep_field};
-	my (@a_deps_norm, @a_deps) = @{$self->{dep_fields}{$a}{$type}};
-	for ( my $i=0; $i < $#a_deps; $i++ ) { # splitted by ,	    
-	    $dep_pkgs{$a_deps_norm[$i]} = $a_deps[$i];
-	    $arch_deps{$a}{$a_deps_norm[$i]}++;
+	my ($a_deps_norm, $a_deps) = @{$self->{dep_fields}{$a}{$dep_field}};
+#	debug( "get_dep_field: $dep_field/$a: ".Dumper($a_deps_norm,$a_deps), 3 );
+	for ( my $i=0; $i < @$a_deps; $i++ ) { # splitted by ,	    
+	    $dep_pkgs{$a_deps_norm->[$i]} = $a_deps->[$i];
+	    $arch_deps{$a}{$a_deps_norm->[$i]}++;
 	}
     }
     @architectures = sort keys %arch_deps;
-#    print Dumper( \%dep_pkgs, \%arch_deps );
+ #   debug( "get_dep_field called:\n ".Dumper( \%dep_pkgs, \%arch_deps ), 3 );
     
     my @deps;
     if ( %dep_pkgs ) {
@@ -218,7 +326,7 @@ sub get_dep_field {
 	    push @deps, [ $is_old_pkgs, @res_pkgs ];
 	}
     }
-    return @deps;
+    return \@deps;
 }
 
 sub _compute_arch_str {
