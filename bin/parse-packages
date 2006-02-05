@@ -20,12 +20,15 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 use strict;
+use lib './lib';
 
 my $what = $ARGV[0] ? "non-free" : "*";
 # max. distinct results for a given package postfix
 my $MAX_PACKAGE_POSTFIXES = 100;
 
 use DB_File;
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+&Packages::Config::init( './' );
 my %packages_small = ();
 my %package_names = ();
 my %package_postfixes = ();
@@ -35,20 +38,17 @@ my @descriptions = ("we count lines one-based\000");
 my %packages_descriptions = ();
 my %descriptions_packages = ();
 
-my @archives = ( 'us', 'non-US', 'security', 'volatile', 'backports' );
-my @suites = ('oldstable', 'stable', 'testing', 'unstable', 'experimental');
-
 $/ = "";
 
-for my $archive (@archives) {
-    for my $suite (@suites) {
+for my $archive (@ARCHIVES) {
+    for my $suite (@SUITES) {
 
 	print "Reading $archive/$suite...\n";
 	my %packages_all_db;
-	tie %packages_all_db, "DB_File", "packages_all_$suite.db.new",
+	tie %packages_all_db, "DB_File", "$DBDIR/packages_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
-	open PKG, "zcat /org/packages.debian.org/archive/$archive/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
+	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
@@ -119,7 +119,7 @@ for my $archive (@archives) {
 
 print "Writing databases...\n";
 my %packages_small_db;
-tie %packages_small_db, "DB_File", "packages_small.db.new",
+tie %packages_small_db, "DB_File", "$DBDIR/packages_small.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%packages_small)) {
@@ -129,7 +129,7 @@ while (my ($k, $v) = each(%packages_small)) {
 untie %packages_small_db;
 
 my %sources_packages_db;
-tie %sources_packages_db, "DB_File", "sources_packages.db.new",
+tie %sources_packages_db, "DB_File", "$DBDIR/sources_packages.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%sources_packages)) {
@@ -139,7 +139,7 @@ while (my ($k, $v) = each(%sources_packages)) {
 untie %sources_packages_db;
 
 my %packages_descriptions_db;
-tie %packages_descriptions_db, "DB_File", "packages_descriptions.db.new",
+tie %packages_descriptions_db, "DB_File", "$DBDIR/packages_descriptions.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%packages_descriptions)) {
@@ -148,7 +148,7 @@ while (my ($k, $v) = each(%packages_descriptions)) {
 untie %packages_descriptions_db;
 
 my %descriptions_packages_db;
-tie %descriptions_packages_db, "DB_File", "descriptions_packages.db.new",
+tie %descriptions_packages_db, "DB_File", "$DBDIR/descriptions_packages.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%descriptions_packages)) {
@@ -158,10 +158,10 @@ while (my ($k, $v) = each(%descriptions_packages)) {
 untie %descriptions_packages_db;
 
 my %descriptions_db;
-tie %descriptions_db, "DB_File", "descriptions.db.new",
+tie %descriptions_db, "DB_File", "$DBDIR/descriptions.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
-open DESCR, "> descriptions.txt" or die "Error creating descriptions textfile";
+open DESCR, ">", "$DBDIR/descriptions.txt" or die "Error creating descriptions textfile";
 for (my $i=1; $i<= $#descriptions; $i++) {
 	my $plain_description = $descriptions[$i];
 	$plain_description =~ s/\n .\n/ /og;
@@ -182,7 +182,7 @@ for my $pkg (keys %package_names) {
 	}
 }
 my %package_postfixes_db;
-tie %package_postfixes_db, "DB_File", "package_postfixes.db.new",
+tie %package_postfixes_db, "DB_File", "$DBDIR/package_postfixes.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%package_postfixes)) {
@@ -197,13 +197,16 @@ while (my ($k, $v) = each(%package_postfixes)) {
 }
 untie %package_postfixes_db;
 
-rename("packages_small.db.new", "packages_small.db");
-rename("sources_packages.db.new", "sources_packages.db");
-for my $suite (@suites) {
-	rename("packages_all_$suite.db.new", "packages_all_$suite.db");
+rename("$DBDIR/packages_small.db.new", "$DBDIR/packages_small.db");
+rename("$DBDIR/sources_packages.db.new", "$DBDIR/sources_packages.db");
+for my $suite (@SUITES) {
+	rename("$DBDIR/packages_all_$suite.db.new",
+	       "$DBDIR/packages_all_$suite.db");
 }
-rename("packages_descriptions.db.new", "packages_descriptions.db");
-rename("descriptions_packages.db.new", "descriptions_packages.db");
-rename("descriptions.txt.new", "descriptions.txt");
-rename("descriptions.db.new", "descriptions.db");
-rename("package_postfixes.db.new", "package_postfixes.db");
+rename("$DBDIR/packages_descriptions.db.new",
+       "$DBDIR/packages_descriptions.db");
+rename("$DBDIR/descriptions_packages.db.new",
+       "$DBDIR/descriptions_packages.db");
+rename("$DBDIR/descriptions.txt.new", "$DBDIR/descriptions.txt");
+rename("$DBDIR/descriptions.db.new", "$DBDIR/descriptions.db");
+rename("$DBDIR/package_postfixes.db.new", "$DBDIR/package_postfixes.db");

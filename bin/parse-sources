@@ -20,30 +20,30 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 use strict;
+use lib './lib';
 
 my $what = $ARGV[0] ? "non-free" : "*";
 # max. distinct results for a given package postfix
 my $MAX_SOURCE_POSTFIXES = 100;
 
 use DB_File;
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+&Packages::Config::init( './' );
 my %sources_small = ();
 my %source_names = ();
 my %source_postfixes = ();
 
-my @archives = ( 'us', 'non-US', 'security', 'volatile', 'backports' );
-my @suites = ('oldstable', 'stable', 'testing', 'unstable', 'experimental');
-
 $/ = "";
 
-for my $archive (@archives) {
-    for my $suite (@suites) {
+for my $archive (@ARCHIVES) {
+    for my $suite (@SUITES) {
 
 	print "Reading $archive/$suite...\n";
 	my %sources_all_db;
-	tie %sources_all_db, "DB_File", "sources_all_$suite.db.new",
+	tie %sources_all_db, "DB_File", "$DBDIR/sources_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
-	open PKG, "zcat /org/packages.debian.org/archive/$archive/$suite/$what/source/Sources.gz|";
+	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/source/Sources.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
@@ -79,7 +79,7 @@ for my $archive (@archives) {
 
 print "Writing databases...\n";
 my %sources_small_db;
-tie %sources_small_db, "DB_File", "sources_small.db.new",
+tie %sources_small_db, "DB_File", "$DBDIR/sources_small.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%sources_small)) {
@@ -98,7 +98,7 @@ for my $pkg (keys %source_names) {
 	}
 }
 my %source_postfixes_db;
-tie %source_postfixes_db, "DB_File", "source_postfixes.db.new",
+tie %source_postfixes_db, "DB_File", "$DBDIR/source_postfixes.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%source_postfixes)) {
@@ -113,8 +113,8 @@ while (my ($k, $v) = each(%source_postfixes)) {
 }
 untie %source_postfixes_db;
 
-for my $suite (@suites) {
-	rename("sources_all_$suite.db.new", "sources_all_$suite.db");
+for my $suite (@SUITES) {
+	rename("$DBDIR/sources_all_$suite.db.new", "$DBDIR/sources_all_$suite.db");
 }
-rename("sources_small.db.new", "sources_small.db");
-rename("source_postfixes.db.new", "source_postfixes.db");
+rename("$DBDIR/sources_small.db.new", "$DBDIR/sources_small.db");
+rename("$DBDIR/source_postfixes.db.new", "$DBDIR/source_postfixes.db");

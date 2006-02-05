@@ -32,14 +32,17 @@ amd64_ftpsite=http://amd64.debian.net/debian
 kfreebsd_ftpsite=http://kfreebsd-gnu.debian.net/debian
 
 root=""
-searchpage="http://packages.debian.net/"
-searchcgi="/cgi-bin/search_packages.pl"
+search_page="http://packages.debian.net/"
+search_cgi="/cgi-bin/search_packages.pl"
+search_url="/search/"
+search_src_url="/search/source/"
 webmaster=webmaster@debian.org
 contact=debian-www@lists.debian.org
 home="http://www.debian.org"
 bug_url="http://bugs.debian.org/"
 src_bug_url="http://bugs.debian.org/src:"
 qa_url="http://packages.qa.debian.org/"
+ddpo_url="http://qa.debian.org/developer.php?email="
 
 # Architectures
 #

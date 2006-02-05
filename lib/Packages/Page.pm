@@ -33,8 +33,8 @@ sub merge_data {
     my ($self, $pkg, $version, $architecture, $data) = @_;
 
     my %data = ( package => $pkg,
-		     version => $version,
-		     architecture => $architecture );
+		 version => $version,
+		 architecture => $architecture );
     chomp($data);
     while ($data =~ /^(\S+):\s*(.*)\s*$/mg) {
 	my ($key, $value) = ($1, $2);
@@ -68,7 +68,8 @@ sub add_src_data {
 
     chomp($data);
     my %data = ();
-    while ($data =~ /^(\S+):\s*(.*)\s*$/mg) {
+    $data =~ s/\n\s+/\377/g;
+    while ($data =~ /^(\S+):\s*(.*)\s*$/mog) {
 	my ($key, $value) = ($1, $2);
 	$key =~ tr [A-Z] [a-z];
 	$data{$key} = $value;
@@ -77,9 +78,9 @@ sub add_src_data {
     $self->{src}{name} = $src;
     $self->{src}{version} = $version;
     if ($data{files}) {
-	$data{files} =~ s/\A\s*//o; # remove leading spaces
 	$self->{src}{files} = [];
-        foreach my $sf ( split( /\n\s*/, $data{files} ) ) {
+        foreach my $sf ( split( /\377/, $data{files} ) ) {
+	    next unless $sf;
             # md5, size, name
             push @{$self->{src}{files}}, [ split( /\s+/, $sf) ];
         }
@@ -148,7 +149,7 @@ sub merge_package {
     if (!$self->{versions}{$data->{architecture}}
 	|| $is_newest
 	|| (version_cmp( $data->{version},
-			 $self->{versions}{$data->{architecture}} ) > 0)) {
+			 $self->{versions}{$data->{architecture}}{version} ) > 0)) {
 	foreach my $key (@STORE_ALL) {
 	    $self->{versions}{$data->{architecture}}{$key}
 	    = $data->{$key};

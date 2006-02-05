@@ -22,6 +22,8 @@ use DB_File;
 use Benchmark;
 
 use Deb::Versions;
+use Packages::Config qw( $DBDIR $ROOT @SUITES @ARCHIVES @SECTIONS
+			 @ARCHITECTURES %FTP_SITES );
 use Packages::CGI;
 use Packages::Search qw( :all );
 use Packages::HTML;
@@ -48,43 +50,9 @@ $debug = 0 if !defined($debug) || $debug !~ /^\d+$/o;
 $Packages::CGI::debug = $debug;
 
 # read the configuration
-our $config_read_time ||= 0;
 our $db_read_time ||= 0;
-our ( $topdir, $ROOT, @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
-      %FTP_SITES );
 
-# FIXME: move to own module
-my $modtime = (stat( "../config.sh" ))[9];
-if ($modtime > $config_read_time) {
-    if (!open (C, '<', "../config.sh")) {
-	error( "Internal: Cannot open configuration file." );
-    }
-    while (<C>) {
-	next if /^\s*\#/o;
-	chomp;
-	$topdir = $1 if /^\s*topdir="?([^\"]*)"?\s*$/o;
-	$ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::HOME = $1 if /^\s*home="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::SEARCH_CGI = $1 if /^\s*searchcgi="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::SEARCH_PAGE = $1 if /^\s*searchpage="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::WEBMASTER_MAIL = $1 if /^\s*webmaster="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::CONTACT_MAIL = $1 if /^\s*contact="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::BUG_URL = $1 if /^\s*bug_url="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::SRC_BUG_URL = $1 if /^\s*src_bug_url="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::QA_URL = $1 if /^\s*qa_url="?([^\"]*)"?\s*$/o;
-	$FTP_SITES{us} = $1 if /^\s*ftpsite="?([^\"]*)"?\s*$/o;
-	$FTP_SITES{$1} = $2 if /^\s*(\w+)_ftpsite="?([^\"]*)"?\s*$/o;
-	@SUITES = split(/\s+/, $1) if /^\s*suites="?([^\"]*)"?\s*$/o;
-	@SECTIONS = split(/\s+/, $1) if /^\s*sections="?([^\"]*)"?\s*$/o;
-	@ARCHIVES = split(/\s+/, $1) if /^\s*archives="?([^\"]*)"?\s*$/o;
-	@ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
-    }
-    close (C);
-    debug( "read config ($modtime > $config_read_time)" );
-    $config_read_time = $modtime;
-}
-my $DBDIR = $topdir . "/files/db";
-my $thisscript = $Packages::HTML::SEARCH_CGI;
+&Packages::Config::init( '../' );
 
 if (my $path = $input->param('path')) {
     my @components = map { lc $_ } split /\//, $path;
@@ -107,21 +75,25 @@ if (my $path = $input->param('path')) {
     }
 }
 
-my ( $pkg, $suite, $format );
+my ( $pkg, $suite, @sections, @archs, @archives, $format );
 my %params_def = ( package => { default => undef, match => '^([a-z0-9.+-]+)$',
 				var => \$pkg },
 		   suite => { default => undef, match => '^(\w+)$',
 			      var => \$suite },
+		   archive => { default => 'all', match => '^(\w+)$',
+				array => ',', var => \@archives,
+				replace => { all => [qw(us security)] } },
+		   section => { default => 'all', match => '^(\w+)$',
+				array => ',', var => \@sections,
+				replace => { all => \@SECTIONS } },
+		   arch => { default => 'any', match => '^(\w+)$',
+			     array => ',', var => \@archs,
+			     replace => { any => \@ARCHITECTURES } },
 		   format => { default => 'html', match => '^(\w+)$',
                                var => \$format }
 		   );
 my %opts;
 my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
-
-$opts{h_suites} =   { $suite => 1 };
-$opts{h_archs} =    { map { $_ => 1 } @ARCHITECTURES };
-$opts{h_sections} = { map { $_ => 1 } @SECTIONS };
-$opts{h_archives} = { map { $_ => 1 } @ARCHIVES };
 
 #XXX: Don't use alternative output formats yet
 $format = 'html';
@@ -131,14 +103,20 @@ if ($format eq 'html') {
 
 if ($params{errors}{package}) {
     fatal_error( "package not valid or not specified" );
+    $pkg = '';
 }
 if ($params{errors}{suite}) {
     fatal_error( "suite not valid or not specified" );
+    $suite = '';
 }
+
+$opts{h_suites} =   { $suite => 1 };
+$opts{h_archs} =    { map { $_ => 1 } @archs };
+$opts{h_sections} = { map { $_ => 1 } @sections };
+$opts{h_archives} = { map { $_ => 1 } @archives };;
 
 my $DL_URL = "$pkg/download";
 my $FILELIST_URL = "$pkg/files";
-my $DDPO_URL = "http://qa.debian.org/developer.php?email=";
 
 our (%packages, %packages_all, %sources_all, %descriptions);
 my (@results, @non_results);
@@ -151,16 +129,16 @@ sub gettext { return $_[0]; };
 my $st0 = new Benchmark;
 unless (@Packages::CGI::fatal_errors) {
     my $dbmodtime = (stat("$DBDIR/packages_small.db"))[9];
+    tie %packages_all, 'DB_File', "$DBDIR/packages_all_$suite.db",
+    O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/packages_all_$suite.db: $!";
+    tie %sources_all, 'DB_File', "$DBDIR/sources_all_$suite.db",
+    O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $DBDIR/sources_all_$suite.db: $!";
     if ($dbmodtime > $db_read_time) {
 	tie %packages, 'DB_File', "$DBDIR/packages_small.db",
 	O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie DB $DBDIR/packages_small.db: $!";
-	tie %packages_all, 'DB_File', "$DBDIR/packages_all_$suite.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $DBDIR/packages_all_$suite.db: $!";
-	tie %sources_all, 'DB_File', "$DBDIR/sources_all_$suite.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $DBDIR/sources_all_$suite.db: $!";
 	tie %descriptions, 'DB_File', "$DBDIR/descriptions.db",
 	O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie DB $DBDIR/descriptions.db: $!";
@@ -239,15 +217,26 @@ unless (@Packages::CGI::fatal_errors) {
 # 	    $long_desc = conv_desc( $lang, $long_desc );
 # 	    $short_desc = conv_desc( $lang, $short_desc );
 
-	    my %all_suites = map { $_->[2] => 1 } (@results, @non_results);
+	    my %all_suites;
+	    foreach (@results, @non_results) {
+		my $a = $_->[1];
+		my $s = $_->[2];
+		if ($a =~ /^(?:us|security)$/o) {
+		    $all_suites{$s}++;
+		} else {
+		    $all_suites{"$s/$a"}++;
+		}
+	    }
 	    foreach (suites_sort(keys %all_suites)) {
-		if ($suite eq $_) {
+		if (("$suite/$archive" eq $_)
+		    || (!$all_suites{"$suite/$archive"} && ($suite eq $_))) {
 		    $package_page .= "[ <strong>$_</strong> ] ";
 		} else {
 		    $package_page .=
-			"[ <a href=\"../$_/".uri_escape($pkg)."\">$_</a> ] ";
+			"[ <a href=\"$ROOT/$_/".uri_escape($pkg)."\">$_</a> ] ";
 		}
 	    }
+	    $package_page .= '<br>';
 
  	    $package_page .= simple_menu( [ gettext( "Distribution:" ),
  					    gettext( "Overview over this suite" ),
@@ -359,6 +348,7 @@ unless (@Packages::CGI::fatal_errors) {
 	    # more information
 	    #
 	    $package_page .= pmoreinfo( name => $pkg, data => $page,
+					opts => \%opts,
 					env => \%FTP_SITES,
 					bugreports => 1, sourcedownload => 1,
 					changesandcopy => 1, maintainers => 1,

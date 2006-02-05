@@ -64,6 +64,7 @@ package Deb::Versions;
 
 use strict;
 use Exporter;
+use Carp qw(cluck);
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( version_cmp version_sort suites_cmp suites_sort );
@@ -79,7 +80,7 @@ sub version_cmp {
 	( $e1, $u1, $d1 ) = ( $1, $2, $3 );
 	$e1 ||= 0;
     } else {
-	warn "This seems not to be a valid version number:"
+	cluck "This seems not to be a valid version number:"
 	    . "<$ver1>\n";
 	return -1;
     }
@@ -87,7 +88,7 @@ sub version_cmp {
         ( $e2, $u2, $d2 ) = ( $1, $2, $3 );
 	$e2 ||= 0;
     } else {
-        warn "This seems not to be a valid version number:"
+        cluck "This seems not to be a valid version number:"
             . "<$ver2>\n";
         return 1;
     }
@@ -156,11 +157,25 @@ our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
 		       etch testing testing-proposed-updates sid unstable
 		       experimental warty hoary hoary-backports breezy
 		       breezy-backports dapper );
-my $i = 100;
-our %suites_sort = map { $_ => $i-- } @SUITES_SORT;
+our @ARCHIVE_SORT = qw( security updates volatile backports );
+my $i = 1000;
+our %suites_sort = map { $_ => ($i-=10) } @SUITES_SORT;
+$i = 0;
+our %archive_sort = map { $_ => $i++ } @ARCHIVE_SORT;
 
 sub suites_cmp {
-    return ($suites_sort{$_[0]} <=> $suites_sort{$_[1]});
+    my ($s_a, $s_b) = @_;
+    my $cmp_a = $suites_sort{$s_a};
+    unless ($cmp_a) {
+	$cmp_a = $suites_sort{$1} - $archive_sort{$2}
+	if $s_a =~ m;^(.+?)[/-](.*)$;o;
+    }
+    my $cmp_b = $suites_sort{$s_b};
+    unless ($cmp_b) {
+	$cmp_b = $suites_sort{$1} - $archive_sort{$2}
+	if $s_b =~ m;^(.+?)[/-](.*)$;o;
+    }
+    return ($cmp_a <=> $cmp_b);
 }
 
 sub suites_sort {

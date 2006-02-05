@@ -361,16 +361,23 @@ sub read_entry {
     read_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
 sub read_entry_simple {
-    my ($hash, $key, $suite) = @_;
+    my ($hash, $key, $archives, $suite) = @_;
     my $result = $hash->{$key} || '';
+    my @data_fuzzy;
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2);
 	if ($data[1] eq $suite) {
-	    debug( "Using entry ".join( ':', @data), 2);
-	    return \@data;
-	}
+	    if ($archives->{$data[0]}) {
+		debug( "Using entry ".join( ':', @data), 2);
+		return \@data;
+	    } elsif ($data[0] eq 'us') {
+		debug( "Fuzzy entry ".join( ':', @data), 2);
+		@data_fuzzy = @data;
+	    }
+	} 
     }
+    return \@data_fuzzy;
 }
 sub read_src_entry {
     my ($hash, $key, $results, $opts) = @_;

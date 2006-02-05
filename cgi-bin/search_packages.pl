@@ -21,6 +21,8 @@ use DB_File;
 use Benchmark;
 
 use Deb::Versions;
+use Packages::Config qw( $DBDIR $ROOT $SEARCH_CGI $SEARCH_PAGE
+			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES );
 use Packages::CGI;
 use Packages::Search qw( :all );
 use Packages::HTML ();
@@ -46,37 +48,9 @@ $debug = 0 if !defined($debug) || $debug !~ /^\d+$/o;
 $Packages::CGI::debug = $debug;
 
 # read the configuration
-our $config_read_time ||= 0;
 our $db_read_time ||= 0;
-our ( $topdir, $ROOT, @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES );
 
-# FIXME: move to own module
-my $modtime = (stat( "../config.sh" ))[9];
-if ($modtime > $config_read_time) {
-    if (!open (C, '<', "../config.sh")) {
-	error( "Internal: Cannot open configuration file." );
-    }
-    while (<C>) {
-	next if /^\s*\#/o;
-	chomp;
-	$topdir = $1 if /^\s*topdir="?([^\"]*)"?\s*$/o;
-	$ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::HOME = $1 if /^\s*home="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::SEARCH_CGI = $1 if /^\s*searchcgi="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::SEARCH_PAGE = $1 if /^\s*searchpage="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::WEBMASTER_MAIL = $1 if /^\s*webmaster="?([^\"]*)"?\s*$/o;
-	$Packages::HTML::CONTACT_MAIL = $1 if /^\s*contact="?([^\"]*)"?\s*$/o;
-	@SUITES = split(/\s+/, $1) if /^\s*suites="?([^\"]*)"?\s*$/o;
-	@SECTIONS = split(/\s+/, $1) if /^\s*sections="?([^\"]*)"?\s*$/o;
-	@ARCHIVES = split(/\s+/, $1) if /^\s*archives="?([^\"]*)"?\s*$/o;
-	@ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
-    }
-    close (C);
-    debug( "read config ($modtime > $config_read_time)" );
-    $config_read_time = $modtime;
-}
-my $DBDIR = $topdir . "/files/db";
-my $thisscript = $Packages::HTML::SEARCH_CGI;
+&Packages::Config::init( '../' );
 
 if (my $path = $input->param('path')) {
     my @components = map { lc $_ } split /\//, $path;
@@ -95,6 +69,8 @@ if (my $path = $input->param('path')) {
 	    $input->param('archive', $_);
 	} elsif ($ARCHITECTURES{$_}) {
 	    $input->param('arch', $_);
+	} elsif ($_ eq 'source') {
+	    $input->param('searchon','sourcenames');
 	}
     }
 }
@@ -261,7 +237,7 @@ if (!@Packages::CGI::fatal_errors && !@results) {
 	    
 	    if ($exact) {
 		$printed++;
-		hint( "You have searched only for exact matches of the package name. You can try to search for <a href=\"$thisscript?exact=0&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">package names that contain your search string</a>." );
+		hint( "You have searched only for exact matches of the package name. You can try to search for <a href=\"$SEARCH_CGI?exact=0&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">package names that contain your search string</a>." );
 	    }
 	} else {
 	    if (($suites_enc eq 'all')
@@ -274,10 +250,10 @@ if (!@Packages::CGI::fatal_errors && !@results) {
 	    
 	    unless ($subword) {
 		$printed++;
-		hint( "You have searched only for words exactly matching your keywords. You can try to search <a href=\"$thisscript?subword=1&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">allowing subword matching</a>." );
+		hint( "You have searched only for words exactly matching your keywords. You can try to search <a href=\"$SEARCH_CGI?subword=1&amp;searchon=$searchon&amp;suite=$suites_param&amp;case=$case&amp;section=$sections_param&amp;keywords=$keyword_esc&amp;arch=$archs_param\">allowing subword matching</a>." );
 	    }
 	}
-	hint( ( $printed ? "Or you" : "You" )." can try a different search on the <a href=\"$Packages::HTML::SEARCH_PAGE#search_packages\">Packages search page</a>." );
+	hint( ( $printed ? "Or you" : "You" )." can try a different search on the <a href=\"$SEARCH_PAGE#search_packages\">Packages search page</a>." );
 	    
     }
 }

@@ -8,6 +8,7 @@ use HTML::Entities;
 
 use Packages::CGI;
 use Packages::Search qw( read_entry_simple );
+use Packages::Config qw( :all );
 
 #use Packages::Util;
 #use Packages::I18N::Locale;
@@ -25,10 +26,6 @@ our @EXPORT = qw( header title trailer file_changed time_stamp
 		  ds_begin ds_item ds_end note title marker pdesc
 		  pdeplegend pkg_list pmoreinfo print_deps );
 
-our ( $HOME, $ROOT, $CONTACT_MAIL, $WEBMASTER_MAIL,
-      $SEARCH_PAGE, $SEARCH_CGI, $SEARCH_URL,
-      $SRC_SEARCH_URL, $CONTENTS_SEARCH_CGI,
-      $CN_HELP_URL, $BUG_URL, $SRC_BUG_URL, $QA_URL );
 our $CHANGELOG_URL = '/changelogs';
 
 sub img {
@@ -120,6 +117,7 @@ sub pmoreinfo {
     
     my $name = $info{name} or return;
     my $env = $info{env} or return;
+    my $opts = $info{opts} or return;
     my $page = $info{data} or return;
     my $is_source = $info{is_source};
 
@@ -139,8 +137,11 @@ sub pmoreinfo {
     my $src_dir = $page->get_src('directory');
     if ($info{sourcedownload}) {
 	my $files = $page->get_src( 'files' );
+	my $path = (@{$opts->{archive}} >1) ?
+	    $opts->{suite} :
+	    "$opts->{suite}/$opts->{archive}[0]";
 	$str .= gettext( "Source Package:" );
-	$str .= " <a href=\"../source/$source\">$source</a>, ".
+	$str .= " <a href=\"/$path/source/$source\">$source</a>, ".
 	    gettext( "Download" ).":\n";
 
 	unless (@$files) {
@@ -287,7 +288,7 @@ sub print_deps {
 	    my @results;
 	    my %short_descs;
 	    my $short_desc = $short_descs{$p_name} ||
-		(read_entry_simple( $packages, $p_name, $opts->{suite}))->[-1];
+		(read_entry_simple( $packages, $p_name, $opts->{h_archives}, $opts->{suite}))->[-1];
 	    if ( $short_desc ) {
 		if ( $is_old_pkgs ) {
 		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
