@@ -157,9 +157,11 @@ our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
 		       etch testing testing-proposed-updates sid unstable
 		       experimental warty hoary hoary-backports breezy
 		       breezy-backports dapper );
-our @ARCHIVE_SORT = qw( security updates volatile backports );
+our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
+our @PRIORITY_SORT = qw( required important standard optional extra );
 my $i = 1000;
 our %suites_sort = map { $_ => ($i-=10) } @SUITES_SORT;
+our %priority_sort = map { $_ => $i-- } @PRIORITY_SORT;
 $i = 0;
 our %archive_sort = map { $_ => $i++ } @ARCHIVE_SORT;
 
@@ -180,6 +182,14 @@ sub suites_cmp {
 
 sub suites_sort {
     return sort { suites_cmp( $b, $a ) } @_;
+}
+
+sub priority_cmp {
+    return ($priority_sort{$_[0]} <=> $priority_sort{$_[1]});
+}
+
+sub priority_sort {
+    return sort { priority_cmp( $b, $a ) } @_;
 }
 
 

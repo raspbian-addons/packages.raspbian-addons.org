@@ -1,0 +1,288 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use POSIX;
+use File::Path;
+use DB_File;
+use Storable;
+use HTML::Entities;
+
+use lib './lib';
+
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+use Packages::HTML;
+use Packages::Page;
+&Packages::Config::init( './' );
+sub gettext { return $_[0]; }
+sub dgettext { return $_[1]; }
+
+my $wwwdir = "$TOPDIR/www";
+
+tie my %packages, 'DB_File', "$DBDIR/packages_small.db",
+    O_RDONLY, 0666, $DB_BTREE
+    or die "couldn't tie DB $DBDIR/packages_small.db: $!";
+
+my $sections = retrieve "$DBDIR/sections.info";
+my $subsections = retrieve "$DBDIR/subsections.info";
+# work around problems with non-US security updates
+$subsections->{oldstable}{us}{'non-US'}++;
+my $priorities = retrieve "$DBDIR/priorities.info";
+
+#use Data::Dumper;
+#print STDERR Dumper($sections, $subsections, $priorities);
+my %sections_descs = (
+		      'admin'		=> [ "Administration Utilities",
+					     "Utilities to administer system resources, manage user accounts, etc." ],
+		      'base'		=> [ "Base Utilities",
+					     "Basic needed utilities of every Debian system." ],
+		      'comm'		=> [ "Communication Programs",
+					     "Software to use your modem in the old fashioned style." ],
+		      'devel'		=> [ "Development",
+					     "Development utilities, compilers, development environments, libraries, etc." ],
+		      'doc'		=> [ "Documentation",
+					     "FAQs, HOWTOs and other documents trying to explain everything related to Debian, and software needed to browse documentation (man, info, etc)." ],
+		      'editors'	=> [ "Editors",
+				     "Software to edit files. Programming environments." ],
+		      'electronics'	=> [ "Electronics",
+					     "Electronics utilities." ],
+		      'embedded'	=> [ "Embedded software",
+					     "Software suitable for use in embedded applications." ],
+		      'games'		=> [ "Games",
+					     "Programs to spend a nice time with after all this setting up." ],
+		      'gnome'		=> [ "GNOME",
+					     "The GNOME desktop environment, a powerful, easy to use set of integrated applications." ],
+		      'graphics'	=> [ "Graphics",
+					     "Editors, viewers, converters... Everything to become an artist." ],
+		      'hamradio'	=> [ "Ham Radio",
+					     "Software for ham radio." ],
+		      'interpreters'	=> [ "Interpreters",
+					     "All kind of interpreters for interpreted languages. Macro processors." ],
+		      'kde'		=> [ "KDE",
+					     "The K Desktop Environment, a powerful, easy to use set of integrated applications." ],
+		      'libs'		=> [ "Libraries",
+					     "Libraries to make other programs work. They provide special features to developers." ],
+		      'libdevel'	=> [ "Library development",
+					     "Libraries necessary for developers to write programs that use them." ],
+		      'mail'		=> [ "Mail",
+					     "Programs to route, read, and compose E-mail messages." ],
+		      'math'		=> [ "Mathematics",
+					     "Math software." ],
+		      'misc'		=> [ "Miscellaneous",
+					     "Miscellaneous utilities that didn\'t fit well anywhere else." ],
+		      'net'		=> [ "Network",
+					     "Daemons and clients to connect your Debian GNU/Linux system to the world." ],
+		      'news'		=> [ "Newsgroups",
+					     "Software to access Usenet, to set up news servers, etc." ],
+		      'non-US'	=> [ "Software restricted in the U.S.",
+				     "These packages probably may not be used in or distributed from the U.S. due to software patents. You should check the regulations in your country before using this software." ],
+		      'oldlibs'	=> [ "Old Libraries",
+				     "Old versions of libraries, kept for backward compatibility with old applications." ],
+		      'otherosfs'	=> [ "Other OS\'s and file systems",
+					     "Software to run programs compiled for other operating system, and to use their filesystems." ],
+		      'perl'		=> [ "Perl",
+					     "Everything about Perl, an interpreted scripting language." ],
+		      'python'	=> [ "Python",
+				     "Everything about Python, an interpreted, interactive object oriented language." ],
+		      'science'	=> [ "Science",
+				     "Basic tools for scientific work" ],
+		      'shells'	=> [ "Shells",
+				     "Command shells. Friendly user interfaces for beginners." ],
+		      'sound'		=> [ "Sound",
+					     "Utilities to deal with sound: mixers, players, recorders, CD players, etc." ],
+		      'tex'		=> [ "TeX",
+					     "The famous typesetting software and related programs." ],
+		      'text'		=> [ "Text Processing",
+					     "Utilities to format and print text documents." ],
+		      'utils'		=> [ "Utilities",
+					     "Utilities for file/disk manipulation, backup and archive tools, system monitoring, input systems, etc." ],
+		      'virtual'	=> [ "Virtual packages",
+				     "Virtual packages." ],
+		      'web'		=> [ "Web Software",
+					     "Web servers, browsers, proxies, download tools etc." ],
+		      'x11'		=> [ "X Window System software",
+					     "X servers, libraries, fonts, window managers, terminal emulators and many related applications." ],
+		      'debian-installer' => [ "debian-installer udeb packages",
+					      "Special packages for building customized debian-installer variants. Do not install them on a normal system!" ],
+		      );
+
+
+my (%pages);
+
+foreach my $s (@SUITES) {
+    foreach my $a (@ARCHIVES) {
+	next if $a eq 'security';
+	next if $a eq 'non-US';
+	my $key = ($a eq 'us') ? $s : "$s/$a";
+	mkpath ( "$wwwdir/$key" );
+	open $pages{$key}{index}{fh}, '>', "$wwwdir/$key/index.en.html.new"
+	    or die "can't open index file for output: $!";
+	open $pages{$key}{fh}, '>', "$wwwdir/$key/allpackages.en.html.new"
+	    or die "can't open index file for output: $!";
+
+	my $title = sprintf( gettext ( "Software Packages in \"%s\"" ),
+			     $s );
+	my $index_title = sprintf( gettext ( "List of sections in \"%s\"" ),
+				   $s );
+	print {$pages{$key}{fh}} header( title => $title,
+					 title_keywords => "debian, $s",
+					 desc => encode_entities( $title, '"' ),
+					 lang => 'en' ),
+	title( $title ), '<dl>';
+	print {$pages{$key}{index}{fh}} header( title => $index_title,
+						title_keywords => "debian, $s",
+						desc => encode_entities( $index_title, '"' ),
+						lang => 'en' ),
+	title( $index_title ), '<div id="lefthalfcol"><dl>';
+
+	foreach my $sec (keys %{$sections->{$s}{$a}}) {
+	    mkpath ( "$wwwdir/$key/$sec" );
+	    open $pages{$key}{$sec}{fh}, '>', "$wwwdir/$key/$sec/index.en.html.new"
+		or die "can't open index file for output: $!";
+	    $title = sprintf( gettext ( "Software Packages in \"%s\", section %s" ),
+			      $s, $sec );
+	    print {$pages{$key}{$sec}{fh}} header( title => $title,
+						   title_keywords => "debian, $s, $sec",
+						   desc => encode_entities( $title, '"' ),
+						   lang => 'en' ),
+	    title( $title ), '<dl>';
+	}
+	my $i = 0; my $num_sections = keys %{$subsections->{$s}{$a}};
+	foreach my $ssec (keys %{$subsections->{$s}{$a}}) {
+	    next if $ssec eq '-';
+	    mkpath ( "$wwwdir/$key/$ssec" );
+	    open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
+		or die "can't open index file for output: $!";
+	    $title = sprintf( gettext ( "Software Packages in \"%s\", subsection %s" ),
+			      $s, $ssec );
+	    print {$pages{$key}{$ssec}{fh}} header( title => $title,
+						    title_keywords => "debian, $s, $ssec",
+						    desc => encode_entities( $title, '"' ),
+						    lang => 'en' ),
+	    title( $title ), '<dl>';
+
+	    if ($sections_descs{$ssec}) {
+		print {$pages{$key}{index}{fh}} "<dt><a href=\"$ssec/\">".dgettext( 'sections', $sections_descs{$ssec}[0] )."</a></dt><dd>".dgettext( 'sections', $sections_descs{$ssec}[1] )."</dd>\n";
+		$i++;
+		if ($i eq ceil($num_sections/2)) {
+		    print {$pages{$key}{index}{fh}} "</dl>\n</div> <!-- end lefthalfcol -->\n<div id=\"righthalfcol\">\n<dl>\n";
+		}
+	    }
+	}
+	foreach my $prio (keys %{$priorities->{$s}{$a}}) {
+	    next if $prio eq '-';
+	    mkpath ( "$wwwdir/$key/$prio" );
+	    open $pages{$key}{$prio}{fh}, '>', "$wwwdir/$key/$prio/index.en.html.new"
+		or die "can't open index file for output: $!";
+	    $title = sprintf( gettext ( "Software Packages in \"%s\", priority %s" ),
+			      $s, $prio );
+	    print {$pages{$key}{$prio}{fh}} header( title => $title,
+						    title_keywords => "debian, $s, $prio",
+						    desc => encode_entities( $title, '"' ),
+						    lang => 'en' ),
+	    title( $title ), '<dl>';
+	}
+    }
+}
+
+while (my ($pkg, $data) = each %packages) {
+    my %pkg;
+    foreach (split /\000/o, $data) {
+	my @data = split ( /\s/o, $_, 8 );
+	my $key = $data[1];
+	if ($data[0] !~ /^(?:us|security|non-US)$/o) {
+	    $key = "$data[1]/$data[0]";
+	}
+	$pkg{$key} ||= new Packages::Page( $pkg );
+	$pkg{$key}->merge_package( { package => $pkg,
+				     archive => $data[0],
+				     suite => $data[1],
+				     architecture => $data[2],
+				     section => $data[3],
+				     subsection => $data[4],
+				     priority => $data[5],
+				     version => $data[6],
+				     description => $data[7] } );
+    }
+    while (my ($key, $entry) = each %pkg) {
+	my (undef, $v_str) = $entry->get_version_string;
+	my $subsection = $entry->get_newest( 'subsection' );
+	my $section = $entry->get_newest( 'section' );
+	my $archive = $entry->get_newest( 'archive' );
+	my $short_desc_txt = $entry->get_newest( 'description' );
+	my $short_desc = encode_entities( $short_desc_txt, "<>&\"" );
+	my $priority = $entry->get_newest( 'priority' );
+
+	my $str = "<dt><a href=\"$pkg\">$pkg</a> ($v_str) ";
+	my $txt_str = "$pkg ($v_str)";
+	if ($section ne 'main') {
+	    $str .= marker( $section );
+	    $txt_str .= " [$section]";
+	}
+	if ($archive ne 'us') {
+	    $str .= marker( $archive );
+	    $txt_str .= " [$archive]";
+	}
+	$str .= "</dt>\n     <dd>$short_desc</dd>\n";
+        $txt_str .= " $short_desc_txt\n";
+	print {$pages{$key}{fh}} $str
+	    or die "couldn't write to output file: $!";
+	print {$pages{$key}{$section}{fh}} $str
+	    or die "couldn't write to output file: $!";
+	if ($subsection ne '-') {
+	    print {$pages{$key}{$subsection}{fh}} $str
+		or die "couldn't write to output file: $!";
+	}
+	if ($priority ne '-') {
+	    print {$pages{$key}{$priority}{fh}} $str
+		or die "couldn't write to output file: $!";
+	}
+    }
+}
+
+foreach my $s (@SUITES) {
+    foreach my $a (@ARCHIVES) {
+	next if $a eq 'security';
+	next if $a eq 'non-US';
+	my $key = ($a eq 'us') ? $s : "$s/$a";
+	my $root = ($a eq 'us') ? '' : '../';
+	print {$pages{$key}{index}{fh}} '</dl></div>',
+	"<p class=\"psmallcenter\"><a href=\"allpackages\" title=\"".gettext( "List of all packages" )."\">".
+        gettext( "All packages" ) ."</a><br>(<a href=\"allpackages.en.txt.gz\">".
+        gettext( "compact compressed textlist" )."</a>)</p>\n";
+	print {$pages{$key}{index}{fh}} trailer( "$root../" );
+	close $pages{$key}{index}{fh} or
+	    warn "can't open index file for output $wwwdir/$key/index.en.html.new: $!";
+	rename( "$wwwdir/$key/index.en.html.new",
+		"$wwwdir/$key/index.en.html" );
+	print {$pages{$key}{fh}} '</dl>', trailer( "$root../" );
+	close $pages{$key}{fh} or
+	    warn "can't close index file $wwwdir/$key/allpackages.en.html.new: $!";
+	rename( "$wwwdir/$key/allpackages.en.html.new",
+		"$wwwdir/$key/allpackages.en.html" );
+	foreach my $sec (keys %{$sections->{$s}{$a}}) {
+	    print {$pages{$key}{$sec}{fh}} '</dl>', trailer( "$root../../" );
+	    close $pages{$key}{$sec}{fh} or
+		warn "can't close index file $wwwdir/$key/$sec/index.en.html.new: $!";
+	    rename( "$wwwdir/$key/$sec/index.en.html.new",
+		    "$wwwdir/$key/$sec/index.en.html" );
+	}
+	foreach my $ssec (keys %{$subsections->{$s}{$a}}) {
+	    next if $ssec eq '-';
+	    print {$pages{$key}{$ssec}{fh}} '</dl>', trailer( "$root../../" );
+	    close $pages{$key}{$ssec}{fh} or
+		warn "can't close index file $wwwdir/$key/$ssec/index.en.html.new: $!";
+	    rename( "$wwwdir/$key/$ssec/index.en.html.new",
+		    "$wwwdir/$key/$ssec/index.en.html" );
+	}
+	foreach my $prio (keys %{$priorities->{$s}{$a}}) {
+	    next if $prio eq '-';
+	    print {$pages{$key}{$prio}{fh}} '</dl>', trailer( "$root../../" );
+	    close $pages{$key}{$prio}{fh} or
+		warn "can't close index file $wwwdir/$key/$prio/index.en.html.new: $!";
+	    rename( "$wwwdir/$key/$prio/index.en.html.new",
+		    "$wwwdir/$key/$prio/index.en.html" );
+	}
+    }
+}

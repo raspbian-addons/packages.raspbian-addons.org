@@ -27,6 +27,7 @@ my $what = $ARGV[0] ? "non-free" : "*";
 my $MAX_PACKAGE_POSTFIXES = 100;
 
 use DB_File;
+use Storable;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
 &Packages::Config::init( './' );
 my %packages_small = ();
@@ -37,6 +38,10 @@ my %descriptions = ();
 my @descriptions = ("we count lines one-based\000");
 my %packages_descriptions = ();
 my %descriptions_packages = ();
+
+my %sections = ();
+my %subsections = ();
+my %priorities = ();
 
 $/ = "";
 
@@ -70,10 +75,10 @@ for my $archive (@ARCHIVES) {
 		if ($data{'source'}) {
 			$src = $data{'source'};
 			$src_version = $1
-			    if $src =~ s/\s+\(\s*=\s*(.*)\).*//; # strip version info
+			    if $src =~ s/\s+\((.*)\).*//; # strip version info
 		}
 		$data{'source'} = $src;
-		$data{'source-version'} = $src_version;
+		$data{'source-version'} = $src_version if $src_version;
 		my $descr = $data{'description'};
 		my $did = undef;
 		if (exists($descriptions{$descr})) {
@@ -94,10 +99,15 @@ for my $archive (@ARCHIVES) {
 		my $subsection = $data{section} || '-';
 		if ($data{section} && ($data{section} =~ m=/=o)) {
 		    ($section, $subsection) = split m=/=o, $data{section}, 2;
+		    ($subsection, $section) = split m=/=o, $data{section}, 2
+			if $section eq 'non-US';
 		}
 		$data{'section'} = $section;
 		$data{'subsection'} = $subsection;
 		$data{'priority'} ||= '-';
+		$sections{$suite}{$archive}{$section}++;
+		$subsections{$suite}{$archive}{$subsection}++;
+		$priorities{$suite}{$archive}{$data{priority}}++;
 		$packages_small{$data{'package'}} .= "$archive $suite $data{'architecture'} ".
 			"$section $subsection $data{'priority'} $data{'version'} $sdescr\000";
 		$sources_packages{$src} .=
@@ -196,6 +206,10 @@ while (my ($k, $v) = each(%package_postfixes)) {
 	$package_postfixes_db{$k} = $v;
 }
 untie %package_postfixes_db;
+
+store \%sections, "$DBDIR/sections.info";
+store \%subsections, "$DBDIR/subsections.info";
+store \%priorities, "$DBDIR/priorities.info";
 
 rename("$DBDIR/packages_small.db.new", "$DBDIR/packages_small.db");
 rename("$DBDIR/sources_packages.db.new", "$DBDIR/sources_packages.db");
