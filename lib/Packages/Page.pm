@@ -6,7 +6,6 @@ use warnings;
 use Data::Dumper;
 use Deb::Versions;
 use Packages::CGI;
-use IO::String;
 
 our $ARCHIVE_DEFAULT = '';
 our $SECTION_DEFAULT = 'main';

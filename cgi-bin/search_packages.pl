@@ -12,6 +12,7 @@
 # see http://www.fsf.org/copyleft/gpl.html for a copy of the license
 
 use strict;
+use lib '../lib';
 use CGI qw( -oldstyle_urls );
 use CGI::Carp qw( fatalsToBrowser );
 use POSIX;

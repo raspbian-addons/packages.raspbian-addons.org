@@ -144,7 +144,7 @@ sub pmoreinfo {
 	$str .= " <a href=\"/$path/source/$source\">$source</a>, ".
 	    gettext( "Download" ).":\n";
 
-	unless (@$files) {
+	unless (defined($files) and @$files) {
 	    $str .= gettext( "Not found" );
 	} else {
 	    foreach( @$files ) {

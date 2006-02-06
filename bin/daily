@@ -19,7 +19,7 @@
 # Should run after the mirror pulse.  The mirror tends to finish by
 # the ctime of rsync.log.* in ~archvsync.
 
-topdir=/org/packages.debian.org
+source config.sh
 files=$topdir/files
 logs=$files/logs
 log=$logs/cron.log

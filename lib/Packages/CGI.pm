@@ -30,6 +30,9 @@ sub debug {
 sub msg {
     push @msgs, $_[0];
 }
+sub note {
+    push @notes, $_[0];
+}
 sub notes {
     push @notes, [ @_ ];
 }
