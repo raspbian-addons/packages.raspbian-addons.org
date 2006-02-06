@@ -83,7 +83,7 @@ my %params_def = ( package => { default => undef, match => '^([a-z0-9.+-]+)$',
 			      var => \$suite },
 		   archive => { default => 'all', match => '^(\w+)$',
 				array => ',', var => \@archives,
-				replace => { all => [qw(us security)] } },
+				replace => { all => [qw(us security non-US)] } },
 		   section => { default => 'all', match => '^(\w+)$',
 				array => ',', var => \@sections,
 				replace => { all => \@SECTIONS } },
@@ -170,6 +170,7 @@ unless (@Packages::CGI::fatal_errors) {
 	    my $source = $page->get_newest( 'source' );
 	    my $source_version = $page->get_newest( 'source-version' )
 		|| $version;
+	    debug( "find source package: source=$source (=$source_version)", 1);
 	    my $src_data = $sources_all{"$source $source_version"};
 	    unless ($src_data) { #fucking binNMUs
 		my $versions = $page->get_versions;
@@ -184,7 +185,8 @@ unless (@Packages::CGI::fatal_errors) {
 		}
 		error( "couldn't find source package" ) unless $src_data;
 	    }
-	    $page->add_src_data( $source, $source_version, $src_data );
+	    $page->add_src_data( $source, $source_version, $src_data )
+		if $src_data;
 
 	    my $st1 = new Benchmark;
 	    my $std = timediff($st1, $st0);
@@ -222,7 +224,7 @@ unless (@Packages::CGI::fatal_errors) {
 	    foreach (@results, @non_results) {
 		my $a = $_->[1];
 		my $s = $_->[2];
-		if ($a =~ /^(?:us|security)$/o) {
+		if ($a =~ /^(?:us|security|non-US)$/o) {
 		    $all_suites{$s}++;
 		} else {
 		    $all_suites{"$s/$a"}++;
@@ -251,6 +253,8 @@ unless (@Packages::CGI::fatal_errors) {
 
  	    my $title .= sprintf( gettext( "Package: %s (%s)" ), $pkg, $v_str );
  	    $title .=  " ".marker( $archive ) if $archive ne 'us';
+ 	    $title .=  " ".marker( $subsection ) if $subsection eq 'non-US'
+		and $archive ne 'non-US'; # non-US/security
  	    $title .=  " ".marker( $section ) if $section ne 'main';
  	    $package_page .= title( $title );
 	    
