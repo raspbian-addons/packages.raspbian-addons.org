@@ -72,7 +72,7 @@ sub pdeplegend {
     my $str = "<table border=\"1\" summary=\"legend\"><tr>\n";
 
     foreach my $entry (@_) {
-	$str .= "<td><img src=\"../../Pics/$entry->[0].gif\" alt=\"[$entry->[0]]\" width=\"16\" height=\"16\">= $entry->[1]</td>";
+	$str .= "<td><img src=\"$ROOT/Pics/$entry->[0].gif\" alt=\"[$entry->[0]]\" width=\"16\" height=\"16\">= $entry->[1]</td>";
     }
 
     $str .= "\n</tr></table>\n";
@@ -187,29 +187,31 @@ sub pmoreinfo {
    }
 
     if ($info{maintainers}) {
-	my @uploaders = @{$page->get_src( 'uploaders' )};
-	foreach (@uploaders) {
-	    $_->[0] = encode_entities( $_->[0], '&<>' );
-	}
-	my ($maint_name, $maint_mail ) = @{shift @uploaders}; 
-	unless (@uploaders) {
-	    $str .= "<p>\n".sprintf( gettext( "%s is responsible for this Debian package." ).
-				     "\n",
-				     "<a href=\"mailto:$maint_mail\">$maint_name</a>" 
-				     );
-	} else {
-	    my $up_str = "<a href=\"mailto:$maint_mail\">$maint_name</a>";
-	    my @uploaders_str;
-	    foreach (@uploaders) {
-		push @uploaders_str, "<a href=\"mailto:$_->[1]\">$_->[0]</a>";
+	my $uploaders = $page->get_src( 'uploaders' );
+	if ($uploaders && @$uploaders) {
+	    foreach (@$uploaders) {
+		$_->[0] = encode_entities( $_->[0], '&<>' );
 	    }
-	    my $last_up = pop @uploaders_str;
-	    $up_str .= ", ".join ", ", @uploaders_str if @uploaders_str;
-	    $up_str .= sprintf( gettext( " and %s are responsible for this Debian package." ), $last_up );
-	    $str .= "<p>\n$up_str ";
+	    my ($maint_name, $maint_mail) = @{shift @$uploaders}; 
+	    unless (@$uploaders) {
+		$str .= "<p>\n".sprintf( gettext( "%s is responsible for this Debian package." ).
+					 "\n",
+					 "<a href=\"mailto:$maint_mail\">$maint_name</a>" 
+					 );
+	    } else {
+		my $up_str = "<a href=\"mailto:$maint_mail\">$maint_name</a>";
+		my @uploaders_str;
+		foreach (@$uploaders) {
+		    push @uploaders_str, "<a href=\"mailto:$_->[1]\">$_->[0]</a>";
+		}
+		my $last_up = pop @uploaders_str;
+		$up_str .= ", ".join ", ", @uploaders_str if @uploaders_str;
+		$up_str .= sprintf( gettext( " and %s are responsible for this Debian package." ), $last_up );
+		$str .= "<p>\n$up_str ";
+	    }
 	}
 
-	$str .= sprintf( gettext( "See the <a href=\"%s\">developer information for %s</a>." )."</p>", $QA_URL.$source, $name );
+	$str .= sprintf( gettext( "See the <a href=\"%s\">developer information for %s</a>." )."</p>", $QA_URL.$source, $name ) if $source;
     }
 
     if ($info{search}) {
@@ -501,7 +503,7 @@ MENU
 $KEYWORDS_LINE
 $DESC_LINE
 $meta
-<link href="$HOME/debian.css" rel="stylesheet" type="text/css" media="all">
+<link href="$ROOT/debian.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
 <div id="header">
