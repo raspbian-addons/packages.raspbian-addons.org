@@ -206,8 +206,9 @@ sub pmoreinfo {
 
     if ($info{search}) {
 	my $encodedname = uri_escape( $name );
-	my $search_url = $is_source ? $SRC_SEARCH_URL : $SEARCH_URL;
-	$str .= "<p>".sprintf( gettext( "Search for <a href=\"%s\">other versions of %s</a>" ), $search_url.$encodedname, $name )."</p>\n";
+	my $search_url = $is_source ? "$ROOT/source" : $ROOT;
+	$str .= "<p>".sprintf( gettext( "Search for <a href=\"%s\">other versions of %s</a>" ),
+	    "$search_url/$encodedname", $name )."</p>\n";
     }
 
     $str .= "</div> <!-- end pmoreinfo -->\n";
@@ -283,12 +284,12 @@ sub print_deps {
 		(read_entry_simple( $packages, $p_name, $opts->{h_archives}, $opts->{suite}))->[-1];
 	    if ( $short_desc ) {
 		if ( $is_old_pkgs ) {
-		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$opts->{suite}/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
 		} else {
 		    $short_descs{$p_name} ||= $short_desc;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
-		    push @res_pkgs, dep_item( "/$opts->{suite}/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$opts->{suite}/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}
 	    } elsif ( $is_old_pkgs ) {

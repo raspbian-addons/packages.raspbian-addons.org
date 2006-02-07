@@ -225,11 +225,11 @@ unless (@Packages::CGI::fatal_errors) {
 
 		$package_page .= simple_menu( [ gettext( "Distribution:" ),
 						gettext( "Overview over this suite" ),
-						"/$suite/",
+						"$ROOT/$suite/",
 						$suite ],
 					      [ gettext( "Section:" ),
 						gettext( "All packages in this section" ),
-						"/$suite/$subsection/",
+						"$ROOT/$suite/$subsection/",
 						$subsection ],
 					      );
 
@@ -298,35 +298,22 @@ unless (@Packages::CGI::fatal_errors) {
 		$package_page .= "<th>".gettext("Architecture")."</th><th>".gettext("Files")."</th><th>".gettext( "Package Size")."</th><th>".gettext("Installed Size")."</th></tr>\n";
 		foreach my $a ( @archs ) {
 		    $package_page .= "<tr>\n";
-		    $package_page .=  "<th><a href=\"$DL_URL?arch=$a";
-		    $package_page .=  "&amp;file=".uri_escape($filenames->{$a});
-		    $package_page .=  "&amp;md5sum=$file_md5sums->{$a}";
-		    $package_page .=  "&amp;arch=$a";
-		    for ($archives->{$a}) {
-			/security/o &&  do {
-			    $package_page .=  "&amp;type=security"; last };
-			/volatile/o &&  do {
-			    $package_page .=  "&amp;type=volatile"; last };
-			/backports/o &&  do {
-			    $package_page .=  "&amp;type=backports"; last };
-			/non-us/io  &&  do {
-			    $package_page .=  "&amp;type=nonus"; last };
-			$package_page .=  "&amp;type=main";
-		    }
+		    $package_page .=  "<th><a href=\"$ROOT/$suite/$encodedpkg/$a/download";
 		    $package_page .=  "\">$a</a></th>\n";
 		    $package_page .= "<td>";
 		    if ( $suite ne "experimental" ) {
-			$package_page .= sprintf( "[<a href=\"%s\">".gettext( "list of files" )."</a>]\n", "$FILELIST_URL$encodedpkg&amp;version=$suite&amp;arch=$a", $pkg );
+			$package_page .= sprintf( "[<a href=\"%s\">".gettext( "list of files" )."</a>]\n",
+			    "$ROOT/$suite/$encodedpkg/$a/filelist", $pkg );
 		    } else {
 			$package_page .= gettext( "no current information" );
 		    }
-		    $package_page .= "</td>\n<td>";
-		    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10;
-		    $package_page .= "</td>\n<td>";
-		    $package_page .=  $sizes_inst->{$a};
+		    $package_page .= "</td>\n<td align=right>"; #FIXME: css
+		    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
+		    $package_page .= "</td>\n<td align=right>"; #FIXME: css
+		    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
 		    $package_page .= "</td>\n</tr>";
 		}
-		$package_page .= "</table><p>".gettext ( "Size is measured in kBytes." )."</p>\n";
+		$package_page .= "</table>\n";
 		$package_page .= "</div> <!-- end pdownload -->\n";
 		
 		#
