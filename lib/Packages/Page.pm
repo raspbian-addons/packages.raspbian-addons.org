@@ -61,7 +61,6 @@ sub add_src_data {
     if ($data{files}) {
 	my @files = split /\01/so, $data{files};
 	$self->{src}{files} = \@files;
-	print @{$self->{src}{files}};
     }
     $self->{src}{directory} = $data{directory};
     my @uploaders;
