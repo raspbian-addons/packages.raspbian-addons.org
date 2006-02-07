@@ -25,6 +25,7 @@ use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $SEARCH_CGI $SEARCH_PAGE
 			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES );
 use Packages::CGI;
+use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::HTML ();
 
@@ -48,10 +49,8 @@ my $debug = $debug_allowed && $input->param("debug");
 $debug = 0 if !defined($debug) || $debug !~ /^\d+$/o;
 $Packages::CGI::debug = $debug;
 
-# read the configuration
-our $db_read_time ||= 0;
-
 &Packages::Config::init( '../' );
+&Packages::DB::init();
 
 if (my $path = $input->param('path')) {
     my @components = map { lc $_ } split /\//, $path;
@@ -148,35 +147,7 @@ debug( "Parameter evaluation took ".timestr($petd) );
 my $st0 = new Benchmark;
 my @results;
 
-our ($obj, $s_obj, $p_obj, $sp_obj,
-     %packages, %sources, %postf, %spostf, %src2bin, %did2pkg );
-
 unless (@Packages::CGI::fatal_errors) {
-
-    my $dbmodtime = (stat("$DBDIR/packages_small.db"))[9];
-    if ($dbmodtime > $db_read_time) {
-	$obj = tie %packages, 'DB_File', "$DBDIR/packages_small.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $DBDIR/packages_small.db: $!";
-	$s_obj = tie %sources, 'DB_File', "$DBDIR/sources_small.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $DBDIR/sources_small.db: $!";
-	$p_obj = tie %postf, 'DB_File', "$DBDIR/package_postfixes.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie postfix db $DBDIR/package_postfixes.db: $!";
-	$sp_obj = tie %spostf, 'DB_File', "$DBDIR/source_postfixes.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie postfix db $DBDIR/source_postfixes.db: $!";
-	tie %src2bin, 'DB_File', "$DBDIR/sources_packages.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't open $DBDIR/sources_packages.db: $!";
-	tie %did2pkg, 'DB_File', "$DBDIR/descriptions_packages.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $DBDIR/descriptions_packages.db: $!";
-	
-	debug( "tied databases ($dbmodtime > $db_read_time)" );
-	$db_read_time = $dbmodtime;
-    }
 
     if ($searchon eq 'names') {
 	push @results, @{ do_names_search( $keyword, \%packages,

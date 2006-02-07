@@ -57,7 +57,7 @@ our @ISA = qw( Exporter );
 our @EXPORT_OK = qw( nextlink prevlink indexline
                      resperpagelink
 		     read_entry read_entry_all read_entry_simple
-		     read_src_entry find_binaries
+		     read_src_entry read_src_entry_all find_binaries
 		     do_names_search do_fulltext_search
 		     printindexline multipageheader );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
@@ -379,8 +379,8 @@ sub read_entry_simple {
     }
     return \@data_fuzzy;
 }
-sub read_src_entry {
-    my ($hash, $key, $results, $opts) = @_;
+sub read_src_entry_all {
+    my ($hash, $key, $results, $non_results, $opts) = @_;
     my $result = $hash->{$key} || '';
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 6 );
@@ -390,8 +390,15 @@ sub read_src_entry {
 	    && $opts->{h_sections}{$data[2]}) {
 	    debug( "Using entry ".join( ':', @data), 2);
 	    push @$results, [ $key, @data ];
+	} else {
+	    push @$non_results, [ $key, @data ];
 	}
     }
+}
+sub read_src_entry {
+    my ($hash, $key, $results, $opts) = @_;
+    my @non_results;
+    read_src_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
 sub do_names_search {
     my ($keyword, $packages, $postfixes, $read_entry, $opts) = @_;

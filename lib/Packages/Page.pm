@@ -4,8 +4,13 @@ use strict;
 use warnings;
 
 use Data::Dumper;
+use Exporter;
 use Deb::Versions;
 use Packages::CGI;
+
+our @ISA = qw( Exporter );
+our @EXPORT_OK = qw( split_name_mail parse_deps );
+our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $ARCHIVE_DEFAULT = '';
 our $SECTION_DEFAULT = 'main';
@@ -74,7 +79,7 @@ sub add_src_data {
 	$data{$key} = $value;
     }
 
-    $self->{src}{name} = $src;
+    $self->{src}{package} = $src;
     $self->{src}{version} = $version;
     if ($data{files}) {
 	$self->{src}{files} = [];

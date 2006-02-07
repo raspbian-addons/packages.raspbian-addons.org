@@ -57,20 +57,29 @@ for my $archive (@ARCHIVES) {
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
-		$data .= "Archive: $archive\n";
-		$sources_all_db{"$data{'package'} $data{'version'}"}
-			= $data;
-
 		$source_names{$data{'package'}} = 1;
 
 		my $section = 'main';
 		my $subsection = $data{section} || '-';
 		if ($data{section} && ($data{section} =~ m=/=o)) {
 		    ($section, $subsection) = split m=/=o, $data{section}, 2;
+		    ($subsection, $section) = split m=/=o, $data{section}, 2
+			if $section eq 'non-US';
 		}
-		$data{'priority'} = "-" if not exists($data{'priority'});
+		$data{'section'} = $section;
+		$data{'subsection'} = $subsection;
+		$data{'priority'} ||= "-";
 		$sources_small{$data{'package'}} .=
 			"$archive $suite $section $subsection $data{'priority'} $data{'version'}\000";
+
+		$data{archive} = $archive;
+		while (my ($key, $value) = each (%data)) {
+		    next if $key eq 'package' or $key eq 'version';
+		    print STDERR "WARN: $key ($suite/$archive/$data{package}/$data{architecture}\n" unless defined $value;
+		    $data .= "$key: $value\n";
+		}
+		$sources_all_db{"$data{'package'} $data{'version'}"}
+			= $data;
 	}
 
 	untie %sources_all_db;
