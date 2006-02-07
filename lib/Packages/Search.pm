@@ -489,9 +489,11 @@ sub find_binaries {
     foreach (split /\000/o, $bins) {
 	my @data = split /\s/, $_, 5;
 
+	debug( "find_binaries: considering @data", 3 );
 	if (($data[0] eq $archive)
 	    && ($data[1] eq $suite)) {
 	    $bins{$data[2]}++;
+	    debug( "find_binaries: using @data", 3 );
 	}
     }
 

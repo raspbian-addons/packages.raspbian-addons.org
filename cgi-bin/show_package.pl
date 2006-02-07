@@ -342,8 +342,8 @@ unless (@Packages::CGI::fatal_errors) {
 		    my (undef, $archive, undef, $section, $subsection,
 			$priority, $version) = @$entry;
 		    
-		    my $data = $sources_all{"$pkg $version"};
-		    $page->merge_data($pkg, $version, $data) or debug( "Merging $pkg $version FAILED", 2 );
+		    my $data = $sources_all{"$archive $suite $pkg"};
+		    $page->merge_data($pkg, $suite, $archive, $data) or debug( "Merging $pkg $version FAILED", 2 );
 		}
 		$version = $page->{version};
 
@@ -459,7 +459,8 @@ unless (@Packages::CGI::fatal_errors) {
 					  gettext("Size (in kB)"),
 					  gettext("md5sum") );
 		foreach( @$source_files ) {
-		    my ($src_file_md5, $src_file_size, $src_file_name) = @$_;
+		    my ($src_file_md5, $src_file_size, $src_file_name)
+			= split /\s+/, $_;
 		    my $src_url;
 		    for ($archive) {
 			/security/o &&  do {
@@ -495,8 +496,8 @@ unless (@Packages::CGI::fatal_errors) {
     }
 }
 
-#use Data::Dumper;
-#debug( "Final page object:\n".Dumper($page), 3 );
+use Data::Dumper;
+debug( "Final page object:\n".Dumper($page), 3 );
 
 my $title = $opts{source} ?
     "Details of source package <em>$pkg</em> in $suite"  :

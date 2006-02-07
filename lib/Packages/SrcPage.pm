@@ -12,19 +12,13 @@ our @ISA = qw( Packages::Page );
 
 #FIXME: change parameters so that we can use the version from Packages::Page
 sub merge_data {
-    my ($self, $pkg, $version, $data) = @_;
+    my ($self, $pkg, $suite, $archive, $data) = @_;
 
-    my %data = ( package => $pkg,
-		 version => $version,
-		 );
-    chomp($data);
-    $data =~ s/\n\s+/\377/g;
-    while ($data =~ /^(\S+):\s*(.*)\s*$/mg) {
-	my ($key, $value) = ($1, $2);
-	$key =~ tr [A-Z] [a-z];
-	$data{$key} = $value;
-    }
-#	debug( "Merge package:\n".Dumper(\%data), 3 );
+    my %data = split /\00/o, $data;
+    $data{package} = $pkg;
+    $data{suite} = $suite;
+    $data{archive} = $archive;
+
     return $self->merge_package( \%data );
 }
 
@@ -35,7 +29,7 @@ our @DEP_FIELDS = qw( build-depends build-depends-indep
 sub merge_package {
     my ($self, $data) = @_;
 
-    ($data->{package} && $data->{version}) || return;
+    ($data->{package} && $data->{suite} && $data->{archive}) || return;
     $self->{package} ||= $data->{package};
     ($self->{package} eq $data->{package}) || return;
     debug( "merge package $data->{package}/$data->{version} into $self (".($self->{version}||'').")", 2 );
@@ -62,12 +56,8 @@ sub merge_package {
 	$self->{uploaders} = \@uploaders;
 
 	if ($data->{files}) {
-	    $self->{files} = [];
-	    foreach my $sf ( split( /\377/, $data->{files} ) ) {
-		next unless $sf;
-		# md5, size, name
-		push @{$self->{files}}, [ split( /\s+/, $sf) ];
-	    }
+	    my @files = split /\01/so, $data->{files};
+	    $self->{files} = \@files;
 	}
 
 	foreach (@DEP_FIELDS) {
