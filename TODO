@@ -32,3 +32,8 @@ search_packages.pl:
 General:
 - Try to break everything with empty/short searches
 - Check for case sensitive consistency
+- Fix assumption that archive doesn't show up in any url, consistency-fy
+  dealing with archives of a different set than (us, non-us, security)
+
+Bugs:
+- amd64 security is getting displayed weirdly
