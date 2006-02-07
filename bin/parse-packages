@@ -74,11 +74,9 @@ for my $archive (@ARCHIVES) {
 		my $src_version = '';
 		if ($data{'source'}) {
 			$src = $data{'source'};
-			$src_version = $1
-			    if $src =~ s/\s+\((.*)\).*//; # strip version info
+			$src =~ s/\s+.*//; # strip version info
 		}
 		$data{'source'} = $src;
-		$data{'source-version'} = $src_version if $src_version;
 		my $descr = $data{'description'};
 		my $did = undef;
 		if (exists($descriptions{$descr})) {
@@ -117,8 +115,9 @@ for my $archive (@ARCHIVES) {
 			next if $key eq 'package' or $key eq 'version' or $key eq 'architecture'
 				or $key eq 'maintainer';
 			print STDERR "WARN: $key ($suite/$archive/$data{package}/$data{architecture}\n" unless defined $value;
-			$data .= "$key: $value\n";
+			$data .= "$key\00$value\00";
 		}
+		$data =~ s/.$//s;
 		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
 			= $data;
 	}

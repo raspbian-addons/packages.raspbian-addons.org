@@ -136,7 +136,7 @@ sub pmoreinfo {
 	    $str .= gettext( "Not found" );
 	} else {
 	    foreach( @$files ) {
-		my ($src_file_md5, $src_file_size, $src_file_name) = @$_;
+		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
 		for ($page->get_newest('archive')) {
 		    /security/o && do {
 			$str .= "<a href=\"$env->{security}/$src_dir/$src_file_name\">["; last };

@@ -33,22 +33,6 @@ sub new {
     return $self;
 }
 
-sub merge_data {
-    my ($self, $pkg, $version, $architecture, $data) = @_;
-
-    my %data = ( package => $pkg,
-		 version => $version,
-		 architecture => $architecture );
-    chomp($data);
-    while ($data =~ /^(\S+):\s*(.*)\s*$/mg) {
-	my ($key, $value) = ($1, $2);
-	$key =~ tr [A-Z] [a-z];
-	$data{$key} = $value;
-    }
-#	debug( "Merge package:\n".Dumper(\%data), 3 );
-    return $self->merge_package( \%data );
-}
-
 sub gettext { return $_[0]; }
 sub split_name_mail {
     my $string = shift;
@@ -68,26 +52,16 @@ sub split_name_mail {
 }
 
 sub add_src_data {
-    my ($self, $src, $version, $data) = @_;
+    my ($self, $src, $data) = @_;
 
-    chomp($data);
-    my %data = ();
-    $data =~ s/\n\s+/\377/g;
-    while ($data =~ /^(\S+):\s*(.*)\s*$/mog) {
-	my ($key, $value) = ($1, $2);
-	$key =~ tr [A-Z] [a-z];
-	$data{$key} = $value;
-    }
+    my %data = split /\00/o, $data;
 
     $self->{src}{package} = $src;
-    $self->{src}{version} = $version;
+    $self->{src}{version} = $data{version};
     if ($data{files}) {
-	$self->{src}{files} = [];
-        foreach my $sf ( split( /\377/, $data{files} ) ) {
-	    next unless $sf;
-            # md5, size, name
-            push @{$self->{src}{files}}, [ split( /\s+/, $sf) ];
-        }
+	my @files = split /\01/so, $data{files};
+	$self->{src}{files} = \@files;
+	print @{$self->{src}{files}};
     }
     $self->{src}{directory} = $data{directory};
     my @uploaders;

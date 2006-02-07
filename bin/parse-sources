@@ -53,11 +53,14 @@ for my $archive (@ARCHIVES) {
 		while (/^(\S+):\s*(.*)\s*$/mg) {
 			my ($key, $value) = ($1, $2);
 			$value =~ s/\377/\n /g;
-			$data .= "$key: $value\n";
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
 		$source_names{$data{'package'}} = 1;
+		delete $data{'binary'};
+
+		$data{files} =~ s/\s*\n\s*/\01/sog;
+		$data{files} =~ s/^\01//sg;
 
 		my $section = 'main';
 		my $subsection = $data{section} || '-';
@@ -72,13 +75,13 @@ for my $archive (@ARCHIVES) {
 		$sources_small{$data{'package'}} .=
 			"$archive $suite $section $subsection $data{'priority'} $data{'version'}\000";
 
-		$data{archive} = $archive;
 		while (my ($key, $value) = each (%data)) {
-		    next if $key eq 'package' or $key eq 'version';
+		    next if $key eq 'package' or $key eq 'archive' or $key eq 'suite';
 		    print STDERR "WARN: $key ($suite/$archive/$data{package}/$data{architecture}\n" unless defined $value;
-		    $data .= "$key: $value\n";
+		    $data .= "$key\00$value\00";
 		}
-		$sources_all_db{"$data{'package'} $data{'version'}"}
+		$data =~ s/.$//so;
+		$sources_all_db{"$archive $suite $data{'package'}"}
 			= $data;
 	}
 

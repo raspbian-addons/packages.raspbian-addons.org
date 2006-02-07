@@ -156,30 +156,19 @@ unless (@Packages::CGI::fatal_errors) {
 		    my (undef, $archive, undef, $arch, $section, $subsection,
 			$priority, $version) = @$entry;
 		    
-		    my $data = $packages_all{"$pkg $arch $version"};
-		    $page->merge_data($pkg, $version, $arch, $data) or debug( "Merging $pkg $arch $version FAILED", 2 );
+		    my %data = split /\000/, $packages_all{"$pkg $arch $version"};
+		    $data{package} = $pkg;
+		    $data{architecture} = $arch;
+		    $data{version} = $version;
+		    $page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 );
 		}
 
 		$version = $page->{newest};
 		my $source = $page->get_newest( 'source' );
-		my $source_version = $page->get_newest( 'source-version' )
-		    || $version;
-		debug( "find source package: source=$source (=$source_version)", 1);
-		my $src_data = $sources_all{"$source $source_version"};
-		unless ($src_data) { #fucking binNMUs
-		    my $versions = $page->get_versions;
-		    my $sources = $page->get_arch_field( 'source' );
-		    my $source_versions = $page->get_arch_field( 'source-version' );
-		    foreach (version_sort keys %$versions) {
-			$source = $sources->{$versions->{$_}[0]};
-			$source = $source_versions->{$versions->{$_}[0]}
-			|| $version;
-			$src_data = $sources_all{"$source $source_version"};
-			last if $src_data;
-		    }
-		    error( "couldn't find source package" ) unless $src_data;
-		}
-		$page->add_src_data( $source, $source_version, $src_data )
+		$archive = $page->get_newest( 'archive' );
+		debug( "find source package: source=$source", 1);
+		my $src_data = $sources_all{"$archive $suite $source"};
+		$page->add_src_data( $source, $src_data )
 		    if $src_data;
 
 		my $st1 = new Benchmark;
@@ -189,7 +178,6 @@ unless (@Packages::CGI::fatal_errors) {
 		my $encodedpkg = uri_escape( $pkg );
 		my ($v_str, $v_str_arch, $v_str_arr) = $page->get_version_string();
 		my $did = $page->get_newest( 'description' );
-		$archive = $page->get_newest( 'archive' );
 		$section = $page->get_newest( 'section' );
 		$subsection = $page->get_newest( 'subsection' );
 		my $filenames = $page->get_arch_field( 'filename' );
