@@ -24,6 +24,11 @@ search_packages.pl:
   - drop case-sensitive from options, descriptions.txt all lowercase and without
 	punctuation, such that instead of =~ //, indexof can be used
 
+- backend:
+  - Ensure that in _small.db, newest version for each suite is first,
+	show_package relies on that. So foreach suite, 'newest entry', and only
+	then, all the other entries
+
 General:
 - Try to break everything with empty/short searches
 - Check for case sensitive consistency
