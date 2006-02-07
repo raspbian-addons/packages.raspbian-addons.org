@@ -1,0 +1,87 @@
+#!/usr/bin/perl -w
+# Convert Contents.gz files into Sleepycat db files for efficient usage of
+# data
+#
+# $Id$
+#
+# Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+use strict;
+use lib './lib';
+
+use DB_File;
+use Storable;
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+&Packages::Config::init( './' );
+my %packages_contents = ();
+my %file_reverse = ();
+
+my @archives =( 'us'); #@ARCHIVES
+my @suites = ('stable');#@SUITES
+
+for my $archive (@archives) { for my $suite (@suites) {
+
+	print "Reading $archive/$suite/i386...\n";
+	open CONT, "zcat /org/ftp.debian.org/ftp/dists/stable/Contents-i386.gz|";
+	while (1) {$_ = <CONT>;last if /^FILE/mo;}
+	while (<CONT>) {
+		my $data = "";
+		my %data = ();
+		chomp;
+		print "Doing line $.\n" if $. % 10000 == 0;
+		/^(\S+)\s+(\S+)/;
+		my ($file, $value) = ($1, $2);
+		$value =~ s#[^,/]+/##g;
+		my @packages = split /,/, $value;
+		for (@packages) {
+			#$packages_contents{$_} .= "$_\0";
+		}
+		# Searches are case-insensitive
+		$file =~ tr [A-Z] [a-z];
+
+		$file_reverse{reverse $file} = join "\0", @packages;
+	}
+}}
+
+print "Writing databases...\n";
+my %packages_contents_db;
+tie %packages_contents_db, "DB_File", "packages_contents.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($k, $v) = each(%packages_contents)) {
+	$v =~ s/.$//s;
+	$packages_contents_db{$k} = $v;
+}
+untie %packages_contents_db;
+
+my %file_reverse_db;
+tie %file_reverse_db, "DB_File", "$DBDIR/file_reverse.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($x, $y) = each(%file_reverse)) {
+#	$v =~ s/.$//s;
+#	my $nr = $v;
+#	$nr =~ s/[^\000]//g;
+#	$nr = length($nr) + 1; # < number of hits
+#	if ($nr > $MAX_file_reverse) {
+#		$v = "\001" . $nr;
+#	}
+	$file_reverse_db{$x} = $y;
+}
+untie %file_reverse_db;
+
+#rename("packages_contents.db.new", "packages_contents.db");
+rename("$DBDIR/file_reverse.db.new", "$DBDIR/file_reverse.db");
