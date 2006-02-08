@@ -22,11 +22,15 @@
 use strict;
 use lib './lib';
 
+my $what = $ARGV[0] ? "head -100000|" : "";
+
 use DB_File;
 use Storable;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
 &Packages::Config::init( './' );
 my %packages_contents = ();
+my %packages_contents_nr = ();
+my %packages_contents_lastword = ();
 my %file_reverse = ();
 
 my @archives =( 'us'); #@ARCHIVES
@@ -35,7 +39,7 @@ my @suites = ('stable');#@SUITES
 for my $archive (@archives) { for my $suite (@suites) {
 
 	print "Reading $archive/$suite/i386...\n";
-	open CONT, "zcat /org/ftp.debian.org/ftp/dists/stable/Contents-i386.gz|";
+	open CONT, "zcat /org/ftp.debian.org/ftp/dists/stable/Contents-i386.gz|$what";
 	while (1) {$_ = <CONT>;last if /^FILE/mo;}
 	while (<CONT>) {
 		my $data = "";
@@ -47,7 +51,14 @@ for my $archive (@archives) { for my $suite (@suites) {
 		$value =~ s#[^,/]+/##g;
 		my @packages = split /,/, $value;
 		for (@packages) {
-			#$packages_contents{$_} .= "$_\0";
+			$packages_contents_nr{$_}++;
+			my $lw = $packages_contents_lastword{$_} || "\0";
+			my $i=0;
+			while (substr($file,$i,1) eq substr($lw,$i++,1)) {}
+			$i--;
+			$i = 255 if $i > 255;
+			$packages_contents{$_} .= pack "CC/a*", ($i, substr($file, $i));
+			$packages_contents_lastword{$_} = "$file\0";
 		}
 		# Searches are case-insensitive
 		$file =~ tr [A-Z] [a-z];
@@ -58,12 +69,12 @@ for my $archive (@archives) { for my $suite (@suites) {
 
 print "Writing databases...\n";
 my %packages_contents_db;
-tie %packages_contents_db, "DB_File", "packages_contents.db.new",
+tie %packages_contents_db, "DB_File", "$DBDIR/packages_contents.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%packages_contents)) {
-	$v =~ s/.$//s;
-	$packages_contents_db{$k} = $v;
+	$packages_contents_db{$k} = (pack "L", $packages_contents_nr{$k})
+		. $v;
 }
 untie %packages_contents_db;
 
@@ -83,5 +94,5 @@ while (my ($x, $y) = each(%file_reverse)) {
 }
 untie %file_reverse_db;
 
-#rename("packages_contents.db.new", "packages_contents.db");
+rename("$DBDIR/packages_contents.db.new", "$DBDIR/packages_contents.db");
 rename("$DBDIR/file_reverse.db.new", "$DBDIR/file_reverse.db");
