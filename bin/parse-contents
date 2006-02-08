@@ -22,33 +22,43 @@
 use strict;
 use lib './lib';
 
-my $what = $ARGV[0] ? "head -100000|" : "";
+my $what = $ARGV[0] ? "head -10000|" : "";
 
 use DB_File;
 use Storable;
-use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 &Packages::Config::init( './' );
-my %packages_contents = ();
-my %packages_contents_nr = ();
-my %packages_contents_lastword = ();
-my %file_reverse = ();
+my %filenames = ();
 
-my @archives =( 'us'); #@ARCHIVES
-my @suites = ('stable');#@SUITES
+my @archives =( 'us'); #@ARCHIVES # NOT-IMPLEMENTED-YET
+my @suites = @SUITES;
+my @archs = @ARCHITECTURES;
 
-for my $archive (@archives) { for my $suite (@suites) {
+for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
 
-	print "Reading $archive/$suite/i386...\n";
-	open CONT, "zcat /org/ftp.debian.org/ftp/dists/stable/Contents-i386.gz|$what";
-	while (1) {$_ = <CONT>;last if /^FILE/mo;}
+	my $filename = "$TOPDIR/archive/$archive/$suite/Contents-$arch.gz";
+	my $db = "$DBDIR/packages_contents_${suite}_${arch}.db";
+	next unless -f $filename;
+	my $ftime = (stat $filename)[9];
+	my $dbtime = (stat $db)[9];
+	next unless $ftime > $dbtime;
+	print "Reading $archive/$suite/$arch...\n";
+
+	my %packages_contents = ();
+	my %packages_contents_nr = ();
+	my %packages_contents_lastword = ();
+	my %contents_packages_reverse = ();
+
+	open CONT, "zcat $filename|$what";
+	while (<CONT>) {last if /^FILE/mo;}
 	while (<CONT>) {
 		my $data = "";
 		my %data = ();
 		chomp;
 		print "Doing line $.\n" if $. % 10000 == 0;
-		/^(\S+)\s+(\S+)/;
+		/^(.+)\s+(\S+)$/;
 		my ($file, $value) = ($1, $2);
-		$value =~ s#[^,/]+/##g;
+		$value =~ s#[^,/]+/##og;
 		my @packages = split /,/, $value;
 		for (@packages) {
 			$packages_contents_nr{$_}++;
@@ -62,37 +72,44 @@ for my $archive (@archives) { for my $suite (@suites) {
 		}
 		# Searches are case-insensitive
 		$file =~ tr [A-Z] [a-z];
+		my $filename = $file;
+		$filename =~ s,.*/,,;
+		$filenames{$filename} = 1;
 
-		$file_reverse{reverse $file} = join "\0", @packages;
+		$contents_packages_reverse{reverse $file} = join "\0", @packages;
 	}
-}}
+	my %contents_packages_reverse_db;
+	tie %contents_packages_reverse_db, "DB_File", "$DBDIR/contents_packages_reverse_${suite}_${arch}.db.new",
+		O_RDWR|O_CREAT, 0666, $DB_BTREE
+		or die "Error creating DB: $!";
+	while (my ($x, $y) = each(%contents_packages_reverse)) {
+		$contents_packages_reverse_db{$x} = $y;
+	}
+	untie %contents_packages_reverse_db;
+
+	my %packages_contents_db;
+	tie %packages_contents_db, "DB_File", "$DBDIR/packages_contents_${suite}_${arch}.db.new",
+		O_RDWR|O_CREAT, 0666, $DB_BTREE
+		or die "Error creating DB: $!";
+	while (my ($k, $v) = each(%packages_contents)) {
+		$packages_contents_db{$k} = (pack "L", $packages_contents_nr{$k})
+			. $v;
+	}
+	untie %packages_contents_db;
+}}}
 
 print "Writing databases...\n";
-my %packages_contents_db;
-tie %packages_contents_db, "DB_File", "$DBDIR/packages_contents.db.new",
-	O_RDWR|O_CREAT, 0666, $DB_BTREE
-	or die "Error creating DB: $!";
-while (my ($k, $v) = each(%packages_contents)) {
-	$packages_contents_db{$k} = (pack "L", $packages_contents_nr{$k})
-		. $v;
-}
-untie %packages_contents_db;
 
-my %file_reverse_db;
-tie %file_reverse_db, "DB_File", "$DBDIR/file_reverse.db.new",
-	O_RDWR|O_CREAT, 0666, $DB_BTREE
-	or die "Error creating DB: $!";
-while (my ($x, $y) = each(%file_reverse)) {
-#	$v =~ s/.$//s;
-#	my $nr = $v;
-#	$nr =~ s/[^\000]//g;
-#	$nr = length($nr) + 1; # < number of hits
-#	if ($nr > $MAX_file_reverse) {
-#		$v = "\001" . $nr;
-#	}
-	$file_reverse_db{$x} = $y;
+# FIXME: missing filenames due to optimising above. Need to store filenames
+# per-suite/arch, but merge them in the end for better cached searching
+open FILENAMES, "> $DBDIR/filenames.txt.new";
+for (keys %filenames) {
+	print FILENAMES "$_\n";
 }
-untie %file_reverse_db;
+close FILENAMES;
 
-rename("$DBDIR/packages_contents.db.new", "$DBDIR/packages_contents.db");
-rename("$DBDIR/file_reverse.db.new", "$DBDIR/file_reverse.db");
+rename("$DBDIR/filenames.txt.new", "$DBDIR/filenames.txt");
+for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
+	rename("$DBDIR/packages_contents_${suite}_${arch}.db.new", "$DBDIR/packages_contents_${suite}_${arch}.db");
+	rename("$DBDIR/contents_packages_reverse_${suite}_${arch}.db.new", "$DBDIR/contents_packages_reverse_${suite}_${arch}.db");
+}}}
