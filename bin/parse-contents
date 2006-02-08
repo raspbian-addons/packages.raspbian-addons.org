@@ -56,7 +56,7 @@ for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
 		my %data = ();
 		chomp;
 		print "Doing line $.\n" if $. % 10000 == 0;
-		/^(.+)\s+(\S+)$/;
+		/^(.+?)\s+(\S+)$/o;
 		my ($file, $value) = ($1, $2);
 		$value =~ s#[^,/]+/##og;
 		my @packages = split /,/, $value;
