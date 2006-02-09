@@ -346,8 +346,9 @@ sub read_entry_all {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2);
 	if ($opts->{h_archives}{$data[0]} && $opts->{h_suites}{$data[1]}
-	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all')
-	    && $opts->{h_sections}{$data[3]}) {
+	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all'
+		|| $data[2] eq 'virtual')
+	    && ($opts->{h_sections}{$data[3]} || $data[3] eq '-')) {
 	    debug( "Using entry ".join( ':', @data), 2);
 	    push @$results, [ $key, @data ];
 	} else {

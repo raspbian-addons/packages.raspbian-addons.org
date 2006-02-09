@@ -48,6 +48,7 @@ $/ = "";
 for my $archive (@ARCHIVES) {
     for my $suite (@SUITES) {
 
+	my %virtual_packages = ();
 	print "Reading $archive/$suite...\n";
 	my %packages_all_db;
 	tie %packages_all_db, "DB_File", "$DBDIR/packages_all_$suite.db.new",
@@ -69,6 +70,11 @@ for my $archive (@ARCHIVES) {
 		# Skip double package
 		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
 
+		if ($data{'provides'}) {
+		    foreach (split /\s*,\s*/, $data{'provides'}) {
+			$virtual_packages{$_}{$data{'package'}}++;
+		    }
+		}
 		$package_names{$data{'package'}} = 1;
 		my $src = $data{'package'};
 		my $src_version = '';
@@ -120,6 +126,11 @@ for my $archive (@ARCHIVES) {
 		$data =~ s/.$//s;
 		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
 			= $data;
+	}
+
+	foreach (keys %virtual_packages) {
+	    my @provided_by = keys %{$virtual_packages{$_}};
+	    $packages_small{$_} .= "$archive $suite virtual - - - - @provided_by\000";
 	}
 
 	untie %packages_all_db;

@@ -81,6 +81,19 @@ sub add_src_data {
     return 1;
 }
 
+sub add_provided_by {
+    my ($self, $provided_by) = @_;
+
+    $self->{provided_by} ||= [];
+    push @{$self->{provided_by}}, @$provided_by;
+}
+
+sub is_virutal {
+    my ($self) = @_;
+
+    return (exists($self->{provided_by}) && !exists($self->{versions}));
+}
+
 our @TAKE_NEWEST = qw( description essential priority section subsection tag
 		       archive source source-version );
 our @STORE_ALL = qw( version source source-version installed-size size

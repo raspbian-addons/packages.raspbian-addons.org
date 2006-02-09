@@ -154,13 +154,17 @@ unless (@Packages::CGI::fatal_errors) {
 		for my $entry (@results) {
 		    debug( join(":", @$entry), 1 );
 		    my (undef, $archive, undef, $arch, $section, $subsection,
-			$priority, $version) = @$entry;
+			$priority, $version, @provided_by) = @$entry;
 		    
-		    my %data = split /\000/, $packages_all{"$pkg $arch $version"};
-		    $data{package} = $pkg;
-		    $data{architecture} = $arch;
-		    $data{version} = $version;
-		    $page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 );
+		    if ($arch ne 'virtual') {
+			my %data = split /\000/, $packages_all{"$pkg $arch $version"};
+			$data{package} = $pkg;
+			$data{architecture} = $arch;
+			$data{version} = $version;
+			$page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 );
+		    } else {
+			$page->add_provided_by(\@provided_by);
+		    }
 		}
 
 		$version = $page->{newest};

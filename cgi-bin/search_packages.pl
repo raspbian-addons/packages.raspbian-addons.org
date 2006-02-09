@@ -252,7 +252,7 @@ print_errors();
 print_hints();
 print_debug();
 if (@results) {
-    my (%pkgs, %subsect, %sect, %desc, %binaries);
+    my (%pkgs, %subsect, %sect, %desc, %binaries, %provided_by);
 
     unless ($opts{searchon} eq 'sourcenames') {
 	foreach (@results) {
@@ -260,25 +260,31 @@ if (@results) {
 		$priority, $version, $desc) = @$_;
 	
 	    my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
-	    $pkgs{$pkg}{$suite}{$archive}{$version}{$arch} = 1;
-	    $subsect{$pkg}{$suite}{$archive}{$version} = $subsection;
-	    $sect{$pkg}{$suite}{$archive}{$version} = $section
-		unless $section eq 'main';
-	    
-	    $desc{$pkg}{$suite}{$archive}{$version} = $desc;
+	    if ($arch ne 'virtual') {
+		$pkgs{$pkg}{$suite}{$archive}{$version}{$arch} = 1;
+		$subsect{$pkg}{$suite}{$archive}{$version} = $subsection;
+		$sect{$pkg}{$suite}{$archive}{$version} = $section
+		    unless $section eq 'main';
+		
+		$desc{$pkg}{$suite}{$archive}{$version} = $desc;
+	    } else {
+		$provided_by{$pkg}{$suite}{$archive} = [ split /\s+/, $desc ];
+	    }
 	}
 
+my @pkgs = sort(keys %pkgs, keys %provided_by);
 	if ($opts{format} eq 'html') {
-	    my ($start, $end) = multipageheader( $input, scalar keys %pkgs, \%opts );
+	    my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
 	    my $count = 0;
 	
-	    foreach my $pkg (sort keys %pkgs) {
+	    foreach my $pkg (@pkgs) {
 		$count++;
 		next if $count < $start or $count > $end;
 		printf "<h3>Package %s</h3>\n", $pkg;
 		print "<ul>\n";
 		foreach my $suite (@SUITES) {
 		    foreach my $archive (@ARCHIVES) {
+			my $path = $suite.(($archive ne 'us')?"/$archive":'');
 			if (exists $pkgs{$pkg}{$suite}{$archive}) {
 			    my @versions = version_sort keys %{$pkgs{$pkg}{$suite}{$archive}};
 			    my $origin_str = "";
@@ -286,14 +292,23 @@ if (@results) {
 				$origin_str .= " [<span style=\"color:red\">$sect{$pkg}{$suite}{$versions[0]}</span>]";
 			    }
 			    printf "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
-			    $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect{$pkg}{$suite}{$archive}{$versions[0]},
+			    $path, $pkg, $path, $subsect{$pkg}{$suite}{$archive}{$versions[0]},
 			    $desc{$pkg}{$suite}{$archive}{$versions[0]}, $origin_str;
 			    
 			    foreach my $v (@versions) {
 				printf "<br>%s: %s\n",
 				$v, join (" ", (sort keys %{$pkgs{$pkg}{$suite}{$archive}{$v}}) );
 			    }
+			    if (my $provided_by =  $provided_by{$pkg}{$suite}{$archive}) {
+				print '<br>also provided by: ',
+				join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$provided_by);
+			    }
 			    print "</li>\n";
+			} elsif (my $provided_by =  $provided_by{$pkg}{$suite}{$archive}) {
+			    printf "<li><a href=\"$ROOT/%s/%s\">%s</a>: Virtual package<br>",
+			    $path, $pkg, $path;
+			    print 'provided by: ',
+			    join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$provided_by);
 			}
 		    }
 		}
