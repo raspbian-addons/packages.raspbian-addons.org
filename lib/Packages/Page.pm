@@ -88,7 +88,7 @@ sub add_provided_by {
     push @{$self->{provided_by}}, @$provided_by;
 }
 
-sub is_virutal {
+sub is_virtual {
     my ($self) = @_;
 
     return (exists($self->{provided_by}) && !exists($self->{versions}));

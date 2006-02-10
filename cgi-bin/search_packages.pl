@@ -113,7 +113,7 @@ my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
 #XXX: Don't use alternative output formats yet
 $format = 'html';
 if ($format eq 'html') {
-    print $input->header;
+    print $input->header( -charset => 'utf-8' );
 }
 
 if ($params{errors}{keywords}) {

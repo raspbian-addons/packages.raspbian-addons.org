@@ -130,7 +130,7 @@ for my $archive (@ARCHIVES) {
 
 	foreach (keys %virtual_packages) {
 	    my @provided_by = keys %{$virtual_packages{$_}};
-	    $packages_small{$_} .= "$archive $suite virtual - - - - @provided_by\000";
+	    $packages_small{$_} .= "$archive $suite virtual v v v v @provided_by\000";
 	}
 
 	untie %packages_all_db;

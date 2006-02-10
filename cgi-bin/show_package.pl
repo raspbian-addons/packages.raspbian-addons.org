@@ -102,7 +102,7 @@ my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
 #XXX: Don't use alternative output formats yet
 $format = 'html';
 if ($format eq 'html') {
-    print $input->header;
+    print $input->header( -charset => 'utf-8' );
 }
 
 if ($params{errors}{package}) {
@@ -154,7 +154,7 @@ unless (@Packages::CGI::fatal_errors) {
 		for my $entry (@results) {
 		    debug( join(":", @$entry), 1 );
 		    my (undef, $archive, undef, $arch, $section, $subsection,
-			$priority, $version, @provided_by) = @$entry;
+			$priority, $version, $provided_by) = @$entry;
 		    
 		    if ($arch ne 'virtual') {
 			my %data = split /\000/, $packages_all{"$pkg $arch $version"};
@@ -163,174 +163,223 @@ unless (@Packages::CGI::fatal_errors) {
 			$data{version} = $version;
 			$page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 );
 		    } else {
-			$page->add_provided_by(\@provided_by);
+			$page->add_provided_by([split /\s+/, $provided_by]);
 		    }
 		}
-
-		$version = $page->{newest};
-		my $source = $page->get_newest( 'source' );
-		$archive = $page->get_newest( 'archive' );
-		debug( "find source package: source=$source", 1);
-		my $src_data = $sources_all{"$archive $suite $source"};
-		$page->add_src_data( $source, $src_data )
-		    if $src_data;
-
-		my $st1 = new Benchmark;
-		my $std = timediff($st1, $st0);
-		debug( "Data search and merging took ".timestr($std) );
-
-		my $encodedpkg = uri_escape( $pkg );
-		my ($v_str, $v_str_arch, $v_str_arr) = $page->get_version_string();
-		my $did = $page->get_newest( 'description' );
-		$section = $page->get_newest( 'section' );
-		$subsection = $page->get_newest( 'subsection' );
-		my $filenames = $page->get_arch_field( 'filename' );
-		my $file_md5sums = $page->get_arch_field( 'md5sum' );
-		my $archives = $page->get_arch_field( 'archive' );
-		my $sizes_inst = $page->get_arch_field( 'installed-size' );
-		my $sizes_deb = $page->get_arch_field( 'size' );
-		my @archs = sort $page->get_architectures;
-
-		# process description
-		#
-		my $desc = $descriptions{$did};
-		$short_desc = encode_entities( $1, "<>&\"" )
-		    if $desc =~ s/^(.*)$//m;
-		my $long_desc = encode_entities( $desc, "<>&\"" );
 		
-		$long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
-		$long_desc =~ s/\A //o;
-		$long_desc =~ s/\n /\n/sgo;
-		$long_desc =~ s/\n.\n/\n<p>\n/go;
-		$long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+		unless ($page->is_virtual()) {
+		    $version = $page->{newest};
+		    my $source = $page->get_newest( 'source' );
+		    $archive = $page->get_newest( 'archive' );
+		    debug( "find source package: source=$source", 1);
+		    my $src_data = $sources_all{"$archive $suite $source"};
+		    $page->add_src_data( $source, $src_data )
+			if $src_data;
+
+		    my $st1 = new Benchmark;
+		    my $std = timediff($st1, $st0);
+		    debug( "Data search and merging took ".timestr($std) );
+
+		    my $encodedpkg = uri_escape( $pkg );
+		    my ($v_str, $v_str_arch, $v_str_arr) = $page->get_version_string();
+		    my $did = $page->get_newest( 'description' );
+		    $section = $page->get_newest( 'section' );
+		    $subsection = $page->get_newest( 'subsection' );
+		    my $filenames = $page->get_arch_field( 'filename' );
+		    my $file_md5sums = $page->get_arch_field( 'md5sum' );
+		    my $archives = $page->get_arch_field( 'archive' );
+		    my $sizes_inst = $page->get_arch_field( 'installed-size' );
+		    my $sizes_deb = $page->get_arch_field( 'size' );
+		    my @archs = sort $page->get_architectures;
+
+		    # process description
+		    #
+		    my $desc = $descriptions{$did};
+		    $short_desc = encode_entities( $1, "<>&\"" )
+			if $desc =~ s/^(.*)$//m;
+		    my $long_desc = encode_entities( $desc, "<>&\"" );
+		    
+		    $long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
+		    $long_desc =~ s/\A //o;
+		    $long_desc =~ s/\n /\n/sgo;
+		    $long_desc =~ s/\n.\n/\n<p>\n/go;
+		    $long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
 # 	    $long_desc = conv_desc( $lang, $long_desc );
 # 	    $short_desc = conv_desc( $lang, $short_desc );
 
-		my %all_suites;
-		foreach (@results, @non_results) {
-		    my $a = $_->[1];
-		    my $s = $_->[2];
-		    if ($a =~ /^(?:us|security|non-US)$/o) {
-			$all_suites{$s}++;
-		    } else {
-			$all_suites{"$s/$a"}++;
+		    my %all_suites;
+		    foreach (@results, @non_results) {
+			my $a = $_->[1];
+			my $s = $_->[2];
+			if ($a =~ /^(?:us|security|non-US)$/o) {
+			    $all_suites{$s}++;
+			} else {
+			    $all_suites{"$s/$a"}++;
+			}
 		    }
-		}
-		foreach (suites_sort(keys %all_suites)) {
-		    if (("$suite/$archive" eq $_)
-			|| (!$all_suites{"$suite/$archive"} && ($suite eq $_))) {
-			$package_page .= "[ <strong>$_</strong> ] ";
-		    } else {
-			$package_page .=
-			    "[ <a href=\"$ROOT/$_/".uri_escape($pkg)."\">$_</a> ] ";
+		    foreach (suites_sort(keys %all_suites)) {
+			if (("$suite/$archive" eq $_)
+			    || (!$all_suites{"$suite/$archive"} && ($suite eq $_))) {
+			    $package_page .= "[ <strong>$_</strong> ] ";
+			} else {
+			    $package_page .=
+				"[ <a href=\"$ROOT/$_/".uri_escape($pkg)."\">$_</a> ] ";
+			}
 		    }
-		}
-		$package_page .= '<br>';
+		    $package_page .= '<br>';
 
-		$package_page .= simple_menu( [ gettext( "Distribution:" ),
-						gettext( "Overview over this suite" ),
-						"$ROOT/$suite/",
-						$suite ],
-					      [ gettext( "Section:" ),
-						gettext( "All packages in this section" ),
-						"$ROOT/$suite/$subsection/",
-						$subsection ],
-					      );
+		    $package_page .= simple_menu( [ gettext( "Distribution:" ),
+						    gettext( "Overview over this suite" ),
+						    "$ROOT/$suite/",
+						    $suite ],
+						  [ gettext( "Section:" ),
+						    gettext( "All packages in this section" ),
+						    "$ROOT/$suite/$subsection/",
+						    $subsection ],
+						  );
 
-		my $title .= sprintf( gettext( "Package: %s (%s)" ), $pkg, $v_str );
-		$title .=  " ".marker( $archive ) if $archive ne 'us';
-		$title .=  " ".marker( $subsection ) if $subsection eq 'non-US'
-		    and $archive ne 'non-US'; # non-US/security
-		$title .=  " ".marker( $section ) if $section ne 'main';
-		$package_page .= title( $title );
-		
-		$package_page .= "<h2>".gettext( "Versions:" )." $v_str_arch</h2>\n" 
-		    unless $version eq $v_str;
-		
-		if ($suite eq "experimental") {
-		    $package_page .= note( gettext( "Experimental package"),
-					   gettext( "Warning: This package is from the <span class=\"pred\">experimental</span> distribution. That means it is likely unstable or buggy, and it may even cause data loss. If you ignore this warning and install it nevertheless, you do it on your own risk.")."</p><p>".
-					   gettext( "Users of experimental packages are encouraged to contact the package maintainers directly in case of problems." )
-					   );
-		}
-		if ($subsection eq "debian-installer") {
-		    note( gettext( "debian-installer udeb package"),
-			  gettext( "Warning: This package is intended for the use in building <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do not install it on a normal Debian system." )
-			  );
-		}
-		$package_page .= pdesc( $short_desc, $long_desc );
-
-		#
-		# display dependencies
-		#
-		my $dep_list;
-		$dep_list = print_deps( \%packages, \%opts, $pkg,
-					$page->get_dep_field('depends'),
-					'depends' );
-		$dep_list .= print_deps( \%packages, \%opts, $pkg,
-					 $page->get_dep_field('recommends'),
-					 'recommends' );
-		$dep_list .= print_deps( \%packages, \%opts, $pkg,
-					 $page->get_dep_field('suggests'),
-					 'suggests' );
-
-		if ( $dep_list ) {
-		    $package_page .= "<div id=\"pdeps\">\n";
-		    $package_page .= sprintf( "<h2>".gettext( "Other Packages Related to %s" )."</h2>\n", $pkg );
+		    my $title .= sprintf( gettext( "Package: %s (%s)" ), $pkg, $v_str );
+		    $title .=  " ".marker( $archive ) if $archive ne 'us';
+		    $title .=  " ".marker( $subsection ) if $subsection eq 'non-US'
+			and $archive ne 'non-US'; # non-US/security
+		    $title .=  " ".marker( $section ) if $section ne 'main';
+		    $package_page .= title( $title );
+		    
+		    $package_page .= "<h2>".gettext( "Versions:" )." $v_str_arch</h2>\n" 
+			unless $version eq $v_str;
+		    if (my $provided_by = $page->{provided_by}) {
+			note( gettext( "This is also a virtual package provided by ").join( ', ', map { "<a href=\"$ROOT/$suite/$_\">$_</a>"  } @$provided_by) );
+		    }
+		    
 		    if ($suite eq "experimental") {
-			note( gettext( "Note that the \"<span class=\"pred\">experimental</span>\" distribution is not self-contained; missing dependencies are likely found in the \"<a href=\"/unstable/\">unstable</a>\" distribution." ) );
+			note( gettext( "Experimental package"),
+			      gettext( "Warning: This package is from the <span class=\"pred\">experimental</span> distribution. That means it is likely unstable or buggy, and it may even cause data loss. If you ignore this warning and install it nevertheless, you do it on your own risk.")."</p><p>".
+			      gettext( "Users of experimental packages are encouraged to contact the package maintainers directly in case of problems." )
+			      );
 		    }
-		    
-		    $package_page .= pdeplegend( [ 'dep',  gettext( 'depends' ) ],
-						 [ 'rec',  gettext( 'recommends' ) ],
-						 [ 'sug',  gettext( 'suggests' ) ], );
-		    
-		    $package_page .= $dep_list;
-		    $package_page .= "</div> <!-- end pdeps -->\n";
-		}
+		    if ($subsection eq "debian-installer") {
+			note( gettext( "debian-installer udeb package"),
+			      gettext( "Warning: This package is intended for the use in building <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do not install it on a normal Debian system." )
+			      );
+		    }
+		    $package_page .= pdesc( $short_desc, $long_desc );
 
-		#
-		# Download package
-		#
-		my $encodedpack = uri_escape( $pkg );
-		$package_page .= "<div id=\"pdownload\">";
-		$package_page .= sprintf( "<h2>".gettext( "Download %s\n" )."</h2>",
-					  $pkg ) ;
-		$package_page .= "<table border=\"1\" summary=\"".gettext("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
-		$package_page .= "<caption class=\"hidecss\">".gettext("Download for all available architectures")."</caption>\n";
-		$package_page .= "<tr>\n";
-		$package_page .= "<th>".gettext("Architecture")."</th><th>".gettext("Files")."</th><th>".gettext( "Package Size")."</th><th>".gettext("Installed Size")."</th></tr>\n";
-		foreach my $a ( @archs ) {
-		    $package_page .= "<tr>\n";
-		    $package_page .=  "<th><a href=\"$ROOT/$suite/$encodedpkg/$a/download";
-		    $package_page .=  "\">$a</a></th>\n";
-		    $package_page .= "<td>";
-		    if ( $suite ne "experimental" ) {
-			$package_page .= sprintf( "[<a href=\"%s\">".gettext( "list of files" )."</a>]\n",
-			    "$ROOT/$suite/$encodedpkg/$a/filelist", $pkg );
-		    } else {
-			$package_page .= gettext( "no current information" );
+		    #
+		    # display dependencies
+		    #
+		    my $dep_list;
+		    $dep_list = print_deps( \%packages, \%opts, $pkg,
+					    $page->get_dep_field('depends'),
+					    'depends' );
+		    $dep_list .= print_deps( \%packages, \%opts, $pkg,
+					     $page->get_dep_field('recommends'),
+					     'recommends' );
+		    $dep_list .= print_deps( \%packages, \%opts, $pkg,
+					     $page->get_dep_field('suggests'),
+					     'suggests' );
+
+		    if ( $dep_list ) {
+			$package_page .= "<div id=\"pdeps\">\n";
+			$package_page .= sprintf( "<h2>".gettext( "Other Packages Related to %s" )."</h2>\n", $pkg );
+			if ($suite eq "experimental") {
+			    note( gettext( "Note that the \"<span class=\"pred\">experimental</span>\" distribution is not self-contained; missing dependencies are likely found in the \"<a href=\"/unstable/\">unstable</a>\" distribution." ) );
+			}
+			
+			$package_page .= pdeplegend( [ 'dep',  gettext( 'depends' ) ],
+						     [ 'rec',  gettext( 'recommends' ) ],
+						     [ 'sug',  gettext( 'suggests' ) ], );
+			
+			$package_page .= $dep_list;
+			$package_page .= "</div> <!-- end pdeps -->\n";
 		    }
-		    $package_page .= "</td>\n<td align=right>"; #FIXME: css
-		    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
-		    $package_page .= "</td>\n<td align=right>"; #FIXME: css
-		    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
-		    $package_page .= "</td>\n</tr>";
-		}
-		$package_page .= "</table>\n";
-		$package_page .= "</div> <!-- end pdownload -->\n";
-		
-		#
-		# more information
-		#
-		$package_page .= pmoreinfo( name => $pkg, data => $page,
-					    opts => \%opts,
-					    env => \%FTP_SITES,
-					    bugreports => 1, sourcedownload => 1,
-					    changesandcopy => 1, maintainers => 1,
-					    search => 1 );
-	    }
-	}
+
+		    #
+		    # Download package
+		    #
+		    my $encodedpack = uri_escape( $pkg );
+		    $package_page .= "<div id=\"pdownload\">";
+		    $package_page .= sprintf( "<h2>".gettext( "Download %s\n" )."</h2>",
+					      $pkg ) ;
+		    $package_page .= "<table border=\"1\" summary=\"".gettext("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
+		    $package_page .= "<caption class=\"hidecss\">".gettext("Download for all available architectures")."</caption>\n";
+		    $package_page .= "<tr>\n";
+		    $package_page .= "<th>".gettext("Architecture")."</th><th>".gettext("Files")."</th><th>".gettext( "Package Size")."</th><th>".gettext("Installed Size")."</th></tr>\n";
+		    foreach my $a ( @archs ) {
+			$package_page .= "<tr>\n";
+			$package_page .=  "<th><a href=\"$ROOT/$suite/$encodedpkg/$a/download";
+			$package_page .=  "\">$a</a></th>\n";
+			$package_page .= "<td>";
+			if ( $suite ne "experimental" ) {
+			    $package_page .= sprintf( "[<a href=\"%s\">".gettext( "list of files" )."</a>]\n",
+						      "$ROOT/$suite/$encodedpkg/$a/filelist", $pkg );
+			} else {
+			    $package_page .= gettext( "no current information" );
+			}
+			$package_page .= "</td>\n<td align=right>"; #FIXME: css
+			$package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
+			$package_page .= "</td>\n<td align=right>"; #FIXME: css
+			$package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
+			$package_page .= "</td>\n</tr>";
+		    }
+		    $package_page .= "</table>\n";
+		    $package_page .= "</div> <!-- end pdownload -->\n";
+		    
+		    #
+		    # more information
+		    #
+		    $package_page .= pmoreinfo( name => $pkg, data => $page,
+						opts => \%opts,
+						env => \%FTP_SITES,
+						bugreports => 1, sourcedownload => 1,
+						changesandcopy => 1, maintainers => 1,
+						search => 1 );
+		} else { # unless $page->is_virtual
+		    $short_desc = gettext( "virtual package" );
+
+		    my %all_suites;
+		    foreach (@results, @non_results) {
+			my $a = $_->[1];
+			my $s = $_->[2];
+			if ($a =~ /^(?:us|security|non-US)$/o) {
+			    $all_suites{$s}++;
+			} else {
+			    $all_suites{"$s/$a"}++;
+			}
+		    }
+		    foreach (suites_sort(keys %all_suites)) {
+			if (("$suite/$archive" eq $_)
+			    || (!$all_suites{"$suite/$archive"} && ($suite eq $_))) {
+			    $package_page .= "[ <strong>$_</strong> ] ";
+			} else {
+			    $package_page .=
+				"[ <a href=\"$ROOT/$_/".uri_escape($pkg)."\">$_</a> ] ";
+			}
+		    }
+		    $package_page .= '<br>';
+		    $package_page .= simple_menu( [ gettext( "Distribution:" ),
+						    gettext( "Overview over this distribution" ),
+						    "$ROOT/",
+						    $suite ],
+						  [ gettext( "Section:" ),
+						    gettext( "All packages in this section" ),
+						    "$ROOT/$suite/virtual/",
+
+						    'virtual' ], );
+
+		    $package_page .= title( sprintf( gettext( "Virtual Package: %s" ),
+						     $pkg ) );
+
+		    my $policy_url = 'http://www.debian.org/doc/debian-policy/';
+		    note( sprintf( gettext( "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual packages</a>." ),
+				   $policy_url, $policy_url ));
+
+		    $package_page .= sprintf( "<h2>".gettext( "Packages providing %s" )."</h2>",                              $pkg );
+			  my $provided_by = $page->{provided_by};
+		    $package_page .= pkg_list( \%packages, \%opts, $provided_by, 'en');
+
+		} # else (unless $page->is_virtual)
+	    } # else (unless @results)
+	} # else (unless (@results || @non_results ))
     } else {
 	read_src_entry_all( \%sources, $pkg, \@results, \@non_results, \%opts );
 

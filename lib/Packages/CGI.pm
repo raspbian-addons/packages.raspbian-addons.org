@@ -31,9 +31,6 @@ sub msg {
     push @msgs, $_[0];
 }
 sub note {
-    push @notes, $_[0];
-}
-sub notes {
     push @notes, [ @_ ];
 }
 sub print_errors {
@@ -69,15 +66,14 @@ sub print_msgs {
 sub print_notes {
     foreach (@notes) {
 	my ( $title, $note ) = @$_;
-	my $str = "";
 
+	print '<div style="border: solid thin black; background-color: #ccf">';
 	if ($note) {
-	    $str .= "<h2 class=\"pred\">$title</h2>";
+	    print "<h2 class=\"pred\">$title</h2>";
 	} else {
 	    $note = $title;
 	}
-	$str .= "<p>$note</p>";
-	return $str;
+	print "<p>$note</p></div>";
     }
 }
 

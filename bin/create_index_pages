@@ -110,6 +110,7 @@ my %sections_descs = (
 
 my (%pages);
 
+print "opening files ...\n";
 foreach my $s (@SUITES) {
     foreach my $a (@ARCHIVES) {
 	next if $a eq 'security';
@@ -149,7 +150,7 @@ foreach my $s (@SUITES) {
 	    title( $title ), '<dl>';
 	}
 	my $i = 0; my $num_sections = keys %{$subsections->{$s}{$a}};
-	foreach my $ssec (keys %{$subsections->{$s}{$a}}) {
+	foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    mkpath ( "$wwwdir/$key/$ssec" );
 	    open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
@@ -186,6 +187,7 @@ foreach my $s (@SUITES) {
     }
 }
 
+print "writing package info ...\n";
 while (my ($pkg, $data) = each %packages) {
     my %pkg;
     foreach (split /\000/o, $data) {
@@ -195,17 +197,30 @@ while (my ($pkg, $data) = each %packages) {
 	    $key = "$data[1]/$data[0]";
 	}
 	$pkg{$key} ||= new Packages::Page( $pkg );
-	$pkg{$key}->merge_package( { package => $pkg,
-				     archive => $data[0],
-				     suite => $data[1],
-				     architecture => $data[2],
-				     section => $data[3],
-				     subsection => $data[4],
-				     priority => $data[5],
-				     version => $data[6],
-				     description => $data[7] } );
+	if ($data[2] ne 'virtual') {
+	    $pkg{$key}->merge_package( { package => $pkg,
+					 archive => $data[0],
+					 suite => $data[1],
+					 architecture => $data[2],
+					 section => $data[3],
+					 subsection => $data[4],
+					 priority => $data[5],
+					 version => $data[6],
+					 description => $data[7] } );
+	} else {
+	    $pkg{$key}->add_provided_by([split /\s+/, $data[7]]);
+	}
     }
     while (my ($key, $entry) = each %pkg) {
+	if (my $provided_by = $entry->{provided_by}) {
+	    my $str = "<dt><a href=\"$pkg\">$pkg</a> ".
+		"</dt>\n     <dd>virtual package provided by ".
+		join( ', ',map { "<a href=\"../$_\">$_</a>" } @$provided_by)."</dd>\n";
+	    my $txt_str = "$pkg\tvirtual package provided by ".join(', ', @$provided_by)."\n";
+	    print {$pages{$key}{virtual}{fh}} $str
+		or die "couldn't write to output file: $!";
+	}
+	next if $entry->is_virtual;
 	my (undef, $v_str) = $entry->get_version_string;
 	my $subsection = $entry->get_newest( 'subsection' );
 	my $section = $entry->get_newest( 'section' );
@@ -241,6 +256,7 @@ while (my ($pkg, $data) = each %packages) {
     }
 }
 
+print "closing files ...\n";
 foreach my $s (@SUITES) {
     foreach my $a (@ARCHIVES) {
 	next if $a eq 'security';
@@ -268,7 +284,7 @@ foreach my $s (@SUITES) {
 	    rename( "$wwwdir/$key/$sec/index.en.html.new",
 		    "$wwwdir/$key/$sec/index.en.html" );
 	}
-	foreach my $ssec (keys %{$subsections->{$s}{$a}}) {
+	foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    print {$pages{$key}{$ssec}{fh}} '</dl>', trailer( "$root../../" );
 	    close $pages{$key}{$ssec}{fh} or
