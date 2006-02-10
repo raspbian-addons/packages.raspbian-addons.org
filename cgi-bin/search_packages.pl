@@ -278,12 +278,13 @@ if (@results) {
 
 my @pkgs = sort(keys %pkgs, keys %provided_by);
 	if ($opts{format} eq 'html') {
-	    my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
-	    my $count = 0;
+	    #my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
+	    print "<p>Found <em>".(scalar @pkgs)."</em> matching packages,";
+	    #my $count = 0;
 	
 	    foreach my $pkg (@pkgs) {
-		$count++;
-		next if $count < $start or $count > $end;
+		#$count++;
+		#next if $count < $start or $count > $end;
 		printf "<h3>Package %s</h3>\n", $pkg;
 		print "<ul>\n";
 		foreach my $suite (@SUITES) {
@@ -333,12 +334,13 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 	}
 
 	if ($opts{format} eq 'html') {
-	    my ($start, $end) = multipageheader( $input, scalar keys %pkgs, \%opts );
-	    my $count = 0;
+	    #my ($start, $end) = multipageheader( $input, scalar keys %pkgs, \%opts );
+	    print "<p>Found <em>".(scalar keys %pkgs)."</em> matching packages,";
+	    #my $count = 0;
 	    
 	    foreach my $pkg (sort keys %pkgs) {
-		$count++;
-		next if ($count < $start) or ($count > $end);
+		#$count++;
+		#next if ($count < $start) or ($count > $end);
 		printf "<h3>Source package %s</h3>\n", $pkg;
 		print "<ul>\n";
 		foreach my $suite (@SUITES) {
@@ -368,7 +370,7 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 	    }
 	}
     }
-    printindexline( $input, scalar keys %pkgs, \%opts );
+    #printindexline( $input, scalar keys %pkgs, \%opts );
 }
 #print_results(\@results, \%opts) if @results;;
 my $tet1 = new Benchmark;
