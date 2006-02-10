@@ -80,7 +80,8 @@ if ($params{errors}{arch}) {
     $arch = '';
 }
 
-my $st0 = new Benchmark;
+print $input->header( -charset => 'utf-8' );
+
 print Packages::HTML::header( title => "Filelist of package $pkg in $suite of arch $arch",
 			      lang => 'en',
 			      #desc => $short_desc,
