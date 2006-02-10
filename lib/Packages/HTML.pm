@@ -129,7 +129,7 @@ sub pmoreinfo {
 	    $opts->{suite} :
 	    "$opts->{suite}/$opts->{archive}[0]";
 	$str .= gettext( "Source Package:" );
-	$str .= " <a href=\"/$path/source/$source\">$source</a>, ".
+	$str .= " <a href=\"$ROOT/$path/source/$source\">$source</a>, ".
 	    gettext( "Download" ).":\n";
 
 	unless (defined($files) and @$files) {
