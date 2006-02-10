@@ -157,6 +157,10 @@ unless (@Packages::CGI::fatal_errors) {
 	push @results, @{ do_names_search( $keyword, \%sources,
 					   $sp_obj,
 					   \&read_src_entry, \%opts ) };
+    } elsif ($searchon eq 'contents') {
+	require "./search_contents.pl";
+	&contents(\$input);
+	exit;
     } else {
 	push @results, @{ do_names_search( $keyword, \%packages,
 					   $p_obj,
@@ -289,7 +293,7 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 			    my @versions = version_sort keys %{$pkgs{$pkg}{$suite}{$archive}};
 			    my $origin_str = "";
 			    if ($sect{$pkg}{$suite}{$archive}{$versions[0]}) {
-				$origin_str .= " [<span style=\"color:red\">$sect{$pkg}{$suite}{$versions[0]}</span>]";
+				$origin_str .= " [<span style=\"color:red\">$sect{$pkg}{$suite}{$archive}{$versions[0]}</span>]";
 			    }
 			    printf "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
 			    $path, $pkg, $path, $subsect{$pkg}{$suite}{$archive}{$versions[0]},
