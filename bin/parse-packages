@@ -184,8 +184,13 @@ tie %descriptions_db, "DB_File", "$DBDIR/descriptions.db.new",
 open DESCR, ">", "$DBDIR/descriptions.txt" or die "Error creating descriptions textfile";
 for (my $i=1; $i<= $#descriptions; $i++) {
 	my $plain_description = $descriptions[$i];
-	$plain_description =~ s/\n .\n/ /og;
-	$plain_description =~ s/[\n \t]+/ /og;
+# WARNING: This needs to correspond with what happens in
+# Packages/Search.pm:do_fulltext_search
+	$plain_description =~ tr [A-Z] [a-z];
+	# ensure one space on both ends
+	$plain_description = " $plain_description ";
+	$plain_description =~ s/[(),.-]+//og;
+	$plain_description =~ s#[^a-z0-9_/+]+# #og;
 	print DESCR "$plain_description\n";
 	$descriptions_db{$i} = $descriptions[$i];
 }

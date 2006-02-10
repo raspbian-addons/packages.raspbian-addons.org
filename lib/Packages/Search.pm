@@ -442,26 +442,19 @@ sub do_fulltext_search {
     my ($keyword, $file, $did2pkg, $packages, $read_entry, $opts) = @_;
     my @results;
 
+# NOTE: this needs to correspond with parse-packages!
     my @lines;
-    my $regex;
-    if ($opts->{case_bool}) {
-	if ($opts->{exact}) {
-	    $regex = qr/\b\Q$keyword\E\b/o;
-	} else {
-	    $regex = qr/\Q$keyword\E/o;
-	}
-    } else {
-	if ($opts->{exact}) {
-	    $regex = qr/\b\Q$keyword\E\b/io;
-	} else {
-	    $regex = qr/\Q$keyword\E/io;
-	}
+    $keyword =~ tr [A-Z] [a-z];
+    if ($opts->{exact}) {
+	$keyword = " $keyword ";
     }
+    $keyword =~ s/[(),.-]+//og;
+    $keyword =~ s#[^a-z0-9_/+]+# #og;
 
     open DESC, '<', "$file"
 	or die "couldn't open $file: $!";
     while (<DESC>) {
-	$_ =~ $regex or next;
+	next if index $_, $keyword < 0;
 	debug( "Matched line $.", 2);
 	push @lines, $.;
     }
