@@ -54,12 +54,10 @@ use Exporter;
 
 our @ISA = qw( Exporter );
 
-our @EXPORT_OK = qw( nextlink prevlink indexline
-                     resperpagelink
-		     read_entry read_entry_all read_entry_simple
+our @EXPORT_OK = qw( read_entry read_entry_all read_entry_simple
 		     read_src_entry read_src_entry_all find_binaries
 		     do_names_search do_fulltext_search
-		     printindexline multipageheader );
+		     );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $VERSION = 0.01;
@@ -295,49 +293,49 @@ sub printindexline {
     }
 }
 
-sub multipageheader {
-    my ( $input, $no_results, $opts ) = @_;
-
-    my ($start, $end);
-    if ($opts->{number} =~ /^all$/i) {
-	$start = 1;
-	$end = $no_results;
-	$opts->{number} = $no_results;
-	$opts->{number_all}++;
-    } else {
-	$start = Packages::Search::start( $opts );
-	$end = Packages::Search::end( $opts );
-	if ($end > $no_results) { $end = $no_results; }
-    }
-
-    print "<p>Found <em>$no_results</em> matching packages,";
-    if ($end == $start) {
-	print " displaying package $end.</p>";
-    } else {
-	print " displaying packages $start to $end.</p>";
-    }
-
-    printindexline( $input, $no_results, $opts );
-
-    if ($no_results > 100) {
-	print "<p>Results per page: ";
-	my @resperpagelinks;
-	for (50, 100, 200) {
-	    if ($opts->{number} == $_) {
-		push @resperpagelinks, $_;
-	    } else {
-		push @resperpagelinks, resperpagelink($input,$opts,$_);
-	    }
-	}
-	if ($opts->{number_all}) {
-	    push @resperpagelinks, "all";
-	} else {
-	    push @resperpagelinks, resperpagelink($input, $opts, "all");
-	}
-	print join( " | ", @resperpagelinks )."</p>";
-    }
-    return ( $start, $end );
-}
+#sub multipageheader {
+#    my ( $input, $no_results, $opts ) = @_;
+#
+#    my ($start, $end);
+#    if ($opts->{number} =~ /^all$/i) {
+#	$start = 1;
+#	$end = $no_results;
+#	$opts->{number} = $no_results;
+#	$opts->{number_all}++;
+#    } else {
+#	$start = Packages::Search::start( $opts );
+#	$end = Packages::Search::end( $opts );
+#	if ($end > $no_results) { $end = $no_results; }
+#    }
+#
+#	print "<p>Found <em>$no_results</em> matching packages,";
+#    if ($end == $start) {
+#	print " displaying package $end.</p>";
+#    } else {
+#	print " displaying packages $start to $end.</p>";
+#    }
+#
+#    printindexline( $input, $no_results, $opts );
+#
+#    if ($no_results > 100) {
+#	print "<p>Results per page: ";
+#	my @resperpagelinks;
+#	for (50, 100, 200) {
+#	    if ($opts->{number} == $_) {
+#		push @resperpagelinks, $_;
+#	    } else {
+#		push @resperpagelinks, resperpagelink($input,$opts,$_);
+#	    }
+#	}
+#	if ($opts->{number_all}) {
+#	    push @resperpagelinks, "all";
+#	} else {
+#	    push @resperpagelinks, resperpagelink($input, $opts, "all");
+#	}
+#	print join( " | ", @resperpagelinks )."</p>";
+#    }
+#    return ( $start, $end );
+#}
 
 sub read_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
@@ -440,10 +438,8 @@ sub do_names_search {
 }
 sub do_fulltext_search {
     my ($keyword, $file, $did2pkg, $packages, $read_entry, $opts) = @_;
-    my @results;
 
 # NOTE: this needs to correspond with parse-packages!
-    my @lines;
     $keyword =~ tr [A-Z] [a-z];
     if ($opts->{exact}) {
 	$keyword = " $keyword ";
@@ -451,24 +447,27 @@ sub do_fulltext_search {
     $keyword =~ s/[(),.-]+//og;
     $keyword =~ s#[^a-z0-9_/+]+# #og;
 
+    my $numres = 0;
+    my %tmp_results;
     open DESC, '<', "$file"
 	or die "couldn't open $file: $!";
     while (<DESC>) {
-	next if index $_, $keyword < 0;
-	debug( "Matched line $.", 2);
-	push @lines, $.;
-    }
-    close DESC;
-
-    my %tmp_results;
-    foreach my $l (@lines) {
-	my $result = $did2pkg->{$l};
+	next if (index $_, $keyword) < 0;
+	debug( "Matched line $.: $_", 2);
+	my $result = $did2pkg->{$.};
 	foreach (split /\000/o, $result) {
 	    my @data = split /\s/, $_, 3;
-	    next unless $opts->{h_archs}{$data[2]};
-	    $tmp_results{$data[0]}++;
+	    debug ("Considering $data[0], arch = $data[2]", 3);
+	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
+	    debug ("Ok", 3);
+	    $numres++ unless $tmp_results{$data[0]}++;
 	}
+	last if $numres > 100;
     }
+    close DESC;
+    $too_many_hits++ if $numres > 100;
+
+    my @results;
     foreach my $pkg (keys %tmp_results) {
 	&$read_entry( $packages, $pkg, \@results, $opts );
     }
