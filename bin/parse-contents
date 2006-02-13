@@ -22,32 +22,49 @@
 use strict;
 use lib './lib';
 
+# Important, we want sorting and such to happen like in the C locale: binary,
+# without any fancy collation. FIXME: is this actually adequate?
+$ENV{"LC_ALL"} = 'C';
+
 my $what = $ARGV[0] ? "head -10000|" : "";
+
+# More RAM vs more disk I/O tradeoff parameters, does not change
+# functionality. True will always use more RAM at the benefit of less
+# temporary files, and is adviced when possible
+my $SORT_REVERSE_CONCURRENTLY = 1;
 
 use DB_File;
 use Storable;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 &Packages::Config::init( './' );
-my %filenames = ();
 
 my @archives =( 'us'); #@ARCHIVES # NOT-IMPLEMENTED-YET
 my @suites = @SUITES;
 my @archs = @ARCHITECTURES;
 
-for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
+$DBDIR .= "/contents";
+
+for my $archive (@archives) { for my $suite (@suites) {
+
+  for my $arch (@archs) {
 
 	my $filename = "$TOPDIR/archive/$archive/$suite/Contents-$arch.gz";
-	my $db = "$DBDIR/packages_contents_${suite}_${arch}.db";
+	my $filelist_db = "$DBDIR/filelists_${suite}_${arch}.db";
 	next unless -f $filename;
-	my $ftime = (stat $filename)[9];
-	my $dbtime = (stat $db)[9];
-	next unless $ftime > $dbtime;
+	my $ftime = (stat $filename)[10]; # Note: ctime, because mtime is set back via rsync
+	my $dbtime = (stat $filelist_db)[9];
+	next if defined $dbtime and $dbtime > $ftime;
 	print "Reading $archive/$suite/$arch...\n";
 
 	my %packages_contents = ();
 	my %packages_contents_nr = ();
 	my %packages_contents_lastword = ();
-	my %contents_packages_reverse = ();
+
+	my $extra = "";
+	$extra = "|sort" if $SORT_REVERSE_CONCURRENTLY;
+
+	open REVERSED, "$extra>$DBDIR/reverse.tmp"
+		or die "Failed to open output reverse file";
 
 	open CONT, "zcat $filename|$what";
 	while (<CONT>) {last if /^FILE/mo;}
@@ -55,7 +72,7 @@ for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
 		my $data = "";
 		my %data = ();
 		chomp;
-		print "Doing line $.\n" if $. % 10000 == 0;
+		print "Doing line ".($./1000)."k (out of approx 1.5M)\n" if $. % 250000 == 0;
 		/^(.+?)\s+(\S+)$/o;
 		my ($file, $value) = ($1, $2);
 		$value =~ s#[^,/]+/##og;
@@ -72,23 +89,19 @@ for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
 		}
 		# Searches are case-insensitive
 		$file =~ tr [A-Z] [a-z];
-		my $filename = $file;
-		$filename =~ s,.*/,,;
-		$filenames{$filename} = 1;
 
-		$contents_packages_reverse{reverse $file} = join "\0", @packages;
+		print REVERSED (reverse $file)."\0".(join ":$arch\0", @packages).":$arch\n";
 	}
-	my %contents_packages_reverse_db;
-	tie %contents_packages_reverse_db, "DB_File", "$DBDIR/contents_packages_reverse_${suite}_${arch}.db.new",
-		O_RDWR|O_CREAT, 0666, $DB_BTREE
-		or die "Error creating DB: $!";
-	while (my ($x, $y) = each(%contents_packages_reverse)) {
-		$contents_packages_reverse_db{$x} = $y;
-	}
-	untie %contents_packages_reverse_db;
+	close CONT;
+	close REVERSED;
 
-	my %packages_contents_db;
-	tie %packages_contents_db, "DB_File", "$DBDIR/packages_contents_${suite}_${arch}.db.new",
+	print "Sorting reverse list if needed\n";
+	system("cd $DBDIR && sort reverse.tmp > reverse.sorted && mv reverse.{sorted,tmp}") == 0
+		or die "Failed to sort reverse"
+		unless $SORT_REVERSE_CONCURRENTLY;
+
+	print "Writing filelist db\n";
+	tie my %packages_contents_db, "DB_File", "$filelist_db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
 	while (my ($k, $v) = each(%packages_contents)) {
@@ -96,20 +109,69 @@ for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
 			. $v;
 	}
 	untie %packages_contents_db;
-}}}
 
-print "Writing databases...\n";
+	rename("$DBDIR/reverse.tmp", "$DBDIR/reverse_${suite}_${arch}.txt");
+
+	rename("$filelist_db.new", $filelist_db);
+	system("ln -sf $filelist_db $DBDIR/filelists_${suite}_all.db") == 0
+		or die "Oops";
+  }
+
+  print "Merging reverse path lists for ${suite}...\n";
+
+  open MERGED, "sort -m $DBDIR/reverse_${suite}_*.txt |"
+	or die "Failed to open merged list";
+  open FILENAMES, "> $DBDIR/filenames_$suite.txt.new"
+	or die "Failed to open filenames list";
+  tie my %reverse_path_db, "DB_File", "$DBDIR/reverse_${suite}.db.new",
+	  O_RDWR|O_CREAT, 0666, $DB_BTREE
+	  or die "Error creating DB: $!";
+
+  my $lastpath = "";
+  my $lastfile = "";
+  my @matches = ();
+  while (<MERGED>) {
+	print "Doing line ".($./1000000)."M (out of approx. 16M)\n" if $. % 1000000 == 0;
+	chomp;
+	my @line = split /\0/o, $_;
+	my $revpath = shift @line;
+	if ($revpath ne $lastpath) {
+      # Wrap: Do useful stuff with this ($lastpath, @matches)
+	  $reverse_path_db{$lastpath} = join "\0", @matches if $lastpath ne "";
+	  $lastpath =~ s,/.*,,o;
+	  if ($lastfile ne $lastpath) {
+		$lastfile = $lastpath;
+		print FILENAMES (reverse $lastfile)."\n";
+	  }
+	  #
+	  $lastpath = $revpath;
+	  @matches = @line;
+	  next;
+	}
+	push @matches, @line
+  }
+  # Note: do useful stuff here too, for out last entry. Maybe prevent this by
+  # adding a fake ultimate entry?
+  $reverse_path_db{$lastpath} = join "\0", @matches;
+
+  untie %reverse_path_db;
+  close FILENAMES;
+  close MERGED;
+
+  rename "$DBDIR/filenames_$suite.txt.new", "$DBDIR/filenames_$suite.txt";
+  rename "$DBDIR/reverse_$suite.db.new", "$DBDIR/reverse_$suite.db";
+}}
+
+#print "Writing databases...\n";
 
 # FIXME: missing filenames due to optimising above. Need to store filenames
 # per-suite/arch, but merge them in the end for better cached searching
-open FILENAMES, "> $DBDIR/filenames.txt.new";
-for (keys %filenames) {
-	print FILENAMES "$_\n";
-}
-close FILENAMES;
+#open FILENAMES, "> $DBDIR/filenames.txt.new";
+#for (keys %filenames) {
+#	print FILENAMES "$_\n";
+#}
+#close FILENAMES;
 
-rename("$DBDIR/filenames.txt.new", "$DBDIR/filenames.txt");
-for my $archive (@archives) { for my $suite (@suites) { for my $arch (@archs) {
-	rename("$DBDIR/packages_contents_${suite}_${arch}.db.new", "$DBDIR/packages_contents_${suite}_${arch}.db");
-	rename("$DBDIR/contents_packages_reverse_${suite}_${arch}.db.new", "$DBDIR/contents_packages_reverse_${suite}_${arch}.db");
-}}}
+#rename("$DBDIR/filenames.txt.new", "$DBDIR/filenames.txt");
+
+# vim: set ts=4
