@@ -117,7 +117,7 @@ if ($params{errors}{suite}) {
 $opts{h_suites} =   { $suite => 1 };
 $opts{h_archs} =    { map { $_ => 1 } @archs };
 $opts{h_sections} = { map { $_ => 1 } @sections };
-$opts{h_archives} = { map { $_ => 1 } @archives };;
+$opts{h_archives} = { map { $_ => 1 } @archives };
 
 my $DL_URL = "$pkg/download";
 my $FILELIST_URL = "$pkg/files";
