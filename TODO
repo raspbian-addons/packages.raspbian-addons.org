@@ -34,7 +34,9 @@ General:
 - Check for case sensitive consistency
 - Fix assumption that archive doesn't show up in any url, consistency-fy
   dealing with archives of a different set than (us, non-us, security)
-- Some packages are both concrete and virtual, deal with that
+- Some packages are both concrete and virtual, deal with that: in depends
+  display of show_package (now if a package is concrete, you only see that),
+  and eh, somewhere else too ttbomk
 
 Bugs:
 - amd64 security is getting displayed weirdly
