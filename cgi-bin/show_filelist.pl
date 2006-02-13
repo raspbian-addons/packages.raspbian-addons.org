@@ -96,11 +96,10 @@ print_debug();
 print_notes();
 
 unless (@Packages::CGI::fatal_errors) {
-    tie my %contents, 'DB_File', "$DBDIR/packages_contents_${suite}_${arch}.db",
+    tie my %contents, 'DB_File', "$DBDIR/contents/filelists_${suite}_${arch}.db",
 	O_RDONLY, 0666, $DB_BTREE
-	or die "couldn't tie DB $DBDIR/packages_contents_${suite}_${arch}.db: $!";
+	or die "Invalid suite/arch combination";
 
-    my $cont = $contents{$pkg};
     print "No such package in this suite on this arch" if not exists $contents{$pkg};
     my @files = unpack "L/(CC/a)", $contents{$pkg};
     my $file = "";
