@@ -27,6 +27,8 @@ PATH_INFO (mode too?). They can not take more than one value then, though.
 search for package name:
 ------------------------
 
+searchon=names
+
 required parameters:
  keywords [PKG_NAME]
 optional parameters:
@@ -37,9 +39,18 @@ optional parameters:
  exact    [BOOL]                     default=1
 
 TODO: Allow more than one keyword
+-> hm? Example?
+J: If exact is not specified, lookup exact and if that fails show
+substring matches -- search is cheap? Maybe totally drop exact parameter, and
+do this always? Less options == easier interface (or so gnome devs say)
+
+	Only in case of $ROOT/<pkg>, exact should be forced and
+	substring/description searches only offered (not performed by default)
 
 full text search in package names and descriptions:
 ---------------------------------------------------
+
+searchon=all (fixme)
 
 required parameters:
  keywords [STRING]
@@ -51,6 +62,8 @@ optional parameters:
  exact    [BOOL]                     default=1
 
 TODO: Allow more than one keyword
+ J: should already work? Only gives hits where keywords are subsequent
+ though...
 
 display one package:
 --------------------
@@ -62,6 +75,9 @@ optional parameters:
  archive  [ARCHIVE_NAME(s) | 'default' | 'all' ] default=( us security non-US )
  section  [SECTION_NAME(s) | 'all' ]             default='all'
  arch     [ARCH_NAME(s) | 'any' ]                default='any'
+
+J: Do we really want random path-element order here? Why not force order like
+in URLS?
 
 download one package:
 ---------------------
@@ -75,6 +91,8 @@ optional parameters:
 
 TODO: support section?
 
+J: same comments as with one-package-page
+
 show file list for one package:
 -------------------------------
 
@@ -87,8 +105,12 @@ optional parameters:
 
 TODO: support section?
 
+J: Same comments as with one-package-page
+
 search for file:
 ----------------
+
+searchon=contents
 
 required parameters:
  keyword [PATH_NAME]
@@ -101,3 +123,13 @@ optional parameters:
 TODO: support section?
       suite/arch were required in the old version, still are?
       which modes do we want? The old ones were "files", "dirs+files", "full"
+
+J: suite is still required, arch is not (it's not even supported atm, but
+trivially would be). An easy crosslink a la [stable][testing][unstable] would
+be adviseable
+
+mode is implemented via exact and fullfilename parameters currently (both
+cannot be set at the same time), mode would be better indeed. Possibilities
+are currently "ends-with", "exact filename" and "filename substring". I don't
+think more would be useful, with 'bin/foo' for example you can then find
+/usr/bin/foo and /bin/foo and /sbin/foo, but simply not /bin/foobar
