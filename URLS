@@ -3,18 +3,18 @@ $Id$
 Proposal for URL layout
 
 $ROOT/search <- search handling
-$ROOT/pkg <- exact lookup for package name
-$ROOT/source/pkg <- exact lookup for source package name
- $ROOT/src:pkg <- redir to above
+$ROOT/<pkg> <- exact lookup for package name
+$ROOT/source/<pkg> <- exact lookup for source package name
+ $ROOT/src:<pkg> <- redir to above
 
-$ROOT/suite/pkg <- static package page
-$ROOT/suite/pkg/changelog <- fetch changelog
-$ROOT/suite/pkg/copyright <- fetch copyright
-$ROOT/suite/pkg/arch <- arch-specific static page (noindex)
-$ROOT/suite/pkg/arch/download <- download form for package
-$ROOT/suite/pkg/arch/filelist <- fetch list of files
+$ROOT/<suite>/<pkg> <- static package page
+$ROOT/<suite>/<pkg>/changelog <- fetch changelog
+$ROOT/<suite>/<pkg>/copyright <- fetch copyright
+$ROOT/<suite>/<pkg>/<arch> <- arch-specific static page (noindex)
+$ROOT/<suite>/<pkg>/<arch>/download <- download form for package
+$ROOT/<suite>/<pkg>/<arch>/filelist <- fetch list of files
 
-$ROOT/suite/source/pkg <- static source package page
+$ROOT/<suite>/source/<pkg> <- static source package page
 
-$ROOT/suite/sections/$section <- section index page
- $ROOT/suite/$section <- will need to work, too, for backwards compatibility
+$ROOT/<suite>/sections/<section> <- section index page
+ $ROOT/<suite>/<section> <- will need to work, too, for backwards compatibility
