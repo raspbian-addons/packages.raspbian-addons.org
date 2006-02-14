@@ -22,7 +22,6 @@ sub contents() {
 
 my $suite = 'stable'; #fixme
 
-    # fixme: I should open $reverses only once per search
     my $reverses = tie my %reverses, 'DB_File', "$DBDIR/contents/reverse_$suite.db",
 	O_RDONLY, 0666, $DB_BTREE
 	or die "Failed opening reverse DB: $!";
