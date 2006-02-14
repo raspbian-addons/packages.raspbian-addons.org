@@ -35,6 +35,7 @@ my $SORT_REVERSE_CONCURRENTLY = 1;
 
 use DB_File;
 use Storable;
+use File::Path;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 &Packages::Config::init( './' );
 
@@ -43,6 +44,7 @@ my @suites = @SUITES;
 my @archs = @ARCHITECTURES;
 
 $DBDIR .= "/contents";
+-d $DBDIR || mkpath( $DBDIR );
 
 for my $archive (@archives) { for my $suite (@suites) {
 
@@ -64,9 +66,10 @@ for my $archive (@archives) { for my $suite (@suites) {
 	$extra = "|sort" if $SORT_REVERSE_CONCURRENTLY;
 
 	open REVERSED, "$extra>$DBDIR/reverse.tmp"
-		or die "Failed to open output reverse file";
+		or die "Failed to open output reverse file: $!";
 
-	open CONT, "zcat $filename|$what";
+	open CONT, "zcat $filename|$what"
+		or die $!;
 	while (<CONT>) {last if /^FILE/mo;}
 	while (<CONT>) {
 		my $data = "";
