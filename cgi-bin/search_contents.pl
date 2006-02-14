@@ -1,12 +1,8 @@
 #!/usr/bin/perl -wT
 # $Id$
-# search_packages.pl -- CGI interface to the Packages files on packages.debian.org
+# search_contents.pl -- CGI interface to the Contents files on packages.debian.org
 #
-# Copyright (C) 1998 James Treacy
-# Copyright (C) 2000, 2001 Josip Rodin
-# Copyright (C) 2001 Adam Heath
-# Copyright (C) 2004 Martin Schulze
-# Copyright (C) 2004-2006 Frank Lichtenheld
+# Copyright (C) 2006 Jeroen van Wolffelaar
 #
 # use is allowed under the terms of the GNU Public License (GPL)                              
 # see http://www.fsf.org/copyleft/gpl.html for a copy of the license
