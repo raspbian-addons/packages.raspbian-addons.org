@@ -159,8 +159,7 @@ unless (@Packages::CGI::fatal_errors) {
 					   \&read_src_entry, \%opts ) };
     } elsif ($searchon eq 'contents') {
 	require "./search_contents.pl";
-	&contents(\$input);
-	exit;
+	&contents($input);
     } else {
 	push @results, @{ do_names_search( $keyword, \%packages,
 					   $p_obj,
