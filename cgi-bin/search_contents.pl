@@ -19,6 +19,11 @@ sub contents() {
 # only thing implemented yet: ends-with search
     my $kw = lc $cgi->param("keywords");
     $kw = reverse $kw;
+    
+    # exact filename searching follows trivially:
+    my $exact = $cgi->param("exact");
+    $kw = "/$kw" if $exact;
+
 # FIXME: ensure $suite is sanitized
     my $suite = 'stable';
 
