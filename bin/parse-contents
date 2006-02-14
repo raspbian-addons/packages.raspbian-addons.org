@@ -117,6 +117,15 @@ for my $archive (@archives) { for my $suite (@suites) {
 		or die "Oops";
   }
 
+
+  my $go = 0;
+  my $suite_mtime = (stat "$DBDIR/reverse_$suite.db")[9];
+  for my $file (glob "$DBDIR/reverse_${suite}_*.txt") {
+	  $go = 1 if not defined $suite_mtime
+		  or $suite_mtime < (stat $file)[9];
+  }
+  next unless $go;
+
   print "Merging reverse path lists for ${suite}...\n";
 
   open MERGED, "sort -m $DBDIR/reverse_${suite}_*.txt |"
@@ -161,17 +170,5 @@ for my $archive (@archives) { for my $suite (@suites) {
   rename "$DBDIR/filenames_$suite.txt.new", "$DBDIR/filenames_$suite.txt";
   rename "$DBDIR/reverse_$suite.db.new", "$DBDIR/reverse_$suite.db";
 }}
-
-#print "Writing databases...\n";
-
-# FIXME: missing filenames due to optimising above. Need to store filenames
-# per-suite/arch, but merge them in the end for better cached searching
-#open FILENAMES, "> $DBDIR/filenames.txt.new";
-#for (keys %filenames) {
-#	print FILENAMES "$_\n";
-#}
-#close FILENAMES;
-
-#rename("$DBDIR/filenames.txt.new", "$DBDIR/filenames.txt");
 
 # vim: set ts=4
