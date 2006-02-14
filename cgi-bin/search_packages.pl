@@ -255,7 +255,7 @@ print_errors();
 print_hints();
 print_debug();
 if (@results) {
-    my (%pkgs, %subsect, %sect, %desc, %binaries, %provided_by);
+    my (%pkgs, %subsect, %sect, %archives, %desc, %binaries, %provided_by);
 
     unless ($opts{searchon} eq 'sourcenames') {
 	foreach (@results) {
@@ -264,10 +264,18 @@ if (@results) {
 	
 	    my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
 	    if ($arch ne 'virtual') {
+		my $real_archive;
+		if ($archive =~ /^(security|non-US)$/) {
+		    $real_archive = $archive;
+		    $archive = 'us';
+		}
+
 		$pkgs{$pkg}{$suite}{$archive}{$version}{$arch} = 1;
 		$subsect{$pkg}{$suite}{$archive}{$version} = $subsection;
 		$sect{$pkg}{$suite}{$archive}{$version} = $section
 		    unless $section eq 'main';
+		$archives{$pkg}{$suite}{$archive}{$version} = $real_archive
+		    if $real_archive;
 		
 		$desc{$pkg}{$suite}{$archive}{$version} = $desc;
 	    } else {
@@ -288,8 +296,11 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 		print "<ul>\n";
 		foreach my $suite (@SUITES) {
 		    foreach my $archive (@ARCHIVES) {
+                        next if $archive eq 'security';
+                        next if $archive eq 'non-US';
 			my $path = $suite.(($archive ne 'us')?"/$archive":'');
 			if (exists $pkgs{$pkg}{$suite}{$archive}) {
+			    my %archs_printed;
 			    my @versions = version_sort keys %{$pkgs{$pkg}{$suite}{$archive}};
 			    my $origin_str = "";
 			    if ($sect{$pkg}{$suite}{$archive}{$versions[0]}) {
@@ -300,8 +311,16 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 			    $desc{$pkg}{$suite}{$archive}{$versions[0]}, $origin_str;
 			    
 			    foreach my $v (@versions) {
-				printf "<br>%s: %s\n",
-				$v, join (" ", (sort keys %{$pkgs{$pkg}{$suite}{$archive}{$v}}) );
+				my $archive_str = "";
+				if ($archives{$pkg}{$suite}{$archive}{$v}) {
+				    $archive_str .= " [<span style=\"color:red\">$archives{$pkg}{$suite}{$archive}{$v}</span>]";
+				}
+
+				my @archs_to_print = grep { !$archs_printed{$_} } sort keys %{$pkgs{$pkg}{$suite}{$archive}{$v}};
+				printf "<br>%s$archive_str: %s\n",
+				$v, join (" ", @archs_to_print )
+                                    if @archs_to_print;
+				$archs_printed{$_}++ foreach @archs_to_print;
 			    }
 			    if (my $provided_by =  $provided_by{$pkg}{$suite}{$archive}) {
 				print '<br>also provided by: ',
@@ -324,10 +343,22 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 	    my ($pkg, $archive, $suite, $section, $subsection, $priority,
 		$version) = @$_;
 	
+	    my $real_archive = '';
+	    if ($archive =~ /^(security|non-US)$/) {
+		$real_archive = $archive;
+		$archive = 'us';
+	    }
+	    if (($real_archive eq $archive) &&
+		$pkgs{$pkg}{$suite}{$archive} &&
+		(version_cmp( $pkgs{$pkg}{$suite}{$archive}, $version ) >= 0)) {
+		next;
+	    }
 	    $pkgs{$pkg}{$suite}{$archive} = $version;
 	    $subsect{$pkg}{$suite}{$archive}{source} = $subsection;
 	    $sect{$pkg}{$suite}{$archive}{source} = $section
 		unless $section eq 'main';
+	    $archives{$pkg}{$suite}{$archive}{source} = $real_archive
+		if $real_archive;
 
 	    $binaries{$pkg}{$suite}{$archive} = find_binaries( $pkg, $archive, $suite, \%src2bin );
 	}
@@ -348,6 +379,9 @@ my @pkgs = sort(keys %pkgs, keys %provided_by);
 			    my $origin_str = "";
 			    if ($sect{$pkg}{$suite}{$archive}{source}) {
 				$origin_str .= " [<span style=\"color:red\">$sect{$pkg}{$suite}{$archive}{source}</span>]";
+			    }
+			    if ($archives{$pkg}{$suite}{$archive}{source}) {
+				$origin_str .= " [<span style=\"color:red\">$archives{$pkg}{$suite}{$archive}{source}</span>]";
 			    }
 			    printf( "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s",
 				    $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect{$pkg}{$suite}{$archive}{source},
