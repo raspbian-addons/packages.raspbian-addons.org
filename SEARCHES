@@ -1,0 +1,103 @@
+
+SEARCHES
+========
+
+Overview over all types of searches that are supported and which
+parameters they use.
+
+general TODO: allow to search for a specific version?
+
+parameter types:
+----------------
+
+PKG_NAME =~ ^[\w+.-]+$
+SUITE_NAME =~ ^[\w-]+$
+ARCHIVE_NAME =~ ^[\w-]+$
+SECTION_NAME =~ ^[\w-]+$
+ARCH_NAME =~ ^[\w-]+$
+PATH_NAME =~ ^[\w.:+/-]+$ <-- what to allow here?
+
+if an parameter type is suffixes with (s) this means you can
+specify an array of values separated by commas.
+
+package, suite, archive, section, and arch can also be specified via
+PATH_INFO (mode too?). They can not take more than one value then, though.
+
+
+search for package name:
+------------------------
+
+required parameters:
+ keywords [PKG_NAME]
+optional parameters:
+ suite    [SUITE_NAME(s) | 'all']    default='all'
+ archive  [ARCHIVE_NAME(s) | 'all' ] default='all'
+ section  [SECTION_NAME(s) | 'all' ] default='all'
+ arch     [ARCH_NAME(s) | 'any' ]    default='any'
+ exact    [BOOL]                     default=1
+
+TODO: Allow more than one keyword
+
+full text search in package names and descriptions:
+---------------------------------------------------
+
+required parameters:
+ keywords [STRING]
+optional parameters:
+ suite    [SUITE_NAME(s) | 'all']    default='all'
+ archive  [ARCHIVE_NAME(s) | 'all' ] default='all'
+ section  [SECTION_NAME(s) | 'all' ] default='all'
+ arch     [ARCH_NAME(s) | 'any' ]    default='any'
+ exact    [BOOL]                     default=1
+
+TODO: Allow more than one keyword
+
+display one package:
+--------------------
+
+required parameters:
+ package  [PKG_NAME]
+ suite    [SUITE_NAME]
+optional parameters:
+ archive  [ARCHIVE_NAME(s) | 'default' | 'all' ] default=( us security non-US )
+ section  [SECTION_NAME(s) | 'all' ]             default='all'
+ arch     [ARCH_NAME(s) | 'any' ]                default='any'
+
+download one package:
+---------------------
+
+required parameters:
+ package  [PKG_NAME]
+ suite    [SUITE_NAME]
+ arch     [ARCH_NAME]
+optional parameters:
+ archive  [ARCHIVE_NAME(s) | 'default' | 'all' ] default=( us security non-US )
+
+TODO: support section?
+
+show file list for one package:
+-------------------------------
+
+required parameters:
+ package  [PKG_NAME]
+ suite    [SUITE_NAME]
+ arch     [ARCH_NAME]
+optional parameters:
+ archive  [ARCHIVE_NAME(s) | 'default' | 'all' ] default=( us security non-US )
+
+TODO: support section?
+
+search for file:
+----------------
+
+required parameters:
+ keyword [PATH_NAME]
+?suite   [SUITE_NAME]
+?arch    [ARCH_NAME]
+?mode    [ 'file' | 'dir' | 'full' ]
+optional parameters:
+ archive  [ARCHIVE_NAME(s) | 'default' | 'all' ] default=( us security non-US )
+
+TODO: support section?
+      suite/arch were required in the old version, still are?
+      which modes do we want? The old ones were "files", "dirs+files", "full"
