@@ -35,7 +35,7 @@ sub note {
 }
 sub print_errors {
     return unless @fatal_errors || @errors;
-    print '<div style="background-color:#F99;font-weight:bold;padding:0.5em;margin:0;">';
+    print '<div style="margin:.2em;background-color:#F99;font-weight:bold;padding:0.5em;margin:0;">';
     foreach ((@fatal_errors, @errors)) {
 	print "<p>ERROR: $_</p>";
     }
@@ -43,7 +43,7 @@ sub print_errors {
 }
 sub print_debug {
     return unless $debug && @debug;
-    print '<div style="font-size:80%;border:solid thin grey">';
+    print '<div style="margin:.2em;font-size:80%;border:solid thin grey">';
     print '<h2>Debugging:</h2><pre>';
     foreach (@debug) {
 	print "$_\n";
@@ -52,7 +52,7 @@ sub print_debug {
 }
 sub print_hints {
     return unless @hints;
-    print '<div>';
+    print '<div style="margin:.2em;">';
     foreach (@hints) {
 	print "<p style=\"background-color:#FF9;padding:0.5em;margin:0\">$_</p>";
     }
@@ -67,7 +67,7 @@ sub print_notes {
     foreach (@notes) {
 	my ( $title, $note ) = @$_;
 
-	print '<div style="border: solid thin black; background-color: #ccf">';
+	print '<div style="margin:.2em;border: solid thin black; background-color: #bdf">';
 	if ($note) {
 	    print "<h2 class=\"pred\">$title</h2>";
 	} else {

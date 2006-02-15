@@ -81,14 +81,15 @@ sub pdeplegend {
 
 sub pkg_list {
     my ( $packages, $opts, $pkgs, $lang ) = @_;
+    my $suite = $opts->{suite}[0];
 
     my $str = "";
     foreach my $p ( @$pkgs ) {
 
-	my $short_desc = (read_entry_simple( $packages, $p, $opts->{h_archives}, $opts->{suite}))->[-1];
+	my $short_desc = (read_entry_simple( $packages, $p, $opts->{h_archives}, $suite))->[-1];
 
 	if ( $short_desc ) {
-	    $str .= "<dt><a href=\"$ROOT/$opts->{suite}/$p\">$p</a></dt>\n".
+	    $str .= "<dt><a href=\"$ROOT/$suite/$p\">$p</a></dt>\n".
 		    "\t<dd>$short_desc</dd>\n";
 	} else {
 	    $str .= "<dt>$p</dt>\n\t<dd>".gettext("Not available")."</dd>\n";
@@ -109,6 +110,7 @@ sub pmoreinfo {
     my $opts = $info{opts} or return;
     my $page = $info{data} or return;
     my $is_source = $info{is_source};
+    my $suite = $opts->{suite}[0];
 
     my $str = "<div id=\"pmoreinfo\">";
     $str .= sprintf( "<h2>".gettext( "More Information on %s" )."</h2>",
@@ -126,8 +128,8 @@ sub pmoreinfo {
     if ($info{sourcedownload}) {
 	my $files = $page->get_src( 'files' );
 	my $path = (@{$opts->{archive}} >1) ?
-	    $opts->{suite} :
-	    "$opts->{suite}/$opts->{archive}[0]";
+	    $suite :
+	    "$suite/$opts->{archive}[0]";
 	$str .= gettext( "Source Package:" );
 	$str .= " <a href=\"$ROOT/$path/source/$source\">$source</a>, ".
 	    gettext( "Download" ).":\n";
@@ -244,6 +246,7 @@ sub print_deps {
 		    'suggests' => 'sug');
     my $res = "<ul class=\"ul$dep_type{$type}\">\n";
     my $first = 1;
+    my $suite = $opts->{suite}[0];
 
 #    use Data::Dumper;
 #    debug( "print_deps called:\n".Dumper( $pkg, $relations, \$type ), 3 );
@@ -279,17 +282,23 @@ sub print_deps {
 	    $pkg_version = "($pkg_version)" if $pkg_version;
 	    
 	    my @results;
-	    my %short_descs;
-	    my $short_desc = $short_descs{$p_name} ||
-		(read_entry_simple( $packages, $p_name, $opts->{h_archives}, $opts->{suite}))->[-1];
+	    my %entries;
+	    my $entry = $entries{$p_name} ||
+		read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite);
+	    my $short_desc = $entry->[-1];
+	    my $arch = $entry->[2];
 	    if ( $short_desc ) {
 		if ( $is_old_pkgs ) {
-		    push @res_pkgs, dep_item( "$ROOT/$opts->{suite}/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$suite/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
+		} elsif ($arch eq 'virtual') {
+		    $short_desc = "virtual package";
+		    push @res_pkgs, dep_item( "$ROOT/$suite/$p_name",
+					      $p_name, "$pkg_version$arch_str", $short_desc );
 		} else {
-		    $short_descs{$p_name} ||= $short_desc;
+		    $entries{$p_name} ||= $entry;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
-		    push @res_pkgs, dep_item( "$ROOT/$opts->{suite}/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$suite/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}
 	    } elsif ( $is_old_pkgs ) {
@@ -315,6 +324,7 @@ sub print_deps {
 sub print_src_deps {
     my ( $packages, $opts, $pkg, $relations, $type) = @_;
     my %dep_type = ('build-depends' => 'adep', 'build-depends-indep' => 'idep' );
+    my $suite = $opts->{suite}[0];
     my $res = "<ul class=\"ul$dep_type{$type}\">\n";
     foreach my $dep (@$relations) {
 	my @res_pkgs;
@@ -336,10 +346,10 @@ sub print_src_deps {
 		}
 		$arch_str = " [${arch_str}@{$or_dep->[3]}]";
 	    }
-	    my $short_desc = (read_entry_simple( $packages, $p_name, $opts->{h_archives}, $opts->{suite}))->[-1];
+	    my $short_desc = (read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite))->[-1];
 	    if ( $short_desc ) {
 		$short_desc = encode_entities( $short_desc, "<>&\"" );
-		push @res_pkgs, dep_item( "/$opts->{suite}/$p_name", $p_name, "$p_version$arch_str", $short_desc );
+		push @res_pkgs, dep_item( "/$suite/$p_name", $p_name, "$p_version$arch_str", $short_desc );
 	    } else {
 		$short_desc = gettext( "Package not available" );
 		push @res_pkgs, dep_item( undef, $p_name, "$p_version$arch_str", $short_desc );
@@ -394,12 +404,6 @@ sub header {
     my $page_title = $params{page_title} || $params{title} || '';
     my $meta = $params{meta} || '';
 
-    if ($params{print_title_above}) {
- 	$title_in_header = "<h1>$title_in_header</h1>";
-    } else {
- 	$title_in_header = '';
-    }
-
     my $search_in_header = '';
     $params{print_search_field} ||= "";
     if ($params{print_search_field} eq 'packages') {
@@ -413,11 +417,9 @@ sub header {
 <div id="hpacketsearch">
 <input type="hidden" name="debug" value="$values{debug}">
 <input type="hidden" name="suite" value="$values{suite}">
-<input type="hidden" name="subword" value="$values{subword}">
 <input type="hidden" name="exact" value="$values{exact}">
 <input type="hidden" name="arch" value="$values{arch}">
 <input type="hidden" name="section" value="$values{section}">
-<input type="hidden" name="case" value="$values{case}">
 <input type="text" size="30" name="keywords" value="$values{keywords}" id="kw">
 <input type="submit" value="Search">
 <span style="font-size: 60%"><a href="$SEARCH_PAGE#search_packages">Full options</a></span>
@@ -510,7 +512,6 @@ $search_in_header
 
 NAVBEGIN
 ;
-# $title_in_header
     $txt .= "<p class=\"hidecss\"><a href=\"\#inner\">" . gettext("Skip Site Navigation")."</a></p>\n";
     $txt .= "<div id=\"navbar\">\n<ul>".
 	"<li><a href=\"$HOME/intro/about\">".gettext( "About&nbsp;Debian" )."</a></li>\n".
@@ -532,10 +533,7 @@ ENDNAV
 
 BEGINCONTENT
 ;
-    if ($params{print_title_above}) {
-	$txt .= "<h1>$page_title</h1>\n";
-    }
-    if ($params{print_title_below}) {
+    if ($params{print_title}) {
 	$txt .= "<h1>$page_title</h1>\n";
     }
 

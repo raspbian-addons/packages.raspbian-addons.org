@@ -362,6 +362,8 @@ sub read_entry {
 sub read_entry_simple {
     my ($hash, $key, $archives, $suite) = @_;
     my $result = $hash->{$key} || '';
+    debug( "read_entry_simple: key=$key, archives=".
+	   join(" ",(keys %$archives)).", suite=$suite", 1);
     my @data_fuzzy;
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
@@ -381,6 +383,7 @@ sub read_entry_simple {
 sub read_src_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
     my $result = $hash->{$key} || '';
+    debug( "read_src_entry_all: key=$key", 1);
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 6 );
 	debug( "Considering entry ".join( ':', @data), 2);
@@ -400,44 +403,40 @@ sub read_src_entry {
     read_src_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
 sub do_names_search {
-    my ($keyword, $packages, $postfixes, $read_entry, $opts) = @_;
-    my @results;
+    my ($keyword, $packages, $postfixes, $read_entry, $opts,
+	$results, $non_results) = @_;
 
-    $keyword = lc $keyword unless $opts->{case_bool};
+    $keyword = lc $keyword;
         
-    if ($opts->{exact}) {
-	&$read_entry( $packages, $keyword, \@results, $opts );
-    } else {
-	my ($key, $prefixes) = ($keyword, '');
-	my %pkgs;
-	$postfixes->seq( $key, $prefixes, R_CURSOR );
-	while (index($key, $keyword) >= 0) {
-            if ($prefixes =~ /^\001(\d+)/o) {
-                $too_many_hits += $1;
-            } else {
-		foreach (split /\000/o, $prefixes) {
-		    $_ = '' if $_ eq '^';
-		    debug( "add word $_$key", 2);
-		    $pkgs{$_.$key}++;
-		}
+    my ($key, $prefixes) = ($keyword, '');
+    my %pkgs;
+    $postfixes->seq( $key, $prefixes, R_CURSOR );
+    while (index($key, $keyword) >= 0) {
+	if ($prefixes =~ /^\001(\d+)/o) {
+	    $too_many_hits += $1;
+	} else {
+	    foreach (split /\000/o, $prefixes) {
+		$_ = '' if $_ eq '^';
+		debug( "add word $_$key", 2);
+		$pkgs{$_.$key}++;
 	    }
-	    last if $postfixes->seq( $key, $prefixes, R_NEXT ) != 0;
-	    last if $too_many_hits or keys %pkgs >= 100;
 	}
-        
-        my $no_results = keys %pkgs;
-        if ($too_many_hits || ($no_results >= 100)) {
-	    $too_many_hits += $no_results;
-	    %pkgs = ( $keyword => 1 );
-	}
-	foreach my $pkg (sort keys %pkgs) {
-	    &$read_entry( $packages, $pkg, \@results, $opts );
-	}
+	last if $postfixes->seq( $key, $prefixes, R_NEXT ) != 0;
+	last if $too_many_hits or keys %pkgs >= 100;
     }
-    return \@results;
+    
+    my $no_results = keys %pkgs;
+    if ($too_many_hits || ($no_results >= 100)) {
+	$too_many_hits += $no_results;
+	%pkgs = ( $keyword => 1 );
+    }
+    foreach my $pkg (sort keys %pkgs) {
+	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
+    }
 }
 sub do_fulltext_search {
-    my ($keyword, $file, $did2pkg, $packages, $read_entry, $opts) = @_;
+    my ($keyword, $file, $did2pkg, $packages, $read_entry, $opts,
+	$results, $non_results) = @_;
 
 # NOTE: this needs to correspond with parse-packages!
     $keyword =~ tr [A-Z] [a-z];
@@ -457,9 +456,9 @@ sub do_fulltext_search {
 	my $result = $did2pkg->{$.};
 	foreach (split /\000/o, $result) {
 	    my @data = split /\s/, $_, 3;
-	    debug ("Considering $data[0], arch = $data[2]", 3);
-	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
-	    debug ("Ok", 3);
+#	    debug ("Considering $data[0], arch = $data[2]", 3);
+#	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
+#	    debug ("Ok", 3);
 	    $numres++ unless $tmp_results{$data[0]}++;
 	}
 	last if $numres > 100;
@@ -469,10 +468,9 @@ sub do_fulltext_search {
 
     my @results;
     foreach my $pkg (keys %tmp_results) {
-	&$read_entry( $packages, $pkg, \@results, $opts );
+	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
     }
-    return \@results;
-}
+ }
 
 sub find_binaries {
     my ($pkg, $archive, $suite, $src2bin) = @_;
