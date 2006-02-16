@@ -253,7 +253,6 @@ sub print_package {
     my ($pkg, $pkgs, $provided_by, $archives, $sect, $subsect, $desc) = @_;
 
     my $str = sprintf "<h3>Package %s</h3>\n", $pkg;
-    return $str;
     $str .= "<ul>\n";
     foreach my $suite (@SUITES) {
 	foreach my $archive (@ARCHIVES) {
