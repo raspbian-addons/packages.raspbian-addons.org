@@ -64,7 +64,7 @@ sub do_search_contents {
 	    or die "Failed opening reverse DB: $!";
 
 	if ($ffn) {
-	    open FILENAMES, '-|', 'fgrep', '--', "$DBDIR/contents/filenames_$suite.txt"
+	    open FILENAMES, '-|', 'fgrep', '--', "$kw", "$DBDIR/contents/filenames_$suite.txt"
 		or die "Failed opening filename table: $!";
 	    while (<FILENAMES>) {
 		chomp;
@@ -152,6 +152,7 @@ sub searchfile
 	last if ($$nres)++ > 100;
     }
 
+# FIXME: use too_many_hits
     return $$nres<100;
 }
 
