@@ -264,7 +264,7 @@ sub print_package {
 		my @versions = version_sort keys %{$pkgs->{$suite}{$archive}};
 		my $origin_str = "";
 		if ($sect->{$suite}{$archive}{$versions[0]}) {
-		    $origin_str .= " [<span style=\"color:red\">$sect->$suite}{$archive}{$versions[0]}</span>]";
+		    $origin_str .= " [<span style=\"color:red\">$sect->{$suite}{$archive}{$versions[0]}</span>]";
 		}
 		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
 				 $path, $pkg, $path, $subsect->{$suite}{$archive}{$versions[0]},
