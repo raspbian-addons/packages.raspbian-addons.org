@@ -370,12 +370,16 @@ sub read_entry_simple {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2);
 	if ($data[1] eq $suite) {
-	    if ($archives->{$data[0]}) {
+	    if ($archives->{$data[0]}
+		&& ($data[2] ne 'virtual')) {
 		debug( "Using entry ".join( ':', @data), 2);
 		return \@data;
+	    } elsif ($archives->{$data[0]}) {
+		debug( "Virtual entry ".join( ':', @data), 2);
+		@data_fuzzy = @data;
 	    } elsif ($data[0] eq 'us') {
 		debug( "Fuzzy entry ".join( ':', @data), 2);
-		@data_fuzzy = @data;
+		@data_fuzzy = @data unless @data_fuzzy;
 	    }
 	} 
     }
