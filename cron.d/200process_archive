@@ -1,0 +1,13 @@
+#!/bin/bash
+
+. `dirname $0`/../config.sh
+
+cd "$topdir"
+
+date
+./bin/parse-packages
+date
+./bin/parse-sources
+date
+./bin/parse-contents
+date
