@@ -134,9 +134,10 @@ sub parse_params {
 	my @p_value_no_replace = @p_value;
 
 	if ($params{$param}{replace} && @p_value) {
-	    @p_value = ();
 	    foreach my $pattern (keys %{$params{$param}{replace}}) {
-		foreach (@p_value_no_replace) {
+		my @p_value_tmp = @p_value;
+		@p_value = ();
+		foreach (@p_value_tmp) {
 		    if ($_ eq $pattern) {
 			my $replacement = $params{$param}{replace}{$_};
 			if (ref $replacement) {
