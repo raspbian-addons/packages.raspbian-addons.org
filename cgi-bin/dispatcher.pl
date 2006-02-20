@@ -28,6 +28,7 @@ use Packages::HTML ();
 use Packages::Sections;
 
 use Packages::DoSearch;
+use Packages::DoSearchContents;
 use Packages::DoShow;
 use Packages::DoDownload;
 use Packages::DoFilelist;
@@ -57,7 +58,7 @@ $Packages::CGI::debug = $debug;
 
 my $what_to_do = 'show';
 my $source = 0;
-if (my $path = $input->path_info()) {
+if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
     my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
     debug( "components[0]=$components[0]", 2 );
@@ -181,6 +182,9 @@ if ((($opts{searchon} eq 'names') && $opts{source}) ||
     $opts{searchon_form} = 'sourcenames';
 } else {
     $opts{searchon_form} = $opts{searchon};
+}
+if ($opts{searchon} eq 'contents' or $opts{searchon} eq 'filenames') {
+    $what_to_do = 'search_contents';
 }
 
 my $pet1 = new Benchmark;
