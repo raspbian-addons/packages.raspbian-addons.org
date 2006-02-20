@@ -365,7 +365,7 @@ sub read_entry_simple {
     my $result = $hash->{$key} || '';
     debug( "read_entry_simple: key=$key, archives=".
 	   join(" ",(keys %$archives)).", suite=$suite", 1);
-    my @data_fuzzy;
+    my (@data_fuzzy, @data_virtual, @data_fuzzy_virtual);
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2);
@@ -376,14 +376,20 @@ sub read_entry_simple {
 		return \@data;
 	    } elsif ($archives->{$data[0]}) {
 		debug( "Virtual entry ".join( ':', @data), 2);
+		@data_virtual = @data;
+	    } elsif (($data[0] eq 'us')
+		     && ($data[2] ne 'virtual')) {
+		debug( "Fuzzy entry ".join( ':', @data), 2);
 		@data_fuzzy = @data;
 	    } elsif ($data[0] eq 'us') {
-		debug( "Fuzzy entry ".join( ':', @data), 2);
-		@data_fuzzy = @data unless @data_fuzzy;
+		debug( "Virtual fuzzy entry ".join( ':', @data), 2);
+		@data_fuzzy_virtual = @data;
 	    }
 	} 
     }
-    return \@data_fuzzy;
+    return \@data_virtual if @data_virtual;
+    return \@data_fuzzy if @data_fuzzy;
+    return \@data_fuzzy_virtual;
 }
 sub read_src_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
