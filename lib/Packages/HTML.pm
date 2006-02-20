@@ -435,8 +435,8 @@ sub header {
 <br>
 <input type="radio" name="searchon" value="sourcenames" id="src" $checked_searchon{sourcenames}>
 <label for="src">Source package names</label>
-<input type="radio" name="searchon" value="contents" id="src" $checked_searchon{contents}>
-<label for="src">Package contents</label>
+<input type="radio" name="searchon" value="contents" id="conts" $checked_searchon{contents}>
+<label for="conts">Package contents</label>
 </div>
 </div> <!-- end hpacketsearch -->
 </form>
