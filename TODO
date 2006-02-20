@@ -37,6 +37,14 @@ General:
 - Some packages are both concrete and virtual, deal with that: in depends
   display of show_package (now if a package is concrete, you only see that),
   and eh, somewhere else too ttbomk
+- grep -ri fixme
+- searchon=all -> searchon=descriptions?
+- quicksearch box: copy parameters of current search (exact,suite,arch,etc),
+  or rather, always use defaults? Both have their pro&cons... former is more
+  obscure, but otoh, for typo fixing more appropriate.
+  Maybe best of both worlds is 'modify search' below results, where you can
+  generalize/specificy arch, etc etc?
+
 
 Bugs:
 - amd64 security is getting displayed weirdly
