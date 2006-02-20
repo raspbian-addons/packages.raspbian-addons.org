@@ -438,7 +438,7 @@ sub do_show {
 		      print_search_field => 'packages',
 		      search_field_values => { 
 			  keywords => '',
-			  searchon => 'names',
+			  searchon => $opts->{source} ? 'sourcenames' : 'names',
 			  arch => 'any',
 			  suite => 'all',
 			  section => 'all',
