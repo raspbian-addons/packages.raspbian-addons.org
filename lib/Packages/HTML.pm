@@ -410,8 +410,11 @@ sub header {
 	my %values = %{$params{search_field_values}};
 	my %checked_searchon = ( names => "",
 				 all => "",
-				 sourcenames => "", );
-	$checked_searchon{$values{searchon}} = "checked=\"checked\"";
+				 sourcenames => "",
+				 contents => "");
+	$checked_searchon{$params{searchon}} = "checked=\"checked\"";
+	$checked_searchon{names} = "checked=\"checked\""
+		if $params{searchon} eq 'default';
 	$search_in_header = <<MENU;
 <form method="GET" action="$SEARCH_CGI">
 <div id="hpacketsearch">
@@ -426,12 +429,14 @@ sub header {
 <br>
 <div style="font-size: 80%">Search on:
 <input type="radio" name="searchon" value="names" id="onlynames" $checked_searchon{names}>
-<label for="onlynames">Package names only</label>&nbsp;&nbsp;
+<label for="onlynames">Package names</label>&nbsp;&nbsp;
 <input type="radio" name="searchon" value="all" id="descs" $checked_searchon{all}>
 <label for="descs">Descriptions</label>
 <br>
 <input type="radio" name="searchon" value="sourcenames" id="src" $checked_searchon{sourcenames}>
 <label for="src">Source package names</label>
+<input type="radio" name="searchon" value="contents" id="src" $checked_searchon{contents}>
+<label for="src">Package contents</label>
 </div>
 </div> <!-- end hpacketsearch -->
 </form>
