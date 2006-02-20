@@ -179,6 +179,8 @@ if ((($opts{searchon} eq 'names') && $opts{source}) ||
     $opts{source} = 1;
     $opts{searchon} = 'names',
     $opts{searchon_form} = 'sourcenames';
+} else {
+    $opts{searchon_form} = $opts{searchon};
 }
 
 my $pet1 = new Benchmark;
