@@ -413,6 +413,7 @@ sub do_names_search {
     $postfixes->seq( $key, $prefixes, R_CURSOR );
     while (index($key, $keyword) >= 0) {
 	if ($prefixes =~ /^\001(\d+)/o) {
+	    debug( "$key has too many hits", 2 );
 	    $too_many_hits += $1;
 	} else {
 	    foreach (split /\000/o, $prefixes) {
