@@ -372,9 +372,9 @@ sub header {
 				 all => "",
 				 sourcenames => "",
 				 contents => "");
-	$checked_searchon{$params{searchon}} = "checked=\"checked\"";
+	$checked_searchon{$values{searchon}} = "checked=\"checked\"";
 	$checked_searchon{names} = "checked=\"checked\""
-		if $params{searchon} eq 'default';
+		if $values{searchon} eq 'default';
 	$search_in_header = <<MENU;
 <form method="GET" action="$SEARCH_CGI">
 <div id="hpacketsearch">
