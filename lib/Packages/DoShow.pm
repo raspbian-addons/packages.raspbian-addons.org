@@ -345,12 +345,12 @@ sub do_show {
 		    # display dependencies
 		    #
 		    my $dep_list;
-		    $dep_list = print_src_deps( \%packages, $opts, $pkg,
-						$page->get_dep_field('build-depends'),
-						'build-depends' );
-		    $dep_list .= print_src_deps( \%packages, $opts, $pkg,
-						 $page->get_dep_field('build-depends-indep'),
-						 'build-depends-indep' );
+		    $dep_list = print_deps( \%packages, $opts, $pkg,
+					    $page->get_dep_field('build-depends'),
+					    'build-depends' );
+		    $dep_list .= print_deps( \%packages, $opts, $pkg,
+					     $page->get_dep_field('build-depends-indep'),
+					     'build-depends-indep' );
 
 		    if ( $dep_list ) {
 			$package_page .= "<div id=\"pdeps\">\n";

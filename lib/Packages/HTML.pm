@@ -243,10 +243,12 @@ sub dep_item {
 sub print_deps {
     my ( $packages, $opts, $pkg, $relations, $type) = @_;
     my %dep_type = ('depends' => 'dep', 'recommends' => 'rec', 
-		    'suggests' => 'sug');
+		    'suggests' => 'sug', 'build-depends' => 'adep',
+		    'build-depends-indep' => 'idep' );
     my $res = "<ul class=\"ul$dep_type{$type}\">\n";
     my $first = 1;
     my $suite = $opts->{suite}[0];
+    my $one_archive = @{$opts->{archive}} > 1 ? '': $opts->{archive}[0];
 
 #    use Data::Dumper;
 #    debug( "print_deps called:\n".Dumper( $pkg, $relations, \$type ), 3 );
@@ -272,14 +274,14 @@ sub print_deps {
 	    my ( $p_name, $pkg_version, $arch_neg,
 		 $arch_str, $subsection, $available ) = @$rel_alt;
 
-	    if ($arch_str) {
+	    if ($arch_str ||= '') {
 		if ($arch_neg) {
 		    $arch_str = " [".gettext("not")." $arch_str]";
 		} else {
 		    $arch_str = " [$arch_str]";
 		}
 	    }
-	    $pkg_version = "($pkg_version)" if $pkg_version;
+	    $pkg_version = "($pkg_version)" if $pkg_version ||= '';
 	    
 	    my @results;
 	    my %entries;
@@ -287,18 +289,21 @@ sub print_deps {
 		read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite);
 	    my $short_desc = $entry->[-1];
 	    my $arch = $entry->[2];
+	    my $archive = $entry->[0];
 	    if ( $short_desc ) {
+		my $path = $one_archive eq $archive ? "$suite/$archive" :
+		    $suite;
 		if ( $is_old_pkgs ) {
-		    push @res_pkgs, dep_item( "$ROOT/$suite/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
 		} elsif ($arch eq 'virtual') {
 		    $short_desc = "virtual package";
-		    push @res_pkgs, dep_item( "$ROOT/$suite/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		} else {
 		    $entries{$p_name} ||= $entry;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
-		    push @res_pkgs, dep_item( "$ROOT/$suite/$p_name",
+		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}
 	    } elsif ( $is_old_pkgs ) {
@@ -320,51 +325,6 @@ sub print_deps {
     }
     return $res;
 } # end print_deps
-
-sub print_src_deps {
-    my ( $packages, $opts, $pkg, $relations, $type) = @_;
-    my %dep_type = ('build-depends' => 'adep', 'build-depends-indep' => 'idep' );
-    my $suite = $opts->{suite}[0];
-    my $res = "<ul class=\"ul$dep_type{$type}\">\n";
-    foreach my $dep (@$relations) {
-	my @res_pkgs;
-	$res .= "<li><dl><dt><img class=\"hidecss\" src=\"$ROOT/Pics/$dep_type{$type}.gif\" alt=\"[$dep_type{$type}]\"> ";
-	foreach my $or_dep ( @$dep ) {
-	    my $p_name = $or_dep->[0];
-	    my $p_version = $or_dep->[1] ? "(".encode_entities( $or_dep->[1] ).
-		" $or_dep->[2]) " : "";
-	    my $not = gettext( "not" );
-	    my $arch_str = '';
-	    if ($or_dep->[3] && @{$or_dep->[3]}) {
-		# as either all or no archs have to be prepended with
-		# exlamation marks, convert the first and delete the others
-		if ($or_dep->[3][0] =~ /^!/) {
-		    $arch_str = "$not ";
-		    foreach (@{$or_dep->[3]}) {
-			$_ =~ s/^!//go;
-		    }
-		}
-		$arch_str = " [${arch_str}@{$or_dep->[3]}]";
-	    }
-	    my $short_desc = (read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite))->[-1];
-	    if ( $short_desc ) {
-		$short_desc = encode_entities( $short_desc, "<>&\"" );
-		push @res_pkgs, dep_item( "/$suite/$p_name", $p_name, "$p_version$arch_str", $short_desc );
-	    } else {
-		$short_desc = gettext( "Package not available" );
-		push @res_pkgs, dep_item( undef, $p_name, "$p_version$arch_str", $short_desc );
-	    }
-	}
-	$res .= "\n".join( "<dt>\n".gettext( "or" )." ", @res_pkgs )."</dl></li>\n";
-    }
-    if (@$relations) {
-        $res .= "\n</ul>";
-    } else {
-        $res = "";
-    }
-	return $res;
-} # end print_src_deps
-
 
 my $ds_begin = '<dl>';
 my $ds_item_desc  = '<dt>';

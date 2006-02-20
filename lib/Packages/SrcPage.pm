@@ -111,7 +111,31 @@ sub get_version_string {
 sub get_dep_field {
     my ($self, $dep_field) = @_;
 
-    return $self->{dep_fields}{$dep_field}[1];
+    my @deps;
+    foreach my $dep (@{$self->{dep_fields}{$dep_field}[1]}) {
+	my @or_deps;
+	foreach my $or_dep ( @$dep ) {
+	    my $p_name = $or_dep->[0];
+	    my $p_version = $or_dep->[1] ? "$or_dep->[1] $or_dep->[2]" : undef;
+	    my $arch_neg;
+	    my $arch_str = '';
+	    if ($or_dep->[3] && @{$or_dep->[3]}) {
+		# as either all or no archs have to be prepended with
+		# exlamation marks, use the first and delete the others
+		if ($or_dep->[3][0] =~ /^!/) {
+		    $arch_neg = 1;
+		    foreach (@{$or_dep->[3]}) {
+			$_ =~ s/^!//go;
+		    }
+		}
+		$arch_str = join(" ",sort(@{$or_dep->[3]}));
+	    }
+
+	    push @or_deps, [ $p_name, $p_version, $arch_neg, $arch_str ];
+	}
+	push @deps, [ 0, @or_deps ];
+    }
+    return \@deps;
 }
 
 1;
