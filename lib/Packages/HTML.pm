@@ -297,7 +297,13 @@ sub print_deps {
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
 		} elsif ($arch eq 'virtual') {
-		    $short_desc = "virtual package";
+		    my @provided_by = split /\s/, $short_desc;
+		    $short_desc = "virtual package provided by ";
+		    if (@provided_by < 10) {
+			$short_desc .= join( ', ',map { "<a href=\"$ROOT/$path/$_\">$_</a>" } @provided_by);
+		    } else {
+			$short_desc .= scalar(@provided_by)." packages";
+		    }
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		} else {
