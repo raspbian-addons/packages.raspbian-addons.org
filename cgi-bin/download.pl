@@ -13,7 +13,7 @@ use warnings;
 
 use CGI ();
 use DB_File;
-use Benchmark;
+use Benchmark ':hireswallclock';
 
 use lib "../lib";
 

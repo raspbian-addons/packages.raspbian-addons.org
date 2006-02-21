@@ -3,7 +3,7 @@ package Packages::DoSearch;
 use strict;
 use warnings;
 
-use Benchmark;
+use Benchmark ':hireswallclock';
 use DB_File;
 use URI::Escape;
 use HTML::Entities;

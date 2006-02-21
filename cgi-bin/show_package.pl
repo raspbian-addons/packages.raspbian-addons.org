@@ -20,7 +20,7 @@ use POSIX;
 use URI::Escape;
 use HTML::Entities;
 use DB_File;
-use Benchmark;
+use Benchmark ':hireswallclock';
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT @SUITES @ARCHIVES @SECTIONS

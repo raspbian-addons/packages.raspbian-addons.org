@@ -6,7 +6,7 @@ use POSIX;
 use URI::Escape;
 use HTML::Entities;
 use DB_File;
-use Benchmark;
+use Benchmark ':hireswallclock';
 use Exporter;
 
 use Deb::Versions;
