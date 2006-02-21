@@ -26,12 +26,21 @@ sub do_search_contents {
     } elsif (length($opts->{keywords}) < 2) {
 	fatal_error( "keyword too short (keywords need to have at least two characters)" );
     }
+    if ($params->{errors}{suite}) {
+	fatal_error( "suite not valid or not specified" );
+    }
+    if (@{$opts->{suite}} > 1) {
+	fatal_error( "more than one suite specified for contents search (@{$opts->{suite}})" );
+    }
 
     $$menu = "";
     
     my $keyword = $opts->{keywords};
     my $searchon = $opts->{searchon};
     my $exact = $opts->{exact};
+    my $suite = $opts->{suite}[0];
+    my $archive = $opts->{archive}[0] ||'';
+    $Packages::Search::too_many_hits = 0;
 
     # for URL construction
     my $keyword_esc = uri_escape( $keyword );
@@ -47,7 +56,7 @@ sub do_search_contents {
     my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ) );
     
     my $st0 = new Benchmark;
-    my (@results, @non_results);
+    my (@results);
 
     unless (@Packages::CGI::fatal_errors) {
 
@@ -57,28 +66,29 @@ sub do_search_contents {
 	# full filename search is tricky
 	my $ffn = $searchon eq 'filenames';
 
-	my $suite = 'stable'; #fixme
-
 	my $reverses = tie my %reverses, 'DB_File', "$DBDIR/contents/reverse_$suite.db",
 	    O_RDONLY, 0666, $DB_BTREE
 	    or die "Failed opening reverse DB: $!";
 
 	if ($ffn) {
-	    open FILENAMES, '-|', 'fgrep', '--', "$kw", "$DBDIR/contents/filenames_$suite.txt"
+	    open FILENAMES, '-|', 'fgrep', '--', $kw, "$DBDIR/contents/filenames_$suite.txt"
 		or die "Failed opening filename table: $!";
+
+	    error( "Exact and fullfilenamesearch don't go along" )
+		if $ffn and $exact;
+
 	    while (<FILENAMES>) {
 		chomp;
-		last unless &searchfile(\@results, reverse($_)."/", \$nres, $reverses);
+		&searchfile(\@results, reverse($_)."/", \$nres, $reverses);
+		last if $Packages::Search::too_many_hits;
 	    }
-	    close FILENAMES;
+	    close FILENAMES or warn "fgrep error: $!\n";
 	} else {
 
 	    $kw = reverse $kw;
 	    
 	    # exact filename searching follows trivially:
 	    $kw = "$kw/" if $exact;
-
-	    print "ERROR: Exact and fullfilenamesearch don't go along" if $ffn and $exact;
 
 	    &searchfile(\@results, $kw, \$nres, $reverses);
 	}
@@ -102,12 +112,11 @@ sub do_search_contents {
     msg( "You have searched for ${wording} <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording." );
 
     if ($Packages::Search::too_many_hits) {
-	error( "Your search was too wide so we will only display exact matches. At least <em>$Packages::Search::too_many_hits</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." );
+	error( "Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords." );
     }
     
-    $$page_content = '';
     if (!@Packages::CGI::fatal_errors && !@results) {
-	$$page_content .= "No results";
+	error( "Nothing found" );
     }
 
     %$html_header = ( title => 'Package Contents Search Results' ,
@@ -126,11 +135,23 @@ sub do_search_contents {
 		      },
 		      );
 
+    $$page_content = '';
     if (@results) {
-	$$page_content .= scalar @results . " results displayed:<br>";
-	foreach (@results) {
-	    $$page_content .= "<tt>$_</tt><br>\n";
+	$$page_content .= "<p>Found ".scalar(@results)." results</p>";
+	$$page_content .= "<div  id=\"pcontentsres\"><table><colgroup><col><col></colgroup><tr><th style=\"text-align:center\">File</th><th style=\"text-align:center\">Packages</th></tr>";
+	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
+	    my $file = shift @$result;
+	    $$page_content .= "<tr><td class=\"file\">$file</td><td>";
+	    my %pkgs;
+	    foreach (@$result) {
+		my ($pkg, $arch) = split /:/, $_;
+		$pkgs{$pkg}{$arch}++;
+	    }
+	    $$page_content .= join( ", ", map { "<a href=\"$ROOT/$suite/$_\">$_</a>" } sort keys %pkgs);
+	    $$page_content .= '</td>';
 	}
+	$$page_content .= '<tr><th style="text-align:center">File</th><th style="text-align:center">Packages</th></tr>' if @results > 20;
+	$$page_content .= '</table></div>';
     }
 } # sub do_search_contents
 
@@ -139,6 +160,7 @@ sub searchfile
     my ($results, $kw, $nres, $reverses) = @_;
 
     my ($key, $value) = ($kw, "");
+    debug( "searchfile: kw=$kw", 1 );
     for (my $status = $reverses->seq($key, $value, R_CURSOR);
 	$status == 0;
     	$status =  $reverses->seq( $key, $value, R_NEXT)) {
@@ -146,14 +168,14 @@ sub searchfile
 	# FIXME: what's the most efficient "is prefix of" thingy? We only want to know
 	# whether $kw is or is not a prefix of $key
 	last unless index($key, $kw) == 0;
+	debug( "found $key", 2 );
 
 	my @hits = split /\0/o, $value;
-	push @$results, reverse($key)." is found in @hits";
+	push @$results, [ scalar reverse($key), @hits ];
 	last if ($$nres)++ > 100;
     }
 
-# FIXME: use too_many_hits
-    return $$nres<100;
+    $Packages::Search::too_many_hits += $$nres - 100 if $$nres > 100;
 }
 
 

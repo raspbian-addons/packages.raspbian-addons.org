@@ -531,6 +531,13 @@ div.righthalf {
 	border-style: ridge;
 	border-collapse: collapse;
 }
+#pcontentsres table {
+	margin: 0 1em 1em 1em;
+	min-width: 50%;
+	border: 2px gray;
+	border-style: ridge;
+	border-collapse: collapse;
+}
 table.vote {
 	margin: 0 auto;
 	border-width: 3px;
@@ -538,11 +545,18 @@ table.vote {
 	border-style: ridge;
 	border-collapse: collapse;
 }
-#pdownload th, #pdownload td, table.ridgetable th, table.ridgetable td,
+#pcontentsres col, #pcontentsres th, #pdownload th, #pdownload td, table.ridgetable th, table.ridgetable td,
 	table.reltable td, table.reltable th {
-	border: 2px gray;
+	border: 2px #BFC3DC;
 	border-style: ridge;
 	padding: 0.1em;
+}
+#pcontentsres td.file {
+	font-family: monospace;
+}
+#pcontentsres td {
+/*	font-size: smaller;*/
+	padding: .4em;
 }
 table.reltable th {
 	background-color: #44CCCC;
