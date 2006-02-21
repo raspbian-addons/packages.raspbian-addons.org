@@ -1,0 +1,168 @@
+#hpacketsearch {
+	display: block;
+	padding-top: 1px;
+	padding-left: 5px;
+	margin-right: 0.2em;
+	margin-left: auto;
+	text-align: left;
+	width: 25em;
+	top: 0em;
+	right: 0em;
+}
+
+#hpacketsearch p small {
+	color: #990000;
+	font-size: 0.8em;
+	font-weight: normal;
+}
+
+#hpacketsearch p select {
+	font-size: 88%;
+}
+
+#hpacketsearch p input {
+	font-size: 88%;
+}
+
+/* classes and div names for package pages */
+
+#pdesc, #pdeps, #pdownload, #pmoreinfo {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#pdesc p {
+	text-align: justify;
+}
+
+.pdescshort {
+	text-align: left;
+	font-size: large;
+	font-weight: bold;
+}
+
+#pdeps table tr td {
+	font-size: 0.9em;
+}
+
+#pdeps ul {
+	list-style-type: none;
+	padding-left: 2em;
+}
+
+#pdeps li {
+	text-indent: -2em;
+}
+
+#pdeps ul.uldep, #pdeps ul.uladep {
+	list-style-type: disc;
+	list-style-image: url(http://packages.debian.org/Pics/dep.gif);
+}
+
+#pdeps ul.ulrec, #pdeps ul.ulidep {
+	list-style-type: disc;
+	list-style-image: url(http://packages.debian.org/Pics/rec.gif);
+}
+
+#pdeps ul.ulsug {
+	list-style-type: disc;
+	list-style-image: url(http://packages.debian.org/Pics/sug.gif);
+}
+
+#pdeps ul.uldep li, #pdeps ul.ulrec li, #pdeps ul.ulsug li, #pdeps ul.uladep li, #pdeps ul.ulidep li {
+	padding-left: 2em;
+}
+#pdeps dl {
+	margin: 0;
+}
+
+#pdownload p {
+	display: inline;
+}
+
+
+#pmoreinfo p {
+	font-size: 0.85em;
+}
+
+.pmarker {
+	color: red;
+}
+.perror {
+	margin: .2em;
+	background-color: #F99;
+	font-weight: bold;
+	padding: 0.5em;
+	margin: 0;
+}
+.pdebug {
+	margin: .2em;
+	font-size: 80%;
+	border: solid thin gray;
+}
+.phints {
+	background-color: #FF9;
+	padding: 0.5em;
+	margin: 0;
+}
+.pnotes {
+	margin: .2em;
+	border: solid thin black;
+	background-color: #bdf;
+}
+.pnotes h2 {
+	color: red;
+}
+
+table#pdeplegend, #pdownload table {
+	border-width: 4px;
+	border-color: gray;
+	margin: 0 1em 1em 1em;
+	border-style: ridge;
+	border-collapse: collapse;
+}
+
+#pcontentsres table {
+	margin: 0 1em 1em 1em;
+	min-width: 50%;
+	border: 2px gray;
+	border-style: ridge;
+	border-collapse: collapse;
+}
+#pcontentsres col, #pcontentsres th, #pdownload th, #pdownload td,
+	#pdeplegend td {
+	border: 2px #BFC3DC;
+	border-style: ridge;
+	padding: 0.1em;
+}
+#pcontentsres td.file {
+	font-family: monospace;
+}
+#pdownload td {
+	font-size: 0.85em;
+	text-align: center;
+}
+
+#pdownload td.size {
+	text-align: right;
+}
+#pdownload td.md5sum {
+	font-family: monospace;
+}
+#pcontentsres td {
+/*	font-size: smaller;*/
+	padding: .4em;
+}
+#pcontentsres th {
+	text-align: center;
+}
+#psearchres h2 {
+	padding: .3em;
+	border-top: solid gray thin;
+	border-bottom: solid gray thin;
+	background-color: #bdf;
+}
+#pfilelist pre {
+	border-top: solid #BFC3DC thin;
+	padding: .5em;
+}

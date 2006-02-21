@@ -52,7 +52,7 @@ sub title {
 }
 
 sub marker {
-    return "[<span class=\"pred\">$_[0]</span>]";
+    return "[<strong class=\"pmarker\">$_[0]</strong>]";
 }
 
 sub pdesc {
@@ -69,7 +69,7 @@ sub pdesc {
 }
 
 sub pdeplegend {
-    my $str = "<table border=\"1\" summary=\"legend\"><tr>\n";
+    my $str = "<table id=\"pdeplegend\" summary=\"legend\"><tr>\n";
 
     foreach my $entry (@_) {
 	$str .= "<td><img src=\"$ROOT/Pics/$entry->[0].gif\" alt=\"[$entry->[0]]\" width=\"16\" height=\"16\">= $entry->[1]</td>";
@@ -460,6 +460,7 @@ $KEYWORDS_LINE
 $DESC_LINE
 $meta
 <link href="$ROOT/debian.css" rel="stylesheet" type="text/css" media="all">
+<link href="$ROOT/packages.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body>
 <div id="header">

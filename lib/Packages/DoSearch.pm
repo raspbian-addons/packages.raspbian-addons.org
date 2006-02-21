@@ -219,20 +219,21 @@ sub print_packages {
     my ($pkgs, $pkgs_list, $opts, $keyword, $print_func, @func_args) = @_;
 
     #my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
-    my $str .= "<p>Found <em>".(scalar @$pkgs_list)."</em> matching packages.";
+    my $str = '<div id="psearchres">';
+    $str .= "<p>Found <em>".(scalar @$pkgs_list)."</em> matching packages.";
     #my $count = 0;
 	    
     my $have_exact;
     if (grep { $_ eq $keyword } @$pkgs_list) {
 	$have_exact = 1;
-	$str .= '<h2 style="padding:.3em;border-top:solid grey thin;border-bottom:solid grey thin;background-color:#bdf">Exact hits</h2>';
+	$str .= '<h2>Exact hits</h2>';
 	$str .= &$print_func( $keyword, $pkgs->{$keyword}||{},
 			      map { $_->{$keyword}||{} } @func_args );
 	@$pkgs_list = grep { $_ ne $keyword } @$pkgs_list;
     }
 	    
     if (@$pkgs_list && (($opts->{searchon} ne 'names') || !$opts->{exact})) {
-	$str .= '<h2 style="padding:.3em;border-top:solid grey thin;border-bottom:solid grey thin;background-color:#bdf">Other hits</h2>'
+	$str .= '<h2>Other hits</h2>'
 	    if $have_exact;
 	
 	foreach my $pkg (@$pkgs_list) {
@@ -245,6 +246,7 @@ sub print_packages {
 	$str .= "<p><a href=\"$SEARCH_URL/FIXME\">".
 	    ($#{$pkgs_list}+1)."</a> results have not been displayed because you requested only exact matches.</p>";
     }
+    $str .= '</div>';
 
     return $str;
 }
@@ -264,7 +266,7 @@ sub print_package {
 		my @versions = version_sort keys %{$pkgs->{$suite}{$archive}};
 		my $origin_str = "";
 		if ($sect->{$suite}{$archive}{$versions[0]}) {
-		    $origin_str .= " [<span style=\"color:red\">$sect->{$suite}{$archive}{$versions[0]}</span>]";
+		    $origin_str .= " ".marker($sect->{$suite}{$archive}{$versions[0]});
 		}
 		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
 				 $path, $pkg, $path, $subsect->{$suite}{$archive}{$versions[0]},
@@ -273,7 +275,7 @@ sub print_package {
 		foreach my $v (@versions) {
 		    my $archive_str = "";
 		    if ($archives->{$suite}{$archive}{$v}) {
-			$archive_str .= " [<span style=\"color:red\">$archives->{$suite}{$archive}{$v}</span>]";
+			$archive_str .= " ".marker($archives->{$suite}{$archive}{$v});
 		    }
 		    
 		    my @archs_to_print = grep { !$archs_printed{$_} } sort keys %{$pkgs->{$suite}{$archive}{$v}};
@@ -309,10 +311,10 @@ sub print_src_package {
 	    if (exists $pkgs->{$suite}{$archive}) {
 		my $origin_str = "";
 		if ($sect->{$suite}{$archive}{source}) {
-		    $origin_str .= " [<span style=\"color:red\">$sect->{$suite}{$archive}{source}</span>]";
+		    $origin_str .= " ".marker($sect->{$suite}{$archive}{source});
 		}
 		if ($archives->{$suite}{$archive}{source}) {
-		    $origin_str .= " [<span style=\"color:red\">$archives->{$suite}{$archive}{source}</span>]";
+		    $origin_str .= " ".marker($archives->{$suite}{$archive}{source});
 		}
 		$str .= sprintf( "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s",
 				 $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect->{$suite}{$archive}{source},

@@ -57,12 +57,12 @@ sub do_filelist {
 	    } else {
 		my @files = unpack "L/(CC/a)", $contents{$pkg};
 		my $file = "";
-		$$page_content .= '<pre style="border-top:solid #BFC3DC thin;padding:.5em;">';
+		$$page_content .= '<div id="pfilelist"><pre>';
 		for (my $i=0; $i<scalar @files;) {
 		    $file = substr($file, 0, $files[$i++]).$files[$i++];
 		    $$page_content .= "$file\n";
 		}
-		$$page_content .= "</pre>";
+		$$page_content .= '</pre></div>';
 	    }
 	} else {
 	    fatal_error( "Invalid suite/arch combination" );

@@ -138,7 +138,7 @@ sub do_search_contents {
     $$page_content = '';
     if (@results) {
 	$$page_content .= "<p>Found ".scalar(@results)." results</p>";
-	$$page_content .= "<div  id=\"pcontentsres\"><table><colgroup><col><col></colgroup><tr><th style=\"text-align:center\">File</th><th style=\"text-align:center\">Packages</th></tr>";
+	$$page_content .= "<div  id=\"pcontentsres\"><table><colgroup><col><col></colgroup><tr><th>File</th><th>Packages</th></tr>";
 	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
 	    my $file = shift @$result;
 	    $$page_content .= "<tr><td class=\"file\">$file</td><td>";
@@ -150,7 +150,7 @@ sub do_search_contents {
 	    $$page_content .= join( ", ", map { "<a href=\"$ROOT/$suite/$_\">$_</a>" } sort keys %pkgs);
 	    $$page_content .= '</td>';
 	}
-	$$page_content .= '<tr><th style="text-align:center">File</th><th style="text-align:center">Packages</th></tr>' if @results > 20;
+	$$page_content .= '<tr><th>File</th><th>Packages</th></tr>' if @results > 20;
 	$$page_content .= '</table></div>';
     }
 } # sub do_search_contents

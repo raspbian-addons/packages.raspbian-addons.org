@@ -177,7 +177,7 @@ sub do_show {
 			
 			if ($suite eq "experimental") {
 			    note( gettext( "Experimental package"),
-				  gettext( "Warning: This package is from the <span class=\"pred\">experimental</span> distribution. That means it is likely unstable or buggy, and it may even cause data loss. If you ignore this warning and install it nevertheless, you do it on your own risk.")."</p><p>".
+				  gettext( "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. If you ignore this warning and install it nevertheless, you do it on your own risk.")."</p><p>".
 				  gettext( "Users of experimental packages are encouraged to contact the package maintainers directly in case of problems." )
 				  );
 			}
@@ -206,7 +206,7 @@ sub do_show {
 			    $package_page .= "<div id=\"pdeps\">\n";
 			    $package_page .= sprintf( "<h2>".gettext( "Other Packages Related to %s" )."</h2>\n", $pkg );
 			    if ($suite eq "experimental") {
-				note( gettext( "Note that the \"<span class=\"pred\">experimental</span>\" distribution is not self-contained; missing dependencies are likely found in the \"<a href=\"/unstable/\">unstable</a>\" distribution." ) );
+				note( gettext( "Note that the <strong>experimental</strong> distribution is not self-contained; missing dependencies are likely found in the <a href=\"/unstable/\">unstable</a> distribution." ) );
 			    }
 			    
 			    $package_page .= pdeplegend( [ 'dep',  gettext( 'depends' ) ],
@@ -224,7 +224,7 @@ sub do_show {
 			$package_page .= "<div id=\"pdownload\">";
 			$package_page .= sprintf( "<h2>".gettext( "Download %s\n" )."</h2>",
 						  $pkg ) ;
-			$package_page .= "<table border=\"1\" summary=\"".gettext("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
+			$package_page .= "<table summary=\"".gettext("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
 			$package_page .= "<caption class=\"hidecss\">".gettext("Download for all available architectures")."</caption>\n";
 			$package_page .= "<tr>\n";
 			$package_page .= "<th>".gettext("Architecture")."</th><th>".gettext("Files")."</th><th>".gettext( "Package Size")."</th><th>".gettext("Installed Size")."</th></tr>\n";
@@ -239,9 +239,9 @@ sub do_show {
 			    } else {
 				$package_page .= gettext( "no current information" );
 			    }
-			    $package_page .= "</td>\n<td align=right>"; #FIXME: css
+			    $package_page .= '</td><td class="size">';
 			    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
-			    $package_page .= "</td>\n<td align=right>"; #FIXME: css
+			    $package_page .= '</td><td class="size">';
 			    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
 			    $package_page .= "</td>\n</tr>";
 			}
@@ -377,7 +377,7 @@ sub do_show {
 		    my $source_files = $page->get_src( 'files' );
 		    my $source_dir = $page->get_src( 'directory' );
 		    
-		    $package_page .= sprintf( "<table cellspacing=\"0\" cellpadding=\"2\" summary=\"Download information for the files of this source package\">\n"
+		    $package_page .= sprintf( "<table summary=\"Download information for the files of this source package\">\n"
 					      ."<tr><th>%s</th><th>%s</th><th>%s</th>",
 					      gettext("File"),
 					      gettext("Size (in kB)"),
@@ -400,8 +400,8 @@ sub do_show {
 			$src_url .= "/$source_dir/$src_file_name";
 			
 			$package_page .= "<tr><td><a href=\"$src_url\">$src_file_name</a></td>\n"
-			    ."<td class=\"dotalign\">".sprintf("%.1f", (floor(($src_file_size/102.4)+0.5)/10))."</td>\n"
-			    ."<td>$src_file_md5</td></tr>";
+			    ."<td>".sprintf("%.1f", (floor(($src_file_size/102.4)+0.5)/10))."</td>\n"
+			    ."<td class=\"md5sum\">$src_file_md5</td></tr>";
 		    }
 		    $package_page .= "</table>\n";
 		    $package_page .= "</div> <!-- end pdownload -->\n";
