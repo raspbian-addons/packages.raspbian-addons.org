@@ -43,7 +43,7 @@ package Packages::Search;
 use strict;
 use warnings;
 
-use CGI qw( -oldstyle_urls );
+use CGI;
 use POSIX;
 use HTML::Entities;
 use DB_File;

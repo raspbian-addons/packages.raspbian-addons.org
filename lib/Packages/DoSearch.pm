@@ -15,11 +15,13 @@ use Deb::Versions;
 use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;
-use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_CGI $SEARCH_PAGE
+use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_PAGE
 			 @SUITES @ARCHIVES $ROOT );
 
 sub do_search {
     my ($params, $opts, $html_header, $menu, $page_content) = @_;
+
+    $Params::Search::too_many_hits = 0;
 
     if ($params->{errors}{keywords}) {
 	fatal_error( "keyword not valid or missing" );
@@ -37,6 +39,7 @@ sub do_search {
     my $suites_param = join ',', @{$params->{values}{suite}{no_replace}};
     my $sections_param = join ',', @{$params->{values}{section}{no_replace}};
     my $archs_param = join ',', @{$params->{values}{arch}{no_replace}};
+    $opts->{common_params} = "suite=$suites_param;section=$sections_param;keywords=$keyword_esc;searchon=$searchon;arch=$archs_param";
 
     # for output
     my $keyword_enc = encode_entities $keyword || '';
@@ -123,7 +126,7 @@ sub do_search {
 	    
 	    if ($opts->{exact}) {
 		$printed++;
-		hint( "You have searched only for words exactly matching your keywords. You can try to search <a href=\"$SEARCH_CGI?exact=0;searchon=$searchon;suite=$suites_param;section=$sections_param;keywords=$keyword_esc;arch=$archs_param\">allowing subword matching</a>." );
+		hint( "You have searched only for words exactly matching your keywords. You can try to search <a href=\"$SEARCH_URL?exact=0;$opts->{common_params}\">allowing subword matching</a>." );
 	    }
 	}
 	hint( ( $printed ? "Or you" : "You" )." can try a different search on the <a href=\"$SEARCH_PAGE#search_packages\">Packages search page</a>." );
@@ -243,7 +246,7 @@ sub print_packages {
 				  map { $_->{$pkg}||{} } @func_args );
 	}
     } elsif (@$pkgs_list) {
-	$str .= "<p><a href=\"$SEARCH_URL/FIXME\">".
+	$str .= "<p><a href=\"$SEARCH_URL?exact=0;$opts->{common_params}\">".
 	    ($#{$pkgs_list}+1)."</a> results have not been displayed because you requested only exact matches.</p>";
     }
     $str .= '</div>';

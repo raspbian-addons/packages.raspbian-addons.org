@@ -19,8 +19,7 @@ use DB_File;
 use Benchmark ':hireswallclock';
 
 use Deb::Versions;
-use Packages::Config qw( $DBDIR $ROOT $SEARCH_CGI $SEARCH_PAGE
-			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES );
+use Packages::Config qw( $DBDIR $ROOT @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES );
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );

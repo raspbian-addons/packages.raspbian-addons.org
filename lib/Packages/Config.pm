@@ -9,14 +9,14 @@ use Packages::CGI;
 our @ISA = qw( Exporter );
 
 our ( $TOPDIR, $DBDIR, $ROOT, $HOME, $CONTACT_MAIL, $WEBMASTER_MAIL,
-      $SEARCH_PAGE, $SEARCH_CGI, $SEARCH_URL,
+      $SEARCH_PAGE, $SEARCH_URL,
       $SRC_SEARCH_URL, $CONTENTS_SEARCH_CGI,
       $CN_HELP_URL, $BUG_URL, $SRC_BUG_URL, $QA_URL, $DDPO_URL,
       @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
       %FTP_SITES );
 our @EXPORT_OK = qw( $TOPDIR $DBDIR $ROOT $HOME $CONTACT_MAIL
 		     $WEBMASTER_MAIL
-		     $SEARCH_PAGE $SEARCH_CGI $SEARCH_URL
+		     $SEARCH_PAGE $SEARCH_URL
 		     $SRC_SEARCH_URL $CONTENTS_SEARCH_CGI
 		     $CN_HELP_URL $BUG_URL $SRC_BUG_URL $QA_URL $DDPO_URL
 		     @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES
@@ -39,7 +39,7 @@ sub init {
 	    $TOPDIR = $1 if /^\s*topdir="?([^\"]*)"?\s*$/o;
 	    $ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
 	    $HOME = $1 if /^\s*home="?([^\"]*)"?\s*$/o;
-	    $SEARCH_CGI = $1 if /^\s*search_cgi="?([^\"]*)"?\s*$/o;
+#	    $SEARCH_CGI = $1 if /^\s*search_cgi="?([^\"]*)"?\s*$/o;
 	    $SEARCH_PAGE = $1 if /^\s*search_page="?([^\"]*)"?\s*$/o;
 	    $SEARCH_URL = $1 if /^\s*search_url="?([^\"]*)"?\s*$/o;
 	    $SRC_SEARCH_URL = $1 if /^\s*search_src_url="?([^\"]*)"?\s*$/o;

@@ -382,7 +382,7 @@ sub header {
 	$checked_searchon{names} = "checked=\"checked\""
 		if $values{searchon} eq 'default';
 	$search_in_header = <<MENU;
-<form method="GET" action="$SEARCH_CGI">
+<form method="GET" action="$SEARCH_URL">
 <div id="hpacketsearch">
 <input type="hidden" name="debug" value="$values{debug}">
 <input type="hidden" name="suite" value="$values{suite}">

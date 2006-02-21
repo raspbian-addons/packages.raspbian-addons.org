@@ -15,7 +15,7 @@ use Deb::Versions;
 use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;
-use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_CGI $SEARCH_PAGE
+use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_PAGE
 			 @SUITES @ARCHIVES $ROOT );
 
 sub do_search_contents {

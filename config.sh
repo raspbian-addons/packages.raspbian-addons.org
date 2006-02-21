@@ -33,8 +33,6 @@ kfreebsd_ftpsite=http://kfreebsd-gnu.debian.net/debian
 
 root=""
 search_page="http://packages.debian.net/"
-# FIXME: remove dupe
-search_cgi="/search"
 search_url="/search"
 webmaster=webmaster@debian.org
 contact=debian-www@lists.debian.org
