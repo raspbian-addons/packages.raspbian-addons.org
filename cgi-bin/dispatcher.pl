@@ -59,19 +59,22 @@ $Packages::CGI::debug = $debug;
 my $what_to_do = 'show';
 my $source = 0;
 if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
-    my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
+    my @components = grep { $_ } map { lc $_ } split /\//, $path;
 
-    debug( "components[0]=$components[0]", 2 );
-    if ($components[0] eq 'search') {
-	shift @components;
-	$what_to_do = 'search';
-    }
-    if ($components[0] eq 'source') {
+    debug( "components[0]=$components[0]", 2 ) if @components>0;
+    if (@components > 0 and $components[0] eq 'source') {
 	shift @components;
 	$input->param( 'source', 1 );
     }
-    if (@components == 0) {
-	# we just hope we get the information through our parameters...
+    if (@components > 0 and $components[0] eq 'search') {
+	shift @components;
+	$what_to_do = 'search';
+	# Done
+	fatal_error( "search doesn't take any more path elements" )
+	    if @components > 0;
+    } elsif (@components == 0) {
+	fatal_error( "We're supposed to display the homepage here, instead of
+	    getting dispatch.pl" );
     } elsif (@components == 1) {
 	$what_to_do = 'search';
     } else {
