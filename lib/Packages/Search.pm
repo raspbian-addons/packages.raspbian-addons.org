@@ -460,12 +460,14 @@ sub do_fulltext_search {
 
     my $numres = 0;
     my %tmp_results;
-    open DESC, '<', "$file"
+    # fgrep is seriously faster than using perl
+    open DESC, '-|', 'fgrep', '-n', '--', $keyword, $file
 	or die "couldn't open $file: $!";
     while (<DESC>) {
-	next if (index $_, $keyword) < 0;
-	debug( "Matched line $.: $_", 2);
-	my $result = $did2pkg->{$.};
+	/^(\d+)/;
+	my $nr = $1;
+	debug( "Matched line $_", 2);
+	my $result = $did2pkg->{$nr};
 	foreach (split /\000/o, $result) {
 	    my @data = split /\s/, $_, 3;
 #	    debug ("Considering $data[0], arch = $data[2]", 3);
