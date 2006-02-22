@@ -1,0 +1,9 @@
+#!/bin/bash
+
+. `dirname $0`/../config.sh
+
+cd "$topdir"
+
+date
+./bin/create_index_pages
+date
