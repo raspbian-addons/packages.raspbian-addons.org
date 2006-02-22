@@ -1,0 +1,63 @@
+#! /bin/bash
+
+. `dirname $0`/../config.sh
+
+gettextfiles=$(find cgi-bin lib -not -name 'LanguageNames.pm' -a -not -name 'Sections.pm' -a \( -name '*.pl' -o -name '*.pm' \));
+gettextfiles="$gettextfiles bin/create_index_pages"
+podomains="pdo sections langs"
+
+# Update pot
+#
+# Common options for all calls
+xgettext_opts="--language=Perl --keyword=_ --keyword=N_ --keyword=_g --foreign-user --add-comments"
+
+echo gettextfiles=$gettextfiles
+xgettext $xgettext_opts -d pdo -o ${podir}/pdo.pot ${gettextfiles}
+xgettext $xgettext_opts -d sections -o ${podir}/sections.pot ${libdir}/Packages/Sections.pm
+xgettext $xgettext_opts -d langs -o ${podir}/langs.pot ${libdir}/Packages/I18N/LanguageNames.pm
+
+cd $podir
+
+# normalize paths in .pot files
+for domain in ${podomains}
+do
+  perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot
+done
+
+# Create missing po files
+#
+for lang in ${polangs}
+do
+  for domain in ${podomains}
+  do
+    test -f ${domain}.${lang}.po || cp ${domain}.pot ${domain}.${lang}.po
+  done
+done
+
+# Update po
+#
+for lang in ${polangs} 
+do
+  for domain in ${podomains}
+  do
+    mv ${domain}.${lang}.po ${domain}.${lang}.po.tmp
+    msgmerge -q -F -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
+    rm ${domain}.${lang}.po.tmp
+    # normalize paths in .po files
+    perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
+  done
+done
+
+# Update mo
+#
+test -d ${localedir} || mkdir -p ${localedir}
+for lang in ${polangs}
+do 
+  test -d ${localedir}/${lang}/LC_MESSAGES \
+      || mkdir -p ${localedir}/${lang}/LC_MESSAGES
+  for domain in ${podomains}
+  do
+    echo domain=$domain language=$lang
+    msgfmt --statistics -o ${localedir}/${lang}/LC_MESSAGES/${domain}.mo ${domain}.${lang}.po
+  done
+done

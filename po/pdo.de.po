@@ -1,0 +1,935 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Remarks:
+# *Sektion ==> Abschnitt
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-22 02:10+0100\n"
+"PO-Revision-Date: 2005-10-18 21:39+0200\n"
+"Last-Translator: Frank Lichtenheld <djpig@debian.org>\n"
+"Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: bin/create_index_pages:63
+#, fuzzy, perl-format
+msgid "List of sections in \"%s\""
+msgstr "Liste der Sektionen in %s"
+
+#: bin/create_index_pages:83
+#, fuzzy
+msgid "List of all packages"
+msgstr "Alle Pakete"
+
+#: bin/create_index_pages:84
+msgid "All packages"
+msgstr "Alle Pakete"
+
+#: bin/create_index_pages:85
+msgid "compact compressed textlist"
+msgstr "kompakte, gepackte Liste im Textformat"
+
+#: bin/create_index_pages:107
+#, perl-format
+msgid "Software Packages in \"%s\""
+msgstr "Software-Pakete in »%s«"
+
+#: bin/create_index_pages:119
+#, fuzzy, perl-format
+msgid "Software Packages in \"%s\", section %s"
+msgstr "Software-Pakete in »%s«, Sektion %s"
+
+#: bin/create_index_pages:132
+#, fuzzy, perl-format
+msgid "Software Packages in \"%s\", subsection %s"
+msgstr "Software-Pakete in »%s«, Sektion %s"
+
+#: bin/create_index_pages:145
+#, perl-format
+msgid "Software Packages in \"%s\", priority %s"
+msgstr "Software-Pakete in »%s«, Priorität »%s«"
+
+#. Done
+#: cgi-bin/dispatcher.pl:89
+msgid "search doesn't take any more path elements"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:92
+msgid ""
+"We're supposed to display the homepage here, instead of getting dispatch.pl"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:117
+#, perl-format
+msgid "%s set more than once in path"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:147
+#, perl-format
+msgid "two or more packages specified (%s)"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:234
+msgid "Error"
+msgstr "Fehler"
+
+#: cgi-bin/dispatcher.pl:239
+msgid "search for a package"
+msgstr "ein Paket suchen"
+
+#: lib/Packages/DoDownload.pm:203 lib/Packages/DoFilelist.pm:31
+#: lib/Packages/DoShow.pm:30
+msgid "package not valid or not specified"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:206 lib/Packages/DoFilelist.pm:34
+#: lib/Packages/DoSearchContents.pm:31 lib/Packages/DoShow.pm:33
+msgid "suite not valid or not specified"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:209 lib/Packages/DoFilelist.pm:37
+msgid "architecture not valid or not specified"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:212
+#, perl-format
+msgid "more than one suite specified for download (%s)"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:215
+#, perl-format
+msgid "more than one architecture specified for download (%s)"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:236 lib/Packages/DoShow.pm:71
+msgid "No such package."
+msgstr "Kein passendes Paket gefunden."
+
+#: lib/Packages/DoDownload.pm:237 lib/Packages/DoShow.pm:72
+#, perl-format
+msgid "<a href=\"%s\">Search for the package</a>"
+msgstr "<a href=\"%s\">Suchen Sie nach dem Paket</a>"
+
+#: lib/Packages/DoDownload.pm:256
+msgid "Package Download Selection"
+msgstr "Paket-Download-Auswahl"
+
+#: lib/Packages/DoDownload.pm:262
+#, perl-format
+msgid "Download Page for <kbd>%s</kbd> on %s machines"
+msgstr "Download-Seite für <kbd>%s</kbd> für %s Rechner"
+
+#: lib/Packages/DoDownload.pm:264
+#, perl-format
+msgid "Download Page for <kbd>%s</kbd>"
+msgstr "Download-Seite für <kbd>%s</kbd>"
+
+#: lib/Packages/DoDownload.pm:268
+#, perl-format
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at any "
+"of these sites:"
+msgstr ""
+"Sie können die angeforderte Datei aus dem <tt>%s</tt>-Unterverzeichnis auf "
+"jeder dieser Seiten herunterladen:"
+
+#: lib/Packages/DoDownload.pm:270
+#, perl-format
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgstr ""
+"Sie können die angeforderte Datei aus dem <tt>%s</tt>-Unterverzeichnis "
+"herunterladen:"
+
+#: lib/Packages/DoDownload.pm:276
+msgid ""
+"Debian security updates are currently officially distributed only via "
+"<tt>security.debian.org</tt>."
+msgstr ""
+"Debian-Sicherheitsaktualisierungen werden derzeit offiziell nur über "
+"<tt>security.debian.org</tt> verbreitet."
+
+#: lib/Packages/DoDownload.pm:279 lib/Packages/DoDownload.pm:289
+#: lib/Packages/DoDownload.pm:299 lib/Packages/DoDownload.pm:333
+msgid "North America"
+msgstr "Nordamerika"
+
+#. $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
+#: lib/Packages/DoDownload.pm:280 lib/Packages/DoDownload.pm:290
+#: lib/Packages/DoDownload.pm:300 lib/Packages/DoDownload.pm:311
+#: lib/Packages/DoDownload.pm:323 lib/Packages/DoDownload.pm:335
+msgid "Europe"
+msgstr "Europa"
+
+#. $$page_content .= print_links( "Australia and New Zealand", $file,
+#. @nonus_australian_sites );
+#: lib/Packages/DoDownload.pm:283 lib/Packages/DoDownload.pm:303
+#: lib/Packages/DoDownload.pm:315 lib/Packages/DoDownload.pm:339
+msgid "Asia"
+msgstr "Asien"
+
+#. $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+#: lib/Packages/DoDownload.pm:286
+msgid ""
+"Note that AMD64 is not officialy included in the Debian archive yet, but the "
+"AMD64 porter group keeps their archive in sync with the official archive as "
+"close as possible. See the <a href=\"http://www.debian.org/ports/amd64/"
+"\">AMD64 ports page</a> for current information."
+msgstr ""
+
+#. $$page_content .= print_links( "Australia and New Zealand", $file,
+#. @nonus_australian_sites );
+#. $$page_content .= print_links( "Asia", $file, @amd64_asian_sites );
+#. $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+#: lib/Packages/DoDownload.pm:296
+msgid ""
+"Note that GNU/kFreeBSD is not officialy included in the Debian archive yet, "
+"but the GNU/kFreeBSD porter group keeps their archive in sync with the "
+"official archive as close as possible. See the <a href=\"http://www.debian."
+"org/ports/kfreebsd-gnu/\">GNU/kFreeBSD ports page</a> for current "
+"information."
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:301 lib/Packages/DoDownload.pm:313
+#: lib/Packages/DoDownload.pm:337
+msgid "Australia and New Zealand"
+msgstr "Australien und Neuseeland"
+
+#: lib/Packages/DoDownload.pm:304 lib/Packages/DoDownload.pm:341
+msgid "South America"
+msgstr "Südamerika"
+
+#. $$page_content .= print_links( "Australia and New Zealand", $file,
+#. @nonus_australian_sites );
+#. $$page_content .= print_links( "Asia", $file, @nonus_asian_sites );
+#. $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+#: lib/Packages/DoDownload.pm:306 lib/Packages/DoDownload.pm:319
+#: lib/Packages/DoDownload.pm:329 lib/Packages/DoDownload.pm:344
+#, perl-format
+msgid ""
+"If none of the above sites are fast enough for you, please see our <a href="
+"\"%s\">complete mirror list</a>."
+msgstr ""
+"Wenn keine der genannten Seiten schnell genug für Sie ist, beachten Sie "
+"bitte ach unsere <a href=\"%s\">komplette Mirrorliste</a>."
+
+#: lib/Packages/DoDownload.pm:347
+msgid ""
+"Note that in some browsers you will need to tell your browser you want the "
+"file saved to a file. For example, in Firefox or Mozilla, you should hold "
+"the Shift key when you click on the URL."
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:348
+#, perl-format
+msgid "The MD5sum for <tt>%s</tt> is <strong>%s</strong>"
+msgstr "Die MD5-Summe für <tt>%s</tt> ist <strong>%s</strong>"
+
+#: lib/Packages/DoFilelist.pm:45
+#, perl-format
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+
+#: lib/Packages/DoFilelist.pm:46
+#, fuzzy, perl-format
+msgid "Filelist of of package %s/%s/%s"
+msgstr "Neue Pakete in %s"
+
+#: lib/Packages/DoFilelist.pm:57
+#, fuzzy
+msgid "No such package in this suite on this architecture."
+msgstr "Keine Pakete in dieser Sektion in dieser Suite"
+
+#: lib/Packages/DoFilelist.pm:69
+msgid "Invalid suite/architecture combination"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:30 lib/Packages/DoSearchContents.pm:26
+msgid "keyword not valid or missing"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:32 lib/Packages/DoSearchContents.pm:28
+msgid "keyword too short (keywords need to have at least two characters)"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:105
+#, perl-format
+msgid ""
+"Your search was too wide so we will only display exact matches. At least <em>"
+"%s</em> results have been omitted and will not be displayed. Please consider "
+"using a longer keyword or more keywords."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:111 lib/Packages/DoSearch.pm:113
+msgid "Can't find that package."
+msgstr "Kann das Paket nicht finden."
+
+#: lib/Packages/DoSearch.pm:114
+#, perl-format
+msgid ""
+"<a href=\"%s\">%s</a> results have not been displayed due to the search "
+"parameters."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:124
+msgid "Can't find that string."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:126
+#, perl-format
+msgid ""
+"Can't find that string, at least not in that suite (%s, section %s) and on "
+"that architecture (%s)."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:131
+#, perl-format
+msgid ""
+"You have searched only for words exactly matching your keywords. You can try "
+"to search <a href=\"%s\">allowing subword matching</a>."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:135
+#, fuzzy, perl-format
+msgid ""
+"You can try a different search on the <a href=\"%s\">Packages search page</"
+"a>."
+msgstr ""
+"Zurück zur: <a href=\"%s/\">Debian-Projekt-Homepage</a> || <a href=\"%s/"
+"\">Paketsuche</a>"
+
+#: lib/Packages/DoSearch.pm:139
+msgid "Package Search Results"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:141
+msgid "Debian Package Search Results"
+msgstr "Debian-Paketsuche: Ergebnisse"
+
+#: lib/Packages/DoSearch.pm:229
+#, perl-format
+msgid "Found <em>%s</em> matching packages."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:236
+msgid "Exact hits"
+msgstr "Genaue Treffer"
+
+#: lib/Packages/DoSearch.pm:243
+msgid "Other hits"
+msgstr "Andere Treffer"
+
+#: lib/Packages/DoSearch.pm:253
+#, perl-format
+msgid ""
+"<a href=\"%s\">%s</a> results have not been displayed because you requested "
+"only exact matches."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:265
+#, perl-format
+msgid "Package %s"
+msgstr "Paket: %s"
+
+#: lib/Packages/DoSearch.pm:296
+msgid "also provided by: "
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:303
+msgid "provided by: "
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:315
+#, perl-format
+msgid "Source package %s"
+msgstr "Quellcode-Paket %s"
+
+#: lib/Packages/DoSearch.pm:331
+msgid "Binary packages: "
+msgstr "Binäre Pakete: "
+
+#: lib/Packages/DoSearchContents.pm:34
+#, perl-format
+msgid "more than one suite specified for contents search (%s)"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:78
+msgid "Exact and fullfilenamesearch don't go along"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:116
+msgid ""
+"Your search was too wide so we will only display only the first about 100 "
+"matches. Please consider using a longer keyword or more keywords."
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:120
+#, fuzzy
+msgid "Nothing found"
+msgstr "Nicht gefunden"
+
+#: lib/Packages/DoSearchContents.pm:123
+#, fuzzy
+msgid "Package Contents Search Results"
+msgstr "Debian-Paketsuche: Ergebnisse"
+
+#: lib/Packages/DoSearchContents.pm:125
+#, fuzzy
+msgid "Debian Package Contents Search Results"
+msgstr "Debian-Paketsuche: Ergebnisse"
+
+#: lib/Packages/DoSearchContents.pm:141
+#, perl-format
+msgid "Found %s results"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:143 lib/Packages/DoSearchContents.pm:156
+#: lib/Packages/DoShow.pm:380
+msgid "File"
+msgstr "Datei"
+
+#: lib/Packages/DoSearchContents.pm:143 lib/Packages/DoSearchContents.pm:156
+#, fuzzy
+msgid "Packages"
+msgstr "Paket: %s"
+
+#: lib/Packages/DoShow.pm:36
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:96
+msgid "Package not available in this suite."
+msgstr "Paket in dieser Suite nicht verfügbar"
+
+#. $long_desc = conv_desc( $lang, $long_desc );
+#. $short_desc = conv_desc( $lang, $short_desc );
+#: lib/Packages/DoShow.pm:154 lib/Packages/DoShow.pm:261
+#: lib/Packages/DoShow.pm:304
+msgid "Distribution:"
+msgstr "Distribution:"
+
+#: lib/Packages/DoShow.pm:155 lib/Packages/DoShow.pm:305
+msgid "Overview over this suite"
+msgstr "Übersicht über diese Suite"
+
+#: lib/Packages/DoShow.pm:158 lib/Packages/DoShow.pm:265
+#: lib/Packages/DoShow.pm:308
+msgid "Section:"
+msgstr "Sektion:"
+
+#: lib/Packages/DoShow.pm:159 lib/Packages/DoShow.pm:266
+#: lib/Packages/DoShow.pm:309
+msgid "All packages in this section"
+msgstr "Alle Pakete in dieser Sektion"
+
+#: lib/Packages/DoShow.pm:164
+#, perl-format
+msgid "Package: %s (%s)"
+msgstr "Paket: %s (%s)"
+
+#: lib/Packages/DoShow.pm:171
+msgid "Versions:"
+msgstr "Versionen:"
+
+#: lib/Packages/DoShow.pm:174
+msgid "This is also a virtual package provided by "
+msgstr ""
+
+#: lib/Packages/DoShow.pm:178 lib/Packages/DoShow.pm:323
+msgid "Experimental package"
+msgstr "Experimentelles Paket"
+
+#: lib/Packages/DoShow.pm:179 lib/Packages/DoShow.pm:324
+#, fuzzy
+msgid ""
+"Warning: This package is from the <strong>experimental</strong> "
+"distribution. That means it is likely unstable or buggy, and it may even "
+"cause data loss. If you ignore this warning and install it nevertheless, you "
+"do it on your own risk."
+msgstr ""
+"Warnung: Dieses Paket ist aus der <span class=\"pred\">experimental</span>-"
+"Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil oder "
+"fehlerhaft ist und sogar Datenverlust verursachen kann. Wenn Sie diese "
+"Warnung ignorieren und es dennoch installieren, so tun Sie dies auf eigenes "
+"Risiko."
+
+#: lib/Packages/DoShow.pm:183 lib/Packages/DoShow.pm:328
+msgid "debian-installer udeb package"
+msgstr "debian-installer udeb-Paket"
+
+#: lib/Packages/DoShow.pm:184 lib/Packages/DoShow.pm:329
+msgid ""
+"Warning: This package is intended for the use in building <a href=\"http://"
+"www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
+"not install it on a normal Debian system."
+msgstr ""
+"Warnung: Dieses Paket ist nur dazu gedacht, um <a href=\"http://www.debian."
+"org/devel/debian-installer\">debian-installer</a>-Images zu erzeugen. "
+"Installieren Sie es nicht auf einem normalen Debian-System."
+
+#: lib/Packages/DoShow.pm:205 lib/Packages/DoShow.pm:354
+#, perl-format
+msgid "Other Packages Related to %s"
+msgstr "Andere Pakete in Beziehung zu %s"
+
+#: lib/Packages/DoShow.pm:207 lib/Packages/DoShow.pm:356
+#, fuzzy, perl-format
+msgid ""
+"Note that the <strong>experimental</strong> distribution is not self-"
+"contained; missing dependencies are likely found in the <a href=\"%s"
+"\">unstable</a> distribution."
+msgstr ""
+"Beachten Sie, dass die »<span class=\"pred\">experimental</span>«-"
+"Distribution nicht abgeschlossen ist; fehlende Abhängigkeiten werden mit "
+"großer Wahrscheinlichkeit in der »<a href=\"../../unstable/\">unstable</a>«-"
+"Distribution gefunden."
+
+#: lib/Packages/DoShow.pm:210
+msgid "depends"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:211
+msgid "recommends"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:212
+msgid "suggests"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:223
+#, perl-format
+msgid "Download %s\n"
+msgstr "%s herunterladen\n"
+
+#: lib/Packages/DoShow.pm:225
+msgid ""
+"The download table links to the download of the package and a file overview. "
+"In addition it gives information about the package size and the installed "
+"size."
+msgstr ""
+"Die Download-Tabelle verlinkt zum Download des Pakets und zu einer "
+"Dateiliste. Zusätzlich enthält sie Informationen zur Größe der Paketdatei "
+"und der Größe im installierten Zustand."
+
+#: lib/Packages/DoShow.pm:226
+msgid "Download for all available architectures"
+msgstr "Download für alle verfügbaren Architekturen"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Architecture"
+msgstr "Architektur"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Files"
+msgstr "Dateien"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Installed Size"
+msgstr "Größe (installiert)"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Package Size"
+msgstr "Paketgröße"
+
+#: lib/Packages/DoShow.pm:235
+msgid "list of files"
+msgstr "Liste der Dateien"
+
+#: lib/Packages/DoShow.pm:238
+#, fuzzy
+msgid "no current information"
+msgstr "Weitere Informationen über %s"
+
+#. unless $page->is_virtual
+#: lib/Packages/DoShow.pm:259
+msgid "virtual package"
+msgstr "Virtuelles Paket"
+
+#: lib/Packages/DoShow.pm:262
+msgid "Overview over this distribution"
+msgstr "Übersicht über diese Distribution"
+
+#: lib/Packages/DoShow.pm:271
+#, perl-format
+msgid "Virtual Package: %s"
+msgstr "Virtuelles Paket: %s"
+
+#: lib/Packages/DoShow.pm:275
+#, perl-format
+msgid ""
+"This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
+"for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
+"packages</a>."
+msgstr ""
+"Dies ist ein <em>virtuelles Paket</em>. Sehen Sie in die <a href=\"%s"
+"\">Debian-Policy</a> für eine <a href=\"%sch-binary.html#s-virtual_pkg"
+"\">Definition von virtuellen Paketen</a>."
+
+#: lib/Packages/DoShow.pm:278
+#, perl-format
+msgid "Packages providing %s"
+msgstr "Pakete, die %s bereitstellen"
+
+#: lib/Packages/DoShow.pm:314
+#, fuzzy, perl-format
+msgid "Source Package: %s (%s)"
+msgstr "Quellcode-Paket: %s (%s)"
+
+#: lib/Packages/DoShow.pm:336
+msgid "The following binary packages are built from this source package:"
+msgstr "Die folgenden Binärpakete werden aus diesem Quellcode-Paket gebaut:"
+
+#: lib/Packages/DoShow.pm:360
+msgid "build-depends"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:361
+msgid "build-depends-indep"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:372
+#, perl-format
+msgid "Download %s"
+msgstr "%s herunterladen"
+
+#: lib/Packages/DoShow.pm:378
+msgid "Download information for the files of this source package"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:381
+msgid "Size (in kB)"
+msgstr "Größe (in kB)"
+
+#: lib/Packages/DoShow.pm:382
+msgid "md5sum"
+msgstr "md5sum"
+
+#: lib/Packages/DoShow.pm:427
+#, perl-format
+msgid "Details of source package <em>%s</em> in %s"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:428
+#, perl-format
+msgid "Details of package <em>%s</em> in %s"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:430
+#, fuzzy, perl-format
+msgid "Details of source package %s in %s"
+msgstr "Quellcode-Pakete in »%s«"
+
+#: lib/Packages/DoShow.pm:431
+#, fuzzy, perl-format
+msgid "Details of package %s in %s"
+msgstr "Neue Pakete in %s"
+
+#: lib/Packages/HTML.pm:93
+msgid "Not available"
+msgstr "Paket nicht verfügbar"
+
+#: lib/Packages/HTML.pm:114
+#, perl-format
+msgid "More Information on %s"
+msgstr "Weitere Informationen über %s"
+
+#: lib/Packages/HTML.pm:119
+#, perl-format
+msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+msgstr "Suchen Sie <a href=\"%s\">Fehlerberichte</a> zu %s."
+
+#: lib/Packages/HTML.pm:131
+msgid "Source Package:"
+msgstr "Quellcode-Paket:"
+
+#: lib/Packages/HTML.pm:133
+msgid "Download"
+msgstr "Download"
+
+#: lib/Packages/HTML.pm:136
+msgid "Not found"
+msgstr "Nicht gefunden"
+
+#: lib/Packages/HTML.pm:169
+#, perl-format
+msgid "View the <a href=\"%s\">Debian changelog</a>"
+msgstr "Das <a href=\"%s\">Debian-Changelog</a>"
+
+#: lib/Packages/HTML.pm:174
+#, perl-format
+msgid "View the <a href=\"%s\">copyright file</a>"
+msgstr "Die <a href=\"%s\">Copyright-Datei</a>"
+
+#: lib/Packages/HTML.pm:187
+#, perl-format
+msgid "%s is responsible for this Debian package."
+msgstr "%s betreut dieses Debian-Paket."
+
+#: lib/Packages/HTML.pm:199
+#, perl-format
+msgid " and %s are responsible for this Debian package."
+msgstr " und %s betreuen dieses Debian-Paket."
+
+#: lib/Packages/HTML.pm:204
+#, perl-format
+msgid "See the <a href=\"%s\">developer information for %s</a>."
+msgstr "<a href=\"%s\">Entwicklerinformationen für %s</a>."
+
+#: lib/Packages/HTML.pm:210
+#, perl-format
+msgid "Search for <a href=\"%s\">other versions of %s</a>"
+msgstr "Suchen Sie <a href=\"%s\">andere Versionen von %s</a>"
+
+#: lib/Packages/HTML.pm:277
+msgid "not"
+msgstr "nicht"
+
+#: lib/Packages/HTML.pm:316
+msgid "Package not available"
+msgstr "Paket nicht verfügbar"
+
+#: lib/Packages/HTML.pm:322
+msgid "or"
+msgstr "oder"
+
+#: lib/Packages/HTML.pm:410 lib/Packages/HTML.pm:501
+msgid "Search"
+msgstr "Suche"
+
+#: lib/Packages/HTML.pm:411
+msgid "Full options"
+msgstr "Alle Optionen"
+
+#: lib/Packages/HTML.pm:412
+msgid "Search on:"
+msgstr "Suche in:"
+
+#: lib/Packages/HTML.pm:413
+msgid "Package Names"
+msgstr "Paketnamen"
+
+#: lib/Packages/HTML.pm:414
+msgid "Descriptions"
+msgstr "Beschreibungen"
+
+#: lib/Packages/HTML.pm:415
+msgid "Source package names"
+msgstr "Quellcodepaketnamen"
+
+#: lib/Packages/HTML.pm:416
+msgid "Package contents"
+msgstr "Paket-Inhalt"
+
+#: lib/Packages/HTML.pm:479
+msgid "Debian Project"
+msgstr "Debian-Projekt"
+
+#: lib/Packages/HTML.pm:493
+msgid "Skip Site Navigation"
+msgstr "Überspringen der Navigation"
+
+#: lib/Packages/HTML.pm:495
+msgid "About&nbsp;Debian"
+msgstr "Über&nbsp;Debian"
+
+#: lib/Packages/HTML.pm:496
+msgid "News"
+msgstr "Neues"
+
+#: lib/Packages/HTML.pm:497
+msgid "Getting&nbsp;Debian"
+msgstr "Debian&nbsp;besorgen"
+
+#: lib/Packages/HTML.pm:498
+msgid "Support"
+msgstr "Unterstützung"
+
+#: lib/Packages/HTML.pm:499
+msgid "Development"
+msgstr "Entwicklung"
+
+#: lib/Packages/HTML.pm:500
+msgid "Site map"
+msgstr "Sitemap"
+
+#: lib/Packages/HTML.pm:530
+#, perl-format
+msgid ""
+"Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+"\">Packages search page</a>"
+msgstr ""
+"Zurück zur: <a href=\"%s/\">Debian-Projekt-Homepage</a> || <a href=\"%s/"
+"\">Paketsuche</a>"
+
+#: lib/Packages/HTML.pm:533
+#, perl-format
+msgid ""
+"To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
+"For other contact information, see the Debian <a href=\"%s/contact\">contact "
+"page</a>."
+msgstr ""
+"Um ein Problem mit der Web-Site zu berichten, schreiben Sie eine E-Mail an "
+"<a href=\"mailto:%s\">%s</a> (auf Englisch). Für weitere "
+"Kontaktinformationen sollten Sie auf die Debian-<a href=\"%s/contact"
+"\">Kontakt-Seite</a> schauen."
+
+#: lib/Packages/HTML.pm:535
+msgid "Last Modified: "
+msgstr "Zuletzt geändert: "
+
+#: lib/Packages/HTML.pm:537
+#, perl-format
+msgid ""
+"Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; See "
+"<a href=\"%s/license\">license terms</a>."
+msgstr ""
+"Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; <a "
+"href=\"%s/license\">Lizenzbestimmungen</a>."
+
+#: lib/Packages/HTML.pm:538
+msgid ""
+"Debian is a registered trademark of Software in the Public Interest, Inc."
+msgstr ""
+"Debian ist ein eingetragenes Warenzeichen von Software in the Public "
+"Interest, Inc."
+
+#: lib/Packages/HTML.pm:555
+msgid "This page is also available in the following languages:\n"
+msgstr "Diese Seite gibt es auch in den folgenden Sprachen:\n"
+
+#: lib/Packages/HTML.pm:574
+#, perl-format
+msgid "How to set <a href=\"%s\">the default document language</a>"
+msgstr "Wie stellt man <a href=\"%s\">die Standardsprache</a> ein"
+
+#: lib/Packages/Page.pm:47
+msgid "package has bad maintainer field"
+msgstr ""
+
+#~ msgid "Virtual package"
+#~ msgstr "Virtuelles Paket"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (c) 1997-2005 SPI;\n"
+#~ "Unter <URL:http://www.debian.org/license> finden Sie die "
+#~ "Lizenzbedingungen.\n"
+#~ "\n"
+
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Keine essentiellen Pakete in dieser Suite"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Software-Pakete in »%s«, essentielle Pakete"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Keine Pakete mit dieser Priorität in dieser Suite"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Warnung: Diese Pakete sind nur dazu gedacht, um <a href=\"http://www."
+#~ "debian.org/devel/debian-installer\">debian-installer</a>-Images zu "
+#~ "erzeugen. Installieren Sie sie nicht auf einem normalen Debian-System."
+
+#~ msgid "yes"
+#~ msgstr "ja"
+
+#~ msgid "Essential"
+#~ msgstr "Essentiell"
+
+#~ msgid "Priority"
+#~ msgstr "Priorität"
+
+#~ msgid "Section"
+#~ msgstr "Sektion"
+
+#~ msgid "Maintainer"
+#~ msgstr "Betreuer"
+
+#~ msgid "Version"
+#~ msgstr "Version"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Die Größe wird in kBytes angegeben."
+
+#~ msgid ""
+#~ "Packages that were added to the unstable Debian archive during the last 7 "
+#~ "days."
+#~ msgstr ""
+#~ "Pakete, die dem unstable Debian-Archiv während der letzten 7 Tage "
+#~ "hinzugefügt wurden."
+
+#~ msgid ""
+#~ "This information is also available as an <a href=\"newpkg_%s.%s.rdf\">RSS "
+#~ "feed</a>."
+#~ msgstr ""
+#~ "Diese Informationen sind auch als <a href=\"newpkg_%s.%s.rdf\">RSS-Feed</"
+#~ "a> verfügbar."
+
+#~ msgid ""
+#~ "The following packages were added to the unstable Debian archive during "
+#~ "the last 7 days."
+#~ msgstr ""
+#~ "Die folgenden Pakete wurden dem unstable Debian-Archiv während der "
+#~ "letzten 7 Tage hinzugefügt."
+
+#~ msgid "New Packages in \"%s\""
+#~ msgstr "Neue Pakete in »%s«"
+
+#~ msgid ""
+#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
+#~ "contains software that is likely unstable or buggy and may even cause "
+#~ "data loss. If you ignore this warning and install it nevertheless, you do "
+#~ "it on your own risk."
+#~ msgstr ""
+#~ "Warnung: Die <span class=\"pred\">experimental</span>-Distribution "
+#~ "enthält Software die höchstwahrscheinlich instabil oder fehlerhaft ist "
+#~ "und sogar Datenverlust verursachen kann. Wenn Sie diese Warnung "
+#~ "ignorieren und es dennoch installieren, so tun Sie dies auf eigenes "
+#~ "Risiko."
+
+#~ msgid "Size:"
+#~ msgstr "Größe:"
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Benutzer von experimentellen Paketen sollten direkt den Paketbetreuer im "
+#~ "Falle von Problemen kontaktieren."
+
+#~ msgid ""
+#~ "Warning: This package is from the <span class=\"pred\">experimental</"
+#~ "span> distribution. That means it is likely unstable or buggy, and it may "
+#~ "even cause data loss. If you ignore this warning and install it "
+#~ "nevertheless, you do it on your own risk."
+#~ msgstr ""
+#~ "Warnung: Dieses Paket ist aus der <span class=\"pred\">experimental</"
+#~ "span>-Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil "
+#~ "oder fehlerhaft ist und sogar Datenverlust verursachen kann. Wenn Sie "
+#~ "diese Warnung ignorieren und es dennoch installieren, so tun Sie dies auf "
+#~ "eigenes Risiko."
+
+#, fuzzy
+#~ msgid ""
+#~ "Note that the \"<span class=\"pred\">experimental</span>\" distribution "
+#~ "is not self-contained; missing dependencies are likely found in the \"<a "
+#~ "href=\"/unstable/\">unstable</a>\" distribution."
+#~ msgstr ""
+#~ "Beachten Sie, dass die »<span class=\"pred\">experimental</span>«-"
+#~ "Distribution nicht abgeschlossen ist; fehlende Abhängigkeiten werden mit "
+#~ "großer Wahrscheinlichkeit in der »<a href=\"../../unstable/\">unstable</"
+#~ "a>«-Distribution gefunden."

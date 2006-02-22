@@ -3,27 +3,25 @@ package Packages::HTML;
 use strict;
 use warnings;
 
+use Exporter;
 use URI::Escape;
 use HTML::Entities;
+use Locale::gettext;
 
-use Packages::CGI;
+use Packages::CGI ();
 use Packages::Search qw( read_entry_simple );
 use Packages::Config qw( :all );
 
 #use Packages::Util;
-#use Packages::I18N::Locale;
-#use Packages::I18N::Languages;
-#use Packages::I18N::LanguageNames;
+use Packages::I18N::Locale;
+use Packages::I18N::Languages;
+use Packages::I18N::LanguageNames;
 #use Generated::Strings qw( gettext dgettext );
-
-# dummy routines
-sub get_charset { return "utf-8" };
-sub gettext { return $_[0]; };
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( header title trailer file_changed time_stamp
 		  read_md5_hash write_md5_hash simple_menu
-		  ds_begin ds_item ds_end note title marker pdesc
+		  ds_begin ds_item ds_end title marker pdesc
 		  pdeplegend pkg_list pmoreinfo print_deps print_src_deps );
 
 our $CHANGELOG_URL = '/changelogs';
@@ -92,7 +90,7 @@ sub pkg_list {
 	    $str .= "<dt><a href=\"$ROOT/$suite/$p\">$p</a></dt>\n".
 		    "\t<dd>$short_desc</dd>\n";
 	} else {
-	    $str .= "<dt>$p</dt>\n\t<dd>".gettext("Not available")."</dd>\n";
+	    $str .= "<dt>$p</dt>\n\t<dd>"._g("Not available")."</dd>\n";
 	}
     }
     if ($str) {
@@ -113,12 +111,12 @@ sub pmoreinfo {
     my $suite = $opts->{suite}[0];
 
     my $str = "<div id=\"pmoreinfo\">";
-    $str .= sprintf( "<h2>".gettext( "More Information on %s" )."</h2>",
+    $str .= sprintf( "<h2>"._g( "More Information on %s" )."</h2>",
 		     $name );
     
     if ($info{bugreports}) {
 	my $bug_url = $is_source ? $SRC_BUG_URL : $BUG_URL; 
-	$str .= "<p>\n".sprintf( gettext( "Check for <a href=\"%s\">Bug Reports</a> about %s." )."<br>\n",
+	$str .= "<p>\n".sprintf( _g( "Check for <a href=\"%s\">Bug Reports</a> about %s." )."<br>\n",
 			 $bug_url.$name, $name );
     }
 	
@@ -130,12 +128,12 @@ sub pmoreinfo {
 	my $path = (@{$opts->{archive}} >1) ?
 	    $suite :
 	    "$suite/$opts->{archive}[0]";
-	$str .= gettext( "Source Package:" );
+	$str .= _g( "Source Package:" );
 	$str .= " <a href=\"$ROOT/$path/source/$source\">$source</a>, ".
-	    gettext( "Download" ).":\n";
+	    _g( "Download" ).":\n";
 
 	unless (defined($files) and @$files) {
-	    $str .= gettext( "Not found" );
+	    $str .= _g( "Not found" );
 	} else {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
@@ -158,7 +156,7 @@ sub pmoreinfo {
 		$str .= "]</a>\n";
 	    }
 	}
-#	    $package_page .= sprintf( gettext( " (These sources are for version %s)\n" ), $src_version )
+#	    $package_page .= sprintf( _g( " (These sources are for version %s)\n" ), $src_version )
 #		if ($src_version ne $version) && !$src_version_given_in_control;
     }
 
@@ -168,12 +166,12 @@ sub pmoreinfo {
 	    $src_basename = "${source}_$src_basename";
 	    $src_dir =~ s,pool/updates,pool,o;
 	    $src_dir =~ s,pool/non-US,pool,o;
-	    $str .= "<br>".sprintf( gettext( "View the <a href=\"%s\">Debian changelog</a>" ),
+	    $str .= "<br>".sprintf( _g( 'View the <a href="%s">Debian changelog</a>' ),
 				    "$CHANGELOG_URL/$src_dir/$src_basename/changelog" )."<br>\n";
 	    my $copyright_url = "$CHANGELOG_URL/$src_dir/$src_basename/";
 	    $copyright_url .= ( $is_source ? 'copyright' : "$name.copyright" );
 
-	    $str .= sprintf( gettext( "View the <a href=\"%s\">copyright file</a>" ),
+	    $str .= sprintf( _g( 'View the <a href="%s">copyright file</a>' ),
 			     $copyright_url )."</p>";
 	}
    }
@@ -186,7 +184,7 @@ sub pmoreinfo {
 	    }
 	    my ($maint_name, $maint_mail) = @{shift @$uploaders}; 
 	    unless (@$uploaders) {
-		$str .= "<p>\n".sprintf( gettext( "%s is responsible for this Debian package." ).
+		$str .= "<p>\n".sprintf( _g( "%s is responsible for this Debian package." ).
 					 "\n",
 					 "<a href=\"mailto:$maint_mail\">$maint_name</a>" 
 					 );
@@ -198,18 +196,18 @@ sub pmoreinfo {
 		}
 		my $last_up = pop @uploaders_str;
 		$up_str .= ", ".join ", ", @uploaders_str if @uploaders_str;
-		$up_str .= sprintf( gettext( " and %s are responsible for this Debian package." ), $last_up );
+		$up_str .= sprintf( _g( " and %s are responsible for this Debian package." ), $last_up );
 		$str .= "<p>\n$up_str ";
 	    }
 	}
 
-	$str .= sprintf( gettext( "See the <a href=\"%s\">developer information for %s</a>." )."</p>", $QA_URL.$source, $name ) if $source;
+	$str .= sprintf( _g( "See the <a href=\"%s\">developer information for %s</a>." )."</p>", $QA_URL.$source, $name ) if $source;
     }
 
     if ($info{search}) {
 	my $encodedname = uri_escape( $name );
 	my $search_url = $is_source ? "$ROOT/source" : $ROOT;
-	$str .= "<p>".sprintf( gettext( "Search for <a href=\"%s\">other versions of %s</a>" ),
+	$str .= "<p>".sprintf( _g( "Search for <a href=\"%s\">other versions of %s</a>" ),
 	    "$search_url/$encodedname", $name )."</p>\n";
     }
 
@@ -276,7 +274,7 @@ sub print_deps {
 
 	    if ($arch_str ||= '') {
 		if ($arch_neg) {
-		    $arch_str = " [".gettext("not")." $arch_str]";
+		    $arch_str = " ["._g("not")." $arch_str]";
 		} else {
 		    $arch_str = " [$arch_str]";
 		}
@@ -315,13 +313,13 @@ sub print_deps {
 	    } elsif ( $is_old_pkgs ) {
 		push @res_pkgs, dep_item( undef, $p_name, "$pkg_version$arch_str" );
 	    } else {
-		my $short_desc = gettext( "Package not available" );
+		my $short_desc = _g( "Package not available" );
 		push @res_pkgs, dep_item( undef, $p_name, "$pkg_version$arch_str", $short_desc );
 	    }
 	    
 	}
 	
-	$res .= "\n".join( "<dt>".gettext( "or" )." ", @res_pkgs )."\n";
+	$res .= "\n".join( "<dt>"._g( "or" )." ", @res_pkgs )."\n";
     }
     if (@$relations) {
 	$res .= "</dl></li>\n";
@@ -390,57 +388,65 @@ sub header {
 <input type="hidden" name="arch" value="$values{arch}">
 <input type="hidden" name="section" value="$values{section}">
 <input type="text" size="30" name="keywords" value="$values{keywords}" id="kw">
-<input type="submit" value="Search">
-<span style="font-size: 60%"><a href="$SEARCH_PAGE#search_packages">Full options</a></span>
+<input type="submit" value="%s">
+<span style="font-size: 60%%"><a href="$SEARCH_PAGE#search_packages">%s</a></span>
 <br>
-<div style="font-size: 80%">Search on:
+<div style="font-size: 80%%">%s
 <input type="radio" name="searchon" value="names" id="onlynames" $checked_searchon{names}>
-<label for="onlynames">Package names</label>&nbsp;&nbsp;
+<label for="onlynames">%s</label>&nbsp;&nbsp;
 <input type="radio" name="searchon" value="all" id="descs" $checked_searchon{all}>
-<label for="descs">Descriptions</label>
+<label for="descs">%s</label>
 <br>
 <input type="radio" name="searchon" value="sourcenames" id="src" $checked_searchon{sourcenames}>
-<label for="src">Source package names</label>
+<label for="src">%s</label>
 <input type="radio" name="searchon" value="contents" id="conts" $checked_searchon{contents}>
-<label for="conts">Package contents</label>
+<label for="conts">%s</label>
 </div>
 </div> <!-- end hpacketsearch -->
 </form>
 MENU
 ;
-    } elsif ($params{print_search_field} eq 'contents') {
-	my %values = %{$params{search_field_values}};
-	my %checked_searchmode = ( searchfiles => "",
-				   searchfilesanddirs => "",
-				   searchword => "",
-				   filelist => "", );
-	$checked_searchmode{$values{searchmode}} = "checked=\"checked\"";
-	$search_in_header = <<MENU;
-<form method="GET" action="$CONTENTS_SEARCH_CGI">
-<div id="hpacketsearch">
-<input type="hidden" name="debug" value="$values{debug}" />
-<input type="hidden" name="version" value="$values{version}" />
-<input type="hidden" name="arch" value="$values{arch}" />
-<input type="hidden" name="case" value="$values{case}" />
-<input type="text" size="30" name="word" id="keyword" value="$values{keyword}">&nbsp;
-<input type="submit" value="Search">
-<span style="font-size: 60%"><a href="$SEARCH_PAGE#search_contents">Full options</a></span>
-<br>
-<div style="font-size: 80%">Display:
-<input type=radio name="searchmode" value="searchfiles" id="searchfiles" $checked_searchmode{searchfiles}>
-<label for="searchfiles">files</label>
-<input type=radio name="searchmode" value="searchfilesanddirs" id="searchfilesanddirs" $checked_searchmode{searchfilesanddirs}>
-<label for="searchfilesanddirs">files &amp; directories</label>
-<br>
-<input type=radio name="searchmode" value="searchword" id="searchword" $checked_searchmode{searchword}>
-<label for="searchword">subword matching</label>
-<input type=radio name="searchmode" value="filelist" id="filelist" $checked_searchmode{filelist}>
-<label for="filelist">content list</label>
-</div>
-</div> <!-- end hpacketsearch -->
-</form>
-MENU
-;
+	$search_in_header = sprintf( $search_in_header,
+				     _g( 'Search' ),
+				     _g( 'Full options' ),
+				     _g( 'Search on:'),
+				     _g( 'Package Names' ),
+				     _g( 'Descriptions' ),
+				     _g( 'Source package names' ),
+				     _g( 'Package contents' ));
+#     } elsif ($params{print_search_field} eq 'contents') {
+# 	my %values = %{$params{search_field_values}};
+# 	my %checked_searchmode = ( searchfiles => "",
+# 				   searchfilesanddirs => "",
+# 				   searchword => "",
+# 				   filelist => "", );
+# 	$checked_searchmode{$values{searchmode}} = "checked=\"checked\"";
+# 	$search_in_header = <<MENU;
+# <form method="GET" action="$CONTENTS_SEARCH_CGI">
+# <div id="hpacketsearch">
+# <input type="hidden" name="debug" value="$values{debug}" />
+# <input type="hidden" name="version" value="$values{version}" />
+# <input type="hidden" name="arch" value="$values{arch}" />
+# <input type="hidden" name="case" value="$values{case}" />
+# <input type="text" size="30" name="word" id="keyword" value="$values{keyword}">&nbsp;
+# <input type="submit" value="Search">
+# <span style="font-size: 60%"><a href="$SEARCH_PAGE#search_contents">Full options</a></span>
+# <br>
+# <div style="font-size: 80%">Display:
+# <input type=radio name="searchmode" value="searchfiles" id="searchfiles" $checked_searchmode{searchfiles}>
+# <label for="searchfiles">files</label>
+# <input type=radio name="searchmode" value="searchfilesanddirs" id="searchfilesanddirs" $checked_searchmode{searchfilesanddirs}>
+# <label for="searchfilesanddirs">files &amp; directories</label>
+# <br>
+# <input type=radio name="searchmode" value="searchword" id="searchword" $checked_searchmode{searchword}>
+# <label for="searchword">subword matching</label>
+# <input type=radio name="searchmode" value="filelist" id="filelist" $checked_searchmode{filelist}>
+# <label for="filelist">content list</label>
+# </div>
+# </div> <!-- end hpacketsearch -->
+# </form>
+# MENU
+# ;
     }
 
     my $keywords = $params{keywords} || '';
@@ -470,7 +476,7 @@ $meta
 HEAD
 ;
 
-    $txt .= img( "$HOME/", "", "Pics/debian.png", gettext( "Debian Project" ),
+    $txt .= img( "$HOME/", "", "Pics/debian.png", _g( "Debian Project" ),
 		 width => 179, height => 61 );
     $txt .= <<HEADEND;
 
@@ -484,15 +490,15 @@ $search_in_header
 
 NAVBEGIN
 ;
-    $txt .= "<p class=\"hidecss\"><a href=\"\#inner\">" . gettext("Skip Site Navigation")."</a></p>\n";
+    $txt .= "<p class=\"hidecss\"><a href=\"\#inner\">" . _g("Skip Site Navigation")."</a></p>\n";
     $txt .= "<div id=\"navbar\">\n<ul>".
-	"<li><a href=\"$HOME/intro/about\">".gettext( "About&nbsp;Debian" )."</a></li>\n".
-	"<li><a href=\"$HOME/News/\">".gettext( "News" )."</a></li>\n".
-	"<li><a href=\"$HOME/distrib/\">".gettext( "Getting&nbsp;Debian" )."</a></li>\n".
-	"<li><a href=\"$HOME/support\">".gettext( "Support" )."</a></li>\n".
-	"<li><a href=\"$HOME/devel/\">".gettext( "Development" )."</a></li>\n".
-	"<li><a href=\"$HOME/sitemap\">".gettext( "Site map" )."</a></li>\n".
-	"<li><a href=\"http://search.debian.org/\">".gettext( "Search" )."</a></li>\n";
+	"<li><a href=\"$HOME/intro/about\">"._g( "About&nbsp;Debian" )."</a></li>\n".
+	"<li><a href=\"$HOME/News/\">"._g( "News" )."</a></li>\n".
+	"<li><a href=\"$HOME/distrib/\">"._g( "Getting&nbsp;Debian" )."</a></li>\n".
+	"<li><a href=\"$HOME/support\">"._g( "Support" )."</a></li>\n".
+	"<li><a href=\"$HOME/devel/\">"._g( "Development" )."</a></li>\n".
+	"<li><a href=\"$HOME/sitemap\">"._g( "Site map" )."</a></li>\n".
+	"<li><a href=\"http://search.debian.org/\">"._g( "Search" )."</a></li>\n";
     $txt .= "</ul>\n";
     $txt .= <<ENDNAV;
 </div> <!-- end navbar -->
@@ -521,15 +527,15 @@ sub trailer {
 	$langs.
 	"\n<hr class=\"hidecss\">\n" .
 	"<p$bl_class>".
-	sprintf( gettext( "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/\">Packages search page</a>" ), $HOME, $ROOT ).
+	sprintf( _g( "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/\">Packages search page</a>" ), $HOME, $ROOT ).
 	"</p>\n<hr class=\"hidecss\">\n".
 	"<div id=\"fineprint\" class=\"bordertop\"><p>".
-	sprintf( gettext( "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the Debian <a href=\"%s/contact\">contact page</a>." ), $CONTACT_MAIL, $CONTACT_MAIL, $HOME).
+	sprintf( _g( "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the Debian <a href=\"%s/contact\">contact page</a>." ), $CONTACT_MAIL, $CONTACT_MAIL, $HOME).
 	"</p>\n".
-	"<p>". gettext( "Last Modified: " ). "LAST_MODIFIED_DATE".
+	"<p>". _g( "Last Modified: " ). "LAST_MODIFIED_DATE".
 	"<br>\n".
-	sprintf( gettext( "Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; See <a href=\"%s/license\">license terms</a>." ), "$HOME/" )."<br>\n".
-	gettext( "Debian is a registered trademark of Software in the Public Interest, Inc." ).
+	sprintf( _g( "Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; See <a href=\"%s/license\">license terms</a>." ), "$HOME/" )."<br>\n".
+	_g( "Debian is a registered trademark of Software in the Public Interest, Inc." ).
 	"</div> <!-- end fineprint -->\n".
 	"</div> <!-- end footer -->\n".
 	"</div> <!-- end outer -->\n".
@@ -546,7 +552,7 @@ sub languages {
     if (@used_langs) {
 	$str .= "<hr class=\"hidecss\">\n";
 	$str .= "<!--UdmComment-->\n<p>\n";
-	$str .= gettext( "This page is also available in the following languages:\n" );
+	$str .= _g( "This page is also available in the following languages:\n" );
 	$str .= "</p><p class=\"navpara\">\n";
 	
 	my @printed_langs = ();
@@ -565,7 +571,7 @@ sub languages {
 	    $str .= "</a>\n";
 	}
 	$str .= "\n</p><p>\n";
-	$str .= sprintf( gettext( "How to set <a href=\"%s\">the default document language</a></p>" ), $CN_HELP_URL );
+	$str .= sprintf( _g( "How to set <a href=\"%s\">the default document language</a>" ), $CN_HELP_URL )."</p>";
 	$str .= "\n<!--/UdmComment-->\n";
     }
     

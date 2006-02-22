@@ -17,14 +17,17 @@ use URI::Escape;
 use HTML::Entities;
 use DB_File;
 use Benchmark ':hireswallclock';
+use I18N::AcceptLanguage;
+use Locale::gettext;
 
 use Deb::Versions;
-use Packages::Config qw( $DBDIR $ROOT @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES );
+use Packages::Config qw( $DBDIR $ROOT @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @LANGUAGES $LOCALES );
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::HTML ();
 use Packages::Sections;
+use Packages::I18N::Locale;
 
 use Packages::DoSearch;
 use Packages::DoSearchContents;
@@ -34,7 +37,12 @@ use Packages::DoFilelist;
 
 &Packages::CGI::reset;
 
+# clean up env
 $ENV{PATH} = "/bin:/usr/bin";
+delete $ENV{'LANGUAGE'};
+delete $ENV{'LANG'};
+delete $ENV{'LC_ALL'};
+delete $ENV{'LC_MESSAGES'};
 
 # Read in all the variables set by the form
 my $input;
@@ -55,10 +63,19 @@ $Packages::CGI::debug = $debug;
 &Packages::Config::init( '../' );
 &Packages::DB::init();
 
+my $acc = I18N::AcceptLanguage->new();
+my $http_lang = $acc->accepts( $input->http("Accept-Language"),
+			       \@LANGUAGES );
+debug( "LANGUAGES=@LANGUAGES header=".
+       $input->http("Accept-Language").
+       " http_lang=$http_lang", 2 );
+bindtextdomain ( 'pdo', $LOCALES );
+textdomain( 'pdo' );
+
 my $what_to_do = 'show';
 my $source = 0;
 if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
-    my @components = grep { $_ } map { lc $_ } split /\//, $path;
+    my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
     debug( "components[0]=$components[0]", 2 ) if @components>0;
     if (@components > 0 and $components[0] eq 'source') {
@@ -69,11 +86,10 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	shift @components;
 	$what_to_do = 'search';
 	# Done
-	fatal_error( "search doesn't take any more path elements" )
+	fatal_error( _( "search doesn't take any more path elements" ) )
 	    if @components > 0;
     } elsif (@components == 0) {
-	fatal_error( "We're supposed to display the homepage here, instead of
-	    getting dispatch.pl" );
+	fatal_error( _( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
     } elsif (@components == 1) {
 	$what_to_do = 'search';
     } else {
@@ -98,7 +114,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	sub set_param_once {
 	    my ($cgi, $params_set, $key, $val) = @_;
 	    if ($params_set->{$key}++) {
-		fatal_error( "$key set more than once in path" );
+		fatal_error( sprintf( _( "%s set more than once in path" ), $key ) );
 	    } else {
 		$cgi->param( $key, $val );
 	    }
@@ -128,7 +144,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	@components = @tmp;
 
 	if (@components > 1) {
-	    fatal_error( "two or more packages specified (@components)" );
+	    fatal_error( sprintf( _( "two or more packages specified (%s)" ), "@components" ) );
 	}
     } # else if (@components == 1)
     
@@ -156,6 +172,7 @@ my %params_def = ( keywords => { default => undef,
 				    replace => { all => \@ARCHIVES,
 						 default => [qw(us security non-US)]} },
 		   exact => { default => 0, match => '^(\w+)$',  },
+		   lang => { default => $http_lang, match => '^(\w+)$',  },
 		   source => { default => 0, match => '^(\d+)$',  },
 		   searchon => { default => 'names', match => '^(\w+)$', },
 		   section => { default => 'all', match => '^([\w-]+)$',
@@ -171,6 +188,19 @@ my %params_def = ( keywords => { default => undef,
 		   );
 my %opts;
 my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
+
+my $locale = get_locale($opts{lang});
+my $charset = get_charset($opts{lang});
+setlocale ( LC_ALL, $locale )
+    or do { debug( "couldn't set locale $locale, using default" );
+	    setlocale( LC_ALL, get_locale() )
+		or do {
+		    debug( "couldn't set default locale either" );
+		    next if ($opts{lang} ne 'en');
+		    setlocale( LC_ALL, "C" );
+		};
+	};
+debug( "locale=$locale charset=$charset", 2 );
 
 $opts{h_suites} = { map { $_ => 1 } @suites };
 $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -193,7 +223,7 @@ my $pet1 = new Benchmark;
 my $petd = timediff($pet1, $pet0);
 debug( "Parameter evaluation took ".timestr($petd) );
 
-print $input->header( -charset => 'utf-8' );
+print $input->header( -charset => $charset );
 
 my (%html_header, $menu, $page_content);
 unless (@Packages::CGI::fatal_errors) {
@@ -201,12 +231,12 @@ unless (@Packages::CGI::fatal_errors) {
     &{"do_$what_to_do"}( \%params, \%opts, \%html_header,
 			 \$menu, \$page_content );
 } else {
-    %html_header = ( title => 'Error',
-		     lang => 'en',
+    %html_header = ( title => _('Error'),
+		     lang => $opts{lang},
 		     print_title => 1,
 		     print_search_field => 'packages',
 		     search_field_values => { 
-			 keywords => 'search for a package',
+			 keywords => _('search for a package'),
 			 searchon => 'default',
 			 arch => 'any',
 			 suite => 'all',

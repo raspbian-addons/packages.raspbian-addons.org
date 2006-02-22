@@ -13,6 +13,7 @@ use Exporter;
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT @SUITES @ARCHIVES @SECTIONS
 			 @ARCHITECTURES %FTP_SITES );
+use Packages::I18N::Locale;
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );
@@ -27,13 +28,13 @@ sub do_filelist {
     my ($params, $opts, $html_header, $menu, $page_content) = @_;
 
     if ($params->{errors}{package}) {
-	fatal_error( "package not valid or not specified" );
+	fatal_error( _( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( "suite not valid or not specified" );
+	fatal_error( _( "suite not valid or not specified" ) );
     }
     if ($params->{errors}{arch}) {
-	fatal_error( "arch not valid or not specified" );
+	fatal_error( _( "architecture not valid or not specified" ) );
     }
 
     $$menu = '';
@@ -41,9 +42,9 @@ sub do_filelist {
     my $suite = $opts->{suite}[0];
     my $arch = $opts->{arch}[0] ||'';
 
-    %$html_header = ( title => "Filelist of package <em>$pkg</em> in <em>$suite</em> of arch <em>$arch</em>",
-		      title_tag => "Filelist of of package $pkg/$suite/$arch",
-		      lang => 'en',
+    %$html_header = ( title => sprintf( _( "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>" ), $pkg, $suite, $arch ),
+		      title_tag => sprintf( _( "Filelist of of package %s/%s/%s" ), $pkg, $suite, $arch ),
+		      lang => $opts->{lang},
 		      keywords => "debian, $suite, $arch, filelist",
 		      print_title => 1,
 		      );
@@ -53,7 +54,7 @@ sub do_filelist {
 	    O_RDONLY, 0666, $DB_BTREE) {
 
 	    unless (exists $contents{$pkg}) {
-		fatal_error( "No such package in this suite on this arch" );
+		fatal_error( _( "No such package in this suite on this architecture." ) );
 	    } else {
 		my @files = unpack "L/(CC/a)", $contents{$pkg};
 		my $file = "";
@@ -65,7 +66,7 @@ sub do_filelist {
 		$$page_content .= '</pre></div>';
 	    }
 	} else {
-	    fatal_error( "Invalid suite/arch combination" );
+	    fatal_error( _( "Invalid suite/architecture combination" ) );
 	}
     }
 }

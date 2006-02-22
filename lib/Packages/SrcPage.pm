@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use Data::Dumper;
+use Locale::gettext;
 use Deb::Versions;
 use Packages::CGI;
 use Packages::Page qw( :all );
@@ -21,8 +22,6 @@ sub merge_data {
 
     return $self->merge_package( \%data );
 }
-
-sub gettext { return $_[0]; }
 
 our @DEP_FIELDS = qw( build-depends build-depends-indep
 		      build-conflicts build-conflicts-indep);

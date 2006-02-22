@@ -5,6 +5,7 @@ use warnings;
 
 use Data::Dumper;
 use Exporter;
+use Locale::gettext;
 use Deb::Versions;
 use Packages::CGI;
 
@@ -33,7 +34,6 @@ sub new {
     return $self;
 }
 
-sub gettext { return $_[0]; }
 sub split_name_mail {
     my $string = shift;
     my ( $name, $email );

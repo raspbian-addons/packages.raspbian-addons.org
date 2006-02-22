@@ -11,7 +11,7 @@ filesdir=${topdir}/files
 htmldir=${topdir}/www
 archivedir=${topdir}/archive
 podir=${topdir}/po
-localedir=${topdir}/locale
+localedir=/org/packages.debian.org/locale
 staticdir=${topdir}/static
 configdir=${topdir}/conf
 
@@ -41,6 +41,7 @@ bug_url="http://bugs.debian.org/"
 src_bug_url="http://bugs.debian.org/src:"
 qa_url="http://packages.qa.debian.org/"
 ddpo_url="http://qa.debian.org/developer.php?email="
+cn_help_url="http://www.debian.org/intro/cn"
 
 # Architectures
 #

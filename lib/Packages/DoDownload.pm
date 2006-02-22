@@ -9,9 +9,10 @@ use Benchmark ':hireswallclock';
 use Exporter;
 
 use Deb::Versions;
+use Packages::I18N::Locale;
 use Packages::HTML ();
 use Packages::Search qw( :all );
-use Packages::Config qw( $HOME $DBDIR @SUITES @ARCHIVES @SECTIONS @ARCHITECTURES );
+use Packages::Config qw( $HOME $DBDIR @SUITES @ARCHIVES @SECTIONS @ARCHITECTURES $SEARCH_URL );
 use Packages::CGI;
 use Packages::DB;
 
@@ -199,19 +200,19 @@ sub do_download {
     my ($params, $opts, $html_header, $menu, $page_content) = @_;
 
     if ($params->{errors}{package}) {
-	fatal_error( "package not valid or not specified" );
+	fatal_error( _( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( "suite not valid or not specified" );
+	fatal_error( _( "suite not valid or not specified" ) );
     }
     if ($params->{errors}{arch}) {
-	fatal_error( "arch not valid or not specified" );
+	fatal_error( _( "architecture not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( "more than one suite specified for download (@{$opts->{suite}})" );
+	fatal_error( sprintf( _( "more than one suite specified for download (%s)" ), "@{$opts->{suite}}" ) );
     }
     if (@{$opts->{arch}} > 1) {
-	fatal_error( "more than one architecture specified for download (@{$opts->{arch}})" );
+	fatal_error( sprintf( _( "more than one architecture specified for download (%s)" ), "@{$opts->{arch}}" ) );
     }
 
     $opts->{h_sections} = { map { $_ => 1 } @SECTIONS };
@@ -223,8 +224,6 @@ sub do_download {
     my (@results);
     my ($final_result, $file, $filen, $md5sum, @file_components, $archive) = ("")x5;
 
-    sub gettext { return $_[0]; };
-
     my $st0 = new Benchmark;
     unless (@Packages::CGI::fatal_errors) {
 	tie %packages_all, 'DB_File', "$DBDIR/packages_all_$suite.db",
@@ -234,8 +233,8 @@ sub do_download {
 	read_entry( \%packages, $pkg, \@results, $opts );
 
 	unless (@results) {
-	    fatal_error( "No such package".
-			 "{insert link to search page with substring search}" );	    
+	    fatal_error( _( "No such package." )."<br>".
+			 sprintf( _( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) );
 	} else {
 	    my $final_result = shift @results;
 	    foreach (@results) {
@@ -254,139 +253,100 @@ sub do_download {
 	}
     }
 
-    my $arch_string = $arch ne 'all' ? "on $arches{$arch} machines" : "";
-    
-    %$html_header = ( title => "Package Download Selection",
-		      lang => "en",
+    %$html_header = ( title => _( "Package Download Selection" ),
+		      lang => $opts->{lang},
 		      print_title => 1 );
 
     if ($file) {
-	$$page_content .= "<h2>Download Page for <kbd>$filen</kbd> $arch_string</h2>\n".
-	    "<p>You can download the requested file from the <tt>";
-	$$page_content .= join( '/', @file_components).'/';
-	$$page_content .= "</tt> subdirectory at";
-	$$page_content .= $archive ne 'security' ? " any of these sites:" : ":";
-	$$page_content .= "</p>\n";
+	if ($arch ne 'all') {
+	    $$page_content .= '<h2>'.sprintf( _('Download Page for <kbd>%s</kbd> on %s machines'), $filen, $arches{$arch} ).'</h2>';
+	} else {
+	    $$page_content .= '<h2>'.sprintf( _('Download Page for <kbd>%s</kbd>'), $filen ).'</h2>';
+	}
+	my $directory = join( '/', @file_components).'/';
+	if ($archive ne 'security' ) {
+	    $$page_content .= "<p>".sprintf( _( 'You can download the requested file from the <tt>%s</tt> subdirectory at any of these sites:' ), $directory )."</p>\n";
+	} else {
+	    $$page_content .= "<p>".sprintf( _( 'You can download the requested file from the <tt>%s</tt> subdirectory at:' ), $directory )."</p>\n";
+	}
 	
 	if ($archive eq 'security') {
 	    
-	    $$page_content .= <<END;
-<ul>
-    <li><a href="http://security.debian.org/debian-security/$file">security.debian.org/debian-security</a></li>
-    </ul>
-    
-    <p>Debian security updates are currently officially distributed only via
-    security.debian.org.</p>
-END
-;
+	    $$page_content .= "<ul><li><a href=\"http://security.debian.org/debian-security/$file\">security.debian.org/debian-security</a></li></ul>";
+	    $$page_content .= '<p>'._( 'Debian security updates are currently officially distributed only via <tt>security.debian.org</tt>.' ).'</p>';
 	} elsif ($arch eq 'amd64') {
 
-	    $$page_content .= print_links( "North America", $file, @amd64_north_american_sites );
-	    $$page_content .= print_links( "Europe", $file, @amd64_european_sites );
+	    $$page_content .= print_links( _( "North America" ), $file, @amd64_north_american_sites );
+	    $$page_content .= print_links( _( "Europe" ), $file, @amd64_european_sites );
 #    $$page_content .= print_links( "Australia and New Zealand", $file,
 #		 @nonus_australian_sites );
-	    $$page_content .= print_links( "Asia", $file, @amd64_asian_sites );
+	    $$page_content .= print_links( _( "Asia" ), $file, @amd64_asian_sites );
 #    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 
-	    $$page_content .= <<END;
-<p>Note that AMD64 is not officialy included in the Debian archive
-    yet, but the AMD64 porter group keeps their archive in sync with
-    the official archive as close as possible. See the
-    <a href="http://www.debian.org/ports/amd64/">AMD64 ports page</a> for
-    current information.</p>
-END
-;
+	    $$page_content .= '<p>'._( 'Note that AMD64 is not officialy included in the Debian archive yet, but the AMD64 porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/amd64/">AMD64 ports page</a> for current information.' ).'</p>';
 	} elsif ($arch eq 'kfreebsd-i386') {
 
-	    $$page_content .= print_links( "North America", $file, @kfreebsd_north_american_sites );
-	    $$page_content .= print_links( "Europe", $file, @kfreebsd_european_sites );
+	    $$page_content .= print_links( _( "North America" ), $file, @kfreebsd_north_american_sites );
+	    $$page_content .= print_links( _( "Europe" ), $file, @kfreebsd_european_sites );
 #    $$page_content .= print_links( "Australia and New Zealand", $file,
 #		 @nonus_australian_sites );
 #    $$page_content .= print_links( "Asia", $file, @amd64_asian_sites );
 #    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 	
-	    $$page_content .= <<END;
-<p>Note that GNU/kFreeBSD is not officialy included in the Debian archive
-    yet, but the GNU/kFreeBSD porter group keeps their archive in sync with
-    the official archive as close as possible. See the
-    <a href="http://www.debian.org/ports/kfreebsd-gnu/">GNU/kFreeBSD ports page</a> for
-    current information.</p>
-END
-;
+	    $$page_content .= '<p>'._( 'Note that GNU/kFreeBSD is not officialy included in the Debian archive yet, but the GNU/kFreeBSD porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/kfreebsd-gnu/">GNU/kFreeBSD ports page</a> for current information.' ).'</p>';
 	} elsif ($archive eq 'non-US') {
 
-	    $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
-	    $$page_content .= print_links( "Europe", $file, @nonus_european_sites );
-	    $$page_content .= print_links( "Australia and New Zealand", $file,
-			 @nonus_australian_sites );
-	    $$page_content .= print_links( "Asia", $file, @nonus_asian_sites );
-	    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+	    $$page_content .= print_links( _( "North America" ), $file, @nonus_north_american_sites );
+	    $$page_content .= print_links( _( "Europe" ), $file, @nonus_european_sites );
+	    $$page_content .= print_links( _( "Australia and New Zealand" ), $file,
+					   @nonus_australian_sites );
+	    $$page_content .= print_links( _( "Asia" ), $file, @nonus_asian_sites );
+	    $$page_content .= print_links( _( "South America" ), $file, @nonus_south_american_sites );
 	    
-	    $$page_content .= <<END;
-<p>If none of the above sites are fast enough for you, please see our
-    <a href="http://www.debian.org/mirror/list-non-US">complete mirror list</a>.</p>
-END
-;
+	    $$page_content .= '<p>'.sprintf( _('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://www.debian.org/mirror/list-non-US' ).'</p>';
 	} elsif ($archive eq 'backports') {
 	
 #    $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
 	    $$page_content .= '<div class="cardleft">';
-	    $$page_content .= print_links( "Europe", $file, @backports_european_sites );
+	    $$page_content .= print_links( _( "Europe" ), $file, @backports_european_sites );
 	    $$page_content .= '</div><div class="cardright">';
-	    $$page_content .= print_links( "Australia and New Zealand", $file,
-			 @backports_australian_sites );
-	    $$page_content .= print_links( "Asia", $file, @backports_asian_sites );
+	    $$page_content .= print_links( _( "Australia and New Zealand" ), $file,
+					   @backports_australian_sites );
+	    $$page_content .= print_links( _( "Asia" ), $file, @backports_asian_sites );
 #    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 	    $$page_content .= '</div>';
-	
-	    $$page_content .= <<END;
-<p style="clear:both">If none of the above sites are fast enough for you, please see our
-    <a href="http://www.backports.org/debian/README.mirrors.html">complete mirror list</a>.</p>
-END
-;
+	    
+	    $$page_content .= '<p style="clear:both">'.sprintf( _( 'If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.'), 'http://www.backports.org/debian/README.mirrors.html' ).'</p>';
 	} elsif ($archive eq 'volatile') {
 	    
 #    $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
-	    $$page_content .=_links( "Europe", $file, @volatile_european_sites );
+	    $$page_content .= print_links( _( "Europe" ), $file, @volatile_european_sites );
 #    $$page_content .= print_links( "Australia and New Zealand", $file,
 #		 @nonus_australian_sites );
 #    $$page_content .= print_links( "Asia", $file, @nonus_asian_sites );
 #    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 
-	    $$page_content .= <<END;
-<p>If none of the above sites are fast enough for you, please see our
-    <a href="http://volatile.debian.net/mirrors.html">complete mirror list</a>.</p>
-END
-;
+	    $$page_content .= '<p>'.sprintf( _( 'If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://volatile.debian.net/mirrors.html' ).'</p>';
 	} elsif ($archive eq 'us') {
 	    
 	    $$page_content .= '<div class="cardleft">';
-	    $$page_content .= print_links( "North America", $file, @north_american_sites );
+	    $$page_content .= print_links( _( "North America" ), $file, @north_american_sites );
 	    $$page_content .= '</div><div class="cardright">';
-	    $$page_content .= print_links( "Europe", $file, @european_sites );
+	    $$page_content .= print_links( _( "Europe" ), $file, @european_sites );
 	    $$page_content .= '</div><div class="cardleft">';
-	    $$page_content .= print_links( "Australia and New Zealand", $file, @australian_sites );
+	    $$page_content .= print_links( _( "Australia and New Zealand" ), $file, @australian_sites );
 	    $$page_content .= '</div><div class="cardright">';
-	    $$page_content .= print_links( "Asia", $file, @asian_sites );
+	    $$page_content .= print_links( _( "Asia" ), $file, @asian_sites );
 	    $$page_content .= '</div><div class="cardleft">';
-	    $$page_content .= print_links( "South America", $file, @south_american_sites );
+	    $$page_content .= print_links( _( "South America" ), $file, @south_american_sites );
 	    $$page_content .= '</div>';
 	    
-	    $$page_content .= <<END;
-<p style="clear:both">If none of the above sites are fast enough for you, please see our
-    <a href="http://www.debian.org/mirror/list">complete mirror list</a>.</p>
-END
-;
+	    $$page_content .= '<p style="clear:both">'.sprintf( _( 'If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://www.debian.org/mirror/list' ).'</p>';
 	}
     
-	$$page_content .= <<END;
-<p>Note that in some browsers you will need to tell your browser you want
-    the file saved to a file. For example, in Netscape or Mozilla, you should
-    hold the Shift key when you click on the URL.</p>
-END
-;
-	$$page_content .= "<p>The MD5sum for <tt>$filen</tt> is <strong>$md5sum</strong></p>\n"
-	    if $md5sum;
+    $$page_content .= '<p>'._( 'Note that in some browsers you will need to tell your browser you want the file saved to a file. For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL.' ).'</p>';
+    $$page_content .= "<p>".sprintf( _( 'The MD5sum for <tt>%s</tt> is <strong>%s</strong>' ), $filen, $md5sum ).'</p>'
+	if $md5sum;
     }
 }
 

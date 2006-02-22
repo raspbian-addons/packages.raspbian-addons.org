@@ -8,16 +8,24 @@ use File::Path;
 use DB_File;
 use Storable;
 use HTML::Entities;
+use Locale::gettext;
 
 use lib './lib';
 
-use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @LANGUAGES $LOCALES);
 use Packages::HTML;
+use Packages::I18N::Locale;
 use Packages::Page;
 use Packages::Sections;
 &Packages::Config::init( './' );
-sub gettext { return $_[0]; }
-sub dgettext { return $_[1]; }
+
+delete $ENV{'LANGUAGE'};
+delete $ENV{'LANG'};
+delete $ENV{'LC_ALL'};
+delete $ENV{'LC_MESSAGES'};
+bindtextdomain ( 'pdo', $LOCALES );
+bindtextdomain ( 'sections', $LOCALES );
+textdomain( 'pdo' );
 
 my $wwwdir = "$TOPDIR/www";
 
@@ -36,6 +44,56 @@ my $priorities = retrieve "$DBDIR/priorities.info";
 
 my (%pages);
 
+print "write suite index files ...\n";
+foreach my $s (@SUITES) {
+    foreach my $a (@ARCHIVES) {
+	next if $a eq 'security';
+	next if $a eq 'non-US';
+	my $key = ($a eq 'us') ? $s : "$s/$a";
+	my $root = ($a eq 'us') ? '' : '../';
+	mkpath ( "$wwwdir/$key" );
+	foreach my $lang (@LANGUAGES) {
+	    my $locale = get_locale( $lang );
+	    setlocale ( LC_ALL, $locale ) or do {
+		warn "couldn't set locale ($lang/$locale)\n";
+		next;
+	    };
+	    open $pages{$key}{$lang}{index}{fh}, '>', "$wwwdir/$key/index.$lang.html.new"
+		or die "can't open index file for output: $!";
+	    my $index_title = sprintf( _g( "List of sections in \"%s\"" ),
+				       $s );
+	    print {$pages{$key}{$lang}{index}{fh}} header( title => $index_title,
+							   title_keywords => "debian, $s",
+							   desc => encode_entities( $index_title, '"' ),
+							   lang => $lang ),
+	    title( $index_title ), '<div id="lefthalfcol"><dl>';
+	    my $i = 0; my $num_sections = keys %{$subsections->{$s}{$a}};
+	    foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
+		next if $ssec eq '-';
+		if ($sections_descs{$ssec}) {
+		    print {$pages{$key}{$lang}{index}{fh}} "<dt><a href=\"$ssec/\">".dgettext( 'sections', $sections_descs{$ssec}[0] )."</a></dt><dd>".dgettext( 'sections', $sections_descs{$ssec}[1] )."</dd>\n";
+		    $i++;
+		    if ($i eq ceil($num_sections/2)) {
+			print {$pages{$key}{$lang}{index}{fh}} "</dl>\n</div> <!-- end lefthalfcol -->\n<div id=\"righthalfcol\">\n<dl>\n";
+		    }
+		}
+	    }
+
+	    print {$pages{$key}{$lang}{index}{fh}} '</dl></div>',
+	    "<p class=\"psmallcenter\"><a href=\"allpackages\" title=\""._g( "List of all packages" )."\">".
+		_g( "All packages" ) ."</a><br>(<a href=\"allpackages.en.txt.gz\">".
+		_g( "compact compressed textlist" )."</a>)</p>\n";
+	    print {$pages{$key}{$lang}{index}{fh}} trailer( "$root../", 'index', $lang, @LANGUAGES );
+	    close $pages{$key}{$lang}{index}{fh} or
+		warn "can't close index file $wwwdir/$key/index.$lang.html.new: $!";
+	    rename( "$wwwdir/$key/index.$lang.html.new",
+		    "$wwwdir/$key/index.$lang.html" );
+
+	}
+    }
+}
+setlocale( LC_ALL, 'C' ) or die "couldn't reset locale";
+
 print "opening files ...\n";
 foreach my $s (@SUITES) {
     foreach my $a (@ARCHIVES) {
@@ -43,31 +101,22 @@ foreach my $s (@SUITES) {
 	next if $a eq 'non-US';
 	my $key = ($a eq 'us') ? $s : "$s/$a";
 	mkpath ( "$wwwdir/$key" );
-	open $pages{$key}{index}{fh}, '>', "$wwwdir/$key/index.en.html.new"
-	    or die "can't open index file for output: $!";
 	open $pages{$key}{fh}, '>', "$wwwdir/$key/allpackages.en.html.new"
 	    or die "can't open index file for output: $!";
 
-	my $title = sprintf( gettext ( "Software Packages in \"%s\"" ),
+	my $title = sprintf( _g( "Software Packages in \"%s\"" ),
 			     $s );
-	my $index_title = sprintf( gettext ( "List of sections in \"%s\"" ),
-				   $s );
 	print {$pages{$key}{fh}} header( title => $title,
 					 title_keywords => "debian, $s",
 					 desc => encode_entities( $title, '"' ),
 					 lang => 'en' ),
 	title( $title ), '<dl>';
-	print {$pages{$key}{index}{fh}} header( title => $index_title,
-						title_keywords => "debian, $s",
-						desc => encode_entities( $index_title, '"' ),
-						lang => 'en' ),
-	title( $index_title ), '<div id="lefthalfcol"><dl>';
 
 	foreach my $sec (keys %{$sections->{$s}{$a}}) {
 	    mkpath ( "$wwwdir/$key/$sec" );
 	    open $pages{$key}{$sec}{fh}, '>', "$wwwdir/$key/$sec/index.en.html.new"
 		or die "can't open index file for output: $!";
-	    $title = sprintf( gettext ( "Software Packages in \"%s\", section %s" ),
+	    $title = sprintf( _g( "Software Packages in \"%s\", section %s" ),
 			      $s, $sec );
 	    print {$pages{$key}{$sec}{fh}} header( title => $title,
 						   title_keywords => "debian, $s, $sec",
@@ -75,34 +124,25 @@ foreach my $s (@SUITES) {
 						   lang => 'en' ),
 	    title( $title ), '<dl>';
 	}
-	my $i = 0; my $num_sections = keys %{$subsections->{$s}{$a}};
 	foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    mkpath ( "$wwwdir/$key/$ssec" );
 	    open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
 		or die "can't open index file for output: $!";
-	    $title = sprintf( gettext ( "Software Packages in \"%s\", subsection %s" ),
+	    $title = sprintf( _g( "Software Packages in \"%s\", subsection %s" ),
 			      $s, $ssec );
 	    print {$pages{$key}{$ssec}{fh}} header( title => $title,
 						    title_keywords => "debian, $s, $ssec",
 						    desc => encode_entities( $title, '"' ),
 						    lang => 'en' ),
 	    title( $title ), '<dl>';
-
-	    if ($sections_descs{$ssec}) {
-		print {$pages{$key}{index}{fh}} "<dt><a href=\"$ssec/\">".dgettext( 'sections', $sections_descs{$ssec}[0] )."</a></dt><dd>".dgettext( 'sections', $sections_descs{$ssec}[1] )."</dd>\n";
-		$i++;
-		if ($i eq ceil($num_sections/2)) {
-		    print {$pages{$key}{index}{fh}} "</dl>\n</div> <!-- end lefthalfcol -->\n<div id=\"righthalfcol\">\n<dl>\n";
-		}
-	    }
 	}
 	foreach my $prio (keys %{$priorities->{$s}{$a}}) {
 	    next if $prio eq '-';
 	    mkpath ( "$wwwdir/$key/$prio" );
 	    open $pages{$key}{$prio}{fh}, '>', "$wwwdir/$key/$prio/index.en.html.new"
 		or die "can't open index file for output: $!";
-	    $title = sprintf( gettext ( "Software Packages in \"%s\", priority %s" ),
+	    $title = sprintf( _g( "Software Packages in \"%s\", priority %s" ),
 			      $s, $prio );
 	    print {$pages{$key}{$prio}{fh}} header( title => $title,
 						    title_keywords => "debian, $s, $prio",
@@ -189,15 +229,6 @@ foreach my $s (@SUITES) {
 	next if $a eq 'non-US';
 	my $key = ($a eq 'us') ? $s : "$s/$a";
 	my $root = ($a eq 'us') ? '' : '../';
-	print {$pages{$key}{index}{fh}} '</dl></div>',
-	"<p class=\"psmallcenter\"><a href=\"allpackages\" title=\"".gettext( "List of all packages" )."\">".
-        gettext( "All packages" ) ."</a><br>(<a href=\"allpackages.en.txt.gz\">".
-        gettext( "compact compressed textlist" )."</a>)</p>\n";
-	print {$pages{$key}{index}{fh}} trailer( "$root../" );
-	close $pages{$key}{index}{fh} or
-	    warn "can't open index file for output $wwwdir/$key/index.en.html.new: $!";
-	rename( "$wwwdir/$key/index.en.html.new",
-		"$wwwdir/$key/index.en.html" );
 	print {$pages{$key}{fh}} '</dl>', trailer( "$root../" );
 	close $pages{$key}{fh} or
 	    warn "can't close index file $wwwdir/$key/allpackages.en.html.new: $!";

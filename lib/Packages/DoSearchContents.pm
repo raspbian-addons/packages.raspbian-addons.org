@@ -12,6 +12,7 @@ our @ISA = qw( Exporter );
 our @EXPORT = qw( do_search_contents );
 
 use Deb::Versions;
+use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;
@@ -22,15 +23,15 @@ sub do_search_contents {
     my ($params, $opts, $html_header, $menu, $page_content) = @_;
 
     if ($params->{errors}{keywords}) {
-	fatal_error( "keyword not valid or missing" );
+	fatal_error( gettext( "keyword not valid or missing" ) );
     } elsif (length($opts->{keywords}) < 2) {
-	fatal_error( "keyword too short (keywords need to have at least two characters)" );
+	fatal_error( gettext( "keyword too short (keywords need to have at least two characters)" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( "suite not valid or not specified" );
+	fatal_error( gettext( "suite not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( "more than one suite specified for contents search (@{$opts->{suite}})" );
+	fatal_error( sprintf( gettext( "more than one suite specified for contents search (%s)" ), "@{$opts->{suite}}" ) );
     }
 
     $$menu = "";
@@ -74,7 +75,7 @@ sub do_search_contents {
 	    open FILENAMES, '-|', 'fgrep', '--', $kw, "$DBDIR/contents/filenames_$suite.txt"
 		or die "Failed opening filename table: $!";
 
-	    error( "Exact and fullfilenamesearch don't go along" )
+	    error( gettext( "Exact and fullfilenamesearch don't go along" ) )
 		if $ffn and $exact;
 
 	    while (<FILENAMES>) {
@@ -112,16 +113,16 @@ sub do_search_contents {
     msg( "You have searched for ${wording} <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording." );
 
     if ($Packages::Search::too_many_hits) {
-	error( "Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords." );
+	error( gettext( "Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords." ) );
     }
     
     if (!@Packages::CGI::fatal_errors && !@results) {
-	error( "Nothing found" );
+	error( gettext( "Nothing found" ) );
     }
 
-    %$html_header = ( title => 'Package Contents Search Results' ,
-		      lang => 'en',
-		      title_tag => 'Debian Package Contents Search Results',
+    %$html_header = ( title => gettext( 'Package Contents Search Results' ),
+		      lang => $opts->{lang},
+		      title_tag => gettext( 'Debian Package Contents Search Results' ),
 		      print_title => 1,
 		      print_search_field => 'packages',
 		      search_field_values => { 
@@ -137,8 +138,10 @@ sub do_search_contents {
 
     $$page_content = '';
     if (@results) {
-	$$page_content .= "<p>Found ".scalar(@results)." results</p>";
-	$$page_content .= "<div  id=\"pcontentsres\"><table><colgroup><col><col></colgroup><tr><th>File</th><th>Packages</th></tr>";
+	$$page_content .= "<p>".sprintf( gettext( 'Found %s results' ),
+					 scalar @results )."</p>";
+	$$page_content .= '<div id="pcontentsres"><table><colgroup><col><col></colgroup><tr><th>'.gettext('File').'</th><th>'.gettext('Packages')
+	    .'</th></tr>';
 	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
 	    my $file = shift @$result;
 	    $$page_content .= "<tr><td class=\"file\">$file</td><td>";
@@ -150,7 +153,7 @@ sub do_search_contents {
 	    $$page_content .= join( ", ", map { "<a href=\"$ROOT/$suite/$_\">$_</a>" } sort keys %pkgs);
 	    $$page_content .= '</td>';
 	}
-	$$page_content .= '<tr><th>File</th><th>Packages</th></tr>' if @results > 20;
+	$$page_content .= '<tr><th>'.gettext('File').'</th><th>'.gettext('Packages').'</th></tr>' if @results > 20;
 	$$page_content .= '</table></div>';
     }
 } # sub do_search_contents

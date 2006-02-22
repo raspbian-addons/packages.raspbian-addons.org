@@ -1,0 +1,919 @@
+# Finnish translations for packages.debian.org
+# This file is put in the public domain.
+# Tommi Vainikainen <thv+debian@iki.fi>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pdo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-22 02:10+0100\n"
+"PO-Revision-Date: 2005-10-17 22:05+0300\n"
+"Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bin/create_index_pages:63
+#, fuzzy, perl-format
+msgid "List of sections in \"%s\""
+msgstr "Osastoluettelo jakelussa %s"
+
+#: bin/create_index_pages:83
+msgid "List of all packages"
+msgstr "Luettelo kaikista paketeista"
+
+#: bin/create_index_pages:84
+msgid "All packages"
+msgstr "Kaikki paketit"
+
+#: bin/create_index_pages:85
+msgid "compact compressed textlist"
+msgstr "pieni tiivistetty tekstiluettelo"
+
+#: bin/create_index_pages:107
+#, perl-format
+msgid "Software Packages in \"%s\""
+msgstr "Ohjelmistopaketit jakelussa \"%s\""
+
+#: bin/create_index_pages:119
+#, fuzzy, perl-format
+msgid "Software Packages in \"%s\", section %s"
+msgstr "Ohjelmistopaketit jakelun \"%s\" osastossa %s"
+
+#: bin/create_index_pages:132
+#, fuzzy, perl-format
+msgid "Software Packages in \"%s\", subsection %s"
+msgstr "Ohjelmistopaketit jakelun \"%s\" osastossa %s"
+
+#: bin/create_index_pages:145
+#, perl-format
+msgid "Software Packages in \"%s\", priority %s"
+msgstr "Ohjelmistopaketit jakelussa \"%s\" tärkeysasteella %s"
+
+#. Done
+#: cgi-bin/dispatcher.pl:89
+msgid "search doesn't take any more path elements"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:92
+msgid ""
+"We're supposed to display the homepage here, instead of getting dispatch.pl"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:117
+#, perl-format
+msgid "%s set more than once in path"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:147
+#, fuzzy, perl-format
+msgid "two or more packages specified (%s)"
+msgstr "Lähdepaketti: %s (%s)"
+
+#: cgi-bin/dispatcher.pl:234
+msgid "Error"
+msgstr ""
+
+#: cgi-bin/dispatcher.pl:239
+#, fuzzy
+msgid "search for a package"
+msgstr "Luettelo kaikista paketeista"
+
+#: lib/Packages/DoDownload.pm:203 lib/Packages/DoFilelist.pm:31
+#: lib/Packages/DoShow.pm:30
+msgid "package not valid or not specified"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:206 lib/Packages/DoFilelist.pm:34
+#: lib/Packages/DoSearchContents.pm:31 lib/Packages/DoShow.pm:33
+msgid "suite not valid or not specified"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:209 lib/Packages/DoFilelist.pm:37
+msgid "architecture not valid or not specified"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:212
+#, perl-format
+msgid "more than one suite specified for download (%s)"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:215
+#, perl-format
+msgid "more than one architecture specified for download (%s)"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:236 lib/Packages/DoShow.pm:71
+#, fuzzy
+msgid "No such package."
+msgstr "Lähdepaketti"
+
+#: lib/Packages/DoDownload.pm:237 lib/Packages/DoShow.pm:72
+#, perl-format
+msgid "<a href=\"%s\">Search for the package</a>"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:256
+msgid "Package Download Selection"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:262
+#, perl-format
+msgid "Download Page for <kbd>%s</kbd> on %s machines"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:264
+#, perl-format
+msgid "Download Page for <kbd>%s</kbd>"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:268
+#, perl-format
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at any "
+"of these sites:"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:270
+#, perl-format
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:276
+msgid ""
+"Debian security updates are currently officially distributed only via "
+"<tt>security.debian.org</tt>."
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:279 lib/Packages/DoDownload.pm:289
+#: lib/Packages/DoDownload.pm:299 lib/Packages/DoDownload.pm:333
+msgid "North America"
+msgstr ""
+
+#. $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
+#: lib/Packages/DoDownload.pm:280 lib/Packages/DoDownload.pm:290
+#: lib/Packages/DoDownload.pm:300 lib/Packages/DoDownload.pm:311
+#: lib/Packages/DoDownload.pm:323 lib/Packages/DoDownload.pm:335
+msgid "Europe"
+msgstr ""
+
+#. $$page_content .= print_links( "Australia and New Zealand", $file,
+#. @nonus_australian_sites );
+#: lib/Packages/DoDownload.pm:283 lib/Packages/DoDownload.pm:303
+#: lib/Packages/DoDownload.pm:315 lib/Packages/DoDownload.pm:339
+msgid "Asia"
+msgstr ""
+
+#. $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+#: lib/Packages/DoDownload.pm:286
+msgid ""
+"Note that AMD64 is not officialy included in the Debian archive yet, but the "
+"AMD64 porter group keeps their archive in sync with the official archive as "
+"close as possible. See the <a href=\"http://www.debian.org/ports/amd64/"
+"\">AMD64 ports page</a> for current information."
+msgstr ""
+
+#. $$page_content .= print_links( "Australia and New Zealand", $file,
+#. @nonus_australian_sites );
+#. $$page_content .= print_links( "Asia", $file, @amd64_asian_sites );
+#. $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+#: lib/Packages/DoDownload.pm:296
+msgid ""
+"Note that GNU/kFreeBSD is not officialy included in the Debian archive yet, "
+"but the GNU/kFreeBSD porter group keeps their archive in sync with the "
+"official archive as close as possible. See the <a href=\"http://www.debian."
+"org/ports/kfreebsd-gnu/\">GNU/kFreeBSD ports page</a> for current "
+"information."
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:301 lib/Packages/DoDownload.pm:313
+#: lib/Packages/DoDownload.pm:337
+msgid "Australia and New Zealand"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:304 lib/Packages/DoDownload.pm:341
+msgid "South America"
+msgstr ""
+
+#. $$page_content .= print_links( "Australia and New Zealand", $file,
+#. @nonus_australian_sites );
+#. $$page_content .= print_links( "Asia", $file, @nonus_asian_sites );
+#. $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
+#: lib/Packages/DoDownload.pm:306 lib/Packages/DoDownload.pm:319
+#: lib/Packages/DoDownload.pm:329 lib/Packages/DoDownload.pm:344
+#, perl-format
+msgid ""
+"If none of the above sites are fast enough for you, please see our <a href="
+"\"%s\">complete mirror list</a>."
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:347
+msgid ""
+"Note that in some browsers you will need to tell your browser you want the "
+"file saved to a file. For example, in Firefox or Mozilla, you should hold "
+"the Shift key when you click on the URL."
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:348
+#, perl-format
+msgid "The MD5sum for <tt>%s</tt> is <strong>%s</strong>"
+msgstr ""
+
+#: lib/Packages/DoFilelist.pm:45
+#, perl-format
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+
+#: lib/Packages/DoFilelist.pm:46
+#, fuzzy, perl-format
+msgid "Filelist of of package %s/%s/%s"
+msgstr "Luettelo kaikista paketeista"
+
+#: lib/Packages/DoFilelist.pm:57
+#, fuzzy
+msgid "No such package in this suite on this architecture."
+msgstr "Kokoelman tässä osastossa ei ole paketteja"
+
+#: lib/Packages/DoFilelist.pm:69
+msgid "Invalid suite/architecture combination"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:30 lib/Packages/DoSearchContents.pm:26
+msgid "keyword not valid or missing"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:32 lib/Packages/DoSearchContents.pm:28
+msgid "keyword too short (keywords need to have at least two characters)"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:105
+#, perl-format
+msgid ""
+"Your search was too wide so we will only display exact matches. At least <em>"
+"%s</em> results have been omitted and will not be displayed. Please consider "
+"using a longer keyword or more keywords."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:111 lib/Packages/DoSearch.pm:113
+msgid "Can't find that package."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:114
+#, perl-format
+msgid ""
+"<a href=\"%s\">%s</a> results have not been displayed due to the search "
+"parameters."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:124
+msgid "Can't find that string."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:126
+#, perl-format
+msgid ""
+"Can't find that string, at least not in that suite (%s, section %s) and on "
+"that architecture (%s)."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:131
+#, perl-format
+msgid ""
+"You have searched only for words exactly matching your keywords. You can try "
+"to search <a href=\"%s\">allowing subword matching</a>."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:135
+#, fuzzy, perl-format
+msgid ""
+"You can try a different search on the <a href=\"%s\">Packages search page</"
+"a>."
+msgstr ""
+"Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%s/"
+"\">Pakettien hakusivulle</a>"
+
+#: lib/Packages/DoSearch.pm:139
+msgid "Package Search Results"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:141
+#, fuzzy
+msgid "Debian Package Search Results"
+msgstr "Kaikki jakelun \"%s\" Debian-paketit"
+
+#: lib/Packages/DoSearch.pm:229
+#, perl-format
+msgid "Found <em>%s</em> matching packages."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:236
+msgid "Exact hits"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:243
+msgid "Other hits"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:253
+#, perl-format
+msgid ""
+"<a href=\"%s\">%s</a> results have not been displayed because you requested "
+"only exact matches."
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:265
+#, fuzzy, perl-format
+msgid "Package %s"
+msgstr "Paketti: %s (%s)"
+
+#: lib/Packages/DoSearch.pm:296
+msgid "also provided by: "
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:303
+msgid "provided by: "
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:315
+#, fuzzy, perl-format
+msgid "Source package %s"
+msgstr "Lähdepaketti"
+
+#: lib/Packages/DoSearch.pm:331
+#, fuzzy
+msgid "Binary packages: "
+msgstr "näennäispaketti"
+
+#: lib/Packages/DoSearchContents.pm:34
+#, perl-format
+msgid "more than one suite specified for contents search (%s)"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:78
+msgid "Exact and fullfilenamesearch don't go along"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:116
+msgid ""
+"Your search was too wide so we will only display only the first about 100 "
+"matches. Please consider using a longer keyword or more keywords."
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:120
+#, fuzzy
+msgid "Nothing found"
+msgstr "Ei löytynyt"
+
+#: lib/Packages/DoSearchContents.pm:123
+msgid "Package Contents Search Results"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:125
+msgid "Debian Package Contents Search Results"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:141
+#, perl-format
+msgid "Found %s results"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:143 lib/Packages/DoSearchContents.pm:156
+#: lib/Packages/DoShow.pm:380
+msgid "File"
+msgstr "Tiedosto"
+
+#: lib/Packages/DoSearchContents.pm:143 lib/Packages/DoSearchContents.pm:156
+#, fuzzy
+msgid "Packages"
+msgstr "Paketin koko"
+
+#: lib/Packages/DoShow.pm:36
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:96
+#, fuzzy
+msgid "Package not available in this suite."
+msgstr "Paketti ei saatavilla"
+
+#. $long_desc = conv_desc( $lang, $long_desc );
+#. $short_desc = conv_desc( $lang, $short_desc );
+#: lib/Packages/DoShow.pm:154 lib/Packages/DoShow.pm:261
+#: lib/Packages/DoShow.pm:304
+msgid "Distribution:"
+msgstr "Jakelu:"
+
+#: lib/Packages/DoShow.pm:155 lib/Packages/DoShow.pm:305
+#, fuzzy
+msgid "Overview over this suite"
+msgstr "Tämän jakelun yleiskuva"
+
+#: lib/Packages/DoShow.pm:158 lib/Packages/DoShow.pm:265
+#: lib/Packages/DoShow.pm:308
+msgid "Section:"
+msgstr "Osasto:"
+
+#: lib/Packages/DoShow.pm:159 lib/Packages/DoShow.pm:266
+#: lib/Packages/DoShow.pm:309
+msgid "All packages in this section"
+msgstr "Kaikki tämän osaston paketit"
+
+#: lib/Packages/DoShow.pm:164
+#, perl-format
+msgid "Package: %s (%s)"
+msgstr "Paketti: %s (%s)"
+
+#: lib/Packages/DoShow.pm:171
+msgid "Versions:"
+msgstr "Versiot:"
+
+#: lib/Packages/DoShow.pm:174
+msgid "This is also a virtual package provided by "
+msgstr ""
+
+#: lib/Packages/DoShow.pm:178 lib/Packages/DoShow.pm:323
+msgid "Experimental package"
+msgstr "Kokeellinen paketti"
+
+#: lib/Packages/DoShow.pm:179 lib/Packages/DoShow.pm:324
+#, fuzzy
+msgid ""
+"Warning: This package is from the <strong>experimental</strong> "
+"distribution. That means it is likely unstable or buggy, and it may even "
+"cause data loss. If you ignore this warning and install it nevertheless, you "
+"do it on your own risk."
+msgstr ""
+"Varoitus: Tämä paketti on <span class=\"pred\">kokeellisesta</span> "
+"jakelusta. Tämä tarkoittaa, että se on luultavasti epävakaa tai buginen, ja "
+"voi aiheuttaa jopa tiedonhäviötä. Mikäli ohitat tämän varoituksen ja asennat "
+"paketin kaikesta huolimatta, otat vastuun itsellesi."
+
+#: lib/Packages/DoShow.pm:183 lib/Packages/DoShow.pm:328
+msgid "debian-installer udeb package"
+msgstr "debian-asentimen udeb-paketti"
+
+#: lib/Packages/DoShow.pm:184 lib/Packages/DoShow.pm:329
+msgid ""
+"Warning: This package is intended for the use in building <a href=\"http://"
+"www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
+"not install it on a normal Debian system."
+msgstr ""
+"Varoitus: Tämä paketti on tarkoitettu käytettäväksi vain rakennettaessa <a "
+"href=\"http://www.debian.org/devel/debian-installer\">debian-asentimen</a> "
+"vedoksia. Älä asenna normaaliin Debian-järjestelmään."
+
+#: lib/Packages/DoShow.pm:205 lib/Packages/DoShow.pm:354
+#, perl-format
+msgid "Other Packages Related to %s"
+msgstr "Muut pakettiin %s liittyvät paketit"
+
+#: lib/Packages/DoShow.pm:207 lib/Packages/DoShow.pm:356
+#, fuzzy, perl-format
+msgid ""
+"Note that the <strong>experimental</strong> distribution is not self-"
+"contained; missing dependencies are likely found in the <a href=\"%s"
+"\">unstable</a> distribution."
+msgstr ""
+"Huomaa, että \"<span class=\"pred\">kokeellinen</span>\" jakelu ei ole "
+"itsenäinen kokonaisuus. Puuttuvat riippuvuudet löytyvät luultavasti \"<a "
+"href=\"../../unstable/\">epävakaasta</a>\" jakelusta."
+
+#: lib/Packages/DoShow.pm:210
+msgid "depends"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:211
+msgid "recommends"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:212
+msgid "suggests"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:223
+#, perl-format
+msgid "Download %s\n"
+msgstr "Imuroi %s\n"
+
+#: lib/Packages/DoShow.pm:225
+msgid ""
+"The download table links to the download of the package and a file overview. "
+"In addition it gives information about the package size and the installed "
+"size."
+msgstr ""
+"Imurointitaulukko linkittää paketin imurointiin ja tiedostokatsaukseen. "
+"Lisäksi se antaa tietoa paketin koosta sekä asennukseen tarvittavasta "
+"levytilasta."
+
+#: lib/Packages/DoShow.pm:226
+msgid "Download for all available architectures"
+msgstr "Imurointi kaikille saataville arkkitehtuureille"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Architecture"
+msgstr "Arkkitehtuuri"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Files"
+msgstr "Tiedostot"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Installed Size"
+msgstr "Koko asennettuna"
+
+#: lib/Packages/DoShow.pm:228
+msgid "Package Size"
+msgstr "Paketin koko"
+
+#: lib/Packages/DoShow.pm:235
+msgid "list of files"
+msgstr "tiedostoluettelo"
+
+#: lib/Packages/DoShow.pm:238
+#, fuzzy
+msgid "no current information"
+msgstr "Lisätietoa paketista %s"
+
+#. unless $page->is_virtual
+#: lib/Packages/DoShow.pm:259
+msgid "virtual package"
+msgstr "näennäispaketti"
+
+#: lib/Packages/DoShow.pm:262
+msgid "Overview over this distribution"
+msgstr "Tämän jakelun yleiskuva"
+
+#: lib/Packages/DoShow.pm:271
+#, perl-format
+msgid "Virtual Package: %s"
+msgstr "Näennäispaketti: %s"
+
+#: lib/Packages/DoShow.pm:275
+#, perl-format
+msgid ""
+"This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
+"for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
+"packages</a>."
+msgstr ""
+"Tämä on <em>näennäispaketti</em>. Katso <a href=\"%s\">Debianin linjan "
+"kuvaksesta</a> <a href=\"%sch-binary.html#s-virtual_pkg\">näennäispaketin "
+"määritelmä</a>."
+
+#: lib/Packages/DoShow.pm:278
+#, perl-format
+msgid "Packages providing %s"
+msgstr "Paketit, jotka tarjoavat paketin %s"
+
+#: lib/Packages/DoShow.pm:314
+#, fuzzy, perl-format
+msgid "Source Package: %s (%s)"
+msgstr "Lähdepaketti: %s (%s)"
+
+#: lib/Packages/DoShow.pm:336
+msgid "The following binary packages are built from this source package:"
+msgstr "Seuraavat binääripaketit on käännetty tästä lähdepaketista:"
+
+#: lib/Packages/DoShow.pm:360
+msgid "build-depends"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:361
+msgid "build-depends-indep"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:372
+#, perl-format
+msgid "Download %s"
+msgstr "Imuroi %s"
+
+#: lib/Packages/DoShow.pm:378
+msgid "Download information for the files of this source package"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:381
+msgid "Size (in kB)"
+msgstr "Koko (kt)"
+
+#: lib/Packages/DoShow.pm:382
+msgid "md5sum"
+msgstr "MD5-summa"
+
+#: lib/Packages/DoShow.pm:427
+#, perl-format
+msgid "Details of source package <em>%s</em> in %s"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:428
+#, perl-format
+msgid "Details of package <em>%s</em> in %s"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:430
+#, fuzzy, perl-format
+msgid "Details of source package %s in %s"
+msgstr "Lähdepaketit jakelussa \"%s\""
+
+#: lib/Packages/DoShow.pm:431
+#, fuzzy, perl-format
+msgid "Details of package %s in %s"
+msgstr "Uudet paketit komponentissa %s"
+
+#: lib/Packages/HTML.pm:93
+msgid "Not available"
+msgstr "Ei saatavilla"
+
+#: lib/Packages/HTML.pm:114
+#, perl-format
+msgid "More Information on %s"
+msgstr "Lisätietoa paketista %s"
+
+#: lib/Packages/HTML.pm:119
+#, perl-format
+msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
+
+#: lib/Packages/HTML.pm:131
+msgid "Source Package:"
+msgstr "Lähdepaketti:"
+
+#: lib/Packages/HTML.pm:133
+msgid "Download"
+msgstr "Imuroi"
+
+#: lib/Packages/HTML.pm:136
+msgid "Not found"
+msgstr "Ei löytynyt"
+
+#: lib/Packages/HTML.pm:169
+#, perl-format
+msgid "View the <a href=\"%s\">Debian changelog</a>"
+msgstr "Katso <a href=\"%s\">Debian-muutoslokia</a>"
+
+#: lib/Packages/HTML.pm:174
+#, perl-format
+msgid "View the <a href=\"%s\">copyright file</a>"
+msgstr "Katso <a href=\"%s\">copyright-tiedostoa</a>"
+
+#: lib/Packages/HTML.pm:187
+#, perl-format
+msgid "%s is responsible for this Debian package."
+msgstr "%s on vastuussa tästä Debian-paketista."
+
+#: lib/Packages/HTML.pm:199
+#, perl-format
+msgid " and %s are responsible for this Debian package."
+msgstr " ja %s ovat vastuussa tästä Debian-paketista."
+
+#: lib/Packages/HTML.pm:204
+#, perl-format
+msgid "See the <a href=\"%s\">developer information for %s</a>."
+msgstr "Katso <a href=\"%s\">paketin %s kehittäjätietoja</a>."
+
+#: lib/Packages/HTML.pm:210
+#, perl-format
+msgid "Search for <a href=\"%s\">other versions of %s</a>"
+msgstr "Hae <a href=\"%s\">paketin %s muita versioita</a>"
+
+#: lib/Packages/HTML.pm:277
+msgid "not"
+msgstr "ei"
+
+#: lib/Packages/HTML.pm:316
+msgid "Package not available"
+msgstr "Paketti ei saatavilla"
+
+#: lib/Packages/HTML.pm:322
+msgid "or"
+msgstr "tai"
+
+#: lib/Packages/HTML.pm:410 lib/Packages/HTML.pm:501
+msgid "Search"
+msgstr "Hae"
+
+#: lib/Packages/HTML.pm:411
+msgid "Full options"
+msgstr ""
+
+#: lib/Packages/HTML.pm:412
+#, fuzzy
+msgid "Search on:"
+msgstr "Hae"
+
+#: lib/Packages/HTML.pm:413
+#, fuzzy
+msgid "Package Names"
+msgstr "Paketin koko"
+
+#: lib/Packages/HTML.pm:414
+#, fuzzy
+msgid "Descriptions"
+msgstr "Jakelu:"
+
+#: lib/Packages/HTML.pm:415
+#, fuzzy
+msgid "Source package names"
+msgstr "Lähdepaketti"
+
+#: lib/Packages/HTML.pm:416
+#, fuzzy
+msgid "Package contents"
+msgstr "Paketin koko"
+
+#: lib/Packages/HTML.pm:479
+msgid "Debian Project"
+msgstr "Debian-projekti"
+
+#: lib/Packages/HTML.pm:493
+msgid "Skip Site Navigation"
+msgstr "Ohita sivustonavigointi"
+
+#: lib/Packages/HTML.pm:495
+msgid "About&nbsp;Debian"
+msgstr "Tietoja&nbsp;Debianista"
+
+#: lib/Packages/HTML.pm:496
+msgid "News"
+msgstr "Uutiset"
+
+#: lib/Packages/HTML.pm:497
+msgid "Getting&nbsp;Debian"
+msgstr "Debianin&nbsp;hankkiminen"
+
+#: lib/Packages/HTML.pm:498
+msgid "Support"
+msgstr "Tuki"
+
+#: lib/Packages/HTML.pm:499
+msgid "Development"
+msgstr "Kehitys"
+
+#: lib/Packages/HTML.pm:500
+msgid "Site map"
+msgstr "Sivustokartta"
+
+#: lib/Packages/HTML.pm:530
+#, perl-format
+msgid ""
+"Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+"\">Packages search page</a>"
+msgstr ""
+"Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%s/"
+"\">Pakettien hakusivulle</a>"
+
+#: lib/Packages/HTML.pm:533
+#, perl-format
+msgid ""
+"To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
+"For other contact information, see the Debian <a href=\"%s/contact\">contact "
+"page</a>."
+msgstr ""
+"Tällä www-sivulla olevista ongelmista voi ilmoittaa lähettämällä sähköpostia "
+"englanniksi osoitteeseen <a href=\"mailto:%s\">%s</a>. Muut yhteystiedot "
+"löytyvät Debianin <a href=\"%s/contact\">yhteystietosivulta</a>."
+
+#: lib/Packages/HTML.pm:535
+msgid "Last Modified: "
+msgstr "Viimeksi muutettu: "
+
+#: lib/Packages/HTML.pm:537
+#, perl-format
+msgid ""
+"Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; See "
+"<a href=\"%s/license\">license terms</a>."
+msgstr ""
+"Copyright © 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>. Lue <a "
+"href=\"%s/license\">lisenssiehdot</a>."
+
+#: lib/Packages/HTML.pm:538
+msgid ""
+"Debian is a registered trademark of Software in the Public Interest, Inc."
+msgstr ""
+"Debian on Software in the Public Interest, Inc.'in rekisteröimä tavaramerkki."
+
+#: lib/Packages/HTML.pm:555
+msgid "This page is also available in the following languages:\n"
+msgstr "Tämä sivu on saatavilla myös seuraavilla kielillä:\n"
+
+#: lib/Packages/HTML.pm:574
+#, fuzzy, perl-format
+msgid "How to set <a href=\"%s\">the default document language</a>"
+msgstr "Oletuskielen <a href=\"%s\">asettamisohjeet</a></p>"
+
+#: lib/Packages/Page.pm:47
+msgid "package has bad maintainer field"
+msgstr ""
+
+#~ msgid ""
+#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
+#~ "contains software that is likely unstable or buggy and may even cause "
+#~ "data loss. If you ignore this warning and install it nevertheless, you do "
+#~ "it on your own risk."
+#~ msgstr ""
+#~ "Varoitus: <span clas=\"pred\">kokeellinen</span> jakelu sisältää "
+#~ "ohjelmistoja, jotka ovat luultavasti epävakaita sekä bugisia, ja voi "
+#~ "aiheuttaa jopa tiedonhäviötä. Mikäli ohitat tämän varoituksen ja asennat "
+#~ "paketin kaikesta huolimatta, otat vastuun itsellesi."
+
+#~ msgid "New Packages in \"%s\""
+#~ msgstr "Uudet paketit komponentissa \"%s\""
+
+#~ msgid ""
+#~ "The following packages were added to the unstable Debian archive during "
+#~ "the last 7 days."
+#~ msgstr ""
+#~ "Seuraavat paketit on lisätty epävakaaseen Debian-arkistoon viimeisen "
+#~ "seitsemän (7) päivän aikana."
+
+#~ msgid ""
+#~ "This information is also available as an <a href=\"newpkg_%s.%s.rdf\">RSS "
+#~ "feed</a>."
+#~ msgstr ""
+#~ "Tämä tieto on saatavilla myös <a href=\"newpkg_%s.%s.rdf\">RSS-syötteenä</"
+#~ "a>."
+
+#~ msgid ""
+#~ "Packages that were added to the unstable Debian archive during the last 7 "
+#~ "days."
+#~ msgstr ""
+#~ "Paketit, jotka on lisätty epävakaaseen Debian-arkistoon viimeisen "
+#~ "seitsemän (7) päivän aikana."
+
+#~ msgid ""
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Seuraavat paketit on lisätty komponenttiin \"%s\" Debian-arkistoon "
+#~ "viimeisen seitsemän (7) päivän aikana."
+
+#~ msgid ""
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Paketit, jotka on lisätty komponenttiin \"%s\" epävakaaseen Debian-"
+#~ "arkistoon viimeisen seitsemän (7) päivän aikana."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Kokeellisten pakettien käyttäjiä kehotetaan ottamaan ongelmatapauksissa "
+#~ "yhteyttä suoraan paketin ylläpitäjiin."
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Koko mitataan kilotavuissa."
+
+#~ msgid "Version"
+#~ msgstr "Versio"
+
+#~ msgid "Maintainer"
+#~ msgstr "Ylläpitäjä"
+
+#~ msgid "Uploaders"
+#~ msgstr "Uploadaajat"
+
+#~ msgid "Section"
+#~ msgstr "Osasto"
+
+#~ msgid "Priority"
+#~ msgstr "Tärkeys"
+
+#~ msgid "Essential"
+#~ msgstr "Välttämätön"
+
+#~ msgid "yes"
+#~ msgstr "kyllä"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Varoitus: Nämä paketit on tarkoitettu käytettäväksi vain rakennettaessa "
+#~ "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
+#~ "asentimen</a> vedoksia. Älä asenna normaaliin Debian-järjestelmään."
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Kokoelmassa ei ole paketteja tällä tärkeysasteella"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Ohjelmistopaketit jakelussa \"%s\", välttämättömät paketit"
+
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Kokoelmassa ei ole välttämättömiä paketteja"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright © 1997-2005 SPI;\n"
+#~ "Katso lisenssiehdot sivulta <URL:http://www.debian.org/license>.\n"
+#~ "\n"
+
+#~ msgid "Virtual package"
+#~ msgstr "Näennäispaketti"
