@@ -269,6 +269,11 @@ sub do_download {
 	} else {
 	    $$page_content .= "<p>".sprintf( _g( 'You can download the requested file from the <tt>%s</tt> subdirectory at:' ), $directory )."</p>\n";
 	}
+
+	hint(_g("If you are running Debian, it's strongly suggested to use a
+	    package manager like <a href=\"../../aptitude\">aptitude</a> or <a
+	    href=\"../../synaptic\">synaptic</a> to download and install
+	    packages, instead of doing so manually via this website"));
 	
 	if ($archive eq 'security') {
 	    
