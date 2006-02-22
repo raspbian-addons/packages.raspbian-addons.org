@@ -260,7 +260,7 @@ unless (@Packages::CGI::fatal_errors) {
 my $tet1 = new Benchmark;
 my $tetd = timediff($tet1, $tet0);
 print "Total page evaluation took ".timestr($tetd)."<br>"
-    if $debug_allowed;
+    if DEBUG;
 
 my $trailer = Packages::HTML::trailer( $ROOT );
 $trailer =~ s/LAST_MODIFIED_DATE/gmtime()/e; #FIXME
