@@ -93,20 +93,6 @@ sub get_arch_field {
     return $self->{data}{$field};
 }
 
-sub get_versions {
-    my ($self) = @_;
-
-    return [ $self->{version} ];
-}
-
-sub get_version_string {
-    my ($self) = @_;
-
-    my $versions = $self->get_versions;
-
-    return ($self->{version}, $versions);
-}
-
 sub get_dep_field {
     my ($self, $dep_field) = @_;
 

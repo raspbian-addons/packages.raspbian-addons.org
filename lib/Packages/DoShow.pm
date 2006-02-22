@@ -125,13 +125,13 @@ sub do_show {
 			my $std = timediff($st1, $st0);
 			debug( "Data search and merging took ".timestr($std) );
 
-			my ($v_str, $v_str_arch, $v_str_arr) = $page->get_version_string();
 			my $did = $page->get_newest( 'description' );
 			$section = $page->get_newest( 'section' );
 			$subsection = $page->get_newest( 'subsection' );
 			my $filenames = $page->get_arch_field( 'filename' );
 			my $file_md5sums = $page->get_arch_field( 'md5sum' );
 			my $archives = $page->get_arch_field( 'archive' );
+			my $versions = $page->get_arch_field( 'version' );
 			my $sizes_inst = $page->get_arch_field( 'installed-size' );
 			my $sizes_deb = $page->get_arch_field( 'size' );
 			my @archs = sort $page->get_architectures;
@@ -161,6 +161,9 @@ sub do_show {
 						 $subsection ],
 					       );
 
+			my $v_str = $version;
+			my $multiple_versions = grep { $_ ne $version } values %$versions;
+			$v_str .= " (and others)" if $multiple_versions;
 			my $title .= sprintf( _g( "Package: %s (%s)" ), $pkg, $v_str );
 			$title .=  " ".marker( $archive ) if $archive ne 'us';
 			$title .=  " ".marker( $subsection ) if $subsection eq 'non-US'
@@ -168,8 +171,6 @@ sub do_show {
 			$title .=  " ".marker( $section ) if $section ne 'main';
 			$package_page .= title( $title );
 			
-			$package_page .= "<h2>"._g( "Versions:" )." $v_str_arch</h2>\n" 
-			    unless $version eq $v_str;
 			if (my $provided_by = $page->{provided_by}) {
 			    note( _g( "This is also a virtual package provided by ").join( ', ', map { "<a href=\"$ROOT/$suite/$_\">$_</a>"  } @$provided_by) );
 			}
@@ -225,11 +226,16 @@ sub do_show {
 			$package_page .= "<table summary=\""._g("The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.")."\">\n";
 			$package_page .= "<caption class=\"hidecss\">"._g("Download for all available architectures")."</caption>\n";
 			$package_page .= "<tr>\n";
-			$package_page .= "<th>"._g("Architecture")."</th><th>"._g("Files")."</th><th>"._g( "Package Size")."</th><th>"._g("Installed Size")."</th></tr>\n";
+			$package_page .= "<th>"._g("Architecture")."</th>";
+			$package_page .= "<th>"._g("Version")."</th>"
+			    if $multiple_versions;
+			$package_page .= "<th>"._g("Files")."</th><th>"._g( "Package Size")."</th><th>"._g("Installed Size")."</th></tr>\n";
 			foreach my $a ( @archs ) {
 			    $package_page .= "<tr>\n";
 			    $package_page .=  "<th><a href=\"$ROOT/$suite/$encodedpkg/$a/download";
 			    $package_page .=  "\">$a</a></th>\n";
+			    $package_page .= "<td>".$versions->{$a}."</td>"
+				if $multiple_versions;
 			    $package_page .= "<td>";
 			    if ( $suite ne "experimental" ) {
 				$package_page .= sprintf( "[<a href=\"%s\">"._g( "list of files" )."</a>]\n",
@@ -296,7 +302,6 @@ sub do_show {
 		    my $std = timediff($st1, $st0);
 		    debug( "Data search and merging took ".timestr($std) );
 
-		    my ($v_str, $v_str_arr) = $page->get_version_string();
 		    $archive = $page->get_newest( 'archive' );
 		    $section = $page->get_newest( 'section' );
 		    $subsection = $page->get_newest( 'subsection' );
@@ -312,7 +317,7 @@ sub do_show {
 					   );
 		    
 		    my $title .= sprintf( _g( "Source Package: %s (%s)" ),
-					  $pkg, $v_str );
+					  $pkg, $version );
 		    $title .=  " ".marker( $archive ) if $archive ne 'us';
 		    $title .=  " ".marker( $subsection ) if $subsection eq 'non-US'
 			and $archive ne 'non-US'; # non-US/security

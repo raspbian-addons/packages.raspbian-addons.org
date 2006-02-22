@@ -212,42 +212,6 @@ sub get_arch_field {
     return \%result;
 }
 
-sub get_versions {
-    my ($self) = @_;
-
-    my %versions;
-    foreach (keys %{$self->{versions}}) {
-	my $version = $self->{versions}{$_}{version};
-	$versions{$version} ||= [];
-	push @{$versions{$version}}, $_;
-    }
-
-    return \%versions;
-}
-
-sub get_version_string {
-    my ($self) = @_;
-
-    my $versions = $self->get_versions;
-    my @versions = version_sort keys %$versions;
-    my (@v_str, $v_str, $v_str_arch);
-    if ( scalar @versions == 1 ) {
-	@v_str = ( [ $versions[0], undef ] );
-	$v_str = $versions[0];
-	$v_str_arch = $versions[0];
-    } else {
-	my @v_str_arch;
-	foreach ( @versions ) {
-	    push @v_str, [ $_, $versions->{$_} ];
-	    push @v_str_arch, "$_ [".join(', ', @{$versions->{$_}})."]";
-	}
-	$v_str_arch = join( ", ", @v_str_arch );
-	$v_str = join( ", ",  @versions );
-    }
-
-    return ($v_str, $v_str_arch, \@v_str);
-}
-
 sub get_dep_field {
     my ($self, $dep_field) = @_;
 
