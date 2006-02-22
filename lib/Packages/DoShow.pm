@@ -163,7 +163,7 @@ sub do_show {
 
 			my $v_str = $version;
 			my $multiple_versions = grep { $_ ne $version } values %$versions;
-			$v_str .= " (and others)" if $multiple_versions;
+			$v_str .= _g(" and others") if $multiple_versions;
 			my $title .= sprintf( _g( "Package: %s (%s)" ), $pkg, $v_str );
 			$title .=  " ".marker( $archive ) if $archive ne 'us';
 			$title .=  " ".marker( $subsection ) if $subsection eq 'non-US'

@@ -61,7 +61,7 @@ foreach my $s (@SUITES) {
 	    open $pages{$key}{$lang}{index}{fh}, '>', "$wwwdir/$key/index.$lang.html.new"
 		or die "can't open index file for output: $!";
 	    my $index_title = sprintf( _g( "List of sections in \"%s\"" ),
-				       $s );
+				       $key );
 	    print {$pages{$key}{$lang}{index}{fh}} header( title => $index_title,
 							   title_keywords => "debian, $s",
 							   desc => encode_entities( $index_title, '"' ),
@@ -105,7 +105,7 @@ foreach my $s (@SUITES) {
 	    or die "can't open index file for output: $!";
 
 	my $title = sprintf( _g( "Software Packages in \"%s\"" ),
-			     $s );
+			     $key );
 	print {$pages{$key}{fh}} header( title => $title,
 					 title_keywords => "debian, $s",
 					 desc => encode_entities( $title, '"' ),
@@ -117,7 +117,7 @@ foreach my $s (@SUITES) {
 	    open $pages{$key}{$sec}{fh}, '>', "$wwwdir/$key/$sec/index.en.html.new"
 		or die "can't open index file for output: $!";
 	    $title = sprintf( _g( "Software Packages in \"%s\", section %s" ),
-			      $s, $sec );
+			      $key, $sec );
 	    print {$pages{$key}{$sec}{fh}} header( title => $title,
 						   title_keywords => "debian, $s, $sec",
 						   desc => encode_entities( $title, '"' ),
@@ -130,7 +130,7 @@ foreach my $s (@SUITES) {
 	    open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
 		or die "can't open index file for output: $!";
 	    $title = sprintf( _g( "Software Packages in \"%s\", subsection %s" ),
-			      $s, $ssec );
+			      $key, $ssec );
 	    print {$pages{$key}{$ssec}{fh}} header( title => $title,
 						    title_keywords => "debian, $s, $ssec",
 						    desc => encode_entities( $title, '"' ),
@@ -143,7 +143,7 @@ foreach my $s (@SUITES) {
 	    open $pages{$key}{$prio}{fh}, '>', "$wwwdir/$key/$prio/index.en.html.new"
 		or die "can't open index file for output: $!";
 	    $title = sprintf( _g( "Software Packages in \"%s\", priority %s" ),
-			      $s, $prio );
+			      $key, $prio );
 	    print {$pages{$key}{$prio}{fh}} header( title => $title,
 						    title_keywords => "debian, $s, $prio",
 						    desc => encode_entities( $title, '"' ),

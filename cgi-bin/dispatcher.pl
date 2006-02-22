@@ -32,6 +32,7 @@ use Packages::I18N::Locale;
 use Packages::DoSearch;
 use Packages::DoSearchContents;
 use Packages::DoShow;
+use Packages::DoIndex;
 use Packages::DoDownload;
 use Packages::DoFilelist;
 
@@ -75,17 +76,19 @@ my $source = 0;
 if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
     my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
-    debug( "components[0]=$components[0]", 2 ) if @components>0;
+    push @components, 'index' if $path =~ m,/$,;
+
+    debug( "components[0]=$components[0]", 2 ) if DEBUG and @components>0;
     if (@components > 0 and $components[0] eq 'source') {
 	shift @components;
 	$input->param( 'source', 1 );
     }
-    if (@components > 0 and $components[0] eq 'search') {
+    if (@components > 1 and $components[0] eq 'search') {
 	shift @components;
 	$what_to_do = 'search';
 	# Done
 	fatal_error( _g( "search doesn't take any more path elements" ) )
-	    if @components > 0;
+	    if @components;
     } elsif (@components == 0) {
 	fatal_error( _g( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
     } elsif (@components == 1) {
@@ -93,7 +96,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
     } else {
 
 	for ($components[-1]) {
-	    /^(changelog|copyright|download|filelist)$/ && do {
+	    /^(index|changelog|copyright|download|filelist)$/ && do {
 		pop @components;
 		$what_to_do = $1;
 		last;
@@ -220,8 +223,6 @@ my $pet1 = new Benchmark;
 my $petd = timediff($pet1, $pet0);
 debug( "Parameter evaluation took ".timestr($petd) ) if DEBUG;
 
-print $input->header( -charset => $charset );
-
 my (%html_header, $menu, $page_content);
 unless (@Packages::CGI::fatal_errors) {
     no strict 'refs';
@@ -243,6 +244,8 @@ unless (@Packages::CGI::fatal_errors) {
 		     },
 		     );
 }
+
+print $input->header( -charset => $charset );
 
 print Packages::HTML::header( %html_header );
 
