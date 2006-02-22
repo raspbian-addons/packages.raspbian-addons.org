@@ -30,6 +30,10 @@ search_packages.pl:
 	show_package relies on that. So foreach suite, 'newest entry', and only
 	then, all the other entries
 
+Static pages:
+- with this design, we can resolve experimental dependencies from unstable
+- try to make it faster
+
 General:
 - Try to break everything with empty/short searches
 - Check for case sensitive consistency
