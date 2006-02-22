@@ -61,7 +61,7 @@ sub do_filelist {
 		$$page_content .= '<div id="pfilelist"><pre>';
 		for (my $i=0; $i<scalar @files;) {
 		    $file = substr($file, 0, $files[$i++]).$files[$i++];
-		    $$page_content .= "$file\n";
+		    $$page_content .= "/$file\n";
 		}
 		$$page_content .= '</pre></div>';
 	    }
