@@ -196,7 +196,6 @@ setlocale ( LC_ALL, $locale )
 	    setlocale( LC_ALL, get_locale() )
 		or do {
 		    debug( "couldn't set default locale either" );
-		    next if ($opts{lang} ne 'en');
 		    setlocale( LC_ALL, "C" );
 		};
 	};
