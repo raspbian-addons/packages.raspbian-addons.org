@@ -229,24 +229,24 @@ sub do_show {
 			$package_page .= "<th>"._g("Architecture")."</th>";
 			$package_page .= "<th>"._g("Version")."</th>"
 			    if $multiple_versions;
-			$package_page .= "<th>"._g("Files")."</th><th>"._g( "Package Size")."</th><th>"._g("Installed Size")."</th></tr>\n";
+			$package_page .= "<th>"._g( "Package Size")."</th><th>"._g("Installed Size")."</th><th>"._g("Files")."</th></tr>\n";
 			foreach my $a ( @archs ) {
 			    $package_page .= "<tr>\n";
 			    $package_page .=  "<th><a href=\"$ROOT/$suite/$encodedpkg/$a/download";
 			    $package_page .=  "\">$a</a></th>\n";
 			    $package_page .= "<td>".$versions->{$a}."</td>"
 				if $multiple_versions;
-			    $package_page .= "<td>";
+			    $package_page .= '</td><td class="size">';
+			    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
+			    $package_page .= '</td><td class="size">';
+			    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
+			    $package_page .= "</td>\n<td>";
 			    if ( $suite ne "experimental" ) {
 				$package_page .= sprintf( "[<a href=\"%s\">"._g( "list of files" )."</a>]\n",
 							  "$ROOT/$suite/$encodedpkg/$a/filelist", $pkg );
 			    } else {
 				$package_page .= _g( "no current information" );
 			    }
-			    $package_page .= '</td><td class="size">';
-			    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
-			    $package_page .= '</td><td class="size">';
-			    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
 			    $package_page .= "</td>\n</tr>";
 			}
 			$package_page .= "</table>\n";
