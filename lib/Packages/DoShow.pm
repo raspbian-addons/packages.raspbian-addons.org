@@ -15,7 +15,7 @@ use Packages::Config qw( $DBDIR $ROOT @SUITES @ARCHIVES @SECTIONS
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );
-use Packages::HTML;
+use Packages::HTML qw(marker);
 use Packages::Page ();
 use Packages::SrcPage ();
 
