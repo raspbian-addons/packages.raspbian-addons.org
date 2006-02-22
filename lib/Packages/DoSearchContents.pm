@@ -145,7 +145,7 @@ sub do_search_contents {
 	    .'</th></tr>';
 	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
 	    my $file = shift @$result;
-	    $$page_content .= "<tr><td class=\"file\">$file</td><td>";
+	    $$page_content .= "<tr><td class=\"file\">/$file</td><td>";
 	    my %pkgs;
 	    foreach (@$result) {
 		my ($pkg, $arch) = split /:/, $_;
