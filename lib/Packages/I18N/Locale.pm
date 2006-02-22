@@ -7,6 +7,9 @@ use Exporter;
 use Locale::gettext;
 
 our @ISA = qw( Exporter );
+# the reason we have both _g and _ is simply that there
+# seem to be some situations where Perl doesn't handle _
+# correctly. If in doubt use _g
 our @EXPORT = qw( get_locale get_charset _g _ N_ );
 
 
