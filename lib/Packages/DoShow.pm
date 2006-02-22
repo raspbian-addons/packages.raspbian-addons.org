@@ -97,7 +97,7 @@ sub do_show {
 	    } else {
 		unless ($opts->{source}) {
 		    for my $entry (@results) {
-			debug( join(":", @$entry), 1 );
+			debug( join(":", @$entry), 1 ) if DEBUG;
 			my (undef, $archive, undef, $arch, $section, $subsection,
 			    $priority, $version, $provided_by) = @$entry;
 			
@@ -106,7 +106,7 @@ sub do_show {
 			    $data{package} = $pkg;
 			    $data{architecture} = $arch;
 			    $data{version} = $version;
-			    $page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 );
+			    $page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 ) if DEBUG;
 			} else {
 			    $page->add_provided_by([split /\s+/, $provided_by]);
 			}
@@ -116,14 +116,14 @@ sub do_show {
 			$version = $page->{newest};
 			my $source = $page->get_newest( 'source' );
 			$archive = $page->get_newest( 'archive' );
-			debug( "find source package: source=$source", 1);
+			debug( "find source package: source=$source", 1) if DEBUG;
 			my $src_data = $sources_all{"$archive $suite $source"};
 			$page->add_src_data( $source, $src_data )
 			    if $src_data;
 
 			my $st1 = new Benchmark;
 			my $std = timediff($st1, $st0);
-			debug( "Data search and merging took ".timestr($std) );
+			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 			my $did = $page->get_newest( 'description' );
 			$section = $page->get_newest( 'section' );
@@ -288,19 +288,19 @@ sub do_show {
 		    } # else (unless $page->is_virtual)
 		} else { # unless $opts->{source}
 		    for my $entry (@results) {
-			debug( join(":", @$entry), 1 );
+			debug( join(":", @$entry), 1 ) if DEBUG;
 			my (undef, $archive, undef, $section, $subsection,
 			    $priority, $version) = @$entry;
 			
 			my $data = $sources_all{"$archive $suite $pkg"};
 			$page->merge_data($pkg, $suite, $archive, $data)
-			    or debug( "Merging $pkg $version FAILED", 2 );
+			    or debug( "Merging $pkg $version FAILED", 2 ) if DEBUG;
 		    }
 		    $version = $page->{version};
 
 		    my $st1 = new Benchmark;
 		    my $std = timediff($st1, $st0);
-		    debug( "Data search and merging took ".timestr($std) );
+		    debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 		    $archive = $page->get_newest( 'archive' );
 		    $section = $page->get_newest( 'section' );
@@ -426,7 +426,7 @@ sub do_show {
     }
 
 #    use Data::Dumper;
-#    debug( "Final page object:\n".Dumper($page), 3 );
+#    debug( "Final page object:\n".Dumper($page), 3 ) if DEBUG;
 
     my $title = $opts->{source} ?
 	_g( "Details of source package <em>%s</em> in %s" ) :

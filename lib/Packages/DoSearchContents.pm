@@ -99,7 +99,7 @@ sub do_search_contents {
     
 	my $st1 = new Benchmark;
 	my $std = timediff($st1, $st0);
-	debug( "Search took ".timestr($std) );
+	debug( "Search took ".timestr($std) ) if DEBUG;
     }
     
     my $suite_wording = $suites_enc eq "all" ? "all suites"
@@ -164,7 +164,7 @@ sub searchfile
     my ($results, $kw, $nres, $reverses) = @_;
 
     my ($key, $value) = ($kw, "");
-    debug( "searchfile: kw=$kw", 1 );
+    debug( "searchfile: kw=$kw", 1 ) if DEBUG;
     for (my $status = $reverses->seq($key, $value, R_CURSOR);
 	$status == 0;
     	$status =  $reverses->seq( $key, $value, R_NEXT)) {
@@ -172,7 +172,7 @@ sub searchfile
 	# FIXME: what's the most efficient "is prefix of" thingy? We only want to know
 	# whether $kw is or is not a prefix of $key
 	last unless index($key, $kw) == 0;
-	debug( "found $key", 2 );
+	debug( "found $key", 2 ) if DEBUG;
 
 	my @hits = split /\0/o, $value;
 	push @$results, [ scalar reverse($key), @hits ];

@@ -31,11 +31,11 @@ sub merge_package {
     ($data->{package} && $data->{suite} && $data->{archive}) || return;
     $self->{package} ||= $data->{package};
     ($self->{package} eq $data->{package}) || return;
-    debug( "merge package $data->{package}/$data->{version} into $self (".($self->{version}||'').")", 2 );
+    debug( "merge package $data->{package}/$data->{version} into $self (".($self->{version}||'').")", 2 ) if DEBUG;
 
     if (!$self->{version}
 	|| (version_cmp( $data->{version}, $self->{version} ) > 0)) {
-	debug( "added package is newer, replacing old information" );
+	debug( "added package is newer, replacing old information" ) if DEBUG;
 
 	$self->{data} = $data;
 

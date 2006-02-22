@@ -81,10 +81,10 @@ sub do_search {
     }
     
 #    use Data::Dumper;
-#    debug( join( "", Dumper( \@results, \@non_results )) );
+#    debug( join( "", Dumper( \@results, \@non_results )) ) if DEBUG;
     my $st1 = new Benchmark;
     my $std = timediff($st1, $st0);
-    debug( "Search took ".timestr($std) );
+    debug( "Search took ".timestr($std) ) if DEBUG;
     
     my $suite_wording = $suites_enc eq "all" ? "all suites"
 	: "suite(s) <em>$suites_enc</em>";

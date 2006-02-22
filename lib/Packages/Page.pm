@@ -107,10 +107,10 @@ sub merge_package {
     ($data->{package} && $data->{version} && $data->{architecture}) || return;
     $self->{package} ||= $data->{package};
     ($self->{package} eq $data->{package}) || return;
-    debug( "merge package $data->{package}/$data->{version}/$data->{architecture} into $self (".($self->{newest}||'').")", 2 );
+    debug( "merge package $data->{package}/$data->{version}/$data->{architecture} into $self (".($self->{newest}||'').")", 2 ) if DEBUG;
 
     unless ($self->{newest}) {
-	debug( "package $data->{package}/$data->{version}/$data->{architecture} is first to merge", 3 );
+	debug( "package $data->{package}/$data->{version}/$data->{architecture} is first to merge", 3 ) if DEBUG;
 	foreach my $key (@TAKE_NEWEST) {
 	    $self->{data}{$key} = $data->{$key};
 	}
@@ -126,7 +126,7 @@ sub merge_package {
         return 1;
     }
 
-    debug( "package $data->{package}/$data->{version}/$data->{architecture} is subsequent merge", 3 );
+    debug( "package $data->{package}/$data->{version}/$data->{architecture} is subsequent merge", 3 ) if DEBUG;
     my $is_newest;
     if ($is_newest =
 	(version_cmp( $data->{version}, $self->{newest} ) > 0)) {
@@ -135,7 +135,7 @@ sub merge_package {
 	    $self->{data}{$key} = $data->{$key};
 	}
     }
-    debug( "is_newest= ".($is_newest||0), 3 );
+    debug( "is_newest= ".($is_newest||0), 3 ) if DEBUG;
     if (!$self->{versions}{$data->{architecture}}
 	|| $is_newest
 	|| (version_cmp( $data->{version},
@@ -221,14 +221,14 @@ sub get_dep_field {
     foreach my $a ( @architectures ) {
 	next unless exists $self->{dep_fields}{$a}{$dep_field};
 	my ($a_deps_norm, $a_deps) = @{$self->{dep_fields}{$a}{$dep_field}};
-#	debug( "get_dep_field: $dep_field/$a: ".Dumper($a_deps_norm,$a_deps), 3 );
+#	debug( "get_dep_field: $dep_field/$a: ".Dumper($a_deps_norm,$a_deps), 3 ) if DEBUG;
 	for ( my $i=0; $i < @$a_deps; $i++ ) { # splitted by ,	    
 	    $dep_pkgs{$a_deps_norm->[$i]} = $a_deps->[$i];
 	    $arch_deps{$a}{$a_deps_norm->[$i]}++;
 	}
     }
     @architectures = sort keys %arch_deps;
- #   debug( "get_dep_field called:\n ".Dumper( \%dep_pkgs, \%arch_deps ), 3 );
+ #   debug( "get_dep_field called:\n ".Dumper( \%dep_pkgs, \%arch_deps ), 3 ) if DEBUG;
     
     my @deps;
     if ( %dep_pkgs ) {

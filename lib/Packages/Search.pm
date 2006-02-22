@@ -78,7 +78,7 @@ sub parse_params {
     my %params_ret = ( values => {}, errors => {} );
     my %params;
     if ($USE_PAGED_MODE) {
-        debug( "Use PAGED_MODE", 2 );
+        debug( "Use PAGED_MODE", 2 ) if DEBUG;
         %params = %$params_def;
         foreach (keys %page_params) {
             delete $params{$_};
@@ -90,7 +90,7 @@ sub parse_params {
 
     foreach my $param ( keys %params ) {
 	
-	debug( "Param <strong>$param</strong>", 2 );
+	debug( "Param <strong>$param</strong>", 2 ) if DEBUG;
 
 	my $p_value_orig = $cgi->param($param);
 
@@ -104,11 +104,11 @@ sub parse_params {
 
 	my @p_value = ($p_value_orig);
 
-	debug( "Value (Orig) ".($p_value_orig||""), 2 );
+	debug( "Value (Orig) ".($p_value_orig||""), 2 ) if DEBUG;
 
 	if ($params_def->{$param}{array} && defined $p_value_orig) {
 	    @p_value = split /$params_def->{$param}{array}/, $p_value_orig;
-	    debug( "Value (Array Split) ". join('##',@p_value), 2 );
+	    debug( "Value (Array Split) ". join('##',@p_value), 2 ) if DEBUG;
 	}
 
 	if ($params_def->{$param}{match} && defined $p_value_orig) {
@@ -118,7 +118,7 @@ sub parse_params {
 	}
 	@p_value = grep { defined $_ } @p_value;
 
-	debug( "Value (Match) ". join('##',@p_value), 2 );
+	debug( "Value (Match) ". join('##',@p_value), 2 ) if DEBUG;
 
 	unless (@p_value) {
 	    if (defined $params{$param}{default}) {
@@ -130,7 +130,7 @@ sub parse_params {
 	    }
 	}
 
-	debug( "Value (Default) ". join('##',@p_value), 2 );
+	debug( "Value (Default) ". join('##',@p_value), 2 ) if DEBUG;
 	my @p_value_no_replace = @p_value;
 
 	if ($params{$param}{replace} && @p_value) {
@@ -152,7 +152,7 @@ sub parse_params {
 	    }
 	}
 	
-	debug( "Value (Final) ". join('##',@p_value), 2 );
+	debug( "Value (Final) ". join('##',@p_value), 2 ) if DEBUG;
 
 	if ($params_def->{$param}{array}) {
 	    $params_ret{values}{$param} = {
@@ -198,7 +198,7 @@ sub end {
     my $params = shift;
 
     use Data::Dumper;
-    debug( "end: ".Dumper($params) );
+    debug( "end: ".Dumper($params) ) if DEBUG;
     my $page = $params->{page}
     || DEFAULT_PAGE;
     my $res_per_page = $params->{number}
@@ -343,12 +343,12 @@ sub read_entry_all {
     my $result = $hash->{$key} || '';
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
-	debug( "Considering entry ".join( ':', @data), 2);
+	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
 	if ($opts->{h_archives}{$data[0]} && $opts->{h_suites}{$data[1]}
 	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all'
 		|| $data[2] eq 'virtual')
 	    && ($opts->{h_sections}{$data[3]} || $data[3] eq 'v')) {
-	    debug( "Using entry ".join( ':', @data), 2);
+	    debug( "Using entry ".join( ':', @data), 2) if DEBUG;
 	    push @$results, [ $key, @data ];
 	} else {
 	    push @$non_results, [ $key, @data ];
@@ -368,21 +368,21 @@ sub read_entry_simple {
     my (@data_fuzzy, @data_virtual, @data_fuzzy_virtual);
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
-	debug( "Considering entry ".join( ':', @data), 2);
+	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
 	if ($data[1] eq $suite) {
 	    if ($archives->{$data[0]}
 		&& ($data[2] ne 'virtual')) {
-		debug( "Using entry ".join( ':', @data), 2);
+		debug( "Using entry ".join( ':', @data), 2) if DEBUG;
 		return \@data;
 	    } elsif ($archives->{$data[0]}) {
-		debug( "Virtual entry ".join( ':', @data), 2);
+		debug( "Virtual entry ".join( ':', @data), 2) if DEBUG;
 		@data_virtual = @data;
 	    } elsif (($data[0] eq 'us')
 		     && ($data[2] ne 'virtual')) {
-		debug( "Fuzzy entry ".join( ':', @data), 2);
+		debug( "Fuzzy entry ".join( ':', @data), 2) if DEBUG;
 		@data_fuzzy = @data;
 	    } elsif ($data[0] eq 'us') {
-		debug( "Virtual fuzzy entry ".join( ':', @data), 2);
+		debug( "Virtual fuzzy entry ".join( ':', @data), 2) if DEBUG;
 		@data_fuzzy_virtual = @data;
 	    }
 	} 
@@ -394,14 +394,14 @@ sub read_entry_simple {
 sub read_src_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
     my $result = $hash->{$key} || '';
-    debug( "read_src_entry_all: key=$key", 1);
+    debug( "read_src_entry_all: key=$key", 1) if DEBUG;
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 6 );
-	debug( "Considering entry ".join( ':', @data), 2);
+	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
 	if ($opts->{h_archives}{$data[0]}
 	    && $opts->{h_suites}{$data[1]}
 	    && $opts->{h_sections}{$data[2]}) {
-	    debug( "Using entry ".join( ':', @data), 2);
+	    debug( "Using entry ".join( ':', @data), 2) if DEBUG;
 	    push @$results, [ $key, @data ];
 	} else {
 	    push @$non_results, [ $key, @data ];
@@ -424,12 +424,12 @@ sub do_names_search {
     $postfixes->seq( $key, $prefixes, R_CURSOR );
     while (index($key, $keyword) >= 0) {
 	if ($prefixes =~ /^\001(\d+)/o) {
-	    debug( "$key has too many hits", 2 );
+	    debug( "$key has too many hits", 2 ) if DEBUG;
 	    $too_many_hits += $1;
 	} else {
 	    foreach (split /\000/o, $prefixes) {
 		$_ = '' if $_ eq '^';
-		debug( "add word $_$key", 2);
+		debug( "add word $_$key", 2) if DEBUG;
 		$pkgs{$_.$key}++;
 	    }
 	}
@@ -466,13 +466,13 @@ sub do_fulltext_search {
     while (<DESC>) {
 	/^(\d+)/;
 	my $nr = $1;
-	debug( "Matched line $_", 2);
+	debug( "Matched line $_", 2) if DEBUG;
 	my $result = $did2pkg->{$nr};
 	foreach (split /\000/o, $result) {
 	    my @data = split /\s/, $_, 3;
-#	    debug ("Considering $data[0], arch = $data[2]", 3);
+#	    debug ("Considering $data[0], arch = $data[2]", 3) if DEBUG;
 #	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
-#	    debug ("Ok", 3);
+#	    debug ("Ok", 3) if DEBUG;
 	    $numres++ unless $tmp_results{$data[0]}++;
 	}
 	last if $numres > 100;
@@ -494,11 +494,11 @@ sub find_binaries {
     foreach (split /\000/o, $bins) {
 	my @data = split /\s/, $_, 5;
 
-	debug( "find_binaries: considering @data", 3 );
+	debug( "find_binaries: considering @data", 3 ) if DEBUG;
 	if (($data[0] eq $archive)
 	    && ($data[1] eq $suite)) {
 	    $bins{$data[2]}++;
-	    debug( "find_binaries: using @data", 3 );
+	    debug( "find_binaries: using @data", 3 ) if DEBUG;
 	}
     }
 

@@ -60,7 +60,7 @@ sub init {
 	    @ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
 	}
 	close (C);
-	debug( "read config ($modtime > $config_read_time)" );
+	debug( "read config ($modtime > $config_read_time)" ) if DEBUG;
 	$config_read_time = $modtime;
     }
     $DBDIR = "$TOPDIR/files/db";

@@ -42,7 +42,7 @@ sub init {
 	O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie postfix db $DBDIR/source_postfixes.db: $!";
 
-    	debug( "tied databases ($dbmodtime > $db_read_time)" );
+    	debug( "tied databases ($dbmodtime > $db_read_time)" ) if DEBUG;
 	$db_read_time = $dbmodtime;
     }
 }

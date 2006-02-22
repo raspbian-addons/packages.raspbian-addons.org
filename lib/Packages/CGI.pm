@@ -4,8 +4,10 @@ use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( fatal_error error hint debug msg note
 		  print_errors print_hints print_debug print_msgs
-		  print_notes );
+		  print_notes DEBUG );
 
+# define this to 0 in production mode
+use constant DEBUG => 1;
 our $debug = 0;
 
 our (@fatal_errors, @errors, @debug, @msgs, @hints, @notes);

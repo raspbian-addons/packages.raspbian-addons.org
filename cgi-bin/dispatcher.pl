@@ -54,9 +54,7 @@ if ($ARGV[0] && ($ARGV[0] eq 'php')) {
 
 my $pet0 = new Benchmark;
 my $tet0 = new Benchmark;
-# use this to disable debugging in production mode completly
-my $debug_allowed = 1;
-my $debug = $debug_allowed && $input->param("debug");
+my $debug = DEBUG && $input->param("debug");
 $debug = 0 if !defined($debug) || $debug !~ /^\d+$/o;
 $Packages::CGI::debug = $debug;
 
@@ -192,14 +190,14 @@ my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
 my $locale = get_locale($opts{lang});
 my $charset = get_charset($opts{lang});
 setlocale ( LC_ALL, $locale )
-    or do { debug( "couldn't set locale $locale, using default" );
+    or do { debug( "couldn't set locale $locale, using default" ) if DEBUG;
 	    setlocale( LC_ALL, get_locale() )
 		or do {
-		    debug( "couldn't set default locale either" );
+		    debug( "couldn't set default locale either" ) if DEBUG;
 		    setlocale( LC_ALL, "C" );
 		};
 	};
-debug( "locale=$locale charset=$charset", 2 );
+debug( "locale=$locale charset=$charset", 2 ) if DEBUG;
 
 $opts{h_suites} = { map { $_ => 1 } @suites };
 $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -220,7 +218,7 @@ if ($opts{searchon} eq 'contents' or $opts{searchon} eq 'filenames') {
 
 my $pet1 = new Benchmark;
 my $petd = timediff($pet1, $pet0);
-debug( "Parameter evaluation took ".timestr($petd) );
+debug( "Parameter evaluation took ".timestr($petd) ) if DEBUG;
 
 print $input->header( -charset => $charset );
 
@@ -252,7 +250,7 @@ print $menu||'';
 print_errors();
 print_hints();
 print_msgs();
-print_debug();
+print_debug() if DEBUG;
 print_notes();
 
 unless (@Packages::CGI::fatal_errors) {

@@ -249,7 +249,7 @@ sub print_deps {
     my $one_archive = @{$opts->{archive}} > 1 ? '': $opts->{archive}[0];
 
 #    use Data::Dumper;
-#    debug( "print_deps called:\n".Dumper( $pkg, $relations, \$type ), 3 );
+#    debug( "print_deps called:\n".Dumper( $pkg, $relations, \$type ), 3 ) if DEBUG;
 
     foreach my $rel (@$relations) {
 	my $is_old_pkgs = $rel->[0];
