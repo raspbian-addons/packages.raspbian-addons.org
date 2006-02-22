@@ -86,10 +86,10 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	shift @components;
 	$what_to_do = 'search';
 	# Done
-	fatal_error( _( "search doesn't take any more path elements" ) )
+	fatal_error( _g( "search doesn't take any more path elements" ) )
 	    if @components > 0;
     } elsif (@components == 0) {
-	fatal_error( _( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
+	fatal_error( _g( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
     } elsif (@components == 1) {
 	$what_to_do = 'search';
     } else {
@@ -114,7 +114,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	sub set_param_once {
 	    my ($cgi, $params_set, $key, $val) = @_;
 	    if ($params_set->{$key}++) {
-		fatal_error( sprintf( _( "%s set more than once in path" ), $key ) );
+		fatal_error( sprintf( _g( "%s set more than once in path" ), $key ) );
 	    } else {
 		$cgi->param( $key, $val );
 	    }
@@ -144,7 +144,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	@components = @tmp;
 
 	if (@components > 1) {
-	    fatal_error( sprintf( _( "two or more packages specified (%s)" ), "@components" ) );
+	    fatal_error( sprintf( _g( "two or more packages specified (%s)" ), "@components" ) );
 	}
     } # else if (@components == 1)
     
@@ -230,12 +230,12 @@ unless (@Packages::CGI::fatal_errors) {
     &{"do_$what_to_do"}( \%params, \%opts, \%html_header,
 			 \$menu, \$page_content );
 } else {
-    %html_header = ( title => _('Error'),
+    %html_header = ( title => _g('Error'),
 		     lang => $opts{lang},
 		     print_title => 1,
 		     print_search_field => 'packages',
 		     search_field_values => { 
-			 keywords => _('search for a package'),
+			 keywords => _g('search for a package'),
 			 searchon => 'default',
 			 arch => 'any',
 			 suite => 'all',

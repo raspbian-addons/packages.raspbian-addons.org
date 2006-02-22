@@ -27,9 +27,9 @@ sub do_search {
     $Params::Search::too_many_hits = 0;
 
     if ($params->{errors}{keywords}) {
-	fatal_error( _( "keyword not valid or missing" ) );
+	fatal_error( _g( "keyword not valid or missing" ) );
     } elsif (length($opts->{keywords}) < 2) {
-	fatal_error( _( "keyword too short (keywords need to have at least two characters)" ) );
+	fatal_error( _g( "keyword too short (keywords need to have at least two characters)" ) );
     }
 
     $$menu = "";
@@ -102,16 +102,16 @@ sub do_search {
     }
 
     if ($Packages::Search::too_many_hits) {
-	error( sprintf( _( "Your search was too wide so we will only display exact matches. At least <em>%s</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." ), $Packages::Search::too_many_hits ) );
+	error( sprintf( _g( "Your search was too wide so we will only display exact matches. At least <em>%s</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." ), $Packages::Search::too_many_hits ) );
     }
     
     if (!@Packages::CGI::fatal_errors && !@results) {
 	if ($searchon eq "names") {
 	    unless (@non_results) {
-		error( _( "Can't find that package." ) );
+		error( _g( "Can't find that package." ) );
 	    } else {
-		hint( _( "Can't find that package." )." ".
-		      sprintf( _( '<a href="%s">%s</a>'.
+		hint( _g( "Can't find that package." )." ".
+		      sprintf( _g( '<a href="%s">%s</a>'.
 		      " results have not been displayed due to the".
 		      " search parameters." ), "$SEARCH_URL/$keyword_esc" ,
 		      $#non_results+1 ) );
@@ -121,24 +121,24 @@ sub do_search {
 	    if (($suites_enc eq 'all')
 		&& ($archs_enc eq 'any')
 		&& ($sections_enc eq 'all')) {
-		error( _( "Can't find that string." ) );
+		error( _g( "Can't find that string." ) );
 	    } else {
-		error( sprintf( _( "Can't find that string, at least not in that suite (%s, section %s) and on that architecture (%s)." ),
+		error( sprintf( _g( "Can't find that string, at least not in that suite (%s, section %s) and on that architecture (%s)." ),
 				$suites_enc, $sections_enc, $archs_enc ) );
 	    }
 	    
 	    if ($opts->{exact}) {
-		hint( sprintf( _( 'You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.' ),
+		hint( sprintf( _g( 'You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.' ),
 			       encode_entities("$SEARCH_URL?exact=0&$opts->{common_params}") ) );
 	    }
 	}
-	hint( sprintf( _( 'You can try a different search on the <a href="%s">Packages search page</a>.' ), "$SEARCH_PAGE#search_packages" ) );
+	hint( sprintf( _g( 'You can try a different search on the <a href="%s">Packages search page</a>.' ), "$SEARCH_PAGE#search_packages" ) );
 	
     }
 
-    %$html_header = ( title => _( 'Package Search Results' ) ,
+    %$html_header = ( title => _g( 'Package Search Results' ) ,
 		      lang => $opts->{lang},
-		      title_tag => _( 'Debian Package Search Results' ),
+		      title_tag => _g( 'Debian Package Search Results' ),
 		      print_title => 1,
 		      print_search_field => 'packages',
 		      search_field_values => { 
@@ -226,21 +226,21 @@ sub print_packages {
 
     #my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
     my $str = '<div id="psearchres">';
-    $str .= "<p>".sprintf( _( "Found <em>%s</em> matching packages." ),
+    $str .= "<p>".sprintf( _g( "Found <em>%s</em> matching packages." ),
 			   scalar @$pkgs_list )."</p>";
     #my $count = 0;
 	    
     my $have_exact;
     if (grep { $_ eq $keyword } @$pkgs_list) {
 	$have_exact = 1;
-	$str .= '<h2>'._( "Exact hits" ).'</h2>';
+	$str .= '<h2>'._g( "Exact hits" ).'</h2>';
 	$str .= &$print_func( $keyword, $pkgs->{$keyword}||{},
 			      map { $_->{$keyword}||{} } @func_args );
 	@$pkgs_list = grep { $_ ne $keyword } @$pkgs_list;
     }
 	    
     if (@$pkgs_list && (($opts->{searchon} ne 'names') || !$opts->{exact})) {
-	$str .= '<h2>'._( 'Other hits' ).'</h2>'
+	$str .= '<h2>'._g( 'Other hits' ).'</h2>'
 	    if $have_exact;
 	
 	foreach my $pkg (@$pkgs_list) {
@@ -250,7 +250,7 @@ sub print_packages {
 				  map { $_->{$pkg}||{} } @func_args );
 	}
     } elsif (@$pkgs_list) {
-	$str .= "<p>".sprintf( _( '<a href="%s">%s</a> results have not been displayed because you requested only exact matches.' ),
+	$str .= "<p>".sprintf( _g( '<a href="%s">%s</a> results have not been displayed because you requested only exact matches.' ),
 			       encode_entities("$SEARCH_URL?exact=0&$opts->{common_params}"),
 			       scalar @$pkgs_list )."</p>";
     }
@@ -262,7 +262,7 @@ sub print_packages {
 sub print_package {
     my ($pkg, $pkgs, $provided_by, $archives, $sect, $subsect, $desc) = @_;
 
-    my $str = '<h3>'.sprintf( _( 'Package %s' ), $pkg ).'</h3>';
+    my $str = '<h3>'.sprintf( _g( 'Package %s' ), $pkg ).'</h3>';
     $str .= '<ul>';
     foreach my $suite (@SUITES) {
 	foreach my $archive (@ARCHIVES) {
@@ -293,14 +293,14 @@ sub print_package {
 		    $archs_printed{$_}++ foreach @archs_to_print;
 		}
 		if (my $p =  $provided_by->{$suite}{$archive}) {
-		    $str .= '<br>'._( 'also provided by: ' ).
+		    $str .= '<br>'._g( 'also provided by: ' ).
 			join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$p);
 		}
 		$str .= "</li>\n";
 	    } elsif (my $p =  $provided_by->{$suite}{$archive}) {
 		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a>: Virtual package<br>",
 				 $path, $pkg, $path );
-		$str .= _( 'provided by: ' ).
+		$str .= _g( 'provided by: ' ).
 		    join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$p);
 	    }
 	}
@@ -312,7 +312,7 @@ sub print_package {
 sub print_src_package {
     my ($pkg, $pkgs, $archives, $sect, $subsect, $binaries) = @_;
 
-    my $str = '<h3>'.sprintf( _( 'Source package %s' ), $pkg ).'</h3>';
+    my $str = '<h3>'.sprintf( _g( 'Source package %s' ), $pkg ).'</h3>';
     $str .= "<ul>\n";
     foreach my $suite (@SUITES) {
 	foreach my $archive (@ARCHIVES) {
@@ -328,7 +328,7 @@ sub print_src_package {
 				 $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect->{$suite}{$archive}{source},
 				 $pkgs->{$suite}{$archive}, $origin_str );
 		
-		$str .= "<br>"._( 'Binary packages: ' );
+		$str .= "<br>"._g( 'Binary packages: ' );
 		my @bp_links;
 		foreach my $bp (@{$binaries->{$suite}{$archive}}) {
 		    my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",

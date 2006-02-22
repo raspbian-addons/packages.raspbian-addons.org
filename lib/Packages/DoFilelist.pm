@@ -28,13 +28,13 @@ sub do_filelist {
     my ($params, $opts, $html_header, $menu, $page_content) = @_;
 
     if ($params->{errors}{package}) {
-	fatal_error( _( "package not valid or not specified" ) );
+	fatal_error( _g( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _( "suite not valid or not specified" ) );
+	fatal_error( _g( "suite not valid or not specified" ) );
     }
     if ($params->{errors}{arch}) {
-	fatal_error( _( "architecture not valid or not specified" ) );
+	fatal_error( _g( "architecture not valid or not specified" ) );
     }
 
     $$menu = '';
@@ -42,8 +42,8 @@ sub do_filelist {
     my $suite = $opts->{suite}[0];
     my $arch = $opts->{arch}[0] ||'';
 
-    %$html_header = ( title => sprintf( _( "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>" ), $pkg, $suite, $arch ),
-		      title_tag => sprintf( _( "Filelist of of package %s/%s/%s" ), $pkg, $suite, $arch ),
+    %$html_header = ( title => sprintf( _g( "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>" ), $pkg, $suite, $arch ),
+		      title_tag => sprintf( _g( "Filelist of of package %s/%s/%s" ), $pkg, $suite, $arch ),
 		      lang => $opts->{lang},
 		      keywords => "debian, $suite, $arch, filelist",
 		      print_title => 1,
@@ -54,7 +54,7 @@ sub do_filelist {
 	    O_RDONLY, 0666, $DB_BTREE) {
 
 	    unless (exists $contents{$pkg}) {
-		fatal_error( _( "No such package in this suite on this architecture." ) );
+		fatal_error( _g( "No such package in this suite on this architecture." ) );
 	    } else {
 		my @files = unpack "L/(CC/a)", $contents{$pkg};
 		my $file = "";
@@ -66,7 +66,7 @@ sub do_filelist {
 		$$page_content .= '</pre></div>';
 	    }
 	} else {
-	    fatal_error( _( "Invalid suite/architecture combination" ) );
+	    fatal_error( _g( "Invalid suite/architecture combination" ) );
 	}
     }
 }
