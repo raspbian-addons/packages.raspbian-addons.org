@@ -340,14 +340,26 @@ sub printindexline {
 
 sub read_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
-    my $result = $hash->{$key} || '';
+    my ($virt, $result) = split /\000/o, $hash->{$key} || "-\01-", 2;
+
+    my %virt = split /\01/o, $virt;
+    while (my ($suite, $provides) = each %virt) {
+	next if $suite eq '-';
+	if ($opts->{h_suites}{$suite}) {
+	    push @$results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
+		(split /\s/, $provides)];
+	} else {
+	    push @$non_results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
+		(split /\s/, $provides)];
+	}
+    }
+
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
-	if ($opts->{h_archives}{$data[0]} && $opts->{h_suites}{$data[1]}
-	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all'
-		|| $data[2] eq 'virtual')
-	    && ($opts->{h_sections}{$data[3]} || $data[3] eq 'v')) {
+	if ($opts->{h_suites}{$data[1]}
+	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all')
+	    && $opts->{h_sections}{$data[3]}) {
 	    debug( "Using entry ".join( ':', @data), 2) if DEBUG;
 	    push @$results, [ $key, @data ];
 	} else {
@@ -362,35 +374,20 @@ sub read_entry {
 }
 sub read_entry_simple {
     my ($hash, $key, $archives, $suite) = @_;
-    my $result = $hash->{$key} || '';
+    # FIXME: drop $archives
+
+    my ($virt, $result) = split /\000/o, $hash->{$key} || "-\01-\0", 2;
+    my %virt = split /\01/o, $virt; 
     debug( "read_entry_simple: key=$key, archives=".
 	   join(" ",(keys %$archives)).", suite=$suite", 1);
-    my (@data_fuzzy, @data_virtual, @data_fuzzy_virtual);
-    foreach (split /\000/o, $result) {
+    # FIXME: magically encoded a max of 7 suites here by the '8'
+    foreach (split /\000/o, $result, 8) {
 	my @data = split ( /\s/o, $_, 8 );
-	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
-	if ($data[1] eq $suite) {
-	    if ($archives->{$data[0]}
-		&& ($data[2] ne 'virtual')) {
-		debug( "Using entry ".join( ':', @data), 2) if DEBUG;
-		return \@data;
-	    } elsif ($archives->{$data[0]}) {
-		debug( "Virtual entry ".join( ':', @data), 2) if DEBUG;
-		@data_virtual = @data;
-	    } elsif (($data[0] eq 'us')
-		     && ($data[2] ne 'virtual')) {
-		debug( "Fuzzy entry ".join( ':', @data), 2) if DEBUG;
-		@data_fuzzy = @data;
-	    } elsif ($data[0] eq 'us') {
-		debug( "Virtual fuzzy entry ".join( ':', @data), 2) if DEBUG;
-		@data_fuzzy_virtual = @data;
-	    }
-	} 
+	return [ $virt{$suite}, @data ] if $data[1] eq $suite;
     }
-    return \@data_virtual if @data_virtual;
-    return \@data_fuzzy if @data_fuzzy;
-    return \@data_fuzzy_virtual;
+    return [ $virt{$suite} ];
 }
+
 sub read_src_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
     my $result = $hash->{$key} || '';

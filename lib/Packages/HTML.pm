@@ -286,16 +286,17 @@ sub print_deps {
 	    my $entry = $entries{$p_name} ||
 		read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite);
 	    my $short_desc = $entry->[-1];
-	    my $arch = $entry->[2];
-	    my $archive = $entry->[0];
+	    my $arch = $entry->[3];
+	    my $archive = $entry->[1];
 	    if ( $short_desc ) {
 		my $path = $one_archive eq $archive ? "$suite/$archive" :
 		    $suite;
 		if ( $is_old_pkgs ) {
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
-		} elsif ($arch eq 'virtual') {
-		    my @provided_by = split /\s/, $short_desc;
+		} elsif (defined $entry->[0]) {
+# FIXME: can be both virtual package (defined $entry->[0]) and real one
+		    my @provided_by = split /\s/, $entry->[0];
 		    $short_desc = "virtual package provided by ";
 		    if (@provided_by < 10) {
 			$short_desc .= join( ', ',map { "<a href=\"$ROOT/$path/$_\">$_</a>" } @provided_by);
@@ -382,12 +383,7 @@ sub header {
 	$search_in_header = <<MENU;
 <form method="GET" action="$SEARCH_URL">
 <div id="hpacketsearch">
-<input type="hidden" name="debug" value="$values{debug}">
-<input type="hidden" name="suite" value="$values{suite}">
-<input type="hidden" name="exact" value="$values{exact}">
-<input type="hidden" name="arch" value="$values{arch}">
-<input type="hidden" name="section" value="$values{section}">
-<input type="text" size="30" name="keywords" value="$values{keywords}" id="kw">
+<input type="text" size="30" name="keywords" value="" id="kw">
 <input type="submit" value="%s">
 <span style="font-size: 60%%"><a href="$SEARCH_PAGE#search_packages">%s</a></span>
 <br>

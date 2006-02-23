@@ -183,7 +183,7 @@ sub do_search {
 		    
 		    $desc{$pkg}{$suite}{$archive}{$version} = $desc;
 		} else {
-		    $provided_by{$pkg}{$suite}{$archive} = [ split /\s+/, $desc ];
+		    $provided_by{$pkg}{$suite} = [ split /\s+/, $desc ];
 		}
 	    }
 
@@ -297,12 +297,12 @@ sub print_package {
 			if @archs_to_print;
 		    $archs_printed{$_}++ foreach @archs_to_print;
 		}
-		if (my $p =  $provided_by->{$suite}{$archive}) {
+		if (my $p =  $provided_by->{$suite}) {
 		    $str .= '<br>'._g( 'also provided by: ' ).
 			join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$p);
 		}
 		$str .= "</li>\n";
-	    } elsif (my $p =  $provided_by->{$suite}{$archive}) {
+	    } elsif (my $p =  $provided_by->{$suite}) {
 		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a>: Virtual package<br>",
 				 $path, $pkg, $path );
 		$str .= _g( 'provided by: ' ).
