@@ -234,7 +234,7 @@ sub do_show {
 			    $package_page .=  "\">$a</a></th>\n";
 			    $package_page .= "<td>".$versions->{$a}."</td>"
 				if $multiple_versions;
-			    $package_page .= '</td><td class="size">';
+			    $package_page .= '<td class="size">';
 			    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
 			    $package_page .= '</td><td class="size">';
 			    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
