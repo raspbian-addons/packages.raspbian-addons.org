@@ -239,13 +239,14 @@ sub dep_item {
 } # end dep_item
 
 sub provides_string {
-    my ($path, $entry) = @_;
+    my ($path, $entry,$also) = @_;
     my @provided_by = split /\s/, $entry;
-    my $short_desc = "virtual package provided by ";
+    my $short_desc = $also ? _g("also a virtual package provided by ")
+	: _g("virtual package provided by ");
     if (@provided_by < 10) {
 	$short_desc .= join( ', ',map { "<a href=\"$path/$_\">$_</a>" } @provided_by);
     } else {
-	$short_desc .= scalar(@provided_by)." packages";
+	$short_desc .= sprintf( _g("%s packages"), scalar(@provided_by));
     }
     return $short_desc;
 }
@@ -307,8 +308,9 @@ sub print_deps {
 		} elsif (defined $entry->[1]) {
 		    $entries{$p_name} ||= $entry;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
-		    $short_desc .= "<br>Also, a ".provides_string( "$ROOT/$path",
-							   $entry->[0] )
+		    $short_desc .= "<br>".provides_string( "$ROOT/$path",
+							   $entry->[0],
+							   1 )
 			if defined $entry->[0];
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );

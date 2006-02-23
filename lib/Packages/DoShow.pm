@@ -307,11 +307,11 @@ sub do_show {
 
 		    $$menu .= simple_menu( [ _g( "Distribution:" ),
 					     _g( "Overview over this suite" ),
-					     "/$suite/",
+					     "$ROOT/$suite/",
 					     $suite ],
 					   [ _g( "Section:" ),
 					     _g( "All packages in this section" ),
-					     "/$suite/$subsection/",
+					     "$ROOT/$suite/$subsection/",
 					     $subsection ],
 					   );
 		    
