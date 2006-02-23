@@ -379,7 +379,7 @@ sub read_entry_simple {
     my ($virt, $result) = split /\000/o, $hash->{$key} || "-\01-\0", 2;
     my %virt = split /\01/o, $virt; 
     debug( "read_entry_simple: key=$key, archives=".
-	   join(" ",(keys %$archives)).", suite=$suite", 1);
+	   join(" ",(keys %$archives)).", suite=$suite", 1) if DEBUG;
     # FIXME: magically encoded a max of 7 suites here by the '8'
     foreach (split /\000/o, $result, 8) {
 	my @data = split ( /\s/o, $_, 8 );
