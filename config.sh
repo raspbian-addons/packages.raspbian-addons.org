@@ -32,6 +32,7 @@ amd64_ftpsite=http://amd64.debian.net/debian
 kfreebsd_ftpsite=http://kfreebsd-gnu.debian.net/debian
 
 root=""
+hostname="http://packages.debian.net"
 search_page="http://packages.debian.net/"
 search_url="/search"
 webmaster=webmaster@debian.org

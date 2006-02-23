@@ -8,13 +8,13 @@ use Packages::CGI;
 
 our @ISA = qw( Exporter );
 
-our ( $TOPDIR, $DBDIR, $ROOT, $HOME, $CONTACT_MAIL, $WEBMASTER_MAIL,
+our ( $TOPDIR, $DBDIR, $ROOT, $HOSTNAME, $HOME, $CONTACT_MAIL, $WEBMASTER_MAIL,
       $SEARCH_PAGE, $SEARCH_URL, @LANGUAGES, $LOCALES,
       $SRC_SEARCH_URL, $CONTENTS_SEARCH_CGI,
       $CN_HELP_URL, $BUG_URL, $SRC_BUG_URL, $QA_URL, $DDPO_URL,
       @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
       %FTP_SITES );
-our @EXPORT_OK = qw( $TOPDIR $DBDIR $ROOT $HOME $CONTACT_MAIL
+our @EXPORT_OK = qw( $TOPDIR $DBDIR $ROOT $HOSTNAME $HOME $CONTACT_MAIL
 		     $WEBMASTER_MAIL @LANGUAGES $LOCALES
 		     $SEARCH_PAGE $SEARCH_URL
 		     $SRC_SEARCH_URL $CONTENTS_SEARCH_CGI
@@ -38,6 +38,7 @@ sub init {
 	    chomp;
 	    $TOPDIR = $1 if /^\s*topdir="?([^\"]*)"?\s*$/o;
 	    $ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
+	    $HOSTNAME = $1 if /^\s*hostname="?([^\"]*)"?\s*$/o;
 	    $HOME = $1 if /^\s*home="?([^\"]*)"?\s*$/o;
 	    $LOCALES = $1 if /^\s*localedir="?([^\"]*)"?\s*$/o;
 #	    $SEARCH_CGI = $1 if /^\s*search_cgi="?([^\"]*)"?\s*$/o;
