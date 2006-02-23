@@ -67,7 +67,7 @@ my $http_lang = $acc->accepts( $input->http("Accept-Language"),
 			       \@LANGUAGES );
 debug( "LANGUAGES=@LANGUAGES header=".
        $input->http("Accept-Language").
-       " http_lang=$http_lang", 2 );
+       " http_lang=$http_lang", 2 ) if DEBUG;
 bindtextdomain ( 'pdo', $LOCALES );
 textdomain( 'pdo' );
 
