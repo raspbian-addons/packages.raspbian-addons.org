@@ -347,10 +347,10 @@ sub read_entry_all {
 	next if $suite eq '-';
 	if ($opts->{h_suites}{$suite}) {
 	    push @$results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
-		(split /\s/, $provides)];
+			      $provides];
 	} else {
 	    push @$non_results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
-		(split /\s/, $provides)];
+				  $provides];
 	}
     }
 
