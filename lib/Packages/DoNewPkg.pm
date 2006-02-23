@@ -141,7 +141,9 @@ sub do_newpkg {
 			       subject  => $pkg->[6],
 			   } );
 	}
-	print &CGI::header( -type => 'application/rss+xml' );
+	my $charset = get_charset( $opts->{lang} );
+	print &CGI::header( -type => 'application/rss+xml',
+			    -charset => $charset );
 	print $rss->as_string;
 	exit;
     }
