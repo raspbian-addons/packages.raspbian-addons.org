@@ -307,7 +307,7 @@ sub print_deps {
 		} elsif (defined $entry->[1]) {
 		    $entries{$p_name} ||= $entry;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
-		    $short_desc .= "<br>".provides_string( "$ROOT/$path",
+		    $short_desc .= "<br>Also, a ".provides_string( "$ROOT/$path",
 							   $entry->[0] )
 			if defined $entry->[0];
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
