@@ -75,19 +75,13 @@ sub do_show {
 	    foreach (@results, @non_results) {
 		my $a = $_->[1];
 		my $s = $_->[2];
-		if ($a =~ /^(?:us|security|non-US)$/o) {
-		    $all_suites{$s}++;
-		} else {
-		    $all_suites{"$s/$a"}++;
-		}
+		$all_suites{$s}++;
 	    }
 	    foreach (suites_sort(keys %all_suites)) {
-		if (("$suite/$archive" eq $_)
-		    || (!$all_suites{"$suite/$archive"} && ($suite eq $_))) {
+		if ($suite eq $_) {
 		    $$menu .= "[ <strong>$_</strong> ] ";
 		} else {
-		    $$menu .=
-			"[ <a href=\"$ROOT/$_/$encodedpkg\">$_</a> ] ";
+		    $$menu .= "[ <a href=\"$ROOT/$_/$encodedpkg\">$_</a> ] ";
 		}
 	    }
 	    $$menu .= '<br>';

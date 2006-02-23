@@ -168,20 +168,13 @@ sub do_search {
 		
 		my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
 		if ($arch ne 'virtual') {
-		    my $real_archive;
-		    if ($archive =~ /^(security|non-US)$/) {
-			$real_archive = $archive;
-			$archive = 'us';
-		    }
-
-		    $pkgs{$pkg}{$suite}{$archive}{$version}{$arch} = 1;
-		    $subsect{$pkg}{$suite}{$archive}{$version} = $subsection;
-		    $sect{$pkg}{$suite}{$archive}{$version} = $section
+		    $pkgs{$pkg}{$suite}{$version}{$arch} = 1;
+		    $subsect{$pkg}{$suite}{$version} = $subsection;
+		    $sect{$pkg}{$suite}{$version} = $section
 			unless $section eq 'main';
-		    $archives{$pkg}{$suite}{$archive}{$version} = $real_archive
-			if $real_archive;
+		    $archives{$pkg}{$suite}{$version} = $archive;
 		    
-		    $desc{$pkg}{$suite}{$archive}{$version} = $desc;
+		    $desc{$pkg}{$suite}{$version} = $desc;
 		} else {
 		    $provided_by{$pkg}{$suite} = [ split /\s+/, $desc ];
 		}
@@ -270,28 +263,25 @@ sub print_package {
     my $str = '<h3>'.sprintf( _g( 'Package %s' ), $pkg ).'</h3>';
     $str .= '<ul>';
     foreach my $suite (@SUITES) {
-	foreach my $archive (@ARCHIVES) {
-	    next if $archive eq 'security';
-	    next if $archive eq 'non-US';
-	    my $path = $suite.(($archive ne 'us')?"/$archive":'');
-	    if (exists $pkgs->{$suite}{$archive}) {
+	    my $path = $suite;
+	    if (exists $pkgs->{$suite}) {
 		my %archs_printed;
-		my @versions = version_sort keys %{$pkgs->{$suite}{$archive}};
+		my @versions = version_sort keys %{$pkgs->{$suite}};
 		my $origin_str = "";
-		if ($sect->{$suite}{$archive}{$versions[0]}) {
-		    $origin_str .= " ".marker($sect->{$suite}{$archive}{$versions[0]});
+		if ($sect->{$suite}{$versions[0]}) {
+		    $origin_str .= " ".marker($sect->{$suite}{$versions[0]});
 		}
 		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
-				 $path, $pkg, $path, $subsect->{$suite}{$archive}{$versions[0]},
-				 $desc->{$suite}{$archive}{$versions[0]}, $origin_str );
+				 $path, $pkg, $path, $subsect->{$suite}{$versions[0]},
+				 $desc->{$suite}{$versions[0]}, $origin_str );
 		
 		foreach my $v (@versions) {
 		    my $archive_str = "";
-		    if ($archives->{$suite}{$archive}{$v}) {
-			$archive_str .= " ".marker($archives->{$suite}{$archive}{$v});
+		    if ($archives->{$suite}{$v} ne 'us') {
+			$archive_str .= " ".marker($archives->{$suite}{$v});
 		    }
 		    
-		    my @archs_to_print = grep { !$archs_printed{$_} } sort keys %{$pkgs->{$suite}{$archive}{$v}};
+		    my @archs_to_print = grep { !$archs_printed{$_} } sort keys %{$pkgs->{$suite}{$v}};
 		    $str .= sprintf( "<br>%s$archive_str: %s\n",
 				     $v, join (" ", @archs_to_print ))
 			if @archs_to_print;
@@ -308,7 +298,6 @@ sub print_package {
 		$str .= _g( 'provided by: ' ).
 		    join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$p);
 	    }
-	}
     }
     $str .= "</ul>\n";
     return $str;
