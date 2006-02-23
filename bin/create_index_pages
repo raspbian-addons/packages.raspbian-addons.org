@@ -63,8 +63,8 @@ foreach my $s (@SUITES) {
 						       desc => encode_entities( $index_title, '"' ),
 						       lang => $lang ),
 	title( $index_title ), '<div id="lefthalfcol"><dl>';
-	my $i = 0; my $num_sections = keys %{$subsections->{$s}{'us'}};
-	foreach my $ssec ((keys %{$subsections->{$s}{'us'}}, 'virtual')) {
+	my $i = 0; my $num_sections = keys %{$subsections->{$s}};
+	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    if ($sections_descs{$ssec}) {
 		print {$pages{$key}{$lang}{index}{fh}} "<dt><a href=\"$ssec/\">".dgettext( 'sections', $sections_descs{$ssec}[0] )."</a></dt><dd>".dgettext( 'sections', $sections_descs{$ssec}[1] )."</dd>\n";
@@ -104,7 +104,7 @@ foreach my $s (@SUITES) {
 				     lang => 'en' ),
     title( $title ), '<dl>';
 
-    foreach my $sec (keys %{$sections->{$s}{'us'}}) {
+    foreach my $sec (keys %{$sections->{$s}}) {
 	mkpath ( "$wwwdir/$key/$sec" );
 	open $pages{$key}{$sec}{fh}, '>', "$wwwdir/$key/$sec/index.en.html.new"
 	    or die "can't open index file for output: $!";
@@ -116,7 +116,7 @@ foreach my $s (@SUITES) {
 					       lang => 'en' ),
 	title( $title ), '<dl>';
     }
-    foreach my $ssec ((keys %{$subsections->{$s}{'us'}}, 'virtual')) {
+    foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
 	next if $ssec eq '-';
 	mkpath ( "$wwwdir/$key/$ssec" );
 	open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
@@ -129,7 +129,7 @@ foreach my $s (@SUITES) {
 						lang => 'en' ),
 	title( $title ), '<dl>';
     }
-    foreach my $prio (keys %{$priorities->{$s}{'us'}}) {
+    foreach my $prio (keys %{$priorities->{$s}}) {
 	next if $prio eq '-';
 	mkpath ( "$wwwdir/$key/$prio" );
 	open $pages{$key}{$prio}{fh}, '>', "$wwwdir/$key/$prio/index.en.html.new"
@@ -203,8 +203,6 @@ while (my ($pkg, $data) = each %packages) {
 	print {$pages{$key}{$section}{fh}} $str
 	    or die "couldn't write to output file: $!";
 	if ($subsection ne '-') {
-	    print STDERR "pages{$key}{$subsection}{fh}\n"
-		unless $pages{$key}{$subsection}{fh};
 	    print {$pages{$key}{$subsection}{fh}} $str
 		or die "couldn't write to output file: $!";
 	}
@@ -230,7 +228,7 @@ foreach my $s (@SUITES) {
 	rename( "$wwwdir/$key/$sec/index.en.html.new",
 		"$wwwdir/$key/$sec/index.en.html" );
     }
-    foreach my $ssec ((keys %{$subsections->{$s}{'us'}}, 'virtual')) {
+    foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
 	next if $ssec eq '-';
 	print {$pages{$key}{$ssec}{fh}} '</dl>', trailer( "../../" );
 	close $pages{$key}{$ssec}{fh} or
@@ -238,7 +236,7 @@ foreach my $s (@SUITES) {
 	rename( "$wwwdir/$key/$ssec/index.en.html.new",
 		"$wwwdir/$key/$ssec/index.en.html" );
     }
-    foreach my $prio (keys %{$priorities->{$s}{'us'}}) {
+    foreach my $prio (keys %{$priorities->{$s}}) {
 	next if $prio eq '-';
 	print {$pages{$key}{$prio}{fh}} '</dl>', trailer( "../../" );
 	close $pages{$key}{$prio}{fh} or
