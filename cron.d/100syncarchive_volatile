@@ -14,17 +14,17 @@ do
     do
       for part in ${parts}
       do
-	echo retrieve Packages $dist/$part/volatile/$arch
-	test -d volatile/${dist}-volatile/${part}/binary-${arch} || mkdir -p volatile/${dist}-volatile/${part}/binary-${arch}
-	(cd  volatile/${dist}-volatile/${part}/binary-${arch} &&
+	echo retrieve Packages $dist-volatile/$part/$arch
+	test -d us/${dist}-volatile/${part}/binary-${arch} || mkdir -p us/${dist}-volatile/${part}/binary-${arch}
+	(cd  us/${dist}-volatile/${part}/binary-${arch} &&
 	    wget -q -N ${volatile_ftpsite}/dists/${dist}/volatile/${part}/binary-${arch}/Packages.gz)
       done
     done
     for part in ${parts}
     do
-        echo retrieve Sources $dist/$part/volatile
-        test -d volatile/${dist}-volatile/${part}/source || mkdir -p volatile/${dist}-volatile/${part}/source
-        (cd volatile/${dist}/${part}-volatile/source &&
+        echo retrieve Sources $dist-volatile/$part
+        test -d us/${dist}-volatile/${part}/source || mkdir -p us/${dist}-volatile/${part}/source
+        (cd us/${dist}-volatile/$part/source &&
             wget -q -N ${volatile_ftpsite}/dists/${dist}/volatile/${part}/source/Sources.gz)
     done
 done

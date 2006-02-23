@@ -14,12 +14,12 @@ for dist in unstable experimental
   for part in ${parts} main/debian-installer
     do
     echo retrieve Packages $dist/$part/$arch
-    test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
-    (cd us/${dist}/${part}/binary-${arch} &&
+    test -d kfreebsd/${dist}/${part}/binary-${arch} || mkdir -p kfreebsd/${dist}/${part}/binary-${arch}
+    (cd kfreebsd/${dist}/${part}/binary-${arch} &&
 	wget -q -N ${kfreebsd_ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
   done
   echo retrieve Contents $dist/$arch
-  (cd us/${dist} &&
+  (cd kfreebsd/${dist} &&
       wget -q -N ${kfreebsd_ftpsite}/dists/${dist}/Contents-${arch}.gz)
 done
 
