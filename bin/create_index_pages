@@ -46,125 +46,113 @@ my (%pages);
 
 print "write suite index files ...\n";
 foreach my $s (@SUITES) {
-    foreach my $a (@ARCHIVES) {
-	next if $a eq 'security';
-	next if $a eq 'non-US';
-	my $key = ($a eq 'us') ? $s : "$s/$a";
-	my $root = ($a eq 'us') ? '' : '../';
-	mkpath ( "$wwwdir/$key" );
-	foreach my $lang (@LANGUAGES) {
-	    my $locale = get_locale( $lang );
-	    setlocale ( LC_ALL, $locale ) or do {
-		warn "couldn't set locale ($lang/$locale)\n";
-		next;
-	    };
-	    open $pages{$key}{$lang}{index}{fh}, '>', "$wwwdir/$key/index.$lang.html.new"
-		or die "can't open index file for output: $!";
-	    my $index_title = sprintf( _g( "List of sections in \"%s\"" ),
-				       $key );
-	    print {$pages{$key}{$lang}{index}{fh}} header( title => $index_title,
-							   title_keywords => "debian, $s",
-							   desc => encode_entities( $index_title, '"' ),
-							   lang => $lang ),
-	    title( $index_title ), '<div id="lefthalfcol"><dl>';
-	    my $i = 0; my $num_sections = keys %{$subsections->{$s}{$a}};
-	    foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
-		next if $ssec eq '-';
-		if ($sections_descs{$ssec}) {
-		    print {$pages{$key}{$lang}{index}{fh}} "<dt><a href=\"$ssec/\">".dgettext( 'sections', $sections_descs{$ssec}[0] )."</a></dt><dd>".dgettext( 'sections', $sections_descs{$ssec}[1] )."</dd>\n";
-		    $i++;
-		    if ($i eq ceil($num_sections/2)) {
-			print {$pages{$key}{$lang}{index}{fh}} "</dl>\n</div> <!-- end lefthalfcol -->\n<div id=\"righthalfcol\">\n<dl>\n";
-		    }
+    my $key = $s;
+    mkpath ( "$wwwdir/$key" );
+    foreach my $lang (@LANGUAGES) {
+	my $locale = get_locale( $lang );
+	setlocale ( LC_ALL, $locale ) or do {
+	    warn "couldn't set locale ($lang/$locale)\n";
+	    next;
+	};
+	open $pages{$key}{$lang}{index}{fh}, '>', "$wwwdir/$key/index.$lang.html.new"
+	    or die "can't open index file for output: $!";
+	my $index_title = sprintf( _g( "List of sections in \"%s\"" ),
+				   $key );
+	print {$pages{$key}{$lang}{index}{fh}} header( title => $index_title,
+						       title_keywords => "debian, $s",
+						       desc => encode_entities( $index_title, '"' ),
+						       lang => $lang ),
+	title( $index_title ), '<div id="lefthalfcol"><dl>';
+	my $i = 0; my $num_sections = keys %{$subsections->{$s}{'us'}};
+	foreach my $ssec ((keys %{$subsections->{$s}{'us'}}, 'virtual')) {
+	    next if $ssec eq '-';
+	    if ($sections_descs{$ssec}) {
+		print {$pages{$key}{$lang}{index}{fh}} "<dt><a href=\"$ssec/\">".dgettext( 'sections', $sections_descs{$ssec}[0] )."</a></dt><dd>".dgettext( 'sections', $sections_descs{$ssec}[1] )."</dd>\n";
+		$i++;
+		if ($i eq ceil($num_sections/2)) {
+		    print {$pages{$key}{$lang}{index}{fh}} "</dl>\n</div> <!-- end lefthalfcol -->\n<div id=\"righthalfcol\">\n<dl>\n";
 		}
 	    }
-
-	    print {$pages{$key}{$lang}{index}{fh}} '</dl></div>',
-	    "<p class=\"psmallcenter\"><a href=\"allpackages\" title=\""._g( "List of all packages" )."\">".
-		_g( "All packages" ) ."</a><br>(<a href=\"allpackages.en.txt.gz\">".
-		_g( "compact compressed textlist" )."</a>)</p>\n";
-	    print {$pages{$key}{$lang}{index}{fh}} trailer( "$root../", 'index', $lang, @LANGUAGES );
-	    close $pages{$key}{$lang}{index}{fh} or
-		warn "can't close index file $wwwdir/$key/index.$lang.html.new: $!";
-	    rename( "$wwwdir/$key/index.$lang.html.new",
-		    "$wwwdir/$key/index.$lang.html" );
-
 	}
+	
+	print {$pages{$key}{$lang}{index}{fh}} '</dl></div>',
+	"<p class=\"psmallcenter\"><a href=\"allpackages\" title=\""._g( "List of all packages" )."\">".
+	    _g( "All packages" ) ."</a><br>(<a href=\"allpackages.en.txt.gz\">".
+	    _g( "compact compressed textlist" )."</a>)</p>\n";
+	print {$pages{$key}{$lang}{index}{fh}} trailer( "../", 'index', $lang, @LANGUAGES );
+	close $pages{$key}{$lang}{index}{fh} or
+	    warn "can't close index file $wwwdir/$key/index.$lang.html.new: $!";
+	rename( "$wwwdir/$key/index.$lang.html.new",
+		"$wwwdir/$key/index.$lang.html" );
+	
     }
 }
 setlocale( LC_ALL, 'C' ) or die "couldn't reset locale";
 
 print "opening files ...\n";
 foreach my $s (@SUITES) {
-    foreach my $a (@ARCHIVES) {
-	next if $a eq 'security';
-	next if $a eq 'non-US';
-	my $key = ($a eq 'us') ? $s : "$s/$a";
-	mkpath ( "$wwwdir/$key" );
-	open $pages{$key}{fh}, '>', "$wwwdir/$key/allpackages.en.html.new"
+    my $key = $s;
+    mkpath ( "$wwwdir/$key" );
+    open $pages{$key}{fh}, '>', "$wwwdir/$key/allpackages.en.html.new"
+	or die "can't open index file for output: $!";
+
+    my $title = sprintf( _g( "Software Packages in \"%s\"" ),
+			 $key );
+    print {$pages{$key}{fh}} header( title => $title,
+				     title_keywords => "debian, $s",
+				     desc => encode_entities( $title, '"' ),
+				     lang => 'en' ),
+    title( $title ), '<dl>';
+
+    foreach my $sec (keys %{$sections->{$s}{'us'}}) {
+	mkpath ( "$wwwdir/$key/$sec" );
+	open $pages{$key}{$sec}{fh}, '>', "$wwwdir/$key/$sec/index.en.html.new"
 	    or die "can't open index file for output: $!";
-
-	my $title = sprintf( _g( "Software Packages in \"%s\"" ),
-			     $key );
-	print {$pages{$key}{fh}} header( title => $title,
-					 title_keywords => "debian, $s",
-					 desc => encode_entities( $title, '"' ),
-					 lang => 'en' ),
+	$title = sprintf( _g( "Software Packages in \"%s\", section %s" ),
+			  $key, $sec );
+	print {$pages{$key}{$sec}{fh}} header( title => $title,
+					       title_keywords => "debian, $s, $sec",
+					       desc => encode_entities( $title, '"' ),
+					       lang => 'en' ),
 	title( $title ), '<dl>';
-
-	foreach my $sec (keys %{$sections->{$s}{$a}}) {
-	    mkpath ( "$wwwdir/$key/$sec" );
-	    open $pages{$key}{$sec}{fh}, '>', "$wwwdir/$key/$sec/index.en.html.new"
-		or die "can't open index file for output: $!";
-	    $title = sprintf( _g( "Software Packages in \"%s\", section %s" ),
-			      $key, $sec );
-	    print {$pages{$key}{$sec}{fh}} header( title => $title,
-						   title_keywords => "debian, $s, $sec",
-						   desc => encode_entities( $title, '"' ),
-						   lang => 'en' ),
-	    title( $title ), '<dl>';
-	}
-	foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
-	    next if $ssec eq '-';
-	    mkpath ( "$wwwdir/$key/$ssec" );
-	    open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
-		or die "can't open index file for output: $!";
-	    $title = sprintf( _g( "Software Packages in \"%s\", subsection %s" ),
-			      $key, $ssec );
-	    print {$pages{$key}{$ssec}{fh}} header( title => $title,
-						    title_keywords => "debian, $s, $ssec",
-						    desc => encode_entities( $title, '"' ),
-						    lang => 'en' ),
-	    title( $title ), '<dl>';
-	}
-	foreach my $prio (keys %{$priorities->{$s}{$a}}) {
-	    next if $prio eq '-';
-	    mkpath ( "$wwwdir/$key/$prio" );
-	    open $pages{$key}{$prio}{fh}, '>', "$wwwdir/$key/$prio/index.en.html.new"
-		or die "can't open index file for output: $!";
-	    $title = sprintf( _g( "Software Packages in \"%s\", priority %s" ),
-			      $key, $prio );
-	    print {$pages{$key}{$prio}{fh}} header( title => $title,
-						    title_keywords => "debian, $s, $prio",
-						    desc => encode_entities( $title, '"' ),
-						    lang => 'en' ),
-	    title( $title ), '<dl>';
-	}
+    }
+    foreach my $ssec ((keys %{$subsections->{$s}{'us'}}, 'virtual')) {
+	next if $ssec eq '-';
+	mkpath ( "$wwwdir/$key/$ssec" );
+	open $pages{$key}{$ssec}{fh}, '>', "$wwwdir/$key/$ssec/index.en.html.new"
+	    or die "can't open index file for output: $!";
+	$title = sprintf( _g( "Software Packages in \"%s\", subsection %s" ),
+			  $key, $ssec );
+	print {$pages{$key}{$ssec}{fh}} header( title => $title,
+						title_keywords => "debian, $s, $ssec",
+						desc => encode_entities( $title, '"' ),
+						lang => 'en' ),
+	title( $title ), '<dl>';
+    }
+    foreach my $prio (keys %{$priorities->{$s}{'us'}}) {
+	next if $prio eq '-';
+	mkpath ( "$wwwdir/$key/$prio" );
+	open $pages{$key}{$prio}{fh}, '>', "$wwwdir/$key/$prio/index.en.html.new"
+	    or die "can't open index file for output: $!";
+	$title = sprintf( _g( "Software Packages in \"%s\", priority %s" ),
+			  $key, $prio );
+	print {$pages{$key}{$prio}{fh}} header( title => $title,
+						title_keywords => "debian, $s, $prio",
+						desc => encode_entities( $title, '"' ),
+						lang => 'en' ),
+	title( $title ), '<dl>';
     }
 }
 
 print "writing package info ...\n";
 while (my ($pkg, $data) = each %packages) {
-    my %pkg;
-    foreach (split /\000/o, $data) {
+    my (%pkg,%virt);
+    my ($virt, $p_data) = split /\000/o, $data, 2;
+    %virt = split /\01/o, $virt; 
+    foreach (split /\000/o, $p_data) {
 	my @data = split ( /\s/o, $_, 8 );
-	my $key = $data[1];
-	if ($data[0] !~ /^(?:us|security|non-US)$/o) {
-	    $key = "$data[1]/$data[0]";
-	}
-	$pkg{$key} ||= new Packages::Page( $pkg );
-	if ($data[2] ne 'virtual') {
-	    $pkg{$key}->merge_package( { package => $pkg,
+	$pkg{$data[1]} ||= new Packages::Page( $pkg );
+	$pkg{$data[1]}->merge_package( { package => $pkg,
 					 archive => $data[0],
 					 suite => $data[1],
 					 architecture => $data[2],
@@ -173,10 +161,13 @@ while (my ($pkg, $data) = each %packages) {
 					 priority => $data[5],
 					 version => $data[6],
 					 description => $data[7] } );
-	} else {
-	    $pkg{$key}->add_provided_by([split /\s+/, $data[7]]);
-	}
     }
+    foreach (keys %virt) {
+	next if $_ eq '-';
+	$pkg{$_} ||= new Packages::Page( $pkg );
+	$pkg{$_}->add_provided_by([split /\s+/, $virt{$_}]);
+    }
+    
     while (my ($key, $entry) = each %pkg) {
 	if (my $provided_by = $entry->{provided_by}) {
 	    my $str = "<dt><a href=\"$pkg\">$pkg</a> ".
@@ -194,7 +185,7 @@ while (my ($pkg, $data) = each %packages) {
 	my $short_desc_txt = $entry->get_newest( 'description' );
 	my $short_desc = encode_entities( $short_desc_txt, "<>&\"" );
 	my $priority = $entry->get_newest( 'priority' );
-
+	
 	my $str = "<dt><a href=\"$pkg\">$pkg</a> ($v_str) ";
 	my $txt_str = "$pkg ($v_str)";
 	if ($section ne 'main') {
@@ -206,12 +197,14 @@ while (my ($pkg, $data) = each %packages) {
 	    $txt_str .= " [$archive]";
 	}
 	$str .= "</dt>\n     <dd>$short_desc</dd>\n";
-        $txt_str .= " $short_desc_txt\n";
+	$txt_str .= " $short_desc_txt\n";
 	print {$pages{$key}{fh}} $str
 	    or die "couldn't write to output file: $!";
 	print {$pages{$key}{$section}{fh}} $str
 	    or die "couldn't write to output file: $!";
 	if ($subsection ne '-') {
+	    print STDERR "pages{$key}{$subsection}{fh}\n"
+		unless $pages{$key}{$subsection}{fh};
 	    print {$pages{$key}{$subsection}{fh}} $str
 		or die "couldn't write to output file: $!";
 	}
@@ -224,38 +217,33 @@ while (my ($pkg, $data) = each %packages) {
 
 print "closing files ...\n";
 foreach my $s (@SUITES) {
-    foreach my $a (@ARCHIVES) {
-	next if $a eq 'security';
-	next if $a eq 'non-US';
-	my $key = ($a eq 'us') ? $s : "$s/$a";
-	my $root = ($a eq 'us') ? '' : '../';
-	print {$pages{$key}{fh}} '</dl>', trailer( "$root../" );
-	close $pages{$key}{fh} or
-	    warn "can't close index file $wwwdir/$key/allpackages.en.html.new: $!";
-	rename( "$wwwdir/$key/allpackages.en.html.new",
-		"$wwwdir/$key/allpackages.en.html" );
-	foreach my $sec (keys %{$sections->{$s}{$a}}) {
-	    print {$pages{$key}{$sec}{fh}} '</dl>', trailer( "$root../../" );
-	    close $pages{$key}{$sec}{fh} or
-		warn "can't close index file $wwwdir/$key/$sec/index.en.html.new: $!";
-	    rename( "$wwwdir/$key/$sec/index.en.html.new",
-		    "$wwwdir/$key/$sec/index.en.html" );
-	}
-	foreach my $ssec ((keys %{$subsections->{$s}{$a}}, 'virtual')) {
-	    next if $ssec eq '-';
-	    print {$pages{$key}{$ssec}{fh}} '</dl>', trailer( "$root../../" );
-	    close $pages{$key}{$ssec}{fh} or
-		warn "can't close index file $wwwdir/$key/$ssec/index.en.html.new: $!";
-	    rename( "$wwwdir/$key/$ssec/index.en.html.new",
-		    "$wwwdir/$key/$ssec/index.en.html" );
-	}
-	foreach my $prio (keys %{$priorities->{$s}{$a}}) {
-	    next if $prio eq '-';
-	    print {$pages{$key}{$prio}{fh}} '</dl>', trailer( "$root../../" );
-	    close $pages{$key}{$prio}{fh} or
-		warn "can't close index file $wwwdir/$key/$prio/index.en.html.new: $!";
-	    rename( "$wwwdir/$key/$prio/index.en.html.new",
-		    "$wwwdir/$key/$prio/index.en.html" );
-	}
+    my $key = $s;
+    print {$pages{$key}{fh}} '</dl>', trailer( "../" );
+    close $pages{$key}{fh} or
+	warn "can't close index file $wwwdir/$key/allpackages.en.html.new: $!";
+    rename( "$wwwdir/$key/allpackages.en.html.new",
+	    "$wwwdir/$key/allpackages.en.html" );
+    foreach my $sec (keys %{$sections->{$s}{'us'}}) {
+	print {$pages{$key}{$sec}{fh}} '</dl>', trailer( "../../" );
+	close $pages{$key}{$sec}{fh} or
+	    warn "can't close index file $wwwdir/$key/$sec/index.en.html.new: $!";
+	rename( "$wwwdir/$key/$sec/index.en.html.new",
+		"$wwwdir/$key/$sec/index.en.html" );
+    }
+    foreach my $ssec ((keys %{$subsections->{$s}{'us'}}, 'virtual')) {
+	next if $ssec eq '-';
+	print {$pages{$key}{$ssec}{fh}} '</dl>', trailer( "../../" );
+	close $pages{$key}{$ssec}{fh} or
+	    warn "can't close index file $wwwdir/$key/$ssec/index.en.html.new: $!";
+	rename( "$wwwdir/$key/$ssec/index.en.html.new",
+		"$wwwdir/$key/$ssec/index.en.html" );
+    }
+    foreach my $prio (keys %{$priorities->{$s}{'us'}}) {
+	next if $prio eq '-';
+	print {$pages{$key}{$prio}{fh}} '</dl>', trailer( "../../" );
+	close $pages{$key}{$prio}{fh} or
+	    warn "can't close index file $wwwdir/$key/$prio/index.en.html.new: $!";
+	rename( "$wwwdir/$key/$prio/index.en.html.new",
+		"$wwwdir/$key/$prio/index.en.html" );
     }
 }

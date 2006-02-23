@@ -20,6 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 use strict;
+use warnings;
 use lib './lib';
 
 $| = 1;
@@ -52,6 +53,7 @@ $/ = "";
 for my $archive (@ARCHIVES) {
     for my $suite (@SUITES) {
 
+	my %package_names_suite = ();
 	print "Reading $archive/$suite...\n";
 	my %packages_all_db;
 	tie %packages_all_db, "DB_File", "$DBDIR/packages_all_$suite.db.new",
@@ -79,6 +81,7 @@ for my $archive (@ARCHIVES) {
 		    }
 		}
 		$package_names{$data{'package'}} = 1;
+		$package_names_suite{$data{'package'}} = 1;
 		my $src = $data{'package'};
 		my $src_version = '';
 		if ($data{'source'}) {
@@ -138,6 +141,13 @@ for my $archive (@ARCHIVES) {
 		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
 			= $data;
 	}
+
+	open NAMES, '>>', "$DBDIR/package_names_$suite.txt.new"
+	    or die "Error creating package names list: $!";
+	foreach (sort keys %package_names_suite) {
+	    print NAMES "$_\n";
+	}
+	close NAMES;
 
 	untie %packages_all_db;
     }
@@ -256,6 +266,8 @@ rename("$DBDIR/sources_packages.db.new", "$DBDIR/sources_packages.db");
 for my $suite (@SUITES) {
 	rename("$DBDIR/packages_all_$suite.db.new",
 	       "$DBDIR/packages_all_$suite.db");
+	rename("$DBDIR/package_names_$suite.txt.new",
+	       "$DBDIR/package_names_$suite.txt");
 }
 rename("$DBDIR/packages_descriptions.db.new",
        "$DBDIR/packages_descriptions.db");

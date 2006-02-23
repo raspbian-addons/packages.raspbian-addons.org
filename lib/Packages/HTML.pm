@@ -238,6 +238,18 @@ sub dep_item {
     return "$link$name$post_link$info$desc";
 } # end dep_item
 
+sub provides_string {
+    my ($path, $entry) = @_;
+    my @provided_by = split /\s/, $entry;
+    my $short_desc = "virtual package provided by ";
+    if (@provided_by < 10) {
+	$short_desc .= join( ', ',map { "<a href=\"$path/$_\">$_</a>" } @provided_by);
+    } else {
+	$short_desc .= scalar(@provided_by)." packages";
+    }
+    return $short_desc;
+}
+
 sub print_deps {
     my ( $packages, $opts, $pkg, $relations, $type) = @_;
     my %dep_type = ('depends' => 'dep', 'recommends' => 'rec', 
@@ -294,20 +306,17 @@ sub print_deps {
 		if ( $is_old_pkgs ) {
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
-		} elsif (defined $entry->[0]) {
-# FIXME: can be both virtual package (defined $entry->[0]) and real one
-		    my @provided_by = split /\s/, $entry->[0];
-		    $short_desc = "virtual package provided by ";
-		    if (@provided_by < 10) {
-			$short_desc .= join( ', ',map { "<a href=\"$ROOT/$path/$_\">$_</a>" } @provided_by);
-		    } else {
-			$short_desc .= scalar(@provided_by)." packages";
-		    }
-		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
-					      $p_name, "$pkg_version$arch_str", $short_desc );
-		} else {
+		} elsif (defined $entry->[1]) {
 		    $entries{$p_name} ||= $entry;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
+		    $short_desc .= "<br>".provides_string( "$ROOT/$path",
+							   $entry->[0] )
+			if defined $entry->[0];
+		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
+					      $p_name, "$pkg_version$arch_str", $short_desc );
+		} elsif (defined $entry->[0]) {
+		    $short_desc = provides_string( "$ROOT/$path",
+						   $entry->[0] );
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}

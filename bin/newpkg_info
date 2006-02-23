@@ -1,0 +1,66 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use lib './lib';
+
+use Packages::Config qw( $TOPDIR );
+use Packages::DB;
+use Packages::Search qw( :all );
+&Packages::Config::init( './' );
+
+my $suite = $ARGV[0] or die "No suite given";
+my $start_time = time;
+
+sub get_iso_date {
+    my ($age) = @_;
+
+    my ($day, $month, $year) = (gmtime($start_time - ($age*86_400)))[3..5];
+    $month++;
+    $year += 1900;
+    return sprintf( "%04s-%02s-%02s", $year, $month, $day );
+}
+
+open CHANGES, '>', "$TOPDIR/files/packages/newpkg_info.new"
+    or die "Couldn't open CHANGES file: $!";
+for (my $age = 0; $age < 7; $age++) {
+    my (%old, %changes);
+    my $newday = get_iso_date( $age );
+    my $oldday = get_iso_date( $age+1 );
+    open OLD, '<', "$TOPDIR/files/packages/package_names_$suite.$oldday"
+	or die "Couldn't open OLD file $TOPDIR/files/packages/package_names_$suite.$oldday: $!";
+    while (<OLD>) {
+	chomp;
+	$old{$_} = 1;
+    }
+    close OLD;
+    open NEW, '<', "$TOPDIR/files/packages/package_names_$suite.$newday"
+	or die "Couldn't open NEW file $TOPDIR/files/packages/package_names_$suite.$newday: $!";
+    while (<NEW>) {
+	chomp;
+	if ($old{$_}) {
+	    # we assume here that the input contains no dupes!
+	    delete $old{$_};
+	} else {
+	    $changes{$_} = 1;
+	}
+    }
+    close NEW;
+    foreach (keys %old) {
+	$changes{$_} = -1;
+    }
+
+    my %archives = map { $_ => 1 } qw( us security non-US );
+    foreach (sort keys %changes) {
+	my $entry = read_entry_simple( \%packages, $_, \%archives, $suite)
+	    or die "Can't find entry for package $_";
+	shift @$entry; # remove virtual pkg info
+	print CHANGES join(" ", $_, $age, @$entry)."\n";
+	print "Wrote entry: ".join(" ", $_, $age, @$entry)."\n";
+    }
+}
+closes CHANGES;
+
+rename("$TOPDIR/files/packages/newpkg_info.new",
+       "$TOPDIR/files/packages/newpkg_info");

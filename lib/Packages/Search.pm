@@ -380,9 +380,9 @@ sub read_entry_simple {
     my %virt = split /\01/o, $virt; 
     debug( "read_entry_simple: key=$key, archives=".
 	   join(" ",(keys %$archives)).", suite=$suite", 1) if DEBUG;
-    # FIXME: magically encoded a max of 7 suites here by the '8'
-    foreach (split /\000/o, $result, 8) {
+    foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
+	debug( "use entry: @data", 2 ) if DEBUG && $data[1] eq $suite;
 	return [ $virt{$suite}, @data ] if $data[1] eq $suite;
     }
     return [ $virt{$suite} ];
