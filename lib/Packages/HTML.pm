@@ -258,7 +258,6 @@ sub print_deps {
     my $res = "<ul class=\"ul$dep_type{$type}\">\n";
     my $first = 1;
     my $suite = $opts->{suite}[0];
-    my $one_archive = @{$opts->{archive}} > 1 ? '': $opts->{archive}[0];
 
 #    use Data::Dumper;
 #    debug( "print_deps called:\n".Dumper( $pkg, $relations, \$type ), 3 ) if DEBUG;
@@ -301,8 +300,7 @@ sub print_deps {
 	    my $arch = $entry->[3];
 	    my $archive = $entry->[1];
 	    if ( $short_desc ) {
-		my $path = $one_archive eq $archive ? "$suite/$archive" :
-		    $suite;
+		my $path = $suite;
 		if ( $is_old_pkgs ) {
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str" );

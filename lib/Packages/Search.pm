@@ -380,6 +380,7 @@ sub read_entry_simple {
     my %virt = split /\01/o, $virt; 
     debug( "read_entry_simple: key=$key, archives=".
 	   join(" ",(keys %$archives)).", suite=$suite", 1) if DEBUG;
+    return [ $virt{$suite} ] unless defined $result;
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "use entry: @data", 2 ) if DEBUG && $data[1] eq $suite;
