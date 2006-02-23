@@ -49,6 +49,11 @@ General:
   obscure, but otoh, for typo fixing more appropriate.
   Maybe best of both worlds is 'modify search' below results, where you can
   generalize/specificy arch, etc etc?
+- In Search.pm, make sure read_entry_small only scans a bit, and not all --
+  once you have #max_nr_of_suites, you know you won't find the queried suite
+  anymore, so search further is futile. Maybe the backend could even add a
+  marker, ignored by read_entry_all, but understood by read_entry_small, that
+  indicates end of $res2 and start of $res3
 
 
 Bugs:
