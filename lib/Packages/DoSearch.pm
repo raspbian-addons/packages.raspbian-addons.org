@@ -86,19 +86,24 @@ sub do_search {
     my $std = timediff($st1, $st0);
     debug( "Search took ".timestr($std) ) if DEBUG;
     
-    my $suite_wording = $suites_enc eq "all" ? "all suites"
-	: "suite(s) <em>$suites_enc</em>";
-    my $section_wording = $sections_enc eq 'all' ? "all sections"
-	: "section(s) <em>$sections_enc</em>";
-    my $arch_wording = $archs_enc eq 'any' ? "all architectures"
-	: "architecture(s) <em>$archs_enc</em>";
+    my $suite_wording = $suites_enc eq "all" ? _g("all suites")
+	: sprintf(_g("suite(s) <em>%s</em>", $suites_enc) );
+    my $section_wording = $sections_enc eq 'all' ? _g("all sections")
+	: sprintf(_g("section(s) <em>%s</em>", $sections_enc) );
+    my $arch_wording = $archs_enc eq 'any' ? _g("all architectures")
+	: sprintf(_g("architecture(s) <em>%s</em>", $archs_enc) );
     if ($searchon eq "names") {
-	my $source_wording = $opts->{source} ? "source " : "";
-	my $exact_wording = $opts->{exact} ? "named" : "that names contain";
-	msg( "You have searched for ${source_wording}packages $exact_wording <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording." );
+	my $source_wording = $opts->{source} ? _g("source packages") : _g("packages");
+	# sorry to all translators for that one... (patches welcome)
+	msg( sprintf( _g( "You have searched for %s that names contain <em>%</em> in %s, %s, and %s." ),
+		      $source_wording, $keyword_enc,
+		      $suite_wording, $section_wording, $arch_wording ) );
     } else {
-	my $exact_wording = $opts->{exact} ? "" : " (including subword matching)";
-	msg( "You have searched for <em>$keyword_enc</em> in packages names and descriptions in $suite_wording, $section_wording, and $arch_wording$exact_wording." );
+	my $exact_wording = $opts->{exact} ? "" : _g(" (including subword matching)");
+	msg( sprintf( _g( "You have searched for <em>%s</em> in packages names and descriptions in %s, %s, and %s%s." ),
+		      $keyword_enc,
+		      $suite_wording, $section_wording, $arch_wording,
+		      $exact_wording ) );
     }
 
     if ($Packages::Search::too_many_hits) {

@@ -102,15 +102,17 @@ sub do_search_contents {
 	debug( "Search took ".timestr($std) ) if DEBUG;
     }
     
-    my $suite_wording = $suites_enc eq "all" ? "all suites"
-	: "suite(s) <em>$suites_enc</em>";
-    my $section_wording = $sections_enc eq 'all' ? "all sections"
-	: "section(s) <em>$sections_enc</em>";
-    my $arch_wording = $archs_enc eq 'any' ? "all architectures"
-	: "architecture(s) <em>$archs_enc</em>";
-    my $wording = $opts->{exact} ? "exact filenames" : "filenames that contain";
-    $wording = "paths that end with" if $searchon eq "contents";
-    msg( "You have searched for ${wording} <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording." );
+    my $suite_wording = $suites_enc eq "all" ? _g("all suites")
+	: sprintf(_g("suite(s) <em>%s</em>", $suites_enc) );
+    my $section_wording = $sections_enc eq 'all' ? _g("all sections")
+	: sprintf(_g("section(s) <em>%s</em>", $sections_enc) );
+    my $arch_wording = $archs_enc eq 'any' ? _g("all architectures")
+	: sprintf(_g("architecture(s) <em>%s</em>", $archs_enc) );
+    my $wording = $opts->{exact} ? _g("exact filenames") : _g("filenames that contain");
+    $wording = _g("paths that end with") if $searchon eq "contents";
+    msg( sprintf( _g("You have searched for %s <em>%s</em> in %s, %s, and %s." ),
+		  $wording, $keyword_enc,
+		  $suite_wording, $section_wording, $arch_wording ) );
 
     if ($Packages::Search::too_many_hits) {
 	error( _g( "Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords." ) );

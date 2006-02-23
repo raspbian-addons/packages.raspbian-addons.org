@@ -283,20 +283,13 @@ sub do_download {
 
 	    $$page_content .= print_links( _g( "North America" ), $file, @amd64_north_american_sites );
 	    $$page_content .= print_links( _g( "Europe" ), $file, @amd64_european_sites );
-#    $$page_content .= print_links( "Australia and New Zealand", $file,
-#		 @nonus_australian_sites );
 	    $$page_content .= print_links( _g( "Asia" ), $file, @amd64_asian_sites );
-#    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 
 	    $$page_content .= '<p>'._g( 'Note that AMD64 is not officialy included in the Debian archive yet, but the AMD64 porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/amd64/">AMD64 ports page</a> for current information.' ).'</p>';
 	} elsif ($arch eq 'kfreebsd-i386') {
 
 	    $$page_content .= print_links( _g( "North America" ), $file, @kfreebsd_north_american_sites );
 	    $$page_content .= print_links( _g( "Europe" ), $file, @kfreebsd_european_sites );
-#    $$page_content .= print_links( "Australia and New Zealand", $file,
-#		 @nonus_australian_sites );
-#    $$page_content .= print_links( "Asia", $file, @amd64_asian_sites );
-#    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 	
 	    $$page_content .= '<p>'._g( 'Note that GNU/kFreeBSD is not officialy included in the Debian archive yet, but the GNU/kFreeBSD porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/kfreebsd-gnu/">GNU/kFreeBSD ports page</a> for current information.' ).'</p>';
 	} elsif ($archive eq 'non-US') {
@@ -311,25 +304,18 @@ sub do_download {
 	    $$page_content .= '<p>'.sprintf( _g('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://www.debian.org/mirror/list-non-US' ).'</p>';
 	} elsif ($archive eq 'backports') {
 	
-#    $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
 	    $$page_content .= '<div class="cardleft">';
 	    $$page_content .= print_links( _g( "Europe" ), $file, @backports_european_sites );
 	    $$page_content .= '</div><div class="cardright">';
 	    $$page_content .= print_links( _g( "Australia and New Zealand" ), $file,
 					   @backports_australian_sites );
 	    $$page_content .= print_links( _g( "Asia" ), $file, @backports_asian_sites );
-#    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 	    $$page_content .= '</div>';
 	    
 	    $$page_content .= '<p style="clear:both">'.sprintf( _g( 'If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.'), 'http://www.backports.org/debian/README.mirrors.html' ).'</p>';
 	} elsif ($archive eq 'volatile') {
 	    
-#    $$page_content .= print_links( "North America", $file, @nonus_north_american_sites );
 	    $$page_content .= print_links( _g( "Europe" ), $file, @volatile_european_sites );
-#    $$page_content .= print_links( "Australia and New Zealand", $file,
-#		 @nonus_australian_sites );
-#    $$page_content .= print_links( "Asia", $file, @nonus_asian_sites );
-#    $$page_content .= print_links( "South America", $file, @nonus_south_american_sites );
 
 	    $$page_content .= '<p>'.sprintf( _g( 'If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://volatile.debian.net/mirrors.html' ).'</p>';
 	} elsif ($archive eq 'us') {
