@@ -143,7 +143,7 @@ for my $suite (@SUITES) {
 	}
     }
 
-    open NAMES, '>>', "$DBDIR/package_names_$suite.txt.new"
+    open NAMES, '>', "$DBDIR/package_names_$suite.txt.new"
 	or die "Error creating package names list: $!";
     foreach (sort keys %package_names_suite) {
 	print NAMES "$_\n";
