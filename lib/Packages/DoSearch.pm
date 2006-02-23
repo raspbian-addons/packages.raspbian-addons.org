@@ -180,7 +180,8 @@ sub do_search {
 		}
 	    }
 
-	    my @pkgs = sort(keys %pkgs, keys %provided_by);
+	    my %uniq_pkgs = map { $_ => 1 } (keys %pkgs, keys %provided_by);
+	    my @pkgs = sort keys %uniq_pkgs;
 	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, $keyword,
 					      \&print_package, \%provided_by,
 					      \%archives, \%sect, \%subsect,
