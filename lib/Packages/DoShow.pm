@@ -153,6 +153,10 @@ sub do_show {
 						 _g( "All packages in this section" ),
 						 "$ROOT/$suite/$subsection/",
 						 $subsection ],
+					       [ _g( "Source:" ),
+						 _g( "Source package building this package" ),
+						 "$ROOT/$suite/source/".$page->get_src('package'),
+						 $page->get_src('package') ],
 					       );
 
 			my $v_str = $version;
