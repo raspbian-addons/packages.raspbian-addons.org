@@ -95,7 +95,7 @@ sub do_search {
     if ($searchon eq "names") {
 	my $source_wording = $opts->{source} ? _g("source packages") : _g("packages");
 	# sorry to all translators for that one... (patches welcome)
-	msg( sprintf( _g( "You have searched for %s that names contain <em>%</em> in %s, %s, and %s." ),
+	msg( sprintf( _g( "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s." ),
 		      $source_wording, $keyword_enc,
 		      $suite_wording, $section_wording, $arch_wording ) );
     } else {

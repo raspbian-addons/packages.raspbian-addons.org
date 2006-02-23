@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-23 01:12+0100\n"
+"POT-Creation-Date: 2006-02-23 01:18+0100\n"
 "PO-Revision-Date: 2005-11-02 14:08+0200\n"
 "Last-Translator: Eugeniy Meshcheryakov <eugen@univ.kiev.ua>\n"
 "Language-Team: Ukrainian\n"
@@ -300,8 +300,9 @@ msgstr "Джерельний пакунок"
 
 #. sorry to all translators for that one... (patches welcome)
 #: lib/Packages/DoSearch.pm:98
+#, perl-format
 msgid ""
-"You have searched for %s that names contain <em>%</em> in %s, %s, and %s."
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
 #: lib/Packages/DoSearch.pm:102
@@ -894,95 +895,11 @@ msgstr "Як встановити <a href=\"%s\">мову документа з�
 msgid "package has bad maintainer field"
 msgstr ""
 
-#~ msgid ""
-#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
-#~ "contains software that is likely unstable or buggy and may even cause "
-#~ "data loss. If you ignore this warning and install it nevertheless, you do "
-#~ "it on your own risk."
-#~ msgstr ""
-#~ "Увага: „<span class=\"pred\">Експериментальний</span>“ містить програмне "
-#~ "забезпечення, яке напевне є нестабільним або містить помилки і навіть "
-#~ "може спричинити втрату даних. Якщо ви проігноруєте це попередження і "
-#~ "встановите його, то робіть це на ваш ризик."
+#~ msgid "Versions:"
+#~ msgstr "Версії:"
 
-#~ msgid "New Packages in \"%s\""
-#~ msgstr "Нові пакунки в дистрибутиві „%s“"
-
-#~ msgid ""
-#~ "The following packages were added to the unstable Debian archive during "
-#~ "the last 7 days."
-#~ msgstr ""
-#~ "Наступні пакунки було додано до нестабільного архіву Debian протягом "
-#~ "останніх семи днів."
-
-#~ msgid ""
-#~ "This information is also available as an <a href=\"newpkg_%s.%s.rdf\">RSS "
-#~ "feed</a>."
-#~ msgstr ""
-#~ "Ця інформація також доступна як <a href=\"newpkg_%s.%s.rdf\">лента RSS</"
-#~ "a>."
-
-#~ msgid ""
-#~ "Packages that were added to the unstable Debian archive during the last 7 "
-#~ "days."
-#~ msgstr ""
-#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
-#~ "7 днів."
-
-#~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Наступні пакунки було додано до компоненту „%s“ впродовж останніх 7 днів."
-
-#~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Пакунки які було додано до компоненту „%s“ впродовж останніх 7 днів."
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Користувачам експериментальних пакунків у випадку виникнення проблем "
-#~ "рекомендується зв'язуватись зі супроводжуючими пакунків напряму."
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "Розмір даний в кілобайтах."
-
-#~ msgid "Maintainer"
-#~ msgstr "Супроводжуючий"
-
-#~ msgid "Uploaders"
-#~ msgstr "Завантажувачі"
-
-#~ msgid "Priority"
-#~ msgstr "Приоритет"
-
-#~ msgid "Essential"
-#~ msgstr "Необхідний"
-
-#~ msgid "yes"
-#~ msgstr "так"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Увага: Ці пакунки призначені для використання тільки при побудові образів "
-#~ "<a href=\"http://www.debian.org/devel/debian-installer/\">встановлювача "
-#~ "Debian</a>. Не встановлюйте їх на нормальній системі Debian."
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Немає пакунків з цим пріоритетом в цьому розділі"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Пакунки в дистрибутиві „%s“, необхідні пакунки"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Немає необхідних пакунків в цьому дистрибутиві"
+#~ msgid "Virtual package"
+#~ msgstr "Віртуальний пакунок"
 
 #~ msgid ""
 #~ "Copyright (C) 1997-2005 SPI;\n"
@@ -993,8 +910,92 @@ msgstr ""
 #~ "Перегляньте <URL:http://www.debian.org/license> щодо умов ліцензії.\n"
 #~ "\n"
 
-#~ msgid "Virtual package"
-#~ msgstr "Віртуальний пакунок"
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Немає необхідних пакунків в цьому дистрибутиві"
 
-#~ msgid "Versions:"
-#~ msgstr "Версії:"
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Пакунки в дистрибутиві „%s“, необхідні пакунки"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Немає пакунків з цим пріоритетом в цьому розділі"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Увага: Ці пакунки призначені для використання тільки при побудові образів "
+#~ "<a href=\"http://www.debian.org/devel/debian-installer/\">встановлювача "
+#~ "Debian</a>. Не встановлюйте їх на нормальній системі Debian."
+
+#~ msgid "yes"
+#~ msgstr "так"
+
+#~ msgid "Essential"
+#~ msgstr "Необхідний"
+
+#~ msgid "Priority"
+#~ msgstr "Приоритет"
+
+#~ msgid "Uploaders"
+#~ msgstr "Завантажувачі"
+
+#~ msgid "Maintainer"
+#~ msgstr "Супроводжуючий"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Розмір даний в кілобайтах."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Користувачам експериментальних пакунків у випадку виникнення проблем "
+#~ "рекомендується зв'язуватись зі супроводжуючими пакунків напряму."
+
+#~ msgid ""
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Пакунки які було додано до компоненту „%s“ впродовж останніх 7 днів."
+
+#~ msgid ""
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Наступні пакунки було додано до компоненту „%s“ впродовж останніх 7 днів."
+
+#~ msgid ""
+#~ "Packages that were added to the unstable Debian archive during the last 7 "
+#~ "days."
+#~ msgstr ""
+#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
+#~ "7 днів."
+
+#~ msgid ""
+#~ "This information is also available as an <a href=\"newpkg_%s.%s.rdf\">RSS "
+#~ "feed</a>."
+#~ msgstr ""
+#~ "Ця інформація також доступна як <a href=\"newpkg_%s.%s.rdf\">лента RSS</"
+#~ "a>."
+
+#~ msgid ""
+#~ "The following packages were added to the unstable Debian archive during "
+#~ "the last 7 days."
+#~ msgstr ""
+#~ "Наступні пакунки було додано до нестабільного архіву Debian протягом "
+#~ "останніх семи днів."
+
+#~ msgid "New Packages in \"%s\""
+#~ msgstr "Нові пакунки в дистрибутиві „%s“"
+
+#~ msgid ""
+#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
+#~ "contains software that is likely unstable or buggy and may even cause "
+#~ "data loss. If you ignore this warning and install it nevertheless, you do "
+#~ "it on your own risk."
+#~ msgstr ""
+#~ "Увага: „<span class=\"pred\">Експериментальний</span>“ містить програмне "
+#~ "забезпечення, яке напевне є нестабільним або містить помилки і навіть "
+#~ "може спричинити втрату даних. Якщо ви проігноруєте це попередження і "
+#~ "встановите його, то робіть це на ваш ризик."

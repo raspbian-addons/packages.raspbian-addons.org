@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-23 01:12+0100\n"
+"POT-Creation-Date: 2006-02-23 01:18+0100\n"
 "PO-Revision-Date: 2005-01-03 00:19+0100\n"
 "Last-Translator: Bas Zoetekouw <bas@debian.org>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -298,8 +298,9 @@ msgstr "Bronpakket"
 
 #. sorry to all translators for that one... (patches welcome)
 #: lib/Packages/DoSearch.pm:98
+#, perl-format
 msgid ""
-"You have searched for %s that names contain <em>%</em> in %s, %s, and %s."
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
 #: lib/Packages/DoSearch.pm:102
@@ -893,8 +894,88 @@ msgstr "Hoe u de <a href=\"%s\">standaard taal kunt instellen</a></p>"
 msgid "package has bad maintainer field"
 msgstr ""
 
-#~ msgid "Size:"
-#~ msgstr "Grootte:"
+#~ msgid "Versions:"
+#~ msgstr "Versies:"
+
+#~ msgid "Virtual package"
+#~ msgstr "Virtueel pakket"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "Zie <URL:http://www.debian.org/license>voor de licentievoorwaarden.\n"
+#~ "\n"
+
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Geen essentiële pakketten in deze suite"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Softwarepakketten in \"%s\", essentiële pakketten"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Geen pakketten met deze prioriteit in deze suite"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Waarschuwing: Deze pakketten zijn alleen bedoeld voor gebruik tijden het "
+#~ "bouwen van het <a href=\"http://www.debian.org/devel/debian-installer"
+#~ "\">Debian installatie programma</a>. Installeer het niet op een normaal "
+#~ "Debian systeem."
+
+#~ msgid "yes"
+#~ msgstr "ja"
+
+#~ msgid "Essential"
+#~ msgstr "Essentieel"
+
+#~ msgid "Priority"
+#~ msgstr "Prioriteit"
+
+#~ msgid "Uploaders"
+#~ msgstr "Uploaders"
+
+#~ msgid "Maintainer"
+#~ msgstr "Beheerder"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "De grootte is aangegeven in kBytes."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Gebruikers van pakketten uit «experimental» kunnen, in het geval van "
+#~ "problemen, het beste direct de beheerder van het pakket contacteren."
+
+#~ msgid ""
+#~ "Packages that were added to the unstable Debian archive during the last 7 "
+#~ "days."
+#~ msgstr ""
+#~ "Pakketten die in de afgelopen 7 dagen aan de «unstable» distributie zijn "
+#~ "toegevoegd."
+
+#~ msgid ""
+#~ "This information is also available as an <a href=\"newpkg_%s.%s.rdf\">RSS "
+#~ "feed</a>."
+#~ msgstr ""
+#~ "Deze informatie is ook beschikbaar als een <a href=\"newpkg_%s.%s.rdf"
+#~ "\">RSS feed</a>."
+
+#~ msgid ""
+#~ "The following packages were added to the unstable Debian archive during "
+#~ "the last 7 days."
+#~ msgstr ""
+#~ "De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
+#~ "distributie toegevoegd."
+
+#~ msgid "New Packages in \"%s\""
+#~ msgstr "Nieuwe pakketten in \"%s\""
 
 #~ msgid ""
 #~ "Warning: The <span class=\"pred\">experimental</span> distribution "
@@ -907,85 +988,5 @@ msgstr ""
 #~ "bevat of zelfs dataverlies kan veroorzaken. Als u deze waarschuwing "
 #~ "negeert en het toch installeert, dan is dat op uw eigen risico."
 
-#~ msgid "New Packages in \"%s\""
-#~ msgstr "Nieuwe pakketten in \"%s\""
-
-#~ msgid ""
-#~ "The following packages were added to the unstable Debian archive during "
-#~ "the last 7 days."
-#~ msgstr ""
-#~ "De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
-#~ "distributie toegevoegd."
-
-#~ msgid ""
-#~ "This information is also available as an <a href=\"newpkg_%s.%s.rdf\">RSS "
-#~ "feed</a>."
-#~ msgstr ""
-#~ "Deze informatie is ook beschikbaar als een <a href=\"newpkg_%s.%s.rdf"
-#~ "\">RSS feed</a>."
-
-#~ msgid ""
-#~ "Packages that were added to the unstable Debian archive during the last 7 "
-#~ "days."
-#~ msgstr ""
-#~ "Pakketten die in de afgelopen 7 dagen aan de «unstable» distributie zijn "
-#~ "toegevoegd."
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Gebruikers van pakketten uit «experimental» kunnen, in het geval van "
-#~ "problemen, het beste direct de beheerder van het pakket contacteren."
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "De grootte is aangegeven in kBytes."
-
-#~ msgid "Maintainer"
-#~ msgstr "Beheerder"
-
-#~ msgid "Uploaders"
-#~ msgstr "Uploaders"
-
-#~ msgid "Priority"
-#~ msgstr "Prioriteit"
-
-#~ msgid "Essential"
-#~ msgstr "Essentieel"
-
-#~ msgid "yes"
-#~ msgstr "ja"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Waarschuwing: Deze pakketten zijn alleen bedoeld voor gebruik tijden het "
-#~ "bouwen van het <a href=\"http://www.debian.org/devel/debian-installer"
-#~ "\">Debian installatie programma</a>. Installeer het niet op een normaal "
-#~ "Debian systeem."
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Geen pakketten met deze prioriteit in deze suite"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Softwarepakketten in \"%s\", essentiële pakketten"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Geen essentiële pakketten in deze suite"
-
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "Zie <URL:http://www.debian.org/license>voor de licentievoorwaarden.\n"
-#~ "\n"
-
-#~ msgid "Virtual package"
-#~ msgstr "Virtueel pakket"
-
-#~ msgid "Versions:"
-#~ msgstr "Versies:"
+#~ msgid "Size:"
+#~ msgstr "Grootte:"
