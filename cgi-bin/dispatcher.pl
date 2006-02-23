@@ -83,7 +83,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	shift @components;
 	$input->param( 'source', 1 );
     }
-    if (@components > 1 and $components[0] eq 'search') {
+    if (@components > 0 and $components[0] eq 'search') {
 	shift @components;
 	$what_to_do = 'search';
 	# Done
