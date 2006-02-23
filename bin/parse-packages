@@ -78,6 +78,7 @@ for my $suite (@SUITES) {
 		if ($data{'provides'}) {
 		    foreach (split /\s*,\s*/, $data{'provides'}) {
 			$virtual_packages{$_}{$suite}{$data{'package'}}++;
+			$packages_small{$_} ||= {};
 		    }
 		}
 		$package_names{$data{'package'}} = 1;
