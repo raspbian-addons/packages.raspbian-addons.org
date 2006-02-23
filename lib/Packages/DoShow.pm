@@ -100,7 +100,8 @@ sub do_show {
 			    $data{package} = $pkg;
 			    $data{architecture} = $arch;
 			    $data{version} = $version;
-			    $page->merge_package(\%data) or debug( "Merging $pkg $arch $version FAILED", 2 ) if DEBUG;
+			    $page->merge_package(\%data)
+				or debug( "Merging $pkg $arch $version FAILED", 2 ) if DEBUG;
 			} else {
 			    $page->add_provided_by([split /\s+/, $provided_by]);
 			}

@@ -12,10 +12,17 @@ use Packages::I18N::Locale;
 use Packages::CGI;
 
 our @ISA = qw( Exporter );
-our @EXPORT = qw( do_index );
+our @EXPORT = qw( do_index do_allpackages );
 
 sub do_index {
-    my ($params, $opts, $html_header) = @_;
+    return send_file( 'index', @_ );
+}
+sub do_allpackages {
+    return send_file( 'allpackages', @_ );
+}
+
+sub send_file {
+    my ($file, $params, $opts, $html_header) = @_;
 
     if ($params->{errors}{suite}) {
 	fatal_error( _g( "suite not valid or not specified" ) );
@@ -33,7 +40,7 @@ sub do_index {
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
     # we don't have translated index pages for subsections yet
     $opts->{lang} = 'en' if @{$opts->{subsection}};
-    $path .= "index.$opts->{lang}.html";
+    $path .= "$file.$opts->{lang}.$opts->{format}";
 
     unless (@Packages::CGI::fatal_errors) {
 	my $buffer;

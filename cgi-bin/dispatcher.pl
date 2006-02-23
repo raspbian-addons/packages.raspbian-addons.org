@@ -33,6 +33,7 @@ use Packages::DoSearch;
 use Packages::DoSearchContents;
 use Packages::DoShow;
 use Packages::DoIndex;
+use Packages::DoNewPkg;
 use Packages::DoDownload;
 use Packages::DoFilelist;
 
@@ -64,7 +65,7 @@ $Packages::CGI::debug = $debug;
 
 my $acc = I18N::AcceptLanguage->new();
 my $http_lang = $acc->accepts( $input->http("Accept-Language"),
-			       \@LANGUAGES );
+			       \@LANGUAGES ) || 'en';
 debug( "LANGUAGES=@LANGUAGES header=".
        $input->http("Accept-Language").
        " http_lang=$http_lang", 2 ) if DEBUG;
@@ -96,7 +97,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
     } else {
 
 	for ($components[-1]) {
-	    /^(index|changelog|copyright|download|filelist)$/ && do {
+	    /^(index|allpackages|newpkg|changelog|copyright|download|filelist)$/ && do {
 		pop @components;
 		$what_to_do = $1;
 		last;
@@ -186,6 +187,8 @@ my %params_def = ( keywords => { default => undef,
 		   arch => { default => 'any', match => '^([\w-]+)$',
 			     array => ',', var => \@archs, replace =>
 			     { any => \@ARCHITECTURES } },
+		   format => { default => 'html', match => '^(\w+)$',  },
+		   mode => { default => undef, match => '^(\w+)$',  },
 		   );
 my %opts;
 my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
