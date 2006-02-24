@@ -39,9 +39,6 @@ General:
 - Check for case sensitive consistency
 - Fix assumption that archive doesn't show up in any url, consistency-fy
   dealing with archives of a different set than (us, non-us, security)
-- Some packages are both concrete and virtual, deal with that: in depends
-  display of show_package (now if a package is concrete, you only see that),
-  and eh, somewhere else too ttbomk
 - grep -ri fixme
 - searchon=all -> searchon=descriptions?
 - quicksearch box: copy parameters of current search (exact,suite,arch,etc),
@@ -56,13 +53,8 @@ General:
   indicates end of $res2 and start of $res3
 
 
-Bugs:
-- amd64 security is getting displayed weirdly
-- kfreebsd-i386 contents files have no header and aren't read correctly
-  currently
-
 Missing pieces from old code:
- - newpkg
+ - txt version of all packages list
  - mail stuff
  - DDTP support (but without a working DDTP I will not invest any time
    in that)
