@@ -82,8 +82,10 @@ sub pkg_list {
     my $suite = $opts->{suite}[0];
 
     my $str = "";
-    foreach my $p ( @$pkgs ) {
+    foreach my $p ( sort @$pkgs ) {
 
+	# we don't deal with virtual packages here because for the
+	# current uses of this function this isn't needed
 	my $short_desc = (read_entry_simple( $packages, $p, $opts->{h_archives}, $suite))->[-1];
 
 	if ( $short_desc ) {
