@@ -387,6 +387,9 @@ sub read_entry_simple {
     my %virt = split /\01/o, $virt; 
     debug( "read_entry_simple: key=$key, archives=".
 	   join(" ",(keys %$archives)).", suite=$suite", 1) if DEBUG;
+    # FIXME: not all of the 2^4=16 combinations of empty(results),
+    # empty(virt{suite}), empty(fb_result), empty(virt{fb_suite}) are dealt
+    # with correctly, but it's adequate enough for now
     return [ $virt{$suite} ] unless defined $result;
     foreach (split /\000/o, $result) {
 	my @data = split ( /\s/o, $_, 8 );
