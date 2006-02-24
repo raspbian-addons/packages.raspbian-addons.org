@@ -134,10 +134,6 @@ sub merge_package {
 	foreach my $key (@TAKE_NEWEST) {
 	    $self->{data}{$key} = $data->{$key};
 	}
-    } elsif (($cmp == 0) &&
-	     $self->{data}{archive} ne 'us') {
-	#FIXME crude hack to prefer us archive over others
-	$self->{data}{archive} = $data->{archive};
     }
     debug( "is_newest= ".($is_newest||0), 3 ) if DEBUG;
     if (!$self->{versions}{$data->{architecture}}

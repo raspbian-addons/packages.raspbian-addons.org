@@ -172,7 +172,7 @@ sub do_search {
 		    $subsect{$pkg}{$suite}{$version} = $subsection;
 		    $sect{$pkg}{$suite}{$version} = $section
 			unless $section eq 'main';
-		    $archives{$pkg}{$suite}{$version} = $archive;
+		    $archives{$pkg}{$suite}{$version} ||= $archive;
 		    
 		    $desc{$pkg}{$suite}{$version} = $desc;
 		} else {
