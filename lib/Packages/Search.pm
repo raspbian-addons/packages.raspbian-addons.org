@@ -372,6 +372,13 @@ sub read_entry {
     my @non_results;
     read_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
+
+#FIXME: make configurable
+my %fallback_suites = (
+		       'stable-backports' => 'stable',
+		       'stable-volatile' => 'stable',
+		       experimental => 'unstable' );
+
 sub read_entry_simple {
     my ($hash, $key, $archives, $suite) = @_;
     # FIXME: drop $archives
@@ -385,6 +392,12 @@ sub read_entry_simple {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "use entry: @data", 2 ) if DEBUG && $data[1] eq $suite;
 	return [ $virt{$suite}, @data ] if $data[1] eq $suite;
+    }
+    if (my $fb_suite = $fallback_suites{$suite}) {
+	my $fb_result = read_entry_simple( $hash, $key, $archives, $fb_suite );
+	my $fb_virt = shift(@$fb_result);
+	$virt{$suite} .= $fb_virt if $fb_virt;
+	return [ $virt{$suite}, @$fb_result ] if @$fb_result;
     }
     return [ $virt{$suite} ];
 }

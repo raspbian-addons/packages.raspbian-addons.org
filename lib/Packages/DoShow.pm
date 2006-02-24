@@ -145,20 +145,20 @@ sub do_show {
 			$long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
 # 	    $long_desc = conv_desc( $lang, $long_desc );
 # 	    $short_desc = conv_desc( $lang, $short_desc );
-
-			$$menu .= simple_menu( [ _g( "Distribution:" ),
-						 _g( "Overview over this suite" ),
-						 "$ROOT/$suite/",
-						 $suite ],
-					       [ _g( "Section:" ),
-						 _g( "All packages in this section" ),
-						 "$ROOT/$suite/$subsection/",
-						 $subsection ],
-					       [ _g( "Source:" ),
-						 _g( "Source package building this package" ),
-						 "$ROOT/$suite/source/".$page->get_src('package'),
-						 $page->get_src('package') ],
-					       );
+			my @menu = ( [ _g( "Distribution:" ),
+				       _g( "Overview over this suite" ),
+				       "$ROOT/$suite/",
+				       $suite ],
+				     [ _g( "Section:" ),
+				       _g( "All packages in this section" ),
+				       "$ROOT/$suite/$subsection/",
+				       $subsection ], );
+			my $source = $page->get_src('package');
+			push @menu, [ _g( "Source:" ),
+				      _g( "Source package building this package" ),
+				      "$ROOT/$suite/source/$source",
+				      $source ] if $source;
+			$$menu .= simple_menu( @menu );
 
 			my $v_str = $version;
 			my $multiple_versions = grep { $_ ne $version } values %$versions;
@@ -203,9 +203,6 @@ sub do_show {
 			if ( $dep_list ) {
 			    $package_page .= "<div id=\"pdeps\">\n";
 			    $package_page .= sprintf( "<h2>"._g( "Other Packages Related to %s" )."</h2>\n", $pkg );
-			    if ($suite eq "experimental") {
-				note( sprintf( _g( 'Note that the <strong>experimental</strong> distribution is not self-contained; missing dependencies are likely found in the <a href="%s">unstable</a> distribution.' ), "$ROOT/unstable/" ) );
-			    }
 			    
 			    $package_page .= pdeplegend( [ 'dep',  _g( 'depends' ) ],
 							 [ 'rec',  _g( 'recommends' ) ],
@@ -356,10 +353,6 @@ sub do_show {
 		    if ( $dep_list ) {
 			$package_page .= "<div id=\"pdeps\">\n";
 			$package_page .= sprintf( "<h2>"._g( "Other Packages Related to %s" )."</h2>\n", $pkg );
-			if ($suite eq "experimental") {
-			    note( sprintf( _g( 'Note that the <strong>experimental</strong> distribution is not self-contained; missing dependencies are likely found in the <a href="%s">unstable</a> distribution.' ), "$ROOT/unstable/" ) );
-
-			}
 			
 			$package_page .= pdeplegend( [ 'adep',  _g( 'build-depends' ) ],
 						     [ 'idep',  _g( 'build-depends-indep' ) ],
@@ -388,7 +381,7 @@ sub do_show {
 			my ($src_file_md5, $src_file_size, $src_file_name)
 			    = split /\s+/, $_;
 			my $src_url;
-			for ($archive) {
+			for ("$suite/$archive") {
 			    /security/o &&  do {
 				$src_url = $FTP_SITES{security}; last };
 			    /volatile/o &&  do {

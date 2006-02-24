@@ -137,7 +137,7 @@ sub pmoreinfo {
 	} else {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
-		for ($page->get_newest('archive')) {
+		for ("$suite/".$page->get_newest('archive')) {
 		    /security/o && do {
 			$str .= "<a href=\"$env->{security}/$src_dir/$src_file_name\">["; last };
 		    /volatile/o && do {
@@ -145,7 +145,7 @@ sub pmoreinfo {
 		    /backports/o && do {
 			$str .= "<a href=\"$env->{backports}/$src_dir/$src_file_name\">["; last };
 		    /non-us/io && do {
-			$str .= "<a href=\"$env->{nonus_site}/$src_dir/$src_file_name\">["; last };
+			$str .= "<a href=\"$env->{'non-US'}/$src_dir/$src_file_name\">["; last };
  		    $str .= "<a href=\"$env->{us}/$src_dir/$src_file_name\">[";
  		}
 		if ($src_file_name =~ /dsc$/) {
@@ -300,8 +300,8 @@ sub print_deps {
 	    my $short_desc = $entry->[-1];
 	    my $arch = $entry->[3];
 	    my $archive = $entry->[1];
+	    my $path = $entry->[2];
 	    if ( $short_desc ) {
-		my $path = $suite;
 		if ( $is_old_pkgs ) {
 		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
 					      $p_name, "$pkg_version$arch_str" );
