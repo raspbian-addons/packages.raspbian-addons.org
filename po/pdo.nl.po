@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-23 17:50+0100\n"
+"POT-Creation-Date: 2006-02-28 18:04+0100\n"
 "PO-Revision-Date: 2005-01-03 00:19+0100\n"
 "Last-Translator: Bas Zoetekouw <bas@debian.org>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -54,30 +54,30 @@ msgid "Software Packages in \"%s\", priority %s"
 msgstr "Softwarepakketten in \"%s\", prioriteit %s"
 
 #. Done
-#: cgi-bin/dispatcher.pl:91
+#: cgi-bin/dispatcher.pl:94
 msgid "search doesn't take any more path elements"
 msgstr ""
 
-#: cgi-bin/dispatcher.pl:94
+#: cgi-bin/dispatcher.pl:97
 msgid ""
 "We're supposed to display the homepage here, instead of getting dispatch.pl"
 msgstr ""
 
-#: cgi-bin/dispatcher.pl:119
+#: cgi-bin/dispatcher.pl:122
 #, perl-format
 msgid "%s set more than once in path"
 msgstr ""
 
-#: cgi-bin/dispatcher.pl:149
+#: cgi-bin/dispatcher.pl:153
 #, fuzzy, perl-format
 msgid "two or more packages specified (%s)"
 msgstr "Bronpakket: %s (%s)"
 
-#: cgi-bin/dispatcher.pl:235 lib/Packages/DoIndex.pm:63
+#: cgi-bin/dispatcher.pl:241 lib/Packages/DoIndex.pm:63
 msgid "Error"
 msgstr ""
 
-#: cgi-bin/dispatcher.pl:240 lib/Packages/DoIndex.pm:68
+#: cgi-bin/dispatcher.pl:246 lib/Packages/DoIndex.pm:68
 #, fuzzy
 msgid "search for a package"
 msgstr "Lijst van alle pakketten"
@@ -318,63 +318,63 @@ msgstr ""
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:89 lib/Packages/DoSearchContents.pm:105
+#: lib/Packages/DoSearch.pm:86 lib/Packages/DoSearchContents.pm:105
 msgid "all suites"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:90 lib/Packages/DoSearchContents.pm:106
+#: lib/Packages/DoSearch.pm:87 lib/Packages/DoSearchContents.pm:106
 #, perl-format
 msgid "suite(s) <em>%s</em>"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:91 lib/Packages/DoSearchContents.pm:107
+#: lib/Packages/DoSearch.pm:88 lib/Packages/DoSearchContents.pm:107
 #, fuzzy
 msgid "all sections"
 msgstr "Sectie"
 
-#: lib/Packages/DoSearch.pm:92 lib/Packages/DoSearchContents.pm:108
+#: lib/Packages/DoSearch.pm:89 lib/Packages/DoSearchContents.pm:108
 #, perl-format
 msgid "section(s) <em>%s</em>"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:93 lib/Packages/DoSearchContents.pm:109
+#: lib/Packages/DoSearch.pm:90 lib/Packages/DoSearchContents.pm:109
 msgid "all architectures"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:94 lib/Packages/DoSearchContents.pm:110
+#: lib/Packages/DoSearch.pm:91 lib/Packages/DoSearchContents.pm:110
 #, perl-format
 msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:96
+#: lib/Packages/DoSearch.pm:93
 #, fuzzy
 msgid "packages"
 msgstr "Pakket niet beschikbaar"
 
-#: lib/Packages/DoSearch.pm:96
+#: lib/Packages/DoSearch.pm:93
 #, fuzzy
 msgid "source packages"
 msgstr "Bronpakket"
 
 #. sorry to all translators for that one... (patches welcome)
-#: lib/Packages/DoSearch.pm:98
+#: lib/Packages/DoSearch.pm:95
 #, perl-format
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:102
+#: lib/Packages/DoSearch.pm:99
 msgid " (including subword matching)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:103
+#: lib/Packages/DoSearch.pm:100
 #, perl-format
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:110
+#: lib/Packages/DoSearch.pm:107
 #, perl-format
 msgid ""
 "Your search was too wide so we will only display exact matches. At least <em>"
@@ -382,36 +382,36 @@ msgid ""
 "using a longer keyword or more keywords."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:116 lib/Packages/DoSearch.pm:118
+#: lib/Packages/DoSearch.pm:113 lib/Packages/DoSearch.pm:115
 msgid "Can't find that package."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:119
+#: lib/Packages/DoSearch.pm:116
 #, perl-format
 msgid ""
 "<a href=\"%s\">%s</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:129
+#: lib/Packages/DoSearch.pm:126
 msgid "Can't find that string."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:131
+#: lib/Packages/DoSearch.pm:128
 #, perl-format
 msgid ""
 "Can't find that string, at least not in that suite (%s, section %s) and on "
 "that architecture (%s)."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:136
+#: lib/Packages/DoSearch.pm:133
 #, perl-format
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:140
+#: lib/Packages/DoSearch.pm:137
 #, fuzzy, perl-format
 msgid ""
 "You can try a different search on the <a href=\"%s\">Packages search page</"
@@ -420,54 +420,58 @@ msgstr ""
 "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%s/"
 "\">Pakketten zoekpagina</a>"
 
-#: lib/Packages/DoSearch.pm:144
+#: lib/Packages/DoSearch.pm:141
 msgid "Package Search Results"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:146
+#: lib/Packages/DoSearch.pm:143
 #, fuzzy
 msgid "Debian Package Search Results"
 msgstr "Alle Debianpakketten in \"%s\""
 
-#: lib/Packages/DoSearch.pm:228
+#: lib/Packages/DoSearch.pm:225
 #, perl-format
 msgid "Found <em>%s</em> matching packages."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:235
+#: lib/Packages/DoSearch.pm:232
 msgid "Exact hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:242
+#: lib/Packages/DoSearch.pm:239
 msgid "Other hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:252
+#: lib/Packages/DoSearch.pm:249
 #, perl-format
 msgid ""
 "<a href=\"%s\">%s</a> results have not been displayed because you requested "
 "only exact matches."
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:264
+#: lib/Packages/DoSearch.pm:261
 #, fuzzy, perl-format
 msgid "Package %s"
 msgstr "Pakket: %s (%s)"
 
-#: lib/Packages/DoSearch.pm:292
+#: lib/Packages/DoSearch.pm:289
 msgid "also provided by: "
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:299
+#: lib/Packages/DoSearch.pm:295
+msgid "Virtual package"
+msgstr "Virtueel pakket"
+
+#: lib/Packages/DoSearch.pm:297
 msgid "provided by: "
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:310
+#: lib/Packages/DoSearch.pm:309
 #, fuzzy, perl-format
 msgid "Source package %s"
 msgstr "Bronpakket"
 
-#: lib/Packages/DoSearch.pm:326
+#: lib/Packages/DoSearch.pm:325
 #, fuzzy
 msgid "Binary packages: "
 msgstr "virtueel pakket"
@@ -523,7 +527,7 @@ msgid "Found %s results"
 msgstr ""
 
 #: lib/Packages/DoSearchContents.pm:146 lib/Packages/DoSearchContents.pm:159
-#: lib/Packages/DoShow.pm:384
+#: lib/Packages/DoShow.pm:377
 msgid "File"
 msgstr "Bestand"
 
@@ -539,23 +543,23 @@ msgstr "Pakket niet beschikbaar"
 
 #. $long_desc = conv_desc( $lang, $long_desc );
 #. $short_desc = conv_desc( $lang, $short_desc );
-#: lib/Packages/DoShow.pm:149 lib/Packages/DoShow.pm:266
-#: lib/Packages/DoShow.pm:308
+#: lib/Packages/DoShow.pm:148 lib/Packages/DoShow.pm:263
+#: lib/Packages/DoShow.pm:305
 msgid "Distribution:"
 msgstr "Distributie:"
 
-#: lib/Packages/DoShow.pm:150 lib/Packages/DoShow.pm:309
+#: lib/Packages/DoShow.pm:149 lib/Packages/DoShow.pm:306
 #, fuzzy
 msgid "Overview over this suite"
 msgstr "Overzicht van deze distributie"
 
-#: lib/Packages/DoShow.pm:153 lib/Packages/DoShow.pm:270
-#: lib/Packages/DoShow.pm:312
+#: lib/Packages/DoShow.pm:152 lib/Packages/DoShow.pm:267
+#: lib/Packages/DoShow.pm:309
 msgid "Section:"
 msgstr "Sectie:"
 
-#: lib/Packages/DoShow.pm:154 lib/Packages/DoShow.pm:271
-#: lib/Packages/DoShow.pm:313
+#: lib/Packages/DoShow.pm:153 lib/Packages/DoShow.pm:268
+#: lib/Packages/DoShow.pm:310
 msgid "All packages in this section"
 msgstr "Alle pakketten in deze sectie"
 
@@ -582,11 +586,11 @@ msgstr "Pakket: %s (%s)"
 msgid "This is also a virtual package provided by "
 msgstr ""
 
-#: lib/Packages/DoShow.pm:178 lib/Packages/DoShow.pm:327
+#: lib/Packages/DoShow.pm:178 lib/Packages/DoShow.pm:324
 msgid "Experimental package"
 msgstr "Experimenteel pakket"
 
-#: lib/Packages/DoShow.pm:179 lib/Packages/DoShow.pm:328
+#: lib/Packages/DoShow.pm:179 lib/Packages/DoShow.pm:325
 #, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
@@ -600,11 +604,11 @@ msgstr ""
 "Als u deze waarschuwing negeert en het pakket toch installeert, dan is dat "
 "op uw eigen risico."
 
-#: lib/Packages/DoShow.pm:183 lib/Packages/DoShow.pm:332
+#: lib/Packages/DoShow.pm:183 lib/Packages/DoShow.pm:329
 msgid "debian-installer udeb package"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:184 lib/Packages/DoShow.pm:333
+#: lib/Packages/DoShow.pm:184 lib/Packages/DoShow.pm:330
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -614,96 +618,85 @@ msgstr ""
 "van het <a href=\"http://www.debian.org/devel/debian-installer\">Debian "
 "installatie programma</a>. Installeer het niet op een normaal Debian systeem."
 
-#: lib/Packages/DoShow.pm:205 lib/Packages/DoShow.pm:358
+#: lib/Packages/DoShow.pm:205 lib/Packages/DoShow.pm:355
 #, perl-format
 msgid "Other Packages Related to %s"
 msgstr "Andere pakketten die aan %s zijn gerelateerd"
 
-#: lib/Packages/DoShow.pm:207 lib/Packages/DoShow.pm:360
-#, fuzzy, perl-format
-msgid ""
-"Note that the <strong>experimental</strong> distribution is not self-"
-"contained; missing dependencies are likely found in the <a href=\"%s"
-"\">unstable</a> distribution."
-msgstr ""
-"Merk op dat de «<span class=\"pred\">experimental</span>» distributie niet "
-"op zichzelf staat; ontbrekende afhankelijkheden kunnen waarschijnlijk worden "
-"gevonden in de «a href=\"../../unstable/\">unstable</a>» distributie."
-
-#: lib/Packages/DoShow.pm:210
+#: lib/Packages/DoShow.pm:207
 msgid "depends"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:211
+#: lib/Packages/DoShow.pm:208
 msgid "recommends"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:212
+#: lib/Packages/DoShow.pm:209
 msgid "suggests"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:223
+#: lib/Packages/DoShow.pm:220
 #, perl-format
 msgid "Download %s\n"
 msgstr "Download %s\n"
 
-#: lib/Packages/DoShow.pm:225
+#: lib/Packages/DoShow.pm:222
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:226
+#: lib/Packages/DoShow.pm:223
 msgid "Download for all available architectures"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:228
+#: lib/Packages/DoShow.pm:225
 msgid "Architecture"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:229
+#: lib/Packages/DoShow.pm:226
 msgid "Version"
 msgstr "Versie"
 
-#: lib/Packages/DoShow.pm:231
+#: lib/Packages/DoShow.pm:228
 #, fuzzy
 msgid "Files"
 msgstr "Bestand"
 
-#: lib/Packages/DoShow.pm:231
+#: lib/Packages/DoShow.pm:228
 msgid "Installed Size"
 msgstr "Geïnstalleerde grootte"
 
-#: lib/Packages/DoShow.pm:231
+#: lib/Packages/DoShow.pm:228
 #, fuzzy
 msgid "Package Size"
 msgstr "Pakket niet beschikbaar"
 
-#: lib/Packages/DoShow.pm:244
+#: lib/Packages/DoShow.pm:241
 msgid "list of files"
 msgstr "lijst van bestanden"
 
-#: lib/Packages/DoShow.pm:247
+#: lib/Packages/DoShow.pm:244
 #, fuzzy
 msgid "no current information"
 msgstr "Meer informatie over %s"
 
 #. unless $page->is_virtual
-#: lib/Packages/DoShow.pm:264
+#: lib/Packages/DoShow.pm:261
 msgid "virtual package"
 msgstr "virtueel pakket"
 
-#: lib/Packages/DoShow.pm:267
+#: lib/Packages/DoShow.pm:264
 msgid "Overview over this distribution"
 msgstr "Overzicht van deze distributie"
 
-#: lib/Packages/DoShow.pm:276
+#: lib/Packages/DoShow.pm:273
 #, perl-format
 msgid "Virtual Package: %s"
 msgstr "Virtueel Pakket: %s"
 
-#: lib/Packages/DoShow.pm:280
+#: lib/Packages/DoShow.pm:277
 #, perl-format
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
@@ -714,122 +707,138 @@ msgstr ""
 "beleidshandboek</a> voor de <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">definitie van een virtueel pakket</a>."
 
-#: lib/Packages/DoShow.pm:283
+#: lib/Packages/DoShow.pm:280
 #, perl-format
 msgid "Packages providing %s"
 msgstr "Pakketten die %s leveren:"
 
-#: lib/Packages/DoShow.pm:318
+#: lib/Packages/DoShow.pm:315
 #, fuzzy, perl-format
 msgid "Source Package: %s (%s)"
 msgstr "Bronpakket: %s (%s)"
 
-#: lib/Packages/DoShow.pm:340
+#: lib/Packages/DoShow.pm:337
 msgid "The following binary packages are built from this source package:"
 msgstr "De volgende binaire pakketten worden van dit bronpakket gebouwd:"
 
-#: lib/Packages/DoShow.pm:364
+#: lib/Packages/DoShow.pm:357
 msgid "build-depends"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:365
+#: lib/Packages/DoShow.pm:358
 msgid "build-depends-indep"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:376
+#: lib/Packages/DoShow.pm:369
 #, perl-format
 msgid "Download %s"
 msgstr "Download %s"
 
-#: lib/Packages/DoShow.pm:382
+#: lib/Packages/DoShow.pm:375
 msgid "Download information for the files of this source package"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:385
+#: lib/Packages/DoShow.pm:378
 msgid "Size (in kB)"
 msgstr "Grootte (in kB)"
 
-#: lib/Packages/DoShow.pm:386
+#: lib/Packages/DoShow.pm:379
 msgid "md5sum"
 msgstr "md5sum"
 
-#: lib/Packages/DoShow.pm:431
+#: lib/Packages/DoShow.pm:424
 #, perl-format
 msgid "Details of source package <em>%s</em> in %s"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:432
+#: lib/Packages/DoShow.pm:425
 #, perl-format
 msgid "Details of package <em>%s</em> in %s"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:434
+#: lib/Packages/DoShow.pm:427
 #, fuzzy, perl-format
 msgid "Details of source package %s in %s"
 msgstr "Bronpakketten in \"%s\""
 
-#: lib/Packages/DoShow.pm:435
+#: lib/Packages/DoShow.pm:428
 #, fuzzy, perl-format
 msgid "Details of package %s in %s"
 msgstr "Nieuwe pakketten in %s"
 
-#: lib/Packages/HTML.pm:93
+#: lib/Packages/HTML.pm:95
 msgid "Not available"
 msgstr "Niet beschikbaar"
 
-#: lib/Packages/HTML.pm:114
+#: lib/Packages/HTML.pm:116
 #, perl-format
 msgid "More Information on %s"
 msgstr "Meer informatie over %s"
 
-#: lib/Packages/HTML.pm:119
+#: lib/Packages/HTML.pm:121
 #, perl-format
 msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
 msgstr "Zoek naar <a href=\"%s\">bug-rapporten</a> over %s."
 
-#: lib/Packages/HTML.pm:131
+#: lib/Packages/HTML.pm:130
 msgid "Source Package:"
 msgstr "Bronpakket:"
 
-#: lib/Packages/HTML.pm:133
+#: lib/Packages/HTML.pm:132
 msgid "Download"
 msgstr "Download"
 
-#: lib/Packages/HTML.pm:136
+#: lib/Packages/HTML.pm:135
 msgid "Not found"
 msgstr "Niet gevonden"
 
-#: lib/Packages/HTML.pm:169
+#: lib/Packages/HTML.pm:168
 #, perl-format
 msgid "View the <a href=\"%s\">Debian changelog</a>"
 msgstr "Bekijk de <a href=\"%s\">Debian changelog</a>"
 
-#: lib/Packages/HTML.pm:174
+#: lib/Packages/HTML.pm:173
 #, perl-format
 msgid "View the <a href=\"%s\">copyright file</a>"
 msgstr "Bekijk het <a href=\"%s\">bestand met auteursrecht-informatie</a>"
 
-#: lib/Packages/HTML.pm:187
+#: lib/Packages/HTML.pm:186
 #, perl-format
 msgid "%s is responsible for this Debian package."
 msgstr "%s is verantwoordelijk voor die Debian pakket."
 
-#: lib/Packages/HTML.pm:199
+#: lib/Packages/HTML.pm:198
 #, perl-format
 msgid " and %s are responsible for this Debian package."
 msgstr " en %s zijn verantwoordelijk voor dit Debian pakket."
 
-#: lib/Packages/HTML.pm:204
+#: lib/Packages/HTML.pm:203
 #, perl-format
 msgid "See the <a href=\"%s\">developer information for %s</a>."
 msgstr "Zie de <a href=\"%s\">informatie voor ontwikkelaars voor %s</a>."
 
-#: lib/Packages/HTML.pm:210
+#: lib/Packages/HTML.pm:209
 #, perl-format
 msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
 
-#: lib/Packages/HTML.pm:288
+#. weed out duplicates
+#: lib/Packages/HTML.pm:242
+#, fuzzy
+msgid "also a virtual package provided by "
+msgstr "virtueel pakket"
+
+#: lib/Packages/HTML.pm:243
+#, fuzzy
+msgid "virtual package provided by "
+msgstr "virtueel pakket"
+
+#: lib/Packages/HTML.pm:247
+#, fuzzy, perl-format
+msgid "%s packages"
+msgstr "Pakket niet beschikbaar"
+
+#: lib/Packages/HTML.pm:287
 msgid "not"
 msgstr "niet"
 
@@ -959,11 +968,19 @@ msgstr "Hoe u de <a href=\"%s\">standaard taal kunt instellen</a></p>"
 msgid "package has bad maintainer field"
 msgstr ""
 
+#, fuzzy
+#~ msgid ""
+#~ "Note that the <strong>experimental</strong> distribution is not self-"
+#~ "contained; missing dependencies are likely found in the <a href=\"%s"
+#~ "\">unstable</a> distribution."
+#~ msgstr ""
+#~ "Merk op dat de «<span class=\"pred\">experimental</span>» distributie "
+#~ "niet op zichzelf staat; ontbrekende afhankelijkheden kunnen "
+#~ "waarschijnlijk worden gevonden in de «a href=\"../../unstable/"
+#~ "\">unstable</a>» distributie."
+
 #~ msgid "Versions:"
 #~ msgstr "Versies:"
-
-#~ msgid "Virtual package"
-#~ msgstr "Virtueel pakket"
 
 #~ msgid ""
 #~ "Copyright (C) 1997-2005 SPI;\n"
