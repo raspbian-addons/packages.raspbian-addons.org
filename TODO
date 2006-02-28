@@ -31,7 +31,6 @@ search_packages.pl:
 	then, all the other entries
 
 Static pages:
-- with this design, we can resolve experimental dependencies from unstable
 - try to make it faster
 
 General:
@@ -55,7 +54,6 @@ General:
 
 Missing pieces from old code:
  - txt version of all packages list
- - mail stuff
  - DDTP support (but without a working DDTP I will not invest any time
    in that)
  - search_packages compatibility (we should at least ensure we don't break
