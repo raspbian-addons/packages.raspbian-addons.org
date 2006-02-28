@@ -416,13 +416,15 @@ sub make_url {
 	$val = $override->{$p} if exists $override->{$p};
 	push @query_string, "$p=$val" if $val;
     }
-    push @path, $add_path if $add_path;
+    push @path, $add_path if $add_path and $add_path ne '/';
     push @query_string, $add_query if $add_query;
 
     my $path = join( '/', @path );
     my $query_string = join( '&', @query_string );
+    $path .= '/' if $add_path and $add_path eq '/';
+    $path .= "?$query_string" if $query_string;
 
-    return "$path?$query_string";
+    return $path;
 }
 
 sub make_search_url {

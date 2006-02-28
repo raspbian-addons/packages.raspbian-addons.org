@@ -1,6 +1,7 @@
 package Packages::DoShow;
 
 use strict;
+use warnings;
 
 use POSIX;
 use URI::Escape;
@@ -143,8 +144,6 @@ sub do_show {
 			$long_desc =~ s/\n /\n/sgo;
 			$long_desc =~ s/\n.\n/\n<p>\n/go;
 			$long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
-# 	    $long_desc = conv_desc( $lang, $long_desc );
-# 	    $short_desc = conv_desc( $lang, $short_desc );
 			my @menu = ( [ _g( "Distribution:" ),
 				       _g( "Overview over this suite" ),
 				       make_url("/",''),
@@ -233,9 +232,13 @@ sub do_show {
 			    $package_page .= "<td>".$versions->{$a}."</td>"
 				if $multiple_versions;
 			    $package_page .= '<td class="size">';
-			    $package_page .=  floor(($sizes_deb->{$a}/102.4)+0.5)/10 . "&nbsp;kB";
+			    # package size
+			    $package_page .=  sprintf(_g('%.1f&nbsp;kB'),
+						      floor(($sizes_deb->{$a}/102.4)+0.5)/10);
 			    $package_page .= '</td><td class="size">';
-			    $package_page .=  $sizes_inst->{$a} . "&nbsp;kB";
+			    # installed size
+			    $package_page .=  sprintf(_g('%d&nbsp;kB'),
+						      $sizes_inst->{$a});
 			    $package_page .= "</td>\n<td>";
 			    if ( $suite ne "experimental" ) {
 				$package_page .= sprintf( "[<a href=\"%s\">"._g( "list of files" )."</a>]\n",
