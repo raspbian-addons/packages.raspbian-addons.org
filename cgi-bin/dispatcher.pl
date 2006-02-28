@@ -192,7 +192,7 @@ my %params_def = ( keywords => { default => undef,
 		   arch => { default => 'any', match => '^([\w-]+)$',
 			     array => ',', var => \@archs, replace =>
 			     { any => \@ARCHITECTURES } },
-		   format => { default => 'html', match => '^(\w+)$',  },
+		   format => { default => 'html', match => '^([\w.]+)$',  },
 		   mode => { default => undef, match => '^(\w+)$',  },
 		   );
 my %opts;

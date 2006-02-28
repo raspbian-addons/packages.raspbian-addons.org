@@ -9,6 +9,7 @@ use DB_File;
 use Storable;
 use HTML::Entities;
 use Locale::gettext;
+use Compress::Zlib;
 
 use lib './lib';
 
@@ -77,7 +78,7 @@ foreach my $s (@SUITES) {
 	
 	print {$pages{$key}{$lang}{index}{fh}} '</dl></div>',
 	"<p class=\"psmallcenter\"><a href=\"allpackages\" title=\""._g( "List of all packages" )."\">".
-	    _g( "All packages" ) ."</a><br>(<a href=\"allpackages.en.txt.gz\">".
+	    _g( "All packages" ) ."</a><br>(<a href=\"allpackages?format=txt.gz\">".
 	    _g( "compact compressed textlist" )."</a>)</p>\n";
 	print {$pages{$key}{$lang}{index}{fh}} trailer( "../", 'index', $lang, @LANGUAGES );
 	close $pages{$key}{$lang}{index}{fh} or
@@ -95,6 +96,9 @@ foreach my $s (@SUITES) {
     mkpath ( "$wwwdir/$key" );
     open $pages{$key}{fh}, '>', "$wwwdir/$key/allpackages.en.html.new"
 	or die "can't open index file for output: $!";
+    $pages{$key}{textgz} = gzopen("$wwwdir/$key/allpackages.en.txt.gz.new",
+				  'wb9')
+	or die "can't open text index file for output: $!";
 
     my $title = sprintf( _g( "Software Packages in \"%s\"" ),
 			 $key );
@@ -103,6 +107,11 @@ foreach my $s (@SUITES) {
 				     desc => encode_entities( $title, '"' ),
 				     lang => 'en' ),
     title( $title ), '<dl>';
+    my $title_txt = sprintf( _g( "All Debian Packages in \"%s\"" ),
+			     $key )."\n\n";
+    $title_txt .= _g( "Last Modified: " ).gmtime()."\n".
+	sprintf(_g( "Copyright (C) 1997-%d SPI;\nSee <URL:http://www.debian.org/license> for the license terms."), (gmtime)[5]+1900 )."\n\n";
+   $pages{$key}{textgz}->gzwrite($title_txt);
 
     foreach my $sec (keys %{$sections->{$s}}) {
 	mkpath ( "$wwwdir/$key/$sec" );
@@ -149,7 +158,7 @@ while (my ($pkg, $data) = each %packages) {
     my (%pkg,%virt);
     my ($virt, $p_data) = split /\000/o, $data, 2;
     %virt = split /\01/o, $virt; 
-    foreach (split /\000/o, $p_data) {
+    foreach (split /\000/o, $p_data||'') {
 	my @data = split ( /\s/o, $_, 8 );
 	$pkg{$data[1]} ||= new Packages::Page( $pkg );
 	$pkg{$data[1]}->merge_package( { package => $pkg,
@@ -200,6 +209,8 @@ while (my ($pkg, $data) = each %packages) {
 	$txt_str .= " $short_desc_txt\n";
 	print {$pages{$key}{fh}} $str
 	    or die "couldn't write to output file: $!";
+	$pages{$key}{textgz}->gzwrite($txt_str)
+	    or die "couldn't write to output file: ".$pages{$key}{textgz}->gzerror;
 	print {$pages{$key}{$section}{fh}} $str
 	    or die "couldn't write to output file: $!";
 	if ($subsection ne '-') {
@@ -217,10 +228,14 @@ print "closing files ...\n";
 foreach my $s (@SUITES) {
     my $key = $s;
     print {$pages{$key}{fh}} '</dl>', trailer( "../" );
+    $pages{$key}{textgz}->gzclose or
+	warn "can't close text index file $wwwdir/$key/allpackages.en.txt.gz.new: ".$pages{$key}{textgz}->gzerror;
     close $pages{$key}{fh} or
 	warn "can't close index file $wwwdir/$key/allpackages.en.html.new: $!";
     rename( "$wwwdir/$key/allpackages.en.html.new",
 	    "$wwwdir/$key/allpackages.en.html" );
+    rename( "$wwwdir/$key/allpackages.en.txt.gz.new",
+	    "$wwwdir/$key/allpackages.en.txt.gz" );
     foreach my $sec (keys %{$sections->{$s}{'us'}}) {
 	print {$pages{$key}{$sec}{fh}} '</dl>', trailer( "../../" );
 	close $pages{$key}{$sec}{fh} or

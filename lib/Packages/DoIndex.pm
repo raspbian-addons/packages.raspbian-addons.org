@@ -21,6 +21,15 @@ sub do_allpackages {
     return send_file( 'allpackages', @_ );
 }
 
+# no real need for more flexibility here, I think...
+my %mime_types = (
+		  txt => 'text/plain',
+		  'txt.gz' => 'text/plain',
+		  html => 'text/html',
+		  );
+my %encoding = (
+		'txt.gz' => 'x-gzip',
+		);
 sub send_file {
     my ($file, $params, $opts, $html_header) = @_;
 
@@ -39,14 +48,17 @@ sub send_file {
     $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
     # we don't have translated index pages for subsections yet
-    $opts->{lang} = 'en' if @{$opts->{subsection}};
+    $opts->{lang} = 'en' if @{$opts->{subsection}} or $file eq 'allpackages';
     $path .= "$file.$opts->{lang}.$opts->{format}";
 
     unless (@Packages::CGI::fatal_errors) {
 	my $buffer;
 	if (open( INDEX, '<', "$wwwdir/$path" )) {
-	    my $charset = get_charset( $opts->{lang} );
-	    print header( -charset => $charset );
+	    my %headers;
+	    $headers{'-charset'} = get_charset( $opts->{lang} );
+	    $headers{'-type'} = $mime_types{$opts->{format}} || 'text/plain';
+	    $headers{'-content-encoding'} = $encoding{$opts->{format}} if exists $encoding{$opts->{format}};
+	    print header( %headers );
 
 	    binmode INDEX;
 	    while (read INDEX, $buffer, 4096) {

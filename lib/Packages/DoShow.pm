@@ -152,7 +152,6 @@ sub do_show {
 				       _g( "All packages in this section" ),
 				       make_url("$subsection/",''),
 				       $subsection ], );
-			my $source = $page->get_src('package');
 			push @menu, [ _g( "Source:" ),
 				      _g( "Source package building this package" ),
 				      make_url($source,'',{source=>'source'}),
