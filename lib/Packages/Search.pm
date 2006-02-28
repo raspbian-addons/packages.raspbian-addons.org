@@ -43,7 +43,6 @@ package Packages::Search;
 use strict;
 use warnings;
 
-#use CGI ();
 use POSIX;
 use HTML::Entities;
 use DB_File;
@@ -62,281 +61,7 @@ our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $VERSION = 0.01;
 
-our $USE_PAGED_MODE = 1;
-use constant DEFAULT_PAGE => 1;
-use constant DEFAULT_RES_PER_PAGE => 50;
-our %page_params = ( page => { default => DEFAULT_PAGE,
-                               match => '(\d+)' },
-                     number => { default => DEFAULT_RES_PER_PAGE,
-                                 match => '(\d+)' } );
-
 our $too_many_hits = 0;
-
-sub parse_params {
-    my ( $cgi, $params_def, $opts ) = @_;
-
-    my %params_ret = ( values => {}, errors => {} );
-    my %params;
-    if ($USE_PAGED_MODE) {
-        debug( "Use PAGED_MODE", 2 ) if DEBUG;
-        %params = %$params_def;
-        foreach (keys %page_params) {
-            delete $params{$_};
-        }
-        %params = ( %params, %page_params );
-    } else {
-        %params = %$params_def;
-    }
-
-    foreach my $param ( keys %params ) {
-	
-	debug( "Param <strong>$param</strong>", 2 ) if DEBUG;
-
-	my $p_value_orig = $cgi->param($param);
-
-	if (!defined($p_value_orig)
-	    && defined $params_def->{$param}{alias}
-	    && defined $cgi->param($params_def->{$param}{alias})) {
-	    $p_value_orig = $cgi->param($params_def->{$param}{alias});
-	    debug( "Used alias <strong>$params_def->{$param}{alias}</strong>",
-		   2 );
-	}
-
-	my @p_value = ($p_value_orig);
-
-	debug( "Value (Orig) ".($p_value_orig||""), 2 ) if DEBUG;
-
-	if ($params_def->{$param}{array} && defined $p_value_orig) {
-	    @p_value = split /$params_def->{$param}{array}/, $p_value_orig;
-	    debug( "Value (Array Split) ". join('##',@p_value), 2 ) if DEBUG;
-	}
-
-	if ($params_def->{$param}{match} && defined $p_value_orig) {
-	    @p_value = map
-	    { $_ =~ m/$params_def->{$param}{match}/; $_ = $1 }
-	    @p_value;
-	}
-	@p_value = grep { defined $_ } @p_value;
-
-	debug( "Value (Match) ". join('##',@p_value), 2 ) if DEBUG;
-
-	unless (@p_value) {
-	    if (defined $params{$param}{default}) {
-		@p_value = ($params{$param}{default});
-	    } else {
-		@p_value = undef;
-		$params_ret{errors}{$param} = "undef";
-		next;
-	    }
-	}
-
-	debug( "Value (Default) ". join('##',@p_value), 2 ) if DEBUG;
-	my @p_value_no_replace = @p_value;
-
-	if ($params{$param}{replace} && @p_value) {
-	    foreach my $pattern (keys %{$params{$param}{replace}}) {
-		my @p_value_tmp = @p_value;
-		@p_value = ();
-		foreach (@p_value_tmp) {
-		    if ($_ eq $pattern) {
-			my $replacement = $params{$param}{replace}{$_};
-			if (ref $replacement) {
-			    push @p_value, @$replacement;
-			} else {
-			    push @p_value, $replacement;
-			}
-		    } else {
-			push @p_value, $_;
-		    }
-		}
-	    }
-	}
-	
-	debug( "Value (Final) ". join('##',@p_value), 2 ) if DEBUG;
-
-	if ($params_def->{$param}{array}) {
-	    $params_ret{values}{$param} = {
-		orig => $p_value_orig,
-		no_replace => \@p_value_no_replace,
-		final => \@p_value,
-	    };
-	    @{$params_def->{$param}{var}} = @p_value
-		if $params_def->{$param}{var};
-	} else {
-	    $params_ret{values}{$param} = {
-		orig => $p_value_orig,
-		no_replace => $p_value_no_replace[0],
-		final => $p_value[0],
-	    };
-	    ${$params_def->{$param}{var}} = $p_value[0]
-		if $params_def->{$param}{var};
-	}
-	$opts->{$param} = $params_ret{values}{$param}{final} if $opts;
-    }
-
-    if ($USE_PAGED_MODE) {
-        $cgi->delete( "page" );
-        $cgi->delete( "number" );
-    }
-
-    return %params_ret;
-}
-
-sub start { 
-    my $params = shift;
-
-    my $page = $params->{values}{page}{final}
-    || DEFAULT_PAGE;
-    my $res_per_page = $params->{values}{number}{final}
-    || DEFAULT_RES_PER_PAGE;
-
-    return 1 if $res_per_page =~ /^all$/i;
-    return $res_per_page * ($page - 1) + 1;
-}
-
-sub end {
-    my $params = shift;
-
-    use Data::Dumper;
-    debug( "end: ".Dumper($params) ) if DEBUG;
-    my $page = $params->{page}
-    || DEFAULT_PAGE;
-    my $res_per_page = $params->{number}
-    || DEFAULT_RES_PER_PAGE;
-
-    return $page * $res_per_page;
-}
-
-sub indexline {
-    my ($cgi, $params, $num_res) = @_;
-
-    my $index_line = "";
-    my $page = $params->{page}
-    || DEFAULT_PAGE;
-    my $res_per_page = $params->{number}
-    || DEFAULT_RES_PER_PAGE;
-    my $numpages = ceil($num_res /
-                        $res_per_page);
-    for (my $i = 1; $i <= $numpages; $i++) {
-        if ($i == $page) {
-            $index_line .= $i;
-        } else {
-            $index_line .= "<a href=\"".encode_entities($cgi->self_url).
-                "&amp;page=$i&amp;number=$res_per_page\">".
-                "$i</a>";
-        }
-	if ($i < $numpages) {
-	   $index_line .= " | ";
-	}
-    }
-    return $index_line;
-}
-
-sub nextlink {
-    my ($cgi, $params, $no_results ) = @_;
-
-    my $page = $params->{page}
-    || DEFAULT_PAGE;
-    $page++;
-    my $res_per_page = $params->{number}
-    || DEFAULT_RES_PER_PAGE;
-
-    if ((($page-1)*$res_per_page + 1) > $no_results) {
-        return "&gt;&gt;";
-    }
-
-    return "<a href=\"".encode_entities($cgi->self_url).
-        "&amp;page=$page&amp;number=$res_per_page\">&gt;&gt;</a>";
-}
-
-sub prevlink {
-    my ($cgi, $params ) = @_;
-
-    my $page = $params->{page}
-    || DEFAULT_PAGE;
-    $page--;
-    if (!$page) {
-        return "&lt;&lt;";
-    }
-
-    my $res_per_page = $params->{number}
-    || DEFAULT_RES_PER_PAGE;
-
-    return "<a href=\"".encode_entities($cgi->self_url).
-        "&amp;page=$page&amp;number=$res_per_page\">&lt;&lt;</a>";
-}
-
-sub resperpagelink {
-    my ($cgi, $params, $res_per_page ) = @_;
-
-    my $page;
-    if ($res_per_page =~ /^all$/i) {
-	$page = 1;
-    } else {
-	$page = ceil(start( $params ) / $res_per_page);
-    }
-
-    return "<a href=\"".encode_entities($cgi->self_url).
-        "&amp;page=$page&amp;number=$res_per_page\">$res_per_page</a>";
-}
-
-sub printindexline {
-    my ( $input, $no_results, $opts ) = @_;
-
-    my $index_line;
-    if ($no_results > $opts->{number}) {
-	
-	$index_line = prevlink( $input, $opts)." | ".
-	    indexline( $input, $opts, $no_results)." | ".
-	    nextlink( $input, $opts, $no_results);
-	
-	print "<p style=\"text-align:center\">$index_line</p>";
-    }
-}
-
-#sub multipageheader {
-#    my ( $input, $no_results, $opts ) = @_;
-#
-#    my ($start, $end);
-#    if ($opts->{number} =~ /^all$/i) {
-#	$start = 1;
-#	$end = $no_results;
-#	$opts->{number} = $no_results;
-#	$opts->{number_all}++;
-#    } else {
-#	$start = Packages::Search::start( $opts );
-#	$end = Packages::Search::end( $opts );
-#	if ($end > $no_results) { $end = $no_results; }
-#    }
-#
-#	print "<p>Found <em>$no_results</em> matching packages,";
-#    if ($end == $start) {
-#	print " displaying package $end.</p>";
-#    } else {
-#	print " displaying packages $start to $end.</p>";
-#    }
-#
-#    printindexline( $input, $no_results, $opts );
-#
-#    if ($no_results > 100) {
-#	print "<p>Results per page: ";
-#	my @resperpagelinks;
-#	for (50, 100, 200) {
-#	    if ($opts->{number} == $_) {
-#		push @resperpagelinks, $_;
-#	    } else {
-#		push @resperpagelinks, resperpagelink($input,$opts,$_);
-#	    }
-#	}
-#	if ($opts->{number_all}) {
-#	    push @resperpagelinks, "all";
-#	} else {
-#	    push @resperpagelinks, resperpagelink($input, $opts, "all");
-#	}
-#	print join( " | ", @resperpagelinks )."</p>";
-#    }
-#    return ( $start, $end );
-#}
 
 sub read_entry_all {
     my ($hash, $key, $results, $non_results, $opts) = @_;
@@ -387,6 +112,7 @@ sub read_entry_simple {
     my %virt = split /\01/o, $virt; 
     debug( "read_entry_simple: key=$key, archives=".
 	   join(" ",(keys %$archives)).", suite=$suite", 1) if DEBUG;
+    debug( "read_entry_simple: virt=".join(" ",(%virt)), 2) if DEBUG;
     # FIXME: not all of the 2^4=16 combinations of empty(results),
     # empty(virt{suite}), empty(fb_result), empty(virt{fb_suite}) are dealt
     # with correctly, but it's adequate enough for now
@@ -399,7 +125,7 @@ sub read_entry_simple {
     if (my $fb_suite = $fallback_suites{$suite}) {
 	my $fb_result = read_entry_simple( $hash, $key, $archives, $fb_suite );
 	my $fb_virt = shift(@$fb_result);
-	$virt{$suite} .= $fb_virt if $fb_virt;
+	$virt{$suite} .= $virt{$suite} ? " $fb_virt" : $fb_virt if $fb_virt;
 	return [ $virt{$suite}, @$fb_result ] if @$fb_result;
     }
     return [ $virt{$suite} ];

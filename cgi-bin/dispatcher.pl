@@ -67,7 +67,7 @@ my $acc = I18N::AcceptLanguage->new();
 my $http_lang = $acc->accepts( $input->http("Accept-Language"),
 			       \@LANGUAGES ) || 'en';
 debug( "LANGUAGES=@LANGUAGES header=".
-       $input->http("Accept-Language").
+       ($input->http("Accept-Language")||'').
        " http_lang=$http_lang", 2 ) if DEBUG;
 bindtextdomain ( 'pdo', $LOCALES );
 textdomain( 'pdo' );
@@ -79,7 +79,10 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 
     push @components, 'index' if $path =~ m,/$,;
 
-    debug( "components[0]=$components[0]", 2 ) if DEBUG and @components>0;
+    my %LANGUAGES = map { $_ => 1 } @LANGUAGES;
+    if (@components > 0 and $LANGUAGES{$components[0]}) {
+	$input->param( 'lang', shift(@components) );
+    }
     if (@components > 0 and $components[0] eq 'source') {
 	shift @components;
 	$input->param( 'source', 1 );
@@ -122,28 +125,29 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	    }
 	}
 
-	my @tmp;
-	foreach (@components) {
-	    if ($SUITES{$_}) {
+	my (@pkg, $need_pkg);
+	foreach (reverse @components) {
+	    $need_pkg = !@pkg
+		&& ($what_to_do !~ /^(index|allpackages|newpkg)$/);
+	    if (!$need_pkg && $SUITES{$_}) {
 		set_param_once( $input, \%params_set, 'suite', $_);
-#possible conflicts with package names
-#	    } elsif (my $s = $SUITES_ALIAS{$_}) {
-#		set_param_once( $input, \%params_set, 'suite', $s);
-	    } elsif ($SECTIONS{$_}) {
+	    } elsif (!$need_pkg && (my $s = $SUITES_ALIAS{$_})) {
+		set_param_once( $input, \%params_set, 'suite', $s);
+	    } elsif (!$need_pkg && $SECTIONS{$_}) {
 		set_param_once( $input, \%params_set, 'section', $_);
-	    } elsif ($ARCHIVES{$_}) {
+	    } elsif (!$need_pkg && $ARCHIVES{$_}) {
 		set_param_once( $input, \%params_set, 'archive', $_);
+	    } elsif (!$need_pkg && $sections_descs{$_}) {
+		set_param_once( $input, \%params_set, 'subsection', $_);
+	    } elsif (!$need_pkg && ($_ eq 'source')) {
+		set_param_once( $input, \%params_set, 'source', 1);
 	    } elsif ($ARCHITECTURES{$_}) {
 		set_param_once( $input, \%params_set, 'arch', $_);
-	    } elsif ($sections_descs{$_}) {
-		set_param_once( $input, \%params_set, 'subsection', $_);
-	    } elsif ($_ eq 'source') {
-		set_param_once( $input, \%params_set, 'source', 1);
 	    } else {
-		push @tmp, $_;
+		push @pkg, $_;
 	    }
 	}
-	@components = @tmp;
+	@components = @pkg;
 
 	if (@components > 1) {
 	    fatal_error( sprintf( _g( "two or more packages specified (%s)" ), "@components" ) );
@@ -176,6 +180,7 @@ my %params_def = ( keywords => { default => undef,
 		   exact => { default => 0, match => '^(\w+)$',  },
 		   lang => { default => $http_lang, match => '^(\w+)$',  },
 		   source => { default => 0, match => '^(\d+)$',  },
+		   debug => { default => 0, match => '^(\d+)$',  },
 		   searchon => { default => 'names', match => '^(\w+)$', },
 		   section => { default => 'all', match => '^([\w-]+)$',
 				alias => 'release', array => ',',
@@ -191,7 +196,8 @@ my %params_def = ( keywords => { default => undef,
 		   mode => { default => undef, match => '^(\w+)$',  },
 		   );
 my %opts;
-my %params = Packages::Search::parse_params( $input, \%params_def, \%opts );
+my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
+Packages::CGI::init_url( $input, \%params, \%opts );
 
 my $locale = get_locale($opts{lang});
 my $charset = get_charset($opts{lang});

@@ -71,7 +71,7 @@ sub send_file {
 			  suite => 'all',
 			  section => 'all',
 			  exact => 1,
-			  debug => $Packages::Search::debug,
+			  debug => $Packages::CGI::debug,
 		      },
 		      );
 }

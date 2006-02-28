@@ -39,10 +39,7 @@ sub do_search {
 
     # for URL construction
     my $keyword_esc = uri_escape( $keyword );
-    my $suites_param = join ',', @{$params->{values}{suite}{no_replace}};
-    my $sections_param = join ',', @{$params->{values}{section}{no_replace}};
-    my $archs_param = join ',', @{$params->{values}{arch}{no_replace}};
-    $opts->{common_params} = "suite=$suites_param&section=$sections_param&keywords=$keyword_esc&searchon=$searchon&arch=$archs_param";
+    $opts->{keywords_esc} = $keyword_esc;
 
     # for output
     my $keyword_enc = encode_entities $keyword || '';
@@ -134,7 +131,7 @@ sub do_search {
 	    
 	    if ($opts->{exact}) {
 		hint( sprintf( _g( 'You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.' ),
-			       encode_entities("$SEARCH_URL?exact=0&$opts->{common_params}") ) );
+			       encode_entities(make_search_url('',"keywords=$keyword_esc",{exact => 0})) ) );
 	    }
 	}
 	hint( sprintf( _g( 'You can try a different search on the <a href="%s">Packages search page</a>.' ), "$SEARCH_PAGE#search_packages" ) );
@@ -250,7 +247,7 @@ sub print_packages {
 	}
     } elsif (@$pkgs_list) {
 	$str .= "<p>".sprintf( _g( '<a href="%s">%s</a> results have not been displayed because you requested only exact matches.' ),
-			       encode_entities("$SEARCH_URL?exact=0&$opts->{common_params}"),
+			       encode_entities(make_search_url('',"keywords=$opts->{keyword_esc}",{exact => 0})),
 			       scalar @$pkgs_list )."</p>";
     }
     $str .= '</div>';
@@ -264,7 +261,7 @@ sub print_package {
     my $str = '<h3>'.sprintf( _g( 'Package %s' ), $pkg ).'</h3>';
     $str .= '<ul>';
     foreach my $suite (@SUITES) {
-	    my $path = $suite;
+	    my $override = { suite => $suite };
 	    if (exists $pkgs->{$suite}) {
 		my %archs_printed;
 		my @versions = version_sort keys %{$pkgs->{$suite}};
@@ -272,8 +269,8 @@ sub print_package {
 		if ($sect->{$suite}{$versions[0]}) {
 		    $origin_str .= " ".marker($sect->{$suite}{$versions[0]});
 		}
-		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a> (%s): %s   %s\n",
-				 $path, $pkg, $path, $subsect->{$suite}{$versions[0]},
+		$str .= sprintf( "<li><a href=\"%s\">%s</a> (%s): %s   %s\n",
+				 make_url($pkg,'',$override), $suite, $subsect->{$suite}{$versions[0]},
 				 $desc->{$suite}{$versions[0]}, $origin_str );
 		
 		foreach my $v (@versions) {
@@ -290,14 +287,16 @@ sub print_package {
 		}
 		if (my $p =  $provided_by->{$suite}) {
 		    $str .= '<br>'._g( 'also provided by: ' ).
-			join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$p);
+			join( ', ', map { "<a href=\"".
+					      make_url($_,'',$override)."\">$_</a>"  } @$p);
 		}
 		$str .= "</li>\n";
 	    } elsif (my $p =  $provided_by->{$suite}) {
-		$str .= sprintf( "<li><a href=\"$ROOT/%s/%s\">%s</a>: Virtual package<br>",
-				 $path, $pkg, $path );
+		$str .= sprintf( "<li><a href=\"%s\">%s</a>: "._g('Virtual package').'<br>',
+				 make_url($pkg,'',$override), $suite );
 		$str .= _g( 'provided by: ' ).
-		    join( ', ', map { "<a href=\"$ROOT/$path/$_\">$_</a>"  } @$p);
+		    join( ', ', map { "<a href=\"".
+					  make_url($_,'',$override)."\">$_</a>"  } @$p);
 	    }
     }
     $str .= "</ul>\n";

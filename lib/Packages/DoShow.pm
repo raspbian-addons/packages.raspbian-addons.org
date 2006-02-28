@@ -81,7 +81,7 @@ sub do_show {
 		if ($suite eq $_) {
 		    $$menu .= "[ <strong>$_</strong> ] ";
 		} else {
-		    $$menu .= "[ <a href=\"$ROOT/$_/$encodedpkg\">$_</a> ] ";
+		    $$menu .= "[ <a href=\"".make_url($encodedpkg,'',{suite=>$suite})."\">$_</a> ] ";
 		}
 	    }
 	    $$menu .= '<br>';
@@ -147,16 +147,16 @@ sub do_show {
 # 	    $short_desc = conv_desc( $lang, $short_desc );
 			my @menu = ( [ _g( "Distribution:" ),
 				       _g( "Overview over this suite" ),
-				       "$ROOT/$suite/",
+				       make_url("/",''),
 				       $suite ],
 				     [ _g( "Section:" ),
 				       _g( "All packages in this section" ),
-				       "$ROOT/$suite/$subsection/",
+				       make_url("$subsection/",''),
 				       $subsection ], );
 			my $source = $page->get_src('package');
 			push @menu, [ _g( "Source:" ),
 				      _g( "Source package building this package" ),
-				      "$ROOT/$suite/source/$source",
+				      make_url($source,'',{source=>'source'}),
 				      $source ] if $source;
 			$$menu .= simple_menu( @menu );
 
@@ -171,7 +171,7 @@ sub do_show {
 			$package_page .= title( $title );
 			
 			if (my $provided_by = $page->{provided_by}) {
-			    note( _g( "This is also a virtual package provided by ").join( ', ', map { "<a href=\"$ROOT/$suite/$_\">$_</a>"  } @$provided_by) );
+			    note( _g( "This is also a virtual package provided by ").join( ', ', map { "<a href=\"".make_url($_,'')."\">$_</a>"  } @$provided_by) );
 			}
 			
 			if ($suite eq "experimental") {
@@ -228,7 +228,7 @@ sub do_show {
 			$package_page .= "<th>"._g( "Package Size")."</th><th>"._g("Installed Size")."</th><th>"._g("Files")."</th></tr>\n";
 			foreach my $a ( @archs ) {
 			    $package_page .= "<tr>\n";
-			    $package_page .=  "<th><a href=\"$ROOT/$suite/$encodedpkg/$a/download";
+			    $package_page .=  "<th><a href=\"".make_url("$encodedpkg/$a/download",'');
 			    $package_page .=  "\">$a</a></th>\n";
 			    $package_page .= "<td>".$versions->{$a}."</td>"
 				if $multiple_versions;
@@ -239,7 +239,7 @@ sub do_show {
 			    $package_page .= "</td>\n<td>";
 			    if ( $suite ne "experimental" ) {
 				$package_page .= sprintf( "[<a href=\"%s\">"._g( "list of files" )."</a>]\n",
-							  "$ROOT/$suite/$encodedpkg/$a/filelist", $pkg );
+							  make_url("$encodedpkg/$a/filelist",''), $pkg );
 			    } else {
 				$package_page .= _g( "no current information" );
 			    }
@@ -262,11 +262,11 @@ sub do_show {
 
 			$$menu .= simple_menu( [ _g( "Distribution:" ),
 						 _g( "Overview over this distribution" ),
-						 "$ROOT/",
+						 make_url('/',''),
 						 $suite ],
 					       [ _g( "Section:" ),
 						 _g( "All packages in this section" ),
-						 "$ROOT/$suite/virtual/",
+						 make_url("virtual/",''),
 						 
 						 'virtual' ], );
 
@@ -304,11 +304,11 @@ sub do_show {
 
 		    $$menu .= simple_menu( [ _g( "Distribution:" ),
 					     _g( "Overview over this suite" ),
-					     "$ROOT/$suite/",
+					     make_url('/',''),
 					     $suite ],
 					   [ _g( "Section:" ),
 					     _g( "All packages in this section" ),
-					     "$ROOT/$suite/$subsection/",
+					     make_url("$subsection/",''),
 					     $subsection ],
 					   );
 		    

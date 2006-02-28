@@ -8,7 +8,7 @@ use URI::Escape;
 use HTML::Entities;
 use Locale::gettext;
 
-use Packages::CGI ();
+use Packages::CGI qw(make_url make_search_url);
 use Packages::Search qw( read_entry_simple );
 use Packages::Config qw( :all );
 
@@ -89,7 +89,7 @@ sub pkg_list {
 	my $short_desc = (read_entry_simple( $packages, $p, $opts->{h_archives}, $suite))->[-1];
 
 	if ( $short_desc ) {
-	    $str .= "<dt><a href=\"$ROOT/$suite/$p\">$p</a></dt>\n".
+	    $str .= "<dt><a href=\"".make_url($p,'',{source=>undef})."\">$p</a></dt>\n".
 		    "\t<dd>$short_desc</dd>\n";
 	} else {
 	    $str .= "<dt>$p</dt>\n\t<dd>"._g("Not available")."</dd>\n";
@@ -127,11 +127,8 @@ sub pmoreinfo {
     my $src_dir = $page->get_src('directory');
     if ($info{sourcedownload}) {
 	my $files = $page->get_src( 'files' );
-	my $path = (@{$opts->{archive}} >1) ?
-	    $suite :
-	    "$suite/$opts->{archive}[0]";
 	$str .= _g( "Source Package:" );
-	$str .= " <a href=\"$ROOT/$path/source/$source\">$source</a>, ".
+	$str .= " <a href=\"".make_url($source,'',{source=>'source'})."\">$source</a>, ".
 	    _g( "Download" ).":\n";
 
 	unless (defined($files) and @$files) {
@@ -218,13 +215,11 @@ sub pmoreinfo {
 }
 
 sub dep_item {
-    my ( $link, $name, $info, $desc ) = @_;
-    my $post_link = '';
-    if ($link) {
-	$link = "<a href=\"$link\">";
+    my ( $suite, $name, $info, $desc ) = @_;
+    my ($link, $post_link) = ('', '');
+    if ($suite) {
+	$link = "<a href=\"".make_url($name,'',{suite=>$suite})."\">";
 	$post_link = '</a>';
-    } else {
-	$link = '';
     }
     if ($info) {
 	$info = " $info";
@@ -241,12 +236,13 @@ sub dep_item {
 } # end dep_item
 
 sub provides_string {
-    my ($path, $entry,$also) = @_;
-    my @provided_by = split /\s/, $entry;
+    my ($suite, $entry, $also) = @_;
+    my %tmp = map { $_ => 1 } split /\s/, $entry;
+    my @provided_by = keys %tmp; # weed out duplicates
     my $short_desc = $also ? _g("also a virtual package provided by ")
 	: _g("virtual package provided by ");
     if (@provided_by < 10) {
-	$short_desc .= join( ', ',map { "<a href=\"$path/$_\">$_</a>" } @provided_by);
+	$short_desc .= join( ', ',map { "<a href=\"".make_url($_,'',{suite=>$suite})."\">$_</a>" } @provided_by);
     } else {
 	$short_desc .= sprintf( _g("%s packages"), scalar(@provided_by));
     }
@@ -302,24 +298,24 @@ sub print_deps {
 	    my $short_desc = $entry->[-1];
 	    my $arch = $entry->[3];
 	    my $archive = $entry->[1];
-	    my $path = $entry->[2];
+	    my $p_suite = $entry->[2];
 	    if ( $short_desc ) {
 		if ( $is_old_pkgs ) {
-		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
+		    push @res_pkgs, dep_item( $p_suite,
 					      $p_name, "$pkg_version$arch_str" );
 		} elsif (defined $entry->[1]) {
 		    $entries{$p_name} ||= $entry;
 		    $short_desc = encode_entities( $short_desc, "<>&\"" );
-		    $short_desc .= "<br>".provides_string( "$ROOT/$path",
+		    $short_desc .= "<br>".provides_string( $p_suite,
 							   $entry->[0],
 							   1 )
 			if defined $entry->[0];
-		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
+		    push @res_pkgs, dep_item( $p_suite,
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		} elsif (defined $entry->[0]) {
-		    $short_desc = provides_string( "$ROOT/$path",
+		    $short_desc = provides_string( $p_suite,
 						   $entry->[0] );
-		    push @res_pkgs, dep_item( "$ROOT/$path/$p_name",
+		    push @res_pkgs, dep_item( $p_suite,
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}
 	    } elsif ( $is_old_pkgs ) {
