@@ -232,6 +232,7 @@ sub do_download {
 	
 	read_entry( \%packages, $pkg, \@results, $opts );
 
+	@results = grep { $_->[7] ne 'v' } @results;
 	unless (@results) {
 	    fatal_error( _g( "No such package." )."<br>".
 			 sprintf( _g( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) );
@@ -243,6 +244,7 @@ sub do_download {
 		}
 	    }
 	    
+	    debug( "final_result=@$final_result", 1 );
 	    $archive = $final_result->[1];
 	    my %data = split /\000/, $packages_all{"$pkg $arch $final_result->[7]"};
 	    $file = $data{filename};
@@ -270,10 +272,12 @@ sub do_download {
 	    $$page_content .= "<p>".sprintf( _g( 'You can download the requested file from the <tt>%s</tt> subdirectory at:' ), $directory )."</p>\n";
 	}
 
-	hint(_g("If you are running Debian, it's strongly suggested to use a
-	    package manager like <a href=\"../../aptitude\">aptitude</a> or <a
-	    href=\"../../synaptic\">synaptic</a> to download and install
-	    packages, instead of doing so manually via this website"));
+	hint(sprintf(_g("If you are running Debian, it's strongly suggested to use a
+	    package manager like <a href=\"%s\">aptitude</a> or <a
+	    href=\"%s\">synaptic</a> to download and install
+	    packages, instead of doing so manually via this website."),
+		     make_url('aptitude','',{arch=>undef}), 
+		     make_url('synaptic','',{arch=>undef}) ) );
 	
 	if ($archive eq 'security') {
 	    
