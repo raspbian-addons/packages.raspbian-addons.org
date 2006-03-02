@@ -83,7 +83,7 @@ sub do_search {
     my $std = timediff($st1, $st0);
     debug( "Search took ".timestr($std) ) if DEBUG;
     
-    my $suite_wording = $suites_enc eq "all" ? _g("all suites")
+    my $suite_wording = $suites_enc =~ /^(default|all)$/ ? _g("all suites")
 	: sprintf(_g("suite(s) <em>%s</em>", $suites_enc) );
     my $section_wording = $sections_enc eq 'all' ? _g("all sections")
 	: sprintf(_g("section(s) <em>%s</em>", $sections_enc) );

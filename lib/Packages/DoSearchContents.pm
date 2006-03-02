@@ -30,6 +30,13 @@ sub do_search_contents {
     if ($params->{errors}{suite}) {
 	fatal_error( _g( "suite not valid or not specified" ) );
     }
+
+    #FIXME: that's extremely hacky atm
+    if ($params->{values}{suite}{no_replace}[0] eq 'default') {
+	$params->{values}{suite}{no_replace} =
+	    $params->{values}{suite}{final} = $opts->{suite} = [ 'stable' ];
+    }
+
     if (@{$opts->{suite}} > 1) {
 	fatal_error( sprintf( _g( "more than one suite specified for contents search (%s)" ), "@{$opts->{suite}}" ) );
     }
@@ -52,9 +59,9 @@ sub do_search_contents {
     # for output
     my $keyword_enc = encode_entities $keyword || '';
     my $searchon_enc = encode_entities $searchon;
-    my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ) );
-    my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ) );
-    my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ) );
+    my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ), '&<>"' );
+    my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ), '&<>"' );
+    my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ), '&<>"' );
     
     my $st0 = new Benchmark;
     my (@results);
@@ -102,14 +109,19 @@ sub do_search_contents {
 	debug( "Search took ".timestr($std) ) if DEBUG;
     }
     
-    my $suite_wording = $suites_enc eq "all" ? _g("all suites")
-	: sprintf(_g("suite(s) <em>%s</em>", $suites_enc) );
+    my $suite_wording = sprintf(_g("suite <em>%s</em>"), $suites_enc );
     my $section_wording = $sections_enc eq 'all' ? _g("all sections")
-	: sprintf(_g("section(s) <em>%s</em>", $sections_enc) );
+	: sprintf(_g("section(s) <em>%s</em>"), $sections_enc );
     my $arch_wording = $archs_enc eq 'any' ? _g("all architectures")
-	: sprintf(_g("architecture(s) <em>%s</em>", $archs_enc) );
-    my $wording = $opts->{exact} ? _g("exact filenames") : _g("filenames that contain");
-    $wording = _g("paths that end with") if $searchon eq "contents";
+	: sprintf(_g("architecture(s) <em>%s</em>"), $archs_enc );
+    my $wording = _g("filenames that contain");
+    if ($searchon eq 'contents') {
+	if ($opts->{exact}) {
+	    $wording =  _g("files named");
+	} else {
+	    $wording = _g("paths that end with");
+	}
+    }
     msg( sprintf( _g("You have searched for %s <em>%s</em> in %s, %s, and %s." ),
 		  $wording, $keyword_enc,
 		  $suite_wording, $section_wording, $arch_wording ) );
@@ -140,20 +152,45 @@ sub do_search_contents {
 
     $$page_content = '';
     if (@results) {
+	my (%results,%archs);
+	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
+	    my $file = shift @$result;
+	    my %pkgs;
+	    foreach (@$result) {
+		my ($pkg, $arch) = split /:/, $_;
+		next unless $opts->{h_archs}{$arch};
+		$pkgs{$pkg}{$arch}++;
+		$archs{$arch}++ unless $arch eq 'all';
+	    }
+	    next unless keys %pkgs;
+	    $results{$file} = \%pkgs;
+	}
+	my @all_archs = keys %archs;
+	debug( "all_archs = @all_archs", 1 ) if DEBUG;
+
 	$$page_content .= "<p>".sprintf( _g( 'Found %s results' ),
 					 scalar @results )."</p>";
 	$$page_content .= '<div
 	id="pcontentsres"><table><colgroup><col><col></colgroup><tr><th>'._g('File').'</th><th>'._g('Packages')
 	    .'</th></tr>';
-	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
-	    my $file = shift @$result;
+	foreach my $file (sort keys %results) {
 	    $$page_content .= "<tr><td class=\"file\">/$file</td><td>";
-	    my %pkgs;
-	    foreach (@$result) {
-		my ($pkg, $arch) = split /:/, $_;
-		$pkgs{$pkg}{$arch}++;
+	    my @pkgs;
+	    foreach my $pkg (sort keys %{$results{$file}}) {
+		my $arch_str = '';
+		my @archs = keys %{$results{$file}{$pkg}};
+		unless ($results{$file}{$pkg}{all} ||
+			(@archs == @all_archs)) {
+		    if (@archs < @all_archs/2) {
+			$arch_str = ' ['.join(' ',sort @archs).']';
+		    } else {
+			$arch_str = ' ['._g('not').' '.
+			    join(' ', grep { !$results{$file}{$pkg}{$_} } @all_archs).']';
+		    }
+		}
+		push @pkgs, "<a href=\"$ROOT/$suite/$pkg\">$pkg</a>$arch_str";
 	    }
-	    $$page_content .= join( ", ", map { "<a href=\"$ROOT/$suite/$_\">$_</a>" } sort keys %pkgs);
+	    $$page_content .= join( ", ", @pkgs);
 	    $$page_content .= '</td>';
 	}
 	$$page_content .= '<tr><th>'._g('File').'</th><th>'._g('Packages').'</th></tr>' if @results > 20;
