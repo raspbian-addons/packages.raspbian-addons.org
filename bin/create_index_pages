@@ -228,7 +228,7 @@ print "closing files ...\n";
 foreach my $s (@SUITES) {
     my $key = $s;
     print {$pages{$key}{fh}} '</dl>', trailer( "../" );
-    $pages{$key}{textgz}->gzclose or
+    ($pages{$key}{textgz}->gzclose == Z_OK) or
 	warn "can't close text index file $wwwdir/$key/allpackages.en.txt.gz.new: ".$pages{$key}{textgz}->gzerror;
     close $pages{$key}{fh} or
 	warn "can't close index file $wwwdir/$key/allpackages.en.html.new: $!";
