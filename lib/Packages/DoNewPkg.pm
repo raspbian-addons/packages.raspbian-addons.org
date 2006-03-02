@@ -101,9 +101,9 @@ sub do_newpkg {
 	    }
 	}
 
-	$$page_content .= '<p class="psmallcenter"><a href="$ROOT/$suite/allpackages" title="'.
+	$$page_content .= '<p class="psmallcenter"><a href="'.make_url('allpackages','').'" title="'.
 	    _g( "List of all packages" ) ."\">".
-	    _g( "All packages" ) ."</a><br>(<a href=\"$ROOT/$suite/allpackages?format=txt.gz\">".
+	    _g( "All packages" ) ."</a><br>(<a href=\"".make_url('allpackages','',{format=>'txt.gz'})."\">".
 	    _g( "compact compressed textlist" )."</a>)<br>".
 	    ($slist ? sprintf(_g( "New packages in %s" ), $slist ):'').
 	    "</p>\n";
