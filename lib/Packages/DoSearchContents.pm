@@ -17,7 +17,7 @@ use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;
 use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_PAGE
-			 @SUITES @ARCHIVES $ROOT );
+			 @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search_contents {
     my ($params, $opts, $html_header, $menu, $page_content) = @_;
@@ -126,14 +126,14 @@ sub do_search_contents {
 		  $wording, $keyword_enc,
 		  $suite_wording, $section_wording, $arch_wording ) );
 
+    msg( _g("Search in other suite:")." ".
+	 join( ' ', map { '[<a href="'.make_search_url('',"keywords=$keyword_esc",{suite=>$_}).
+			      "\">$_</a>]" } @SUITES ) );
+
     if ($Packages::Search::too_many_hits) {
 	error( _g( "Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords." ) );
     }
     
-    if (!@Packages::CGI::fatal_errors && !@results) {
-	error( _g( "Nothing found" ) );
-    }
-
     %$html_header = ( title => _g( 'Package Contents Search Results' ),
 		      lang => $opts->{lang},
 		      title_tag => _g( 'Debian Package Contents Search Results' ),
@@ -151,25 +151,37 @@ sub do_search_contents {
 		      );
 
     $$page_content = '';
-    if (@results) {
-	my (%results,%archs);
-	foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
-	    my $file = shift @$result;
-	    my %pkgs;
-	    foreach (@$result) {
-		my ($pkg, $arch) = split /:/, $_;
-		next unless $opts->{h_archs}{$arch};
-		$pkgs{$pkg}{$arch}++;
-		$archs{$arch}++ unless $arch eq 'all';
-	    }
-	    next unless keys %pkgs;
-	    $results{$file} = \%pkgs;
+    my (%results,%archs);
+    foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
+	my $file = shift @$result;
+	my %pkgs;
+	foreach (@$result) {
+	    my ($pkg, $arch) = split /:/, $_;
+	    next unless $opts->{h_archs}{$arch};
+	    $pkgs{$pkg}{$arch}++;
+	    $archs{$arch}++ unless $arch eq 'all';
 	}
-	my @all_archs = keys %archs;
-	debug( "all_archs = @all_archs", 1 ) if DEBUG;
+	next unless keys %pkgs;
+	$results{$file} = \%pkgs;
+    }
+    my @all_archs = keys %archs;
+    @all_archs = @ARCHITECTURES unless @all_archs;
+    debug( "all_archs = @all_archs", 1 ) if DEBUG;
+    msg(_g("Limit search to a specific architecture:")." ".
+	join( ' ', map { '[<a href="'.make_search_url('',"keywords=$keyword_esc",{arch=>$_}).
+			     "\">$_</a>]" } @all_archs ) )
+	unless (@{$opts->{arch}} == 1) || (@all_archs == 1);
+    msg(sprintf(_g('Search in <a href="%s">all architectures</a>'),
+		make_search_url('',"keywords=$keyword_esc",{arch=>undef})))
+	if @{$opts->{arch}} == 1;
 
+    if (!@Packages::CGI::fatal_errors && !keys(%results)) {
+	error( _g( "Nothing found" ) );
+    }
+
+    if (keys %results) {
 	$$page_content .= "<p>".sprintf( _g( 'Found %s results' ),
-					 scalar @results )."</p>";
+					 scalar keys %results )."</p>";
 	$$page_content .= '<div
 	id="pcontentsres"><table><colgroup><col><col></colgroup><tr><th>'._g('File').'</th><th>'._g('Packages')
 	    .'</th></tr>';
@@ -188,7 +200,7 @@ sub do_search_contents {
 			    join(' ', grep { !$results{$file}{$pkg}{$_} } @all_archs).']';
 		    }
 		}
-		push @pkgs, "<a href=\"$ROOT/$suite/$pkg\">$pkg</a>$arch_str";
+		push @pkgs, "<a href=\"".make_url($pkg,'',{suite=>$suite})."\">$pkg</a>$arch_str";
 	    }
 	    $$page_content .= join( ", ", @pkgs);
 	    $$page_content .= '</td>';

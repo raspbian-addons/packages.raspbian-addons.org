@@ -435,7 +435,7 @@ sub make_search_url {
     push @path, $Packages::Config::SEARCH_URL
 	if $Packages::Config::SEARCH_URL;
     foreach my $p (qw(lang source suite archive section subsection
-		      exact mode searchon format debug)) {
+		      arch exact mode searchon format debug)) {
 	my $val = $url_params{$p};
 	$val = $query_params{$p} if exists $query_params{$p};
 	$val = $override->{$p} if exists $override->{$p};
