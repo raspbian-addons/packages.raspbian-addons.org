@@ -198,7 +198,7 @@ our %arches = (
         s390    => 'IBM S/390',
 	"hurd-i386" => 'Hurd (i386)',
 	amd64   => 'AMD64',
-	"kfreebsd-i386" => 'GNU/kFreeBSD (i386)'
+	"kfreebsd-i386" => 'GNU/kFreeBSD (i386)',
 	"kfreebsd-amd64" => 'GNU/kFreeBSD (amd64)'
 );
 
