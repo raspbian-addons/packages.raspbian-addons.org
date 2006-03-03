@@ -28,7 +28,7 @@ sub do_search {
 
     if ($params->{errors}{keywords}) {
 	fatal_error( _g( "keyword not valid or missing" ) );
-    } elsif (length($opts->{keywords}) < 2) {
+    } elsif (grep { length($_) < 2 } @{$opts->{keywords}}) {
 	fatal_error( _g( "keyword too short (keywords need to have at least two characters)" ) );
     }
 

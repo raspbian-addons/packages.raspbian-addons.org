@@ -24,7 +24,7 @@ sub do_search_contents {
 
     if ($params->{errors}{keywords}) {
 	fatal_error( _g( "keyword not valid or missing" ) );
-    } elsif (length($opts->{keywords}) < 2) {
+    } elsif (grep { length($_) < 2 } @{$opts->{keywords}}) {
 	fatal_error( _g( "keyword too short (keywords need to have at least two characters)" ) );
     }
     if ($params->{errors}{suite}) {
@@ -43,20 +43,20 @@ sub do_search_contents {
 
     $$menu = "";
     
-    my $keyword = $opts->{keywords};
+    my @keywords = @{$opts->{keywords}};
     my $mode = $opts->{mode} || '';
     my $suite = $opts->{suite}[0];
     my $archive = $opts->{archive}[0] ||'';
     $Packages::Search::too_many_hits = 0;
 
     # for URL construction
-    my $keyword_esc = uri_escape( $keyword );
+    my $keyword_esc = uri_escape( "@keywords" );
     my $suites_param = join ',', @{$params->{values}{suite}{no_replace}};
     my $sections_param = join ',', @{$params->{values}{section}{no_replace}};
     my $archs_param = join ',', @{$params->{values}{arch}{no_replace}};
 
     # for output
-    my $keyword_enc = encode_entities $keyword || '';
+    my $keyword_enc = encode_entities "@keywords" || '';
     my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ), '&<>"' );
     my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ), '&<>"' );
     my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ), '&<>"' );
@@ -68,7 +68,7 @@ sub do_search_contents {
 
 	my $nres = 0;
 
-	my $kw = lc $keyword;
+	my $first_kw = lc shift @keywords;
 	# full filename search is tricky
 	my $ffn = $mode eq 'filename';
 
@@ -77,18 +77,25 @@ sub do_search_contents {
 	    or die "Failed opening reverse DB: $!";
 
 	if ($ffn) {
-	    open FILENAMES, '-|', 'fgrep', '--', $kw, "$DBDIR/contents/filenames_$suite.txt"
+	    open FILENAMES, '-|', 'fgrep', '--', $first_kw, "$DBDIR/contents/filenames_$suite.txt"
 		or die "Failed opening filename table: $!";
 
+	  FILENAME:
 	    while (<FILENAMES>) {
 		chomp;
+		foreach my $kw (@keywords) {
+		    next FILENAME unless /\Q$kw\E/;
+		}
 		&searchfile(\@results, reverse($_)."/", \$nres, $reverses);
 		last if $Packages::Search::too_many_hits;
 	    }
 	    close FILENAMES or warn "fgrep error: $!\n";
 	} else {
 
-	    $kw = reverse $kw;
+	    error(_g("The search mode you selected doesn't support more than one keyword."))
+		if @keywords;
+
+	    my $kw = reverse $first_kw;
 	    
 	    # exact filename searching follows trivially:
 	    $kw = "$kw/" if $mode eq 'exactfilename';
@@ -193,7 +200,10 @@ sub do_search_contents {
 	    ."</th></tr>\n";
 	foreach my $file (sort keys %results) {
 		my $file_enc = encode_entities($file);
-		$file_enc =~ s#(\Q$keyword_enc\E)#<span class="keyword">$1</span>#g;
+		foreach my $kw (@{$opts->{keywords}}) {
+		    my $kw_enc = encode_entities($kw);
+		    $file_enc =~ s#(\Q$kw_enc\E)#<span class="keyword">$1</span>#g;
+		}
 	    $$page_content .= "<tr><td class=\"file\">/$file_enc</td><td>";
 	    my @pkgs;
 	    foreach my $pkg (sort keys %{$results{$file}}) {
