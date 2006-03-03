@@ -19,6 +19,10 @@ do
 	(cd  volatile/${dist}-volatile/${part}/binary-${arch} &&
 	    wget -q -N ${volatile_ftpsite}/dists/${dist}/volatile/${part}/binary-${arch}/Packages.gz)
       done
+      echo retrieve Contents $dist-volatile/$arch
+      (cd volatile/${dist}-volatile &&
+	  wget -q -N ${volatile_ftpsite}/dists/${dist}/volatile/Contents-${arch}.gz)
+
     done
     for part in ${parts}
     do

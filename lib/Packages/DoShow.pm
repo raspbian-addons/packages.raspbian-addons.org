@@ -239,7 +239,8 @@ sub do_show {
 			    $package_page .=  sprintf(_g('%d&nbsp;kB'),
 						      $sizes_inst->{$a});
 			    $package_page .= "</td>\n<td>";
-			    if ( $suite ne "experimental" ) {
+			    if ( ($suite ne "experimental")
+				 && ($subsection ne 'debian-installer')) {
 				$package_page .= sprintf( "[<a href=\"%s\">"._g( "list of files" )."</a>]\n",
 							  make_url("$encodedpkg/$a/filelist",''), $pkg );
 			    } else {
