@@ -154,23 +154,29 @@ sub read_src_entry {
     read_src_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
 sub do_names_search {
-    my ($keyword, $packages, $postfixes, $read_entry, $opts,
+    my ($keywords, $packages, $postfixes, $read_entry, $opts,
 	$results, $non_results) = @_;
 
-    $keyword = lc $keyword;
+    my $first_keyword = lc shift @$keywords;
+    @$keywords = map { lc $_ } @$keywords;
         
-    my ($key, $prefixes) = ($keyword, '');
+    my ($key, $prefixes) = ($first_keyword, '');
     my %pkgs;
     $postfixes->seq( $key, $prefixes, R_CURSOR );
-    while (index($key, $keyword) >= 0) {
+    while (index($key, $first_keyword) >= 0) {
 	if ($prefixes =~ /^\001(\d+)/o) {
 	    debug( "$key has too many hits", 2 ) if DEBUG;
 	    $too_many_hits += $1;
 	} else {
+	  PREFIX:
 	    foreach (split /\000/o, $prefixes) {
 		$_ = '' if $_ eq '^';
-		debug( "add word $_$key", 2) if DEBUG;
-		$pkgs{$_.$key}++;
+		my $word = "$_$key";
+		foreach my $k (@$keywords) {
+		    next PREFIX unless $word =~ /\Q$k\E/;
+		}
+		debug( "add word $word", 2) if DEBUG;
+		$pkgs{$word}++;
 	    }
 	}
 	last if $postfixes->seq( $key, $prefixes, R_NEXT ) != 0;
@@ -180,30 +186,40 @@ sub do_names_search {
     my $no_results = keys %pkgs;
     if ($too_many_hits || ($no_results >= 100)) {
 	$too_many_hits += $no_results;
-	%pkgs = ( $keyword => 1 );
+	%pkgs = ( $first_keyword => 1 ) unless @$keywords;
     }
     foreach my $pkg (sort keys %pkgs) {
 	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
     }
 }
 sub do_fulltext_search {
-    my ($keyword, $file, $did2pkg, $packages, $read_entry, $opts,
+    my ($keywords, $file, $did2pkg, $packages, $read_entry, $opts,
 	$results, $non_results) = @_;
 
 # NOTE: this needs to correspond with parse-packages!
-    $keyword =~ tr [A-Z] [a-z];
-    if ($opts->{exact}) {
-	$keyword = " $keyword ";
+    my @tmp;
+    foreach my $keyword (@$keywords) {
+	$keyword =~ tr [A-Z] [a-z];
+	if ($opts->{exact}) {
+	    $keyword = " $keyword ";
+	}
+	$keyword =~ s/[(),.-]+//og;
+	$keyword =~ s;[^a-z0-9_/+]+; ;og;
+	push @tmp, $keyword;
     }
-    $keyword =~ s/[(),.-]+//og;
-    $keyword =~ s#[^a-z0-9_/+]+# #og;
+    my $first_keyword = shift @tmp;
+    @$keywords = @tmp;
 
     my $numres = 0;
     my %tmp_results;
     # fgrep is seriously faster than using perl
-    open DESC, '-|', 'fgrep', '-n', '--', $keyword, $file
+    open DESC, '-|', 'fgrep', '-n', '--', $first_keyword, $file
 	or die "couldn't open $file: $!";
+  LINE:
     while (<DESC>) {
+	foreach my $k (@$keywords) {
+	    next LINE unless /\Q$k\E/;
+	}
 	/^(\d+)/;
 	my $nr = $1;
 	debug( "Matched line $_", 2) if DEBUG;

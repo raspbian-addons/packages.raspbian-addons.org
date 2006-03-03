@@ -167,7 +167,8 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 my ( $pkg, @suites, @sections, @subsections, @archives, @archs );
 
 my %params_def = ( keywords => { default => undef,
-				 match => '^\s*([-+\@\s\w\/.:]+)\s*$',
+				 array => '\s+',
+				 match => '^([-+\@\w\/.:]+)$',
 			     },
 		   package => { default => undef,
 				match => '^([\w.+-]+)$',

@@ -34,15 +34,15 @@ sub do_search {
 
     $$menu = "";
     
-    my $keyword = $opts->{keywords};
+    my @keywords = @{$opts->{keywords}};
     my $searchon = $opts->{searchon};
 
     # for URL construction
-    my $keyword_esc = uri_escape( $keyword );
+    my $keyword_esc = uri_escape( "@keywords" );
     $opts->{keywords_esc} = $keyword_esc;
 
     # for output
-    my $keyword_enc = encode_entities $keyword || '';
+    my $keyword_enc = encode_entities "@keywords" || '';
     my $searchon_enc = encode_entities $searchon;
     my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ) );
     my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ) );
@@ -55,22 +55,19 @@ sub do_search {
 
 	if ($searchon eq 'names') {
 	    if ($opts->{source}) {
-		do_names_search( $keyword, \%sources, $sp_obj,
+		do_names_search( \@keywords, \%sources, $sp_obj,
 				 \&read_src_entry_all, $opts,
 				 \@results, \@non_results );
 	    } else {
-		do_names_search( $keyword, \%packages, $p_obj,
+		do_names_search( \@keywords, \%packages, $p_obj,
 				 \&read_entry_all, $opts,
 				 \@results, \@non_results );
 	    }
-#	} elsif ($searchon eq 'contents') {
-#	    require "./search_contents.pl";
-#	    &contents($input);
 	} else {
-	    do_names_search( $keyword, \%packages, $p_obj,
+	    do_names_search( \@keywords, \%packages, $p_obj,
 			     \&read_entry_all, $opts,
 			     \@results, \@non_results );
-	    do_fulltext_search( $keyword, "$DBDIR/descriptions.txt",
+	    do_fulltext_search( \@keywords, "$DBDIR/descriptions.txt",
 				\%did2pkg, \%packages,
 				\&read_entry_all, $opts,
 				\@results, \@non_results );
@@ -179,7 +176,7 @@ sub do_search {
 
 	    my %uniq_pkgs = map { $_ => 1 } (keys %pkgs, keys %provided_by);
 	    my @pkgs = sort keys %uniq_pkgs;
-	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, $keyword,
+	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, \@keywords,
 					      \&print_package, \%provided_by,
 					      \%archives, \%sect, \%subsect,
 					      \%desc );
@@ -210,7 +207,7 @@ sub do_search {
 	    }
 
 	    my @pkgs = sort keys %pkgs;
-	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, $keyword,
+	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, \@keywords,
 					      \&print_src_package, \%archives,
 					      \%sect, \%subsect, \%binaries );
 	} # else unless $opts->{source}
@@ -218,16 +215,18 @@ sub do_search {
 } # sub do_search
 
 sub print_packages {
-    my ($pkgs, $pkgs_list, $opts, $keyword, $print_func, @func_args) = @_;
+    my ($pkgs, $pkgs_list, $opts, $keywords, $print_func, @func_args) = @_;
 
     #my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
     my $str = '<div id="psearchres">';
     $str .= "<p>".sprintf( _g( "Found <em>%s</em> matching packages." ),
 			   scalar @$pkgs_list )."</p>";
     #my $count = 0;
+    my $keyword;
+    $keyword = $keywords->[0] if @$keywords == 1;
 	    
     my $have_exact;
-    if (grep { $_ eq $keyword } @$pkgs_list) {
+    if ($keyword && grep { $_ eq $keyword } @$pkgs_list) {
 	$have_exact = 1;
 	$str .= '<h2>'._g( "Exact hits" ).'</h2>';
 	$str .= &$print_func( $keyword, $pkgs->{$keyword}||{},
