@@ -43,7 +43,7 @@ sub do_filelist {
     my $arch = $opts->{arch}[0] ||'';
 
     %$html_header = ( title => sprintf( _g( "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>" ), $pkg, $suite, $arch ),
-		      title_tag => sprintf( _g( "Filelist of of package %s/%s/%s" ), $pkg, $suite, $arch ),
+		      title_tag => sprintf( _g( "Filelist of package %s/%s/%s" ), $pkg, $suite, $arch ),
 		      lang => $opts->{lang},
 		      keywords => "debian, $suite, $arch, filelist",
 		      print_title => 1,

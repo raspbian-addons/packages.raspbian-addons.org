@@ -211,7 +211,7 @@ sub dep_item {
     my ( $suite, $name, $info, $desc ) = @_;
     my ($link, $post_link) = ('', '');
     if ($suite) {
-	$link = "<a href=\"".make_url($name,'',{suite=>$suite})."\">";
+	$link = "<a href=\"".make_url($name,'',{suite=>$suite,source=>undef})."\">";
 	$post_link = '</a>';
     }
     if ($info) {
@@ -235,7 +235,7 @@ sub provides_string {
     my $short_desc = $also ? _g("also a virtual package provided by ")
 	: _g("virtual package provided by ");
     if (@provided_by < 10) {
-	$short_desc .= join( ', ',map { "<a href=\"".make_url($_,'',{suite=>$suite})."\">$_</a>" } @provided_by);
+	$short_desc .= join( ', ',map { "<a href=\"".make_url($_,'',{suite=>$suite,source=>undef})."\">$_</a>" } @provided_by);
     } else {
 	$short_desc .= sprintf( _g("%s packages"), scalar(@provided_by));
     }
@@ -530,7 +530,7 @@ sub trailer {
 	"<div id=\"fineprint\" class=\"bordertop\"><p>".
 	sprintf( _g( "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the Debian <a href=\"%s/contact\">contact page</a>." ), $CONTACT_MAIL, $CONTACT_MAIL, $HOME).
 	"</p>\n".
-	"<p>". _g( "Last Modified: " ). "LAST_MODIFIED_DATE".
+	"<p>". _g( "Last Modified: " ). gmtime().
 	"<br>\n".
 	sprintf( _g( "Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; See <a href=\"%s/license\">license terms</a>." ), "$HOME/" )."<br>\n".
 	_g( "Debian is a registered trademark of Software in the Public Interest, Inc." ).

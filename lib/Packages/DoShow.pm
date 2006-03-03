@@ -70,7 +70,7 @@ sub do_show {
 
 	unless (@results || @non_results ) {
 	    fatal_error( _g( "No such package." )."<br>".
-			 sprintf( _g( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) );
+			 sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
 	} else {
 	    my %all_suites;
 	    foreach (@results, @non_results) {

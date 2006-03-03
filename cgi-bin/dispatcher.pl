@@ -77,7 +77,7 @@ my $source = 0;
 if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
     my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
-    push @components, 'index' if $path =~ m,/$,;
+    push @components, 'index' if @components && $path =~ m,/$,;
 
     my %LANGUAGES = map { $_ => 1 } @LANGUAGES;
     if (@components > 0 and $LANGUAGES{$components[0]}) {
@@ -281,7 +281,6 @@ print "Total page evaluation took ".timestr($tetd)."<br>"
     if DEBUG;
 
 my $trailer = Packages::HTML::trailer( $ROOT );
-$trailer =~ s/LAST_MODIFIED_DATE/gmtime()/e; #FIXME
 print $trailer;
 
 # vim: ts=8 sw=4
