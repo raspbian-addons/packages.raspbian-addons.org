@@ -82,7 +82,7 @@ sub do_show {
 		if ($suite eq $_) {
 		    $$menu .= "[ <strong>$_</strong> ] ";
 		} else {
-		    $$menu .= "[ <a href=\"".make_url($encodedpkg,'',{suite=>$suite})."\">$_</a> ] ";
+		    $$menu .= "[ <a href=\"".make_url($encodedpkg,'',{suite=>$_})."\">$_</a> ] ";
 		}
 	    }
 	    $$menu .= '<br>';
