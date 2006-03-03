@@ -308,7 +308,9 @@ sub print_deps {
 		} elsif (defined $entry->[0]) {
 		    $short_desc = provides_string( $p_suite,
 						   $entry->[0] );
-		    push @res_pkgs, dep_item( $p_suite,
+		    #FIXME: we don't handle virtual packages from
+		    # the fallback suite correctly here
+		    push @res_pkgs, dep_item( $suite,
 					      $p_name, "$pkg_version$arch_str", $short_desc );
 		}
 	    } elsif ( $is_old_pkgs ) {
