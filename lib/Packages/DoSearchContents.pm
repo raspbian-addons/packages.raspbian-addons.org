@@ -44,8 +44,7 @@ sub do_search_contents {
     $$menu = "";
     
     my $keyword = $opts->{keywords};
-    my $searchon = $opts->{searchon};
-    my $exact = $opts->{exact};
+    my $mode = $opts->{mode};
     my $suite = $opts->{suite}[0];
     my $archive = $opts->{archive}[0] ||'';
     $Packages::Search::too_many_hits = 0;
@@ -58,7 +57,6 @@ sub do_search_contents {
 
     # for output
     my $keyword_enc = encode_entities $keyword || '';
-    my $searchon_enc = encode_entities $searchon;
     my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ), '&<>"' );
     my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ), '&<>"' );
     my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ), '&<>"' );
@@ -72,7 +70,7 @@ sub do_search_contents {
 
 	my $kw = lc $keyword;
 	# full filename search is tricky
-	my $ffn = $searchon eq 'filenames';
+	my $ffn = $mode eq 'filename';
 
 	my $reverses = tie my %reverses, 'DB_File', "$DBDIR/contents/reverse_$suite.db",
 	    O_RDONLY, 0666, $DB_BTREE
@@ -81,9 +79,6 @@ sub do_search_contents {
 	if ($ffn) {
 	    open FILENAMES, '-|', 'fgrep', '--', $kw, "$DBDIR/contents/filenames_$suite.txt"
 		or die "Failed opening filename table: $!";
-
-	    error( _g( "Exact and fullfilenamesearch don't go along" ) )
-		if $ffn and $exact;
 
 	    while (<FILENAMES>) {
 		chomp;
@@ -96,7 +91,7 @@ sub do_search_contents {
 	    $kw = reverse $kw;
 	    
 	    # exact filename searching follows trivially:
-	    $kw = "$kw/" if $exact;
+	    $kw = "$kw/" if $mode eq 'exactfilename';
 
 	    &searchfile(\@results, $kw, \$nres, $reverses);
 	}
@@ -114,17 +109,28 @@ sub do_search_contents {
 	: sprintf(_g("section(s) <em>%s</em>"), $sections_enc );
     my $arch_wording = $archs_enc eq 'any' ? _g("all architectures")
 	: sprintf(_g("architecture(s) <em>%s</em>"), $archs_enc );
-    my $wording = _g("filenames that contain");
-    if ($searchon eq 'contents') {
-	if ($opts->{exact}) {
-	    $wording =  _g("files named");
-	} else {
-	    $wording = _g("paths that end with");
-	}
+    my $wording = _g("paths that end with");
+    if ($mode eq 'filename') {
+	$wording =  _g("files named");
+    } elsif ($mode eq 'exactfilename') {
+	$wording = _g("filenames that contain");
     }
     msg( sprintf( _g("You have searched for %s <em>%s</em> in %s, %s, and %s." ),
 		  $wording, $keyword_enc,
 		  $suite_wording, $section_wording, $arch_wording ) );
+
+    if ($mode ne 'filename') {
+	msg( '<a href="'.make_search_url('',"keywords=$keyword_esc",{mode=>'filename'}).
+	      "\">"._g("Search within filenames")."</a>");
+    }
+    if ($mode ne 'exactfilename') {
+	msg( '<a href="'.make_search_url('',"keywords=$keyword_esc",{mode=>'exactfilename'}).
+	      "\">"._g("Search exact filename")."</a>");
+    }
+    if ($mode eq 'exactfilename' || $mode eq 'filename') {
+	msg( '<a href="'.make_search_url('',"keywords=$keyword_esc",{mode=>undef}).
+	      "\">"._g("Search for paths ending with")."</a>");
+    }
 
     msg( _g("Search in other suite:")." ".
 	 join( ' ', map { '[<a href="'.make_search_url('',"keywords=$keyword_esc",{suite=>$_}).
