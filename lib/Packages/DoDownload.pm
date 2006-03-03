@@ -133,7 +133,12 @@ our @kfreebsd_european_sites = (
         "kfreebsd-gnu.debian.net/debian",
         "ftp.easynet.be/ftp/gnuab/debian",
 	"ftp.de.debian.org/debian-kfreebsd",
+	"ftp.sh.cvut.cz/MIRRORS/debian-non-linux",
+	"ftp.eila.jussieu.fr/pub/Debian-gnuab",
 			       );
+my @kfreebsd_asian_sites = (
+	"ftp.citkit.ru/pub/HURD/debian",
+			    );
 our @nonus_north_american_sites = (
 #	"ftp.ca.debian.org/debian-non-US",
 	"debian.yorku.ca/debian/non-US",
@@ -194,6 +199,7 @@ our %arches = (
 	"hurd-i386" => 'Hurd (i386)',
 	amd64   => 'AMD64',
 	"kfreebsd-i386" => 'GNU/kFreeBSD (i386)'
+	"kfreebsd-amd64" => 'GNU/kFreeBSD (amd64)'
 );
 
 sub do_download {
@@ -283,17 +289,18 @@ sub do_download {
 	    
 	    $$page_content .= "<ul><li><a href=\"http://security.debian.org/debian-security/$file\">security.debian.org/debian-security</a></li></ul>";
 	    $$page_content .= '<p>'._g( 'Debian security updates are currently officially distributed only via <tt>security.debian.org</tt>.' ).'</p>';
-	} elsif ($arch eq 'amd64') {
+	} elsif ($archive eq 'amd64') {
 
 	    $$page_content .= print_links( _g( "North America" ), $file, @amd64_north_american_sites );
 	    $$page_content .= print_links( _g( "Europe" ), $file, @amd64_european_sites );
 	    $$page_content .= print_links( _g( "Asia" ), $file, @amd64_asian_sites );
 
 	    $$page_content .= '<p>'._g( 'Note that AMD64 is not officialy included in the Debian archive yet, but the AMD64 porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/amd64/">AMD64 ports page</a> for current information.' ).'</p>';
-	} elsif ($arch eq 'kfreebsd-i386') {
+	} elsif ($archive eq 'kfreebsd') {
 
 	    $$page_content .= print_links( _g( "North America" ), $file, @kfreebsd_north_american_sites );
 	    $$page_content .= print_links( _g( "Europe" ), $file, @kfreebsd_european_sites );
+	    $$page_content .= print_links( _g( "Asia" ), $file, @kfreebsd_asian_sites );
 	
 	    $$page_content .= '<p>'._g( 'Note that GNU/kFreeBSD is not officialy included in the Debian archive yet, but the GNU/kFreeBSD porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/kfreebsd-gnu/">GNU/kFreeBSD ports page</a> for current information.' ).'</p>';
 	} elsif ($archive eq 'non-US') {
