@@ -305,14 +305,17 @@ sub do_download {
 	    $$page_content .= '<p>'._g( 'Note that GNU/kFreeBSD is not officialy included in the Debian archive yet, but the GNU/kFreeBSD porter group keeps their archive in sync with the official archive as close as possible. See the <a href="http://www.debian.org/ports/kfreebsd-gnu/">GNU/kFreeBSD ports page</a> for current information.' ).'</p>';
 	} elsif ($archive eq 'non-US') {
 
+	    $$page_content .= '<div class="cardleft">';
 	    $$page_content .= print_links( _g( "North America" ), $file, @nonus_north_american_sites );
-	    $$page_content .= print_links( _g( "Europe" ), $file, @nonus_european_sites );
 	    $$page_content .= print_links( _g( "Australia and New Zealand" ), $file,
 					   @nonus_australian_sites );
 	    $$page_content .= print_links( _g( "Asia" ), $file, @nonus_asian_sites );
 	    $$page_content .= print_links( _g( "South America" ), $file, @nonus_south_american_sites );
-	    
-	    $$page_content .= '<p>'.sprintf( _g('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://www.debian.org/mirror/list-non-US' ).'</p>';
+	    $$page_content .= '</div><div class="cardright">';
+	    $$page_content .= print_links( _g( "Europe" ), $file, @nonus_european_sites );
+	    $$page_content .= '</div>';
+
+	    $$page_content .= '<p style="clear:both">'.sprintf( _g('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.' ), 'http://www.debian.org/mirror/list-non-US' ).'</p>';
 	} elsif ($archive eq 'backports') {
 	
 	    $$page_content .= '<div class="cardleft">';

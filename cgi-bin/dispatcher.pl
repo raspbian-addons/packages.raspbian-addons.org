@@ -118,6 +118,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	my %params_set;
 	sub set_param_once {
 	    my ($cgi, $params_set, $key, $val) = @_;
+	    debug("set_param_once key=$key val=$val",4) if DEBUG;
 	    if ($params_set->{$key}++) {
 		fatal_error( sprintf( _g( "%s set more than once in path" ), $key ) );
 	    } else {
@@ -129,6 +130,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	foreach (reverse @components) {
 	    $need_pkg = !@pkg
 		&& ($what_to_do !~ /^(index|allpackages|newpkg)$/);
+	    debug("need_pkg=$need_pkg component=$_",4) if DEBUG;
 	    if (!$need_pkg && $SUITES{$_}) {
 		set_param_once( $input, \%params_set, 'suite', $_);
 	    } elsif (!$need_pkg && (my $s = $SUITES_ALIAS{$_})) {
@@ -139,6 +141,8 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 		set_param_once( $input, \%params_set, 'archive', $_);
 	    } elsif (!$need_pkg && $sections_descs{$_}) {
 		set_param_once( $input, \%params_set, 'subsection', $_);
+	    } elsif (!$need_pkg && ($_ eq 'non-us')) { # non-US hack
+		set_param_once( $input, \%params_set, 'subsection', 'non-US');
 	    } elsif (!$need_pkg && ($_ eq 'source')) {
 		set_param_once( $input, \%params_set, 'source', 1);
 	    } elsif ($ARCHITECTURES{$_}) {

@@ -15,19 +15,19 @@ do
       for part in ${parts}
       do
 	echo retrieve Packages $dist-backports/$part/$arch
-	test -d us/${dist}-backports/${part}/binary-${arch} || mkdir -p us/${dist}-backports/${part}/binary-${arch}
-	(cd us/${dist}-backports/${part}/binary-${arch} &&
+	test -d backports/${dist}-backports/${part}/binary-${arch} || mkdir -p backports/${dist}-backports/${part}/binary-${arch}
+	(cd backports/${dist}-backports/${part}/binary-${arch} &&
 	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/${part}/binary-${arch}/Packages.gz)
       done
       echo retrieve Contents $dist-backports/$arch
-      (cd us/${dist}-backports &&
+      (cd backports/${dist}-backports &&
 	  wget -q -N ${backports_ftpsite}/dists/sarge-backports/Contents-${arch}.gz)
     done
     for part in ${parts}
     do
         echo retrieve Sources $dist-backports/$part
-        test -d us/${dist}-backports/${part}/source || mkdir -p us/${dist}-backports/${part}/source
-        (cd us/${dist}-backports/${part}/source &&
+        test -d backports/${dist}-backports/${part}/source || mkdir -p backports/${dist}-backports/${part}/source
+        (cd backports/${dist}-backports/${part}/source &&
             wget -q -N ${backports_ftpsite}/dists/sarge-backports/${part}/source/Sources.gz)
     done
 done

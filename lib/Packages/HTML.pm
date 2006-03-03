@@ -136,17 +136,10 @@ sub pmoreinfo {
 	} else {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
-		for ("$suite/".$page->get_newest('archive')) {
-		    /security/o && do {
-			$str .= "<a href=\"$env->{security}/$src_dir/$src_file_name\">["; last };
-		    /volatile/o && do {
-			$str .= "<a href=\"$env->{volatile}/$src_dir/$src_file_name\">["; last };
-		    /backports/o && do {
-			$str .= "<a href=\"$env->{backports}/$src_dir/$src_file_name\">["; last };
-		    /non-us/io && do {
-			$str .= "<a href=\"$env->{'non-US'}/$src_dir/$src_file_name\">["; last };
- 		    $str .= "<a href=\"$env->{us}/$src_dir/$src_file_name\">[";
- 		}
+		# non-US hack
+		(my $server = lc $page->get_newest('archive')) =~ s/-//go;
+		$str .= sprintf("<a href=\"%s/$src_dir/$src_file_name\">[",
+				$env->{$server}||$env->{us});
 		if ($src_file_name =~ /dsc$/) {
 		    $str .= "dsc";
 		} else {

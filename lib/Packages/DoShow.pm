@@ -382,19 +382,9 @@ sub do_show {
 		    foreach( @$source_files ) {
 			my ($src_file_md5, $src_file_size, $src_file_name)
 			    = split /\s+/, $_;
-			my $src_url;
-			for ("$suite/$archive") {
-			    /security/o &&  do {
-				$src_url = $FTP_SITES{security}; last };
-			    /volatile/o &&  do {
-				$src_url = $FTP_SITES{volatile}; last };
-			    /backports/o &&  do {
-
-				$src_url = $FTP_SITES{backports}; last };
-			    /non-us/io  &&  do {
-				$src_url = $FTP_SITES{'non-US'}; last };
-			    $src_url = $FTP_SITES{us};
-			}
+			(my $server = lc $archive) =~ s/-//go; # non-US hack
+			my $src_url = $FTP_SITES{$server}
+			    || $FTP_SITES{us};
 			$src_url .= "/$source_dir/$src_file_name";
 			
 			$package_page .= "<tr><td><a href=\"$src_url\">$src_file_name</a></td>\n"
