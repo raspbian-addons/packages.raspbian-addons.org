@@ -44,7 +44,7 @@ sub do_search_contents {
     $$menu = "";
     
     my $keyword = $opts->{keywords};
-    my $mode = $opts->{mode};
+    my $mode = $opts->{mode} || '';
     my $suite = $opts->{suite}[0];
     my $archive = $opts->{archive}[0] ||'';
     $Packages::Search::too_many_hits = 0;
@@ -193,7 +193,7 @@ sub do_search_contents {
 	    ."</th></tr>\n";
 	foreach my $file (sort keys %results) {
 		my $file_enc = encode_entities($file);
-		$file_enc =~ s#(\Q$keyword_enc\E)#<span class=keyword>$1</span>#g;
+		$file_enc =~ s#(\Q$keyword_enc\E)#<span class="keyword">$1</span>#g;
 	    $$page_content .= "<tr><td class=\"file\">/$file_enc</td><td>";
 	    my @pkgs;
 	    foreach my $pkg (sort keys %{$results{$file}}) {
