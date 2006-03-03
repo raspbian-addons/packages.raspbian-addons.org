@@ -190,9 +190,11 @@ sub do_search_contents {
 					 scalar keys %results )."</p>";
 	$$page_content .= '<div
 	id="pcontentsres"><table><colgroup><col><col></colgroup><tr><th>'._g('File').'</th><th>'._g('Packages')
-	    .'</th></tr>';
+	    ."</th></tr>\n";
 	foreach my $file (sort keys %results) {
-	    $$page_content .= "<tr><td class=\"file\">/$file</td><td>";
+		my $file_enc = encode_entities($file);
+		$file_enc =~ s#(\Q$keyword_enc\E)#<span class=keyword>$1</span>#g;
+	    $$page_content .= "<tr><td class=\"file\">/$file_enc</td><td>";
 	    my @pkgs;
 	    foreach my $pkg (sort keys %{$results{$file}}) {
 		my $arch_str = '';
@@ -209,9 +211,9 @@ sub do_search_contents {
 		push @pkgs, "<a href=\"".make_url($pkg,'',{suite=>$suite})."\">$pkg</a>$arch_str";
 	    }
 	    $$page_content .= join( ", ", @pkgs);
-	    $$page_content .= '</td>';
+	    $$page_content .= "</td></tr>\n";
 	}
-	$$page_content .= '<tr><th>'._g('File').'</th><th>'._g('Packages').'</th></tr>' if @results > 20;
+	$$page_content .= '<tr><th>'._g('File').'</th><th>'._g('Packages')."</th></tr>\n" if @results > 20;
 	$$page_content .= '</table></div>';
     }
 } # sub do_search_contents
