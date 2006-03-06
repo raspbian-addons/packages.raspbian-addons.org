@@ -74,6 +74,9 @@ for my $suite (@SUITES) {
 		}
 		# Skip double package
 		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
+		# Skip arch:all for amd64&kfreebsd, too often broken
+		next if ($archive eq 'amd64' or $archive eq 'kfreebsd')
+		    and $data{architecture} eq 'all';
 
 		if ($data{'provides'}) {
 		    foreach (split /\s*,\s*/, $data{'provides'}) {
