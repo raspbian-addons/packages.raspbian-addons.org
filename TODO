@@ -50,6 +50,9 @@ General:
   anymore, so search further is futile. Maybe the backend could even add a
   marker, ignored by read_entry_all, but understood by read_entry_small, that
   indicates end of $res2 and start of $res3
+- Debtags: print friendly names instead of raw names?
+- Store in db \1-separated, and split on that, instead of the more fragile
+  '/, /' split
 
 
 Missing pieces from old code:

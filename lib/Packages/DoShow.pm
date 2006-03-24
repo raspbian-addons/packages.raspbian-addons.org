@@ -122,6 +122,7 @@ sub do_show {
 			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 			my $did = $page->get_newest( 'description' );
+			my @tags = split(/, /, $page->get_newest( 'tag' ));
 			$section = $page->get_newest( 'section' );
 			$subsection = $page->get_newest( 'subsection' );
 			my $filenames = $page->get_arch_field( 'filename' );
@@ -183,6 +184,7 @@ sub do_show {
 				  );
 			}
 			$package_page .= pdesc( $short_desc, $long_desc );
+			$package_page .= ptags( $pkg, @tags ) if @tags;
 
 			#
 			# display dependencies

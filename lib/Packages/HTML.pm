@@ -21,7 +21,7 @@ use Packages::I18N::LanguageNames;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( header title trailer file_changed time_stamp
 		  read_md5_hash write_md5_hash simple_menu
-		  ds_begin ds_item ds_end title marker pdesc
+		  ds_begin ds_item ds_end title marker pdesc ptags
 		  pdeplegend pkg_list pmoreinfo print_deps print_src_deps );
 
 our $CHANGELOG_URL = '/changelogs';
@@ -62,6 +62,20 @@ sub pdesc {
 
     $str .= "<p>$long_desc\n";
     $str .= "</div> <!-- end pdesc -->\n";
+
+    return $str;
+}
+
+sub ptags {
+    my ( $package, @tags ) = @_;
+    my $str = "";
+
+    $str .= "<div id=\"ptags\">\n<p>";
+    $str .= "<a href=\"http://debtags.alioth.debian.org/cgi-bin/edit.cgi?pkg=".uri_escape($package)."\">Tags</a>:\n";
+    foreach my $tag (@tags) {
+        $str .= "<a href=\"http://debtags.alioth.debian.org/cgi-bin/index.cgi?tags=".uri_escape($tag)."\">$tag</a>\n";
+    }
+    $str .= "</p>\n</div> <!-- end ptags -->\n";
 
     return $str;
 }
