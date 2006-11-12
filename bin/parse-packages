@@ -31,6 +31,7 @@ my $MAX_PACKAGE_POSTFIXES = 100;
 
 use DB_File;
 use Storable;
+use File::Path;
 use Deb::Versions;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
 &Packages::Config::init( './' );
@@ -50,6 +51,8 @@ my %priorities = ();
 
 $/ = "";
 
+-d $DBDIR || mkpath( $DBDIR );
+
 for my $suite (@SUITES) {
     my %package_names_suite = ();
     my %packages_all_db;
@@ -59,6 +62,10 @@ for my $suite (@SUITES) {
 
     for my $archive (@ARCHIVES) {
 	print "Reading $archive/$suite...\n";
+	if (!-d "$TOPDIR/archive/$archive/$suite/") {
+                print "\tseems not to exist, skipping...\n";
+                next;
+        }
 	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;

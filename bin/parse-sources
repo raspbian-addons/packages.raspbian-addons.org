@@ -29,6 +29,7 @@ my $what = $ARGV[0] ? "non-free" : "*";
 my $MAX_SOURCE_POSTFIXES = 100;
 
 use DB_File;
+use File::Path;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
 &Packages::Config::init( './' );
 my %sources_small = ();
@@ -36,6 +37,8 @@ my %source_names = ();
 my %source_postfixes = ();
 
 $/ = "";
+
+-d $DBDIR || mkpath( $DBDIR );
 
 for my $archive (@ARCHIVES) {
     for my $suite (@SUITES) {
@@ -46,6 +49,10 @@ for my $archive (@ARCHIVES) {
 	tie %sources_all_db, "DB_File", "$DBDIR/sources_all_$suite.db.new",
 		O_RDWR|O_CREAT, 0666, $DB_BTREE
 		or die "Error creating DB: $!";
+	if (!-d "$TOPDIR/archive/$archive/$suite/") {
+		print "\tseems not to exist, skipping...\n";
+		next;
+	}
 	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/source/Sources.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
