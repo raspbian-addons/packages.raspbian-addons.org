@@ -27,9 +27,9 @@ our $config_read_time;
 
 sub init {
     my ($dir) = @_;
-    my $modtime = (stat( "$dir/config.sh" ))[9];
+    my $modtime = (stat( "$dir/config.sh" ))[9] || 0;
     $config_read_time ||= 0;
-    if ($modtime > $config_read_time) {
+    if ($modtime >= $config_read_time) {
 	if (!open (C, '<', "$dir/config.sh")) {
 	    error( "Internal: Cannot open configuration file." );
 	}
