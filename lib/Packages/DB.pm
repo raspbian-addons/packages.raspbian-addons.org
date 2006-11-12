@@ -18,8 +18,8 @@ our @EXPORT = qw( %packages %sources %src2bin %did2pkg %descriptions
 our $db_read_time ||= 0;
 
 sub init {
-    my $dbmodtime = (stat("$DBDIR/packages_small.db"))[9];
-    if ($dbmodtime > $db_read_time) {
+    my $dbmodtime = (stat("$DBDIR/packages_small.db"))[9] || 0;
+    if ($dbmodtime >= $db_read_time) {
 	$obj = tie %packages, 'DB_File', "$DBDIR/packages_small.db",
 	O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie DB $DBDIR/packages_small.db: $!";
