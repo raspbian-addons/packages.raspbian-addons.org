@@ -109,6 +109,7 @@ sub merge_package {
     ($self->{package} eq $data->{package}) || return;
     debug( "merge package $data->{package}/$data->{version}/$data->{architecture} into $self (".($self->{newest}||'').")", 2 ) if DEBUG;
 
+    (my $version = $data->{version}) =~ s/\+b\d+$//o; # strip binNMU number
     unless ($self->{newest}) {
 	debug( "package $data->{package}/$data->{version}/$data->{architecture} is first to merge", 3 ) if DEBUG;
 	foreach my $key (@TAKE_NEWEST) {
@@ -121,16 +122,19 @@ sub merge_package {
 	foreach my $key (@DEP_FIELDS) {
 	    $self->normalize_dependencies($key, $data);
 	}
-	$self->{newest} = $data->{version};
+	$self->{newest} = $version;
 	
         return 1;
     }
 
     debug( "package $data->{package}/$data->{version}/$data->{architecture} is subsequent merge", 3 ) if DEBUG;
     my $is_newest;
-    my $cmp = version_cmp( $data->{version}, $self->{newest} );
-    if ($is_newest = ($cmp > 0)) {
-	$self->{newest} = $data->{version};
+    my $cmp = version_cmp( $version, $self->{newest} );
+    # packages from the central archive are preferred over all
+    # others with the same version number but from other archives
+    if ($is_newest = ($cmp > 0)
+    		|| (!$cmp && ($data->{archive} eq 'us') && ($self->{data}{archive} ne 'us'))) {
+	$self->{newest} = $version;
 	foreach my $key (@TAKE_NEWEST) {
 	    $self->{data}{$key} = $data->{$key};
 	}
