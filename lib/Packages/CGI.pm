@@ -445,7 +445,7 @@ sub make_search_url {
     push @query_string, $add_query if $add_query;
 
     my $path = join( '/', @path );
-    my $query_string = join( '&', @query_string );
+    my $query_string = join( '&amp;', @query_string );
 
     return "$path?$query_string";
 }
