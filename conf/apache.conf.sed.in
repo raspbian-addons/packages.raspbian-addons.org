@@ -85,13 +85,13 @@
 
    Alias /cgi-bin/ %TOPDIR%/cgi-bin/
   
-   PerlModule Apache::Registry
+   PerlModule ModPerl::Registry
    PerlTaintCheck On
+   PerlRequire %TOPDIR%/bin/mod_perl-startup
    <Location /cgi-bin/>
       SetHandler perl-script
-      PerlRequire %TOPDIR%/bin/mod_perl-startup
       PerlInitHandler Apache::Reload
-      PerlHandler Apache::Registry
+      PerlHandler ModPerl::Registry
       Options +ExecCGI
       PerlSendHeader On
       allow from all
