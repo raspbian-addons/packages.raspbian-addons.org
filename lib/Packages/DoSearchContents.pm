@@ -16,11 +16,10 @@ use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;
-use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_PAGE
-			 @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
+use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search_contents {
-    my ($params, $opts, $html_header, $menu, $page_content) = @_;
+    my ($params, $opts, $html_header, $page_content) = @_;
 
     if ($params->{errors}{keywords}) {
 	fatal_error( _g( "keyword not valid or missing" ) );
@@ -42,26 +41,12 @@ sub do_search_contents {
 	fatal_error( sprintf( _g( "more than one suite specified for contents search (%s)" ), "@{$opts->{suite}}" ) );
     }
 
-    $$menu = "";
-    
     my @keywords = @{$opts->{keywords}};
     my $mode = $opts->{mode} || '';
     my $suite = $opts->{suite}[0];
     my $archive = $opts->{archive}[0] ||'';
     $Packages::Search::too_many_hits = 0;
 
-    # for URL construction
-    my $keyword_esc = uri_escape( "@keywords" );
-    my $suites_param = join ',', @{$params->{values}{suite}{no_replace}};
-    my $sections_param = join ',', @{$params->{values}{section}{no_replace}};
-    my $archs_param = join ',', @{$params->{values}{arch}{no_replace}};
-
-    # for output
-    my $keyword_enc = encode_entities "@keywords" || '';
-    my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ), '&<>"' );
-    my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ), '&<>"' );
-    my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ), '&<>"' );
-    
     my $st0 = new Benchmark;
     my (@results);
 
@@ -110,61 +95,8 @@ sub do_search_contents {
 	my $st1 = new Benchmark;
 	my $std = timediff($st1, $st0);
 	debug( "Search took ".timestr($std) ) if DEBUG;
-    }
-    
-    my $suite_wording = sprintf(_g("suite <em>%s</em>"), $suites_enc );
-    my $section_wording = $sections_enc eq 'all' ? _g("all sections")
-	: sprintf(_g("section(s) <em>%s</em>"), $sections_enc );
-    my $arch_wording = $archs_enc eq 'any' ? _g("all architectures")
-	: sprintf(_g("architecture(s) <em>%s</em>"), $archs_enc );
-    my $wording = _g("paths that end with");
-    if ($mode eq 'filename') {
-	$wording =  _g("files named");
-    } elsif ($mode eq 'exactfilename') {
-	$wording = _g("filenames that contain");
-    }
-    msg( sprintf( _g("You have searched for %s <em>%s</em> in %s, %s, and %s." ),
-		  $wording, $keyword_enc,
-		  $suite_wording, $section_wording, $arch_wording ) );
+    }    
 
-    if ($mode ne 'filename') {
-	msg( '<a href="'.make_search_url('',"keywords=$keyword_esc",{mode=>'filename'}).
-	      "\">"._g("Search within filenames")."</a>");
-    }
-    if ($mode ne 'exactfilename') {
-	msg( '<a href="'.make_search_url('',"keywords=$keyword_esc",{mode=>'exactfilename'}).
-	      "\">"._g("Search exact filename")."</a>");
-    }
-    if ($mode eq 'exactfilename' || $mode eq 'filename') {
-	msg( '<a href="'.make_search_url('',"keywords=$keyword_esc",{mode=>undef}).
-	      "\">"._g("Search for paths ending with")."</a>");
-    }
-
-    msg( _g("Search in other suite:")." ".
-	 join( ' ', map { '[<a href="'.make_search_url('',"keywords=$keyword_esc",{suite=>$_}).
-			      "\">$_</a>]" } @SUITES ) );
-
-    if ($Packages::Search::too_many_hits) {
-	error( _g( "Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords." ) );
-    }
-    
-    %$html_header = ( title => _g( 'Package Contents Search Results' ),
-		      lang => $opts->{lang},
-		      title_tag => _g( 'Debian Package Contents Search Results' ),
-		      print_title => 1,
-		      print_search_field => 'packages',
-		      search_field_values => { 
-			  keywords => $keyword_enc,
-			  searchon => 'contents',
-			  arch => $archs_enc,
-			  suite => $suites_enc,
-			  section => $sections_enc,
-			  exact => $opts->{exact},
-			  debug => $opts->{debug},
-		      },
-		      );
-
-    $$page_content = '';
     my (%results,%archs);
     foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
 	my $file = shift @$result;
@@ -180,52 +112,47 @@ sub do_search_contents {
     }
     my @all_archs = keys %archs;
     @all_archs = @ARCHITECTURES unless @all_archs;
-    debug( "all_archs = @all_archs", 1 ) if DEBUG;
-    msg(_g("Limit search to a specific architecture:")." ".
-	join( ' ', map { '[<a href="'.make_search_url('',"keywords=$keyword_esc",{arch=>$_}).
-			     "\">$_</a>]" } @all_archs ) )
-	unless (@{$opts->{arch}} == 1) || (@all_archs == 1);
-    msg(sprintf(_g('Search in <a href="%s">all architectures</a>'),
-		make_search_url('',"keywords=$keyword_esc",{arch=>undef})))
-	if @{$opts->{arch}} == 1;
+    $page_content->{suite} = $suite;
+    $page_content->{archive} = $archive;
+    $page_content->{all_architectures} = \@all_archs;
+    $page_content->{all_suites} = \@SUITES;
+    $page_content->{mode} = $mode;
+    $page_content->{search_architectures} = $opts->{arch};
+    $page_content->{search_keywords} = $opts->{keywords};
+    $page_content->{sections} = $opts->{section};
+    $page_content->{too_many_hits} = $Packages::Search::too_many_hits;
 
-    if (!@Packages::CGI::fatal_errors && !keys(%results)) {
-	error( _g( "Nothing found" ) );
-    }
+    debug( "all_archs = @all_archs", 1 ) if DEBUG;
 
     if (keys %results) {
-	$$page_content .= "<p>".sprintf( _g( 'Found %s results' ),
-					 scalar keys %results )."</p>";
-	$$page_content .= '<div
-	id="pcontentsres"><table><colgroup><col><col></colgroup><tr><th>'._g('File').'</th><th>'._g('Packages')
-	    ."</th></tr>\n";
-	foreach my $file (sort keys %results) {
-		my $file_enc = encode_entities($file);
-		foreach my $kw (@{$opts->{keywords}}) {
-		    my $kw_enc = encode_entities($kw);
-		    $file_enc =~ s#(\Q$kw_enc\E)#<span class="keyword">$1</span>#g;
-		}
-	    $$page_content .= "<tr><td class=\"file\">/$file_enc</td><td>";
-	    my @pkgs;
+	my $sort_func = sub { $_[0] cmp $_[1] };
+	$sort_func = sub { (sort keys %{$results{$_[0]}})[0]
+			   cmp
+			   (sort keys %{$results{$_[1]}})[0]
+			 } if $opts->{sort_by} eq 'pkg';
+
+	$page_content->{results} = [];
+	foreach my $file (sort {&$sort_func($a,$b)} keys %results) {
+	    my %result;
+	    $result{file} = "/$file";
+	    $result{packages} = [];
 	    foreach my $pkg (sort keys %{$results{$file}}) {
 		my $arch_str = '';
 		my @archs = keys %{$results{$file}{$pkg}};
+		my $arch_neg = 0;
 		unless ($results{$file}{$pkg}{all} ||
 			(@archs == @all_archs)) {
-		    if (@archs < @all_archs/2) {
-			$arch_str = ' ['.join(' ',sort @archs).']';
-		    } else {
-			$arch_str = ' ['._g('not').' '.
-			    join(' ', grep { !$results{$file}{$pkg}{$_} } @all_archs).']';
+		    if (@archs >= @all_archs/2) {
+			@archs = grep { !$results{$file}{$pkg}{$_} } @all_archs;
+			$arch_neg = 1;
 		    }
+		} else {
+		    @archs = ();
 		}
-		push @pkgs, "<a href=\"".make_url($pkg,'',{suite=>$suite})."\">$pkg</a>$arch_str";
+		push @{$result{packages}}, { pkg => $pkg, architectures => \@archs, architectures_are_rev => $arch_neg };
 	    }
-	    $$page_content .= join( ", ", @pkgs);
-	    $$page_content .= "</td></tr>\n";
+	    push @{$page_content->{results}}, \%result;
 	}
-	$$page_content .= '<tr><th>'._g('File').'</th><th>'._g('Packages')."</th></tr>\n" if @results > 20;
-	$$page_content .= '</table></div>';
     }
 } # sub do_search_contents
 

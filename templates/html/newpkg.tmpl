@@ -1,0 +1,31 @@
+[%- PROCESS 'html/head.tmpl'
+   title_tag = "New Packages in \"$suite\""
+   description = desc
+   keywords = "$suite, new packages, $section"
+   html_meta = '<link rel="alternate" type="application/rss+xml" title="RSS" href="newpkg?format=rss">'
+-%]
+<h1>New Packages in "[% suite %]"</h1>
+
+<p>The following packages were added to suite <em>[% suite %]</em>[% " (section $section)" IF section %] in the [% organisation %] archive during the last 7 days.</p>
+<p>This information is also available as an <a href="newpkg?format=rss">RSS feed</a>
+<a href="newpkg?format=rss"><img src="http://planet.debian.org/rss10.png" alt="[RSS 1.0 Feed]"></a></p>
+
+[% FOREACH pkg IN new_packages %]
+	[% '<ul>' IF loop.first %]
+	<li><a href="[% pkg.0 %]">[% pkg.0 %]</a>
+	-- [% pkg.-1 | html %][% " <em>($pkg.1 days old)</em>" IF pkg.1 %]
+	[% '</ul>' IF loop.last %]
+[% END %]
+
+<p class="psmallcenter"><a href="[% make_url('allpackages','') %]" title="List of all packages">All packages</a><br>
+(<a href="[% make_url('allpackages','','format','txt.gz' ) %]">compact compressed textlist</a>)<br>
+  New packages in 
+[% FOREACH s IN sections %]
+  [%- IF s == section -%]
+[% s %]
+  [%- ELSE -%]
+<a href="[% '../' IF section %][% s %]/newpkg">[% s %]</a>
+  [%- END -%]
+[% ', ' UNLESS loop.last %]
+[% END %]
+</p>

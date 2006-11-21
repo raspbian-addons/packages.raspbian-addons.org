@@ -1,0 +1,17 @@
+[%- PROCESS 'html/head.tmpl'
+   title_tag = "Filelist of package $pkg/$suite/$arch"
+   page_title = "Filelist of package <em>$pkg</em> in <em>$suite</em> of architecture <em>$arch</em>"
+   keywords = "$suite, $arch, filelist"
+   navigation = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/'), name=>suite },
+		  { prefix=>'Package:', url=>make_url(pkg,'','arch',undef), name=>pkg },
+		  { url=>make_url(pkg), name=>arch },
+		  { name => 'Filelist' },
+ 		]
+-%]
+<h1></h1>
+
+[% FOREACH file IN files %]
+[%- '<div id="pfilelist"><pre>' IF loop.first -%]
+[% file %]
+[% '</pre></div>' IF loop.last -%]
+[% END %]

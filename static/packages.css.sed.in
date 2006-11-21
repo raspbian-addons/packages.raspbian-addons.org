@@ -24,15 +24,27 @@
 	font-size: 88%;
 }
 
-/* classes and div names for package pages */
+h1 {
+	clear: both;
+}
 
 #pdesc, #ptags, #pdeps, #pdownload, #pmoreinfo {
 	margin-left: 1em;
 	margin-right: 1em;
 }
+#pmoreinfo p {
+	font-size: 0.85em;
+}
+
+/*
+
+  DESCRIPTIONS
+
+*/
 
 #pdesc p {
 	text-align: justify;
+	max-width: 60em;
 }
 
 .pdescshort {
@@ -41,8 +53,14 @@
 	font-weight: bold;
 }
 
+/*
+
+  DEPENDENCIES
+
+*/
+
 #pdeps table tr td {
-	font-size: 0.9em;
+	font-size: smaller;
 }
 
 #pdeps ul {
@@ -50,9 +68,9 @@
 	padding-left: 2em;
 }
 
-#pdeps li {
+/* #pdeps li {
 	text-indent: -2em;
-}
+} */
 
 #pdeps ul.uldep, #pdeps ul.uladep {
 	list-style-type: disc;
@@ -70,23 +88,20 @@
 }
 
 #pdeps ul.uldep li, #pdeps ul.ulrec li, #pdeps ul.ulsug li, #pdeps ul.uladep li, #pdeps ul.ulidep li {
-	padding-left: 2em;
+	padding-left: 1em;
 }
 #pdeps dl {
 	margin: 0;
 }
 
-#pdownload p {
-	display: inline;
-}
+/*
 
+  MESSAGES
 
-#pmoreinfo p {
-	font-size: 0.85em;
-}
-
+*/
 .pmarker {
 	color: red;
+	clear: both;
 }
 .perror {
 	margin: .2em;
@@ -94,23 +109,40 @@
 	font-weight: bold;
 	padding: 0.5em;
 	margin: 0;
+	clear: both;
 }
 .pdebug {
 	margin: .2em;
 	font-size: 80%;
 	border: solid thin gray;
+	clear: both;
 }
 .phints {
 	background-color: #FF9;
 	padding: 0.5em;
 	margin: 0;
+	clear: both;
 }
 .pnotes {
 	margin: .2em;
+	padding: .5em;
 	border: solid thin black;
 	background-color: #bdf;
+	clear: both;
 }
 .pnotes h2 {
+	color: red;
+}
+.pconstantnag {
+	max-width: 60em;
+	border: dotted thin red;
+	padding: .5em;
+	font-size: smaller;
+}
+.pconstantnag h2 {
+	text-align: center;
+}
+.pconstantnag strong {
 	color: red;
 }
 
@@ -122,8 +154,49 @@ table#pdeplegend, #pdownload table {
 	border-collapse: collapse;
 }
 
+
+/*
+
+  DOWNLOAD
+
+*/
+#pdownload td {
+	font-size: 0.85em;
+	text-align: center;
+}
+#pdownload td.size {
+	text-align: right;
+}
+#pdownload td.md5sum {
+	font-family: monospace;
+}
+#pdownload p {
+	display: inline;
+}
+
+#pdownloadnotes {
+	font-size: smaller;
+	max-width: 60em;
+}
+#pdownloadmeta tr {
+	text-align: left;
+}
+
+/*
+
+  CONTENTS SEARCH
+
+*/
+#pcontentsres {
+	margin-left: 1em;
+	margin-top: 2em;
+}
+#pcontentsres p {
+	margin-top: .1em;
+	margin-bottom: .25em;
+}
 #pcontentsres table {
-	margin: 0 1em 1em 1em;
+	margin: 1em 1em 1em 0;
 	min-width: 50%;
 	border: 2px gray;
 	border-style: ridge;
@@ -138,17 +211,6 @@ table#pdeplegend, #pdownload table {
 #pcontentsres td.file {
 	font-family: monospace;
 }
-#pdownload td {
-	font-size: 0.85em;
-	text-align: center;
-}
-
-#pdownload td.size {
-	text-align: right;
-}
-#pdownload td.md5sum {
-	font-family: monospace;
-}
 #pcontentsres td {
 /*	font-size: smaller;*/
 	padding: .4em;
@@ -156,16 +218,105 @@ table#pdeplegend, #pdownload table {
 #pcontentsres th {
 	text-align: center;
 }
+#pcontentsres h1 {
+	text-align: left;
+	margin-bottom: .25em;
+}
+#pfilelist pre {
+	border-top: solid #BFC3DC thin;
+	padding: .5em;
+}
+
+/*
+
+  PACKAGES SEARCH
+  AND COMMON STUFF
+  FOR SEARCHES
+
+*/
 #psearchres h2 {
 	padding: .3em;
 	border-top: solid gray thin;
 	border-bottom: solid gray thin;
 	background-color: #bdf;
 }
-#pfilelist pre {
-	border-top: solid #BFC3DC thin;
-	padding: .5em;
+#psearchres li {
+	margin-top: 1em;
+}
+#psearchres .resultlink {
+	font-weight: bold;
+}
+#psearchres .binaries {
+	font-size: smaller;
+}
+#psearchsug {
+	font-size: smaller;
+}
+#psearchsug ul.linklist {
+	display: inline;
+	margin-top: .1em;
+	margin-bottom: 0;
+	padding: 0;
+}
+#psearchsug .linklist li {
+	display: inline;	
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-right: 1em;
+	margin-left: 0;
+}
+#psearchsug p {
+	margin-top: .1em;
+	margin-bottom: 0;
+}
+#psearchnoresult, #psearchtoomanyhits {
+	font-size: larger;
+	font-weight: bold;
+	max-width: 60em;
 }
 .keyword {
 	font-weight: bold;
+}
+
+#pothers {
+	float: right;
+	text-align: right;
+}
+
+#pnavbar {
+	clear: both;
+	margin-bottom: .25em;
+	padding-left: 1em;
+	padding-top: 6px;
+	padding-bottom: 4px;
+	width: 100%;
+	height: auto;
+	text-align: left;
+	background: #DF0451;
+	color: yellow;
+	font-size: smaller;
+	font-weight: bold;
+}
+#pnavbar ul {
+	display: inline;
+	list-style-type: none; 
+	padding-left:  0px;
+	line-height: 1.5em;
+}
+#pnavbar ul li {
+	display: inline;
+	margin: 0;
+	white-space: nowrap;
+}
+#pnavbar a {
+	color: yellow;
+	text-decoration: none;
+}
+#pnavbar a:hover {
+}
+
+#pnavbar, .pconstantnag {
+	-moz-border-radius: 15px;
+	/* this goes to the end as the css validator does not like it
+	will be replaced by border-radius with css3 */
 }

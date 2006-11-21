@@ -7,9 +7,10 @@ use Exporter;
 use Packages::Config;
 
 our @ISA = qw( Exporter );
-our @EXPORT = qw( fatal_error error hint debug msg note
-		  print_errors print_hints print_debug print_msgs
-		  print_notes DEBUG make_url make_search_url );
+our @EXPORT = qw( DEBUG debug fatal_error );
+our @EXPORT_OK = qw( error hint msg note get_all_messages
+		     make_url make_search_url );
+
 
 # define this to 0 in production mode
 use constant DEBUG => 1;
@@ -40,50 +41,22 @@ sub msg {
 sub note {
     push @notes, [ @_ ];
 }
-sub print_errors {
-    return unless @fatal_errors || @errors;
-    print '<div class="perror">';
-    foreach ((@fatal_errors, @errors)) {
-	print "<p>ERROR: $_</p>";
-    }
-    print '</div>';
-}
-sub print_debug {
+sub get_errors { (@fatal_errors, @errors) }
+sub get_debug {
     return unless $debug && @debug;
-    print '<div class="pdebug">';
-    print '<h2>Debugging:</h2><pre>';
-    foreach (@debug) {
-	print "$_\n";
-    }
-    print '</pre></div>';
+    return @debug;
 }
-sub print_hints {
-    return unless @hints;
-    print '<div class="phints">';
-    foreach (@hints) {
-	print "<p>$_</p>";
-    }
-    print '</div>';
-}
-sub print_msgs {
-    print '<div class="pmsgs">';
-    foreach (@msgs) {
-	print "<p>$_</p>";
-    }
-    print '</div>';
-}
-sub print_notes {
-    foreach (@notes) {
-	my ( $title, $note ) = @$_;
-
-	print '<div class="pnotes">';
-	if ($note) {
-	    print "<h2>$title</h2>";
-	} else {
-	    $note = $title;
-	}
-	print "<p>$note</p></div>";
-    }
+sub get_msgs { @msgs };
+sub get_hints { @hints };
+sub get_notes { @notes };
+sub get_all_messages {
+    return {
+	errors => [ @fatal_errors, @errors ],
+	debugs => $debug ? \@debug : [],
+	msgs => \@msgs,
+	hints => \@hints,
+	notes => \@notes,
+    };
 }
 
 our $USE_PAGED_MODE = 1;
@@ -400,9 +373,14 @@ sub init_url {
 }
 
 sub make_url {
-    my ($add_path, $add_query, $override) = @_;
+    my ($add_path, $add_query, @override) = @_;
     my (@path, @query_string) = ()x2;
-    $override ||= {};
+    my $override = {};
+    if (ref $override[0]) { 
+	$override = $override[0];
+    } elsif (@override) {
+	$override = { @override };
+    }
 
     push @path, $Packages::Config::ROOT;
     foreach my $p (qw(lang source suite archive arch)) {
@@ -428,9 +406,14 @@ sub make_url {
 }
 
 sub make_search_url {
-    my ($add_path, $add_query, $override) = @_;
+    my ($add_path, $add_query, @override) = @_;
     my (@path, @query_string) = ()x2;
-    $override ||= {};
+    my $override ||= {};
+    if (ref $override[0]) { 
+	$override = $override[0];
+    } elsif (@override) {
+	$override = { @override };
+    }
 
     push @path, $Packages::Config::SEARCH_URL
 	if $Packages::Config::SEARCH_URL;

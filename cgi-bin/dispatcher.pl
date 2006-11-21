@@ -13,19 +13,23 @@ use warnings;
 use lib '../lib';
 use CGI;
 use POSIX;
+use File::Basename;
 use URI::Escape;
 use HTML::Entities;
+use Template;
 use DB_File;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
 use Locale::gettext;
 
 use Deb::Versions;
-use Packages::Config qw( $DBDIR $ROOT @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @LANGUAGES $LOCALES );
-use Packages::CGI;
+use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
+			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @PRIORITIES
+			 @LANGUAGES $LOCALES );
+use Packages::CGI qw( :DEFAULT get_all_messages );
 use Packages::DB;
 use Packages::Search qw( :all );
-use Packages::HTML ();
+use Packages::Template ();
 use Packages::Sections;
 use Packages::I18N::Locale;
 
@@ -38,6 +42,7 @@ use Packages::DoDownload;
 use Packages::DoFilelist;
 
 &Packages::CGI::reset;
+$Packages::Search::too_many_hits = 0;
 
 # clean up env
 $ENV{PATH} = "/bin:/usr/bin";
@@ -60,7 +65,8 @@ my $debug = DEBUG && $input->param("debug");
 $debug = 0 if !defined($debug) || $debug !~ /^\d+$/o;
 $Packages::CGI::debug = $debug;
 
-&Packages::Config::init( '../' );
+my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
+&Packages::Config::init( $homedir );
 &Packages::DB::init();
 
 my $acc = I18N::AcceptLanguage->new();
@@ -115,6 +121,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
 	my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all');
+	my %PRIORITIES = map { $_ => 1 } @PRIORITIES;
 	my %params_set;
 	sub set_param_once {
 	    my ($cgi, $params_set, $key, $val) = @_;
@@ -147,6 +154,8 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 		set_param_once( $input, \%params_set, 'source', 1);
 	    } elsif ($ARCHITECTURES{$_}) {
 		set_param_once( $input, \%params_set, 'arch', $_);
+	    } elsif ($PRIORITIES{$_}) {
+		set_param_once( $input, \%params_set, 'priority', $_);
 	    } else {
 		push @pkg, $_;
 	    }
@@ -195,11 +204,15 @@ my %params_def = ( keywords => { default => undef,
 		   subsection => { default => 'default', match => '^([\w-]+)$',
 				   array => ',', var => \@subsections,
 				   replace => { default => [] } },
+		   priority => { default => 'default', match => '^([\w-]+)$',
+				 array => ',',
+				 replace => { default => [] } },
 		   arch => { default => 'any', match => '^([\w-]+)$',
 			     array => ',', var => \@archs, replace =>
 			     { any => \@ARCHITECTURES } },
 		   format => { default => 'html', match => '^([\w.]+)$',  },
 		   mode => { default => undef, match => '^(\w+)$',  },
+		   sort_by => { default => 'file', match => '^(\w+)$', },
 		   );
 my %opts;
 my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
@@ -238,50 +251,40 @@ my $pet1 = new Benchmark;
 my $petd = timediff($pet1, $pet0);
 debug( "Parameter evaluation took ".timestr($petd) ) if DEBUG;
 
-my (%html_header, $menu, $page_content);
+my $template = new Packages::Template( $TEMPLATEDIR, $opts{format}, { lang => $opts{lang}, charset => $charset, debug => ( DEBUG ? $opts{debug} : 0 ) }, ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
+
+my (%html_header, %page_content);
 unless (@Packages::CGI::fatal_errors) {
     no strict 'refs';
     &{"do_$what_to_do"}( \%params, \%opts, \%html_header,
-			 \$menu, \$page_content );
-} else {
-    %html_header = ( title => _g('Error'),
-		     lang => $opts{lang},
-		     print_title => 1,
-		     print_search_field => 'packages',
-		     search_field_values => { 
-			 keywords => _g('search for a package'),
-			 searchon => 'default',
-			 arch => 'any',
-			 suite => 'all',
-			 section => 'all',
-			 exact => 1,
-			 debug => $debug,
-		     },
-		     );
+			 \%page_content );
 }
+
+$page_content{opts} = \%opts;
+$page_content{params} = \%params;
+
+$page_content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
+$page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
+# needed to work around the limitations of the the FILTER syntax
+$page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
+$page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
+$page_content{quotemeta} = sub { return quotemeta($_[0]) };
 
 print $input->header( -charset => $charset );
 
-print Packages::HTML::header( %html_header );
-
-print $menu||'';
-print_errors();
-print_hints();
-print_msgs();
-print_debug() if DEBUG;
-print_notes();
+#use Data::Dumper;
+#print '<pre>'.Dumper(\%ENV, \%html_header, \%page_content, get_all_messages()).'</pre>';
 
 unless (@Packages::CGI::fatal_errors) {
-    print $page_content;
+print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );
+} else {
+print $template->error_page( get_all_messages() );
 }
 
 my $tet1 = new Benchmark;
 my $tetd = timediff($tet1, $tet0);
-print "Total page evaluation took ".timestr($tetd)."<br>"
-    if DEBUG;
 
-my $trailer = Packages::HTML::trailer( $ROOT );
+my $trailer = $template->trailer( undef, undef, undef, $tetd );
 print $trailer;
 
 # vim: ts=8 sw=4
-

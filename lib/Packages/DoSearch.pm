@@ -14,15 +14,12 @@ our @EXPORT = qw( do_search );
 use Deb::Versions;
 use Packages::I18N::Locale;
 use Packages::Search qw( :all );
-use Packages::CGI;
+use Packages::CGI qw( :DEFAULT msg );
 use Packages::DB;
-use Packages::HTML qw(marker);
-use Packages::Config qw( $DBDIR $SEARCH_URL $SEARCH_PAGE
-			 @SUITES @ARCHIVES $ROOT );
-use Packages::HTML;
+use Packages::Config qw( $DBDIR @SUITES @ARCHIVES $ROOT );
 
 sub do_search {
-    my ($params, $opts, $html_header, $menu, $page_content) = @_;
+    my ($params, $opts, $html_header, $page_content) = @_;
 
     $Params::Search::too_many_hits = 0;
 
@@ -33,8 +30,6 @@ sub do_search {
 	fatal_error( _g( "keyword too short (keywords need to have at least two characters)" ) );
     }
 
-    $$menu = "";
-    
     my @keywords = @{$opts->{keywords}};
     my $searchon = $opts->{searchon};
 
@@ -56,19 +51,19 @@ sub do_search {
 
 	if ($searchon eq 'names') {
 	    if ($opts->{source}) {
-		do_names_search( \@keywords, \%sources, $sp_obj,
+		do_names_search( [ @keywords ], \%sources, $sp_obj,
 				 \&read_src_entry_all, $opts,
 				 \@results, \@non_results );
 	    } else {
-		do_names_search( \@keywords, \%packages, $p_obj,
+		do_names_search( [ @keywords ], \%packages, $p_obj,
 				 \&read_entry_all, $opts,
 				 \@results, \@non_results );
 	    }
 	} else {
-	    do_names_search( \@keywords, \%packages, $p_obj,
+	    do_names_search( [ @keywords ], \%packages, $p_obj,
 			     \&read_entry_all, $opts,
 			     \@results, \@non_results );
-	    do_fulltext_search( \@keywords, "$DBDIR/descriptions.txt",
+	    do_fulltext_search( [ @keywords ], "$DBDIR/descriptions.txt",
 				\%did2pkg, \%packages,
 				\&read_entry_all, $opts,
 				\@results, \@non_results );
@@ -110,11 +105,11 @@ sub do_search {
 	    unless (@non_results) {
 		error( _g( "Can't find that package." ) );
 	    } else {
-		hint( _g( "Can't find that package." )." ".
-		      sprintf( _g( '<a href="%s">%s</a>'.
-		      " results have not been displayed due to the".
-		      " search parameters." ), "$SEARCH_URL/$keyword_esc" ,
-		      $#non_results+1 ) );
+#		hint( _g( "Can't find that package." )." ".
+#		      sprintf( _g( '<a href="%s">%s</a>'.
+#		      " results have not been displayed due to the".
+#		      " search parameters." ), "$SEARCH_URL/$keyword_esc" ,
+#		      $#non_results+1 ) );
 	    }
 	    
 	} else {
@@ -132,27 +127,23 @@ sub do_search {
 			       encode_entities(make_search_url('',"keywords=$keyword_esc",{exact => 0})) ) );
 	    }
 	}
-	hint( sprintf( _g( 'You can try a different search on the <a href="%s">Packages search page</a>.' ), "$SEARCH_PAGE#search_packages" ) );
+#	hint( sprintf( _g( 'You can try a different search on the <a href="%s">Packages search page</a>.' ), "$SEARCH_PAGE#search_packages" ) );
 	
     }
 
-    %$html_header = ( title => _g( 'Package Search Results' ) ,
-		      lang => $opts->{lang},
-		      title_tag => _g( 'Debian Package Search Results' ),
-		      print_title => 1,
-		      print_search_field => 'packages',
-		      search_field_values => { 
-			  keywords => $keyword_enc,
-			  searchon => $opts->{searchon_form},
-			  arch => $archs_enc,
-			  suite => $suites_enc,
-			  section => $sections_enc,
-			  exact => $opts->{exact},
-			  debug => $opts->{debug},
-		      },
-		      );
+    $page_content->{make_url} = sub { return &Packages::CGI::make_url(@_) };
+    $page_content->{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
 
-    $$page_content = '';
+    $page_content->{search_field_values} = { 
+	keywords => $keyword_enc,
+	searchon => $opts->{searchon_form},
+	arch => $archs_enc,
+	suite => $suites_enc,
+	section => $sections_enc,
+	exact => $opts->{exact},
+	debug => $opts->{debug},
+    };
+
     if (@results) {
 	my (%pkgs, %subsect, %sect, %archives, %desc, %binaries, %provided_by);
 
@@ -177,10 +168,10 @@ sub do_search {
 
 	    my %uniq_pkgs = map { $_ => 1 } (keys %pkgs, keys %provided_by);
 	    my @pkgs = sort keys %uniq_pkgs;
-	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, \@keywords,
-					      \&print_package, \%provided_by,
-					      \%archives, \%sect, \%subsect,
-					      \%desc );
+	    process_packages( $page_content, 'packages', \%pkgs, \@pkgs, $opts, \@keywords,
+			      \&process_package, \%provided_by,
+			      \%archives, \%sect, \%subsect,
+			      \%desc );
 
 	} else { # unless $opts->{source}
 	    foreach (@results) {
@@ -208,134 +199,112 @@ sub do_search {
 	    }
 
 	    my @pkgs = sort keys %pkgs;
-	    $$page_content .= print_packages( \%pkgs, \@pkgs, $opts, \@keywords,
-					      \&print_src_package, \%archives,
-					      \%sect, \%subsect, \%binaries );
+	    process_packages( $page_content, 'src_packages', \%pkgs, \@pkgs, $opts, \@keywords,
+			      \&process_src_package, \%archives,
+			      \%sect, \%subsect, \%binaries );
 	} # else unless $opts->{source}
     } # if @results
 } # sub do_search
 
-sub print_packages {
-    my ($pkgs, $pkgs_list, $opts, $keywords, $print_func, @func_args) = @_;
+sub process_packages {
+    my ($content, $target, $pkgs, $pkgs_list, $opts, $keywords, $print_func, @func_args) = @_;
 
-    #my ($start, $end) = multipageheader( $input, scalar @pkgs, \%opts );
-    my $str = '<div id="psearchres">';
-    $str .= "<p>".sprintf( _g( "Found <em>%s</em> matching packages." ),
-			   scalar @$pkgs_list )."</p>";
-    #my $count = 0;
+    my @categories;
+    $content->{results} = scalar @$pkgs_list;
+
     my $keyword;
     $keyword = $keywords->[0] if @$keywords == 1;
 	    
     my $have_exact;
     if ($keyword && grep { $_ eq $keyword } @$pkgs_list) {
 	$have_exact = 1;
-	$str .= '<h2>'._g( "Exact hits" ).'</h2>';
-	$str .= &$print_func( $keyword, $pkgs->{$keyword}||{},
-			      map { $_->{$keyword}||{} } @func_args );
+	$categories[0]{name} = _g( "Exact hits" );
+
+	$categories[0]{$target} = [ &$print_func( $keyword, $pkgs->{$keyword}||{},
+						   map { $_->{$keyword}||{} } @func_args ) ];
 	@$pkgs_list = grep { $_ ne $keyword } @$pkgs_list;
     }
 	    
     if (@$pkgs_list && (($opts->{searchon} ne 'names') || !$opts->{exact})) {
-	$str .= '<h2>'._g( 'Other hits' ).'</h2>'
-	    if $have_exact;
+	my %cat;
+	$cat{name} = _g( 'Other hits' ) if $have_exact;
 	
+	$cat{packages} = [];
 	foreach my $pkg (@$pkgs_list) {
-	    #$count++;
-	    #next if $count < $start or $count > $end;
-	    $str .= &$print_func( $pkg, $pkgs->{$pkg}||{},
-				  map { $_->{$pkg}||{} } @func_args );
+	    push @{$cat{$target}}, &$print_func( $pkg, $pkgs->{$pkg}||{},
+						 map { $_->{$pkg}||{} } @func_args );
 	}
+	push @categories, \%cat;
     } elsif (@$pkgs_list) {
-	$str .= "<p>".sprintf( _g( '<a href="%s">%s</a> results have not been displayed because you requested only exact matches.' ),
-			       encode_entities(make_search_url('',"keywords=$opts->{keyword_esc}",{exact => 0})),
-			       scalar @$pkgs_list )."</p>";
+	$content->{skipped} = scalar @$pkgs_list;
     }
-    $str .= '</div>';
 
-    return $str;
+    $content->{categories} = \@categories;
 }
 
-sub print_package {
+sub process_package {
     my ($pkg, $pkgs, $provided_by, $archives, $sect, $subsect, $desc) = @_;
 
-    my $str = '<h3>'.sprintf( _g( 'Package %s' ), $pkg ).'</h3>';
-    $str .= '<ul>';
+    my %pkg = ( pkg => $pkg,
+		suites => [] );
+
     foreach my $suite (@SUITES) {
-	    my $override = { suite => $suite };
-	    if (exists $pkgs->{$suite}) {
-		my %archs_printed;
-		my @versions = version_sort keys %{$pkgs->{$suite}};
-		my $origin_str = "";
-		if ($sect->{$suite}{$versions[0]}) {
-		    $origin_str .= " ".marker($sect->{$suite}{$versions[0]});
-		}
-		$str .= sprintf( "<li><a href=\"%s\">%s</a> (%s): %s   %s\n",
-				 make_url($pkg,'',$override), $suite, $subsect->{$suite}{$versions[0]},
-				 $desc->{$suite}{$versions[0]}, $origin_str );
+	my %suite = ( suite => $suite );
+	if (exists $pkgs->{$suite}) {
+	    my %archs_printed;
+	    my @versions = version_sort keys %{$pkgs->{$suite}};
+	    $suite{section} = $sect->{$suite}{$versions[0]};
+	    $suite{subsection} = $subsect->{$suite}{$versions[0]};
+	    $suite{desc} = $desc->{$suite}{$versions[0]};
+	    $suite{versions} = [];
 		
-		foreach my $v (@versions) {
-		    my $archive_str = "";
-		    if ($archives->{$suite}{$v} ne 'us') {
-			$archive_str .= " ".marker($archives->{$suite}{$v});
-		    }
+	    foreach my $v (@versions) {
+		my %version;
+		$version{version} = $v;
+		$version{archive} = $archives->{$suite}{$v};
 		    
-		    my @archs_to_print = grep { !$archs_printed{$_} } sort keys %{$pkgs->{$suite}{$v}};
-		    $str .= sprintf( "<br>%s$archive_str: %s\n",
-				     $v, join (" ", @archs_to_print ))
-			if @archs_to_print;
-		    $archs_printed{$_}++ foreach @archs_to_print;
-		}
-		if (my $p =  $provided_by->{$suite}) {
-		    $str .= '<br>'._g( 'also provided by: ' ).
-			join( ', ', map { "<a href=\"".
-					      make_url($_,'',$override)."\">$_</a>"  } @$p);
-		}
-		$str .= "</li>\n";
-	    } elsif (my $p =  $provided_by->{$suite}) {
-		$str .= sprintf( "<li><a href=\"%s\">%s</a>: "._g('Virtual package').'<br>',
-				 make_url($pkg,'',$override), $suite );
-		$str .= _g( 'provided by: ' ).
-		    join( ', ', map { "<a href=\"".
-					  make_url($_,'',$override)."\">$_</a>"  } @$p);
+		$version{architectures} = [ grep { !$archs_printed{$_} } sort keys %{$pkgs->{$suite}{$v}} ];
+		push @{$suite{versions}}, \%version if @{$version{architectures}};
+
+		$archs_printed{$_}++ foreach @{$version{architectures}};
 	    }
+	    if (my $p =  $provided_by->{$suite}) {
+		$suite{providers} = $p;
+	    }
+	} elsif (my $p =  $provided_by->{$suite}) {
+	    $suite{desc} = _g('Virtual package');
+	    $suite{providers} = $p;
+	}
+	push @{$pkg{suites}}, \%suite if $suite{versions} || $suite{providers};
     }
-    $str .= "</ul>\n";
-    return $str;
+
+    return \%pkg;
 }
 
-sub print_src_package {
+sub process_src_package {
     my ($pkg, $pkgs, $archives, $sect, $subsect, $binaries) = @_;
 
-    my $str = '<h3>'.sprintf( _g( 'Source package %s' ), $pkg ).'</h3>';
-    $str .= "<ul>\n";
+    my %pkg = ( pkg => $pkg,
+		origins => [] );
+
     foreach my $suite (@SUITES) {
 	foreach my $archive (@ARCHIVES) {
 	    if (exists $pkgs->{$suite}{$archive}) {
-		my $origin_str = "";
-		if ($sect->{$suite}{$archive}{source}) {
-		    $origin_str .= " ".marker($sect->{$suite}{$archive}{source});
-		}
-		if ($archives->{$suite}{$archive}{source}) {
-		    $origin_str .= " ".marker($archives->{$suite}{$archive}{source});
-		}
-		$str .= sprintf( "<li><a href=\"$ROOT/%s/source/%s\">%s</a> (%s): %s   %s",
-				 $suite.(($archive ne 'us')?"/$archive":''), $pkg, $suite.(($archive ne 'us')?"/$archive":''), $subsect->{$suite}{$archive}{source},
-				 $pkgs->{$suite}{$archive}, $origin_str );
-		
-		$str .= "<br>"._g( 'Binary packages: ' );
-		my @bp_links;
-		foreach my $bp (@{$binaries->{$suite}{$archive}}) {
-		    my $bp_link = sprintf( "<a href=\"$ROOT/%s/%s\">%s</a>",
-					   $suite.(($archive ne 'us')?"/$archive":''), uri_escape( $bp ),  $bp );
-		    push @bp_links, $bp_link;
-		}
-		$str .= join( ", ", @bp_links );
-		$str .= "</li>\n";
+		my %origin;
+		$origin{version} = $pkgs->{$suite}{$archive};
+		$origin{suite} = $suite;
+		$origin{archive} = $archive; 
+		$origin{section} = $sect->{$suite}{$archive}{source};
+		$origin{subsection} = $subsect->{$suite}{$archive}{source};
+		$origin{real_archive} = $archives->{$suite}{$archive}{source};
+
+		$origin{binaries} = $binaries->{$suite}{$archive};
+		push @{$pkg{origins}}, \%origin;
 	    }
 	}
     }
-    $str .= "</ul>\n";
-    return $str;
+
+    return \%pkg;
 }
 
 1;

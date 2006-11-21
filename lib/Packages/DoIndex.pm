@@ -44,9 +44,12 @@ sub send_file {
     }
 
     my $wwwdir = "$TOPDIR/www";
-    my $path = "$opts->{suite}[0]/";
+    my $path = "";
+    $path .= "source/" if $opts->{source};
+    $path .= "$opts->{suite}[0]/";
     $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
+    $path .= "$opts->{priority}[0]/" if @{$opts->{priority}};
     # we don't have translated index pages for subsections yet
     $opts->{lang} = 'en' if @{$opts->{subsection}} or $file eq 'allpackages';
     $path .= "$file.$opts->{lang}.$opts->{format}";
@@ -71,21 +74,6 @@ sub send_file {
 				  $path, $! ) );
 	}
     }
-
-    %$html_header = ( title => _g('Error'),
-		      lang => $opts->{lang},
-		      print_title => 1,
-		      print_search_field => 'packages',
-		      search_field_values => { 
-			  keywords => _g('search for a package'),
-			  searchon => 'default',
-			  arch => 'any',
-			  suite => 'all',
-			  section => 'all',
-			  exact => 1,
-			  debug => $Packages::CGI::debug,
-		      },
-		      );
 }
 
 1;

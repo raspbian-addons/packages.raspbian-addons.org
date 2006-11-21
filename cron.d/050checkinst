@@ -16,6 +16,7 @@ locales="de_DE.UTF-8 en_US.UTF-8 nl_NL fr_FR.UTF-8"
 
 packages=`tempfile`
 locs=`tempfile`
+cache=`tempfile`
 trap "rm -f $packages $locs" INT EXIT
 
 for p in $required
@@ -36,7 +37,22 @@ do
     fi
 done
 
-if [ -s $packages -o -s $locs ]
+if [ -n "$cachedir" ]
+then
+    if [ ! -d "$cachedir" ]
+    then
+    	echo "cachedir missing." >> $cache
+    else
+	perm=$(ls -ld "$cachedir" | perl -ne 'print "ok" if /^drwxrws--- \d+ www-data/')
+        if [ -z "$perm" ]
+	then
+	    echo "cachedir has wrong permissions." >> $cache
+	    echo "make sure it is writable by the web server." >> $cache
+	fi
+    fi
+fi
+
+if [ -s $packages -o -s $locs -o -s $cache ]
 then
     (
 	echo "Subject: Problem packages.debian.org on `hostname -s`"
@@ -55,6 +71,12 @@ then
 	    echo "Missing locales:"
 	    echo
 	    cat $locs
+	fi
+	if [ -s $cache ]
+	then
+	    echo "Problems with cachedir:"
+	    echo
+	    cat $cache
 	fi
     ) | /usr/sbin/sendmail -t
 fi

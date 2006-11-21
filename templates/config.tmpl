@@ -1,0 +1,39 @@
+[%- DEFAULT
+   charset = 'UTF-8'
+   lang = 'en'
+
+   organisation = 'Debian'
+   homepage = 'http://www.debian.org/'
+   packages_homepage = 'http://packages.debian.org/'
+   searchformurl = packages_homepage
+   search_url = '/'
+   tags_url = 'http://debtags.alioth.debian.org/'
+   bugs_url = 'http://bugs.debian.org/'
+   src_bugs_url = bugs_url _ 'src:'
+   mirror_url = 'http://ftp.debian.org/'
+   changelogs_url = '/changelogs/'
+   cn_help_url = homepage _ 'intro/cn'
+   logo = {
+	url => homepage,
+        src => '/Pics/openlogo-nd-50.png',
+        alt => organisation,
+   }
+   copyright = {
+	url => 'http://www.spi-inc.org/',
+        name => 'SPI Inc.',
+        years => '1997 - ' _ timestamp.year,
+   }
+   license = {
+	url => homepage _ 'license'
+   }
+   contact = {
+	name => 'Debian Web Mailinglist',
+	mail => 'debian-www@lists.debian.org',
+        url => homepage _ 'contact',
+   }
+   admin = {
+	name => 'Debian Webmaster',
+	mail => 'webmaster@debian.org',
+   }
+   trademarknotes = organisation _ ' is a trademark of ' _ copyright.name
+-%]

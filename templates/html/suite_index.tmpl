@@ -1,0 +1,28 @@
+[% PROCESS 'html/head.tmpl' 
+	title_tag = "List of sections in \"$suite\""
+	page_title = "List of sections in \"$suite\""
+	keywords = suite
+	navigation = [ { name=> suite },
+		       { name => 'Index' }, ]
+%]
+
+[% FOREACH subsections %]
+  [% '<div id="lefthalfcol"><dl>' IF loop.first %]
+  
+  <dt><a href="[% id %]/">[% name %]</a></dt>
+  <dd>[% desc %]</dd>
+
+  [%- loop_half = loop.size / 2 -%]
+  [%- IF ( loop.count <= loop_half ) && ( loop.count >= ( loop_half - 1 ) ) -%]
+  </dl>
+  </div> <!-- end lefthalfcol -->
+  <div id="righthalfcol">
+  <dl>
+  [%- END -%]
+  [% '</dl></div>' IF loop.last %]
+[% END %]
+
+<p class="psmallcenter">
+	<a href="allpackages" title="List of all packages">All packages</a><br>
+	(<a href="allpackages?format=txt.gz">compact compressed textlist</a>)
+</p>

@@ -1,0 +1,123 @@
+[%- PROCESS 'html/head.tmpl'
+   title_tag = "$organisation Package Contents Search Results"
+   keywords = "$suite"
+   print_search_field = 'packages'
+   navigation = [ { title => '', name => 'Packages Contents Search Results', url => '' } ]
+   search_field_values = {
+	keywords => search_keywords.join(' '),
+	searchon => 'contents',
+        mode => mode,
+	sort_by => sort_by,
+	suite => suite,
+	architectures => params.values.arch.no_replace.join(','),
+	sections => params.values.section.no_replace.join(','),
+   }
+-%]
+
+[% keyword_str = search_keywords.join(' ');
+   keyword_esc = uri_escape(keyword_str);
+   keyword_enc = html_encode(keyword_str);
+
+   section_str = params.values.section.no_replace.join(', ');
+   section_esc = uri_escape(section_str);
+   section_enc = html_encode(section_str);
+
+   architectures_str = params.values.arch.no_replace.join(', ');
+   architectures_esc = uri_escape(architectures_str);
+   architectures_enc = html_encode(architectures_str);
+%]
+<div id="psearchsug">
+
+<ul class="linklist">
+[% IF mode != 'filename' %]
+<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','filename') %]">Search for <em>[% keyword_enc %]</em> within filenames</a>
+[% END %]
+
+[% IF mode != 'exactfilename' %]
+<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','exactfilename') %]">Search exact filename <em>[% keyword_enc %]</em></a>
+[% END %]
+
+[% IF mode == 'exactfilename' || mode == 'filename' %]
+<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','') %]">Search for paths ending with <em>[% keyword_enc %]</em></a>
+[% END %]
+</ul>
+
+<p>Search in other suite:
+[% FOREACH s IN all_suites %]
+[<a href="[% make_search_url('',"keywords=$keyword_esc",'suite',s) %]">[% s  %]</a>]
+[% END %]
+
+[% UNLESS search_architectures.size == 1 || all_architectures.size == 1 %]
+<p>Limit search to a specific architecture:
+[% FOREACH a IN all_architectures %] [<a href="[% make_search_url('',"keywords=$keyword_esc",'arch',a) %]">[% a %]</a>][% END %]
+[% END %]
+
+[% IF search_architectures.size == 1 %]
+<p>Search in <a href="[% make_search_url('',"keywords=$keyword_esc",arch,'') %]">all architectures</a>
+[% END %]
+
+</div>
+
+[%- PROCESS 'html/messages.tmpl' -%]
+<div id="pcontentsres">
+
+[% suite_wording = "suite <em>$suite</em>";
+   section_wording = ( section_enc == 'all' ? "all sections" : "section(s) <em>$section_enc</em>" );
+   arch_wording = ( architectures_enc == 'any' ? "all architectures" : "architecture(s) <em>$architectures_enc</em>" );
+   wording = "paths that end with";
+   IF mode == 'filename';
+	wording =  "files named";
+   ELSIF mode == 'exactfilename';
+	wording = "filenames that contain";
+   END %]
+<p>You have searched for [% wording %] <em>[% keyword_enc %]</em> in [% suite_wording %], [% section_wording %], and [% arch_wording %].
+
+[% IF results %]
+Found <strong>[% results.size %] results</strong>.
+
+[% IF too_many_hits %]
+<p id="psearchtoomanyhits">Note: Your search was too wide so we will only display only the first about 100 matches.
+Please consider using a longer keyword or more keywords.</p>
+[% END %]
+
+<table>
+	<colgroup>
+	<col>
+	<col>
+	</colgroup>
+<tr>
+	<th><a title="Sort results by filename" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=file") %]">File</a></th>
+	<th><a title="Sort results by package name" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=pkg") %]">Packages</th>
+</tr>
+[% FOREACH results %]
+[% file = html_encode(file);
+   FOREACH k IN search_keywords;
+   k_enc = html_encode(k);
+   k_quo = quotemeta(k);
+   file = file.replace(k_quo, "<span class=\"keyword\">$k_enc</span>");
+   END %]
+<tr>
+	<td class="file">[% file %]</td>
+        <td>
+        [% FOREACH packages %]
+	[% arch_str = architectures.join(', ');
+	   SET arch_str = "not $arch_str" IF ( arch_str && architectures_are_rev );
+	   SET arch_str = " [$arch_str]" IF arch_str;
+           pkg_esc = uri_escape(pkg)  %]
+	<a href="[% make_url(pkg_esc,'','suite',suite,'arch','') %]">[% pkg | html %]</a>[% arch_str %][% ', ' UNLESS loop.last %]
+	[% END %]
+        </td>
+</tr>
+[% END %]
+
+[% IF results.size > 20 %]
+<tr><th>File</th><th>Packages</th></tr>
+[% END %]
+</table>
+</div>
+
+[% ELSE %]
+
+<p id="psearchnoresult">Sorry, your search gave no results</p>
+
+[% END %]

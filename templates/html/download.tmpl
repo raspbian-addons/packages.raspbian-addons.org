@@ -1,0 +1,99 @@
+[%- PROCESS 'html/head.tmpl'
+   title_tag = 'Package Download Selection'
+   description = desc
+   keywords = "$suite, $archive, $section, $subsection, $version"
+   navigation = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/'), name=>suite },
+		  { prefix=>'Package:', url=>make_url(pkg,'','arch',undef), name=>pkg },
+		  { url=>make_url(pkg), name=>architecture },
+		  { name => 'Download' },
+ 		]
+-%]
+[%- PROCESS 'config/mirrors.tmpl' -%]
+[%- PROCESS 'config/architectures.tmpl' -%]
+[%- PROCESS 'html/messages.tmpl' -%]
+
+[% IF architecture != 'all' %]
+<h2>Download Page for <kbd>[% filename.file %]</kbd> on [% architectures.$architecture %] machines</h2>
+[% ELSE %]
+<h2>Download Page for <kbd>[% filename.file %]</kbd></h2>
+[% END %]
+
+<div class="pconstantnag">
+<p>If you are running Debian, it's strongly suggested to use a
+package manager like <a href="[% make_url('aptitude','','arch','') %]">aptitude</a> or
+<a href="[% make_url('synaptic','','arch','') %]">synaptic</a> to download and install
+packages, instead of doing so manually via this website.</p>
+[% IF suite == "experimental" %]
+<h2>Experimental package</h2>
+<p>Warning: This package is from the <strong>experimental</strong> distribution.
+That means it is likely unstable or buggy, and it may even cause data loss.
+Please be sure to consult the changelog and other possible documentation before
+using it.</p>
+[% END %]
+[% IF subsection == "debian-installer" %]
+<h2>debian-installer udeb package</h2>
+<p>Warning: This package is intended for the use in building
+<a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only.
+Do not install it on a normal Debian system.</p>
+[% END %]
+</div>
+
+[%- SET a = mirrors.$archive -%]
+
+[% IF archive != 'security' %]
+  <p>You can download the requested file from the <tt>[% filename.directory %]</tt> subdirectory at any of these sites:</p>
+  <div class="cardleft">
+  [% FOREACH continent IN [ 'north_america', 'south_america', 'asia', 'africa' ] %]
+    [% IF a.$continent %]
+	<p><em>[% continents.$continent %]</em></p>
+	<ul>
+	[% FOREACH m IN a.$continent %]
+	  <li><a href="http://[% m %]/[% filename.full %]">[% m %]</a></li>
+	[% END %]
+	</ul>
+    [% END %]
+  [% END %]
+  </div><div class="cardright">
+  [% FOREACH continent IN [ 'europa','australia' ] %]
+    [% IF a.$continent %]
+	<p><em>[% continents.$continent %]</em></p>
+	<ul>
+	[% FOREACH m IN a.$continent %]
+	  <li><a href="http://[% m %]/[% filename.full %]">[% m %]</a></li>
+	[% END %]
+	</ul>
+    [% END %]
+  [% END %]
+  </div>
+[% ELSE %]
+<p>You can download the requested file from the <tt>[% filename.directory %]</tt> subdirectory at:</p>
+<ul><li><a href="http://security.debian.org/debian-security/[% filename.full %]">security.debian.org/debian-security</a></li></ul>
+<p>Debian security updates are currently officially distributed only via <tt>security.debian.org</tt></p>
+[% END %]
+
+<div id="pdownloadnotes">
+
+[% IF a.mirror_list %]
+<p style="clear:both">If none of the above sites are fast enough for you,
+please see our <a href="[% a.mirror_list %]">complete mirror list</a>.</p>
+[% END %]
+
+[% IF a.unofficial_port %]
+[% SET port = a.unofficial_port %]
+<p style="clear:both">Note that [% port.name %] is not officially included in the [% organisation %] archive yet,
+but the [% port.name %] porter group keeps their archive in sync with the official archive as close as possible.
+See the <a href="[% ports_url _ port.url_name _ '/' %]">[% port.name %] ports page</a> for current information.</p>
+[% END %]
+
+<p>Note that in some browsers you will need to tell your browser you want the file saved to a file.
+For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL.</p>
+
+</div>
+
+<h3>More information on <kbd>[% filename.file %]</kbd>:</h3>
+<table id="pdownloadmeta">
+<tr><th>Exact Size</th>       		<td class="size">[% size %] Byte ([% pkgsize %] [% pkgsize_unit %])</td>
+<tr><th>MD5 checksum</th>		<td><tt>[% md5sum %]</tt></td>
+<tr><th>SHA1 checksum</th>		<td><tt>[% sha1 || 'Not Available' %]</tt></td>
+<tr><th>SHA256 checksum</th>		<td><tt>[% sha256  || 'Not Available' %]</tt></td>
+</table>

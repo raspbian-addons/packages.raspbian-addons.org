@@ -1,0 +1,51 @@
+[%- PROCESS 'config/archive_layout.tmpl' -%]
+[%- PROCESS 'html/head.tmpl'
+   title_tag = 'Debian Package Search Results'
+   print_search_field = 'packages'
+   navigation = [ { name => 'Package Search Results' } ]
+-%]
+
+[%- PROCESS 'html/messages.tmpl' -%]
+
+<div id="psearchres">
+<p>Found <em>[% results %]</em> matching packages.</p>
+[% FOREACH categories %]
+  [% "<h2>$name</h2>" IF name %]
+
+[% FOREACH packages %]
+  <h3>Package [% pkg %]</h3>
+  <ul>
+  [% FOREACH s IN suites %]
+    <li><a class="resultlink" href="[% make_url(pkg,'','suite',s.suite) %]">[% s.suite %]</a>[% ' (' _ s.subsect _ ')' IF s.subsect %]: [% s.desc %]  [%- IF s.section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
+    [% FOREACH s.versions %]
+      <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
+    [% END %]
+    [% IF s.providers %]
+	<br>[% 'also ' IF s.versions.size > 0 %]provided by: [% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
+    [% END %]
+    </li>
+  [% END %]
+  </ul>
+[% END %]
+
+[% FOREACH src_packages %]
+  <h3>Source Package [% pkg %]</h3>
+  <ul>
+  [% FOREACH origins %]
+     [% origin = (archive == 'us') ? suite : "$suite/$archive" %]
+    <li><a class="resultlink" href="[% make_url(pkg,'','source',source,'suite',origin) %]">[% origin %]</a> ([% subsection %]): [% version %]
+      [%- IF section %] [<strong class="pmarker">[% section %]</strong>][% END %]
+      [%- IF real_archive %] [<strong class="pmarker">[% real_archive %]</strong>][% END %]
+    <br>Binary packages: <span class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source',source,'suite',suite,'archive',archive) %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+    </li>
+  [% END %]
+  </ul>
+[% END %]
+
+[% END %]
+
+[% IF skipped %]
+  <p><a href="[% make_search_url('',"keywords=$keywords",'exact', 0) %]">[% skipped %]</a> results have not been displayed because you requested only exact matches.
+[% END %]
+
+</div>

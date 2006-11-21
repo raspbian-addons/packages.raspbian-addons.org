@@ -1,0 +1,246 @@
+[% PROCESS 'config/archive_layout.tmpl' %]
+[%- PROCESS 'html/head.tmpl'
+   title_tag = ( is_source ? "Details of source package $pkg in $suite"
+	                   : "Details of package $pkg in $suite" )
+   description = desc
+   keywords = "$suite, $archive, $section, $subsection, $version"
+   print_search_field = 'packages'
+   search_field_values = { 
+			  keywords => '',
+			  searchon => is_source ? 'sourcenames' : 'names',
+			  arch => 'any',
+			  suite => 'all',
+			  section => 'all',
+			  exact => 0
+                         }
+  navigation = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/'), name=>suite },
+		 { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection },
+		 { prefix=>'Package:', name=>pkg } ]
+-%]
+<!-- show.tmpl -->
+[% PROCESS 'html/menu.inc' %]
+[% FOREACH s IN suites %]
+   [% '<div id="pothers">' IF loop.first %]
+   [%- IF s == suite -%]
+     [% PROCESS menuitem name=s url='' %]
+   [%- ELSE -%]
+     [% PROCESS menuitem name=s url=make_url(pkg,'','suite',s) %]
+   [%- END -%]
+   [%- '</div>' IF loop.last -%]
+[% END %]
+</div>
+
+[% IF src %]
+<div id="psource">
+[% PROCESS menuitem prefix='Source:' title='Source package building this package' url=make_url(src.pkg,'','source','source') name=src.pkg %]
+</div>
+[% END %]
+
+[%- PROCESS 'html/messages.tmpl' -%]
+
+[% IF is_virtual %]
+<h1>Virtual Package: [% pkg %]
+[% ELSIF is_source %]
+<h1>Source Package: [% pkg %] ([% version %])
+[% ELSE %]
+<h1>Package: [% pkg %] ([% versions.short %])
+[% END %]
+[%- PROCESS marker text=archive IF archive && archive != main_archive %]
+[%- PROCESS marker text=subsection IF subsection == 'non-US' and archive != 'non-US' %]
+[%- PROCESS marker text=section IF section && section != main_section %]</h1>
+
+[% IF suite == "experimental" || subsection == "debian-installer" %]
+<div class="pconstantnag">
+[% IF suite == "experimental" %]
+<h2>Experimental package</h2>
+<p>Warning: This package is from the <strong>experimental</strong> distribution.
+That means it is likely unstable or buggy, and it may even cause data loss.
+Please be sure to consult the changelog and other possible documentation before
+using it.</p>
+[% END %]
+[% IF subsection == "debian-installer" %]
+<h2>debian-installer udeb package</h2>
+<p>Warning: This package is intended for the use in building
+<a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only.
+Do not install it on a normal Debian system.</p>
+[% END %]
+</div>
+[% END %]
+
+[% UNLESS is_virtual %]
+<div id="pdesc">
+<h2>[% desc.short %]</h2>
+<p>[% desc.long %]
+</div> <!-- end pdesc -->
+[% END %]
+
+[% FOREACH tag IN tags %]
+  [% IF loop.first -%]
+    <div id="ptags"><p>
+    <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">Tags</a>:
+  [%- END %]
+  [% tag %][% ', ' UNLESS loop.last %]
+  [% IF loop.last -%]
+    </p>
+    </div> <!-- end ptags -->
+  [%- END %]
+[% END %]
+
+[% FOREACH providers %]
+  [% IF loop.first %]<div id="pdeps"><h2>Packages providing [% pkg %]</h2><dl>[% END %]
+    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
+    <dd>[% desc %]</dd>
+  [% '</dl></div>' IF loop.last %]
+[% END %]
+
+[% FOREACH binaries %]
+  [% IF loop.first %]<div class="pdesc">The following binary packages are built from this source package:<dl>[% END %]
+    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
+    <dd>[% desc %]</dd>    
+  [% '</dl></div>' IF loop.last %]
+[% END %]
+
+[% FOREACH relations %]
+  [% IF loop.first -%]
+    <div id="pdeps">
+    <h2>Other Packages Related to [% pkg %]</h2>
+
+    <table id="pdeplegend" summary="legend"><tr>
+    [% IF is_source %]
+    <td><img src="/Pics/adep.gif" alt="[adep]" width="16" height="16">= build-depends</td>
+    <td><img src="/Pics/idep.gif" alt="[idep]" width="16" height="16">= build-depends-indep</td>
+    [% ELSE %]
+    <td><img src="/Pics/dep.gif" alt="[dep]" width="16" height="16">= depends</td>
+    <td><img src="/Pics/rec.gif" alt="[rec]" width="16" height="16">= recommends</td>
+    <td><img src="/Pics/sug.gif" alt="[sug]" width="16" height="16">= suggests</td>
+    [% END %]
+    </tr></table>
+  [%- END %]
+
+  <ul class="ul[% id %]">
+  [% FOREACH terms %]
+    [% '<li>' UNLESS is_old_pkgs %]
+    [% FOREACH alternatives %]
+      [% '<dl>' IF loop.first %]
+      <dt>[% IF loop.first %]<img class="hidecss" src="/Pics/[% id %].gif" alt="[[% id %]]">[% ELSE %]or [% END %]
+	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
+	[% ' (' _ version _ ')' IF version %]
+        [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
+      [%- IF !is_old_pkgs -%]
+        <dd>[% desc -%]
+        [%- IF providers.size > 0 -%]
+          [% '<br>also a ' IF providers.also %]virtual package provided by
+          [%- IF providers.pkgs.size < 11 -%]
+	    [% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
+          [%- ELSE -%]
+            <a href="[% make_url(name,'','suite',suite,'source','') %]">[% providers.pkgs.size %] packages</a>
+          [% END %]
+        [% END %]
+        </dd>
+      [% END %]
+      [% '</dl>' IF loop.last %]
+    [% END %]
+  [% END %]
+  </ul>
+
+  [% IF loop.last -%]
+    </div> <!-- end pdeps -->
+  [%- END %]
+[% END %]
+
+[% FOREACH downloads %]
+  [% IF loop.first -%]
+    <div id="pdownload">
+    <h2>Download [% pkg %]</h2>
+    
+    <table summary="The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.">
+    <caption class="hidecss">Download for all available architectures</caption>
+    <tr><th>Architecture</th>[% '<th>Version</th>' IF versions.multiple %]<th>Package Size</th><th>Installed Size</th><th>Files</th></tr>
+  [%- END %]
+
+<tr>
+[% download_url = pkg _ '/' _ arch _ '/download'
+   filelist_url = pkg _ '/' _ arch _ '/filelist' %]
+<th><a href="[% make_url(download_url) | uri %]">[% arch %]</a></th>
+[% '<td>' _ version _ '</td>' IF versions.multiple %]
+<td class="size">[% pkgsize %]&nbsp;kB</td><td class="size">[% instsize %]&nbsp;kB</td>
+<td>
+[% IF contents_avail %]
+  [<a href="[% make_url(filelist_url) | uri %]">list of files</a>]
+[% ELSE %]
+  no current information
+[% END %]
+</td>
+</tr>
+
+  [% IF loop.last -%]
+    </table>
+
+    </div> <!-- end pdownload -->
+  [%- END %]
+[% END %]
+
+[% FOREACH srcfiles %]
+  [% IF loop.first -%]
+    <div id="pdownload">
+    <h2>Download [% pkg %]</h2>
+    
+    <table summary="Download information for the files of this source package">
+    <tr><th>File</th><th>Size (in kB)</th><th>md5sum</th></tr>
+  [%- END %]
+
+<tr>
+<td><a href="[% server _ path %]">[% filename %]</a></td>
+<td>[% size %]</td>
+<td class="md5sum">[% md5sum %]</td>
+</tr>
+
+  [% IF loop.last -%]
+    </table>
+
+    </div> <!-- end pdownload -->
+  [%- END %]
+[% END %]
+
+
+[% UNLESS is_virtual %]
+<div id="pmoreinfo">
+<h2>More Information on [% pkg %]</h2><p>
+Check for <a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">Bug Reports</a> about [% pkg %].<br>
+[% IF src %]
+  Source Package: <a href="[% src.url %]">[% src.pkg %]</a>, Download:
+  [% FOREACH src.downloads %]
+  <a href="[% server _ path %]">[[% name %]]</a>
+  [% END %]
+  [% IF src.downloads.size == 0 %]
+  Not found
+  [% END %]
+[% END %]
+
+[% IF files %]
+<br>View the <a href="[% changelogs_url _ files.changelog.path %]">Debian changelog</a><br>
+View the <a href="[% changelogs_url _ files.copyright.path %]">copyright file</a></p>
+[% END %]
+<p>
+[% IF maintainers.size == 1 -%]
+  [%- FOREACH maintainers -%]
+    <a href="mailto:[% mail %]">[% name | html %]</a> is responsible for this Debian package.
+  [%- END -%]
+[%- ELSE -%]
+  [%- FOREACH maintainers -%]
+    [%- IF loop.first -%]
+<a href="mailto:[% mail %]">[% name | html %]</a>
+    [%- ELSIF loop.last -%]
+ and <a href="mailto:[% mail %]">[% name | html %]</a> are responsible for this Debian package.
+    [%- ELSE -%]
+, <a href="mailto:[% mail %]">[% name | html %]</a>
+    [%- END -%]
+  [%- END -%]
+[%- END %]
+[% IF src -%]
+See the <a href="[% pts_url _ src.pkg | uri %]">developer information for [% pkg %]</a>.
+[%- END %]
+</p>
+<p>Search for <a href="[% (is_source ? src_search_url : search_url) _ pkg | uri %]">other versions of [% pkg %]</a></p>
+</div> <!-- end pmoreinfo -->
+[% END %]

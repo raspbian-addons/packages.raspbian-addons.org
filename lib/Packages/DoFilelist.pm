@@ -17,7 +17,6 @@ use Packages::I18N::Locale;
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );
-use Packages::HTML;
 use Packages::Page ();
 use Packages::SrcPage ();
 
@@ -25,7 +24,7 @@ our @ISA = qw( Exporter );
 our @EXPORT = qw( do_filelist );
 
 sub do_filelist {
-    my ($params, $opts, $html_header, $menu, $page_content) = @_;
+    my ($params, $opts, $html_header, $page_content) = @_;
 
     if ($params->{errors}{package}) {
 	fatal_error( _g( "package not valid or not specified" ) );
@@ -37,17 +36,12 @@ sub do_filelist {
 	fatal_error( _g( "architecture not valid or not specified" ) );
     }
 
-    $$menu = '';
     my $pkg = $opts->{package};
     my $suite = $opts->{suite}[0];
     my $arch = $opts->{arch}[0] ||'';
-
-    %$html_header = ( title => sprintf( _g( "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>" ), $pkg, $suite, $arch ),
-		      title_tag => sprintf( _g( "Filelist of package %s/%s/%s" ), $pkg, $suite, $arch ),
-		      lang => $opts->{lang},
-		      keywords => "debian, $suite, $arch, filelist",
-		      print_title => 1,
-		      );
+    $page_content->{pkg} = $pkg;
+    $page_content->{suite} = $suite;
+    $page_content->{arch} = $arch;
 
     unless (@Packages::CGI::fatal_errors) {
 	if (tie my %contents, 'DB_File', "$DBDIR/contents/filelists_${suite}_${arch}.db",
@@ -57,13 +51,13 @@ sub do_filelist {
 		fatal_error( _g( "No such package in this suite on this architecture." ) );
 	    } else {
 		my @files = unpack "L/(CC/a)", $contents{$pkg};
-		my $file = "";
-		$$page_content .= '<div id="pfilelist"><pre>';
+		my $file;
+
+		$page_content->{files} = [];
 		for (my $i=0; $i<scalar @files;) {
 		    $file = substr($file, 0, $files[$i++]).$files[$i++];
-		    $$page_content .= "/$file\n";
+		    push @{$page_content->{files}}, "/$file";
 		}
-		$$page_content .= '</pre></div>';
 	    }
 	} else {
 	    fatal_error( _g( "Invalid suite/architecture combination" ) );

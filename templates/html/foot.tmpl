@@ -1,0 +1,37 @@
+[%- IF benchmark && debug -%]
+Total page evaluation took [% benchmark %]<br>
+[%- END -%]
+</div> <!-- end inner -->
+
+<div id="footer">
+
+[% IF langs.size > 0 %]
+<hr class="hidecss">
+<!--UdmComment-->
+<p>This page is also available in the following languages:</p>
+<p class="navpara">
+[% FOREACH langs %]
+<a href="[% name _ cur_lang _ ".html" %]" title="[% tooltip %]" hreflang="[% cur_lang %]" lang="[% cur_lang %]" rel="alternate">[% selfname %]
+[%- IF transliteration %] ([% transliteration %])[% END %]</a>
+[% END %]
+</p>
+<p>How to set <a href="[% cn_help_url %]">the default document language</a></p>
+<!--/UdmComment-->
+[% END %]
+
+<hr class="hidecss">
+<p [%- ' class="bordertop"' IF langs.count > 0 %]>Back to: <a href="[% homepage %]">[% organisation %] homepage</a> || <a href="[% searchformurl %]">Packages search page</a></p>
+
+<hr class="hidecss">
+<div id="fineprint" class="bordertop">
+<p>To report a problem with the web site, e-mail <a href="mailto:[% contact.mail %]">[% contact.mail %]</a>. For other contact information, see the [% organisation %] <a href="[% contact.url %]">contact page</a>.</p>
+<p>Generated: [% timestamp.string %]<br>
+Copyright &copy; [% copyright.years %] <a href="[% copyright.url %]">[% copyright.name %]</a>; See <a href="[% license.url %]">license terms</a>.
+[% IF trademarknotes -%]
+ <br>[% trademarknotes %]
+[%- END %]
+</div> <!-- end fineprint -->
+</div> <!-- end footer -->
+</div> <!-- end outer -->
+</body>
+</html>
