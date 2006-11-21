@@ -56,17 +56,17 @@
 
 #pdeps ul.uldep, #pdeps ul.uladep {
 	list-style-type: disc;
-	list-style-image: url(http://packages.debian.org/Pics/dep.gif);
+	list-style-image: url(http://%SITE%/Pics/dep.gif);
 }
 
 #pdeps ul.ulrec, #pdeps ul.ulidep {
 	list-style-type: disc;
-	list-style-image: url(http://packages.debian.org/Pics/rec.gif);
+	list-style-image: url(http://%SITE%/Pics/rec.gif);
 }
 
 #pdeps ul.ulsug {
 	list-style-type: disc;
-	list-style-image: url(http://packages.debian.org/Pics/sug.gif);
+	list-style-image: url(http://%SITE%/Pics/sug.gif);
 }
 
 #pdeps ul.uldep li, #pdeps ul.ulrec li, #pdeps ul.ulsug li, #pdeps ul.uladep li, #pdeps ul.ulidep li {

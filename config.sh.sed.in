@@ -1,7 +1,7 @@
-# Configuration for packages.debian.org
+# Configuration for %SITE%
 #
 
-topdir=/org/packages.debian.org
+topdir=%TOPDIR%
 
 tmpdir=${topdir}/tmp
 bindir=${topdir}/bin
@@ -11,11 +11,11 @@ filesdir=${topdir}/files
 htmldir=${topdir}/www
 archivedir=${topdir}/archive
 podir=${topdir}/po
-localedir=/org/packages.debian.org/locale
+localedir=%TOPDIR%/locale
 staticdir=${topdir}/static
 configdir=${topdir}/conf
 
-# unset this if packages.debian.org moves somewhere where the packages files
+# unset this if %SITE% moves somewhere where the packages files
 # cannot be obtained locally
 #
 localdir=/org/ftp.debian.org/ftp
@@ -32,17 +32,6 @@ amd64_ftpsite=http://amd64.debian.net/debian
 kfreebsd_ftpsite=http://kfreebsd-gnu.debian.net/debian
 
 root=""
-hostname="http://packages.debian.net"
-search_page="http://packages.debian.net/"
-search_url="/search"
-webmaster=webmaster@debian.org
-contact=debian-www@lists.debian.org
-home="http://www.debian.org"
-bug_url="http://bugs.debian.org/"
-src_bug_url="http://bugs.debian.org/src:"
-qa_url="http://packages.qa.debian.org/"
-ddpo_url="http://qa.debian.org/developer.php?email="
-cn_help_url="http://www.debian.org/intro/cn"
 
 # Architectures
 #

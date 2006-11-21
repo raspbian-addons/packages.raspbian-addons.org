@@ -1,5 +1,5 @@
 # Need to turn on negotiation_module
-<Directory /org/packages.debian.org/www/>
+<Directory %TOPDIR%/www/>
   Options +MultiViews +FollowSymLinks +Indexes
   AddHandler type-map var
   # Make sure that the srm.conf directive is commented out.
@@ -78,20 +78,18 @@
 
 <VirtualHost *>
    ServerAdmin webmaster@debian.org
-   DocumentRoot /org/packages.debian.org/www/
-   ServerName packages.debian.net
-   ErrorLog /var/log/apache/packages.debian.org-error.log
-   CustomLog /var/log/apache/packages.debian.org-access.log combined
+   DocumentRoot %TOPDIR%/www/
+   ServerName %SITE%
+   ErrorLog /var/log/apache2/%SITE%-error.log
+   CustomLog /var/log/apache2/%SITE%-access.log combined
 
-#   ScriptAlias /cgi-bin /org/packages.debian.org/cgi-bin/
-
-   Alias /cgi-bin/ /org/packages.debian.org/cgi-bin/
+   Alias /cgi-bin/ %TOPDIR%/cgi-bin/
   
    PerlModule Apache::Registry
    PerlTaintCheck On
    <Location /cgi-bin/>
       SetHandler perl-script
-      PerlRequire /org/packages.debian.org/bin/mod_perl-startup
+      PerlRequire %TOPDIR%/bin/mod_perl-startup
       PerlInitHandler Apache::Reload
       PerlHandler Apache::Registry
       Options +ExecCGI
@@ -99,10 +97,8 @@
       allow from all
    </Location>
 
-   ScriptAlias /cgi-old /org/packages.debian.net/cgi-bin/
-
    RewriteEngine on
-   RewriteLog /var/log/apache/rewrite.log
+   RewriteLog /var/log/apache2/rewrite.log
    RewriteLogLevel 0
 
    # we never want to rewrite those URLs
