@@ -10,8 +10,7 @@ our @ISA = qw( Exporter );
 # the reason we have both _g and _ is simply that there
 # seem to be some situations where Perl doesn't handle _
 # correctly. If in doubt use _g
-our @EXPORT = qw( get_locale get_charset _g _ N_ );
-
+our @EXPORT = qw( get_locale get_charset _g N_ );
 
 my %lang2loc = ( en => "en_US",
 		 cs => "cs_CZ",
@@ -53,7 +52,6 @@ sub get_charset {
     return $lang2charset{$lang} || $lang2charset{default};
 }
 
-sub _ { return gettext( $_[0] ) }
 sub _g { return gettext( $_[0] ) }
 sub N_ { return $_[0] }
 
