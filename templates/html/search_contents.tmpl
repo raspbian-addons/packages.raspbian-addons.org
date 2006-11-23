@@ -53,7 +53,7 @@
 [% END %]
 
 [% IF search_architectures.size == 1 %]
-<p>Search in <a href="[% make_search_url('',"keywords=$keyword_esc",arch,'') %]">all architectures</a>
+<p>Search in <a href="[% make_search_url('',"keywords=$keyword_esc",'arch','any') %]">all architectures</a>
 [% END %]
 
 </div>
