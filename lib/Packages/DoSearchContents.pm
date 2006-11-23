@@ -82,7 +82,7 @@ sub do_search_contents {
 		if @keywords;
 
 	    my $kw = reverse $first_kw;
-	    
+
 	    # exact filename searching follows trivially:
 	    $kw = "$kw/" if $mode eq 'exactfilename';
 
@@ -91,11 +91,11 @@ sub do_search_contents {
 	$reverses = undef;
 	untie %reverses;
 
-    
+
 	my $st1 = new Benchmark;
 	my $std = timediff($st1, $st0);
 	debug( "Search took ".timestr($std) ) if DEBUG;
-    }    
+    }
 
     my (%results,%archs);
     foreach my $result (sort { $a->[0] cmp $b->[0] } @results) {
@@ -110,8 +110,8 @@ sub do_search_contents {
 	next unless keys %pkgs;
 	$results{$file} = \%pkgs;
     }
-    my @all_archs = keys %archs;
-    @all_archs = @ARCHITECTURES unless @all_archs;
+    my @all_archs = sort keys %archs;
+    @all_archs = sort @ARCHITECTURES unless @all_archs;
     $page_content->{suite} = $suite;
     $page_content->{archive} = $archive;
     $page_content->{all_architectures} = \@all_archs;
@@ -164,7 +164,7 @@ sub searchfile
     debug( "searchfile: kw=$kw", 1 ) if DEBUG;
     for (my $status = $reverses->seq($key, $value, R_CURSOR);
 	$status == 0;
-    	$status =  $reverses->seq( $key, $value, R_NEXT)) {
+	$status =  $reverses->seq( $key, $value, R_NEXT)) {
 
 	# FIXME: what's the most efficient "is prefix of" thingy? We only want to know
 	# whether $kw is or is not a prefix of $key
