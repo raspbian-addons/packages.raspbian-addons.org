@@ -333,6 +333,13 @@ sub printindexline {
 #    return ( $start, $end );
 #}
 
+sub string2id {
+    my $string = "@_";
+    
+    $string =~ s/[^\w]/_/g;
+    return $string;
+}
+
 our ( %url_params, %query_params );
 
 sub init_url {

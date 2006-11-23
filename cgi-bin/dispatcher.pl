@@ -269,6 +269,7 @@ $page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
 $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
 $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
 $page_content{quotemeta} = sub { return quotemeta($_[0]) };
+$page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
 print $input->header( -charset => $charset );
 
