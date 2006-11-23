@@ -6,12 +6,7 @@
    keywords = "$suite, $archive, $section, $subsection, $version"
    print_search_field = 'packages'
    search_field_values = { 
-			  keywords => '',
 			  searchon => is_source ? 'sourcenames' : 'names',
-			  arch => 'any',
-			  suite => 'all',
-			  section => 'all',
-			  exact => 0
                          }
   navigation = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/'), name=>suite },
 		 { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection },
@@ -128,13 +123,13 @@ Do not install it on a normal Debian system.</p>
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
       [%- IF !is_old_pkgs -%]
         <dd>[% desc -%]
-        [%- IF providers.size > 0 -%]
+        [%- IF providers.pkgs.size > 0 -%]
           [% '<br>also a ' IF providers.also %]virtual package provided by
-          [%- IF providers.pkgs.size < 11 -%]
-	    [% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
-          [%- ELSE -%]
-            <a href="[% make_url(name,'','suite',suite,'source','') %]">[% providers.pkgs.size %] packages</a>
-          [% END %]
+	  [% js_id = name %]
+	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+	[% IF providers.pkgs.size > 10 %]
+	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% providers.pkgs.size %] providing packages")</script>
+	[% END %]
         [% END %]
         </dd>
       [% END %]

@@ -14,7 +14,7 @@ our @EXPORT = qw( do_search );
 use Deb::Versions;
 use Packages::I18N::Locale;
 use Packages::Search qw( :all );
-use Packages::CGI qw( :DEFAULT msg );
+use Packages::CGI qw( :DEFAULT msg error );
 use Packages::DB;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES $ROOT );
 
@@ -156,8 +156,7 @@ sub do_search {
 		if ($arch ne 'virtual') {
 		    $pkgs{$pkg}{$suite}{$version}{$arch} = 1;
 		    $subsect{$pkg}{$suite}{$version} = $subsection;
-		    $sect{$pkg}{$suite}{$version} = $section
-			unless $section eq 'main';
+		    $sect{$pkg}{$suite}{$version} = $section;
 		    $archives{$pkg}{$suite}{$version} ||= $archive;
 		    
 		    $desc{$pkg}{$suite}{$version} = $desc;
