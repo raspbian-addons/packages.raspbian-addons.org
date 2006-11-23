@@ -1,4 +1,4 @@
-search_packages.pl:
+search_packages:
 - all searches:
   - Display "$pkg ($section) shortdesc from stable (or if not available, testing, unstable, ...)"
     tersely on one line each, with "#foo" links to what's currently displayed.
@@ -29,6 +29,10 @@ search_packages.pl:
   - Ensure that in _small.db, newest version for each suite is first,
 	show_package relies on that. So foreach suite, 'newest entry', and only
 	then, all the other entries
+
+search_contents:
+- regain section (main/contrib/non-free) information? It is currently
+   not available at all.
 
 Static pages:
 - try to make it faster
