@@ -95,9 +95,9 @@ sub is_virtual {
 }
 
 our @TAKE_NEWEST = qw( description essential priority section subsection tag
-		       archive source source-version );
+		       archive source source-version url );
 our @STORE_ALL = qw( version source source-version installed-size size
-		     filename md5sum
+		     filename md5sum sha1 sha256 task
 		     origin bugs suite archive section );
 our @DEP_FIELDS = qw( depends pre-depends recommends suggests enhances
 		      provides conflicts );
