@@ -78,10 +78,11 @@ sub do_show {
 		$all_suites{$s}++;
 	    }
 	    $contents{suites} = [ suites_sort(keys %all_suites) ];
-	    
+
 	    unless (@results) {
 		fatal_error( _g( "Package not available in this suite." ) );
 	    } else {
+		$contents{page} = $page;
 		unless ($opts->{source}) {
 
 		    for my $entry (@results) {
@@ -100,7 +101,7 @@ sub do_show {
 			    $page->add_provided_by([split /\s+/, $provided_by]);
 			}
 		    }
-		    
+
 		    unless ($page->is_virtual()) {
 			$version = $page->{newest};
 			$contents{version} = $version;
@@ -152,7 +153,7 @@ sub do_show {
 			my $multiple_versions = grep { $_ ne $version } values %$versions;
 			$v_str .= _g(" and others") if $multiple_versions;
 			$contents{versions} = { short => $v_str,
-					        multiple => $multiple_versions };
+						multiple => $multiple_versions };
 
 			my $provided_by = $page->{provided_by};
 			$contents{providers} = [];
@@ -161,13 +162,13 @@ sub do_show {
 			#
 			# display dependencies
 			#
- 			build_deps( \%packages, $opts, $pkg,
+			build_deps( \%packages, $opts, $pkg,
 				    $page->get_dep_field('depends'),
 				    'depends', \%contents );
- 			build_deps( \%packages, $opts, $pkg,
+			build_deps( \%packages, $opts, $pkg,
 				    $page->get_dep_field('recommends'),
 				    'recommends', \%contents );
- 			build_deps( \%packages, $opts, $pkg,
+			build_deps( \%packages, $opts, $pkg,
 				    $page->get_dep_field('suggests'),
 				    'suggests', \%contents );
 
@@ -188,7 +189,7 @@ sub do_show {
 			    push @downloads, \%d;
 			}
 			$contents{downloads} = \@downloads;
-			
+
 			#
 			# more information
 			#
@@ -219,7 +220,7 @@ sub do_show {
 			debug( join(":", @$entry), 1 ) if DEBUG;
 			my (undef, $archive, undef, $section, $subsection,
 			    $priority, $version) = @$entry;
-			
+
 			my $data = $sources_all{"$archive $suite $pkg"};
 			$page->merge_data($pkg, $suite, $archive, $data)
 			    or debug( "Merging $pkg $version FAILED", 2 ) if DEBUG;
@@ -237,13 +238,13 @@ sub do_show {
 		    $contents{section} = $section;
 		    $subsection = $page->get_newest( 'subsection' );
 		    $contents{subsection} = $subsection;
-		    
+
 		    my $binaries = find_binaries( $pkg, $archive, $suite, \%src2bin );
 		    if ($binaries && @$binaries) {
 			$contents{binaries} = [];
 			pkg_list( \%packages, $opts, $binaries, 'en', $contents{binaries} );
 		    }
-		    
+
 		    #
 		    # display dependencies
 		    #
@@ -259,7 +260,7 @@ sub do_show {
 		    #
 		    my $source_files = $page->get_src( 'files' );
 		    my $source_dir = $page->get_src( 'directory' );
-		    
+
 		    $contents{srcfiles} = [];
 		    foreach( @$source_files ) {
 			my ($src_file_md5, $src_file_size, $src_file_name)
@@ -268,7 +269,7 @@ sub do_show {
 			$server = $FTP_SITES{$server}
 			    || $FTP_SITES{us};
 			my $path = "/$source_dir/$src_file_name";
-			
+
 			push @{$contents{srcfiles}}, { server => $server, path => $path, filename => $src_file_name,
 						       size => sprintf("%.1f", (floor(($src_file_size/102.4)+0.5)/10)),
 						       md5sum => $src_file_md5 };
@@ -283,7 +284,7 @@ sub do_show {
 			      bugreports => 1,
 			      changesandcopy => 1, maintainers => 1,
 			      search => 1, is_source => 1 );
-		    
+
 		} # else (unless $opts->{source})
 	    } # else (unless @results)
 	} # else (unless (@results || @non_results ))
