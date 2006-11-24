@@ -23,7 +23,6 @@
    [%- END -%]
    [%- '</div>' IF loop.last -%]
 [% END %]
-</div>
 
 [% IF src %]
 <div id="psource">
@@ -42,7 +41,8 @@
 [% END %]
 [%- PROCESS marker text=archive IF archive && archive != main_archive %]
 [%- PROCESS marker text=subsection IF subsection == 'non-US' and archive != 'non-US' %]
-[%- PROCESS marker text=section IF section && section != main_section %]</h1>
+[%- PROCESS marker text=section IF section && section != main_section %]
+[%- PROCESS marker text='essential' IF page.get_newest('essential') == 'yes' %]</h1>
 
 [% IF suite == "experimental" || subsection == "debian-installer" %]
 <div class="pconstantnag">
@@ -64,8 +64,10 @@ Do not install it on a normal Debian system.</p>
 
 [% UNLESS is_virtual %]
 <div id="pdesc">
-<h2>[% desc.short %]</h2>
-<p>[% desc.long %]
+[% IF desc.short %]
+	<h2>[% desc.short %]</h2>
+	<p>[% desc.long %]
+[% END %]
 </div> <!-- end pdesc -->
 [% END %]
 
@@ -234,7 +236,29 @@ View the <a href="[% changelogs_url _ files.copyright.path %]">copyright file</a
 [%- END %]
 [% IF src -%]
 See the <a href="[% pts_url _ src.pkg | uri %]">developer information for [% pkg %]</a>.
+[% ELSIF is_source %]
+See the <a href="[% pts_url _ pkg | uri %]">developer information for [% pkg %]</a>.
 [%- END %]
+[% # use url only for source packages
+   # otherwise we have too often two home page links
+   url = page.get_newest('url');
+   IF is_source && url %]
+<p>Homepage: <a href="[% url | uri %]">[% url | html %]</a></p>
+[% END %]
+[% #FIXME: should this only be used for the PTS?
+   known_vcs = [ [ 'cvs', 'CVS' ],
+		[ 'svn', 'Subversion' ],
+		[ 'bzr', 'bzr' ],
+		[ 'darcs', 'Darcs'],
+		[ 'arch', 'arch' ] ];
+   FOREACH vcs IN known_vcs;
+	vcs_id = vcs.0; vcs_name = vcs.1;
+	vcs_info = page.get_newest("vcs-$vcs_id");
+	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
+	IF vcs_info; %]
+<p>Repository for Debian package: <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a> (<acronym title="Version Control System">VCS</acronym>: [% vcs_name %])</p>
+[% END; END %]
+
 </p>
 <p>Search for <a href="[% (is_source ? src_search_url : search_url) _ pkg | uri %]">other versions of [% pkg %]</a></p>
 </div> <!-- end pmoreinfo -->
