@@ -14,7 +14,7 @@ our @EXPORT = qw( do_search );
 use Deb::Versions;
 use Packages::I18N::Locale;
 use Packages::Search qw( :all );
-use Packages::CGI qw( :DEFAULT msg error );
+use Packages::CGI qw( :DEFAULT );
 use Packages::DB;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES $ROOT );
 
@@ -32,18 +32,8 @@ sub do_search {
 
     my @keywords = @{$opts->{keywords}};
     my $searchon = $opts->{searchon};
+    $page_content->{search_keywords} = \@keywords;
 
-    # for URL construction
-    my $keyword_esc = uri_escape( "@keywords" );
-    $opts->{keywords_esc} = $keyword_esc;
-
-    # for output
-    my $keyword_enc = encode_entities "@keywords" || '';
-    my $searchon_enc = encode_entities $searchon;
-    my $suites_enc = encode_entities( join( ', ', @{$params->{values}{suite}{no_replace}} ) );
-    my $sections_enc = encode_entities( join( ', ', @{$params->{values}{section}{no_replace}} ) );
-    my $archs_enc = encode_entities( join( ', ',  @{$params->{values}{arch}{no_replace}} ) );
-    
     my $st0 = new Benchmark;
     my (@results, @non_results);
 
@@ -69,80 +59,17 @@ sub do_search {
 				\@results, \@non_results );
 	}
     }
-    
+
 #    use Data::Dumper;
 #    debug( join( "", Dumper( \@results, \@non_results )) ) if DEBUG;
     my $st1 = new Benchmark;
     my $std = timediff($st1, $st0);
     debug( "Search took ".timestr($std) ) if DEBUG;
-    
-    my $suite_wording = $suites_enc =~ /^(default|all)$/ ? _g("all suites")
-	: sprintf(_g("suite(s) <em>%s</em>", $suites_enc) );
-    my $section_wording = $sections_enc eq 'all' ? _g("all sections")
-	: sprintf(_g("section(s) <em>%s</em>", $sections_enc) );
-    my $arch_wording = $archs_enc eq 'any' ? _g("all architectures")
-	: sprintf(_g("architecture(s) <em>%s</em>", $archs_enc) );
-    if ($searchon eq "names") {
-	my $source_wording = $opts->{source} ? _g("source packages") : _g("packages");
-	# sorry to all translators for that one... (patches welcome)
-	msg( sprintf( _g( "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s." ),
-		      $source_wording, $keyword_enc,
-		      $suite_wording, $section_wording, $arch_wording ) );
-    } else {
-	my $exact_wording = $opts->{exact} ? "" : _g(" (including subword matching)");
-	msg( sprintf( _g( "You have searched for <em>%s</em> in packages names and descriptions in %s, %s, and %s%s." ),
-		      $keyword_enc,
-		      $suite_wording, $section_wording, $arch_wording,
-		      $exact_wording ) );
-    }
 
-    if ($Packages::Search::too_many_hits) {
-	error( sprintf( _g( "Your search was too wide so we will only display exact matches. At least <em>%s</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords." ), $Packages::Search::too_many_hits ) );
-    }
-    
-    if (!@Packages::CGI::fatal_errors && !@results) {
-	if ($searchon eq "names") {
-	    unless (@non_results) {
-		error( _g( "Can't find that package." ) );
-	    } else {
-#		hint( _g( "Can't find that package." )." ".
-#		      sprintf( _g( '<a href="%s">%s</a>'.
-#		      " results have not been displayed due to the".
-#		      " search parameters." ), "$SEARCH_URL/$keyword_esc" ,
-#		      $#non_results+1 ) );
-	    }
-	    
-	} else {
-	    if (($suites_enc eq 'all')
-		&& ($archs_enc eq 'any')
-		&& ($sections_enc eq 'all')) {
-		error( _g( "Can't find that string." ) );
-	    } else {
-		error( sprintf( _g( "Can't find that string, at least not in that suite (%s, section %s) and on that architecture (%s)." ),
-				$suites_enc, $sections_enc, $archs_enc ) );
-	    }
-	    
-	    if ($opts->{exact}) {
-		hint( sprintf( _g( 'You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.' ),
-			       encode_entities(make_search_url('',"keywords=$keyword_esc",{exact => 0})) ) );
-	    }
-	}
-#	hint( sprintf( _g( 'You can try a different search on the <a href="%s">Packages search page</a>.' ), "$SEARCH_PAGE#search_packages" ) );
-	
-    }
-
-    $page_content->{make_url} = sub { return &Packages::CGI::make_url(@_) };
-    $page_content->{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-
-    $page_content->{search_field_values} = { 
-	keywords => $keyword_enc,
-	searchon => $opts->{searchon_form},
-	arch => $archs_enc,
-	suite => $suites_enc,
-	section => $sections_enc,
-	exact => $opts->{exact},
-	debug => $opts->{debug},
-    };
+    $page_content->{too_many_hits} = $Packages::Search::too_many_hits;
+    #FIXME: non_results can't be compared to results since it is
+    # not normalized to unique packages
+    $page_content->{non_results} = scalar @non_results;
 
     if (@results) {
 	my (%pkgs, %subsect, %sect, %archives, %desc, %binaries, %provided_by);
@@ -151,14 +78,14 @@ sub do_search {
 	    foreach (@results) {
 		my ($pkg_t, $archive, $suite, $arch, $section, $subsection,
 		    $priority, $version, $desc) = @$_;
-		
+
 		my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
 		if ($arch ne 'virtual') {
 		    $pkgs{$pkg}{$suite}{$version}{$arch} = 1;
 		    $subsect{$pkg}{$suite}{$version} = $subsection;
 		    $sect{$pkg}{$suite}{$version} = $section;
 		    $archives{$pkg}{$suite}{$version} ||= $archive;
-		    
+
 		    $desc{$pkg}{$suite}{$version} = $desc;
 		} else {
 		    $provided_by{$pkg}{$suite} = [ split /\s+/, $desc ];
@@ -176,7 +103,7 @@ sub do_search {
 	    foreach (@results) {
 		my ($pkg, $archive, $suite, $section, $subsection, $priority,
 		    $version) = @$_;
-		
+
 		my $real_archive = '';
 		if ($archive =~ /^(security|non-US)$/) {
 		    $real_archive = $archive;

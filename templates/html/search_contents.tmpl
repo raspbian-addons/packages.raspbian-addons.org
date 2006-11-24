@@ -72,7 +72,7 @@
    END %]
 <p>You have searched for [% wording %] <em>[% keyword_enc %]</em> in [% suite_wording %], [% section_wording %], and [% arch_wording %].
 
-[% IF results %]
+[% IF results.size %]
 Found <strong>[% results.size %] results</strong>.
 
 [% IF too_many_hits %]

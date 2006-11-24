@@ -2,13 +2,79 @@
 [%- PROCESS 'html/head.tmpl'
    title_tag = 'Debian Package Search Results'
    print_search_field = 'packages'
+   search_field_values = {
+	keywords => search_keywords.join(' '),
+	searchon => opts.searchon_form,
+	suite => params.values.suite.no_replace.join(','),
+	architectures => params.values.arch.no_replace.join(','),
+	sections => params.values.section.no_replace.join(','),
+    };
+
    navigation = [ { name => 'Package Search Results' } ]
 -%]
+
+[% keyword_str = search_keywords.join(' ');
+   keyword_esc = uri_escape(keyword_str);
+   keyword_enc = html_encode(keyword_str);
+
+   section_str = params.values.section.no_replace.join(', ');
+   section_esc = uri_escape(section_str);
+   section_enc = html_encode(section_str);
+
+   suite_str = params.values.suite.no_replace.join(', ');
+   suite_esc = uri_escape(suite_str);
+   suite_enc = html_encode(suite_str);
+
+   architectures_str = params.values.arch.no_replace.join(', ');
+   architectures_esc = uri_escape(architectures_str);
+   architectures_enc = html_encode(architectures_str);
+%]
+
+<div id="psearchsug">
+[% UNLESS results %]
+	<p>You can try a different search on the <a href="[% searchformurl %]#search_packages">Packages search page</a>.</p>
+	
+	[% IF opts.searchon != "names" && opts.exact %]
+	<p>You have searched only for words exactly matching your keywords.
+	You can try to search <a href="[% make_search_url('',"keywords=$keyword_esc",'exact',0) %]">allowing subword matching</a>
+	[% END %]
+[% END %]
+[% IF opts.searchon == "names" && non_results %]
+<p><a href="[% search_url %][% keyword_esc %]">[% non_results %]</a>
+results have not been displayed due to the search parameters.</p>
+[% END %]
+</div>
 
 [%- PROCESS 'html/messages.tmpl' -%]
 
 <div id="psearchres">
-<p>Found <em>[% results %]</em> matching packages.</p>
+
+[% suite_wording = suite_enc.match("^(default|all)$") ? "all suites" : "suite(s) <em>$suite_enc</em>";
+   section_wording = (section_enc == 'all') ? "all sections" : "section(s) <em>$section_enc</em>";
+   arch_wording = (architectures_enc == 'any') ? "all architectures" : "architecture(s) <em>$architectures_enc</em>";
+    IF opts.searchon == "names";
+	source_wording = opts.source ? "source packages" : "packages";
+	msg = "You have searched for $source_wording that names contain <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording .";
+    ELSE;
+	exact_wording = opts.exact ? "" : " (including subword matching)";
+	msg = "You have searched for <em>$keyword_enc</em> in packages names and descriptions in $suite_wording, $section_wording, and $arch_wording$exact_wording .";
+    END %]
+<p>[% msg %]
+
+[% IF results %]
+Found <strong>[% results %]</strong> matching packages.</p>
+[% END %]
+
+[% IF too_many_hits %]
+<p id="psearchtoomanyhits">Your search was too wide so we will only display exact matches.
+At least <em>[% too_many_hits %]</em> results have been omitted and will not be displayed.
+Please consider using a longer keyword or more keywords.</p>
+[% END %]
+
+[% UNLESS results %]
+<p id="psearchnoresult">Sorry, your search gave no results</p>
+[% END %]
+
 [% FOREACH categories %]
   [% "<h2>$name</h2>" IF name %]
 
@@ -16,7 +82,7 @@
   <h3>Package [% pkg %]</h3>
   <ul>
   [% FOREACH s IN suites %]
-    <li><a class="resultlink" href="[% make_url(pkg,'','suite',s.suite) %]">[% s.suite %]</a>[% ' (' _ s.subsect _ ')' IF s.subsect %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
+    <li><a class="resultlink" href="[% make_url(pkg,'','suite',s.suite,'arch','','section','') %]">[% s.suite %]</a>[% ' (' _ s.subsect _ ')' IF s.subsect %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
     [% FOREACH s.versions %]
       <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
     [% END %]
