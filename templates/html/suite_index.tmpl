@@ -1,10 +1,23 @@
-[% PROCESS 'html/head.tmpl' 
+[% nav_arr = [ { name=> suite, url=>make_url('/','','suite',suite) } ];
+   nav_arr.push( { name => 'Source' } ) IF source;
+   nav_arr.push( { name => 'Index' } );
+   PROCESS 'html/head.tmpl' 
 	title_tag = "List of sections in \"$suite\""
-	page_title = "List of sections in \"$suite\""
 	keywords = suite
-	navigation = [ { name=> suite },
-		       { name => 'Index' }, ]
+	navigation = nav_arr
 %]
+[% PROCESS 'html/menu.inc' %]
+[% FOREACH s IN suites %]
+   [% '<div id="pothers">' IF loop.first %]
+   [%- IF s == suite -%]
+     [% PROCESS menuitem name=s url='' %]
+   [%- ELSE -%]
+     [% PROCESS menuitem name=s url=make_url('/','','suite',s,'source',source) %]
+   [%- END -%]
+   [%- '</div>' IF loop.last -%]
+[% END %]
+
+<h1>List of sections in "[% suite %]"</h1>
 
 [% FOREACH subsections %]
   [% '<div id="lefthalfcol"><dl>' IF loop.first %]
@@ -23,6 +36,6 @@
 [% END %]
 
 <p class="psmallcenter">
-	<a href="allpackages" title="List of all packages">All packages</a><br>
+	<a href="allpackages" title="List of all [% "source " IF source %]packages">All [% "source " IF source %]packages</a><br>
 	(<a href="allpackages?format=txt.gz">compact compressed textlist</a>)
 </p>

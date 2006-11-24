@@ -2,13 +2,17 @@
 [% pkg_type = is_source ? 'Source' : 'Software';
    title_common = category ? "$pkg_type Packages in \"$suite\", $category.id $category.name"
 	: "$pkg_type Packages in \"$suite\"";
+
+   nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','suite',suite), name=>suite } ];
    IF category;
-	navigation_pre = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>"../", name=>suite },
-			   { prefix=>"$category.id:", name=>category.name } ];
+	nav_last = { prefix=>"$category.id:", name=>category.name };
    ELSE;
-	navigation_pre = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>"index", name=>suite },
-			   { name=>'All Packages' } ];
+	nav_last = { name=>'All Packages' };
    END
+   nav_arr.push( { name=>'Source',
+	           url=>make_url('/','','suite',suite,'source',source) } )
+	IF source;
+   nav_arr.push( nav_last );
 %]
 [% PROCESS 'html/head.tmpl' 
 	title_tag = title_common
