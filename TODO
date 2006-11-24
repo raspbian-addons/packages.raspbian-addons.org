@@ -57,7 +57,18 @@ General:
 - Debtags: print friendly names instead of raw names?
 - Store in db \1-separated, and split on that, instead of the more fragile
   '/, /' split
-
+- Fields we don't handle in any way currently:
+  Essential -- should be simple
+  Conflicts
+  Suggests
+  Replaces
+  Enhances
+  Origin    -- not needed
+  Bugs      -- not needed
+  URL       -- should be supported, should be simple
+  Task
+  Python-Version(s) -- not needed
+  X-Vcs-.*  -- should be supported
 
 Missing pieces from old code:
  - DDTP support (but without a working DDTP I will not invest any time
