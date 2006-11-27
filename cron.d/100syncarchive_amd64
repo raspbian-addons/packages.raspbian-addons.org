@@ -11,6 +11,12 @@ arch=amd64
 
 for dist in stable
   do
+  echo "retrieve Release(.gpg) $dist"
+  test -d amd64/${dist} || mkdir -p amd64/${dist}
+  (cd amd64/${dist} &&
+      wget -q -N ${amd64_ftpsite}/dists/${dist}/Release &&
+      wget -q -N ${amd64_ftpsite}/dists/${dist}/Release.gpg )
+
   for part in ${parts} main/debian-installer
     do
     echo retrieve Packages $dist/$part/$arch

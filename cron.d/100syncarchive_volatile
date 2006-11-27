@@ -9,6 +9,12 @@ cd ${archivedir}
 #
 for dist in stable
 do
+  echo "retrieve Release(.gpg) $dist-volatile"
+  test -d volatile/${dist}-volatile || mkdir -p volatile/${dist}-volatile
+  (cd volatile/${dist}-volatile &&
+      wget -q -N ${volatile_ftpsite}/dists/${dist}/volatile/Release &&
+      wget -q -N ${volatile_ftpsite}/dists/${dist}/volatile/Release.gpg )
+
     foo=\$arch_${dist//-/_}
     for arch in `eval echo $foo`
     do

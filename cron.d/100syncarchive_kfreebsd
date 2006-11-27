@@ -9,9 +9,15 @@ cd ${archivedir}
 #
 architectures="kfreebsd-i386 kfreebsd-amd64"
 
-for arch in $architectures
+for dist in unstable experimental
   do
-  for dist in unstable experimental
+  echo "retrieve Release(.gpg) $dist"
+  test -d kfreebsd/${dist} || mkdir -p kfreebsd/${dist}
+  (cd kfreebsd/${dist} &&
+	    wget -q -N ${kfreebsd_ftpsite}/dists/${dist}/Release &&
+	    wget -q -N ${kfreebsd_ftpsite}/dists/${dist}/Release.gpg )
+
+  for arch in $architectures
     do
     for part in ${parts} main/debian-installer
       do

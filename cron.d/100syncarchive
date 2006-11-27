@@ -12,6 +12,12 @@ then
     echo using remote mirror
     for dist in $dists
     do
+        echo "retrieve Release(.gpg) $dist"
+	test -d us/${dist} || mkdir -p us/${dist}
+	(cd us/${dist} &&
+	    wget -q -N ${ftpsite}/dists/${dist}/Release &&
+	    wget -q -N ${ftpsite}/dists/${dist}/Release.gpg )
+        
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
@@ -41,6 +47,12 @@ else
     echo using local mirror
     for dist in $dists
     do
+        echo "retrieve Releases(.gpg) $dist"
+	test -d us/${dist} || mkdir -p us/${dist}
+	(cd us/${dist} &&
+	    rsync -t ${localdir}/dists/${dist}/Release &&
+	    rsync -t ${localdir}/dists/${dist}/Release.gpg )
+
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do

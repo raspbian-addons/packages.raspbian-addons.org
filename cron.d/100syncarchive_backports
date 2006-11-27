@@ -9,6 +9,12 @@ cd ${archivedir}
 #
 for dist in stable
 do
+  echo "retrieve Release(.gpg) $dist-backports"
+  test -d backports/${dist}-backports || mkdir -p backports/${dist}-backports
+  (cd backports/${dist}-backports &&
+	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/Release &&
+	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/Release.gpg )
+
     foo=\$arch_${dist//-/_}
     for arch in `eval echo $foo`
     do
