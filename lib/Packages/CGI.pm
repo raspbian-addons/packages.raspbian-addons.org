@@ -20,6 +20,7 @@ my %mime_types = (
 		  'txt.gz' => 'text/plain',
 		  html => 'text/html',
 		  rss => 'application/rss+xml',
+		  rfc822 => 'text/plain',
 		  );
 
 sub get_mime {
@@ -27,13 +28,16 @@ sub get_mime {
 }
 
 our (@fatal_errors, @errors, @debug, @msgs, @hints, @notes);
+our $http_code;
 
 sub reset {
     @fatal_errors = @errors = @debug = @msgs = @hints = @notes = ();
+    $http_code = 200;
 }
 
 sub fatal_error {
     push @fatal_errors, $_[0];
+    $http_code = $_[1] if $_[1];
 }
 sub error {
     push @errors, $_[0];

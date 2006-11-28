@@ -71,7 +71,7 @@ sub error_page {
 #    warn Dumper($page_content);
 
     my $txt;
-    $self->process("$self->{format}/error.tmpl", $page_content, \$txt)
+    $self->process("html/error.tmpl", $page_content, \$txt)
 	or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
 
     return $txt;

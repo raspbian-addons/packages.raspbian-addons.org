@@ -58,6 +58,11 @@ if ($ARGV[0] && ($ARGV[0] eq 'php')) {
 } else {
 	$input = new CGI;
 }
+my $cgi_error = $input->cgi_error;
+if ($cgi_error) {
+    fatal_error( "Error parsing the request", $cgi_error );
+}
+
 
 my $pet0 = new Benchmark;
 my $tet0 = new Benchmark;
@@ -253,6 +258,11 @@ debug( "Parameter evaluation took ".timestr($petd) ) if DEBUG;
 
 my $template = new Packages::Template( $TEMPLATEDIR, $opts{format}, { lang => $opts{lang}, charset => $charset, debug => ( DEBUG ? $opts{debug} : 0 ) }, ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
+unless (-e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
+    fatal_error( "requested format not available for this document",
+		 "405 requested format not available");
+}
+
 my (%html_header, %page_content);
 unless (@Packages::CGI::fatal_errors) {
     no strict 'refs';
@@ -271,21 +281,23 @@ $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
 $page_content{quotemeta} = sub { return quotemeta($_[0]) };
 $page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
-print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
-
-#use Data::Dumper;
-#print '<pre>'.Dumper(\%ENV, \%html_header, \%page_content, get_all_messages()).'</pre>';
-
 unless (@Packages::CGI::fatal_errors) {
-print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );
+    print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
+    #use Data::Dumper;
+    #print '<pre>'.Dumper(\%ENV, \%html_header, \%page_content, get_all_messages()).'</pre>';
+    print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );
+    my $tet1 = new Benchmark;
+    my $tetd = timediff($tet1, $tet0);
+    print $template->trailer( undef, undef, undef, $tetd );
+} elsif ($Packages::CGI::http_code) {
+    print $input->header( -charset => $charset, -status => $Packages::CGI::http_code );
 } else {
-print $template->error_page( get_all_messages() );
+    # We currently have only an error page in html
+    # so no format support here
+    print $input->header( -charset => $charset );
+    print $template->error_page( get_all_messages() );
+    print $template->trailer();;
 }
 
-my $tet1 = new Benchmark;
-my $tetd = timediff($tet1, $tet0);
-
-my $trailer = $template->trailer( undef, undef, undef, $tetd );
-print $trailer;
 
 # vim: ts=8 sw=4
