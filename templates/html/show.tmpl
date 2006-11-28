@@ -130,14 +130,16 @@ Do not install it on a normal Debian system.</p>
 </div>
 [% END %]
 
-[% UNLESS is_virtual %]
 <div id="pdesc">
-[% IF desc.short %]
+[% UNLESS is_virtual %]
+	[% IF desc.short %]
 	<h2>[% desc.short %]</h2>
 	<p>[% desc.long %]
+	[% END %]
+[% ELSE %]
+	<p>This is a <em>virtual package</em>. See the <a href="[% policy_url %]">Debian policy</a> for a <a href="[% policy_url %]ch-binary.html#s-virtual_pkg">definition of virtual packages</a>.</p>
 [% END %]
 </div> <!-- end pdesc -->
-[% END %]
 
 [% FOREACH tag IN tags %]
   [% IF loop.first -%]

@@ -4,14 +4,15 @@
 
    organisation = 'Debian'
    homepage = 'http://www.debian.org/'
-   packages_homepage = 'http://packages.debian.org/'
+   packages_homepage = 'http://packages.debian.net/'
    searchformurl = packages_homepage
    search_url = '/'
    tags_url = 'http://debtags.alioth.debian.org/'
    bugs_url = 'http://bugs.debian.org/'
    src_bugs_url = bugs_url _ 'src:'
    mirror_url = 'http://ftp.debian.org/'
-   changelogs_url = '/changelogs/'
+   changelogs_url = 'http://packages.debian.org/changelogs/'
+   policy_url = 'http://www.debian.org/doc/debian-policy/'
    cn_help_url = homepage _ 'intro/cn'
    logo = {
 	url => homepage,
@@ -37,8 +38,8 @@
    }
    trademarknotes = organisation _ ' is a trademark of ' _ copyright.name
 -%]
-[%#-
+[%-
    # possible values for importance: high, normal, low
-   sitewidemsg = { importance => "low",
+   sitewidemsg = { importance => "high",
 		   txt => "Please note that this is an experimental version of <a href=\"http://packages.debian.org/\">packages.debian.org</a>. Errors and obsolete information should be expected" }
 -%]

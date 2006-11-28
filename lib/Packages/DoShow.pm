@@ -204,10 +204,6 @@ sub do_show {
 			$contents{desc}{short} = _g( "virtual package" );
 			$contents{subsection} = 'virtual';
 
-			my $policy_url = 'http://www.debian.org/doc/debian-policy/';
-			note( sprintf( _g( 'This is a <em>virtual package</em>. See the <a href="%s">Debian policy</a> for a <a href="%sch-binary.html#s-virtual_pkg">definition of virtual packages</a>.' ),
-				       $policy_url, $policy_url ));
-
 			my $provided_by = $page->{provided_by};
 			$contents{providers} = [];
 			pkg_list( \%packages, $opts, $provided_by, 'en', $contents{providers} );
