@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns="http://purl.org/rss/1.0/"
+ xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:syn="http://purl.org/rss/1.0/modules/syndication/"
+ xmlns:admin="http://webns.net/mvcb/"
+>
+
+[%- root_url = "$packages_homepage$suite/";
+    SET root_url = "$root_url$section/" IF section -%]
+
+<channel rdf:about="[% root_url %]newpkg">
+<title>New [% organisation %] Packages</title>
+<link>[% root_url %]newpkg</link>
+<description>Packages that were added to the [% suite %] [% organisation %] archive [% " (section \"$section\")" IF section %] during the last 7 days.</description>
+<dc:language>en</dc:language>
+<dc:rights>Copyright [% timestamp.year %], [% copyright.name %]</dc:rights>
+<dc:date>[% rss_timestamp %]</dc:date>
+<dc:publisher>[% contact.mail %]</dc:publisher>
+<syn:updatePeriod>weekly</syn:updatePeriod>
+<syn:updateFrequency>2</syn:updateFrequency>
+[% FOREACH pkg IN new_packages %]
+ [%- IF loop.first %]
+ <items>
+  <rdf:Seq>
+ [% END -%]
+<rdf:li rdf:resource="[% root_url _ pkg.0 %]" />
+ [% IF loop.last -%]
+  </rdf:Seq>
+ </items>
+ [% END -%]
+[% END -%]
+</channel>
+
+[%- FOREACH pkg IN new_packages %]
+<item rdf:about="[% root_url _ pkg.0 %]">
+<title>[% pkg.0 %]</title>
+<link>[% root_url _ pkg.0 %]</link>
+<description>[% pkg.-1 %]</description>
+<dc:subject>[% pkg.6 %]</dc:subject>
+</item>
+[% END -%]
+
+</rdf:RDF>

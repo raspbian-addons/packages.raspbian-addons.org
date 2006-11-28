@@ -7,14 +7,24 @@ use Exporter;
 use Packages::Config;
 
 our @ISA = qw( Exporter );
-our @EXPORT = qw( DEBUG debug fatal_error );
+our @EXPORT = qw( DEBUG debug fatal_error get_mime );
 our @EXPORT_OK = qw( error hint msg note get_all_messages
 		     make_url make_search_url );
-
 
 # define this to 0 in production mode
 use constant DEBUG => 1;
 our $debug = 0;
+
+my %mime_types = (
+		  txt => 'text/plain',
+		  'txt.gz' => 'text/plain',
+		  html => 'text/html',
+		  rss => 'application/rss+xml',
+		  );
+
+sub get_mime {
+    return $mime_types{$_[0]} || $_[1] || 'text/html';
+}
 
 our (@fatal_errors, @errors, @debug, @msgs, @hints, @notes);
 

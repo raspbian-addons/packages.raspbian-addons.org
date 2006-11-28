@@ -21,12 +21,6 @@ sub do_allpackages {
     return send_file( 'allpackages', @_ );
 }
 
-# no real need for more flexibility here, I think...
-my %mime_types = (
-		  txt => 'text/plain',
-		  'txt.gz' => 'text/plain',
-		  html => 'text/html',
-		  );
 my %encoding = (
 		'txt.gz' => 'x-gzip',
 		);
@@ -59,7 +53,7 @@ sub send_file {
 	if (open( INDEX, '<', "$wwwdir/$path" )) {
 	    my %headers;
 	    $headers{'-charset'} = get_charset( $opts->{lang} );
-	    $headers{'-type'} = $mime_types{$opts->{format}} || 'text/plain';
+	    $headers{'-type'} = get_mime( $opts->{format}, 'text/plain' );
 	    $headers{'-content-encoding'} = $encoding{$opts->{format}} if exists $encoding{$opts->{format}};
 	    print header( %headers );
 

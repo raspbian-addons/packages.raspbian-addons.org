@@ -271,7 +271,7 @@ $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
 $page_content{quotemeta} = sub { return quotemeta($_[0]) };
 $page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
-print $input->header( -charset => $charset );
+print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
 
 #use Data::Dumper;
 #print '<pre>'.Dumper(\%ENV, \%html_header, \%page_content, get_all_messages()).'</pre>';
