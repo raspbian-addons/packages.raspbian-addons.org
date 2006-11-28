@@ -8,6 +8,7 @@
 		  { name => 'Download' },
  		]
 -%]
+[%- PROCESS 'config/archive_layout.tmpl' -%]
 [%- PROCESS 'config/mirrors.tmpl' -%]
 [%- PROCESS 'config/architectures.tmpl' -%]
 [%- PROCESS 'html/messages.tmpl' -%]
@@ -23,6 +24,12 @@
 package manager like <a href="[% make_url('aptitude','','arch','') %]">aptitude</a> or
 <a href="[% make_url('synaptic','','arch','') %]">synaptic</a> to download and install
 packages, instead of doing so manually via this website.</p>
+<p>You should be able to use any of the listed mirrors by adding a
+line to your <kbd>/etc/apt/sources.list</kbd> like this:</p>
+<pre>
+deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section IF section != main_section %]
+</pre>
+<p>Replacing <em>[% mirrors.$archive.europa.0 %]</em> with the mirror in question.
 [% IF suite == "experimental" %]
 <h2>Experimental package</h2>
 <p>Warning: This package is from the <strong>experimental</strong> distribution.
