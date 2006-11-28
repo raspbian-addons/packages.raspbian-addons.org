@@ -87,7 +87,7 @@ Please consider using a longer keyword or more keywords.</p>
 	</colgroup>
 <tr>
 	<th><a title="Sort results by filename" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=file") %]">File</a></th>
-	<th><a title="Sort results by package name" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=pkg") %]">Packages</th>
+	<th><a title="Sort results by package name" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=pkg") %]">Packages</a></th>
 </tr>
 [% FOREACH results %]
 [% file = html_encode(file);
