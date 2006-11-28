@@ -58,20 +58,20 @@ General:
 - Store in db \1-separated, and split on that, instead of the more fragile
   '/, /' split
 - Fields we don't handle in any way currently:
-  Essential -- should be simple
   Conflicts
   Suggests
   Replaces
   Enhances
   Origin    -- not needed
   Bugs      -- not needed
-  URL       -- should be supported, should be simple
   Task
   Python-Version(s) -- not needed
-  X-Vcs-.*  -- should be supported
+  X-Vcs-.*  -- should be supported(?)
 
 Missing pieces from old code:
  - DDTP support (but without a working DDTP I will not invest any time
    in that)
- - search_packages compatibility (we should at least ensure we don't break
-   sarge's reportbug)
+ - search_packages result parser?
+   reportbug in sarge is completly broken in this regard anyway AFAICT
+   reportbug in etch works as long as there is the exact hit but
+   breaks once there is more than one hit
