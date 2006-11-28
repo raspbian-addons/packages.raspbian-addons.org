@@ -28,12 +28,21 @@ h1 {
 	clear: both;
 }
 
-#pdesc, #ptags, #pdeps, #pdownload, #pmoreinfo {
+#pdesc, #ptags, #pdeps, #pdownload {
 	margin-left: 1em;
 	margin-right: 1em;
 }
-#pmoreinfo p {
-	font-size: 0.85em;
+#pmoreinfo { 
+             font-size: smaller;
+             margin-left: 1em;
+             float: right;
+             background-color: #BBDDFF;
+             border: thin solid #BFC3DC;
+             padding: 1em .5em;
+             width: auto;
+}
+#pmoreinfo h3 {
+             border-top: thin solid black;
 }
 
 /*
@@ -65,12 +74,7 @@ h1 {
 
 #pdeps ul {
 	list-style-type: none;
-	padding-left: 2em;
 }
-
-/* #pdeps li {
-	text-indent: -2em;
-} */
 
 #pdeps ul.uldep, #pdeps ul.uladep {
 	list-style-type: disc;
@@ -87,12 +91,10 @@ h1 {
 	list-style-image: url(http://%SITE%/Pics/sug.gif);
 }
 
-#pdeps ul.uldep li, #pdeps ul.ulrec li, #pdeps ul.ulsug li, #pdeps ul.uladep li, #pdeps ul.ulidep li {
-	padding-left: 1em;
-}
 #pdeps dl {
 	margin: 0;
 }
+
 
 /*
 
@@ -212,7 +214,6 @@ table#pdeplegend, #pdownload table {
 	font-family: monospace;
 }
 #pcontentsres td {
-/*	font-size: smaller;*/
 	padding: .4em;
 }
 #pcontentsres th {
@@ -315,7 +316,33 @@ table#pdeplegend, #pdownload table {
 #pnavbar a:hover {
 }
 
-#pnavbar, .pconstantnag {
+.p_js_elem { 
+             font-size: smaller;
+}
+
+#psitewidemsg {
+                padding: .25em;
+                text-align: center;
+}
+
+#psitewidemsg.high { 
+                     border: 4px #DF0451 ridge;
+                     background-color: yellow;
+                     color: #DF0451;
+}
+
+#psitewidemsg.normal {
+                       border: dotted thin red;
+}
+
+#psitewidemsg.low {
+                    border: solid thin black;
+}
+
+.pvcslink { 
+}
+
+#pnavbar, .pconstantnag, #psitewidemsg {
 	-moz-border-radius: 15px;
 	/* this goes to the end as the css validator does not like it
 	will be replaced by border-radius with css3 */

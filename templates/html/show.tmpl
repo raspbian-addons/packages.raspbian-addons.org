@@ -44,6 +44,74 @@
 [%- PROCESS marker text=section IF section && section != main_section %]
 [%- PROCESS marker text='essential' IF page.get_newest('essential') == 'yes' %]</h1>
 
+[% UNLESS is_virtual %]
+<div id="pmoreinfo">
+<h2>Links for [% pkg %]</h2>
+<h3>Debian Resources:</h3>
+<ul>
+<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">Bug Reports</a></li>
+
+[% IF src -%]
+<li><a href="[% pts_url _ src.pkg | uri %]">Developer Information (PTS)</a></li>
+[% ELSIF is_source %]
+<li><a href="[% pts_url _ pkg | uri %]">Developer Information (PTS)</a></li>
+[%- END %]
+
+[% IF files %]
+<li><a href="[% changelogs_url _ files.changelog.path %]">Debian Changelog</a></li>
+<li><a href="[% changelogs_url _ files.copyright.path %]">Copyright File</a></li>
+[% END %]
+</ul>
+
+[% #FIXME: should this only be used for the PTS?
+   known_vcs = [ [ 'cvs', 'CVS' ],
+		[ 'svn', 'Subversion' ],
+		[ 'bzr', 'bzr' ],
+		[ 'darcs', 'Darcs'],
+		[ 'arch', 'arch' ] ];
+   FOREACH vcs IN known_vcs;
+	vcs_id = vcs.0; vcs_name = vcs.1;
+	vcs_info = page.get_newest("vcs-$vcs_id");
+	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
+	IF vcs_info; %]
+<p>Debian Package Repository (<acronym title="Version Control System">VCS</acronym>: [% vcs_name %]):<br> <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></p>
+[% END; END %]
+
+[% IF src %]
+  <p>Download Source Package <a href="[% src.url %]">[% src.pkg %]</a>:
+  [% FOREACH src.downloads %]
+    [% '<ul>' IF loop.first %]
+    <li><a href="[% server _ path %]">[[% name %]]</a></li>
+    [% '</ul>' IF loop.last %]
+  [% END %]
+  [% IF src.downloads.size == 0 %]
+  Not found
+  [% END %]
+[% END %]
+
+[% IF maintainers.size == 1 -%]
+  <h3>Maintainer:</h3>
+  [%- FOREACH maintainers -%]
+	<a href="mailto:[% mail %]">[% name | html %]</a>
+  [%- END -%]
+[%- ELSE -%]
+  <h3>Maintainers:</h3>
+  [%- FOREACH maintainers -%]
+    [%- '<ul>' IF loop.first -%]
+	<li><a href="mailto:[% mail %]">[% name | html %]</a></li>
+    [%- '</ul>' IF loop.last -%]
+  [%- END -%]
+[%- END %]
+
+[% url = page.get_newest('url');
+   IF url %]
+<h3>External Resources:</h3>
+<p>Homepage: <a href="[% url | uri %]">[% url | html %]</a></p>
+[% END %]
+
+</div> <!-- end pmoreinfo -->
+[% END %]
+
 [% IF suite == "experimental" || subsection == "debian-installer" %]
 <div class="pconstantnag">
 [% IF suite == "experimental" %]
@@ -199,67 +267,3 @@ Do not install it on a normal Debian system.</p>
   [%- END %]
 [% END %]
 
-
-[% UNLESS is_virtual %]
-<div id="pmoreinfo">
-<h2>More Information on [% pkg %]</h2><p>
-Check for <a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">Bug Reports</a> about [% pkg %].<br>
-[% IF src %]
-  Source Package: <a href="[% src.url %]">[% src.pkg %]</a>, Download:
-  [% FOREACH src.downloads %]
-  <a href="[% server _ path %]">[[% name %]]</a>
-  [% END %]
-  [% IF src.downloads.size == 0 %]
-  Not found
-  [% END %]
-[% END %]
-
-[% IF files %]
-<br>View the <a href="[% changelogs_url _ files.changelog.path %]">Debian changelog</a><br>
-View the <a href="[% changelogs_url _ files.copyright.path %]">copyright file</a></p>
-[% END %]
-<p>
-[% IF maintainers.size == 1 -%]
-  [%- FOREACH maintainers -%]
-    <a href="mailto:[% mail %]">[% name | html %]</a> is responsible for this Debian package.
-  [%- END -%]
-[%- ELSE -%]
-  [%- FOREACH maintainers -%]
-    [%- IF loop.first -%]
-<a href="mailto:[% mail %]">[% name | html %]</a>
-    [%- ELSIF loop.last -%]
- and <a href="mailto:[% mail %]">[% name | html %]</a> are responsible for this Debian package.
-    [%- ELSE -%]
-, <a href="mailto:[% mail %]">[% name | html %]</a>
-    [%- END -%]
-  [%- END -%]
-[%- END %]
-[% IF src -%]
-See the <a href="[% pts_url _ src.pkg | uri %]">developer information for [% pkg %]</a>.
-[% ELSIF is_source %]
-See the <a href="[% pts_url _ pkg | uri %]">developer information for [% pkg %]</a>.
-[%- END %]
-[% # use url only for source packages
-   # otherwise we have too often two home page links
-   url = page.get_newest('url');
-   IF is_source && url %]
-<p>Homepage: <a href="[% url | uri %]">[% url | html %]</a></p>
-[% END %]
-[% #FIXME: should this only be used for the PTS?
-   known_vcs = [ [ 'cvs', 'CVS' ],
-		[ 'svn', 'Subversion' ],
-		[ 'bzr', 'bzr' ],
-		[ 'darcs', 'Darcs'],
-		[ 'arch', 'arch' ] ];
-   FOREACH vcs IN known_vcs;
-	vcs_id = vcs.0; vcs_name = vcs.1;
-	vcs_info = page.get_newest("vcs-$vcs_id");
-	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
-	IF vcs_info; %]
-<p>Repository for Debian package: <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a> (<acronym title="Version Control System">VCS</acronym>: [% vcs_name %])</p>
-[% END; END %]
-
-</p>
-<p>Search for <a href="[% (is_source ? src_search_url : search_url) _ pkg | uri %]">other versions of [% pkg %]</a></p>
-</div> <!-- end pmoreinfo -->
-[% END %]
