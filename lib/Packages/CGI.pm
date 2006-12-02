@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Exporter;
-use Packages::Config;
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( DEBUG debug fatal_error get_mime );
@@ -349,8 +348,8 @@ sub printindexline {
 
 sub string2id {
     my $string = "@_";
-    
-    $string =~ s/[^\w]/_/g;
+
+    $string =~ s/[^\w:.-]/_/g;
     return $string;
 }
 
