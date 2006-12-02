@@ -146,7 +146,11 @@ Do not install it on a normal Debian system.</p>
     <div id="ptags"><p>
     <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">Tags</a>:
   [%- END %]
-  [% tag %][% ', ' UNLESS loop.last %]
+  [% IF tag.1 %]
+  <a href="/about/debtags#[% string2id(tag.0) %]">[% tag.1 %]</a>[% ', ' UNLESS loop.last %]
+  [% ELSE %]
+  [% tag.0 %][% ', ' UNLESS loop.last %]
+  [% END %]
   [% IF loop.last -%]
     </p>
     </div> <!-- end ptags -->

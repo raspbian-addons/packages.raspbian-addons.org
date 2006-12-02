@@ -1,0 +1,131 @@
+#!/usr/bin/perl -w
+# Convert Debtags vocabulary.gz files into Sleepycat db files
+#
+# $Id: parse-packages 227 2006-11-12 20:24:48Z djpig $
+#
+# Copyright (C) 2006  Frank Lichtenheld <djpig@debian.org>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+use strict;
+use warnings;
+use lib './lib';
+
+$| = 1;
+
+use DB_File;
+use File::Path;
+use Data::Dumper;
+use HTML::Entities;
+use URI::Escape;
+
+use Deb::Versions;
+use Packages::Template;
+use Packages::Config qw( $TOPDIR );
+use Packages::CGI;
+&Packages::Config::init( './' );
+my $debtagsdir = "$TOPDIR/files/debtags";
+my $wwwdir = "$TOPDIR/www/about";
+my $voc_file = "$debtagsdir/vocabulary";
+my (%voc, %voc_db);
+
+$/ = "";
+
+delete $ENV{'LANGUAGE'};
+delete $ENV{'LANG'};
+delete $ENV{'LC_ALL'};
+delete $ENV{'LC_MESSAGES'};
+
+print "Parsing Vocabulary...\n";
+tie %voc_db, "DB_File", "$debtagsdir/vocabulary.db.new",
+    O_RDWR|O_CREAT, 0666, $DB_BTREE
+    or die "Error creating DB: $!";
+open VOC, '<', $voc_file or die "Error opening vocabulary: $!";
+
+while (<VOC>) {
+    next if /^\s*$/;
+    my $data = "";
+    my %data = ();
+    chomp;
+    s/\n /\377/g;
+    while (/^(\S+):\s*(.*)\s*$/mg) {
+	my ($key, $value) = ($1, $2);
+	$value =~ s/\377/\n /g;
+	$key =~ tr [A-Z] [a-z];
+	$data{$key} = $value;
+    }
+    my $voc_key = $data{facet} || $data{tag};
+    unless ($voc_key) {
+	warn "No key found in ".Dumper(\%data);
+	next;
+    }
+    if ($voc{$voc_key}) {
+	warn "Duplicated key found: $voc_key\n";
+	next;
+    }
+    my ($sdesc,$ldesc) = split /\n/, encode_entities($data{description}), 2;
+
+    if ($ldesc) {
+	$ldesc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
+	$ldesc =~ s/\A //o;
+	$ldesc =~ s/\n /\n/sgo;
+	$ldesc =~ s/\n.\n/\n<p>\n/go;
+	$ldesc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+    }
+    $data{html_description} = [ $sdesc, $ldesc||"" ];
+
+    $voc_db{$voc_key} = $sdesc || "";
+    $voc{$voc_key} = \%data;
+}
+
+close VOC or warn "Couldn't close vocabulary: $!";
+
+#print Dumper(\%voc,\%voc_db);
+
+print "Creating tag list...\n";
+
+-d $wwwdir || mkpath( $wwwdir );
+open TAGLST, '>', "$wwwdir/debtags.en.html.new"
+    or die "Error creating tag list: $!";
+
+my $template = new Packages::Template( "$TOPDIR/templates", 'html', {} );
+my @facets = sort( grep { exists $voc{$_}{facet} } keys %voc );
+my @tags = sort( grep { exists $voc{$_}{tag} } keys %voc );
+my %tags_by_facet;
+foreach (@tags) {
+    my ($facet, $tag) = split /::/, $_, 2;
+    warn "No facet data available for $facet\n"
+	unless exists $voc{$facet};
+    $tags_by_facet{$facet} ||= [];
+    push @{$tags_by_facet{$facet}}, $_;
+}
+my %content = ( vocabulary => \%voc,
+		facets => \@facets, tags => \@tags,
+		tags_by_facet => \%tags_by_facet );
+# needed to work around the limitations of the the FILTER syntax
+$content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
+$content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
+$content{quotemeta} = sub { return quotemeta($_[0]) };
+$content{string2id} = sub { return &Packages::CGI::string2id(@_) };
+
+print TAGLST $template->page( 'tag_index', \%content );
+print TAGLST $template->trailer();
+close TAGLST or warn "Couldn't close tag list: $!";
+
+rename( "$wwwdir/debtags.en.html.new",
+	"$wwwdir/debtags.en.html" );
+
+untie %voc_db;
+rename( "$debtagsdir/vocabulary.db.new",
+	"$debtagsdir/vocabulary.db" );

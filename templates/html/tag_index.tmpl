@@ -1,0 +1,23 @@
+[% PROCESS 'html/head.tmpl' 
+	title_tag = "Overview of available Debian Package Tags"
+	keywords = debtags
+	navigation = [  { name=>'About', url=>"/about/" },
+			{ name=>'Debtags' } ]
+%]
+<h1>Overview of available Debian Package Tags</h1>
+
+[% FOREACH facet IN facets %]
+	<h2 id="[% string2id(facet) %]">Facet: [% facet %]</h2>
+	<p class="pshortdesc">[% vocabulary.$facet.html_description.0 %]</p>
+	<p>[% vocabulary.$facet.html_description.1 %]
+
+	[% FOREACH tag IN tags_by_facet.$facet %]
+		[% '<dl class="ptaglist">' IF loop.first %]
+		<dt id="[% string2id(tag) %]">[% tag %]</dt>
+		<dd><p class="pshortdesc">[% vocabulary.$tag.html_description.0 %]
+		    <p>[% vocabulary.$tag.html_description.1 %]
+		</dd>
+		[% '</dl>' IF loop.last %]
+	[% END %]
+
+[% END %]

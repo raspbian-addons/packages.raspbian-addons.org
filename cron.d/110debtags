@@ -1,0 +1,15 @@
+#! /bin/bash
+
+. `dirname $0`/../config.sh
+
+debtagsdir="$filesdir/debtags"
+
+test -d ${debtagsdir} || mkdir -p ${debtagsdir}
+cd ${debtagsdir}
+
+wget -q -N http://debtags.alioth.debian.org/tags/vocabulary.gz &&
+	gunzip -f vocabulary.gz
+
+cd "$topdir"
+
+./bin/parse-debtags-voc

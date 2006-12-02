@@ -119,7 +119,7 @@ sub do_show {
 			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 			my $did = $page->get_newest( 'description' );
-			my @tags = split(/, /, $page->get_newest( 'tag' ));
+			my @tags = map { [ $_, $debtags{$_} ] } split(/, /, $page->get_newest( 'tag' ));
 			$contents{tags} = \@tags;
 
 			$section = $page->get_newest( 'section' );

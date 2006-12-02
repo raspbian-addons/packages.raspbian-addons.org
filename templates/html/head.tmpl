@@ -11,6 +11,9 @@
 
 <link href="/debian.css" rel="stylesheet" type="text/css" media="all">
 <link href="/packages.css" rel="stylesheet" type="text/css" media="all">
+[% IF rss_alternate %]
+<link rel="alternate" type="application/rss+xml" title="RSS" href="[% rss_alternate %]">
+[% END %]
 <script src="/packages.js" type="text/javascript"></script>
 </head>
 <body>
