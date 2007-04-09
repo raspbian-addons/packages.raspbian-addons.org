@@ -112,6 +112,12 @@ done
 #
 for dist in oldstable stable testing
 do
+    echo "retrieve Release(.gpg) $dist"
+    test -d security/${dist} || mkdir -p security/${dist}
+    (cd security/${dist} &&
+	wget -q -N ${security_ftpsite}/dists/${dist}/updates/Release &&
+	wget -q -N ${security_ftpsite}/dists/${dist}/updates/Release.gpg )
+        
     foo=\$arch_${dist//-/_}
     for arch in `eval echo $foo`
     do
