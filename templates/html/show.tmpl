@@ -64,17 +64,19 @@
 </ul>
 
 [% #FIXME: should this only be used for the PTS?
-   known_vcs = [ [ 'cvs', 'CVS' ],
-		[ 'svn', 'Subversion' ],
-		[ 'bzr', 'bzr' ],
-		[ 'darcs', 'Darcs'],
-		[ 'arch', 'arch' ] ];
+   known_vcs = [ [ 'cvs', 'CVS', 'cvs' ],
+		[ 'svn', 'Subversion', 'subversion' ],
+		[ 'bzr', 'bzr', 'bzr' ],
+		[ 'darcs', 'Darcs', 'darcs' ],
+		[ 'arch', 'arch', 'tla' ],
+		[ 'git', 'Git', 'git-core' ], ];
    FOREACH vcs IN known_vcs;
-	vcs_id = vcs.0; vcs_name = vcs.1;
+	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
 	vcs_info = page.get_newest("vcs-$vcs_id");
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
 	IF vcs_info; %]
-<p>Debian Package Repository (<acronym title="Version Control System">VCS</acronym>: [% vcs_name %]):<br> <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></p>
+<p>Debian Package Repository (<acronym title="Version Control System">VCS</acronym>:
+<a href="[% make_url(vcs_pkg,'','source','') %]">[% vcs_name %]</a>):<br> <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></p>
 [% END; END %]
 
 [% IF src %]
