@@ -63,13 +63,15 @@
 [% END %]
 </ul>
 
+[% vcs_link = page.get_newest("vcs-browser") %]
 [% #FIXME: should this only be used for the PTS?
    known_vcs = [ [ 'cvs', 'CVS', 'cvs' ],
 		[ 'svn', 'Subversion', 'subversion' ],
 		[ 'bzr', 'bzr', 'bzr' ],
 		[ 'darcs', 'Darcs', 'darcs' ],
 		[ 'arch', 'arch', 'tla' ],
-		[ 'git', 'Git', 'git-core' ], ];
+		[ 'git', 'Git', 'git-core' ],
+		[ 'hg', 'Hg', 'mercurial' ], ];
    FOREACH vcs IN known_vcs;
 	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
 	vcs_info = page.get_newest("vcs-$vcs_id");
@@ -77,7 +79,9 @@
 	IF vcs_info; %]
 <p>Debian Package Repository (<acronym title="Version Control System">VCS</acronym>:
 <a href="[% make_url(vcs_pkg,'','source','') %]">[% vcs_name %]</a>):<br> <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></p>
-[% END; END %]
+[% IF vcs_link %]
+<p>Debian Package Repository (Browsable):<br> <a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></p>
+[% END; END; END %]
 
 [% IF src %]
   <p>Download Source Package <a href="[% src.url %]">[% src.pkg %]</a>:
