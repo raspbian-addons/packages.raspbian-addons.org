@@ -146,11 +146,18 @@ Do not install it on a normal Debian system.</p>
     <div id="ptags"><p>
     <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">Tags</a>:
   [%- END %]
-  [% IF tag.1 %]
-  <a href="/about/debtags#[% string2id(tag.0) %]">[% tag.1 %]</a>[% ', ' UNLESS loop.last %]
+  [% facet = tag.0;
+     facet_name = debtags_voc.$facet;
+     tag_id = "$tag.0::$tag.1";
+     tag_name = debtags_voc.$tag_id;
+   %]
+  [% facet_name _ ': ' UNLESS old_facet && facet == old_facet %]
+  [% IF tag_name %]
+   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name %]</a>[% ', ' UNLESS loop.last %]
   [% ELSE %]
-  [% tag.0 %][% ', ' UNLESS loop.last %]
+  [% tag_id %][% ', ' UNLESS loop.last %]
   [% END %]
+  [% old_facet = facet %]
   [% IF loop.last -%]
     </p>
     </div> <!-- end ptags -->
