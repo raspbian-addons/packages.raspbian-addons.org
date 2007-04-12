@@ -108,7 +108,9 @@
    RewriteRule ^/cgi-(bin|old)/ - [L]
    RewriteRule ^/changelogs/ - [L]
    RewriteRule ^/Pics/ - [L]
+   RewriteRule ^/about/ - [L]
    RewriteRule ^/[^/]+\.css - [L]
+   RewriteRule ^/[^/]+\.js - [L]
 
 #   RewriteRule ^/$ http://www.debian.org/distrib/packages
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
