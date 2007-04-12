@@ -80,34 +80,6 @@ else
     done
 fi
 
-# Non-US archive
-#
-for dist in oldstable
-do
-    foo=\$arch_${dist//-/_}
-    for arch in `eval echo $foo`
-    do
-	for part in ${parts}
-	do
-	    echo retrieve Packages $dist/$part/non-US/$arch
-	    test -d non-US/${dist}/${part}/binary-${arch} || mkdir -p non-US/${dist}/${part}/binary-${arch}
-	    (cd non-US/${dist}/${part}/binary-${arch} &&
-		wget -q -N ${nonus_ftpsite}/dists/${dist}/non-US/${part}/binary-${arch}/Packages.gz)
-	done
-	#FIXME: no Contents files for p-u
-	echo retrieve Contents $dist/non-US/$arch
-	(cd non-US/${dist} &&
-	    wget -q -N ${nonus_ftpsite}/dists/${dist}/non-US/Contents-${arch}.gz)
-    done
-    for part in ${parts}
-    do
-        echo retrieve Sources $dist/$part/non-US
-    	test -d non-US/${dist}/${part}/source || mkdir -p non-US/${dist}/${part}/source
-	(cd non-US/${dist}/${part}/source &&
-	    wget -q -N ${nonus_ftpsite}/dists/${dist}/non-US/${part}/source/Sources.gz)
-    done
-done
-
 # security archive
 #
 for dist in oldstable stable testing
