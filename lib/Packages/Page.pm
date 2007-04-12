@@ -243,7 +243,7 @@ sub get_version_string {
 	my @v_str_arch;
 	foreach ( @versions ) {
 	    push @v_str, [ $_, $versions->{$_} ];
-	    push @v_str_arch, "$_ [".join(', ', @{$versions->{$_}})."]";
+	    push @v_str_arch, "$_ [".join(', ', sort @{$versions->{$_}})."]";
 	}
 	$v_str_arch = join( ", ", @v_str_arch );
 	$v_str = join( ", ",  @versions );
