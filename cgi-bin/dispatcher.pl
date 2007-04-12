@@ -261,7 +261,7 @@ my $template = new Packages::Template( $TEMPLATEDIR, $opts{format}, { lang => $o
 
 unless (-e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
     fatal_error( "requested format not available for this document",
-		 "405 requested format not available");
+		 "406 requested format not available");
 }
 
 my (%html_header, %page_content);
