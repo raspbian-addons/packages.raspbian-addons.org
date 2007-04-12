@@ -1,7 +1,5 @@
 #! /bin/bash
 
-exit 0
-
 . `dirname $0`/../config.sh
 
 test -d ${archivedir} || mkdir -p ${archivedir}
