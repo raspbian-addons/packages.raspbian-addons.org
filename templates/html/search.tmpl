@@ -81,7 +81,7 @@ Please consider using a longer keyword or more keywords.</p>
   <h3>Package [% pkg %]</h3>
   <ul>
   [% FOREACH s IN suites %]
-    <li><a class="resultlink" href="[% make_url(pkg,'','suite',s.suite,'arch','','section','') %]">[% s.suite %]</a>[% ' (' _ s.subsect _ ')' IF s.subsect %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
+    <li><a class="resultlink" href="[% make_url(pkg,'','suite',s.suite,'arch','','section','') %]">[% s.suite %]</a>[% ' (' _ s.subsection _ ')' IF s.subsection %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
     [% FOREACH s.versions %]
       <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
     [% END %]
@@ -102,7 +102,7 @@ Please consider using a longer keyword or more keywords.</p>
     <li><a class="resultlink" href="[% make_url(pkg,'','source','source','suite',origin,'section','','arch','') %]">[% origin %]</a> ([% subsection %]): [% version %]
       [%- IF section %] [<strong class="pmarker">[% section %]</strong>][% END %]
       [%- IF real_archive %] [<strong class="pmarker">[% real_archive %]</strong>][% END %]
-    <br>Binary packages: <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive) %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+    <br>Binary packages: <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF binaries.size > 10 %]
 	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% binaries.size %] binary packages")</script>
 	[% END %]
