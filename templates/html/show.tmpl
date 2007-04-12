@@ -1,4 +1,8 @@
 [% PROCESS 'config/archive_layout.tmpl' %]
+[%- nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite }, ];
+    nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
+    nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
+    nav_arr.push( { prefix=>'Package:', name=>pkg } ); -%]
 [%- PROCESS 'html/head.tmpl'
    title_tag = ( is_source ? "Details of source package $pkg in $suite"
 	                   : "Details of package $pkg in $suite" )
@@ -8,9 +12,7 @@
    search_field_values = { 
 			  searchon => is_source ? 'sourcenames' : 'names',
                          }
-  navigation = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/'), name=>suite },
-		 { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection },
-		 { prefix=>'Package:', name=>pkg } ]
+  navigation = nav_arr
 -%]
 <!-- show.tmpl -->
 [% PROCESS 'html/menu.inc' %]
