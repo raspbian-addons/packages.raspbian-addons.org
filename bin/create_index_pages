@@ -59,6 +59,7 @@ print "write suite index files ...\n";
 foreach my $s (@SUITES) {
     my $key = $s;
     mkpath ( "$wwwdir/$key" );
+    mkpath ( "$wwwdir/source/$key" );
     foreach my $lang (@LANGUAGES) {
 	my $locale = get_locale( $lang );
 	my $charset = get_locale( $lang );
