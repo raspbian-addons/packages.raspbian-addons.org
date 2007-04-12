@@ -44,7 +44,11 @@
 
 <p>Search in other suite:
 [% FOREACH s IN all_suites %]
-[<a href="[% make_search_url('',"keywords=$keyword_esc",'suite',s) %]">[% s  %]</a>]
+	[% IF s != suite %]
+	[<a href="[% make_search_url('',"keywords=$keyword_esc",'suite',s) %]">[% s  %]</a>]
+	[% ELSE %]
+	[[% s %]]
+	[% END %]
 [% END %]
 
 [% UNLESS search_architectures.size == 1 || all_architectures.size == 1 %]
