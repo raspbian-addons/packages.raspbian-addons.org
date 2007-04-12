@@ -125,7 +125,7 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 			     sid => 'unstable', );
 	my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
-	my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all');
+	my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all', 'any');
 	my %PRIORITIES = map { $_ => 1 } @PRIORITIES;
 	my %params_set;
 	sub set_param_once {
@@ -158,7 +158,8 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	    } elsif (!$need_pkg && ($_ eq 'source')) {
 		set_param_once( $input, \%params_set, 'source', 1);
 	    } elsif ($ARCHITECTURES{$_}) {
-		set_param_once( $input, \%params_set, 'arch', $_);
+		set_param_once( $input, \%params_set, 'arch', $_)
+		    unless $_ eq 'any';
 	    } elsif ($PRIORITIES{$_}) {
 		set_param_once( $input, \%params_set, 'priority', $_);
 	    } else {
