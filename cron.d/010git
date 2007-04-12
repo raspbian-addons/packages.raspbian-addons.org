@@ -20,7 +20,7 @@
 . `dirname $0`/../config.sh
 
 logs=${topdir}/files/logs
-log=${logs}/svn.log
+log=${logs}/git.log
 
 cd ${topdir}
 
@@ -32,5 +32,5 @@ then
 fi
 
 date > $log
-svn update &> $log
+git pull &> $log
 date >> $log
