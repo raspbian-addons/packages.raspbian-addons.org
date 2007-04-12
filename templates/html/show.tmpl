@@ -95,12 +95,15 @@
   <h3>Maintainer:</h3>
   [%- FOREACH maintainers -%]
 	<a href="mailto:[% mail %]">[% name | html %]</a>
+	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainter's packages and uploads">QA Page</a>)
   [%- END -%]
 [%- ELSE -%]
   <h3>Maintainers:</h3>
   [%- FOREACH maintainers -%]
     [%- '<ul>' IF loop.first -%]
-	<li><a href="mailto:[% mail %]">[% name | html %]</a></li>
+	<li><a href="mailto:[% mail %]">[% name | html %]</a>
+	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainter's packages and uploads">QA Page</a>)
+	</li>
     [%- '</ul>' IF loop.last -%]
   [%- END -%]
 [%- END %]
