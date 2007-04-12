@@ -8,7 +8,7 @@
 	nav_last = { prefix=>"$category.id:", name=>category.name };
    ELSE;
 	nav_last = { name=>'All Packages' };
-   END
+   END;
    nav_arr.push( { name=>'Source',
 	           url=>make_url('/','','suite',suite,'source',source) } )
 	IF source;
@@ -18,7 +18,7 @@
 	title_tag = title_common
 	page_title = title_common
 	keywords = "$suite, $category.name"
-	navigation = navigation_pre
+	navigation = nav_arr
 %]
 
 [% FOREACH packages %]
