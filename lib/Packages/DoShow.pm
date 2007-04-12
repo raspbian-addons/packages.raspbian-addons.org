@@ -140,7 +140,7 @@ sub do_show {
 			$short_desc = encode_entities( $1, "<>&\"" )
 			    if $desc =~ s/^(.*)$//m;
 			my $long_desc = encode_entities( $desc, "<>&\"" );
-			
+
 			$long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
 			$long_desc =~ s/\A //o;
 			$long_desc =~ s/\n /\n/sgo;
@@ -163,6 +163,9 @@ sub do_show {
 			#
 			# display dependencies
 			#
+			build_deps( \%packages, $opts, $pkg,
+				    $page->get_dep_field('pre-depends'),
+				    'depends', \%contents );
 			build_deps( \%packages, $opts, $pkg,
 				    $page->get_dep_field('depends'),
 				    'depends', \%contents );
