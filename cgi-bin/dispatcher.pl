@@ -119,9 +119,9 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 	}
 
 	my %SUITES = map { $_ => 1 } @SUITES;
-	my %SUITES_ALIAS = ( woody => 'oldstable',
-			     sarge => 'stable',
-			     etch => 'testing',
+	my %SUITES_ALIAS = ( sarge => 'oldstable',
+			     etch => 'stable',
+			     lenny => 'testing',
 			     sid => 'unstable', );
 	my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
