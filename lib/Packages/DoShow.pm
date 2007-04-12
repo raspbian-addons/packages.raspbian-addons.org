@@ -119,7 +119,20 @@ sub do_show {
 			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 			my $did = $page->get_newest( 'description' );
-			my @tags = map { [ split( /::/, $_) ] } split(/, /, $page->get_newest( 'tag' ));
+			my @complete_tags = split(/, /, $page->get_newest( 'tag' ));
+			my @tags;
+			foreach (@complete_tags) {
+			    my ($facet, $tag) = split( /::/, $_, 2);
+			    # handle tags like devel::{lang:c,lang:c++}
+			    if ($tag =~ s/^\{(.+)\}$/$1/) {
+				foreach (split( /,/, $tag )) {
+				    push @tags, [ $facet, $_ ];
+				}
+			    } else {
+				push @tags, [ $facet, $tag ];
+			    }
+			}
+
 			$contents{tags} = \@tags;
 			$contents{debtags_voc} = \%debtags;
 
