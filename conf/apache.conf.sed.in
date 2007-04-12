@@ -113,10 +113,11 @@
    RewriteRule ^/[^/]+\.js - [L]
 
 #   RewriteRule ^/$ http://www.debian.org/distrib/packages
+   RewriteRule ^/$ /index.html [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
    RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
 
-   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [PT]
+   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 
 #  In case we need to disable the site again
 # 

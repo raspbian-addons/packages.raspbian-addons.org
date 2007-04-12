@@ -1,0 +1,17 @@
+recurse
+verbose
+
+ignore = \b(CVS|RCS|\.git|\.svn)\b
+ignore = ^#
+ignore = ~$
+ignore = \.sed\.in$
+
+copy   = \.(gif|png|jpg|pdf|css|js)$
+accept = \.tmpl$
+suffix tmpl=html
+
+lib = %TOPDIR%/templates
+src = %TOPDIR%/static
+dest = %TOPDIR%/www
+
+pre_process = config.tmpl

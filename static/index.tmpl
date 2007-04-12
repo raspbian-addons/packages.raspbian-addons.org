@@ -1,0 +1,107 @@
+[% PROCESS 'html/head.tmpl' 
+	title_tag = "$organisation Packages Search"
+	page_title = "$organisation Packages Search"
+	keywords = "$organisation, Packages"
+%]
+
+
+<p>This site provides you with information about all the packages
+available in the <a href="[% homepage %]">[% organisation %]</a>
+Package archive.
+
+<p><em>Please contact <a href="mailto:[% admin.mail %]">[% admin.name %]</a>
+if you encounter any problems!</em></p>
+
+<h2>Browse through the lists of packages:</h2>
+
+<ul style="font-size:large">
+<!-- FIXME -->
+</ul>
+
+<!-- FIXME -->
+<p>There is also a list of <a href="unstable/newpkg">packages
+recently added to unstable</a>.</p>
+
+<h2>Search</h2>
+
+<h3>Search package directories</h3>
+
+<form method="GET" action="/search">
+<label for="kw">Keyword:</label>
+<input type="text" size="30" name="keywords" id="kw">
+<input type="submit" value="Search"> <input type="reset" value="Reset">
+<br>
+Search on:
+<input type="radio" name="searchon" value="names" id="onlynames" checked="checked">
+<label for="onlynames">Package names only</label>&nbsp;&nbsp;
+<input type="radio" name="searchon" value="all" id="descs">
+<label for="descs">Descriptions</label>
+
+<input type="radio" name="searchon" value="sourcenames" id="src">
+<label for="src">Source package names</label>
+<br>
+Only show exact matches:
+<input type="checkbox" name="exact" value="1">
+<br>
+Distribution:
+<select name="suite">
+
+<!-- FIXME -->
+  <option value="all">any</option>
+</select>
+Section:
+<select name="section">
+<!-- FIXME -->
+  <option value="all" selected="selected">any</option>
+</select>
+</form>
+<p>There are shortcuts for some searches available:</p>
+<ul>
+      <li><code>[% packages_homepage %]/<var>name</var></code> for
+      the search on package names.</li>
+
+      <li><code>[% packages_homepage %]/src:<var>name</var></code>
+      for the search on source package names.</li>
+</ul>
+<hr>
+
+<h3><a name="search_contents">Search the contents of packages</a></h3>
+
+<P>This search engine allows you to search the contents of [% organisation %]
+distributions for any files (or just parts of file names) that are
+part of packages.
+You can also get a full list of files in a given package.
+<BR>
+<form method="GET" action="/search">
+<input type="hidden" name="searchon" value="contents">
+
+<label for="keyword">Keyword:</label>
+<input type="text" size="30" name="keywords" id="keyword"> &nbsp;
+
+<input type="submit" value="Search">
+&nbsp;<input type="reset" value="Reset">
+<br>
+Display:
+<br>
+<input type="radio" name="mode" value="exactfilename" id="exactfilename" checked="checked">
+  <label for="exactfilename">packages that contain files named like this</label>
+<br>
+<input type="radio" name="mode" value="" id="suffixpathname">
+  <label for="suffixpathname">packages that contain files whose names end with the keyword</label>
+<br>
+<input type="radio" name="mode" value="filename" id="filename">
+  <label for="filename">packages that contain files whose names contain the keyword</label>
+
+<label for="distro">Distribution:</label>
+
+<select name="suite" id="distro">
+  <option value="stable" selected="selected">stable</option>
+</select>
+<label for="architecture">Architecture:</label>
+<select name="arch" id="architecture">
+  <option value="i386" selected="selected">Intel x86</option>
+</select>
+</form>
+
+[% PROCESS 'html/foot.tmpl'
+	langs.size = 0 %]
