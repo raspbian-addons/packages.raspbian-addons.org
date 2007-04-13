@@ -13,7 +13,7 @@ then
     for dist in ${dists}
     do
 
-      if [ $dist = oldstable -o $dist = experimental ]; then
+      if [ $dist = experimental ]; then
 	  continue
       fi
 
@@ -34,7 +34,7 @@ else
     for dist in ${dists}
     do
 
-      if [ $dist = oldstable -o $dist = experimental ]; then
+      if [ $dist = experimental ]; then
 	  continue
       fi
 
