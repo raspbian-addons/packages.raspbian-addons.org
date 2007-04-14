@@ -2,46 +2,47 @@
    charset = 'UTF-8'
    lang = 'en'
 
-   organisation = 'Debian'
-   homepage = 'http://www.debian.org/'
-   packages_homepage = 'http://packages.debian.net/'
+   organisation = 'Ubuntu'
+   homepage = 'http://www.ubuntulinux.org/'
+   packages_homepage = 'http://packages.ubuntu.lichtenheld.net/'
    searchformurl = packages_homepage
    search_url = '/'
    tags_url = 'http://debtags.alioth.debian.org/'
    bugs_url = 'http://bugs.debian.org/'
+   launchpad_url = 'https://launchpad.net/distros/ubuntu/+source/'
    pts_url = 'http://packages.qa.debian.org/'
    ddpo_url = 'http://qa.debian.org/developer.php?login='
    src_bugs_url = bugs_url _ 'src:'
-   mirror_url = 'http://ftp.debian.org/'
-   changelogs_url = 'http://packages.debian.org/changelogs/'
+   mirror_url = 'http://archive.ubuntu.com/'
+   changelogs_url = 'http://changelogs.ubuntu.com/changelogs'
    policy_url = 'http://www.debian.org/doc/debian-policy/'
-   cn_help_url = homepage _ 'intro/cn'
+#   cn_help_url = homepage _ 'intro/cn'
    logo = {
 	url => homepage,
         src => '/Pics/openlogo-nd-50.png',
         alt => organisation,
    }
    copyright = {
-	url => 'http://www.spi-inc.org/',
-        name => 'SPI Inc.',
-        years => '1997 - ' _ timestamp.year,
+#	url => 'http://www.spi-inc.org/',
+        name => 'Canonical Ltd.',
+#        years => '1997 - ' _ timestamp.year,
    }
-   license = {
-	url => homepage _ 'license'
-   }
+#   license = {
+#	url => homepage _ 'license'
+#   }
    contact = {
-	name => 'Debian Web Mailinglist',
-	mail => 'debian-www@lists.debian.org',
-        url => homepage _ 'contact',
+	name => 'Frank Lichtenheld',
+	mail => 'frank@lichtenheld.de',
+        url => homepage _ 'support',
    }
    admin = {
-	name => 'Debian Webmaster',
-	mail => 'webmaster@debian.org',
+	name => 'Frank Lichtenheld',
+	mail => 'frank@lichtenheld.de',
    }
    trademarknotes = organisation _ ' is a trademark of ' _ copyright.name
 -%]
 [%-
    # possible values for importance: high, normal, low
    sitewidemsg = { importance => "high",
-		   txt => "Please note that this is an experimental version of <a href=\"http://packages.debian.org/\">packages.debian.org</a>. Errors and obsolete information should be expected" }
+		   txt => "Please note that this is an experimental version of <a href=\"http://packages.ubuntu.com/\">packages.ubuntu.com</a>. Errors and obsolete information should be expected" }
 -%]
