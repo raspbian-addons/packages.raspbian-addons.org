@@ -102,6 +102,8 @@ sub read_entry {
 
 #FIXME: make configurable
 my %fallback_suites = (
+		       'oldstable-backports' => 'oldstable',
+		       'oldstable-volatile' => 'oldstable',
 		       'stable-backports' => 'stable',
 		       'stable-volatile' => 'stable',
 		       experimental => 'unstable' );
