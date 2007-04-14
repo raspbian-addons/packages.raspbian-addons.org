@@ -108,6 +108,8 @@
 
    RewriteRule ^/cgi-bin/search_packages.pl(.*)$ /search$1
    RewriteRule ^/cgi-bin/search_contents.pl(.*)$ /search$1
+   RewriteRule ^/unstable/newpkg_([a-z]+)\.[a-z]+\.rdf /unstable/$1/newpkg?format=rss [R=permanent,L]
+   RewriteRule ^/unstable/newpkg_([a-z]+) /unstable/$1/newpkg [R=permanent,L]
 
    # we never want to rewrite those URLs
    RewriteRule ^/cgi-bin/dispatcher.pl - [L]
