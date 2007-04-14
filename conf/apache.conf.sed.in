@@ -100,6 +100,8 @@
       allow from all
    </Location>
 
+   BrowserMatch reportbug is_reportbug
+
    RewriteEngine on
    RewriteLog /var/log/apache2/rewrite.log
    RewriteLogLevel 0

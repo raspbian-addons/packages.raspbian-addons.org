@@ -83,6 +83,11 @@ debug( "LANGUAGES=@LANGUAGES header=".
 bindtextdomain ( 'pdo', $LOCALES );
 textdomain( 'pdo' );
 
+if ($ENV{is_reportbug}) {
+    $input->param('exact', 1);
+    debug( "reportbug detected, set paramater exact to '1'" ) if DEBUG;
+}
+
 my $what_to_do = 'show';
 my $source = 0;
 if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
