@@ -26,7 +26,7 @@ use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
 			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @PRIORITIES
 			 @LANGUAGES $LOCALES );
-use Packages::CGI qw( :DEFAULT get_all_messages );
+use Packages::CGI qw( :DEFAULT error get_all_messages );
 use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::Template ();
@@ -83,6 +83,32 @@ debug( "LANGUAGES=@LANGUAGES header=".
 bindtextdomain ( 'pdo', $LOCALES );
 textdomain( 'pdo' );
 
+# backwards compatibility stuff
+debug( "SCRIPT_URL=$ENV{SCRIPT_URL} SCRIPT_URI=$ENV{SCRIPT_URI}" ) if DEBUG;
+
+if ($ENV{SCRIPT_URL} =~ m|^/cgi-bin/search_|) {
+    error( "You reached this site over an old URL. ".
+	   "Depending on the exact parameters your search might work or not." );
+    # contents search changed a lot
+    if ($ENV{SCRIPT_URL} =~ m|^/cgi-bin/search_contents|) {
+	$input->param('keywords',$input->param('word')) if $input->param('word');
+	$input->param('searchon','contents');
+	for ($input->param('searchmode')) {
+	    /^searchfiles/ && do {
+		$input->param('mode','filename');
+		last;
+	    };
+	    /^filelist/ && do {
+		$ENV{PATH_INFO} = '/'.join('/',($input->param('version')||'stable',
+						$input->param('keywords'),
+						$input->param('arch')||'i386',
+						'filelist' ));
+		$input->delete('searchon','version','keywords','arch');
+		last;
+	    };
+	}
+    }
+}
 if ($ENV{is_reportbug}) {
     $input->param('exact', 1);
     debug( "reportbug detected, set paramater exact to '1'" ) if DEBUG;
@@ -92,6 +118,8 @@ my $what_to_do = 'show';
 my $source = 0;
 if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
     my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
+
+    debug( "PATH_INFO=$path components=@components", 3) if DEBUG;
 
     push @components, 'index' if @components && $path =~ m,/$,;
 

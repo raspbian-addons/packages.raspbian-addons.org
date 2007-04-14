@@ -106,8 +106,11 @@
    RewriteLog /var/log/apache2/rewrite.log
    RewriteLogLevel 0
 
+   RewriteRule ^/cgi-bin/search_packages.pl(.*)$ /search$1
+   RewriteRule ^/cgi-bin/search_contents.pl(.*)$ /search$1
+
    # we never want to rewrite those URLs
-   RewriteRule ^/cgi-(bin|old)/ - [L]
+   RewriteRule ^/cgi-bin/dispatcher.pl - [L]
    RewriteRule ^/changelogs/ - [L]
    RewriteRule ^/Pics/ - [L]
    RewriteRule ^/about/ - [L]
