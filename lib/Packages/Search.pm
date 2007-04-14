@@ -46,6 +46,8 @@ use warnings;
 use POSIX;
 use HTML::Entities;
 use DB_File;
+use Lingua::Stem v0.82;
+use Search::Xapian qw(:ops);
 
 use Deb::Versions;
 use Packages::CGI;
@@ -55,7 +57,7 @@ our @ISA = qw( Exporter );
 
 our @EXPORT_OK = qw( read_entry read_entry_all read_entry_simple
 		     read_src_entry read_src_entry_all find_binaries
-		     do_names_search do_fulltext_search
+		     do_names_search do_fulltext_search do_xapian_search
 		     );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
@@ -241,6 +243,52 @@ sub do_fulltext_search {
 	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
     }
  }
+
+sub do_xapian_search {
+    my ($keywords, $db, $did2pkg, $packages, $read_entry, $opts,
+	$results, $non_results) = @_;
+
+# NOTE: this needs to correspond with parse-packages!
+    my @tmp;
+    foreach my $keyword (@$keywords) {
+	$keyword =~ tr [A-Z] [a-z];
+	if ($opts->{exact}) {
+	    $keyword = " $keyword ";
+	}
+	$keyword =~ s/[(),.-]+//og;
+	$keyword =~ s;[^a-z0-9_/+]+; ;og;
+	push @tmp, $keyword;
+    }
+    my $stemmer = Lingua::Stem->new();
+    $keywords = $stemmer->stem( @tmp );
+
+    my $db = Search::Xapian::Database->new( $db );
+    my $enq = $db->enquire( OP_AND, @$keywords );
+    debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
+    my @matches = $enq->matches(0, 100);
+
+    my $numres = 0;
+    my %tmp_results;
+    foreach my $match ( @matches ) {
+	my $id = $match->get_docid();
+	my $result = $did2pkg->{$id};
+
+	foreach (split /\000/o, $result) {
+	    my @data = split /\s/, $_, 3;
+#	    debug ("Considering $data[0], arch = $data[2]", 3) if DEBUG;
+#	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
+#	    debug ("Ok", 3) if DEBUG;
+	    $numres++ unless $tmp_results{$data[0]}++;
+	}
+	last if $numres > 100;
+    }
+    undef $db;
+    $too_many_hits++ if $numres > 100;
+
+    foreach my $pkg (keys %tmp_results) {
+	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
+    }
+}
 
 sub find_binaries {
     my ($pkg, $archive, $suite, $src2bin) = @_;

@@ -33,6 +33,8 @@ use DB_File;
 use Storable;
 use File::Path;
 use Deb::Versions;
+use Lingua::Stem v0.82;
+use Search::Xapian;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
 &Packages::Config::init( './' );
 my %packages_small = ();
@@ -52,6 +54,9 @@ my %priorities = ();
 $/ = "";
 
 -d $DBDIR || mkpath( $DBDIR );
+-d "$DBDIR/xapian.new" && rmtree("$DBDIR/xapian.new");
+-d "$DBDIR/xapian.old" && rmtree("$DBDIR/xapian.old");
+mkpath( "$DBDIR/xapian.new" );
 
 for my $suite (@SUITES) {
     my %package_names_suite = ();
@@ -97,10 +102,14 @@ for my $suite (@SUITES) {
 		my $src_version = '';
 		if ($data{'source'}) {
 			$src = $data{'source'};
-			$src =~ s/\s+.*//; # strip version info
+			$src =~ s/\s+.*//o; # strip version info
 		}
 		$data{'source'} = $src;
-		my $descr = $data{'description'};
+		# we add some additional data here
+		my $descr = "$data{'description'}\000$data{'package'}\000"
+		    .($data{'tag'}||'');
+		my $sdescr = $data{'description'};
+		$sdescr =~ s/\n.*//os;
 		my $did = undef;
 		if (exists($descriptions{$descr})) {
 			$did  = $descriptions{$descr};
@@ -114,8 +123,6 @@ for my $suite (@SUITES) {
 		$descriptions_packages{$did} .=
 			"$data{'package'} $data{'version'} $data{'architecture'}\000";
 
-		my $sdescr = $descr;
-		$sdescr =~ s/\n.*//s;
 		my $section = 'main';
 		my $subsection = $data{section} || '-';
 		if ($data{section} && ($data{section} =~ m=/=o)) {
@@ -178,7 +185,7 @@ while (my ($pkg, $v) = each(%packages_small)) {
 		$res3 .= $v3;
 	    }
 	}
-    	
+
 	if (exists $virtual_packages{$pkg}) {
 		while (my ($suite, $v2) = each %{$virtual_packages{$pkg}}) {
 			$res1 .= "$suite\01".(join ' ', keys %$v2)."\01";
@@ -223,13 +230,25 @@ while (my ($k, $v) = each(%descriptions_packages)) {
 }
 untie %descriptions_packages_db;
 
+my $stemmer = Lingua::Stem->new();
+$stemmer->stem_caching({ -level => 2 });
+my $xapian_db;
+eval {
+    $xapian_db = Search::Xapian::WritableDatabase->new("$DBDIR/xapian.new",
+						       Search::Xapian::DB_CREATE_OR_OPEN)
+	or die "can't create write-able db object: $!\n";
+};
+die $@ if $@;
 my %descriptions_db;
 tie %descriptions_db, "DB_File", "$DBDIR/descriptions.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 open DESCR, ">", "$DBDIR/descriptions.txt" or die "Error creating descriptions textfile";
+print "Index $#descriptions descriptions\n";
 for (my $i=1; $i<= $#descriptions; $i++) {
 	my $plain_description = $descriptions[$i];
+	# strip away additional data
+	my ($only_desc) = split /\000/o, $plain_description, 2;
 # WARNING: This needs to correspond with what happens in
 # Packages/Search.pm:do_fulltext_search
 	$plain_description =~ tr [A-Z] [a-z];
@@ -238,10 +257,33 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 	$plain_description =~ s/[(),.-]+//og;
 	$plain_description =~ s#[^a-z0-9_/+]+# #og;
 	print DESCR "$plain_description\n";
-	$descriptions_db{$i} = $descriptions[$i];
+
+	#XAPIAN
+	eval {
+	    my @words = split /\s+/, $plain_description;
+	    my $stem_words = $stemmer->stem( \@words );
+	    my $doc = Search::Xapian::Document->new()
+		or die "can't create doc object for $i: $!\n";
+	    if ($doc->set_data($i)){
+		warn "can't set_data in doc object for $i: $!\n";
+	    }
+	    for my $j (0 .. (@$stem_words-1)) {
+		next if $stem_words->[$j] =~ /^\s*$/o;
+		if ($doc->add_posting($stem_words->[$j], $j)) {
+		    warn "can't add word $stem_words->[$j] $j: $!\n";
+		}
+	    }
+	    $xapian_db->add_document($doc)
+		or warn "failed to add document: $i\n";
+	};
+	die $@ if $@;
+
+	$descriptions_db{$i} = $only_desc;
 }
 close DESCR;
 untie %descriptions_db;
+$xapian_db->flush;
+undef $xapian_db;
 
 # package names stuff:
 for my $pkg (keys %package_names) {
@@ -280,6 +322,9 @@ for my $suite (@SUITES) {
 	rename("$DBDIR/package_names_$suite.txt.new",
 	       "$DBDIR/package_names_$suite.txt");
 }
+rename("$DBDIR/xapian", "$DBDIR/xapian.old");
+rename("$DBDIR/xapian.new","$DBDIR/xapian");
+rmtree("$DBDIR/xapian.old");
 rename("$DBDIR/packages_descriptions.db.new",
        "$DBDIR/packages_descriptions.db");
 rename("$DBDIR/descriptions_packages.db.new",
