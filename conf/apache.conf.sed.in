@@ -91,9 +91,9 @@
    <Location /cgi-bin/>
       SetHandler perl-script
       # mod-perl etch
-      #PerlInitHandler Apache2::Reload
+      PerlInitHandler Apache2::Reload
       # mod-perl sarge
-      PerlInitHandler Apache::Reload
+      #PerlInitHandler Apache::Reload
       PerlHandler ModPerl::Registry
       Options +ExecCGI
       PerlSendHeader On
