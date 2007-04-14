@@ -25,11 +25,11 @@ Total page evaluation took [% benchmark %]<br>
 <hr class="hidecss">
 <div id="fineprint" class="bordertop">
 <p>To report a problem with the web site, e-mail <a href="mailto:[% contact.mail %]">[% contact.mail %]</a>. For other contact information, see the [% organisation %] <a href="[% contact.url %]">contact page</a>.</p>
-<p>Generated: [% timestamp.string %]<br>
-Copyright &copy; [% copyright.years %] <a href="[% copyright.url %]">[% copyright.name %]</a>; See <a href="[% license.url %]">license terms</a>.
-[% IF trademarknotes -%]
- <br>[% trademarknotes %]
-[%- END %]
+<p>[% IF timestamp.string %]Generated: [% timestamp.string %]<br>[% END %]
+[% UNLESS footer.doNotDisplayCopyright %]
+Content Copyright &copy; [% copyright.years %] <a href="[% copyright.url %]">[% copyright.name %]</a>; See <a href="[% license.url %]">license terms</a>. [% IF trademarknotes -%][% trademarknotes %][%- END %]
+[% END %]
+<p><a href="/about/">Learn more about this site</a>.</p>
 </div> <!-- end fineprint -->
 </div> <!-- end footer -->
 </div> <!-- end outer -->

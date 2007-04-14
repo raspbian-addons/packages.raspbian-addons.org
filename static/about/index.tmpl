@@ -1,0 +1,98 @@
+[% PROCESS 'html/head.tmpl' 
+	title_tag = "$organisation Packages - About this site"
+	page_title = "$organisation Packages - About this site"
+	keywords = "$organisation, Packages, Authors, Source, Code"
+%]
+
+<h2>Code</h2>
+
+<h3>Getting</h3>
+
+<p>The current code base is maintained by Frank Lichtenheld in
+<a href="http://git.or.cz/">git</a> and can be obtained from
+<a href="http://source.djpig.de/git/">http://source.djpig.de/git/</a>
+both over <tt>HTTP</tt> and the native git protocol.
+
+<blockquote>
+	git clone http://source.djpig.de/git/packages.git
+</blockquote>
+
+<p>or
+
+<blockquote>
+	git clone git://source.djpig.de/git/packages.git
+</blockquote>
+
+<p>The older second generation code can be found in the Debian CVS
+at <a href="http://cvs.debian.org/packages/?cvsroot=webwml">cvs.debian.org</a>.
+
+<h3>Technology</h3>
+
+<p>This site is built and served to you with the help of
+
+<ul>
+	<li><a href="http://www.debian.org/">Debian</a>
+	<li><a href="http://httpd.apache.org/">Apache</a>
+	<li><a href="http://perl.apache.org/">mod_perl</a>
+	<li><a href="http://www.template-toolkit.org/">Template Toolkit</a>
+	<li><a href="http://www.xapian.org/">Xapian</a>
+</ul>
+
+<h3>Copyright &amp; License</h3>
+
+<pre>
+Copyright (C) 1998 James Treacy
+Copyright (C) 2000, 2001 Josip Rodin
+Copyright (C) 2001 Adam Heath
+Copyright (C) 2004 Martin Schulze
+Copyright (C) 2006 Jeroen van Wolffelaar &lt;jeroen@wolffelaar.nl&gt;
+Copyright (C) 2004-2007 Frank Lichtenheld &lt;frank@lichtenheld.de&gt;
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+</pre>
+
+<h3>Authors</h3>
+
+<p>The code for the first generation of
+<a href="http://packages.debian.org/">packages.debian.org</a> was
+
+<pre>
+Copyright (C) 1998 James Treacy
+Copyright (C) 2000, 2001 Josip Rodin
+Copyright (C) 2001 Adam Heath
+</pre>
+
+<p>(From this code little to nothing remains today)
+
+<p>The second generation was built upon this code and added the ability
+to browse and search more than one architecture (i.e. <tt>i386</tt>)
+and was
+
+<pre>
+Copyright (C) 2004 Martin Schulze
+Copyright (C) 2004-2006 Frank Lichtenheld
+</pre>
+
+<p>You are currently using the third generation which is a near complete
+rewrite and is
+
+<pre>
+Copyright (C) 2006 Jeroen van Wolffelaar &lt;jeroen@wolffelaar.nl&gt;
+Copyright (C) 2006, 2007 Frank Lichtenheld &lt;frank@lichtenheld.de&gt;
+</pre>
+
+[% PROCESS 'html/foot.tmpl'
+	langs.size = 0
+	footer.doNotDisplayCopyright = 1 %]
