@@ -295,7 +295,7 @@ unless (@Packages::CGI::fatal_errors) {
     my $tet1 = new Benchmark;
     my $tetd = timediff($tet1, $tet0);
     print $template->trailer( undef, undef, undef, $tetd );
-} elsif ($Packages::CGI::http_code) {
+} elsif ($Packages::CGI::http_code && $Packages::CGI::http_code !~ /^2\d\d/) {
     print $input->header( -charset => $charset, -status => $Packages::CGI::http_code );
 } else {
     # We currently have only an error page in html
