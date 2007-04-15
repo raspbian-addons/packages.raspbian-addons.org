@@ -1,8 +1,9 @@
 [%- IF benchmark && debug -%]
 Total page evaluation took [% benchmark %]<br>
 [%- END -%]
-</div> <!-- end inner -->
+</div></div></div></div>
 
+<div class=\"clear mozclear\"></div><div id=\"prefooter\">
 <div id="footer">
 
 [% IF langs.size > 0 %]
@@ -23,6 +24,8 @@ Total page evaluation took [% benchmark %]<br>
 <p [%- ' class="bordertop"' IF langs.size > 0 %]>Back to: <a href="[% homepage %]">[% organisation %] homepage</a> || <a href="[% searchformurl %]">Packages search page</a></p>
 
 <hr class="hidecss">
+<div id="footWrapper">
+<div id="footer" class="inside">
 <div id="fineprint" class="bordertop">
 <p>To report a problem with the web site, e-mail <a href="mailto:[% contact.mail %]">[% contact.mail %]</a>. For other contact information, see the [% organisation %] <a href="[% contact.url %]">contact page</a>.</p>
 <p>[% IF timestamp.string %]Generated: [% timestamp.string %]<br>[% END %]
@@ -30,8 +33,8 @@ Total page evaluation took [% benchmark %]<br>
 Content Copyright &copy; [% copyright.years %] <a href="[% copyright.url %]">[% copyright.name %]</a>; See <a href="[% license.url %]">license terms</a>. [% IF trademarknotes -%][% trademarknotes %][%- END %]
 [% END %]
 <p><a href="/about/">Learn more about this site</a>.</p>
-</div> <!-- end fineprint -->
 </div> <!-- end footer -->
-</div> <!-- end outer -->
+</div> <!-- end footWrapper -->
+</div> <!-- end pageWrapper -->
 </body>
 </html>

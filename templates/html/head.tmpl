@@ -11,6 +11,8 @@
 
 <link href="/debian.css" rel="stylesheet" type="text/css" media="all">
 <link href="/packages.css" rel="stylesheet" type="text/css" media="all">
+<link href="/ubuntu/ubuntu.css" rel="stylesheet" type="text/css" media="all">
+<link href="/ubuntu/masthead.css" rel="stylesheet" type="text/css" media="all">
 [% IF rss_alternate %]
 <link rel="alternate" type="application/rss+xml" title="RSS" href="[% rss_alternate %]">
 [% END %]
@@ -23,17 +25,19 @@
 [% sitewidemsg.txt %]
 </div>
 [%- END -%]
-<div id="header">
-   <div id="upperheader">
+    <div id="pageWrapper">
+      <div id="mastWrapper">
+        <div id="masthead">
+          <a class="imageLink"
+             href="[% homepage %]">&nbsp;</a>
 
-   <div id="logo">
-  <!-- very Debian specific use of the logo stuff -->
-  <a href="[% logo.url %]"><img src="[% logo.src %]" alt="" /></a>
-  <a href="[% logo.url %]"><img src="/Pics/debian.png" alt="[% logo.alt %]" width="179" height="61"></a>
-</div> <!-- end logo -->
+          <a class="hiddenStructure"
+             href="[% homepage %]/#documentContent">Skip
+             to content</a>
 
 [%- IF print_search_field %]
 [% checked = 'checked="checked"' %]
+<div id="search">
 <form method="GET" action="/search">
 <div id="hpacketsearch">
 [% IF search_field_values.mode %]<input type="hidden" name="mode" value="[% search_field_values.mode %]">[% END %]
@@ -59,9 +63,25 @@
 </div>
 </div> <!-- end hpacketsearch -->
 </form>
+</div>
 [% END %]
 
-</div> <!-- end upperheader -->
+     <!-- masthead content begin -->
+    <h5 class="hiddenStructure">Sections</h5>    
+    <div id="nav">
+      <ul>        
+      </ul>
+    </div> <!-- nav -->
+    <!-- masthead content end -->
+    </div> <!-- masthead -->
+   </div>  <!-- mastWrapper -->
+
+<div class="visualClear"></div>
+<div id="contentColumn">
+<div class="inside">
+<div id="content" class="">
+<div class="documentContent" id="region-content">
+
 
 <p class="hidecss"><a href="#inner">skip the navigation</a></p>
 <div id="pnavbar">
@@ -72,11 +92,7 @@
 [% END %]
 </div> <!-- end navbar -->
 
-</div> <!-- end header -->
-<div id="outer">
-<div id="inner">
-
 [%- IF page_title %]
-  <h1>[% page_title %]</h1>
+  <h1 class="documentFirstHeading">[% page_title %]</h1>
   [%- PROCESS 'html/messages.tmpl' -%]
 [% END -%]

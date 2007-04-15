@@ -77,7 +77,7 @@
 </Directory>
 
 <VirtualHost *>
-   ServerAdmin webmaster@debian.org
+   ServerAdmin frank@lichtenheld.de
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
    ErrorLog /var/log/apache2/%SITE%-error.log
@@ -116,6 +116,7 @@
    RewriteRule ^/changelogs/ - [L]
    RewriteRule ^/Pics/ - [L]
    RewriteRule ^/about/ - [L]
+   RewriteRule ^/ubuntu/ - [L]
    RewriteRule ^/[^/]+\.css - [L]
    RewriteRule ^/[^/]+\.js - [L]
 
