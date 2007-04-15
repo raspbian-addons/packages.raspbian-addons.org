@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. `dirname $0`/../config.sh
+
+cd "$topdir"
+
+date
+./bin/create_changelogs_map "$filesdir/db/" "$filesdir/changelogs-map"
+date
