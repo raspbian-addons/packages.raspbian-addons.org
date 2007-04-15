@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use DB_File;
+
+use lib './lib';
+
+use Deb::Versions;
+
+unless (@ARGV == 2) {
+	die "Usage: create_changelogs_map <db_dir> <changelogs_map_file>\n";
+}
+
+my ($dbdir, $outfile) = @ARGV;
+
+tie my %src_packages, 'DB_File', "$dbdir/sources_small.db",
+    O_RDONLY, 0666, $DB_BTREE
+    or die "couldn't tie DB $dbdir/sources_small.db: $!";
+tie my %src2bin, 'DB_File', "$dbdir/sources_packages.db",
+    O_RDONLY, 0666, $DB_BTREE
+    or die "couldn't open $dbdir/sources_packages.db: $!";
+
+open my $out, '>', "$outfile.new"
+    or die "couldn't open $outfile.new: $!";
+
+sub get_dir_from_name {
+    my $name = shift;
+
+    if ($name =~ /^(lib.)/o) {
+	return "$1/$name";
+    } else {
+	return substr( $name, 0, 1 )."/$name";
+    }
+}
+
+use Data::Dumper;
+my %bin;
+while (my ($source, $data) = each %src_packages) {
+    my @src = map { [ split(/\s+/) ] } split( /\0/, $data );
+    my $newest = (sort( { version_cmp($b->[-1],$a->[-1]) } @src))[0];
+    my ($section, $version) = @{$newest}[2,5];
+    my $directory = get_dir_from_name($source);
+#    warn "src=$source sect=$section v=$version dir=$directory\n";
+
+    my $bin_data = $src2bin{$source};
+    unless ($bin_data) {
+	warn "no binary data found for $source\n";
+	# source packages without binaries have most
+	# likely been succeded
+	next;
+    }
+
+    print $out "$source\tpool/$section/$directory/current/changelog\n";
+
+    my @bin = map { [ split(/\s+/) ] } split( /\0/, $bin_data );
+    my %seen;
+    foreach (@bin) {
+	my ($pkg, $ver) = @{$_}[2,3];
+	next if $seen{"$pkg/$ver"}++; # weed out multiple arches/suites faster
+	if ($bin{$pkg}
+	    && ($bin{$pkg}{source} ne $source)
+	    && (version_cmp($bin{$pkg}{version},$ver) > 0)) {
+	    warn "ignore $pkg/$ver from $source for ".
+		"$pkg/$bin{$pkg}{version} from $bin{$pkg}{source}\n";
+	    next;
+	} else {
+	    $bin{$pkg} = { version => $ver, source => $source,
+			   target => "$section/$directory" };
+	}
+    }
+}
+
+while (my ($pkg, $data) = each %bin) {
+#    warn "pkg=$pkg v=$data->{version} src=$data->{source} tgt=$data->{target}\n";
+    print $out "$pkg\tpool/$data->{target}/current/changelog\n";
+}
+
+close $out or warn $!;
+rename("$outfile.new", $outfile);

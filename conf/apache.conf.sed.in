@@ -106,6 +106,8 @@
    RewriteLog /var/log/apache2/rewrite.log
    RewriteLogLevel 0
 
+   RewriteMap changelog-url txt:%TOPDIR%/files/changelogs-map
+
    RewriteRule ^/cgi-bin/search_packages.pl(.*)$ /search$1
    RewriteRule ^/cgi-bin/search_contents.pl(.*)$ /search$1
    RewriteRule ^/unstable/newpkg_([a-z]+)\.[a-z]+\.rdf /unstable/$1/newpkg?format=rss [R=permanent,L]
@@ -123,6 +125,7 @@
 #   RewriteRule ^/$ http://www.debian.org/distrib/packages
    RewriteRule ^/$ /index.html [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
+   RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
 
    RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
