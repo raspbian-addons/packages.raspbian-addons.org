@@ -154,7 +154,7 @@ sub _lcmp {
 }
 
 our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
-		       etch testing testing-proposed-updates sid unstable
+		       etch etch-m68k testing testing-proposed-updates sid unstable
 		       experimental warty hoary hoary-backports breezy
 		       breezy-backports dapper );
 our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
