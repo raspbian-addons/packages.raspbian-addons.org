@@ -121,8 +121,10 @@ mirrors = {
 
 	amd64 => {
 		unofficial_port => {
-			url_name => 'amd64',
-			name => 'AMD64',
+			amd64 => {
+				url_name => 'amd64',
+				name => 'AMD64',
+			}
 		},
 		europa => [
 			"amd64.debian.net/debian",
@@ -142,8 +144,18 @@ mirrors = {
 
 	gnuab => {
 		unofficial_port => {
-			url_name => 'kfreebsd-gnu',
-			name => 'GNU/kFreeBSD',
+			'kfreebsd-amd64' => {
+				url_name => 'kfreebsd-gnu',
+				name => 'GNU/kFreeBSD',
+			},
+			'kfreebsd-i386' => {
+				url_name => 'kfreebsd-gnu',
+				name => 'GNU/kFreeBSD',
+			},
+			armel => {
+				url => 'http://www.debonaras.org/',
+				name => 'armel',
+			},
 		},
 		north_america => [
 			"www.gtlib.gatech.edu/pub/gnuab/debian",

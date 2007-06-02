@@ -92,10 +92,13 @@ please see our <a href="[% a.mirror_list %]">complete mirror list</a>.</p>
 [% END %]
 
 [% IF a.unofficial_port %]
-[% SET port = a.unofficial_port %]
+[% SET port = a.unofficial_port.$architecture %]
+[% IF port.url_name;
+   SET port.url = ports_url _ port.url_name _ '/';
+   END -%]
 <p style="clear:both">Note that [% port.name %] is not officially included in the [% organisation %] archive yet,
 but the [% port.name %] porter group keeps their archive in sync with the official archive as close as possible.
-See the <a href="[% ports_url _ port.url_name _ '/' %]">[% port.name %] ports page</a> for current information.</p>
+See the <a href="[% port.url %]">[% port.name %] ports page</a> for current information.</p>
 [% END %]
 
 <p>Note that in some browsers you will need to tell your browser you want the file saved to a file.
