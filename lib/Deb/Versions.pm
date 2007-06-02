@@ -111,7 +111,7 @@ sub _cmp_part {
     my ( $v1, $v2 ) = @_;
     my $r;
 
-    while ( $v1 && $v2 ) {
+    while ( $v1 || $v2 ) {
 	$v1 =~ s/^(\D*)//o;
 	my $sp1 = $1;
 	$v2 =~ s/^(\D*)//o;
@@ -138,8 +138,8 @@ sub _cmp_part {
 
 sub _lcmp {
     my ( $v1, $v2 ) = @_;
-    
-    for ( my $i = 0; $i < length( $v1 ); $i++ ) {
+   
+    for ( my $i = 0; $i <= length( $v1 ); $i++ ) {
 	my ( $n1, $n2 ) = ( ord( substr( $v1, $i, 1 ) ), 
 			    ord( substr( $v2, $i, 1 ) ) );
 	$n1 += 256 if $n1 < 65; # letters sort earlier than non-letters
