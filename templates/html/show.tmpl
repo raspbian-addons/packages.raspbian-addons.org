@@ -1,4 +1,5 @@
 [% PROCESS 'config/archive_layout.tmpl' %]
+[% PROCESS 'config/mirrors.tmpl' %]
 [%- nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite }, ];
     nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
     nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
@@ -239,7 +240,7 @@ Do not install it on a normal Debian system.</p>
   [%- END %]
 [% END %]
 
-[% FOREACH downloads %]
+[% FOREACH d IN downloads %]
   [% IF loop.first -%]
     <div id="pdownload">
     <h2>Download [% pkg %]</h2>
@@ -250,11 +251,12 @@ Do not install it on a normal Debian system.</p>
   [%- END %]
 
 <tr>
-[% download_url = pkg _ '/' _ arch _ '/download'
-   filelist_url = pkg _ '/' _ arch _ '/filelist' %]
-<th><a href="[% make_url(download_url) | uri %]">[% arch %]</a></th>
-[% '<td>' _ version _ '</td>' IF versions.multiple %]
-<td class="size">[% pkgsize %]&nbsp;kB</td><td class="size">[% instsize %]&nbsp;kB</td>
+[% download_url = pkg _ '/' _ d.arch _ '/download'
+   filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
+<th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
+[%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>(unofficial port)</strong>[% END %]</th>
+[% '<td>' _ d.version _ '</td>' IF versions.multiple %]
+<td class="size">[% d.pkgsize %]&nbsp;kB</td><td class="size">[% d.instsize %]&nbsp;kB</td>
 <td>
 [% IF contents_avail %]
   [<a href="[% make_url(filelist_url) | uri %]">list of files</a>]
