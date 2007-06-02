@@ -11,7 +11,7 @@ fi
 
 echo -e "Using\n\ttopdir=$topdir\n\tsite=$site"
 
-find "$topdir" -name '*.sed.in' | while read file;
+find "$topdir" -maxdepth 2 -name '*.sed.in' | while read file;
 do
 	wdir=$(dirname "$file")
 	newfile="$wdir/"$(basename "$file" .sed.in)
