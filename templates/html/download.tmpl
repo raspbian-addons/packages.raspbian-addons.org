@@ -26,10 +26,16 @@ package manager like <a href="[% make_url('aptitude','','arch','') %]">aptitude<
 packages, instead of doing so manually via this website.</p>
 <p>You should be able to use any of the listed mirrors by adding a
 line to your <kbd>/etc/apt/sources.list</kbd> like this:</p>
+[% IF archive != "security" %]
 <pre>
 deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section IF section != main_section %]
 </pre>
 <p>Replacing <em>[% mirrors.$archive.europa.0 %]</em> with the mirror in question.
+[% ELSE %]
+<pre>
+deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% section IF section != main_section %]
+</pre>
+[%- END %]
 [% IF suite == "experimental" %]
 <h2>Experimental package</h2>
 <p>Warning: This package is from the <strong>experimental</strong> distribution.
