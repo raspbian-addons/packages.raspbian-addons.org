@@ -54,7 +54,7 @@
 <ul>
 <li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">Bug Reports</a></li>
 
-[% IF src -%]
+[% IF src.pkg -%]
 <li><a href="[% pts_url _ src.pkg | uri %]">Developer Information (PTS)</a></li>
 [% ELSIF is_source %]
 <li><a href="[% pts_url _ pkg | uri %]">Developer Information (PTS)</a></li>
