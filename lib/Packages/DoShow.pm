@@ -339,7 +339,7 @@ sub moreinfo {
 		# non-US hack
 		($server = lc $page->get_newest('archive')) =~ s/-//go;
 		$server = $env->{$server}||$env->{us};
-		$path = "$src_dir/$src_file_name";
+		$path = "/$src_dir/$src_file_name";
 		if ($src_file_name =~ /dsc$/) {
 		    $name = 'dsc'
 		} else {
