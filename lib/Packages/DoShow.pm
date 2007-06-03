@@ -111,6 +111,8 @@ sub do_show {
 
 			debug( "find source package: source=$source", 1) if DEBUG;
 			my $src_data = $sources_all{"$archive $suite $source"};
+			#FIXME: should be $main_archive or similar, not hardcoded "us"
+			$src_data = $sources_all{"us $suite $source"} unless $src_data;
 			$page->add_src_data( $source, $src_data )
 			    if $src_data;
 
