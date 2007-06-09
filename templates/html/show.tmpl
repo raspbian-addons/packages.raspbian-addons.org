@@ -262,7 +262,16 @@ Do not install it on a normal Debian system.</p>
    filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
 <th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
 [%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>(unofficial port)</strong>[% END %]</th>
-[% '<td>' _ d.version _ '</td>' IF versions.multiple %]
+[% vnorm = d.version.replace( '\+b\d+$', '' ); vlatest = version.replace( '\+b\d+$', '' );
+   vup = vnorm.replace( '-[^-]+$', '' ); vuplatest = vlatest.replace( '-[^-]+$', '' );
+   IF vnorm == vlatest;
+	version_class = 'vcurrent';
+   ELSIF vup == vuplatest;
+	version_class = 'volder';
+   ELSE;
+	version_class = 'vold';
+   END %]
+[% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
 <td class="size">[% d.pkgsize %]&nbsp;kB</td><td class="size">[% d.instsize %]&nbsp;kB</td>
 <td>
 [% IF contents_avail %]
