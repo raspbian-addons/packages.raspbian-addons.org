@@ -30,11 +30,12 @@
    <div id="logo">
   <!-- very Debian specific use of the logo stuff -->
   <a href="[% logo.url %]"><img src="[% logo.src %]" alt="" /></a>
-  <a href="[% logo.url %]"><img src="/Pics/debian.png" alt="[% logo.alt %]" width="179" height="61"></a>
+  <a href="[% logo.url %]"><img src="/Pics/debian-small.png" alt="[% logo.alt %]" width="90" height="31"></a>
 </div> <!-- end logo -->
 
 [%- IF print_search_field %]
-[% checked = 'checked="checked"' %]
+[% checked = 'checked="checked"'
+   selected = 'selected="selected"' %]
 <form method="GET" action="/search">
 <div id="hpacketsearch">
 [% IF search_field_values.mode %]<input type="hidden" name="mode" value="[% search_field_values.mode %]">[% END %]
@@ -42,22 +43,16 @@
 [% IF search_field_values.suite %]<input type="hidden" name="suite" value="[% search_field_values.suite %]">[% END %]
 [% IF search_field_values.sections %]<input type="hidden" name="section" value="[% search_field_values.sections %]">[% END %]
 [% IF search_field_values.architectures %]<input type="hidden" name="arch" value="[% search_field_values.architectures %]">[% END %]
-<input type="text" size="30" name="keywords" value="[% search_field_values.keywords | html %]" id="kw">
 <input type="submit" value="Search">
+<select size="1" name="searchon">
+<option value="names" [% selected IF search_field_values.searchon == 'names' || search_field_values.searchon == 'default' %]>
+package names</option>
+<option value="all" [% selected IF search_field_values.searchon == 'all' %]>descriptions</option>
+<option value="sourcenames" [% selected IF search_field_values.searchon == 'sourcenames' %]>source package names</option>
+<option value="contents" [% selected IF search_field_values.searchon == 'contents' %]>package contents</option
+</select>
+<input type="text" size="30" name="keywords" value="[% search_field_values.keywords | html %]" id="kw">
 <span style="font-size: 60%"><a href="[% searchformurl %]">all options</a></span>
-<br>
-<div style="font-size: 80%">search in:
-<input type="radio" name="searchon" value="names" id="onlynames" [% checked IF search_field_values.searchon == 'names' || search_field_values.searchon == 'default' %]>
-<label for="onlynames">package names</label>&nbsp;&nbsp;
-
-<input type="radio" name="searchon" value="all" id="descs" [% checked IF search_field_values.searchon == 'all' %]>
-<label for="descs">descriptions</label>
-<br>
-<input type="radio" name="searchon" value="sourcenames" id="src" [% checked IF search_field_values.searchon == 'sourcenames' %]>
-<label for="src">source package names</label>
-<input type="radio" name="searchon" value="contents" id="conts" [% checked IF search_field_values.searchon == 'contents' %]>
-<label for="conts">package contents</label>
-</div>
 </div> <!-- end hpacketsearch -->
 </form>
 [% END %]
