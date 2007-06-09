@@ -274,7 +274,7 @@ Do not install it on a normal Debian system.</p>
 [% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
 <td class="size">[% d.pkgsize %]&nbsp;kB</td><td class="size">[% d.instsize %]&nbsp;kB</td>
 <td>
-[% IF contents_avail %]
+[% IF d.contents_avail %]
   [<a href="[% make_url(filelist_url) | uri %]">list of files</a>]
 [% ELSE %]
   no current information
