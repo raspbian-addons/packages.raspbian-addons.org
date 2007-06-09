@@ -28,7 +28,7 @@ h1 {
 	clear: both;
 }
 
-#pdesc, #ptags, #pdeps, #pdownload {
+#pdesc, #pbinaries, #ptags, #pdeps, #pdownload {
 	margin-left: 1em;
 	margin-right: 1em;
 }
@@ -314,6 +314,18 @@ table#pdeplegend, #pdownload table {
 	text-decoration: none;
 }
 #pnavbar a:hover {
+}
+
+#ptablist ul {
+	display: inline;
+	list-style-type: none; 
+	padding-left:  0px;
+	line-height: 1.5em;
+}
+#ptablist ul li {
+	display: inline;
+	margin: 0 .25em;
+	white-space: nowrap;
 }
 
 .p_js_elem { 

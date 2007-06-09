@@ -144,6 +144,11 @@ Do not install it on a normal Debian system.</p>
 </div>
 [% END %]
 
+<div id="ptablist">
+</div>
+
+[% IF desc %]
+<div id="pdesctab">
 <div id="pdesc">
 [% UNLESS is_virtual %]
 	[% IF desc.short %]
@@ -184,9 +189,11 @@ Do not install it on a normal Debian system.</p>
     <dd>[% desc %]</dd>
   [% '</dl></div>' IF loop.last %]
 [% END %]
+</div> <!-- pdesctab -->
+[% END %]
 
 [% FOREACH binaries %]
-  [% IF loop.first %]<div class="pdesc">The following binary packages are built from this source package:<dl>[% END %]
+  [% IF loop.first %]<div id="pbinaries">The following binary packages are built from this source package:<dl>[% END %]
     <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
     <dd>[% desc %]</dd>    
   [% '</dl></div>' IF loop.last %]
@@ -294,4 +301,6 @@ Do not install it on a normal Debian system.</p>
     </div> <!-- end pdownload -->
   [%- END %]
 [% END %]
+
+<script type="text/javascript">init_tab_list("ptablist")</script>
 
