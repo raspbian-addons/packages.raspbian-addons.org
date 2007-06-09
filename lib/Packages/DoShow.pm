@@ -337,17 +337,12 @@ sub moreinfo {
 	if (defined($files) and @$files) {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
-		my ($name, $server, $path);
+		my ($server, $path);
 		# non-US hack
 		($server = lc $page->get_newest('archive')) =~ s/-//go;
 		$server = $env->{$server}||$env->{us};
 		$path = "/$src_dir/$src_file_name";
-		if ($src_file_name =~ /dsc$/) {
-		    $name = 'dsc'
-		} else {
-		    $name = $src_file_name;
-		}
-		push @downloads, { name => $name, server => $server, path => $path };
+		push @downloads, { name => $src_file_name, server => $server, path => $path };
 	    }
 	}
 	$contents->{src}{downloads} = \@downloads;
