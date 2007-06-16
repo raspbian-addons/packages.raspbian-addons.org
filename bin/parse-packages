@@ -32,6 +32,7 @@ my $MAX_PACKAGE_POSTFIXES = 100;
 use DB_File;
 use Storable;
 use File::Path;
+use Digest::MD5;
 use Deb::Versions;
 use Lingua::Stem v0.82;
 use Search::Xapian;
@@ -119,6 +120,7 @@ for my $suite (@SUITES) {
 			$descriptions[$did] = $descr;
 			$descriptions{$descr} = $did;
 		}
+		$data{'description-md5'} = Digest::MD5::md5_hex($data{'description'});
 		$data{'description'} = $did;
 		$packages_descriptions{"$data{'package'} $data{'version'} $data{'architecture'}"} = $did;
 		$descriptions_packages{$did} .=
