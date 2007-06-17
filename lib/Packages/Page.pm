@@ -94,7 +94,7 @@ sub is_virtual {
     return (exists($self->{provided_by}) && !exists($self->{versions}));
 }
 
-our @TAKE_NEWEST = qw( description essential priority section subsection tag
+our @TAKE_NEWEST = qw( description description-md5 essential priority section subsection tag
 		       archive source source-version url );
 our @STORE_ALL = qw( version source source-version installed-size size
 		     filename md5sum sha1 sha256 task
