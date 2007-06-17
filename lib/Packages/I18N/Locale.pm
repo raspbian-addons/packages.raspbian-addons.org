@@ -21,12 +21,9 @@ my %lang2loc = ( en => "en_US",
 		 default => "en_US",
 		 );
 
-# most of them can probably changed to UTF-8 in Sarge
-# as there are more available UTF-8 locales then
+# this can probably be removed now that all locales are available in UTF-8
 my %lang2charset = (
 		    default => 'UTF-8',
-		    ja => 'EUC-JP',
-		    uk => 'KOI8-U',
 		    );
 
 sub get_locale {
