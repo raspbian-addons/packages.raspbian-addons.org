@@ -12,7 +12,7 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
-			 @ARCHITECTURES %FTP_SITES );
+			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
 use Packages::CGI qw( :DEFAULT make_url make_search_url note );
 use Packages::DB;
@@ -121,6 +121,7 @@ sub do_show {
 			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 			my $did = $page->get_newest( 'description' );
+			my $desc_md5 = $page->get_newest( 'description-md5' );
 			my @complete_tags = split(/, /, $page->get_newest( 'tag' ));
 			my @tags;
 			foreach (@complete_tags) {
@@ -153,19 +154,43 @@ sub do_show {
 
 			# process description
 			#
+			sub process_description {
+			    my ($desc) = @_;
+
+			    my $short_desc = encode_entities( $1, "<>&\"" )
+				if $desc =~ s/^(.*)$//m;
+			    my $long_desc = encode_entities( $desc, "<>&\"" );
+
+			    $long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
+			    $long_desc =~ s/\A //o;
+			    $long_desc =~ s/\n /\n/sgo;
+			    $long_desc =~ s/\n.\n/\n<p>\n/go;
+			    $long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+
+			    return ($short_desc, $long_desc);
+			}
+
 			my $desc = $descriptions{$did};
-			$short_desc = encode_entities( $1, "<>&\"" )
-			    if $desc =~ s/^(.*)$//m;
-			my $long_desc = encode_entities( $desc, "<>&\"" );
+			my $long_desc;
+			($short_desc, $long_desc) = process_description($desc);
 
-			$long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
-			$long_desc =~ s/\A //o;
-			$long_desc =~ s/\n /\n/sgo;
-			$long_desc =~ s/\n.\n/\n<p>\n/go;
-			$long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+			$contents{desc}{en} = { short => $short_desc,
+						long => $long_desc, };
 
-			$contents{desc} = { short => $short_desc,
-					    long => $long_desc, };
+			debug( "desc_md5=$desc_md5", 2)
+			    if DEBUG;
+			my $trans_desc = $desctrans{$desc_md5};
+			if ($trans_desc) {
+			    my %trans_desc = split /\000|\001/, $trans_desc;
+			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
+				if DEBUG;
+			    while (my ($l, $d) = each %trans_desc) {
+				my ($short_t, $long_t) = process_description($d);
+
+				$contents{desc}{$l} = { short => $short_t,
+							long => $long_t, };
+			    }
+			}
 
 			my $v_str = $version;
 			my $multiple_versions = grep { $_ ne $version } values %$versions;

@@ -4,10 +4,12 @@
     nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
     nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
     nav_arr.push( { prefix=>'Package:', name=>pkg } ); -%]
+[% desclang = 'en';
+   SET desclang = lang IF desc.$lang.long %]
 [%- PROCESS 'html/head.tmpl'
    title_tag = ( is_source ? "Details of source package $pkg in $suite"
 	                   : "Details of package $pkg in $suite" )
-   description = desc
+   description = desc.$desclang.short
    keywords = "$suite, $archive, $section, $subsection, $version"
    print_search_field = 'packages'
    search_field_values = { 
@@ -151,9 +153,9 @@ Do not install it on a normal Debian system.</p>
 <div id="pdesctab">
 <div id="pdesc">
 [% UNLESS is_virtual %]
-	[% IF desc.short %]
-	<h2>[% desc.short %]</h2>
-	<p>[% desc.long %]
+	[% IF desc.$desclang.short %]
+	<h2>[% desc.$desclang.short %]</h2>
+	<p>[% desc.$desclang.long %]
 	[% END %]
 [% ELSE %]
 	<p>This is a <em>virtual package</em>. See the <a href="[% policy_url %]">Debian policy</a> for a <a href="[% policy_url %]ch-binary.html#s-virtual_pkg">definition of virtual packages</a>.</p>
