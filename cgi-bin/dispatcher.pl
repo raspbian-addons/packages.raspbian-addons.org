@@ -25,7 +25,7 @@ use Locale::gettext;
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
 			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @PRIORITIES
-			 @LANGUAGES $LOCALES );
+			 @LANGUAGES @DDTP_LANGUAGES $LOCALES );
 use Packages::CGI qw( :DEFAULT error get_all_messages );
 use Packages::DB;
 use Packages::Search qw( :all );
@@ -75,9 +75,11 @@ my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
 &Packages::DB::init();
 
 my $acc = I18N::AcceptLanguage->new();
+my %all_langs = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
+my @all_langs = sort keys %all_langs;
 my $http_lang = $acc->accepts( $input->http("Accept-Language"),
-			       \@LANGUAGES ) || 'en';
-debug( "LANGUAGES=@LANGUAGES header=".
+			       \@all_langs ) || 'en';
+debug( "LANGUAGES=@all_langs header=".
        ($input->http("Accept-Language")||'').
        " http_lang=$http_lang", 2 ) if DEBUG;
 bindtextdomain ( 'pdo', $LOCALES );
