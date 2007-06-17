@@ -196,55 +196,6 @@ sub do_names_search {
 	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
     }
 }
-sub do_fulltext_search {
-    my ($keywords, $file, $did2pkg, $packages, $read_entry, $opts,
-	$results, $non_results) = @_;
-
-# NOTE: this needs to correspond with parse-packages!
-    my @tmp;
-    foreach my $keyword (@$keywords) {
-	$keyword =~ tr [A-Z] [a-z];
-	if ($opts->{exact}) {
-	    $keyword = " $keyword ";
-	}
-	$keyword =~ s/[(),.-]+//og;
-	$keyword =~ s;[^a-z0-9_/+]+; ;og;
-	push @tmp, $keyword;
-    }
-    my $first_keyword = shift @tmp;
-    @$keywords = @tmp;
-
-    my $numres = 0;
-    my %tmp_results;
-    # fgrep is seriously faster than using perl
-    open DESC, '-|', 'fgrep', '-n', '--', $first_keyword, $file
-	or die "couldn't open $file: $!";
-  LINE:
-    while (<DESC>) {
-	foreach my $k (@$keywords) {
-	    next LINE unless /\Q$k\E/;
-	}
-	/^(\d+)/;
-	my $nr = $1;
-	debug( "Matched line $_", 2) if DEBUG;
-	my $result = $did2pkg->{$nr};
-	foreach (split /\000/o, $result) {
-	    my @data = split /\s/, $_, 3;
-#	    debug ("Considering $data[0], arch = $data[2]", 3) if DEBUG;
-#	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
-#	    debug ("Ok", 3) if DEBUG;
-	    $numres++ unless $tmp_results{$data[0]}++;
-	}
-	last if $numres > 100;
-    }
-    close DESC;
-    $too_many_hits++ if $numres > 100;
-
-    my @results;
-    foreach my $pkg (keys %tmp_results) {
-	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
-    }
- }
 
 sub do_xapian_search {
     my ($keywords, $db, $did2pkg, $packages, $read_entry, $opts,

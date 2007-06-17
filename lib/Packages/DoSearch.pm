@@ -53,21 +53,14 @@ sub do_search {
 	    do_names_search( [ @keywords ], \%packages, $p_obj,
 			     \&read_entry_all, $opts,
 			     \@results, \@non_results );
-#	    my $fts0 = new Benchmark;
-#	    do_fulltext_search( [ @keywords ], "$DBDIR/descriptions.txt",
-#				\%did2pkg, \%packages,
-#				\&read_entry_all, $opts,
-#				\@results, \@non_results );
 	    my $fts1 = new Benchmark;
 	    do_xapian_search( [ @keywords ], "$DBDIR/xapian/",
 				\%did2pkg, \%packages,
 				\&read_entry_all, $opts,
 				\@results, \@non_results );
 	    my $fts2 = new Benchmark;
-#	    my $fts_grep = timediff($fts1,$fts0);
 	    my $fts_xapian = timediff($fts2,$fts1);
-#	    debug( "Fulltext search took ".timestr($fts_grep)." (grep)" ) if DEBUG;
-	    debug( "Fulltext search took ".timestr($fts_xapian)." (Xapian)" )
+	    debug( "Fulltext search took ".timestr($fts_xapian) )
 		if DEBUG;
 	}
     }

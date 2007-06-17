@@ -246,7 +246,6 @@ my %descriptions_db;
 tie %descriptions_db, "DB_File", "$DBDIR/descriptions.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
-open DESCR, ">", "$DBDIR/descriptions.txt" or die "Error creating descriptions textfile";
 print "Index $#descriptions descriptions\n";
 for (my $i=1; $i<= $#descriptions; $i++) {
 	my $plain_description = $descriptions[$i];
@@ -259,7 +258,6 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 	$plain_description = " $plain_description ";
 	$plain_description =~ s/[(),.-]+//og;
 	$plain_description =~ s#[^a-z0-9_/+]+# #og;
-	print DESCR "$plain_description\n";
 
 	#XAPIAN
 	eval {
@@ -283,7 +281,6 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 
 	$descriptions_db{$i} = $only_desc;
 }
-close DESCR;
 untie %descriptions_db;
 $xapian_db->flush;
 undef $xapian_db;
@@ -332,6 +329,5 @@ rename("$DBDIR/packages_descriptions.db.new",
        "$DBDIR/packages_descriptions.db");
 rename("$DBDIR/descriptions_packages.db.new",
        "$DBDIR/descriptions_packages.db");
-rename("$DBDIR/descriptions.txt.new", "$DBDIR/descriptions.txt");
 rename("$DBDIR/descriptions.db.new", "$DBDIR/descriptions.db");
 rename("$DBDIR/package_postfixes.db.new", "$DBDIR/package_postfixes.db");
