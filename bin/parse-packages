@@ -120,7 +120,7 @@ for my $suite (@SUITES) {
 			$descriptions[$did] = $descr;
 			$descriptions{$descr} = $did;
 		}
-		$data{'description-md5'} = Digest::MD5::md5_hex($data{'description'});
+		$data{'description-md5'} = Digest::MD5::md5_hex($data{'description'}, "\n");
 		$data{'description'} = $did;
 		$packages_descriptions{"$data{'package'} $data{'version'} $data{'architecture'}"} = $did;
 		$descriptions_packages{$did} .=
