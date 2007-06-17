@@ -32,6 +32,7 @@ use DB_File;
 use Storable;
 use File::Path;
 use Digest::MD5;
+use Text::Iconv;
 use Deb::Versions;
 use Lingua::Stem v0.82;
 use Search::Xapian;
@@ -42,6 +43,8 @@ my %descriptions = ();
 $/ = "";
 
 -d $DBDIR || mkpath( $DBDIR );
+
+my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
 
 foreach my $lang (@DDTP_LANGUAGES) {
     print "Reading Translations for $lang...";
@@ -63,6 +66,10 @@ foreach my $lang (@DDTP_LANGUAGES) {
 	next if exists($descriptions{$data{"description-md5"}}{$lang});
 	# some weirdnesses in the files
 	next unless defined $data{"description-".lc($lang)};
+	if ($lang eq 'ja') {
+	    my $fixed = $fixja->convert($data{"description-ja"});
+	    $data{"description-ja"} = $fixed if $fixed;
+	}
 	$descriptions{$data{"description-md5"}}{$lang} = $data{"description-".lc($lang)};
 	$count++;
     }
