@@ -65,10 +65,15 @@ Found <strong>[% results %]</strong> matching packages.</p>
 [% END %]
 
 [% IF too_many_hits %]
+[% IF opts.search != "names" %]
+<p id="psearchtoomanyhits">Note that this only shows the best matches, sorted by relevance.
+If the first few packages don't match what you searched for, try using more keywords or alternative
+keywords.</p>
+[% ELSE %]
 <p id="psearchtoomanyhits">Your search was too wide so we will only display exact matches.
 At least <em>[% too_many_hits %]</em> results have been omitted and will not be displayed.
 Please consider using a longer keyword or more keywords.</p>
-[% END %]
+[% END; END %]
 
 [% UNLESS results %]
 <p id="psearchnoresult">Sorry, your search gave no results</p>
