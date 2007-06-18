@@ -19,7 +19,7 @@ use Packages::DB;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES $ROOT );
 
 sub do_search {
-    my ($params, $opts, $html_header, $page_content) = @_;
+    my ($params, $opts, $page_content) = @_;
 
     $Params::Search::too_many_hits = 0;
 

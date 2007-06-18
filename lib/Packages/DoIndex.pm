@@ -25,7 +25,7 @@ my %encoding = (
 		'txt.gz' => 'x-gzip',
 		);
 sub send_file {
-    my ($file, $params, $opts, $html_header) = @_;
+    my ($file, $params, $opts) = @_;
 
     if ($params->{errors}{suite}) {
 	fatal_error( _g( "suite not valid or not specified" ) );

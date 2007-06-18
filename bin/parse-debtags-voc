@@ -120,7 +120,6 @@ $content{quotemeta} = sub { return quotemeta($_[0]) };
 $content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
 print TAGLST $template->page( 'tag_index', \%content );
-print TAGLST $template->trailer();
 close TAGLST or warn "Couldn't close tag list: $!";
 
 rename( "$wwwdir/debtags.en.html.new",

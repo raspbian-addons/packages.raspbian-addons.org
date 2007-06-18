@@ -19,7 +19,7 @@ use Packages::DB;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search_contents {
-    my ($params, $opts, $html_header, $page_content) = @_;
+    my ($params, $opts, $page_content) = @_;
 
     if ($params->{errors}{keywords}) {
 	fatal_error( _g( "keyword not valid or missing" ) );

@@ -38,6 +38,7 @@ sub new {
 	%$options,
     } ) or fatal_error( sprintf( _g( "Initialization of Template Engine failed: %s" ), $Template::ERROR ) );
     $self->{format} = $format;
+    $self->{vars} = $vars;
 
     return $self;
 }
@@ -56,6 +57,10 @@ sub page {
 
     #use Data::Dumper;
     #die Dumper($self, $action, $page_content);
+    $page_content->{used_langs} ||= [ 'en' ];
+    $page_content->{langs} = languages( $page_content->{lang}
+					|| $self->{vars}{lang} || 'en',
+					@{$page_content->{used_langs}} );
 
     my $txt;
     $self->process("$self->{format}/$action.tmpl", $page_content, \$txt)
@@ -72,18 +77,6 @@ sub error_page {
 
     my $txt;
     $self->process("html/error.tmpl", $page_content, \$txt)
-	or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
-
-    return $txt;
-}
-
-sub trailer {
-    my ($self, $NAME, $LANG, $USED_LANGS, $timediff) = @_;
-
-    my $langs = languages( $LANG, @$USED_LANGS );
-
-    my $txt;
-    $self->process("$self->{format}/foot.tmpl", { langs => $langs, name => $NAME, benchmark => $timediff ? timestr($timediff) : '' }, \$txt)
 	or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
 
     return $txt;

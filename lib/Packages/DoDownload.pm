@@ -21,7 +21,7 @@ our @EXPORT = qw( do_download );
 
 
 sub do_download {
-    my ($params, $opts, $html_header, $page_content) = @_;
+    my ($params, $opts, $page_content) = @_;
 
     if ($params->{errors}{package}) {
 	fatal_error( _g( "package not valid or not specified" ) );
