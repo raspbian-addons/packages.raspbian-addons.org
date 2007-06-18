@@ -267,32 +267,50 @@ tie %descriptions_db, "DB_File", "$DBDIR/descriptions.db.new",
 	or die "Error creating DB: $!";
 print "Index $#descriptions descriptions\n";
 for (my $i=1; $i<= $#descriptions; $i++) {
-	my $plain_description = $descriptions[$i];
 	# strip away additional data
-	my ($only_desc) = split /\000/o, $plain_description, 2;
+	my ($only_desc, $pkg, $tags) = split /\000/o, $descriptions[$i], 3;
 # WARNING: This needs to correspond with what happens in
-# Packages/Search.pm:do_fulltext_search
-	$plain_description =~ tr [A-Z] [a-z];
-	# ensure one space on both ends
-	$plain_description = " $plain_description ";
-	$plain_description =~ s/[(),.-]+//og;
-	$plain_description =~ s#[^a-z0-9_/+]+# #og;
+# Packages/Search.pm:do_xapian_search
+	$only_desc =~ s#[^\w/+]+# #og;
 
 	#XAPIAN
 	eval {
-	    my @words = split /\s+/, $plain_description;
-	    my $stem_words = $stemmer->stem( \@words );
+	    my @words = split /\s+/, $only_desc;
+	    unshift @words, $pkg;
+
 	    my $doc = Search::Xapian::Document->new()
 		or die "can't create doc object for $i: $!\n";
 	    if ($doc->set_data($i)){
 		warn "can't set_data in doc object for $i: $!\n";
 	    }
-	    for my $j (0 .. (@$stem_words-1)) {
-		next if $stem_words->[$j] =~ /^\s*$/o;
-		if ($doc->add_posting($stem_words->[$j], $j)) {
-		    warn "can't add word $stem_words->[$j] $j: $!\n";
+
+	    # package with prefix
+	    if ($doc->add_term("P$pkg")) {
+		warn "can't add term P$pkg: $!\n";
+	    }
+	    # description, unstemmed with positional info
+	    for my $j (0 .. (@words-1)) {
+		next if $words[$j] =~ /^\s*$/o;
+		if ($doc->add_posting($words[$j], $j)) {
+		    warn "can't add posting $words[$j] at $j: $!\n";
 		}
 	    }
+	    # description, stemmed
+	    my $stem_words = $stemmer->stem( \@words );
+	    foreach my $w (@$stem_words) {
+		next if $w =~ /^\s*$/o;
+		if ($doc->add_term($w)) {
+		    warn "can't add term $w: $!\n";
+		}
+	    }
+	    if ($tags) {
+		foreach my $t (split /, /, $tags) {
+		    if ($doc->add_term($t)) {
+			warn "can't add term $t: $!\n";
+		    }
+		}
+	    }
+
 	    $xapian_db->add_document($doc)
 		or warn "failed to add document: $i\n";
 	};

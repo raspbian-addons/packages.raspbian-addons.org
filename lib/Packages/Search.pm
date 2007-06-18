@@ -204,41 +204,38 @@ sub do_xapian_search {
 # NOTE: this needs to correspond with parse-packages!
     my @tmp;
     foreach my $keyword (@$keywords) {
-	$keyword =~ tr [A-Z] [a-z];
-	if ($opts->{exact}) {
-	    $keyword = " $keyword ";
-	}
-	$keyword =~ s/[(),.-]+//og;
-	$keyword =~ s;[^a-z0-9_/+]+; ;og;
+	$keyword =~ s;[^\w/+]+; ;og;
 	push @tmp, $keyword;
     }
     my $stemmer = Lingua::Stem->new();
-    $keywords = $stemmer->stem( @tmp );
+    my $stemmed_keywords = $stemmer->stem( @tmp );
 
     my $db = Search::Xapian::Database->new( $db );
-    my $enq = $db->enquire( OP_AND, @$keywords );
+    my $enq = $db->enquire( OP_OR, @$keywords, @$stemmed_keywords );
     debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
-    my @matches = $enq->matches(0, 100);
+    my @matches = $enq->matches(0, 999);
 
-    my $numres = 0;
-    my %tmp_results;
+    my (@order, %tmp_results);
     foreach my $match ( @matches ) {
 	my $id = $match->get_docid();
 	my $result = $did2pkg->{$id};
 
 	foreach (split /\000/o, $result) {
 	    my @data = split /\s/, $_, 3;
-#	    debug ("Considering $data[0], arch = $data[2]", 3) if DEBUG;
+	    debug ("Considering $data[0], arch = $data[2], relevance=".$match->get_percent(), 3) if DEBUG;
 #	    next unless $data[2] eq 'all' || $opts->{h_archs}{$data[2]};
 #	    debug ("Ok", 3) if DEBUG;
-	    $numres++ unless $tmp_results{$data[0]}++;
+	    unless ($tmp_results{$data[0]}++) {
+		push @order, $data[0];
+	    }
 	}
-	last if $numres > 100;
+	last if @order > 100;
     }
     undef $db;
-    $too_many_hits++ if $numres > 100;
+    $too_many_hits++ if @order > 100;
 
-    foreach my $pkg (keys %tmp_results) {
+    debug ("ORDER: @order", 2) if DEBUG;
+    foreach my $pkg (@order) {
 	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
     }
 }
