@@ -107,6 +107,25 @@ for my $suite (@SUITES) {
 			$src =~ s/\s+.*//o; # strip version info
 		}
 		$data{'source'} = $src;
+
+		# expand tags like devel::{lang:c,lang:c++}
+		if ($data{'tag'} && $data{'tag'} =~ /\{/) {
+		    my @complete_tags = split(/, /, $data{'tag'});
+		    my @tags;
+		    foreach (@complete_tags) {
+			my ($facet, $tag) = split( /::/, $_, 2);
+			if ($tag =~ s/^\{(.+)\}$/$1/) {
+			    foreach (split( /,/, $tag )) {
+				push @tags, "${facet}::$_";
+			    }
+			} else {
+			    push @tags, "${facet}::$tag";
+			}
+		    }
+		    my $old = $data{tag};
+		    $data{'tag'} = join ", ", @tags;
+		}
+
 		# we add some additional data here
 		my $descr = "$data{'description'}\000$data{'package'}\000"
 		    .($data{'tag'}||'');

@@ -126,16 +126,9 @@ sub do_show {
 			my @tags;
 			foreach (@complete_tags) {
 			    my ($facet, $tag) = split( /::/, $_, 2);
-			    # handle tags like devel::{lang:c,lang:c++}
-			    if ($tag =~ s/^\{(.+)\}$/$1/) {
-				foreach (split( /,/, $tag )) {
-				    next if $tag =~ /^special:/;
-				    push @tags, [ $facet, $_ ];
-				}
-			    } else {
-				next if $tag =~ /^special:/;
-				push @tags, [ $facet, $tag ];
-			    }
+			    next if $facet =~ /^special/;
+			    next if $tag =~ /^special:/;
+			    push @tags, [ $facet, $tag ];
 			}
 
 			$contents{tags} = \@tags;
