@@ -24,7 +24,7 @@ our @ISA = qw( Exporter );
 our @EXPORT = qw( do_show );
 
 sub do_show {
-    my ($params, $opts, $html_header, $page_contents) = @_;
+    my ($params, $opts, $page_contents) = @_;
 
     if ($params->{errors}{package}) {
 	fatal_error( _g( "package not valid or not specified" ) );

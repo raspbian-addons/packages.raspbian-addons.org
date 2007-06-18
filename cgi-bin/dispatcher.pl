@@ -299,11 +299,10 @@ unless (-e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
 		 "406 requested format not available");
 }
 
-my (%html_header, %page_content);
+my (%page_content);
 unless (@Packages::CGI::fatal_errors) {
     no strict 'refs';
-    &{"do_$what_to_do"}( \%params, \%opts, \%html_header,
-			 \%page_content );
+    &{"do_$what_to_do"}( \%params, \%opts, \%page_content );
 }
 
 $page_content{opts} = \%opts;
@@ -320,7 +319,7 @@ $page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 unless (@Packages::CGI::fatal_errors) {
     print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
     #use Data::Dumper;
-    #print '<pre>'.Dumper(\%ENV, \%html_header, \%page_content, get_all_messages()).'</pre>';
+    #print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
     print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );
     my $tet1 = new Benchmark;
     my $tetd = timediff($tet1, $tet0);

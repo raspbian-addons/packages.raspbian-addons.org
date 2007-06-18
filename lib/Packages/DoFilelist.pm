@@ -24,7 +24,7 @@ our @ISA = qw( Exporter );
 our @EXPORT = qw( do_filelist );
 
 sub do_filelist {
-    my ($params, $opts, $html_header, $page_content) = @_;
+    my ($params, $opts, $page_content) = @_;
 
     if ($params->{errors}{package}) {
 	fatal_error( _g( "package not valid or not specified" ) );

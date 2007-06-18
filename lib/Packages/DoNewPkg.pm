@@ -19,7 +19,7 @@ use Packages::DB;
 use Packages::Config qw( $TOPDIR @SECTIONS $ROOT );
 
 sub do_newpkg {
-    my ($params, $opts, $html_header, $page_content) = @_;
+    my ($params, $opts, $page_content) = @_;
 
     if ($params->{errors}{suite}) {
 	fatal_error( _g( "suite not valid or not specified" ) );
