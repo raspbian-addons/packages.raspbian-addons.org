@@ -175,6 +175,7 @@ sub do_show {
 			my $trans_desc = $desctrans{$desc_md5};
 			if ($trans_desc) {
 			    my %trans_desc = split /\000|\001/, $trans_desc;
+			    $contents{used_langs} = ['en', sort keys %trans_desc];
 			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
 				if DEBUG;
 			    while (my ($l, $d) = each %trans_desc) {

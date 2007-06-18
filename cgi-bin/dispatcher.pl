@@ -125,8 +125,9 @@ if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
 
     push @components, 'index' if @components && $path =~ m,/$,;
 
-    my %LANGUAGES = map { $_ => 1 } @LANGUAGES;
-    if (@components > 0 and $LANGUAGES{$components[0]}) {
+    my %LANGUAGES = map { $_ => 1 } @all_langs;
+    if (@components > 0 and $LANGUAGES{$components[0]}
+	and !$input->param('lang')) {
 	$input->param( 'lang', shift(@components) );
     }
     if (@components > 0 and $components[0] eq 'source') {
@@ -321,9 +322,6 @@ unless (@Packages::CGI::fatal_errors) {
     #use Data::Dumper;
     #print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
     print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );
-    my $tet1 = new Benchmark;
-    my $tetd = timediff($tet1, $tet0);
-    print $template->trailer( undef, undef, undef, $tetd );
 } elsif ($Packages::CGI::http_code && $Packages::CGI::http_code !~ /^2\d\d/) {
     print $input->header( -charset => $charset, -status => $Packages::CGI::http_code );
 } else {
@@ -331,7 +329,6 @@ unless (@Packages::CGI::fatal_errors) {
     # so no format support here
     print $input->header( -charset => $charset );
     print $template->error_page( get_all_messages() );
-    print $template->trailer();;
 }
 
 

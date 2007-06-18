@@ -71,7 +71,7 @@ foreach my $s (@SUITES) {
 
 	my %content = ( subsections => [], suite => $s,
 			lang => $lang, charset => $charset,
-			suites => \@SUITES );
+			used_langs => \@LANGUAGES, suites => \@SUITES );
 	$content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
 	$content{make_url} = sub { return &Packages::CGI::make_url(@_) };
         # needed to work around the limitations of the the FILTER syntax
@@ -93,7 +93,6 @@ foreach my $s (@SUITES) {
 	open $pages{$key}{$lang}{index}{fh}, '>', "$wwwdir/$key/index.$lang.html.new"
 	    or die "can't open index file for output: $!";
 	print {$pages{$key}{$lang}{index}{fh}} $template->page( 'suite_index', \%content );
-	print {$pages{$key}{$lang}{index}{fh}} $template->trailer( 'index', $lang, \@LANGUAGES );
 	close $pages{$key}{$lang}{index}{fh} or
 	    warn "can't close index file $wwwdir/$key/index.$lang.html.new: $!";
 	rename( "$wwwdir/$key/index.$lang.html.new",
@@ -103,7 +102,6 @@ foreach my $s (@SUITES) {
 	open $pages{$key}{$lang}{source_index}{fh}, '>', "$wwwdir/source/$key/index.$lang.html.new"
 	    or die "can't open index file for output: $!";
 	print {$pages{$key}{$lang}{source_index}{fh}} $template->page( 'suite_index', \%content );
-	print {$pages{$key}{$lang}{source_index}{fh}} $template->trailer( 'index', $lang, \@LANGUAGES );
 	close $pages{$key}{$lang}{source_index}{fh} or
 	    warn "can't close index file $wwwdir/source/$key/index.$lang.html.new: $!";
 	rename( "$wwwdir/source/$key/index.$lang.html.new",

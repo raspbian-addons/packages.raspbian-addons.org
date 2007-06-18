@@ -11,7 +11,7 @@ Total page evaluation took [% benchmark %]<br>
 <p>This page is also available in the following languages:</p>
 <p class="navpara">
 [% FOREACH langs %]
-<a href="[% "$name?lang=$lang" %]" title="[% tooltip %]" hreflang="[% lang %]" lang="[% lang %]" rel="alternate">[% selfname %]
+<a href="[% "$page_name?lang=$lang" %]" title="[% tooltip %]" hreflang="[% lang %]" lang="[% lang %]" rel="alternate">[% selfname %]
 [%- IF transliteration %] ([% transliteration %])[% END %]</a>
 [% END %]
 </p>
