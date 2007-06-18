@@ -9,11 +9,11 @@ use Packages::CGI qw( :DEFAULT error );
 our @ISA = qw( Exporter );
 
 our ( $TOPDIR, $DBDIR, $TEMPLATEDIR, $CACHEDIR, $ROOT,
-      @LANGUAGES, $LOCALES,
+      @LANGUAGES, @DDTP_LANGUAGES, $LOCALES,
       @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
       @PRIORITIES, %FTP_SITES );
 our @EXPORT_OK = qw( $TOPDIR $DBDIR $TEMPLATEDIR $CACHEDIR $ROOT
-		     @LANGUAGES $LOCALES
+		     @LANGUAGES @DDTP_LANGUAGES $LOCALES
 		     @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES
 		     @PRIORITIES %FTP_SITES  );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
@@ -39,6 +39,7 @@ sub init {
 	    $FTP_SITES{us} = $1 if /^\s*ftpsite="?([^\"]*)"?\s*$/o;
 	    $FTP_SITES{$1} = $2 if /^\s*(\w+)_ftpsite="?([^\"]*)"?\s*$/o;
 	    @LANGUAGES = split(/\s+/, $1) if /^\s*polangs="?([^\"]*)"?\s*$/o;
+	    @DDTP_LANGUAGES = split(/\s+/, $1) if /^\s*ddtplangs="?([^\"]*)"?\s*$/o;
 	    @SUITES = split(/\s+/, $1) if /^\s*suites="?([^\"]*)"?\s*$/o;
 	    @SECTIONS = split(/\s+/, $1) if /^\s*sections="?([^\"]*)"?\s*$/o;
 	    @ARCHIVES = split(/\s+/, $1) if /^\s*archives="?([^\"]*)"?\s*$/o;

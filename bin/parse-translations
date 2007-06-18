@@ -1,0 +1,100 @@
+#!/usr/bin/perl -w
+# Convert Translation.gz files into Sleepycat db files for efficient usage of
+# data
+#
+# $Id$
+#
+# Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+use strict;
+use warnings;
+use lib './lib';
+
+$| = 1;
+
+# max. distinct results for a given package postfix
+my $MAX_PACKAGE_POSTFIXES = 100;
+
+use DB_File;
+use Storable;
+use File::Path;
+use Digest::MD5;
+use Text::Iconv;
+use Deb::Versions;
+use Lingua::Stem v0.82;
+use Search::Xapian;
+use Packages::Config qw( $TOPDIR $DBDIR @DDTP_LANGUAGES );
+&Packages::Config::init( './' );
+my %descriptions = ();
+
+$/ = "";
+
+-d $DBDIR || mkpath( $DBDIR );
+
+my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
+
+foreach my $lang (@DDTP_LANGUAGES) {
+    print "Reading Translations for $lang...";
+    open PKG, "zcat $TOPDIR/archive/*/*/*/i18n/Translation-$lang.gz|";
+    my $count = 0;
+    while (<PKG>) {
+	next if /^\s*$/;
+	my $data = "";
+	my %data = ();
+	chomp;
+	s/\n /\377/g;
+	while (/^(\S+):\s*(.*)\s*$/mg) {
+	    my ($key, $value) = ($1, $2);
+	    $value =~ s/\377/\n /g;
+	    $key =~ tr [A-Z] [a-z];
+	    $data{$key} = $value;
+	}
+	# Skip double descriptions
+	next if exists($descriptions{$data{"description-md5"}}{$lang});
+	# some weirdnesses in the files
+	next unless defined $data{"description-".lc($lang)};
+	if ($lang eq 'ja') {
+	    my $fixed = $fixja->convert($data{"description-ja"});
+	    $data{"description-ja"} = $fixed if $fixed;
+	}
+	$descriptions{$data{"description-md5"}}{$lang} = $data{"description-".lc($lang)};
+	$count++;
+    }
+    print "($count)\n";
+}
+close PKG;
+
+print "Writing database (".scalar(keys %descriptions)." unique descriptions)...\n";
+my %descriptions_db;
+tie %descriptions_db, "DB_File", "$DBDIR/descriptions_translated.db.new",
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
+	or die "Error creating DB: $!";
+while (my ($md5, $v) = each(%descriptions)) {
+    my $str = "";
+    while (my ($lang, $desc) = each %$v) {
+	unless ($lang && $desc) {
+	    warn "MD5: $md5 LANG: $lang DESC: $desc\n";
+	    exit;
+	}
+	$str .= "$lang\001$desc\000";
+    }
+
+    $descriptions_db{$md5} = $str;
+}
+untie %descriptions_db;
+
+rename("$DBDIR/descriptions_translated.db.new",
+       "$DBDIR/descriptions_translated.db");

@@ -1,12 +1,15 @@
 [% PROCESS 'config/archive_layout.tmpl' %]
+[% PROCESS 'config/mirrors.tmpl' %]
 [%- nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite }, ];
     nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
     nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
     nav_arr.push( { prefix=>'Package:', name=>pkg } ); -%]
+[% desclang = 'en';
+   SET desclang = lang IF desc.$lang.long %]
 [%- PROCESS 'html/head.tmpl'
    title_tag = ( is_source ? "Details of source package $pkg in $suite"
 	                   : "Details of package $pkg in $suite" )
-   description = desc
+   description = desc.$desclang.short
    keywords = "$suite, $archive, $section, $subsection, $version"
    print_search_field = 'packages'
    search_field_values = { 
@@ -53,7 +56,7 @@
 <ul>
 <li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">Bug Reports</a></li>
 
-[% IF src -%]
+[% IF src.pkg -%]
 <li><a href="[% pts_url _ src.pkg | uri %]">Developer Information (PTS)</a></li>
 [% ELSIF is_source %]
 <li><a href="[% pts_url _ pkg | uri %]">Developer Information (PTS)</a></li>
@@ -101,14 +104,14 @@
   <h3>Maintainer:</h3>
   [%- FOREACH maintainers -%]
 	<a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainter's packages and uploads">QA Page</a>)
+	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainer's packages and uploads">QA Page</a>)
   [%- END -%]
 [%- ELSE -%]
   <h3>Maintainers:</h3>
   [%- FOREACH maintainers -%]
     [%- '<ul>' IF loop.first -%]
 	<li><a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainter's packages and uploads">QA Page</a>)
+	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainer's packages and uploads">QA Page</a>)
 	</li>
     [%- '</ul>' IF loop.last -%]
   [%- END -%]
@@ -143,11 +146,16 @@ Do not install it on a normal Debian system.</p>
 </div>
 [% END %]
 
+<div id="ptablist">
+</div>
+
+[% IF desc %]
+<div id="pdesctab">
 <div id="pdesc">
 [% UNLESS is_virtual %]
-	[% IF desc.short %]
-	<h2>[% desc.short %]</h2>
-	<p>[% desc.long %]
+	[% IF desc.$desclang.short %]
+	<h2>[% desc.$desclang.short %]</h2>
+	<p>[% desc.$desclang.long %]
 	[% END %]
 [% ELSE %]
 	<p>This is a <em>virtual package</em>. See the <a href="[% policy_url %]">Debian policy</a> for a <a href="[% policy_url %]ch-binary.html#s-virtual_pkg">definition of virtual packages</a>.</p>
@@ -183,9 +191,11 @@ Do not install it on a normal Debian system.</p>
     <dd>[% desc %]</dd>
   [% '</dl></div>' IF loop.last %]
 [% END %]
+</div> <!-- pdesctab -->
+[% END %]
 
 [% FOREACH binaries %]
-  [% IF loop.first %]<div class="pdesc">The following binary packages are built from this source package:<dl>[% END %]
+  [% IF loop.first %]<div id="pbinaries">The following binary packages are built from this source package:<dl>[% END %]
     <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
     <dd>[% desc %]</dd>    
   [% '</dl></div>' IF loop.last %]
@@ -239,7 +249,7 @@ Do not install it on a normal Debian system.</p>
   [%- END %]
 [% END %]
 
-[% FOREACH downloads %]
+[% FOREACH d IN downloads %]
   [% IF loop.first -%]
     <div id="pdownload">
     <h2>Download [% pkg %]</h2>
@@ -250,13 +260,23 @@ Do not install it on a normal Debian system.</p>
   [%- END %]
 
 <tr>
-[% download_url = pkg _ '/' _ arch _ '/download'
-   filelist_url = pkg _ '/' _ arch _ '/filelist' %]
-<th><a href="[% make_url(download_url) | uri %]">[% arch %]</a></th>
-[% '<td>' _ version _ '</td>' IF versions.multiple %]
-<td class="size">[% pkgsize %]&nbsp;kB</td><td class="size">[% instsize %]&nbsp;kB</td>
+[% download_url = pkg _ '/' _ d.arch _ '/download'
+   filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
+<th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
+[%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>(unofficial port)</strong>[% END %]</th>
+[% vnorm = d.version.replace( '\+b\d+$', '' ); vlatest = version.replace( '\+b\d+$', '' );
+   vup = vnorm.replace( '-[^-]+$', '' ); vuplatest = vlatest.replace( '-[^-]+$', '' );
+   IF vnorm == vlatest;
+	version_class = 'vcurrent';
+   ELSIF vup == vuplatest;
+	version_class = 'volder';
+   ELSE;
+	version_class = 'vold';
+   END %]
+[% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
+<td class="size">[% d.pkgsize %]&nbsp;kB</td><td class="size">[% d.instsize %]&nbsp;kB</td>
 <td>
-[% IF contents_avail %]
+[% IF d.contents_avail %]
   [<a href="[% make_url(filelist_url) | uri %]">list of files</a>]
 [% ELSE %]
   no current information
@@ -292,4 +312,6 @@ Do not install it on a normal Debian system.</p>
     </div> <!-- end pdownload -->
   [%- END %]
 [% END %]
+
+<script type="text/javascript">init_tab_list("ptablist")</script>
 

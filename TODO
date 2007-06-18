@@ -19,10 +19,6 @@ search_packages:
 	matches" and abce: 90 matches"
 
 - fulltext search:
-  - Max 100 results
-  - Better exact=1 performance by indexing per word?
-  - drop case-sensitive from options, descriptions.txt all lowercase and without
-	punctuation, such that instead of =~ //, indexof can be used
   - in results, show full descriptions, so one sees what's being matched?
 
 - backend:

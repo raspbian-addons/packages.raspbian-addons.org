@@ -53,21 +53,14 @@ sub do_search {
 	    do_names_search( [ @keywords ], \%packages, $p_obj,
 			     \&read_entry_all, $opts,
 			     \@results, \@non_results );
-#	    my $fts0 = new Benchmark;
-#	    do_fulltext_search( [ @keywords ], "$DBDIR/descriptions.txt",
-#				\%did2pkg, \%packages,
-#				\&read_entry_all, $opts,
-#				\@results, \@non_results );
 	    my $fts1 = new Benchmark;
 	    do_xapian_search( [ @keywords ], "$DBDIR/xapian/",
 				\%did2pkg, \%packages,
 				\&read_entry_all, $opts,
 				\@results, \@non_results );
 	    my $fts2 = new Benchmark;
-#	    my $fts_grep = timediff($fts1,$fts0);
 	    my $fts_xapian = timediff($fts2,$fts1);
-#	    debug( "Fulltext search took ".timestr($fts_grep)." (grep)" ) if DEBUG;
-	    debug( "Fulltext search took ".timestr($fts_xapian)." (Xapian)" )
+	    debug( "Fulltext search took ".timestr($fts_xapian) )
 		if DEBUG;
 	}
     }
@@ -85,6 +78,14 @@ sub do_search {
 
     if (@results) {
 	my (%pkgs, %subsect, %sect, %archives, %desc, %binaries, %provided_by);
+
+	my %sort_by_relevance;
+	for (1 ... scalar @results) {
+#	    debug("$results[$_][0] => $_", 4) if DEBUG;
+	    $sort_by_relevance{$results[$_-1][0]} = $_;
+	}
+#	use Data::Dumper;
+#	debug( "sort_by_relevance=".Dumper(\%sort_by_relevance), 4);
 
 	unless ($opts->{source}) {
 	    foreach (@results) {
@@ -105,7 +106,12 @@ sub do_search {
 	    }
 
 	    my %uniq_pkgs = map { $_ => 1 } (keys %pkgs, keys %provided_by);
-	    my @pkgs = sort keys %uniq_pkgs;
+	    my @pkgs;
+	    if ($searchon eq 'names') {
+		@pkgs = sort keys %uniq_pkgs;
+	    } else {
+		@pkgs = sort { $sort_by_relevance{$a} <=> $sort_by_relevance{$b} } keys %uniq_pkgs;
+	    }
 	    process_packages( $page_content, 'packages', \%pkgs, \@pkgs, $opts, \@keywords,
 			      \&process_package, \%provided_by,
 			      \%archives, \%sect, \%subsect,

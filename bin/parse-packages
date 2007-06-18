@@ -32,6 +32,7 @@ my $MAX_PACKAGE_POSTFIXES = 100;
 use DB_File;
 use Storable;
 use File::Path;
+use Digest::MD5;
 use Deb::Versions;
 use Lingua::Stem v0.82;
 use Search::Xapian;
@@ -86,8 +87,9 @@ for my $suite (@SUITES) {
 		}
 		# Skip double package
 		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
-		# Skip arch:all for amd64&kfreebsd, too often broken
-		next if ($archive eq 'amd64' or $archive eq 'kfreebsd')
+		# Skip arch:all for amd64 & gnuab, any non-redundancy is
+		# usually a bug anyway
+		next if ($archive eq 'amd64' or $archive eq 'gnuab')
 		    and $data{architecture} eq 'all';
 
 		if ($data{'provides'}) {
@@ -105,6 +107,25 @@ for my $suite (@SUITES) {
 			$src =~ s/\s+.*//o; # strip version info
 		}
 		$data{'source'} = $src;
+
+		# expand tags like devel::{lang:c,lang:c++}
+		if ($data{'tag'} && $data{'tag'} =~ /\{/) {
+		    my @complete_tags = split(/, /, $data{'tag'});
+		    my @tags;
+		    foreach (@complete_tags) {
+			my ($facet, $tag) = split( /::/, $_, 2);
+			if ($tag =~ s/^\{(.+)\}$/$1/) {
+			    foreach (split( /,/, $tag )) {
+				push @tags, "${facet}::$_";
+			    }
+			} else {
+			    push @tags, "${facet}::$tag";
+			}
+		    }
+		    my $old = $data{tag};
+		    $data{'tag'} = join ", ", @tags;
+		}
+
 		# we add some additional data here
 		my $descr = "$data{'description'}\000$data{'package'}\000"
 		    .($data{'tag'}||'');
@@ -118,6 +139,7 @@ for my $suite (@SUITES) {
 			$descriptions[$did] = $descr;
 			$descriptions{$descr} = $did;
 		}
+		$data{'description-md5'} = Digest::MD5::md5_hex($data{'description'}, "\n");
 		$data{'description'} = $did;
 		$packages_descriptions{"$data{'package'} $data{'version'} $data{'architecture'}"} = $did;
 		$descriptions_packages{$did} .=
@@ -243,36 +265,52 @@ my %descriptions_db;
 tie %descriptions_db, "DB_File", "$DBDIR/descriptions.db.new",
 	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
-open DESCR, ">", "$DBDIR/descriptions.txt" or die "Error creating descriptions textfile";
 print "Index $#descriptions descriptions\n";
 for (my $i=1; $i<= $#descriptions; $i++) {
-	my $plain_description = $descriptions[$i];
 	# strip away additional data
-	my ($only_desc) = split /\000/o, $plain_description, 2;
+	my ($only_desc, $pkg, $tags) = split /\000/o, $descriptions[$i], 3;
 # WARNING: This needs to correspond with what happens in
-# Packages/Search.pm:do_fulltext_search
-	$plain_description =~ tr [A-Z] [a-z];
-	# ensure one space on both ends
-	$plain_description = " $plain_description ";
-	$plain_description =~ s/[(),.-]+//og;
-	$plain_description =~ s#[^a-z0-9_/+]+# #og;
-	print DESCR "$plain_description\n";
+# Packages/Search.pm:do_xapian_search
+	$only_desc =~ s#[^\w/+]+# #og;
 
 	#XAPIAN
 	eval {
-	    my @words = split /\s+/, $plain_description;
-	    my $stem_words = $stemmer->stem( \@words );
+	    my @words = split /\s+/, $only_desc;
+	    unshift @words, $pkg;
+
 	    my $doc = Search::Xapian::Document->new()
 		or die "can't create doc object for $i: $!\n";
 	    if ($doc->set_data($i)){
 		warn "can't set_data in doc object for $i: $!\n";
 	    }
-	    for my $j (0 .. (@$stem_words-1)) {
-		next if $stem_words->[$j] =~ /^\s*$/o;
-		if ($doc->add_posting($stem_words->[$j], $j)) {
-		    warn "can't add word $stem_words->[$j] $j: $!\n";
+
+	    # package with prefix
+	    if ($doc->add_term("P$pkg")) {
+		warn "can't add term P$pkg: $!\n";
+	    }
+	    # description, unstemmed with positional info
+	    for my $j (0 .. (@words-1)) {
+		next if $words[$j] =~ /^\s*$/o;
+		if ($doc->add_posting($words[$j], $j)) {
+		    warn "can't add posting $words[$j] at $j: $!\n";
 		}
 	    }
+	    # description, stemmed
+	    my $stem_words = $stemmer->stem( \@words );
+	    foreach my $w (@$stem_words) {
+		next if $w =~ /^\s*$/o;
+		if ($doc->add_term($w)) {
+		    warn "can't add term $w: $!\n";
+		}
+	    }
+	    if ($tags) {
+		foreach my $t (split /, /, $tags) {
+		    if ($doc->add_term($t)) {
+			warn "can't add term $t: $!\n";
+		    }
+		}
+	    }
+
 	    $xapian_db->add_document($doc)
 		or warn "failed to add document: $i\n";
 	};
@@ -280,7 +318,6 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 
 	$descriptions_db{$i} = $only_desc;
 }
-close DESCR;
 untie %descriptions_db;
 $xapian_db->flush;
 undef $xapian_db;
@@ -329,6 +366,5 @@ rename("$DBDIR/packages_descriptions.db.new",
        "$DBDIR/packages_descriptions.db");
 rename("$DBDIR/descriptions_packages.db.new",
        "$DBDIR/descriptions_packages.db");
-rename("$DBDIR/descriptions.txt.new", "$DBDIR/descriptions.txt");
 rename("$DBDIR/descriptions.db.new", "$DBDIR/descriptions.db");
 rename("$DBDIR/package_postfixes.db.new", "$DBDIR/package_postfixes.db");

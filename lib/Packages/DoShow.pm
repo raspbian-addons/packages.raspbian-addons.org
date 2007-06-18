@@ -12,7 +12,7 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
-			 @ARCHITECTURES %FTP_SITES );
+			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
 use Packages::CGI qw( :DEFAULT make_url make_search_url note );
 use Packages::DB;
@@ -111,6 +111,8 @@ sub do_show {
 
 			debug( "find source package: source=$source", 1) if DEBUG;
 			my $src_data = $sources_all{"$archive $suite $source"};
+			#FIXME: should be $main_archive or similar, not hardcoded "us"
+			$src_data = $sources_all{"us $suite $source"} unless $src_data;
 			$page->add_src_data( $source, $src_data )
 			    if $src_data;
 
@@ -119,20 +121,14 @@ sub do_show {
 			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
 			my $did = $page->get_newest( 'description' );
+			my $desc_md5 = $page->get_newest( 'description-md5' );
 			my @complete_tags = split(/, /, $page->get_newest( 'tag' ));
 			my @tags;
 			foreach (@complete_tags) {
 			    my ($facet, $tag) = split( /::/, $_, 2);
-			    # handle tags like devel::{lang:c,lang:c++}
-			    if ($tag =~ s/^\{(.+)\}$/$1/) {
-				foreach (split( /,/, $tag )) {
-				    next if $tag =~ /^special:/;
-				    push @tags, [ $facet, $_ ];
-				}
-			    } else {
-				next if $tag =~ /^special:/;
-				push @tags, [ $facet, $tag ];
-			    }
+			    next if $facet =~ /^special/;
+			    next if $tag =~ /^special:/;
+			    push @tags, [ $facet, $tag ];
 			}
 
 			$contents{tags} = \@tags;
@@ -151,19 +147,43 @@ sub do_show {
 
 			# process description
 			#
+			sub process_description {
+			    my ($desc) = @_;
+
+			    my $short_desc = encode_entities( $1, "<>&\"" )
+				if $desc =~ s/^(.*)$//m;
+			    my $long_desc = encode_entities( $desc, "<>&\"" );
+
+			    $long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
+			    $long_desc =~ s/\A //o;
+			    $long_desc =~ s/\n /\n/sgo;
+			    $long_desc =~ s/\n.\n/\n<p>\n/go;
+			    $long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+
+			    return ($short_desc, $long_desc);
+			}
+
 			my $desc = $descriptions{$did};
-			$short_desc = encode_entities( $1, "<>&\"" )
-			    if $desc =~ s/^(.*)$//m;
-			my $long_desc = encode_entities( $desc, "<>&\"" );
+			my $long_desc;
+			($short_desc, $long_desc) = process_description($desc);
 
-			$long_desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
-			$long_desc =~ s/\A //o;
-			$long_desc =~ s/\n /\n/sgo;
-			$long_desc =~ s/\n.\n/\n<p>\n/go;
-			$long_desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+			$contents{desc}{en} = { short => $short_desc,
+						long => $long_desc, };
 
-			$contents{desc} = { short => $short_desc,
-					    long => $long_desc, };
+			debug( "desc_md5=$desc_md5", 2)
+			    if DEBUG;
+			my $trans_desc = $desctrans{$desc_md5};
+			if ($trans_desc) {
+			    my %trans_desc = split /\000|\001/, $trans_desc;
+			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
+				if DEBUG;
+			    while (my ($l, $d) = each %trans_desc) {
+				my ($short_t, $long_t) = process_description($d);
+
+				$contents{desc}{$l} = { short => $short_t,
+							long => $long_t, };
+			    }
+			}
 
 			my $v_str = $version;
 			my $multiple_versions = grep { $_ ne $version } values %$versions;
@@ -201,6 +221,7 @@ sub do_show {
 				      instsize => $sizes_inst->{$a}, );
 
 			    $d{version} = $versions->{$a} if $multiple_versions;
+			    $d{archive} = $archives->{$a};
 			    if ( ($suite ne "experimental")
 				 && ($subsection ne 'debian-installer')) {
 				$d{contents_avail} = 1;
@@ -334,17 +355,12 @@ sub moreinfo {
 	if (defined($files) and @$files) {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
-		my ($name, $server, $path);
+		my ($server, $path);
 		# non-US hack
 		($server = lc $page->get_newest('archive')) =~ s/-//go;
 		$server = $env->{$server}||$env->{us};
-		$path = "$src_dir/$src_file_name";
-		if ($src_file_name =~ /dsc$/) {
-		    $name = 'dsc'
-		} else {
-		    $name = $src_file_name;
-		}
-		push @downloads, { name => $name, server => $server, path => $path };
+		$path = "/$src_dir/$src_file_name";
+		push @downloads, { name => $src_file_name, server => $server, path => $path };
 	    }
 	}
 	$contents->{src}{downloads} = \@downloads;

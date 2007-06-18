@@ -26,10 +26,16 @@ package manager like <a href="[% make_url('aptitude','','arch','') %]">aptitude<
 packages, instead of doing so manually via this website.</p>
 <p>You should be able to use any of the listed mirrors by adding a
 line to your <kbd>/etc/apt/sources.list</kbd> like this:</p>
+[% IF archive != "security" %]
 <pre>
 deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section IF section != main_section %]
 </pre>
 <p>Replacing <em>[% mirrors.$archive.europa.0 %]</em> with the mirror in question.
+[% ELSE %]
+<pre>
+deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% section IF section != main_section %]
+</pre>
+[%- END %]
 [% IF suite == "experimental" %]
 <h2>Experimental package</h2>
 <p>Warning: This package is from the <strong>experimental</strong> distribution.
@@ -86,10 +92,13 @@ please see our <a href="[% a.mirror_list %]">complete mirror list</a>.</p>
 [% END %]
 
 [% IF a.unofficial_port %]
-[% SET port = a.unofficial_port %]
+[% SET port = a.unofficial_port.$architecture %]
+[% IF port.url_name;
+   SET port.url = ports_url _ port.url_name _ '/';
+   END -%]
 <p style="clear:both">Note that [% port.name %] is not officially included in the [% organisation %] archive yet,
 but the [% port.name %] porter group keeps their archive in sync with the official archive as close as possible.
-See the <a href="[% ports_url _ port.url_name _ '/' %]">[% port.name %] ports page</a> for current information.</p>
+See the <a href="[% port.url %]">[% port.name %] ports page</a> for current information.</p>
 [% END %]
 
 <p>Note that in some browsers you will need to tell your browser you want the file saved to a file.
