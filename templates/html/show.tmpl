@@ -123,6 +123,15 @@
 <p>Homepage: <a href="[% url | uri %]">[% url | html %]</a></p>
 [% END %]
 
+[% FOREACH sim IN similar %]
+	[% IF loop.first %]
+	<h3>Similar packages:</h3>
+	<ul>
+	[% END %]
+	<li><a href="/[% sim %]">[% sim %]</a></li>
+	[% '</ul>' IF loop.last %]
+[% END %]
+
 </div> <!-- end pmoreinfo -->
 [% END %]
 

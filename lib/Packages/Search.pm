@@ -58,6 +58,7 @@ our @ISA = qw( Exporter );
 our @EXPORT_OK = qw( read_entry read_entry_all read_entry_simple
 		     read_src_entry read_src_entry_all find_binaries
 		     do_names_search do_fulltext_search do_xapian_search
+		     find_similar
 		     );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
@@ -238,6 +239,50 @@ sub do_xapian_search {
     foreach my $pkg (@order) {
 	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
     }
+}
+
+sub find_similar {
+    my ($pkg, $db, $did2pkg) = @_;
+
+    my $db = Search::Xapian::Database->new( $db );
+    my $enq = $db->enquire( "P$pkg" );
+    debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
+    my $first_match = ($enq->matches(0,1))[0]->get_document();
+
+    my @terms;
+    my $term_it = $first_match->termlist_begin();
+    my $term_end = $first_match->termlist_end();
+
+    for ($term_it; $term_it ne $term_end; $term_it++) {
+	debug( "TERM: ".$term_it->get_termname(), 3);
+	push @terms, $term_it->get_termname();
+    }
+
+    my $rel_enq = $db->enquire( OP_OR, @terms );
+    debug( "Xapian Query was: ".$rel_enq->get_query()->get_description(), 1) if DEBUG;
+    my @rel_pkg = $rel_enq->matches(2,20);
+
+    use Data::Dumper;
+    debug(Dumper(\@rel_pkg),1);
+
+    my (@order, %tmp_results);
+    foreach my $match ( @rel_pkg ) {
+	my $id = $match->get_docid();
+	my $result = $did2pkg->{$id};
+
+	foreach (split /\000/o, $result) {
+	    my @data = split /\s/, $_, 3;
+	    debug ("Considering $data[0], arch = $data[2], relevance=".$match->get_percent(), 3) if DEBUG;
+	    next if $data[0] eq $pkg;
+	    unless ($tmp_results{$data[0]}++) {
+		push @order, $data[0];
+	    }
+	}
+    }
+    undef $db;
+
+    debug ("ORDER: @order", 2) if DEBUG;
+    return @order[0..10];
 }
 
 sub find_binaries {

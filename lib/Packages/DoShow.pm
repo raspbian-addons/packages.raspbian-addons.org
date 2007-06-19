@@ -120,6 +120,10 @@ sub do_show {
 			my $std = timediff($st1, $st0);
 			debug( "Data search and merging took ".timestr($std) ) if DEBUG;
 
+			my @similar = find_similar( $pkg, "$DBDIR/xapian/",
+						    \%did2pkg );
+			$contents{similar} = \@similar;
+
 			my $did = $page->get_newest( 'description' );
 			my $desc_md5 = $page->get_newest( 'description-md5' );
 			my @complete_tags = split(/, /, $page->get_newest( 'tag' ));
