@@ -127,6 +127,7 @@
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
+   RewriteRule ^/file:(.+)$ http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
 
    RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 
