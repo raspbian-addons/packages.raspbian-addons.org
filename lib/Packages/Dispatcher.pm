@@ -139,7 +139,7 @@ sub do_dispatch {
 
     my $what_to_do = 'show';
     my $source = 0;
-    if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
+    if (my $path = $ENV{'PATH_INFO'} || $input->param('PATH_INFO')) {
 	my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
 	debug( "PATH_INFO=$path components=@components", 3) if DEBUG;
