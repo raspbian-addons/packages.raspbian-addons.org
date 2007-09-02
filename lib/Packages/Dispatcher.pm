@@ -226,8 +226,9 @@ sub do_dispatch {
 	} # else if (@components == 1)
 
 	if (@components) {
-	    $input->param( 'keywords', $components[0] );
-	    $input->param( 'package', $components[0] );
+	    my $c = uri_unescape($components[0]);
+	    $input->param( 'keywords', $c );
+	    $input->param( 'package', $c );
 	}
     }
 
