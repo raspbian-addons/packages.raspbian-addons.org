@@ -82,6 +82,7 @@ sub do_search_contents {
 		if @keywords;
 
 	    my $kw = reverse $first_kw;
+	    $kw =~ s{/+$}{};
 
 	    # exact filename searching follows trivially:
 	    $kw = "$kw/" if $mode eq 'exactfilename';
