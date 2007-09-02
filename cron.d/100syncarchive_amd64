@@ -9,7 +9,7 @@ cd ${archivedir}
 #
 arch=amd64
 
-for dist in oldstable
+for dist in sarge
   do
   echo "retrieve Release(.gpg) $dist"
   test -d amd64/${dist} || mkdir -p amd64/${dist}

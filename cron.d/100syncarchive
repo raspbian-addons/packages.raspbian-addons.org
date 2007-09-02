@@ -86,7 +86,7 @@ fi
 
 # security archive
 #
-for dist in oldstable stable testing
+for dist in sarge etch lenny
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}

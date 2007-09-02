@@ -7,13 +7,13 @@ cd ${archivedir}
 
 # backports archive
 #
-for dist in oldstable
+for dist in sarge etch
 do
   echo "retrieve Release(.gpg) $dist-backports"
   test -d backports/${dist}-backports || mkdir -p backports/${dist}-backports
   (cd backports/${dist}-backports &&
-	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/Release &&
-	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/Release.gpg )
+	    wget -q -N ${backports_ftpsite}/dists/${dist}-backports/Release &&
+	    wget -q -N ${backports_ftpsite}/dists/${dist}-backports/Release.gpg )
 
     foo=\$arch_${dist//-/_}
     for arch in `eval echo $foo`
@@ -23,17 +23,17 @@ do
 	echo retrieve Packages $dist-backports/$part/$arch
 	test -d backports/${dist}-backports/${part}/binary-${arch} || mkdir -p backports/${dist}-backports/${part}/binary-${arch}
 	(cd backports/${dist}-backports/${part}/binary-${arch} &&
-	    wget -q -N ${backports_ftpsite}/dists/sarge-backports/${part}/binary-${arch}/Packages.gz)
+	    wget -q -N ${backports_ftpsite}/dists/${dist}-backports/${part}/binary-${arch}/Packages.gz)
       done
       echo retrieve Contents $dist-backports/$arch
       (cd backports/${dist}-backports &&
-	  wget -q -N ${backports_ftpsite}/dists/sarge-backports/Contents-${arch}.gz)
+	  wget -q -N ${backports_ftpsite}/dists/${dist}-backports/Contents-${arch}.gz)
     done
     for part in ${parts}
     do
         echo retrieve Sources $dist-backports/$part
         test -d backports/${dist}-backports/${part}/source || mkdir -p backports/${dist}-backports/${part}/source
         (cd backports/${dist}-backports/${part}/source &&
-            wget -q -N ${backports_ftpsite}/dists/sarge-backports/${part}/source/Sources.gz)
+            wget -q -N ${backports_ftpsite}/dists/${dist}-backports/${part}/source/Sources.gz)
     done
 done

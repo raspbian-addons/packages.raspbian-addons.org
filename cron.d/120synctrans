@@ -8,7 +8,7 @@ cd ${archivedir}
 if [ -z "${localdir}" ]
 then
     echo using remote mirror
-    for dist in unstable
+    for dist in sid
     do
 	for part in main
 	do
@@ -23,7 +23,7 @@ then
     done
 else
     echo using local mirror
-    for dist in unstable
+    for dist in sid
     do
 	for part in main
 	do

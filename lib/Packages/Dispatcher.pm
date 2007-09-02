@@ -171,7 +171,11 @@ sub do_dispatch {
 	    my %SUITES_ALIAS = ( sarge => 'oldstable',
 				 etch => 'stable',
 				 lenny => 'testing',
-				 sid => 'unstable', );
+				 sid => 'unstable',
+				 oldstable => 'sarge',
+				 stable => 'etch',
+				 testing => 'lenny',
+				 unstable => 'sid', );
 	    my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	    my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
 	    my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all', 'any');
