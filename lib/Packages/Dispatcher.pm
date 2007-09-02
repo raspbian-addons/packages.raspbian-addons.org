@@ -65,6 +65,13 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
+    my %SUITES_ALIAS = ( oldstable => 'sarge',
+			 stable => 'etch',
+			 testing => 'lenny',
+			 unstable => 'sid',
+			 '3.1' => 'sarge',
+			 '4.0' => 'etch' );
+
     # Read in all the variables set by the form
     my $input;
     if ($ARGV[0] && ($ARGV[0] eq 'php')) {
@@ -168,14 +175,6 @@ sub do_dispatch {
 	    }
 
 	    my %SUITES = map { $_ => 1 } @SUITES;
-	    my %SUITES_ALIAS = ( sarge => 'oldstable',
-				 etch => 'stable',
-				 lenny => 'testing',
-				 sid => 'unstable',
-				 oldstable => 'sarge',
-				 stable => 'etch',
-				 testing => 'lenny',
-				 unstable => 'sid', );
 	    my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	    my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
 	    my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all', 'any');
@@ -244,7 +243,8 @@ sub do_dispatch {
 		       suite => { default => 'default', match => '^([\w-]+)$',
 				  array => ',', var => \@suites,
 				  replace => { all => \@SUITES,
-					       default => \@SUITES } },
+					       default => \@SUITES,
+					       %SUITES_ALIAS } },
 		       archive => { default => ($what_to_do eq 'search') ?
 					'all' : 'default',
 					match => '^([\w-]+)$',
