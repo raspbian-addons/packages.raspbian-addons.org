@@ -14,7 +14,7 @@ our @EXPORT = qw( do_search_contents );
 use Deb::Versions;
 use Packages::I18N::Locale;
 use Packages::Search qw( :all );
-use Packages::CGI;
+use Packages::CGI qw( :DEFAULT error );
 use Packages::DB;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
