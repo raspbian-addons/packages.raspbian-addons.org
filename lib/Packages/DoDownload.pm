@@ -85,9 +85,11 @@ sub do_download {
 	    $page_content->{archive} = $archive;
 	    $page_content->{suite} = $suite;
 	    $page_content->{pkg} = $pkg;
-	    $page_content->{pkgsize} = sprintf( '%.1f', floor(($data{size}/102.4)+0.5)/10 );
-	    $page_content->{pkgsize_unit} = _g( 'kByte' );
-	    if ($page_content->{pkgsize} > 1024) {
+	    my $pkgsize = floor(($data{size}/102.4)+0.5)/10;
+	    if ($pkgsize < 1024) {
+		$page_content->{pkgsize} = sprintf( '%.1f', $pkgsize );
+		$page_content->{pkgsize_unit} = _g( 'kByte' );
+	    } else {
 		$page_content->{pkgsize} = sprintf( '%.1f', floor(($data{size}/(102.4*102.4))+0.5)/100 );
 		$page_content->{pkgsize_unit} = _g( 'MByte' );
 	    }
