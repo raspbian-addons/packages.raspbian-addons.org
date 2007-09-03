@@ -30,7 +30,7 @@ sub do_newpkg {
 
     my $sort_func = sub { $_[0][0] cmp $_[1][0] };
     $sort_func = sub { $_[0][1] <=> $_[1][1] or $_[0][0] cmp $_[1][0] }
-    if $opts->{mode} eq 'byage';
+	if $opts->{mode} eq 'byage';
 
     my $suite = $opts->{suite}[0];
     my $one_archive = @{$opts->{archive}} == 1 ?
@@ -46,6 +46,7 @@ sub do_newpkg {
 	chomp;
 	my @data = split /\s/, $_, 10;
 
+	next unless $data[2]; #removed packages
 	next unless $data[3] eq $suite;
 	next if $one_archive and $data[2] ne $one_archive;
 	next if $one_section and $data[5] ne $one_section;

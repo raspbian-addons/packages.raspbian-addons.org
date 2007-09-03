@@ -271,7 +271,7 @@ sub do_dispatch {
 				 array => ',', var => \@archs, replace =>
 				 { any => \@ARCHITECTURES } },
 		       format => { default => 'html', match => '^([\w.]+)$',  },
-		   mode => { default => undef, match => '^(\w+)$',  },
+		   mode => { default => '', match => '^(\w+)$',  },
 		   sort_by => { default => 'file', match => '^(\w+)$', },
 		   );
     my %opts;
