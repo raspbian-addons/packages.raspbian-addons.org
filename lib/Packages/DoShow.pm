@@ -126,7 +126,7 @@ sub do_show {
 
 			my $did = $page->get_newest( 'description' );
 			my $desc_md5 = $page->get_newest( 'description-md5' );
-			my @complete_tags = split(/, /, $page->get_newest( 'tag' ));
+			my @complete_tags = split(/, /, $page->get_newest( 'tag' )||'' );
 			my @tags;
 			foreach (@complete_tags) {
 			    my ($facet, $tag) = split( /::/, $_, 2);
