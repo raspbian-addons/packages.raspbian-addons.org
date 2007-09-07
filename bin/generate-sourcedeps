@@ -1,0 +1,265 @@
+#!/usr/bin/perl -w
+# Convert Sources.gz files into .deb files for easy build dependency
+# tracking
+#
+# based on parse-sources:
+# Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
+#
+# Copyright (C) 2007  Frank Lichtenheld <frank@lichtenheld.de>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+use strict;
+use lib './lib';
+
+$| = 1;
+
+my $what = $ARGV[0] ? "non-free" : "*";
+# max. distinct results for a given package postfix
+my $MAX_SOURCE_POSTFIXES = 100;
+
+use Template;
+use DB_File;
+use File::Path;
+use File::Temp qw/ tempdir /;
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES
+ @ARCHITECTURES @SECTIONS %FTP_SITES);
+&Packages::Config::init( './' );
+
+$/ = "";
+
+-d $DBDIR || mkpath( $DBDIR );
+
+print "@ARCHITECTURES\n";
+my $date_rfc822 = qx/date -R/;
+chomp $date_rfc822;
+
+for my $suite (reverse @SUITES) {
+
+    my %debs;
+    for my $archive (@ARCHIVES) {
+
+	print "Reading $archive/$suite...\n";
+	if (!-d "$TOPDIR/archive/$archive/$suite/") {
+		print "\tseems not to exist, skipping...\n";
+		next;
+	}
+	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/source/Sources.gz|";
+	while (<PKG>) {
+	    next if /^\s*$/;
+	    my $data = "";
+	    my %data = ();
+	    chomp;
+	    s/\n\s/\377/g;
+	    while (/^(\S+):\s*(.*)\s*$/mg) {
+		my ($key, $value) = ($1, $2);
+		$value =~ s/\377/ /g;
+		$key =~ tr [A-Z] [a-z];
+		$key =~ tr/-/_/; # for TT
+		$data{$key} = $value;
+	    }
+
+	    $data{suite} = $suite;
+	    $data{archive} = $archive;
+	    $data{archive_url} = $FTP_SITES{$archive};
+	    $data{priority} ||= "-";
+
+	    $data{architecture} = 'all';
+	    # check whether we need arch specific packages
+	    my $arch_deps = ($data{build_depends}||'').
+		($data{build_depends_indep}||'').
+		($data{build_conflicts}||'');
+	    if ($arch_deps && ($arch_deps =~ /\[/)) {
+		my @debs = generate_arch_debs( \@ARCHITECTURES, \%data );
+		foreach (@debs) {
+		    $debs{$_}++;
+		}
+	    } else {
+		my $deb = generate_deb( \%data );
+		$debs{$deb}++ if $deb;
+	    }
+	}
+
+    }
+    foreach my $arch (@ARCHITECTURES) {
+	foreach my $sect (@SECTIONS) {
+	    open NAMES, '>>', "$DBDIR/deb_list_${suite}_${sect}_$arch.txt.new"
+		or die "Error creating deb list: $!";
+	    foreach (sort keys %debs) {
+		my ($deb_sect, $deb_arch) = m#pool/([\w-]+)/.*_([\w-]+).deb$#;
+#		warn "DEBUG: deb=$_ arch=$deb_arch sect=$deb_sect\n";
+		if (($deb_arch eq $arch)
+		    or ($deb_arch eq 'all')) {
+		    if ($deb_sect eq $sect) {
+			print NAMES "$_\n";
+		    }
+		}
+	    }
+	    close NAMES;
+	}
+    }
+}
+
+sub generate_arch_debs {
+    my ($archs, $data) = @_;
+
+    my %copy_data = %$data;
+    split_deps_by_arch( \%copy_data );
+
+    my @debs;
+    foreach my $a (@$archs) {
+#	warn "DEBUG: generate_arch_debs: arch=$a\n";
+	$copy_data{architecture} = $a;
+	$copy_data{build_depends} = $copy_data{build_depends_by_arch}{$a};
+	$copy_data{build_depends_indep} = $copy_data{build_depends_indep_by_arch}{$a};
+	$copy_data{build_conflicts} = $copy_data{build_conflicts_by_arch}{$a};
+	my $deb = generate_deb( \%copy_data );
+	push @debs, $deb if $deb;
+    }
+    return @debs;
+}
+
+sub generate_deb {
+    my ($data) = @_;
+
+    use Data::Dumper;
+    ($data->{directory} && $data->{package} && defined($data->{version})
+     && $data->{architecture})
+	|| die Dumper($data);
+
+#    warn "DEBUG: data = ".Dumper($data);
+
+    (my $version = $data->{version}) =~ s/^\d+://;
+    my $filename = "$data->{directory}/$data->{package}-build-depends_${version}_$data->{architecture}.deb";
+    my $abs_filename = "$TOPDIR/www/$filename";
+
+#    warn "DEBUG: Filename: $filename\n";
+
+    if (-e $abs_filename) {
+#	warn "DEBUG: $filename already exists\n";
+	return $filename;
+    }
+
+    if ($data->{build_conflicts} && $data->{build_conflicts_indep}) {
+	$data->{build_conflicts} = "$data->{build_conflicts}, $data->{build_conflicts_indep}";
+    } elsif ($data->{build_conflicts_indep}) {
+	$data->{build_conflicts} = $data->{build_conflicts_indep};
+    }
+    if ($data->{build_conflicts}) {
+	# dpkg-deb will complain about alternatives in Conflicts
+	$data->{build_conflicts} =~ s/\s*\|\s*/, /;
+    }
+
+    my $debdir = tempdir( 'sourcedepsXXXXXX', TMPDIR => 1, CLEANUP => 0 );
+#    warn "DEBUG: tempdir=$debdir\n";
+
+    my $tt = Template->new( {
+	INCLUDE_PATH => "$TOPDIR/templates/sourcedeps",
+	OUTPUT_PATH => $debdir,
+	VARIABLES => { date_rfc822 => $date_rfc822, },
+	COMPILE_EXT => '.ttc',
+			    } )
+	or die "Initialization of Template Engine failed: $Template::ERROR\n";
+
+    mkpath("$debdir/DEBIAN")
+	or die;
+    $tt->process( 'control.tt', $data, 'DEBIAN/control' )
+	or die sprintf( "template error: %s", $tt->error );
+
+    my $usd = "usr/share/doc/$data->{package}-build-depends";
+    mkpath("$debdir/$usd")
+	or die;
+    $tt->process( 'copyright.tt', $data, "$usd/copyright" )
+	or die sprintf( "template error: %s", $tt->error );
+    $tt->process( 'changelog.tt', $data, "$usd/changelog.Debian" )
+	or die sprintf( "template error: %s", $tt->error );
+
+    my $target = "$TOPDIR/www/$data->{directory}";
+    -d $target || mkpath($target) || die;
+    system('dpkg-deb', '-b', $debdir, $target);
+#	or die "dpkg-deb -b $debdir failed: $!\n";
+    rmtree($debdir);
+
+    return $filename;
+}
+
+sub split_deps_by_arch {
+    my ($data) = @_;
+
+    $data->{build_depends_by_arch} = _split_deps($data->{build_depends});
+    $data->{build_depends_indep_by_arch} = _split_deps($data->{build_depends_indep});
+    $data->{build_conflicts_by_arch} = _split_deps($data->{build_conflicts});
+}
+
+sub _split_deps {
+    my ($string) = @_;
+
+    my %res;
+    return \%res unless $string;
+    foreach (@ARCHITECTURES) {
+	$res{$_} = [];
+    }
+
+#    warn "DEBUG: string=$string\n";
+    foreach my $dep (split( /\s*,\s*/, $string )) {
+	my %dep;
+	foreach (@ARCHITECTURES) {
+	    $dep{$_} = [];
+	}
+#	warn "DEBUG: dep=$dep\n";
+	foreach my $alt (split( /\s*\|\s*/, $dep )) {
+#	    warn "DEBUG: alt=$alt\n";
+	    if ($alt =~ s/\s*\[([^\]]+)\]\s*//) {
+		my $archs = $1;
+		my $neg = ($archs =~ s/!//go);
+#		warn "DEBUG: alt_stripped=$alt neg=$neg archs=$archs\n";
+		my %archs = map { $_ => 1 } split( /\s+/, $archs );
+		foreach (@ARCHITECTURES) {
+		    if ((!$neg && $archs{$_})
+			|| ($neg && !$archs{$_})) {
+#			warn "DEBUG: push $alt for $_\n";
+			push @{$dep{$_}}, $alt;
+		    }
+		}
+	    } else {
+		foreach (@ARCHITECTURES) {
+#		    warn "DEBUG: push $alt for $_\n";
+		    push @{$dep{$_}}, $alt;
+		}
+	    }
+	}
+	foreach (@ARCHITECTURES) {
+	    if (@{$dep{$_}}) {
+		push @{$res{$_}}, join( " | ", @{$dep{$_}});
+#		warn "DEBUG: pushed $res{$_}[-1] for $_\n";
+	    }
+	}
+    }
+
+    foreach (@ARCHITECTURES) {
+	$res{$_} = join( ", ", @{$res{$_}});
+#	warn "DEBUG: pushed res($_)=$res{$_}\n";
+    }
+
+    return \%res;
+}
+
+foreach my $suite (@SUITES) {
+    foreach my $sect (@SECTIONS) {
+	foreach my $arch (@ARCHITECTURES) {
+	    rename("$DBDIR/deb_list_${suite}_${sect}_$arch.txt.new",
+		   "$DBDIR/deb_list_${suite}_${sect}_$arch.txt");
+	}
+    }
+}

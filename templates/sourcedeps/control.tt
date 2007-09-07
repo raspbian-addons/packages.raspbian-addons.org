@@ -1,0 +1,27 @@
+Package: [% package %]-build-depends
+Version: [% version %]
+Architecture: [% architecture %]
+Maintainer: [% maintainer %]
+Installed-Size: 32
+Section: [% section %]
+Priority: extra
+[%- IF build_depends %]
+Depends: [% build_depends %][% END %]
+[%- IF build_depends_indep %]
+Recommends: [% build_depends_indep %][% END %]
+[%- IF build_conflicts %]
+Conflicts: [% build_conflicts %][% END %]
+Suggests: [% binary %]
+[%- IF binary != package %]
+Provides: [% FOREACH bin IN binary.split('\s*,\s*') -%]
+	[%- NEXT IF binary == package -%]
+	[%- bin _ '-build-depends' -%]
+	[%- ', ' UNLESS loop.last -%]
+[%- END; END %]
+Description: Dummy package to track build dependencies
+ This package was generated to allow easy tracking of the
+ build dependencies of source package [% package %].
+ .
+ Its build dependencies are noted in the Depends field, its architecture
+ independent build dependencies in the Recommends field. Build conflicts
+ are noted in the Conflicts field.
