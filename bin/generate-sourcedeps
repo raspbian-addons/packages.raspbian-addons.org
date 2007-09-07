@@ -187,7 +187,8 @@ sub generate_deb {
 
     my $target = "$TOPDIR/www/$data->{directory}";
     -d $target || mkpath($target) || die;
-    system('dpkg-deb', '-b', $debdir, $target);
+    chmod 0755, $debdir; # lintian complains
+    system('fakeroot', 'dpkg-deb', '-b', $debdir, $target);
 #	or die "dpkg-deb -b $debdir failed: $!\n";
     rmtree($debdir);
 
