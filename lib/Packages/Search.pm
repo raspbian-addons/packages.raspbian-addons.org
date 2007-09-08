@@ -82,7 +82,7 @@ sub read_entry_all {
 	}
     }
 
-    foreach (split /\000/o, $result) {
+    foreach (split(/\000/o, $result||'')) {
 	my @data = split ( /\s/o, $_, 8 );
 	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
 	if ($opts->{h_suites}{$data[1]}
@@ -199,7 +199,7 @@ sub do_names_search {
 }
 
 sub do_xapian_search {
-    my ($keywords, $db, $did2pkg, $packages, $read_entry, $opts,
+    my ($keywords, $dbpath, $did2pkg, $packages, $read_entry, $opts,
 	$results, $non_results) = @_;
 
 # NOTE: this needs to correspond with parse-packages!
@@ -211,7 +211,7 @@ sub do_xapian_search {
     my $stemmer = Lingua::Stem->new();
     my $stemmed_keywords = $stemmer->stem( @tmp );
 
-    my $db = Search::Xapian::Database->new( $db );
+    my $db = Search::Xapian::Database->new( $dbpath );
     my $enq = $db->enquire( OP_OR, @$keywords, @$stemmed_keywords );
     debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
     my @matches = $enq->matches(0, 999);
@@ -242,9 +242,9 @@ sub do_xapian_search {
 }
 
 sub find_similar {
-    my ($pkg, $db, $did2pkg) = @_;
+    my ($pkg, $dbpath, $did2pkg) = @_;
 
-    my $db = Search::Xapian::Database->new( $db );
+    my $db = Search::Xapian::Database->new( $dbpath );
     my $enq = $db->enquire( "P$pkg" );
     debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
     my $first_match = ($enq->matches(0,1))[0]->get_document();
@@ -253,7 +253,7 @@ sub find_similar {
     my $term_it = $first_match->termlist_begin();
     my $term_end = $first_match->termlist_end();
 
-    for ($term_it; $term_it ne $term_end; $term_it++) {
+    for (; $term_it ne $term_end; $term_it++) {
 	debug( "TERM: ".$term_it->get_termname(), 3);
 	push @terms, $term_it->get_termname();
     }
@@ -262,8 +262,8 @@ sub find_similar {
     debug( "Xapian Query was: ".$rel_enq->get_query()->get_description(), 1) if DEBUG;
     my @rel_pkg = $rel_enq->matches(2,20);
 
-    use Data::Dumper;
-    debug(Dumper(\@rel_pkg),1);
+#    use Data::Dumper;
+#    debug(Dumper(\@rel_pkg),1);
 
     my (@order, %tmp_results);
     foreach my $match ( @rel_pkg ) {

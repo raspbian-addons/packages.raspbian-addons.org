@@ -45,7 +45,6 @@
 <h1>Package: [% pkg %] ([% versions.short %])
 [% END %]
 [%- PROCESS marker text=archive IF archive && archive != main_archive %]
-[%- PROCESS marker text=subsection IF subsection == 'non-US' and archive != 'non-US' %]
 [%- PROCESS marker text=section IF section && section != main_section %]
 [%- PROCESS marker text='essential' IF page.get_newest('essential') == 'yes' %]</h1>
 
@@ -62,7 +61,7 @@
 <li><a href="[% pts_url _ pkg | uri %]">Developer Information (PTS)</a></li>
 [%- END %]
 
-[% IF files %]
+[% IF files && (!archive or archive == main_archive or archive == 'security') %]
 <li><a href="[% changelogs_url _ files.changelog.path %]">Debian Changelog</a></li>
 <li><a href="[% changelogs_url _ files.copyright.path %]">Copyright File</a></li>
 [% END %]

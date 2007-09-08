@@ -51,8 +51,6 @@ our %sections_descs = (
 					     N_("Daemons and clients to connect your Debian GNU/Linux system to the world.") ],
 		      news		=> [ N_("Newsgroups"),
 					     N_("Software to access Usenet, to set up news servers, etc.") ],
-		      'non-US'	=> [ N_("Software restricted in the U.S."),
-				     N_("These packages probably may not be used in or distributed from the U.S. due to software patents. You should check the regulations in your country before using this software.") ],
 		      oldlibs	=> [ N_("Old Libraries"),
 				     N_("Old versions of libraries, kept for backward compatibility with old applications.") ],
 		      otherosfs	=> [ N_("Other OS\'s and file systems"),

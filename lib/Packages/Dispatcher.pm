@@ -65,6 +65,13 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
+    my %SUITES_ALIAS = ( oldstable => 'sarge',
+			 stable => 'etch',
+			 testing => 'lenny',
+			 unstable => 'sid',
+			 '3.1' => 'sarge',
+			 '4.0' => 'etch' );
+
     # Read in all the variables set by the form
     my $input;
     if ($ARGV[0] && ($ARGV[0] eq 'php')) {
@@ -168,14 +175,6 @@ sub do_dispatch {
 	    }
 
 	    my %SUITES = map { $_ => 1 } @SUITES;
-	    my %SUITES_ALIAS = ( sarge => 'oldstable',
-				 etch => 'stable',
-				 lenny => 'testing',
-				 sid => 'unstable',
-				 oldstable => 'sarge',
-				 stable => 'etch',
-				 testing => 'lenny',
-				 unstable => 'sid', );
 	    my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	    my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
 	    my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all', 'any');
@@ -206,8 +205,6 @@ sub do_dispatch {
 		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif (!$need_pkg && $sections_descs{$_}) {
 		    set_param_once( $input, \%params_set, 'subsection', $_);
-		} elsif (!$need_pkg && ($_ eq 'non-us')) { # non-US hack
-		    set_param_once( $input, \%params_set, 'subsection', 'non-US');
 		} elsif (!$need_pkg && ($_ eq 'source')) {
 		    set_param_once( $input, \%params_set, 'source', 1);
 		} elsif ($ARCHITECTURES{$_}) {
@@ -227,8 +224,9 @@ sub do_dispatch {
 	} # else if (@components == 1)
 
 	if (@components) {
-	    $input->param( 'keywords', $components[0] );
-	    $input->param( 'package', $components[0] );
+	    my $c = uri_unescape($components[0]);
+	    $input->param( 'keywords', $c );
+	    $input->param( 'package', $c );
 	}
     }
 
@@ -244,7 +242,8 @@ sub do_dispatch {
 		       suite => { default => 'default', match => '^([\w-]+)$',
 				  array => ',', var => \@suites,
 				  replace => { all => \@SUITES,
-					       default => \@SUITES } },
+					       default => \@SUITES,
+					       %SUITES_ALIAS } },
 		       archive => { default => ($what_to_do eq 'search') ?
 					'all' : 'default',
 					match => '^([\w-]+)$',
@@ -270,7 +269,7 @@ sub do_dispatch {
 				 array => ',', var => \@archs, replace =>
 				 { any => \@ARCHITECTURES } },
 		       format => { default => 'html', match => '^([\w.]+)$',  },
-		   mode => { default => undef, match => '^(\w+)$',  },
+		   mode => { default => '', match => '^(\w+)$',  },
 		   sort_by => { default => 'file', match => '^(\w+)$', },
 		   );
     my %opts;

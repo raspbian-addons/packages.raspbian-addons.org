@@ -88,12 +88,13 @@
    PerlModule ModPerl::Registry
    PerlTaintCheck On
    PerlRequire %TOPDIR%/bin/mod_perl-startup
+   PerlSwitches -T
    <Location /cgi-bin/>
       SetHandler perl-script
       # mod-perl etch
-      #PerlInitHandler Apache2::Reload
+      PerlInitHandler Apache2::Reload
       # mod-perl sarge
-      PerlInitHandler Apache::Reload
+      #PerlInitHandler Apache::Reload
       PerlHandler ModPerl::Registry
       Options +ExecCGI
       PerlSendHeader On
@@ -126,6 +127,7 @@
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
+   RewriteRule ^/file:(.+)$ http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
 
    RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 

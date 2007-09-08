@@ -126,7 +126,7 @@ sub do_show {
 
 			my $did = $page->get_newest( 'description' );
 			my $desc_md5 = $page->get_newest( 'description-md5' );
-			my @complete_tags = split(/, /, $page->get_newest( 'tag' ));
+			my @complete_tags = split(/, /, $page->get_newest( 'tag' )||'' );
 			my @tags;
 			foreach (@complete_tags) {
 			    my ($facet, $tag) = split( /::/, $_, 2);
@@ -306,8 +306,7 @@ sub do_show {
 		    foreach( @$source_files ) {
 			my ($src_file_md5, $src_file_size, $src_file_name)
 			    = split /\s+/, $_;
-			(my $server = lc $archive) =~ s/-//go; # non-US hack
-			$server = $FTP_SITES{$server}
+			my $server = $FTP_SITES{lc $archive}
 			    || $FTP_SITES{us};
 			my $path = "/$source_dir/$src_file_name";
 
@@ -361,9 +360,7 @@ sub moreinfo {
 	    foreach( @$files ) {
 		my ($src_file_md5, $src_file_size, $src_file_name) = split /\s/o, $_;
 		my ($server, $path);
-		# non-US hack
-		($server = lc $page->get_newest('archive')) =~ s/-//go;
-		$server = $env->{$server}||$env->{us};
+		$server = $env->{lc $page->get_newest('archive')}||$env->{us};
 		$path = "/$src_dir/$src_file_name";
 		push @downloads, { name => $src_file_name, server => $server, path => $path };
 	    }
@@ -376,7 +373,6 @@ sub moreinfo {
 	    (my $src_basename = $source_version) =~ s,^\d+:,,; # strip epoche
 	    $src_basename = "${source}_$src_basename";
 	    $src_dir =~ s,pool/updates,pool,o;
-	    $src_dir =~ s,pool/non-US,pool,o;
 
 	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename/changelog";
 	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );

@@ -62,11 +62,15 @@ for (my $age = 0; $age < 7; $age++) {
 	$changes{$_} = -1;
     }
 
-    my %archives = map { $_ => 1 } qw( us security non-US );
+    my %archives = map { $_ => 1 } qw( us security );
     foreach (sort keys %changes) {
-	my $entry = read_entry_simple( \%packages, $_, \%archives, $suite)
-	    or die "Fatal Error: Can't find entry for package $_\n";
-	shift @$entry; # remove virtual pkg info
+	my $entry = [];
+	if ($changes{$_} == 1) {
+	    $entry = read_entry_simple( \%packages, $_, \%archives, $suite);
+	    die "Fatal Error: Can't find entry for package $_\n"
+		unless @$entry;
+	    shift @$entry; # remove virtual pkg info
+	}
 	print CHANGES join(" ", $_, $age, @$entry)."\n";
 	print "Wrote entry: ".join(" ", $_, $age, @$entry)."\n";
     }

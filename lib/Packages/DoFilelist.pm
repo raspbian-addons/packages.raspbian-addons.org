@@ -51,7 +51,7 @@ sub do_filelist {
 		fatal_error( _g( "No such package in this suite on this architecture." ) );
 	    } else {
 		my @files = unpack "L/(CC/a)", $contents{$pkg};
-		my $file;
+		my $file = '';
 
 		$page_content->{files} = [];
 		for (my $i=0; $i<scalar @files;) {

@@ -77,8 +77,6 @@ for my $archive (@ARCHIVES) {
 		my $subsection = $data{section} || '-';
 		if ($data{section} && ($data{section} =~ m=/=o)) {
 		    ($section, $subsection) = split m=/=o, $data{section}, 2;
-		    ($subsection, $section) = split m=/=o, $data{section}, 2
-			if $section eq 'non-US';
 		}
 		$data{'section'} = $section;
 		$data{'subsection'} = $subsection;
