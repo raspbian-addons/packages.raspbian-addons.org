@@ -55,6 +55,9 @@ sub send_file {
 	    $headers{'-charset'} = get_charset( $opts->{lang} );
 	    $headers{'-type'} = get_mime( $opts->{format}, 'text/plain' );
 	    $headers{'-content-encoding'} = $encoding{$opts->{format}} if exists $encoding{$opts->{format}};
+	    my ($size,$mtime) = (stat("$wwwdir/$path"))[7,9];
+	    $headers{'-content-length'} = $size;
+	    $headers{'-last-modified'} = gmtime($mtime);
 	    print header( %headers );
 
 	    binmode INDEX;
