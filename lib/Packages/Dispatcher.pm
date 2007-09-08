@@ -205,8 +205,6 @@ sub do_dispatch {
 		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif (!$need_pkg && $sections_descs{$_}) {
 		    set_param_once( $input, \%params_set, 'subsection', $_);
-		} elsif (!$need_pkg && ($_ eq 'non-us')) { # non-US hack
-		    set_param_once( $input, \%params_set, 'subsection', 'non-US');
 		} elsif (!$need_pkg && ($_ eq 'source')) {
 		    set_param_once( $input, \%params_set, 'source', 1);
 		} elsif ($ARCHITECTURES{$_}) {

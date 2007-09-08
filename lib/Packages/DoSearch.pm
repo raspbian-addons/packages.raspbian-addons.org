@@ -123,7 +123,7 @@ sub do_search {
 		    $version) = @$_;
 
 		my $real_archive = '';
-		if ($archive =~ /^(security|non-US)$/) {
+		if ($archive eq 'security') {
 		    $real_archive = $archive;
 		    $archive = 'us';
 		}

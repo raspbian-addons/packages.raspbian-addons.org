@@ -45,7 +45,6 @@
 <h1>Package: [% pkg %] ([% versions.short %])
 [% END %]
 [%- PROCESS marker text=archive IF archive && archive != main_archive %]
-[%- PROCESS marker text=subsection IF subsection == 'non-US' and archive != 'non-US' %]
 [%- PROCESS marker text=section IF section && section != main_section %]
 [%- PROCESS marker text='essential' IF page.get_newest('essential') == 'yes' %]</h1>
 

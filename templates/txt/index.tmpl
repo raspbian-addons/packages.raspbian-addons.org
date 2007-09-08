@@ -11,7 +11,7 @@ See <URL:[% license.url %]> for the license terms.
     [%- PROCESS marker text=section IF section != main_section -%]
     [%- PROCESS marker text=archive IF archive != main_archive -%]
   [%- END -%]
-  [%- IF providers %]
+  [%- IF providers.size %]
 [% name %] virtual package provided by [% providers.join(', ') %]
   [%- END -%]
   [%- IF versions %]

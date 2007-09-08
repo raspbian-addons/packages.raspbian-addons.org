@@ -134,26 +134,20 @@ sub add_log {
 # PACKAGE HANDLING (UNPACKING/CLEANUP)
 
 sub unpack_srcpkg {
-    my ( $dscname, $log ) = @_;
+    my ( $pkgname, $dscname, $log ) = @_;
 
     chdir( $TEMPDIR ) or do_error( "couldn't change working directory to $TEMPDIR" );
 
-    add_log( $log, "dpkg-source -sn -x $dscname"  );
+    add_log( $log, "dpkg-source -sn -x $dscname $pkgname+source"  );
 
-    my $out = qx/dpkg-source -sn -x "$dscname" 2>&1/;
-    my ($dir) = ($out =~ /(\S+)$/mo);
+    system("dpkg-source", "-sn", "-x", $dscname, "$pkgname+source" ) == 0
+	or do {
+	    do_warning( "couldn't unpack $dscname: $!" );
+	    add_log( $log, "couldn't unpack $dscname: $!" );
+	    return;
+	};
 
-    add_log( $log, "dpkg-source output: ", $out );
-
-#Bug#246802
-#    system("dpkg-source", "-x", $dscname ) == 0
-#	or do {
-#	    do_warning( "couldn't unpack $dscname" );
-#	    add_log( $log, "couldn't unpack $dscname" );
-#	    return;
-#	};
-
-    return $dir;
+    return "$pkgname+source";
 }
 
 sub unpack_binpkg {
@@ -409,7 +403,7 @@ sub extract_files {
 	return;
     }
 
-    if (my $source_dir = unpack_srcpkg( $pkg_data->{dsc}, \$log )) {
+    if (my $source_dir = unpack_srcpkg( $pkg_data->{src_name}, $pkg_data->{dsc}, \$log )) {
 
 	$source_dir = "$TEMPDIR/$source_dir";
 
