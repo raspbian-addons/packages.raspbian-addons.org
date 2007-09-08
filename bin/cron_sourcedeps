@@ -59,6 +59,13 @@ then
 	    -o "APT::FTPArchive::Release::Suite=$suite" \
 	    -o "APT::FTPArchive::Release::Description=Sourcedep packages for $suite" \
 	    release "$topdir/www/dists/$suite" >"$topdir/www/dists/$suite/Release"
+	if [ -n "$sourcedeps_key" ]
+	then
+	    gpg --yes --default-key "$sourcedeps_key" --no-default-keyring \
+		--keyring conf/keyring.gpg --secret-keyring conf/secring.gpg \
+		--armor --output "$topdir/www/dists/$suite/Release.gpg" \
+		--detach-sign "$topdir/www/dists/$suite/Release"
+	fi
     done
     rm -f "${files}/sourcedeps.lock"
 else
