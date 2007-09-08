@@ -32,21 +32,36 @@ then
     savelog -c 14 $log > /dev/null
 fi
 
-date > $log
+exec >$log 2>&1
 
-if lockfile -600 -r5 "${files}/sourcedeps.lock" >> $log 2>&1
+date
+
+if lockfile -600 -r5 "${files}/sourcedeps.lock"
 then
     $topdir/bin/generate-sourcedeps
+    mkdir -p "$topdir/www/dists"
+    for suite in $suites
+    do
+	mkdir -p "$topdir/www/dists/$suite"
+	for sect in $sections
+	do
+	    mkdir -p "$topdir/www/dists/$suite/$sect"
+	    for arch in $architectures
+	    do
+		mkdir -p "$topdir/www/dists/$suite/$sect/binary-$arch"
+	    done
+	done
+    done	
     apt-ftparchive generate conf/apt-ftparchive.conf
     for suite in $suites
     do
 	apt-ftparchive -c conf/apt-ftparchive.conf \
-	    -o APT::FTPArchive::Release::Suite "$suite" \
-	    -o APT::FTPArchive::Release::Description "Sourcedep packages for $suite" \
+	    -o "APT::FTPArchive::Release::Suite=$suite" \
+	    -o "APT::FTPArchive::Release::Description=Sourcedep packages for $suite" \
 	    release "$topdir/www/dists/$suite" >"$topdir/www/dists/$suite/Release"
     done
     rm -f "${files}/sourcedeps.lock"
 else
-    echo "couldn't aquire sourcedeps lock file in due time" >> $log
+    echo "couldn't aquire sourcedeps lock file in due time"
 fi
-date >> $log
+date
