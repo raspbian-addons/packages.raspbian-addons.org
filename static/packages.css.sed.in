@@ -1,3 +1,11 @@
+@media handheld, print, projection, screen, tv {
+	.nonvisual { display: none; }
+}
+
+@media braille, embossed, speech, tty {
+	.visual { display: none; }
+}
+
 #hpacketsearch {
 	display: block;
 	padding-top: 1px;
@@ -82,12 +90,12 @@ h1 {
 }
 
 #pdeps ul.ulrec, #pdeps ul.ulidep {
-	list-style-type: disc;
+	list-style-type: square;
 	list-style-image: url(http://%SITE%/Pics/rec.gif);
 }
 
 #pdeps ul.ulsug {
-	list-style-type: disc;
+	list-style-type: circle;
 	list-style-image: url(http://%SITE%/Pics/sug.gif);
 }
 

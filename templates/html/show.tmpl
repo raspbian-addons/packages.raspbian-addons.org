@@ -217,7 +217,7 @@ Do not install it on a normal Debian system.</p>
     <div id="pdeps">
     <h2>Other Packages Related to [% pkg %]</h2>
 
-    <table id="pdeplegend" summary="legend"><tr>
+    <table id="pdeplegend" class="visual" summary="legend"><tr>
     [% IF is_source %]
     <td><img src="/Pics/adep.gif" alt="[adep]" width="16" height="16">= build-depends</td>
     <td><img src="/Pics/idep.gif" alt="[idep]" width="16" height="16">= build-depends-indep</td>
@@ -234,7 +234,7 @@ Do not install it on a normal Debian system.</p>
     [% '<li>' UNLESS is_old_pkgs %]
     [% FOREACH alternatives %]
       [% '<dl>' IF loop.first %]
-      <dt>[% IF loop.first %]<img class="hidecss" src="/Pics/[% id %].gif" alt="[[% id %]]">[% ELSE %]or [% END %]
+      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %]or [% END %]
 	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
