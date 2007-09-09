@@ -314,7 +314,9 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 					     debug => ( DEBUG ? $opts{debug} : 0 ) },
 					   ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
-    unless (-e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
+    #FIXME: ugly hack
+    unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
+            || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
 	fatal_error( "requested format not available for this document",
 		     "406 requested format not available");
     }
