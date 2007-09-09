@@ -219,12 +219,12 @@ Do not install it on a normal Debian system.</p>
 
     <table id="pdeplegend" class="visual" summary="legend"><tr>
     [% IF is_source %]
-    <td><img src="/Pics/adep.gif" alt="[adep]" width="16" height="16">= build-depends</td>
-    <td><img src="/Pics/idep.gif" alt="[idep]" width="16" height="16">= build-depends-indep</td>
+    <td><ul class="uladep"><li>build-depends</li></ul></td>
+    <td><ul class="ulidep"><li>build-depends-indep</li></ul></td>
     [% ELSE %]
-    <td><img src="/Pics/dep.gif" alt="[dep]" width="16" height="16">= depends</td>
-    <td><img src="/Pics/rec.gif" alt="[rec]" width="16" height="16">= recommends</td>
-    <td><img src="/Pics/sug.gif" alt="[sug]" width="16" height="16">= suggests</td>
+    <td><ul class="uldep"><li>depends</li></ul></td>
+    <td><ul class="ulrec"><li>recommends</li></ul></td>
+    <td><ul class="ulsug"><li>suggests</li></ul></td>
     [% END %]
     </tr></table>
   [%- END %]
