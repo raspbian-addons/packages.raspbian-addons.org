@@ -21,7 +21,7 @@ then
 	  do
 	    echo retrieve translated Descs $dist/$part/$lang
             (cd us/${dist}/${part}/i18n &&
-                wget -q -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translations-$lang.gz)
+                wget -q -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translation-$lang.gz)
 	  done
 	done
     done
