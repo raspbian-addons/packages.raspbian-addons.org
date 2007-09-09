@@ -125,8 +125,8 @@
    RewriteRule ^/[^/]+\.css - [L]
    RewriteRule ^/[^/]+\.js - [L]
 
-#   RewriteRule ^/$ http://www.debian.org/distrib/packages
-   RewriteRule ^/$ /index.html [L]
+   RewriteRule ^/$ http://www.debian.org/distrib/packages
+#   RewriteRule ^/$ /index.html [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
