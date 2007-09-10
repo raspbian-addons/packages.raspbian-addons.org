@@ -39,16 +39,16 @@ date
 if lockfile -600 -r5 "${files}/sourcedeps.lock"
 then
     $topdir/bin/generate-sourcedeps
-    mkdir -p "$topdir/www/dists"
+    mkdir -p "$htmldir/dists"
     for suite in $suites
     do
-	mkdir -p "$topdir/www/dists/$suite"
+	mkdir -p "$htmldir/dists/$suite"
 	for sect in $sections
 	do
-	    mkdir -p "$topdir/www/dists/$suite/$sect"
+	    mkdir -p "$htmldir/dists/$suite/$sect"
 	    for arch in $architectures
 	    do
-		mkdir -p "$topdir/www/dists/$suite/$sect/binary-$arch"
+		mkdir -p "$htmldir/dists/$suite/$sect/binary-$arch"
 	    done
 	done
     done	
@@ -58,13 +58,13 @@ then
 	apt-ftparchive -c conf/apt-ftparchive.conf \
 	    -o "APT::FTPArchive::Release::Suite=$suite" \
 	    -o "APT::FTPArchive::Release::Description=Sourcedep packages for $suite" \
-	    release "$topdir/www/dists/$suite" >"$topdir/www/dists/$suite/Release"
+	    release "$htmldir/dists/$suite" >"$htmldir/dists/$suite/Release"
 	if [ -n "$sourcedeps_key" ]
 	then
 	    gpg --yes --default-key "$sourcedeps_key" --no-default-keyring \
 		--keyring conf/keyring.gpg --secret-keyring conf/secring.gpg \
-		--armor --output "$topdir/www/dists/$suite/Release.gpg" \
-		--detach-sign "$topdir/www/dists/$suite/Release"
+		--armor --output "$htmldir/dists/$suite/Release.gpg" \
+		--detach-sign "$htmldir/dists/$suite/Release"
 	fi
     done
     rm -f "${files}/sourcedeps.lock"
