@@ -67,6 +67,13 @@ then
 		--detach-sign "$htmldir/dists/$suite/Release"
 	fi
     done
+
+    cd $htmldir
+    for file in $((find pool/ -name '*.deb'; cat $files/db/deb_list_*.txt) | sort | uniq -u)
+    do
+	rm -v "$file"
+    done
+
     rm -f "${files}/sourcedeps.lock"
 else
     echo "couldn't aquire sourcedeps lock file in due time"
