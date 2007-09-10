@@ -97,7 +97,7 @@ for my $suite (reverse @SUITES) {
 	    open NAMES, '>>', "$DBDIR/deb_list_${suite}_${sect}_$arch.txt.new"
 		or die "Error creating deb list: $!";
 	    foreach (sort keys %debs) {
-		my ($deb_sect, $deb_arch) = m#pool/([\w-]+)/.*_([\w-]+).deb$#;
+		my ($deb_sect, $deb_arch) = m#pool/(?:updates/|volatile/)?([\w-]+)/.*_([\w-]+).deb$#;
 #		warn "DEBUG: deb=$_ arch=$deb_arch sect=$deb_sect\n";
 		if (($deb_arch eq $arch)
 		    or ($deb_arch eq 'all')) {
