@@ -16,6 +16,7 @@ do
 	wdir=$(dirname "$file")
 	newfile="$wdir/"$(basename "$file" .sed.in)
 	echo -e "processing\n\t$file\n->\t$newfile"
-	sed -e "s#%SITE%#$site#g;s#%TOPDIR%#$topdir#g" "$file" > "$newfile"
+	cp -p "$file" "$newfile"
+	sed -i -e "s#%SITE%#$site#g;s#%TOPDIR%#$topdir#g" "$newfile"
 	diff -u "$file" "$newfile"
 done
