@@ -103,11 +103,11 @@ sub read_entry {
 
 #FIXME: make configurable
 my %fallback_suites = (
-		       'oldstable-backports' => 'oldstable',
-		       'oldstable-volatile' => 'oldstable',
-		       'stable-backports' => 'stable',
-		       'stable-volatile' => 'stable',
-		       experimental => 'unstable' );
+		       'sarge-backports' => 'sarge',
+		       'sarge-volatile' => 'sarge',
+		       'etch-backports' => 'etch',
+		       'etch-volatile' => 'etch',
+		       experimental => 'sid' );
 
 sub read_entry_simple {
     my ($hash, $key, $archives, $suite) = @_;
