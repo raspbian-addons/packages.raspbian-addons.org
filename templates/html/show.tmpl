@@ -117,6 +117,7 @@
 [%- END %]
 
 [% url = page.get_newest('url');
+   url = page.get_newest('homepage');
    IF url %]
 <h3>External Resources:</h3>
 <p>Homepage: <a href="[% url | uri %]">[% url | html %]</a></p>
