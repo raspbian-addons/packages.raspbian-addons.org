@@ -142,9 +142,9 @@ sub _lcmp {
     for ( my $i = 0; $i <= length( $v1 ); $i++ ) {
 	my ( $n1, $n2 ) = ( ord( substr( $v1, $i, 1 ) ), 
 			    ord( substr( $v2, $i, 1 ) ) );
-	$n1 += 256 if $n1 < 65; # letters sort earlier than non-letters
+	$n1 += 256 if $n1 && $n1 < 65; # letters sort earlier than non-letters
 	$n1 = -1 if $n1 == 126; # '~' sorts earlier than everything else
-	$n2 += 256 if $n2 < 65;
+	$n2 += 256 if $n2 && $n2 < 65;
 	$n2 = -1 if $n2 == 126;
 	if ( my $r = ($n1 <=> $n2) ) {
 	    return $r;
