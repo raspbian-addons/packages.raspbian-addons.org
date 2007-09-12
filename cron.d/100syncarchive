@@ -21,9 +21,6 @@ then
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    test ! "$arch" = "kfreebsd-i386" || continue
-	    test ! "$arch" = "kfreebsd-amd64" || continue
-	    test ! "$arch" = "armel" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
@@ -31,8 +28,6 @@ then
 		(cd us/${dist}/${part}/binary-${arch} &&
 		    wget -q -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
 	    done
-	    #FIXME: no Contents files for p-u
-	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    (cd us/${dist} &&
 		wget -q -N ${ftpsite}/dists/${dist}/Contents-${arch}.gz)
@@ -57,9 +52,6 @@ else
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    test ! "$arch" = "kfreebsd-i386" || continue
-	    test ! "$arch" = "kfreebsd-amd64" || continue
-	    test ! "$arch" = "armel" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
@@ -67,8 +59,6 @@ else
 		rsync -t ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
 	    done
-	    #FIXME: no Contents files for p-u
-	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    rsync -t ${localdir}/dists/${dist}/Contents-${arch}.gz \
 		us/${dist}/Contents-${arch}.gz
@@ -85,7 +75,7 @@ fi
 
 # security archive
 #
-for dist in sarge etch lenny
+for dist in $dists
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}

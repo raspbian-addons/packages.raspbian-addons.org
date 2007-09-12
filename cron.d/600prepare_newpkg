@@ -5,11 +5,11 @@
 packagesdir=${filesdir}/packages
 test -d ${packagesdir} || mkdir -p ${packagesdir}
 
-LANG=C cat ${filesdir}/db/package_names_sid.txt \
-    | sort | uniq > ${packagesdir}/package_names_sid.$(date -I)
-LANG=C cat ${filesdir}/db/source_names_unstable.txt \
-    | sort | uniq > ${packagesdir}/source_names_sid.$(date -I)
+LANG=C cat ${filesdir}/db/package_names_gutsy.txt \
+    | sort | uniq > ${packagesdir}/package_names_gutsy.$(date -I)
+LANG=C cat ${filesdir}/db/source_names_gutsy.txt \
+    | sort | uniq > ${packagesdir}/source_names_gutsy.$(date -I)
 
 cd $topdir
 
-./bin/newpkg_info sid
+./bin/newpkg_info gutsy
