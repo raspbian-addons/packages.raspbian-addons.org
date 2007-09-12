@@ -31,7 +31,9 @@
   [% END %]
   [% IF providers.size %]
     <dt><a href="[% name %]" id="[% name %]">[% name %]</a></dt>
-       <dd>virtual package provided by [% FOREACH provider IN providers %]<a href="../[% provider | uri %]">[% provider %]</a>[% END %]</dd>
+       <dd>virtual package provided by
+	[% FOREACH provider IN providers %]<a href="../[% provider | uri %]">[% provider %]</a>
+	[%- ', ' UNLESS loop.last %][% END %]</dd>
     [% IF versions.length %]
       <dt><a href="[% name %]">[% name %]</a> ([% versions %])[% PROCESS markers %]</dt>
          <dd>[% desc | html %]</dd>

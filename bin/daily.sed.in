@@ -19,7 +19,7 @@
 # Should run after the mirror pulse.  The mirror tends to finish by
 # the ctime of rsync.log.* in ~archvsync.
 
-source config.sh
+source %TOPDIR%/config.sh
 files=$topdir/files
 logs=$files/logs
 log=$logs/cron.log
@@ -32,22 +32,24 @@ then
     savelog -c 14 $log > /dev/null
 fi
 
-date > $log
+exec >"$log" 2>&1
 
-if lockfile -600 -r5 "${files}/cron.lock" >> $log 2>&1
+date
+
+if lockfile -300 -r2 "${files}/cron.lock"
 then
-    run-parts --verbose $topdir/cron.d >> $log 2>&1
+    run-parts --verbose $topdir/cron.d
     rm -f "${files}/cron.lock"
 else
-    echo "couldn't aquire cron lock file in due time" >> $log
+    echo "couldn't aquire cron lock file in due time"
 fi
-date >> $log
+date
 
-if lockfile -600 -r5 "${files}/changelogs.lock" >> $log 2>&1
+if lockfile -300 -r2 "${files}/changelogs.lock"
 then
-    $topdir/bin/extract_changelogs >> $log 2>&1
+    $topdir/bin/extract_changelogs
     rm -f "${files}/changelogs.lock"
 else
-    echo "couldn't aquire changelogs lock file in due time" >> $log
+    echo "couldn't aquire changelogs lock file in due time"
 fi
-date >> $log
+date
