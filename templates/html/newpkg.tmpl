@@ -6,7 +6,12 @@
 -%]
 <h1>New Packages in "[% suite %]"</h1>
 
-<p>The following packages were added to suite <em>[% suite %]</em>[% " (section $section)" IF section %] in the [% organisation %] archive during the last 7 days.</p>
+<p>The following packages were added to suite <em>[% suite %]</em>[% " (section $section)" IF section %] in the [% organisation %] archive during the last 7 days. You can also display this list
+[%- IF opts.mode == 'byage' %]
+ <a href="[% make_url('newpkg','','mode','') %]">sorted by name</a>
+[%- ELSE %]
+ <a href="[% make_url('newpkg','mode=byage') %]">sorted by age</a>
+[%- END %].</p>
 <p>This information is also available as an <a href="newpkg?format=rss">RSS feed</a>
 <a href="newpkg?format=rss"><img src="http://planet.debian.org/rss10.png" alt="[RSS 1.0 Feed]"></a></p>
 

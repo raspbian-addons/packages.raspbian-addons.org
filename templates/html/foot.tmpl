@@ -11,9 +11,9 @@ Total page evaluation took [% benchmark %]<br>
 <!--UdmComment-->
 <p>This page is also available in the following languages:</p>
 <p class="navpara">
-[% FOREACH langs %]
-<a href="[% "$page_name?lang=$lang" %]" title="[% tooltip %]" hreflang="[% lang %]" lang="[% lang %]" rel="alternate">[% selfname %]
-[%- IF transliteration %] ([% transliteration %])[% END %]</a>
+[% FOREACH l IN langs %]
+<a href="[% "$page_name?lang=$l.lang" %]" title="[% l.tooltip %]" hreflang="[% l.lang %]" lang="[% l.lang %]" rel="alternate">[% l.selfname %]
+[%- IF l.transliteration %] ([% l.transliteration %])[% END %]</a>
 [% END %]
 </p>
 <p>How to set <a href="[% cn_help_url %]">the default document language</a></p>

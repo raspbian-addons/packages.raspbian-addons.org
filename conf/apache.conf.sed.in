@@ -74,6 +74,9 @@
 
   # RSS stuff
   AddType application/rss+xml .rdf .xml
+
+  RemoveType .gz
+  AddEncoding x-gzip .gz
 </Directory>
 
 <VirtualHost *>
@@ -88,6 +91,7 @@
 #   PerlModule ModPerl::Registry
 #   PerlTaintCheck On
 #   PerlRequire %TOPDIR%/bin/mod_perl-startup
+#   PerlSwitches -T
    <Location /cgi-bin/>
 #      SetHandler perl-script
       # mod-perl etch
@@ -127,6 +131,14 @@
    RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
+   RewriteRule ^/file:(.+)$ http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
+
+   RewriteCond %{QUERY_STRING} =""
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -f [OR]
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME}.en.html -f [OR]
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -l [OR]
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -d
+   RewriteRule . - [L]
 
    RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 

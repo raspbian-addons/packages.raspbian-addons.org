@@ -1,6 +1,17 @@
 [% PROCESS 'config/archive_layout.tmpl' %]
 [% PROCESS 'config/mirrors.tmpl' %]
-[%- nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite }, ];
+[%- known_vcs = [ [ 'cvs', 'CVS', 'cvs' ],
+		[ 'svn', 'Subversion', 'subversion' ],
+		[ 'bzr', 'bzr', 'bzr' ],
+		[ 'darcs', 'Darcs', 'darcs' ],
+		[ 'arch', 'arch', 'tla' ],
+		[ 'git', 'Git', 'git-core' ],
+		[ 'hg', 'Hg', 'mercurial' ], ];
+   vcs_link = page.get_newest("vcs-browser");
+-%]
+[%- suite_name = suite;
+    SET suite_name = suite_name _ ' (' _ suite_aliases.$suite _ ')' IF suite_aliases.$suite;
+    nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite_name }, ];
     nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
     nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
     nav_arr.push( { prefix=>'Package:', name=>pkg } ); -%]
@@ -45,7 +56,6 @@
 <h1>Package: [% pkg %] ([% versions.short %])
 [% END %]
 [%- PROCESS marker text=archive IF archive && archive != main_archive %]
-[%- PROCESS marker text=subsection IF subsection == 'non-US' and archive != 'non-US' %]
 [%- PROCESS marker text=section IF section && section != main_section %]
 [%- PROCESS marker text='essential' IF page.get_newest('essential') == 'yes' %]</h1>
 
@@ -62,31 +72,24 @@
 <li><a href="[% pts_url _ pkg | uri %]">Developer Information (PTS)</a></li>
 [%- END %]
 
-[% IF files %]
+[% IF files && (!archive or archive == main_archive or archive == 'security') %]
 <li><a href="[% changelogs_url _ files.changelog.path %]">Debian Changelog</a></li>
 <li><a href="[% changelogs_url _ files.copyright.path %]">Copyright File</a></li>
 [% END %]
-</ul>
 
-[% vcs_link = page.get_newest("vcs-browser") %]
-[% #FIXME: should this only be used for the PTS?
-   known_vcs = [ [ 'cvs', 'CVS', 'cvs' ],
-		[ 'svn', 'Subversion', 'subversion' ],
-		[ 'bzr', 'bzr', 'bzr' ],
-		[ 'darcs', 'Darcs', 'darcs' ],
-		[ 'arch', 'arch', 'tla' ],
-		[ 'git', 'Git', 'git-core' ],
-		[ 'hg', 'Hg', 'mercurial' ], ];
-   FOREACH vcs IN known_vcs;
+[% IF vcs_link %]
+<li><a href="[% vcs_link %]" class="pvcslink">Debian Source Repository</a>
+[%- FOREACH vcs IN known_vcs;
 	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
 	vcs_info = page.get_newest("vcs-$vcs_id");
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
-	IF vcs_info; %]
-<p>Debian Package Repository (<acronym title="Version Control System">VCS</acronym>:
-<a href="[% make_url(vcs_pkg,'','source','') %]">[% vcs_name %]</a>):<br> <a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></p>
-[% IF vcs_link %]
-<p>Debian Package Repository (Browsable):<br> <a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></p>
-[% END; END; END %]
+   IF vcs_info %]
+ (<a href="[% vcs_info %]" class="pvcslink">[% vcs_name %]</a>)
+[% END %]
+</li>
+[% END; END %]
+
+</ul>
 
 [% IF src %]
   <p>Download Source Package <a href="[% src.url %]">[% src.pkg %]</a>:
@@ -102,25 +105,33 @@
 
 [% IF maintainers.size == 1 -%]
   <h3>Maintainer:</h3>
-  [%- FOREACH maintainers -%]
-	<a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainer's packages and uploads">QA Page</a>)
-  [%- END -%]
 [%- ELSE -%]
   <h3>Maintainers:</h3>
-  [%- FOREACH maintainers -%]
-    [%- '<ul>' IF loop.first -%]
+[%- END %]
+[%- FOREACH maintainers -%]
+  [%- '<ul>' IF loop.first -%]
 	<li><a href="mailto:[% mail %]">[% name | html %]</a>
 	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainer's packages and uploads">QA Page</a>)
 	</li>
-    [%- '</ul>' IF loop.last -%]
-  [%- END -%]
-[%- END %]
+  [%- '</ul>' IF loop.last -%]
+[%- END -%]
 
 [% url = page.get_newest('url');
+   SET url = page.get_newest('homepage') IF page.get_newest('homepage');
    IF url %]
 <h3>External Resources:</h3>
-<p>Homepage: <a href="[% url | uri %]">[% url | html %]</a></p>
+<ul>
+<li><a href="[% url | uri %]">Homepage</a> [[% extract_host(url) %]]</li>
+</ul>
+[% END %]
+
+[% FOREACH sim IN similar %]
+	[% IF loop.first %]
+	<h3>Similar packages:</h3>
+	<ul>
+	[% END %]
+	<li><a href="/[% sim %]">[% sim %]</a></li>
+	[% '</ul>' IF loop.last %]
 [% END %]
 
 </div> <!-- end pmoreinfo -->
@@ -206,14 +217,14 @@ Do not install it on a normal Debian system.</p>
     <div id="pdeps">
     <h2>Other Packages Related to [% pkg %]</h2>
 
-    <table id="pdeplegend" summary="legend"><tr>
+    <table id="pdeplegend" class="visual" summary="legend"><tr>
     [% IF is_source %]
-    <td><img src="/Pics/adep.gif" alt="[adep]" width="16" height="16">= build-depends</td>
-    <td><img src="/Pics/idep.gif" alt="[idep]" width="16" height="16">= build-depends-indep</td>
+    <td><ul class="uladep"><li>build-depends</li></ul></td>
+    <td><ul class="ulidep"><li>build-depends-indep</li></ul></td>
     [% ELSE %]
-    <td><img src="/Pics/dep.gif" alt="[dep]" width="16" height="16">= depends</td>
-    <td><img src="/Pics/rec.gif" alt="[rec]" width="16" height="16">= recommends</td>
-    <td><img src="/Pics/sug.gif" alt="[sug]" width="16" height="16">= suggests</td>
+    <td><ul class="uldep"><li>depends</li></ul></td>
+    <td><ul class="ulrec"><li>recommends</li></ul></td>
+    <td><ul class="ulsug"><li>suggests</li></ul></td>
     [% END %]
     </tr></table>
   [%- END %]
@@ -223,7 +234,7 @@ Do not install it on a normal Debian system.</p>
     [% '<li>' UNLESS is_old_pkgs %]
     [% FOREACH alternatives %]
       [% '<dl>' IF loop.first %]
-      <dt>[% IF loop.first %]<img class="hidecss" src="/Pics/[% id %].gif" alt="[[% id %]]">[% ELSE %]or [% END %]
+      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %]or [% END %]
 	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
@@ -309,10 +320,24 @@ Do not install it on a normal Debian system.</p>
   [% IF loop.last -%]
     </table>
 
+[% FOREACH vcs IN known_vcs;
+	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
+	vcs_info = page.get_newest("vcs-$vcs_id");
+	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
+	IF vcs_info; %]
+<dl>
+<dt>Debian Package Source Repository (<acronym title="Version Control System">VCS</acronym>: <a href="[% make_url(vcs_pkg,'','source','') %]">[% vcs_name %]</a>)</dt>
+<dd><a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></dd>
+[% IF vcs_link %]
+<dt>Debian Package Source Repository (Browsable)</dt><dd><a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></dd>
+[% END %]
+</dl>
+[% END; END %]
+
     </div> <!-- end pdownload -->
   [%- END %]
 [% END %]
 
-<script type="text/javascript">init_tab_list("ptablist")</script>
+[%# <script type="text/javascript">init_tab_list("ptablist")</script> %]
 
 [%- PROCESS 'html/foot.tmpl' -%]

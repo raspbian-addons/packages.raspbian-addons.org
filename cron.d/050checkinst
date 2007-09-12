@@ -11,8 +11,9 @@ required="$required libtext-iconv-perl libhtml-template-perl"
 required="$required libclass-accessor-perl"
 required="$required liburi-perl libxml-rss-perl"
 required="$required libtemplate-perl libi18n-acceptlanguage-perl"
+required="$required liblingua-stem-perl"
 
-locales="de_DE.UTF-8 en_US.UTF-8 nl_NL fr_FR.UTF-8"
+locales="de_DE.UTF-8 en_US.UTF-8 nl_NL fr_FR.UTF-8 uk_UA.UTF-8"
 
 packages=`tempfile`
 locs=`tempfile`

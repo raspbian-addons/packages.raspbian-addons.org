@@ -1,5 +1,3 @@
-# $Id$
-#
 # Taken from the webwml CVS tree (english/templates/languages.wml)
 
 package Packages::I18N::Languages;

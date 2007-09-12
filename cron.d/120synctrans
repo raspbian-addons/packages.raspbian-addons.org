@@ -5,10 +5,14 @@
 test -d ${archivedir} || mkdir -p ${archivedir}
 cd ${archivedir}
 
-if [ -z "${localdir}" ]
+if [ -z "${localdir}" ] || [ -n "$ddtp_ftpsite" ]
 then
-    echo using remote mirror
-    for dist in unstable
+    if [ -z "$ddtp_ftpsite" ]
+    then
+	ddtp_ftpsite="$ftpsite"
+    fi
+    echo using remote mirror $ddtp_ftpsite
+    for dist in sid
     do
 	for part in main
 	do
@@ -17,13 +21,13 @@ then
 	  do
 	    echo retrieve translated Descs $dist/$part/$lang
             (cd us/${dist}/${part}/i18n &&
-                wget -q -N ${ftpsite}/dists/${dist}/${part}/i18n/Translations-$lang.gz)
+                wget -q -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translation-$lang.gz)
 	  done
 	done
     done
 else
     echo using local mirror
-    for dist in unstable
+    for dist in sid
     do
 	for part in main
 	do

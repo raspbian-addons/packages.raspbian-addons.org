@@ -20,26 +20,26 @@ cachedir=${topdir}/cache
 # unset this if %SITE% moves somewhere where the packages files
 # cannot be obtained locally
 #
-localdir=/org/ftp.debian.org/debian
+#localdir=/org/ftp.debian.org/debian
 
 # path to private ftp directory
 #ftproot=/org/ftp.root
 
 ftpsite=http://archive.ubuntu.com/ubuntu
 security_ftpsite=$ftpsite
+ddtp_ftpsite=http://ddtp.debian.net/debian
 
 root=""
 
 # Architectures
 #
 polangs="de fi nl fr uk"
-ddtplangs="de cs da eo es fi fr hu it ja nl pl pt_BR pt_PT ru sk sv_SE uk"
+ddtplangs="ca cs da de eo es fi fr go hu it ja km_KH ko nl pl pt pt_BR ru sk sv uk zh zh_CN zh_TW"
 archives="us security"
 sections="main multiverse restricted universe"
 parts="${sections}"
 suites="warty hoary hoary-backports breezy breezy-backports dapper dapper-backports edgy edgy-backports feisty"
 priorities="required important standard optional extra"
-dists="${suites}"
 architectures="i386 amd64 powerpc"
 arch_warty="i386 amd64 powerpc"
 arch_warty_updates="${arch_warty}"

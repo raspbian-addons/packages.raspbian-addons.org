@@ -44,8 +44,6 @@ tie my %src2bin, 'DB_File', "$DBDIR/sources_packages.db",
 
 my $sections = retrieve "$DBDIR/sections.info";
 my $subsections = retrieve "$DBDIR/subsections.info";
-# work around problems with non-US security updates
-$subsections->{oldstable}{us}{'non-US'}++;
 my $priorities = retrieve "$DBDIR/priorities.info";
 
 #use Data::Dumper;

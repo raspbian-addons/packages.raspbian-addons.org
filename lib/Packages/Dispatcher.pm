@@ -15,7 +15,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, write to the Free Software
-#    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 package Packages::Dispatcher;
 
@@ -25,6 +25,7 @@ use warnings;
 use CGI;
 use POSIX;
 use File::Basename;
+use URI;
 use URI::Escape;
 use HTML::Entities;
 use Template;
@@ -64,6 +65,13 @@ sub do_dispatch {
     delete $ENV{'LANG'};
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
+
+    my %SUITES_ALIAS = ( oldstable => 'sarge',
+			 stable => 'etch',
+			 testing => 'lenny',
+			 unstable => 'sid',
+			 '3.1' => 'sarge',
+			 '4.0' => 'etch' );
 
     # Read in all the variables set by the form
     my $input;
@@ -168,10 +176,6 @@ sub do_dispatch {
 	    }
 
 	    my %SUITES = map { $_ => 1 } @SUITES;
-	    my %SUITES_ALIAS = ( sarge => 'oldstable',
-				 etch => 'stable',
-				 lenny => 'testing',
-				 sid => 'unstable', );
 	    my %SECTIONS = map { $_ => 1 } @SECTIONS;
 	    my %ARCHIVES = map { $_ => 1 } @ARCHIVES;
 	    my %ARCHITECTURES = map { $_ => 1 } (@ARCHITECTURES, 'all', 'any');
@@ -202,8 +206,6 @@ sub do_dispatch {
 		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif (!$need_pkg && $sections_descs{$_}) {
 		    set_param_once( $input, \%params_set, 'subsection', $_);
-		} elsif (!$need_pkg && ($_ eq 'non-us')) { # non-US hack
-		    set_param_once( $input, \%params_set, 'subsection', 'non-US');
 		} elsif (!$need_pkg && ($_ eq 'source')) {
 		    set_param_once( $input, \%params_set, 'source', 1);
 		} elsif ($ARCHITECTURES{$_}) {
@@ -223,8 +225,9 @@ sub do_dispatch {
 	} # else if (@components == 1)
 
 	if (@components) {
-	    $input->param( 'keywords', $components[0] );
-	    $input->param( 'package', $components[0] );
+	    my $c = uri_unescape($components[0]);
+	    $input->param( 'keywords', $c );
+	    $input->param( 'package', $c );
 	}
     }
 
@@ -240,7 +243,8 @@ sub do_dispatch {
 		       suite => { default => 'default', match => '^([\w-]+)$',
 				  array => ',', var => \@suites,
 				  replace => { all => \@SUITES,
-					       default => \@SUITES } },
+					       default => \@SUITES,
+					       %SUITES_ALIAS } },
 		       archive => { default => ($what_to_do eq 'search') ?
 					'all' : 'default',
 					match => '^([\w-]+)$',
@@ -266,7 +270,7 @@ sub do_dispatch {
 				 array => ',', var => \@archs, replace =>
 				 { any => \@ARCHITECTURES } },
 		       format => { default => 'html', match => '^([\w.]+)$',  },
-		   mode => { default => undef, match => '^(\w+)$',  },
+		   mode => { default => '', match => '^(\w+)$',  },
 		   sort_by => { default => 'file', match => '^(\w+)$', },
 		   );
     my %opts;
@@ -311,7 +315,9 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 					     debug => ( DEBUG ? $opts{debug} : 0 ) },
 					   ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
-    unless (-e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
+    #FIXME: ugly hack
+    unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
+            || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
 	fatal_error( "requested format not available for this document",
 		     "406 requested format not available");
     }
@@ -327,6 +333,11 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 
     $page_content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
     $page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
+    $page_content{extract_host} = sub { my $uri = URI->new($_[0]);
+                                        my $host = $uri->host;
+                                        $host .= ':'.$uri->port if $uri->port != $uri->default_port;
+                                        return $host;
+                                      };
     # needed to work around the limitations of the the FILTER syntax
     $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
     $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };

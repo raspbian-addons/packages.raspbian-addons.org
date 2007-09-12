@@ -53,7 +53,7 @@
 package names</option>
 <option value="all" [% selected IF search_field_values.searchon == 'all' %]>descriptions</option>
 <option value="sourcenames" [% selected IF search_field_values.searchon == 'sourcenames' %]>source package names</option>
-<option value="contents" [% selected IF search_field_values.searchon == 'contents' %]>package contents</option
+<option value="contents" [% selected IF search_field_values.searchon == 'contents' %]>package contents</option>
 </select>
 <input type="text" size="30" name="keywords" value="[% search_field_values.keywords | html %]" id="kw">
 <span style="font-size: 60%"><a href="[% searchformurl %]">all options</a></span>

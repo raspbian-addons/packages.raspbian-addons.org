@@ -14,7 +14,7 @@ our @EXPORT = qw( do_search_contents );
 use Deb::Versions;
 use Packages::I18N::Locale;
 use Packages::Search qw( :all );
-use Packages::CGI;
+use Packages::CGI qw( :DEFAULT error );
 use Packages::DB;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
@@ -34,7 +34,7 @@ sub do_search_contents {
     #FIXME: that's extremely hacky atm
     if ($params->{values}{suite}{no_replace}[0] eq 'default') {
 	$params->{values}{suite}{no_replace} =
-	    $params->{values}{suite}{final} = $opts->{suite} = [ 'stable' ];
+	    $params->{values}{suite}{final} = $opts->{suite} = [ 'etch' ];
     }
 
     if (@{$opts->{suite}} > 1) {
@@ -82,6 +82,7 @@ sub do_search_contents {
 		if @keywords;
 
 	    my $kw = reverse $first_kw;
+	    $kw =~ s{/+$}{};
 
 	    # exact filename searching follows trivially:
 	    $kw = "$kw/" if $mode eq 'exactfilename';

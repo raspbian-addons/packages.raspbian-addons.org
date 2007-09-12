@@ -1,3 +1,11 @@
+@media handheld, print, projection, screen, tv {
+	.nonvisual { display: none; }
+}
+
+@media braille, embossed, speech, tty {
+	.visual { display: none; }
+}
+
 #hpacketsearch {
 	display: block;
 	padding-top: 1px;
@@ -76,18 +84,22 @@ h1 {
 	list-style-type: none;
 }
 
+#pdeps table ul {
+	margin: 0;
+}
+
 #pdeps ul.uldep, #pdeps ul.uladep {
 	list-style-type: disc;
 	list-style-image: url(http://%SITE%/Pics/dep.gif);
 }
 
 #pdeps ul.ulrec, #pdeps ul.ulidep {
-	list-style-type: disc;
+	list-style-type: square;
 	list-style-image: url(http://%SITE%/Pics/rec.gif);
 }
 
 #pdeps ul.ulsug {
-	list-style-type: disc;
+	list-style-type: circle;
 	list-style-image: url(http://%SITE%/Pics/sug.gif);
 }
 
@@ -173,7 +185,7 @@ table#pdeplegend, #pdownload table {
 	font-family: monospace;
 }
 #pdownload p {
-	display: inline;
+	margin-left: 1em;
 }
 
 #pdownloadnotes {

@@ -9,7 +9,7 @@ cd ${archivedir}
 #
 architectures="armel kfreebsd-i386 kfreebsd-amd64"
 
-for dist in unstable experimental
+for dist in sid experimental
   do
   echo "retrieve Release(.gpg) $dist"
   test -d gnuab/${dist} || mkdir -p gnuab/${dist}

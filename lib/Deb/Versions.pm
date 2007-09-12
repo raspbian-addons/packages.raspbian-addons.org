@@ -1,6 +1,5 @@
 #
 # Deb::Versions
-# $Id$
 #
 # Copyright 2003, 2004 Frank Lichtenheld <frank@lichtenheld.de>
 #
@@ -16,7 +15,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, write to the Free Software
-#    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 =head1 NAME
@@ -142,9 +141,9 @@ sub _lcmp {
     for ( my $i = 0; $i <= length( $v1 ); $i++ ) {
 	my ( $n1, $n2 ) = ( ord( substr( $v1, $i, 1 ) ), 
 			    ord( substr( $v2, $i, 1 ) ) );
-	$n1 += 256 if $n1 < 65; # letters sort earlier than non-letters
+	$n1 += 256 if $n1 && $n1 < 65; # letters sort earlier than non-letters
 	$n1 = -1 if $n1 == 126; # '~' sorts earlier than everything else
-	$n2 += 256 if $n2 < 65;
+	$n2 += 256 if $n2 && $n2 < 65;
 	$n2 = -1 if $n2 == 126;
 	if ( my $r = ($n1 <=> $n2) ) {
 	    return $r;
@@ -154,9 +153,9 @@ sub _lcmp {
 }
 
 our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
-		       etch etch-m68k testing testing-proposed-updates sid unstable
-		       experimental warty hoary hoary-backports breezy
-		       breezy-backports dapper );
+		       etch etch-m68k testing testing-proposed-updates lenny
+		       sid unstable experimental
+		       warty hoary breezy breezy dapper edgy feisty gutsy );
 our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
 our @PRIORITY_SORT = qw( required important standard optional extra );
 my $i = 1000;
