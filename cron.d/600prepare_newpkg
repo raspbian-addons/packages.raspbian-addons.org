@@ -7,7 +7,7 @@ test -d ${packagesdir} || mkdir -p ${packagesdir}
 
 LANG=C cat ${filesdir}/db/package_names_sid.txt \
     | sort | uniq > ${packagesdir}/package_names_sid.$(date -I)
-LANG=C cat ${filesdir}/db/source_names_unstable.txt \
+LANG=C cat ${filesdir}/db/source_names_sid.txt \
     | sort | uniq > ${packagesdir}/source_names_sid.$(date -I)
 
 cd $topdir
