@@ -9,7 +9,9 @@
 		[ 'hg', 'Hg', 'mercurial' ], ];
    vcs_link = page.get_newest("vcs-browser");
 -%]
-[%- nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite }, ];
+[%- suite_name = suite;
+    SET suite_name = suite_name _ ' (' _ suite_aliases.$suite _ ')' IF suite_aliases.$suite;
+    nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite_name }, ];
     nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
     nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
     nav_arr.push( { prefix=>'Package:', name=>pkg } ); -%]
