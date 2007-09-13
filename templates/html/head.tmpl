@@ -73,13 +73,6 @@ package names</option>
    </div>  <!-- mastWrapper -->
 
 <div class="visualClear"></div>
-<div id="contentColumn">
-<div class="inside">
-<div id="content" class="">
-<div class="documentContent" id="region-content">
-
-
-<p class="hidecss"><a href="#inner">skip the navigation</a></p>
 <div id="pnavbar">
  &gt;&gt; <a href="[% homepage %]" title="[% organisation %] Homepage">[% organisation %]</a>
  &gt;&gt; <a href="[% packages_homepage %]" title="[% organisation %] Packages Homepage">Packages</a>
@@ -87,6 +80,10 @@ package names</option>
  &gt;&gt; [% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 
 [% END %]
 </div> <!-- end navbar -->
+
+<div class="inside">
+<div id="content" class="">
+<div class="documentContent" id="region-content">
 
 [%- IF page_title %]
   <h1 class="documentFirstHeading">[% page_title %]</h1>

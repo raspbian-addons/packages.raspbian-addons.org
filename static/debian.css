@@ -1,38 +1,3 @@
-/* css file for debian web site - Jutta Wrage 2004 */
-
-/* all pages have a header, outer inner and footer
-leftcol and maincol can be omitted, there will be other boxes
-to replace later (eg. two content columns)
-normal page:
-<div id="header">
-  <div id="upperheader">
-     <div id="logo">
-     </div> <!-- end logo -->
-     <div id="serverselect">
-     </div> <!-- end serverselect -->
-  </div> <!-- end upperheader -->
-  <div id="navbar">
-  </div> <!-- end navbar -->
-</div> <!-- end header -->
-<div id="outer">
-  <div id="inner">
-    <div id="leftcol">
-      Leftcol is for menus - if omitted, maincol can be omitted, too
-    </div> <!-- end leftcol -->
-    <div id="maincol">
-      Maincol with margin left is for the content
-      But content may go directly to inner
-    </div> <!-- end maincol -->
-  </div> <!-- end inner -->
-  <div id="footer">
-    <hr class="hidecss"> This line is a divider for lynx
-  </div> <!-- end footer -->
-</div> <!-- end outer -->
-color logo #C60036
-cd-pages: bgcolor="#e09e86" - navbar
-*/
-
-/* { border: 1px solid yellow; } */
 html, body {
 	color: #000000;
 	background-color: #FFFFFF;
@@ -59,150 +24,13 @@ acronym {
 hr.hidecss {
 	border: 0;
 }
+.hidecss {
+        display: none;
+}
 
 hr {
 	border-bottom: 0;
 	border-top: 1px solid #BFC3DC;
-}
-
-samp {
-	display: block;
-	margin-left: 2em;
-}
-div.sampleblock {
-	width: 80%;
-	margin: auto;
-	font-family:courier, serif;
-	font-size: 90%;
-}
-div.quoteblock {
-	width: 75%;
-	margin: auto;
-	font-size: 90%;
-	text-align: justify;
-}
-
-.quoteblock div.preimg {
-	float: left;
-	margin-top: 0.2em;
-}
-.quoteblock cite {
-	display: block;
-	text-align: right;
-}
-blockquote.question {
-	font-style: italic;
-}
-blockquote.question p span {
-	font-style: normal;
-	width: 10%;
-}
-#pagewidth {
-	width: 100%;
-	text-align: left;
-}
-
-/* now the header*/
-#header {
-	margin-left: -3px;
-	width: 100%;
-	height: auto;
-}
-
-/* upper nested header box*/
-#upperheader {
-	width: 100%;
-	margin-top: 11px;
-	height: auto;
-	/* height: 4.8em; */
-	background: #FFFFFF;
-}
-
-#logo {
-	float: left;
-	margin-left: 6px;
-	background: #FFFFFF;
-}
-
-#serverselect {
-	float: right;
-	display: block;
-	padding-top: 1px;
-	margin-right: 6px;
-	margin-left: auto;
-	text-align: right;
-	top: 0;
-	right: 0;
-}
-
-#serverselect:lang(de) {
-	width: 15em;
-}
-#serverselect:lang(en) {
-	width: 13em;
-}
-
-#serverselect p {
-	color: #990000;
-	font-size: 0.8em;
-	font-weight: normal;
-}
-
-#serverselect p select {
-	font-size: 88%;
-}
-
-#serverselect p input {
-	font-size: 88%;
-}
-.centerlogo {
-	margin-left: 260px;
-	margin-right: auto;
-	width: 125px;
-	text-align: center;
-	vertical-align: bottom;
-}
-#cdlogo {
-}
-
-#navbar {
-	/* margin-top: 1em; */
-	clear: both;
-	padding-left: 0px;
-	/* margin-top: 5px; */
-	padding-top: 6px;
-	padding-bottom: 4px;
-	width: 100%;
-	height: auto;
-	text-align: center;
-	background: #DF0451;
-}
-#navbar ul {
-	display: inline;
-	list-style-type: none; 
-	padding-left:  0px;
-	line-height: 1.5em;
-}
-#navbar ul li {
-	display: inline;
-	margin: 0;
-	white-space: nowrap;
-}
-#navbar a {
-	color: #FFFFFF;
-	text-decoration: none;
-	padding: 0.2em 0.4em 0.2em 0.4em;
-	background-color: #000084;
-	border: 1px solid #000084;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
-	font-size: 0.9em;
-}
-#navbar a:hover {
-	background: #0000CC;
-}
-#navbar .hidecss, .hidecss {
-	display: none;
 }
 
 /* the rest of page out of two nested boxes around */
@@ -219,88 +47,6 @@ blockquote.question p span {
 	width: 100%;
 	background: #FFFFFF;
 	/* overflow: auto; */
-}
-
-#leftcol {
-	float: left;
-	margin: 0em 0.4em 0 0;
-	padding-left: 0;
-	padding-bottom: 1em;
-	width: auto;
-	background: #BBDDFF;
-	font-size: 0.9em;
-	font-family: Arial, Helvetica, sans-serif;
-	border: 1px solid #BBDDFF;
-	/* overflow: auto; */
-}
-#leftcol a:link, #leftcol a:visited {
-	display: block;
-}
-#leftcol a:hover {
-	background-color: #DDEEFF;
-	/* background-color: #FFFFFF; */
-}
-#leftcol ul {
-	margin: 2px;
-	padding: 0;
-	list-style-type: none;
-	font-weight: bold;
-}
-#leftcol ul.votemenu {
-	width: 11em;
-}
-#leftcol ul.cdmenu {
-	width: 12em;
-}
-#leftcol ul.votemenu ul li, #leftcol ul.cdmenu ul li {
-	padding-bottom: 0.4em;
-}
-#leftcol li ul {
-	display: inline;
-}
-#leftcol ul li {
-	padding: 0.2em 0;
-}
-#leftcol ul ul {
-	font-size: 0.9em;
-	margin: 0;
-}
-#leftcol ul li a {
-	line-height: 1.2em;
-	padding-right: 0.5em;
-	/* padding: 0.2em 0 0.3em 0em; */
-}
-#leftcol ul ul li a {
-	font-weight: normal;
-	padding: 0.1em 0.5em;
-	line-height: 1.1em;
-}
-#leftcol ul ul li {
-	padding-top: 0;
-}
-#leftcol p {
-	margin-left: 2px;
-	margin-right: 2px;
-}
-#leftcol p a {
-	display: block;
-	margin: 0;
-}
-#leftcol p img {
-	margin-left: 1em;
-}
-
-#maincol {
-	background: #FFFFFF;
-	margin-left: 12em;
-	margin-right: 0.5em;
-	margin-bottom: 1em;
-}
-
-#maincol:lang(en), #maincol:lang(cz), #maincol:lang(ko),
-	#maincol:lang(no), #maincol:lang(sk), #maincol:lang(tr),
-	#maincol:lang(zh-CN), #maincol:lang(zh-HK), #maincol:lang(zh-TW) {
-	margin-left: 10em;
 }
 
 #lefthalfcol {
@@ -322,6 +68,7 @@ blockquote.question p span {
 	margin-right: 0.2em;
 }
 
+
 #footer {
 	clear: both;
 	width: 100%;
@@ -329,7 +76,7 @@ blockquote.question p span {
 	bottom: 0;
 	text-align: center;
 	margin: 0px;
-	border-top: 1px solid #BFC3DC;
+	border-top: 1px solid #000;
 }
 
 #fineprint {
@@ -339,7 +86,7 @@ blockquote.question p span {
 	font-size: 0.85em;
 }
 
-.bordertop { border-top: 1px solid #BFC3DC; }
+.bordertop { border-top: 1px solid #000; }
 
 dl.gloss dt {
 	font-weight: bold;
@@ -362,64 +109,6 @@ dl.gloss dt {
 	margin: 0px;
 }
 
-#main {
-	background: #bbddff;
-	padding: 1em 0; /* have some padding to get rid of collapsed margins */
-}
-
-/* classes for cards */
-
-.cardleft {
-	margin: 0 0 1em;
-	float: left;
-	width: 49%;
-}
-.cardright {
-	margin-left: 50%
-	/*margin: 0 1% 2em 50%; */
-}
-.card {
-	clear: left;
-	margin: 0 0 1em;
-}
-
-.cardleft h2, .cardright h2, .card h2 {
-	font-size: 120%;
-	background: #000000;
-	color: #FFD400;
-	display: inline;
-	padding: 0.2em 0.4em;
-	margin: 0 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	letter-spacing: 0.2em;
-}
-
-.cardleft dl dd, .cardright dl dd , .card dl dd {
-	padding-bottom: 0.5em;
-}
-
-.cardleft div, .cardright div, .card div {
-	border: 2px solid #000000;
-	background: #FFFFFF;
-	padding: 0.5em;
-	margin: 2px 10px;
-	/* the next two lines xpand the div to heigth of left inner div */
-	overflow: auto;
-}
-
-div.lefthalf {
-	float: left;
-	width: 49%;
-	border: 0;
-	margin: 0; 
-	padding: 0;
-}
-
-div.righthalf {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
 /* colors for packages, warnings and news in ports */
 .warning, dt.new, .no {
 	color: red; /* FF0000 */
@@ -441,13 +130,6 @@ table.ridgetable, table.reltable {
 	border-style: ridge;
 	border-collapse: collapse;
 }
-table.vote {
-	margin: 0 auto;
-	border-width: 3px;
-	border-color: gray;
-	border-style: ridge;
-	border-collapse: collapse;
-}
 #pcontentsres col, #pcontentsres th, #pdownload th, #pdownload td, table.ridgetable th, table.ridgetable td,
 	table.reltable td, table.reltable th {
 	border: 2px #BFC3DC;
@@ -457,136 +139,11 @@ table.vote {
 table.reltable th {
 	background-color: #44CCCC;
 }
-table.vote th {
-	border: 1px solid gray;
-	background-color: #DDDDDD;
-}
-table.vote td {
-	border: 1px solid gray;
-	padding: 4px;
-}
 table.reltable tr.odd {
 	background-color: #FFFFFF;
 }
 table.reltable tr.even {
 	background-color: #DDDDDD;
-}
-table.stattrans {
-	margin: 0 auto;
-	width: 95%;
-	border: 1px solid black;
-	background-color: #cdc9c9;
-}
-table.stattrans th {
-	text-align: center;
-	padding: 2px;
-}
-table.stattrans td {
-	text-align: right;
-	padding: 2px;
-}
-table.stattrans tbody th {
-	text-align: left;
-	font-weight: normal;
-}
-
-/* partners */
-.partnertype {
-	background-color: #DD0000;
-	padding: 0.2em 0 0.2em 1em;
-	color: #FFFFFF;
-
-}
-div.partnerlogo {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	width: 30%;
-}
-div.partnerdesc {
-	display: table-cell;
-	font-size: 85%;
-}
-div.cdflash {
-	background-color: #E09E86;
-	width: 80%;
-	margin: auto;
-	text-align: center;
-}
-.cdrsync {
-	color: #6B1300;
-}
-/* debian installer */
-
-.dierror {
-	background-color: #FF6060;
-}
-.dibad {
-	background-color: #F7FF60;
-}
-.digood {
-	background-color: #7AFF71;
-}
-
-/* useful classes */
-
-th.eventheader {
-	background-color: #BBDDFF;
-}
-.center {
-	text-align: center;
-}
-.right {
-	text-align: right;
-}
-ul.circlelist {
-	list-style-type: circle;
-}
-.centerdiv table {
-	margin-left: auto;
-	margin-right: auto;
-}
-ul.discless {
-	list-style-type: none;
-}
-.top, img.ico {
-	vertical-align: top;
-}
-img.ico {
-	float: left;
-	margin: 0 0.2em 0 0;
-}
-img.rightico {
-	float: right;
-	vertical-align: top;
-	margin: 0 0 0 0.2em;
-}
-img.cve {
-	vertical-align: -25px;
-}
-.y2kok, .yes {
-	color: #00BB00;
-}
-.y2kok2 {
-	color: #00BBBB;
-}
-.bluehead {
-	color: #0000FF !important;
-}
-span.halfsize {
-	font-size: 80%;
-}
-span.ddpbooktitle, span.merchtitle {
-	font-size: larger;
-}
-a:link { color: #0000FF; }
-a:visited { color: #800080; }
-a:hover { color: #F000FF; }
-a:active { color: #FF0000; }
-
-.navpara a, col.y2k {
-	white-space: nowrap;
-	/* this is to keep from breaking at whitespace in anchors */
 }
 
 /* language dependent stuff */
@@ -629,10 +186,4 @@ html[lang|="zh"] strong {
 .bidi {
 	direction: rtl;
 	text-align: right;
-}
-
-#leftcol, #navbar, #navbar a {
-	-moz-border-radius: 15px;
-	/* this goes to the end as the css validator does not like it
-	will be replaced by border-radius with css3 */
 }

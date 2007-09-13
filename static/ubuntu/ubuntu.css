@@ -107,42 +107,18 @@ html[xmlns] .mozclear
 }
 
 #footWrapper {
-	background: url(footer-bg.png);
-	background-repeat: repeat-x;
-	border-bottom: 2px solid #583D1E;
+	background-color: #dbba75;
+	border-bottom: 2px solid #000;
 }
 
 #footer
 {
 	color: #5B4832;
-	background-image: url(footer-image2.png);
-	background-repeat: repeat-y;
-	background-position: left top;
+	background-color: #dbba75;
 	position: relative;
 	text-align: center;
 	padding: 10px;
 }
-
-#prefooter
-{
-	color: #5B4832;
-	text-align: center;
-}
-
-#prefooter .bordertop
-{
-	border-top: 1px dotted #C1B496;
-}
-
-#extranav
-{
-	margin: 0;
-	border-bottom: 1px dotted #C1B496;
-}
-
-#extranav a, #extranav a:visited, #prefooter a, #prefooter a:visited { color: #2e2003;} /* darker brown */
-#extranav a:hover, #prefooter a:hover {color: #800000; } /* ubuntu dark brown */
-
 
 html>body #footer
 {
@@ -260,7 +236,7 @@ h1, h2, h3, h4, h5, h6
 h1
 {
 	font-size: 170%;
-	border-bottom: 2px solid #6D4C07;
+/*	border-bottom: 2px solid #6D4C07; */
 }
 
 h2

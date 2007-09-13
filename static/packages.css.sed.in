@@ -44,13 +44,20 @@ h1 {
              font-size: smaller;
              margin-left: 1em;
              float: right;
-             background-color: #BBDDFF;
-             border: thin solid #BFC3DC;
+             background-color: #dbba75;
+	     color: #5B4832;
+             border: thin solid #5B4832;
              padding: 1em .5em;
              width: auto;
 }
+#pmoreinfo h2 {
+             border-bottom: none;
+	     color: #5B4832;
+}
 #pmoreinfo h3 {
              border-top: thin solid black;
+	     border-bottom: none;
+	     color: #5B4832;
 }
 
 /*
@@ -260,7 +267,8 @@ table#pdeplegend, #pdownload table {
 	padding: .3em;
 	border-top: solid gray thin;
 	border-bottom: solid gray thin;
-	background-color: #bdf;
+        background-color: #dbba75;
+	color: #5B4832;
 }
 #psearchres li {
 	margin-top: 1em;
@@ -311,11 +319,11 @@ table#pdeplegend, #pdownload table {
 	padding-left: 1em;
 	padding-top: 6px;
 	padding-bottom: 4px;
-	width: 100%;
+	width: auto;
 	height: auto;
 	text-align: left;
-	background: #DF0451;
-	color: yellow;
+        background-color: #dbba75;
+	color: #5B4832;
 	font-size: smaller;
 	font-weight: bold;
 }
@@ -330,9 +338,8 @@ table#pdeplegend, #pdownload table {
 	margin: 0;
 	white-space: nowrap;
 }
-#pnavbar a {
-	color: yellow;
-	text-decoration: none;
+#pnavbar a, #pmoreinfo a {
+	color: #5B4832;
 }
 #pnavbar a:hover {
 }
@@ -375,7 +382,7 @@ table#pdeplegend, #pdownload table {
 .pvcslink { 
 }
 
-#pnavbar, .pconstantnag, #psitewidemsg {
+.pconstantnag, #psitewidemsg {
 	-moz-border-radius: 15px;
 	/* this goes to the end as the css validator does not like it
 	will be replaced by border-radius with css3 */
