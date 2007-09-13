@@ -14,7 +14,7 @@
    ddpo_url = 'http://qa.debian.org/developer.php?login='
    src_bugs_url = bugs_url _ 'src:'
    mirror_url = 'http://archive.ubuntu.com/'
-   changelogs_url = 'http://changelogs.ubuntu.com/changelogs'
+   changelogs_url = 'http://changelogs.ubuntu.com/changelogs/'
    policy_url = 'http://www.debian.org/doc/debian-policy/'
 #   cn_help_url = homepage _ 'intro/cn'
    logo = {
@@ -23,13 +23,13 @@
         alt => organisation,
    }
    copyright = {
-#	url => 'http://www.spi-inc.org/',
+	url => 'http://www.canonical.com/',
         name => 'Canonical Ltd.',
-#        years => '1997 - ' _ timestamp.year,
+        years => timestamp.year,
    }
-#   license = {
-#	url => homepage _ 'license'
-#   }
+   license = {
+	url => homepage _ 'legal'
+   }
    contact = {
 	name => 'Frank Lichtenheld',
 	mail => 'frank@lichtenheld.de',
