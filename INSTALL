@@ -1,0 +1,34 @@
+INSTALL
+=======
+
+This should give you an idea about the basic steps. It is probably very rough
+around the edges, feel free to ask for clarifications so we can improve it.
+
+This guide assumes you are working on a Debian etch system. If that is not the
+case, you might have to adjust some of the steps.
+
+1) Install git (package git-core). You will get a much more pleasant user
+   experience if you use a version from backports.org or a self-compiled one
+   instead of etch's version.
+2) Download the code from git://source.djpig.de/git/packages.git
+   (Something like `git clone git://source.djpig.de/git/packages.git')
+3) Install the needed dependencies. A list can be found in cron.d/050checkinst.
+   One dependency can't be fulfilled directly from etch and is therefor not listed
+   there: the Search::Xapian perl module. You can either compile that yourself against
+   libxapian from etch, backport all of xapian and libsearch-xapian-perl from
+   lenny, or install the 0.9.9-1 deb from snapshots.debian.net.
+4) Install apache2 (apache2-mpm-worker) and mod_perl (libapache2-mod-perl2)
+5) Adjust the configuration to your needs. You should at least edit the following
+   files before starting to test:
+   - ./config.sh.sed.in
+   - ./templates/config.tmpl
+   - ./templates/config/*
+   - ./conf/apache.conf.sed.in
+6) run `./bin/setup-site <topdir> <site>'
+   (e.g. `./bin/setup-site /org/packages.debian.org packages.debian.org')
+7) create a cache directory for the compiled templates, it needs to be writable by
+   apache (i.e. on default etch by www-data). Default location is
+   <topdir>/cache
+7) Include ./conf/apache.conf in apache's configuration, e.g. by symlinking it from
+   /etc/apache2/sites-available/ and then using a2ensite
+8) Run ./bin/daily

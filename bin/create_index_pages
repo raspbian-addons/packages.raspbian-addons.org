@@ -49,9 +49,16 @@ my $priorities = retrieve "$DBDIR/priorities.info";
 #use Data::Dumper;
 #print STDERR Dumper($sections, $subsections, $priorities);
 
-my (%pages);
+my (%pages, %tt_vars);
 
-my $template = new Packages::Template( "$TOPDIR/templates", 'html', {} );
+$tt_vars{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
+$tt_vars{make_url} = sub { return &Packages::CGI::make_url(@_) };
+# needed to work around the limitations of the the FILTER syntax
+$tt_vars{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
+$tt_vars{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
+$tt_vars{quotemeta} = sub { return quotemeta($_[0]) };
+
+my $template = new Packages::Template( "$TOPDIR/templates", 'html', \%tt_vars );
 
 print "write suite index files ...\n";
 foreach my $s (@SUITES) {
@@ -70,13 +77,6 @@ foreach my $s (@SUITES) {
 	my %content = ( subsections => [], suite => $s,
 			lang => $lang, charset => $charset,
 			used_langs => \@LANGUAGES, suites => \@SUITES );
-	$content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-	$content{make_url} = sub { return &Packages::CGI::make_url(@_) };
-        # needed to work around the limitations of the the FILTER syntax
-	$content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-	$content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-	$content{quotemeta} = sub { return quotemeta($_[0]) };
-
 	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    if ($sections_descs{$ssec}) {

@@ -10,8 +10,8 @@
 	nav_last = { name=>'All Packages' };
    END;
    nav_arr.push( { name=>'Source',
-	           url=>make_url('/','','suite',suite,'source',source) } )
-	IF source;
+	           url=>make_url('/','','suite',suite,'source','source') } )
+	IF is_source;
    nav_arr.push( nav_last );
 %]
 [% PROCESS 'html/head.tmpl' 
