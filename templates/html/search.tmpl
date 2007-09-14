@@ -1,18 +1,5 @@
 [%- PROCESS 'config/archive_layout.tmpl' -%]
-[%- PROCESS 'html/head.tmpl'
-   title_tag = 'Debian Package Search Results'
-   print_search_field = 'packages'
-   search_field_values = {
-	keywords => search_keywords.join(' '),
-	searchon => opts.searchon_form,
-	suite => params.values.suite.no_replace.join(','),
-	architectures => params.values.arch.no_replace.join(','),
-	sections => params.values.section.no_replace.join(','),
-    }
-   navigation = [ { name => 'Package Search Results' } ]
--%]
-
-[% keyword_str = search_keywords.join(' ');
+[%- keyword_str = search_keywords.join(' ');
    keyword_esc = uri_escape(keyword_str);
    keyword_enc = html_encode(keyword_str);
 
@@ -27,7 +14,19 @@
    architectures_str = params.values.arch.no_replace.join(', ');
    architectures_esc = uri_escape(architectures_str);
    architectures_enc = html_encode(architectures_str);
-%]
+-%]
+[%- PROCESS 'html/head.tmpl'
+   title_tag = "Package Search Results -- $keyword_enc"
+   print_search_field = 'packages'
+   search_field_values = {
+	keywords => search_keywords.join(' '),
+	searchon => opts.searchon_form,
+	suite => params.values.suite.no_replace.join(','),
+	architectures => params.values.arch.no_replace.join(','),
+	sections => params.values.section.no_replace.join(','),
+    }
+   navigation = [ { name => 'Package Search Results' } ]
+-%]
 
 <div id="psearchsug">
 [% UNLESS results %]
