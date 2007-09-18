@@ -75,6 +75,7 @@ sub do_search_contents {
 		&searchfile(\@results, reverse($_)."/", \$nres, $reverses);
 		last if $Packages::Search::too_many_hits;
 	    }
+	    while (<FILENAMES>) {};
 	    close FILENAMES or warn "fgrep error: $!\n";
 	} else {
 
