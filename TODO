@@ -50,23 +50,23 @@ General:
   anymore, so search further is futile. Maybe the backend could even add a
   marker, ignored by read_entry_all, but understood by read_entry_small, that
   indicates end of $res2 and start of $res3
-- Debtags: print friendly names instead of raw names?
 - Store in db \1-separated, and split on that, instead of the more fragile
   '/, /' split
 - Fields we don't handle in any way currently:
   Conflicts
-  Suggests
   Replaces
   Enhances
   Origin    -- not needed
   Bugs      -- not needed
   Task
   Python-Version(s) -- not needed
-  X-Vcs-.*  -- should be supported(?)
+
+Cron:
+- Verify Release files
+- refactorize 100syncarchive* so that there is not so much copied code
 
 Missing pieces from old code:
- - DDTP support (but without a working DDTP I will not invest any time
-   in that)
+ - gettext support in templates
  - search_packages result parser?
    reportbug in sarge is completly broken in this regard anyway AFAICT
    reportbug in etch works as long as there is the exact hit but
