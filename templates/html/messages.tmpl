@@ -1,31 +1,31 @@
 <!-- messages.tmpl -->
 [%- FOREACH error IN errors %]
 [%- '<div class="perror">' IF loop.first %]
- <p>[% error %]</p>
+ <p>[% error | html %]</p>
 [% '</div>' IF loop.last -%]
 [% END -%]
 [%- FOREACH debug IN debugs %]
 [%- '<div class="pdebug"><h2>Debugging:</h2><pre>' IF loop.first -%]
-[% debug %]
+[% debug | html %]
 [% '</pre></div>' IF loop.last -%]
 [% END -%]
 [%- FOREACH hint IN hints %]
 [%- '<div class="phints">' IF loop.first %]
- <p>[% hint %]</p>
+ <p>[% hint | html %]</p>
 [% '</div>' IF loop.last -%]
 [% END -%]
 [%- FOREACH msg IN msgs %]
 [%- '<div class="pmsgs">' IF loop.first %]
- <p>[% msg %]</p>
+ <p>[% msg | html %]</p>
 [% '</div>' IF loop.last -%]
 [% END -%]
 [%- FOREACH note IN notes %]
 [%- '<div class="pnotes">' IF loop.first %]
 [%- IF note.1 %]
- <h2>[% note.0 %]</h2>
- <p>[% note.1 %]</p>
+ <h2>[% note.0 | html %]</h2>
+ <p>[% note.1 | html %]</p>
 [% ELSE %]
- <p>[% note.0 %]</p>
+ <p>[% note.0 | html %]</p>
 [% END -%]
 [% '</div>' IF loop.last -%]
 [% END -%]
