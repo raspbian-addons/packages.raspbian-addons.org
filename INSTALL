@@ -32,3 +32,6 @@ case, you might have to adjust some of the steps.
 7) Include ./conf/apache.conf in apache's configuration, e.g. by symlinking it from
    /etc/apache2/sites-available/ and then using a2ensite
 8) Run ./bin/daily
+9) Setup ./bin/daily to be run regulary. In ./conf/crontab you can find an example crontab
+   to do this. Actually preferable is to trigger the script by archive updates, but you
+   will know best if and how to implement that in your setup.

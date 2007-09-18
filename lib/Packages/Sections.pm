@@ -69,6 +69,8 @@ our %sections_descs = (
 					     N_("The famous typesetting software and related programs.") ],
 		      text		=> [ N_("Text Processing"),
 					     N_("Utilities to format and print text documents.") ],
+		      translations      => [ N_("Translations"),
+					     N_("Translation packages and language support meta packages.") ],
 		      utils		=> [ N_("Utilities"),
 					     N_("Utilities for file/disk manipulation, backup and archive tools, system monitoring, input systems, etc.") ],
 		      virtual	=> [ N_("Virtual packages"),

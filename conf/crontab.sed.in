@@ -1,0 +1,4 @@
+# Example crontab
+55 22 * * *     %TOPDIR%/bin/daily
+@reboot         rm -f %TOPDIR%/files/cron.lock
+@reboot         rm -f %TOPDIR%/files/changelogs.lock
