@@ -2,6 +2,7 @@
 
 #   build-maintainerdb - convert several Packages files to maintainer database
 #   Copyright (c) 1998,9,2001,3,4,6  Martin Schulze <joey@debian.org>
+#   Copyright (C) 2007 Joerg Jaspert <joerg@debian.org>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -15,9 +16,7 @@
 #
 #   You should have received a copy of the GNU General Public License
 #   along with this program; if not, write to the Free Software
-#   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-
-# $Id$
+#   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #   Todo:
 #    . Read maintainer changes from overrides file(s), need to rub
@@ -25,6 +24,11 @@
 
 use strict;
 use warnings;
+use DB_File;
+
+use lib '../lib';
+
+use Deb::Versions;
 
 # read the configuration
 if (!open (C, "../config.sh")) {
@@ -38,14 +42,61 @@ while (<C>) {
 close (C);
 
 my $maildomain = "packages.debian.org";
+my $ptsdomain = "packages.qa.debian.org";
 
-my $maintainerfile = "$topdir/archive/Maintainers";
+
+my $maintainerfile = "$topdir/../ftp.root/debian/indices/Maintainers";
 my $maintainerdb = "$topdir/conf/maintainer";
 my $overridefile = "$topdir/conf/maintainerdb.override";
 my @postcall = ( "/usr/sbin/postmap", $maintainerdb );
 my $opt_verbose = 0;
+my $dbdir = "$topdir/files/db";
 
 my %maint;
+my %binsrc;
+
+# Lets take pdo database input files for the source mapping
+sub read_bin_src_mapping
+{
+    tie my %src_packages, 'DB_File', "$dbdir/sources_small.db",
+    O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't tie DB $dbdir/sources_small.db: $!";
+    tie my %src2bin, 'DB_File', "$dbdir/sources_packages.db",
+    O_RDONLY, 0666, $DB_BTREE
+	or die "couldn't open $dbdir/sources_packages.db: $!";
+
+    my %bin;
+    while (my ($source, $data) = each %src_packages) {
+	my @src = map { [ split(/\s+/) ] } split( /\0/, $data );
+	my $newest = (sort( { version_cmp($b->[-1],$a->[-1]) } @src))[0];
+	my ($section, $version) = @{$newest}[2,5];
+	
+	my $bin_data = $src2bin{$source};
+	unless ($bin_data) {
+	    warn "no binary data found for $source\n";
+	    # source packages without binaries have most
+	    # likely been succeded
+	    next;
+	}
+	
+	my @bin = map { [ split(/\s+/) ] } split( /\0/, $bin_data );
+	my %seen;
+	foreach (@bin) {
+	    my ($pkg, $ver) = @{$_}[2,3];
+	    next if $seen{"$pkg/$ver"}++; # weed out multiple arches/suites faster
+	    if ($bin{$pkg}
+		&& ($bin{$pkg}{source} ne $source)
+		&& (version_cmp($bin{$pkg}{version},$ver) > 0)) {
+		next;
+	    } else {
+		$bin{$pkg} = { version => $ver, source => $source,
+			       target => "$section" };
+		$binsrc{$pkg} = $source;
+	    }
+	}
+	$binsrc{$source} = $source;
+    }
+}
 
 sub package_maintainer
 {
@@ -95,20 +146,23 @@ sub read_maintainer
 		}
 
 	    printf "  %s: %s\n", $package, $maint{$package} if ($opt_verbose > 1);
-	    my $pkgshort = "";
-	    if ($package =~ /(.*[^\d\.]+)([\d\.]*\d)$/) {
-		$pkgshort = $1;
-		$maint{$pkgshort} = $maint{$package} if (! exists $maint{$pkgshort});
-		printf "  %s: %s\n", $pkgshort, $maint{$package} if ($opt_verbose > 1);
-	    }
-	    if ($maint{$package} =~ /([^\@]+)\@(master\.)?debian\.org/) {
-		my $addrsave = $maint{$package} if ($opt_verbose > 1);
-		$maint{$package} = package_maintainer ($package, $1, $maint{$package});
-		printf "  Changed to %s\n", $maint{$package} if ($opt_verbose > 1 && ($addrsave ne $maint{$package}));
-		if (length ($pkgshort) > 0) {
-		    $maint{$pkgshort} = package_maintainer ($pkgshort, $1, $maint{$pkgshort});
-		}
-	    }
+
+# Short what? Whats this supposed to do, except creating new (and 99% broken) something -> email mappings?
+# 	    my $pkgshort = "";
+# 	    if ($package =~ /(.*[^\d\.]+)([\d\.]*\d)$/) {
+# 		$pkgshort = $1;
+# 		print "Short what? $pkgshort (long is $package)\n";
+# 		$maint{$pkgshort} = $maint{$package} if (! exists $maint{$pkgshort});
+# 		printf "  %s: %s\n", $pkgshort, $maint{$package} if ($opt_verbose > 1);
+# 	    }
+# 	    if ($maint{$package} =~ /([^\@]+)\@(master\.)?debian\.org/) {
+# 		my $addrsave = $maint{$package} if ($opt_verbose > 1);
+# 		$maint{$package} = package_maintainer ($package, $1, $maint{$package});
+# 		printf "  Changed to %s\n", $maint{$package} if ($opt_verbose > 1 && ($addrsave ne $maint{$package}));
+# 		if (length ($pkgshort) > 0) {
+# 		    $maint{$pkgshort} = package_maintainer ($pkgshort, $1, $maint{$pkgshort});
+# 		}
+# 	    }
 	} else {
 	    printf "Skipping double $package\n" if ($opt_verbose);
 	    printf "LINE: $_" if ($opt_verbose > 2);
@@ -117,15 +171,27 @@ sub read_maintainer
     close (F);
 }
 
+
+
 sub write_maintainer
 {
     my $file = shift;
 
     printf "Writing to %s.new\n", $file if ($opt_verbose > 0);
     open (CONF, ">$file.new") || die "Can't open $file.new, $!";
+    my $forward;
     foreach my $package (sort(keys(%maint))) {
-	printf "%s -> %s\n", $package, $maint{$package} if ($opt_verbose > 1);
-	printf CONF "%s@%s\t%s\n", $package, $maildomain, $maint{$package};
+# It is possible that we do not know a source package -> in that case fall back to old behaviour
+# and only mail the maintainer. Can happen when pdo doesnt know the suite the source is in, like
+# it doesnt know oldstable-proposed-updates at date of writing this code.
+	$forward = "$maint{$package}";
+	if ($binsrc{$package}) {
+	    $forward .= ", $binsrc{$package}_contact\@$ptsdomain";
+	}
+	printf "%s -> %s\n", $package, $forward if ($opt_verbose);
+	printf CONF "%s@%s\t%s\n", $package, $maildomain, $forward;
+#	printf "%s -> %s and pts: %s\n", $package, $maint{$package}, $binsrc{$package} if ($opt_verbose);
+#	printf CONF "%s@%s\t%s, %s_contact@%s\n", $package, $maildomain, $maint{$package}, $binsrc{$package}, $ptsdomain;
     }
     close (CONF);
     printf "Renaming to %s\n", $file if ($opt_verbose > 0);
@@ -161,6 +227,8 @@ while ($#ARGV > -1) {
     }
     shift;
 }
+
+&read_bin_src_mapping();
 
 &read_maintainer ($overridefile);
 &read_maintainer ($maintainerfile);

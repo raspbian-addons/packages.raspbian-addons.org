@@ -46,7 +46,12 @@ sub send_file {
     $path .= "$opts->{priority}[0]/" if @{$opts->{priority}};
     # we don't have translated index pages for subsections yet
     $opts->{lang} = 'en' if @{$opts->{subsection}} or $file eq 'allpackages';
-    $path .= "$file.$opts->{lang}.$opts->{format}";
+
+    #FIXME: ugly hack
+    if ($opts->{lang} ne 'en' and !-f "$wwwdir/$path$file.$opts->{lang}.$opts->{format}") {
+    	$opts->{lang} = 'en';
+    }
+    $path .= "$file.$opts->{lang}.$opts->{format}";	
 
     unless (@Packages::CGI::fatal_errors) {
 	my $buffer;
@@ -55,6 +60,9 @@ sub send_file {
 	    $headers{'-charset'} = get_charset( $opts->{lang} );
 	    $headers{'-type'} = get_mime( $opts->{format}, 'text/plain' );
 	    $headers{'-content-encoding'} = $encoding{$opts->{format}} if exists $encoding{$opts->{format}};
+	    my ($size,$mtime) = (stat("$wwwdir/$path"))[7,9];
+	    $headers{'-content-length'} = $size;
+	    $headers{'-last-modified'} = gmtime($mtime);
 	    print header( %headers );
 
 	    binmode INDEX;

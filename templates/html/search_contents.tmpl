@@ -1,8 +1,20 @@
+[%- keyword_str = search_keywords.join(' ');
+   keyword_esc = uri_escape(keyword_str);
+   keyword_enc = html_encode(keyword_str);
+
+   section_str = params.values.section.no_replace.join(', ');
+   section_esc = uri_escape(section_str);
+   section_enc = html_encode(section_str);
+
+   architectures_str = params.values.arch.no_replace.join(', ');
+   architectures_esc = uri_escape(architectures_str);
+   architectures_enc = html_encode(architectures_str);
+-%]
 [%- PROCESS 'html/head.tmpl'
-   title_tag = "$organisation Package Contents Search Results"
+   title_tag = "Package Contents Search Results -- $keyword_enc"
    keywords = "$suite"
    print_search_field = 'packages'
-   navigation = [ { title => '', name => 'Packages Contents Search Results', url => '' } ]
+   navigation = [ { title => '', name => 'Package Contents Search Results', url => '' } ]
    search_field_values = {
 	keywords => search_keywords.join(' '),
 	searchon => 'contents',
@@ -14,18 +26,6 @@
    }
 -%]
 
-[% keyword_str = search_keywords.join(' ');
-   keyword_esc = uri_escape(keyword_str);
-   keyword_enc = html_encode(keyword_str);
-
-   section_str = params.values.section.no_replace.join(', ');
-   section_esc = uri_escape(section_str);
-   section_enc = html_encode(section_str);
-
-   architectures_str = params.values.arch.no_replace.join(', ');
-   architectures_esc = uri_escape(architectures_str);
-   architectures_enc = html_encode(architectures_str);
-%]
 <div id="psearchsug">
 
 <ul class="linklist">

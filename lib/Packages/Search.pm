@@ -1,8 +1,8 @@
 #
 # Packages::Search
 #
-# Copyright (C) 2004-2006 Frank Lichtenheld <frank@lichtenheld.de>
-# 
+# Copyright (C) 2004-2007 Frank Lichtenheld <frank@lichtenheld.de>
+#
 # The code is based on the old search_packages.pl script that
 # was:
 #
@@ -23,7 +23,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, write to the Free Software
-#    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 =head1 NAME
@@ -103,11 +103,11 @@ sub read_entry {
 
 #FIXME: make configurable
 my %fallback_suites = (
-		       'oldstable-backports' => 'oldstable',
-		       'oldstable-volatile' => 'oldstable',
-		       'stable-backports' => 'stable',
-		       'stable-volatile' => 'stable',
-		       experimental => 'unstable' );
+		       'sarge-backports' => 'sarge',
+		       'sarge-volatile' => 'sarge',
+		       'etch-backports' => 'etch',
+		       'etch-volatile' => 'etch',
+		       experimental => 'sid' );
 
 sub read_entry_simple {
     my ($hash, $key, $archives, $suite) = @_;

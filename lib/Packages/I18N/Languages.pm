@@ -1,5 +1,3 @@
-# $Id$
-#
 # Taken from the webwml CVS tree (english/templates/languages.wml)
 
 package Packages::I18N::Languages;
@@ -16,25 +14,28 @@ our @EXPORT = qw( langcmp get_transliteration get_selfname );
 my %langs = (
 	     english    => "en",
 	     arabic     => "ar",
+	     armenian   => "hy",
 	     bulgarian  => "bg",
 	     catalan    => "ca",
+	     chinese    => "zh",
+	     croatian   => "hr",
 	     czech	=> "cs",
 	     danish     => "da",
+	     dutch      => "nl",
 	     german     => "de",
 	     greek      => "el",
 	     esperanto  => "eo",
 	     spanish    => "es",
 	     finnish    => "fi",
 	     french     => "fr",
-	     croatian   => "hr",
 	     hungarian  => "hu",
 	     indonesian => "id",
 	     italian    => "it",
 	     japanese   => "ja",
 	     korean     => "ko",
 	     lithuanian => "lt",
-	     dutch      => "nl",
 	     norwegian  => "no",
+	     persian    => "fa",
 	     polish     => "pl",
 	     portuguese => "pt",
 	     romanian   => "ro",
@@ -43,7 +44,6 @@ my %langs = (
 	     slovene    => "sl",
 	     slovak     => "sk",
 	     turkish    => "tr",
-	     chinese    => "zh",
 	     );
 
 # language directory name => native name of the language
@@ -52,35 +52,42 @@ my %selflang = (
 		ar     => '&#1593;&#1585;&#1576;&#1610;&#1577;',
 		bg     => '&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;',
 		ca     => 'catal&agrave;',
-		zh     => '&#20013;&#25991;',
-		hr     => 'hrvatski',
 		cs     => '&#269;esky',
 		da     => 'dansk',
-		nl     => 'Nederlands',
-		en     => 'English',
-		eo     => 'Esperanto',
-		fi     => 'suomi',
-		fr     => 'fran&ccedil;ais',
 		de     => 'Deutsch',
 		el     => '&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;',
+		en     => 'English',
+		eo     => 'Esperanto',
+		es     => 'espa&ntilde;ol',
+		fa     => '&#x0641;&#x0627;&#x0631;&#x0633;&#x06cc;',
+		fi     => 'suomi',
+		fr     => 'fran&ccedil;ais',
 		hu     => 'magyar',
+		hr     => 'hrvatski',
+		hy     => '&#1344;&#1377;&#1397;&#1381;&#1408;&#1381;&#1398;',
 		id     => 'Indonesia',
 		it     => 'Italiano',
 		ja     => '&#26085;&#26412;&#35486;',
 		ko     => '&#54620;&#44397;&#50612;',
 		lt     => 'Lietuvi&#371;',
+		nl     => 'Nederlands',
 		"no"   => 'norsk&nbsp;(bokm&aring;l)',
 		pl     => 'polski',
+		pt     => 'Portugu&ecirc;s (pt)',
 		pt_PT  => 'Portugu&ecirc;s (pt)',
 		pt_BR  => 'Portugu&ecirc;s (br)',
 		ro     => 'rom&acirc;n&#259;',
 		ru     => '&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;',
-		es     => 'espa&ntilde;ol',
-		sk     => 'slovak', #FIXME
+		sk     => 'slovensky',
+		sv     => 'svenska',
 		sv_SE  => 'svenska',
 		sl     => 'sloven&#353;&#269;ina',
 		tr     => 'T&uuml;rk&ccedil;e',
-		uk     => 'ukrainian', #FIXME
+		uk     => '&#1091;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;',
+		zh     => '&#20013;&#25991;',
+		zh_CN  => '&#31777;&#39636;&#20013;&#25991;',
+		zh_HK  => '&#27491;&#39636;&#20013;&#25991;',
+		zh_TW  => '&#27491;&#39636;&#20013;&#25991;',
 		);
 
 # language directory name => Latin transliteration of the language name
@@ -90,11 +97,17 @@ my %selflang = (
 my %translit = (
 		ar => "Arabiya",
 		bg => "B&#601;lgarski",
-		zh => "Zhongzu", # Not printed due to Chinese-specific code; kept for sort order
 		el => "Ellinika",
+		fa => "Farsi",
+		hy => "hayeren",
 		ja => "Nihongo",
 		ko => "Hangul", # Not sure. "Hanguk-Mal" (=Spoken Korean)?
 		ru => "Russkij",
+		uk => "ukrajins'ka",
+		zh => "Zhongzu", # Not printed due to Chinese-specific code; kept for sort order
+		zh_CN => "Simplified Chinese",
+		zh_HK => "Traditional Chinese",
+		zh_TW => "Traditional Chinese",
 		);
 
 # second transliteration table, used for languages starting with a latin

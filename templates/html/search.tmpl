@@ -1,18 +1,5 @@
 [%- PROCESS 'config/archive_layout.tmpl' -%]
-[%- PROCESS 'html/head.tmpl'
-   title_tag = 'Debian Package Search Results'
-   print_search_field = 'packages'
-   search_field_values = {
-	keywords => search_keywords.join(' '),
-	searchon => opts.searchon_form,
-	suite => params.values.suite.no_replace.join(','),
-	architectures => params.values.arch.no_replace.join(','),
-	sections => params.values.section.no_replace.join(','),
-    }
-   navigation = [ { name => 'Package Search Results' } ]
--%]
-
-[% keyword_str = search_keywords.join(' ');
+[%- keyword_str = search_keywords.join(' ');
    keyword_esc = uri_escape(keyword_str);
    keyword_enc = html_encode(keyword_str);
 
@@ -27,7 +14,19 @@
    architectures_str = params.values.arch.no_replace.join(', ');
    architectures_esc = uri_escape(architectures_str);
    architectures_enc = html_encode(architectures_str);
-%]
+-%]
+[%- PROCESS 'html/head.tmpl'
+   title_tag = "Package Search Results -- $keyword_enc"
+   print_search_field = 'packages'
+   search_field_values = {
+	keywords => search_keywords.join(' '),
+	searchon => opts.searchon_form,
+	suite => params.values.suite.no_replace.join(','),
+	architectures => params.values.arch.no_replace.join(','),
+	sections => params.values.section.no_replace.join(','),
+    }
+   navigation = [ { name => 'Package Search Results' } ]
+-%]
 
 <div id="psearchsug">
 [% UNLESS results %]
@@ -85,8 +84,10 @@ Please consider using a longer keyword or more keywords.</p>
 [% FOREACH packages %]
   <h3>Package [% pkg %]</h3>
   <ul>
-  [% FOREACH s IN suites %]
-    <li class="[% s.suite %]"><a class="resultlink" href="[% make_url(pkg,'','suite',s.suite,'arch','','section','') %]">[% s.suite %]</a>[% ' (' _ s.subsection _ ')' IF s.subsection %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
+  [% FOREACH s IN suites;
+	suite = s.suite %]
+    <li class="[% suite %]"><a class="resultlink" href="[% make_url(pkg,'','suite',suite,'arch','','section','') %]">[% suite %]
+	[%- ' (' _ suite_aliases.$suite _ ')' IF suite_aliases.$suite %]</a>[% ' (' _ s.subsection _ ')' IF s.subsection %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
     [% FOREACH s.versions %]
       <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
     [% END %]

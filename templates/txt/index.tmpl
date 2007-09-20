@@ -6,12 +6,12 @@ Copyright (C) [% copyright.years %] [% copyright.name %];
 See <URL:[% license.url %]> for the license terms.
 
 [% FOREACH packages -%]
-  [%- BLOCK marker %] [[% text %][% END -%]
+  [%- BLOCK marker %] [[% text %]][% END -%]
   [%- BLOCK markers -%]
     [%- PROCESS marker text=section IF section != main_section -%]
     [%- PROCESS marker text=archive IF archive != main_archive -%]
   [%- END -%]
-  [%- IF providers %]
+  [%- IF providers.size %]
 [% name %] virtual package provided by [% providers.join(', ') %]
   [%- END -%]
   [%- IF versions %]

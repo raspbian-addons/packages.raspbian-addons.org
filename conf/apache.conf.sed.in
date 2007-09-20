@@ -133,6 +133,13 @@
 #   RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
 #   RewriteRule ^/file:(.+)$ http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
 
+#   RewriteCond %{QUERY_STRING} =""
+#   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -f [OR]
+#   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME}.en.html -f [OR]
+#   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -l [OR]
+#   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -d
+#   RewriteRule . - [L]
+
 #   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 
 #  In case we need to disable the site again

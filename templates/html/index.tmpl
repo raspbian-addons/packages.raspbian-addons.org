@@ -10,8 +10,8 @@
 	nav_last = { name=>'All Packages' };
    END;
    nav_arr.push( { name=>'Source',
-	           url=>make_url('/','','suite',suite,'source',source) } )
-	IF source;
+	           url=>make_url('/','','suite',suite,'source','source') } )
+	IF is_source;
    nav_arr.push( nav_last );
 %]
 [% PROCESS 'html/head.tmpl' 
@@ -31,7 +31,9 @@
   [% END %]
   [% IF providers.size %]
     <dt><a href="[% name %]" id="[% name %]">[% name %]</a></dt>
-       <dd>virtual package provided by [% FOREACH provider IN providers %]<a href="../[% provider | uri %]">[% provider %]</a>[% END %]</dd>
+       <dd>virtual package provided by
+	[% FOREACH provider IN providers %]<a href="../[% provider | uri %]">[% provider %]</a>
+	[%- ', ' UNLESS loop.last %][% END %]</dd>
     [% IF versions.length %]
       <dt><a href="[% name %]">[% name %]</a> ([% versions %])[% PROCESS markers %]</dt>
          <dd>[% desc | html %]</dd>
