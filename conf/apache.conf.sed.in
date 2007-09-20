@@ -74,6 +74,10 @@
 
   # RSS stuff
   AddType application/rss+xml .rdf .xml
+
+  RemoveType .gz
+  AddEncoding x-gzip .gz
+  DefaultType text/plain
 </Directory>
 
 <VirtualHost *>
@@ -83,53 +87,53 @@
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
 
-   Alias /cgi-bin/ %TOPDIR%/cgi-bin/
+#   Alias /cgi-bin/ %TOPDIR%/cgi-bin/
   
-   PerlModule ModPerl::Registry
-   PerlTaintCheck On
-   PerlRequire %TOPDIR%/bin/mod_perl-startup
-   PerlSwitches -T
-   <Location /cgi-bin/>
-      SetHandler perl-script
-      # mod-perl etch
-      PerlInitHandler Apache2::Reload
-      # mod-perl sarge
-      #PerlInitHandler Apache::Reload
-      PerlHandler ModPerl::Registry
-      Options +ExecCGI
-      PerlSendHeader On
-      allow from all
-   </Location>
+#   PerlModule ModPerl::Registry
+#   PerlTaintCheck On
+#   PerlRequire %TOPDIR%/bin/mod_perl-startup
+#   PerlSwitches -T
+#   <Location /cgi-bin/>
+#      SetHandler perl-script
+#      # mod-perl etch
+#      PerlInitHandler Apache2::Reload
+#      # mod-perl sarge
+#      #PerlInitHandler Apache::Reload
+#      PerlHandler ModPerl::Registry
+#      Options +ExecCGI
+#      PerlSendHeader On
+#      allow from all
+#   </Location>
 
-   BrowserMatch reportbug is_reportbug
+#   BrowserMatch reportbug is_reportbug
 
-   RewriteEngine on
-   RewriteLog /var/log/apache2/rewrite.log
-   RewriteLogLevel 0
+#   RewriteEngine on
+#   RewriteLog /var/log/apache2/rewrite.log
+#   RewriteLogLevel 0
 
-   RewriteMap changelog-url txt:%TOPDIR%/files/changelogs-map
+#   RewriteMap changelog-url txt:%TOPDIR%/files/changelogs-map
 
-   RewriteRule ^/cgi-bin/search_packages.pl(.*)$ /search$1
-   RewriteRule ^/cgi-bin/search_contents.pl(.*)$ /search$1
-   RewriteRule ^/unstable/newpkg_([a-z]+)\.[a-z]+\.rdf /unstable/$1/newpkg?format=rss [R=permanent,L]
-   RewriteRule ^/unstable/newpkg_([a-z]+) /unstable/$1/newpkg [R=permanent,L]
+#   RewriteRule ^/cgi-bin/search_packages.pl(.*)$ /search$1
+#   RewriteRule ^/cgi-bin/search_contents.pl(.*)$ /search$1
+#   RewriteRule ^/unstable/newpkg_([a-z]+)\.[a-z]+\.rdf /unstable/$1/newpkg?format=rss [R=permanent,L]
+#   RewriteRule ^/unstable/newpkg_([a-z]+) /unstable/$1/newpkg [R=permanent,L]
 
    # we never want to rewrite those URLs
-   RewriteRule ^/cgi-bin/dispatcher.pl - [L]
-   RewriteRule ^/changelogs/ - [L]
-   RewriteRule ^/Pics/ - [L]
-   RewriteRule ^/about/ - [L]
-   RewriteRule ^/[^/]+\.css - [L]
-   RewriteRule ^/[^/]+\.js - [L]
+#   RewriteRule ^/cgi-bin/dispatcher.pl - [L]
+#   RewriteRule ^/changelogs/ - [L]
+#   RewriteRule ^/Pics/ - [L]
+#   RewriteRule ^/about/ - [L]
+#   RewriteRule ^/[^/]+\.css - [L]
+#   RewriteRule ^/[^/]+\.js - [L]
 
 #   RewriteRule ^/$ http://www.debian.org/distrib/packages
-   RewriteRule ^/$ /index.html [L]
-   RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
-   RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
-   RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
-   RewriteRule ^/file:(.+)$ http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
+#   RewriteRule ^/$ /index.html [L]
+#   RewriteRule ^/([^/+]*)([+])([^/]*)$ "/$1%%{%}2B$3" [N]
+#   RewriteRule ^/changelog:(.+)$  http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
+#   RewriteRule ^/src:([^/]+)$ /source/$1 [R,L,NE]
+#   RewriteRule ^/file:(.+)$ http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
 
-   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
+#   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 
 #  In case we need to disable the site again
 # 
