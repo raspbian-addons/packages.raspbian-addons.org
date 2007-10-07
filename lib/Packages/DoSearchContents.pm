@@ -173,8 +173,15 @@ sub searchfile
 	last unless index($key, $kw) == 0;
 	debug( "found $key", 2 ) if DEBUG;
 
-	my @hits = split /\0/o, $value;
-	push @$results, [ scalar reverse($key), @hits ];
+	my @files = split /\001/o, $value;
+	foreach my $f (@files) {
+	    my @hits = split /\0/o, $f;
+	    my $file = shift @hits;
+	    if ($file eq '-') {
+		$file = reverse($key);
+	    }
+	    push @$results, [ $file, @hits ];
+	}
 	last if ($$nres)++ > 100;
     }
 
