@@ -88,7 +88,7 @@ sub parse_params {
 
     foreach my $param ( keys %params ) {
 	
-	debug( "Param <strong>$param</strong>", 2 ) if DEBUG;
+	debug( "Param $param", 2 ) if DEBUG;
 
 	my $p_value_orig = $cgi->param($param);
 
