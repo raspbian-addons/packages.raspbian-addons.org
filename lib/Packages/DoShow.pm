@@ -14,7 +14,7 @@ use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
 			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
-use Packages::CGI qw( :DEFAULT make_url make_search_url note );
+use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::Page ();

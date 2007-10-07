@@ -26,11 +26,11 @@ sub get_mime {
     return $mime_types{$_[0]} || $_[1] || 'text/html';
 }
 
-our (@fatal_errors, @errors, @debug, @msgs, @hints, @notes);
+our (@fatal_errors, @errors, @debug, @hints);
 our $http_code;
 
 sub reset {
-    @fatal_errors = @errors = @debug = @msgs = @hints = @notes = ();
+    @fatal_errors = @errors = @debug = @hints = ();
     $http_code = 200;
 }
 
@@ -48,27 +48,17 @@ sub debug {
     my $lvl = $_[1] || 0;
     push(@debug, $_[0]) if $debug > $lvl;
 }
-sub msg {
-    push @msgs, $_[0];
-}
-sub note {
-    push @notes, [ @_ ];
-}
 sub get_errors { (@fatal_errors, @errors) }
 sub get_debug {
     return unless $debug && @debug;
     return @debug;
 }
-sub get_msgs { @msgs };
 sub get_hints { @hints };
-sub get_notes { @notes };
 sub get_all_messages {
     return {
 	errors => [ @fatal_errors, @errors ],
 	debugs => $debug ? \@debug : [],
-	msgs => \@msgs,
 	hints => \@hints,
-	notes => \@notes,
     };
 }
 
