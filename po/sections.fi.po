@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-28 18:04+0100\n"
+"POT-Creation-Date: 2007-10-07 06:18+0200\n"
 "PO-Revision-Date: 2005-10-17 21:52+0300\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -209,24 +209,10 @@ msgstr ""
 "ohjelmistot"
 
 #: lib/Packages/Sections.pm:54
-msgid "Software restricted in the U.S."
-msgstr "Yhdysvalloissa rajoitetut ohjelmistot"
-
-#: lib/Packages/Sections.pm:55
-msgid ""
-"These packages probably may not be used in or distributed from the U.S. due "
-"to software patents. You should check the regulations in your country before "
-"using this software."
-msgstr ""
-"Näitä paketteja ei todennäköisesti saa käyttää tai levittää Yhdysvalloissa "
-"ohjelmistopatenttien vuoksi. Kannattaa tarkistaa oman maasi säännökset ennen "
-"näiden ohjelmistojen käyttämistä."
-
-#: lib/Packages/Sections.pm:56
 msgid "Old Libraries"
 msgstr "Vanhat kirjastot"
 
-#: lib/Packages/Sections.pm:57
+#: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
@@ -234,11 +220,11 @@ msgstr ""
 "Vanhat versiot kirjastoista, joita pidetään vanhojen sovellusten takautuvan "
 "yhteensopivuuden vuoksi"
 
-#: lib/Packages/Sections.pm:58
+#: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
 msgstr "Muut käyttö- ja tiedostojärjestelmät"
 
-#: lib/Packages/Sections.pm:59
+#: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
@@ -246,66 +232,74 @@ msgstr ""
 "Ohjelmistot, joilla voidaan ajaa muille käyttöjärjestelmille käännettyjä "
 "ohjelmia ja käyttää niiden tiedostojärjestelmiä"
 
-#: lib/Packages/Sections.pm:60
+#: lib/Packages/Sections.pm:58
 msgid "Perl"
 msgstr "Perl"
 
-#: lib/Packages/Sections.pm:61
+#: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
 msgstr "Kaikki Perlistä, tulkattavasta skriptikielestä"
 
-#: lib/Packages/Sections.pm:62
+#: lib/Packages/Sections.pm:60
 msgid "Python"
 msgstr "Python"
 
-#: lib/Packages/Sections.pm:63
+#: lib/Packages/Sections.pm:61
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
 msgstr ""
 "Kaikki Pythonista, tulkattavasta interaktiivisesta olio-ohjelmointikielestä"
 
-#: lib/Packages/Sections.pm:64
+#: lib/Packages/Sections.pm:62
 msgid "Science"
 msgstr "Tiede"
 
-#: lib/Packages/Sections.pm:65
+#: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
 msgstr "Perustyökalut tieteelliseen työhön"
 
-#: lib/Packages/Sections.pm:66
+#: lib/Packages/Sections.pm:64
 msgid "Shells"
 msgstr "Kuoret"
 
-#: lib/Packages/Sections.pm:67
+#: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
 msgstr "Komentokuoret, ystävällisiä käyttöliittymiä aloittelijoille"
 
-#: lib/Packages/Sections.pm:68
+#: lib/Packages/Sections.pm:66
 msgid "Sound"
 msgstr "Ääni"
 
-#: lib/Packages/Sections.pm:69
+#: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Ohjelmat äänen käyttöön: mikserit, soittimet, nauhoittimet, CD-soittimet jne."
 
-#: lib/Packages/Sections.pm:70
+#: lib/Packages/Sections.pm:68
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/Packages/Sections.pm:71
+#: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
 msgstr "Kuuluisa ladontaohjelmisto ja siihen liittyvät ohjelmat"
 
-#: lib/Packages/Sections.pm:72
+#: lib/Packages/Sections.pm:70
 msgid "Text Processing"
 msgstr "Tekstinkäsittely"
 
-#: lib/Packages/Sections.pm:73
+#: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
 msgstr "Työkaluja tekstiasiakirjojen muotoiluun ja tulostamiseen"
+
+#: lib/Packages/Sections.pm:72
+msgid "Translations"
+msgstr ""
+
+#: lib/Packages/Sections.pm:73
+msgid "Translation packages and language support meta packages."
+msgstr ""
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
@@ -368,3 +362,15 @@ msgstr ""
 #~ msgstr ""
 #~ "Jokaisen Debian-järjestelmän runkoon tarvittavat ohjelmat (Näitä ei "
 #~ "tarvitse asentaa, ne tarjotaan vain päivitystä varten.)"
+
+#~ msgid ""
+#~ "These packages probably may not be used in or distributed from the U.S. "
+#~ "due to software patents. You should check the regulations in your country "
+#~ "before using this software."
+#~ msgstr ""
+#~ "Näitä paketteja ei todennäköisesti saa käyttää tai levittää "
+#~ "Yhdysvalloissa ohjelmistopatenttien vuoksi. Kannattaa tarkistaa oman "
+#~ "maasi säännökset ennen näiden ohjelmistojen käyttämistä."
+
+#~ msgid "Software restricted in the U.S."
+#~ msgstr "Yhdysvalloissa rajoitetut ohjelmistot"

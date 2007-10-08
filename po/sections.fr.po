@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-28 18:04+0100\n"
+"POT-Creation-Date: 2007-10-07 06:18+0200\n"
 "PO-Revision-Date: 2005-04-11 20:32+0200\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team:  French <debian-l10n-french@lists.debian.org>\n"
@@ -212,24 +212,10 @@ msgstr ""
 "nouvelles, etc."
 
 #: lib/Packages/Sections.pm:54
-msgid "Software restricted in the U.S."
-msgstr "Logiciels soumis à restriction aux États-Unis"
-
-#: lib/Packages/Sections.pm:55
-msgid ""
-"These packages probably may not be used in or distributed from the U.S. due "
-"to software patents. You should check the regulations in your country before "
-"using this software."
-msgstr ""
-"Ces paquets ne peuvent vraisemblablement pas être utilisés ou distribués aux "
-"États-Unis du fait de brevets logiciels. Vous devriez vérifier la "
-"règlementation de votre pays avant d'utiliser ces logiciels."
-
-#: lib/Packages/Sections.pm:56
 msgid "Old Libraries"
 msgstr "Bibliothèques obsolètes"
 
-#: lib/Packages/Sections.pm:57
+#: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
@@ -237,11 +223,11 @@ msgstr ""
 "Versions obsolètes de bibliothèques, conservées à des fins de compatibilité "
 "avec d'anciennes applications."
 
-#: lib/Packages/Sections.pm:58
+#: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
 msgstr "Autres OS et systèmes de fichiers"
 
-#: lib/Packages/Sections.pm:59
+#: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
@@ -249,67 +235,75 @@ msgstr ""
 "Logiciels permettant d'exécuter des programmes compilés pour d'autres "
 "systèmes d'exploitation et d'utiliser leur système de fichiers."
 
-#: lib/Packages/Sections.pm:60
+#: lib/Packages/Sections.pm:58
 msgid "Perl"
 msgstr "Perl"
 
-#: lib/Packages/Sections.pm:61
+#: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
 msgstr "Tout à propos de Perl, langage interprété pour scripts."
 
-#: lib/Packages/Sections.pm:62
+#: lib/Packages/Sections.pm:60
 msgid "Python"
 msgstr "Python"
 
-#: lib/Packages/Sections.pm:63
+#: lib/Packages/Sections.pm:61
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
 msgstr ""
 "Tout à propos de Python, langage interprété, interactif et orienté objet."
 
-#: lib/Packages/Sections.pm:64
+#: lib/Packages/Sections.pm:62
 msgid "Science"
 msgstr "Science"
 
-#: lib/Packages/Sections.pm:65
+#: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
 msgstr "Outils de base pour les travaux scientifiques."
 
-#: lib/Packages/Sections.pm:66
+#: lib/Packages/Sections.pm:64
 msgid "Shells"
 msgstr "Shells"
 
-#: lib/Packages/Sections.pm:67
+#: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
 msgstr "Shells de commandes. Interfaces abordables par le débutant."
 
-#: lib/Packages/Sections.pm:68
+#: lib/Packages/Sections.pm:66
 msgid "Sound"
 msgstr "Son"
 
-#: lib/Packages/Sections.pm:69
+#: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Outils pour travailler avec le son : tables de mixage, lecteurs, "
 "enregistreurs, lecteurs de CD, etc."
 
-#: lib/Packages/Sections.pm:70
+#: lib/Packages/Sections.pm:68
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/Packages/Sections.pm:71
+#: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
 msgstr "Le célèbre logiciel de composition et les programmes associés."
 
-#: lib/Packages/Sections.pm:72
+#: lib/Packages/Sections.pm:70
 msgid "Text Processing"
 msgstr "Traitement de texte"
 
-#: lib/Packages/Sections.pm:73
+#: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
 msgstr "Outils pour la mise en forme et l'impression de documents texte."
+
+#: lib/Packages/Sections.pm:72
+msgid "Translations"
+msgstr ""
+
+#: lib/Packages/Sections.pm:73
+msgid "Translation packages and language support meta packages."
+msgstr ""
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
@@ -372,3 +366,15 @@ msgstr ""
 #~ "Outils de base utilisés par tout système Debian (vous ne devriez pas "
 #~ "avoir besoin de les installer, ils sont fournis ici pour les mises à "
 #~ "niveaux)."
+
+#~ msgid ""
+#~ "These packages probably may not be used in or distributed from the U.S. "
+#~ "due to software patents. You should check the regulations in your country "
+#~ "before using this software."
+#~ msgstr ""
+#~ "Ces paquets ne peuvent vraisemblablement pas être utilisés ou distribués "
+#~ "aux États-Unis du fait de brevets logiciels. Vous devriez vérifier la "
+#~ "règlementation de votre pays avant d'utiliser ces logiciels."
+
+#~ msgid "Software restricted in the U.S."
+#~ msgstr "Logiciels soumis à restriction aux États-Unis"
