@@ -237,9 +237,9 @@ sub do_dispatch {
 				     array => '\s+',
 				     match => '^([-+\@\w\/.:]+)$',
 				 },
-		       package => { default => undef,
-				    match => '^([\w.+-]+)$',
-				    var => \$pkg },
+		       'package' => { default => undef,
+				      match => '^([\w.+-]+)$',
+				      var => \$pkg },
 		       suite => { default => 'default', match => '^([\w-]+)$',
 				  array => ',', var => \@suites,
 				  replace => { all => \@SUITES,
@@ -269,13 +269,13 @@ sub do_dispatch {
 		       arch => { default => 'any', match => '^([\w-]+)$',
 				 array => ',', var => \@archs, replace =>
 				 { any => \@ARCHITECTURES } },
-		       format => { default => 'html', match => '^([\w.]+)$',  },
-		   mode => { default => '', match => '^(\w+)$',  },
-		   sort_by => { default => 'file', match => '^(\w+)$', },
-		   );
+		       'format' => { default => 'html', match => '^([\w.]+)$',  },
+		       mode => { default => '', match => '^(\w+)$',  },
+		       sort_by => { default => 'file', match => '^(\w+)$', },
+		       );
     my %opts;
     my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
-Packages::CGI::init_url( $input, \%params, \%opts );
+    Packages::CGI::init_url( $input, \%params, \%opts );
 
     my $locale = get_locale($opts{lang});
     my $charset = get_charset($opts{lang});
@@ -317,8 +317,8 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
-            || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
-	fatal_error( "requested format not available for this document",
+	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
+	fatal_error( _g("requested format not available for this document"),
 		     "406 requested format not available");
     }
 
@@ -334,10 +334,10 @@ Packages::CGI::init_url( $input, \%params, \%opts );
     $page_content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
     $page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
     $page_content{extract_host} = sub { my $uri = URI->new($_[0]);
-                                        my $host = $uri->host;
-                                        $host .= ':'.$uri->port if $uri->port != $uri->default_port;
-                                        return $host;
-                                      };
+					my $host = $uri->host;
+					$host .= ':'.$uri->port if $uri->port != $uri->default_port;
+					return $host;
+				    };
     # needed to work around the limitations of the the FILTER syntax
     $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
     $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
