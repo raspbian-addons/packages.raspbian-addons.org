@@ -14,7 +14,7 @@ use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
 			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
-use Packages::CGI qw( :DEFAULT make_url make_search_url note );
+use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::Page ();
@@ -68,8 +68,8 @@ sub do_show {
 	}
 
 	unless (@results || @non_results ) {
-	    fatal_error( _g( "No such package." )."<br>".
-			 sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
+	    fatal_error( _g( "No such package.") );
+	    #sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
 	} else {
 	    my %all_suites;
 	    foreach (@results, @non_results) {
