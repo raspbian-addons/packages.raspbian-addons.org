@@ -2,7 +2,7 @@
 [% g('All %s Packages in "%s"', organisation, suite) %]
 
 [% g('Generated:') _ ' ' _ timestamp.string %]
-[% g('Copyright (C)') _ ' ' _ copyright.years _ ' ' _ copyright.name %];
+[% g('Copyright ©') _ ' ' _ copyright.years _ ' ' _ copyright.name %];
 [% g('See <URL:%s> for the license terms.', license.url) %]
 
 [% FOREACH packages -%]
