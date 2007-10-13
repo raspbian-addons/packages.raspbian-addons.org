@@ -67,7 +67,7 @@ foreach my $s (@SUITES) {
     mkpath ( "$wwwdir/source/$key" );
     foreach my $lang (@LANGUAGES) {
 	my $locale = get_locale( $lang );
-	my $charset = get_locale( $lang );
+	my $charset = get_charset( $lang );
 	setlocale ( LC_ALL, $locale ) or do {
 	    warn "couldn't set locale ($lang/$locale)\n";
 	    next;
