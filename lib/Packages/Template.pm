@@ -53,7 +53,7 @@ sub error {
 }
 
 sub page {
-    my ($self, $action, $page_content) = @_;
+    my ($self, $action, $page_content, $target) = @_;
 
     #use Data::Dumper;
     #die Dumper($self, $action, $page_content);
@@ -63,9 +63,13 @@ sub page {
 					@{$page_content->{used_langs}} );
 
     my $txt;
-    $self->process("$self->{format}/$action.tmpl", $page_content, \$txt)
-	or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
-
+    if ($target) {
+	$self->process("$self->{format}/$action.tmpl", $page_content, $target)
+	    or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
+    } else {
+	$self->process("$self->{format}/$action.tmpl", $page_content, \$txt)
+	    or die sprintf( "template error: %s", $self->error );
+    }
     return $txt;
 }
 
