@@ -2,17 +2,21 @@
 
 . `dirname $0`/../config.sh
 
-gettextfiles=$(find cgi-bin lib -not -name 'LanguageNames.pm' -a -not -name 'Sections.pm' -a \( -name '*.pl' -o -name '*.pm' \));
+cd "$topdir"
+gettextfiles=$(find cgi-bin lib -not -name 'LanguageNames.pm' -a -not -name 'Sections.pm' -a \( -name '*.pl' -o -name '*.pm' \))
+templatefiles=$(find templates -name '*.tmpl' -o -name '*.inc')
 gettextfiles="$gettextfiles bin/create_index_pages"
-podomains="pdo sections langs"
+podomains="pdo templates sections langs"
 
 # Update pot
 #
 # Common options for all calls
-xgettext_opts="--language=Perl --keyword=_ --keyword=N_ --keyword=_g --foreign-user --add-comments"
+xgettext_opts="--language=Perl --keyword=N_ --keyword=_g --foreign-user --add-comments"
 
 echo gettextfiles=$gettextfiles
+echo templatefiles=$templatefiles
 xgettext $xgettext_opts -d pdo -o ${podir}/pdo.pot ${gettextfiles}
+$topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot
 xgettext $xgettext_opts -d sections -o ${podir}/sections.pot ${libdir}/Packages/Sections.pm
 xgettext $xgettext_opts -d langs -o ${podir}/langs.pot ${libdir}/Packages/I18N/LanguageNames.pm
 
@@ -40,8 +44,8 @@ for lang in ${polangs}
 do
   for domain in ${podomains}
   do
-    mv ${domain}.${lang}.po ${domain}.${lang}.po.tmp
-    msgmerge -q -F -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
+    cp ${domain}.${lang}.po ${domain}.${lang}.po.tmp
+    msgmerge --previous --quiet --sort-by-file -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
     rm ${domain}.${lang}.po.tmp
     # normalize paths in .po files
     perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po

@@ -102,8 +102,9 @@ sub do_dispatch {
 				   \@all_langs ) || 'en';
     debug( "LANGUAGES=@all_langs header=".
 	   ($input->http("Accept-Language")||'').
-	   " http_lang=$http_lang", 2 ) if DEBUG;
+	   " http_lang=$http_lang", 1 ) if DEBUG;
     bindtextdomain ( 'pdo', $LOCALES );
+    bindtextdomain ( 'templates', $LOCALES );
     textdomain( 'pdo' );
 
     # backwards compatibility stuff
@@ -287,7 +288,7 @@ sub do_dispatch {
 			setlocale( LC_ALL, "C" );
 		    };
 	    };
-    debug( "locale=$locale charset=$charset", 2 ) if DEBUG;
+    debug( "locale=$locale charset=$charset", 1 ) if DEBUG;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
     $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -338,6 +339,7 @@ sub do_dispatch {
 					$host .= ':'.$uri->port if $uri->port != $uri->default_port;
 					return $host;
 				    };
+    $page_content{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
     # needed to work around the limitations of the the FILTER syntax
     $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
     $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };

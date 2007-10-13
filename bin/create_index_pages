@@ -28,6 +28,7 @@ delete $ENV{'LC_ALL'};
 delete $ENV{'LC_MESSAGES'};
 bindtextdomain ( 'pdo', $LOCALES );
 bindtextdomain ( 'sections', $LOCALES );
+bindtextdomain ( 'templates', $LOCALES );
 textdomain( 'pdo' );
 
 my $wwwdir = "$TOPDIR/www";
@@ -53,6 +54,7 @@ my (%pages, %tt_vars);
 
 $tt_vars{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
 $tt_vars{make_url} = sub { return &Packages::CGI::make_url(@_) };
+$tt_vars{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
 # needed to work around the limitations of the the FILTER syntax
 $tt_vars{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
 $tt_vars{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
