@@ -13,11 +13,19 @@
     SET root_url = "$root_url$section/" IF section -%]
 
 <channel rdf:about="[% root_url %]newpkg">
-<title>New [% organisation %] Packages</title>
+<title>[% g('New %s Packages', organisation) %]</title>
 <link>[% root_url %]newpkg</link>
-<description>Packages that were added to the [% suite %] [% organisation %] archive [% " (section \"$section\")" IF section %] during the last 7 days.</description>
-<dc:language>en</dc:language>
-<dc:rights>Copyright [% timestamp.year %], [% copyright.name %]</dc:rights>
+<description>
+[%- IF section; 
+	g('Packages that were added to the %s %s archive (section "%s") during the last 7 days.',
+	suite, organisation, section);
+    ELSE;
+	g('Packages that were added to the %s %s archive during the last 7 days.',
+	suite, organisation, section);
+    END; -%]
+</description>
+<dc:language>[% lang %]</dc:language>
+<dc:rights>[% g('Copyright ©') %] [% timestamp.year %], [% copyright.name %]</dc:rights>
 <dc:date>[% rss_timestamp %]</dc:date>
 <dc:publisher>[% contact.mail %]</dc:publisher>
 <syn:updatePeriod>weekly</syn:updatePeriod>

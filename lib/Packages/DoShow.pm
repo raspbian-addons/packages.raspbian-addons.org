@@ -222,7 +222,7 @@ sub do_show {
 			my @downloads;
 			foreach my $a ( @archs ) {
 			    my %d = ( arch => $a,
-				      pkgsize => sprintf( '%.1f', floor(($sizes_deb->{$a}/102.4)+0.5)/10 ),
+				      pkgsize => floor(($sizes_deb->{$a}/102.4)+0.5)/10,
 				      instsize => $sizes_inst->{$a}, );
 
 			    $d{version} = $versions->{$a} if $multiple_versions;
@@ -311,7 +311,7 @@ sub do_show {
 			my $path = "/$source_dir/$src_file_name";
 
 			push @{$contents{srcfiles}}, { server => $server, path => $path, filename => $src_file_name,
-						       size => sprintf("%.1f", (floor(($src_file_size/102.4)+0.5)/10)),
+						       size => floor(($src_file_size/102.4)+0.5)/10,
 						       md5sum => $src_file_md5 };
 		    }
 
