@@ -50,18 +50,10 @@ my $priorities = retrieve "$DBDIR/priorities.info";
 #use Data::Dumper;
 #print STDERR Dumper($sections, $subsections, $priorities);
 
-my (%pages, %tt_vars);
+my (%pages);
 
-$tt_vars{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-$tt_vars{make_url} = sub { return &Packages::CGI::make_url(@_) };
-$tt_vars{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
-# needed to work around the limitations of the the FILTER syntax
-$tt_vars{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-$tt_vars{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-$tt_vars{quotemeta} = sub { return quotemeta($_[0]) };
-
-my $template = new Packages::Template( "$TOPDIR/templates", 'html', \%tt_vars );
-my $txt_template = new Packages::Template( "$TOPDIR/templates", 'txt', \%tt_vars );
+my $template = new Packages::Template( "$TOPDIR/templates", 'html');
+my $txt_template = new Packages::Template( "$TOPDIR/templates", 'txt');
 
 print "write suite index files ...\n";
 foreach my $s (@SUITES) {

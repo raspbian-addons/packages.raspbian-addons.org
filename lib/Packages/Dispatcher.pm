@@ -25,11 +25,9 @@ use warnings;
 use CGI;
 use POSIX;
 use File::Basename;
-use URI;
-use URI::Escape;
-use HTML::Entities;
 use Template;
 use DB_File;
+use URI::Escape;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
 use Locale::gettext;
@@ -331,20 +329,6 @@ sub do_dispatch {
 
     $page_content{opts} = \%opts;
     $page_content{params} = \%params;
-
-    $page_content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-    $page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
-    $page_content{extract_host} = sub { my $uri = URI->new($_[0]);
-					my $host = $uri->host;
-					$host .= ':'.$uri->port if $uri->port != $uri->default_port;
-					return $host;
-				    };
-    $page_content{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
-    # needed to work around the limitations of the the FILTER syntax
-    $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-    $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-    $page_content{quotemeta} = sub { return quotemeta($_[0]) };
-    $page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
     unless (@Packages::CGI::fatal_errors) {
 	print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
