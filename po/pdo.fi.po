@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-28 18:04+0100\n"
-"PO-Revision-Date: 2005-10-17 22:05+0300\n"
+"PO-Revision-Date: 2007-10-12 15:04+0300\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: bin/create_index_pages:59
-#, fuzzy, perl-format
+#, perl-format
 msgid "List of sections in \"%s\""
-msgstr "Osastoluettelo jakelussa %s"
+msgstr "Osastoluettelo jakelussa \"%s\""
 
 #: bin/create_index_pages:79 lib/Packages/DoNewPkg.pm:105
 msgid "List of all packages"
@@ -65,7 +65,7 @@ msgstr ""
 #: cgi-bin/dispatcher.pl:122
 #, perl-format
 msgid "%s set more than once in path"
-msgstr ""
+msgstr "%s asetettu useammin kuin kerran polussa"
 
 #: cgi-bin/dispatcher.pl:153
 #, fuzzy, perl-format
@@ -74,7 +74,7 @@ msgstr "Lähdepaketti: %s (%s)"
 
 #: cgi-bin/dispatcher.pl:241 lib/Packages/DoIndex.pm:63
 msgid "Error"
-msgstr ""
+msgstr "Virhe"
 
 #: cgi-bin/dispatcher.pl:246 lib/Packages/DoIndex.pm:68
 #, fuzzy
@@ -84,7 +84,7 @@ msgstr "Luettelo kaikista paketeista"
 #: lib/Packages/DoDownload.pm:203 lib/Packages/DoFilelist.pm:31
 #: lib/Packages/DoShow.pm:30
 msgid "package not valid or not specified"
-msgstr ""
+msgstr "paketti ei kelpaa tai määrittelemättä"
 
 #: lib/Packages/DoDownload.pm:206 lib/Packages/DoFilelist.pm:34
 #: lib/Packages/DoIndex.pm:28 lib/Packages/DoNewPkg.pm:25
@@ -94,7 +94,7 @@ msgstr ""
 
 #: lib/Packages/DoDownload.pm:209 lib/Packages/DoFilelist.pm:37
 msgid "architecture not valid or not specified"
-msgstr ""
+msgstr "arkkitehtuuri ei kelpaa tai määrittelemättä"
 
 #: lib/Packages/DoDownload.pm:212
 #, perl-format
@@ -107,14 +107,13 @@ msgid "more than one architecture specified for download (%s)"
 msgstr ""
 
 #: lib/Packages/DoDownload.pm:236 lib/Packages/DoShow.pm:71
-#, fuzzy
 msgid "No such package."
-msgstr "Lähdepaketti"
+msgstr "Pakettia ei löydy."
 
 #: lib/Packages/DoDownload.pm:237 lib/Packages/DoShow.pm:72
 #, perl-format
 msgid "<a href=\"%s\">Search for the package</a>"
-msgstr ""
+msgstr "<a href=\"%s\">Hae pakettia</a>"
 
 #: lib/Packages/DoDownload.pm:256
 msgid "Package Download Selection"
