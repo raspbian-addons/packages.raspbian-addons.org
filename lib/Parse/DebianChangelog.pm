@@ -98,11 +98,12 @@ use warnings;
 
 use Fcntl qw( :flock );
 use English;
+use Locale::gettext;
 use Date::Parse;
 use Parse::DebianChangelog::Util qw( :all );
 use Parse::DebianChangelog::Entry;
 
-our $VERSION = '1.0';
+our $VERSION = '1.1.1';
 
 =pod
 
@@ -215,9 +216,9 @@ sub get_parse_errors {
 	my $res = "";
 	foreach my $e (@{$self->{errors}{parser}}) {
 	    if ($e->[3]) {
-		$res .= "WARN: $e->[0](l$e->[1]): $e->[2]\nLINE: $e->[3]\n";
+		$res .= __g( "WARN: %s(l%s): %s\nLINE: %s\n", @$e );
 	    } else {
-		$res .= "WARN: $e->[0](l$e->[1]): $e->[2]\n";
+		$res .= __g( "WARN: %s(l%s): %s\n", @$e );
 	    }
 	}
 	return $res;
@@ -228,7 +229,7 @@ sub _do_fatal_error {
     my ($self, @msg) = @_;
 
     $self->{errors}{fatal} = "@msg";
-    warn "FATAL: @msg\n" unless $self->{config}{quiet};
+    warn __g( "FATAL: %s", "@msg")."\n" unless $self->{config}{quiet};
 }
 
 =pod
@@ -260,6 +261,11 @@ can get the reason for the failure by calling the L<get_error> method.
 
 =cut
 
+sub __g {
+    my $string = shift;
+    return sprintf( dgettext( 'Parse-DebianChangelog', $string ), @_ );
+}
+
 sub parse {
     my ($self, $config) = @_;
 
@@ -270,23 +276,26 @@ sub parse {
     my ($fh, $file);
     if ($file = $self->{config}{infile}) {
 	open $fh, '<', $file or do {
-	    $self->_do_fatal_error( "can't open file $file: $!" );
+	    $self->_do_fatal_error( __g( "can't open file %s: %s",
+					 $file, $! ));
 	    return undef;
 	};
 	flock $fh, LOCK_SH or do {
-	    $self->_do_fatal_error( "can't lock file $file: $!" );
+	    $self->_do_fatal_error( __g( "can't lock file %s: %s",
+					 $file, $! ));
 	    return undef;
 	};
     } elsif (my $string = $self->{config}{instring}) {
 	eval { require IO::String };
 	if ($@) {
-	    $self->_do_fatal_error( "can't load IO::String: $@" );
+	    $self->_do_fatal_error( __g( "can't load IO::String: %s",
+					 $@ ));
 	    return undef;
 	}
 	$fh = IO::String->new( $string );
 	$file = 'String';
     } else {
-	$self->_do_fatal_error( 'no changelog file specified' );
+	$self->_do_fatal_error( __g( 'no changelog file specified' ));
 	return undef;
     }
 
@@ -307,7 +316,8 @@ sub parse {
 	    unless ($expect eq 'first heading'
 		    || $expect eq 'next heading or eof') {
 		$entry->{ERROR} = [ $file, $NR,
-				  "found start of entry where expected $expect", "$_" ];
+				  __g( "found start of entry where expected %s",
+				       $expect ), "$_" ];
 		$self->_do_parse_error(@{$entry->{ERROR}});
 	    }
 	    unless ($entry->is_empty) {
@@ -317,10 +327,10 @@ sub parse {
 		$entry = Parse::DebianChangelog::Entry->init();
 	    }
 	    {
-		$entry->{'Source'} = $1;
-		$entry->{'Version'} = $2;
-		$entry->{'Header'} = $_;
-		($entry->{'Distribution'} = $3) =~ s/^\s+//;
+		$entry->{'Source'} = "$1";
+		$entry->{'Version'} = "$2";
+		$entry->{'Header'} = "$_";
+		($entry->{'Distribution'} = "$3") =~ s/^\s+//;
 		$entry->{'Changes'} = $entry->{'Urgency_Comment'} = '';
 		$entry->{'Urgency'} = $entry->{'Urgency_LC'} = 'unknown';
 	    }
@@ -329,26 +339,27 @@ sub parse {
 #	    print STDERR "RHS: $rhs\n";
 	    for my $kv (split(/\s*,\s*/,$rhs)) {
 		$kv =~ m/^([-0-9a-z]+)\=\s*(.*\S)$/i ||
-		    $self->_do_parse_error($file, $NR, "bad key-value after \`;': \`$kv'");
+		    $self->_do_parse_error($file, $NR,
+					   __g( "bad key-value after \`;': \`%s'", $kv ));
 		my $k = ucfirst $1;
 		my $v = $2;
 		$kvdone{$k}++ && $self->_do_parse_error($file, $NR,
-						       "repeated key-value $k");
+						       __g( "repeated key-value %s", $k ));
 		if ($k eq 'Urgency') {
 		    $v =~ m/^([-0-9a-z]+)((\s+.*)?)$/i ||
 			$self->_do_parse_error($file, $NR,
-					      "badly formatted urgency value",
+					      __g( "badly formatted urgency value" ),
 					      $v);
-		    $entry->{'Urgency'} = $1;
-		    $entry->{'Urgency_LC'} = lc($1);
-		    $entry->{'Urgency_Comment'} = $2 || '';
+		    $entry->{'Urgency'} = "$1";
+		    $entry->{'Urgency_LC'} = lc("$1");
+		    $entry->{'Urgency_Comment'} = "$2";
 		} elsif ($k =~ m/^X[BCS]+-/i) {
 		    # Extensions - XB for putting in Binary,
 		    # XC for putting in Control, XS for putting in Source
 		    $entry->{$k}= $v;
 		} else {
 		    $self->_do_parse_error($file, $NR,
-					  "unknown key-value key $k - copying to XS-$k");
+					  __g( "unknown key-value key %s - copying to XS-%s", $k, $k ));
 		    $entry->{ExtraFields}{"XS-$k"} = $v;
 		}
 	    }
@@ -371,7 +382,7 @@ sub parse {
 		 || m/^Changes from version (.*) to (.*):/io
 		 || m/^Changes for [\w.+-]+-[\w.+-]+:?$/io
 		 || m/^Old Changelog:$/io
-		 || m/^(?:\d+:)?[\w.+~-]+:?$/o) {
+		 || m/^(?:\d+:)?\w[\w.+~-]*:?$/o) {
 	    # save entries on old changelog format verbatim
 	    # we assume the rest of the file will be in old format once we
 	    # hit it for the first time
@@ -379,26 +390,32 @@ sub parse {
 	    $self->{oldformat} .= join "", <$fh>;
 	} elsif (m/^\S/) {
 	    $self->_do_parse_error($file, $NR,
-				  "badly formatted heading line", "$_");
+				  __g( "badly formatted heading line" ), "$_");
 	} elsif (m/^ \-\- (.*) <(.*)>(  ?)((\w+\,\s*)?\d{1,2}\s+\w+\s+\d{4}\s+\d{1,2}:\d\d:\d\d\s+[-+]\d{4}(\s+\([^\\\(\)]\))?)$/o) {
 	    $expect eq 'more change data or trailer' ||
 		$self->_do_parse_error($file, $NR,
-			"found trailer where expected $expect", "$_");
+				       __g( "found trailer where expected %s",
+					    $expect ), "$_");
 	    if ($3 ne '  ') {
 		$self->_do_parse_error($file, $NR,
-				      "badly formatted trailer line", "$_");
+				       __g( "badly formatted trailer line" ),
+				       "$_");
 	    }
 	    $entry->{'Trailer'} = $_;
 	    $entry->{'Maintainer'} = "$1 <$2>" unless $entry->{'Maintainer'};
-	    unless($entry->{'Date'} && $entry->{'Timestamp'}) {
-		$entry->{'Date'} = $4;
-		$entry->{'Timestamp'} = str2time($4)
-		    or $self->_do_parse_error( $file, $NR, "couldn't parse date $4" );
+	    unless($entry->{'Date'} && defined $entry->{'Timestamp'}) {
+		$entry->{'Date'} = "$4";
+		$entry->{'Timestamp'} = str2time($4);
+		unless (defined $entry->{'Timestamp'}) {
+		    $self->_do_parse_error( $file, $NR,
+					    __g( "couldn't parse date %s",
+						 "$4" ) );
+		}
 	    }
 	    $expect = 'next heading or eof';
 	} elsif (m/^ \-\-/) {
 	    $entry->{ERROR} = [ $file, $NR,
-			      "badly formatted trailer line", "$_" ];
+			      __g( "badly formatted trailer line" ), "$_" ];
 	    $self->_do_parse_error(@{$entry->{ERROR}});
 #	    $expect = 'next heading or eof'
 #		if $expect eq 'more change data or trailer';
@@ -407,7 +424,8 @@ sub parse {
 		|| $expect eq 'more change data or trailer'
 		|| do {
 		    $self->_do_parse_error($file, $NR,
-			    "found change data where expected $expect", "$_");
+			    __g( "found change data where expected %s",
+				 $expect ), "$_");
 		    if (($expect eq 'next heading or eof')
 			&& !$entry->is_empty) {
 			# lets assume we have missed the actual header line
@@ -421,7 +439,8 @@ sub parse {
 			$entry->{Version} = 'unknown'.($unknowncounter++);
 			$entry->{Urgency_Comment} = '';
 			$entry->{ERROR} = [ $file, $NR,
-			    "found change data where expected $expect", "$_" ];
+					    __g( "found change data where expected %s",
+						 $expect ), "$_" ];
 		    }
 		};
 	    $entry->{'Changes'} .= (" \n" x $blanklines)." $_\n";
@@ -438,10 +457,12 @@ sub parse {
 		|| $expect eq 'next heading or eof';
 	    $expect eq 'more change data or trailer'
 		|| $self->_do_parse_error($file, $NR,
-					 "found blank line where expected $expect");
+					 __g( "found blank line where expected %s",
+					      $expect ));
 	    $blanklines++;
 	} else {
-	    $self->_do_parse_error($file, $NR, "unrecognised line", "$_");
+	    $self->_do_parse_error($file, $NR, __g( "unrecognised line" ),
+				   "$_");
 	    ($expect eq 'start of change data'
 		|| $expect eq 'more change data or trailer')
 		&& do {
@@ -455,14 +476,17 @@ sub parse {
 		    }
 		    $blanklines = 0;
 		    $expect = 'more change data or trailer';
-		    $entry->{ERROR} = [ $file, $NR, "unrecognised line", "$_" ];
+		    $entry->{ERROR} = [ $file, $NR, __g( "unrecognised line" ),
+					"$_" ];
 		};
 	}
     }
 
     $expect eq 'next heading or eof'
 	|| do {
-	    $entry->{ERROR} = [ $file, $NR, "found eof where expected $expect" ];
+	    $entry->{ERROR} = [ $file, $NR,
+				__g( "found eof where expected %s",
+				     $expect ) ];
 	    $self->_do_parse_error( @{$entry->{ERROR}} );
 	};
     unless ($entry->is_empty) {
@@ -472,7 +496,8 @@ sub parse {
 
     if ($self->{config}{infile}) {
 	close $fh or do {
-	    $self->_do_fatal_error( "can't close file $file: $!" );
+	    $self->_do_fatal_error( __g( "can't close file %s: %s",
+					 $file, $! ));
 	    return undef;
 	};
     }
@@ -515,23 +540,23 @@ sub __sanity_check_range {
     my ( $data, $from, $to, $since, $until, $start, $end ) = @_;
 
     if (($$start || $$end) && ($$from || $$since || $$to || $$until)) {
-	warn( "you can't combine 'count' or 'offset' with any other range option\n" );
+	warn( __g( "you can't combine 'count' or 'offset' with any other range option" ) ."\n");
 	$$from = $$since = $$to = $$until = '';
     }
     if ($$from && $$since) {
-	warn( "you can only specify one of 'from' and 'since'\n" );
+	warn( __g( "you can only specify one of 'from' and 'since'" ) ."\n");
 	$$from = '';
     }
     if ($$to && $$until) {
-	warn( "you can only specify one of 'to' and 'until'\n" );
+	warn( __g( "you can only specify one of 'to' and 'until'" ) ."\n");
 	$$to = '';
     }
-    if ($data->[0]{Version} eq $$since) {
-	warn( "'since' option specifies most recent version\n" );
+    if ($$since && ($data->[0]{Version} eq $$since)) {
+	warn( __g( "'since' option specifies most recent version" ) ."\n");
 	$$since = '';
     }
-    if ($data->[$#{$data}]{Version} eq $$until) {
-	warn( "'until' option specifies oldest version\n" );
+    if ($$until && ($data->[$#{$data}]{Version} eq $$until)) {
+	warn( __g( "'until' option specifies oldest version" ) ."\n");
 	$$until = '';
     }
     $$start = 0 if $$start < 0;
@@ -573,7 +598,7 @@ sub _data_range {
 					\$since, \$until,
 					\$start, \$end );
 
-    
+
     unless ($from or $to or $since or $until or $start or $end) {
 	return [ @$data ] if $config->{default_all} and not $count;
 	return [ $data->[0] ];
@@ -880,8 +905,8 @@ directly write the output to the file specified
 
 =item template
 
-template file to use, defaults to
-/usr/share/libparse-debianchangelog-perl/default.tmpl.
+template file to use, defaults to tmpl/default.tmpl, so you
+most likely want to override that.
 NOTE: The plan is to provide a configuration file for the module
 later to be able to use sane defaults here.
 
@@ -915,9 +940,9 @@ sub html {
     require CGI;
     import CGI qw( -no_xhtml -no_debug );
     require HTML::Template;
-    
+
     my $template = HTML::Template->new(filename => $config->{template}
-				       || '/usr/share/libparse-debianchangelog-perl/default.tmpl',
+				       || 'tmpl/default.tmpl',
 				       die_on_bad_params => 0);
     $template->param( MODULE_NAME => ref($self),
 		      MODULE_VERSION => $VERSION,
@@ -939,12 +964,13 @@ sub html {
     my $last_year;
     foreach my $entry (@$data) {
 	my $year = $last_year; # try to deal gracefully with unparsable dates
-	if ($entry->{Timestamp}) {
+	if (defined $entry->{Timestamp}) {
 	    $year = (gmtime($entry->{Timestamp}))[5] + 1900;
 	    $last_year = $year;
 	}
 
 	$year ||= (($entry->{Date} =~ /\s(\d{4})\s/) ? $1 : (gmtime)[5] + 1900);
+
 	$navigation{$year}{NAV_VERSIONS} ||= [];
 	$navigation{$year}{NAV_YEAR} ||= $year;
 
@@ -968,7 +994,7 @@ sub html {
     $last_year = undef;
     foreach my $entry (@$data) {
 	my $year = $last_year; # try to deal gracefully with unparsable dates
-	if ($entry->{Timestamp}) {
+	if (defined $entry->{Timestamp}) {
 	    $year = (gmtime($entry->{Timestamp}))[5] + 1900;
 	}
 	$year ||= (($entry->{Date} =~ /\s(\d{4})\s/) ? $1 : (gmtime)[5] + 1900);
