@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-28 18:04+0100\n"
+"POT-Creation-Date: 2007-10-07 06:18+0200\n"
 "PO-Revision-Date: 2005-11-28 15:41+0200\n"
 "Last-Translator: Eugeniy Meshcheryakov <eugen@univ.kiev.ua>\n"
 "Language-Team: Ukrainian\n"
@@ -212,24 +212,10 @@ msgid "Software to access Usenet, to set up news servers, etc."
 msgstr "Програми для доступу до Usenet, встановлення серверів новин і т.ін."
 
 #: lib/Packages/Sections.pm:54
-msgid "Software restricted in the U.S."
-msgstr "Програми з обмеженнями в США"
-
-#: lib/Packages/Sections.pm:55
-msgid ""
-"These packages probably may not be used in or distributed from the U.S. due "
-"to software patents. You should check the regulations in your country before "
-"using this software."
-msgstr ""
-"Ці пакунки, мабуть, не можна використовувати в або експортувати зі США через "
-"патенти на програмне забезпечення. Вам потрібно перевірити законодавство "
-"вашої країни перед використанням цих програм."
-
-#: lib/Packages/Sections.pm:56
 msgid "Old Libraries"
 msgstr "Старі бібліотеки"
 
-#: lib/Packages/Sections.pm:57
+#: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
@@ -237,11 +223,11 @@ msgstr ""
 "Старі версії бібліотек, що зберігаються для зворотної сумісності зі старими "
 "програмами."
 
-#: lib/Packages/Sections.pm:58
+#: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
 msgstr "Інші ОС та файлові системи"
 
-#: lib/Packages/Sections.pm:59
+#: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
@@ -249,66 +235,74 @@ msgstr ""
 "Програмне забезпечення для запуску програм скомпільованих для інших "
 "операційних систем та для використання їхніх файлових систем."
 
-#: lib/Packages/Sections.pm:60
+#: lib/Packages/Sections.pm:58
 msgid "Perl"
 msgstr "Perl"
 
-#: lib/Packages/Sections.pm:61
+#: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
 msgstr "Все, що стосується Perl, скриптової мови."
 
-#: lib/Packages/Sections.pm:62
+#: lib/Packages/Sections.pm:60
 msgid "Python"
 msgstr "Python"
 
-#: lib/Packages/Sections.pm:63
+#: lib/Packages/Sections.pm:61
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
 msgstr "Все, що стосується Python, інтерактивної об'єктно-орієнтованої мови."
 
-#: lib/Packages/Sections.pm:64
+#: lib/Packages/Sections.pm:62
 msgid "Science"
 msgstr "Наука"
 
-#: lib/Packages/Sections.pm:65
+#: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
 msgstr "Основні інструменти для наукової роботи."
 
-#: lib/Packages/Sections.pm:66
+#: lib/Packages/Sections.pm:64
 msgid "Shells"
 msgstr "Оболонки"
 
-#: lib/Packages/Sections.pm:67
+#: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
 msgstr "Командні оболонки. Дружні інтерфейси користувача для початківців."
 
-#: lib/Packages/Sections.pm:68
+#: lib/Packages/Sections.pm:66
 msgid "Sound"
 msgstr "Звук"
 
-#: lib/Packages/Sections.pm:69
+#: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Програми для роботи зі звуком: мікшери, програвачі, записувачі, програвачі "
 "компакт-дисків та ін."
 
-#: lib/Packages/Sections.pm:70
+#: lib/Packages/Sections.pm:68
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/Packages/Sections.pm:71
+#: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
 msgstr "Знамените програмне забезпечення для набору та пов'язані програми."
 
-#: lib/Packages/Sections.pm:72
+#: lib/Packages/Sections.pm:70
 msgid "Text Processing"
 msgstr "Обробка текстів"
 
-#: lib/Packages/Sections.pm:73
+#: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
 msgstr "Програми для форматування та друку текстових документів."
+
+#: lib/Packages/Sections.pm:72
+msgid "Translations"
+msgstr ""
+
+#: lib/Packages/Sections.pm:73
+msgid "Translation packages and language support meta packages."
+msgstr ""
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
@@ -369,3 +363,15 @@ msgstr ""
 #~ msgstr ""
 #~ "Основні програми кожної системи Debian (вам не потрібно їх встановлювати, "
 #~ "вони тут тільки для потреб оновлення)."
+
+#~ msgid ""
+#~ "These packages probably may not be used in or distributed from the U.S. "
+#~ "due to software patents. You should check the regulations in your country "
+#~ "before using this software."
+#~ msgstr ""
+#~ "Ці пакунки, мабуть, не можна використовувати в або експортувати зі США "
+#~ "через патенти на програмне забезпечення. Вам потрібно перевірити "
+#~ "законодавство вашої країни перед використанням цих програм."
+
+#~ msgid "Software restricted in the U.S."
+#~ msgstr "Програми з обмеженнями в США"
