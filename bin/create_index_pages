@@ -27,8 +27,9 @@ delete $ENV{'LANG'};
 delete $ENV{'LC_ALL'};
 delete $ENV{'LC_MESSAGES'};
 bindtextdomain ( 'pdo', $LOCALES );
-bindtextdomain ( 'sections', $LOCALES );
 bindtextdomain ( 'templates', $LOCALES );
+bindtextdomain ( 'sections', $LOCALES );
+bindtextdomain ( 'langs', $LOCALES );
 textdomain( 'pdo' );
 
 my $wwwdir = "$TOPDIR/www";
