@@ -5,6 +5,9 @@ use warnings;
 
 use Template;
 use Locale::gettext;
+use URI ();
+use HTML::Entities ();
+use URI::Escape ();
 use Benchmark ':hireswallclock';
 
 use Packages::CGI;
@@ -19,6 +22,7 @@ use constant COMPILE => 1;
 
 sub new {
     my ($classname, $include, $format, $vars, $options) = @_;
+    $vars ||= {};
     $options ||= {};
 
     my $self = {};
@@ -29,6 +33,19 @@ sub new {
 	year => $timestamp[5]+1900,
 	string => scalar gmtime() .' UTC',
     };
+    $vars->{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
+    $vars->{make_url} = sub { return &Packages::CGI::make_url(@_) };
+    $vars->{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
+    $vars->{extract_host} = sub { my $uri = URI->new($_[0]);
+				  my $host = $uri->host;
+				  $host .= ':'.$uri->port if $uri->port != $uri->default_port;
+				  return $host;
+			      };
+    # needed to work around the limitations of the the FILTER syntax
+    $vars->{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
+    $vars->{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
+    $vars->{quotemeta} = sub { return quotemeta($_[0]) };
+    $vars->{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
     $self->{template} = Template->new( {
 	PRE_PROCESS => [ 'config.tmpl' ],
@@ -53,7 +70,7 @@ sub error {
 }
 
 sub page {
-    my ($self, $action, $page_content) = @_;
+    my ($self, $action, $page_content, $target) = @_;
 
     #use Data::Dumper;
     #die Dumper($self, $action, $page_content);
@@ -63,9 +80,13 @@ sub page {
 					@{$page_content->{used_langs}} );
 
     my $txt;
-    $self->process("$self->{format}/$action.tmpl", $page_content, \$txt)
-	or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
-
+    if ($target) {
+	$self->process("$self->{format}/$action.tmpl", $page_content, $target)
+	    or die sprintf( "template error: %s", $self->error ); # too late for reporting on-line
+    } else {
+	$self->process("$self->{format}/$action.tmpl", $page_content, \$txt)
+	    or die sprintf( "template error: %s", $self->error );
+    }
     return $txt;
 }
 

@@ -16,7 +16,7 @@
    architectures_enc = html_encode(architectures_str);
 -%]
 [%- PROCESS 'html/head.tmpl'
-   title_tag = "Package Search Results -- $keyword_enc"
+   title_tag = g("Package Search Results -- %s", keyword_enc)
    print_search_field = 'packages'
    search_field_values = {
 	keywords => search_keywords.join(' '),
@@ -25,21 +25,22 @@
 	architectures => params.values.arch.no_replace.join(','),
 	sections => params.values.section.no_replace.join(','),
     }
-   navigation = [ { name => 'Package Search Results' } ]
+   navigation = [ { name => g('Package Search Results') } ]
 -%]
 
 <div id="psearchsug">
 [% UNLESS results %]
-	<p>You can try a different search on the <a href="[% searchformurl %]#search_packages">Packages search page</a>.</p>
+	<p>[% g('You can try a different search on the <a href="%s#search_packages">Packages search page</a>.',
+		searchformurl) %]</p>
 	
 	[% IF opts.searchon != "names" && opts.exact %]
-	<p>You have searched only for words exactly matching your keywords.
-	You can try to search <a href="[% make_search_url('',"keywords=$keyword_esc",'exact',0) %]">allowing subword matching</a>
+	<p>[% g('You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching.',
+		make_search_url('',"keywords=$keyword_esc",'exact',0) ) %]</a>
 	[% END %]
 [% END %]
 [% IF opts.searchon == "names" && non_results %]
-<p><a href="[% search_url %][% keyword_esc %]">[% non_results %]</a>
-results have not been displayed due to the search parameters.</p>
+<p>[% g('<a href="%s">%u</a> results have not been displayed due to the search parameters.',
+	"$search_url$keyword_esc", non_results) %]</p>
 [% END %]
 </div>
 
@@ -47,42 +48,45 @@ results have not been displayed due to the search parameters.</p>
 
 <div id="psearchres">
 
-[% suite_wording = suite_enc.match("^(default|all)$") ? "all suites" : "suite(s) <em>$suite_enc</em>";
-   section_wording = (section_enc == 'all') ? "all sections" : "section(s) <em>$section_enc</em>";
-   arch_wording = (architectures_enc == 'any') ? "all architectures" : "architecture(s) <em>$architectures_enc</em>";
+[%# @translators: I'm really sorry :/ %]
+[% suite_wording = suite_enc.match("^(default|all)$") ? g("all suites") : g("suite(s) <em>$suite_enc</em>");
+   section_wording = (section_enc == 'all') ? g("all sections") : g("section(s) <em>$section_enc</em>");
+   arch_wording = (architectures_enc == 'any') ? g("all architectures") : g("architecture(s) <em>$architectures_enc</em>");
     IF opts.searchon == "names";
-	source_wording = opts.source ? "source packages" : "packages";
-	msg = "You have searched for $source_wording that names contain <em>$keyword_enc</em> in $suite_wording, $section_wording, and $arch_wording .";
+	source_wording = opts.source ? g("source packages") : g("packages");
+	msg = g("You have searched for %s that names contain <em>%s</em> in %s, %s, and %s.",
+		source_wording, keyword_enc, suite_wording, section_wording, arch_wording);
     ELSE;
-	exact_wording = opts.exact ? "" : " (including subword matching)";
-	msg = "You have searched for <em>$keyword_enc</em> in packages names and descriptions in $suite_wording, $section_wording, and $arch_wording$exact_wording .";
+	exact_wording = opts.exact ? "" : g(" (including subword matching)");
+	msg = g("You have searched for <em>%s</em> in packages names and descriptions in %s, %s, and %s%s.",
+		keyword_enc, suite_wording, section_wording, arch_wording, exact_wording);
     END %]
 <p>[% msg %]
 
 [% IF results %]
-Found <strong>[% results %]</strong> matching packages.</p>
+[% g('Found <strong>%u</strong> matching packages.', results) %]</p>
 [% END %]
 
 [% IF too_many_hits %]
 [% IF opts.searchon != "names" %]
-<p id="psearchtoomanyhits">Note that this only shows the best matches, sorted by relevance.
+<p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance.
 If the first few packages don't match what you searched for, try using more keywords or alternative
-keywords.</p>
+keywords.") %]</p>
 [% ELSE %]
-<p id="psearchtoomanyhits">Your search was too wide so we will only display exact matches.
-At least <em>[% too_many_hits %]</em> results have been omitted and will not be displayed.
-Please consider using a longer keyword or more keywords.</p>
+<p id="psearchtoomanyhits">[% g('Your search was too wide so we will only display exact matches.
+At least <em>%u</em> results have been omitted and will not be displayed.
+Please consider using a longer keyword or more keywords.', too_many_hits) %]</p>
 [% END; END %]
 
 [% UNLESS results %]
-<p id="psearchnoresult">Sorry, your search gave no results</p>
+<p id="psearchnoresult">[% g('Sorry, your search gave no results') %]</p>
 [% END %]
 
 [% FOREACH categories %]
   [% "<h2>$name</h2>" IF name %]
 
 [% FOREACH packages %]
-  <h3>Package [% pkg %]</h3>
+  <h3>[% g('Package %s', pkg) %]</h3>
   <ul>
   [% FOREACH s IN suites;
 	suite = s.suite %]
@@ -92,7 +96,7 @@ Please consider using a longer keyword or more keywords.</p>
       <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
     [% END %]
     [% IF s.providers %]
-	<br>[% 'also ' IF s.versions.size > 0 %]provided by: [% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
+	<br>[% 'also ' IF s.versions.size > 0 %][% g('provided by:') %] [% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
     [% END %]
     </li>
   [% END %]
@@ -100,7 +104,7 @@ Please consider using a longer keyword or more keywords.</p>
 [% END %]
 
 [% FOREACH src_packages %]
-  <h3>Source Package [% pkg %]</h3>
+  <h3>[% g('Source Package %s', pkg) %]</h3>
   <ul>
   [% FOREACH origins %]
      [% origin = (archive == main_archive) ? suite : "$suite/$archive";
@@ -108,9 +112,9 @@ Please consider using a longer keyword or more keywords.</p>
     <li><a class="resultlink" href="[% make_url(pkg,'','source','source','suite',origin,'section','','arch','') %]">[% origin %]</a> ([% subsection %]): [% version %]
       [%- IF section %] [<strong class="pmarker">[% section %]</strong>][% END %]
       [%- IF real_archive %] [<strong class="pmarker">[% real_archive %]</strong>][% END %]
-    <br>Binary packages: <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+    <br>[% g('Binary packages:') %] <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF binaries.size > 10 %]
-	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% binaries.size %] binary packages")</script>
+	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% g('%u binary packages', binaries.size) %])</script>
 	[% END %]
     </li>
   [% END %]
@@ -120,7 +124,8 @@ Please consider using a longer keyword or more keywords.</p>
 [% END %]
 
 [% IF skipped %]
-  <p><a href="[% make_search_url('',"keywords=$keyword_esc",'exact', 0) %]">[% skipped %]</a> results have not been displayed because you requested only exact matches.
+  <p>[% g('<a href="%s">%u</a> results have not been displayed because you requested only exact matches.',
+	make_search_url('',"keywords=$keyword_esc",'exact', 0), skipped) %]
 [% END %]
 
 </div>

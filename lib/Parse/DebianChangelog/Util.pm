@@ -96,9 +96,13 @@ sub data2rfc822 {
     for my $f (sort { $fieldimps->{$b} <=> $fieldimps->{$a} } keys %$data) {
 	my $v= $data->{$f} or next;
 	$v =~ m/\S/o || next; # delete whitespace-only fields
-	$v =~ m/\n\S/o && warn("field $f has newline then non whitespace >$v<");
-	$v =~ m/\n[ \t]*\n/o && warn("field $f has blank lines >$v<");
-	$v =~ m/\n$/o && warn("field $f has trailing newline >$v<");
+	$v =~ m/\n\S/o
+	    && warn(__g("field %s has newline then non whitespace >%s<",
+			$f, $v ));
+	$v =~ m/\n[ \t]*\n/o && warn(__g("field %s has blank lines >%s<",
+					 $f, $v ));
+	$v =~ m/\n$/o && warn(__g("field %s has trailing newline >%s<",
+				  $f, $v ));
 	$v =~ s/\$\{\}/\$/go;
 	$rfc822_str .= "$f: $v\n";
     }
@@ -142,7 +146,7 @@ in the output format of C<dpkg-parsechangelog>.
 =cut
 
 sub get_dpkg_changes {
-    my $changes = "\n ".$_[0]->Header."\n .\n".$_[0]->Changes;
+    my $changes = "\n ".($_[0]->Header||'')."\n .\n".($_[0]->Changes||'');
     chomp $changes;
     $changes =~ s/^ $/ ./mgo;
     return $changes;

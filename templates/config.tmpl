@@ -29,20 +29,24 @@
    license = {
 	url => homepage _ 'license'
    }
+   trademark = {
+	name => copyright.name,
+	url => homepage _ 'trademark'
+   }
    contact = {
-	name => 'Debian Web Mailinglist',
+	name => g('Debian Web Mailinglist'),
 	mail => 'debian-www@lists.debian.org',
         url => homepage _ 'contact',
    }
    admin = {
-	name => 'Debian Webmaster',
+	name => g('%s Webmaster', organisation),
 	mail => 'webmaster@debian.org',
    }
-   trademarknotes = organisation _ ' is a trademark of ' _ copyright.name
+   trademarknotes = g('%s is a <a href="%s">trademark</a> of %s', organisation, trademark.url, trademark.name)
 -%]
 [%-
    # possible values for importance: high, normal, low
 #   sitewidemsg = { importance => "high",
-#		   txt => "Please note that this is an experimental version of <a href=\"http://packages.debian.org/\">packages.debian.org</a>. Errors and obsolete information should be expected" }
+#		   txt => g('Please note that this is an experimental version of <a href="http://packages.debian.org/">packages.debian.org</a>. Errors and obsolete information should be expected') }
 #		   txt => "Site maintainance in progress, some temporary problems might occour." }
 -%]

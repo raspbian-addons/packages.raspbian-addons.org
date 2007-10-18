@@ -49,6 +49,11 @@ sub get_charset {
     return $lang2charset{$lang} || $lang2charset{default};
 }
 
+sub tt_gettext {
+    my ($str, @args) = @_;
+    return dgettext( 'templates', $str ) unless @args;
+    return sprintf(dgettext( 'templates', $str ), @args);
+}
 sub _g { return gettext( $_[0] ) }
 sub N_ { return $_[0] }
 

@@ -1,15 +1,19 @@
 [% PROCESS 'config/archive_layout.tmpl' %]
-[% pkg_type = is_source ? 'Source' : 'Software';
-   title_common = category ? "$pkg_type Packages in \"$suite\", $category.id $category.name"
-	: "$pkg_type Packages in \"$suite\"";
+[% IF is_source;
+	title_common = category ? g('Source Packages in "%s", %s %s', suite, category.id, category.name)
+				: g('Source Packages in "%s"', suite);
+   ELSE;
+	title_common = category ? g('Software Packages in "%s", %s %s', suite, category.id, category.name)
+				: g('Software Packages in "%s"', suite);
+   END;
 
-   nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','suite',suite), name=>suite } ];
+   nav_arr = [ { prefix=>g('Distribution:'), title=>g('Overview over this suite'), url=>make_url('/','','suite',suite), name=>suite } ];
    IF category;
 	nav_last = { prefix=>"$category.id:", name=>category.name };
    ELSE;
-	nav_last = { name=>'All Packages' };
+	nav_last = { name=>g('All Packages') };
    END;
-   nav_arr.push( { name=>'Source',
+   nav_arr.push( { name=>g('Source'),
 	           url=>make_url('/','','suite',suite,'source','source') } )
 	IF is_source;
    nav_arr.push( nav_last );
@@ -31,7 +35,7 @@
   [% END %]
   [% IF providers.size %]
     <dt><a href="[% name %]" id="[% name %]">[% name %]</a></dt>
-       <dd>virtual package provided by
+       <dd>[% g('virtual package provided by') %]
 	[% FOREACH provider IN providers %]<a href="../[% provider | uri %]">[% provider %]</a>
 	[%- ', ' UNLESS loop.last %][% END %]</dd>
     [% IF versions.length %]
