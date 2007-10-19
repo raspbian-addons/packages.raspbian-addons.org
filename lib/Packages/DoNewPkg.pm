@@ -22,7 +22,7 @@ sub do_newpkg {
 	fatal_error( _g( "suite not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for show (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( sprintf( _g( "more than one suite specified for newpkg (%s)" ), "@{$opts->{suite}}" ) );
     }
 
     my $sort_func = sub { $_[0][0] cmp $_[1][0] };
@@ -36,9 +36,13 @@ sub do_newpkg {
 	$opts->{section}[0] : undef;
 
     my @new_pkgs;
-    #FIXME: move to Packages::DB?
-    open NEWPKG, '<', "$TOPDIR/files/packages/newpkg_info"
-	or die "can't read newpkg_info file: $!";
+    open NEWPKG, '<', "$TOPDIR/files/packages/newpkg_info_$suite"
+	or do {
+	    warn "can't read newpkg_info_$suite: $!";
+	    fatal_error( sprintf( _g("no newpkg information found for suite %s"),
+				  $suite) );
+	    return;
+    };
     while (<NEWPKG>) {
 	chomp;
 	my @data = split /\s/, $_, 10;

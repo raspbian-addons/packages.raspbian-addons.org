@@ -2,14 +2,18 @@
 
 . `dirname $0`/../config.sh
 
-packagesdir=${filesdir}/packages
-test -d ${packagesdir} || mkdir -p ${packagesdir}
-
-LANG=C cat ${filesdir}/db/package_names_sid.txt \
-    | sort | uniq > ${packagesdir}/package_names_sid.$(date -I)
-LANG=C cat ${filesdir}/db/source_names_sid.txt \
-    | sort | uniq > ${packagesdir}/source_names_sid.$(date -I)
+isodate=$(date -I)
+packagesdir="${filesdir}/packages/${isodate}"
+test -d "${packagesdir}" || mkdir -p "${packagesdir}"
 
 cd $topdir
+for dist in $dists
+do
+    echo newpkg info for $dist
+    LANG=C cat "${filesdir}/db/package_names_${dist}.txt" \
+	| sort | uniq > "${packagesdir}/package_names_${dist}"
+    LANG=C cat "${filesdir}/db/source_names_${dist}.txt" \
+	| sort | uniq > "${packagesdir}/source_names_${dist}"
 
-./bin/newpkg_info sid
+    ./bin/newpkg_info ${dist}
+done

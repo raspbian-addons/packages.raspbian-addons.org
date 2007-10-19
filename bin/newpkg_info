@@ -13,6 +13,7 @@ use Packages::Search qw( :all );
 
 my $suite = $ARGV[0] or die "Fatal Error: No suite given";
 my $start_time = time;
+my $debug = 1;
 
 tie my %packages, 'DB_File', "$DBDIR/packages_small.db",
     O_RDONLY, 0666, $DB_BTREE
@@ -27,22 +28,30 @@ sub get_iso_date {
     return sprintf( "%04s-%02s-%02s", $year, $month, $day );
 }
 
-open CHANGES, '>', "$TOPDIR/files/packages/newpkg_info.new"
+my $packagesdir = "$TOPDIR/files/packages";
+open CHANGES, '>', "$packagesdir/newpkg_info_$suite.new"
     or die "Fatal Error: Couldn't open CHANGES file: $!";
-for (my $age = 0; $age < 7; $age++) {
-    my (%old, %changes);
+my (%add, %del);
+my $lastday;
+for (my $age = 7; $age >= 0; $age--) {
+    my (%old);
     my $newday = get_iso_date( $age );
     my $oldday = get_iso_date( $age+1 );
-    open OLD, '<', "$TOPDIR/files/packages/package_names_$suite.$oldday"
-	or do {
-	    warn "Warning: Couldn't open OLD file $TOPDIR/files/packages/package_names_$suite.$oldday: $!\n";
-	    next;
-	};
-    open NEW, '<', "$TOPDIR/files/packages/package_names_$suite.$newday"
-	or do {
-	    warn "Warning: Couldn't open NEW file $TOPDIR/files/packages/package_names_$suite.$newday: $!\n";
-	    next;
-	};
+    -d "$packagesdir/$oldday" or do {
+	warn "Warning: No information available for $oldday\n";
+	next unless $lastday;
+	$oldday = $lastday;
+    };
+    -d "$packagesdir/$newday" or do {
+	warn "Warning: No information available for $newday\n";
+	next;
+    };
+    $lastday = $newday;
+    warn "Process: age=$age oldday=$oldday newday=$newday\n" if $debug;
+    open OLD, '<', "$packagesdir/$oldday/package_names_$suite"
+	or die "Error: Couldn't open OLD file $packagesdir/$oldday/package_names_$suite: $!\n";
+    open NEW, '<', "$packagesdir/$newday/package_names_$suite"
+	or die "Error: Couldn't open NEW file $packagesdir/$newday/package_names_$suite: $!\n";
     while (<OLD>) {
 	chomp;
 	$old{$_} = 1;
@@ -54,28 +63,44 @@ for (my $age = 0; $age < 7; $age++) {
 	    # we assume here that the input contains no dupes!
 	    delete $old{$_};
 	} else {
-	    $changes{$_} = 1;
+	    if (exists $del{$_}) {
+		delete $del{$_};
+		warn "Re-Added: $_\n" if $debug;
+	    } else {
+		$add{$_} = $age;
+		warn "Added: $_ (age $age)\n" if $debug;
+	    }
 	}
     }
     close NEW;
     foreach (keys %old) {
-	$changes{$_} = -1;
+	if (exists $add{$_}) {
+	    delete $add{$_};
+	    warn "Deleted again: $_\n" if $debug;
+	} else {
+	    $del{$_} = $age;
+	    warn "Deleted: $_ (age $age)\n" if $debug;
+	}
     }
 
-    my %archives = map { $_ => 1 } qw( us security );
-    foreach (sort keys %changes) {
-	my $entry = [];
-	if ($changes{$_} == 1) {
-	    $entry = read_entry_simple( \%packages, $_, \%archives, $suite);
-	    die "Fatal Error: Can't find entry for package $_\n"
-		unless @$entry;
-	    shift @$entry; # remove virtual pkg info
-	}
-	print CHANGES join(" ", $_, $age, @$entry)."\n";
-	print "Wrote entry: ".join(" ", $_, $age, @$entry)."\n";
+}
+my %archives = map { $_ => 1 } qw( us security );
+foreach (sort (keys %add, keys %del)) {
+    my $entry = [];
+    my $age = 0;
+    if (exists $add{$_}) {
+	$entry = read_entry_simple( \%packages, $_, \%archives, $suite);
+	die "Fatal Error: Can't find entry for package $_\n"
+	    unless @$entry;
+	shift @$entry; # remove virtual pkg info
+	$age = $add{$_};
+    } else {
+	$age = $del{$_};
     }
+    print CHANGES join(" ", $_, $age, @$entry)."\n";
+    print "Wrote entry: ".join(" ", $_, $age, @$entry)."\n";
 }
 close CHANGES;
 
-rename("$TOPDIR/files/packages/newpkg_info.new",
-       "$TOPDIR/files/packages/newpkg_info");
+rename("$packagesdir/newpkg_info_$suite.new",
+       "$packagesdir/newpkg_info_$suite");
