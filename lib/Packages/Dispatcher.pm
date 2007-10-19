@@ -103,6 +103,7 @@ sub do_dispatch {
 	   " http_lang=$http_lang", 1 ) if DEBUG;
     bindtextdomain ( 'pdo', $LOCALES );
     bindtextdomain ( 'templates', $LOCALES );
+    bindtextdomain ( 'langs', $LOCALES );
     textdomain( 'pdo' );
 
     # backwards compatibility stuff

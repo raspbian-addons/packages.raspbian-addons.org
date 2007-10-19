@@ -3,9 +3,47 @@
 . `dirname $0`/../config.sh
 
 cd "$topdir"
-gettextfiles=$(find cgi-bin lib -not -name 'LanguageNames.pm' -a -not -name 'Sections.pm' -a \( -name '*.pl' -o -name '*.pm' \))
-templatefiles=$(find templates -name '*.tmpl' -o -name '*.inc')
-gettextfiles="$gettextfiles bin/create_index_pages"
+gettextfiles="
+lib/Packages/CGI.pm
+lib/Packages/Config.pm
+lib/Packages/DB.pm
+lib/Packages/DoDownload.pm
+lib/Packages/DoFilelist.pm
+lib/Packages/DoIndex.pm
+lib/Packages/DoNewPkg.pm
+lib/Packages/DoSearch.pm
+lib/Packages/DoSearchContents.pm
+lib/Packages/DoShow.pm
+lib/Packages/Page.pm
+lib/Packages/Search.pm
+lib/Packages/SrcPage.pm
+lib/Packages/Template.pm
+lib/Packages/Dispatcher.pm
+bin/create_index_pages
+"
+templatefiles="
+templates/config.tmpl
+templates/config/architectures.tmpl
+templates/config/archive_layout.tmpl
+templates/config/mirrors.tmpl
+templates/html/download.tmpl
+templates/html/error.tmpl
+templates/html/filelist.tmpl
+templates/html/foot.tmpl
+templates/html/head.tmpl
+templates/html/index.tmpl
+templates/html/menu.inc
+templates/html/messages.tmpl
+templates/html/newpkg.tmpl
+templates/html/search.tmpl
+templates/html/search_contents.tmpl
+templates/html/show.tmpl
+templates/html/suite_index.tmpl
+templates/html/tag_index.tmpl
+templates/rfc822/search.tmpl
+templates/rss/newpkg.tmpl
+templates/txt/index.tmpl
+"
 podomains="pdo templates sections langs"
 
 # Update pot
