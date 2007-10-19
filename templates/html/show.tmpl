@@ -264,7 +264,7 @@ Do not install it on a normal %s system.', organisation ) %]</p>
 [% FOREACH d IN downloads %]
   [% IF loop.first -%]
     <div id="pdownload">
-    <h2>Download [% pkg %]</h2>
+    <h2>[% g('Download %s', pkg) %]</h2>
     
     <table summary="[% g('The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.') %]">
     <caption class="hidecss">[% g('Download for all available architectures') %]</caption>
