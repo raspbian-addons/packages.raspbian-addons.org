@@ -5,14 +5,50 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
-"Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
-"POT-Creation-Date: 2007-10-14 03:22+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-10-19 23:43+0200\n"
 "PO-Revision-Date: 2007-10-19 20:12+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: bin/create_index_pages:234
+msgid "Section"
+msgstr ""
+
+#: bin/create_index_pages:246
+msgid "Subsection"
+msgstr ""
+
+#: bin/create_index_pages:258
+msgid "Priority"
+msgstr ""
+
+#. Done
+#: lib/Packages/Dispatcher.pm:162
+msgid "search doesn't take any more path elements"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:165
+msgid ""
+"We're supposed to display the homepage here, instead of getting dispatch.pl"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:188
+#, perl-format
+msgid "%s set more than once in path"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:223
+#, perl-format
+msgid "two or more packages specified (%s)"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:321
+msgid "requested format not available for this document"
+msgstr ""
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoShow.pm:30
@@ -122,40 +158,4 @@ msgstr ""
 #: lib/Packages/Template.pm:56
 #, perl-format
 msgid "Initialization of Template Engine failed: %s"
-msgstr ""
-
-#. Done
-#: lib/Packages/Dispatcher.pm:161
-msgid "search doesn't take any more path elements"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:164
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:187
-#, perl-format
-msgid "%s set more than once in path"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:222
-#, perl-format
-msgid "two or more packages specified (%s)"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:320
-msgid "requested format not available for this document"
-msgstr ""
-
-#: bin/create_index_pages:233
-msgid "Section"
-msgstr ""
-
-#: bin/create_index_pages:245
-msgid "Subsection"
-msgstr ""
-
-#: bin/create_index_pages:257
-msgid "Priority"
 msgstr ""

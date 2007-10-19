@@ -32,7 +32,10 @@ msgid ""
 "Please note that this is an experimental version of <a href=\"http://"
 "packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
 "information should be expected"
-msgstr "Huomaattehan, että tämä on kokeellinen versio <a href=\"http://packages.debian.org/\">packages.debian.org</a>-palvelusta. Varauduttehan virheisiin ja vanhentuneeseen tietoon"
+msgstr ""
+"Huomaattehan, että tämä on kokeellinen versio <a href=\"http://packages."
+"debian.org/\">packages.debian.org</a>-palvelusta. Varauduttehan virheisiin "
+"ja vanhentuneeseen tietoon"
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -184,7 +187,11 @@ msgid ""
 "Please be sure to consult the changelog and other possible documentation "
 "before\n"
 "using it."
-msgstr "Varoitus: Tämä paketti on <span class=\"pred\">kokeellisesta</span> jakelusta. Tämä tarkoittaa, että se on luultavasti epävakaa tai buginen, ja voi aiheuttaa jopa tiedonhäviötä. Suosittelemme muutoslokiin ja muuhun mahdolliseen dokumenaatioon tutustumista ennen käyttöönottoa."
+msgstr ""
+"Varoitus: Tämä paketti on <span class=\"pred\">kokeellisesta</span> "
+"jakelusta. Tämä tarkoittaa, että se on luultavasti epävakaa tai buginen, ja "
+"voi aiheuttaa jopa tiedonhäviötä. Suosittelemme muutoslokiin ja muuhun "
+"mahdolliseen dokumenaatioon tutustumista ennen käyttöönottoa."
 
 #: templates/html/download.tmpl:55 templates/html/show.tmpl:155
 msgid "debian-installer udeb package"
@@ -196,7 +203,10 @@ msgid ""
 "<a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</"
 "a> images only.\n"
 "Do not install it on a normal %s system."
-msgstr "Varoitus: Tämä paketti on tarkoitettu käytettäväksi vain rakennettaessa <a href=\"http://www.debian.org/devel/debian-installer\">debian-asentimen</a> vedoksia. Älä asenna normaaliin %s-järjestelmään."
+msgstr ""
+"Varoitus: Tämä paketti on tarkoitettu käytettäväksi vain rakennettaessa <a "
+"href=\"http://www.debian.org/devel/debian-installer\">debian-asentimen</a> "
+"vedoksia. Älä asenna normaaliin %s-järjestelmään."
 
 #: templates/html/download.tmpl:67
 msgid ""
@@ -243,25 +253,25 @@ msgid "More information on <kbd>%s</kbd>:"
 msgstr "Lisätietoa paketista %s"
 
 #: templates/html/download.tmpl:127
+msgid "%s Byte (%s %s)"
+msgstr "%s tavua (%s %s)"
+
+#: templates/html/download.tmpl:127
 #, fuzzy
 msgid "Exact Size"
 msgstr "Paketin koko"
-
-#: templates/html/download.tmpl:127
-msgid "%s Byte (%s %s)"
-msgstr "%s tavua (%s %s)"
 
 #: templates/html/download.tmpl:128 templates/html/show.tmpl:322
 msgid "MD5 checksum"
 msgstr "MD5-tarkiste"
 
-#: templates/html/download.tmpl:129
-msgid "SHA1 checksum"
-msgstr "SHA1-tarkiste"
-
 #: templates/html/download.tmpl:129 templates/html/download.tmpl:130
 msgid "Not Available"
 msgstr "Ei saatavilla"
+
+#: templates/html/download.tmpl:129
+msgid "SHA1 checksum"
+msgstr "SHA1-tarkiste"
 
 #: templates/html/download.tmpl:130
 msgid "SHA256 checksum"
@@ -290,13 +300,13 @@ msgstr "Tämä sivu on saatavilla myös seuraavilla kielillä:\n"
 msgid "How to set <a href=\"%s\">the default document language</a>"
 msgstr "Oletuskielen <a href=\"%s\">asettamisohjeet</a></p>"
 
-#: templates/html/foot.tmpl:23
-msgid "Back to:"
-msgstr ""
-
 #: templates/html/foot.tmpl:23 templates/html/head.tmpl:64
 msgid "%s Homepage"
 msgstr "%s-kotisivu"
+
+#: templates/html/foot.tmpl:23
+msgid "Back to:"
+msgstr ""
 
 #: templates/html/foot.tmpl:23
 #, fuzzy
@@ -321,7 +331,9 @@ msgstr ""
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
-msgstr "Sisältö: Copyright &copy; %s <a href=\"%s\">%s</a>. Lue <a href=\"%s\">lisenssiehdot</a>."
+msgstr ""
+"Sisältö: Copyright &copy; %s <a href=\"%s\">%s</a>. Lue <a href=\"%s"
+"\">lisenssiehdot</a>."
 
 #: templates/html/foot.tmpl:35
 #, fuzzy
@@ -457,13 +469,13 @@ msgstr "[RSS 1.0 -syöte]"
 msgid " <em>(%u days old)</em>"
 msgstr " <em>(%u päivää vanha)</em>"
 
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
-msgid "List of all packages"
-msgstr "Luettelo kaikista paketeista"
-
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
 msgid "All packages"
 msgstr "Kaikki paketit"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
+msgid "List of all packages"
+msgstr "Luettelo kaikista paketeista"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
@@ -530,12 +542,12 @@ msgid "architecture(s) <em>$architectures_enc</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:56
-msgid "source packages"
-msgstr "lähdepaketit"
-
-#: templates/html/search.tmpl:56
 msgid "packages"
 msgstr "paketit"
+
+#: templates/html/search.tmpl:56
+msgid "source packages"
+msgstr "lähdepaketit"
 
 #: templates/html/search.tmpl:57
 msgid ""
@@ -696,12 +708,12 @@ msgid "Source packages"
 msgstr "Lähdepaketit"
 
 #: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "Osasto:"
-
-#: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "Kaikki tämän osaston paketit"
+
+#: templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Osasto:"
 
 #: templates/html/show.tmpl:21
 #, fuzzy
@@ -715,13 +727,13 @@ msgstr "Uudet paketit komponentissa %s"
 
 #: templates/html/show.tmpl:45
 #, fuzzy
-msgid "Source:"
-msgstr "Lähdepaketti:"
+msgid "Source package building this package"
+msgstr "Lähdepaketti"
 
 #: templates/html/show.tmpl:45
 #, fuzzy
-msgid "Source package building this package"
-msgstr "Lähdepaketti"
+msgid "Source:"
+msgstr "Lähdepaketti:"
 
 #: templates/html/show.tmpl:52
 msgid "Virtual Package: %s"
@@ -851,6 +863,10 @@ msgstr "Muut pakettiin %s liittyvät paketit"
 #, fuzzy
 msgid "%u providing packages"
 msgstr "Paketin koko"
+
+#: templates/html/show.tmpl:272
+msgid "Download %s"
+msgstr "Imuroi %s"
 
 #: templates/html/show.tmpl:274
 msgid ""
@@ -1131,9 +1147,6 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 
 #~ msgid "md5sum"
 #~ msgstr "MD5-summa"
-
-#~ msgid "Download %s"
-#~ msgstr "Imuroi %s"
 
 #~ msgid "Overview over this distribution"
 #~ msgstr "Tämän jakelun yleiskuva"

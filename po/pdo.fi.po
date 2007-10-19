@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-14 03:22+0200\n"
+"POT-Creation-Date: 2007-10-19 23:43+0200\n"
 "PO-Revision-Date: 2007-10-18 22:06+0300\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -14,6 +14,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bin/create_index_pages:234
+msgid "Section"
+msgstr "Osasto"
+
+#: bin/create_index_pages:246
+msgid "Subsection"
+msgstr "Alaosasto"
+
+#: bin/create_index_pages:258
+msgid "Priority"
+msgstr "Tärkeys"
+
+#. Done
+#: lib/Packages/Dispatcher.pm:162
+msgid "search doesn't take any more path elements"
+msgstr "haku ei ota enempää polkuelementtejä"
+
+#: lib/Packages/Dispatcher.pm:165
+msgid ""
+"We're supposed to display the homepage here, instead of getting dispatch.pl"
+msgstr "Meidän pitäisi näyttää kotisivu tässä dispatch.pl:n sijaan."
+
+#: lib/Packages/Dispatcher.pm:188
+#, perl-format
+msgid "%s set more than once in path"
+msgstr "%s asetettu useammin kuin kerran polussa"
+
+#: lib/Packages/Dispatcher.pm:223
+#, perl-format
+msgid "two or more packages specified (%s)"
+msgstr "kaksi tai useampi pakettia määritetty (%s)"
+
+#: lib/Packages/Dispatcher.pm:321
+msgid "requested format not available for this document"
+msgstr "pyydetty muoto ei ole käytettävissä tälle asiakirjalle"
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoShow.pm:30
@@ -124,42 +160,6 @@ msgstr "paketin ylläpitäjätietue on virheellinen"
 #, perl-format
 msgid "Initialization of Template Engine failed: %s"
 msgstr "Mallinemoottorin alustus epäonnistui: %s"
-
-#. Done
-#: lib/Packages/Dispatcher.pm:161
-msgid "search doesn't take any more path elements"
-msgstr "haku ei ota enempää polkuelementtejä"
-
-#: lib/Packages/Dispatcher.pm:164
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr "Meidän pitäisi näyttää kotisivu tässä dispatch.pl:n sijaan."
-
-#: lib/Packages/Dispatcher.pm:187
-#, perl-format
-msgid "%s set more than once in path"
-msgstr "%s asetettu useammin kuin kerran polussa"
-
-#: lib/Packages/Dispatcher.pm:222
-#, perl-format
-msgid "two or more packages specified (%s)"
-msgstr "kaksi tai useampi pakettia määritetty (%s)"
-
-#: lib/Packages/Dispatcher.pm:320
-msgid "requested format not available for this document"
-msgstr "pyydetty muoto ei ole käytettävissä tälle asiakirjalle"
-
-#: bin/create_index_pages:233
-msgid "Section"
-msgstr "Osasto"
-
-#: bin/create_index_pages:245
-msgid "Subsection"
-msgstr "Alaosasto"
-
-#: bin/create_index_pages:257
-msgid "Priority"
-msgstr "Tärkeys"
 
 #~ msgid ""
 #~ "Warning: The <span class=\"pred\">experimental</span> distribution "

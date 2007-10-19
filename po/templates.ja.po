@@ -270,24 +270,24 @@ msgid "More information on <kbd>%s</kbd>:"
 msgstr "<kbd>%s</kbd> に関するさらに詳しい情報:"
 
 #: templates/html/download.tmpl:127
-msgid "Exact Size"
-msgstr "正確なサイズ"
-
-#: templates/html/download.tmpl:127
 msgid "%s Byte (%s %s)"
 msgstr "%s Byte (%s %s)"
+
+#: templates/html/download.tmpl:127
+msgid "Exact Size"
+msgstr "正確なサイズ"
 
 #: templates/html/download.tmpl:128 templates/html/show.tmpl:322
 msgid "MD5 checksum"
 msgstr "MD5 チェックサム"
 
-#: templates/html/download.tmpl:129
-msgid "SHA1 checksum"
-msgstr "SHA1 チェックサム"
-
 #: templates/html/download.tmpl:129 templates/html/download.tmpl:130
 msgid "Not Available"
 msgstr "入手不能"
+
+#: templates/html/download.tmpl:129
+msgid "SHA1 checksum"
+msgstr "SHA1 チェックサム"
 
 #: templates/html/download.tmpl:130
 msgid "SHA256 checksum"
@@ -318,13 +318,13 @@ msgstr "このページは以下の言語でもご覧になれます。"
 msgid "How to set <a href=\"%s\">the default document language</a>"
 msgstr "<a href=\"%s\">デフォルトの言語を設定するには</a>"
 
-#: templates/html/foot.tmpl:23
-msgid "Back to:"
-msgstr "戻る:"
-
 #: templates/html/foot.tmpl:23 templates/html/head.tmpl:64
 msgid "%s Homepage"
 msgstr "%s ホームページ"
+
+#: templates/html/foot.tmpl:23
+msgid "Back to:"
+msgstr "戻る:"
 
 #: templates/html/foot.tmpl:23
 msgid "Packages search page"
@@ -467,13 +467,13 @@ msgstr "[RSS 1.0 フィード]"
 msgid " <em>(%u days old)</em>"
 msgstr " <em>(%u 日前)</em>"
 
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
-msgid "List of all packages"
-msgstr "全パッケージ一覧"
-
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
 msgid "All packages"
 msgstr "すべてのパッケージ"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
+msgid "List of all packages"
+msgstr "全パッケージ一覧"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
@@ -538,12 +538,12 @@ msgid "architecture(s) <em>$architectures_enc</em>"
 msgstr "<em>$architectures_enc</em> アーキテクチャ"
 
 #: templates/html/search.tmpl:56
-msgid "source packages"
-msgstr "ソースパッケージ"
-
-#: templates/html/search.tmpl:56
 msgid "packages"
 msgstr "パッケージ"
+
+#: templates/html/search.tmpl:56
+msgid "source packages"
+msgstr "ソースパッケージ"
 
 #: templates/html/search.tmpl:57
 msgid ""
@@ -711,12 +711,12 @@ msgid "Source packages"
 msgstr "ソースパッケージ"
 
 #: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "セクション:"
-
-#: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "このセクションのすべてのパッケージ"
+
+#: templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "セクション:"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
@@ -727,12 +727,12 @@ msgid "Details of package %s in %s"
 msgstr "%2$s の %1$s パッケージに関する詳細"
 
 #: templates/html/show.tmpl:45
-msgid "Source:"
-msgstr "ソース:"
-
-#: templates/html/show.tmpl:45
 msgid "Source package building this package"
 msgstr "このパッケージをビルドするためのソースパッケージ"
+
+#: templates/html/show.tmpl:45
+msgid "Source:"
+msgstr "ソース:"
 
 #: templates/html/show.tmpl:52
 msgid "Virtual Package: %s"
@@ -857,6 +857,12 @@ msgstr "その他の %s 関連パッケージ"
 #: templates/html/show.tmpl:254
 msgid "%u providing packages"
 msgstr "%u 個の提供パッケージ"
+
+#: templates/html/show.tmpl:272
+#, fuzzy
+#| msgid "Download"
+msgid "Download %s"
+msgstr "ダウンロード"
 
 #: templates/html/show.tmpl:274
 msgid ""
