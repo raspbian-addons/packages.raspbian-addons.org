@@ -1,30 +1,30 @@
 # SOME DESCRIPTIVE TITLE.
-# This file is put in the public domain.
+# Copyright (C) YEAR Free Software Foundation, Inc.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2005-10-25 17:52+0200\n"
-"Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
-"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"Project-Id-Version: packages.debian.org trunk\n"
+"Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
+"POT-Creation-Date: 2007-10-14 03:22+0200\n"
+"PO-Revision-Date: 2007-10-20 04:31+0900\n"
+"Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
+"Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: templates/config.tmpl:37
 msgid "Debian Web Mailinglist"
-msgstr ""
+msgstr "Debian ウェブメーリングリスト"
 
 #: templates/config.tmpl:42
 msgid "%s Webmaster"
-msgstr ""
+msgstr "%s ウェブマスター"
 
 #: templates/config.tmpl:45
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr ""
+msgstr "%s は %3$s の<a href=\"%2$s\">登録商標</a>です。"
 
 #: templates/config.tmpl:50
 msgid ""
@@ -32,127 +32,127 @@ msgid ""
 "packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
 "information should be expected"
 msgstr ""
+"注意: このサイトは <a href=\"http://packages.debian.org/\">packages.debian."
+"org</a> の試験版です。エラーや古い情報があると思ってください。"
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
-msgstr ""
+msgstr "Intel x86"
 
 #: templates/config/architectures.tmpl:5
 msgid "Motorola 680x0"
-msgstr ""
+msgstr "Motorola 680x0"
 
 #: templates/config/architectures.tmpl:6
 msgid "SPARC"
-msgstr ""
+msgstr "SPARC"
 
 #: templates/config/architectures.tmpl:7
 msgid "Alpha"
-msgstr ""
+msgstr "Alpha"
 
 #: templates/config/architectures.tmpl:8
 msgid "PowerPC"
-msgstr ""
+msgstr "PowerPC"
 
 #: templates/config/architectures.tmpl:9
 msgid "ARM"
-msgstr ""
+msgstr "ARM"
 
 #: templates/config/architectures.tmpl:10
 msgid "HP PA-RISC"
-msgstr ""
+msgstr "HP PA-RISC"
 
 #: templates/config/architectures.tmpl:11
 msgid "Intel IA-64"
-msgstr ""
+msgstr "Intel IA-64"
 
 #: templates/config/architectures.tmpl:12
 msgid "MIPS (big-endian)"
-msgstr ""
+msgstr "MIPS (ビッグエンディアン)"
 
 #: templates/config/architectures.tmpl:13
 msgid "MIPS (little-endian)"
-msgstr ""
+msgstr "MIPS (リトルエンディアン)"
 
 #: templates/config/architectures.tmpl:14
 msgid "IBM S/390"
-msgstr ""
+msgstr "IBM S/390"
 
 #: templates/config/architectures.tmpl:15
 msgid "Hurd (i386)"
-msgstr ""
+msgstr "Hurd (i386)"
 
 #: templates/config/architectures.tmpl:16
 msgid "AMD64"
-msgstr ""
+msgstr "AMD64"
 
 #: templates/config/architectures.tmpl:17
 msgid "EABI ARM"
-msgstr ""
+msgstr "EABI ARM"
 
 #: templates/config/architectures.tmpl:18
 msgid "GNU/kFreeBSD (i386)"
-msgstr ""
+msgstr "GNU/kFreeBSD (i386)"
 
 #: templates/config/architectures.tmpl:19
 msgid "GNU/kFreeBSD (amd64)"
-msgstr ""
+msgstr "GNU/kFreeBSD (amd64)"
 
 #: templates/config/mirrors.tmpl:182
 msgid "North America"
-msgstr ""
+msgstr "北アメリカ"
 
 #: templates/config/mirrors.tmpl:183
 msgid "South America"
-msgstr ""
+msgstr "南アメリカ"
 
 #: templates/config/mirrors.tmpl:184
 msgid "Asia"
-msgstr ""
+msgstr "アジア"
 
 #: templates/config/mirrors.tmpl:185
 msgid "Australia and New Zealand"
-msgstr ""
+msgstr "オーストラリア・ニュージーランド"
 
 #: templates/config/mirrors.tmpl:186
 msgid "Europe"
-msgstr ""
+msgstr "ヨーロッパ"
 
 #: templates/config/mirrors.tmpl:187
 msgid "Africa"
-msgstr ""
+msgstr "アフリカ"
 
 #: templates/html/download.tmpl:2
 msgid "Package Download Selection -- %s"
-msgstr ""
+msgstr "パッケージのダウンロードに関する選択 -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index.tmpl:10 templates/html/show.tmpl:14
 msgid "Distribution:"
-msgstr "Distribution&nbsp;:"
+msgstr "ディストリビューション:"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index.tmpl:10 templates/html/show.tmpl:14
-#, fuzzy
 msgid "Overview over this suite"
-msgstr "Vue d'ensemble de cette distribution"
+msgstr "このスイートの概要"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
-#, fuzzy
 msgid "Package:"
-msgstr "Taille du paquet"
+msgstr "パッケージ:"
 
 #: templates/html/download.tmpl:8
 msgid "Download"
-msgstr "Télécharger"
+msgstr "ダウンロード"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr ""
+msgstr "%2$s マシン用 <kbd>%1$s</kbd> のダウンロードページ"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
-msgstr ""
+msgstr "<kbd>%s</kbd> のダウンロードページ"
 
 #: templates/html/download.tmpl:26
 msgid ""
@@ -161,23 +161,28 @@ msgid ""
 "<a href=\"%s\">synaptic</a> to download and install\n"
 "packages, instead of doing so manually via this website."
 msgstr ""
+"%s を使用している場合、パッケージのダウンロードやインストールはこのウェブサイ"
+"トから手動で行うのではなく、<a href=\"%s\">aptitude</a> や <a href=\"%s"
+"\">synaptic</a> のようなパッケージマネージャを用いて行うことを強くお勧めしま"
+"す。"
 
 #: templates/html/download.tmpl:32
 msgid ""
 "You should be able to use any of the listed mirrors by adding a\n"
 "line to your <kbd>/etc/apt/sources.list</kbd> like this:"
 msgstr ""
+"次のような行を <kbd>/etc/apt/sources.list</kbd> に追加して、以下の一覧にある"
+"ミラーのうち使いたいものを利用可能にすべきでしょう。"
 
 #: templates/html/download.tmpl:38
 msgid "Replacing <em>%s</em> with the mirror in question."
-msgstr ""
+msgstr "<em>%s</em> を使いたいミラーに置き換えてください。"
 
 #: templates/html/download.tmpl:45 templates/html/show.tmpl:145
 msgid "Experimental package"
-msgstr "Paquet «&nbsp;experimental&nbsp;»"
+msgstr "試験的な (experimental の) パッケージ"
 
 #: templates/html/download.tmpl:49
-#, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution.\n"
@@ -186,53 +191,56 @@ msgid ""
 "before\n"
 "using it."
 msgstr ""
-"Avertissement&nbsp;: ce paquet appartient à la distribution «&nbsp;<span "
-"class=\"pred\">experimental</span>&nbsp;». Cela signifie qu'il peut être "
-"instable ou bogué et peut éventuellement corrompre vos données. Son "
-"installation s'effectue donc à vos risques et périls."
+"警告: このパッケージは <strong>experimental</strong> ディストリビューションの"
+"ものです。つまり、おそらく不安定でバグがあり、それどころかデータの損失を起こ"
+"すかもしれません。使用前には、変更履歴やその他の参照可能なドキュメントを必ず"
+"調べてください。"
 
 #: templates/html/download.tmpl:55 templates/html/show.tmpl:155
 msgid "debian-installer udeb package"
-msgstr "paquet de l'installateur Debian udeb"
+msgstr "debian-installer 用の udeb パッケージ"
 
 #: templates/html/download.tmpl:58 templates/html/show.tmpl:158
-#, fuzzy
-#| msgid ""
-#| "Warning: This package is intended for the use in building <a href="
-#| "\"http://www.debian.org/devel/debian-installer\">debian-installer</a> "
-#| "images only. Do not install it on a normal Debian system."
 msgid ""
 "Warning: This package is intended for the use in building\n"
 "<a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</"
 "a> images only.\n"
 "Do not install it on a normal %s system."
 msgstr ""
-"Avertissement&nbsp;: ce paquet est réservé à la construction des images de "
-"l'<a href=\"http://www.debian.org/devel/debian-installer\">installateur "
-"Debian</a>. Il ne doit pas être installé sur un système Debian classique."
+"警告: このパッケージは、<a href=\"http://www.debian.org/devel/debian-"
+"installer\">debian-installer</a> イメージのビルド時における使用のみを意図して"
+"います。通常の %s システムにはインストールしないでください。"
 
 #: templates/html/download.tmpl:67
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
 msgstr ""
+"要求のファイルは、以下のいずれのサイトでも <tt>%s</tt> サブディレクトリからダ"
+"ウンロード可能です。"
 
 #: templates/html/download.tmpl:93
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
+"要求のファイルは、以下のサイトの <tt>%s</tt> サブディレクトリからダウンロード"
+"可能です。"
 
 #: templates/html/download.tmpl:95
 msgid ""
 "Debian security updates are currently officially distributed only via "
 "<tt>security.debian.org</tt>."
 msgstr ""
+"Debian セキュリティアップデートは、現在のところ公式には <tt>security.debian."
+"org</tt> のみで配布されています。"
 
 #: templates/html/download.tmpl:102
 msgid ""
 "If none of the above sites are fast enough for you,\n"
 "please see our <a href=\"%s\">complete mirror list</a>."
 msgstr ""
+"上記のサイトのいずれでも不十分な速度しか出ない場合は、<a href=\"%s\">ミラーの"
+"完全な一覧を</a>をご覧ください。"
 
 #: templates/html/download.tmpl:113
 msgid ""
@@ -241,6 +249,10 @@ msgid ""
 "archive as close as possible.\n"
 "See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
+"注意: %s はまだ、%s のアーカイブに公式に含まれているわけではありません。%s 移"
+"植グループが、このアーカイブと公式アーカイブが可能なかぎり同期するよう維持し"
+"ているのです。現在の情報については <a href=\"%s\">%s 移植版のページ</a>をご覧"
+"ください。"
 
 #: templates/html/download.tmpl:120
 msgid ""
@@ -249,292 +261,243 @@ msgid ""
 "For example, in Firefox or Mozilla, you should hold the Shift key when you "
 "click on the URL."
 msgstr ""
+"注意: 一部のブラウザでは、ダウンロードするファイルを保存るようブラウザに教え"
+"る必要があります。例えば、Firefox や Mozilla では URL をクリックする際に "
+"Shift キーを押してください。"
 
 #: templates/html/download.tmpl:125
-#, fuzzy
-#| msgid "More Information on %s"
 msgid "More information on <kbd>%s</kbd>:"
-msgstr "Plus d'informations sur %s"
+msgstr "<kbd>%s</kbd> に関するさらに詳しい情報:"
 
 #: templates/html/download.tmpl:127
 msgid "%s Byte (%s %s)"
-msgstr ""
+msgstr "%s Byte (%s %s)"
 
 #: templates/html/download.tmpl:127
-#, fuzzy
-#| msgid "Package Size"
 msgid "Exact Size"
-msgstr "Taille du paquet"
+msgstr "正確なサイズ"
 
 #: templates/html/download.tmpl:128 templates/html/show.tmpl:322
 msgid "MD5 checksum"
-msgstr ""
+msgstr "MD5 チェックサム"
 
 #: templates/html/download.tmpl:129 templates/html/download.tmpl:130
-#, fuzzy
-#| msgid "Not available"
 msgid "Not Available"
-msgstr "Indisponible"
+msgstr "入手不能"
 
 #: templates/html/download.tmpl:129
 msgid "SHA1 checksum"
-msgstr ""
+msgstr "SHA1 チェックサム"
 
 #: templates/html/download.tmpl:130
 msgid "SHA256 checksum"
-msgstr ""
+msgstr "SHA256 チェックサム"
 
 #: templates/html/filelist.tmpl:2
-#, fuzzy
 msgid "Filelist of package %s/%s/%s"
-msgstr "Liste de tous les paquets"
+msgstr "パッケージのファイル一覧: %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
 msgid ""
 "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
+"<em>%2$s</em> の <em>%3$s</em> アーキテクチャ用 <em>%1$s</em> パッケージの"
+"ファイル一覧"
 
 #: templates/html/filelist.tmpl:8
-#, fuzzy
-#| msgid "Files"
 msgid "Filelist"
-msgstr "Fichiers"
+msgstr "ファイル一覧"
 
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:11
-#, fuzzy
-#| msgid "This page is also available in the following languages:\n"
 msgid "This page is also available in the following languages:"
-msgstr "Cette page est aussi disponible dans les langues suivantes&nbsp;:\n"
+msgstr "このページは以下の言語でもご覧になれます。"
 
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:18
-#, fuzzy
 msgid "How to set <a href=\"%s\">the default document language</a>"
-msgstr ""
-"Comment configurer la <a href=\"%s\">langue par défaut du document</a></p>"
+msgstr "<a href=\"%s\">デフォルトの言語を設定するには</a>"
 
 #: templates/html/foot.tmpl:23 templates/html/head.tmpl:64
-#, fuzzy
 msgid "%s Homepage"
-msgstr "Taille du paquet"
+msgstr "%s ホームページ"
 
 #: templates/html/foot.tmpl:23
 msgid "Back to:"
-msgstr ""
+msgstr "戻る:"
 
 #: templates/html/foot.tmpl:23
-#, fuzzy
 msgid "Packages search page"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "パッケージ検索ページ"
 
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:27
-#, fuzzy
-#| msgid ""
-#| "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</"
-#| "a>. For other contact information, see the Debian <a href=\"%s/contact"
-#| "\">contact page</a>."
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
-"Pour signaler un problème sur le site web, envoyez un courriel en anglais à "
-"<a href=\"mailto:%s\">%s</a> ou en français à <a href=\"mailto:debian-l10n-"
-"french@lists.debian.org\">debian-l10n-french@lists.debian.org</a>. Pour "
-"obtenir d'autres informations, référez-vous à la <a href=\"%s/contact\">page "
-"contact</a> de Debian."
+"ウェブサイトの問題を報告するには、<a href=\"mailto:%s\">%s</a>にメールを送っ"
+"てください。その他の連絡先に関する情報は、%s の<a href=\"%s\">コンタクトペー"
+"ジ</a>をご覧ください。"
 
 #: templates/html/foot.tmpl:29 templates/txt/index.tmpl:4
 msgid "Generated:"
-msgstr ""
+msgstr "生成:"
 
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:31
-#, fuzzy
-#| msgid ""
-#| "Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; "
-#| "See <a href=\"%s/license\">license terms</a>."
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
-"Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>&nbsp;; "
-"voir <a href=\"%s/license\">les termes de la licence</a>."
+"Content Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s\">ライセンス"
+"条項</a>をご覧ください。"
 
 #: templates/html/foot.tmpl:35
-#, fuzzy
 msgid "Learn more about this site"
-msgstr "Vue d'ensemble de cette distribution"
+msgstr "このサイトについてさらに詳しく知るには"
 
 #: templates/html/head.tmpl:46
 msgid "Search"
-msgstr "Recherche"
+msgstr "検索"
 
 #: templates/html/head.tmpl:49
-#, fuzzy
 msgid "package names"
-msgstr "Taille du paquet"
+msgstr "パッケージ名"
 
 #: templates/html/head.tmpl:50
-#, fuzzy
 msgid "descriptions"
-msgstr "Distribution&nbsp;:"
+msgstr "説明"
 
 #: templates/html/head.tmpl:51
-#, fuzzy
 msgid "source package names"
-msgstr "Paquet source"
+msgstr "ソースパッケージ名"
 
 #: templates/html/head.tmpl:52
-#, fuzzy
 msgid "package contents"
-msgstr "Taille du paquet"
+msgstr "パッケージの内容"
 
 #: templates/html/head.tmpl:55
-#, fuzzy
 msgid "all options"
-msgstr "Section"
+msgstr "すべてのオプション"
 
 #: templates/html/head.tmpl:62
-#, fuzzy
-#| msgid "Skip Site Navigation"
 msgid "skip the navigation"
-msgstr "Sauter la navigation du site"
+msgstr "ナビゲーションをスキップ"
 
 #: templates/html/head.tmpl:65
-#, fuzzy
 msgid "%s Packages Homepage"
-msgstr "Taille du paquet"
+msgstr "%s パッケージホームページ"
 
 #: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:102
 #: templates/html/search_contents.tmpl:126
-#, fuzzy
 msgid "Packages"
-msgstr "Paquet&nbsp;: %s (%s)"
+msgstr "パッケージ"
 
 #: templates/html/index.tmpl:3
-#, fuzzy
 msgid "Source Packages in \"%s\", %s %s"
-msgstr "Paquets de «&nbsp;%s&nbsp;», section %s"
+msgstr "\"%s\" の %s %s に含まれるソースパッケージ"
 
 #: templates/html/index.tmpl:4
-#, fuzzy
-#| msgid "Software Packages in \"%s\""
 msgid "Source Packages in \"%s\""
-msgstr "Paquets inclus dans «&nbsp;%s&nbsp;»"
+msgstr "\"%s\" に含まれるソースパッケージ"
 
 #: templates/html/index.tmpl:6
-#, fuzzy
 msgid "Software Packages in \"%s\", %s %s"
-msgstr "Paquets de «&nbsp;%s&nbsp;», section %s"
+msgstr "\"%s\" の %s %s に含まれるソフトウェアパッケージ"
 
 #: templates/html/index.tmpl:7
 msgid "Software Packages in \"%s\""
-msgstr "Paquets inclus dans «&nbsp;%s&nbsp;»"
+msgstr "\"%s\" に含まれるソフトウェアパッケージ"
 
 #: templates/html/index.tmpl:14
-#, fuzzy
-#| msgid "All packages"
 msgid "All Packages"
-msgstr "Tous les paquets"
+msgstr "すべてのパッケージ"
 
 #: templates/html/index.tmpl:16 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
-#, fuzzy
 msgid "Source"
-msgstr "Paquet source&nbsp;:"
+msgstr "ソース"
 
 #: templates/html/index.tmpl:38 templates/html/show.tmpl:250
 #: templates/txt/index.tmpl:15
-#, fuzzy
 msgid "virtual package provided by"
-msgstr "paquet virtuel"
+msgstr "以下のパッケージによって提供される仮想パッケージ: "
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
-#, fuzzy
 msgid "New Packages in \"%s\""
-msgstr "Nouveaux Paquets dans «&nbsp;%s&nbsp;»"
+msgstr "\"%s\" の新規パッケージ"
 
 #: templates/html/newpkg.tmpl:11
-#, fuzzy
 msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-"unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+"以下のパッケージは、%3$s アーカイブの <em>%1$s</em> スイート (%2$s セクショ"
+"ン) に最近 7 日間に追加されたものです。"
 
 #: templates/html/newpkg.tmpl:14
-#, fuzzy
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-"unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+"以下のパッケージは、%2$s アーカイブの <em>%1$s</em> スイートに最近 7 日間に追"
+"加されたものです。"
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr ""
+msgstr "この一覧は<a href=\"%s\">名前の順</a>でも表示できます。"
 
 #: templates/html/newpkg.tmpl:20
-#, fuzzy
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr ""
-"Retour à la&nbsp;: <a href=\"%s/\">Page d'accueil du Projet Debian</a> || <a "
-"href=\"%s/\">Page de recherche de paquets</a>"
+msgstr "この一覧は<a href=\"%s\">日時の順</a>でも表示できます。"
 
 #: templates/html/newpkg.tmpl:22
-#, fuzzy
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
 msgstr ""
-"Cette information est aussi disponible via le <a href=\"newpkg_%s.%s.rdf"
-"\">fil RSS</a>."
+"この情報は <a href=\"newpkg?format=rss\">RSS フィード</a>でも入手可能です。"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
-msgstr ""
+msgstr "[RSS 1.0 フィード]"
 
 #: templates/html/newpkg.tmpl:28
 msgid " <em>(%u days old)</em>"
-msgstr ""
+msgstr " <em>(%u 日前)</em>"
 
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
-#, fuzzy
-#| msgid "All packages"
 msgid "All packages"
-msgstr "Tous les paquets"
+msgstr "すべてのパッケージ"
 
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
 msgid "List of all packages"
-msgstr "Liste de tous les paquets"
+msgstr "全パッケージ一覧"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
-msgstr "liste au format texte compressée"
+msgstr "コンパクトに圧縮されたテキスト形式の一覧"
 
 #: templates/html/newpkg.tmpl:34
-#, fuzzy
 msgid "New packages in "
-msgstr "Nouveaux Paquets dans «&nbsp;%s&nbsp;»"
+msgstr "アーカイブに含まれる新規パッケージ:"
 
 #: templates/html/search.tmpl:19
-#, fuzzy
 msgid "Package Search Results -- %s"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "パッケージ検索結果 -- %s"
 
 #: templates/html/search.tmpl:28
-#, fuzzy
 msgid "Package Search Results"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "パッケージ検索結果"
 
 #: templates/html/search.tmpl:33
-#, fuzzy
 msgid ""
 "You can try a different search on the <a href=\"%s#search_packages"
 "\">Packages search page</a>."
 msgstr ""
-"Retour à la&nbsp;: <a href=\"%s/\">Page d'accueil du Projet Debian</a> || <a "
-"href=\"%s/\">Page de recherche de paquets</a>"
+"<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行できま"
+"す。"
 
 #: templates/html/search.tmpl:37
 msgid ""
@@ -547,61 +510,60 @@ msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
+"検索パラメータの設定によって、<a href=\"%s\">%u</a> 個の結果が非表示になって"
+"います。"
 
 #: templates/html/search.tmpl:52
 msgid "all suites"
-msgstr ""
+msgstr "すべてのスイート"
 
 #: templates/html/search.tmpl:52
 msgid "suite(s) <em>$suite_enc</em>"
-msgstr ""
+msgstr "<em>$suite_enc</em> スイート"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
-#, fuzzy
 msgid "all sections"
-msgstr "Section"
+msgstr "すべてのセクション"
 
 #: templates/html/search.tmpl:53
 msgid "section(s) <em>$section_enc</em>"
-msgstr ""
+msgstr "<em>$section_enc</em> セクション"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
-#, fuzzy
 msgid "all architectures"
-msgstr "Architecture"
+msgstr "すべてのアーキテクチャ"
 
 #: templates/html/search.tmpl:54
 msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr ""
+msgstr "<em>$architectures_enc</em> アーキテクチャ"
 
 #: templates/html/search.tmpl:56
-#, fuzzy
 msgid "packages"
-msgstr "Taille du paquet"
+msgstr "パッケージ"
 
 #: templates/html/search.tmpl:56
-#, fuzzy
 msgid "source packages"
-msgstr "Paquet source"
+msgstr "ソースパッケージ"
 
 #: templates/html/search.tmpl:57
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
-msgstr ""
+msgstr "<em>%2$s</em> を名前に含む%1$sを、%s、%s、%sで検索しました。"
 
 #: templates/html/search.tmpl:60
 msgid " (including subword matching)"
-msgstr ""
+msgstr " (単語の一部が一致したものも含んでいます)"
 
 #: templates/html/search.tmpl:61
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
+"名前や説明に<em>%s</em>を含むパッケージを、%s、%s、%sで検索しました%s。"
 
 #: templates/html/search.tmpl:67
 msgid "Found <strong>%u</strong> matching packages."
-msgstr ""
+msgstr "<strong>%u</strong> 個の一致するパッケージが見つかりました。"
 
 #: templates/html/search.tmpl:74
 msgid ""
@@ -610,6 +572,9 @@ msgid ""
 "keywords or alternative\n"
 "keywords."
 msgstr ""
+"注意: この結果は、最もよく一致したものを妥当性の順に表示しているだけです。最"
+"初のいくつかのパッケージが検索しようとしたものと一致していない場合は、キー"
+"ワードを追加するか他のキーワードを用いてみてください。"
 
 #: templates/html/search.tmpl:80
 msgid ""
@@ -617,258 +582,239 @@ msgid ""
 "At least <em>%u</em> results have been omitted and will not be displayed.\n"
 "Please consider using a longer keyword or more keywords."
 msgstr ""
+"あまりにも幅の広い検索なので、ここでは完全に一致するものを表示するだけに留め"
+"ています。少なくとも <em>%u</em> 個の結果が省略され、非表示となっています。さ"
+"らに長いキーワードを用いるか、キーワードを追加することを検討してください。"
 
 #: templates/html/search.tmpl:86 templates/html/search_contents.tmpl:133
 msgid "Sorry, your search gave no results"
-msgstr ""
+msgstr "残念ながら、検索結果はありませんでした"
 
 #: templates/html/search.tmpl:93
-#, fuzzy
 msgid "Package %s"
-msgstr "Paquet&nbsp;: %s (%s)"
+msgstr "%s パッケージ"
 
 #: templates/html/search.tmpl:103
 msgid "provided by:"
-msgstr ""
+msgstr "提供:"
 
 #: templates/html/search.tmpl:111
-#, fuzzy
 msgid "Source Package %s"
-msgstr "Paquet source"
+msgstr "%s ソースパッケージ"
 
 #: templates/html/search.tmpl:119
-#, fuzzy
 msgid "Binary packages:"
-msgstr "paquet virtuel"
+msgstr "バイナリパッケージ:"
 
 #: templates/html/search.tmpl:121
-#, fuzzy
 msgid "%u binary packages"
-msgstr "Taille du paquet"
+msgstr "%u 個のバイナリパッケージ"
 
 #: templates/html/search.tmpl:131
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
 msgstr ""
+"完全に一致するものを表示という要求だったので、<a href=\"%s\">%u</a> 個の結果"
+"が非表示となっています。"
 
 #: templates/html/search_contents.tmpl:14
 msgid "Package Contents Search Results -- %s"
-msgstr ""
+msgstr "パッケージ内容検索結果 -- %s"
 
 #: templates/html/search_contents.tmpl:17
-#, fuzzy
 msgid "Package Contents Search Results"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "パッケージ内容検索結果"
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
-msgstr ""
+msgstr "名前に <em>%s</em> を含むファイルを検索"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr ""
+msgstr "名前がちょうど <em>%s</em> であるファイルを検索"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
-msgstr ""
+msgstr "<em>%s</em> を末尾に持つパスを検索"
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
-msgstr ""
+msgstr "他のスイートでの検索:"
 
 #: templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
-msgstr ""
+msgstr "特定のアーキテクチャに絞って検索:"
 
 #: templates/html/search_contents.tmpl:63
-#, fuzzy
-#| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Chercher d'<a href=\"%s\">autres versions de %s</a>"
+msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
 
 #: templates/html/search_contents.tmpl:73
 msgid "section(s) <em>%s</em>"
-msgstr ""
+msgstr "<em>%s</em> セクション"
 
 #: templates/html/search_contents.tmpl:74
 msgid "architecture(s) <em>%s</em>"
-msgstr ""
+msgstr "<em>%s</em> アーキテクチャ"
 
 #: templates/html/search_contents.tmpl:75
 msgid "paths that end with"
-msgstr ""
+msgstr "を末尾に持つパス"
 
 #: templates/html/search_contents.tmpl:77
 msgid "files named"
-msgstr ""
+msgstr "という名前のファイル"
 
 #: templates/html/search_contents.tmpl:79
 msgid "filenames that contain"
-msgstr ""
+msgstr "を名前に含むファイル"
 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr ""
+msgstr "<em>%2$s</em> %1$sを、<em>%s</em> スイート、%s、%sで検索しました。"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr ""
+msgstr "<strong>%u 個の結果</strong>が見つかりました。"
 
+# FIXME: "... only ... only ..." is OK?
 #: templates/html/search_contents.tmpl:89
 msgid ""
 "Note: Your search was too wide so we will only display only the first about "
 "100 matches.\n"
 "Please consider using a longer keyword or more keywords."
 msgstr ""
+"注意: あまりにも幅の広い検索なので、ここでは最初の約 100 個の結果のみを表示す"
+"るだけに留めています。さらに長いキーワードを用いるか、キーワードを追加するこ"
+"とを検討してください。"
 
 #: templates/html/search_contents.tmpl:99
 msgid "Sort results by filename"
-msgstr ""
+msgstr "ファイル名の順に結果を並び換える"
 
 #: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:126 templates/html/show.tmpl:322
 msgid "File"
-msgstr "Fichier"
+msgstr "ファイル"
 
 #: templates/html/search_contents.tmpl:101
-#, fuzzy
 msgid "Sort results by package name"
-msgstr "Paquet source"
+msgstr "パッケージ名の順に結果を並び換える"
 
 #: templates/html/search_contents.tmpl:116
-#, fuzzy
-#| msgid "not"
 msgid "not %s"
-msgstr "non"
+msgstr "%s 以外"
 
 #: templates/html/show.tmpl:15
-#, fuzzy
 msgid "Source packages"
-msgstr "Paquet source"
+msgstr "ソースパッケージ"
 
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
-msgstr "Tous les paquets de cette section"
+msgstr "このセクションのすべてのパッケージ"
 
 #: templates/html/show.tmpl:16
 msgid "Section:"
-msgstr "Section&nbsp;:"
+msgstr "セクション:"
 
 #: templates/html/show.tmpl:21
-#, fuzzy
 msgid "Details of source package %s in %s"
-msgstr "Paquets source dans «&nbsp;%s&nbsp;»"
+msgstr "%2$s の %1$s ソースパッケージに関する詳細"
 
 #: templates/html/show.tmpl:22
-#, fuzzy
 msgid "Details of package %s in %s"
-msgstr "Nouveaux paquets dans «&nbsp;%s&nbsp;»"
+msgstr "%2$s の %1$s パッケージに関する詳細"
 
 #: templates/html/show.tmpl:45
-#, fuzzy
 msgid "Source package building this package"
-msgstr "Paquet source"
+msgstr "このパッケージをビルドするためのソースパッケージ"
 
 #: templates/html/show.tmpl:45
-#, fuzzy
 msgid "Source:"
-msgstr "Paquet source&nbsp;:"
+msgstr "ソース:"
 
 #: templates/html/show.tmpl:52
 msgid "Virtual Package: %s"
-msgstr "Paquet virtuel&nbsp;: %s"
+msgstr "仮想パッケージ: %s"
 
 #: templates/html/show.tmpl:54
-#, fuzzy
 msgid "Source Package: %s (%s)"
-msgstr "Paquet source&nbsp;: %s (%s)"
+msgstr "ソースパッケージ: %s (%s)"
 
 #: templates/html/show.tmpl:56
 msgid "Package: %s (%s)"
-msgstr "Paquet&nbsp;: %s (%s)"
+msgstr "パッケージ: %s (%s)"
 
 #: templates/html/show.tmpl:60
-#, fuzzy
-#| msgid "Essential"
 msgid "essential"
-msgstr "Essentiel"
+msgstr "必須"
 
 #: templates/html/show.tmpl:64
 msgid "Links for %s"
-msgstr ""
+msgstr "%s に関するリンク"
 
 #: templates/html/show.tmpl:65
 msgid "Debian Resources:"
-msgstr ""
+msgstr "Debian の資源:"
 
 #: templates/html/show.tmpl:67
 msgid "Bug Reports"
-msgstr ""
+msgstr "バグ報告"
 
 #: templates/html/show.tmpl:70 templates/html/show.tmpl:72
-#, fuzzy
-#| msgid "More Information on %s"
 msgid "Developer Information (PTS)"
-msgstr "Plus d'informations sur %s"
+msgstr "開発者情報 (PTS)"
 
 #: templates/html/show.tmpl:76
 msgid "%s Changelog"
-msgstr ""
+msgstr "%s の変更履歴"
 
 #: templates/html/show.tmpl:77
 msgid "Copyright File"
-msgstr ""
+msgstr "著作権ファイル"
 
 #: templates/html/show.tmpl:81
 msgid "Debian Source Repository"
-msgstr ""
+msgstr "Debian ソースリポジトリ"
 
 #: templates/html/show.tmpl:95
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgstr ""
+msgstr "<a href=\"%s\">%s</a> ソースパッケージをダウンロード:"
 
 #: templates/html/show.tmpl:102
 msgid "Not found"
-msgstr "Introuvable"
+msgstr "見つかりません"
 
 #: templates/html/show.tmpl:107
-#, fuzzy
-#| msgid "Maintainer"
 msgid "Maintainer:"
-msgstr "Responsable"
+msgstr "メンテナ:"
 
 #: templates/html/show.tmpl:109
-#, fuzzy
-#| msgid "Maintainer"
 msgid "Maintainers:"
-msgstr "Responsable"
+msgstr "メンテナ:"
 
 #: templates/html/show.tmpl:114
 msgid "An overview over the maintainer's packages and uploads"
-msgstr ""
+msgstr "メンテナのパッケージやアップロードの概要"
 
 #: templates/html/show.tmpl:114
-#, fuzzy
-#| msgid "All packages"
 msgid "QA Page"
-msgstr "Tous les paquets"
+msgstr "QA ページ"
 
 #: templates/html/show.tmpl:122
 msgid "External Resources:"
-msgstr ""
+msgstr "外部の資源:"
 
 #: templates/html/show.tmpl:124
 msgid "Homepage"
-msgstr ""
+msgstr "ホームページ"
 
 #: templates/html/show.tmpl:130
-#, fuzzy
 msgid "Similar packages:"
-msgstr "paquet virtuel"
+msgstr "類似のパッケージ:"
 
 #: templates/html/show.tmpl:149
-#, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution.\n"
@@ -877,10 +823,10 @@ msgid ""
 "possible documentation before\n"
 "using it."
 msgstr ""
-"Avertissement&nbsp;: ce paquet appartient à la distribution «&nbsp;<span "
-"class=\"pred\">experimental</span>&nbsp;». Cela signifie qu'il peut être "
-"instable ou bogué et peut éventuellement corrompre vos données. Son "
-"installation s'effectue donc à vos risques et périls."
+"警告: このパッケージは <strong>experimental</strong> ディストリビューションの"
+"ものです。つまり、おそらく不安定でバグがあり、それどころかデータの損失を起こ"
+"すかもしれません。使用前には、<a href=\"%s\">変更履歴</a>やその他の参照可能な"
+"ドキュメントを必ず調べてください。"
 
 #: templates/html/show.tmpl:177
 msgid ""
@@ -888,36 +834,35 @@ msgid ""
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
 "packages</a>."
 msgstr ""
-"Ceci est un <em>paquet virtuel</em>. Consultez la <a href=\"%s\">Charte "
-"Debian</a> pour une <a href=\"%sch-binary.html#s-virtual_pkg\">définition "
-"des paquets virtuels</a>."
+"これは<em>仮想パッケージ</em>です。<a href=\"%sch-binary.html#s-virtual_pkg"
+"\">仮想パッケージの定義</a>については <a href=\"%s\">Debian ポリシーマニュア"
+"ル</a>を参照してください。"
 
 #: templates/html/show.tmpl:185
 msgid "Tags"
-msgstr ""
+msgstr "タグ"
 
 #: templates/html/show.tmpl:206
 msgid "Packages providing %s"
-msgstr "Paquets fournissant %s"
+msgstr "%s を提供するパッケージ"
 
 #: templates/html/show.tmpl:215
 msgid "The following binary packages are built from this source package:"
-msgstr ""
-"Les paquets binaires suivants sont compilés à partir de ce paquet "
-"source&nbsp;:"
+msgstr "以下のバイナリパッケージがこのソースパッケージからビルドされています。"
 
 #: templates/html/show.tmpl:224
 msgid "Other Packages Related to %s"
-msgstr "Autres paquets associés à %s"
+msgstr "その他の %s 関連パッケージ"
 
 #: templates/html/show.tmpl:254
-#, fuzzy
 msgid "%u providing packages"
-msgstr "Taille du paquet"
+msgstr "%u 個の提供パッケージ"
 
 #: templates/html/show.tmpl:272
+#, fuzzy
+#| msgid "Download"
 msgid "Download %s"
-msgstr "Télécharger %s"
+msgstr "ダウンロード"
 
 #: templates/html/show.tmpl:274
 msgid ""
@@ -925,365 +870,129 @@ msgid ""
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
-"Le tableau de téléchargement pointe sur le téléchargement du paquet et sur "
-"un aperçu du fichier. Il indique par ailleurs la taille du paquet et "
-"l'espace occupé une fois installé."
+"パッケージダウンロードページやファイル概要ページへの、表形式のダウンロード用"
+"リンク。加えて、パッケージサイズやインストールサイズに関する情報も含んでいま"
+"す。"
 
 #: templates/html/show.tmpl:275
 msgid "Download for all available architectures"
-msgstr "Télécharger pour toutes les architectures proposées"
+msgstr "すべての利用可能アーキテクチャ向けのダウンロード"
 
 #: templates/html/show.tmpl:276
 msgid "Architecture"
-msgstr "Architecture"
+msgstr "アーキテクチャ"
 
 #: templates/html/show.tmpl:277
 msgid "Version"
-msgstr "Version"
+msgstr "バージョン"
 
 #: templates/html/show.tmpl:278
 msgid "Package Size"
-msgstr "Taille du paquet"
+msgstr "パッケージサイズ"
 
 #: templates/html/show.tmpl:279
 msgid "Installed Size"
-msgstr "Espace occupé"
+msgstr "インストールサイズ"
 
 #: templates/html/show.tmpl:280
 msgid "Files"
-msgstr "Fichiers"
+msgstr "ファイル"
 
 #: templates/html/show.tmpl:288
 msgid "(unofficial port)"
-msgstr ""
+msgstr "(非公式の移植版)"
 
 #: templates/html/show.tmpl:299 templates/html/show.tmpl:327
 msgid "%.1f&nbsp;kB"
-msgstr ""
+msgstr "%.1f&nbsp;kB"
 
 #: templates/html/show.tmpl:299
 msgid "%u&nbsp;kB"
-msgstr ""
+msgstr "%u&nbsp;kB"
 
 #: templates/html/show.tmpl:302
 msgid "list of files"
-msgstr "liste des fichiers"
+msgstr "ファイル一覧"
 
 #: templates/html/show.tmpl:304
-#, fuzzy
 msgid "no current information"
-msgstr "Plus d'informations sur %s"
+msgstr "現在の情報はありません"
 
 #: templates/html/show.tmpl:321
 msgid "Download information for the files of this source package"
-msgstr ""
+msgstr "このソースパッケージのファイルのダウンロードに関する情報"
 
 #: templates/html/show.tmpl:322
 msgid "Size (in kB)"
-msgstr "Taille (en kOctets)"
+msgstr "サイズ (単位: kB)"
 
 #: templates/html/show.tmpl:340
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
+"Debian パッケージソースリポジトリ (<acronym title=\"バージョン管理システム"
+"\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:344
-#, fuzzy
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "Debian パッケージソースリポジトリ (ブラウザで表示可能)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
-msgstr ""
+msgstr "索引"
 
 #: templates/html/suite_index.tmpl:5 templates/html/suite_index.tmpl:20
-#, fuzzy
 msgid "List of sections in \"%s\""
-msgstr "Liste des sections de %s"
+msgstr "\"%s\" のセクション一覧"
 
 #: templates/html/suite_index.tmpl:38
-#, fuzzy
-#| msgid "List of all packages"
 msgid "List of all source packages"
-msgstr "Liste de tous les paquets"
+msgstr "全ソースパッケージ一覧"
 
 #: templates/html/suite_index.tmpl:40
-#, fuzzy
 msgid "All source packages"
-msgstr "Paquet source"
+msgstr "すべてのソースパッケージ"
 
 #: templates/html/tag_index.tmpl:2 templates/html/tag_index.tmpl:7
-#, fuzzy
 msgid "Overview of available Debian Package Tags"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "利用可能な Debian パッケージタグの概要"
 
 #: templates/html/tag_index.tmpl:4
 msgid "About"
-msgstr ""
+msgstr "このサイトについて"
 
 #: templates/html/tag_index.tmpl:5
 msgid "Debtags"
-msgstr ""
+msgstr "Debtags"
 
 #: templates/html/tag_index.tmpl:10
-#, fuzzy
 msgid "Facet: %s"
-msgstr "Paquet&nbsp;: %s (%s)"
+msgstr "ファセット: %s"
 
 #: templates/rss/newpkg.tmpl:16
-#, fuzzy
 msgid "New %s Packages"
-msgstr "Taille du paquet"
+msgstr "新規 %s パッケージ"
 
 #: templates/rss/newpkg.tmpl:20
-#, fuzzy
-#| msgid ""
-#| "Packages that were added to the unstable Debian archive during the last 7 "
-#| "days."
 msgid ""
 "Packages that were added to the %s %s archive (section \"%s\") during the "
 "last 7 days."
 msgstr ""
-"Paquets ayant été ajoutés à l'archive Debian «&nbsp;unstable&nbsp;» au cours "
-"des 7&nbsp;derniers jours."
+"%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #: templates/rss/newpkg.tmpl:23
-#, fuzzy
-#| msgid ""
-#| "Packages that were added to the unstable Debian archive during the last 7 "
-#| "days."
 msgid "Packages that were added to the %s %s archive during the last 7 days."
-msgstr ""
-"Paquets ayant été ajoutés à l'archive Debian «&nbsp;unstable&nbsp;» au cours "
-"des 7&nbsp;derniers jours."
+msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"
-msgstr ""
+msgstr "Copyright ©"
 
 #: templates/txt/index.tmpl:2
-#, fuzzy
-#| msgid "New Packages in \"%s\""
 msgid "All %s Packages in \"%s\""
-msgstr "Nouveaux Paquets dans «&nbsp;%s&nbsp;»"
+msgstr "\"%s\" に含まれるすべての %s パッケージ"
 
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
-msgstr ""
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the <strong>experimental</strong> distribution is not self-"
-#~ "contained; missing dependencies are likely found in the <a href=\"%s"
-#~ "\">unstable</a> distribution."
-#~ msgstr ""
-#~ "Veuillez noter que la distribution «&nbsp;\"<span class=\"pred"
-#~ "\">experimental</span>\"&nbsp;» n'est pas autosuffisante&nbsp;; certaines "
-#~ "dépendances peuvent se trouver dans la distribution «&nbsp;\"<a href="
-#~ "\"../../unstable/\">unstable</a>\"&nbsp;»."
-
-#~ msgid "Versions:"
-#~ msgstr "Versions&nbsp;:"
-
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright © 1997-2005 SPI&nbsp;;voir <URL:http://www.debian.org/license> "
-#~ "les termes de la licence.\n"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Aucun paquet essentiel dans cette distribution"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Paquets de «&nbsp;%s&nbsp;», paquets essentiels"
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Aucun paquet de cette priorité et cette distribution"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Avertissement&nbsp;: ces paquets sont réservés à la construction des "
-#~ "images de l'<a href=\"http://www.debian.org/devel/debian-installer"
-#~ "\">installateur Debian</a>. Ils ne doivent pas être installés sur un "
-#~ "système Debian classique."
-
-#~ msgid "yes"
-#~ msgstr "oui"
-
-#~ msgid "Priority"
-#~ msgstr "Priorité"
-
-#~ msgid "Uploaders"
-#~ msgstr "Expéditeurs"
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "La taille est indiquée en kOctets"
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;"
-#~ "experimental&nbsp;» rencontrant des problèmes à contacter directement le "
-#~ "responsable du paquet."
-
-#~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Paquets ayant été ajoutés à la section «&nbsp;%s&nbsp;» de l'archive "
-#~ "Debian «&nbsp;unstable&nbsp;» au cours des 7&nbsp;derniers jours."
-
-#~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Les paquets suivants ont été ajoutés à la section «&nbsp;%s&nbsp;» de "
-#~ "l'archive Debian au cours des 7&nbsp;derniers jours."
-
-#~ msgid ""
-#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
-#~ "contains software that is likely unstable or buggy and may even cause "
-#~ "data loss. If you ignore this warning and install it nevertheless, you do "
-#~ "it on your own risk."
-#~ msgstr ""
-#~ "Avertissement&nbsp;: la distribution «&nbsp;<span class=\"pred"
-#~ "\">experimental</span>&nbsp;» contient des logiciels qui peuvent être "
-#~ "instables ou bogués et peuvent éventuellement corrompre vos données. Leur "
-#~ "installation s'effectue donc à vos risques et périls."
-
-#~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
-#~ msgstr ""
-#~ "Debian est une marque déposée de Software in the Public Interest, Inc."
-
-#~ msgid "Last Modified: "
-#~ msgstr "Dernière modification&nbsp;: "
-
-#~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
-#~ msgstr ""
-#~ "Retour à la&nbsp;: <a href=\"%s/\">Page d'accueil du Projet Debian</a> || "
-#~ "<a href=\"%s/\">Page de recherche de paquets</a>"
-
-#~ msgid "Site map"
-#~ msgstr "Plan&nbsp;du&nbsp;site"
-
-#~ msgid "Development"
-#~ msgstr "Le&nbsp;coin&nbsp;du&nbsp;développeur"
-
-#~ msgid "Support"
-#~ msgstr "Assistance"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Obtenir&nbsp;Debian"
-
-#~ msgid "News"
-#~ msgstr "Actualités"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "À&nbsp;propos&nbsp;de&nbsp;Debian"
-
-#~ msgid "Debian Project"
-#~ msgstr "Projet Debian"
-
-#, fuzzy
-#~ msgid "Search on:"
-#~ msgstr "Recherche"
-
-#~ msgid "or"
-#~ msgstr "ou"
-
-#, fuzzy
-#~ msgid "also a virtual package provided by "
-#~ msgstr "paquet virtuel"
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr ""
-#~ "Consulter les <a href=\"%s\">informations de développement de %s</a>."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " et %s sont responsables de ce paquet Debian."
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s est responsable de ce paquet Debian."
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Consulter le <a href=\"%s\">fichier de licence</a>"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Consulter le <a href=\"%s\">journal des modifications Debian</a>"
-
-#~ msgid "Source Package:"
-#~ msgstr "Paquet source&nbsp;:"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Consulter les <a href=\"%s\">rapports de bogues</a> de %s."
-
-#~ msgid "md5sum"
-#~ msgstr "code de contrôle MD5"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Vue d'ensemble de cette distribution"
-
-#~ msgid "virtual package"
-#~ msgstr "paquet virtuel"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Télécharger %s\n"
-
-#, fuzzy
-#~ msgid "Nothing found"
-#~ msgstr "Introuvable"
-
-#, fuzzy
-#~ msgid ""
-#~ "The following packages were added to suite %s%s in the Debian archive "
-#~ "during the last 7 days."
-#~ msgstr ""
-#~ "Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-#~ "unstable&nbsp;» au cours des 7&nbsp;derniers jours."
-
-#, fuzzy
-#~ msgid " (section %s)"
-#~ msgstr "Section"
-
-#, fuzzy
-#~ msgid "search for a package"
-#~ msgstr "Liste de tous les paquets"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Paquets de «&nbsp;%s&nbsp;», priorité %s"
-
-#, fuzzy
-#~ msgid "Software Packages in \"%s\", subsection %s"
-#~ msgstr "Paquets de «&nbsp;%s&nbsp;», section %s"
-
-#~ msgid "Package not available"
-#~ msgstr "Paquet indisponible"
-
-#, fuzzy
-#~ msgid "Package not available in this suite."
-#~ msgstr "Paquet indisponible"
-
-#, fuzzy
-#~ msgid "No such package."
-#~ msgstr "Paquet source"
-
-#~ msgid "Virtual package"
-#~ msgstr "Paquet virtuel"
-
-#, fuzzy
-#~ msgid "No such package in this suite on this architecture."
-#~ msgstr "Aucun paquet dans cette section et cette distribution"
-
-#, fuzzy
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "Paquet source&nbsp;: %s (%s)"
+msgstr "ライセンス条項については <URL:%s> をご覧ください。"

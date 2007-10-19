@@ -218,14 +218,14 @@ Do not install it on a normal %s system.', organisation ) %]</p>
     <div id="pdeps">
     <h2>[% g('Other Packages Related to %s', pkg) %]</h2>
 
-    <table id="pdeplegend" class="visual" summary="legend"><tr>
+    <table id="pdeplegend" class="visual" summary="[% g('legend') %]"><tr>
     [% IF is_source %]
-    <td><ul class="uladep"><li>build-depends</li></ul></td>
-    <td><ul class="ulidep"><li>build-depends-indep</li></ul></td>
+    <td><ul class="uladep"><li>[% g('build-depends') %]</li></ul></td>
+    <td><ul class="ulidep"><li>[% g('build-depends-indep') %]</li></ul></td>
     [% ELSE %]
-    <td><ul class="uldep"><li>depends</li></ul></td>
-    <td><ul class="ulrec"><li>recommends</li></ul></td>
-    <td><ul class="ulsug"><li>suggests</li></ul></td>
+    <td><ul class="uldep"><li>[% g('depends') %]</li></ul></td>
+    <td><ul class="ulrec"><li>[% g('recommends') %]</li></ul></td>
+    <td><ul class="ulsug"><li>[% g('suggests') %]</li></ul></td>
     [% END %]
     </tr></table>
   [%- END %]
@@ -264,7 +264,7 @@ Do not install it on a normal %s system.', organisation ) %]</p>
 [% FOREACH d IN downloads %]
   [% IF loop.first -%]
     <div id="pdownload">
-    <h2>Download [% pkg %]</h2>
+    <h2>[% g('Download %s', pkg) %]</h2>
     
     <table summary="[% g('The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.') %]">
     <caption class="hidecss">[% g('Download for all available architectures') %]</caption>

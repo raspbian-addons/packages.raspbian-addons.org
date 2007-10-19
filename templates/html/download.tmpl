@@ -1,5 +1,5 @@
 [%- PROCESS 'html/head.tmpl'
-   title_tag = g('Package Download Selection -- %s', $filename.file)
+   title_tag = g('Package Download Selection -- %s', filename.file)
    description = desc
    keywords = "$suite, $archive, $section, $subsection, $version"
    navigation = [ { prefix=>g('Distribution:'), title=>g('Overview over this suite'), url=>make_url('/'), name=>suite },
