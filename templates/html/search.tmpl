@@ -34,8 +34,8 @@
 		searchformurl) %]</p>
 	
 	[% IF opts.searchon != "names" && opts.exact %]
-	<p>[% g('You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching.',
-		make_search_url('',"keywords=$keyword_esc",'exact',0) ) %]</a>
+	<p>[% g('You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.',
+		make_search_url('',"keywords=$keyword_esc",'exact',0) ) %]</p>
 	[% END %]
 [% END %]
 [% IF opts.searchon == "names" && non_results %]

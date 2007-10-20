@@ -422,7 +422,7 @@ sub build_deps {
 
 	    if ($arch_str ||= '') {
 		if ($arch_neg) {
-		    $arch_str = _g("not")." $arch_str";
+		    $arch_str = sprintf( _g("not %s"), "$arch_str" );
 		} else {
 		    $arch_str = $arch_str;
 		}
