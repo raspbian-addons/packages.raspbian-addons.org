@@ -53,18 +53,12 @@ xgettext_opts="--language=Perl --keyword=N_ --keyword=_g --foreign-user --add-co
 
 echo gettextfiles=$gettextfiles
 echo templatefiles=$templatefiles
-xgettext $xgettext_opts -d pdo -o ${podir}/pdo.pot ${gettextfiles}
-$topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot
-xgettext $xgettext_opts -d sections -o ${podir}/sections.pot ${libdir}/Packages/Sections.pm
-xgettext $xgettext_opts -d langs -o ${podir}/langs.pot ${libdir}/Packages/I18N/LanguageNames.pm
+xgettext $xgettext_opts -d pdo -o ${podir}/pdo.pot.new ${gettextfiles}
+$topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot.new
+xgettext $xgettext_opts -d sections -o ${podir}/sections.pot.new ${libdir}/Packages/Sections.pm
+xgettext $xgettext_opts -d langs -o ${podir}/langs.pot.new ${libdir}/Packages/I18N/LanguageNames.pm
 
 cd $podir
-
-# normalize paths in .pot files
-for domain in ${podomains}
-do
-  perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot
-done
 
 # Create missing po files
 #
@@ -76,20 +70,31 @@ do
   done
 done
 
-# Update po
-#
-for lang in ${polangs} 
+# normalize paths in .pot files
+for domain in ${podomains}
 do
-  for domain in ${podomains}
-  do
-    cp ${domain}.${lang}.po ${domain}.${lang}.po.tmp
-    msgmerge --previous --quiet --sort-by-file -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
-    rm ${domain}.${lang}.po.tmp
-    # normalize paths in .po files
-    perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
-  done
+  perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot.new
+  if diff -I"POT-Creation-Date" -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
+  then
+      echo "${domain}.pot unchanged"
+      rm ${domain}.pot.new
+  else
+      echo "${domain}.pot changed"
+      mv ${domain}.pot.new ${domain}.pot
+      # Update po
+      for lang in ${polangs} 
+      do
+	echo "  update ${domain}.${lang}.po"
+	cp ${domain}.${lang}.po ${domain}.${lang}.po.tmp
+	msgmerge --previous --quiet --sort-by-file -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
+	rm ${domain}.${lang}.po.tmp
+        # normalize paths in .po files
+	perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
+      done
+  fi
 done
 
+echo
 # Update mo
 #
 test -d ${localedir} || mkdir -p ${localedir}
