@@ -3,10 +3,7 @@ package Packages::DoNewPkg;
 use strict;
 use warnings;
 
-use Benchmark ':hireswallclock';
-use HTML::Entities;
 use POSIX;
-use XML::RSS;
 use CGI ();
 use Exporter;
 our @ISA = qw( Exporter );
