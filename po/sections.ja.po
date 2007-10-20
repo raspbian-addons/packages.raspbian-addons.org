@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-19 23:43+0200\n"
-"PO-Revision-Date: 2007-10-19 18:06+0900\n"
+"PO-Revision-Date: 2007-10-21 02:28+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -87,9 +87,10 @@ msgstr "組み込みアプリケーションでの使用に適したソフトウ
 msgid "Games"
 msgstr "ゲーム"
 
+# TRANSLATION-FIXME: こんな感じ?
 #: lib/Packages/Sections.pm:29
 msgid "Programs to spend a nice time with after all this setting up."
-msgstr ""
+msgstr "これだけのセットアップをしたあなたの遊び相手となってくれるプログラム。"
 
 #: lib/Packages/Sections.pm:30
 msgid "GNOME"
@@ -99,7 +100,7 @@ msgstr "GNOME"
 msgid ""
 "The GNOME desktop environment, a powerful, easy to use set of integrated "
 "applications."
-msgstr ""
+msgstr "強力で使いやすく統合されたアプリケーション群、GNOME デスクトップ環境。"
 
 #: lib/Packages/Sections.pm:32
 msgid "Graphics"
@@ -113,19 +114,19 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:34
 msgid "Ham Radio"
-msgstr ""
+msgstr "アマチュア無線"
 
 #: lib/Packages/Sections.pm:35
 msgid "Software for ham radio."
-msgstr ""
+msgstr "アマチュア無線用のソフトウェア。"
 
 #: lib/Packages/Sections.pm:36
 msgid "Interpreters"
-msgstr ""
+msgstr "インタプリタ"
 
 #: lib/Packages/Sections.pm:37
 msgid "All kind of interpreters for interpreted languages. Macro processors."
-msgstr ""
+msgstr "インタプリタ言語用の様々なインタプリタやマクロプロセッサ。"
 
 #: lib/Packages/Sections.pm:38
 msgid "KDE"
@@ -136,6 +137,7 @@ msgid ""
 "The K Desktop Environment, a powerful, easy to use set of integrated "
 "applications."
 msgstr ""
+"強力で使いやすく統合されたアプリケーション群、K デスクトップ環境 (KDE)。"
 
 #: lib/Packages/Sections.pm:40
 msgid "Libraries"
@@ -146,185 +148,203 @@ msgid ""
 "Libraries to make other programs work. They provide special features to "
 "developers."
 msgstr ""
+"他のプログラムの動作に必要となるライブラリ。特殊機能を開発者に提供します。"
 
 #: lib/Packages/Sections.pm:42
 msgid "Library development"
-msgstr ""
+msgstr "ライブラリ開発"
 
 #: lib/Packages/Sections.pm:43
 msgid "Libraries necessary for developers to write programs that use them."
-msgstr ""
+msgstr "ライブラリを使用するプログラムを開発者が書くのに必要なライブラリ。"
 
 #: lib/Packages/Sections.pm:44
 msgid "Mail"
-msgstr ""
+msgstr "メール"
 
 #: lib/Packages/Sections.pm:45
 msgid "Programs to route, read, and compose E-mail messages."
 msgstr ""
+"電子メールのメッセージを配送したり読んだり作成したりするためのプログラム。"
 
 #: lib/Packages/Sections.pm:46
 msgid "Mathematics"
-msgstr ""
+msgstr "数学"
 
 #: lib/Packages/Sections.pm:47
 msgid "Math software."
-msgstr ""
+msgstr "数値演算ソフトウェア。"
 
 #: lib/Packages/Sections.pm:48
 msgid "Miscellaneous"
-msgstr ""
+msgstr "その他"
 
 #: lib/Packages/Sections.pm:49
 msgid "Miscellaneous utilities that didn't fit well anywhere else."
-msgstr ""
+msgstr "他のどのセクションにもうまく当てはまらないその他のユーティリティ。"
 
 #: lib/Packages/Sections.pm:50
 msgid "Network"
-msgstr ""
+msgstr "ネットワーク"
 
 #: lib/Packages/Sections.pm:51
 msgid ""
 "Daemons and clients to connect your Debian GNU/Linux system to the world."
 msgstr ""
+"ユーザの Debian GNU/Linux システムへ世界から接続するのに必要なデーモンやクラ"
+"イアント。"
 
 #: lib/Packages/Sections.pm:52
 msgid "Newsgroups"
-msgstr ""
+msgstr "ニュースグループ"
 
 #: lib/Packages/Sections.pm:53
 msgid "Software to access Usenet, to set up news servers, etc."
 msgstr ""
+"Usenet へのアクセスやニュースサーバのセットアップなどのためのソフトウェア。"
 
 #: lib/Packages/Sections.pm:54
 msgid "Old Libraries"
-msgstr ""
+msgstr "旧式ライブラリ"
 
 #: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
 msgstr ""
+"古いアプリケーションとの後方互換性のために提供され続けている、古いバージョン"
+"のライブラリ。"
 
 #: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
-msgstr ""
+msgstr "異なるオペレーティングシステムやファイルシステムのもの"
 
 #: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
 msgstr ""
+"異なるオペレーティングシステム用にコンパイルされたプログラムを実行するための"
+"ソフトウェアや、他のオペレーティングシステムのファイルシステムを使用するため"
+"のソフトウェア。"
 
 #: lib/Packages/Sections.pm:58
 msgid "Perl"
-msgstr ""
+msgstr "Perl"
 
 #: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
-msgstr ""
+msgstr "インタプリタ式スクリプト言語 Perl に関するあらゆるもの。"
 
 #: lib/Packages/Sections.pm:60
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #: lib/Packages/Sections.pm:61
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
-msgstr ""
+msgstr "インタプリタ式対話的オブジェクト指向言語 Python に関するあらゆるもの。"
 
 #: lib/Packages/Sections.pm:62
 msgid "Science"
-msgstr ""
+msgstr "科学"
 
 #: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
-msgstr ""
+msgstr "科学研究用の基本ツール。"
 
 #: lib/Packages/Sections.pm:64
 msgid "Shells"
-msgstr ""
+msgstr "シェル"
 
 #: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
-msgstr ""
+msgstr "コマンドシェル。初心者に親切なユーザインタフェース。"
 
 #: lib/Packages/Sections.pm:66
 msgid "Sound"
-msgstr ""
+msgstr "サウンド"
 
 #: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
+"音声を扱うユーティリティ: ミキサー・再生ソフト・録音ソフト・CD プレーヤーな"
+"ど。"
 
 #: lib/Packages/Sections.pm:68
 msgid "TeX"
-msgstr ""
+msgstr "TeX"
 
 #: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
-msgstr ""
+msgstr "人気の高い組版ソフトウェアと関連プログラム。"
 
 #: lib/Packages/Sections.pm:70
 msgid "Text Processing"
-msgstr ""
+msgstr "テキスト処理"
 
 #: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
-msgstr ""
+msgstr "テキスト文書の整形・印刷用のユーティリティ。"
 
 #: lib/Packages/Sections.pm:72
 msgid "Translations"
-msgstr ""
+msgstr "翻訳"
 
 #: lib/Packages/Sections.pm:73
 msgid "Translation packages and language support meta packages."
-msgstr ""
+msgstr "翻訳パッケージと各言語サポート用メタパッケージ。"
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
-msgstr ""
+msgstr "ユーティリティ"
 
 #: lib/Packages/Sections.pm:75
 msgid ""
 "Utilities for file/disk manipulation, backup and archive tools, system "
 "monitoring, input systems, etc."
 msgstr ""
+"ファイルやディスクの操作用のユーティリティ、バックアップやアーカイブのための"
+"ツール、システム監視ツール、入力システムなど。"
 
 #: lib/Packages/Sections.pm:76
 msgid "Virtual packages"
-msgstr ""
+msgstr "仮想パッケージ"
 
 #: lib/Packages/Sections.pm:77
 msgid "Virtual packages."
-msgstr ""
+msgstr "仮想的な (実体のない) パッケージ。"
 
 #: lib/Packages/Sections.pm:78
 msgid "Web Software"
-msgstr ""
+msgstr "ウェブソフトウェア"
 
 #: lib/Packages/Sections.pm:79
 msgid "Web servers, browsers, proxies, download tools etc."
-msgstr ""
+msgstr "ウェブサーバ・ブラウザ・プロキシ・ダウンロードツールなど。"
 
 #: lib/Packages/Sections.pm:80
 msgid "X Window System software"
-msgstr ""
+msgstr "X ウィンドウシステムのソフトウェア"
 
 #: lib/Packages/Sections.pm:81
 msgid ""
 "X servers, libraries, fonts, window managers, terminal emulators and many "
 "related applications."
 msgstr ""
+"X サーバやライブラリ、フォント、ウィンドウマネージャ、ターミナルエミュレー"
+"タ、その他多くの関連アプリケーション。"
 
 #: lib/Packages/Sections.pm:82
 msgid "debian-installer udeb packages"
-msgstr ""
+msgstr "debian-installer 用 udeb パッケージ"
 
 #: lib/Packages/Sections.pm:83
 msgid ""
 "Special packages for building customized debian-installer variants. Do not "
 "install them on a normal system!"
 msgstr ""
+"カスタム版 debian-installer をビルドするための特殊パッケージ。通常のシステム"
+"にはインストールしないでください!"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-10-21 01:21+0900\n"
+"PO-Revision-Date: 2007-10-21 01:31+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -402,9 +402,10 @@ msgstr "\"%s\" の %s %s に含まれるソースパッケージ"
 msgid "Source Packages in \"%s\""
 msgstr "\"%s\" に含まれるソースパッケージ"
 
+# TRANSLATION-FIXME: "%3$s Section", "%3$s Subsection", and "Priority %s" would be the best.
 #: templates/html/index.tmpl:6
 msgid "Software Packages in \"%s\", %s %s"
-msgstr "\"%s\" の %s %s に含まれるソフトウェアパッケージ"
+msgstr "\"%s\" の%s %s に含まれるソフトウェアパッケージ"
 
 #: templates/html/index.tmpl:7
 msgid "Software Packages in \"%s\""
@@ -860,10 +861,9 @@ msgid "%u providing packages"
 msgstr "%u 個の提供パッケージ"
 
 #: templates/html/show.tmpl:272
-#, fuzzy
 #| msgid "Download"
 msgid "Download %s"
-msgstr "ダウンロード"
+msgstr "%s のダウンロード"
 
 #: templates/html/show.tmpl:274
 msgid ""
