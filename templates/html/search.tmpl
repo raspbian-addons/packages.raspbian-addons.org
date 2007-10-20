@@ -69,13 +69,10 @@
 
 [% IF too_many_hits %]
 [% IF opts.searchon != "names" %]
-<p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance.
-If the first few packages don't match what you searched for, try using more keywords or alternative
-keywords.") %]</p>
+<p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords.") %]</p>
 [% ELSE %]
-<p id="psearchtoomanyhits">[% g('Your search was too wide so we will only display exact matches.
-At least <em>%u</em> results have been omitted and will not be displayed.
-Please consider using a longer keyword or more keywords.', too_many_hits) %]</p>
+<p id="psearchtoomanyhits">[% g('Your search was too wide so we will only display exact matches. At least <em>%u</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.',
+	too_many_hits) %]</p>
 [% END; END %]
 
 [% UNLESS results %]

@@ -143,16 +143,13 @@
 [% changelog_link = 'changelog';
    changelog_link = "$changelogs_url$files.changelog.path" %] 
 <h2>[% g('Experimental package') %]</h2>
-<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution.
-That means it is likely unstable or buggy, and it may even cause data loss.
-Please be sure to consult the <a href="%s">changelog</a> and other possible documentation before
-using it.', changelog_link) %]</p>
+<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the <a href="%s">changelog</a> and other possible documentation before using it.',
+	changelog_link) %]</p>
 [% END %]
 [% IF subsection == "debian-installer" %]
 <h2>[% g('debian-installer udeb package') %]</h2>
-<p>[% g('Warning: This package is intended for the use in building
-<a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only.
-Do not install it on a normal %s system.', organisation ) %]</p>
+<p>[% g('Warning: This package is intended for the use in building <a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only. Do not install it on a normal %s system.',
+	organisation ) %]</p>
 [% END %]
 </div>
 [% END %]

@@ -20,13 +20,9 @@
 [% END %]
 
 <div class="pconstantnag">
-<p>[% g('If you are running %s, it is strongly suggested to use a
-package manager like <a href="%s">aptitude</a> or
-<a href="%s">synaptic</a> to download and install
-packages, instead of doing so manually via this website.',
+<p>[% g('If you are running %s, it is strongly suggested to use a package manager like <a href="%s">aptitude</a> or <a href="%s">synaptic</a> to download and install packages, instead of doing so manually via this website.',
 	organisation, make_url('aptitude','','arch',''), make_url('synaptic','','arch','')) %]</p>
-<p>[% g('You should be able to use any of the listed mirrors by adding a
-line to your <kbd>/etc/apt/sources.list</kbd> like this:') %]</p>
+<p>[% g('You should be able to use any of the listed mirrors by adding a line to your <kbd>/etc/apt/sources.list</kbd> like this:') %]</p>
 [% IF archive != "security" %]
 <pre>
 deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section IF section != main_section %]
@@ -39,16 +35,11 @@ deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% 
 [%- END %]
 [% IF suite == "experimental" %]
 <h2>[% g('Experimental package') %]</h2>
-<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution.
-That means it is likely unstable or buggy, and it may even cause data loss.
-Please be sure to consult the changelog and other possible documentation before
-using it.') %]</p>
+<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the changelog and other possible documentation before using it.') %]</p>
 [% END %]
 [% IF subsection == "debian-installer" %]
 <h2>[% g('debian-installer udeb package') %]</h2>
-<p>[% g('Warning: This package is intended for the use in building
-<a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only.
-Do not install it on a normal %s system.', organisation) %]</p>
+<p>[% g('Warning: This package is intended for the use in building <a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only. Do not install it on a normal %s system.', organisation) %]</p>
 [% END %]
 </div>
 
@@ -89,8 +80,7 @@ Do not install it on a normal %s system.', organisation) %]</p>
 <div id="pdownloadnotes">
 
 [% IF a.mirror_list %]
-<p style="clear:both">[% g('If none of the above sites are fast enough for you,
-please see our <a href="%s">complete mirror list</a>.', a.mirror_list ) %]</p>
+<p style="clear:both">[% g('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.', a.mirror_list ) %]</p>
 [% END %]
 
 [% IF a.unofficial_port %]
@@ -98,14 +88,11 @@ please see our <a href="%s">complete mirror list</a>.', a.mirror_list ) %]</p>
 [% IF port.url_name;
    SET port.url = ports_url _ port.url_name _ '/';
    END -%]
-<p style="clear:both">[% g('Note that %s is not officially included in the %s archive yet,
-but the %s porter group keeps their archive in sync with the official archive as close as possible.
-See the <a href="%s">%s ports page</a> for current information.',
+<p style="clear:both">[% g('Note that %s is not officially included in the %s archive yet, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href="%s">%s ports page</a> for current information.',
 	port.name, organisation, port.name, port.url, port.name) %]</p>
 [% END %]
 
-<p>[% g('Note that in some browsers you will need to tell your browser you want the file saved to a file.
-For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL.') %]</p>
+<p>[% g('Note that in some browsers you will need to tell your browser you want the file saved to a file. For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL.') %]</p>
 
 </div>
 
