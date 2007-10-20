@@ -11,6 +11,7 @@ use URI::Escape ();
 use Benchmark ':hireswallclock';
 
 use Packages::CGI;
+use Packages::Config qw( @LANGUAGES );
 use Packages::I18N::Locale;
 use Packages::I18N::Languages;
 use Packages::I18N::LanguageNames;
@@ -74,7 +75,7 @@ sub page {
 
     #use Data::Dumper;
     #die Dumper($self, $action, $page_content);
-    $page_content->{used_langs} ||= [ 'en' ];
+    $page_content->{used_langs} ||= \@LANGUAGES;
     $page_content->{langs} = languages( $page_content->{lang}
 					|| $self->{vars}{lang} || 'en',
 					@{$page_content->{used_langs}} );

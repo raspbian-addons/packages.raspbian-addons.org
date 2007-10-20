@@ -12,7 +12,8 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
-			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
+			 @ARCHITECTURES %FTP_SITES
+			 @LANGUAGES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
 use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
@@ -179,7 +180,8 @@ sub do_show {
 			my $trans_desc = $desctrans{$desc_md5};
 			if ($trans_desc) {
 			    my %trans_desc = split /\000|\001/, $trans_desc;
-			    $contents{used_langs} = ['en', sort keys %trans_desc];
+			    my %all_langs = map { $_ => 1 } (@LANGUAGES, keys %trans_desc);
+			    $contents{used_langs} = [ keys %all_langs ];
 			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
 				if DEBUG;
 			    while (my ($l, $d) = each %trans_desc) {
