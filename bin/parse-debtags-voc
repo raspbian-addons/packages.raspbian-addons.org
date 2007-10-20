@@ -111,12 +111,6 @@ foreach (@tags) {
 my %content = ( vocabulary => \%voc,
 		facets => \@facets, tags => \@tags,
 		tags_by_facet => \%tags_by_facet );
-# needed to work around the limitations of the the FILTER syntax
-$content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-$content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-$content{quotemeta} = sub { return quotemeta($_[0]) };
-$content{string2id} = sub { return &Packages::CGI::string2id(@_) };
-
 print TAGLST $template->page( 'tag_index', \%content );
 close TAGLST or warn "Couldn't close tag list: $!";
 

@@ -1,13 +1,13 @@
 [% PROCESS 'html/head.tmpl' 
-	title_tag = "Overview of available Debian Package Tags"
+	title_tag = g("Overview of available Debian Package Tags")
 	keywords = debtags
-	navigation = [  { name=>'About', url=>"/about/" },
-			{ name=>'Debtags' } ]
+	navigation = [  { name=>g('About'), url=>"/about/" },
+			{ name=>g('Debtags') } ]
 %]
-<h1>Overview of available Debian Package Tags</h1>
+<h1>[% g('Overview of available Debian Package Tags') %]</h1>
 
 [% FOREACH facet IN facets %]
-	<h2 id="[% string2id(facet) %]">Facet: [% facet %]</h2>
+	<h2 id="[% string2id(facet) %]">[% g('Facet: %s', facet) %]</h2>
 	<p class="pshortdesc">[% vocabulary.$facet.html_description.0 %]</p>
 	<p>[% vocabulary.$facet.html_description.1 %]
 

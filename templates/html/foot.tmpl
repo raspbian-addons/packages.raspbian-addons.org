@@ -9,29 +9,36 @@ Total page evaluation took [% benchmark %]<br>
 [% IF langs.size > 0 %]
 <hr class="hidecss">
 <!--UdmComment-->
-<p>This page is also available in the following languages:</p>
+<p>[% g('This page is also available in the following languages:') %]</p>
 <p class="navpara">
 [% FOREACH l IN langs %]
-<a href="[% "$page_name?lang=$l.lang" %]" title="[% l.tooltip %]" hreflang="[% l.lang %]" lang="[% l.lang %]" rel="alternate">[% l.selfname %]
+<a href="[% IF keyword_esc;
+		make_search_url('',"keywords=$keyword_esc",'lang',l.lang);
+	    ELSE;
+		"$page_name?lang=$l.lang";
+	    END %]" title="[% l.tooltip %]" hreflang="[% l.lang %]" lang="[% l.lang %]" rel="alternate">[% l.selfname %]
 [%- IF l.transliteration %] ([% l.transliteration %])[% END %]</a>
 [% END %]
 </p>
-<p>How to set <a href="[% cn_help_url %]">the default document language</a></p>
+<p>[% g('How to set <a href="%s">the default document language</a>', cn_help_url) %]</p>
 <!--/UdmComment-->
 [% END %]
 
 <hr class="hidecss">
-<p [%- ' class="bordertop"' IF langs.size > 0 %]>Back to: <a href="[% homepage %]">[% organisation %] homepage</a> || <a href="[% searchformurl %]">Packages search page</a></p>
+<p [%- ' class="bordertop"' IF langs.size > 0 %]>[% g('Back to:') %] <a href="[% homepage %]">[% g('%s Homepage', organisation) %]</a> || <a href="[% searchformurl %]">[% g('Packages search page') %]</a></p>
 
 <hr class="hidecss">
-<div id="footer" class="inside">
-<div id="fineprint">
-<p>To report a problem with the web site, e-mail <a href="mailto:[% contact.mail %]">[% contact.mail %]</a>. For other contact information, see the [% organisation %] <a href="[% contact.url %]">contact page</a>.</p>
-<p>[% IF timestamp.string %]Generated: [% timestamp.string %]<br>[% END %]
-[% UNLESS footer.doNotDisplayCopyright %]
-Content Copyright &copy; [% copyright.years %] <a href="[% copyright.url %]">[% copyright.name %]</a>; See <a href="[% license.url %]">license terms</a>. [% IF trademarknotes -%][% trademarknotes %][%- END %]
-[% END %]
-<p><a href="/about/">Learn more about this site</a>.</p>
+<div id="fineprint" class="bordertop">
+<p>[% g('To report a problem with the web site, e-mail <a href="mailto:%s">%s</a>. For other contact information, see the %s <a href="%s">contact page</a>.',
+	contact.mail, contact.mail, organisation, contact.url) %]</p>
+<p>[% IF timestamp.string; g('Generated:') _ ' ' _ timestamp.string _ '<br>'; END %]
+[% UNLESS footer.doNotDisplayCopyright;
+	g('Content Copyright &copy; %s <a href="%s">%s</a>; See <a href="%s">license terms</a>.',
+		copyright.years, copyright.url, copyright.name, license.url);
+	' ' _ trademarknotes IF trademarknotes;
+END %]
+<p><a href="/about/">[% g('Learn more about this site') %]</a>.</p>
+</div> <!-- end fineprint -->
 </div> <!-- end footer -->
 </div> <!-- end pageWrapper -->
 </body>

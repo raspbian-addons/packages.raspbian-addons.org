@@ -1,14 +1,13 @@
 [%- PROCESS 'html/head.tmpl'
-   title_tag = "Filelist of package $pkg/$suite/$arch"
-   page_title = "Filelist of package <em>$pkg</em> in <em>$suite</em> of architecture <em>$arch</em>"
+   title_tag = g("Filelist of package %s/%s/%s", pkg, suite, arch)
+   page_title = g("Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>", pkg, suite, arch)
    keywords = "$suite, $arch, filelist"
-   navigation = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/'), name=>suite },
-		  { prefix=>'Package:', url=>make_url(pkg,'','arch',undef), name=>pkg },
+   navigation = [ { prefix=>g('Distribution:'), title=>g('Overview over this suite'), url=>make_url('/'), name=>suite },
+		  { prefix=>g('Package:'), url=>make_url(pkg,'','arch',undef), name=>pkg },
 		  { url=>make_url(pkg), name=>arch },
-		  { name => 'Filelist' },
+		  { name => g('Filelist') },
  		]
 -%]
-<h1></h1>
 
 [% FOREACH file IN files %]
 [%- '<div id="pfilelist"><pre>' IF loop.first -%]

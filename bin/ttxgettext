@@ -1,0 +1,110 @@
+#! /usr/bin/perl -w
+
+# copied from webwml/english/po/wmlxgettext.pl and
+# adapted for Template Toolkit
+#  Copyright © 2002-2003  Denis Barbier <barbier@debian.org>
+#  Copyright © 2007 Frank Lichtenheld <frank@lichtenheld.de>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+use strict;
+use Getopt::Std;
+
+use vars qw($opt_p);
+
+my $messages = {};
+my @msgids = ();
+
+my $domain = shift @ARGV;
+
+sub escape {
+        my $text = shift;
+        $text =~ s/\\/\\\\/g;
+        $text =~ s/"/\\"/g;
+        $text =~ s/\n/\\n/g;
+        $text =~ s/\t/\\t/g;
+        return $text;
+}
+
+sub countNewline {
+        my $text = shift;
+        return ($text =~ s/\n//g);
+}
+
+sub processFile {
+        my $file = shift;
+        my $prefix = shift;
+        my ($text, $lineno, $comment, $nextlineno, $msgid);
+        my (@messages) = ();
+        my (%msgids) = ();
+        my $repl = '';
+
+        open(IN, "< $file") || die "Unable to open $file\n";
+        local ($/) = undef;
+        $text = <IN>;
+        close(IN);
+
+        if ($prefix =~ s/=(.*)//) {
+                $repl = $1;
+        }
+        $file =~ s{^$prefix}{$repl}o unless $prefix eq '__';
+#        #  Remove comments if they contain <gettext> or </gettext>
+#        $text =~ s/^[ \t]*#.*<\/?gettext\b//mg;
+        $lineno = 1;
+        while ($text =~ m{\G(.*?) # begin at end of previous match, $1=prefix
+			      (\bg\(\s* # "g(" , $2=whole match
+			       (["']) # " quoting, $3=quotes
+				 (.*?)\3 # string, $4=string
+			       )}gxs) {
+                $msgid = escape($4);
+                $lineno += countNewline ($1.$2);
+                $nextlineno = countNewline ($4);;
+		my $dom = $domain;
+#                my $dom = ($3) ? $3 : 'templates';
+#                if ($domain ne $dom) {
+#                   $lineno += $nextlineno;
+#                   next;  # wrong domain
+#                }
+                $comment = '';
+                if ($1 =~ m/(((^|\n)[ \t]*#.*)+)\n?[^\n]*$/) {
+                        $comment = $1;
+                        $comment =~ s/^\s+#\s*//;
+                        $comment =~ s/\n[ \t]*#\s*/\n/g;
+                }
+                push (@msgids, $msgid);
+#                if (defined ($messages->{$msgid})) {
+#                        print STDERR "ttxgettext: Warning: msgid multiple defined:\n\t".
+#                                $msgid."\n";
+#                } else {
+#                        $messages->{$msgid} = [];
+#                }
+                push (@{$messages->{$msgid}}, $comment, $file, $lineno);
+                $lineno += $nextlineno;
+        }
+}
+
+$opt_p = '__';
+getopt('p');
+
+foreach (@ARGV) {
+        processFile($_, $opt_p);
+}
+
+print "msgid \"\"\nmsgstr \"\"\n".
+        "\"Content-Type: text/plain; charset=UTF-8\\n\"\n".
+        "\"Content-Transfer-Encoding: 8bit\\n\"\n\n";
+
+foreach my $msgid (@msgids) {
+        next unless $messages->{$msgid};
+        while (@{$messages->{$msgid}}) {
+                $_ = shift(@{$messages->{$msgid}});
+                s/\n/\n#. /g;
+                print "#. ".$_."\n" if $_;
+                print "#: ".shift(@{$messages->{$msgid}}).":".
+                            shift(@{$messages->{$msgid}})."\n";
+        }
+        print "msgid \"$msgid\"\nmsgstr \"\"\n\n";
+        undef $messages->{$msgid};
+}

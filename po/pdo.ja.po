@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: packages.debian.org trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-10-20 21:54+0200\n"
+"PO-Revision-Date: 2007-10-21 02:55+0900\n"
+"Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
+"Language-Team: Japanese <debian-www@debian.or.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: bin/create_index_pages:234
+msgid "Section"
+msgstr "セクション"
+
+#: bin/create_index_pages:246
+msgid "Subsection"
+msgstr "サブセクション"
+
+#: bin/create_index_pages:258
+msgid "Priority"
+msgstr "優先度"
+
+#. Done
+#: lib/Packages/Dispatcher.pm:162
+msgid "search doesn't take any more path elements"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:165
+msgid ""
+"We're supposed to display the homepage here, instead of getting dispatch.pl"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:188
+#, perl-format
+msgid "%s set more than once in path"
+msgstr ""
+
+#: lib/Packages/Dispatcher.pm:223
+#, perl-format
+msgid "two or more packages specified (%s)"
+msgstr "2 つ以上のパッケージが指定されています (%s)"
+
+#: lib/Packages/Dispatcher.pm:321
+msgid "requested format not available for this document"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
+#: lib/Packages/DoShow.pm:31
+msgid "package not valid or not specified"
+msgstr "パッケージが不正か、または指定されていません"
+
+#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
+#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
+#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
+msgid "suite not valid or not specified"
+msgstr "スイートが不正か、または指定されていません"
+
+#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
+msgid "architecture not valid or not specified"
+msgstr "アーキテクチャが不正か、または指定されていません"
+
+#: lib/Packages/DoDownload.pm:36
+#, perl-format
+msgid "more than one suite specified for download (%s)"
+msgstr ""
+
+#: lib/Packages/DoDownload.pm:39
+#, perl-format
+msgid "more than one architecture specified for download (%s)"
+msgstr ""
+
+#: lib/Packages/DoFilelist.pm:48
+msgid "No such package in this suite on this architecture."
+msgstr "このスイートのこのアーキテクチャにはそのようなパッケージはありません。"
+
+#: lib/Packages/DoFilelist.pm:60
+msgid "Invalid suite/architecture combination"
+msgstr "スイートとアーキテクチャの組み合わせが不正です"
+
+#: lib/Packages/DoIndex.pm:34
+#, perl-format
+msgid "more than one suite specified for show_static (%s)"
+msgstr ""
+
+#: lib/Packages/DoIndex.pm:37
+#, perl-format
+msgid "more than one subsection specified for show_static (%s)"
+msgstr ""
+
+#: lib/Packages/DoIndex.pm:73
+#, perl-format
+msgid "couldn't read index file %s: %s"
+msgstr ""
+
+#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr ""
+
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
+msgid "keyword not valid or missing"
+msgstr "キーワードが不正か、または指定されていません"
+
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
+msgid "keyword too short (keywords need to have at least two characters)"
+msgstr "キーワードが短すぎます (キーワードは 2 文字以上である必要があります)"
+
+#: lib/Packages/DoSearch.pm:163
+msgid "Exact hits"
+msgstr "完全なヒット"
+
+#: lib/Packages/DoSearch.pm:172
+msgid "Other hits"
+msgstr "その他のヒット"
+
+#: lib/Packages/DoSearch.pm:217
+msgid "Virtual package"
+msgstr "仮想パッケージ"
+
+#: lib/Packages/DoSearchContents.pm:39
+#, perl-format
+msgid "more than one suite specified for contents search (%s)"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:80
+msgid "The search mode you selected doesn't support more than one keyword."
+msgstr "選択した検索モードでは複数のキーワード指定はサポートされていません。"
+
+#: lib/Packages/DoShow.pm:72
+msgid "No such package."
+msgstr "そのようなパッケージはありません。"
+
+#: lib/Packages/DoShow.pm:84
+msgid "Package not available in this suite."
+msgstr "パッケージはこのスイートでは利用できません。"
+
+#: lib/Packages/DoShow.pm:197
+msgid " and others"
+msgstr " など"
+
+#: lib/Packages/DoShow.pm:427
+#, perl-format
+msgid "not %s"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:465
+msgid "Package not available"
+msgstr "パッケージは利用できません"
+
+#: lib/Packages/DoShow.pm:491
+msgid "Not available"
+msgstr "入手不能"
+
+#: lib/Packages/Page.pm:47
+msgid "package has bad maintainer field"
+msgstr "パッケージのメンテナ (Maintainer) フィールドが不正です"
+
+#~ msgid "Initialization of Template Engine failed: %s"
+#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"

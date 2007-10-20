@@ -12,9 +12,10 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
-			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
+			 @ARCHITECTURES %FTP_SITES
+			 @LANGUAGES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
-use Packages::CGI qw( :DEFAULT make_url make_search_url note );
+use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::Page ();
@@ -68,8 +69,8 @@ sub do_show {
 	}
 
 	unless (@results || @non_results ) {
-	    fatal_error( _g( "No such package." )."<br>".
-			 sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
+	    fatal_error( _g( "No such package.") );
+	    #sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
 	} else {
 	    my %all_suites;
 	    foreach (@results, @non_results) {
@@ -179,7 +180,8 @@ sub do_show {
 			my $trans_desc = $desctrans{$desc_md5};
 			if ($trans_desc) {
 			    my %trans_desc = split /\000|\001/, $trans_desc;
-			    $contents{used_langs} = ['en', sort keys %trans_desc];
+			    my %all_langs = map { $_ => 1 } (@LANGUAGES, keys %trans_desc);
+			    $contents{used_langs} = [ keys %all_langs ];
 			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
 				if DEBUG;
 			    while (my ($l, $d) = each %trans_desc) {
@@ -222,7 +224,7 @@ sub do_show {
 			my @downloads;
 			foreach my $a ( @archs ) {
 			    my %d = ( arch => $a,
-				      pkgsize => sprintf( '%.1f', floor(($sizes_deb->{$a}/102.4)+0.5)/10 ),
+				      pkgsize => floor(($sizes_deb->{$a}/102.4)+0.5)/10,
 				      instsize => $sizes_inst->{$a}, );
 
 			    $d{version} = $versions->{$a} if $multiple_versions;
@@ -311,7 +313,7 @@ sub do_show {
 			my $path = "/$source_dir/$src_file_name";
 
 			push @{$contents{srcfiles}}, { server => $server, path => $path, filename => $src_file_name,
-						       size => sprintf("%.1f", (floor(($src_file_size/102.4)+0.5)/10)),
+						       size => floor(($src_file_size/102.4)+0.5)/10,
 						       md5sum => $src_file_md5 };
 		    }
 
@@ -422,7 +424,7 @@ sub build_deps {
 
 	    if ($arch_str ||= '') {
 		if ($arch_neg) {
-		    $arch_str = _g("not")." $arch_str";
+		    $arch_str = sprintf( _g("not %s"), "$arch_str" );
 		} else {
 		    $arch_str = $arch_str;
 		}

@@ -27,7 +27,9 @@ delete $ENV{'LANG'};
 delete $ENV{'LC_ALL'};
 delete $ENV{'LC_MESSAGES'};
 bindtextdomain ( 'pdo', $LOCALES );
+bindtextdomain ( 'templates', $LOCALES );
 bindtextdomain ( 'sections', $LOCALES );
+bindtextdomain ( 'langs', $LOCALES );
 textdomain( 'pdo' );
 
 my $wwwdir = "$TOPDIR/www";
@@ -51,7 +53,8 @@ my $priorities = retrieve "$DBDIR/priorities.info";
 
 my (%pages);
 
-my $template = new Packages::Template( "$TOPDIR/templates", 'html', {} );
+my $template = new Packages::Template( "$TOPDIR/templates", 'html');
+my $txt_template = new Packages::Template( "$TOPDIR/templates", 'txt');
 
 print "write suite index files ...\n";
 foreach my $s (@SUITES) {
@@ -60,7 +63,7 @@ foreach my $s (@SUITES) {
     mkpath ( "$wwwdir/source/$key" );
     foreach my $lang (@LANGUAGES) {
 	my $locale = get_locale( $lang );
-	my $charset = get_locale( $lang );
+	my $charset = get_charset( $lang );
 	setlocale ( LC_ALL, $locale ) or do {
 	    warn "couldn't set locale ($lang/$locale)\n";
 	    next;
@@ -70,13 +73,6 @@ foreach my $s (@SUITES) {
 	my %content = ( subsections => [], suite => $s,
 			lang => $lang, charset => $charset,
 			used_langs => \@LANGUAGES, suites => \@SUITES );
-	$content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-	$content{make_url} = sub { return &Packages::CGI::make_url(@_) };
-        # needed to work around the limitations of the the FILTER syntax
-	$content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-	$content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-	$content{quotemeta} = sub { return quotemeta($_[0]) };
-
 	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    if ($sections_descs{$ssec}) {
@@ -88,20 +84,14 @@ foreach my $s (@SUITES) {
 	    }
 	}
 
-	open $pages{$key}{$lang}{index}{fh}, '>', "$wwwdir/$key/index.$lang.html.new"
-	    or die "can't open index file for output: $!";
-	print {$pages{$key}{$lang}{index}{fh}} $template->page( 'suite_index', \%content );
-	close $pages{$key}{$lang}{index}{fh} or
-	    warn "can't close index file $wwwdir/$key/index.$lang.html.new: $!";
+	$template->page( 'suite_index', \%content,
+			 "$wwwdir/$key/index.$lang.html.new");
 	rename( "$wwwdir/$key/index.$lang.html.new",
 		"$wwwdir/$key/index.$lang.html" );
 
 	$content{source} = 'source';
-	open $pages{$key}{$lang}{source_index}{fh}, '>', "$wwwdir/source/$key/index.$lang.html.new"
-	    or die "can't open index file for output: $!";
-	print {$pages{$key}{$lang}{source_index}{fh}} $template->page( 'suite_index', \%content );
-	close $pages{$key}{$lang}{source_index}{fh} or
-	    warn "can't close index file $wwwdir/source/$key/index.$lang.html.new: $!";
+	$template->page( 'suite_index', \%content,
+			 "$wwwdir/source/$key/index.$lang.html.new");
 	rename( "$wwwdir/source/$key/index.$lang.html.new",
 		"$wwwdir/source/$key/index.$lang.html" );
 
@@ -204,64 +194,72 @@ sub write_files {
     foreach my $s (@SUITES) {
 	my $key = $s;
 	mkpath ( "$wwwdir/$source$key" );
-	print "writing $source$s/allpackages...\n";
-	$template->process( 'html/index.tmpl', { packages => $pkgs->{$key}, suite => $s, lang => 'en', is_source => $source  },
-			    "$wwwdir/$source$key/allpackages.en.html.new" )
-	    or die "error writing allpackages for $key: ".$template->error();
-	print "writing $source$s/allpackages (txt)...\n";
-	my $gzfh = gzopen("$wwwdir/$source$key/allpackages.en.txt.gz.new",
-		      'wb9')
-	    or die "can't open text index file for output: $!";
-	my $gztxt;
-	$template->process( 'txt/index.tmpl', { packages => $pkgs->{$key}, suite => $s, lang => 'en', is_source => $source  },
-			    \$gztxt )
-	    or die "error writing allpackages txt for $key: ".$template->error();    
-	$gzfh->gzwrite($gztxt);
-	($gzfh->gzclose == Z_OK) or
-	    warn "can't close text index file $wwwdir/$source$key/allpackages.en.txt.gz.new: ".$gzfh->gzerror;
+	foreach my $lang (@LANGUAGES) {
+	    my $locale = get_locale( $lang );
+	    my $charset = get_charset( $lang );
+	    setlocale ( LC_ALL, $locale ) or do {
+		warn "couldn't set locale ($lang/$locale)\n";
+		next;
+	    };
 
-	rename( "$wwwdir/$source$key/allpackages.en.html.new",
-		"$wwwdir/$source$key/allpackages.en.html" );
-	rename( "$wwwdir/$source$key/allpackages.en.txt.gz.new",
-		"$wwwdir/$source$key/allpackages.en.txt.gz" );
-	
-	foreach my $sec (keys %{$sections->{$s}}) {
-	    mkpath ( "$wwwdir/$source$key/$sec" );
+	    my %lang_vars = ( lang => $lang, charset => $charset,
+			      used_langs => \@LANGUAGES );
+	    print "writing $source$s/allpackages (lang=$lang)...\n";
+	    $template->page( 'index', { %lang_vars, packages => $pkgs->{$key},
+					suite => $s, is_source => $source  },
+			     "$wwwdir/$source$key/allpackages.$lang.html.new" );
+	    print "writing $source$s/allpackages (txt,lang=$lang)...\n";
+	    my $gzfh = gzopen("$wwwdir/$source$key/allpackages.$lang.txt.gz.new",
+			      'wb9')
+		or die "can't open text index file for output: $!";
+	    my $gztxt;
+	    $gztxt = $txt_template->page( 'index', { %lang_vars, packages => $pkgs->{$key},
+						     suite => $s, is_source => $source  },
+					  );
+	    $gzfh->gzwrite($gztxt);
+	    ($gzfh->gzclose == Z_OK) or
+		warn "can't close text index file $wwwdir/$source$key/allpackages.$lang.txt.gz.new: ".$gzfh->gzerror;
 
-	    print "writing $source$s/$sec/index...\n";
-	    $template->process( 'html/index.tmpl', { packages => [ grep { $_->{section} eq $sec } @{$pkgs->{$key}} ],
-						     suite => $s, lang => 'en', is_source => $source,
-						     category => { id => 'section', name => $sec } },
-				"$wwwdir/$source$key/$sec/index.en.html.new" )
-		or die "error writing section index for $key/$sec: ".$template->error();
-	    rename( "$wwwdir/$source$key/$sec/index.en.html.new",
-		    "$wwwdir/$source$key/$sec/index.en.html" );
-    }
-	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
-	    next if $ssec eq '-';
-	    mkpath ( "$wwwdir/$source$key/$ssec" );
+	    rename( "$wwwdir/$source$key/allpackages.$lang.html.new",
+		    "$wwwdir/$source$key/allpackages.$lang.html" );
+	    rename( "$wwwdir/$source$key/allpackages.$lang.txt.gz.new",
+		    "$wwwdir/$source$key/allpackages.$lang.txt.gz" );
 
-	    print "writing $source$s/$ssec/index...\n";
-	    $template->process( 'html/index.tmpl', { packages => [ grep { $_->{subsection} eq $ssec } @{$pkgs->{$key}} ],
-						     suite => $s, lang => 'en', is_source => $source,
-						     category => { id => 'subsection', name => $ssec } },
-				"$wwwdir/$source$key/$ssec/index.en.html.new" )
-	    or die "error writing subsection index for $key/$ssec: ".$template->error();
-	rename( "$wwwdir/$source$key/$ssec/index.en.html.new",
-		"$wwwdir/$source$key/$ssec/index.en.html" );
-	}
-	foreach my $prio (keys %{$priorities->{$s}}) {
-	    next if $prio eq '-';
-	    mkpath ( "$wwwdir/$source$key/$prio" );
-	    
-	    print "writing $source$s/$prio/index...\n";
-	    $template->process( 'html/index.tmpl', { packages => [ grep { $_->{priority} eq $prio } @{$pkgs->{$key}} ],
-						     suite => $s, lang => 'en', is_source => $source,
-						     category => { id => 'priority', name => $prio } },
-				"$wwwdir/$source$key/$prio/index.en.html.new" )
-		or die "error writing priority index for $key/$prio: ".$template->error();
-	    rename( "$wwwdir/$source$key/$prio/index.en.html.new",
-		    "$wwwdir/$source$key/$prio/index.en.html" );
+	    foreach my $sec (keys %{$sections->{$s}}) {
+		mkpath ( "$wwwdir/$source$key/$sec" );
+
+		print "writing $source$s/$sec/index (lang=$lang)...\n";
+		$template->page( 'index', { packages => [ grep { $_->{section} eq $sec } @{$pkgs->{$key}} ],
+					    %lang_vars, suite => $s, is_source => $source,
+					    category => { id => _g('Section'), name => $sec } },
+				 "$wwwdir/$source$key/$sec/index.$lang.html.new" );
+		rename( "$wwwdir/$source$key/$sec/index.$lang.html.new",
+			"$wwwdir/$source$key/$sec/index.$lang.html" );
+	    }
+	    foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
+		next if $ssec eq '-';
+		mkpath ( "$wwwdir/$source$key/$ssec" );
+
+		print "writing $source$s/$ssec/index (lang=$lang)...\n";
+		$template->page( 'index', { packages => [ grep { $_->{subsection} eq $ssec } @{$pkgs->{$key}} ],
+					    %lang_vars, suite => $s, is_source => $source,
+					    category => { id => _g('Subsection'), name => $ssec } },
+				 "$wwwdir/$source$key/$ssec/index.$lang.html.new" );
+		rename( "$wwwdir/$source$key/$ssec/index.$lang.html.new",
+			"$wwwdir/$source$key/$ssec/index.$lang.html" );
+	    }
+	    foreach my $prio (keys %{$priorities->{$s}}) {
+		next if $prio eq '-';
+		mkpath ( "$wwwdir/$source$key/$prio" );
+
+		print "writing $source$s/$prio/index (lang=$lang)...\n";
+		$template->page( 'index', { packages => [ grep { $_->{priority} eq $prio } @{$pkgs->{$key}} ],
+					    %lang_vars, suite => $s, is_source => $source,
+					    category => { id => _g('Priority'), name => $prio } },
+				 "$wwwdir/$source$key/$prio/index.$lang.html.new" );
+		rename( "$wwwdir/$source$key/$prio/index.$lang.html.new",
+			"$wwwdir/$source$key/$prio/index.$lang.html" );
+	    }
 	}
     }
 }

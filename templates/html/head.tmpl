@@ -47,16 +47,16 @@
 [% IF search_field_values.suite %]<input type="hidden" name="suite" value="[% search_field_values.suite %]">[% END %]
 [% IF search_field_values.sections %]<input type="hidden" name="section" value="[% search_field_values.sections %]">[% END %]
 [% IF search_field_values.architectures %]<input type="hidden" name="arch" value="[% search_field_values.architectures %]">[% END %]
-<input type="submit" value="Search">
+<input type="submit" value="[% g('Search') %]">
 <select size="1" name="searchon">
 <option value="names" [% selected IF search_field_values.searchon == 'names' || search_field_values.searchon == 'default' %]>
-package names</option>
-<option value="all" [% selected IF search_field_values.searchon == 'all' %]>descriptions</option>
-<option value="sourcenames" [% selected IF search_field_values.searchon == 'sourcenames' %]>source package names</option>
-<option value="contents" [% selected IF search_field_values.searchon == 'contents' %]>package contents</option>
+[% g('package names') %]</option>
+<option value="all" [% selected IF search_field_values.searchon == 'all' %]>[% g('descriptions') %]</option>
+<option value="sourcenames" [% selected IF search_field_values.searchon == 'sourcenames' %]>[% g('source package names') %]</option>
+<option value="contents" [% selected IF search_field_values.searchon == 'contents' %]>[% g('package contents') %]</option>
 </select>
 <input type="text" size="30" name="keywords" value="[% search_field_values.keywords | html %]" id="kw">
-<span style="font-size: 60%"><a href="[% searchformurl %]">all options</a></span>
+<span style="font-size: 60%"><a href="[% searchformurl %]">[% g('all options') %]</a></span>
 </div> <!-- end hpacketsearch -->
 </form>
 </div>
@@ -74,8 +74,8 @@ package names</option>
 
 <div class="visualClear"></div>
 <div id="pnavbar">
- &gt;&gt; <a href="[% homepage %]" title="[% organisation %] Homepage">[% organisation %]</a>
- &gt;&gt; <a href="[% packages_homepage %]" title="[% organisation %] Packages Homepage">Packages</a>
+ &gt;&gt; <a href="[% homepage %]" title="[% g('%s Homepage', organisation) %]">[% organisation %]</a>
+ &gt;&gt; <a href="[% packages_homepage %]" title="[% g('%s Packages Homepage', organisation) %]">[% g('Packages') %]</a>
 [% FOREACH n IN navigation %]
  &gt;&gt; [% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 
 [% END %]

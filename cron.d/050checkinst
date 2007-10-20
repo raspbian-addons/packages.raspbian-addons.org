@@ -1,9 +1,11 @@
 #! /bin/sh
 
+. `dirname $0`/../config.sh
+
 # Test whether all required packages are installed and generate a mail
 # if they aren't, so that the admin is informed.
 
-required="subversion gettext locales rsync dpkg-dev procmail"
+required="git-core gettext locales rsync dpkg-dev procmail"
 required="$required libcompress-zlib-perl"
 required="$required libhtml-parser-perl libio-stringy-perl"
 required="$required liblocale-gettext-perl libmldbm-perl"

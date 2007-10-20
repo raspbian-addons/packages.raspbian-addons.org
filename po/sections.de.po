@@ -1,11 +1,15 @@
+# Copyright (C) 2007 Frank Lichtenheld
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: packages.git 2cd81017ac27717adcda738074294c4f5cd9e4cd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-28 18:04+0100\n"
-"Last-Translator: Frank Lichtenheld <frank@lichtenheld.de>\n"
+"POT-Creation-Date: 2007-10-19 23:43+0200\n"
+"PO-Revision-Date: 2007-09-18 19:48+0200\n"
+"Last-Translator: Frank Lichtenheld <djpig@debian.org>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lib/Packages/Sections.pm:12
@@ -24,7 +28,7 @@ msgstr "Basisprogramme"
 
 #: lib/Packages/Sections.pm:15
 msgid "Basic needed utilities of every Debian system."
-msgstr ""
+msgstr "Allgemeine, von jedem Debian-System benÃ¶tigte Programme"
 
 #: lib/Packages/Sections.pm:16
 msgid "Communication Programs"
@@ -54,7 +58,7 @@ msgid ""
 "Debian, and software needed to browse documentation (man, info, etc)."
 msgstr ""
 "FAQs, HOWTOs und andere Dokumente, die versuchen, alles in Bezug auf Debian "
-"zu erklären, sowie Software, die nötig ist, um die Dokumentation zu nutzen "
+"zu erklÃ¤ren, sowie Software, die nÃ¶tig ist, um die Dokumentation zu nutzen "
 "(man, info, usw.)"
 
 #: lib/Packages/Sections.pm:22
@@ -79,7 +83,7 @@ msgstr "Embedded Software"
 
 #: lib/Packages/Sections.pm:27
 msgid "Software suitable for use in embedded applications."
-msgstr "Software, die für die Benutzung in Embedded-Systemen geeignet ist."
+msgstr "Software, die fÃ¼r die Benutzung in Embedded-Systemen geeignet ist."
 
 #: lib/Packages/Sections.pm:28
 msgid "Games"
@@ -88,7 +92,7 @@ msgstr "Spiele"
 #: lib/Packages/Sections.pm:29
 msgid "Programs to spend a nice time with after all this setting up."
 msgstr ""
-"Programme, mit denen man eine schöne Zeit verbringen kann nach dem ganzen "
+"Programme, mit denen man eine schÃ¶ne Zeit verbringen kann nach dem ganzen "
 "Einrichten."
 
 #: lib/Packages/Sections.pm:30
@@ -100,7 +104,7 @@ msgid ""
 "The GNOME desktop environment, a powerful, easy to use set of integrated "
 "applications."
 msgstr ""
-"Die GNOME-Desktop-Umgebung, eine mächtige, leicht zu benutzende Sammlung von "
+"Die GNOME-Desktop-Umgebung, eine mÃ¤chtige, leicht zu benutzende Sammlung von "
 "integrierten Anwendungen."
 
 #: lib/Packages/Sections.pm:32
@@ -109,7 +113,7 @@ msgstr "Grafik"
 
 #: lib/Packages/Sections.pm:33
 msgid "Editors, viewers, converters... Everything to become an artist."
-msgstr "Editoren, Viewer, Konverter... Alles um ein Künstler zu werden."
+msgstr "Editoren, Viewer, Konverter... Alles um ein KÃ¼nstler zu werden."
 
 #: lib/Packages/Sections.pm:34
 msgid "Ham Radio"
@@ -117,7 +121,7 @@ msgstr "Amateurfunk"
 
 #: lib/Packages/Sections.pm:35
 msgid "Software for ham radio."
-msgstr "Software für Amateurfunker."
+msgstr "Software fÃ¼r Amateurfunker."
 
 #: lib/Packages/Sections.pm:36
 msgid "Interpreters"
@@ -126,7 +130,7 @@ msgstr "Interpreter"
 #: lib/Packages/Sections.pm:37
 msgid "All kind of interpreters for interpreted languages. Macro processors."
 msgstr ""
-"Alle Sorten von Interpretern für interpretierte Programmiersprachen. "
+"Alle Sorten von Interpretern fÃ¼r interpretierte Programmiersprachen. "
 "Makroprozessoren."
 
 #: lib/Packages/Sections.pm:38
@@ -138,7 +142,7 @@ msgid ""
 "The K Desktop Environment, a powerful, easy to use set of integrated "
 "applications."
 msgstr ""
-"Die K-Desktop-Umgebung, eine mächtige, leicht zu benutzende Sammlung von "
+"Die K-Desktop-Umgebung, eine mÃ¤chtige, leicht zu benutzende Sammlung von "
 "integrierten Anwendungen."
 
 #: lib/Packages/Sections.pm:40
@@ -158,7 +162,7 @@ msgstr "Bibliotheksentwicklung"
 #: lib/Packages/Sections.pm:43
 msgid "Libraries necessary for developers to write programs that use them."
 msgstr ""
-"Bibliotheken, die von Entwicklern benötigt werden, um Programme zu "
+"Bibliotheken, die von Entwicklern benÃ¶tigt werden, um Programme zu "
 "entwicklen, die sie benutzen."
 
 #: lib/Packages/Sections.pm:44
@@ -204,57 +208,43 @@ msgid "Software to access Usenet, to set up news servers, etc."
 msgstr "Software, um auf das Usenet zuzugreifen, News-Server aufzusetzen, usw."
 
 #: lib/Packages/Sections.pm:54
-msgid "Software restricted in the U.S."
-msgstr "Software, die Beschränkungen in den USA unterliegt"
-
-#: lib/Packages/Sections.pm:55
-msgid ""
-"These packages probably may not be used in or distributed from the U.S. due "
-"to software patents. You should check the regulations in your country before "
-"using this software."
-msgstr ""
-"Diese Pakete dürfen wahrscheinlich nicht in den USA verwendet werden oder "
-"nicht ausgeführt werden aufgrund von Software-Patenten. Sie sollten die "
-"Vorschriften in Ihrem Land überprüfen bevor Sie diese Software verwenden."
-
-#: lib/Packages/Sections.pm:56
 msgid "Old Libraries"
 msgstr "Alte Bibliotheken"
 
-#: lib/Packages/Sections.pm:57
+#: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
 msgstr ""
-"Alte Versionen von Bibliotheken, die zur Erhaltung der Abwärtskompatibilität "
+"Alte Versionen von Bibliotheken, die zur Erhaltung der AbwÃ¤rtskompatibilitÃ¤t "
 "mit alten Anwendungen bereitgestellt werden."
 
-#: lib/Packages/Sections.pm:58
+#: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
 msgstr "Andere Betriebs- und Dateisysteme"
 
-#: lib/Packages/Sections.pm:59
+#: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
 msgstr ""
-"Software, um Programme zu benutzen, die für andere Betriebssysteme "
+"Software, um Programme zu benutzen, die fÃ¼r andere Betriebssysteme "
 "kompiliert wurden und um die Dateisysteme anderer Betriebssysteme zu "
 "benutzen."
 
-#: lib/Packages/Sections.pm:60
+#: lib/Packages/Sections.pm:58
 msgid "Perl"
 msgstr "Perl"
 
-#: lib/Packages/Sections.pm:61
+#: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
 msgstr "Alles zu Perl, einer interpretierten Skriptsprache."
 
-#: lib/Packages/Sections.pm:62
+#: lib/Packages/Sections.pm:60
 msgid "Python"
 msgstr "Python"
 
-#: lib/Packages/Sections.pm:63
+#: lib/Packages/Sections.pm:61
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
@@ -262,47 +252,55 @@ msgstr ""
 "Alles zu Python, einer interpretierten, interaktiven, objekt-orientierten "
 "Programmiersprache."
 
-#: lib/Packages/Sections.pm:64
+#: lib/Packages/Sections.pm:62
 msgid "Science"
 msgstr "Wissenschaft"
 
-#: lib/Packages/Sections.pm:65
+#: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
 msgstr "Programme zum wissenschaftlichen Arbeiten"
 
-#: lib/Packages/Sections.pm:66
+#: lib/Packages/Sections.pm:64
 msgid "Shells"
 msgstr "Shells"
 
-#: lib/Packages/Sections.pm:67
+#: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
-msgstr "Kommandoshells. Benutzerfreundliche Schnittstellen für Anfänger."
+msgstr "Kommandoshells. Benutzerfreundliche Schnittstellen fÃ¼r AnfÃ¤nger."
 
-#: lib/Packages/Sections.pm:68
+#: lib/Packages/Sections.pm:66
 msgid "Sound"
 msgstr "Sound"
 
-#: lib/Packages/Sections.pm:69
+#: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Programme um mit Sound zu arbeiten: Mixer, Player, Recorder, CD-Player, usw."
 
-#: lib/Packages/Sections.pm:70
+#: lib/Packages/Sections.pm:68
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/Packages/Sections.pm:71
+#: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
-msgstr "Die berühmte Schriftsatz-Software und verwandte Programme."
+msgstr "Die berÃ¼hmte Schriftsatz-Software und verwandte Programme."
 
-#: lib/Packages/Sections.pm:72
+#: lib/Packages/Sections.pm:70
 msgid "Text Processing"
 msgstr "Textverarbeitung"
 
-#: lib/Packages/Sections.pm:73
+#: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
 msgstr "Programme, um Textdokumente zu formatieren und zu drucken."
+
+#: lib/Packages/Sections.pm:72
+msgid "Translations"
+msgstr ""
+
+#: lib/Packages/Sections.pm:73
+msgid "Translation packages and language support meta packages."
+msgstr ""
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
@@ -334,14 +332,14 @@ msgstr "Web-Server, Browser, Proxies, Download-Tools, usw."
 
 #: lib/Packages/Sections.pm:80
 msgid "X Window System software"
-msgstr "»X Window System«-Software"
+msgstr "Â»X Window SystemÂ«-Software"
 
 #: lib/Packages/Sections.pm:81
 msgid ""
 "X servers, libraries, fonts, window managers, terminal emulators and many "
 "related applications."
 msgstr ""
-"X-Server, Bibliotheken, Zeichensätze, Windowmanager, Terminal-Emulatoren und "
+"X-Server, Bibliotheken, ZeichensÃ¤tze, Windowmanager, Terminal-Emulatoren und "
 "viele verwandte Anwendungen."
 
 #: lib/Packages/Sections.pm:82
@@ -355,11 +353,3 @@ msgid ""
 msgstr ""
 "Spezielle Pakete zum Erzeugen von angepassten Debian-Installer-Varianten. "
 "Installieren Sie sie nicht in einem normalen System!"
-
-#~ msgid ""
-#~ "Basic needed utilities of every Debian system (you needn't install this, "
-#~ "they're provided only for upgrading purposes)."
-#~ msgstr ""
-#~ "Allgemeine, von jedem Debian-System benötigte Programme (Sie brauchen "
-#~ "diese im Allgemeinen nicht selbst installieren, sie werden vor allem zu "
-#~ "Aktualisierungszwecken bereitgestellt)."

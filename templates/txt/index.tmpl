@@ -1,9 +1,9 @@
 [%- PROCESS 'config/archive_layout.tmpl' -%]
-All Debian Packages in "[% suite %]"
+[% g('All %s Packages in "%s"', organisation, suite) %]
 
-Last Modified: [% timestamp.string %]
-Copyright (C) [% copyright.years %] [% copyright.name %];
-See <URL:[% license.url %]> for the license terms.
+[% g('Generated:') _ ' ' _ timestamp.string %]
+[% g('Copyright ©') _ ' ' _ copyright.years _ ' ' _ copyright.name %];
+[% g('See <URL:%s> for the license terms.', license.url) %]
 
 [% FOREACH packages -%]
   [%- BLOCK marker %] [[% text %]][% END -%]
@@ -12,7 +12,7 @@ See <URL:[% license.url %]> for the license terms.
     [%- PROCESS marker text=archive IF archive != main_archive -%]
   [%- END -%]
   [%- IF providers.size %]
-[% name %] virtual package provided by [% providers.join(', ') %]
+[% name %] [% g('virtual package provided by') _ ' ' _ providers.join(', ') %]
   [%- END -%]
   [%- IF versions %]
 [% name %] ([% versions %])[% PROCESS markers %] [% desc %]

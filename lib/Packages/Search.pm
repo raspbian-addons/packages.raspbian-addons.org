@@ -210,10 +210,10 @@ sub do_xapian_search {
 	push @tmp, $keyword;
     }
     my $stemmer = Lingua::Stem->new();
-    my $stemmed_keywords = $stemmer->stem( @tmp );
+    my @stemmed_keywords = grep { length($_) } @{$stemmer->stem( @tmp )};
 
     my $db = Search::Xapian::Database->new( $dbpath );
-    my $enq = $db->enquire( OP_OR, @$keywords, @$stemmed_keywords );
+    my $enq = $db->enquire( OP_OR, @$keywords, @stemmed_keywords );
     debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
     my @matches = $enq->matches(0, 999);
 

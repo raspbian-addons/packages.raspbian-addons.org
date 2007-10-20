@@ -30,6 +30,10 @@
    license = {
 	url => homepage _ 'legal'
    }
+   trademark = {
+	name => copyright.name,
+	url => homepage _ 'trademark'
+   }
    contact = {
 	name => 'Frank Lichtenheld',
 	mail => 'frank@lichtenheld.de',
@@ -39,10 +43,10 @@
 	name => 'Frank Lichtenheld',
 	mail => 'frank@lichtenheld.de',
    }
-   trademarknotes = organisation _ ' is a trademark of ' _ copyright.name
+   trademarknotes = g('%s is a <a href="%s">trademark</a> of %s', organisation, trademark.url, trademark.name)
 -%]
 [%-
    # possible values for importance: high, normal, low
    sitewidemsg = { importance => "high",
-		   txt => "Please note that this is an experimental version of <a href=\"http://packages.ubuntu.com/\">packages.ubuntu.com</a>. Errors and obsolete information should be expected" }
+		   txt => g('Please note that this is an experimental version of <a href="http://packages.ubuntu.com/">packages.ubuntu.com</a>. Errors and obsolete information should be expected') }
 -%]

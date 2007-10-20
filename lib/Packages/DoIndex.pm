@@ -34,7 +34,7 @@ sub send_file {
 	fatal_error( sprintf( _g( "more than one suite specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
     }
     if (@{$opts->{subsection}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( sprintf( _g( "more than one subsection specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
     }
 
     my $wwwdir = "$TOPDIR/www";
@@ -44,14 +44,12 @@ sub send_file {
     $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
     $path .= "$opts->{priority}[0]/" if @{$opts->{priority}};
-    # we don't have translated index pages for subsections yet
-    $opts->{lang} = 'en' if @{$opts->{subsection}} or $file eq 'allpackages';
 
     #FIXME: ugly hack
     if ($opts->{lang} ne 'en' and !-f "$wwwdir/$path$file.$opts->{lang}.$opts->{format}") {
-    	$opts->{lang} = 'en';
+	$opts->{lang} = 'en';
     }
-    $path .= "$file.$opts->{lang}.$opts->{format}";	
+    $path .= "$file.$opts->{lang}.$opts->{format}";
 
     unless (@Packages::CGI::fatal_errors) {
 	my $buffer;

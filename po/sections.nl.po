@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-28 18:04+0100\n"
+"POT-Creation-Date: 2007-10-19 23:43+0200\n"
 "PO-Revision-Date: 2005-01-03 00:59+0100\n"
 "Last-Translator: Bas Zoetekouw <bas@debian.org>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -217,25 +217,10 @@ msgstr ""
 "zetten, etc."
 
 #: lib/Packages/Sections.pm:54
-msgid "Software restricted in the U.S."
-msgstr "Software waar in de Verenigde Staten beperkingen op van kracht zijn."
-
-#: lib/Packages/Sections.pm:55
-msgid ""
-"These packages probably may not be used in or distributed from the U.S. due "
-"to software patents. You should check the regulations in your country before "
-"using this software."
-msgstr ""
-"Deze pakketten mogen waarschijnlijk niet worden gebruikt in of "
-"gedistribueerd vanuit de Verenigde Staten vanwege softwarepatenten. U kunt "
-"het beste de regels in uw eigen land checken alvorens deze software te "
-"gebruiken."
-
-#: lib/Packages/Sections.pm:56
 msgid "Old Libraries"
 msgstr "Oude bibliotheken"
 
-#: lib/Packages/Sections.pm:57
+#: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
@@ -243,11 +228,11 @@ msgstr ""
 "Oude versies van bibliotheken, die worden bewaard omdat oudere programmatuur "
 "hen nog nodig kan hebben."
 
-#: lib/Packages/Sections.pm:58
+#: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
 msgstr "Andere besturings- en bestandssystemen"
 
-#: lib/Packages/Sections.pm:59
+#: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
@@ -255,19 +240,19 @@ msgstr ""
 "Programmatuur om programma's te kunnen draaien die voor andere "
 "besturingssystemen zijn gebouwd, en om hun bestandssystemen te gebruiken."
 
-#: lib/Packages/Sections.pm:60
+#: lib/Packages/Sections.pm:58
 msgid "Perl"
 msgstr "Perl"
 
-#: lib/Packages/Sections.pm:61
+#: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
 msgstr "Alles wat te maken heeft met Perl, een geïnterpreteerde script taal."
 
-#: lib/Packages/Sections.pm:62
+#: lib/Packages/Sections.pm:60
 msgid "Python"
 msgstr "Python"
 
-#: lib/Packages/Sections.pm:63
+#: lib/Packages/Sections.pm:61
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
@@ -275,48 +260,56 @@ msgstr ""
 "Alles wat te maken heeft met Python, een geïnterpreteerde, interactieve, "
 "object-georiënteerde taal."
 
-#: lib/Packages/Sections.pm:64
+#: lib/Packages/Sections.pm:62
 msgid "Science"
 msgstr "Wetenschap"
 
-#: lib/Packages/Sections.pm:65
+#: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
 msgstr "Basisgereedschappen voor wetenschappelijk werk."
 
-#: lib/Packages/Sections.pm:66
+#: lib/Packages/Sections.pm:64
 msgid "Shells"
 msgstr "Shells"
 
-#: lib/Packages/Sections.pm:67
+#: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
 msgstr "Commando shells. Vriendelijke gebruikersinterfaces voor beginners."
 
-#: lib/Packages/Sections.pm:68
+#: lib/Packages/Sections.pm:66
 msgid "Sound"
 msgstr "Geluid"
 
-#: lib/Packages/Sections.pm:69
+#: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Gereedschappen om om te gaan met geluid: mixers, afspeel- en "
 "opnameprogramma's, CD-spelers, etc."
 
-#: lib/Packages/Sections.pm:70
+#: lib/Packages/Sections.pm:68
 msgid "TeX"
 msgstr "TeX"
 
-#: lib/Packages/Sections.pm:71
+#: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
 msgstr "De beroemde tekst-zet programmatuur en gerelateerde programma's."
 
-#: lib/Packages/Sections.pm:72
+#: lib/Packages/Sections.pm:70
 msgid "Text Processing"
 msgstr "Tekstverwerking"
 
-#: lib/Packages/Sections.pm:73
+#: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
 msgstr "Gereedschappen om tekstdocumenten op te maken en te printen."
+
+#: lib/Packages/Sections.pm:72
+msgid "Translations"
+msgstr ""
+
+#: lib/Packages/Sections.pm:73
+msgid "Translation packages and language support meta packages."
+msgstr ""
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
@@ -370,11 +363,3 @@ msgid ""
 msgstr ""
 "Speciale pakketten om uw eigen varianten van de debian-installer te bouwen. "
 "Installeer deze niet op een normaal systeem!"
-
-#~ msgid ""
-#~ "Basic needed utilities of every Debian system (you needn't install this, "
-#~ "they're provided only for upgrading purposes)."
-#~ msgstr ""
-#~ "Basisgereedschappen die elk Debian systeem nodig heeft (u hoeft dit niet "
-#~ "te installeren; ze zijn alleen beschikbaar om het upgraden makkelijker te "
-#~ "maken)"

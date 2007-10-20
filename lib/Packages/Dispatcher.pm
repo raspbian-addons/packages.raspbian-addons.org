@@ -25,11 +25,9 @@ use warnings;
 use CGI;
 use POSIX;
 use File::Basename;
-use URI;
-use URI::Escape;
-use HTML::Entities;
 use Template;
 use DB_File;
+use URI::Escape;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
 use Locale::gettext;
@@ -102,8 +100,10 @@ sub do_dispatch {
 				   \@all_langs ) || 'en';
     debug( "LANGUAGES=@all_langs header=".
 	   ($input->http("Accept-Language")||'').
-	   " http_lang=$http_lang", 2 ) if DEBUG;
+	   " http_lang=$http_lang", 1 ) if DEBUG;
     bindtextdomain ( 'pdo', $LOCALES );
+    bindtextdomain ( 'templates', $LOCALES );
+    bindtextdomain ( 'langs', $LOCALES );
     textdomain( 'pdo' );
 
     # backwards compatibility stuff
@@ -237,9 +237,9 @@ sub do_dispatch {
 				     array => '\s+',
 				     match => '^([-+\@\w\/.:]+)$',
 				 },
-		       package => { default => undef,
-				    match => '^([\w.+-]+)$',
-				    var => \$pkg },
+		       'package' => { default => undef,
+				      match => '^([\w.+-]+)$',
+				      var => \$pkg },
 		       suite => { default => 'default', match => '^([\w-]+)$',
 				  array => ',', var => \@suites,
 				  replace => { all => \@SUITES,
@@ -269,13 +269,13 @@ sub do_dispatch {
 		       arch => { default => 'any', match => '^([\w-]+)$',
 				 array => ',', var => \@archs, replace =>
 				 { any => \@ARCHITECTURES } },
-		       format => { default => 'html', match => '^([\w.]+)$',  },
-		   mode => { default => '', match => '^(\w+)$',  },
-		   sort_by => { default => 'file', match => '^(\w+)$', },
-		   );
+		       'format' => { default => 'html', match => '^([\w.]+)$',  },
+		       mode => { default => '', match => '^(\w+)$',  },
+		       sort_by => { default => 'file', match => '^(\w+)$', },
+		       );
     my %opts;
     my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
-Packages::CGI::init_url( $input, \%params, \%opts );
+    Packages::CGI::init_url( $input, \%params, \%opts );
 
     my $locale = get_locale($opts{lang});
     my $charset = get_charset($opts{lang});
@@ -287,7 +287,7 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 			setlocale( LC_ALL, "C" );
 		    };
 	    };
-    debug( "locale=$locale charset=$charset", 2 ) if DEBUG;
+    debug( "locale=$locale charset=$charset", 1 ) if DEBUG;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
     $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -317,8 +317,8 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
-            || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
-	fatal_error( "requested format not available for this document",
+	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
+	fatal_error( _g("requested format not available for this document"),
 		     "406 requested format not available");
     }
 
@@ -330,19 +330,6 @@ Packages::CGI::init_url( $input, \%params, \%opts );
 
     $page_content{opts} = \%opts;
     $page_content{params} = \%params;
-
-    $page_content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-    $page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
-    $page_content{extract_host} = sub { my $uri = URI->new($_[0]);
-                                        my $host = $uri->host;
-                                        $host .= ':'.$uri->port if $uri->port != $uri->default_port;
-                                        return $host;
-                                      };
-    # needed to work around the limitations of the the FILTER syntax
-    $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-    $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-    $page_content{quotemeta} = sub { return quotemeta($_[0]) };
-    $page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
 
     unless (@Packages::CGI::fatal_errors) {
 	print $input->header(-charset => $charset, -type => get_mime($opts{format}) );

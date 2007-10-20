@@ -5,8 +5,6 @@ use warnings;
 
 use Benchmark ':hireswallclock';
 use DB_File;
-use URI::Escape;
-use HTML::Entities;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_search_contents );
@@ -75,6 +73,7 @@ sub do_search_contents {
 		&searchfile(\@results, reverse($_)."/", \$nres, $reverses);
 		last if $Packages::Search::too_many_hits;
 	    }
+	    while (<FILENAMES>) {};
 	    close FILENAMES or warn "fgrep error: $!\n";
 	} else {
 
@@ -172,8 +171,15 @@ sub searchfile
 	last unless index($key, $kw) == 0;
 	debug( "found $key", 2 ) if DEBUG;
 
-	my @hits = split /\0/o, $value;
-	push @$results, [ scalar reverse($key), @hits ];
+	my @files = split /\001/o, $value;
+	foreach my $f (@files) {
+	    my @hits = split /\0/o, $f;
+	    my $file = shift @hits;
+	    if ($file eq '-') {
+		$file = reverse($key);
+	    }
+	    push @$results, [ $file, @hits ];
+	}
 	last if ($$nres)++ > 100;
     }
 
