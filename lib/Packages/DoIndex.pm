@@ -34,7 +34,7 @@ sub send_file {
 	fatal_error( sprintf( _g( "more than one suite specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
     }
     if (@{$opts->{subsection}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( sprintf( _g( "more than one subsection specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
     }
 
     my $wwwdir = "$TOPDIR/www";
