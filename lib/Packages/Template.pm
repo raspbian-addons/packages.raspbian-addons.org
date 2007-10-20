@@ -54,7 +54,7 @@ sub new {
 	VARIABLES => $vars,
 	COMPILE_EXT => '.ttc',
 	%$options,
-    } ) or fatal_error( sprintf( _g( "Initialization of Template Engine failed: %s" ), $Template::ERROR ) );
+    } ) or die sprintf( "Initialization of Template Engine failed: %s", $Template::ERROR );
     $self->{format} = $format;
     $self->{vars} = $vars;
 
