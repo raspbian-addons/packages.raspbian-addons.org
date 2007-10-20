@@ -96,7 +96,8 @@ Please consider using a longer keyword or more keywords.', too_many_hits) %]</p>
       <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
     [% END %]
     [% IF s.providers %]
-	<br>[% 'also ' IF s.versions.size > 0 %][% g('provided by:') %] [% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
+	<br>[% IF s.versions.size > 0; g('also provided by:'); ELSE; g('provided by:'); END %]
+	[% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
     [% END %]
     </li>
   [% END %]

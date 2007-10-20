@@ -242,7 +242,11 @@ Do not install it on a normal %s system.', organisation ) %]</p>
       [%- IF !is_old_pkgs -%]
         <dd>[% desc -%]
         [%- IF providers.pkgs.size > 0 -%]
-          [% '<br>also a ' IF providers.also %][% g('virtual package provided by') %]
+	  [% IF providers.also;
+		'<br>' _ g('also a virtual package provided by');
+	     ELSE;
+		g('virtual package provided by');
+	     END; %]
 	  [% js_id = name %]
 	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF providers.pkgs.size > 10 %]
