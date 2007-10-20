@@ -16,12 +16,12 @@
 <title>[% g('New %s Packages', organisation) %]</title>
 <link>[% root_url %]newpkg</link>
 <description>
-[%- IF section; 
-	g('Packages that were added to the %s %s archive (section "%s") during the last 7 days.',
-	suite, organisation, section);
+[%- IF section;
+	g('The following packages were added to suite %s (section %s) in the %s archive during the last 7 days.',
+	suite, section, organisation);
     ELSE;
-	g('Packages that were added to the %s %s archive during the last 7 days.',
-	suite, organisation, section);
+	g('The following packages were added to suite %s in the %s archive during the last 7 days.',
+	suite, organisation);
     END; -%]
 </description>
 <dc:language>[% lang %]</dc:language>
