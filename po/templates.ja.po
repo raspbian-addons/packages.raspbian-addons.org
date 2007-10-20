@@ -503,7 +503,7 @@ msgstr ""
 #: templates/html/search.tmpl:37
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
-"to search <a href=\"%s\">allowing subword matching."
+"to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
 
 #: templates/html/search.tmpl:42
@@ -856,12 +856,35 @@ msgstr "以下のバイナリパッケージがこのソースパッケージか
 msgid "Other Packages Related to %s"
 msgstr "その他の %s 関連パッケージ"
 
+#: templates/html/show.tmpl:226
+msgid "legend"
+msgstr ""
+
+#: templates/html/show.tmpl:228
+msgid "build-depends"
+msgstr ""
+
+#: templates/html/show.tmpl:229
+msgid "build-depends-indep"
+msgstr ""
+
+#: templates/html/show.tmpl:231
+msgid "depends"
+msgstr ""
+
+#: templates/html/show.tmpl:232
+msgid "recommends"
+msgstr ""
+
+#: templates/html/show.tmpl:233
+msgid "suggests"
+msgstr ""
+
 #: templates/html/show.tmpl:254
 msgid "%u providing packages"
 msgstr "%u 個の提供パッケージ"
 
 #: templates/html/show.tmpl:272
-#| msgid "Download"
 msgid "Download %s"
 msgstr "%s のダウンロード"
 
@@ -976,15 +999,28 @@ msgid "New %s Packages"
 msgstr "新規 %s パッケージ"
 
 #: templates/rss/newpkg.tmpl:20
+#, fuzzy
+#| msgid ""
+#| "The following packages were added to suite <em>%s</em> (section %s) in "
+#| "the %s archive during the last 7 days."
 msgid ""
-"Packages that were added to the %s %s archive (section \"%s\") during the "
-"last 7 days."
+"The following packages were added to suite %s (section %s) in the %s archive "
+"during the last 7 days."
 msgstr ""
-"%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
+"以下のパッケージは、%3$s アーカイブの <em>%1$s</em> スイート (%2$s セクショ"
+"ン) に最近 7 日間に追加されたものです。"
 
 #: templates/rss/newpkg.tmpl:23
-msgid "Packages that were added to the %s %s archive during the last 7 days."
-msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+#, fuzzy
+#| msgid ""
+#| "The following packages were added to suite <em>%s</em> in the %s archive "
+#| "during the last 7 days."
+msgid ""
+"The following packages were added to suite %s in the %s archive during the "
+"last 7 days."
+msgstr ""
+"以下のパッケージは、%2$s アーカイブの <em>%1$s</em> スイートに最近 7 日間に追"
+"加されたものです。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"
@@ -997,3 +1033,13 @@ msgstr "\"%s\" に含まれるすべての %s パッケージ"
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
+
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
+#~ "last 7 days."
+#~ msgstr ""
+#~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"

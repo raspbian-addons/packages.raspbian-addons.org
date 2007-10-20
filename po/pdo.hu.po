@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-19 23:43+0200\n"
+"POT-Creation-Date: 2007-10-20 21:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,18 +51,18 @@ msgstr ""
 msgid "requested format not available for this document"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:30
-#: lib/Packages/DoShow.pm:30
+#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
+#: lib/Packages/DoShow.pm:31
 msgid "package not valid or not specified"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:33
-#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:25
-#: lib/Packages/DoSearchContents.pm:31 lib/Packages/DoShow.pm:33
+#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
+#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
+#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:36
+#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
 msgid "architecture not valid or not specified"
 msgstr ""
 
@@ -76,17 +76,22 @@ msgstr ""
 msgid "more than one architecture specified for download (%s)"
 msgstr ""
 
-#: lib/Packages/DoFilelist.pm:51
+#: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
 msgstr ""
 
-#: lib/Packages/DoFilelist.pm:63
+#: lib/Packages/DoFilelist.pm:60
 msgid "Invalid suite/architecture combination"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:34 lib/Packages/DoIndex.pm:37
+#: lib/Packages/DoIndex.pm:34
 #, perl-format
 msgid "more than one suite specified for show_static (%s)"
+msgstr ""
+
+#: lib/Packages/DoIndex.pm:37
+#, perl-format
+msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
 #: lib/Packages/DoIndex.pm:73
@@ -94,69 +99,65 @@ msgstr ""
 msgid "couldn't read index file %s: %s"
 msgstr ""
 
-#: lib/Packages/DoNewPkg.pm:28 lib/Packages/DoShow.pm:36
+#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
 #, perl-format
 msgid "more than one suite specified for show (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:27 lib/Packages/DoSearchContents.pm:25
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:30 lib/Packages/DoSearchContents.pm:28
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:163
 msgid "Exact hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:174
+#: lib/Packages/DoSearch.pm:172
 msgid "Other hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:219
+#: lib/Packages/DoSearch.pm:217
 msgid "Virtual package"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:41
+#: lib/Packages/DoSearchContents.pm:39
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:82
+#: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:71
+#: lib/Packages/DoShow.pm:72
 msgid "No such package."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:83
+#: lib/Packages/DoShow.pm:84
 msgid "Package not available in this suite."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:195
+#: lib/Packages/DoShow.pm:197
 msgid " and others"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:425
-msgid "not"
+#: lib/Packages/DoShow.pm:427
+#, perl-format
+msgid "not %s"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:463
+#: lib/Packages/DoShow.pm:465
 msgid "Package not available"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:489
+#: lib/Packages/DoShow.pm:491
 msgid "Not available"
 msgstr ""
 
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
-msgstr ""
-
-#: lib/Packages/Template.pm:56
-#, perl-format
-msgid "Initialization of Template Engine failed: %s"
 msgstr ""

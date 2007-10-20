@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 00:10+0200\n"
+"POT-Creation-Date: 2007-10-20 21:54+0200\n"
 "PO-Revision-Date: 2007-10-13 18:24+0200\n"
 "Last-Translator: Frank Lichtenheld <djpig@debian.org>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
@@ -46,18 +46,18 @@ msgstr "zwei oder mehr Pakete angegeben (%s)"
 msgid "requested format not available for this document"
 msgstr "angefordertes Format nicht verfügbar für dieses Dokument"
 
-#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:30
-#: lib/Packages/DoShow.pm:30
+#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
+#: lib/Packages/DoShow.pm:31
 msgid "package not valid or not specified"
 msgstr "Paket nicht gültig oder nicht angegeben"
 
-#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:33
-#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:25
-#: lib/Packages/DoSearchContents.pm:31 lib/Packages/DoShow.pm:33
+#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
+#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
+#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
 msgstr "Suite nicht gültig oder nicht angegeben"
 
-#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:36
+#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
 msgid "architecture not valid or not specified"
 msgstr "Architektur nicht gültig oder nicht angegeben"
 
@@ -71,17 +71,22 @@ msgstr ""
 msgid "more than one architecture specified for download (%s)"
 msgstr ""
 
-#: lib/Packages/DoFilelist.pm:51
+#: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
 msgstr "Keine Pakete in dieser Suite auf dieser Architektur"
 
-#: lib/Packages/DoFilelist.pm:63
+#: lib/Packages/DoFilelist.pm:60
 msgid "Invalid suite/architecture combination"
 msgstr "Ungültige Suite/Architektur-Kombination"
 
-#: lib/Packages/DoIndex.pm:34 lib/Packages/DoIndex.pm:37
+#: lib/Packages/DoIndex.pm:34
 #, perl-format
 msgid "more than one suite specified for show_static (%s)"
+msgstr ""
+
+#: lib/Packages/DoIndex.pm:37
+#, perl-format
+msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
 #: lib/Packages/DoIndex.pm:73
@@ -89,69 +94,66 @@ msgstr ""
 msgid "couldn't read index file %s: %s"
 msgstr ""
 
-#: lib/Packages/DoNewPkg.pm:28 lib/Packages/DoShow.pm:36
+#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
 #, perl-format
 msgid "more than one suite specified for show (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:27 lib/Packages/DoSearchContents.pm:25
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:30 lib/Packages/DoSearchContents.pm:28
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:163
 msgid "Exact hits"
 msgstr "Genaue Treffer"
 
-#: lib/Packages/DoSearch.pm:174
+#: lib/Packages/DoSearch.pm:172
 msgid "Other hits"
 msgstr "Andere Treffer"
 
-#: lib/Packages/DoSearch.pm:219
+#: lib/Packages/DoSearch.pm:217
 msgid "Virtual package"
 msgstr "Virtuelles Paket"
 
-#: lib/Packages/DoSearchContents.pm:41
+#: lib/Packages/DoSearchContents.pm:39
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:82
+#: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:71
+#: lib/Packages/DoShow.pm:72
 msgid "No such package."
 msgstr "Kein passendes Paket gefunden."
 
-#: lib/Packages/DoShow.pm:83
+#: lib/Packages/DoShow.pm:84
 msgid "Package not available in this suite."
 msgstr "Paket in dieser Suite nicht verfügbar"
 
-#: lib/Packages/DoShow.pm:195
+#: lib/Packages/DoShow.pm:197
 msgid " and others"
 msgstr " und andere"
 
-#: lib/Packages/DoShow.pm:425
-msgid "not"
+#: lib/Packages/DoShow.pm:427
+#, fuzzy, perl-format
+#| msgid "not"
+msgid "not %s"
 msgstr "nicht"
 
-#: lib/Packages/DoShow.pm:463
+#: lib/Packages/DoShow.pm:465
 msgid "Package not available"
 msgstr "Paket nicht verfügbar"
 
-#: lib/Packages/DoShow.pm:489
+#: lib/Packages/DoShow.pm:491
 msgid "Not available"
 msgstr "Paket nicht verfügbar"
 
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
 msgstr "Paket hat ungültiges Betreuer-Feld"
-
-#: lib/Packages/Template.pm:56
-#, perl-format
-msgid "Initialization of Template Engine failed: %s"
-msgstr ""
