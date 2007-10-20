@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-10-20 04:31+0900\n"
+"PO-Revision-Date: 2007-10-21 01:21+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "%s ウェブマスター"
 
 #: templates/config.tmpl:45
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr "%s は %3$s の<a href=\"%2$s\">登録商標</a>です。"
+msgstr "%1$s は %3$s の<a href=\"%2$s\">登録商標</a>です。"
 
 #: templates/config.tmpl:50
 msgid ""
@@ -548,7 +548,7 @@ msgstr "ソースパッケージ"
 #: templates/html/search.tmpl:57
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
-msgstr "<em>%2$s</em> を名前に含む%1$sを、%s、%s、%sで検索しました。"
+msgstr "<em>%2$s</em> を名前に含む%1$sを、%3$s、%4$s、%5$sで検索しました。"
 
 #: templates/html/search.tmpl:60
 msgid " (including subword matching)"
@@ -672,7 +672,8 @@ msgstr "を名前に含むファイル"
 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr "<em>%2$s</em> %1$sを、<em>%s</em> スイート、%s、%sで検索しました。"
+msgstr ""
+"<em>%2$s</em> %1$sを、<em>%3$s</em> スイート、%4$s、%5$sで検索しました。"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
