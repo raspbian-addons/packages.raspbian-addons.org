@@ -28,6 +28,9 @@ msgid ""
 "packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
 "information should be expected"
 msgstr ""
+"Bitte beachten Sie, dass es sich bei dieser Seite um eine experimentelle "
+"Version von <a href=\"http://packages.debian.org/\">packages.debian.org</a> "
+"handelt. Mit Fehlern und veralteten Informationen muss gerechnet werden"
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -154,39 +157,35 @@ msgid ""
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
 "and install packages, instead of doing so manually via this website."
 msgstr ""
+"Wenn Sie %s auf ihrem Rechner einsetzen, wird empfohlen, einen Paket-Manager "
+"wie <a href=\"%s\">aptitude</a> oder <a href=\"%s\">synaptic</a> zum "
+"Herunterladen  und Installieren von Paketen zu benutzen, und nicht diese "
+"Webseite."
 
 #: templates/html/download.tmpl:25
 msgid ""
 "You should be able to use any of the listed mirrors by adding a line to your "
 "<kbd>/etc/apt/sources.list</kbd> like this:"
 msgstr ""
+"Sie können jeden der aufgeführten Spiegel-Server benutzen, indem Sie eine "
+"Zeile  zu ihrer <kbd>/etc/apt/sources.list</kbd> hinzufügen, wie folgt:"
 
 #: templates/html/download.tmpl:30
 msgid "Replacing <em>%s</em> with the mirror in question."
-msgstr ""
+msgstr "Ersetzen Sie dabei <em>%s</em> mit dem gewünschten Spiegel-Server."
 
 #: templates/html/download.tmpl:37 templates/html/show.tmpl:145
 msgid "Experimental package"
 msgstr "Experimentelles Paket"
 
 #: templates/html/download.tmpl:38
-#, fuzzy
-#| msgid ""
-#| "Warning: This package is from the <strong>experimental</strong> "
-#| "distribution.\n"
-#| "That means it is likely unstable or buggy, and it may even cause data "
-#| "loss.\n"
-#| "Please be sure to consult the changelog and other possible documentation "
-#| "before\n"
-#| "using it."
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
 "cause data loss. Please be sure to consult the changelog and other possible "
 "documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>experimental</strong>-"
-"Distribution.\n"
+"Warnung: Dieses Paket ist aus der <strong>experimental</strong>-Distribution."
 "Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
 "sogar Datenverlust verursachen kann. Bitte lesen Sie das Changelog und "
 "andere möglicherweise verfügbare Dokumentation, bevor Sie es benutzen."
@@ -196,12 +195,6 @@ msgid "debian-installer udeb package"
 msgstr "debian-installer udeb-Paket"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:151
-#, fuzzy
-#| msgid ""
-#| "Warning: This package is intended for the use in building\n"
-#| "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
-#| "installer</a> images only.\n"
-#| "Do not install it on a normal %s system."
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -235,16 +228,12 @@ msgstr ""
 "<tt>security.debian.org</tt> verbreitet."
 
 #: templates/html/download.tmpl:83
-#, fuzzy
-#| msgid ""
-#| "If none of the above sites are fast enough for you,\n"
-#| "please see our <a href=\"%s\">complete mirror list</a>."
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
 msgstr ""
-"Wenn keine der genannten Seiten schnell genug für Sie ist,\n"
-"beachten Sie bitte auch unsere <a href=\"%s\">komplette Mirrorliste</a>."
+"Wenn keine der genannten Seiten schnell genug für Sie ist,beachten Sie bitte "
+"auch unsere <a href=\"%s\">komplette Mirrorliste</a>."
 
 #: templates/html/download.tmpl:91
 msgid ""
@@ -343,7 +332,7 @@ msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
-"Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s"
+"Inhalt Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s"
 "\">Lizenzbestimmungen</a>."
 
 #: templates/html/foot.tmpl:39
@@ -588,10 +577,8 @@ msgid "Package %s"
 msgstr "Paket %s"
 
 #: templates/html/search.tmpl:96
-#, fuzzy
-#| msgid "provided by:"
 msgid "also provided by:"
-msgstr "bereitgestellt durch:"
+msgstr "auch bereitgestellt durch:"
 
 #: templates/html/search.tmpl:96
 msgid "provided by:"
@@ -629,7 +616,7 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr ""
+msgstr "Suche exakten Dateinamen <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
@@ -637,11 +624,11 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
-msgstr ""
+msgstr "Suche in anderer Suite:"
 
 #: templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
-msgstr ""
+msgstr "Schränke Suche auf bestimmte Architekturen ein:"
 
 #: templates/html/search_contents.tmpl:63
 #, fuzzy
@@ -675,7 +662,7 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr ""
+msgstr "<strong>%u Treffer</strong>."
 
 #: templates/html/search_contents.tmpl:88
 msgid ""
@@ -794,16 +781,12 @@ msgid "Maintainers:"
 msgstr "Betreuer:"
 
 #: templates/html/show.tmpl:114
-#, fuzzy
-#| msgid "Overview over this suite"
 msgid "An overview over the maintainer's packages and uploads"
-msgstr "Übersicht über diese Suite"
+msgstr "Eine Übersicht über die Pakete und Uploads des Betreuers"
 
 #: templates/html/show.tmpl:114
-#, fuzzy
-#| msgid "All Packages"
 msgid "QA Page"
-msgstr "Alle Pakete"
+msgstr "QS-Seite"
 
 #: templates/html/show.tmpl:122
 msgid "External Resources:"
@@ -818,26 +801,17 @@ msgid "Similar packages:"
 msgstr "Ähnliche Pakete: "
 
 #: templates/html/show.tmpl:146
-#, fuzzy
-#| msgid ""
-#| "Warning: This package is from the <strong>experimental</strong> "
-#| "distribution.\n"
-#| "That means it is likely unstable or buggy, and it may even cause data "
-#| "loss.\n"
-#| "Please be sure to consult the changelog and other possible documentation "
-#| "before\n"
-#| "using it."
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>experimental</strong>-"
-"Distribution.\n"
+"Warnung: Dieses Paket ist aus der <strong>experimental</strong>-Distribution."
 "Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
-"sogar Datenverlust verursachen kann. Bitte lesen Sie das Changelog und "
-"andere möglicherweise verfügbare Dokumentation, bevor Sie es benutzen."
+"sogar Datenverlust verursachen kann. Bitte lesen Sie das <a href=\"%s"
+"\">Changelog</a> und andere möglicherweise verfügbare Dokumentation, bevor "
+"Sie es benutzen."
 
 #: templates/html/show.tmpl:169
 msgid ""
@@ -867,7 +841,7 @@ msgstr "Andere Pakete in Beziehung zu %s"
 
 #: templates/html/show.tmpl:218
 msgid "legend"
-msgstr ""
+msgstr "Legende"
 
 #: templates/html/show.tmpl:220
 msgid "build-depends"
@@ -890,15 +864,12 @@ msgid "suggests"
 msgstr ""
 
 #: templates/html/show.tmpl:243
-#, fuzzy
 msgid "also a virtual package provided by"
-msgstr "Virtuelles Paket"
+msgstr "Auch ein virtuelles Paket, bereitgestellt durch"
 
 #: templates/html/show.tmpl:250
-#, fuzzy
-#| msgid "Packages providing %s"
 msgid "%u providing packages"
-msgstr "Pakete, die %s bereitstellen"
+msgstr "%u bereitstellende Pakete"
 
 #: templates/html/show.tmpl:268
 msgid "Download %s"
@@ -940,7 +911,7 @@ msgstr "Dateien"
 
 #: templates/html/show.tmpl:284
 msgid "(unofficial port)"
-msgstr ""
+msgstr "(inoffizielle Portierung)"
 
 #: templates/html/show.tmpl:295 templates/html/show.tmpl:323
 msgid "%.1f&nbsp;kB"
@@ -1018,28 +989,20 @@ msgid "New %s Packages"
 msgstr "Neue %s Pakete"
 
 #: templates/rss/newpkg.tmpl:20
-#, fuzzy
-#| msgid ""
-#| "The following packages were added to suite <em>%s</em> (section %s) in "
-#| "the %s archive during the last 7 days."
 msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite <em>%s</em> (Abschnitt %s) im %s-"
-"Archiv während der letzten 7 Tage hinzugefügt."
+"Die folgenden Pakete wurden der Suite %s (Abschnitt %s) im %s-Archiv während "
+"der letzten 7 Tage hinzugefügt."
 
 #: templates/rss/newpkg.tmpl:23
-#, fuzzy
-#| msgid ""
-#| "The following packages were added to suite <em>%s</em> in the %s archive "
-#| "during the last 7 days."
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite <em>%s</em> im %s-Archiv während der "
-"letzten 7 Tage hinzugefügt."
+"Die folgenden Pakete wurden der Suite %s im %s-Archiv während der letzten 7 "
+"Tage hinzugefügt."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"
@@ -1052,257 +1015,3 @@ msgstr "Alle %s-Pakete in »%s«"
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
-
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
-#~ "last 7 days."
-#~ msgstr ""
-#~ "Pakete, die dem unstable Debian-Archiv während der letzten 7 Tage "
-#~ "hinzugefügt wurden."
-
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr ""
-#~ "Pakete, die dem unstable Debian-Archiv während der letzten 7 Tage "
-#~ "hinzugefügt wurden."
-
-#, fuzzy
-#~| msgid "Copyright ©"
-#~ msgid "Copyright"
-#~ msgstr "Copyright ©"
-
-#, fuzzy
-#~ msgid "No such package in this suite on this architecture."
-#~ msgstr "Keine Pakete in dieser Sektion in dieser Suite"
-
-#~ msgid "Other hits"
-#~ msgstr "Andere Treffer"
-
-#~ msgid "Virtual package"
-#~ msgstr "Virtuelles Paket"
-
-#~ msgid "No such package."
-#~ msgstr "Kein passendes Paket gefunden."
-
-#~ msgid "Package not available in this suite."
-#~ msgstr "Paket in dieser Suite nicht verfügbar"
-
-#~ msgid "Package not available"
-#~ msgstr "Paket nicht verfügbar"
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the <strong>experimental</strong> distribution is not self-"
-#~ "contained; missing dependencies are likely found in the <a href=\"%s"
-#~ "\">unstable</a> distribution."
-#~ msgstr ""
-#~ "Beachten Sie, dass die »<span class=\"pred\">experimental</span>«-"
-#~ "Distribution nicht abgeschlossen ist; fehlende Abhängigkeiten werden mit "
-#~ "großer Wahrscheinlichkeit in der »<a href=\"../../unstable/\">unstable</"
-#~ "a>«-Distribution gefunden."
-
-#~ msgid "Versions:"
-#~ msgstr "Versionen:"
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the \"<span class=\"pred\">experimental</span>\" distribution "
-#~ "is not self-contained; missing dependencies are likely found in the \"<a "
-#~ "href=\"/unstable/\">unstable</a>\" distribution."
-#~ msgstr ""
-#~ "Beachten Sie, dass die »<span class=\"pred\">experimental</span>«-"
-#~ "Distribution nicht abgeschlossen ist; fehlende Abhängigkeiten werden mit "
-#~ "großer Wahrscheinlichkeit in der »<a href=\"../../unstable/\">unstable</"
-#~ "a>«-Distribution gefunden."
-
-#~ msgid ""
-#~ "Warning: This package is from the <span class=\"pred\">experimental</"
-#~ "span> distribution. That means it is likely unstable or buggy, and it may "
-#~ "even cause data loss. If you ignore this warning and install it "
-#~ "nevertheless, you do it on your own risk."
-#~ msgstr ""
-#~ "Warnung: Dieses Paket ist aus der <span class=\"pred\">experimental</"
-#~ "span>-Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil "
-#~ "oder fehlerhaft ist und sogar Datenverlust verursachen kann. Wenn Sie "
-#~ "diese Warnung ignorieren und es dennoch installieren, so tun Sie dies auf "
-#~ "eigenes Risiko."
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Benutzer von experimentellen Paketen sollten direkt den Paketbetreuer im "
-#~ "Falle von Problemen kontaktieren."
-
-#~ msgid "Size:"
-#~ msgstr "Größe:"
-
-#~ msgid ""
-#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
-#~ "contains software that is likely unstable or buggy and may even cause "
-#~ "data loss. If you ignore this warning and install it nevertheless, you do "
-#~ "it on your own risk."
-#~ msgstr ""
-#~ "Warnung: Die <span class=\"pred\">experimental</span>-Distribution "
-#~ "enthält Software die höchstwahrscheinlich instabil oder fehlerhaft ist "
-#~ "und sogar Datenverlust verursachen kann. Wenn Sie diese Warnung "
-#~ "ignorieren und es dennoch installieren, so tun Sie dies auf eigenes "
-#~ "Risiko."
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "Die Größe wird in kBytes angegeben."
-
-#~ msgid "Section"
-#~ msgstr "Sektion"
-
-#~ msgid "Priority"
-#~ msgstr "Priorität"
-
-#~ msgid "yes"
-#~ msgstr "ja"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Warnung: Diese Pakete sind nur dazu gedacht, um <a href=\"http://www."
-#~ "debian.org/devel/debian-installer\">debian-installer</a>-Images zu "
-#~ "erzeugen. Installieren Sie sie nicht auf einem normalen Debian-System."
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Keine Pakete mit dieser Priorität in dieser Suite"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Software-Pakete in »%s«, essentielle Pakete"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Keine essentiellen Pakete in dieser Suite"
-
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (c) 1997-2005 SPI;\n"
-#~ "Unter <URL:http://www.debian.org/license> finden Sie die "
-#~ "Lizenzbedingungen.\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
-#~ msgstr ""
-#~ "Debian ist ein eingetragenes Warenzeichen von Software in the Public "
-#~ "Interest, Inc."
-
-#~ msgid "Last Modified: "
-#~ msgstr "Zuletzt geändert: "
-
-#~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
-#~ msgstr ""
-#~ "Zurück zur: <a href=\"%s/\">Debian-Projekt-Homepage</a> || <a href=\"%s/"
-#~ "\">Paketsuche</a>"
-
-#~ msgid "Site map"
-#~ msgstr "Sitemap"
-
-#~ msgid "Development"
-#~ msgstr "Entwicklung"
-
-#~ msgid "Support"
-#~ msgstr "Unterstützung"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Debian&nbsp;besorgen"
-
-#~ msgid "News"
-#~ msgstr "Neues"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "Über&nbsp;Debian"
-
-#~ msgid "Debian Project"
-#~ msgstr "Debian-Projekt"
-
-#~ msgid "Search on:"
-#~ msgstr "Suche in:"
-
-#~ msgid "or"
-#~ msgstr "oder"
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr "<a href=\"%s\">Entwicklerinformationen für %s</a>."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " und %s betreuen dieses Debian-Paket."
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s betreut dieses Debian-Paket."
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Die <a href=\"%s\">Copyright-Datei</a>"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Das <a href=\"%s\">Debian-Changelog</a>"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Suchen Sie <a href=\"%s\">Fehlerberichte</a> zu %s."
-
-#~ msgid "md5sum"
-#~ msgstr "md5sum"
-
-#~ msgid "virtual package"
-#~ msgstr "Virtuelles Paket"
-
-#~ msgid "Download %s\n"
-#~ msgstr "%s herunterladen\n"
-
-#, fuzzy
-#~ msgid "Nothing found"
-#~ msgstr "Nicht gefunden"
-
-#~ msgid "Can't find that package."
-#~ msgstr "Kann das Paket nicht finden."
-
-#, fuzzy
-#~ msgid ""
-#~ "The following packages were added to suite %s%s in the Debian archive "
-#~ "during the last 7 days."
-#~ msgstr ""
-#~ "Die folgenden Pakete wurden dem unstable Debian-Archiv während der "
-#~ "letzten 7 Tage hinzugefügt."
-
-#, fuzzy
-#~ msgid " (section %s)"
-#~ msgstr "Alle Optionen"
-
-#~ msgid "The MD5sum for <tt>%s</tt> is <strong>%s</strong>"
-#~ msgstr "Die MD5-Summe für <tt>%s</tt> ist <strong>%s</strong>"
-
-#~ msgid "<a href=\"%s\">Search for the package</a>"
-#~ msgstr "<a href=\"%s\">Suchen Sie nach dem Paket</a>"
-
-#~ msgid "search for a package"
-#~ msgstr "ein Paket suchen"
-
-#~ msgid "Error"
-#~ msgstr "Fehler"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Software-Pakete in »%s«, Priorität »%s«"
-
-#~ msgid "Software Packages in \"%s\", subsection %s"
-#~ msgstr "Software-Pakete in »%s«, Sektion %s"
-
-#~ msgid "Source Package:"
-#~ msgstr "Quellcode-Paket:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 21:54+0200\n"
+"POT-Creation-Date: 2007-10-20 23:41+0200\n"
 "PO-Revision-Date: 2007-10-13 18:24+0200\n"
 "Last-Translator: Frank Lichtenheld <djpig@debian.org>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: lib/Packages/Dispatcher.pm:188
 #, perl-format
 msgid "%s set more than once in path"
-msgstr ""
+msgstr "%s mehr als einmal im Pfad angegeben"
 
 #: lib/Packages/Dispatcher.pm:223
 #, perl-format
@@ -101,11 +101,12 @@ msgstr ""
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
-msgstr ""
+msgstr "Suchbegriff ungültig oder nicht angegeben"
 
 #: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
+"Suchbegriff zu kurz (Suchbegriffe müssen mindestens zwei Zeichen lang sein)"
 
 #: lib/Packages/DoSearch.pm:163
 msgid "Exact hits"
@@ -127,6 +128,8 @@ msgstr ""
 #: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
+"Der Suchmodus, den Sie ausgewählt haben, unterstützt nicht mehr als einen "
+"Suchbegriff."
 
 #: lib/Packages/DoShow.pm:72
 msgid "No such package."
@@ -141,10 +144,9 @@ msgid " and others"
 msgstr " und andere"
 
 #: lib/Packages/DoShow.pm:427
-#, fuzzy, perl-format
-#| msgid "not"
+#, perl-format
 msgid "not %s"
-msgstr "nicht"
+msgstr "nicht %s"
 
 #: lib/Packages/DoShow.pm:465
 msgid "Package not available"
