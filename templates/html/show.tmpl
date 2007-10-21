@@ -64,13 +64,7 @@
 <h2>[% g('Links for %s', pkg) %]</h2>
 <h3>[% g('Debian Resources:') %]</h3>
 <ul>
-<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">[% g('Bug Reports') %]</a></li>
-
-[% IF src.pkg -%]
-<li><a href="[% pts_url _ src.pkg | uri %]">[% g('Developer Information (PTS)') %]</a></li>
-[% ELSIF is_source %]
-<li><a href="[% pts_url _ pkg | uri %]">[% g('Developer Information (PTS)') %]</a></li>
-[%- END %]
+<li><a href="[% launchpad_url _ (is_source ? pkg : src.pkg) _ '/+bugs' | uri %]">[% g('Bug Reports') %]</a></li>
 
 [% IF files && (!archive or archive == main_archive or archive == 'security') %]
 <li><a href="[% changelogs_url _ files.changelog.path %]">[% g('%s Changelog', organisation) %]</a></li>
@@ -110,9 +104,7 @@
 [%- END %]
 [%- FOREACH maintainers -%]
   [%- '<ul>' IF loop.first -%]
-	<li><a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>)
-	</li>
+	<li><a href="mailto:[% mail %]">[% name | html %]</a></li>
   [%- '</ul>' IF loop.last -%]
 [%- END -%]
 
