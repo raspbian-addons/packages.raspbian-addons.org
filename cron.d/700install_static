@@ -6,4 +6,4 @@ set -e
 
 test -d "$htmldir" || mkdir -p "$htmldir"
 
-cd "$topdir" && ttree -f ./conf/ttreerc
+cd "$topdir" && ttree --eval_perl -f ./conf/ttreerc
