@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-10-21 01:31+0900\n"
+"PO-Revision-Date: 2007-10-21 13:41+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -155,7 +155,6 @@ msgid "Download Page for <kbd>%s</kbd>"
 msgstr "<kbd>%s</kbd> のダウンロードページ"
 
 #: templates/html/download.tmpl:23
-#, fuzzy
 #| msgid ""
 #| "If you are running %s, it is strongly suggested to use a\n"
 #| "package manager like <a href=\"%s\">aptitude</a> or\n"
@@ -172,7 +171,6 @@ msgstr ""
 "す。"
 
 #: templates/html/download.tmpl:25
-#, fuzzy
 #| msgid ""
 #| "You should be able to use any of the listed mirrors by adding a\n"
 #| "line to your <kbd>/etc/apt/sources.list</kbd> like this:"
@@ -192,7 +190,6 @@ msgid "Experimental package"
 msgstr "試験的な (experimental の) パッケージ"
 
 #: templates/html/download.tmpl:38
-#, fuzzy
 #| msgid ""
 #| "Warning: This package is from the <strong>experimental</strong> "
 #| "distribution.\n"
@@ -217,7 +214,6 @@ msgid "debian-installer udeb package"
 msgstr "debian-installer 用の udeb パッケージ"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:151
-#, fuzzy
 #| msgid ""
 #| "Warning: This package is intended for the use in building\n"
 #| "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
@@ -256,7 +252,6 @@ msgstr ""
 "org</tt> のみで配布されています。"
 
 #: templates/html/download.tmpl:83
-#, fuzzy
 #| msgid ""
 #| "If none of the above sites are fast enough for you,\n"
 #| "please see our <a href=\"%s\">complete mirror list</a>."
@@ -268,7 +263,6 @@ msgstr ""
 "完全な一覧を</a>をご覧ください。"
 
 #: templates/html/download.tmpl:91
-#, fuzzy
 #| msgid ""
 #| "Note that %s is not officially included in the %s archive yet,\n"
 #| "but the %s porter group keeps their archive in sync with the official "
@@ -286,7 +280,6 @@ msgstr ""
 "ください。"
 
 #: templates/html/download.tmpl:95
-#, fuzzy
 #| msgid ""
 #| "Note that in some browsers you will need to tell your browser you want "
 #| "the file saved to a file.\n"
@@ -459,7 +452,7 @@ msgstr "ソース"
 #: templates/html/index.tmpl:38 templates/html/show.tmpl:245
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
-msgstr "以下のパッケージによって提供される仮想パッケージ: "
+msgstr "以下のパッケージによって提供される仮想パッケージです: "
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
@@ -541,6 +534,8 @@ msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
+"キーワードに完全に一致する単語のみを検索しました。<a href=\"%s\">単語の部分的"
+"な一致を有効にして</a>検索してみるとよいでしょう。"
 
 #: templates/html/search.tmpl:42
 msgid ""
@@ -603,7 +598,6 @@ msgid "Found <strong>%u</strong> matching packages."
 msgstr "<strong>%u</strong> 個の一致するパッケージが見つかりました。"
 
 #: templates/html/search.tmpl:72
-#, fuzzy
 #| msgid ""
 #| "Note that this only shows the best matches, sorted by relevance.\n"
 #| "If the first few packages don't match what you searched for, try using "
@@ -619,7 +613,6 @@ msgstr ""
 "ワードを追加するか他のキーワードを用いてみてください。"
 
 #: templates/html/search.tmpl:74
-#, fuzzy
 #| msgid ""
 #| "Your search was too wide so we will only display exact matches.\n"
 #| "At least <em>%u</em> results have been omitted and will not be "
@@ -643,14 +636,13 @@ msgid "Package %s"
 msgstr "%s パッケージ"
 
 #: templates/html/search.tmpl:96
-#, fuzzy
 #| msgid "provided by:"
 msgid "also provided by:"
-msgstr "提供:"
+msgstr "また、以下のパッケージによって提供されてもいます:"
 
 #: templates/html/search.tmpl:96
 msgid "provided by:"
-msgstr "提供:"
+msgstr "以下のパッケージによって提供されています:"
 
 #: templates/html/search.tmpl:105
 msgid "Source Package %s"
@@ -735,7 +727,6 @@ msgstr "<strong>%u 個の結果</strong>が見つかりました。"
 
 # FIXME: "... only ... only ..." is OK?
 #: templates/html/search_contents.tmpl:88
-#, fuzzy
 #| msgid ""
 #| "Note: Your search was too wide so we will only display only the first "
 #| "about 100 matches.\n"
@@ -874,7 +865,6 @@ msgid "Similar packages:"
 msgstr "類似のパッケージ:"
 
 #: templates/html/show.tmpl:146
-#, fuzzy
 #| msgid ""
 #| "Warning: This package is from the <strong>experimental</strong> "
 #| "distribution.\n"
@@ -922,33 +912,32 @@ msgstr "その他の %s 関連パッケージ"
 
 #: templates/html/show.tmpl:218
 msgid "legend"
-msgstr ""
+msgstr "凡例"
 
 #: templates/html/show.tmpl:220
 msgid "build-depends"
-msgstr ""
+msgstr "構築依存"
 
 #: templates/html/show.tmpl:221
 msgid "build-depends-indep"
-msgstr ""
+msgstr "構築依存 (アーキテクチャ非依存)"
 
 #: templates/html/show.tmpl:223
 msgid "depends"
-msgstr ""
+msgstr "依存"
 
 #: templates/html/show.tmpl:224
 msgid "recommends"
-msgstr ""
+msgstr "推奨"
 
 #: templates/html/show.tmpl:225
 msgid "suggests"
-msgstr ""
+msgstr "提案"
 
 #: templates/html/show.tmpl:243
-#, fuzzy
 #| msgid "virtual package provided by"
 msgid "also a virtual package provided by"
-msgstr "以下のパッケージによって提供される仮想パッケージ: "
+msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
 #: templates/html/show.tmpl:250
 msgid "%u providing packages"
@@ -1069,7 +1058,6 @@ msgid "New %s Packages"
 msgstr "新規 %s パッケージ"
 
 #: templates/rss/newpkg.tmpl:20
-#, fuzzy
 #| msgid ""
 #| "The following packages were added to suite <em>%s</em> (section %s) in "
 #| "the %s archive during the last 7 days."
@@ -1077,11 +1065,10 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"以下のパッケージは、%3$s アーカイブの <em>%1$s</em> スイート (%2$s セクショ"
-"ン) に最近 7 日間に追加されたものです。"
+"以下のパッケージは、%3$s アーカイブの %1$s スイート (%2$s セクション) に最近 "
+"7 日間に追加されたものです。"
 
 #: templates/rss/newpkg.tmpl:23
-#, fuzzy
 #| msgid ""
 #| "The following packages were added to suite <em>%s</em> in the %s archive "
 #| "during the last 7 days."
@@ -1089,8 +1076,8 @@ msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"以下のパッケージは、%2$s アーカイブの <em>%1$s</em> スイートに最近 7 日間に追"
-"加されたものです。"
+"以下のパッケージは、%2$s アーカイブの %1$s スイートに最近 7 日間に追加された"
+"ものです。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"
