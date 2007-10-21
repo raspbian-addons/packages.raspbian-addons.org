@@ -109,6 +109,44 @@ dl.gloss dt {
 	margin: 0px;
 }
 
+/* classes for cards */
+.cardleft {
+	margin: 0 0 1em;
+	float: left;
+	width: 49%;
+}
+.cardright {
+	margin-left: 50%
+	/*margin: 0 1% 2em 50%; */
+}
+.card {
+	clear: left;
+	margin: 0 0 1em;
+}
+
+.cardleft h2, .cardright h2, .card h2 {
+	font-size: 120%;
+	background: #000000;
+	color: #FFD400;
+	display: inline;
+	padding: 0.2em 0.4em;
+	margin: 0 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: 0.2em;
+}
+
+.cardleft dl dd, .cardright dl dd , .card dl dd {
+	padding-bottom: 0.5em;
+}
+
+.cardleft div, .cardright div, .card div {
+	border: 2px solid #000000;
+	background: #FFFFFF;
+	padding: 0.5em;
+	margin: 2px 10px;
+	/* the next two lines xpand the div to heigth of left inner div */
+	overflow: auto;
+}
 /* colors for packages, warnings and news in ports */
 .warning, dt.new, .no {
 	color: red; /* FF0000 */
