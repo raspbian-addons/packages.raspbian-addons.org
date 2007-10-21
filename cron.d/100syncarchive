@@ -80,18 +80,18 @@ do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}
     (cd security/${dist} &&
-	wget -q -N ${security_ftpsite}/dists/${dist}/updates/Release &&
-	wget -q -N ${security_ftpsite}/dists/${dist}/updates/Release.gpg )
+	wget -q -N ${security_ftpsite}/dists/${dist}-security/Release &&
+	wget -q -N ${security_ftpsite}/dists/${dist}-security/Release.gpg )
         
     foo=\$arch_${dist//-/_}
     for arch in `eval echo $foo`
     do
       for part in ${parts}
       do
-	echo retrieve Packages $dist/$part/security/$arch
+	echo retrieve Packages $dist-security/$part/$arch
 	test -d security/${dist}/${part}/binary-${arch} || mkdir -p security/${dist}/${part}/binary-${arch}
 	(cd  security/${dist}/${part}/binary-${arch} &&
-	    wget -q -N ${security_ftpsite}/dists/${dist}/updates/${part}/binary-${arch}/Packages.gz)
+	    wget -q -N ${security_ftpsite}/dists/${dist}-security/${part}/binary-${arch}/Packages.gz)
       done
     done
     for part in ${parts}
@@ -99,6 +99,6 @@ do
         echo retrieve Sources $dist/$part/security
         test -d security/${dist}/${part}/source || mkdir -p security/${dist}/${part}/source
         (cd security/${dist}/${part}/source &&
-            wget -q -N ${security_ftpsite}/dists/${dist}/updates/${part}/source/Sources.gz)
+            wget -q -N ${security_ftpsite}/dists/${dist}-security/${part}/source/Sources.gz)
     done
 done
