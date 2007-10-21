@@ -30,7 +30,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 <p>[% g('Replacing <em>%s</em> with the mirror in question.', mirrors.$archive.europa.0) %]
 [% ELSE %]
 <pre>
-deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% section IF section != main_section %]
+deb [% 'http://' _ security_mirror_url %] [% suite _ security_suite_suffix %] main [% section IF section != main_section %]
 </pre>
 [%- END %]
 [% IF suite == "experimental" %]
@@ -73,8 +73,9 @@ deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% 
   </div>
 [% ELSE %]
 <p>[% g('You can download the requested file from the <tt>%s</tt> subdirectory at:', filename.directory) %]</p>
-<ul><li><a href="http://security.debian.org/debian-security/[% filename.full %]">security.debian.org/debian-security</a></li></ul>
-<p>[% g('Debian security updates are currently officially distributed only via <tt>security.debian.org</tt>.') %]</p>
+<ul><li><a href="[% 'http://' _ security_mirror_url _ filename.full %]">[% security_mirror_url %]</a></li></ul>
+<p>[% g('%s security updates are officially distributed only via <tt>%s</tt>.',
+	organisation, security_mirror) %]</p>
 [% END %]
 
 <div id="pdownloadnotes">
