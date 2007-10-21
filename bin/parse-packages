@@ -303,7 +303,7 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 		}
 	    }
 	    if ($tags) {
-		foreach my $t (split /, /, $tags) {
+		foreach my $t (split m/, /, $tags) {
 		    if ($doc->add_term($t)) {
 			warn "can't add term $t: $!\n";
 		    }
