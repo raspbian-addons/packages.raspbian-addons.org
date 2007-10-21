@@ -232,7 +232,7 @@
     [% '<li>' UNLESS is_old_pkgs %]
     [% FOREACH alternatives %]
       [% '<dl>' IF loop.first %]
-      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %]or [% END %]
+      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %][% g('or ') %][% END %]
 	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
