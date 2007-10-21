@@ -176,14 +176,16 @@
     <div id="ptags"><p>
     <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">[% g('Tags') %]</a>:
   [%- END %]
-  [% facet = tag.0;
-     facet_name = debtags_voc.$facet;
-     tag_id = "$tag.0::$tag.1";
-     tag_name = debtags_voc.$tag_id;
+  [% facet = tag.0; lfacet = "$facet-$lang"; 
+     facet_name = debtags_voc.$lfacet;
+     SET facet_name = debtags_voc.$facet UNLESS facet_name;
+     tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$lang";
+     tag_name = debtags_voc.$ltag;
+     SET tag_name = debtags_voc.$tag_id UNLESS tag_name;
    %]
   [% facet_name _ ': ' UNLESS old_facet && facet == old_facet %]
   [% IF tag_name %]
-   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name %]</a>[% ', ' UNLESS loop.last %]
+   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name | html %]</a>[% ', ' UNLESS loop.last %]
   [% ELSE %]
   [% tag_id %][% ', ' UNLESS loop.last %]
   [% END %]

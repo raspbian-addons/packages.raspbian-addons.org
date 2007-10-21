@@ -44,7 +44,7 @@ templates/rfc822/search.tmpl
 templates/rss/newpkg.tmpl
 templates/txt/index.tmpl
 "
-podomains="pdo templates sections langs"
+podomains="pdo templates sections langs debtags"
 
 # Update pot
 #
@@ -54,9 +54,12 @@ xgettext_opts="--language=Perl --keyword=N_ --keyword=_g --foreign-user --add-co
 echo gettextfiles=$gettextfiles
 echo templatefiles=$templatefiles
 xgettext $xgettext_opts -d pdo -o ${podir}/pdo.pot.new ${gettextfiles}
-$topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot.new
 xgettext $xgettext_opts -d sections -o ${podir}/sections.pot.new ${libdir}/Packages/Sections.pm
 xgettext $xgettext_opts -d langs -o ${podir}/langs.pot.new ${libdir}/Packages/I18N/LanguageNames.pm
+$topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot.new
+if [ -f files/debtags/vocabulary ]; then
+    $topdir/bin/debtags-xgettext files/debtags/vocabulary >${podir}/debtags.pot.new
+fi
 
 cd $podir
 
@@ -74,7 +77,7 @@ done
 for domain in ${podomains}
 do
   perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot.new
-  if diff -I"POT-Creation-Date" -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
+  if [ ! -f ${domain}.pot.new ] || diff -I"POT-Creation-Date" -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
   then
       echo "${domain}.pot unchanged"
       rm ${domain}.pot.new
