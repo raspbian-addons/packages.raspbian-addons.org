@@ -1,182 +1,115 @@
 [%
 
-# TODO: find a way to get the U.S. mirror list from a more authoritive
-# location automatically. might not be overly smart to automatize it
-# completely, since I hand pick sites that are up-to-date, fast, and
-# have HTTP on a reasonably short URL
-#   -- Joy
-
-# hint:
-# grep-dctrl -F Site,Alias -e '(udel|bigfoot|kernel|crosslink|internap|cerias|lcs.mit|progeny)' Mirrors.masterlist | timestamps/archive_mirror_check.py
- 
 mirrors = {
 	us => {
-		mirror_list => 'http://www.debian.org/mirror/list',
-		north_america => [
-#only amd64,i386			"ftp.us.debian.org/debian",
-			"http.us.debian.org/debian",
-#only amd64,i386			"ftp.debian.org/debian",
-			"ftp.egr.msu.edu/debian",
-			"mirrors.kernel.org/debian",
-#not amd64			"ftp-mirror.internap.com/pub/debian",
-#only amd64,i386			"ftp.cerias.purdue.edu/pub/os/debian",
-			"debian.lcs.mit.edu/debian",
-			"debian.oregonstate.edu/debian",
+		mirror_list => 'https://wiki.ubuntu.com/Mirrors',
+		north_america = [
+	"mirrors.kernel.org/ubuntu",
+	"ftp.cs.umn.edu/pub/ubuntu",
+	"lug.mtu.edu/ubuntu",
+	"mirror.clarkson.edu/pub/distributions/ubuntu",
+	"ubuntu.mirrors.tds.net/ubuntu",
+	"www.opensourcemirrors.org/ubuntu",
+	"ftp.ale.org/pub/mirrors/ubuntu",
+	"ubuntu.secs.oakland.edu",
+	"mirror.mcs.anl.gov/pub/ubuntu",
+	"mirrors.cat.pdx.edu/ubuntu",
+	"ubuntu.cs.utah.edu/ubuntu",
+	"ftp.ussg.iu.edu/linux/ubuntu",
+	"mirrors.xmission.com/ubuntu",
+	"ftp.osuosl.org/pub/ubuntu",
+	"mirrors.cs.wmich.edu/ubuntu",
+	"mirror.cpsc.ucalgary.ca/mirror/ubuntu.com",
+	"mirror.arcticnetwork.ca/pub/ubuntu/packages",
+	"gulus.USherbrooke.ca/pub/distro/ubuntu",
+				],
+		europa = [
+	"fr.archive.ubuntu.com/ubuntu",
+	"ge.archive.ubuntu.com/ubuntu",
+	"nl.archive.ubuntu.com/ubuntu",
+	"no.archive.ubuntu.com/ubuntu",
+	"yu.archive.ubuntu.com/ubuntu",
+	"ubuntu.inode.at/ubuntu",
+	"ubuntu.uni-klu.ac.at/ubuntu",
+	"gd.tuwien.ac.at/opsys/linux/ubuntu/archive",
+	"ftp.belnet.be/pub/mirror/ubuntu.com",
+	"ubuntu.mirrors.skynet.be/pub/ubuntu.com",
+	"ubuntu.ipacct.com/ubuntu",
+	"ubuntu-hr.org/ubuntu",
+	"archive.ubuntu.cz/ubuntu",
+	"mirrors.dk.telia.net/ubuntu",
+	"mirrors.dotsrc.org/ubuntu",
+	"klid.dk/homeftp/ubuntu",
+	"ftp.estpak.ee/pub/ubuntu",
+	"www.nic.funet.fi/pub/mirrors/archive.ubuntu.com",
+	"mir1.ovh.net/ubuntu",
+	"ftp.u-picardie.fr/pub/ubuntu/ubuntu",
+	"ftp.oleane.net/pub/ubuntu",
+	"debian.charite.de/ubuntu",
+	"ftp.inf.tu-dresden.de/os/linux/dists/ubuntu",
+	"www.artfiles.org/ubuntu.com/archive",
+	"ftp.rz.tu-bs.de/pub/mirror/ubuntu-packages",
+	"ftp.join.uni-muenster.de/pub/mirrors/ftp.ubuntu.com/ubuntu",
+	"www.ftp.uni-erlangen.de/pub/mirrors/ubuntu",
+	"ftp.ntua.gr/pub/linux/ubuntu",
+	"ftp.kfki.hu/linux/ubuntu",
+	"ubuntu.odg.cc",
+	"ubuntu.lhi.is",
+	"ftp.esat.net/mirrors/archive.ubuntu.com",
+	"ftp.heanet.ie/pub/ubuntu",
+	"ftp.linux.it/ubuntu",
+	"na.mirror.garr.it/mirrors/ubuntu-archive",
+	"mirrors.linux.edu.lv/ftp.ubuntu.com",
+	"ftp.litnet.lt/pub/ubuntu",
+	"ubuntu.synssans.nl",
+	"ubuntulinux.mainseek.com/ubuntu",
+	"ubuntu.task.gda.pl/ubuntu",
+	"darkstar.ist.utl.pt/ubuntu/archive",
+	"ubuntu.dcc.fc.up.pt",
+	"ftp.iasi.roedu.net/mirrors/ubuntulinux.org/ubuntu",
+	"ftp.gui.uva.es/sites/ubuntu.com/ubuntu",
+	"ftp.acc.umu.se/mirror/ubuntu",
+	"mirror.switch.ch/ftp/mirror/ubuntu",
+	"www.mirrorservice.org/sites/archive.ubuntu.com/ubuntu",
+	"www.mirror.ac.uk/mirror/archive.ubuntu.com/ubuntu",
+	"ubuntu.blueyonder.co.uk/archive",
+	"ubuntu.snet.uz/ubuntu",
+			],
+	south_americas = [
+	"cl.archive.ubuntu.com/ubuntu",
+	"espelhos.edugraf.ufsc.br/ubuntu",
+	"ubuntu.interlegis.gov.br/archive",
+	"ubuntu.c3sl.ufpr.br/ubuntu",
+	"ftp.ucr.ac.cr/ubuntu",
+	"www.computacion.uni.edu.ni/iso/ubuntu",
+			],
+	australia = [
+	"ftp.iinet.net.au/pub/ubuntu",
+	"mirror.optus.net/ubuntu",
+	"mirror.isp.net.au/ftp/pub/ubuntu",
+	"www.planetmirror.com/pub/ubuntu",
+	"ftp.filearena.net/pub/ubuntu",
+	"mirror.pacific.net.au/linux/ubuntu",
 		],
-		europa => [
-			"ftp.de.debian.org/debian",
-			"ftp.at.debian.org/debian",
-#no amd64			"ftp.bg.debian.org/debian",
-			"ftp.ch.debian.org/debian",
-			"ftp.cz.debian.org/debian",
-			"ftp.dk.debian.org/debian",
-			"ftp.ee.debian.org/debian",
-			"ftp.es.debian.org/debian",
-			"ftp.fi.debian.org/debian",
-			"ftp.fr.debian.org/debian",
-			"ftp.hr.debian.org/debian",
-			"ftp.hu.debian.org/debian",
-			"ftp.ie.debian.org/debian",
-			"ftp.is.debian.org/debian",
-			"ftp.it.debian.org/debian",
-			"ftp.nl.debian.org/debian",
-			"ftp.no.debian.org/debian",
-			"ftp.pl.debian.org/debian",
-#only amd64,i386			"ftp.ru.debian.org/debian",
-			"ftp.se.debian.org/debian",
-#only some arches			"ftp.si.debian.org/debian",
-			"ftp.tr.debian.org/debian",
-			"ftp.uk.debian.org/debian",
+	asia = [
+	"archive.ubuntu.org.cn/ubuntu",
+	"debian.cn99.com/ubuntu",
+	"mirror.lupaworld.com/ubuntu",
+	"komo.vlsm.org/ubuntu",
+	"kambing.vlsm.org/ubuntu",
+	"ubuntu.mithril-linux.org/archives",
+	"ubuntu.csie.ntu.edu.tw/ubuntu",
+	"mirror.letsopen.com/os/ubuntu",
+	"ftp.kaist.ac.kr/pub/ubuntu",
+	"apt.ubuntu.org.tw/ubuntu",
+	"apt.nc.hcc.edu.tw/pub/ubuntu",
+	"mirror.in.th/ubuntu",
 		],
-		south_america => [
-			"ftp.br.debian.org/debian",
-			"ftp.cl.debian.org/debian",
-		],
-		australia => [
-			"ftp.au.debian.org/debian",
-			"ftp.wa.au.debian.org/debian",
-			"ftp.nz.debian.org/debian",
-		],
-		asia => [
-			"ftp.jp.debian.org/debian",
-			"ftp2.jp.debian.org/debian",
-			"ftp.kr.debian.org/debian",
-#no amd64			"ftp.hk.debian.org/debian",
-			"ftp.tw.debian.org/debian",
-#only amd64,i386			"linux.csie.nctu.edu.tw/debian",
-			"debian.linux.org.tw/debian",
-			"linux.cdpa.nsysu.edu.tw/debian",
-		],
-	},
-
-	volatile => {
-		mirror_list => 'http://www.debian.org/devel/debian-volatile/volatile-mirrors',
-		europa => [
-			"volatile.debian.net/debian-volatile",
-			"ftp2.de.debian.org/debian-volatile",
-			"ftp.sk.debian.org/debian-volatile",
-		],
-		north_america => [
-			"debian.domainmail.org/debian-volatile",
-		],
-		south_america => [
-			"sft.if.usp.br/debian-volatile",
-		],
-		asia => [
-			"ftp2.jp.debian.org/debian-volatile",
-		],
-		australia => [
-			"ftp.nz.debian.org/debian-volatile",
-		],
-	},
-
-	backports => {
-		mirror_list => 'http://www.backports.org/debian/README.mirrors.html',
-		europa => [
-			"www.backports.org/debian",
-			"debian.sil.at/backports.org/",
-		    	"backports.debian.or.at/backports.org",
-		       	"mirror.realroute.net/backports.org",
-			"backports.cisbg.com",
-			"backports.linuxdediziert.de/backports.org",
-			"debian.netcologne.de/debian-backports",
-			"ftp.de.debian.org/backports.org",
-			"mirror.buildd.net/backports.org",
-			"ftp.estpak.ee/backports.org",
-			"debian.acantho.net/backports.org",
-			"backports.essentkabel.com/backports.org",
-			"backports.sipo.nl",
-			"ftp.tuke.sk",
-		],
-		asia => [
-			"backports.mithril-linux.org",
-		],
-		australia => [
-			"mirror.linux.org.au/backports.org",
-			"mirror.pacific.net.au/linux/debian-backports",
-		],
-	},
-
-	amd64 => {
-		mirror_list => 'http://amd64.debian.net/README.mirrors.html',
-		unofficial_port => {
-			amd64 => {
-				url_name => 'amd64',
-				name => 'AMD64',
-			}
-		},
-		europa => [
-			"amd64.debian.net/debian",
-			"ftp.de.debian.org/debian-amd64/debian",
-			"ftp.es.debian.org/debian-amd64/debian",
-			"ftp.nl.debian.org/debian-amd64/debian",
-			"ftp.sk.debian.org/debian-amd64/debian",
-			"bytekeeper.as28747.net/debian-amd64/debian",
-			"mirror.switch.ch/debian-amd64/debian",
-		],
-		asia => [
-			"ftp.jp.debian.org/debian-amd64/debian/",
-			"hanzubon.jp/debian-amd64/debian",
-		],
-		north_america => [
-			"mirror.espri.arizona.edu/debian-amd64/debian",
-			"debian.csail.mit.edu/debian-amd64/debian",
-		],
-		australia => [
-			"public.planetmirror.com/pub/debian-amd64/debian",
-		],
-	},
-
-	gnuab => {
-		mirror_list => 'http://wiki.debian.org/Debian_GNU/kFreeBSD_Mirrors',
-		unofficial_port => {
-			'kfreebsd-amd64' => {
-				url_name => 'kfreebsd-gnu',
-				name => 'GNU/kFreeBSD',
-			},
-			'kfreebsd-i386' => {
-				url_name => 'kfreebsd-gnu',
-				name => 'GNU/kFreeBSD',
-			},
-			armel => {
-				url => 'http://www.debonaras.org/',
-				name => 'armel',
-			},
-		},
-		north_america => [
-			"www.gtlib.gatech.edu/pub/gnuab/debian",
-		],
-		europa => [
-			# master site, aka ftp.gnuab.org
-			"kfreebsd-gnu.debian.net/debian",
-			"ftp.easynet.be/ftp/gnuab/debian",
-			"ftp.de.debian.org/debian-kfreebsd",
-			"ftp.ch.debian.org/debian-kfreebsd",
+	africa = [
+	"za.archive.ubuntu.com/ubuntu",
 		],
 	},
 }
-
-ports_url = 'http://www.debian.org/ports/'
 
 continents = {
 		north_america => g('North America'),

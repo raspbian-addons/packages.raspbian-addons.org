@@ -30,7 +30,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 <p>[% g('Replacing <em>%s</em> with the mirror in question.', mirrors.$archive.europa.0) %]
 [% ELSE %]
 <pre>
-deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% section IF section != main_section %]
+deb http://security.ubuntu.com/ubuntu [% suite _ "-security" %] main [% section IF section != main_section %]
 </pre>
 [%- END %]
 [% IF suite == "experimental" %]
@@ -49,7 +49,7 @@ deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% 
   <p>[% g('You can download the requested file from the <tt>%s</tt> subdirectory at any of these sites:',
 	filename.directory) %]</p>
   <div class="cardleft">
-  [% FOREACH continent IN [ 'north_america', 'south_america', 'asia', 'africa' ] %]
+  [% FOREACH continent IN [ 'north_america', 'south_america', 'asia', 'africa', 'australia' ] %]
     [% IF a.$continent %]
 	<p><em>[% continents.$continent %]</em></p>
 	<ul>
@@ -60,7 +60,7 @@ deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% 
     [% END %]
   [% END %]
   </div><div class="cardright">
-  [% FOREACH continent IN [ 'europa','australia' ] %]
+  [% FOREACH continent IN [ 'europa' ] %]
     [% IF a.$continent %]
 	<p><em>[% continents.$continent %]</em></p>
 	<ul>
@@ -73,8 +73,8 @@ deb http://security.debian.org/debian-security [% suite _ "/updates" %] main [% 
   </div>
 [% ELSE %]
 <p>[% g('You can download the requested file from the <tt>%s</tt> subdirectory at:', filename.directory) %]</p>
-<ul><li><a href="http://security.debian.org/debian-security/[% filename.full %]">security.debian.org/debian-security</a></li></ul>
-<p>[% g('Debian security updates are currently officially distributed only via <tt>security.debian.org</tt>.') %]</p>
+<ul><li><a href="http://security.ubuntu.com/ubuntu/[% filename.full %]">security.ubuntu.com/ubuntu</a></li></ul>
+<p>[% g('Ubuntu security updates are currently officially distributed only via <tt>security.ubuntu.com</tt>.') %]</p>
 [% END %]
 
 <div id="pdownloadnotes">
