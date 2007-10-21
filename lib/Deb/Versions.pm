@@ -155,7 +155,7 @@ sub _lcmp {
 our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
 		       etch etch-m68k testing testing-proposed-updates lenny
 		       sid unstable experimental
-		       warty hoary breezy breezy dapper edgy feisty gutsy );
+		       warty hoary breezy breezy dapper edgy feisty gutsy hardy );
 our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
 our @PRIORITY_SORT = qw( required important standard optional extra );
 my $i = 1000;
