@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-20 21:54+0200\n"
-"PO-Revision-Date: 2007-10-21 12:15+0900\n"
+"PO-Revision-Date: 2007-10-22 00:13+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -29,17 +29,19 @@ msgstr "優先度"
 #. Done
 #: lib/Packages/Dispatcher.pm:162
 msgid "search doesn't take any more path elements"
-msgstr ""
+msgstr "search の場合は後ろにパスを追加できません"
 
 #: lib/Packages/Dispatcher.pm:165
 msgid ""
 "We're supposed to display the homepage here, instead of getting dispatch.pl"
 msgstr ""
+"ここには、dispatch.pl を取得するのではなくホームページを表示することになって"
+"います。"
 
 #: lib/Packages/Dispatcher.pm:188
 #, perl-format
 msgid "%s set more than once in path"
-msgstr ""
+msgstr "%s がパスに複数入っています"
 
 #: lib/Packages/Dispatcher.pm:223
 #, perl-format
@@ -48,7 +50,7 @@ msgstr "2 つ以上のパッケージが指定されています (%s)"
 
 #: lib/Packages/Dispatcher.pm:321
 msgid "requested format not available for this document"
-msgstr ""
+msgstr "この文書は要求された形式では利用できません"
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
@@ -68,12 +70,12 @@ msgstr "アーキテクチャが不正か、または指定されていません
 #: lib/Packages/DoDownload.pm:36
 #, perl-format
 msgid "more than one suite specified for download (%s)"
-msgstr ""
+msgstr "download に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoDownload.pm:39
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
-msgstr ""
+msgstr "download に複数のアーキテクチャが指定されています (%s)"
 
 #: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
@@ -86,22 +88,22 @@ msgstr "スイートとアーキテクチャの組み合わせが不正です"
 #: lib/Packages/DoIndex.pm:34
 #, perl-format
 msgid "more than one suite specified for show_static (%s)"
-msgstr ""
+msgstr "show_static に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoIndex.pm:37
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
-msgstr ""
+msgstr "show_static に複数のサブセクションが指定されています (%s)"
 
 #: lib/Packages/DoIndex.pm:73
 #, perl-format
 msgid "couldn't read index file %s: %s"
-msgstr ""
+msgstr "索引ファイル %s を読み込めませんでした: %s"
 
 #: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
 #, perl-format
 msgid "more than one suite specified for show (%s)"
-msgstr ""
+msgstr "show に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
@@ -126,7 +128,7 @@ msgstr "仮想パッケージ"
 #: lib/Packages/DoSearchContents.pm:39
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
-msgstr ""
+msgstr "内容の検索 (contents search) に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
