@@ -88,7 +88,7 @@ sub do_search {
 	unless ($opts->{source}) {
 	    foreach (@results) {
 		my ($pkg_t, $archive, $suite, $arch, $section, $subsection,
-		    $priority, $version, $desc) = @$_;
+		    $priority, $version, $desc_md5, $desc) = @$_;
 
 		my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
 		if ($arch ne 'virtual') {
@@ -97,7 +97,7 @@ sub do_search {
 		    $sect{$pkg}{$suite}{$version} = $section;
 		    $archives{$pkg}{$suite}{$version} ||= $archive;
 
-		    $desc{$pkg}{$suite}{$version} = $desc;
+		    $desc{$pkg}{$suite}{$version} = [ $desc_md5, $desc ];
 		} else {
 		    $provided_by{$pkg}{$suite} = [ split /\s+/, $desc ];
 		}
@@ -197,9 +197,22 @@ sub process_package {
 	    my @versions = version_sort keys %{$pkgs->{$suite}};
 	    $suite{section} = $sect->{$suite}{$versions[0]};
 	    $suite{subsection} = $subsect->{$suite}{$versions[0]};
-	    $suite{desc} = $desc->{$suite}{$versions[0]};
+	    my $desc_md5 = $desc->{$suite}{$versions[0]}[0];
+	    $suite{desc} = $desc->{$suite}{$versions[0]}[1];
 	    $suite{versions} = [];
-		
+
+	    my $trans_desc = $desctrans{$desc_md5};
+	    my %sdescs;
+	    if ($trans_desc) {
+		my %trans_desc = split /\000|\001/, $trans_desc;
+		while (my ($l, $d) = each %trans_desc) {
+		    $d =~ s/\n.*//os;
+
+		    $sdescs{$l} = $d;
+		}
+		$suite{trans_desc} = \%sdescs;
+	    }
+
 	    foreach my $v (@versions) {
 		my %version;
 		$version{version} = $v;
