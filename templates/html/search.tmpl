@@ -94,7 +94,7 @@
     [% END %]
     [% IF s.providers %]
 	<br>[% IF s.versions.size > 0; g('also provided by:'); ELSE; g('provided by:'); END %]
-	[% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
+	[% FOREACH provider IN s.providers.sort %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
     [% END %]
     </li>
   [% END %]
@@ -110,7 +110,7 @@
     <li><a class="resultlink" href="[% make_url(pkg,'','source','source','suite',origin,'section','','arch','') %]">[% origin %]</a> ([% subsection %]): [% version %]
       [%- IF section %] [<strong class="pmarker">[% section %]</strong>][% END %]
       [%- IF real_archive %] [<strong class="pmarker">[% real_archive %]</strong>][% END %]
-    <br>[% g('Binary packages:') %] <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+    <br>[% g('Binary packages:') %] <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries.sort %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF binaries.size > 10 %]
 	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% g('%u binary packages', binaries.size) %])</script>
 	[% END %]
