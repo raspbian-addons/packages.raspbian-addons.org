@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 21:54+0200\n"
+"POT-Creation-Date: 2007-10-21 21:31+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,9 +99,14 @@ msgstr ""
 msgid "couldn't read index file %s: %s"
 msgstr ""
 
-#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
+#: lib/Packages/DoNewPkg.pm:25
 #, perl-format
-msgid "more than one suite specified for show (%s)"
+msgid "more than one suite specified for newpkg (%s)"
+msgstr ""
+
+#: lib/Packages/DoNewPkg.pm:42
+#, perl-format
+msgid "no newpkg information found for suite %s"
 msgstr ""
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
@@ -131,6 +136,11 @@ msgstr ""
 
 #: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
+msgstr ""
+
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
 msgstr ""
 
 #: lib/Packages/DoShow.pm:72

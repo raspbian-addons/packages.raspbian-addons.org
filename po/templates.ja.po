@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:37
+#: templates/config.tmpl:40
 msgid "Debian Web Mailinglist"
 msgstr "Debian ウェブメーリングリスト"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:45
 msgid "%s Webmaster"
 msgstr "%s ウェブマスター"
 
-#: templates/config.tmpl:45
+#: templates/config.tmpl:48
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1$s は %3$s の<a href=\"%2$s\">登録商標</a>です。"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:53
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://"
 "packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
@@ -155,11 +155,6 @@ msgid "Download Page for <kbd>%s</kbd>"
 msgstr "<kbd>%s</kbd> のダウンロードページ"
 
 #: templates/html/download.tmpl:23
-#| msgid ""
-#| "If you are running %s, it is strongly suggested to use a\n"
-#| "package manager like <a href=\"%s\">aptitude</a> or\n"
-#| "<a href=\"%s\">synaptic</a> to download and install\n"
-#| "packages, instead of doing so manually via this website."
 msgid ""
 "If you are running %s, it is strongly suggested to use a package manager "
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
@@ -171,9 +166,6 @@ msgstr ""
 "す。"
 
 #: templates/html/download.tmpl:25
-#| msgid ""
-#| "You should be able to use any of the listed mirrors by adding a\n"
-#| "line to your <kbd>/etc/apt/sources.list</kbd> like this:"
 msgid ""
 "You should be able to use any of the listed mirrors by adding a line to your "
 "<kbd>/etc/apt/sources.list</kbd> like this:"
@@ -190,14 +182,6 @@ msgid "Experimental package"
 msgstr "試験的な (experimental の) パッケージ"
 
 #: templates/html/download.tmpl:38
-#| msgid ""
-#| "Warning: This package is from the <strong>experimental</strong> "
-#| "distribution.\n"
-#| "That means it is likely unstable or buggy, and it may even cause data "
-#| "loss.\n"
-#| "Please be sure to consult the changelog and other possible documentation "
-#| "before\n"
-#| "using it."
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -214,11 +198,6 @@ msgid "debian-installer udeb package"
 msgstr "debian-installer 用の udeb パッケージ"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:151
-#| msgid ""
-#| "Warning: This package is intended for the use in building\n"
-#| "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
-#| "installer</a> images only.\n"
-#| "Do not install it on a normal %s system."
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -244,17 +223,16 @@ msgstr ""
 "可能です。"
 
 #: templates/html/download.tmpl:77
-msgid ""
-"Debian security updates are currently officially distributed only via "
-"<tt>security.debian.org</tt>."
+#, fuzzy
+#| msgid ""
+#| "Debian security updates are currently officially distributed only via "
+#| "<tt>security.debian.org</tt>."
+msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "Debian セキュリティアップデートは、現在のところ公式には <tt>security.debian."
 "org</tt> のみで配布されています。"
 
-#: templates/html/download.tmpl:83
-#| msgid ""
-#| "If none of the above sites are fast enough for you,\n"
-#| "please see our <a href=\"%s\">complete mirror list</a>."
+#: templates/html/download.tmpl:84
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -262,12 +240,7 @@ msgstr ""
 "上記のサイトのいずれでも不十分な速度しか出ない場合は、<a href=\"%s\">ミラーの"
 "完全な一覧を</a>をご覧ください。"
 
-#: templates/html/download.tmpl:91
-#| msgid ""
-#| "Note that %s is not officially included in the %s archive yet,\n"
-#| "but the %s porter group keeps their archive in sync with the official "
-#| "archive as close as possible.\n"
-#| "See the <a href=\"%s\">%s ports page</a> for current information."
+#: templates/html/download.tmpl:92
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -279,12 +252,7 @@ msgstr ""
 "ているのです。現在の情報については <a href=\"%s\">%s 移植版のページ</a>をご覧"
 "ください。"
 
-#: templates/html/download.tmpl:95
-#| msgid ""
-#| "Note that in some browsers you will need to tell your browser you want "
-#| "the file saved to a file.\n"
-#| "For example, in Firefox or Mozilla, you should hold the Shift key when "
-#| "you click on the URL."
+#: templates/html/download.tmpl:96
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -294,31 +262,31 @@ msgstr ""
 "示する必要があります。例えば、Firefox や Mozilla では、Shift キーを押しなが"
 "ら URL をクリックしてください。"
 
-#: templates/html/download.tmpl:99
+#: templates/html/download.tmpl:100
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "<kbd>%s</kbd> に関するさらに詳しい情報:"
 
-#: templates/html/download.tmpl:101
+#: templates/html/download.tmpl:102
 msgid "%s Byte (%s %s)"
 msgstr "%s Byte (%s %s)"
 
-#: templates/html/download.tmpl:101
+#: templates/html/download.tmpl:102
 msgid "Exact Size"
 msgstr "正確なサイズ"
 
-#: templates/html/download.tmpl:102 templates/html/show.tmpl:318
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:320
 msgid "MD5 checksum"
 msgstr "MD5 チェックサム"
 
-#: templates/html/download.tmpl:103 templates/html/download.tmpl:104
+#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
 msgid "Not Available"
 msgstr "入手不能"
 
-#: templates/html/download.tmpl:103
+#: templates/html/download.tmpl:104
 msgid "SHA1 checksum"
 msgstr "SHA1 チェックサム"
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:105
 msgid "SHA256 checksum"
 msgstr "SHA256 チェックサム"
 
@@ -449,7 +417,7 @@ msgstr "すべてのパッケージ"
 msgid "Source"
 msgstr "ソース"
 
-#: templates/html/index.tmpl:38 templates/html/show.tmpl:245
+#: templates/html/index.tmpl:38 templates/html/show.tmpl:247
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージです: "
@@ -598,11 +566,6 @@ msgid "Found <strong>%u</strong> matching packages."
 msgstr "<strong>%u</strong> 個の一致するパッケージが見つかりました。"
 
 #: templates/html/search.tmpl:72
-#| msgid ""
-#| "Note that this only shows the best matches, sorted by relevance.\n"
-#| "If the first few packages don't match what you searched for, try using "
-#| "more keywords or alternative\n"
-#| "keywords."
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -613,11 +576,6 @@ msgstr ""
 "ワードを追加するか他のキーワードを用いてみてください。"
 
 #: templates/html/search.tmpl:74
-#| msgid ""
-#| "Your search was too wide so we will only display exact matches.\n"
-#| "At least <em>%u</em> results have been omitted and will not be "
-#| "displayed.\n"
-#| "Please consider using a longer keyword or more keywords."
 msgid ""
 "Your search was too wide so we will only display exact matches. At least <em>"
 "%u</em> results have been omitted and will not be displayed. Please consider "
@@ -636,7 +594,6 @@ msgid "Package %s"
 msgstr "%s パッケージ"
 
 #: templates/html/search.tmpl:96
-#| msgid "provided by:"
 msgid "also provided by:"
 msgstr "また、以下のパッケージによって提供されてもいます:"
 
@@ -727,10 +684,6 @@ msgstr "<strong>%u 個の結果</strong>が見つかりました。"
 
 # FIXME: "... only ... only ..." is OK?
 #: templates/html/search_contents.tmpl:88
-#| msgid ""
-#| "Note: Your search was too wide so we will only display only the first "
-#| "about 100 matches.\n"
-#| "Please consider using a longer keyword or more keywords."
 msgid ""
 "Note: Your search was too wide so we will only display only the first about "
 "100 matches. Please consider using a longer keyword or more keywords."
@@ -744,7 +697,7 @@ msgid "Sort results by filename"
 msgstr "ファイル名の順に結果を並び換える"
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:318
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:320
 msgid "File"
 msgstr "ファイル"
 
@@ -865,14 +818,6 @@ msgid "Similar packages:"
 msgstr "類似のパッケージ:"
 
 #: templates/html/show.tmpl:146
-#| msgid ""
-#| "Warning: This package is from the <strong>experimental</strong> "
-#| "distribution.\n"
-#| "That means it is likely unstable or buggy, and it may even cause data "
-#| "loss.\n"
-#| "Please be sure to consult the <a href=\"%s\">changelog</a> and other "
-#| "possible documentation before\n"
-#| "using it."
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -898,60 +843,59 @@ msgstr ""
 msgid "Tags"
 msgstr "タグ"
 
-#: templates/html/show.tmpl:198
+#: templates/html/show.tmpl:200
 msgid "Packages providing %s"
 msgstr "%s を提供するパッケージ"
 
-#: templates/html/show.tmpl:207
+#: templates/html/show.tmpl:209
 msgid "The following binary packages are built from this source package:"
 msgstr "以下のバイナリパッケージがこのソースパッケージからビルドされています。"
 
-#: templates/html/show.tmpl:216
+#: templates/html/show.tmpl:218
 msgid "Other Packages Related to %s"
 msgstr "その他の %s 関連パッケージ"
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:220
 msgid "legend"
 msgstr "凡例"
 
-#: templates/html/show.tmpl:220
+#: templates/html/show.tmpl:222
 msgid "build-depends"
 msgstr "構築依存"
 
-#: templates/html/show.tmpl:221
+#: templates/html/show.tmpl:223
 msgid "build-depends-indep"
 msgstr "構築依存 (アーキテクチャ非依存)"
 
-#: templates/html/show.tmpl:223
+#: templates/html/show.tmpl:225
 msgid "depends"
 msgstr "依存"
 
-#: templates/html/show.tmpl:224
+#: templates/html/show.tmpl:226
 msgid "recommends"
 msgstr "推奨"
 
-#: templates/html/show.tmpl:225
+#: templates/html/show.tmpl:227
 msgid "suggests"
 msgstr "提案"
 
-#: templates/html/show.tmpl:235
+#: templates/html/show.tmpl:237
 msgid "or "
 msgstr "または "
 
-#: templates/html/show.tmpl:243
-#| msgid "virtual package provided by"
+#: templates/html/show.tmpl:245
 msgid "also a virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
-#: templates/html/show.tmpl:250
+#: templates/html/show.tmpl:252
 msgid "%u providing packages"
 msgstr "%u 個の提供パッケージ"
 
-#: templates/html/show.tmpl:268
+#: templates/html/show.tmpl:270
 msgid "Download %s"
 msgstr "%s のダウンロード"
 
-#: templates/html/show.tmpl:270
+#: templates/html/show.tmpl:272
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -961,59 +905,59 @@ msgstr ""
 "リンク。加えて、パッケージサイズやインストールサイズに関する情報も含んでいま"
 "す。"
 
-#: templates/html/show.tmpl:271
+#: templates/html/show.tmpl:273
 msgid "Download for all available architectures"
 msgstr "すべての利用可能アーキテクチャ向けのダウンロード"
 
-#: templates/html/show.tmpl:272
+#: templates/html/show.tmpl:274
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/html/show.tmpl:273
+#: templates/html/show.tmpl:275
 msgid "Version"
 msgstr "バージョン"
 
-#: templates/html/show.tmpl:274
+#: templates/html/show.tmpl:276
 msgid "Package Size"
 msgstr "パッケージサイズ"
 
-#: templates/html/show.tmpl:275
+#: templates/html/show.tmpl:277
 msgid "Installed Size"
 msgstr "インストールサイズ"
 
-#: templates/html/show.tmpl:276
+#: templates/html/show.tmpl:278
 msgid "Files"
 msgstr "ファイル"
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:286
 msgid "(unofficial port)"
 msgstr "(非公式の移植版)"
 
-#: templates/html/show.tmpl:295 templates/html/show.tmpl:323
+#: templates/html/show.tmpl:297 templates/html/show.tmpl:325
 msgid "%.1f&nbsp;kB"
 msgstr "%.1f&nbsp;kB"
 
-#: templates/html/show.tmpl:295
+#: templates/html/show.tmpl:297
 msgid "%u&nbsp;kB"
 msgstr "%u&nbsp;kB"
 
-#: templates/html/show.tmpl:298
+#: templates/html/show.tmpl:300
 msgid "list of files"
 msgstr "ファイル一覧"
 
-#: templates/html/show.tmpl:300
+#: templates/html/show.tmpl:302
 msgid "no current information"
 msgstr "現在の情報はありません"
 
-#: templates/html/show.tmpl:317
+#: templates/html/show.tmpl:319
 msgid "Download information for the files of this source package"
 msgstr "このソースパッケージのファイルのダウンロードに関する情報"
 
-#: templates/html/show.tmpl:318
+#: templates/html/show.tmpl:320
 msgid "Size (in kB)"
 msgstr "サイズ (単位: kB)"
 
-#: templates/html/show.tmpl:336
+#: templates/html/show.tmpl:338
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -1021,7 +965,7 @@ msgstr ""
 "Debian パッケージソースリポジトリ (<acronym title=\"バージョン管理システム"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:340
+#: templates/html/show.tmpl:342
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Debian パッケージソースリポジトリ (ブラウザで表示可能)"
 
@@ -1062,9 +1006,6 @@ msgid "New %s Packages"
 msgstr "新規 %s パッケージ"
 
 #: templates/rss/newpkg.tmpl:20
-#| msgid ""
-#| "The following packages were added to suite <em>%s</em> (section %s) in "
-#| "the %s archive during the last 7 days."
 msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
@@ -1073,9 +1014,6 @@ msgstr ""
 "7 日間に追加されたものです。"
 
 #: templates/rss/newpkg.tmpl:23
-#| msgid ""
-#| "The following packages were added to suite <em>%s</em> in the %s archive "
-#| "during the last 7 days."
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
@@ -1096,11 +1034,11 @@ msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
 #~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
 #~ "last 7 days."
 #~ msgstr ""
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
-
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"

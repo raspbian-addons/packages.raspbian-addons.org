@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 21:54+0200\n"
+"POT-Creation-Date: 2007-10-21 21:31+0200\n"
 "PO-Revision-Date: 2007-10-22 00:13+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
@@ -100,10 +100,16 @@ msgstr "show_static に複数のサブセクションが指定されています
 msgid "couldn't read index file %s: %s"
 msgstr "索引ファイル %s を読み込めませんでした: %s"
 
-#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
-#, perl-format
-msgid "more than one suite specified for show (%s)"
+#: lib/Packages/DoNewPkg.pm:25
+#, fuzzy, perl-format
+#| msgid "more than one suite specified for show (%s)"
+msgid "more than one suite specified for newpkg (%s)"
 msgstr "show に複数のスイートが指定されています (%s)"
+
+#: lib/Packages/DoNewPkg.pm:42
+#, perl-format
+msgid "no newpkg information found for suite %s"
+msgstr ""
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
@@ -133,6 +139,11 @@ msgstr "内容の検索 (contents search) に複数のスイートが指定さ�
 #: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr "選択した検索モードでは複数のキーワード指定はサポートされていません。"
+
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr "show に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoShow.pm:72
 msgid "No such package."

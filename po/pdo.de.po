@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 23:41+0200\n"
+"POT-Creation-Date: 2007-10-21 21:31+0200\n"
 "PO-Revision-Date: 2007-10-21 17:25+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
@@ -30,8 +30,7 @@ msgstr "Suche nimmt keine Pfadelemente mehr an"
 #: lib/Packages/Dispatcher.pm:165
 msgid ""
 "We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr ""
-"Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
+msgstr "Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
 
 #: lib/Packages/Dispatcher.pm:188
 #, perl-format
@@ -100,11 +99,8 @@ msgstr "konnte Indexdatei %s nicht lesen: %s"
 msgid "more than one suite specified for newpkg (%s)"
 msgstr ""
 
-#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
+#: lib/Packages/DoNewPkg.pm:42
 #, perl-format
-msgid "more than one suite specified for show (%s)"
-msgstr "mehr als eine Suite zum Anzeigen angegeben (%s)"
-
 msgid "no newpkg information found for suite %s"
 msgstr "keine Informationen über neue Pakete gefunden für Suite %s"
 
@@ -139,6 +135,11 @@ msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 "Der Suchmodus, den Sie ausgewählt haben, unterstützt nicht mehr als einen "
 "Suchbegriff."
+
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr "mehr als eine Suite zum Anzeigen angegeben (%s)"
 
 #: lib/Packages/DoShow.pm:72
 msgid "No such package."
