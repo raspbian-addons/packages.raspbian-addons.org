@@ -95,10 +95,18 @@ msgstr "mehr als ein Unterabschnitt für show_static angegeben (%s)"
 msgid "couldn't read index file %s: %s"
 msgstr "konnte Indexdatei %s nicht lesen: %s"
 
+#: lib/Packages/DoNewPkg.pm:25
+#, perl-format
+msgid "more than one suite specified for newpkg (%s)"
+msgstr ""
+
 #: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
 #, perl-format
 msgid "more than one suite specified for show (%s)"
 msgstr "mehr als eine Suite zum Anzeigen angegeben (%s)"
+
+msgid "no newpkg information found for suite %s"
+msgstr "keine Informationen über neue Pakete gefunden für Suite %s"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"

@@ -220,12 +220,10 @@ msgstr ""
 "herunterladen:"
 
 #: templates/html/download.tmpl:77
-msgid ""
-"Debian security updates are currently officially distributed only via "
-"<tt>security.debian.org</tt>."
+msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
-"Debian-Sicherheitsaktualisierungen werden derzeit offiziell nur über "
-"<tt>security.debian.org</tt> verbreitet."
+"%s-Sicherheitsaktualisierungen werden offiziell nur über <tt>%s</tt> "
+"verbreitet."
 
 #: templates/html/download.tmpl:83
 msgid ""
@@ -570,9 +568,9 @@ msgid ""
 "first few packages don't match what you searched for, try using more "
 "keywords or alternative keywords."
 msgstr ""
-"Beachten Sie, dass dies nur die besten Treffer zeigt, sortiert nach Relevanz. "
+"Beachten Sie, dass nur die besten Treffer angezeigt werden, sortiert nach Relevanz. "
 "Falls die ersten paar Pakete nicht auf Ihre Suche passen, versuchen Sie, "
-"mehr oder andere Schlüsselwörter zu verwenden."
+"mehr oder andere Suchbegriffe zu verwenden."
 
 #: templates/html/search.tmpl:74
 msgid ""
@@ -580,9 +578,9 @@ msgid ""
 "%u</em> results have been omitted and will not be displayed. Please consider "
 "using a longer keyword or more keywords."
 msgstr ""
-"Sie Suche war zu weit, daher werden wir nur exakte Treffer anzeigen. "
-"Zumindestens <em>%zu</em> Treffer wurden ausgelassen und werden nicht "
-"angezeigt. Bitte verwenden Sie ein längeres oder mehr Schlüsselwörter."
+"Ihre Suche ergab zu viele Ergebnisse, nur exakte Treffer werden angezeigt. "
+"Mindestens <em>%u</em> weitere Treffer werden nicht angezeigt. Bitte "
+"benutzen Sie längere oder mehr Suchbegriffe."
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
@@ -630,7 +628,7 @@ msgstr "Debian-Inhalts-Paketsuche: Ergebnisse"
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
-msgstr "Suche nach <em>%s</em> innerhalb von Dateinamen"
+msgstr "Suche nach <em>%s</em> in Dateinamen"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
@@ -650,7 +648,7 @@ msgstr "Schränke Suche auf bestimmte Architekturen ein:"
 
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Suchen in <a href=\"%s\">anderen Architekturen</a>"
+msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
 
 #: templates/html/search_contents.tmpl:73
 msgid "section(s) <em>%s</em>"
@@ -720,15 +718,15 @@ msgstr "Abschnitt:"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
-msgstr "Details des Quellpakete %s in %s"
+msgstr "Informationen über Quellcode-Paket %s in %s"
 
 #: templates/html/show.tmpl:22
 msgid "Details of package %s in %s"
-msgstr "Details des Paketes %s in %s"
+msgstr "Informationen über Paket %s in %s"
 
 #: templates/html/show.tmpl:45
 msgid "Source package building this package"
-msgstr "Quellpaket, das dieses Paket baut"
+msgstr "Quellcode-Paket, aus dem dieses Paket gebaut wird"
 
 #: templates/html/show.tmpl:45
 msgid "Source:"
@@ -756,7 +754,7 @@ msgstr "Links für %s"
 
 #: templates/html/show.tmpl:65
 msgid "Debian Resources:"
-msgstr "Debian-Ressource:"
+msgstr "Debian-Ressourcen:"
 
 #: templates/html/show.tmpl:67
 msgid "Bug Reports"
@@ -776,11 +774,11 @@ msgstr "Copyright-Datei"
 
 #: templates/html/show.tmpl:81
 msgid "Debian Source Repository"
-msgstr "Debian Quelldepot"
+msgstr "Debian Quellcode-Repository"
 
 #: templates/html/show.tmpl:95
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgstr "Download Quellpaket <a href=\"%s\">%s</a>:"
+msgstr "Quellcode-Paket <a href=\"%s\">%s</a> herunterladen:"
 
 #: templates/html/show.tmpl:102
 msgid "Not found"
@@ -804,7 +802,7 @@ msgstr "QS-Seite"
 
 #: templates/html/show.tmpl:122
 msgid "External Resources:"
-msgstr "Externe Ressource:"
+msgstr "Externe Ressourcen:"
 
 #: templates/html/show.tmpl:124
 msgid "Homepage"
@@ -877,6 +875,10 @@ msgstr "empfiehlt"
 msgid "suggests"
 msgstr "schlägt vor"
 
+#: templates/html/show.tmpl:235
+msgid "or "
+msgstr "oder "
+
 #: templates/html/show.tmpl:243
 msgid "also a virtual package provided by"
 msgstr "Auch ein virtuelles Paket, bereitgestellt durch"
@@ -945,7 +947,7 @@ msgstr "keine aktuellen Informationen"
 
 #: templates/html/show.tmpl:317
 msgid "Download information for the files of this source package"
-msgstr "Informationen für die Dateien dieses Quellpakets herunterladen"
+msgstr "Download-Informationen für die Dateien dieses Quellcode-Pakets"
 
 #: templates/html/show.tmpl:318
 msgid "Size (in kB)"
@@ -956,12 +958,12 @@ msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
-"Debian-Paket Quell-Depot (<acronym lang=\"en\" title=\"Version Control System"
-"\">VCS</acronym>: <a href=\"%s\">%s</a>)"
+"Quellcode-Repository des Debian-Pakets (<acronym lang=\"en\" title=\"Version "
+"Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:340
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Debian-Paket-Quell-Depot (zum Blättern)"
+msgstr "Quellcode-Repository des Debian-Pakets (Browsable)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
