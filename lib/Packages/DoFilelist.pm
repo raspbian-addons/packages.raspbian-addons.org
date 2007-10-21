@@ -4,10 +4,7 @@ use strict;
 use warnings;
 
 use POSIX;
-use URI::Escape;
-use HTML::Entities;
 use DB_File;
-use Benchmark ':hireswallclock';
 use Exporter;
 
 use Deb::Versions;

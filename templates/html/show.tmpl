@@ -143,16 +143,13 @@
 [% changelog_link = 'changelog';
    changelog_link = "$changelogs_url$files.changelog.path" %] 
 <h2>[% g('Experimental package') %]</h2>
-<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution.
-That means it is likely unstable or buggy, and it may even cause data loss.
-Please be sure to consult the <a href="%s">changelog</a> and other possible documentation before
-using it.', changelog_link) %]</p>
+<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the <a href="%s">changelog</a> and other possible documentation before using it.',
+	changelog_link) %]</p>
 [% END %]
 [% IF subsection == "debian-installer" %]
 <h2>[% g('debian-installer udeb package') %]</h2>
-<p>[% g('Warning: This package is intended for the use in building
-<a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only.
-Do not install it on a normal %s system.', organisation ) %]</p>
+<p>[% g('Warning: This package is intended for the use in building <a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only. Do not install it on a normal %s system.',
+	organisation ) %]</p>
 [% END %]
 </div>
 [% END %]
@@ -179,14 +176,16 @@ Do not install it on a normal %s system.', organisation ) %]</p>
     <div id="ptags"><p>
     <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">[% g('Tags') %]</a>:
   [%- END %]
-  [% facet = tag.0;
-     facet_name = debtags_voc.$facet;
-     tag_id = "$tag.0::$tag.1";
-     tag_name = debtags_voc.$tag_id;
+  [% facet = tag.0; lfacet = "$facet-$lang"; 
+     facet_name = debtags_voc.$lfacet;
+     SET facet_name = debtags_voc.$facet UNLESS facet_name;
+     tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$lang";
+     tag_name = debtags_voc.$ltag;
+     SET tag_name = debtags_voc.$tag_id UNLESS tag_name;
    %]
   [% facet_name _ ': ' UNLESS old_facet && facet == old_facet %]
   [% IF tag_name %]
-   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name %]</a>[% ', ' UNLESS loop.last %]
+   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name | html %]</a>[% ', ' UNLESS loop.last %]
   [% ELSE %]
   [% tag_id %][% ', ' UNLESS loop.last %]
   [% END %]
@@ -197,19 +196,19 @@ Do not install it on a normal %s system.', organisation ) %]</p>
   [%- END %]
 [% END %]
 
-[% FOREACH providers %]
+[% FOREACH p IN providers %]
   [% IF loop.first %]<div id="pdeps"><h2>[% g('Packages providing %s', pkg) %]</h2><dl>[% END %]
-    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
-    <dd>[% desc %]</dd>
+    <dt>[% IF p.available %]<a href="[% make_url(name,'','source','') %]">[% p.name %]</a>[% ELSE; p.name; END %]</dt>
+    <dd>[% IF p.trans_desc.$lang; p.trans_desc.$lang | html; ELSE; p.desc | html; END %]</dd>
   [% '</dl></div>' IF loop.last %]
 [% END %]
 </div> <!-- pdesctab -->
 [% END %]
 
-[% FOREACH binaries %]
+[% FOREACH b IN binaries %]
   [% IF loop.first %]<div id="pbinaries">[% g('The following binary packages are built from this source package:') %]<dl>[% END %]
-    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
-    <dd>[% desc %]</dd>    
+    <dt>[% IF b.available %]<a href="[% make_url(name,'','source','') %]">[% b.name %]</a>[% ELSE; b.name; END %]</dt>
+    <dd>[% IF b.trans_desc.$lang; b.trans_desc.$lang | html; ELSE; b.desc | html; END %]</dd>
   [% '</dl></div>' IF loop.last %]
 [% END %]
 
@@ -235,16 +234,20 @@ Do not install it on a normal %s system.', organisation ) %]</p>
     [% '<li>' UNLESS is_old_pkgs %]
     [% FOREACH alternatives %]
       [% '<dl>' IF loop.first %]
-      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %]or [% END %]
+      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %][% g('or ') %][% END %]
 	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
       [%- IF !is_old_pkgs -%]
-        <dd>[% desc -%]
+        <dd>[% IF trans_desc.$lang; trans_desc.$lang | html; ELSE; desc | html; END -%]
         [%- IF providers.pkgs.size > 0 -%]
-          [% '<br>also a ' IF providers.also %][% g('virtual package provided by') %]
+	  [% IF providers.also;
+		'<br>' _ g('also a virtual package provided by');
+	     ELSE;
+		g('virtual package provided by');
+	     END; %]
 	  [% js_id = name %]
-	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs.sort %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF providers.pkgs.size > 10 %]
 	<script type="text/javascript">init_toggle_elem("[% js_id %]",[% g('%u providing packages', providers.pkgs.size) %]</script>
 	[% END %]

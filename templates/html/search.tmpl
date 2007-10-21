@@ -34,8 +34,8 @@
 		searchformurl) %]</p>
 	
 	[% IF opts.searchon != "names" && opts.exact %]
-	<p>[% g('You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching.',
-		make_search_url('',"keywords=$keyword_esc",'exact',0) ) %]</a>
+	<p>[% g('You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.',
+		make_search_url('',"keywords=$keyword_esc",'exact',0) ) %]</p>
 	[% END %]
 [% END %]
 [% IF opts.searchon == "names" && non_results %]
@@ -69,13 +69,10 @@
 
 [% IF too_many_hits %]
 [% IF opts.searchon != "names" %]
-<p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance.
-If the first few packages don't match what you searched for, try using more keywords or alternative
-keywords.") %]</p>
+<p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords.") %]</p>
 [% ELSE %]
-<p id="psearchtoomanyhits">[% g('Your search was too wide so we will only display exact matches.
-At least <em>%u</em> results have been omitted and will not be displayed.
-Please consider using a longer keyword or more keywords.', too_many_hits) %]</p>
+<p id="psearchtoomanyhits">[% g('Your search was too wide so we will only display exact matches. At least <em>%u</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.',
+	too_many_hits) %]</p>
 [% END; END %]
 
 [% UNLESS results %]
@@ -91,12 +88,13 @@ Please consider using a longer keyword or more keywords.', too_many_hits) %]</p>
   [% FOREACH s IN suites;
 	suite = s.suite %]
     <li class="[% suite %]"><a class="resultlink" href="[% make_url(pkg,'','suite',suite,'arch','','section','') %]">[% suite %]
-	[%- ' (' _ suite_aliases.$suite _ ')' IF suite_aliases.$suite %]</a>[% ' (' _ s.subsection _ ')' IF s.subsection %]: [% s.desc %]  [%- IF s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
+	[%- ' (' _ suite_aliases.$suite _ ')' IF suite_aliases.$suite %]</a>[% ' (' _ s.subsection _ ')' IF s.subsection %]: [% IF s.trans_desc.$lang; s.trans_desc.$lang | html; ELSE; s.desc | html; END %]  [%- IF s.section && s.section != main_section %] [<strong class="pmarker">[% s.section %]</strong>][% END %]
     [% FOREACH s.versions %]
       <br>[% version %] [%- IF archive != main_archive %] [<strong class="pmarker">[% archive %]</strong>][% END %]: [% architectures.join(' ') %]
     [% END %]
     [% IF s.providers %]
-	<br>[% 'also ' IF s.versions.size > 0 %][% g('provided by:') %] [% FOREACH provider IN s.providers %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
+	<br>[% IF s.versions.size > 0; g('also provided by:'); ELSE; g('provided by:'); END %]
+	[% FOREACH provider IN s.providers.sort %]<a href="[% make_url(provider,'','suite',suite) %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]
     [% END %]
     </li>
   [% END %]
@@ -112,7 +110,7 @@ Please consider using a longer keyword or more keywords.', too_many_hits) %]</p>
     <li><a class="resultlink" href="[% make_url(pkg,'','source','source','suite',origin,'section','','arch','') %]">[% origin %]</a> ([% subsection %]): [% version %]
       [%- IF section %] [<strong class="pmarker">[% section %]</strong>][% END %]
       [%- IF real_archive %] [<strong class="pmarker">[% real_archive %]</strong>][% END %]
-    <br>[% g('Binary packages:') %] <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+    <br>[% g('Binary packages:') %] <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]" class="binaries">[% FOREACH binary IN binaries.sort %]<a href="[% make_url(binary,'','source','','suite',suite,'archive',archive,'arch','','archive','') %]">[% binary %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF binaries.size > 10 %]
 	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% g('%u binary packages', binaries.size) %])</script>
 	[% END %]

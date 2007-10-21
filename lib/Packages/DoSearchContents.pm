@@ -5,8 +5,6 @@ use warnings;
 
 use Benchmark ':hireswallclock';
 use DB_File;
-use URI::Escape;
-use HTML::Entities;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_search_contents );

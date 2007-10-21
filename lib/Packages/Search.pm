@@ -74,16 +74,16 @@ sub read_entry_all {
     while (my ($suite, $provides) = each %virt) {
 	next if $suite eq '-';
 	if ($opts->{h_suites}{$suite}) {
-	    push @$results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
+	    push @$results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v', 'v',
 			      $provides];
 	} else {
-	    push @$non_results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
+	    push @$non_results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v', 'v',
 				  $provides];
 	}
     }
 
     foreach (split(/\000/o, $result||'')) {
-	my @data = split ( /\s/o, $_, 8 );
+	my @data = split ( /\s/o, $_, 9 );
 	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
 	if ($opts->{h_suites}{$data[1]}
 	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all')
@@ -123,7 +123,7 @@ sub read_entry_simple {
     # with correctly, but it's adequate enough for now
     return [ $virt{$suite} ] unless defined $result;
     foreach (split /\000/o, $result) {
-	my @data = split ( /\s/o, $_, 8 );
+	my @data = split ( /\s/o, $_, 9 );
 	debug( "use entry: @data", 2 ) if DEBUG && $data[1] eq $suite;
 	return [ $virt{$suite}, @data ] if $data[1] eq $suite;
     }
@@ -209,10 +209,10 @@ sub do_xapian_search {
 	push @tmp, $keyword;
     }
     my $stemmer = Lingua::Stem->new();
-    my $stemmed_keywords = $stemmer->stem( @tmp );
+    my @stemmed_keywords = grep { length($_) } @{$stemmer->stem( @tmp )};
 
     my $db = Search::Xapian::Database->new( $dbpath );
-    my $enq = $db->enquire( OP_OR, @$keywords, @$stemmed_keywords );
+    my $enq = $db->enquire( OP_OR, @$keywords, @stemmed_keywords );
     debug( "Xapian Query was: ".$enq->get_query()->get_description(), 1) if DEBUG;
     my @matches = $enq->matches(0, 999);
 

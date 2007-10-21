@@ -12,7 +12,8 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
-			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
+			 @ARCHITECTURES %FTP_SITES
+			 @LANGUAGES @DDTP_LANGUAGES);
 use Packages::I18N::Locale;
 use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
@@ -88,7 +89,7 @@ sub do_show {
 		    for my $entry (@results) {
 			debug( join(":", @$entry), 1 ) if DEBUG;
 			my (undef, $archive, undef, $arch, $section, $subsection,
-			    $priority, $version, $provided_by) = @$entry;
+			    $priority, $version, undef, $provided_by) = @$entry;
 			
 			if ($arch ne 'virtual') {
 			    my %data = split /\000/, $packages_all{"$pkg $arch $version"};
@@ -179,7 +180,8 @@ sub do_show {
 			my $trans_desc = $desctrans{$desc_md5};
 			if ($trans_desc) {
 			    my %trans_desc = split /\000|\001/, $trans_desc;
-			    $contents{used_langs} = ['en', sort keys %trans_desc];
+			    my %all_langs = map { $_ => 1 } (@LANGUAGES, keys %trans_desc);
+			    $contents{used_langs} = [ keys %all_langs ];
 			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
 				if DEBUG;
 			    while (my ($l, $d) = each %trans_desc) {
@@ -422,7 +424,7 @@ sub build_deps {
 
 	    if ($arch_str ||= '') {
 		if ($arch_neg) {
-		    $arch_str = _g("not")." $arch_str";
+		    $arch_str = sprintf( _g("not %s"), "$arch_str" );
 		} else {
 		    $arch_str = $arch_str;
 		}
@@ -438,11 +440,23 @@ sub build_deps {
 	    my $entry = $entries{$p_name} ||
 		read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite);
 	    my $short_desc = $entry->[-1];
+	    my $desc_md5 = $entry->[-2];
 	    my $arch = $entry->[3];
 	    my $archive = $entry->[1];
 	    my $p_suite = $entry->[2];
 	    if ( $short_desc ) {
 		$rel_alt_out{desc} = $short_desc;
+		my $trans_desc = $desctrans{$desc_md5};
+		if ($trans_desc) {
+		    my %trans_desc = split /\000|\001/, $trans_desc;
+		    my %sdescs;
+		    while (my ($l, $d) = each %trans_desc) {
+			$d =~ s/\n.*//os;
+
+			$sdescs{$l} = $d;
+		    }
+		    $rel_alt_out{trans_desc} = \%sdescs;
+		}
 		$rel_alt_out{suite} = $p_suite;
 		if ( $rel_out{is_old_pkgs} ) {
 		} elsif (defined $entry->[1]) {
@@ -481,10 +495,22 @@ sub pkg_list {
 
 	# we don't deal with virtual packages here because for the
 	# current uses of this function this isn't needed
-	my $short_desc = (read_entry_simple( $packages, $p, $opts->{h_archives}, $suite))->[-1];
+	my $data = read_entry_simple( $packages, $p, $opts->{h_archives}, $suite);
+	my ($desc_md5, $short_desc) = ($data->[-2],$data->[-1]);
 
 	if ( $short_desc ) {
-	    push @$list, { name => $p, desc => $short_desc, available => 1 };
+	    my $trans_desc = $desctrans{$desc_md5};
+	    my %sdescs;
+	    if ($trans_desc) {
+		my %trans_desc = split /\000|\001/, $trans_desc;
+		while (my ($l, $d) = each %trans_desc) {
+		    $d =~ s/\n.*//os;
+
+		    $sdescs{$l} = $d;
+		}
+	    }
+	    push @$list, { name => $p, desc => $short_desc,
+			   trans_desc => \%sdescs, available => 1 };
 	} else {
 	    push @$list, { name => $p, desc => _g("Not available") };
 	}

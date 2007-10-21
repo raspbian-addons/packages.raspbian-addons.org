@@ -1,0 +1,87 @@
+#! /usr/bin/perl -w
+
+# copied from webwml/english/po/wmlxgettext.pl and
+# changed to a crude intltool replacement
+#  Copyright © 2002-2003  Denis Barbier <barbier@debian.org>
+#  Copyright © 2007 Frank Lichtenheld <frank@lichtenheld.de>
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+use strict;
+
+my $messages = {};
+my @msgids = ();
+
+sub escape {
+        my $text = shift;
+        $text =~ s/\\/\\\\/g;
+        $text =~ s/"/\\"/g;
+        $text =~ s/\n/\\n/g;
+        $text =~ s/\t/\\t/g;
+        return $text;
+}
+
+sub processFile {
+        my $file = shift;
+        my ($text, $comment);
+        my (@messages) = ();
+        my (%msgids) = ();
+
+	open(IN, "<", $file) || die "Unable to open $file\n";
+	local ($/) = "";
+	while (<IN>) {
+	    my %data = ();
+	    chomp;
+	    s/\n /\377/g;
+	    while (/^(\S+):\s*(.*)\s*$/mg) {
+		my ($key, $value) = ($1, $2);
+		$value =~ s/\377/\n /g;
+		$key =~ tr [A-Z] [a-z];
+		$data{$key} = $value;
+	    }
+	    next unless $data{description};
+	    my $comment = '';
+	    if ($data{facet}) {
+		$comment = "Facet: $data{facet}";
+	    } elsif ($data{tag}) {
+		$comment = "Tag: $data{tag}";
+	    } else {
+		die "Neither Facet nor Tag found.";
+	    }
+
+	    my ($short, $long) = split /\n/, $data{description}, 2;
+
+	    $short = escape($short);
+	    push (@msgids, $short);
+	    push (@{$messages->{$short}}, $comment.", short desc", $file);
+
+	    if ($long) {
+		$long = escape($long);
+		push (@msgids, $long);
+		push (@{$messages->{$long}}, $comment.", long desc", $file);
+	    }
+	}
+	close(IN);
+}
+
+foreach (@ARGV) {
+        processFile($_);
+}
+
+print "msgid \"\"\nmsgstr \"\"\n".
+        "\"Content-Type: text/plain; charset=UTF-8\\n\"\n".
+        "\"Content-Transfer-Encoding: 8bit\\n\"\n\n";
+
+foreach my $msgid (@msgids) {
+        next unless $messages->{$msgid};
+        while (@{$messages->{$msgid}}) {
+                $_ = shift(@{$messages->{$msgid}});
+                s/\n/\n#. /g;
+                print "#. ".$_."\n" if $_;
+                print "#: ".shift(@{$messages->{$msgid}})."\n";
+        }
+        print "msgid \"$msgid\"\nmsgstr \"\"\n\n";
+        undef $messages->{$msgid};
+}

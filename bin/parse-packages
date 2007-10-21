@@ -157,7 +157,7 @@ for my $suite (@SUITES) {
 		$subsections{$suite}{$subsection}++;
 		$priorities{$suite}{$data{priority}}++;
 		my $pkgitem = "$archive $suite $data{'architecture'} ".
-			"$section $subsection $data{'priority'} $data{'version'} $sdescr\0";
+			"$section $subsection $data{'priority'} $data{'version'} $data{'description-md5'} $sdescr\0";
 		my $previtem = ($packages_small{$data{'package'}}{$suite}{$data{'architecture'}}
 		    ||= $pkgitem);
 		$packages_small{$data{'package'}}{$suite}{$data{'architecture'}} = $pkgitem
@@ -303,7 +303,7 @@ for (my $i=1; $i<= $#descriptions; $i++) {
 		}
 	    }
 	    if ($tags) {
-		foreach my $t (split /, /, $tags) {
+		foreach my $t (split m/, /, $tags) {
 		    if ($doc->add_term($t)) {
 			warn "can't add term $t: $!\n";
 		    }
