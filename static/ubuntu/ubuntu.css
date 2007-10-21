@@ -113,11 +113,15 @@ html[xmlns] .mozclear
 
 #footer
 {
-	color: #5B4832;
-	background-color: #dbba75;
 	position: relative;
 	text-align: center;
 	padding: 10px;
+}
+
+#fineprint
+{
+	color: #5B4832;
+	background-color: #dbba75; 
 }
 
 html>body #footer
@@ -159,6 +163,7 @@ p, h1, h2, h3, h4, h5, h6
 }
 #footer
 {
+        margin-top: 1em;
 	padding: .3em;			/* ditto from above */
 }
 #pageWrapper, #innerColumnContainer, #masthead, #footer
@@ -272,9 +277,9 @@ h6 {
 dt
 {
 	margin-top: 20px;
-	margin-bottom: 8px;
+/*	margin-bottom: 8px; */
 	font-size: 120%;
-	border-bottom: 1px solid #6D4C07;
+/*	border-bottom: 1px solid #6D4C07; */
 }
 
 img { border: 0; }
