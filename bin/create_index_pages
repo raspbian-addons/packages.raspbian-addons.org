@@ -106,7 +106,7 @@ while (my ($pkg, $data) = each %packages) {
     my ($virt, $p_data) = split /\000/o, $data, 2;
     %virt = split /\01/o, $virt; 
     foreach (split /\000/o, $p_data||'') {
-	my @data = split ( /\s/o, $_, 8 );
+	my @data = split ( /\s/o, $_, 9 );
 	$pkg{$data[1]} ||= new Packages::Page( $pkg );
 	$pkg{$data[1]}->merge_package( { package => $pkg,
 					 archive => $data[0],
@@ -116,7 +116,7 @@ while (my ($pkg, $data) = each %packages) {
 					 subsection => $data[4],
 					 priority => $data[5],
 					 version => $data[6],
-					 description => $data[7] } );
+					 description => $data[8] } );
     }
     foreach (keys %virt) {
 	next if $_ eq '-';
