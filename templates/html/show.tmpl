@@ -198,7 +198,7 @@
 
 [% FOREACH p IN providers %]
   [% IF loop.first %]<div id="pdeps"><h2>[% g('Packages providing %s', pkg) %]</h2><dl>[% END %]
-    <dt>[% IF p.available %]<a href="[% make_url(name,'','source','') %]">[% p.name %]</a>[% ELSE; p.name; END %]</dt>
+    <dt>[% IF p.available %]<a href="[% make_url(p.name,'','source','') %]">[% p.name %]</a>[% ELSE; p.name; END %]</dt>
     <dd>[% IF p.trans_desc.$lang; p.trans_desc.$lang | html; ELSE; p.desc | html; END %]</dd>
   [% '</dl></div>' IF loop.last %]
 [% END %]
@@ -207,7 +207,7 @@
 
 [% FOREACH b IN binaries %]
   [% IF loop.first %]<div id="pbinaries">[% g('The following binary packages are built from this source package:') %]<dl>[% END %]
-    <dt>[% IF b.available %]<a href="[% make_url(name,'','source','') %]">[% b.name %]</a>[% ELSE; b.name; END %]</dt>
+    <dt>[% IF b.available %]<a href="[% make_url(b.name,'','source','') %]">[% b.name %]</a>[% ELSE; b.name; END %]</dt>
     <dd>[% IF b.trans_desc.$lang; b.trans_desc.$lang | html; ELSE; b.desc | html; END %]</dd>
   [% '</dl></div>' IF loop.last %]
 [% END %]
