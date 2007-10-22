@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-10-21 17:36+0200\n"
+"PO-Revision-Date: 2007-10-22 21:29+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -185,14 +185,14 @@ msgid ""
 "cause data loss. Please be sure to consult the changelog and other possible "
 "documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution."
+"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
 "Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
 "sogar Datenverlust verursachen kann. Bitte lesen Sie den Changelog und "
 "andere möglicherweise verfügbare Dokumentation, bevor Sie es benutzen."
 
 #: templates/html/download.tmpl:41 templates/html/show.tmpl:150
 msgid "debian-installer udeb package"
-msgstr "Debian-Installer udeb-Paket"
+msgstr "udeb-Paket des Debian-Installer"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:151
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 msgstr ""
 "Beachten Sie, dass %s noch nicht offiziell im %s-Archiv ist, aber die "
 "Portierungsgruppe %s hält ihr Archiv mit dem offiziellen Archiv so eng wie "
-"möglich synchron. Lesen Sie die <a href=\"%s\">Portierungsseiten von %s </a> "
+"möglich synchron. Lesen Sie die <a href=\"%s\">Portierungsseiten von %s</a> "
 "für aktuelle Informationen."
 
 #: templates/html/download.tmpl:96
@@ -488,8 +488,8 @@ msgid ""
 "You can try a different search on the <a href=\"%s#search_packages"
 "\">Packages search page</a>."
 msgstr ""
-"Sie können auf <a href=\"%s#search_packages\">Paketsuchseite</a> eine andere "
-"Suche durchführen."
+"Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
+"andere Suche durchführen."
 
 #: templates/html/search.tmpl:37
 msgid ""
@@ -579,7 +579,7 @@ msgid ""
 "using a longer keyword or more keywords."
 msgstr ""
 "Ihre Suche ergab zu viele Ergebnisse, nur exakte Treffer werden angezeigt. "
-"Mindestens <em>%u</em> weitere Treffer werden nicht angezeigt. Bitte "
+"Mindestens <em>%u</em> weitere Treffer ausgelassen und nicht angezeigt. Bitte "
 "benutzen Sie längere oder mehr Suchbegriffe."
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
@@ -615,7 +615,7 @@ msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
 msgstr ""
-"<a href=\"%s\">%u</a> Ergebnisse wurde nicht angezeigt, das Sie nur exakte "
+"<a href=\"%s\">%u</a> Ergebnisse wurde nicht angezeigt, da Sie nur exakte "
 "Treffer verlangt haben."
 
 #: templates/html/search_contents.tmpl:14
@@ -660,7 +660,7 @@ msgstr "Architektur(en) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:75
 msgid "paths that end with"
-msgstr "Pfade die wie folgt enden: "
+msgstr "Pfade die wie folgt enden:"
 
 #: templates/html/search_contents.tmpl:77
 msgid "files named"
@@ -668,12 +668,12 @@ msgstr "Dateien mit Namen"
 
 #: templates/html/search_contents.tmpl:79
 msgid "filenames that contain"
-msgstr "Dateinamen, die folgendes enthalten: "
+msgstr "Dateinamen, die Folgendes enthalten:"
 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
-"Sie haben nach %s <em>%s</em> in der Suite <em>%s</em>, %s, und %s gesucht."
+"Sie haben nach %s <em>%s</em> in der Suite <em>%s</em>, %s und %s gesucht."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -684,8 +684,8 @@ msgid ""
 "Note: Your search was too wide so we will only display only the first about "
 "100 matches. Please consider using a longer keyword or more keywords."
 msgstr ""
-"Hinweis: Ihre Suche war zu breit, daher werden wir nur die ersten rund 100 "
-"Treffer anzeigen. Bitte verwenden Sie ein längeres oder mehr Schlüsselwörter."
+"Hinweis: Ihre Suche war zu breit, daher werden nur rund die ersten 100 "
+"Treffer angezeigt. Bitte verwenden Sie ein längeres oder mehr Schlüsselwörter."
 
 #: templates/html/search_contents.tmpl:97
 msgid "Sort results by filename"
@@ -774,7 +774,7 @@ msgstr "Copyright-Datei"
 
 #: templates/html/show.tmpl:81
 msgid "Debian Source Repository"
-msgstr "Debian Quellcode-Repository"
+msgstr "Debian-Quellcode-Depot"
 
 #: templates/html/show.tmpl:95
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
@@ -819,7 +819,7 @@ msgid ""
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution."
+"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
 "Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
 "sogar Datenverlust verursachen kann. Bitte lesen Sie das <a href=\"%s"
 "\">Changelog</a> und andere möglicherweise verfügbare Dokumentation, bevor "
@@ -963,7 +963,7 @@ msgstr ""
 
 #: templates/html/show.tmpl:342
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Quellcode-Repository des Debian-Pakets (Browsable)"
+msgstr "Quellcode-Depot des Debian-Pakets (Browsable)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
