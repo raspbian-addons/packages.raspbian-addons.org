@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-10-21 18:52+0900\n"
+"PO-Revision-Date: 2007-10-22 14:45+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -223,14 +223,11 @@ msgstr ""
 "可能です。"
 
 #: templates/html/download.tmpl:77
-#, fuzzy
 #| msgid ""
 #| "Debian security updates are currently officially distributed only via "
 #| "<tt>security.debian.org</tt>."
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr ""
-"Debian セキュリティアップデートは、現在のところ公式には <tt>security.debian."
-"org</tt> のみで配布されています。"
+msgstr "%s セキュリティアップデートは、<tt>%s</tt> のみで公式に配布されています。"
 
 #: templates/html/download.tmpl:84
 msgid ""
@@ -238,7 +235,7 @@ msgid ""
 "\"%s\">complete mirror list</a>."
 msgstr ""
 "上記のサイトのいずれでも不十分な速度しか出ない場合は、<a href=\"%s\">ミラーの"
-"完全な一覧を</a>をご覧ください。"
+"完全な一覧</a>をご覧ください。"
 
 #: templates/html/download.tmpl:92
 msgid ""
