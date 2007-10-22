@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-21 21:31+0200\n"
-"PO-Revision-Date: 2007-10-22 00:13+0900\n"
+"PO-Revision-Date: 2007-10-22 14:48+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -101,15 +101,15 @@ msgid "couldn't read index file %s: %s"
 msgstr "索引ファイル %s を読み込めませんでした: %s"
 
 #: lib/Packages/DoNewPkg.pm:25
-#, fuzzy, perl-format
+#, perl-format
 #| msgid "more than one suite specified for show (%s)"
 msgid "more than one suite specified for newpkg (%s)"
-msgstr "show に複数のスイートが指定されています (%s)"
+msgstr "newpkg に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoNewPkg.pm:42
 #, perl-format
 msgid "no newpkg information found for suite %s"
-msgstr ""
+msgstr "newpkg に %s スイートの情報が見つかりません"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
