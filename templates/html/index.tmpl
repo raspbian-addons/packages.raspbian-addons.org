@@ -33,6 +33,11 @@
     [% PROCESS marker text=section IF section != main_section %]
     [% PROCESS marker text=archive IF archive != main_archive %]
   [% END %]
+  [%- IF trans_desc.$lang;
+	sdesc = trans_desc.$lang;
+      ELSE;
+	sdesc = desc;
+      END -%]
   [% IF providers.size %]
     <dt><a href="[% name %]" id="[% name %]">[% name %]</a></dt>
        <dd>[% g('virtual package provided by') %]
@@ -40,11 +45,11 @@
 	[%- ', ' UNLESS loop.last %][% END %]</dd>
     [% IF versions.length %]
       <dt><a href="[% name %]">[% name %]</a> ([% versions %])[% PROCESS markers %]</dt>
-         <dd>[% desc | html %]</dd>
+         <dd>[% sdesc | html %]</dd>
     [% END %]
   [% ELSE %]
     <dt><a href="[% name %]" id="[% name %]">[% name %]</a> ([% versions %])[% PROCESS markers %]</dt>
-       <dd>[% desc | html %]</dd>
+       <dd>[% sdesc | html %]</dd>
   [% END %]
 
   [% '</dl>' IF loop.last %]
