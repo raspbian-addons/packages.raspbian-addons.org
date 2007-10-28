@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-10-24 18:29+0200\n"
+"PO-Revision-Date: 2007-10-28 16:50+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -145,7 +145,7 @@ msgstr "Download"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr "Download-Seite für <kbd>%s</kbd> für %s Rechner"
+msgstr "Download-Seite für <kbd>%s</kbd> für %s-Rechner"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
@@ -157,10 +157,10 @@ msgid ""
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
 "and install packages, instead of doing so manually via this website."
 msgstr ""
-"Falls Sie %s auf Ihrem Rechner einsetzen, wird empfohlen, einen Paket-"
-"Manager wie <a href=\"%s\">Aptitude</a> oder <a href=\"%s\">Synaptic</a> zum "
-"Herunterladen und Installieren von Paketen zu benutzen und nicht diese "
-"Website."
+"Falls Sie %s auf Ihrem Rechner einsetzen, wird nachdrücklich empfohlen, einen "
+"Paket-Manager wie <a href=\"%s\">Aptitude</a> oder <a "
+"href=\"%s\">Synaptic</a> zum Herunterladen und Installieren von Paketen zu "
+"benutzen und nicht diese Website."
 
 #: templates/html/download.tmpl:25
 msgid ""
@@ -192,7 +192,7 @@ msgstr ""
 
 #: templates/html/download.tmpl:41 templates/html/show.tmpl:150
 msgid "debian-installer udeb package"
-msgstr "udeb-Paket des Debian-Installer"
+msgstr "udeb-Paket des Debian-Installers"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:151
 msgid ""
@@ -241,9 +241,9 @@ msgid ""
 "information."
 msgstr ""
 "Beachten Sie, dass %s noch nicht offiziell im %s-Archiv ist, aber die "
-"Portierungsgruppe %s hält ihr Archiv mit dem offiziellen Archiv so eng wie "
-"möglich synchron. Lesen Sie die <a href=\"%s\">Portierungsseiten von %s</a> "
-"für aktuelle Informationen."
+"Portierungsgruppe %s ihr Archiv mit dem offiziellen Archiv so eng wie möglich "
+"synchron hält. Lesen Sie die <a href=\"%s\">Portierungsseiten von %s</a> für "
+"aktuelle Informationen."
 
 #: templates/html/download.tmpl:96
 msgid ""
@@ -304,11 +304,11 @@ msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
 
 #: templates/html/foot.tmpl:22
 msgid "How to set <a href=\"%s\">the default document language</a>"
-msgstr "Wie stellt man <a href=\"%s\">die Standardsprache</a> ein"
+msgstr "Wie wird <a href=\"%s\">die Standardsprache</a> eingestellt"
 
 #: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
 msgid "%s Homepage"
-msgstr "%s Homepage"
+msgstr "%s-Homepage"
 
 #: templates/html/foot.tmpl:27
 msgid "Back to:"
@@ -337,12 +337,12 @@ msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
-"Inhalt Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s"
+"Inhalt-Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s"
 "\">Lizenzbestimmungen</a>."
 
 #: templates/html/foot.tmpl:39
 msgid "Learn more about this site"
-msgstr "Mehr Informationen über diese Seite"
+msgstr "Mehr Informationen über diese Site"
 
 #: templates/html/head.tmpl:46
 msgid "Search"
@@ -374,7 +374,7 @@ msgstr "Überspringen der Navigation"
 
 #: templates/html/head.tmpl:65
 msgid "%s Packages Homepage"
-msgstr "%s-Pakete Homepage"
+msgstr "%s-Pakete-Homepage"
 
 #: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
@@ -420,7 +420,7 @@ msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite <em>%s</em> (Abschnitt %s) im %s-"
+"Die folgenden Pakete wurden der Suite <em>%s</em> (Bereich %s) im %s-"
 "Archiv während der letzten 7 Tage hinzugefügt."
 
 #: templates/html/newpkg.tmpl:14
@@ -477,11 +477,11 @@ msgstr "Neue Pakete in "
 
 #: templates/html/search.tmpl:19
 msgid "Package Search Results -- %s"
-msgstr "Debian-Paketsuche: Ergebnisse -- %s"
+msgstr "Ergebnisse der Debian-Paketsuche -- %s"
 
 #: templates/html/search.tmpl:28
 msgid "Package Search Results"
-msgstr "Debian-Paketsuche: Ergebnisse"
+msgstr "Ergebnisse der Debian-Paketsuche"
 
 #: templates/html/search.tmpl:33
 msgid ""
@@ -517,11 +517,11 @@ msgstr "Suite(s) <em>$suite_enc</em>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all sections"
-msgstr "allen Abschnitten"
+msgstr "allen Bereichen"
 
 #: templates/html/search.tmpl:53
 msgid "section(s) <em>$section_enc</em>"
-msgstr "Abschnitt(e) <em>$section_enc</em>"
+msgstr "Bereich(e) <em>$section_enc</em>"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
 msgid "all architectures"
@@ -560,7 +560,7 @@ msgstr ""
 
 #: templates/html/search.tmpl:67
 msgid "Found <strong>%u</strong> matching packages."
-msgstr "<strong>%u</strong> Pakete gefunden."
+msgstr "<strong>%u</strong> passende Pakete gefunden."
 
 #: templates/html/search.tmpl:72
 msgid ""
@@ -620,11 +620,11 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:14
 msgid "Package Contents Search Results -- %s"
-msgstr "Debian-Inhalts-Paketsuche: Ergebnisse -- %s"
+msgstr "Ergebnisse der Debian-Inhalts-Paketsuche -- %s"
 
 #: templates/html/search_contents.tmpl:17
 msgid "Package Contents Search Results"
-msgstr "Debian-Inhalts-Paketsuche: Ergebnisse"
+msgstr "Ergebnisse der Debian-Inhalts-Paketsuche "
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
@@ -652,7 +652,7 @@ msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
 
 #: templates/html/search_contents.tmpl:73
 msgid "section(s) <em>%s</em>"
-msgstr "Abschnitt(e) <em>%s</em>"
+msgstr "Bereich(e) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "architecture(s) <em>%s</em>"
@@ -710,11 +710,11 @@ msgstr "Quellcode-Pakete"
 
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
-msgstr "Alle Pakete in dieser Sektion"
+msgstr "Alle Pakete in diesem Bereich"
 
 #: templates/html/show.tmpl:16
 msgid "Section:"
-msgstr "Abschnitt:"
+msgstr "Bereiche:"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
@@ -766,7 +766,7 @@ msgstr "Entwicklerinformationen (PTS)"
 
 #: templates/html/show.tmpl:76
 msgid "%s Changelog"
-msgstr "%s Changelog"
+msgstr "%s-Changelog"
 
 #: templates/html/show.tmpl:77
 msgid "Copyright File"
@@ -821,7 +821,7 @@ msgid ""
 msgstr ""
 "Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
 "Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
-"sogar Datenverlust verursachen kann. Bitte lesen Sie das <a href=\"%s"
+"sogar Datenverlust verursachen kann. Bitte lesen Sie den <a href=\"%s"
 "\">Changelog</a> und andere möglicherweise verfügbare Dokumentation, bevor "
 "Sie es benutzen."
 
@@ -832,7 +832,7 @@ msgid ""
 "packages</a>."
 msgstr ""
 "Dies ist ein <em>virtuelles Paket</em>. Sehen Sie in die <a href=\"%s"
-"\">Debian-Policy</a> für eine <a href=\"%sch-binary.html#s-virtual_pkg"
+"\">Debian-Richtlinien</a> für eine <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">Definition von virtuellen Paketen</a>."
 
 #: templates/html/show.tmpl:177
@@ -849,7 +849,7 @@ msgstr "Die folgenden Binärpakete werden aus diesem Quellcode-Paket gebaut:"
 
 #: templates/html/show.tmpl:218
 msgid "Other Packages Related to %s"
-msgstr "Andere Pakete in Beziehung zu %s"
+msgstr "Andere Pakete mit Bezug zu %s"
 
 #: templates/html/show.tmpl:220
 msgid "legend"
@@ -881,7 +881,7 @@ msgstr "oder "
 
 #: templates/html/show.tmpl:245
 msgid "also a virtual package provided by"
-msgstr "Auch ein virtuelles Paket, bereitgestellt durch"
+msgstr "auch ein virtuelles Paket, bereitgestellt durch"
 
 #: templates/html/show.tmpl:252
 msgid "%u providing packages"
@@ -958,12 +958,12 @@ msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
-"Quellcode-Repository des Debian-Pakets (<acronym lang=\"en\" title=\"Version "
+"Quellcode-Depot des Debian-Pakets (<acronym lang=\"en\" title=\"Version "
 "Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:342
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Quellcode-Depot des Debian-Pakets (Browsable)"
+msgstr "Quellcode-Depot des Debian-Pakets (browsable)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
@@ -971,7 +971,7 @@ msgstr "Index"
 
 #: templates/html/suite_index.tmpl:5 templates/html/suite_index.tmpl:20
 msgid "List of sections in \"%s\""
-msgstr "Liste der Kategorien in »%s«"
+msgstr "Liste der Bereiche in »%s«"
 
 #: templates/html/suite_index.tmpl:38
 msgid "List of all source packages"
@@ -1006,7 +1006,7 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite %s (Abschnitt %s) im %s-Archiv während "
+"Die folgenden Pakete wurden der Suite %s (Bereich %s) im %s-Archiv während "
 "der letzten 7 Tage hinzugefügt."
 
 #: templates/rss/newpkg.tmpl:23
