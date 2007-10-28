@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-21 21:31+0200\n"
-"PO-Revision-Date: 2007-10-21 17:25+0200\n"
+"PO-Revision-Date: 2007-10-28 17:07+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,11 +12,11 @@ msgstr ""
 
 #: bin/create_index_pages:234
 msgid "Section"
-msgstr "Abschnitt"
+msgstr "Bereich"
 
 #: bin/create_index_pages:246
 msgid "Subsection"
-msgstr "Kategorie"
+msgstr "Unterbereich"
 
 #: bin/create_index_pages:258
 msgid "Priority"
@@ -44,7 +44,7 @@ msgstr "zwei oder mehr Pakete angegeben (%s)"
 
 #: lib/Packages/Dispatcher.pm:321
 msgid "requested format not available for this document"
-msgstr "angefordertes Format nicht verfügbar für dieses Dokument"
+msgstr "angefordertes Format für dieses Dokument nicht verfügbar"
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
@@ -87,7 +87,7 @@ msgstr "mehr als eine Suite für show_static angegeben (%s)"
 #: lib/Packages/DoIndex.pm:37
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
-msgstr "mehr als ein Unterabschnitt für show_static angegeben (%s)"
+msgstr "mehr als ein Unterbereich für show_static angegeben (%s)"
 
 #: lib/Packages/DoIndex.pm:73
 #, perl-format
@@ -97,12 +97,12 @@ msgstr "konnte Indexdatei %s nicht lesen: %s"
 #: lib/Packages/DoNewPkg.pm:25
 #, perl-format
 msgid "more than one suite specified for newpkg (%s)"
-msgstr ""
+msgstr "mehr als eine Suite für newpkg angegeben (%s)"
 
 #: lib/Packages/DoNewPkg.pm:42
 #, perl-format
 msgid "no newpkg information found for suite %s"
-msgstr "keine Informationen über neue Pakete gefunden für Suite %s"
+msgstr "keine Informationen über neue Pakete für Suite %s gefunden"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
@@ -164,7 +164,7 @@ msgstr "Paket nicht verfügbar"
 
 #: lib/Packages/DoShow.pm:491
 msgid "Not available"
-msgstr "Paket nicht verfügbar"
+msgstr "Nicht verfügbar"
 
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
