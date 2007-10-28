@@ -279,14 +279,14 @@ sub do_dispatch {
 
     my $locale = get_locale($opts{lang});
     my $charset = get_charset($opts{lang});
-    setlocale ( LC_ALL, $locale )
-	or do { debug( "couldn't set locale $locale, using default" ) if DEBUG;
-		setlocale( LC_ALL, get_locale() )
-		    or do {
-			debug( "couldn't set default locale either" ) if DEBUG;
+#    setlocale ( LC_ALL, $locale )
+#	or do { debug( "couldn't set locale $locale, using default" ) if DEBUG;
+#		setlocale( LC_ALL, get_locale() )
+#		    or do {
+#			debug( "couldn't set default locale either" ) if DEBUG;
 			setlocale( LC_ALL, "C" );
-		    };
-	    };
+#		    };
+#	    };
     debug( "locale=$locale charset=$charset", 1 ) if DEBUG;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
