@@ -45,7 +45,7 @@ sub do_newpkg {
     };
     while (<NEWPKG>) {
 	chomp;
-	my @data = split /\s/, $_, 10;
+	my @data = split /\s/, $_, 11;
 
 	next unless $data[2]; #removed packages
 	next unless $data[3] eq $suite;
