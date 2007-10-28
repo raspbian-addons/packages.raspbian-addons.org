@@ -65,6 +65,5 @@ then
 	    echo
 	    cat $cache
 	fi
-    ) | /usr/sbin/sendmail -t
+    ) | tee /dev/stderr | /usr/sbin/sendmail -t
 fi
-
