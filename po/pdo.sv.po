@@ -1,171 +1,168 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: packages.git 944e9ffd2b\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: packages.git\n"
 "POT-Creation-Date: 2007-10-21 21:31+0200\n"
-"PO-Revision-Date: 2007-10-28 17:07+0100\n"
-"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
-"Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
+"PO-Revision-Date: 2007-10-26 22:09+0100\n"
+"Last-Translator: Peter Karlsson <peterk@debian.org>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: bin/create_index_pages:234
-msgid "Section"
-msgstr "Bereich"
-
-#: bin/create_index_pages:246
-msgid "Subsection"
-msgstr "Unterbereich"
-
-#: bin/create_index_pages:258
-msgid "Priority"
-msgstr "PrioritÃ¤t"
-
-#. Done
-#: lib/Packages/Dispatcher.pm:162
-msgid "search doesn't take any more path elements"
-msgstr "Suche nimmt keine Pfadelemente mehr an"
-
-#: lib/Packages/Dispatcher.pm:165
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr "Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
-
-#: lib/Packages/Dispatcher.pm:188
-#, perl-format
-msgid "%s set more than once in path"
-msgstr "%s mehr als einmal im Pfad angegeben"
-
-#: lib/Packages/Dispatcher.pm:223
-#, perl-format
-msgid "two or more packages specified (%s)"
-msgstr "zwei oder mehr Pakete angegeben (%s)"
-
-#: lib/Packages/Dispatcher.pm:321
-msgid "requested format not available for this document"
-msgstr "angefordertes Format fÃ¼r dieses Dokument nicht verfÃ¼gbar"
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
 msgid "package not valid or not specified"
-msgstr "Paket nicht gÃ¼ltig oder nicht angegeben"
+msgstr "paketet inte giltigt eller inte angivet"
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
 #: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
-msgstr "Suite nicht gÃ¼ltig oder nicht angegeben"
+msgstr "sviten inte giltig eller inte angiven"
 
 #: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
 msgid "architecture not valid or not specified"
-msgstr "Architektur nicht gÃ¼ltig oder nicht angegeben"
+msgstr "arkitekturen inte giltig eller inte angiven"
 
 #: lib/Packages/DoDownload.pm:36
 #, perl-format
 msgid "more than one suite specified for download (%s)"
-msgstr "mehr als eine Suite zum Download angegeben (%s)"
+msgstr "mer än en svit angiven för hämtningen (%s)"
 
 #: lib/Packages/DoDownload.pm:39
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
-msgstr "mehr als eine Architektur zum Download angegeben (%s)"
+msgstr "mer än en arkitektur angiven för hämtningen (%s)"
 
 #: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
-msgstr "Keine Pakete in dieser Suite auf dieser Architektur"
+msgstr "Paketet finns inte på arkitekturen."
 
 #: lib/Packages/DoFilelist.pm:60
 msgid "Invalid suite/architecture combination"
-msgstr "UngÃ¼ltige Suite/Architektur-Kombination"
+msgstr "Ogiltig kombination av svit och arkitektur"
 
 #: lib/Packages/DoIndex.pm:34
 #, perl-format
 msgid "more than one suite specified for show_static (%s)"
-msgstr "mehr als eine Suite fÃ¼r show_static angegeben (%s)"
+msgstr "mer än en svit angavs för show_static (%s)"
 
 #: lib/Packages/DoIndex.pm:37
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
-msgstr "mehr als ein Unterbereich fÃ¼r show_static angegeben (%s)"
+msgstr "mer än en undersektion angavs för show_static (%s)"
 
 #: lib/Packages/DoIndex.pm:73
 #, perl-format
 msgid "couldn't read index file %s: %s"
-msgstr "konnte Indexdatei %s nicht lesen: %s"
+msgstr "kunde inte läsa indexfilen %s: %s"
 
 #: lib/Packages/DoNewPkg.pm:25
 #, perl-format
 msgid "more than one suite specified for newpkg (%s)"
-msgstr "mehr als eine Suite fÃ¼r newpkg angegeben (%s)"
+msgstr "mer än en svit angiven för newpkg (%s)"
 
 #: lib/Packages/DoNewPkg.pm:42
 #, perl-format
 msgid "no newpkg information found for suite %s"
-msgstr "keine Informationen Ã¼ber neue Pakete fÃ¼r Suite %s gefunden"
+msgstr "ingen newpkg-information hittades för sviten %s"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
 msgid "keyword not valid or missing"
-msgstr "Suchbegriff ungÃ¼ltig oder nicht angegeben"
+msgstr "nyckelordet inte giltigt eller saknas"
 
 #: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
 msgid "keyword too short (keywords need to have at least two characters)"
-msgstr ""
-"Suchbegriff zu kurz (Suchbegriffe mÃ¼ssen mindestens zwei Zeichen lang sein)"
+msgstr "nyckelordet för kort (nyckelord måste bestå av minst två tecken)"
 
 #: lib/Packages/DoSearch.pm:163
 msgid "Exact hits"
-msgstr "Genaue Treffer"
+msgstr "Exakta träffar"
 
 #: lib/Packages/DoSearch.pm:172
 msgid "Other hits"
-msgstr "Andere Treffer"
+msgstr "Andra träffar"
 
 #: lib/Packages/DoSearch.pm:217
 msgid "Virtual package"
-msgstr "Virtuelles Paket"
+msgstr "Virtuellt paket"
 
 #: lib/Packages/DoSearchContents.pm:39
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
-msgstr "mehr als eine Suite zur Inhaltssuche angegeben (%s)"
+msgstr "mer än en svit angavs i innehållssökningen (%s)"
 
 #: lib/Packages/DoSearchContents.pm:80
 msgid "The search mode you selected doesn't support more than one keyword."
-msgstr ""
-"Der Suchmodus, den Sie ausgewÃ¤hlt haben, unterstÃ¼tzt nicht mehr als einen "
-"Suchbegriff."
+msgstr "Sökläget du valde stöder inte mer än ett nyckelord."
 
 #: lib/Packages/DoShow.pm:37
 #, perl-format
 msgid "more than one suite specified for show (%s)"
-msgstr "mehr als eine Suite zum Anzeigen angegeben (%s)"
+msgstr "mer är en svit angavs för show (%s)"
 
 #: lib/Packages/DoShow.pm:72
 msgid "No such package."
-msgstr "Kein passendes Paket gefunden."
+msgstr "Paketet finns inte."
 
 #: lib/Packages/DoShow.pm:84
 msgid "Package not available in this suite."
-msgstr "Paket in dieser Suite nicht verfÃ¼gbar"
+msgstr "Paketet är inte tillgängligt i sviten."
 
 #: lib/Packages/DoShow.pm:197
 msgid " and others"
-msgstr " und andere"
+msgstr " och andra"
 
 #: lib/Packages/DoShow.pm:427
 #, perl-format
 msgid "not %s"
-msgstr "nicht %s"
+msgstr "inte %s"
 
 #: lib/Packages/DoShow.pm:465
 msgid "Package not available"
-msgstr "Paket nicht verfÃ¼gbar"
+msgstr "Paketet inte tillgängligt"
 
 #: lib/Packages/DoShow.pm:491
 msgid "Not available"
-msgstr "Nicht verfÃ¼gbar"
+msgstr "Inte tillgängligt"
 
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
-msgstr "Paket hat ungÃ¼ltiges Betreuer-Feld"
+msgstr "paketet har felaktigt ansvarigfält"
+
+#. Done
+#: lib/Packages/Dispatcher.pm:162
+msgid "search doesn't take any more path elements"
+msgstr "search tar inte fler sökvägselement"
+
+#: lib/Packages/Dispatcher.pm:165
+msgid ""
+"We're supposed to display the homepage here, instead of getting dispatch.pl"
+msgstr ""
+"Det är meningen att vi ska visa hemsidan här, inte hämta dispatch.pl"
+
+#: lib/Packages/Dispatcher.pm:188
+#, perl-format
+msgid "%s set more than once in path"
+msgstr "%s satt fler än en gång i sökvägen"
+
+#: lib/Packages/Dispatcher.pm:223
+#, perl-format
+msgid "two or more packages specified (%s)"
+msgstr "två eller flera paket angavs (%s)"
+
+#: lib/Packages/Dispatcher.pm:321
+msgid "requested format not available for this document"
+msgstr "angivet format inte tillgängligt för dokumentet"
+
+#: bin/create_index_pages:234
+msgid "Section"
+msgstr "Sektion"
+
+#: bin/create_index_pages:246
+msgid "Subsection"
+msgstr "Undersektion"
+
+#: bin/create_index_pages:258
+msgid "Priority"
+msgstr "Prioritet"

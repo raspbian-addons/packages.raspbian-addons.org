@@ -43,6 +43,9 @@ tie my %src_packages, 'DB_File', "$DBDIR/sources_small.db",
 tie my %src2bin, 'DB_File', "$DBDIR/sources_packages.db",
     O_RDONLY, 0666, $DB_BTREE
     or die "couldn't open $DBDIR/sources_packages.db: $!";
+tie my %desctrans, 'DB_File', "$DBDIR/descriptions_translated.db",
+    O_RDONLY, 0666, $DB_BTREE
+    or die "couldn't tie DB $DBDIR/descriptions_translated.db: $!";
 
 my $sections = retrieve "$DBDIR/sections.info";
 my $subsections = retrieve "$DBDIR/subsections.info";
@@ -116,6 +119,7 @@ while (my ($pkg, $data) = each %packages) {
 					 subsection => $data[4],
 					 priority => $data[5],
 					 version => $data[6],
+					 'description-md5' => $data[7],
 					 description => $data[8] } );
     }
     foreach (keys %virt) {
@@ -138,6 +142,18 @@ while (my ($pkg, $data) = each %packages) {
 	    $p{section} = $entry->get_newest( 'section' );
 	    $p{archive} = $entry->get_newest( 'archive' );
 	    $p{desc} = $entry->get_newest( 'description' );
+	    my $desc_md5 = $entry->get_newest( 'description-md5' );
+	    my $trans_desc = $desctrans{$desc_md5};
+	    if ($trans_desc) {
+		my %sdescs;
+		my %trans_desc = split /\000|\001/, $trans_desc;
+		while (my ($l, $d) = each %trans_desc) {
+		    $d =~ s/\n.*//os;
+
+		    $sdescs{$l} = $d;
+		}
+		$p{trans_desc} = \%sdescs;
+	    }
 	    $p{priority} = $entry->get_newest( 'priority' );
 	}
 	push @{$allpkgs{$key}}, \%p;

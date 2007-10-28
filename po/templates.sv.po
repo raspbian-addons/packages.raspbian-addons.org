@@ -1,26 +1,24 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: packages.git c82c758c8\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-10-28 16:50+0100\n"
-"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
-"Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
+"Project-Id-Version: Debian webwml organization\n"
+"PO-Revision-Date: 2006-10-26 23:10+0100\n"
+"Last-Translator: Peter Karlsson <peterk@debian.org>\n"
+"Language-Team: debian-l10n-swedish@lists.debian.org\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: templates/config.tmpl:40
 msgid "Debian Web Mailinglist"
-msgstr "Debian Webseiten-Mailingliste"
+msgstr "Debians webbsändlista"
 
 #: templates/config.tmpl:45
 msgid "%s Webmaster"
-msgstr "%s-Webmaster"
+msgstr "Webbansvarig för %s"
 
 #: templates/config.tmpl:48
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr "%s ist ein eingetragenes <a href=\"%s\">Warenzeichen</a> von %s"
+msgstr "%s är ett <a href=\"%s\">varumärke</a> hos %s"
 
 #: templates/config.tmpl:53
 msgid ""
@@ -28,13 +26,13 @@ msgid ""
 "packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
 "information should be expected"
 msgstr ""
-"Bitte beachten Sie, dass es sich bei dieser Seite um eine experimentelle "
-"Version von <a href=\"http://packages.debian.org/\">packages.debian.org</a> "
-"handelt. Mit Fehlern und veralteten Informationen muss gerechnet werden"
+"Observera att detta är en experimentell version av <a href=\"http://"
+"packages.debian.org/\">packages.debian.org</a>. Fel och föråldrad "
+"information kan förväntas"
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
-msgstr "Intel x86"
+msgstr "Inte x86"
 
 #: templates/config/architectures.tmpl:5
 msgid "Motorola 680x0"
@@ -102,7 +100,7 @@ msgstr "Nordamerika"
 
 #: templates/config/mirrors.tmpl:183
 msgid "South America"
-msgstr "SÃ¼damerika"
+msgstr "Sydamerika"
 
 #: templates/config/mirrors.tmpl:184
 msgid "Asia"
@@ -110,7 +108,7 @@ msgstr "Asien"
 
 #: templates/config/mirrors.tmpl:185
 msgid "Australia and New Zealand"
-msgstr "Australien und Neuseeland"
+msgstr "Australien och Nya Zeeland"
 
 #: templates/config/mirrors.tmpl:186
 msgid "Europe"
@@ -122,7 +120,7 @@ msgstr "Afrika"
 
 #: templates/html/download.tmpl:2
 msgid "Package Download Selection -- %s"
-msgstr "Paket-Download-Auswahl -- %s"
+msgstr "Val av pakethämtning -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index.tmpl:10 templates/html/show.tmpl:14
@@ -132,7 +130,7 @@ msgstr "Distribution:"
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index.tmpl:10 templates/html/show.tmpl:14
 msgid "Overview over this suite"
-msgstr "Ãœbersicht Ã¼ber diese Suite"
+msgstr "Översikt över denna svit"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
@@ -141,15 +139,15 @@ msgstr "Paket:"
 
 #: templates/html/download.tmpl:8
 msgid "Download"
-msgstr "Download"
+msgstr "Hämta"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr "Download-Seite fÃ¼r <kbd>%s</kbd> fÃ¼r %s-Rechner"
+msgstr "Hämtningssida för <kbd>%s</kbd> på %s-maskiner"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
-msgstr "Download-Seite fÃ¼r <kbd>%s</kbd>"
+msgstr "Hämtningssida för <kbd>%s</kbd>"
 
 #: templates/html/download.tmpl:23
 msgid ""
@@ -157,26 +155,26 @@ msgid ""
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
 "and install packages, instead of doing so manually via this website."
 msgstr ""
-"Falls Sie %s auf Ihrem Rechner einsetzen, wird nachdrÃ¼cklich empfohlen, einen "
-"Paket-Manager wie <a href=\"%s\">Aptitude</a> oder <a "
-"href=\"%s\">Synaptic</a> zum Herunterladen und Installieren von Paketen zu "
-"benutzen und nicht diese Website."
+"Om du kör %s rekommenderas det å det bestämdaste att du använder en "
+"pakethanterare som a href=\"%s\">aptitude</a> eller <a href=\"%s\">"
+"synaptic</a> för att hämta och installera paket, istället för att göra "
+"det manuellt via webbplatsen."
 
 #: templates/html/download.tmpl:25
 msgid ""
 "You should be able to use any of the listed mirrors by adding a line to your "
 "<kbd>/etc/apt/sources.list</kbd> like this:"
 msgstr ""
-"Sie kÃ¶nnen jeden der aufgefÃ¼hrten Spiegel-Server benutzen, indem Sie eine "
-"Zeile der folgenden Art zu Ihrer <kbd>/etc/apt/sources.list</kbd> hinzufÃ¼gen:"
+"Du bör kunna använda valfri av de angivna speglarna genom att lägga till en "
+"rad i din <kbd>/etc/apt/sources.list</kbd> på den här formen:"
 
 #: templates/html/download.tmpl:30
 msgid "Replacing <em>%s</em> with the mirror in question."
-msgstr "Ersetzen Sie dabei <em>%s</em> mit dem gewÃ¼nschten Spiegel-Server."
+msgstr "Ersätt <em>%s</em> med spegeln i fråga."
 
 #: templates/html/download.tmpl:37 templates/html/show.tmpl:145
 msgid "Experimental package"
-msgstr "Experimentelles Paket"
+msgstr "Experimentellt paket"
 
 #: templates/html/download.tmpl:38
 msgid ""
@@ -185,14 +183,14 @@ msgid ""
 "cause data loss. Please be sure to consult the changelog and other possible "
 "documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
-"Dies bedeutet, dass es hÃ¶chstwahrscheinlich instabil oder fehlerhaft ist und "
-"sogar Datenverlust verursachen kann. Bitte lesen Sie den Changelog und "
-"andere mÃ¶glicherweise verfÃ¼gbare Dokumentation, bevor Sie es benutzen."
+"Varning: Paketet är från den <strong>experimentella</strong> utgåvan. "
+"Det innebär att det med stor sannolikhet är instabilt eller innehåller "
+"fel, och kanske till och med kan orsaka dataförluster. Se till att "
+"läsa ändringsloggen och annan dokumentation innan du använder det."
 
 #: templates/html/download.tmpl:41 templates/html/show.tmpl:150
 msgid "debian-installer udeb package"
-msgstr "udeb-Paket des Debian-Installers"
+msgstr "udeb-paket för debian-installer"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:151
 msgid ""
@@ -200,38 +198,35 @@ msgid ""
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"Warnung: Dieses Paket ist nur dazu gedacht, um <a href=\"http://www.debian."
-"org/devel/debian-installer\">debian-installer</a>-Images zu erzeugen. "
-"Installieren Sie es nicht auf einem normalen %s-System."
+"Varning: Paketet är enbart tänkt att användas för att bygga "
+"<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
+"installer</a>-avbildningar. Installera det inte på ett normalt %ssystem."
 
 #: templates/html/download.tmpl:49
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
 msgstr ""
-"Sie kÃ¶nnen die angeforderte Datei aus dem <tt>%s</tt>-Unterverzeichnis auf "
-"jeder dieser Sites herunterladen:"
+"Du kan hämta den önskade filen från underkatalogen <tt>%s</tt> på någon "
+"av dessa platser:"
 
 #: templates/html/download.tmpl:75
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
-"Sie kÃ¶nnen die angeforderte Datei aus dem <tt>%s</tt>-Unterverzeichnis "
-"herunterladen:"
+"Du kan hämta den önskade filen från underkatalogen <tt>%s</tt> på:"
 
 #: templates/html/download.tmpl:77
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr ""
-"%s-Sicherheitsaktualisierungen werden offiziell nur Ã¼ber <tt>%s</tt> "
-"verbreitet."
+msgstr "Säkerhetsuppdateringar för %s distribueras officiellt enbart från <tt>%s</tt>."
 
 #: templates/html/download.tmpl:84
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
 msgstr ""
-"Falls keine der genannten Seiten schnell genug fÃ¼r Sie ist, beachten Sie "
-"bitte auch unsere <a href=\"%s\">komplette Spiegelliste</a>."
+"Om ingen av platserna ovan är snabb nog för dig, se vår "
+"<a href=\"%s\">fullständiga spegelförteckning</a>."
 
 #: templates/html/download.tmpl:92
 msgid ""
@@ -240,10 +235,10 @@ msgid ""
 "as possible. See the <a href=\"%s\">%s ports page</a> for current "
 "information."
 msgstr ""
-"Beachten Sie, dass %s noch nicht offiziell im %s-Archiv ist, aber die "
-"Portierungsgruppe %s ihr Archiv mit dem offiziellen Archiv so eng wie mÃ¶glich "
-"synchron hÃ¤lt. Lesen Sie die <a href=\"%s\">Portierungsseiten von %s</a> fÃ¼r "
-"aktuelle Informationen."
+"Observera att %s ännu inte officiellt ingår i %sarkivet, men att "
+"%s-anpassningsgruppen håller sina arkiv så nära i synk med det officiella "
+"arkivet som möjligt. Se <a href=\"%s\">%s-anpassningssidan</a> för "
+"aktuell information."
 
 #: templates/html/download.tmpl:96
 msgid ""
@@ -251,316 +246,311 @@ msgid ""
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
 "the Shift key when you click on the URL."
 msgstr ""
-"Beachten Sie, dass Sie bei einigen Browsern angeben mÃ¼ssen, dass die Datei "
-"als Datei gespeichert werden soll. Bei Firefox oder Mozilla sollten Sie die "
-"Umschalttaste halten, wenn Sie auf eine URL klicken."
+"Observera att du i vissa webbläsare måste tala om att du vill att filen "
+"skall sparas. I Firefox och Mozilla, till exempel, håller du ned "
+"Skift-tangenten medan du klickar på webbadressen."
 
 #: templates/html/download.tmpl:100
 msgid "More information on <kbd>%s</kbd>:"
-msgstr "Weitere Informationen Ã¼ber <kbd>%s</kbd>:"
-
-#: templates/html/download.tmpl:102
-msgid "%s Byte (%s %s)"
-msgstr "%s Byte (%s %s)"
+msgstr "Ytterligare information om <kbd>%s</kbd>:"
 
 #: templates/html/download.tmpl:102
 msgid "Exact Size"
-msgstr "Genaue GrÃ¶ÃŸe"
+msgstr "Exakt storlek"
+
+#: templates/html/download.tmpl:102
+msgid "%s Byte (%s %s)"
+msgstr "%s byte (%s %s)"
 
 #: templates/html/download.tmpl:103 templates/html/show.tmpl:320
 msgid "MD5 checksum"
-msgstr "MD5-PrÃ¼fsumme"
-
-#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
-msgid "Not Available"
-msgstr "Nicht verfÃ¼gbar"
+msgstr "MD5-kontrollsumma"
 
 #: templates/html/download.tmpl:104
 msgid "SHA1 checksum"
-msgstr "SHA1-PrÃ¼fsumme"
+msgstr "SHA1-kontrollsymma"
+
+#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
+msgid "Not Available"
+msgstr "Ej tillgänglig"
 
 #: templates/html/download.tmpl:105
 msgid "SHA256 checksum"
-msgstr "SHA256-PrÃ¼fsumme"
+msgstr "SHA256-kontrollsumma"
 
 #: templates/html/filelist.tmpl:2
 msgid "Filelist of package %s/%s/%s"
-msgstr "Liste der Dateien in Paket %s/%s/%s"
+msgstr "Filförteckning för paketet %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
 msgid ""
 "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
-"Liste der Dateien in Paket <em>%s</em> in <em>%s</em> fÃ¼r Architektur <em>%"
-"s</em>"
+"Filförteckning för paketet <em>%s</em> i <em>%s</em> för arkitekturen <em>%s</em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
-msgstr "Liste der Dateien"
+msgstr "Filförteckning"
 
 #: templates/html/foot.tmpl:11
 msgid "This page is also available in the following languages:"
-msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
+msgstr "Denna sida finns även på följande språk:"
 
 #: templates/html/foot.tmpl:22
 msgid "How to set <a href=\"%s\">the default document language</a>"
-msgstr "Wie wird <a href=\"%s\">die Standardsprache</a> eingestellt"
-
-#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr "%s-Homepage"
+msgstr ""
+"Så ställer du in <a href=\"%s\">standardspråkval för dokument</a>"
 
 #: templates/html/foot.tmpl:27
 msgid "Back to:"
-msgstr "ZurÃ¼ck zu:"
+msgstr "Återgå till:"
+
+#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
+msgid "%s Homepage"
+msgstr "%ss startsida"
 
 #: templates/html/foot.tmpl:27
 msgid "Packages search page"
-msgstr "Paket-Suchseite"
+msgstr "Paketsöksida"
 
 #: templates/html/foot.tmpl:31
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
-"Um ein Problem mit der Web-Site zu berichten, schreiben Sie eine E-Mail an "
-"<a href=\"mailto:%s\">%s</a> (auf Englisch). FÃ¼r weitere "
-"Kontaktinformationen sollten Sie auf die %s-<a href=\"%s\">Kontakt-Seite</a> "
-"schauen."
+"För att rapportera ett problem med webbplatsen, kontakta <a href=\"mailto:"
+"%s\">%s</a> (på engelska). "
+"För problem och synpunkter om den svenska översättningen, kontakta <a href="
+"\"mailto:debian-l10n-swedish@lists.debian.org\">debian-l10n-swedish@lists."
+"debian.org</a>. För övrig kontaktinformation, se %ss <a href=\"%s"
+"%s\">kontaktsida</a>."
 
 #: templates/html/foot.tmpl:33 templates/txt/index.tmpl:4
 msgid "Generated:"
-msgstr "Erzeugt:"
+msgstr "Skapad:"
 
 #: templates/html/foot.tmpl:35
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
-"Inhalt-Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s"
-"\">Lizenzbestimmungen</a>."
+"Innehållet upphovsrättsskyddat &copy; %s <a href=\"%s\">%s</a>; Se <a href=\"%s"
+"\">licensvillkor</a>."
 
 #: templates/html/foot.tmpl:39
 msgid "Learn more about this site"
-msgstr "Mehr Informationen Ã¼ber diese Site"
+msgstr "Läs mer om denna webbplats"
 
 #: templates/html/head.tmpl:46
 msgid "Search"
-msgstr "Suche"
+msgstr "Sök"
 
 #: templates/html/head.tmpl:49
 msgid "package names"
-msgstr "Paketnamen"
+msgstr "namn på paket"
 
 #: templates/html/head.tmpl:50
 msgid "descriptions"
-msgstr "Beschreibungen"
+msgstr "beskrivningar"
 
 #: templates/html/head.tmpl:51
 msgid "source package names"
-msgstr "Quellcodepaketnamen"
+msgstr "namn på källkodspaket"
 
 #: templates/html/head.tmpl:52
 msgid "package contents"
-msgstr "Paket-Inhalte"
+msgstr "innehåll i paket"
 
 #: templates/html/head.tmpl:55
 msgid "all options"
-msgstr "Alle Optionen"
+msgstr "alla flaggor"
 
 #: templates/html/head.tmpl:62
 msgid "skip the navigation"
-msgstr "Ãœberspringen der Navigation"
+msgstr "hoppa över navigationen"
 
 #: templates/html/head.tmpl:65
 msgid "%s Packages Homepage"
-msgstr "%s-Pakete-Homepage"
+msgstr "%ss startsida för paket"
 
 #: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
-msgstr "Pakete"
+msgstr "Paket"
 
 #: templates/html/index.tmpl:3
 msgid "Source Packages in \"%s\", %s %s"
-msgstr "Quellcode-Pakete in Â»%sÂ«, %s %s"
+msgstr "Källkodspaket i \"%s\", %s %s"
 
 #: templates/html/index.tmpl:4
 msgid "Source Packages in \"%s\""
-msgstr "Quellcode-Pakete in Â»%sÂ«"
+msgstr "Källkodspaket i \"%s\""
 
 #: templates/html/index.tmpl:6
 msgid "Software Packages in \"%s\", %s %s"
-msgstr "Software-Pakete in Â»%sÂ«, %s %s"
+msgstr "Källkodspaket i \"%s\", %s %s"
 
 #: templates/html/index.tmpl:7
 msgid "Software Packages in \"%s\""
-msgstr "Software-Pakete in Â»%sÂ«"
+msgstr "Källkodspaket i \"%s\""
 
 #: templates/html/index.tmpl:14
 msgid "All Packages"
-msgstr "Alle Pakete"
+msgstr "Alla paket"
 
 #: templates/html/index.tmpl:16 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
-msgstr "Quellcode"
+msgstr "Källkod"
 
 #: templates/html/index.tmpl:38 templates/html/show.tmpl:247
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
-msgstr "virtuelles Paket, bereitgestellt durch"
+msgstr "virtuellt paket som tillhandahålls av"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
-msgstr "Neue Pakete in Â»%sÂ«"
+msgstr "Nya paket i \"%s\""
 
 #: templates/html/newpkg.tmpl:11
 msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite <em>%s</em> (Bereich %s) im %s-"
-"Archiv wÃ¤hrend der letzten 7 Tage hinzugefÃ¼gt."
+"Följande paket har lagts till sviten <em>%</em> (sektion %s) i %s-arkivet "
+"under de senaste sju dagarna."
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite <em>%s</em> im %s-Archiv wÃ¤hrend der "
-"letzten 7 Tage hinzugefÃ¼gt."
+"Följande paket har lagts till sviten <em>%</em> i %s-arkivet "
+"under de senaste sju dagarna."
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr ""
-" Sie kÃ¶nnen diese Liste auch <a href=\"%s\">sortiert nach Name</a> anzeigen "
-"lassen."
+msgstr " Du kan även visa listan <a href=\"%s\">sorterad i bokstavsordning</a>."
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr ""
-" Sie kÃ¶nnen diese Liste auch <a href=\"%s\">sortiert nach Alter</a> anzeigen "
-"lassen."
+msgstr " Du kan även visa lisan <a href=\"%s\">sorterad efter ålder</a>."
 
 #: templates/html/newpkg.tmpl:22
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
 msgstr ""
-"Diese Informationen sind auch als <a href=\"newpkg?format=rss\">RSS-Feed</a> "
-"verfÃ¼gbar."
+"Informationen är också tillgänglig som en <a href=\"newpkg?format=rss\">RSS-"
+"kanal</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
-msgstr "[RSS 1.0 Feed]"
+msgstr "[RSS 1.0-kanal]"
 
 #: templates/html/newpkg.tmpl:28
 msgid " <em>(%u days old)</em>"
-msgstr " <em>(%u Tage alt)</em>"
-
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
-msgid "All packages"
-msgstr "Alle Pakete"
+msgstr " <em>(%u dagar gammal</em>"
 
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
 msgid "List of all packages"
-msgstr "Liste aller Pakete"
+msgstr "Förteckning över alla paket"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
+msgid "All packages"
+msgstr "Alla paket"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
-msgstr "kompakte, gepackte Liste im Textformat"
+msgstr "kompakt komprimerad textlista"
 
 #: templates/html/newpkg.tmpl:34
 msgid "New packages in "
-msgstr "Neue Pakete in "
+msgstr "Nya paket i "
 
 #: templates/html/search.tmpl:19
 msgid "Package Search Results -- %s"
-msgstr "Ergebnisse der Debian-Paketsuche -- %s"
+msgstr "Paketsökresultat -- %s"
 
 #: templates/html/search.tmpl:28
 msgid "Package Search Results"
-msgstr "Ergebnisse der Debian-Paketsuche"
+msgstr "Paketsökresultat"
 
 #: templates/html/search.tmpl:33
 msgid ""
 "You can try a different search on the <a href=\"%s#search_packages"
 "\">Packages search page</a>."
 msgstr ""
-"Sie kÃ¶nnen auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
-"andere Suche durchfÃ¼hren."
+"Du kan prova en annan sökning på <a href=\"%s#search_packages"
+"\">paketsöksidan</a>."
 
 #: templates/html/search.tmpl:37
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
-"Sie haben nur nach WÃ¶rtern gesucht, die exakt auf die SchlÃ¼sselwÃ¶rter "
-"passen. Sie kÃ¶nnen eine <a href=\"%s\">Teilwortsuche</a> ausprobieren."
+"Du har bara sökt efter ord som exakt träffar dina nyckelord. Du kan försöka "
+"söka med <a href=\"%s\">träff av delord aktiverade</a>."
 
 #: templates/html/search.tmpl:42
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
-"<a href=\"%s\">%u</a> Ergebnisse wurden aufgrund der Suchparameter nicht "
-"angezeigt."
+"<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
 
 #: templates/html/search.tmpl:52
 msgid "all suites"
-msgstr "allen Suites"
+msgstr "alla sviter"
 
 #: templates/html/search.tmpl:52
 msgid "suite(s) <em>$suite_enc</em>"
-msgstr "Suite(s) <em>$suite_enc</em>"
+msgstr "svit(er) <em>$suite_enc</em>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all sections"
-msgstr "allen Bereichen"
+msgstr "alla sektioner"
 
 #: templates/html/search.tmpl:53
 msgid "section(s) <em>$section_enc</em>"
-msgstr "Bereich(e) <em>$section_enc</em>"
+msgstr "sektion(er) <em>$section_enc</em>"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
 msgid "all architectures"
-msgstr "auf allen Architekturen"
+msgstr "alla arkitekturer"
 
 #: templates/html/search.tmpl:54
 msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "auf Architektur(en) <em>$architectures_enc</em>"
-
-#: templates/html/search.tmpl:56
-msgid "packages"
-msgstr "Paketen"
+msgstr "arkitektur(er) <em>$architectures_enc</em>"
 
 #: templates/html/search.tmpl:56
 msgid "source packages"
-msgstr "Quellcode-Paketen"
+msgstr "källkodspaket"
+
+#: templates/html/search.tmpl:56
+msgid "packages"
+msgstr "paket"
 
 #: templates/html/search.tmpl:57
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
-"Sie haben nach %s gesucht, deren Namen <em>%s</em> enthÃ¤lt, in %s, %s, und %"
-"s."
+"Du har sökt efter %s vars namn innehåller <em>%s</em> i %s, %s och %s."
 
 #: templates/html/search.tmpl:60
 msgid " (including subword matching)"
-msgstr " (enthÃ¤lt Teilwortabgleich)"
+msgstr " (inkluderar delordsträffar)"
 
 #: templates/html/search.tmpl:61
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
-"Sie haben nach <em>%s</em> in Paketnamen und -beschreibungen gesucht, in %s, "
-"%s, und %s%s."
+"Du har sökt efter <em>%s</em> i paketnamn och beskrivningar i %s, %s och %s%s."
 
 #: templates/html/search.tmpl:67
 msgid "Found <strong>%u</strong> matching packages."
-msgstr "<strong>%u</strong> passende Pakete gefunden."
+msgstr "Hittade <strong>%u</strong> paket."
 
 #: templates/html/search.tmpl:72
 msgid ""
@@ -568,9 +558,9 @@ msgid ""
 "first few packages don't match what you searched for, try using more "
 "keywords or alternative keywords."
 msgstr ""
-"Beachten Sie, dass nur die besten Treffer angezeigt werden, sortiert nach "
-"Relevanz. Falls die ersten paar Pakete nicht auf Ihre Suche passen, "
-"versuchen Sie, mehr oder andere Suchbegriffe zu verwenden."
+"Observera att enbart de bästa träffarna visas, sorterade efter relevans. "
+"Om de första paketen inte är det du sökte efter, försök använda fler "
+"eller andra nyckelord."
 
 #: templates/html/search.tmpl:74
 msgid ""
@@ -578,167 +568,166 @@ msgid ""
 "%u</em> results have been omitted and will not be displayed. Please consider "
 "using a longer keyword or more keywords."
 msgstr ""
-"Ihre Suche ergab zu viele Ergebnisse, nur exakte Treffer werden angezeigt. "
-"Mindestens <em>%u</em> weitere Treffer wurden ausgelassen und nicht "
-"angezeigt. Bitte benutzen Sie lÃ¤ngere oder mehr Suchbegriffe."
+"Din sökning var så vid att vi bara visar exakta träffar. Åtminstone <em>"
+"%u</em> resulat har uteslutits och kommer inte att visas. Försök använda "
+"ett längre eller fler nyckelord."
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
-msgstr "Leider ergab Ihre Suche kein Ergebnis"
+msgstr "Din sökning gav dessvärre inga resultat"
 
 #: templates/html/search.tmpl:86
 msgid "Package %s"
-msgstr "Paket %s"
+msgstr "Paketet %s"
 
 #: templates/html/search.tmpl:96
 msgid "also provided by:"
-msgstr "auch bereitgestellt durch:"
+msgstr "tillhandahålls också av:"
 
 #: templates/html/search.tmpl:96
 msgid "provided by:"
-msgstr "bereitgestellt durch:"
+msgstr "tillhandahålls av:"
 
 #: templates/html/search.tmpl:105
 msgid "Source Package %s"
-msgstr "Quellcode-Paket %s"
+msgstr "Källkodspaketet %s"
 
 #: templates/html/search.tmpl:113
 msgid "Binary packages:"
-msgstr "BinÃ¤r-Pakete:"
+msgstr "Binärpaket:"
 
 #: templates/html/search.tmpl:115
 msgid "%u binary packages"
-msgstr "%u binÃ¤re Pakete"
+msgstr "%u binärpaket"
 
 #: templates/html/search.tmpl:125
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
 msgstr ""
-"<a href=\"%s\">%u</a> Ergebnisse wurden nicht angezeigt, da Sie nur exakte "
-"Treffer verlangt haben."
+"<a href=\"%s\">%u</a> resultat visas inte eftersom du bett om exakta "
+"träffar enbart."
 
 #: templates/html/search_contents.tmpl:14
 msgid "Package Contents Search Results -- %s"
-msgstr "Ergebnisse der Debian-Inhalts-Paketsuche -- %s"
+msgstr "Sökning i paketinnehåll, resultat -- %s"
 
 #: templates/html/search_contents.tmpl:17
 msgid "Package Contents Search Results"
-msgstr "Ergebnisse der Debian-Inhalts-Paketsuche "
+msgstr "Resultat från sökning i paketinnehåll"
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
-msgstr "Suche nach <em>%s</em> in Dateinamen"
+msgstr "Sök efter <em>%s</em> i filnamn"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr "Suche exakten Dateinamen <em>%s</em>"
+msgstr "Sök exakt filnemn <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
-msgstr "Suche nach Pfaden, die auf <em>%s</em> enden"
+msgstr "Sök sökvägar som slutar med <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
-msgstr "Suche in anderer Suite:"
+msgstr "Sök i annan svit:"
 
 #: templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
-msgstr "SchrÃ¤nke Suche auf bestimmte Architekturen ein:"
+msgstr "Begränsa sökningen till en specifik arkitektur:"
 
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
+msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
 
 #: templates/html/search_contents.tmpl:73
 msgid "section(s) <em>%s</em>"
-msgstr "Bereich(e) <em>%s</em>"
+msgstr "sektion(er) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "architecture(s) <em>%s</em>"
-msgstr "Architektur(en) <em>%s</em>"
+msgstr "arkitektur(er) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:75
 msgid "paths that end with"
-msgstr "Pfade die wie folgt enden:"
+msgstr "sökvägar som slutar med"
 
 #: templates/html/search_contents.tmpl:77
 msgid "files named"
-msgstr "Dateien mit Namen"
+msgstr "filer som heter"
 
 #: templates/html/search_contents.tmpl:79
 msgid "filenames that contain"
-msgstr "Dateinamen, die Folgendes enthalten:"
+msgstr "filnamn som innehåller"
 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr ""
-"Sie haben nach %s <em>%s</em> in der Suite <em>%s</em>, %s und %s gesucht."
+msgstr "Du har sökt efter %s <em>%</em> i sviten <em>%s</em>, %s och %s."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr "<strong>%u Treffer</strong>."
+msgstr "Hittade <strong>%u resultat</strong>:"
 
 #: templates/html/search_contents.tmpl:88
 msgid ""
 "Note: Your search was too wide so we will only display only the first about "
 "100 matches. Please consider using a longer keyword or more keywords."
 msgstr ""
-"Hinweis: Ihre Suche war zu breit, daher werden nur rund die ersten 100 "
-"Treffer angezeigt. Bitte verwenden Sie ein lÃ¤ngeres oder mehr SchlÃ¼sselwÃ¶rter."
+"Observera: Din sökning var för vid, så vi visar bara de första omkring "
+"100 träffarna. Försök använda ett längre eller fler nyckelord."
 
 #: templates/html/search_contents.tmpl:97
 msgid "Sort results by filename"
-msgstr "Sortiere Ergebnisse nach Dateinamen"
+msgstr "Sök resultat efter filnamn"
 
 #: templates/html/search_contents.tmpl:98
 #: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:320
 msgid "File"
-msgstr "Datei"
+msgstr "Fil"
 
 #: templates/html/search_contents.tmpl:99
 msgid "Sort results by package name"
-msgstr "Sortiere Ergebnisse nach Paketnamen"
+msgstr "Sortera resultat efter paketnamn"
 
 #: templates/html/search_contents.tmpl:114
 msgid "not %s"
-msgstr "nicht %s"
+msgstr "ej %s"
 
 #: templates/html/show.tmpl:15
 msgid "Source packages"
-msgstr "Quellcode-Pakete"
-
-#: templates/html/show.tmpl:16
-msgid "All packages in this section"
-msgstr "Alle Pakete in diesem Bereich"
+msgstr "Källkodspaket"
 
 #: templates/html/show.tmpl:16
 msgid "Section:"
-msgstr "Bereiche:"
+msgstr "Sektion:"
+
+#: templates/html/show.tmpl:16
+msgid "All packages in this section"
+msgstr "Alla paket i sektionen"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
-msgstr "Informationen Ã¼ber Quellcode-Paket %s in %s"
+msgstr "Detaljer för källkodspaketet %s i %s"
 
 #: templates/html/show.tmpl:22
 msgid "Details of package %s in %s"
-msgstr "Informationen Ã¼ber Paket %s in %s"
-
-#: templates/html/show.tmpl:45
-msgid "Source package building this package"
-msgstr "Quellcode-Paket, aus dem dieses Paket gebaut wird"
+msgstr "Detaljer för paketet %s i %s"
 
 #: templates/html/show.tmpl:45
 msgid "Source:"
-msgstr "Quellcode:"
+msgstr "Källkod:"
+
+#: templates/html/show.tmpl:45
+msgid "Source package building this package"
+msgstr "Källkodspaketet som bygger detta paket"
 
 #: templates/html/show.tmpl:52
 msgid "Virtual Package: %s"
-msgstr "Virtuelles Paket: %s"
+msgstr "Virtuellt paket: %s"
 
 #: templates/html/show.tmpl:54
 msgid "Source Package: %s (%s)"
-msgstr "Quellcode-Paket: %s (%s)"
+msgstr "Källkodspaket: %s (%s)"
 
 #: templates/html/show.tmpl:56
 msgid "Package: %s (%s)"
@@ -746,71 +735,71 @@ msgstr "Paket: %s (%s)"
 
 #: templates/html/show.tmpl:60
 msgid "essential"
-msgstr "Essenziell"
+msgstr "systemkritiskt"
 
 #: templates/html/show.tmpl:64
 msgid "Links for %s"
-msgstr "Links fÃ¼r %s"
+msgstr "Länkar för %s"
 
 #: templates/html/show.tmpl:65
 msgid "Debian Resources:"
-msgstr "Debian-Ressourcen:"
+msgstr "Debianresurser:"
 
 #: templates/html/show.tmpl:67
 msgid "Bug Reports"
-msgstr "Fehlerberichte"
+msgstr "Felrapporter"
 
 #: templates/html/show.tmpl:70 templates/html/show.tmpl:72
 msgid "Developer Information (PTS)"
-msgstr "Entwicklerinformationen (PTS)"
+msgstr "Utvecklarinformation (PTS)"
 
 #: templates/html/show.tmpl:76
 msgid "%s Changelog"
-msgstr "%s-Changelog"
+msgstr "Ändringslogg för %s"
 
 #: templates/html/show.tmpl:77
 msgid "Copyright File"
-msgstr "Copyright-Datei"
+msgstr "Upphovsrättsfil"
 
 #: templates/html/show.tmpl:81
 msgid "Debian Source Repository"
-msgstr "Debian-Quellcode-Depot"
+msgstr "Debians källkodsarkiv"
 
 #: templates/html/show.tmpl:95
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgstr "Quellcode-Paket <a href=\"%s\">%s</a> herunterladen:"
+msgstr "Hämta källkodspaketet <a href=\"%s\">%s</a>:"
 
 #: templates/html/show.tmpl:102
 msgid "Not found"
-msgstr "Nicht gefunden"
+msgstr "Hittades ej"
 
 #: templates/html/show.tmpl:107
 msgid "Maintainer:"
-msgstr "Betreuer:"
+msgstr "Ansvarig:"
 
 #: templates/html/show.tmpl:109
 msgid "Maintainers:"
-msgstr "Betreuer:"
+msgstr "Ansvariga:"
 
 #: templates/html/show.tmpl:114
 msgid "An overview over the maintainer's packages and uploads"
-msgstr "Eine Ãœbersicht Ã¼ber die Pakete und Uploads des Betreuers"
+msgstr "En översikt över ansvarigas paket och insändningar"
 
 #: templates/html/show.tmpl:114
 msgid "QA Page"
-msgstr "QS-Seite"
+msgstr "QA-sida"
 
 #: templates/html/show.tmpl:122
 msgid "External Resources:"
-msgstr "Externe Ressourcen:"
+msgstr "Externa resurser:"
 
 #: templates/html/show.tmpl:124
 msgid "Homepage"
-msgstr "Homepage"
+msgstr "Hemsida"
 
 #: templates/html/show.tmpl:130
 msgid "Similar packages:"
-msgstr "Ã„hnliche Pakete: "
+msgstr "Liknande paket:"
 
 #: templates/html/show.tmpl:146
 msgid ""
@@ -819,11 +808,12 @@ msgid ""
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
-"Dies bedeutet, dass es hÃ¶chstwahrscheinlich instabil oder fehlerhaft ist und "
-"sogar Datenverlust verursachen kann. Bitte lesen Sie den <a href=\"%s"
-"\">Changelog</a> und andere mÃ¶glicherweise verfÃ¼gbare Dokumentation, bevor "
-"Sie es benutzen."
+"Varning: Paketet är från den <strong>experimentella</strong> utgåvan. "
+"Det innebär att det med stor sannolikhet är instabilt eller innehåller "
+"fel, och kanske till och med kan orsaka dataförluster. Se till att "
+"läsa <a href=\"%s\">ändringsloggen</a> och annan dokumentation innan "
+"du använder det."
+
 
 #: templates/html/show.tmpl:169
 msgid ""
@@ -831,65 +821,65 @@ msgid ""
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
 "packages</a>."
 msgstr ""
-"Dies ist ein <em>virtuelles Paket</em>. Sehen Sie in die <a href=\"%s"
-"\">Debian-Richtlinien</a> fÃ¼r eine <a href=\"%sch-binary.html#s-virtual_pkg"
-"\">Definition von virtuellen Paketen</a>."
+"Detta är ett <em>virtuellt paket</em>. Se <a href=\"%s\">Debians policy</a> "
+"för en <a href=\"%sch-binary.html#s-virtual_pkg\">definition av virtuella "
+"paket</a>."
 
 #: templates/html/show.tmpl:177
 msgid "Tags"
-msgstr "Markierungen"
+msgstr "Märken"
 
 #: templates/html/show.tmpl:200
 msgid "Packages providing %s"
-msgstr "Pakete, die %s bereitstellen"
+msgstr "Paket som tillhandahåller %s"
 
 #: templates/html/show.tmpl:209
 msgid "The following binary packages are built from this source package:"
-msgstr "Die folgenden BinÃ¤rpakete werden aus diesem Quellcode-Paket gebaut:"
+msgstr "Följande binärpaket byggs från detta källkodspaket:"
 
 #: templates/html/show.tmpl:218
 msgid "Other Packages Related to %s"
-msgstr "Andere Pakete mit Bezug zu %s"
+msgstr "Andra paket besäktade med %s"
 
 #: templates/html/show.tmpl:220
 msgid "legend"
-msgstr "Legende"
+msgstr "beskrivnign"
 
 #: templates/html/show.tmpl:222
 msgid "build-depends"
-msgstr "build-depends"
+msgstr "bygg-beroende"
 
 #: templates/html/show.tmpl:223
 msgid "build-depends-indep"
-msgstr "build-depends-indep"
+msgstr "arkitekturoberoende bygg-beroende"
 
 #: templates/html/show.tmpl:225
 msgid "depends"
-msgstr "hÃ¤ngt ab von"
+msgstr "beror"
 
 #: templates/html/show.tmpl:226
 msgid "recommends"
-msgstr "empfiehlt"
+msgstr "rekommenderar"
 
 #: templates/html/show.tmpl:227
 msgid "suggests"
-msgstr "schlÃ¤gt vor"
+msgstr "föreslår"
 
 #: templates/html/show.tmpl:237
 msgid "or "
-msgstr "oder "
+msgstr "eller "
 
 #: templates/html/show.tmpl:245
 msgid "also a virtual package provided by"
-msgstr "auch ein virtuelles Paket, bereitgestellt durch"
+msgstr "också ett virtuellt paket som tillhandahålls av"
 
 #: templates/html/show.tmpl:252
 msgid "%u providing packages"
-msgstr "%u bereitstellende Pakete"
+msgstr "%u tillhandahåller paketen"
 
 #: templates/html/show.tmpl:270
 msgid "Download %s"
-msgstr "%s herunterladen"
+msgstr "Hämta %s"
 
 #: templates/html/show.tmpl:272
 msgid ""
@@ -897,17 +887,16 @@ msgid ""
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
-"Die Download-Tabelle verlinkt zum Download des Pakets und zu einer "
-"Dateiliste. ZusÃ¤tzlich enthÃ¤lt sie Informationen zur GrÃ¶ÃŸe der Paketdatei "
-"und der GrÃ¶ÃŸe im installierten Zustand."
+"Hämtningstabellen länkar till hämtningar för paketet och en filöversikt. "
+"Dessutom innehåller den information om paketstorlek och installerad storlek."
 
 #: templates/html/show.tmpl:273
 msgid "Download for all available architectures"
-msgstr "Download fÃ¼r alle verfÃ¼gbaren Architekturen"
+msgstr "Hämtningar för alla tillgängliga arkitekturer"
 
 #: templates/html/show.tmpl:274
 msgid "Architecture"
-msgstr "Architektur"
+msgstr "Arkitektur"
 
 #: templates/html/show.tmpl:275
 msgid "Version"
@@ -915,55 +904,55 @@ msgstr "Version"
 
 #: templates/html/show.tmpl:276
 msgid "Package Size"
-msgstr "PaketgrÃ¶ÃŸe"
+msgstr "Paketstorlek"
 
 #: templates/html/show.tmpl:277
 msgid "Installed Size"
-msgstr "GrÃ¶ÃŸe (installiert)"
+msgstr "Installerad storlek"
 
 #: templates/html/show.tmpl:278
 msgid "Files"
-msgstr "Dateien"
+msgstr "Filer"
 
 #: templates/html/show.tmpl:286
 msgid "(unofficial port)"
-msgstr "(inoffizielle Portierung)"
+msgstr "(inofficiell anpassning)"
 
 #: templates/html/show.tmpl:297 templates/html/show.tmpl:325
 msgid "%.1f&nbsp;kB"
-msgstr "%.1f&nbsp;kB"
+msgstr "%.1f&nbsp;kbyte"
 
 #: templates/html/show.tmpl:297
 msgid "%u&nbsp;kB"
-msgstr "%u&nbsp;kB"
+msgstr "%u&nbsp;kbyte"
 
 #: templates/html/show.tmpl:300
 msgid "list of files"
-msgstr "Liste der Dateien"
+msgstr "filförteckning"
 
 #: templates/html/show.tmpl:302
 msgid "no current information"
-msgstr "keine aktuellen Informationen"
+msgstr "ingen aktuell information"
 
 #: templates/html/show.tmpl:319
 msgid "Download information for the files of this source package"
-msgstr "Download-Informationen fÃ¼r die Dateien dieses Quellcode-Pakets"
+msgstr "Hämtningsinformation för filer i källkodspaketet"
 
 #: templates/html/show.tmpl:320
 msgid "Size (in kB)"
-msgstr "GrÃ¶ÃŸe (in kB)"
+msgstr "Storlek (i kbyte)"
 
 #: templates/html/show.tmpl:338
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
-"Quellcode-Depot des Debian-Pakets (<acronym lang=\"en\" title=\"Version "
-"Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
+"Debians paketkällkodsarkiv- (<acronym title=\"Version Control System"
+"\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:342
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Quellcode-Depot des Debian-Pakets (browsable)"
+msgstr "Debians paketkällkodsarkiv (blädderbart)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
@@ -971,23 +960,23 @@ msgstr "Index"
 
 #: templates/html/suite_index.tmpl:5 templates/html/suite_index.tmpl:20
 msgid "List of sections in \"%s\""
-msgstr "Liste der Bereiche in Â»%sÂ«"
+msgstr "Förteckning över sektioner i \"%s\""
 
 #: templates/html/suite_index.tmpl:38
 msgid "List of all source packages"
-msgstr "Liste aller Quellcode-Pakete"
+msgstr "Förteckning över alla källkodspaket"
 
 #: templates/html/suite_index.tmpl:40
 msgid "All source packages"
-msgstr "Alle Quellcode-Pakete"
+msgstr "Alla källkodspaket"
 
 #: templates/html/tag_index.tmpl:2 templates/html/tag_index.tmpl:7
 msgid "Overview of available Debian Package Tags"
-msgstr "Ãœberblick Ã¼ber die verfÃ¼gbaren Debian-Paket-Markierungen"
+msgstr "Översikt över tillgängliga Debianpaketmärken"
 
 #: templates/html/tag_index.tmpl:4
 msgid "About"
-msgstr "Ãœber"
+msgstr "Om"
 
 #: templates/html/tag_index.tmpl:5
 msgid "Debtags"
@@ -995,36 +984,36 @@ msgstr "Debtags"
 
 #: templates/html/tag_index.tmpl:10
 msgid "Facet: %s"
-msgstr ""
+msgstr "Avdelning: %s"
 
 #: templates/rss/newpkg.tmpl:16
 msgid "New %s Packages"
-msgstr "Neue %s Pakete"
+msgstr "Nytt %spaket"
 
 #: templates/rss/newpkg.tmpl:20
 msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite %s (Bereich %s) im %s-Archiv wÃ¤hrend "
-"der letzten 7 Tage hinzugefÃ¼gt."
+"Följande paket har lagts till i sviten %s (sektionen %s) i %sarkivet under "
+"de senaste 7 dagarna."
 
 #: templates/rss/newpkg.tmpl:23
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite %s im %s-Archiv wÃ¤hrend der letzten 7 "
-"Tage hinzugefÃ¼gt."
+"Följande paket har lagts till i sviten %s i %sarkivet under de senaste 7 "
+"dagarna."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
-msgid "Copyright Â©"
-msgstr "Copyright Â©"
+msgid "Copyright ©"
+msgstr "Upphovsrättsskyddat ©"
 
 #: templates/txt/index.tmpl:2
 msgid "All %s Packages in \"%s\""
-msgstr "Alle %s-Pakete in Â»%sÂ«"
+msgstr "Alla %spaket i \"%s\""
 
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
-msgstr "Siehe <URL:%s> fÃ¼r die Lizenz-Bestimmungen."
+msgstr "Se <URL:%s> för licensvillkor."
