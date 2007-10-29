@@ -147,11 +147,11 @@ sub do_dispatch {
 	push @components, 'index' if @components && $path =~ m,/$,;
 
 	my %LANGUAGES = map { $_ => 1 } @all_langs;
-	if (@components > 0 and $LANGUAGES{$components[0]}
+	if (@components > 1 and $LANGUAGES{$components[0]}
 	    and !$input->param('lang')) {
 	    $input->param( 'lang', shift(@components) );
 	}
-	if (@components > 0 and $components[0] eq 'source') {
+	if (@components > 1 and $components[0] eq 'source') {
 	    shift @components;
 	    $input->param( 'source', 1 );
 	}
