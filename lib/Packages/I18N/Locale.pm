@@ -22,7 +22,7 @@ sub N_ { return $_[0]; }
 sub g {
     my ($self, $format, @args) = @_;
     my $result = $self->maketext($format, @args);
-    return sprintf($result, @args) if $result =~ /%[su]/;
+    return sprintf($result, @args) if $result =~ /%([su]|[.\d]*f)/;
     return $result;
 }
 
