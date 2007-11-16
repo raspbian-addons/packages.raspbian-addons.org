@@ -36,7 +36,9 @@ sub new {
     };
     $vars->{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
     $vars->{make_url} = sub { return &Packages::CGI::make_url(@_) };
-    $vars->{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
+    if ($vars->{cat}) {
+	$vars->{g} = sub { return Packages::I18N::Locale::g($vars->{cat}, @_) };
+    }
     $vars->{extract_host} = sub { my $uri = URI->new($_[0]);
 				  my $host = $uri->host;
 				  $host .= ':'.$uri->port if $uri->port != $uri->default_port;

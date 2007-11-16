@@ -101,10 +101,6 @@ sub do_dispatch {
     debug( "LANGUAGES=@all_langs header=".
 	   ($input->http("Accept-Language")||'').
 	   " http_lang=$http_lang", 1 ) if DEBUG;
-    bindtextdomain ( 'pdo', $LOCALES );
-    bindtextdomain ( 'templates', $LOCALES );
-    bindtextdomain ( 'langs', $LOCALES );
-    textdomain( 'pdo' );
 
     # backwards compatibility stuff
     debug( "SCRIPT_URL=$ENV{SCRIPT_URL} SCRIPT_URI=$ENV{SCRIPT_URI}" ) if DEBUG;
@@ -277,17 +273,9 @@ sub do_dispatch {
     my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
     Packages::CGI::init_url( $input, \%params, \%opts );
 
-    my $locale = get_locale($opts{lang});
-    my $charset = get_charset($opts{lang});
-    setlocale ( LC_ALL, $locale )
-	or do { debug( "couldn't set locale $locale, using default" ) if DEBUG;
-		setlocale( LC_ALL, get_locale() )
-		    or do {
-			debug( "couldn't set default locale either" ) if DEBUG;
-			setlocale( LC_ALL, "C" );
-		    };
-	    };
-    debug( "locale=$locale charset=$charset", 1 ) if DEBUG;
+    my $charset = "UTF-8";
+    my $cat = Packages::I18N::Locale->get_handle( $opts{lang} )
+	or die "get_handle failed";
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
     $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -312,6 +300,7 @@ sub do_dispatch {
 
     my $template = new Packages::Template( $TEMPLATEDIR, $opts{format},
 					   { lang => $opts{lang}, charset => $charset,
+					     cat => $cat,
 					     debug => ( DEBUG ? $opts{debug} : 0 ) },
 					   ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
