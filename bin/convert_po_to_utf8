@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+pofile=$1
+charset=$(perl -n -e 's/^.*charset=([\w-]+).*$/uc($1)/e && print' "$pofile")
+
+echo pofile=$pofile charset=$charset
+
+if [ "$charset" = "UTF-8" ]
+then
+    echo >&2 charset is already utf-8
+    exit 1
+fi
+
+set -x
+
+iconv -f $charset -t utf-8 "$pofile" >"$pofile".tmp
+perl -p -e 's/charset=([\w-]+)/charset=UTF-8/' "$pofile".tmp >"$pofile"
+rm -f "$pofile".tmp
