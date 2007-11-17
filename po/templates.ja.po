@@ -35,6 +35,15 @@ msgstr ""
 "注意: このサイトは <a href=\"http://packages.debian.org/\">packages.debian."
 "org</a> の試験版です。エラーや古い情報があると思ってください。"
 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:56
+msgid "."
+msgstr ""
+
+#: templates/config.tmpl:57
+msgid ","
+msgstr ""
+
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
 msgstr "Intel x86"
@@ -223,9 +232,6 @@ msgstr ""
 "可能です。"
 
 #: templates/html/download.tmpl:77
-#| msgid ""
-#| "Debian security updates are currently officially distributed only via "
-#| "<tt>security.debian.org</tt>."
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "%s セキュリティアップデートは、<tt>%s</tt> のみで公式に配布されています。"
@@ -415,7 +421,7 @@ msgstr "すべてのパッケージ"
 msgid "Source"
 msgstr "ソース"
 
-#: templates/html/index.tmpl:38 templates/html/show.tmpl:247
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:247
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージです: "
@@ -511,47 +517,48 @@ msgstr ""
 "検索パラメータの設定によって、<a href=\"%s\">%u</a> 個の結果が非表示になって"
 "います。"
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "all suites"
 msgstr "すべてのスイート"
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "suite(s) <em>$suite_enc</em>"
 msgstr "<em>$suite_enc</em> スイート"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "すべてのセクション"
 
-#: templates/html/search.tmpl:53
+#: templates/html/search.tmpl:52
 msgid "section(s) <em>$section_enc</em>"
 msgstr "<em>$section_enc</em> セクション"
 
-#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "すべてのアーキテクチャ"
 
-#: templates/html/search.tmpl:54
+#: templates/html/search.tmpl:53
 msgid "architecture(s) <em>$architectures_enc</em>"
 msgstr "<em>$architectures_enc</em> アーキテクチャ"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "packages"
 msgstr "パッケージ"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "source packages"
 msgstr "ソースパッケージ"
 
-#: templates/html/search.tmpl:57
+#: templates/html/search.tmpl:56
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr "<em>%2$s</em> を名前に含む%1$sを、%3$s、%4$s、%5$sで検索しました。"
 
-#: templates/html/search.tmpl:60
+#: templates/html/search.tmpl:59
 msgid " (including subword matching)"
 msgstr " (単語の一部が一致したものも含んでいます)"
 
+#. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:61
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
@@ -651,26 +658,27 @@ msgstr "特定のアーキテクチャに絞って検索:"
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
 
-#: templates/html/search_contents.tmpl:73
+#: templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "<em>%s</em> セクション"
 
-#: templates/html/search_contents.tmpl:74
+#: templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "<em>%s</em> アーキテクチャ"
 
-#: templates/html/search_contents.tmpl:75
+#: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
 msgstr "を末尾に持つパス"
 
-#: templates/html/search_contents.tmpl:77
+#: templates/html/search_contents.tmpl:76
 msgid "files named"
 msgstr "という名前のファイル"
 
-#: templates/html/search_contents.tmpl:79
+#: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
 msgstr "を名前に含むファイル"
 
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -932,12 +940,8 @@ msgid "(unofficial port)"
 msgstr "(非公式の移植版)"
 
 #: templates/html/show.tmpl:297 templates/html/show.tmpl:325
-msgid "%.1f&nbsp;kB"
-msgstr "%.1f&nbsp;kB"
-
-#: templates/html/show.tmpl:297
-msgid "%u&nbsp;kB"
-msgstr "%u&nbsp;kB"
+msgid "%s&nbsp;kB"
+msgstr "%s&nbsp;kB"
 
 #: templates/html/show.tmpl:300
 msgid "list of files"

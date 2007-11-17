@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-21 21:31+0200\n"
+"POT-Creation-Date: 2007-11-17 21:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,39 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/create_index_pages:234
+#: bin/create_index_pages:233
 msgid "Section"
 msgstr ""
 
-#: bin/create_index_pages:246
+#: bin/create_index_pages:245
 msgid "Subsection"
 msgstr ""
 
-#: bin/create_index_pages:258
+#: bin/create_index_pages:257
 msgid "Priority"
 msgstr ""
 
-#. Done
-#: lib/Packages/Dispatcher.pm:162
-msgid "search doesn't take any more path elements"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:165
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:188
-#, perl-format
-msgid "%s set more than once in path"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:223
-#, perl-format
-msgid "two or more packages specified (%s)"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:321
+#: lib/Packages/Dispatcher.pm:312
 msgid "requested format not available for this document"
 msgstr ""
 
@@ -58,7 +38,7 @@ msgstr ""
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
-#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
+#: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
 msgstr ""
 
@@ -71,7 +51,7 @@ msgstr ""
 msgid "more than one suite specified for download (%s)"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:39
+#: lib/Packages/DoDownload.pm:40
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
 msgstr ""
@@ -89,12 +69,12 @@ msgstr ""
 msgid "more than one suite specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:37
+#: lib/Packages/DoIndex.pm:38
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:73
+#: lib/Packages/DoIndex.pm:75
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr ""
@@ -104,37 +84,37 @@ msgstr ""
 msgid "more than one suite specified for newpkg (%s)"
 msgstr ""
 
-#: lib/Packages/DoNewPkg.pm:42
+#: lib/Packages/DoNewPkg.pm:43
 #, perl-format
 msgid "no newpkg information found for suite %s"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
 msgid "keyword not valid or missing"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:163
+#: lib/Packages/DoSearch.pm:165
 msgid "Exact hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:172
+#: lib/Packages/DoSearch.pm:175
 msgid "Other hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:217
+#: lib/Packages/DoSearch.pm:234
 msgid "Virtual package"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:39
+#: lib/Packages/DoSearchContents.pm:40
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:80
+#: lib/Packages/DoSearchContents.pm:82
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 
@@ -143,28 +123,28 @@ msgstr ""
 msgid "more than one suite specified for show (%s)"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:72
+#: lib/Packages/DoShow.pm:73
 msgid "No such package."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:84
+#: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:197
+#: lib/Packages/DoShow.pm:198
 msgid " and others"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:427
+#: lib/Packages/DoShow.pm:429
 #, perl-format
 msgid "not %s"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:465
+#: lib/Packages/DoShow.pm:479
 msgid "Package not available"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:491
+#: lib/Packages/DoShow.pm:518
 msgid "Not available"
 msgstr ""
 
