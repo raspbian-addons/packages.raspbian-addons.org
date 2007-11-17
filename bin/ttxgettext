@@ -67,13 +67,15 @@ sub processFile {
 #                   $lineno += $nextlineno;
 #                   next;  # wrong domain
 #                }
-                $comment = '';
-                if ($1 =~ m/(((^|\n)[ \t]*#.*)+)\n?[^\n]*$/) {
-                        $comment = $1;
-                        $comment =~ s/^\s+#\s*//;
-                        $comment =~ s/\n[ \t]*#\s*/\n/g;
-                }
-                push (@msgids, $msgid);
+		$comment = '';
+		if ($1 =~ m/(((^|\n)\s*(\[%)?\s*#.*)+)\n?[^\n]*$/) {
+		    $comment = $1;
+		    $comment =~ s/\[%//g;
+		    $comment =~ s/%\]//g;
+		    $comment =~ s/^\s+#\s*//;
+		    $comment =~ s/\n[ \t]*#\s*/\n/g;
+		}
+		push (@msgids, $msgid);
 #                if (defined ($messages->{$msgid})) {
 #                        print STDERR "ttxgettext: Warning: msgid multiple defined:\n\t".
 #                                $msgid."\n";
