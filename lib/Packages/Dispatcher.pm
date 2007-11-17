@@ -155,10 +155,10 @@ sub do_dispatch {
 	    shift @components;
 	    $what_to_do = 'search';
 	    # Done
-	    fatal_error( _g( "search doesn't take any more path elements" ) )
+	    fatal_error( "search doesn't take any more path elements" )
 		if @components;
 	} elsif (@components == 0) {
-	    fatal_error( _g( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
+	    fatal_error( "We're supposed to display the homepage here, instead of getting dispatch.pl" );
 	} elsif (@components == 1) {
 	    $what_to_do = 'search';
 	} else {
@@ -181,7 +181,7 @@ sub do_dispatch {
 		my ($cgi, $params_set, $key, $val) = @_;
 		debug("set_param_once key=$key val=$val",4) if DEBUG;
 		if ($params_set->{$key}++) {
-		    fatal_error( sprintf( _g( "%s set more than once in path" ), $key ) );
+		    fatal_error( "$key set more than once in path" );
 		} else {
 		    $cgi->param( $key, $val );
 		}
@@ -216,7 +216,7 @@ sub do_dispatch {
 	    @components = @pkg;
 
 	    if (@components > 1) {
-		fatal_error( sprintf( _g( "two or more packages specified (%s)" ), "@components" ) );
+		fatal_error( "two or more packages specified (@components)" );
 	    }
 	} # else if (@components == 1)
 
@@ -276,6 +276,7 @@ sub do_dispatch {
     my $charset = "UTF-8";
     my $cat = Packages::I18N::Locale->get_handle( $opts{lang} )
 	or die "get_handle failed";
+    $opts{cat} = $cat;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
     $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -307,7 +308,7 @@ sub do_dispatch {
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
 	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
-	fatal_error( _g("requested format not available for this document"),
+	fatal_error( $cat->g("requested format not available for this document"),
 		     "406 requested format not available");
     }
 

@@ -22,21 +22,24 @@ our @EXPORT = qw( do_download );
 
 sub do_download {
     my ($params, $opts, $page_content) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{package}) {
-	fatal_error( _g( "package not valid or not specified" ) );
+	fatal_error( $cat->g( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if ($params->{errors}{arch}) {
-	fatal_error( _g( "architecture not valid or not specified" ) );
+	fatal_error( $cat->g( "architecture not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for download (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for download (%s)",
+			      "@{$opts->{suite}}" ) );
     }
     if (@{$opts->{arch}} > 1) {
-	fatal_error( sprintf( _g( "more than one architecture specified for download (%s)" ), "@{$opts->{arch}}" ) );
+	fatal_error( $cat->g( "more than one architecture specified for download (%s)",
+			      "@{$opts->{arch}}" ) );
     }
 
     $opts->{h_sections} = { map { $_ => 1 } @SECTIONS };
@@ -88,10 +91,10 @@ sub do_download {
 	    my $pkgsize = floor(($data{size}/102.4)+0.5)/10;
 	    if ($pkgsize < 1024) {
 		$page_content->{pkgsize} = sprintf( '%.1f', $pkgsize );
-		$page_content->{pkgsize_unit} = _g( 'kByte' );
+		$page_content->{pkgsize_unit} = $cat->g( 'kByte' );
 	    } else {
 		$page_content->{pkgsize} = sprintf( '%.1f', floor(($data{size}/(102.4*102.4))+0.5)/100 );
-		$page_content->{pkgsize_unit} = _g( 'MByte' );
+		$page_content->{pkgsize_unit} = $cat->g( 'MByte' );
 	    }
 	    $page_content->{architecture} = $arch;
 	    foreach (keys %data) {

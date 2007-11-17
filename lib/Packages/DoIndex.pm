@@ -26,15 +26,18 @@ my %encoding = (
 		);
 sub send_file {
     my ($file, $params, $opts) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for show_static (%s)",
+			      "@{$opts->{suite}}" ) );
     }
     if (@{$opts->{subsection}} > 1) {
-	fatal_error( sprintf( _g( "more than one subsection specified for show_static (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one subsection specified for show_static (%s)",
+			      "@{$opts->{suite}}" ) );
     }
 
     my $wwwdir = "$TOPDIR/www";
@@ -70,7 +73,7 @@ sub send_file {
 	    close INDEX;
 	    exit;
 	} else {
-	    fatal_error( sprintf( _g( "couldn't read index file %s: %s" ),
+	    fatal_error( $cat->g( "couldn't read index file %s: %s",
 				  $path, $! ) );
 	}
     }

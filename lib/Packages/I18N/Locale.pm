@@ -14,9 +14,8 @@ use Locale::Maketext::Lexicon {
 
 use base 'Exporter';
 
-our @EXPORT = qw( _g N_ );
+our @EXPORT = qw( N_ );
 
-sub _g { return $_[0]; }
 sub N_ { return $_[0]; }
 
 sub g {

@@ -26,15 +26,17 @@ our @EXPORT = qw( do_show );
 
 sub do_show {
     my ($params, $opts, $page_contents) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{package}) {
-	fatal_error( _g( "package not valid or not specified" ) );
+	fatal_error( $cat->g( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for show (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for show (%s)",
+			      "@{$opts->{suite}}" ) );
     }
 
     my %contents;
@@ -69,7 +71,7 @@ sub do_show {
 	}
 
 	unless (@results || @non_results ) {
-	    fatal_error( _g( "No such package.") );
+	    fatal_error( $cat->g( "No such package.") );
 	    #sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
 	} else {
 	    my %all_suites;
@@ -81,7 +83,7 @@ sub do_show {
 	    $contents{suites} = [ suites_sort(keys %all_suites) ];
 
 	    unless (@results) {
-		fatal_error( _g( "Package not available in this suite." ) );
+		fatal_error( $cat->g( "Package not available in this suite." ) );
 	    } else {
 		$contents{page} = $page;
 		unless ($opts->{source}) {
@@ -194,7 +196,7 @@ sub do_show {
 
 			my $v_str = $version;
 			my $multiple_versions = grep { $_ ne $version } values %$versions;
-			$v_str .= _g(" and others") if $multiple_versions;
+			$v_str .= $cat->g(" and others") if $multiple_versions;
 			$contents{versions} = { short => $v_str,
 						multiple => $multiple_versions };
 
@@ -248,7 +250,7 @@ sub do_show {
 				  search => 1 );
 		    } else { # unless $page->is_virtual
 			$contents{is_virtual} = 1;
-			$contents{desc}{short} = _g( "virtual package" );
+			$contents{desc}{short} = $cat->g( "virtual package" );
 			$contents{subsection} = 'virtual';
 
 			my $provided_by = $page->{provided_by};
@@ -406,6 +408,7 @@ sub build_deps {
 		    'suggests' => 'sug', 'build-depends' => 'adep',
 		    'build-depends-indep' => 'idep' );
     my $suite = $opts->{suite}[0];
+    my $cat = $opts->{cat};
 
     my %out = ( id => $dep_type{$type}, terms => [] );
 
@@ -424,7 +427,7 @@ sub build_deps {
 
 	    if ($arch_str ||= '') {
 		if ($arch_neg) {
-		    $arch_str = sprintf( _g("not %s"), "$arch_str" );
+		    $arch_str = $cat->g("not %s", "$arch_str" );
 		} else {
 		    $arch_str = $arch_str;
 		}
@@ -474,7 +477,7 @@ sub build_deps {
 		}
 	    } elsif ( $rel_out{is_old_pkgs} ) {
 	    } else {
-		$rel_alt_out{desc} = _g( "Package not available" );
+		$rel_alt_out{desc} = $cat->g( "Package not available" );
 		$rel_alt_out{suite} = '';
 	    }
 	    push @{$rel_out{alternatives}}, \%rel_alt_out;
@@ -512,7 +515,8 @@ sub pkg_list {
 	    push @$list, { name => $p, desc => $short_desc,
 			   trans_desc => \%sdescs, available => 1 };
 	} else {
-	    push @$list, { name => $p, desc => _g("Not available") };
+	    push @$list, { name => $p,
+			   desc => $opts->{cat}->g("Not available") };
 	}
     }
 }
