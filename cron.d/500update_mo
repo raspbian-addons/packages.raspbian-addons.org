@@ -49,7 +49,7 @@ podomains="pdo templates sections langs debtags"
 # Update pot
 #
 # Common options for all calls
-xgettext_opts="--language=Perl --keyword=N_ --keyword=_g --keyword=g --foreign-user --add-comments"
+xgettext_opts="--language=Perl --keyword=N_ --keyword=g --foreign-user --add-comments"
 
 echo gettextfiles=$gettextfiles
 echo templatefiles=$templatefiles

@@ -30,7 +30,6 @@ use DB_File;
 use URI::Escape;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
-use Locale::gettext;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
@@ -275,7 +274,8 @@ sub do_dispatch {
 
     my $charset = "UTF-8";
     my $cat = Packages::I18N::Locale->get_handle( $opts{lang} )
-	or die "get_handle failed";
+	|| Packages::I18N::Locale->get_handle( 'en' );
+    die "get_handle failed for $opts{lang}" unless $cat;
     $opts{cat} = $cat;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };

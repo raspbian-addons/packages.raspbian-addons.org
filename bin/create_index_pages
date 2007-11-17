@@ -9,7 +9,6 @@ use DB_File;
 use Storable;
 use HTML::Entities;
 use URI::Escape;
-use Locale::gettext;
 use Compress::Zlib;
 
 use lib './lib';
@@ -21,16 +20,6 @@ use Packages::Page;
 use Packages::SrcPage;
 use Packages::Sections;
 &Packages::Config::init( './' );
-
-delete $ENV{'LANGUAGE'};
-delete $ENV{'LANG'};
-delete $ENV{'LC_ALL'};
-delete $ENV{'LC_MESSAGES'};
-bindtextdomain ( 'pdo', $LOCALES );
-bindtextdomain ( 'templates', $LOCALES );
-bindtextdomain ( 'sections', $LOCALES );
-bindtextdomain ( 'langs', $LOCALES );
-textdomain( 'pdo' );
 
 my $wwwdir = "$TOPDIR/www";
 
@@ -65,24 +54,21 @@ foreach my $s (@SUITES) {
     mkpath ( "$wwwdir/$key" );
     mkpath ( "$wwwdir/source/$key" );
     foreach my $lang (@LANGUAGES) {
-	my $locale = get_locale( $lang );
-	my $charset = get_charset( $lang );
-	setlocale ( LC_ALL, $locale ) or do {
-	    warn "couldn't set locale ($lang/$locale)\n";
-	    next;
-	};
+	my $charset = 'UTF-8';
+	my $cat = Packages::I18N::Locale->get_handle($lang)
+	    or die "get_handle failed for $lang";
 	print "writing $key/index (lang=$lang)...\n";
 
 	my %content = ( subsections => [], suite => $s,
-			lang => $lang, charset => $charset,
+			lang => $lang, charset => $charset, cat => $cat,
 			used_langs => \@LANGUAGES, suites => \@SUITES );
 	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    if ($sections_descs{$ssec}) {
 		push @{$content{subsections}}, {
 		    id => $ssec,
-		    name => dgettext( 'sections', $sections_descs{$ssec}[0] ),
-		    desc => dgettext( 'sections', $sections_descs{$ssec}[1] ),
+		    name => $cat->g($sections_descs{$ssec}[0]),
+		    desc => $cat->g($sections_descs{$ssec}[1]),
 		};
 	    }
 	}
@@ -100,7 +86,6 @@ foreach my $s (@SUITES) {
 
     }
 }
-setlocale( LC_ALL, 'C' ) or die "couldn't reset locale";
 
 print "collecting package info ...\n";
 my %allpkgs;
@@ -211,15 +196,12 @@ sub write_files {
 	my $key = $s;
 	mkpath ( "$wwwdir/$source$key" );
 	foreach my $lang (@LANGUAGES) {
-	    my $locale = get_locale( $lang );
-	    my $charset = get_charset( $lang );
-	    setlocale ( LC_ALL, $locale ) or do {
-		warn "couldn't set locale ($lang/$locale)\n";
-		next;
-	    };
+	    my $charset = 'UTF-8';
+	    my $cat = Packages::I18N::Locale->get_handle($lang)
+		or die "get_handle failed for $lang";
 
 	    my %lang_vars = ( lang => $lang, charset => $charset,
-			      used_langs => \@LANGUAGES );
+			      cat => $cat, used_langs => \@LANGUAGES );
 	    print "writing $source$s/allpackages (lang=$lang)...\n";
 	    $template->page( 'index', { %lang_vars, packages => $pkgs->{$key},
 					suite => $s, is_source => $source  },
@@ -247,7 +229,7 @@ sub write_files {
 		print "writing $source$s/$sec/index (lang=$lang)...\n";
 		$template->page( 'index', { packages => [ grep { $_->{section} eq $sec } @{$pkgs->{$key}} ],
 					    %lang_vars, suite => $s, is_source => $source,
-					    category => { id => _g('Section'), name => $sec } },
+					    category => { id => $cat->g('Section'), name => $sec } },
 				 "$wwwdir/$source$key/$sec/index.$lang.html.new" );
 		rename( "$wwwdir/$source$key/$sec/index.$lang.html.new",
 			"$wwwdir/$source$key/$sec/index.$lang.html" );
@@ -259,7 +241,7 @@ sub write_files {
 		print "writing $source$s/$ssec/index (lang=$lang)...\n";
 		$template->page( 'index', { packages => [ grep { $_->{subsection} eq $ssec } @{$pkgs->{$key}} ],
 					    %lang_vars, suite => $s, is_source => $source,
-					    category => { id => _g('Subsection'), name => $ssec } },
+					    category => { id => $cat->g('Subsection'), name => $ssec } },
 				 "$wwwdir/$source$key/$ssec/index.$lang.html.new" );
 		rename( "$wwwdir/$source$key/$ssec/index.$lang.html.new",
 			"$wwwdir/$source$key/$ssec/index.$lang.html" );
@@ -271,7 +253,7 @@ sub write_files {
 		print "writing $source$s/$prio/index (lang=$lang)...\n";
 		$template->page( 'index', { packages => [ grep { $_->{priority} eq $prio } @{$pkgs->{$key}} ],
 					    %lang_vars, suite => $s, is_source => $source,
-					    category => { id => _g('Priority'), name => $prio } },
+					    category => { id => $cat->g('Priority'), name => $prio } },
 				 "$wwwdir/$source$key/$prio/index.$lang.html.new" );
 		rename( "$wwwdir/$source$key/$prio/index.$lang.html.new",
 			"$wwwdir/$source$key/$prio/index.$lang.html" );

@@ -58,7 +58,7 @@ sub send_file {
 	my $buffer;
 	if (open( INDEX, '<', "$wwwdir/$path" )) {
 	    my %headers;
-	    $headers{'-charset'} = get_charset( $opts->{lang} );
+	    $headers{'-charset'} = 'UTF-8';
 	    $headers{'-type'} = get_mime( $opts->{format}, 'text/plain' );
 	    $headers{'-content-encoding'} = $encoding{$opts->{format}} if exists $encoding{$opts->{format}};
 	    my ($size,$mtime) = (stat("$wwwdir/$path"))[7,9];
