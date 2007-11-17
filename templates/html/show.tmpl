@@ -64,12 +64,12 @@
 <h2>[% g('Links for %s', pkg) %]</h2>
 <h3>[% g('Debian Resources:') %]</h3>
 <ul>
-<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">[% g('Bug Reports') %]</a></li>
+<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg %]">[% g('Bug Reports') %]</a></li>
 
 [% IF src.pkg -%]
-<li><a href="[% pts_url _ src.pkg | uri %]">[% g('Developer Information (PTS)') %]</a></li>
+<li><a href="[% pts_url _ src.pkg %]">[% g('Developer Information (PTS)') %]</a></li>
 [% ELSIF is_source %]
-<li><a href="[% pts_url _ pkg | uri %]">[% g('Developer Information (PTS)') %]</a></li>
+<li><a href="[% pts_url _ pkg %]">[% g('Developer Information (PTS)') %]</a></li>
 [%- END %]
 
 [% IF files && (!archive or archive == main_archive or archive == 'security') %]
@@ -121,7 +121,7 @@
    IF url %]
 <h3>[% g('External Resources:') %]</h3>
 <ul>
-<li><a href="[% url | uri %]">[% g('Homepage') %]</a> [[% extract_host(url) %]]</li>
+<li><a href="[% url %]">[% g('Homepage') %]</a> [[% extract_host(url) %]]</li>
 </ul>
 [% END %]
 
@@ -282,7 +282,7 @@
 <tr>
 [% download_url = pkg _ '/' _ d.arch _ '/download'
    filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
-<th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
+<th><a href="[% make_url(download_url) %]">[% d.arch %]</a>
 [%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>[% g('(unofficial port)') %]</strong>[% END %]</th>
 [% vnorm = d.version.replace( '\+b\d+$', '' ); vlatest = version.replace( '\+b\d+$', '' );
    vup = vnorm.replace( '-[^-]+$', '' ); vuplatest = vlatest.replace( '-[^-]+$', '' );
@@ -297,7 +297,7 @@
 <td class="size">[% g('%.1f&nbsp;kB', d.pkgsize) %]</td><td class="size">[% g('%u&nbsp;kB', d.instsize) %]</td>
 <td>
 [% IF d.contents_avail %]
-  [<a href="[% make_url(filelist_url) | uri %]">[% g('list of files') %]</a>]
+  [<a href="[% make_url(filelist_url) %]">[% g('list of files') %]</a>]
 [% ELSE %]
   [% g('no current information') %]
 [% END %]
