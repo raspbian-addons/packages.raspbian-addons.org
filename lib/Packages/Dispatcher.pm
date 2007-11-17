@@ -34,7 +34,7 @@ use I18N::AcceptLanguage;
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
 			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @PRIORITIES
-			 @LANGUAGES @DDTP_LANGUAGES $LOCALES );
+			 @LANGUAGES @DDTP_LANGUAGES );
 use Packages::CGI qw( :DEFAULT error get_all_messages );
 use Packages::DB;
 use Packages::Search qw( :all );

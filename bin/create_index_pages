@@ -13,7 +13,7 @@ use Compress::Zlib;
 
 use lib './lib';
 
-use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @LANGUAGES $LOCALES);
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @LANGUAGES );
 use Packages::Template;
 use Packages::I18N::Locale;
 use Packages::Page;

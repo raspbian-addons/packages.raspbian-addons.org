@@ -31,7 +31,7 @@ use URI::Escape;
 
 use Deb::Versions;
 use Packages::Template;
-use Packages::Config qw( $TOPDIR @LANGUAGES $LOCALES);
+use Packages::Config qw( $TOPDIR @LANGUAGES );
 use Packages::I18N::Locale;
 &Packages::Config::init( './' );
 my $debtagsdir = "$TOPDIR/files/debtags";
