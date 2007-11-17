@@ -99,7 +99,7 @@ deb [% 'http://' _ security_mirror_url %] [% suite _ security_suite_suffix %] ma
 
 <h3>[% g('More information on <kbd>%s</kbd>:', filename.file) %]</h3>
 <table id="pdownloadmeta">
-<tr><th>[% g('Exact Size') %]</th>	<td class="size">[% g('%s Byte (%s %s)', size, pkgsize, pkgsize_unit) %]</td>
+<tr><th>[% g('Exact Size') %]</th>	<td class="size">[% g('%s Byte (%s %s)', size, num.format_number(pkgsize,1), pkgsize_unit) %]</td>
 <tr><th>[% g('MD5 checksum') %]</th>	<td><tt>[% md5sum %]</tt></td>
 <tr><th>[% g('SHA1 checksum') %]</th>	<td><tt>[% sha1 || g('Not Available') %]</tt></td>
 <tr><th>[% g('SHA256 checksum') %]</th>	<td><tt>[% sha256  || g('Not Available') %]</tt></td>

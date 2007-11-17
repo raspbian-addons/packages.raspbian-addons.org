@@ -89,10 +89,10 @@ sub do_download {
 	    $page_content->{pkg} = $pkg;
 	    my $pkgsize = floor(($data{size}/102.4)+0.5)/10;
 	    if ($pkgsize < 1024) {
-		$page_content->{pkgsize} = sprintf( '%.1f', $pkgsize );
+		$page_content->{pkgsize} = $pkgsize;
 		$page_content->{pkgsize_unit} = $cat->g( 'kByte' );
 	    } else {
-		$page_content->{pkgsize} = sprintf( '%.1f', floor(($data{size}/(102.4*102.4))+0.5)/100 );
+		$page_content->{pkgsize} = floor(($data{size}/(102.4*102.4))+0.5)/100;
 		$page_content->{pkgsize_unit} = $cat->g( 'MByte' );
 	    }
 	    $page_content->{architecture} = $arch;
