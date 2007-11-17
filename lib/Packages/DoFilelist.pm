@@ -10,7 +10,6 @@ use Exporter;
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT @SUITES @ARCHIVES @SECTIONS
 			 @ARCHITECTURES %FTP_SITES );
-use Packages::I18N::Locale;
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );

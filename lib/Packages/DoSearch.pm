@@ -10,7 +10,6 @@ our @ISA = qw( Exporter );
 our @EXPORT = qw( do_search );
 
 use Deb::Versions;
-use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::CGI qw( :DEFAULT );
 use Packages::DB;

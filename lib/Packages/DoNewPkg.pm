@@ -9,7 +9,6 @@ use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_newpkg );
 
-use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;

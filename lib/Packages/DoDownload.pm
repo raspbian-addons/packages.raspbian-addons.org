@@ -10,7 +10,6 @@ use Benchmark ':hireswallclock';
 use Exporter;
 
 use Deb::Versions;
-use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS @ARCHITECTURES );
 use Packages::CGI;

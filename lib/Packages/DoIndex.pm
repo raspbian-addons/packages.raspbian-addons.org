@@ -8,7 +8,6 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $TOPDIR );
-use Packages::I18N::Locale;
 use Packages::CGI;
 
 our @ISA = qw( Exporter );
