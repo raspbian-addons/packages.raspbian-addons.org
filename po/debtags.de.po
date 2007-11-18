@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-11-10 19:35+0100\n"
+"PO-Revision-Date: 2007-11-18 10:06+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -547,6 +547,9 @@ msgid ""
 " doing so would make this tag useless.\n"
 " Ultimately all applications should have unicode support."
 msgstr ""
+" Bitte markiern Sie keine Programme mit einfacher Unicode-Unterstützung,\n"
+" denn dadurch würde diese Markierung nutzlos.\n"
+" Letztendlich sollten alle Anwendungen Unicode unterstützen."
 
 #. Tag: biology::format:nexus, long desc
 #: files/debtags/vocabulary
@@ -957,6 +960,12 @@ msgid ""
 " Mark a package with this tag to signal the vocabulary maintainers of cases\n"
 " where the current tag set is lacking."
 msgstr ""
+" Dieses Paket kann zusemman mit diesem Aspekt kategorisiert werden, aber\n"
+" die richtige Markierung fehlt noch.\n"
+" .\n"
+" Markieren Sie ein Paket mit dieser Markierung um den Betreuern des\n"
+" Vokabulars die Stellen zu signalisieren, an denen die aktuelle Menge an\n"
+" Markierungen noch nicht ausreicht."
 
 #. Tag: works-with::im, long desc
 #: files/debtags/vocabulary
@@ -966,7 +975,7 @@ msgstr ""
 #. Tag: suite::netscape, long desc
 #: files/debtags/vocabulary
 msgid " The pre-6.0 versions of netscape browser"
-msgstr ""
+msgstr " Netscape-Browser vor Version 6.0"
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
@@ -980,6 +989,8 @@ msgid ""
 "people)\n"
 " that the package can work with."
 msgstr ""
+" Diese Markierungen beschreiben mit welcher Art von Daten (oder sogar \n"
+" Prozessen oder Leuten) dieses Paket arbeiten kann."
 
 #. Tag: admin::virtualization, long desc
 #: files/debtags/vocabulary
@@ -997,6 +1008,10 @@ msgid ""
 "this\n"
 " should never show up."
 msgstr ""
+" Diese Markierung bedeutet, dass die Markierungsdatenbank eine Markierung\n"
+" enthält, die nicht im Makierungsvokabular enthalten ist. Das Vorkommen\n"
+" dieser Markierung stellt einen Software-Fehler dar: sie sollte nie "
+" auftauchen."
 
 #. Tag: use::comparing, long desc
 #: files/debtags/vocabulary
@@ -1168,7 +1183,7 @@ msgstr ""
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
-msgstr ""
+msgstr "!Noch nicht markierte Pakete!"
 
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
@@ -1319,10 +1334,8 @@ msgstr ""
 
 #. Tag: field::aviation, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Application"
 msgid "Aviation"
-msgstr "Anwendung"
+msgstr "Luftfahrt"
 
 #. Tag: admin::backup, short desc
 #: files/debtags/vocabulary
@@ -1332,7 +1345,7 @@ msgstr ""
 #. Tag: culture::basque, short desc
 #: files/debtags/vocabulary
 msgid "Basque"
-msgstr ""
+msgstr "Baskisch"
 
 #. Tag: admin::benchmarking, short desc
 #: files/debtags/vocabulary
@@ -1368,7 +1381,7 @@ msgstr "BitTorrent"
 #. Tag: web::blog, short desc
 #: files/debtags/vocabulary
 msgid "Blog Software"
-msgstr ""
+msgstr "Blog-Software"
 
 #. Tag: game::board, short desc
 #: files/debtags/vocabulary
@@ -1378,7 +1391,7 @@ msgstr "Brettspiel"
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
 msgid "Bosnian"
-msgstr "Bonsnisch"
+msgstr "Bosnisch"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -1403,7 +1416,7 @@ msgstr ""
 #. Tag: works-with::bugs, short desc
 #: files/debtags/vocabulary
 msgid "Bugs or Issues"
-msgstr "Fehlern oder Problemen"
+msgstr "Fehler oder Probleme"
 
 #. Tag: devel::buildtools, short desc
 #: files/debtags/vocabulary
@@ -1468,7 +1481,7 @@ msgstr "CORBA"
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
 msgid "Calculation and numerical computation"
-msgstr ""
+msgstr "Rechnen und numerische Berechnung"
 
 #. Tag: game::card, short desc
 #: files/debtags/vocabulary
@@ -1488,7 +1501,7 @@ msgstr ""
 #. Tag: use::checking, short desc
 #: files/debtags/vocabulary
 msgid "Checking"
-msgstr ""
+msgstr "Überprüfen"
 
 #. Tag: field::chemistry, short desc
 #: files/debtags/vocabulary
@@ -1518,12 +1531,12 @@ msgstr ""
 #. Tag: admin::cluster, short desc
 #: files/debtags/vocabulary
 msgid "Clustering"
-msgstr ""
+msgstr "Verclustern"
 
 #. Tag: devel::code-generator, short desc
 #: files/debtags/vocabulary
 msgid "Code Generation"
-msgstr ""
+msgstr "Code-Erzeugung"
 
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
@@ -1569,12 +1582,12 @@ msgstr "Konfigurationswerkzeug"
 #. Tag: interface::svga, short desc
 #: files/debtags/vocabulary
 msgid "Console SVGA"
-msgstr ""
+msgstr "Konsole SVGA"
 
 #. Tag: web::cms, short desc
 #: files/debtags/vocabulary
 msgid "Content Management (CMS)"
-msgstr ""
+msgstr "Inhaltsverwaltung (CMS)"
 
 #. Tag: culture::croatian, short desc
 #: files/debtags/vocabulary
@@ -1589,7 +1602,7 @@ msgstr "Kryptographie"
 #. Facet: culture, short desc
 #: files/debtags/vocabulary
 msgid "Culture"
-msgstr ""
+msgstr "Kultur"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
@@ -1644,7 +1657,7 @@ msgstr "Daten-Visualisierung"
 #. Tag: admin::recovery, short desc
 #: files/debtags/vocabulary
 msgid "Data recovery"
-msgstr ""
+msgstr "Daten-Wiederherstellung"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
@@ -1690,7 +1703,7 @@ msgstr "Entwicklungs-Bibliothek"
 #. Tag: use::dialing, short desc
 #: files/debtags/vocabulary
 msgid "Dialup Access"
-msgstr ""
+msgstr "Einwählzugriff"
 
 #. Tag: works-with::dictionary, short desc
 #: files/debtags/vocabulary
@@ -1747,7 +1760,7 @@ msgstr "ECMA CLI"
 #. Tag: biology::emboss, short desc
 #: files/debtags/vocabulary
 msgid "EMBOSS"
-msgstr ""
+msgstr "EMBOSS"
 
 #. Tag: suite::eclipse, short desc
 #: files/debtags/vocabulary
@@ -1772,12 +1785,12 @@ msgstr "Bearbeiten"
 #. Facet: mail, short desc
 #: files/debtags/vocabulary
 msgid "Electronic Mail"
-msgstr ""
+msgstr "Elektronische Post"
 
 #. Tag: field::electronics, short desc
 #: files/debtags/vocabulary
 msgid "Electronics"
-msgstr ""
+msgstr "Elektronik"
 
 #. Tag: suite::emacs, short desc
 #: files/debtags/vocabulary
@@ -1792,7 +1805,7 @@ msgstr "E-Mail"
 #. Tag: hardware::embedded, short desc
 #: files/debtags/vocabulary
 msgid "Embedded"
-msgstr ""
+msgstr "Eingebettet"
 
 #. Tag: hardware::emulation, short desc
 #: files/debtags/vocabulary
@@ -1802,7 +1815,7 @@ msgstr "Emulation"
 #. Tag: use::entertaining, short desc
 #: files/debtags/vocabulary
 msgid "Entertaining"
-msgstr ""
+msgstr "Unterhaltung"
 
 #. Tag: culture::esperanto, short desc
 #: files/debtags/vocabulary
@@ -1812,7 +1825,7 @@ msgstr "Esperanto"
 #. Tag: culture::estonian, short desc
 #: files/debtags/vocabulary
 msgid "Estonian"
-msgstr ""
+msgstr "Estnisch"
 
 #. Tag: protocol::ethernet, short desc
 #: files/debtags/vocabulary
@@ -1848,7 +1861,7 @@ msgstr ""
 #. Tag: works-with::fax, short desc
 #: files/debtags/vocabulary
 msgid "Faxes"
-msgstr ""
+msgstr "Faxe"
 
 #. Tag: protocol::fidonet, short desc
 #: files/debtags/vocabulary
@@ -1858,7 +1871,7 @@ msgstr "FidoNet"
 #. Facet: field, short desc
 #: files/debtags/vocabulary
 msgid "Field"
-msgstr ""
+msgstr "Feld"
 
 #. Tag: admin::file-distribution, short desc
 #: files/debtags/vocabulary
@@ -1888,12 +1901,12 @@ msgstr "Dateien"
 #. Tag: admin::filesystem, short desc
 #: files/debtags/vocabulary
 msgid "Filesystem Tool"
-msgstr ""
+msgstr "Dateisystem-Werkzeug"
 
 #. Tag: use::filtering, short desc
 #: files/debtags/vocabulary
 msgid "Filtering"
-msgstr ""
+msgstr "Filtern"
 
 #. Tag: mail::filters, short desc
 #: files/debtags/vocabulary
@@ -1903,12 +1916,12 @@ msgstr "Filter"
 #. Tag: office::finance, short desc
 #: files/debtags/vocabulary
 msgid "Finance"
-msgstr ""
+msgstr "Finanzen"
 
 #. Tag: field::finance, short desc
 #: files/debtags/vocabulary
 msgid "Financial"
-msgstr ""
+msgstr "finanziell"
 
 #. Tag: protocol::finger, short desc
 #: files/debtags/vocabulary
@@ -1975,12 +1988,12 @@ msgstr "Fortran-Entwicklung"
 #. Tag: web::forum, short desc
 #: files/debtags/vocabulary
 msgid "Forum"
-msgstr "Forume"
+msgstr "Forum"
 
 #. Tag: interface::framebuffer, short desc
 #: files/debtags/vocabulary
 msgid "Framebuffer"
-msgstr ""
+msgstr "Framebuffer"
 
 #. Tag: culture::french, short desc
 #: files/debtags/vocabulary
@@ -2055,7 +2068,7 @@ msgstr "GTK"
 #. Tag: use::gameplaying, short desc
 #: files/debtags/vocabulary
 msgid "Game Playing"
-msgstr ""
+msgstr "Spiele spielen"
 
 #. Facet: game, short desc
 #: files/debtags/vocabulary
@@ -2065,7 +2078,7 @@ msgstr "Spiele und Vergnügungen"
 #. Tag: field::genealogy, short desc
 #: files/debtags/vocabulary
 msgid "Genealogy"
-msgstr ""
+msgstr "Ahnenforschung"
 
 #. Tag: field::geography, short desc
 #: files/debtags/vocabulary
@@ -2112,7 +2125,7 @@ msgstr "HTTP"
 #. Tag: hardware::hamradio, short desc
 #: files/debtags/vocabulary
 msgid "Ham Radio"
-msgstr ""
+msgstr "Amateurfunk"
 
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
@@ -2277,12 +2290,12 @@ msgstr "Interpreter"
 #. Tag: security::ids, short desc
 #: files/debtags/vocabulary
 msgid "Intrusion Detection"
-msgstr ""
+msgstr "Einbruchserkennung"
 
 #. Tag: special::invalid-tag, short desc
 #: files/debtags/vocabulary
 msgid "Invalid tag"
-msgstr ""
+msgstr "Ungültige Markierung"
 
 #. Tag: culture::irish, short desc
 #: files/debtags/vocabulary
@@ -2407,7 +2420,7 @@ msgstr "Bibliothek"
 #. Tag: field::linguistics, short desc
 #: files/debtags/vocabulary
 msgid "Linguistics"
-msgstr ""
+msgstr "Linguistik"
 
 #. Tag: implemented-in::lisp, short desc
 #: files/debtags/vocabulary
@@ -2427,7 +2440,7 @@ msgstr ""
 #. Tag: network::load-balancing, short desc
 #: files/debtags/vocabulary
 msgid "Load Balancing"
-msgstr ""
+msgstr "Last-Verteilung"
 
 #. Tag: security::log-analyzer, short desc
 #: files/debtags/vocabulary
@@ -2443,7 +2456,7 @@ msgstr "Protokollierung"
 #. Tag: use::login, short desc
 #: files/debtags/vocabulary
 msgid "Login"
-msgstr ""
+msgstr "Anmeldung"
 
 #. Tag: x11::display-manager, short desc
 #: files/debtags/vocabulary
@@ -2493,17 +2506,17 @@ msgstr "MS RIFF-Audio"
 #. Tag: protocol::msn-messenger, short desc
 #: files/debtags/vocabulary
 msgid "MSN Messenger"
-msgstr ""
+msgstr "MSN-Messenger"
 
 #. Tag: devel::machinecode, short desc
 #: files/debtags/vocabulary
 msgid "Machine Code"
-msgstr ""
+msgstr "Maschinencode"
 
 #. Facet: made-of, short desc
 #: files/debtags/vocabulary
 msgid "Made Of"
-msgstr ""
+msgstr "Hergestellt aus"
 
 #. Tag: mail::delivery-agent, short desc
 #: files/debtags/vocabulary
@@ -2543,7 +2556,7 @@ msgstr "Mathematik"
 #. Tag: field::medicine:imaging, short desc
 #: files/debtags/vocabulary
 msgid "Medical Imaging"
-msgstr ""
+msgstr "Medizinische Bildgebung"
 
 #. Tag: field::medicine, short desc
 #: files/debtags/vocabulary
@@ -2639,7 +2652,7 @@ msgstr "Keine IPv6-Unterstützung"
 #. Tag: uitoolkit::ncurses, short desc
 #: files/debtags/vocabulary
 msgid "Ncurses TUI"
-msgstr ""
+msgstr "Ncurses TUI"
 
 #. Tag: accessibility::TODO, short desc
 #. Tag: admin::TODO, short desc
@@ -2671,7 +2684,7 @@ msgstr ""
 #. Tag: x11::TODO, short desc
 #: files/debtags/vocabulary
 msgid "Need an extra tag"
-msgstr ""
+msgstr "Benötige eine zusätzliche Markierung"
 
 #. Tag: suite::netscape, short desc
 #: files/debtags/vocabulary
@@ -2686,7 +2699,7 @@ msgstr "Netzwerk-Protokoll"
 #. Tag: netcomm, short desc
 #: files/debtags/vocabulary
 msgid "Network and Communication"
-msgstr ""
+msgstr "Vernetzung und Kommunikation"
 
 #. Tag: works-with::network-traffic, short desc
 #: files/debtags/vocabulary
@@ -2696,12 +2709,12 @@ msgstr ""
 #. Facet: network, short desc
 #: files/debtags/vocabulary
 msgid "Networking"
-msgstr ""
+msgstr "Vernetzung"
 
 #. Tag: biology::format:nexus, short desc
 #: files/debtags/vocabulary
 msgid "Nexus"
-msgstr ""
+msgstr "Nexus"
 
 #. Tag: culture::norwegian, short desc
 #: files/debtags/vocabulary
@@ -2721,132 +2734,132 @@ msgstr "norwegisches Nynorsk"
 #. Tag: special::not-yet-tagged::a, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with a"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit a"
 
 #. Tag: special::not-yet-tagged::b, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with b"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit b"
 
 #. Tag: special::not-yet-tagged::c, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with c"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit c"
 
 #. Tag: special::not-yet-tagged::d, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with d"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit d"
 
 #. Tag: special::not-yet-tagged::e, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with e"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit e"
 
 #. Tag: special::not-yet-tagged::f, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with f"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit f"
 
 #. Tag: special::not-yet-tagged::g, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with g"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit g"
 
 #. Tag: special::not-yet-tagged::h, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with h"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit h"
 
 #. Tag: special::not-yet-tagged::i, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with i"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit i"
 
 #. Tag: special::not-yet-tagged::j, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with j"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit j"
 
 #. Tag: special::not-yet-tagged::k, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with k"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit k"
 
 #. Tag: special::not-yet-tagged::l, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with l"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit l"
 
 #. Tag: special::not-yet-tagged::m, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with m"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit m"
 
 #. Tag: special::not-yet-tagged::n, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with n"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit n"
 
 #. Tag: special::not-yet-tagged::o, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with o"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit o"
 
 #. Tag: special::not-yet-tagged::p, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with p"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit p"
 
 #. Tag: special::not-yet-tagged::q, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with q"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit q"
 
 #. Tag: special::not-yet-tagged::r, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with r"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit r"
 
 #. Tag: special::not-yet-tagged::s, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with s"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit s"
 
 #. Tag: special::not-yet-tagged::t, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with t"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit t"
 
 #. Tag: special::not-yet-tagged::u, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with u"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit u"
 
 #. Tag: special::not-yet-tagged::v, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with v"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit v"
 
 #. Tag: special::not-yet-tagged::w, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with w"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit w"
 
 #. Tag: special::not-yet-tagged::x, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with x"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit x"
 
 #. Tag: special::not-yet-tagged::y, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with y"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit y"
 
 #. Tag: special::not-yet-tagged::z, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with z"
-msgstr ""
+msgstr "Noch nicht markierte Pakete mit z"
 
 #. Tag: mail::notification, short desc
 #: files/debtags/vocabulary
@@ -2856,7 +2869,7 @@ msgstr "Benachrichtigung"
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
 msgid "Nucleic acids"
-msgstr ""
+msgstr "Nukleinsäuren"
 
 #. Tag: implemented-in::ocaml, short desc
 #: files/debtags/vocabulary
@@ -2891,12 +2904,12 @@ msgstr "Objective-C-Entwicklung"
 #. Tag: special::obsolete, short desc
 #: files/debtags/vocabulary
 msgid "Obsolete Packages"
-msgstr ""
+msgstr "Veraltete Pakete"
 
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
-msgstr ""
+msgstr "Büro und Geschäft"
 
 #. Tag: office, short desc
 #: files/debtags/vocabulary
@@ -3017,7 +3030,7 @@ msgstr ""
 #. Tag: game::platform, short desc
 #: files/debtags/vocabulary
 msgid "Platform"
-msgstr ""
+msgstr "Plattform"
 
 #. Tag: sound::player, short desc
 #: files/debtags/vocabulary
@@ -3027,7 +3040,7 @@ msgstr "Wiedergabe"
 #. Tag: use::playing, short desc
 #: files/debtags/vocabulary
 msgid "Playing Media"
-msgstr ""
+msgstr "Medien-Wiedergabe"
 
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
@@ -3114,7 +3127,7 @@ msgstr "Prolog-Entwicklung"
 #. Tag: biology::peptidic, short desc
 #: files/debtags/vocabulary
 msgid "Proteins"
-msgstr ""
+msgstr "Proteine"
 
 #. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
@@ -3159,7 +3172,7 @@ msgstr "RADIUS"
 #. Tag: devel::rpc, short desc
 #: files/debtags/vocabulary
 msgid "RPC"
-msgstr ""
+msgstr "RPC"
 
 #. Tag: works-with-format::xml:rss, short desc
 #: files/debtags/vocabulary
@@ -3334,7 +3347,7 @@ msgstr "SWF, ShockWave Flash"
 #. Tag: network::scanner, short desc
 #: files/debtags/vocabulary
 msgid "Scanning"
-msgstr ""
+msgstr "Scannen"
 
 #. Tag: implemented-in::scheme, short desc
 #: files/debtags/vocabulary
@@ -3369,17 +3382,17 @@ msgstr ""
 #. Tag: x11::screensaver, short desc
 #: files/debtags/vocabulary
 msgid "Screen Saver"
-msgstr " Bildschirmschoner"
+msgstr "Bildschirmschoner"
 
 #. Tag: web::scripting, short desc
 #: files/debtags/vocabulary
 msgid "Scripting"
-msgstr ""
+msgstr "Skripten"
 
 #. Tag: web::search-engine, short desc
 #: files/debtags/vocabulary
 msgid "Search engine"
-msgstr ""
+msgstr "Suchmaschine"
 
 #. Tag: use::searching, short desc
 #: files/debtags/vocabulary
@@ -3389,7 +3402,7 @@ msgstr "Suchen"
 #. Tag: special::auto-inst-parts, short desc
 #: files/debtags/vocabulary
 msgid "Secondary packages users won't install directly"
-msgstr ""
+msgstr "Sekundäre Pakete, die Benutzer nicht direkt installieren werden"
 
 #. Facet: security, short desc
 #: files/debtags/vocabulary
@@ -3415,7 +3428,7 @@ msgstr "Dienst"
 #. Facet: special, short desc
 #: files/debtags/vocabulary
 msgid "Service tags"
-msgstr ""
+msgstr "Service-Markierungen"
 
 #. Tag: role::shared-lib, short desc
 #: files/debtags/vocabulary
@@ -3465,13 +3478,13 @@ msgstr "Spanisch"
 #. Tag: accessibility::speech-recognition, short desc
 #: files/debtags/vocabulary
 msgid "Speech Recognition"
-msgstr ""
+msgstr "Spracherkennung"
 
 #. Tag: accessibility::speech, short desc
 #. Tag: sound::speech, short desc
 #: files/debtags/vocabulary
 msgid "Speech Synthesis"
-msgstr ""
+msgstr "Sprachsynthese"
 
 #. Tag: game::sport, short desc
 #: files/debtags/vocabulary
@@ -3512,7 +3525,7 @@ msgstr "Strategie"
 #. Tag: field::biology:structural, short desc
 #: files/debtags/vocabulary
 msgid "Structural biology"
-msgstr ""
+msgstr "Strukturelle Biologie"
 
 #. Tag: scope::suite, short desc
 #: files/debtags/vocabulary
@@ -3542,22 +3555,22 @@ msgstr "System-Administration"
 #. Tag: admin::boot, short desc
 #: files/debtags/vocabulary
 msgid "System Boot"
-msgstr ""
+msgstr "Systemstart"
 
 #. Tag: works-with::logfile, short desc
 #: files/debtags/vocabulary
 msgid "System Logs"
-msgstr ""
+msgstr "Systemprotokolle"
 
 #. Tag: admin::install, short desc
 #: files/debtags/vocabulary
 msgid "System installation"
-msgstr ""
+msgstr "Systeminstallation"
 
 #. Tag: system, short desc
 #: files/debtags/vocabulary
 msgid "System software and maintainance"
-msgstr ""
+msgstr "Systemsoftware und -wartung"
 
 #. Tag: implemented-in::tcl, short desc
 #: files/debtags/vocabulary
@@ -3662,7 +3675,7 @@ msgstr ""
 #. Tag: suite::gimp, short desc
 #: files/debtags/vocabulary
 msgid "The GIMP"
-msgstr ""
+msgstr "The GIMP"
 
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
@@ -3748,7 +3761,7 @@ msgstr "Hilfswerkzeug"
 #. Tag: culture::uzbek, short desc
 #: files/debtags/vocabulary
 msgid "Uzbek"
-msgstr ""
+msgstr "Usbekisch"
 
 #. Tag: vi, short desc
 #: files/debtags/vocabulary
@@ -3773,7 +3786,7 @@ msgstr "VRML Virtual Reality Markup Language"
 #. Tag: works-with::image:vector, short desc
 #: files/debtags/vocabulary
 msgid "Vector Image"
-msgstr ""
+msgstr "Vektor-Bild"
 
 #. Tag: works-with::video, short desc
 #: files/debtags/vocabulary
@@ -3793,7 +3806,7 @@ msgstr "VoIP"
 #. Tag: devel::web, short desc
 #: files/debtags/vocabulary
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #. Tag: protocol::webdav, short desc
 #: files/debtags/vocabulary
@@ -3865,7 +3878,7 @@ msgstr "XML"
 #. Tag: protocol::xmlrpc, short desc
 #: files/debtags/vocabulary
 msgid "XML-RPC"
-msgstr ""
+msgstr "XML-RPC"
 
 #. Tag: suite::xmms, short desc
 #: files/debtags/vocabulary
@@ -3885,7 +3898,7 @@ msgstr ""
 #. Tag: protocol::yahoo-messenger, short desc
 #: files/debtags/vocabulary
 msgid "Yahoo! Messenger"
-msgstr ""
+msgstr "Yahoo! Messenger"
 
 #. Tag: suite::zope, short desc
 #: files/debtags/vocabulary
