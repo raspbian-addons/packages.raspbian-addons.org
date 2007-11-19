@@ -63,7 +63,7 @@ foreach my $s (@SUITES) {
 	my %content = ( subsections => [], suite => $s,
 			lang => $lang, charset => $charset, cat => $cat,
 			used_langs => \@LANGUAGES, suites => \@SUITES );
-	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
+	foreach my $ssec (sort (keys %{$subsections->{$s}}, 'virtual')) {
 	    next if $ssec eq '-';
 	    if ($sections_descs{$ssec}) {
 		push @{$content{subsections}}, {
