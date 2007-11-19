@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-10-22 15:16+0900\n"
+"PO-Revision-Date: 2007-11-20 01:11+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr ""
 #. Facet: junior, long desc
 #: files/debtags/vocabulary
 msgid " Applications recommended for younger users"
-msgstr ""
+msgstr " 低年齢のユーザに推奨されるアプリケーション"
 
 #. Tag: accessibility::input, long desc
 #: files/debtags/vocabulary
@@ -305,12 +305,12 @@ msgstr ""
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
 msgid " How is the package related to the field of biology."
-msgstr ""
+msgstr " パッケージと生物学の分野との関連性"
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
 msgid " How the package is related to system security"
-msgstr ""
+msgstr " パッケージとシステムセキュリティとの関連性"
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
@@ -917,12 +917,12 @@ msgstr ""
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid " The culture for which the package provides special support"
-msgstr ""
+msgstr " パッケージが特殊なサポートを提供する文化"
 
 #. Facet: made-of, long desc
 #: files/debtags/vocabulary
 msgid " The languages or data formats used to make the package"
-msgstr ""
+msgstr " パッケージの作成に用いられている言語やデータ形式"
 
 #. Tag: accessibility::TODO, long desc
 #. Tag: admin::TODO, long desc
@@ -984,6 +984,8 @@ msgid ""
 "people)\n"
 " that the package can work with."
 msgstr ""
+" これらのタグはパッケージが取り扱うことのできるデータ種別 (またはプロセスや"
+"人々) を説明しています。"
 
 #. Tag: admin::virtualization, long desc
 #: files/debtags/vocabulary
@@ -1198,7 +1200,7 @@ msgstr ""
 #. Facet: accessibility, short desc
 #: files/debtags/vocabulary
 msgid "Accessibility Support"
-msgstr ""
+msgstr "アクセシビリティサポート"
 
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
@@ -1213,12 +1215,12 @@ msgstr ""
 #. Tag: implemented-in::ada, short desc
 #: files/debtags/vocabulary
 msgid "Ada"
-msgstr ""
+msgstr "Ada"
 
 #. Tag: devel::lang:ada, short desc
 #: files/debtags/vocabulary
 msgid "Ada Development"
-msgstr ""
+msgstr "Ada での開発"
 
 #. Tag: game::adventure, short desc
 #: files/debtags/vocabulary
@@ -1270,7 +1272,7 @@ msgstr ""
 #. Facet: suite, short desc
 #: files/debtags/vocabulary
 msgid "Application Suite"
-msgstr ""
+msgstr "アプリケーションスイート"
 
 #. Tag: culture::arabic, short desc
 #: files/debtags/vocabulary
@@ -1356,7 +1358,7 @@ msgstr ""
 #. Tag: field::biology, short desc
 #: files/debtags/vocabulary
 msgid "Biology"
-msgstr ""
+msgstr "生物学"
 
 #. Tag: protocol::bittorrent, short desc
 #: files/debtags/vocabulary
@@ -1421,32 +1423,32 @@ msgstr ""
 #. Tag: implemented-in::c, short desc
 #: files/debtags/vocabulary
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #. Tag: devel::lang:c, short desc
 #: files/debtags/vocabulary
 msgid "C Development"
-msgstr ""
+msgstr "C での開発"
 
 #. Tag: implemented-in::c-sharp, short desc
 #: files/debtags/vocabulary
 msgid "C#"
-msgstr ""
+msgstr "C#"
 
 #. Tag: devel::lang:c-sharp, short desc
 #: files/debtags/vocabulary
 msgid "C# Development"
-msgstr ""
+msgstr "C# での開発"
 
 #. Tag: implemented-in::c++, short desc
 #: files/debtags/vocabulary
 msgid "C++"
-msgstr ""
+msgstr "C++"
 
 #. Tag: devel::lang:c++, short desc
 #: files/debtags/vocabulary
 msgid "C++ Development"
-msgstr ""
+msgstr "C++ での開発"
 
 #. Tag: hardware::storage:cd, short desc
 #: files/debtags/vocabulary
@@ -1587,7 +1589,7 @@ msgstr ""
 #. Facet: culture, short desc
 #: files/debtags/vocabulary
 msgid "Culture"
-msgstr ""
+msgstr "文化"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
@@ -1755,12 +1757,12 @@ msgstr ""
 #. Tag: devel::lang:ecmascript, short desc
 #: files/debtags/vocabulary
 msgid "Ecmascript/JavaScript Development"
-msgstr ""
+msgstr "Ecmascript/JavaScript での開発"
 
 #. Tag: implemented-in::ecmascript, short desc
 #: files/debtags/vocabulary
 msgid "Ecmascript/Javascript"
-msgstr ""
+msgstr "Ecmascript/Javascript"
 
 #. Tag: use::editing, short desc
 #: files/debtags/vocabulary
@@ -1770,7 +1772,7 @@ msgstr ""
 #. Facet: mail, short desc
 #: files/debtags/vocabulary
 msgid "Electronic Mail"
-msgstr ""
+msgstr "電子メール"
 
 #. Tag: field::electronics, short desc
 #: files/debtags/vocabulary
@@ -1856,7 +1858,7 @@ msgstr ""
 #. Facet: field, short desc
 #: files/debtags/vocabulary
 msgid "Field"
-msgstr ""
+msgstr "分野"
 
 #. Tag: admin::file-distribution, short desc
 #: files/debtags/vocabulary
@@ -1871,7 +1873,7 @@ msgstr ""
 #. Facet: filetransfer, short desc
 #: files/debtags/vocabulary
 msgid "File Transfer"
-msgstr ""
+msgstr "ファイル転送"
 
 #. Tag: file-formats, short desc
 #: files/debtags/vocabulary
@@ -1963,12 +1965,12 @@ msgstr ""
 #. Tag: implemented-in::fortran, short desc
 #: files/debtags/vocabulary
 msgid "Fortran"
-msgstr ""
+msgstr "Fortran"
 
 #. Tag: devel::lang:fortran, short desc
 #: files/debtags/vocabulary
 msgid "Fortran Development"
-msgstr ""
+msgstr "Fortran での開発"
 
 #. Tag: web::forum, short desc
 #: files/debtags/vocabulary
@@ -2023,12 +2025,12 @@ msgstr ""
 #. Tag: implemented-in::r, short desc
 #: files/debtags/vocabulary
 msgid "GNU R"
-msgstr ""
+msgstr "GNU R"
 
 #. Tag: devel::lang:r, short desc
 #: files/debtags/vocabulary
 msgid "GNU R Development"
-msgstr ""
+msgstr "GNU R での開発"
 
 #. Tag: suite::gnustep, short desc
 #: files/debtags/vocabulary
@@ -2058,7 +2060,7 @@ msgstr ""
 #. Facet: game, short desc
 #: files/debtags/vocabulary
 msgid "Games and Amusement"
-msgstr ""
+msgstr "ゲームや娯楽"
 
 #. Tag: field::genealogy, short desc
 #: files/debtags/vocabulary
@@ -2120,7 +2122,7 @@ msgstr ""
 #. Facet: hardware, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Enablement"
-msgstr ""
+msgstr "使用を可能にするハードウェア"
 
 #. Tag: admin::hardware, short desc
 #: files/debtags/vocabulary
@@ -2135,12 +2137,12 @@ msgstr ""
 #. Tag: implemented-in::haskell, short desc
 #: files/debtags/vocabulary
 msgid "Haskell"
-msgstr ""
+msgstr "Haskell"
 
 #. Tag: devel::lang:haskell, short desc
 #: files/debtags/vocabulary
 msgid "Haskell Development"
-msgstr ""
+msgstr "Haskell での開発"
 
 #. Tag: culture::hebrew, short desc
 #: files/debtags/vocabulary
@@ -2240,7 +2242,7 @@ msgstr ""
 #. Facet: implemented-in, short desc
 #: files/debtags/vocabulary
 msgid "Implemented in"
-msgstr ""
+msgstr "実装言語"
 
 #. Tag: hardware::input, short desc
 #: files/debtags/vocabulary
@@ -2260,7 +2262,7 @@ msgstr ""
 #. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
 msgid "Interface Toolkit"
-msgstr ""
+msgstr "インタフェースツールキット"
 
 #. Tag: devel::i18n, short desc
 #: files/debtags/vocabulary
@@ -2315,12 +2317,12 @@ msgstr ""
 #. Tag: implemented-in::java, short desc
 #: files/debtags/vocabulary
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #. Tag: devel::lang:java, short desc
 #: files/debtags/vocabulary
 msgid "Java Development"
-msgstr ""
+msgstr "Java での開発"
 
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
@@ -2335,7 +2337,7 @@ msgstr ""
 #. Facet: junior, short desc
 #: files/debtags/vocabulary
 msgid "Junior Applications"
-msgstr ""
+msgstr "子供向けアプリケーション"
 
 #. Tag: suite::kde, short desc
 #: files/debtags/vocabulary
@@ -2410,12 +2412,12 @@ msgstr ""
 #. Tag: implemented-in::lisp, short desc
 #: files/debtags/vocabulary
 msgid "Lisp"
-msgstr ""
+msgstr "Lisp"
 
 #. Tag: devel::lang:lisp, short desc
 #: files/debtags/vocabulary
 msgid "Lisp Development"
-msgstr ""
+msgstr "Lisp での開発"
 
 #. Tag: devel::docsystem, short desc
 #: files/debtags/vocabulary
@@ -2451,12 +2453,12 @@ msgstr ""
 #. Tag: implemented-in::lua, short desc
 #: files/debtags/vocabulary
 msgid "Lua"
-msgstr ""
+msgstr "Lua"
 
 #. Tag: devel::lang:lua, short desc
 #: files/debtags/vocabulary
 msgid "Lua Development"
-msgstr ""
+msgstr "Lua での開発"
 
 #. Tag: sound::sequencer, short desc
 #: files/debtags/vocabulary
@@ -2471,12 +2473,12 @@ msgstr ""
 #. Tag: implemented-in::ml, short desc
 #: files/debtags/vocabulary
 msgid "ML"
-msgstr ""
+msgstr "ML"
 
 #. Tag: devel::lang:ml, short desc
 #: files/debtags/vocabulary
 msgid "ML Development"
-msgstr ""
+msgstr "ML での開発"
 
 #. Tag: works-with-format::mp3, short desc
 #: files/debtags/vocabulary
@@ -2501,7 +2503,7 @@ msgstr ""
 #. Facet: made-of, short desc
 #: files/debtags/vocabulary
 msgid "Made Of"
-msgstr ""
+msgstr "構成要素"
 
 #. Tag: mail::delivery-agent, short desc
 #: files/debtags/vocabulary
@@ -2679,7 +2681,7 @@ msgstr ""
 #. Facet: protocol, short desc
 #: files/debtags/vocabulary
 msgid "Network Protocol"
-msgstr ""
+msgstr "ネットワークプロトコル"
 
 #. Tag: netcomm, short desc
 #: files/debtags/vocabulary
@@ -2694,7 +2696,7 @@ msgstr ""
 #. Facet: network, short desc
 #: files/debtags/vocabulary
 msgid "Networking"
-msgstr ""
+msgstr "ネットワークの利用方法"
 
 #. Tag: biology::format:nexus, short desc
 #: files/debtags/vocabulary
@@ -2859,12 +2861,12 @@ msgstr ""
 #. Tag: implemented-in::ocaml, short desc
 #: files/debtags/vocabulary
 msgid "OCaml"
-msgstr ""
+msgstr "OCaml"
 
 #. Tag: devel::lang:ocaml, short desc
 #: files/debtags/vocabulary
 msgid "OCaml Development"
-msgstr ""
+msgstr "OCaml での開発"
 
 #. Tag: works-with-format::odf, short desc
 #: files/debtags/vocabulary
@@ -2879,12 +2881,12 @@ msgstr ""
 #. Tag: implemented-in::objc, short desc
 #: files/debtags/vocabulary
 msgid "Objective C"
-msgstr ""
+msgstr "Objective C"
 
 #. Tag: devel::lang:objc, short desc
 #: files/debtags/vocabulary
 msgid "Objective-C Development"
-msgstr ""
+msgstr "Objective C での開発"
 
 #. Tag: special::obsolete, short desc
 #: files/debtags/vocabulary
@@ -2894,7 +2896,7 @@ msgstr ""
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
-msgstr ""
+msgstr "事務・業務"
 
 #. Tag: office, short desc
 #: files/debtags/vocabulary
@@ -2930,12 +2932,12 @@ msgstr ""
 #. Tag: implemented-in::php, short desc
 #: files/debtags/vocabulary
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #. Tag: devel::lang:php, short desc
 #: files/debtags/vocabulary
 msgid "PHP Development"
-msgstr ""
+msgstr "PHP での開発"
 
 #. Tag: works-with-format::png, short desc
 #: files/debtags/vocabulary
@@ -2980,12 +2982,12 @@ msgstr ""
 #. Tag: implemented-in::perl, short desc
 #: files/debtags/vocabulary
 msgid "Perl"
-msgstr ""
+msgstr "Perl"
 
 #. Tag: devel::lang:perl, short desc
 #: files/debtags/vocabulary
 msgid "Perl Development"
-msgstr ""
+msgstr "Perl での開発"
 
 #. Tag: works-with::pim, short desc
 #: files/debtags/vocabulary
@@ -3000,12 +3002,12 @@ msgstr ""
 #. Tag: implemented-in::pike, short desc
 #: files/debtags/vocabulary
 msgid "Pike"
-msgstr ""
+msgstr "Pike"
 
 #. Tag: devel::lang:pike, short desc
 #: files/debtags/vocabulary
 msgid "Pike Development"
-msgstr ""
+msgstr "Pike での開発"
 
 #. Tag: works-with-format::plaintext, short desc
 #: files/debtags/vocabulary
@@ -3127,7 +3129,7 @@ msgstr ""
 #. Facet: use, short desc
 #: files/debtags/vocabulary
 msgid "Purpose"
-msgstr ""
+msgstr "目的"
 
 #. Tag: game::puzzle, short desc
 #: files/debtags/vocabulary
@@ -3137,12 +3139,12 @@ msgstr ""
 #. Tag: implemented-in::python, short desc
 #: files/debtags/vocabulary
 msgid "Python"
-msgstr ""
+msgstr "Python"
 
 #. Tag: devel::lang:python, short desc
 #: files/debtags/vocabulary
 msgid "Python Development"
-msgstr ""
+msgstr "Python での開発"
 
 #. Tag: uitoolkit::qt, short desc
 #: files/debtags/vocabulary
@@ -3202,7 +3204,7 @@ msgstr ""
 #. Facet: role, short desc
 #: files/debtags/vocabulary
 msgid "Role"
-msgstr ""
+msgstr "役割"
 
 #. Tag: game::rpg, short desc
 #: files/debtags/vocabulary
@@ -3228,12 +3230,12 @@ msgstr ""
 #. Tag: implemented-in::ruby, short desc
 #: files/debtags/vocabulary
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #. Tag: devel::lang:ruby, short desc
 #: files/debtags/vocabulary
 msgid "Ruby Development"
-msgstr ""
+msgstr "Ruby での開発"
 
 #. Tag: works-with::software:running, short desc
 #: files/debtags/vocabulary
@@ -3352,7 +3354,7 @@ msgstr ""
 #. Facet: scope, short desc
 #: files/debtags/vocabulary
 msgid "Scope"
-msgstr ""
+msgstr "動作範囲"
 
 #. Tag: accessibility::screen-magnify, short desc
 #: files/debtags/vocabulary
@@ -3392,7 +3394,7 @@ msgstr ""
 #. Facet: security, short desc
 #: files/debtags/vocabulary
 msgid "Security"
-msgstr ""
+msgstr "セキュリティ"
 
 #. Tag: culture::serbian, short desc
 #: files/debtags/vocabulary
@@ -3413,7 +3415,7 @@ msgstr ""
 #. Facet: special, short desc
 #: files/debtags/vocabulary
 msgid "Service tags"
-msgstr ""
+msgstr "特殊なタグ"
 
 #. Tag: role::shared-lib, short desc
 #: files/debtags/vocabulary
@@ -3433,12 +3435,12 @@ msgstr ""
 #. Facet: devel, short desc
 #: files/debtags/vocabulary
 msgid "Software Development"
-msgstr ""
+msgstr "ソフトウェア開発"
 
 #. Facet: sound, short desc
 #: files/debtags/vocabulary
 msgid "Sound and Music"
-msgstr ""
+msgstr "音声・音楽"
 
 #. Tag: role::source, short desc
 #: files/debtags/vocabulary
@@ -3520,7 +3522,7 @@ msgstr ""
 #. Facet: works-with-format, short desc
 #: files/debtags/vocabulary
 msgid "Supports Format"
-msgstr ""
+msgstr "サポート形式"
 
 #. Tag: culture::swedish, short desc
 #: files/debtags/vocabulary
@@ -3535,7 +3537,7 @@ msgstr ""
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
 msgid "System Administration"
-msgstr ""
+msgstr "システム管理"
 
 #. Tag: admin::boot, short desc
 #: files/debtags/vocabulary
@@ -3731,7 +3733,7 @@ msgstr ""
 #. Facet: interface, short desc
 #: files/debtags/vocabulary
 msgid "User Interface"
-msgstr ""
+msgstr "ユーザインタフェース"
 
 #. Tag: admin::user-management, short desc
 #: files/debtags/vocabulary
@@ -3821,13 +3823,13 @@ msgstr ""
 #. Facet: works-with, short desc
 #: files/debtags/vocabulary
 msgid "Works with"
-msgstr ""
+msgstr "取り扱い対象"
 
 #. Tag: interface::web, short desc
 #. Facet: web, short desc
 #: files/debtags/vocabulary
 msgid "World Wide Web"
-msgstr ""
+msgstr "World Wide Web"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
@@ -3839,10 +3841,11 @@ msgstr ""
 msgid "X Window System"
 msgstr ""
 
+# TRANSLATION-FIXME: Why "Windowing"?
 #. Facet: x11, short desc
 #: files/debtags/vocabulary
 msgid "X Windowing System"
-msgstr ""
+msgstr "X ウィンドウシステム"
 
 #. Tag: uitoolkit::xlib, short desc
 #: files/debtags/vocabulary
