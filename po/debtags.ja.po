@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-21 00:11+0900\n"
+"PO-Revision-Date: 2007-11-21 02:44+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -795,23 +795,25 @@ msgstr " データを知識に変えるためのソフトウェア。"
 #. Tag: mail::user-agent, long desc
 #: files/debtags/vocabulary
 msgid " Software that allows users to access e-mail."
-msgstr ""
+msgstr " ユーザが電子メールを読むのに用いるソフトウェア。"
 
 #. Tag: mail::delivery-agent, long desc
 #: files/debtags/vocabulary
 msgid " Software that delivers mail to users' mailboxes."
-msgstr ""
+msgstr " メールをユーザのメールボックスに配送するソフトウェア。"
 
 #. Tag: mail::notification, long desc
 #: files/debtags/vocabulary
 msgid " Software that notifies users about status of mailbox."
-msgstr ""
+msgstr " ユーザにメールボックスの状態を通知するソフトウェア。"
 
 #. Tag: mail::transport-agent, long desc
 #: files/debtags/vocabulary
 msgid ""
 " Software that routes and transmits mail accross the system and the network."
 msgstr ""
+" システムやネットワークをまたいでメールのルーティングや送信を行うソフトウェ"
+"ア。"
 
 #. Tag: biology::peptidic, long desc
 #: files/debtags/vocabulary
@@ -1195,7 +1197,7 @@ msgstr ""
 #. Tag: junior::games-gl, short desc
 #: files/debtags/vocabulary
 msgid "3D games"
-msgstr ""
+msgstr "3D ゲーム"
 
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
@@ -1297,7 +1299,7 @@ msgstr ""
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
 msgid "Arcade games"
-msgstr ""
+msgstr "アーケードゲーム"
 
 #. Tag: works-with::archive, short desc
 #: files/debtags/vocabulary
@@ -1715,7 +1717,7 @@ msgstr ""
 #. Tag: made-of::data:dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionary"
-msgstr ""
+msgstr "辞書"
 
 #. Tag: hardware::camera, short desc
 #: files/debtags/vocabulary
@@ -1737,7 +1739,7 @@ msgstr ""
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
 msgid "Documentation in Info format"
-msgstr ""
+msgstr "Info 形式のドキュメント"
 
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
@@ -1913,7 +1915,7 @@ msgstr "フィルタリング"
 #. Tag: mail::filters, short desc
 #: files/debtags/vocabulary
 msgid "Filters"
-msgstr ""
+msgstr "フィルタ"
 
 #. Tag: office::finance, short desc
 #: files/debtags/vocabulary
@@ -1955,7 +1957,7 @@ msgstr ""
 #. Tag: x11::font, short desc
 #: files/debtags/vocabulary
 msgid "Font"
-msgstr ""
+msgstr "フォント"
 
 #. Tag: works-with::font, short desc
 #: files/debtags/vocabulary
@@ -2116,7 +2118,7 @@ msgstr ""
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
 msgid "HTML Hypertext Markup Language"
-msgstr ""
+msgstr "HyperText Markup Language (HTML)"
 
 #. Tag: protocol::http, short desc
 #. Tag: filetransfer::http, short desc
@@ -2192,7 +2194,7 @@ msgstr ""
 #. Tag: mail::imap, short desc
 #: files/debtags/vocabulary
 msgid "IMAP Protocol"
-msgstr ""
+msgstr "IMAP プロトコル"
 
 #. Tag: protocol::ip, short desc
 #: files/debtags/vocabulary
@@ -2237,7 +2239,7 @@ msgstr ""
 #. Tag: made-of::data:icons, short desc
 #: files/debtags/vocabulary
 msgid "Icons"
-msgstr ""
+msgstr "アイコン"
 
 #. Tag: protocol::ident, short desc
 #: files/debtags/vocabulary
@@ -2523,22 +2525,22 @@ msgstr "構成要素"
 #. Tag: mail::delivery-agent, short desc
 #: files/debtags/vocabulary
 msgid "Mail Delivery Agent"
-msgstr ""
+msgstr "メール配送エージェント (Mail Delivery Agent, MDA)"
 
 #. Tag: mail::transport-agent, short desc
 #: files/debtags/vocabulary
 msgid "Mail Transport Agent"
-msgstr ""
+msgstr "メール転送エージェント (Mail Transport Agent, MTA)"
 
 #. Tag: mail::user-agent, short desc
 #: files/debtags/vocabulary
 msgid "Mail user agent"
-msgstr ""
+msgstr "メールユーザエージェント (Mail User Agent, MUA)"
 
 #. Tag: mail::list, short desc
 #: files/debtags/vocabulary
 msgid "Mailing Lists"
-msgstr ""
+msgstr "メーリングリスト"
 
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
@@ -2548,7 +2550,7 @@ msgstr ""
 #. Tag: made-of::data:man, short desc
 #: files/debtags/vocabulary
 msgid "Manuals in nroff format"
-msgstr ""
+msgstr "nroff 形式のマニュアル"
 
 #. Tag: field::mathematics, short desc
 #: files/debtags/vocabulary
@@ -2573,7 +2575,7 @@ msgstr ""
 #. Tag: junior::meta, short desc
 #: files/debtags/vocabulary
 msgid "Metapackages"
-msgstr ""
+msgstr "メタパッケージ"
 
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
@@ -2866,7 +2868,7 @@ msgstr ""
 #. Tag: mail::notification, short desc
 #: files/debtags/vocabulary
 msgid "Notification"
-msgstr ""
+msgstr "通知"
 
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
@@ -2942,7 +2944,7 @@ msgstr ""
 #. Tag: works-with-format::pdf, short desc
 #: files/debtags/vocabulary
 msgid "PDF Documents"
-msgstr ""
+msgstr "PDF 文書"
 
 #. Tag: implemented-in::php, short desc
 #: files/debtags/vocabulary
@@ -2967,7 +2969,7 @@ msgstr ""
 #. Tag: mail::pop, short desc
 #: files/debtags/vocabulary
 msgid "POP3 Protocol"
-msgstr ""
+msgstr "POP3 プロトコル"
 
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
@@ -3073,7 +3075,7 @@ msgstr ""
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
 msgid "Postscript"
-msgstr ""
+msgstr "PostScript"
 
 #. Tag: admin::power-management, short desc
 #. Tag: hardware::power, short desc
@@ -3287,7 +3289,7 @@ msgstr "SFTP"
 #. Tag: works-with-format::sgml, short desc
 #: files/debtags/vocabulary
 msgid "SGML, Standard Generalized Markup Language"
-msgstr ""
+msgstr "Standard Generalized Markup Language (SGML)"
 
 #. Tag: protocol::smb, short desc
 #: files/debtags/vocabulary
@@ -3307,7 +3309,7 @@ msgstr ""
 #. Tag: mail::smtp, short desc
 #: files/debtags/vocabulary
 msgid "SMTP Protocol"
-msgstr ""
+msgstr "SMTP プロトコル"
 
 #. Tag: protocol::snmp, short desc
 #: files/debtags/vocabulary
@@ -3338,7 +3340,7 @@ msgstr ""
 #. Tag: works-with-format::svg, short desc
 #: files/debtags/vocabulary
 msgid "SVG, Scalable Vector Graphics"
-msgstr ""
+msgstr "Scalable Vector Graphics (SVG)"
 
 #. Tag: works-with-format::swf, short desc
 #: files/debtags/vocabulary
@@ -3632,7 +3634,7 @@ msgstr ""
 #. Tag: made-of::data:tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
-msgstr ""
+msgstr "TeX や LaTeX、DVI"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3784,7 +3786,7 @@ msgstr ""
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
 msgid "VRML Virtual Reality Markup Language"
-msgstr ""
+msgstr "Virtual Reality Markup Language (VRML)"
 
 #. Tag: works-with::image:vector, short desc
 #: files/debtags/vocabulary
@@ -3877,7 +3879,7 @@ msgstr ""
 #. Tag: works-with-format::xml, short desc
 #: files/debtags/vocabulary
 msgid "XML"
-msgstr ""
+msgstr "XML"
 
 #. Tag: protocol::xmlrpc, short desc
 #: files/debtags/vocabulary
