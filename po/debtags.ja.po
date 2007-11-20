@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-20 15:53+0900\n"
+"PO-Revision-Date: 2007-11-21 00:11+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,9 @@ msgid ""
 " only does something 10-20% of users in the field will need. Often has\n"
 " functionality missing from related applications."
 msgstr ""
+" 1 つまたはいくつかの使用事例に特化した、対象範囲の狭いプログラム。これに該当"
+"するプログラムは、その分野のユーザのうち 10 〜 20% が必要とすることを行うだけ"
+"です。関連するアプリケーションに欠けている機能を補うこともよくあります。"
 
 #. Tag: field::finance, long desc
 #: files/debtags/vocabulary
@@ -56,6 +59,9 @@ msgid ""
 " a document for incorrectly spelled words, checking a network for \n"
 " routing problems. Verifying."
 msgstr ""
+" ファイルシステムの整合性の検査、ドキュメント内の誤った綴りの単語の検査、ネッ"
+"トワーク上のルーティングの問題の検査など、あらゆる種類の検査。検証用のツール"
+"もこのタグに該当します。"
 
 #. Facet: junior, long desc
 #: files/debtags/vocabulary
@@ -122,6 +128,9 @@ msgid ""
 " for 80-90% of use cases. The pieces that remain are usually to be\n"
 " found as utilities."
 msgstr ""
+" 一般の使用を目的とした、対象範囲の広いプログラム。これに該当するプログラムの"
+"機能は、おそらく使用事例の 80 〜 90% をカバーするでしょう。残りのプログラムは"
+"通常はユーティリティとして見つかるはずです。"
 
 #. Tag: field::electronics, long desc
 #: files/debtags/vocabulary
@@ -161,6 +170,8 @@ msgid ""
 " Comprehensive suite of applications and utilities on the scale of\n"
 " desktop environment or base operating system."
 msgstr ""
+" デスクトップ環境や基本オペレーティングシステムといった規模の、アプリケーショ"
+"ンやユーティリティの包括的な統合環境。"
 
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
@@ -779,7 +790,7 @@ msgstr ""
 #. Tag: use::analysing, long desc
 #: files/debtags/vocabulary
 msgid " Software for turning data into knowledge."
-msgstr ""
+msgstr " データを知識に変えるためのソフトウェア。"
 
 #. Tag: mail::user-agent, long desc
 #: files/debtags/vocabulary
@@ -1011,7 +1022,7 @@ msgstr ""
 #. Tag: use::comparing, long desc
 #: files/debtags/vocabulary
 msgid " To find what relates or differs in two or more objects."
-msgstr ""
+msgstr " 複数のオブジェクトにおいて何が同じで何が異なるかを調べるためのもの。"
 
 #. Tag: devel::docsystem, long desc
 #: files/debtags/vocabulary
@@ -1239,7 +1250,7 @@ msgstr ""
 #. Tag: use::analysing, short desc
 #: files/debtags/vocabulary
 msgid "Analysing"
-msgstr ""
+msgstr "解析"
 
 #. Tag: security::antivirus, short desc
 #: files/debtags/vocabulary
@@ -1261,7 +1272,7 @@ msgstr ""
 #. Tag: x11::application, short desc
 #: files/debtags/vocabulary
 msgid "Application"
-msgstr ""
+msgstr "アプリケーション"
 
 #. Tag: role::app-data, short desc
 #: files/debtags/vocabulary
@@ -1397,7 +1408,7 @@ msgstr ""
 #. Tag: use::browsing, short desc
 #: files/debtags/vocabulary
 msgid "Browsing"
-msgstr ""
+msgstr "閲覧"
 
 #. Tag: devel::bugtracker, short desc
 #: files/debtags/vocabulary
@@ -1487,12 +1498,12 @@ msgstr ""
 #. Tag: use::chatting, short desc
 #: files/debtags/vocabulary
 msgid "Chatting"
-msgstr ""
+msgstr "おしゃべり (チャット)"
 
 #. Tag: use::checking, short desc
 #: files/debtags/vocabulary
 msgid "Checking"
-msgstr ""
+msgstr "検査"
 
 #. Tag: field::chemistry, short desc
 #: files/debtags/vocabulary
@@ -1542,7 +1553,7 @@ msgstr "コマンドシェル"
 #. Tag: use::comparing, short desc
 #: files/debtags/vocabulary
 msgid "Comparing"
-msgstr ""
+msgstr "比較"
 
 #. Tag: devel::compiler, short desc
 #: files/debtags/vocabulary
@@ -1552,7 +1563,7 @@ msgstr ""
 #. Tag: use::compressing, short desc
 #: files/debtags/vocabulary
 msgid "Compressing"
-msgstr ""
+msgstr "圧縮"
 
 #. Tag: sound::compression, short desc
 #: files/debtags/vocabulary
@@ -1563,7 +1574,7 @@ msgstr ""
 #. Tag: network::configuration, short desc
 #: files/debtags/vocabulary
 msgid "Configuration"
-msgstr ""
+msgstr "設定"
 
 #. Tag: admin::configuring, short desc
 #: files/debtags/vocabulary
@@ -1628,7 +1639,7 @@ msgstr ""
 #. Tag: use::converting, short desc
 #: files/debtags/vocabulary
 msgid "Data Conversion"
-msgstr ""
+msgstr "データの変換"
 
 #. Tag: data-exchange, short desc
 #: files/debtags/vocabulary
@@ -1638,12 +1649,12 @@ msgstr ""
 #. Tag: use::organizing, short desc
 #: files/debtags/vocabulary
 msgid "Data Organisation"
-msgstr ""
+msgstr "データの編成"
 
 #. Tag: use::viewing, short desc
 #: files/debtags/vocabulary
 msgid "Data Visualization"
-msgstr ""
+msgstr "データの可視化"
 
 #. Tag: admin::recovery, short desc
 #: files/debtags/vocabulary
@@ -1694,7 +1705,7 @@ msgstr ""
 #. Tag: use::dialing, short desc
 #: files/debtags/vocabulary
 msgid "Dialup Access"
-msgstr ""
+msgstr "ダイアルアップ接続"
 
 #. Tag: works-with::dictionary, short desc
 #: files/debtags/vocabulary
@@ -1731,7 +1742,7 @@ msgstr ""
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
 msgid "Downloading"
-msgstr ""
+msgstr "ダウンロード"
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
@@ -1771,7 +1782,7 @@ msgstr "Ecmascript/Javascript"
 #. Tag: use::editing, short desc
 #: files/debtags/vocabulary
 msgid "Editing"
-msgstr ""
+msgstr "編集"
 
 #. Facet: mail, short desc
 #: files/debtags/vocabulary
@@ -1806,7 +1817,7 @@ msgstr ""
 #. Tag: use::entertaining, short desc
 #: files/debtags/vocabulary
 msgid "Entertaining"
-msgstr ""
+msgstr "娯楽"
 
 #. Tag: culture::esperanto, short desc
 #: files/debtags/vocabulary
@@ -1897,7 +1908,7 @@ msgstr ""
 #. Tag: use::filtering, short desc
 #: files/debtags/vocabulary
 msgid "Filtering"
-msgstr ""
+msgstr "フィルタリング"
 
 #. Tag: mail::filters, short desc
 #: files/debtags/vocabulary
@@ -2059,7 +2070,7 @@ msgstr ""
 #. Tag: use::gameplaying, short desc
 #: files/debtags/vocabulary
 msgid "Game Playing"
-msgstr ""
+msgstr "ゲームのプレー"
 
 #. Facet: game, short desc
 #: files/debtags/vocabulary
@@ -2121,7 +2132,7 @@ msgstr ""
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Driver"
-msgstr ""
+msgstr "ハードウェアドライバ"
 
 #. Facet: hardware, short desc
 #: files/debtags/vocabulary
@@ -2391,7 +2402,7 @@ msgstr ""
 #. Tag: use::learning, short desc
 #: files/debtags/vocabulary
 msgid "Learning"
-msgstr ""
+msgstr "学習"
 
 #. Tag: uitoolkit::motif, short desc
 #: files/debtags/vocabulary
@@ -2447,7 +2458,7 @@ msgstr ""
 #. Tag: use::login, short desc
 #: files/debtags/vocabulary
 msgid "Login"
-msgstr ""
+msgstr "ログイン"
 
 #. Tag: x11::display-manager, short desc
 #: files/debtags/vocabulary
@@ -2593,7 +2604,7 @@ msgstr ""
 #. Tag: use::monitor, short desc
 #: files/debtags/vocabulary
 msgid "Monitoring"
-msgstr ""
+msgstr "監視"
 
 #. Tag: hardware::input:mouse, short desc
 #: files/debtags/vocabulary
@@ -3031,7 +3042,7 @@ msgstr ""
 #. Tag: use::playing, short desc
 #: files/debtags/vocabulary
 msgid "Playing Media"
-msgstr ""
+msgstr "メディアの再生"
 
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
@@ -3088,7 +3099,7 @@ msgstr ""
 #. Tag: use::printing, short desc
 #: files/debtags/vocabulary
 msgid "Printing"
-msgstr ""
+msgstr "印刷"
 
 #. Tag: security::privacy, short desc
 #: files/debtags/vocabulary
@@ -3123,7 +3134,7 @@ msgstr ""
 #. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
 msgid "Proxying"
-msgstr ""
+msgstr "プロキシ"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
@@ -3224,7 +3235,7 @@ msgstr ""
 #. Tag: network::routing, short desc
 #: files/debtags/vocabulary
 msgid "Routing"
-msgstr ""
+msgstr "ルーティング"
 
 #. Tag: suite::roxen, short desc
 #: files/debtags/vocabulary
@@ -3338,7 +3349,7 @@ msgstr ""
 #. Tag: network::scanner, short desc
 #: files/debtags/vocabulary
 msgid "Scanning"
-msgstr ""
+msgstr "スキャン"
 
 #. Tag: implemented-in::scheme, short desc
 #: files/debtags/vocabulary
@@ -3358,7 +3369,7 @@ msgstr ""
 #. Facet: scope, short desc
 #: files/debtags/vocabulary
 msgid "Scope"
-msgstr "動作範囲"
+msgstr "対象範囲"
 
 #. Tag: accessibility::screen-magnify, short desc
 #: files/debtags/vocabulary
@@ -3388,7 +3399,7 @@ msgstr ""
 #. Tag: use::searching, short desc
 #: files/debtags/vocabulary
 msgid "Searching"
-msgstr ""
+msgstr "検索"
 
 #. Tag: special::auto-inst-parts, short desc
 #: files/debtags/vocabulary
@@ -3506,7 +3517,7 @@ msgstr ""
 #. Tag: use::storing, short desc
 #: files/debtags/vocabulary
 msgid "Storing"
-msgstr ""
+msgstr "保存"
 
 #. Tag: game::strategy, short desc
 #: files/debtags/vocabulary
@@ -3521,7 +3532,7 @@ msgstr ""
 #. Tag: scope::suite, short desc
 #: files/debtags/vocabulary
 msgid "Suite"
-msgstr ""
+msgstr "スイート (統合環境)"
 
 #. Facet: works-with-format, short desc
 #: files/debtags/vocabulary
@@ -3536,7 +3547,7 @@ msgstr ""
 #. Tag: use::synchronizing, short desc
 #: files/debtags/vocabulary
 msgid "Synchronisation"
-msgstr ""
+msgstr "同期"
 
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
@@ -3646,7 +3657,7 @@ msgstr ""
 #. Tag: use::text-formatting, short desc
 #: files/debtags/vocabulary
 msgid "Text Formatting"
-msgstr ""
+msgstr "テキストの整形"
 
 #. Tag: accessibility::ocr, short desc
 #: files/debtags/vocabulary
@@ -3681,17 +3692,18 @@ msgstr "3 次元"
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
 msgid "Time and Clock"
-msgstr ""
+msgstr "時間・時計"
 
 #. Tag: game::toys, short desc
 #: files/debtags/vocabulary
 msgid "Toy or Gimmick"
 msgstr ""
 
+# TRANSLATION-FIXME: "通信", "送信", or "配送"?
 #. Tag: use::transmission, short desc
 #: files/debtags/vocabulary
 msgid "Transmission"
-msgstr ""
+msgstr "通信"
 
 #. Tag: culture::turkish, short desc
 #: files/debtags/vocabulary
@@ -3701,7 +3713,7 @@ msgstr ""
 #. Tag: use::typesetting, short desc
 #: files/debtags/vocabulary
 msgid "Typesetting"
-msgstr ""
+msgstr "組版"
 
 #. Tag: game::typing, short desc
 #: files/debtags/vocabulary
@@ -3747,7 +3759,7 @@ msgstr ""
 #. Tag: scope::utility, short desc
 #: files/debtags/vocabulary
 msgid "Utility"
-msgstr ""
+msgstr "ユーティリティ"
 
 #. Tag: culture::uzbek, short desc
 #: files/debtags/vocabulary
