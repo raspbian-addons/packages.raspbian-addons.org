@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-20 01:11+0900\n"
+"PO-Revision-Date: 2007-11-20 15:53+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -193,6 +193,8 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " Direct Client to Client protocol used by Internet Relay Chat clients."
 msgstr ""
+" インターネット・リレー・チャット (IRC) クライアントが使用する Direct Client-"
+"to-Client プロトコル。"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
@@ -273,7 +275,7 @@ msgstr ""
 #. Tag: filetransfer::ftp, long desc
 #: files/debtags/vocabulary
 msgid " File Transfer Protocol"
-msgstr ""
+msgstr " ファイル転送プロトコル (File Transfer Protocol)"
 
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
@@ -320,7 +322,7 @@ msgstr ""
 #. Tag: filetransfer::http, long desc
 #: files/debtags/vocabulary
 msgid " HyperText Transfer Protocol"
-msgstr ""
+msgstr " ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
 
 #. Tag: protocol::http, long desc
 #: files/debtags/vocabulary
@@ -640,6 +642,8 @@ msgid ""
 " Runs in background, only a control interface is provided, usually on\n"
 " commandline."
 msgstr ""
+" バックグラウンドで実行されるプログラムで、制御用のインタフェースのみが、通常"
+"はコマンドラインで提供されます。"
 
 #. Tag: devel::runtime, long desc
 #: files/debtags/vocabulary
@@ -665,7 +669,7 @@ msgstr ""
 #. Tag: filetransfer::sftp, long desc
 #: files/debtags/vocabulary
 msgid " Secure File Transfer Protocol"
-msgstr ""
+msgstr " Secure File Transfer Protocol"
 
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
@@ -1145,7 +1149,7 @@ msgstr ""
 #. Tag: filetransfer::smb, long desc
 #: files/debtags/vocabulary
 msgid " Windows file and printer sharing (SMB)"
-msgstr ""
+msgstr " Windows ファイル・プリンタ共有 (SMB)"
 
 #. Tag: protocol::xmlrpc, long desc
 #: files/debtags/vocabulary
@@ -1528,12 +1532,12 @@ msgstr ""
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
 msgid "Command Line"
-msgstr ""
+msgstr "コマンドライン"
 
 #. Tag: interface::shell, short desc
 #: files/debtags/vocabulary
 msgid "Command Shell"
-msgstr ""
+msgstr "コマンドシェル"
 
 #. Tag: use::comparing, short desc
 #: files/debtags/vocabulary
@@ -1569,7 +1573,7 @@ msgstr ""
 #. Tag: interface::svga, short desc
 #: files/debtags/vocabulary
 msgid "Console SVGA"
-msgstr ""
+msgstr "コンソール SVGA"
 
 #. Tag: web::cms, short desc
 #: files/debtags/vocabulary
@@ -1614,7 +1618,7 @@ msgstr ""
 #. Tag: interface::daemon, short desc
 #: files/debtags/vocabulary
 msgid "Daemon"
-msgstr ""
+msgstr "デーモン"
 
 #. Tag: culture::danish, short desc
 #: files/debtags/vocabulary
@@ -1833,7 +1837,7 @@ msgstr ""
 #. Tag: filetransfer::ftp, short desc
 #: files/debtags/vocabulary
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #. Tag: culture::faroese, short desc
 #: files/debtags/vocabulary
@@ -1980,7 +1984,7 @@ msgstr ""
 #. Tag: interface::framebuffer, short desc
 #: files/debtags/vocabulary
 msgid "Framebuffer"
-msgstr ""
+msgstr "フレームバッファ"
 
 #. Tag: culture::french, short desc
 #: files/debtags/vocabulary
@@ -2107,7 +2111,7 @@ msgstr ""
 #. Tag: filetransfer::http, short desc
 #: files/debtags/vocabulary
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #. Tag: hardware::hamradio, short desc
 #: files/debtags/vocabulary
@@ -2207,7 +2211,7 @@ msgstr ""
 #. Tag: filetransfer::dcc, short desc
 #: files/debtags/vocabulary
 msgid "IRC DCC"
-msgstr ""
+msgstr "IRC DCC"
 
 #. Tag: works-with-format::iso9660, short desc
 #: files/debtags/vocabulary
@@ -3266,7 +3270,7 @@ msgstr ""
 #. Tag: filetransfer::sftp, short desc
 #: files/debtags/vocabulary
 msgid "SFTP"
-msgstr ""
+msgstr "SFTP"
 
 #. Tag: made-of::data:sgml, short desc
 #. Tag: works-with-format::sgml, short desc
@@ -3282,7 +3286,7 @@ msgstr ""
 #. Tag: filetransfer::smb, short desc
 #: files/debtags/vocabulary
 msgid "SMB and CIFS"
-msgstr ""
+msgstr "SMB や CIFS"
 
 #. Tag: protocol::smtp, short desc
 #: files/debtags/vocabulary
@@ -3652,7 +3656,7 @@ msgstr ""
 #. Tag: interface::text-mode, short desc
 #: files/debtags/vocabulary
 msgid "Text-based Interactive"
-msgstr ""
+msgstr "テキストベースの対話"
 
 #. Tag: culture::thai, short desc
 #: files/debtags/vocabulary
@@ -3672,7 +3676,7 @@ msgstr ""
 #. Tag: interface::3d, short desc
 #: files/debtags/vocabulary
 msgid "Three-Dimensional"
-msgstr ""
+msgstr "3 次元"
 
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
@@ -3839,7 +3843,7 @@ msgstr ""
 #. Tag: interface::x11, short desc
 #: files/debtags/vocabulary
 msgid "X Window System"
-msgstr ""
+msgstr "X ウィンドウシステム"
 
 # TRANSLATION-FIXME: Why "Windowing"?
 #. Facet: x11, short desc
