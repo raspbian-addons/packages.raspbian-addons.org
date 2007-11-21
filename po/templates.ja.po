@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-11-19 23:58+0900\n"
+"PO-Revision-Date: 2007-11-21 18:18+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "%s ウェブマスター"
 
 #: templates/config.tmpl:48
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr "%1$s は %3$s の<a href=\"%2$s\">登録商標</a>です。"
+msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
 #: templates/config.tmpl:53
 msgid ""
@@ -157,7 +157,7 @@ msgstr "ダウンロード"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr "%2$s マシン用 <kbd>%1$s</kbd> のダウンロードページ"
+msgstr "%2 マシン用 <kbd>%1</kbd> のダウンロードページ"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
@@ -302,8 +302,8 @@ msgstr "パッケージのファイル一覧: %s/%s/%s"
 msgid ""
 "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
-"<em>%2$s</em> の <em>%3$s</em> アーキテクチャ用 <em>%1$s</em> パッケージの"
-"ファイル一覧"
+"<em>%2</em> の <em>%3</em> アーキテクチャ用 <em>%1</em> パッケージのファイル"
+"一覧"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
@@ -403,7 +403,7 @@ msgstr "\"%s\" の %s %s に含まれるソースパッケージ"
 msgid "Source Packages in \"%s\""
 msgstr "\"%s\" に含まれるソースパッケージ"
 
-# TRANSLATION-FIXME: "%3$s Section", "%3$s Subsection", and "Priority %s" would be the best.
+# TRANSLATION-FIXME: "%3 Section", "%3 Subsection", and "Priority %s" would be the best.
 #: templates/html/index.tmpl:6
 msgid "Software Packages in \"%s\", %s %s"
 msgstr "\"%s\" の%s %s に含まれるソフトウェアパッケージ"
@@ -435,16 +435,16 @@ msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"以下のパッケージは、%3$s アーカイブの <em>%1$s</em> スイート (%2$s セクショ"
-"ン) に最近 7 日間に追加されたものです。"
+"以下のパッケージは、%3 アーカイブの <em>%1</em> スイート (%2 セクション) に最"
+"近 7 日間に追加されたものです。"
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"以下のパッケージは、%2$s アーカイブの <em>%1$s</em> スイートに最近 7 日間に追"
-"加されたものです。"
+"以下のパッケージは、%2 アーカイブの <em>%1</em> スイートに最近 7 日間に追加さ"
+"れたものです。"
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
@@ -552,7 +552,7 @@ msgstr "ソースパッケージ"
 #: templates/html/search.tmpl:56
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
-msgstr "<em>%2$s</em> を名前に含む%1$sを、%3$s、%4$s、%5$sで検索しました。"
+msgstr "<em>%2</em> を名前に含む%1を、%3、%4、%5で検索しました。"
 
 #: templates/html/search.tmpl:59
 msgid " (including subword matching)"
@@ -681,8 +681,7 @@ msgstr "を名前に含むファイル"
 #. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr ""
-"<em>%2$s</em> %1$sを、<em>%3$s</em> スイート、%4$s、%5$sで検索しました。"
+msgstr "<em>%2</em> %1を、<em>%3</em> スイート、%4、%5で検索しました。"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -729,11 +728,11 @@ msgstr "セクション:"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
-msgstr "%2$s の %1$s ソースパッケージに関する詳細"
+msgstr "%2 の %1 ソースパッケージに関する詳細"
 
 #: templates/html/show.tmpl:22
 msgid "Details of package %s in %s"
-msgstr "%2$s の %1$s パッケージに関する詳細"
+msgstr "%2 の %1 パッケージに関する詳細"
 
 #: templates/html/show.tmpl:45
 msgid "Source package building this package"
@@ -1012,16 +1011,16 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"以下のパッケージは、%3$s アーカイブの %1$s スイート (%2$s セクション) に最近 "
-"7 日間に追加されたものです。"
+"以下のパッケージは、%3 アーカイブの %1 スイート (%2 セクション) に最近 7 日間"
+"に追加されたものです。"
 
 #: templates/rss/newpkg.tmpl:23
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"以下のパッケージは、%2$s アーカイブの %1$s スイートに最近 7 日間に追加された"
-"ものです。"
+"以下のパッケージは、%2 アーカイブの %1 スイートに最近 7 日間に追加されたもの"
+"です。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"
