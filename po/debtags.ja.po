@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-24 12:48+0900\n"
+"PO-Revision-Date: 2007-11-24 16:33+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgstr " システムに含まれているソフトウェアの実行の自動�
 #. Tag: works-with-format::bib, long desc
 #: files/debtags/vocabulary
 msgid " BibTeX list of references"
-msgstr ""
+msgstr " BibTeX 参考文献リスト"
 
 #. Tag: protocol::bittorrent, long desc
 #: files/debtags/vocabulary
@@ -181,7 +181,7 @@ msgstr " ファイルシステムの作成・保守・使用"
 #. Tag: security::cryptography, long desc
 #: files/debtags/vocabulary
 msgid " Cryptographic and privacy-oriented tools."
-msgstr ""
+msgstr " 暗号ツールやプライバシー指向のツール。"
 
 #. Tag: works-with-format::dvi, long desc
 #: files/debtags/vocabulary
@@ -189,6 +189,8 @@ msgid ""
 " DeVice Independent page description file, usually generated\n"
 " by TeX or LaTeX."
 msgstr ""
+" デバイス独立 (DeVice Independent) ページ記述ファイル。通常は TeX や LaTeX に"
+"よって生成されます。"
 
 #. Tag: role::debug-symbols, long desc
 #: files/debtags/vocabulary
@@ -363,7 +365,7 @@ msgstr ""
 #. Tag: works-with::image:vector, long desc
 #: files/debtags/vocabulary
 msgid " Images made of lines, such as graphs or most clipart"
-msgstr ""
+msgstr " グラフや大半のクリップアートなどの、線でできている画像"
 
 #. Tag: devel::ide, long desc
 #: files/debtags/vocabulary
@@ -468,7 +470,7 @@ msgstr ""
 #. Tag: works-with-format::ldif, long desc
 #: files/debtags/vocabulary
 msgid " Lightweight Directory Interchange Format"
-msgstr ""
+msgstr " Lightweight Directory Interchange Format"
 
 #. Tag: suite::xfce, long desc
 #: files/debtags/vocabulary
@@ -588,7 +590,7 @@ msgstr ""
 #. Tag: security::forensics, long desc
 #: files/debtags/vocabulary
 msgid " Post-mortem analysis of intrusions."
-msgstr ""
+msgstr " 侵入を受けたときの事後解析ツール。"
 
 #. Tag: devel::profiler, long desc
 #: files/debtags/vocabulary
@@ -1067,6 +1069,8 @@ msgid ""
 " Tools to monitor system for changes in filesystem and report changes\n"
 " or tools providing other means to check system integrity."
 msgstr ""
+" ファイルシステムにおける変更がないかシステムを監視して変更があったら報告する"
+"ツールや、システムの整合性を調べるその他の手段を提供するツール。"
 
 #. Tag: devel::debian, long desc
 #: files/debtags/vocabulary
@@ -1119,10 +1123,11 @@ msgid ""
 " Link: http://www.ietf.org/rfc/rfc768.txt"
 msgstr ""
 
+# FIXME: Should be "Virtual Reality Modeling Language"
 #. Tag: works-with-format::vrml, long desc
 #: files/debtags/vocabulary
 msgid " Virtual Reality Markup Language"
-msgstr ""
+msgstr " Virtual Reality Markup Language"
 
 #. Tag: protocol::voip, long desc
 #: files/debtags/vocabulary
@@ -1138,7 +1143,7 @@ msgstr ""
 #. Tag: works-with-format::wav, long desc
 #: files/debtags/vocabulary
 msgid " Wave uncompressed audio format"
-msgstr ""
+msgstr " WAVE 非圧縮オーディオ形式"
 
 #. Tag: protocol::webdav, long desc
 #: files/debtags/vocabulary
@@ -1189,7 +1194,7 @@ msgstr ""
 #. Tag: works-with-format::xml:rss, long desc
 #: files/debtags/vocabulary
 msgid " XML dialect used to describe resources and websites."
-msgstr ""
+msgstr "資源やウェブサイトを記述するのに用いられる XML の方言。"
 
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
@@ -1265,7 +1270,7 @@ msgstr "解析"
 #. Tag: security::antivirus, short desc
 #: files/debtags/vocabulary
 msgid "Anti-Virus"
-msgstr ""
+msgstr "アンチウイルス"
 
 #. Tag: suite::apache, short desc
 #: files/debtags/vocabulary
@@ -1337,7 +1342,7 @@ msgstr ""
 #. Tag: security::authentication, short desc
 #: files/debtags/vocabulary
 msgid "Authentication"
-msgstr ""
+msgstr "認証"
 
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
@@ -1372,7 +1377,7 @@ msgstr "ベンガル語"
 #. Tag: works-with-format::bib, short desc
 #: files/debtags/vocabulary
 msgid "BibTeX"
-msgstr ""
+msgstr "BibTeX"
 
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
@@ -1609,7 +1614,7 @@ msgstr "クロアチア語"
 #. Tag: security::cryptography, short desc
 #: files/debtags/vocabulary
 msgid "Cryptography"
-msgstr ""
+msgstr "暗号"
 
 #. Facet: culture, short desc
 #: files/debtags/vocabulary
@@ -1732,10 +1737,11 @@ msgstr "辞書"
 msgid "Digital Camera"
 msgstr ""
 
+# FIXME: Should be "DocBook"
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
 msgid "Docbook"
-msgstr ""
+msgstr "DocBook"
 
 #. Tag: devel::doc, short desc
 #. Tag: role::documentation, short desc
@@ -1893,7 +1899,7 @@ msgstr "ファイル配布"
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
-msgstr ""
+msgstr "ファイル整合性"
 
 #. Facet: filetransfer, short desc
 #: files/debtags/vocabulary
@@ -1980,7 +1986,7 @@ msgstr ""
 #. Tag: security::forensics, short desc
 #: files/debtags/vocabulary
 msgid "Forensics"
-msgstr ""
+msgstr "フォレンジック"
 
 # TRANSLATION-FIXME: Is this correct?
 #. Tag: admin::forensics, short desc
@@ -2021,7 +2027,7 @@ msgstr "GForge"
 #. Tag: works-with-format::gif, short desc
 #: files/debtags/vocabulary
 msgid "GIF, Graphics Interchange Format"
-msgstr ""
+msgstr "Graphics Interchange Format (GIF)"
 
 #. Tag: suite::gkrellm, short desc
 #: files/debtags/vocabulary
@@ -2238,7 +2244,7 @@ msgstr "IRC DCC"
 #. Tag: works-with-format::iso9660, short desc
 #: files/debtags/vocabulary
 msgid "ISO 9660 CD Filesystem"
-msgstr ""
+msgstr "ISO 9660 CD ファイルシステム"
 
 #. Tag: culture::icelandic, short desc
 #: files/debtags/vocabulary
@@ -2303,7 +2309,7 @@ msgstr ""
 #. Tag: security::ids, short desc
 #: files/debtags/vocabulary
 msgid "Intrusion Detection"
-msgstr ""
+msgstr "侵入検出"
 
 #. Tag: special::invalid-tag, short desc
 #: files/debtags/vocabulary
@@ -2326,10 +2332,11 @@ msgstr "問題追跡システム"
 msgid "Italian"
 msgstr "イタリア語"
 
+# FIXME: Should be "Joint Photographic Experts Group"
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
 msgid "JPEG, Joint Picture Expert Group"
-msgstr ""
+msgstr "Joint Picture Expert Group (JPEG)"
 
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
@@ -2399,7 +2406,7 @@ msgstr ""
 #. Tag: works-with-format::ldif, short desc
 #: files/debtags/vocabulary
 msgid "LDIF"
-msgstr ""
+msgstr "LDIF"
 
 #. Tag: protocol::lpr, short desc
 #: files/debtags/vocabulary
@@ -2459,7 +2466,7 @@ msgstr "ロードバランシング"
 #. Tag: security::log-analyzer, short desc
 #: files/debtags/vocabulary
 msgid "Log Analyzer"
-msgstr ""
+msgstr "ログ解析"
 
 #. Tag: admin::logging, short desc
 #: files/debtags/vocabulary
@@ -2510,12 +2517,12 @@ msgstr "ML での開発"
 #. Tag: works-with-format::mp3, short desc
 #: files/debtags/vocabulary
 msgid "MP3 Audio"
-msgstr ""
+msgstr "MP3 音声"
 
 #. Tag: works-with-format::wav, short desc
 #: files/debtags/vocabulary
 msgid "MS RIFF Audio"
-msgstr ""
+msgstr "MS RIFF 音声"
 
 #. Tag: protocol::msn-messenger, short desc
 #: files/debtags/vocabulary
@@ -2555,7 +2562,7 @@ msgstr "メーリングリスト"
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
 msgid "Manpages"
-msgstr ""
+msgstr "マニュアルページ"
 
 #. Tag: made-of::data:man, short desc
 #: files/debtags/vocabulary
@@ -2636,7 +2643,7 @@ msgstr "複数プレイヤー RPG"
 #. Tag: works-with-format::mpc, short desc
 #: files/debtags/vocabulary
 msgid "Musepack Audio"
-msgstr ""
+msgstr "Musepack 音声"
 
 #. Tag: works-with::music-notation, short desc
 #: files/debtags/vocabulary
@@ -2898,7 +2905,7 @@ msgstr "OCaml での開発"
 #. Tag: works-with-format::odf, short desc
 #: files/debtags/vocabulary
 msgid "ODF, Open Document Format"
-msgstr ""
+msgstr "Open Document Format (ODF)"
 
 #. Tag: protocol::oscar, short desc
 #: files/debtags/vocabulary
@@ -2933,12 +2940,12 @@ msgstr ""
 #. Tag: works-with-format::oggtheora, short desc
 #: files/debtags/vocabulary
 msgid "Ogg Theora Video"
-msgstr ""
+msgstr "Ogg Theora 動画"
 
 #. Tag: works-with-format::oggvorbis, short desc
 #: files/debtags/vocabulary
 msgid "Ogg Vorbis Audio"
-msgstr ""
+msgstr "Ogg Vorbis 音声"
 
 #. Tag: suite::opie, short desc
 #: files/debtags/vocabulary
@@ -2969,7 +2976,7 @@ msgstr "PHP での開発"
 #. Tag: works-with-format::png, short desc
 #: files/debtags/vocabulary
 msgid "PNG, Portable Network Graphics"
-msgstr ""
+msgstr "Portable Network Graphics (PNG)"
 
 #. Tag: protocol::pop3, short desc
 #: files/debtags/vocabulary
@@ -3039,7 +3046,7 @@ msgstr "Pike での開発"
 #. Tag: works-with-format::plaintext, short desc
 #: files/debtags/vocabulary
 msgid "Plain text"
-msgstr ""
+msgstr "プレーンテキスト"
 
 #. Tag: game::platform, short desc
 #: files/debtags/vocabulary
@@ -3081,6 +3088,7 @@ msgstr "ポルトガル語"
 msgid "PostgreSQL"
 msgstr ""
 
+# FIXME: Should be "PostScript"
 #. Tag: made-of::data:postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
@@ -3116,7 +3124,7 @@ msgstr "印刷"
 #. Tag: security::privacy, short desc
 #: files/debtags/vocabulary
 msgid "Privacy"
-msgstr ""
+msgstr "プライバシー"
 
 #. Tag: devel::profiler, short desc
 #: files/debtags/vocabulary
@@ -3191,7 +3199,7 @@ msgstr ""
 #. Tag: works-with-format::xml:rss, short desc
 #: files/debtags/vocabulary
 msgid "RSS Rich Site Summary"
-msgstr ""
+msgstr "Rich Site Summary (RSS)"
 
 #. Tag: game::sport:racing, short desc
 #: files/debtags/vocabulary
@@ -3355,7 +3363,7 @@ msgstr "Scalable Vector Graphics (SVG)"
 #. Tag: works-with-format::swf, short desc
 #: files/debtags/vocabulary
 msgid "SWF, ShockWave Flash"
-msgstr ""
+msgstr "ShockWave Flash (SWF)"
 
 #. Tag: use::scanning, short desc
 #. Tag: network::scanner, short desc
@@ -3599,7 +3607,7 @@ msgstr ""
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
-msgstr ""
+msgstr "Tagged Image File Format (TIFF)"
 
 #. Tag: uitoolkit::tk, short desc
 #: files/debtags/vocabulary
@@ -3624,7 +3632,7 @@ msgstr "タミル語"
 #. Tag: works-with-format::tar, short desc
 #: files/debtags/vocabulary
 msgid "Tar Archives"
-msgstr ""
+msgstr "Tar アーカイブ"
 
 #. Tag: devel::lang:tcl, short desc
 #: files/debtags/vocabulary
@@ -3634,12 +3642,12 @@ msgstr ""
 #. Tag: works-with-format::dvi, short desc
 #: files/debtags/vocabulary
 msgid "TeX DVI"
-msgstr ""
+msgstr "TeX DVI"
 
 #. Tag: works-with-format::tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX and LaTeX"
-msgstr ""
+msgstr "TeX や LaTeX"
 
 #. Tag: made-of::data:tex, short desc
 #: files/debtags/vocabulary
@@ -3791,7 +3799,7 @@ msgstr "VPN やトンネリング"
 #. Tag: works-with-format::vrml, short desc
 #: files/debtags/vocabulary
 msgid "VRML 3D Model"
-msgstr ""
+msgstr "VRML 3D モデル"
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
@@ -3909,7 +3917,7 @@ msgstr "XMMS 2"
 #. Tag: works-with-format::xml:xslt, short desc
 #: files/debtags/vocabulary
 msgid "XSL Transformations (XSLT)"
-msgstr ""
+msgstr "XSL Transformations (XSLT)"
 
 #. Tag: protocol::yahoo-messenger, short desc
 #: files/debtags/vocabulary
@@ -3924,7 +3932,7 @@ msgstr "Zope"
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
-msgstr ""
+msgstr "Zip アーカイブ"
 
 #. Tag: educational, short desc
 #: files/debtags/vocabulary
