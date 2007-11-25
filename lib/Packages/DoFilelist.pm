@@ -10,7 +10,6 @@ use Exporter;
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT @SUITES @ARCHIVES @SECTIONS
 			 @ARCHITECTURES %FTP_SITES );
-use Packages::I18N::Locale;
 use Packages::CGI;
 use Packages::DB;
 use Packages::Search qw( :all );
@@ -22,15 +21,16 @@ our @EXPORT = qw( do_filelist );
 
 sub do_filelist {
     my ($params, $opts, $page_content) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{package}) {
-	fatal_error( _g( "package not valid or not specified" ) );
+	fatal_error( $cat->g( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if ($params->{errors}{arch}) {
-	fatal_error( _g( "architecture not valid or not specified" ) );
+	fatal_error( $cat->g( "architecture not valid or not specified" ) );
     }
 
     my $pkg = $opts->{package};
@@ -45,7 +45,7 @@ sub do_filelist {
 	    O_RDONLY, 0666, $DB_BTREE) {
 
 	    unless (exists $contents{$pkg}) {
-		fatal_error( _g( "No such package in this suite on this architecture." ) );
+		fatal_error( $cat->g( "No such package in this suite on this architecture." ) );
 	    } else {
 		my @files = unpack "L/(CC/a)", $contents{$pkg};
 		my $file = '';
@@ -57,7 +57,7 @@ sub do_filelist {
 		}
 	    }
 	} else {
-	    fatal_error( _g( "Invalid suite/architecture combination" ) );
+	    fatal_error( $cat->g( "Invalid suite/architecture combination" ) );
 	}
     }
 }

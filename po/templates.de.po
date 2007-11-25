@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-10-28 16:50+0100\n"
+"PO-Revision-Date: 2007-11-05 18:47+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,15 @@ msgstr ""
 "Bitte beachten Sie, dass es sich bei dieser Seite um eine experimentelle "
 "Version von <a href=\"http://packages.debian.org/\">packages.debian.org</a> "
 "handelt. Mit Fehlern und veralteten Informationen muss gerechnet werden"
+
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:56
+msgid "."
+msgstr ","
+
+#: templates/config.tmpl:57
+msgid ","
+msgstr " "
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -157,10 +166,10 @@ msgid ""
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
 "and install packages, instead of doing so manually via this website."
 msgstr ""
-"Falls Sie %s auf Ihrem Rechner einsetzen, wird nachdrücklich empfohlen, einen "
-"Paket-Manager wie <a href=\"%s\">Aptitude</a> oder <a "
-"href=\"%s\">Synaptic</a> zum Herunterladen und Installieren von Paketen zu "
-"benutzen und nicht diese Website."
+"Falls Sie %s auf Ihrem Rechner einsetzen, wird nachdrücklich empfohlen, "
+"einen Paket-Manager wie <a href=\"%s\">Aptitude</a> oder <a href=\"%s"
+"\">Synaptic</a> zum Herunterladen und Installieren von Paketen zu benutzen "
+"und nicht diese Website."
 
 #: templates/html/download.tmpl:25
 msgid ""
@@ -185,10 +194,11 @@ msgid ""
 "cause data loss. Please be sure to consult the changelog and other possible "
 "documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
-"Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
-"sogar Datenverlust verursachen kann. Bitte lesen Sie den Changelog und "
-"andere möglicherweise verfügbare Dokumentation, bevor Sie es benutzen."
+"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-"
+"Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil oder "
+"fehlerhaft ist und sogar Datenverlust verursachen kann. Bitte lesen Sie den "
+"Changelog und andere möglicherweise verfügbare Dokumentation, bevor Sie es "
+"benutzen."
 
 #: templates/html/download.tmpl:41 templates/html/show.tmpl:150
 msgid "debian-installer udeb package"
@@ -241,9 +251,9 @@ msgid ""
 "information."
 msgstr ""
 "Beachten Sie, dass %s noch nicht offiziell im %s-Archiv ist, aber die "
-"Portierungsgruppe %s ihr Archiv mit dem offiziellen Archiv so eng wie möglich "
-"synchron hält. Lesen Sie die <a href=\"%s\">Portierungsseiten von %s</a> für "
-"aktuelle Informationen."
+"Portierungsgruppe %s ihr Archiv mit dem offiziellen Archiv so eng wie "
+"möglich synchron hält. Lesen Sie die <a href=\"%s\">Portierungsseiten von %"
+"s</a> für aktuelle Informationen."
 
 #: templates/html/download.tmpl:96
 msgid ""
@@ -406,7 +416,7 @@ msgstr "Alle Pakete"
 msgid "Source"
 msgstr "Quellcode"
 
-#: templates/html/index.tmpl:38 templates/html/show.tmpl:247
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:247
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr "virtuelles Paket, bereitgestellt durch"
@@ -420,8 +430,8 @@ msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"Die folgenden Pakete wurden der Suite <em>%s</em> (Bereich %s) im %s-"
-"Archiv während der letzten 7 Tage hinzugefügt."
+"Die folgenden Pakete wurden der Suite <em>%s</em> (Bereich %s) im %s-Archiv "
+"während der letzten 7 Tage hinzugefügt."
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
@@ -507,49 +517,50 @@ msgstr ""
 "<a href=\"%s\">%u</a> Ergebnisse wurden aufgrund der Suchparameter nicht "
 "angezeigt."
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "all suites"
 msgstr "allen Suites"
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "suite(s) <em>$suite_enc</em>"
 msgstr "Suite(s) <em>$suite_enc</em>"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "allen Bereichen"
 
-#: templates/html/search.tmpl:53
+#: templates/html/search.tmpl:52
 msgid "section(s) <em>$section_enc</em>"
 msgstr "Bereich(e) <em>$section_enc</em>"
 
-#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "auf allen Architekturen"
 
-#: templates/html/search.tmpl:54
+#: templates/html/search.tmpl:53
 msgid "architecture(s) <em>$architectures_enc</em>"
 msgstr "auf Architektur(en) <em>$architectures_enc</em>"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "packages"
 msgstr "Paketen"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "source packages"
 msgstr "Quellcode-Paketen"
 
-#: templates/html/search.tmpl:57
+#: templates/html/search.tmpl:56
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 "Sie haben nach %s gesucht, deren Namen <em>%s</em> enthält, in %s, %s, und %"
 "s."
 
-#: templates/html/search.tmpl:60
+#: templates/html/search.tmpl:59
 msgid " (including subword matching)"
 msgstr " (enthält Teilwortabgleich)"
 
+#. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:61
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
@@ -650,26 +661,27 @@ msgstr "Schränke Suche auf bestimmte Architekturen ein:"
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
 
-#: templates/html/search_contents.tmpl:73
+#: templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "Bereich(e) <em>%s</em>"
 
-#: templates/html/search_contents.tmpl:74
+#: templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "Architektur(en) <em>%s</em>"
 
-#: templates/html/search_contents.tmpl:75
+#: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
 msgstr "Pfade die wie folgt enden:"
 
-#: templates/html/search_contents.tmpl:77
+#: templates/html/search_contents.tmpl:76
 msgid "files named"
 msgstr "Dateien mit Namen"
 
-#: templates/html/search_contents.tmpl:79
+#: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
 msgstr "Dateinamen, die Folgendes enthalten:"
 
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -685,7 +697,8 @@ msgid ""
 "100 matches. Please consider using a longer keyword or more keywords."
 msgstr ""
 "Hinweis: Ihre Suche war zu breit, daher werden nur rund die ersten 100 "
-"Treffer angezeigt. Bitte verwenden Sie ein längeres oder mehr Schlüsselwörter."
+"Treffer angezeigt. Bitte verwenden Sie ein längeres oder mehr "
+"Schlüsselwörter."
 
 #: templates/html/search_contents.tmpl:97
 msgid "Sort results by filename"
@@ -819,11 +832,11 @@ msgid ""
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-Distribution. "
-"Dies bedeutet, dass es höchstwahrscheinlich instabil oder fehlerhaft ist und "
-"sogar Datenverlust verursachen kann. Bitte lesen Sie den <a href=\"%s"
-"\">Changelog</a> und andere möglicherweise verfügbare Dokumentation, bevor "
-"Sie es benutzen."
+"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-"
+"Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil oder "
+"fehlerhaft ist und sogar Datenverlust verursachen kann. Bitte lesen Sie den "
+"<a href=\"%s\">Changelog</a> und andere möglicherweise verfügbare "
+"Dokumentation, bevor Sie es benutzen."
 
 #: templates/html/show.tmpl:169
 msgid ""
@@ -930,12 +943,8 @@ msgid "(unofficial port)"
 msgstr "(inoffizielle Portierung)"
 
 #: templates/html/show.tmpl:297 templates/html/show.tmpl:325
-msgid "%.1f&nbsp;kB"
-msgstr "%.1f&nbsp;kB"
-
-#: templates/html/show.tmpl:297
-msgid "%u&nbsp;kB"
-msgstr "%u&nbsp;kB"
+msgid "%s&nbsp;kB"
+msgstr "%s&nbsp;kB"
 
 #: templates/html/show.tmpl:300
 msgid "list of files"
@@ -995,7 +1004,7 @@ msgstr "Debtags"
 
 #: templates/html/tag_index.tmpl:10
 msgid "Facet: %s"
-msgstr ""
+msgstr "Aspekt: %s"
 
 #: templates/rss/newpkg.tmpl:16
 msgid "New %s Packages"

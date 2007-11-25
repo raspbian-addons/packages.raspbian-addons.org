@@ -30,12 +30,11 @@ use DB_File;
 use URI::Escape;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
-use Locale::gettext;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
 			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @PRIORITIES
-			 @LANGUAGES @DDTP_LANGUAGES $LOCALES );
+			 @LANGUAGES @DDTP_LANGUAGES );
 use Packages::CGI qw( :DEFAULT error get_all_messages );
 use Packages::DB;
 use Packages::Search qw( :all );
@@ -92,6 +91,7 @@ sub do_dispatch {
     my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
+    &Packages::I18N::Locale::load( "$homedir/po" );
 
     my $acc = I18N::AcceptLanguage->new();
     my %all_langs = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
@@ -101,10 +101,6 @@ sub do_dispatch {
     debug( "LANGUAGES=@all_langs header=".
 	   ($input->http("Accept-Language")||'').
 	   " http_lang=$http_lang", 1 ) if DEBUG;
-    bindtextdomain ( 'pdo', $LOCALES );
-    bindtextdomain ( 'templates', $LOCALES );
-    bindtextdomain ( 'langs', $LOCALES );
-    textdomain( 'pdo' );
 
     # backwards compatibility stuff
     debug( "SCRIPT_URL=$ENV{SCRIPT_URL} SCRIPT_URI=$ENV{SCRIPT_URI}" ) if DEBUG;
@@ -139,7 +135,7 @@ sub do_dispatch {
 
     my $what_to_do = 'show';
     my $source = 0;
-    if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
+    if (my $path = $ENV{'PATH_INFO'} || $input->param('PATH_INFO')) {
 	my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
 	debug( "PATH_INFO=$path components=@components", 3) if DEBUG;
@@ -159,10 +155,10 @@ sub do_dispatch {
 	    shift @components;
 	    $what_to_do = 'search';
 	    # Done
-	    fatal_error( _g( "search doesn't take any more path elements" ) )
+	    fatal_error( "search doesn't take any more path elements" )
 		if @components;
 	} elsif (@components == 0) {
-	    fatal_error( _g( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
+	    fatal_error( "We're supposed to display the homepage here, instead of getting dispatch.pl" );
 	} elsif (@components == 1) {
 	    $what_to_do = 'search';
 	} else {
@@ -185,7 +181,7 @@ sub do_dispatch {
 		my ($cgi, $params_set, $key, $val) = @_;
 		debug("set_param_once key=$key val=$val",4) if DEBUG;
 		if ($params_set->{$key}++) {
-		    fatal_error( sprintf( _g( "%s set more than once in path" ), $key ) );
+		    fatal_error( "$key set more than once in path" );
 		} else {
 		    $cgi->param( $key, $val );
 		}
@@ -220,7 +216,7 @@ sub do_dispatch {
 	    @components = @pkg;
 
 	    if (@components > 1) {
-		fatal_error( sprintf( _g( "two or more packages specified (%s)" ), "@components" ) );
+		fatal_error( "two or more packages specified (@components)" );
 	    }
 	} # else if (@components == 1)
 
@@ -252,7 +248,7 @@ sub do_dispatch {
 					replace => { all => \@ARCHIVES,
 						     default => \@ARCHIVES} },
 		       exact => { default => 0, match => '^(\w+)$',  },
-		       lang => { default => $http_lang, match => '^(\w+)$',  },
+		       lang => { default => $http_lang, match => '^([\w-]+)$',  },
 		       source => { default => 0, match => '^(\d+)$',  },
 		       debug => { default => 0, match => '^(\d+)$',  },
 		       searchon => { default => 'names', match => '^(\w+)$', },
@@ -277,17 +273,11 @@ sub do_dispatch {
     my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
     Packages::CGI::init_url( $input, \%params, \%opts );
 
-    my $locale = get_locale($opts{lang});
-    my $charset = get_charset($opts{lang});
-    setlocale ( LC_ALL, $locale )
-	or do { debug( "couldn't set locale $locale, using default" ) if DEBUG;
-		setlocale( LC_ALL, get_locale() )
-		    or do {
-			debug( "couldn't set default locale either" ) if DEBUG;
-			setlocale( LC_ALL, "C" );
-		    };
-	    };
-    debug( "locale=$locale charset=$charset", 1 ) if DEBUG;
+    my $charset = "UTF-8";
+    my $cat = Packages::I18N::Locale->get_handle( $opts{lang} )
+	|| Packages::I18N::Locale->get_handle( 'en' );
+    die "get_handle failed for $opts{lang}" unless $cat;
+    $opts{cat} = $cat;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
     $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -312,13 +302,14 @@ sub do_dispatch {
 
     my $template = new Packages::Template( $TEMPLATEDIR, $opts{format},
 					   { lang => $opts{lang}, charset => $charset,
+					     cat => $cat,
 					     debug => ( DEBUG ? $opts{debug} : 0 ) },
 					   ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
 	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
-	fatal_error( _g("requested format not available for this document"),
+	fatal_error( $cat->g("requested format not available for this document"),
 		     "406 requested format not available");
     }
 

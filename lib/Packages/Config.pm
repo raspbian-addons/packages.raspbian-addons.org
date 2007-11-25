@@ -9,11 +9,11 @@ use Packages::CGI qw( :DEFAULT error );
 our @ISA = qw( Exporter );
 
 our ( $TOPDIR, $DBDIR, $TEMPLATEDIR, $CACHEDIR, $ROOT,
-      @LANGUAGES, @DDTP_LANGUAGES, $LOCALES,
+      @LANGUAGES, @DDTP_LANGUAGES,
       @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
       @PRIORITIES, %FTP_SITES );
 our @EXPORT_OK = qw( $TOPDIR $DBDIR $TEMPLATEDIR $CACHEDIR $ROOT
-		     @LANGUAGES @DDTP_LANGUAGES $LOCALES
+		     @LANGUAGES @DDTP_LANGUAGES
 		     @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES
 		     @PRIORITIES %FTP_SITES  );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
@@ -35,7 +35,6 @@ sub init {
 	    $TEMPLATEDIR = $1 if /^\s*templatedir="?([^\"]*)"?\s*$/o;
 	    $CACHEDIR = $1 if /^\s*cachedir="?([^\"]*)"?\s*$/o;
 	    $ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
-	    $LOCALES = $1 if /^\s*localedir="?([^\"]*)"?\s*$/o;
 	    $FTP_SITES{us} = $1 if /^\s*ftpsite="?([^\"]*)"?\s*$/o;
 	    $FTP_SITES{$1} = $2 if /^\s*(\w+)_ftpsite="?([^\"]*)"?\s*$/o;
 	    @LANGUAGES = split(/\s+/, $1) if /^\s*polangs="?([^\"]*)"?\s*$/o;
@@ -46,7 +45,7 @@ sub init {
 	    @ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
 	    @PRIORITIES = split(/\s+/, $1) if /^\s*priorities="?([^\"]*)"?\s*$/o;
 	}
-	foreach (($TEMPLATEDIR, $CACHEDIR, $LOCALES)) {
+	foreach (($TEMPLATEDIR, $CACHEDIR)) {
 	    s/\$\{?topdir\}?/$TOPDIR/g;
 	}
 	close (C);

@@ -1,166 +1,148 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: packages.git 944e9ffd2b\n"
+"Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 21:01+0100\n"
-"PO-Revision-Date: 2007-10-28 17:07+0100\n"
-"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
-"Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
+"PO-Revision-Date: 2007-10-26 19:48+0800\n"
+"Last-Translator: Vern Sun <s5unty@gmail.com>\n"
+"Language-Team: Chinese\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: bin/create_index_pages:233
-msgid "Section"
-msgstr "Bereich"
-
-#: bin/create_index_pages:245
-msgid "Subsection"
-msgstr "Unterbereich"
-
-#: bin/create_index_pages:257
-msgid "Priority"
-msgstr "Priorität"
-
-#: lib/Packages/Dispatcher.pm:312
-msgid "requested format not available for this document"
-msgstr "angefordertes Format für dieses Dokument nicht verfügbar"
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
 msgid "package not valid or not specified"
-msgstr "Paket nicht gültig oder nicht angegeben"
+msgstr "软件包无效或未指定"
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
 #: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
-msgstr "Suite nicht gültig oder nicht angegeben"
+msgstr "发行版不合法或未指定"
 
 #: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
 msgid "architecture not valid or not specified"
-msgstr "Architektur nicht gültig oder nicht angegeben"
+msgstr "硬件架构不合法或未指定"
 
 #: lib/Packages/DoDownload.pm:36
 #, perl-format
 msgid "more than one suite specified for download (%s)"
-msgstr "mehr als eine Suite zum Download angegeben (%s)"
+msgstr "不止一套发行版被指定下载(%s)"
 
 #: lib/Packages/DoDownload.pm:40
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
-msgstr "mehr als eine Architektur zum Download angegeben (%s)"
+msgstr "不止一种硬件架构被指定下载(%s)"
 
 #: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
-msgstr "Keine Pakete in dieser Suite auf dieser Architektur"
+msgstr "在此发行版中这种硬件架构下缺少这样的软件包"
 
 #: lib/Packages/DoFilelist.pm:60
 msgid "Invalid suite/architecture combination"
-msgstr "Ungültige Suite/Architektur-Kombination"
+msgstr "无效的发行版/硬件架构组合"
 
 #: lib/Packages/DoIndex.pm:34
 #, perl-format
 msgid "more than one suite specified for show_static (%s)"
-msgstr "mehr als eine Suite für show_static angegeben (%s)"
+msgstr "不止一套发行版被指定 show_static(%s)"
 
 #: lib/Packages/DoIndex.pm:38
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
-msgstr "mehr als ein Unterbereich für show_static angegeben (%s)"
+msgstr "不止一套子版面被指定 show_static(%s)"
 
 #: lib/Packages/DoIndex.pm:75
 #, perl-format
 msgid "couldn't read index file %s: %s"
-msgstr "konnte Indexdatei %s nicht lesen: %s"
+msgstr "未能读取索引文件 %s: %s"
 
 #: lib/Packages/DoNewPkg.pm:25
 #, perl-format
 msgid "more than one suite specified for newpkg (%s)"
-msgstr "mehr als eine Suite für newpkg angegeben (%s)"
+msgstr "不止一套发行版被指定显示(%s)"
 
 #: lib/Packages/DoNewPkg.pm:43
 #, perl-format
 msgid "no newpkg information found for suite %s"
-msgstr "keine Informationen über neue Pakete für Suite %s gefunden"
+msgstr "没能在发行版 %s 中找到相关信息"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
 msgid "keyword not valid or missing"
-msgstr "Suchbegriff ungültig oder nicht angegeben"
+msgstr "关键字不合法或不存在"
 
 #: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
 msgid "keyword too short (keywords need to have at least two characters)"
-msgstr ""
-"Suchbegriff zu kurz (Suchbegriffe müssen mindestens zwei Zeichen lang sein)"
+msgstr "关键字太短(关键字需要至少包含两个字符)"
 
 #: lib/Packages/DoSearch.pm:165
 msgid "Exact hits"
-msgstr "Genaue Treffer"
+msgstr "完整匹配"
 
 #: lib/Packages/DoSearch.pm:175
 msgid "Other hits"
-msgstr "Andere Treffer"
+msgstr "部分匹配"
 
 #: lib/Packages/DoSearch.pm:234
 msgid "Virtual package"
-msgstr "Virtuelles Paket"
+msgstr "虚包"
 
 #: lib/Packages/DoSearchContents.pm:40
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
-msgstr "mehr als eine Suite zur Inhaltssuche angegeben (%s)"
+msgstr "不止一套发行版被指定要求搜索其内容(%s)"
 
 #: lib/Packages/DoSearchContents.pm:82
 msgid "The search mode you selected doesn't support more than one keyword."
-msgstr ""
-"Der Suchmodus, den Sie ausgewählt haben, unterstützt nicht mehr als einen "
-"Suchbegriff."
+msgstr "您选择的搜索模式不支持多个关键字。"
 
 #: lib/Packages/DoShow.pm:37
 #, perl-format
 msgid "more than one suite specified for show (%s)"
-msgstr "mehr als eine Suite zum Anzeigen angegeben (%s)"
+msgstr "不止一套发行版被指定显示(%s)"
 
 #: lib/Packages/DoShow.pm:73
 msgid "No such package."
-msgstr "Kein passendes Paket gefunden."
+msgstr "没有这样的软件包。"
 
 #: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
-msgstr "Paket in dieser Suite nicht verfügbar"
+msgstr "软件包在当前发行版中暂时不可用。"
 
 #: lib/Packages/DoShow.pm:198
 msgid " and others"
-msgstr " und andere"
+msgstr " 以及其他的"
 
 #: lib/Packages/DoShow.pm:429
 #, perl-format
 msgid "not %s"
-msgstr "nicht %s"
+msgstr "缺 %s"
 
 #: lib/Packages/DoShow.pm:479
 msgid "Package not available"
-msgstr "Paket nicht verfügbar"
+msgstr "软件包暂时不可用"
 
 #: lib/Packages/DoShow.pm:518
 msgid "Not available"
-msgstr "Nicht verfügbar"
+msgstr "暂时不可用"
 
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
-msgstr "Paket hat ungültiges Betreuer-Feld"
+msgstr "软件包存在错误的维护者字段"
 
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
+#: lib/Packages/Dispatcher.pm:312
+msgid "requested format not available for this document"
+msgstr "要求的格式在此文档中暂时不可用"
 
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s mehr als einmal im Pfad angegeben"
+#: bin/create_index_pages:233
+msgid "Section"
+msgstr "版面"
 
-#~ msgid ""
-#~ "We're supposed to display the homepage here, instead of getting dispatch."
-#~ "pl"
-#~ msgstr ""
-#~ "Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
+#: bin/create_index_pages:245
+msgid "Subsection"
+msgstr "子版面"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "Suche nimmt keine Pfadelemente mehr an"
+#: bin/create_index_pages:257
+msgid "Priority"
+msgstr "优先级"

@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Template;
-use Locale::gettext;
 use URI ();
 use HTML::Entities ();
 use URI::Escape ();
@@ -36,7 +35,9 @@ sub new {
     };
     $vars->{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
     $vars->{make_url} = sub { return &Packages::CGI::make_url(@_) };
-    $vars->{g} = sub { return &Packages::I18N::Locale::tt_gettext(@_) };
+    if ($vars->{cat}) {
+	$vars->{g} = sub { return Packages::I18N::Locale::g($vars->{cat}, @_) };
+    }
     $vars->{extract_host} = sub { my $uri = URI->new($_[0]);
 				  my $host = $uri->host;
 				  $host .= ':'.$uri->port if $uri->port != $uri->default_port;
@@ -75,6 +76,10 @@ sub page {
 
     #use Data::Dumper;
     #die Dumper($self, $action, $page_content);
+    if ($page_content->{cat}) {
+	$page_content->{g} =
+	    sub { return Packages::I18N::Locale::g($page_content->{cat}, @_) };
+    }
     $page_content->{used_langs} ||= \@LANGUAGES;
     $page_content->{langs} = languages( $page_content->{lang}
 					|| $self->{vars}{lang} || 'en',
@@ -106,11 +111,13 @@ sub error_page {
 
 sub languages {
     my ( $lang, @used_langs ) = @_;
-    
+    my $cat = Packages::I18N::Locale->get_handle($lang)
+	|| Packages::I18N::Locale->get_handle('en');
+
     my @langs;
 
     if (@used_langs) {
-	
+
 	my @printed_langs = ();
 	foreach (@used_langs) {
 	    next if $_ eq $lang; # Never print the current language
@@ -123,13 +130,14 @@ sub languages {
 	foreach my $cur_lang (sort langcmp @printed_langs) {
 	    my %lang;
 	    $lang{lang} = $cur_lang;
-	    $lang{tooltip} = dgettext( "langs", get_language_name($cur_lang) );
-            $lang{selfname} = get_selfname($cur_lang);
-	    $lang{transliteration} = get_transliteration($cur_lang) if defined get_transliteration($cur_lang);
+	    $lang{tooltip} = $cat->g(get_language_name($cur_lang));
+	    $lang{selfname} = get_selfname($cur_lang);
+	    $lang{transliteration} = get_transliteration($cur_lang)
+		if defined get_transliteration($cur_lang);
 	    push @langs, \%lang;
 	}
     }
-    
+
     return \@langs;
 }
 

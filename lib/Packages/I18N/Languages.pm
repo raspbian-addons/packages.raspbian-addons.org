@@ -74,20 +74,20 @@ my %selflang = (
 		"no"   => 'norsk&nbsp;(bokm&aring;l)',
 		pl     => 'polski',
 		pt     => 'Portugu&ecirc;s (pt)',
-		pt_PT  => 'Portugu&ecirc;s (pt)',
-		pt_BR  => 'Portugu&ecirc;s (br)',
+		'pt-pt'=> 'Portugu&ecirc;s (pt)',
+		'pt-br'=> 'Portugu&ecirc;s (br)',
 		ro     => 'rom&acirc;n&#259;',
 		ru     => '&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;',
 		sk     => 'slovensky',
 		sv     => 'svenska',
-		sv_SE  => 'svenska',
+		'sv-se'=> 'svenska',
 		sl     => 'sloven&#353;&#269;ina',
 		tr     => 'T&uuml;rk&ccedil;e',
 		uk     => '&#1091;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;',
 		zh     => '&#20013;&#25991;',
-		zh_CN  => '&#31777;&#39636;&#20013;&#25991;',
-		zh_HK  => '&#27491;&#39636;&#20013;&#25991;',
-		zh_TW  => '&#27491;&#39636;&#20013;&#25991;',
+		'zh-cn'=> '&#20013;&#25991;',
+		'zh-hk'=> '&#27491;&#39636;&#20013;&#25991;',
+		'zh-tw'=> '&#20013;&#25991;',
 		);
 
 # language directory name => Latin transliteration of the language name
@@ -104,10 +104,10 @@ my %translit = (
 		ko => "Hangul", # Not sure. "Hanguk-Mal" (=Spoken Korean)?
 		ru => "Russkij",
 		uk => "ukrajins'ka",
-		zh => "Zhongzu", # Not printed due to Chinese-specific code; kept for sort order
-		zh_CN => "Simplified Chinese",
-		zh_HK => "Traditional Chinese",
-		zh_TW => "Traditional Chinese",
+		zh => "Zhongzu",
+		'zh-cn'=> "Zhongzu,&#31616;",
+		'zh-hk'=> "Zhongzu,HK",
+		'zh-tw'=> "Zhongzu,&#32321;",
 		);
 
 # second transliteration table, used for languages starting with a latin

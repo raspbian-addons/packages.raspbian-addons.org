@@ -22,6 +22,15 @@ msgid ""
 "information should be expected"
 msgstr ""
 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:56
+msgid "."
+msgstr ""
+
+#: templates/config.tmpl:57
+msgid ","
+msgstr ""
+
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
 msgstr ""
@@ -360,7 +369,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: templates/html/index.tmpl:38 templates/html/show.tmpl:247
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:247
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr ""
@@ -445,47 +454,48 @@ msgid ""
 "parameters."
 msgstr ""
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "all suites"
 msgstr ""
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "suite(s) <em>$suite_enc</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr ""
 
-#: templates/html/search.tmpl:53
+#: templates/html/search.tmpl:52
 msgid "section(s) <em>$section_enc</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr ""
 
-#: templates/html/search.tmpl:54
+#: templates/html/search.tmpl:53
 msgid "architecture(s) <em>$architectures_enc</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "packages"
 msgstr ""
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "source packages"
 msgstr ""
 
-#: templates/html/search.tmpl:57
+#: templates/html/search.tmpl:56
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
-#: templates/html/search.tmpl:60
+#: templates/html/search.tmpl:59
 msgid " (including subword matching)"
 msgstr ""
 
+#. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:61
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
@@ -576,26 +586,27 @@ msgstr ""
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:73
+#: templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:74
+#: templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:75
+#: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:77
+#: templates/html/search_contents.tmpl:76
 msgid "files named"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:79
+#: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
 msgstr ""
 
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -842,11 +853,7 @@ msgid "(unofficial port)"
 msgstr ""
 
 #: templates/html/show.tmpl:297 templates/html/show.tmpl:325
-msgid "%.1f&nbsp;kB"
-msgstr ""
-
-#: templates/html/show.tmpl:297
-msgid "%u&nbsp;kB"
+msgid "%s&nbsp;kB"
 msgstr ""
 
 #: templates/html/show.tmpl:300

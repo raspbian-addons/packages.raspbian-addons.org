@@ -49,7 +49,7 @@ podomains="pdo templates sections langs debtags"
 # Update pot
 #
 # Common options for all calls
-xgettext_opts="--language=Perl --keyword=N_ --keyword=_g --foreign-user --add-comments"
+xgettext_opts="--language=Perl --keyword=N_ --keyword=g --foreign-user --add-comments"
 
 echo gettextfiles=$gettextfiles
 echo templatefiles=$templatefiles
@@ -95,19 +95,4 @@ do
 	perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
       done
   fi
-done
-
-echo
-# Update mo
-#
-test -d ${localedir} || mkdir -p ${localedir}
-for lang in ${polangs}
-do 
-  test -d ${localedir}/${lang}/LC_MESSAGES \
-      || mkdir -p ${localedir}/${lang}/LC_MESSAGES
-  for domain in ${podomains}
-  do
-    echo domain=$domain language=$lang
-    msgfmt --statistics -o ${localedir}/${lang}/LC_MESSAGES/${domain}.mo ${domain}.${lang}.po
-  done
 done

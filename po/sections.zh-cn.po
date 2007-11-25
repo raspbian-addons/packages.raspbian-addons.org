@@ -1,102 +1,91 @@
-# Dutch translation of packages.debian.org.
-# This file is put in the public domain.
-# Bas Zoetekouw <bas@debian.org>, 2005.
-# , fuzzy
-# 
-# 
 msgid ""
 msgstr ""
-"Project-Id-Version: packages.debian.org\n"
+"Project-Id-Version: sections\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-19 23:43+0200\n"
-"PO-Revision-Date: 2005-01-03 00:59+0100\n"
-"Last-Translator: Bas Zoetekouw <bas@debian.org>\n"
-"Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"PO-Revision-Date: 2007-10-26 19:47+0800\n"
+"Last-Translator: Vern Sun <s5unty@gmail.com>\n"
+"Language-Team: Chinese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
-msgstr "Onderhoudsgereedschappen"
+msgstr "实用管理工具"
 
 #: lib/Packages/Sections.pm:13
 msgid "Utilities to administer system resources, manage user accounts, etc."
-msgstr ""
-"Gereedschappen om de systeembronnen te administreren, gebruikersaccounts bij "
-"te houden, etc."
+msgstr "管理系统资源，维护用户账号等实用工具。"
 
 #: lib/Packages/Sections.pm:14
 msgid "Base Utilities"
-msgstr "Basisgereedschappen"
+msgstr "基础实用工具"
 
 #: lib/Packages/Sections.pm:15
 msgid "Basic needed utilities of every Debian system."
-msgstr ""
+msgstr "任何 Debian 系统必备的实用工具。"
 
 #: lib/Packages/Sections.pm:16
 msgid "Communication Programs"
-msgstr "Communicatieprogramma's"
+msgstr "通讯程序"
 
 #: lib/Packages/Sections.pm:17
 msgid "Software to use your modem in the old fashioned style."
-msgstr "Software om uw modem op de ouderwetse manier te gebruiken."
+msgstr "用于您老式调制解调器的软件。"
 
 #: lib/Packages/Sections.pm:18
 msgid "Development"
-msgstr "Ontwikkeling"
+msgstr "开发"
 
 #: lib/Packages/Sections.pm:19
 msgid ""
 "Development utilities, compilers, development environments, libraries, etc."
-msgstr ""
-"Gereedschappen, compilers, omgevingen, bibliotheken, etc. voor ontwikkeling "
-"van software"
+msgstr "实用开发工具，编译器，开发环境，链接库，等等。"
 
 #: lib/Packages/Sections.pm:20
 msgid "Documentation"
-msgstr "Documentatie"
+msgstr "文档"
 
 #: lib/Packages/Sections.pm:21
 msgid ""
 "FAQs, HOWTOs and other documents trying to explain everything related to "
 "Debian, and software needed to browse documentation (man, info, etc)."
 msgstr ""
-"FAQ's, HOWTO's en andere documentatie waarin van alles wat met Debian heeft "
-"te maken, wordt uitgelegd, en programmatuur die nodig is om de documentatie "
-"te bekijken (man, info, etc)."
+"FAQs，HOWTOs 以及其他的、尝试讲解有关 Debian 一切的文档，以及阅读文档时所需的"
+"软件(man，info，等)。"
 
 #: lib/Packages/Sections.pm:22
 msgid "Editors"
-msgstr "Editors"
+msgstr "编辑器"
 
 #: lib/Packages/Sections.pm:23
 msgid "Software to edit files. Programming environments."
-msgstr "Programma's om bestanden te bewerken, programmeer-omgevingen"
+msgstr "编辑文件的软件。程序编写环境。"
 
 #: lib/Packages/Sections.pm:24
 msgid "Electronics"
-msgstr "Elektronica"
+msgstr "电子工程学"
 
 #: lib/Packages/Sections.pm:25
 msgid "Electronics utilities."
-msgstr "Gereedschappen voor elektronica"
+msgstr "实用电子工程学工具。"
 
 #: lib/Packages/Sections.pm:26
 msgid "Embedded software"
-msgstr ""
+msgstr "嵌入式软件"
 
 #: lib/Packages/Sections.pm:27
 msgid "Software suitable for use in embedded applications."
-msgstr "Programma's die geschikt zijn voor gebruik in embedded applicaties."
+msgstr "适合于嵌入式应用的软件。"
 
 #: lib/Packages/Sections.pm:28
 msgid "Games"
-msgstr "Spellen"
+msgstr "游戏"
 
 #: lib/Packages/Sections.pm:29
 msgid "Programs to spend a nice time with after all this setting up."
-msgstr "Programma's om op een leuke manier uw tijd door te brengen."
+msgstr "这些程序装完以后可以用来消谴娱乐。"
 
 #: lib/Packages/Sections.pm:30
 msgid "GNOME"
@@ -106,37 +95,31 @@ msgstr "GNOME"
 msgid ""
 "The GNOME desktop environment, a powerful, easy to use set of integrated "
 "applications."
-msgstr ""
-"De GNOME desktopomgeving, een krachtige, makkelijk te gebruiken verzameling "
-"van geïntegreerde programma's."
+msgstr "GNOME 桌面环境，一组强大的、易用的、集成的应用程序。"
 
 #: lib/Packages/Sections.pm:32
 msgid "Graphics"
-msgstr "Grafisch"
+msgstr "图形"
 
 #: lib/Packages/Sections.pm:33
 msgid "Editors, viewers, converters... Everything to become an artist."
-msgstr ""
-"Programma's om grafische bestanden te wijzigen, te bekijken en te "
-"converteren... Alles om een artiest te worden."
+msgstr "编辑器，浏览器，转换器……成为一名艺术家所需的一切。"
 
 #: lib/Packages/Sections.pm:34
 msgid "Ham Radio"
-msgstr "Ham Radio"
+msgstr "业余无线电"
 
 #: lib/Packages/Sections.pm:35
 msgid "Software for ham radio."
-msgstr "Programma's voor ham radio"
+msgstr "业余无线电软件。"
 
 #: lib/Packages/Sections.pm:36
 msgid "Interpreters"
-msgstr "Interpretators"
+msgstr "解释器"
 
 #: lib/Packages/Sections.pm:37
 msgid "All kind of interpreters for interpreted languages. Macro processors."
-msgstr ""
-"Allerlei verschillende interpretators voor geïnterpreteerde talen. Macro-"
-"uitvoerders."
+msgstr "各种解释型语言的解释器。巨集处理器。"
 
 #: lib/Packages/Sections.pm:38
 msgid "KDE"
@@ -146,99 +129,86 @@ msgstr "KDE"
 msgid ""
 "The K Desktop Environment, a powerful, easy to use set of integrated "
 "applications."
-msgstr ""
-"De K Desktopomgeving, een krachtige, makkelijk te gebruiken verzameling van "
-"geïntegreerde programma's."
+msgstr "KDE 桌面环境。一组强大的、易用的、集成的应用程序。"
 
 #: lib/Packages/Sections.pm:40
 msgid "Libraries"
-msgstr "Bibliotheken"
+msgstr "链接库"
 
 #: lib/Packages/Sections.pm:41
 msgid ""
 "Libraries to make other programs work. They provide special features to "
 "developers."
-msgstr ""
-"Bibliotheken die nodig zijn voor andere programma's. Ze leveren speciale "
-"mogelijkheden voor ontwikkelaars."
+msgstr "提供其他程序工作的链接库。是它们让开发者富有特色。"
 
 #: lib/Packages/Sections.pm:42
 msgid "Library development"
-msgstr "Bibliotheek-ontwikkeling"
+msgstr "链接库开发"
 
 #: lib/Packages/Sections.pm:43
 msgid "Libraries necessary for developers to write programs that use them."
-msgstr ""
-"Bibliotheken die nodig zijn voor ontwikkelaars om programma's te schrijven "
-"die die bibliotheken gebruiken."
+msgstr "当开发者要编写一些调用链接库的程序时所必需的链接库"
 
 #: lib/Packages/Sections.pm:44
 msgid "Mail"
-msgstr "E-mail"
+msgstr "邮件"
 
 #: lib/Packages/Sections.pm:45
 msgid "Programs to route, read, and compose E-mail messages."
-msgstr "Programma's om e-mailberichten te routeren, te lezen en te schrijven."
+msgstr "投递、阅读、撰写电子邮件的程序。"
 
 #: lib/Packages/Sections.pm:46
 msgid "Mathematics"
-msgstr "Wiskunde"
+msgstr "数学"
 
 #: lib/Packages/Sections.pm:47
 msgid "Math software."
-msgstr "Wiskundige programma's."
+msgstr "数学软件。"
 
 #: lib/Packages/Sections.pm:48
 msgid "Miscellaneous"
-msgstr "Diversen"
+msgstr "五花八门"
 
 #: lib/Packages/Sections.pm:49
 msgid "Miscellaneous utilities that didn't fit well anywhere else."
-msgstr "Diverse gereedschappen die nergens anders passen."
+msgstr "放在其他地方都不合适的各式各样的实用程序。"
 
 #: lib/Packages/Sections.pm:50
 msgid "Network"
-msgstr "Netwerk"
+msgstr "网络"
 
 #: lib/Packages/Sections.pm:51
 msgid ""
 "Daemons and clients to connect your Debian GNU/Linux system to the world."
-msgstr ""
-"Daemon en clients om uw Debian GNU/Linux systeem met de wereld te verbinden."
+msgstr "服务端程序和客户端程序使您的 Debian GNU/Linux 系统与世界相连接。"
 
 #: lib/Packages/Sections.pm:52
 msgid "Newsgroups"
-msgstr "Nieuwsgroepen"
+msgstr "新闻组"
 
 #: lib/Packages/Sections.pm:53
 msgid "Software to access Usenet, to set up news servers, etc."
-msgstr ""
-"Programmatuur om toegang te krijgen tot Usenet, om eigen news-servers op te "
-"zetten, etc."
+msgstr "访问新闻网，设置新闻服务器等软件。"
 
 #: lib/Packages/Sections.pm:54
 msgid "Old Libraries"
-msgstr "Oude bibliotheken"
+msgstr "旧的链接库"
 
 #: lib/Packages/Sections.pm:55
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
-msgstr ""
-"Oude versies van bibliotheken, die worden bewaard omdat oudere programmatuur "
-"hen nog nodig kan hebben."
+msgstr "老版本的链接库，为了向后兼容旧程序而继续保留。"
 
 #: lib/Packages/Sections.pm:56
 msgid "Other OS's and file systems"
-msgstr "Andere besturings- en bestandssystemen"
+msgstr "其他操作系统和文件系统"
 
 #: lib/Packages/Sections.pm:57
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
-msgstr ""
-"Programmatuur om programma's te kunnen draaien die voor andere "
-"besturingssystemen zijn gebouwd, en om hun bestandssystemen te gebruiken."
+msgstr "使得在其他操作系统上编译的软件得以运行，以及使用它们的文件系统。"
 
 #: lib/Packages/Sections.pm:58
 msgid "Perl"
@@ -246,7 +216,7 @@ msgstr "Perl"
 
 #: lib/Packages/Sections.pm:59
 msgid "Everything about Perl, an interpreted scripting language."
-msgstr "Alles wat te maken heeft met Perl, een geïnterpreteerde script taal."
+msgstr "一切有关 Perl 的内容，一种解释型的脚本语言。"
 
 #: lib/Packages/Sections.pm:60
 msgid "Python"
@@ -256,17 +226,15 @@ msgstr "Python"
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
-msgstr ""
-"Alles wat te maken heeft met Python, een geïnterpreteerde, interactieve, "
-"object-georiënteerde taal."
+msgstr "一切有关 Python 的内容，一种解释型、面向对象的语言"
 
 #: lib/Packages/Sections.pm:62
 msgid "Science"
-msgstr "Wetenschap"
+msgstr "科研"
 
 #: lib/Packages/Sections.pm:63
 msgid "Basic tools for scientific work"
-msgstr "Basisgereedschappen voor wetenschappelijk werk."
+msgstr "科研工作的初级工具"
 
 #: lib/Packages/Sections.pm:64
 msgid "Shells"
@@ -274,18 +242,16 @@ msgstr "Shells"
 
 #: lib/Packages/Sections.pm:65
 msgid "Command shells. Friendly user interfaces for beginners."
-msgstr "Commando shells. Vriendelijke gebruikersinterfaces voor beginners."
+msgstr "命令行。友好的用户和计算机的交互界面。"
 
 #: lib/Packages/Sections.pm:66
 msgid "Sound"
-msgstr "Geluid"
+msgstr "声音"
 
 #: lib/Packages/Sections.pm:67
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
-msgstr ""
-"Gereedschappen om om te gaan met geluid: mixers, afspeel- en "
-"opnameprogramma's, CD-spelers, etc."
+msgstr "处理声音的实用程序: 混频器，播放器，录音器，CD 播放器，等等。"
 
 #: lib/Packages/Sections.pm:68
 msgid "TeX"
@@ -293,73 +259,68 @@ msgstr "TeX"
 
 #: lib/Packages/Sections.pm:69
 msgid "The famous typesetting software and related programs."
-msgstr "De beroemde tekst-zet programmatuur en gerelateerde programma's."
+msgstr "流行的文档排版及相关处理程序"
 
 #: lib/Packages/Sections.pm:70
 msgid "Text Processing"
-msgstr "Tekstverwerking"
+msgstr "文本处理"
 
 #: lib/Packages/Sections.pm:71
 msgid "Utilities to format and print text documents."
-msgstr "Gereedschappen om tekstdocumenten op te maken en te printen."
+msgstr "格式化和打印文本文档的实用工具。"
 
 #: lib/Packages/Sections.pm:72
 msgid "Translations"
-msgstr ""
+msgstr "翻译"
 
 #: lib/Packages/Sections.pm:73
 msgid "Translation packages and language support meta packages."
-msgstr ""
+msgstr "一些提供翻译支持或语言支持的，自身不含内容但却依赖其他软件包的元包"
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
-msgstr "Gereedschappen"
+msgstr "实用工具"
 
 #: lib/Packages/Sections.pm:75
 msgid ""
 "Utilities for file/disk manipulation, backup and archive tools, system "
 "monitoring, input systems, etc."
-msgstr ""
-"Gereedschappen voor bestands- en diskmanipulatie, voor backup en "
-"archivering, voor het in de gaten houden van uw systeem, voor "
-"invoersystemen, etc."
+msgstr "文件/磁盘操作，备份和打包工具，系统监控，输入系统，等等。"
 
 #: lib/Packages/Sections.pm:76
 msgid "Virtual packages"
-msgstr "Virtuele pakketten"
+msgstr "虚包"
 
 #: lib/Packages/Sections.pm:77
 msgid "Virtual packages."
-msgstr "Virtuele pakketten."
+msgstr "虚拟的、逻辑的、概念上的软件包。"
 
 #: lib/Packages/Sections.pm:78
 msgid "Web Software"
-msgstr "Webprogrammatuur"
+msgstr "网页软件"
 
 #: lib/Packages/Sections.pm:79
 msgid "Web servers, browsers, proxies, download tools etc."
-msgstr "Webservers, -browsers, -proxies, download-gereedschappen, etc."
+msgstr "网页服务器，浏览器，代理，下载工具等。"
 
 #: lib/Packages/Sections.pm:80
 msgid "X Window System software"
-msgstr "X Window System programma's"
+msgstr "X 窗口系统软件"
 
 #: lib/Packages/Sections.pm:81
 msgid ""
 "X servers, libraries, fonts, window managers, terminal emulators and many "
 "related applications."
-msgstr ""
-"X-servers en  -bibliotheken, lettertypen, windowmanagers, terminal "
-"emulatoren en veel gerelateerde programma's."
+msgstr "X 服务器，链接库，字体，窗口管理器，虚拟终端以及许多有关的应用程序。"
 
 #: lib/Packages/Sections.pm:82
 msgid "debian-installer udeb packages"
-msgstr "udeb-pakketten voor de debian-installer"
+msgstr "Debian 安装程序 udeb 包"
 
 #: lib/Packages/Sections.pm:83
 msgid ""
 "Special packages for building customized debian-installer variants. Do not "
 "install them on a normal system!"
 msgstr ""
-"Speciale pakketten om uw eigen varianten van de debian-installer te bouwen. "
-"Installeer deze niet op een normaal systeem!"
+"一组特殊的包用于创建可定制的 Debian 安装程序的变体。请不要在一个普通系统上安"
+"装它们！"

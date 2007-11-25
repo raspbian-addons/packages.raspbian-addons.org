@@ -52,3 +52,7 @@
    sitewidemsg = { importance => "high",
 		   txt => g('Please note that this is an experimental version of <a href="http://packages.debian.org/">packages.debian.org</a>. Errors and obsolete information should be expected') }
 -%]
+[%# @translators: . = decimal_point , = thousands_sep, see Number::Format %]
+[%- USE num = Number.Format( decimal_point => g('.'),
+    	      		     thousands_sep => g(','),
+			     decimal_fill  => 1 ) -%]
