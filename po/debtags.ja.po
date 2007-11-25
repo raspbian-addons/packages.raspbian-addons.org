@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-24 16:33+0900\n"
+"PO-Revision-Date: 2007-11-25 17:05+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -51,6 +51,8 @@ msgid ""
 " Add-on, pluggable program fragments enhancing functionality\n"
 " of some program or system."
 msgstr ""
+" アドオン、すなわちプログラムやシステムの機能を強化するための着脱可能な小さな"
+"プログラム。"
 
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
@@ -195,7 +197,7 @@ msgstr ""
 #. Tag: role::debug-symbols, long desc
 #: files/debtags/vocabulary
 msgid " Debugging symbols."
-msgstr ""
+msgstr " デバッグ用のシンボル。"
 
 #. Tag: hardware::storage:dvd, long desc
 #: files/debtags/vocabulary
@@ -267,7 +269,7 @@ msgstr ""
 #. Tag: role::program, long desc
 #: files/debtags/vocabulary
 msgid " Executable computer program."
-msgstr ""
+msgstr " 実行可能なコンピュータプログラム。"
 
 #. Tag: protocol::fidonet, long desc
 #: files/debtags/vocabulary
@@ -331,7 +333,7 @@ msgstr " パッケージとシステムセキュリティとの関連性"
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
 msgid " Human-readable code of a program, library or a part thereof."
-msgstr ""
+msgstr " プログラムやライブラリ、またはその一部の、人間が読める形式のコード。"
 
 #. Tag: filetransfer::http, long desc
 #: files/debtags/vocabulary
@@ -360,7 +362,7 @@ msgstr ""
 #. Tag: works-with::image:raster, long desc
 #: files/debtags/vocabulary
 msgid " Images made of dots, such as photos and scans"
-msgstr ""
+msgstr " 写真やスキャンなどの、点でできている画像"
 
 #. Tag: works-with::image:vector, long desc
 #: files/debtags/vocabulary
@@ -460,7 +462,7 @@ msgstr ""
 #. Tag: role::devel-lib, long desc
 #: files/debtags/vocabulary
 msgid " Library and header files used in software development or building."
-msgstr ""
+msgstr " ソフトウェアの開発や構築に使用されるライブラリやヘッダファイル。"
 
 #. Tag: protocol::ldap, long desc
 #: files/debtags/vocabulary
@@ -553,7 +555,7 @@ msgstr ""
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
-msgstr ""
+msgstr " 他のいくつかのパッケージをまとめてインストールするパッケージ。"
 
 #. Tag: devel::code-generator, long desc
 #: files/debtags/vocabulary
@@ -567,6 +569,9 @@ msgid ""
 " doing so would make this tag useless.\n"
 " Ultimately all applications should have unicode support."
 msgstr ""
+" 単に Unicode をサポートしているだけのプログラムにこのタグを付与しないでくだ"
+"さい。そんなことをしてしまうと、このタグの意味がなくなってしまいます。最終的"
+"には、すべてのアプリケーションが Unicode をサポートすべきなのです。"
 
 #. Tag: biology::format:nexus, long desc
 #: files/debtags/vocabulary
@@ -651,6 +656,8 @@ msgid ""
 " Routers, shapers, sniffers, firewalls and other tools\n"
 " that work with a stream of network packets."
 msgstr ""
+" ルータ・シェイパ・スニファ・ファイアウォールや、ネットワークパケットのスト"
+"リームを扱うその他のツール。"
 
 #. Tag: interface::daemon, long desc
 #: files/debtags/vocabulary
@@ -746,7 +753,7 @@ msgstr ""
 #. Tag: role::shared-lib, long desc
 #: files/debtags/vocabulary
 msgid " Shared libraries used by one or more programs."
-msgstr ""
+msgstr " 1 つ以上のプログラムが共同利用するライブラリ。"
 
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
@@ -990,6 +997,8 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " The package can connect to some IM network (or networks)."
 msgstr ""
+" 何らかの (場合によっては複数の) インスタントメッセンジャー (IM) ネットワーク"
+"に接続できるパッケージ。"
 
 #. Tag: suite::netscape, long desc
 #: files/debtags/vocabulary
@@ -1204,7 +1213,7 @@ msgstr ""
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
 msgid "3D Model"
-msgstr ""
+msgstr "3D モデル"
 
 #. Tag: junior::games-gl, short desc
 #: files/debtags/vocabulary
@@ -1292,7 +1301,7 @@ msgstr "アプリケーション"
 #. Tag: role::app-data, short desc
 #: files/debtags/vocabulary
 msgid "Application Data"
-msgstr ""
+msgstr "アプリケーションデータ"
 
 #. Tag: web::appserver, short desc
 #: files/debtags/vocabulary
@@ -1317,7 +1326,7 @@ msgstr "アーケードゲーム"
 #. Tag: works-with::archive, short desc
 #: files/debtags/vocabulary
 msgid "Archive"
-msgstr ""
+msgstr "アーカイブ"
 
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
@@ -1337,7 +1346,7 @@ msgstr "Athena ウィジェット"
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
-msgstr ""
+msgstr "音声"
 
 #. Tag: security::authentication, short desc
 #: files/debtags/vocabulary
@@ -1433,7 +1442,7 @@ msgstr ""
 #. Tag: works-with::bugs, short desc
 #: files/debtags/vocabulary
 msgid "Bugs or Issues"
-msgstr ""
+msgstr "バグや問題点"
 
 #. Tag: devel::buildtools, short desc
 #: files/debtags/vocabulary
@@ -1679,7 +1688,7 @@ msgstr "データ復旧"
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
 msgid "Databases"
-msgstr ""
+msgstr "データベース"
 
 #. Tag: devel::debian, short desc
 #. Tag: suite::debian, short desc
@@ -1695,7 +1704,7 @@ msgstr ""
 #. Tag: role::debug-symbols, short desc
 #: files/debtags/vocabulary
 msgid "Debugging symbols"
-msgstr ""
+msgstr "デバッグシンボル"
 
 #. Tag: game::demos, short desc
 #: files/debtags/vocabulary
@@ -1710,12 +1719,12 @@ msgstr ""
 #. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
-msgstr ""
+msgstr "デスクトップパブリッシング (DTP)"
 
 #. Tag: role::devel-lib, short desc
 #: files/debtags/vocabulary
 msgid "Development Library"
-msgstr ""
+msgstr "開発ライブラリ"
 
 #. Tag: use::dialing, short desc
 #: files/debtags/vocabulary
@@ -1725,7 +1734,7 @@ msgstr "ダイアルアップ接続"
 #. Tag: works-with::dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionaries"
-msgstr ""
+msgstr "辞書"
 
 #. Tag: made-of::data:dictionary, short desc
 #: files/debtags/vocabulary
@@ -1747,7 +1756,7 @@ msgstr "DocBook"
 #. Tag: role::documentation, short desc
 #: files/debtags/vocabulary
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメント"
 
 #. Tag: made-of::data:info, short desc
 #. Tag: works-with-format::info, short desc
@@ -1818,7 +1827,7 @@ msgstr "Emacs"
 #. Tag: works-with::mail, short desc
 #: files/debtags/vocabulary
 msgid "Email"
-msgstr ""
+msgstr "電子メール"
 
 #. Tag: hardware::embedded, short desc
 #: files/debtags/vocabulary
@@ -1879,7 +1888,7 @@ msgstr "ペルシア語"
 #. Tag: works-with::fax, short desc
 #: files/debtags/vocabulary
 msgid "Faxes"
-msgstr ""
+msgstr "FAX"
 
 #. Tag: protocol::fidonet, short desc
 #: files/debtags/vocabulary
@@ -1914,7 +1923,7 @@ msgstr ""
 #. Tag: works-with::file, short desc
 #: files/debtags/vocabulary
 msgid "Files"
-msgstr ""
+msgstr "ファイル"
 
 #. Tag: admin::filesystem, short desc
 #: files/debtags/vocabulary
@@ -1976,7 +1985,7 @@ msgstr "フォント"
 #. Tag: works-with::font, short desc
 #: files/debtags/vocabulary
 msgid "Fonts"
-msgstr ""
+msgstr "フォント"
 
 #. Tag: foreignos, short desc
 #: files/debtags/vocabulary
@@ -2264,7 +2273,7 @@ msgstr ""
 #. Tag: works-with::image, short desc
 #: files/debtags/vocabulary
 msgid "Image"
-msgstr ""
+msgstr "画像"
 
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
@@ -2289,7 +2298,7 @@ msgstr ""
 #. Tag: works-with::im, short desc
 #: files/debtags/vocabulary
 msgid "Instant Messages"
-msgstr ""
+msgstr "インスタントメッセージ"
 
 #. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
@@ -2587,7 +2596,7 @@ msgstr "薬学"
 #. Tag: role::metapackage, short desc
 #: files/debtags/vocabulary
 msgid "Metapackage"
-msgstr ""
+msgstr "メタパッケージ"
 
 #. Tag: junior::meta, short desc
 #: files/debtags/vocabulary
@@ -2648,7 +2657,7 @@ msgstr "Musepack 音声"
 #. Tag: works-with::music-notation, short desc
 #: files/debtags/vocabulary
 msgid "Music Notation"
-msgstr ""
+msgstr "楽譜"
 
 #. Tag: protocol::db:mysql, short desc
 #: files/debtags/vocabulary
@@ -2725,7 +2734,7 @@ msgstr ""
 #. Tag: works-with::network-traffic, short desc
 #: files/debtags/vocabulary
 msgid "Network traffic"
-msgstr ""
+msgstr "ネットワークトラフィック"
 
 #. Facet: network, short desc
 #: files/debtags/vocabulary
@@ -2996,7 +3005,7 @@ msgstr "パッケージ管理"
 #. Tag: works-with::software:package, short desc
 #: files/debtags/vocabulary
 msgid "Packaged software"
-msgstr ""
+msgstr "パッケージ化されたソフトウェア"
 
 #. Tag: devel::packaging, short desc
 #: files/debtags/vocabulary
@@ -3011,7 +3020,7 @@ msgstr ""
 #. Tag: works-with::people, short desc
 #: files/debtags/vocabulary
 msgid "People"
-msgstr ""
+msgstr "人々"
 
 #. Tag: implemented-in::perl, short desc
 #: files/debtags/vocabulary
@@ -3026,7 +3035,7 @@ msgstr "Perl での開発"
 #. Tag: works-with::pim, short desc
 #: files/debtags/vocabulary
 msgid "Personal Information"
-msgstr ""
+msgstr "個人情報"
 
 #. Tag: field::physics, short desc
 #: files/debtags/vocabulary
@@ -3066,7 +3075,7 @@ msgstr "メディアの再生"
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
 msgid "Plugin"
-msgstr ""
+msgstr "プラグイン"
 
 #. Tag: culture::polish, short desc
 #: files/debtags/vocabulary
@@ -3134,7 +3143,7 @@ msgstr ""
 #. Tag: role::program, short desc
 #: files/debtags/vocabulary
 msgid "Program"
-msgstr ""
+msgstr "プログラム"
 
 #. Tag: office::project-management, short desc
 #: files/debtags/vocabulary
@@ -3209,7 +3218,7 @@ msgstr "レースゲーム"
 #. Tag: works-with::image:raster, short desc
 #: files/debtags/vocabulary
 msgid "Raster Image"
-msgstr ""
+msgstr "ラスタ画像"
 
 #. Tag: sound::recorder, short desc
 #: files/debtags/vocabulary
@@ -3275,7 +3284,7 @@ msgstr "Ruby での開発"
 #. Tag: works-with::software:running, short desc
 #: files/debtags/vocabulary
 msgid "Running programs"
-msgstr ""
+msgstr "プログラムの実行"
 
 #. Tag: devel::runtime, short desc
 #: files/debtags/vocabulary
@@ -3455,7 +3464,7 @@ msgstr "特殊なタグ"
 #. Tag: role::shared-lib, short desc
 #: files/debtags/vocabulary
 msgid "Shared Library"
-msgstr ""
+msgstr "共有ライブラリ"
 
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
@@ -3480,7 +3489,7 @@ msgstr "音声・音楽"
 #. Tag: role::source, short desc
 #: files/debtags/vocabulary
 msgid "Source Code"
-msgstr ""
+msgstr "ソースコード"
 
 #. Tag: devel::editor, short desc
 #: files/debtags/vocabulary
@@ -3490,7 +3499,7 @@ msgstr ""
 #. Tag: works-with::software:source, short desc
 #: files/debtags/vocabulary
 msgid "Source code"
-msgstr ""
+msgstr "ソースコード"
 
 #. Tag: culture::spanish, short desc
 #: files/debtags/vocabulary
@@ -3522,7 +3531,7 @@ msgstr "スプレッドシート"
 #. Tag: role::data, short desc
 #: files/debtags/vocabulary
 msgid "Standalone Data"
-msgstr ""
+msgstr "単独で意味をもつデータ"
 
 #. Tag: field::statistics, short desc
 #: files/debtags/vocabulary
@@ -3582,7 +3591,7 @@ msgstr "システムの起動"
 #. Tag: works-with::logfile, short desc
 #: files/debtags/vocabulary
 msgid "System Logs"
-msgstr ""
+msgstr "システムログ"
 
 #. Tag: admin::install, short desc
 #: files/debtags/vocabulary
@@ -3672,7 +3681,7 @@ msgstr "テトリス風 (落ち物) ゲーム"
 #. Tag: works-with::text, short desc
 #: files/debtags/vocabulary
 msgid "Text"
-msgstr ""
+msgstr "テキスト"
 
 #. Tag: use::text-formatting, short desc
 #: files/debtags/vocabulary
@@ -3763,7 +3772,7 @@ msgstr "ウクライナ語"
 #. Tag: works-with::unicode, short desc
 #: files/debtags/vocabulary
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #. Tag: devel::ui-builder, short desc
 #. Facet: interface, short desc
@@ -3809,12 +3818,12 @@ msgstr "Virtual Reality Markup Language (VRML)"
 #. Tag: works-with::image:vector, short desc
 #: files/debtags/vocabulary
 msgid "Vector Image"
-msgstr ""
+msgstr "ベクタ画像"
 
 #. Tag: works-with::video, short desc
 #: files/debtags/vocabulary
 msgid "Video and Animation"
-msgstr ""
+msgstr "映像・動画"
 
 #. Tag: admin::virtualization, short desc
 #: files/debtags/vocabulary
