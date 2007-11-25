@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-25 17:11+0900\n"
+"PO-Revision-Date: 2007-11-25 20:48+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -551,6 +551,8 @@ msgid ""
 " Packages that are not used any longer, also packages only left for upgrade\n"
 " purposes (merged / split packages)"
 msgstr ""
+" もう使われていないパッケージ、またはアップグレードのために残されているだけの"
+"パッケージ (マージや分割が行われたパッケージ)"
 
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
@@ -569,9 +571,9 @@ msgid ""
 " doing so would make this tag useless.\n"
 " Ultimately all applications should have unicode support."
 msgstr ""
-" 単に Unicode をサポートしているだけのプログラムにこのタグを付与しないでくだ"
-"さい。そんなことをしてしまうと、このタグの意味がなくなってしまいます。最終的"
-"には、すべてのアプリケーションが Unicode をサポートすべきなのです。"
+" 単に Unicode をサポートしているだけのプログラムにこのタグをつけないでくださ"
+"い。そんなことをしてしまうと、このタグの意味がなくなってしまいます。最終的に"
+"は、すべてのアプリケーションが Unicode をサポートすべきなのです。"
 
 #. Tag: biology::format:nexus, long desc
 #: files/debtags/vocabulary
@@ -992,6 +994,11 @@ msgid ""
 " Mark a package with this tag to signal the vocabulary maintainers of cases\n"
 " where the current tag set is lacking."
 msgstr ""
+" パッケージはこのファセットに分類できますが、パッケージに合う適切なタグがあり"
+"ません。\n"
+" .\n"
+" パッケージにこのタグをつけ、現在のタグセットで考慮されていない状況についてタ"
+"グリストのメンテナに知らせてください。"
 
 #. Tag: works-with::im, long desc
 #: files/debtags/vocabulary
@@ -1038,6 +1045,9 @@ msgid ""
 "this\n"
 " should never show up."
 msgstr ""
+" このタグは、タグ定義表に存在しないタグがタグデータベースに含まれているという"
+"意味です。このタグが現れるのはソフトウェアのバグです。現れるべきでありませ"
+"ん。"
 
 #. Tag: use::comparing, long desc
 #: files/debtags/vocabulary
@@ -1113,6 +1123,8 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " Use this for packages that cannot yet or will never support IPv6."
 msgstr ""
+" このタグは、IPv6 をまだサポートできていないパッケージやサポートすることのな"
+"いパッケージに使用してください。"
 
 #. Tag: biology::format:aln, long desc
 #: files/debtags/vocabulary
@@ -1208,7 +1220,7 @@ msgstr "資源やウェブサイトを記述するのに用いられる XML の�
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
-msgstr ""
+msgstr "!タグがまだついていないパッケージ!"
 
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
@@ -2323,7 +2335,7 @@ msgstr "侵入検出"
 #. Tag: special::invalid-tag, short desc
 #: files/debtags/vocabulary
 msgid "Invalid tag"
-msgstr ""
+msgstr "不正なタグ"
 
 # TRANSLATION-FIXME: Gaelic?
 #. Tag: culture::irish, short desc
@@ -2677,7 +2689,7 @@ msgstr ""
 #. Tag: special::ipv6-nosupport, short desc
 #: files/debtags/vocabulary
 msgid "NO IPv6 support"
-msgstr ""
+msgstr "IPv6 サポートなし"
 
 #. Tag: uitoolkit::ncurses, short desc
 #: files/debtags/vocabulary
@@ -2714,7 +2726,7 @@ msgstr "Ncurses TUI"
 #. Tag: x11::TODO, short desc
 #: files/debtags/vocabulary
 msgid "Need an extra tag"
-msgstr ""
+msgstr "追加のタグが必要"
 
 #. Tag: suite::netscape, short desc
 #: files/debtags/vocabulary
@@ -2764,132 +2776,132 @@ msgstr "ノルウェー語 (ニーノシュク)"
 #. Tag: special::not-yet-tagged::a, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with a"
-msgstr ""
+msgstr "a で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::b, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with b"
-msgstr ""
+msgstr "b で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::c, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with c"
-msgstr ""
+msgstr "c で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::d, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with d"
-msgstr ""
+msgstr "d で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::e, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with e"
-msgstr ""
+msgstr "e で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::f, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with f"
-msgstr ""
+msgstr "f で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::g, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with g"
-msgstr ""
+msgstr "g で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::h, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with h"
-msgstr ""
+msgstr "h で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::i, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with i"
-msgstr ""
+msgstr "i で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::j, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with j"
-msgstr ""
+msgstr "j で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::k, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with k"
-msgstr ""
+msgstr "k で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::l, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with l"
-msgstr ""
+msgstr "l で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::m, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with m"
-msgstr ""
+msgstr "m で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::n, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with n"
-msgstr ""
+msgstr "n で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::o, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with o"
-msgstr ""
+msgstr "o で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::p, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with p"
-msgstr ""
+msgstr "p で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::q, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with q"
-msgstr ""
+msgstr "q で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::r, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with r"
-msgstr ""
+msgstr "r で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::s, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with s"
-msgstr ""
+msgstr "s で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::t, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with t"
-msgstr ""
+msgstr "t で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::u, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with u"
-msgstr ""
+msgstr "u で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::v, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with v"
-msgstr ""
+msgstr "v で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::w, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with w"
-msgstr ""
+msgstr "w で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::x, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with x"
-msgstr ""
+msgstr "x で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::y, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with y"
-msgstr ""
+msgstr "y で始まる、タグがまだついていないパッケージ"
 
 #. Tag: special::not-yet-tagged::z, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with z"
-msgstr ""
+msgstr "z で始まる、タグがまだついていないパッケージ"
 
 #. Tag: mail::notification, short desc
 #: files/debtags/vocabulary
@@ -2934,7 +2946,7 @@ msgstr "Objective C での開発"
 #. Tag: special::obsolete, short desc
 #: files/debtags/vocabulary
 msgid "Obsolete Packages"
-msgstr ""
+msgstr "廃止されたパッケージ"
 
 #. Facet: office, short desc
 #: files/debtags/vocabulary
@@ -3433,7 +3445,7 @@ msgstr "検索"
 #. Tag: special::auto-inst-parts, short desc
 #: files/debtags/vocabulary
 msgid "Secondary packages users won't install directly"
-msgstr ""
+msgstr "ユーザが直接インストールすることはない補助的なパッケージ"
 
 #. Facet: security, short desc
 #: files/debtags/vocabulary
