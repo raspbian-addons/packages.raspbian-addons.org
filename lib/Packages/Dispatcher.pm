@@ -248,7 +248,7 @@ sub do_dispatch {
 					replace => { all => \@ARCHIVES,
 						     default => \@ARCHIVES} },
 		       exact => { default => 0, match => '^(\w+)$',  },
-		       lang => { default => $http_lang, match => '^(\w+)$',  },
+		       lang => { default => $http_lang, match => '^([\w-]+)$',  },
 		       source => { default => 0, match => '^(\d+)$',  },
 		       debug => { default => 0, match => '^(\d+)$',  },
 		       searchon => { default => 'names', match => '^(\w+)$', },
