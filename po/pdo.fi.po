@@ -1,13 +1,13 @@
 # Finnish translations for packages.debian.org
 # This file is put in the public domain.
-# Tommi Vainikainen <thv+debian@iki.fi>, 2005.
+# Tommi Vainikainen <thv+debian@iki.fi>, 2005-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 21:01+0100\n"
-"PO-Revision-Date: 2007-10-18 22:06+0300\n"
+"PO-Revision-Date: 2007-11-26 08:04+0200\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -70,10 +70,10 @@ msgid "more than one suite specified for show_static (%s)"
 msgstr "useampi kuin yksi jakelu määritetty show_static-metodille (%s)"
 
 #: lib/Packages/DoIndex.pm:38
-#, fuzzy, perl-format
+#, perl-format
 #| msgid "more than one suite specified for show_static (%s)"
 msgid "more than one subsection specified for show_static (%s)"
-msgstr "useampi kuin yksi jakelu määritetty show_static-metodille (%s)"
+msgstr "useampi kuin yksi alaosasto määritetty show_static-metodille (%s)"
 
 #: lib/Packages/DoIndex.pm:75
 #, perl-format
@@ -81,16 +81,16 @@ msgid "couldn't read index file %s: %s"
 msgstr "hakemistotiedostoa %s ei voitu lukea: %s"
 
 #: lib/Packages/DoNewPkg.pm:25
-#, fuzzy, perl-format
+#, perl-format
 #| msgid "more than one suite specified for show (%s)"
 msgid "more than one suite specified for newpkg (%s)"
-msgstr "useampi kuin yksi jakelu määritetty show-metodille (%s)"
+msgstr "useampi kuin yksi jakelu määritetty newpkg-metodille (%s)"
 
 #: lib/Packages/DoNewPkg.pm:43
-#, fuzzy, perl-format
+#, perl-format
 #| msgid "More Information on %s"
 msgid "no newpkg information found for suite %s"
-msgstr "Lisätietoa paketista %s"
+msgstr "newpkg-tietoa ei löytynyt jakelulle %s"
 
 #: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
 msgid "keyword not valid or missing"
@@ -139,10 +139,10 @@ msgid " and others"
 msgstr " ja muut"
 
 #: lib/Packages/DoShow.pm:429
-#, fuzzy, perl-format
+#, perl-format
 #| msgid "not"
 msgid "not %s"
-msgstr "ei"
+msgstr "ei %s"
 
 #: lib/Packages/DoShow.pm:479
 msgid "Package not available"
