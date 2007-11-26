@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2007-10-26 19:43+0800\n"
+"PO-Revision-Date: 2007-11-26 19:26+0900\n"
 "Last-Translator: Vern Sun <s5unty@gmail.com>\n"
 "Language-Team: Chinese\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "%s 网管"
 
 #: templates/config.tmpl:48
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr "%1$s 是 %3$s 的一个<a href=\"%3$s\">注册商标</a>"
+msgstr "%1 是 %3 的一个<a href=\"%3\">注册商标</a>"
 
 #: templates/config.tmpl:53
 msgid ""
@@ -153,7 +153,7 @@ msgstr "下载"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr "用在 %2$s 上 <kbd>%1$s</kbd> 的下载页面"
+msgstr "用在 %2 上 <kbd>%1</kbd> 的下载页面"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
@@ -289,7 +289,7 @@ msgstr "软件包的文件清单: %s/%s/%s"
 msgid ""
 "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
-"在 <em>%2$s</em> 发行版中 <em>%3$s</em> 硬件架构下的 <em>%1$s</em> 软件包文件"
+"在 <em>%2</em> 发行版中 <em>%3</em> 硬件架构下的 <em>%1</em> 软件包文件"
 "清单"
 
 #: templates/html/filelist.tmpl:8
@@ -378,19 +378,19 @@ msgstr "软件包"
 
 #: templates/html/index.tmpl:3
 msgid "Source Packages in \"%s\", %s %s"
-msgstr "属于 \"%1$s\" 发行版 %3$s %2$s的源码包"
+msgstr "属于 \"%1\" 发行版 %3 %2的源码包"
 
 #: templates/html/index.tmpl:4
 msgid "Source Packages in \"%s\""
-msgstr "属于 \"%1$s\" 发行版的源码包"
+msgstr "属于 \"%1\" 发行版的源码包"
 
 #: templates/html/index.tmpl:6
 msgid "Software Packages in \"%s\", %s %s"
-msgstr "属于 \"%1$s\" 发行版 %3$s %2$s的软件包"
+msgstr "属于 \"%1\" 发行版 %3 %2的软件包"
 
 #: templates/html/index.tmpl:7
 msgid "Software Packages in \"%s\""
-msgstr "属于 \"%1$s\" 发行版的软件包"
+msgstr "属于 \"%1\" 发行版的软件包"
 
 #: templates/html/index.tmpl:14
 msgid "All Packages"
@@ -420,7 +420,7 @@ msgstr "以下是在最近 7 天内被选进 <em>%s</em> 发行版( %s 版面)�
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
-msgstr "以下是在最近 7 天内被选进 %2$s 的 %1$s 发行版之中的软件包。"
+msgstr "以下是在最近 7 天内被选进 %2 的 %1 发行版之中的软件包。"
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
@@ -526,7 +526,7 @@ msgstr "软件包"
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
-"您在%3$s中%5$s下%4$s里，指定关键字 <em>%2$s</em> 在%1$s名称中搜索的结果。"
+"您在%3中%5下%4里，指定关键字 <em>%2</em> 在%1名称中搜索的结果。"
 
 #: templates/html/search.tmpl:59
 msgid " (including subword matching)"
@@ -538,8 +538,8 @@ msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
-"您在%2$s中%4$s下%3$s里，指定关键字 <em>%1$s</em> 在软件包名称和描述信息中搜索"
-"的结果%5$s。"
+"您在%2中%4下%3里，指定关键字 <em>%1</em> 在软件包名称和描述信息中搜索"
+"的结果%5。"
 
 #: templates/html/search.tmpl:67
 msgid "Found <strong>%u</strong> matching packages."
@@ -655,7 +655,7 @@ msgstr "文件名含有"
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
-"您在 <em>%3$s</em> 发行版中%5$s下%4$s里，搜索了%1$s <em>%2$s</em> 的内容。"
+"您在 <em>%3</em> 发行版中%5下%4里，搜索了%1 <em>%2</em> 的内容。"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -700,11 +700,11 @@ msgstr "属于本版面的所有软件包"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
-msgstr "在 %2$s 中的 %1$s 源码包详细信息"
+msgstr "在 %2 中的 %1 源码包详细信息"
 
 #: templates/html/show.tmpl:22
 msgid "Details of package %s in %s"
-msgstr "在 %2$s 中的 %1$s 软件包详细信息"
+msgstr "在 %2 中的 %1 软件包详细信息"
 
 #: templates/html/show.tmpl:45
 msgid "Source:"
@@ -980,13 +980,13 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"以下是在最近 7 天内被选进 %3$s 的 %1$s 发行版( %2$s 版面)之中的软件包。"
+"以下是在最近 7 天内被选进 %3 的 %1 发行版( %2 版面)之中的软件包。"
 
 #: templates/rss/newpkg.tmpl:23
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
-msgstr "以下是在最近 7 天内被选进 %2$s 的 %1$s 发行版之中的软件包。"
+msgstr "以下是在最近 7 天内被选进 %2 的 %1 发行版之中的软件包。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"
@@ -994,7 +994,7 @@ msgstr "Copyright ©"
 
 #: templates/txt/index.tmpl:2
 msgid "All %s Packages in \"%s\""
-msgstr "\"%2$s\" 包含所有的 %1$s 软件包"
+msgstr "\"%2\" 包含所有的 %1 软件包"
 
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
