@@ -282,7 +282,9 @@ sub find_similar {
     undef $db;
 
     debug ("ORDER: @order", 2) if DEBUG;
-    return @order[0..10];
+    my $last = 10;
+    $last = $#order if $#order < $last;
+    return @order[0..$last];
 }
 
 sub find_binaries {
