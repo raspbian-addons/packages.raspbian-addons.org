@@ -12,7 +12,7 @@ then
 	ddtp_ftpsite="$ftpsite"
     fi
     echo using remote mirror $ddtp_ftpsite
-    for dist in sid
+    for dist in $dists
     do
 	for part in main
 	do
@@ -28,7 +28,7 @@ then
     done
 else
     echo using local mirror
-    for dist in sid
+    for dist in $dists
     do
 	for part in main
 	do
