@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-25 20:48+0900\n"
+"PO-Revision-Date: 2007-11-28 02:18+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -76,11 +76,13 @@ msgid ""
 " Applies to input methods for non-latin languages as well as special input\n"
 " systems."
 msgstr ""
+" このタグは、非ラテン系言語用のインプットメソッドや特殊な入力システムに適用さ"
+"れます。"
 
 #. Tag: devel::machinecode, long desc
 #: files/debtags/vocabulary
 msgid " Assemblers and other machine-code development tools."
-msgstr ""
+msgstr " アセンブラやその他の機械語のための開発ツール。"
 
 #. Tag: protocol::atm, long desc
 #: files/debtags/vocabulary
@@ -142,7 +144,7 @@ msgstr " 回路の設計など電子工学関連のソフトウェア"
 #. Tag: devel::prettyprint, long desc
 #: files/debtags/vocabulary
 msgid " Code pretty-printing and indentation/reformatting."
-msgstr ""
+msgstr " コードをきれいに印刷したりインデントや整形を行うツール。"
 
 #. Tag: protocol::corba, long desc
 #: files/debtags/vocabulary
@@ -372,7 +374,7 @@ msgstr " グラフや大半のクリップアートなどの、線でできて�
 #. Tag: devel::ide, long desc
 #: files/debtags/vocabulary
 msgid " Integrated Development Environment"
-msgstr ""
+msgstr " 統合開発環境"
 
 #. Tag: protocol::imap, long desc
 #: files/debtags/vocabulary
@@ -537,7 +539,7 @@ msgstr ""
 #. Tag: accessibility::ocr, long desc
 #: files/debtags/vocabulary
 msgid " Optical Character Recognition"
-msgstr ""
+msgstr " 光学文字認識"
 
 #. Tag: biology::emboss, long desc
 #: files/debtags/vocabulary
@@ -562,7 +564,7 @@ msgstr " 他のいくつかのパッケージをまとめてインストール�
 #. Tag: devel::code-generator, long desc
 #: files/debtags/vocabulary
 msgid " Parser, lexer and other code generators"
-msgstr ""
+msgstr " パーサやレキサ、その他のコード生成ツール"
 
 #. Tag: works-with::unicode, long desc
 #: files/debtags/vocabulary
@@ -602,7 +604,7 @@ msgstr " 侵入を受けたときの事後解析ツール。"
 #. Tag: devel::profiler, long desc
 #: files/debtags/vocabulary
 msgid " Profiling and optimization tools."
-msgstr ""
+msgstr " プロファイリングや最適化を行うツール。"
 
 #. Tag: devel::modelling, long desc
 #: files/debtags/vocabulary
@@ -610,6 +612,8 @@ msgid ""
 " Programs and libraries that support creation of software models\n"
 " with modelling languages like UML or OCL."
 msgstr ""
+" UML や OCL などのモデリング言語を用いたソフトウェアモデルの作成をサポートす"
+"るプログラムやライブラリ。"
 
 #. Tag: protocol::db:mysql, long desc
 #: files/debtags/vocabulary
@@ -624,7 +628,7 @@ msgstr ""
 #. Tag: devel::rcs, long desc
 #: files/debtags/vocabulary
 msgid " RCS (Revision Control System) and SCM (Software Configuration Manager)"
-msgstr ""
+msgstr " リビジョン管理システム (RCS) やソフトウェア構成管理 (SCM)"
 
 #. Tag: admin::forensics, long desc
 #: files/debtags/vocabulary
@@ -650,7 +654,7 @@ msgstr ""
 #. Tag: devel::rpc, long desc
 #: files/debtags/vocabulary
 msgid " Remote Procedure Call, Network transparent programming"
-msgstr ""
+msgstr " リモートプロシージャコールやネットワーク透過なプログラミング"
 
 #. Tag: works-with::network-traffic, long desc
 #: files/debtags/vocabulary
@@ -673,7 +677,7 @@ msgstr ""
 #. Tag: devel::runtime, long desc
 #: files/debtags/vocabulary
 msgid " Runtime environments of various languages and systems."
-msgstr ""
+msgstr " 様々な言語やシステムのための実行時環境。"
 
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
@@ -1057,7 +1061,7 @@ msgstr " 複数のオブジェクトにおいて何が同じで何が異なる�
 #. Tag: devel::docsystem, long desc
 #: files/debtags/vocabulary
 msgid " Tools and auto-documenters"
-msgstr ""
+msgstr " ツールや自動ドキュメント生成システム。"
 
 #. Tag: devel::ecma-cli, long desc
 #: files/debtags/vocabulary
@@ -1066,21 +1070,23 @@ msgid ""
 " the ECMA CLI (Common Language Infrastructure), like Mono\n"
 " or DotGNU Portable.NET."
 msgstr ""
+" Mono や DotGNU Portable.NET のような、ECMA CLI (共通言語基盤) の実装で開発を"
+"行うためのツールやライブラリ。"
 
 #. Tag: devel::ui-builder, long desc
 #: files/debtags/vocabulary
 msgid " Tools for designing user interfaces."
-msgstr ""
+msgstr " ユーザインタフェースを設計するツール。"
 
 #. Tag: devel::packaging, long desc
 #: files/debtags/vocabulary
 msgid " Tools for packaging software."
-msgstr ""
+msgstr " ソフトウェアをパッケージ化するツール。"
 
 #. Tag: devel::testing-qa, long desc
 #: files/debtags/vocabulary
 msgid " Tools for software testing and quality assurance."
-msgstr ""
+msgstr " ソフトウェアのテストや品質保証を行うツール。"
 
 #. Tag: security::integrity, long desc
 #: files/debtags/vocabulary
@@ -1094,7 +1100,7 @@ msgstr ""
 #. Tag: devel::debian, long desc
 #: files/debtags/vocabulary
 msgid " Tools, documentation, etc. of use primarily to Debian developers."
-msgstr ""
+msgstr " 主に Debian 開発者が使用するためのツールやドキュメントなど。"
 
 #. Tag: protocol::tcp, long desc
 #: files/debtags/vocabulary
@@ -1186,6 +1192,8 @@ msgid ""
 " Web-centric frameworks, CGI libraries and other web-specific development\n"
 " tools."
 msgstr ""
+" ウェブ中心のフレームワークや CGI ライブラリ、その他のウェブ固有の開発ツー"
+"ル。"
 
 #. Tag: web::wiki, long desc
 #: files/debtags/vocabulary
@@ -1449,7 +1457,7 @@ msgstr "閲覧"
 #. Tag: devel::bugtracker, short desc
 #: files/debtags/vocabulary
 msgid "Bug Tracking"
-msgstr ""
+msgstr "バグ追跡"
 
 #. Tag: works-with::bugs, short desc
 #: files/debtags/vocabulary
@@ -1459,7 +1467,7 @@ msgstr "バグや問題点"
 #. Tag: devel::buildtools, short desc
 #: files/debtags/vocabulary
 msgid "Build Tool"
-msgstr ""
+msgstr "ビルドツール"
 
 #. Tag: culture::bulgarian, short desc
 #: files/debtags/vocabulary
@@ -1574,7 +1582,7 @@ msgstr "クラスタリング"
 #. Tag: devel::code-generator, short desc
 #: files/debtags/vocabulary
 msgid "Code Generation"
-msgstr ""
+msgstr "コード生成"
 
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
@@ -1594,7 +1602,7 @@ msgstr "比較"
 #. Tag: devel::compiler, short desc
 #: files/debtags/vocabulary
 msgid "Compiler"
-msgstr ""
+msgstr "コンパイラ"
 
 #. Tag: use::compressing, short desc
 #: files/debtags/vocabulary
@@ -1711,7 +1719,7 @@ msgstr "Debian"
 #. Tag: devel::debugger, short desc
 #: files/debtags/vocabulary
 msgid "Debugging"
-msgstr ""
+msgstr "デバッグ"
 
 #. Tag: role::debug-symbols, short desc
 #: files/debtags/vocabulary
@@ -1794,7 +1802,7 @@ msgstr "電子商取引 (e コマース)"
 #. Tag: devel::ecma-cli, short desc
 #: files/debtags/vocabulary
 msgid "ECMA CLI"
-msgstr ""
+msgstr "ECMA CLI"
 
 #. Tag: biology::emboss, short desc
 #: files/debtags/vocabulary
@@ -1874,7 +1882,7 @@ msgstr ""
 #. Tag: devel::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
-msgstr ""
+msgstr "サンプル"
 
 #. Tag: uitoolkit::fltk, short desc
 #: files/debtags/vocabulary
@@ -2220,7 +2228,7 @@ msgstr "ハンガリー語"
 #. Tag: devel::ide, short desc
 #: files/debtags/vocabulary
 msgid "IDE"
-msgstr ""
+msgstr "IDE"
 
 #. Tag: protocol::imap, short desc
 #: files/debtags/vocabulary
@@ -2305,7 +2313,7 @@ msgstr ""
 #. Tag: accessibility::input, short desc
 #: files/debtags/vocabulary
 msgid "Input Systems"
-msgstr ""
+msgstr "入力システム"
 
 #. Tag: works-with::im, short desc
 #: files/debtags/vocabulary
@@ -2320,12 +2328,12 @@ msgstr "インタフェースツールキット"
 #. Tag: devel::i18n, short desc
 #: files/debtags/vocabulary
 msgid "Internationalization"
-msgstr ""
+msgstr "国際化"
 
 #. Tag: devel::interpreter, short desc
 #: files/debtags/vocabulary
 msgid "Interpreter"
-msgstr ""
+msgstr "インタプリタ"
 
 #. Tag: security::ids, short desc
 #: files/debtags/vocabulary
@@ -2452,7 +2460,7 @@ msgstr "Lesstif/Motif"
 #. Tag: devel::library, short desc
 #: files/debtags/vocabulary
 msgid "Libraries"
-msgstr ""
+msgstr "ライブラリ"
 
 #. Tag: x11::library, short desc
 #: files/debtags/vocabulary
@@ -2477,7 +2485,7 @@ msgstr "Lisp での開発"
 #. Tag: devel::docsystem, short desc
 #: files/debtags/vocabulary
 msgid "Literate Programming"
-msgstr ""
+msgstr "文芸的プログラミング"
 
 #. Tag: network::load-balancing, short desc
 #: files/debtags/vocabulary
@@ -2553,7 +2561,7 @@ msgstr ""
 #. Tag: devel::machinecode, short desc
 #: files/debtags/vocabulary
 msgid "Machine Code"
-msgstr ""
+msgstr "機械語"
 
 #. Facet: made-of, short desc
 #: files/debtags/vocabulary
@@ -2623,7 +2631,7 @@ msgstr "ミキシング"
 #. Tag: devel::modelling, short desc
 #: files/debtags/vocabulary
 msgid "Modelling"
-msgstr ""
+msgstr "モデリング"
 
 #. Tag: hardware::modem, short desc
 #: files/debtags/vocabulary
@@ -3022,7 +3030,7 @@ msgstr "パッケージ化されたソフトウェア"
 #. Tag: devel::packaging, short desc
 #: files/debtags/vocabulary
 msgid "Packaging"
-msgstr ""
+msgstr "パッケージ化"
 
 #. Tag: devel::lang:pascal, short desc
 #: files/debtags/vocabulary
@@ -3130,7 +3138,7 @@ msgstr "プレゼンテーション"
 #. Tag: devel::prettyprint, short desc
 #: files/debtags/vocabulary
 msgid "Prettyprint"
-msgstr ""
+msgstr "プリティプリンタ"
 
 #. Tag: hardware::printer, short desc
 #: files/debtags/vocabulary
@@ -3150,7 +3158,7 @@ msgstr "プライバシー"
 #. Tag: devel::profiler, short desc
 #: files/debtags/vocabulary
 msgid "Profiling"
-msgstr ""
+msgstr "プロファイリング"
 
 #. Tag: role::program, short desc
 #: files/debtags/vocabulary
@@ -3215,7 +3223,7 @@ msgstr ""
 #. Tag: devel::rpc, short desc
 #: files/debtags/vocabulary
 msgid "RPC"
-msgstr ""
+msgstr "RPC"
 
 #. Tag: works-with-format::xml:rss, short desc
 #: files/debtags/vocabulary
@@ -3250,7 +3258,7 @@ msgstr ""
 #. Tag: devel::rcs, short desc
 #: files/debtags/vocabulary
 msgid "Revision Control"
-msgstr ""
+msgstr "リビジョン管理"
 
 #. Tag: game::rpg:rogue, short desc
 #: files/debtags/vocabulary
@@ -3301,7 +3309,7 @@ msgstr "プログラムの実行"
 #. Tag: devel::runtime, short desc
 #: files/debtags/vocabulary
 msgid "Runtime Support"
-msgstr ""
+msgstr "実行時サポート"
 
 #. Tag: culture::russian, short desc
 #: files/debtags/vocabulary
@@ -3415,12 +3423,12 @@ msgstr "対象範囲"
 #. Tag: accessibility::screen-magnify, short desc
 #: files/debtags/vocabulary
 msgid "Screen Magnification"
-msgstr ""
+msgstr "画面拡大ソフト"
 
 #. Tag: accessibility::screen-reader, short desc
 #: files/debtags/vocabulary
 msgid "Screen Reading"
-msgstr ""
+msgstr "スクリーンリーダ (画面読み上げソフト)"
 
 #. Tag: x11::screensaver, short desc
 #: files/debtags/vocabulary
@@ -3506,7 +3514,7 @@ msgstr "ソースコード"
 #. Tag: devel::editor, short desc
 #: files/debtags/vocabulary
 msgid "Source Editor"
-msgstr ""
+msgstr "ソースエディタ"
 
 #. Tag: works-with::software:source, short desc
 #: files/debtags/vocabulary
@@ -3521,7 +3529,7 @@ msgstr "スペイン語"
 #. Tag: accessibility::speech-recognition, short desc
 #: files/debtags/vocabulary
 msgid "Speech Recognition"
-msgstr ""
+msgstr "音声認識"
 
 #. Tag: accessibility::speech, short desc
 #. Tag: sound::speech, short desc
@@ -3684,7 +3692,7 @@ msgstr "端末エミュレータ"
 #. Tag: devel::testing-qa, short desc
 #: files/debtags/vocabulary
 msgid "Testing and QA"
-msgstr ""
+msgstr "テストや QA"
 
 #. Tag: game::tetris, short desc
 #: files/debtags/vocabulary
@@ -3704,7 +3712,7 @@ msgstr "テキストの整形"
 #. Tag: accessibility::ocr, short desc
 #: files/debtags/vocabulary
 msgid "Text Recognition (OCR)"
-msgstr ""
+msgstr "テキスト認識 (OCR)"
 
 #. Tag: interface::text-mode, short desc
 #: files/debtags/vocabulary
@@ -3851,7 +3859,7 @@ msgstr ""
 #. Tag: devel::web, short desc
 #: files/debtags/vocabulary
 msgid "Web"
-msgstr ""
+msgstr "ウェブ"
 
 #. Tag: protocol::webdav, short desc
 #: files/debtags/vocabulary
