@@ -280,9 +280,9 @@
   [%- END %]
 
 <tr>
-[% download_url = pkg _ '/' _ d.arch _ '/download'
-   filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
-<th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
+[% download_url = pkg _ '/download'
+   filelist_url = pkg _ '/filelist' %]
+<th><a href="[% make_url(download_url,'','arch',d.arch) %]">[% d.arch %]</a>
 [%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>[% g('(unofficial port)') %]</strong>[% END %]</th>
 [% vnorm = d.version.replace( '\+b\d+$', '' ); vlatest = version.replace( '\+b\d+$', '' );
    vup = vnorm.replace( '-[^-]+$', '' ); vuplatest = vlatest.replace( '-[^-]+$', '' );
@@ -297,7 +297,7 @@
 <td class="size">[% g('%.1f&nbsp;kB', d.pkgsize) %]</td><td class="size">[% g('%u&nbsp;kB', d.instsize) %]</td>
 <td>
 [% IF d.contents_avail %]
-  [<a href="[% make_url(filelist_url) | uri %]">[% g('list of files') %]</a>]
+  [<a href="[% make_url(filelist_url,'','arch',d.arch) %]">[% g('list of files') %]</a>]
 [% ELSE %]
   [% g('no current information') %]
 [% END %]
