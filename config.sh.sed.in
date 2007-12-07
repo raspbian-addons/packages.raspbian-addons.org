@@ -29,7 +29,7 @@ security_ftpsite=http://security.debian.org/debian-security
 volatile_ftpsite=http://volatile.debian.org/debian-volatile
 backports_ftpsite=http://backports.org/debian
 amd64_ftpsite=http://amd64.debian.net/debian
-gnuab_ftpsite=http://kfreebsd-gnu.debian.net/debian
+debports_ftpsite=http://ftp.debian-ports.org/debian
 ddtp_ftpsite=http://ddtp.debian.net/debian
 
 root=""
@@ -38,7 +38,7 @@ root=""
 #
 polangs="de fi fr hu ja nl ru sv uk zh-cn"
 ddtplangs="ca cs da de eo es fi fr hu it ja km-kh ko nl pl pt pt-br ru sk sv uk zh-cn zh-tw"
-archives="us security amd64 gnuab backports volatile"
+archives="us security amd64 debports backports volatile"
 sections="main contrib non-free"
 parts="$sections"
 suites="sarge sarge-volatile sarge-backports etch etch-m68k etch-volatile etch-backports lenny sid experimental"
