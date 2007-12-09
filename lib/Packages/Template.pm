@@ -38,10 +38,14 @@ sub new {
     if ($vars->{cat}) {
 	$vars->{g} = sub { return Packages::I18N::Locale::g($vars->{cat}, @_) };
     }
-    $vars->{extract_host} = sub { my $uri = URI->new($_[0]);
-				  my $host = $uri->host;
-				  $host .= ':'.$uri->port if $uri->port != $uri->default_port;
-				  return $host;
+    $vars->{extract_host} = sub { my $uri_str = $_[0];
+    				  my $uri = URI->new($uri_str);
+				  if ($uri->can('host')) {
+				      my $host = $uri->host;
+				      $host .= ':'.$uri->port if $uri->port != $uri->default_port;
+				      return $host;
+				  }
+				  return $uri_str;
 			      };
     # needed to work around the limitations of the the FILTER syntax
     $vars->{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
