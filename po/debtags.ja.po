@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-11-28 02:18+0900\n"
+"PO-Revision-Date: 2007-12-02 22:28+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -166,7 +166,7 @@ msgstr ""
 #. Tag: hardware::storage:cd, long desc
 #: files/debtags/vocabulary
 msgid " Compact Disc"
-msgstr ""
+msgstr " コンパクトディスク"
 
 #. Tag: scope::suite, long desc
 #: files/debtags/vocabulary
@@ -204,7 +204,7 @@ msgstr " デバッグ用のシンボル。"
 #. Tag: hardware::storage:dvd, long desc
 #: files/debtags/vocabulary
 msgid " Digital Versatile Disc"
-msgstr ""
+msgstr " Digital Versatile Disc"
 
 #. Tag: filetransfer::dcc, long desc
 #: files/debtags/vocabulary
@@ -546,6 +546,7 @@ msgstr " 光学文字認識"
 msgid ""
 " Packages related to the European Molecular Biology Open Software Suite."
 msgstr ""
+"European Molecular Biology Open Software Suite (EMBOSS) 関連のパッケージ。"
 
 #. Tag: special::obsolete, long desc
 #: files/debtags/vocabulary
@@ -580,7 +581,7 @@ msgstr ""
 #. Tag: biology::format:nexus, long desc
 #: files/debtags/vocabulary
 msgid " Popular format for phylogenetic trees."
-msgstr ""
+msgstr " よく用いられる系統樹のファイル形式。"
 
 #. Tag: protocol::pop3, long desc
 #: files/debtags/vocabulary
@@ -837,14 +838,17 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid ""
 " Software that works with sequences of aminoacids: peptides and proteins."
-msgstr ""
+msgstr " アミノ酸の連なり、つまりペプチドやタンパク質を扱うソフトウェア。"
 
+# FIXME: 連なったものが核酸なので、sequences of は不要?
 #. Tag: biology::nuceleic-acids, long desc
 #: files/debtags/vocabulary
 msgid ""
 " Software that works with sequences of nucleic acids: \n"
 " DNA, RNA but also non-natural nucleic acids such as PNA or LNA."
 msgstr ""
+" 核酸、つまり DNA、RNA、さらには自然界に存在しない PNA や LNA などを扱うソフ"
+"トウェア。"
 
 #. Tag: field::biology:structural, long desc
 #: files/debtags/vocabulary
@@ -1118,12 +1122,12 @@ msgstr ""
 #. Tag: hardware::power:ups, long desc
 #: files/debtags/vocabulary
 msgid " Uninterruptible Power Supply"
-msgstr ""
+msgstr " 無停電電源装置"
 
 #. Tag: hardware::usb, long desc
 #: files/debtags/vocabulary
 msgid " Universal Serial Bus"
-msgstr ""
+msgstr " Universal Serial Bus"
 
 #. Tag: special::ipv6-nosupport, long desc
 #: files/debtags/vocabulary
@@ -1135,7 +1139,7 @@ msgstr ""
 #. Tag: biology::format:aln, long desc
 #: files/debtags/vocabulary
 msgid " Used in multiple alignment of biological sequences."
-msgstr ""
+msgstr " 生物学的な配列の多重アラインメントで使用される形式。"
 
 #. Tag: protocol::udp, long desc
 #: files/debtags/vocabulary
@@ -1243,12 +1247,12 @@ msgstr "3D ゲーム"
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
 msgid "ACPI Power Management"
-msgstr ""
+msgstr "ACPI 電源管理"
 
 #. Tag: hardware::power:apm, short desc
 #: files/debtags/vocabulary
 msgid "APM Power Management"
-msgstr ""
+msgstr "APM 電源管理"
 
 #. Tag: protocol::atm, short desc
 #: files/debtags/vocabulary
@@ -1512,7 +1516,7 @@ msgstr "C++ での開発"
 #. Tag: hardware::storage:cd, short desc
 #: files/debtags/vocabulary
 msgid "CD"
-msgstr ""
+msgstr "CD"
 
 #. Tag: web::cgi, short desc
 #: files/debtags/vocabulary
@@ -1572,7 +1576,7 @@ msgstr "クライアント"
 #. Tag: biology::format:aln, short desc
 #: files/debtags/vocabulary
 msgid "Clustal/ALN"
-msgstr ""
+msgstr "Clustal/ALN"
 
 #. Tag: admin::cluster, short desc
 #: files/debtags/vocabulary
@@ -1668,7 +1672,7 @@ msgstr ""
 #. Tag: hardware::storage:dvd, short desc
 #: files/debtags/vocabulary
 msgid "DVD"
-msgstr ""
+msgstr "DVD"
 
 #. Tag: interface::daemon, short desc
 #: files/debtags/vocabulary
@@ -1764,7 +1768,7 @@ msgstr "辞書"
 #. Tag: hardware::camera, short desc
 #: files/debtags/vocabulary
 msgid "Digital Camera"
-msgstr ""
+msgstr "デジタルカメラ"
 
 # FIXME: Should be "DocBook"
 #. Tag: works-with-format::docbook, short desc
@@ -1807,7 +1811,7 @@ msgstr "ECMA CLI"
 #. Tag: biology::emboss, short desc
 #: files/debtags/vocabulary
 msgid "EMBOSS"
-msgstr ""
+msgstr "EMBOSS"
 
 #. Tag: suite::eclipse, short desc
 #: files/debtags/vocabulary
@@ -1852,12 +1856,12 @@ msgstr "電子メール"
 #. Tag: hardware::embedded, short desc
 #: files/debtags/vocabulary
 msgid "Embedded"
-msgstr ""
+msgstr "組み込み"
 
 #. Tag: hardware::emulation, short desc
 #: files/debtags/vocabulary
 msgid "Emulation"
-msgstr ""
+msgstr "エミュレーション"
 
 #. Tag: use::entertaining, short desc
 #: files/debtags/vocabulary
@@ -1994,7 +1998,7 @@ msgstr "ファーストパーソンシューティングゲーム"
 #. Tag: hardware::storage:floppy, short desc
 #: files/debtags/vocabulary
 msgid "Floppy disk"
-msgstr ""
+msgstr "フロッピーディスク"
 
 #. Tag: made-of::data:font, short desc
 #. Tag: x11::font, short desc
@@ -2146,7 +2150,7 @@ msgstr "ドイツ語"
 #. Tag: hardware::video, short desc
 #: files/debtags/vocabulary
 msgid "Graphics and Video"
-msgstr ""
+msgstr "画像・映像"
 
 #. Tag: culture::greek, short desc
 #: files/debtags/vocabulary
@@ -2173,7 +2177,7 @@ msgstr "HTTP"
 #. Tag: hardware::hamradio, short desc
 #: files/debtags/vocabulary
 msgid "Ham Radio"
-msgstr ""
+msgstr "アマチュア無線"
 
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
@@ -2193,7 +2197,7 @@ msgstr "ハードウェアサポート"
 #. Tag: hardware::detection, short desc
 #: files/debtags/vocabulary
 msgid "Hardware detection"
-msgstr ""
+msgstr "ハードウェア検出"
 
 #. Tag: implemented-in::haskell, short desc
 #: files/debtags/vocabulary
@@ -2298,7 +2302,7 @@ msgstr "画像"
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
 msgid "Image-scanning hardware"
-msgstr ""
+msgstr "画像読み取り用ハードウェア (イメージスキャナ)"
 
 #. Facet: implemented-in, short desc
 #: files/debtags/vocabulary
@@ -2308,7 +2312,7 @@ msgstr "実装言語"
 #. Tag: hardware::input, short desc
 #: files/debtags/vocabulary
 msgid "Input Devices"
-msgstr ""
+msgstr "入力装置"
 
 #. Tag: accessibility::input, short desc
 #: files/debtags/vocabulary
@@ -2390,12 +2394,12 @@ msgstr "Java での開発"
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
 msgid "Joystick"
-msgstr ""
+msgstr "ジョイスティック"
 
 #. Tag: hardware::joystick, short desc
 #: files/debtags/vocabulary
 msgid "Joystick (legacy)"
-msgstr ""
+msgstr "ジョイスティック (廃止されたタグ)"
 
 #. Facet: junior, short desc
 #: files/debtags/vocabulary
@@ -2420,7 +2424,7 @@ msgstr "カーネルやモジュール"
 #. Tag: hardware::input:keyboard, short desc
 #: files/debtags/vocabulary
 msgid "Keyboard"
-msgstr ""
+msgstr "キーボード"
 
 #. Tag: culture::korean, short desc
 #: files/debtags/vocabulary
@@ -2445,7 +2449,7 @@ msgstr ""
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
 msgid "Laptop"
-msgstr ""
+msgstr "ラップトップ"
 
 #. Tag: use::learning, short desc
 #: files/debtags/vocabulary
@@ -2636,7 +2640,7 @@ msgstr "モデリング"
 #. Tag: hardware::modem, short desc
 #: files/debtags/vocabulary
 msgid "Modem"
-msgstr ""
+msgstr "モデム"
 
 #. Tag: field::biology:molecular, short desc
 #: files/debtags/vocabulary
@@ -2657,7 +2661,7 @@ msgstr "監視"
 #. Tag: hardware::input:mouse, short desc
 #: files/debtags/vocabulary
 msgid "Mouse"
-msgstr ""
+msgstr "マウス"
 
 #. Tag: suite::mozilla, short desc
 #: files/debtags/vocabulary
@@ -2764,7 +2768,7 @@ msgstr "ネットワークの利用方法"
 #. Tag: biology::format:nexus, short desc
 #: files/debtags/vocabulary
 msgid "Nexus"
-msgstr ""
+msgstr "NEXUS"
 
 #. Tag: culture::norwegian, short desc
 #: files/debtags/vocabulary
@@ -2919,7 +2923,7 @@ msgstr "通知"
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
 msgid "Nucleic acids"
-msgstr ""
+msgstr "核酸"
 
 #. Tag: implemented-in::ocaml, short desc
 #: files/debtags/vocabulary
@@ -3143,7 +3147,7 @@ msgstr "プリティプリンタ"
 #. Tag: hardware::printer, short desc
 #: files/debtags/vocabulary
 msgid "Printer"
-msgstr ""
+msgstr "プリンタ"
 
 #. Tag: use::printing, short desc
 #: files/debtags/vocabulary
@@ -3178,7 +3182,7 @@ msgstr "Prolog での開発"
 #. Tag: biology::peptidic, short desc
 #: files/debtags/vocabulary
 msgid "Proteins"
-msgstr ""
+msgstr "タンパク質"
 
 #. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
@@ -3253,7 +3257,7 @@ msgstr "宗教"
 #. Tag: hardware::opengl, short desc
 #: files/debtags/vocabulary
 msgid "Requires video hardware acceleration"
-msgstr ""
+msgstr "ビデオカードのハードウェアアクセラレーションが必要"
 
 #. Tag: devel::rcs, short desc
 #: files/debtags/vocabulary
@@ -3561,7 +3565,7 @@ msgstr "統計学"
 #. Tag: hardware::storage, short desc
 #: files/debtags/vocabulary
 msgid "Storage"
-msgstr ""
+msgstr "外部記憶装置"
 
 #. Tag: use::storing, short desc
 #: files/debtags/vocabulary
@@ -3778,12 +3782,12 @@ msgstr ""
 #. Tag: hardware::power:ups, short desc
 #: files/debtags/vocabulary
 msgid "UPS"
-msgstr ""
+msgstr "UPS"
 
 #. Tag: hardware::usb, short desc
 #: files/debtags/vocabulary
 msgid "USB"
-msgstr ""
+msgstr "USB"
 
 #. Tag: culture::ukrainian, short desc
 #: files/debtags/vocabulary
@@ -3982,4 +3986,4 @@ msgstr "wxWidgets"
 #. Tag: hardware::modem:dsl, short desc
 #: files/debtags/vocabulary
 msgid "xDSL Modem"
-msgstr ""
+msgstr "xDSL モデム"
