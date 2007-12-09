@@ -140,9 +140,12 @@ for my $suite (@suites) {
 	    rename("$DBDIR/reverse.tmp", "$DBDIR/reverse_${suite}_${arch}.txt");
 
 	    activate($filelist_db);
-	    system("ln", "-sf", $filelist_db,
-		   "$DBDIR/filelists_${suite}_all.db") == 0
-		       or die "Oops";
+	    #FIXME: hardcoded archs. (gnuab has no contrib/non-free)
+	    if ($arch !~ m/^(armel|kfreebsd-.*)$/) {
+		system("ln", "-sf", $filelist_db,
+		       "$DBDIR/filelists_${suite}_all.db") == 0
+			   or die "Oops";
+	    }
 	}
     }
 
