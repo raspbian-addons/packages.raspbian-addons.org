@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-10-22 22:31+0900\n"
+"PO-Revision-Date: 2007-11-21 18:18+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "%s ウェブマスター"
 
 #: templates/config.tmpl:48
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr "%1$s は %3$s の<a href=\"%2$s\">登録商標</a>です。"
+msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
 #: templates/config.tmpl:53
 msgid ""
@@ -34,6 +34,15 @@ msgid ""
 msgstr ""
 "注意: このサイトは <a href=\"http://packages.debian.org/\">packages.debian."
 "org</a> の試験版です。エラーや古い情報があると思ってください。"
+
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:56
+msgid "."
+msgstr "."
+
+#: templates/config.tmpl:57
+msgid ","
+msgstr ","
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -148,7 +157,7 @@ msgstr "ダウンロード"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr "%2$s マシン用 <kbd>%1$s</kbd> のダウンロードページ"
+msgstr "%2 マシン用 <kbd>%1</kbd> のダウンロードページ"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
@@ -223,9 +232,6 @@ msgstr ""
 "可能です。"
 
 #: templates/html/download.tmpl:77
-#| msgid ""
-#| "Debian security updates are currently officially distributed only via "
-#| "<tt>security.debian.org</tt>."
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "%s セキュリティアップデートは、<tt>%s</tt> のみで公式に配布されています。"
@@ -296,8 +302,8 @@ msgstr "パッケージのファイル一覧: %s/%s/%s"
 msgid ""
 "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
-"<em>%2$s</em> の <em>%3$s</em> アーキテクチャ用 <em>%1$s</em> パッケージの"
-"ファイル一覧"
+"<em>%2</em> の <em>%3</em> アーキテクチャ用 <em>%1</em> パッケージのファイル"
+"一覧"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
@@ -397,7 +403,7 @@ msgstr "\"%s\" の %s %s に含まれるソースパッケージ"
 msgid "Source Packages in \"%s\""
 msgstr "\"%s\" に含まれるソースパッケージ"
 
-# TRANSLATION-FIXME: "%3$s Section", "%3$s Subsection", and "Priority %s" would be the best.
+# TRANSLATION-FIXME: "%3 Section", "%3 Subsection", and "Priority %s" would be the best.
 #: templates/html/index.tmpl:6
 msgid "Software Packages in \"%s\", %s %s"
 msgstr "\"%s\" の%s %s に含まれるソフトウェアパッケージ"
@@ -415,7 +421,7 @@ msgstr "すべてのパッケージ"
 msgid "Source"
 msgstr "ソース"
 
-#: templates/html/index.tmpl:38 templates/html/show.tmpl:247
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:247
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージです: "
@@ -429,16 +435,16 @@ msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"以下のパッケージは、%3$s アーカイブの <em>%1$s</em> スイート (%2$s セクショ"
-"ン) に最近 7 日間に追加されたものです。"
+"以下のパッケージは、%3 アーカイブの <em>%1</em> スイート (%2 セクション) に最"
+"近 7 日間に追加されたものです。"
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"以下のパッケージは、%2$s アーカイブの <em>%1$s</em> スイートに最近 7 日間に追"
-"加されたものです。"
+"以下のパッケージは、%2 アーカイブの <em>%1</em> スイートに最近 7 日間に追加さ"
+"れたものです。"
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
@@ -511,47 +517,48 @@ msgstr ""
 "検索パラメータの設定によって、<a href=\"%s\">%u</a> 個の結果が非表示になって"
 "います。"
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "all suites"
 msgstr "すべてのスイート"
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:51
 msgid "suite(s) <em>$suite_enc</em>"
 msgstr "<em>$suite_enc</em> スイート"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "すべてのセクション"
 
-#: templates/html/search.tmpl:53
+#: templates/html/search.tmpl:52
 msgid "section(s) <em>$section_enc</em>"
 msgstr "<em>$section_enc</em> セクション"
 
-#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "すべてのアーキテクチャ"
 
-#: templates/html/search.tmpl:54
+#: templates/html/search.tmpl:53
 msgid "architecture(s) <em>$architectures_enc</em>"
 msgstr "<em>$architectures_enc</em> アーキテクチャ"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "packages"
 msgstr "パッケージ"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:55
 msgid "source packages"
 msgstr "ソースパッケージ"
 
-#: templates/html/search.tmpl:57
+#: templates/html/search.tmpl:56
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
-msgstr "<em>%2$s</em> を名前に含む%1$sを、%3$s、%4$s、%5$sで検索しました。"
+msgstr "<em>%2</em> を名前に含む%1を、%3、%4、%5で検索しました。"
 
-#: templates/html/search.tmpl:60
+#: templates/html/search.tmpl:59
 msgid " (including subword matching)"
 msgstr " (単語の一部が一致したものも含んでいます)"
 
+#. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:61
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
@@ -651,30 +658,30 @@ msgstr "特定のアーキテクチャに絞って検索:"
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
 
-#: templates/html/search_contents.tmpl:73
+#: templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "<em>%s</em> セクション"
 
-#: templates/html/search_contents.tmpl:74
+#: templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "<em>%s</em> アーキテクチャ"
 
-#: templates/html/search_contents.tmpl:75
+#: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
 msgstr "を末尾に持つパス"
 
-#: templates/html/search_contents.tmpl:77
+#: templates/html/search_contents.tmpl:76
 msgid "files named"
 msgstr "という名前のファイル"
 
-#: templates/html/search_contents.tmpl:79
+#: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
 msgstr "を名前に含むファイル"
 
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr ""
-"<em>%2$s</em> %1$sを、<em>%3$s</em> スイート、%4$s、%5$sで検索しました。"
+msgstr "<em>%2</em> %1を、<em>%3</em> スイート、%4、%5で検索しました。"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -721,11 +728,11 @@ msgstr "セクション:"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
-msgstr "%2$s の %1$s ソースパッケージに関する詳細"
+msgstr "%2 の %1 ソースパッケージに関する詳細"
 
 #: templates/html/show.tmpl:22
 msgid "Details of package %s in %s"
-msgstr "%2$s の %1$s パッケージに関する詳細"
+msgstr "%2 の %1 パッケージに関する詳細"
 
 #: templates/html/show.tmpl:45
 msgid "Source package building this package"
@@ -932,12 +939,8 @@ msgid "(unofficial port)"
 msgstr "(非公式の移植版)"
 
 #: templates/html/show.tmpl:297 templates/html/show.tmpl:325
-msgid "%.1f&nbsp;kB"
-msgstr "%.1f&nbsp;kB"
-
-#: templates/html/show.tmpl:297
-msgid "%u&nbsp;kB"
-msgstr "%u&nbsp;kB"
+msgid "%s&nbsp;kB"
+msgstr "%s&nbsp;kB"
 
 #: templates/html/show.tmpl:300
 msgid "list of files"
@@ -1008,16 +1011,16 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"以下のパッケージは、%3$s アーカイブの %1$s スイート (%2$s セクション) に最近 "
-"7 日間に追加されたものです。"
+"以下のパッケージは、%3 アーカイブの %1 スイート (%2 セクション) に最近 7 日間"
+"に追加されたものです。"
 
 #: templates/rss/newpkg.tmpl:23
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"以下のパッケージは、%2$s アーカイブの %1$s スイートに最近 7 日間に追加された"
-"ものです。"
+"以下のパッケージは、%2 アーカイブの %1 スイートに最近 7 日間に追加されたもの"
+"です。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
 msgid "Copyright ©"

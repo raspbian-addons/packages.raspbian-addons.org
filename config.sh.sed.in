@@ -11,7 +11,6 @@ filesdir=${topdir}/files
 htmldir=${topdir}/www
 archivedir=${topdir}/archive
 podir=${topdir}/po
-localedir=%TOPDIR%/locale
 staticdir=${topdir}/static
 configdir=${topdir}/conf
 templatedir=${topdir}/templates
@@ -37,9 +36,8 @@ root=""
 
 # Architectures
 #
-polangs="de fi fr hu ja nl sv uk"
-ddtplangs="ca cs da de eo es fi fr go hu it ja km_KH ko nl pl pt pt_BR ru sk sv uk"
-#ddtplangs="ca cs da de eo es fi fr go hu it ja km_KH ko nl pl pt pt_BR ru sk sv uk zh zh_CN zh_TW"
+polangs="de fi fr hu ja nl ru sv uk zh-cn"
+ddtplangs="ca cs da de eo es fi fr hu it ja km-kh ko nl pl pt pt-br ru sk sv uk zh-cn zh-tw"
 archives="us security amd64 gnuab backports volatile"
 sections="main contrib non-free"
 parts="$sections"

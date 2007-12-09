@@ -69,7 +69,6 @@
 [%- PROCESS 'html/messages.tmpl' -%]
 <div id="pcontentsres">
 
-[%# @translators: I'm really sorry :/ %]
 [% section_wording = ( section_enc == 'all' ? g("all sections") : g("section(s) <em>%s</em>", section_enc) );
    arch_wording = ( architectures_enc == 'any' ? g("all architectures") : g("architecture(s) <em>%s</em>", architectures_enc) );
    wording = g("paths that end with");
@@ -78,6 +77,7 @@
    ELSIF mode == 'exactfilename';
 	wording = g("filenames that contain");
    END %]
+[%# @translators: I'm really sorry :/ %]
 <p>[% g('You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s.',
 	wording, keyword_enc, suite, section_wording, arch_wording) %]
 

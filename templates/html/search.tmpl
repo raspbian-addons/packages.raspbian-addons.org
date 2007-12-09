@@ -48,7 +48,6 @@
 
 <div id="psearchres">
 
-[%# @translators: I'm really sorry :/ %]
 [% suite_wording = suite_enc.match("^(default|all)$") ? g("all suites") : g("suite(s) <em>$suite_enc</em>");
    section_wording = (section_enc == 'all') ? g("all sections") : g("section(s) <em>$section_enc</em>");
    arch_wording = (architectures_enc == 'any') ? g("all architectures") : g("architecture(s) <em>$architectures_enc</em>");
@@ -58,6 +57,7 @@
 		source_wording, keyword_enc, suite_wording, section_wording, arch_wording);
     ELSE;
 	exact_wording = opts.exact ? "" : g(" (including subword matching)");
+	# @translators: I'm really sorry :/
 	msg = g("You have searched for <em>%s</em> in packages names and descriptions in %s, %s, and %s%s.",
 		keyword_enc, suite_wording, section_wording, arch_wording, exact_wording);
     END %]

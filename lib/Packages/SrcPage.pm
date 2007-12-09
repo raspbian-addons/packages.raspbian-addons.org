@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Data::Dumper;
-use Locale::gettext;
 use Deb::Versions;
 use Packages::CGI;
 use Packages::Page qw( :all );

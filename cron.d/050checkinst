@@ -5,24 +5,12 @@
 # Test whether all required packages are installed and generate a mail
 # if they aren't, so that the admin is informed.
 
-locales="de_DE.UTF-8 en_US.UTF-8 nl_NL fr_FR.UTF-8 uk_UA.UTF-8"
-
 packages=`tempfile`
-locs=`tempfile`
 cache=`tempfile`
 trap "rm -f $packages $locs" INT EXIT
 
 cd $topdir
 dpkg-checkbuilddeps >> $packages 2>&1
-
-for l in $locales
-do
-    if ! grep -q "^$l" /etc/locale.gen
-    then
-	echo "Locale $l missing." >> $locs
-	echo >> $locs
-    fi
-done
 
 if [ -n "$cachedir" ]
 then
@@ -39,7 +27,7 @@ then
     fi
 fi
 
-if [ -s $packages -o -s $locs -o -s $cache ]
+if [ -s $packages -o -s $cache ]
 then
     (
 	echo "Subject: Problem packages.debian.org on `hostname -s`"

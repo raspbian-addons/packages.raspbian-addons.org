@@ -64,12 +64,12 @@
 <h2>[% g('Links for %s', pkg) %]</h2>
 <h3>[% g('Debian Resources:') %]</h3>
 <ul>
-<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">[% g('Bug Reports') %]</a></li>
+<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg %]">[% g('Bug Reports') %]</a></li>
 
 [% IF src.pkg -%]
-<li><a href="[% pts_url _ src.pkg | uri %]">[% g('Developer Information (PTS)') %]</a></li>
+<li><a href="[% pts_url _ src.pkg %]">[% g('Developer Information (PTS)') %]</a></li>
 [% ELSIF is_source %]
-<li><a href="[% pts_url _ pkg | uri %]">[% g('Developer Information (PTS)') %]</a></li>
+<li><a href="[% pts_url _ pkg %]">[% g('Developer Information (PTS)') %]</a></li>
 [%- END %]
 
 [% IF files && (!archive or archive == main_archive or archive == 'security') %]
@@ -121,7 +121,7 @@
    IF url %]
 <h3>[% g('External Resources:') %]</h3>
 <ul>
-<li><a href="[% url | uri %]">[% g('Homepage') %]</a> [[% extract_host(url) %]]</li>
+<li><a href="[% url | uri %]">[% g('Homepage') %]</a> [[% extract_host(url) | html %]]</li>
 </ul>
 [% END %]
 
@@ -294,7 +294,7 @@
 	version_class = 'vold';
    END %]
 [% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
-<td class="size">[% g('%.1f&nbsp;kB', d.pkgsize) %]</td><td class="size">[% g('%u&nbsp;kB', d.instsize) %]</td>
+<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', d.instsize) %]</td>
 <td>
 [% IF d.contents_avail %]
   [<a href="[% make_url(filelist_url,'','arch',d.arch) %]">[% g('list of files') %]</a>]
@@ -322,7 +322,7 @@
 
 <tr>
 <td><a href="[% server _ path %]">[% filename %]</a></td>
-<td>[% g('%.1f&nbsp;kB', size) %]</td>
+<td>[% g('%s&nbsp;kB', num.format_number(size,1)) %]</td>
 <td class="md5sum">[% md5sum %]</td>
 </tr>
 

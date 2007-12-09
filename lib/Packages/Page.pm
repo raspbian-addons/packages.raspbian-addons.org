@@ -5,9 +5,9 @@ use warnings;
 
 use Data::Dumper;
 use Exporter;
-use Locale::gettext;
 use Deb::Versions;
 use Packages::CGI;
+use Packages::I18N::Locale;
 
 our @ISA = qw( Exporter );
 our @EXPORT_OK = qw( split_name_mail parse_deps );
@@ -44,7 +44,7 @@ sub split_name_mail {
         $name =  $string;
         $email = $string;
     } else {
-        $name = gettext( 'package has bad maintainer field' );
+        $name = N_( 'package has bad maintainer field' );
         $email = '';
     }
     $name =~ s/\s+$//o;
