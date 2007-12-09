@@ -10,7 +10,7 @@ msgstr ""
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-msgid "  GNUStep Desktop and WindowMaker"
+msgid "  GNUstep Desktop and WindowMaker"
 msgstr ""
 
 #. Tag: suite::gpe, long desc
@@ -530,9 +530,20 @@ msgid ""
 " purposes (merged / split packages)"
 msgstr ""
 
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Packages that contain only operating system kernels and kernel modules."
+msgstr ""
+
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
+msgstr ""
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid " Packages used for upgrades and transitions."
 msgstr ""
 
 #. Tag: devel::code-generator, long desc
@@ -823,6 +834,14 @@ msgstr ""
 msgid " Software useful to molecular cloning and related wet biology."
 msgstr ""
 
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+" TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -916,6 +935,11 @@ msgid ""
 " Link: http://www.venkydude.com/articles/yahoo.htm"
 msgstr ""
 
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+msgid " The Zope (web) publishing platform."
+msgstr ""
+
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid " The culture for which the package provides special support"
@@ -977,11 +1001,6 @@ msgstr ""
 #. Tag: suite::netscape, long desc
 #: files/debtags/vocabulary
 msgid " The pre-6.0 versions of netscape browser"
-msgstr ""
-
-#. Tag: suite::zope, long desc
-#: files/debtags/vocabulary
-msgid " The zope (web) publishing platform."
 msgstr ""
 
 #. Facet: works-with, long desc
@@ -1314,6 +1333,11 @@ msgstr ""
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
+msgstr ""
+
+#. Tag: made-of::data:audio, short desc
+#: files/debtags/vocabulary
+msgid "Audrio"
 msgstr ""
 
 #. Tag: security::authentication, short desc
@@ -1721,7 +1745,7 @@ msgstr ""
 
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
-msgid "Docbook"
+msgid "DocBook"
 msgstr ""
 
 #. Tag: devel::doc, short desc
@@ -1739,6 +1763,11 @@ msgstr ""
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
 msgid "Downloading"
+msgstr ""
+
+#. Tag: role::dummy, short desc
+#: files/debtags/vocabulary
+msgid "Dummy Package"
 msgstr ""
 
 #. Tag: culture::dutch, short desc
@@ -2052,10 +2081,6 @@ msgid "GNU R Development"
 msgstr ""
 
 #. Tag: suite::gnustep, short desc
-#: files/debtags/vocabulary
-msgid "GNUStep"
-msgstr ""
-
 #. Tag: uitoolkit::gnustep, short desc
 #: files/debtags/vocabulary
 msgid "GNUstep"
@@ -2119,7 +2144,7 @@ msgstr ""
 #. Tag: made-of::data:html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
-msgid "HTML Hypertext Markup Language"
+msgid "HTML, Hypertext Markup Language"
 msgstr ""
 
 #. Tag: protocol::http, short desc
@@ -2320,7 +2345,7 @@ msgstr "Italienska"
 
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
-msgid "JPEG, Joint Picture Expert Group"
+msgid "JPEG, Joint Photographic Experts Group"
 msgstr ""
 
 #. Tag: protocol::jabber, short desc
@@ -2367,6 +2392,13 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Kerberos"
 msgstr ""
+
+#. Tag: role::kernel, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Kernel or Modules"
+msgid "Kernel and modules"
+msgstr "Kärna eller moduler"
 
 #. Tag: admin::kernel, short desc
 #: files/debtags/vocabulary
@@ -3070,15 +3102,15 @@ msgstr ""
 msgid "Portuguese"
 msgstr "Portugisiska"
 
-#. Tag: protocol::db:psql, short desc
-#: files/debtags/vocabulary
-msgid "PostgreSQL"
-msgstr ""
-
 #. Tag: made-of::data:postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
-msgid "Postscript"
+msgid "PostScript"
+msgstr ""
+
+#. Tag: protocol::db:psql, short desc
+#: files/debtags/vocabulary
+msgid "PostgreSQL"
 msgstr ""
 
 #. Tag: admin::power-management, short desc
@@ -3273,11 +3305,6 @@ msgstr ""
 msgid "Russian"
 msgstr "Ryska"
 
-#. Tag: suite::samba, short desc
-#: files/debtags/vocabulary
-msgid "SAMBA"
-msgstr ""
-
 #. Tag: uitoolkit::sdl, short desc
 #: files/debtags/vocabulary
 msgid "SDL"
@@ -3349,6 +3376,11 @@ msgstr ""
 #. Tag: works-with-format::swf, short desc
 #: files/debtags/vocabulary
 msgid "SWF, ShockWave Flash"
+msgstr ""
+
+#. Tag: suite::samba, short desc
+#: files/debtags/vocabulary
+msgid "Samba"
 msgstr ""
 
 #. Tag: use::scanning, short desc
@@ -3581,11 +3613,6 @@ msgstr "Systeminstallation"
 msgid "System software and maintainance"
 msgstr ""
 
-#. Tag: implemented-in::tcl, short desc
-#: files/debtags/vocabulary
-msgid "TCL Tool Command Language"
-msgstr ""
-
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3626,6 +3653,11 @@ msgstr ""
 msgid "Tcl Development"
 msgstr ""
 
+#. Tag: implemented-in::tcl, short desc
+#: files/debtags/vocabulary
+msgid "Tcl, Tool Command Language"
+msgstr ""
+
 #. Tag: works-with-format::dvi, short desc
 #: files/debtags/vocabulary
 msgid "TeX DVI"
@@ -3639,6 +3671,11 @@ msgstr ""
 #. Tag: made-of::data:tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
+msgstr ""
+
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+msgid "Telnet"
 msgstr ""
 
 #. Tag: x11::terminal, short desc
@@ -3789,7 +3826,7 @@ msgstr ""
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
-msgid "VRML Virtual Reality Markup Language"
+msgid "VRML, Virtual Reality Markup Language"
 msgstr ""
 
 #. Tag: works-with::image:vector, short desc
@@ -3860,13 +3897,9 @@ msgid "X Server"
 msgstr ""
 
 #. Tag: interface::x11, short desc
-#: files/debtags/vocabulary
-msgid "X Window System"
-msgstr ""
-
 #. Facet: x11, short desc
 #: files/debtags/vocabulary
-msgid "X Windowing System"
+msgid "X Window System"
 msgstr ""
 
 #. Tag: uitoolkit::xlib, short desc
@@ -3910,14 +3943,14 @@ msgstr ""
 msgid "Yahoo! Messenger"
 msgstr ""
 
-#. Tag: suite::zope, short desc
-#: files/debtags/vocabulary
-msgid "ZOPE"
-msgstr ""
-
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
+msgstr ""
+
+#. Tag: suite::zope, short desc
+#: files/debtags/vocabulary
+msgid "Zope"
 msgstr ""
 
 #. Tag: educational, short desc
@@ -3940,122 +3973,122 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Gallegan"
-#~ msgstr "galiciska"
-
-#~ msgid "Zulu"
-#~ msgstr "zulu"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Malayalam"
-#~ msgstr "malayalam"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Latvian"
-#~ msgstr "lettiska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Kannada"
-#~ msgstr "kanaresiska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Irish"
-#~ msgstr "irlÃ¤ndska"
-
-#~ msgid "Galician"
-#~ msgstr "galiciska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Chinese (Simplified)"
-#~ msgstr "kinesiska (fÃ¶renklad)"
-
-#~ msgid "Chinese (Traditional)"
-#~ msgstr "kinesiska (traditionell)"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
-
-#~ msgid "Portuguese (Brazilian)"
-#~ msgstr "portugisiska (Brasilien)"
+#~ msgid "Armenian"
+#~ msgstr "armeniska"
 
 #~ msgid "English"
 #~ msgstr "engelska"
 
-#~ msgid "Armenian"
-#~ msgstr "armeniska"
+#~ msgid "Portuguese (Brazilian)"
+#~ msgstr "portugisiska (Brasilien)"
+
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
+
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "kinesiska (traditionell)"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "kinesiska (fÃ¶renklad)"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Galician"
+#~ msgstr "galiciska"
+
+#~ msgid "Irish"
+#~ msgstr "irlÃ¤ndska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Kannada"
+#~ msgstr "kanaresiska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Latvian"
+#~ msgstr "lettiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Malayalam"
+#~ msgstr "malayalam"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Zulu"
+#~ msgstr "zulu"
+
+#~ msgid "Gallegan"
+#~ msgstr "galiciska"

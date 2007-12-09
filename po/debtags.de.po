@@ -12,7 +12,9 @@ msgstr ""
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-msgid "  GNUStep Desktop and WindowMaker"
+#, fuzzy
+#| msgid "  GNUStep Desktop and WindowMaker"
+msgid "  GNUstep Desktop and WindowMaker"
 msgstr "  GNUStep-Desktop und WindowMaker"
 
 #. Tag: suite::gpe, long desc
@@ -540,9 +542,20 @@ msgid ""
 " purposes (merged / split packages)"
 msgstr ""
 
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Packages that contain only operating system kernels and kernel modules."
+msgstr ""
+
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
+msgstr ""
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid " Packages used for upgrades and transitions."
 msgstr ""
 
 #. Tag: devel::code-generator, long desc
@@ -830,6 +843,14 @@ msgstr ""
 msgid " Software useful to molecular cloning and related wet biology."
 msgstr ""
 
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+" TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -923,6 +944,11 @@ msgid ""
 " Link: http://www.venkydude.com/articles/yahoo.htm"
 msgstr ""
 
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+msgid " The Zope (web) publishing platform."
+msgstr ""
+
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid " The culture for which the package provides special support"
@@ -987,11 +1013,6 @@ msgstr ""
 msgid " The pre-6.0 versions of netscape browser"
 msgstr " Netscape-Browser vor Version 6.0"
 
-#. Tag: suite::zope, long desc
-#: files/debtags/vocabulary
-msgid " The zope (web) publishing platform."
-msgstr ""
-
 #. Facet: works-with, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -1020,8 +1041,8 @@ msgid ""
 msgstr ""
 " Diese Markierung bedeutet, dass die Markierungsdatenbank eine Markierung\n"
 " enthält, die nicht im Makierungsvokabular enthalten ist. Das Vorkommen\n"
-" dieser Markierung stellt einen Software-Fehler dar: sie sollte nie "
-" auftauchen."
+" dieser Markierung stellt einen Software-Fehler dar: sie sollte nie  "
+"auftauchen."
 
 #. Tag: use::comparing, long desc
 #: files/debtags/vocabulary
@@ -1330,6 +1351,13 @@ msgstr ""
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
+msgstr "Audio"
+
+#. Tag: made-of::data:audio, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Audio"
+msgid "Audrio"
 msgstr "Audio"
 
 #. Tag: security::authentication, short desc
@@ -1732,7 +1760,9 @@ msgstr "Digitale Kamera"
 
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
-msgid "Docbook"
+#, fuzzy
+#| msgid "Docbook"
+msgid "DocBook"
 msgstr "Docbook"
 
 #. Tag: devel::doc, short desc
@@ -1751,6 +1781,11 @@ msgstr "Dokumentation im Info-Format"
 #: files/debtags/vocabulary
 msgid "Downloading"
 msgstr "Herunterladen"
+
+#. Tag: role::dummy, short desc
+#: files/debtags/vocabulary
+msgid "Dummy Package"
+msgstr ""
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
@@ -2056,10 +2091,6 @@ msgid "GNU R Development"
 msgstr "GNU R-Entwicklung"
 
 #. Tag: suite::gnustep, short desc
-#: files/debtags/vocabulary
-msgid "GNUStep"
-msgstr "GNUStep"
-
 #. Tag: uitoolkit::gnustep, short desc
 #: files/debtags/vocabulary
 msgid "GNUstep"
@@ -2123,8 +2154,10 @@ msgstr ""
 #. Tag: made-of::data:html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
-msgid "HTML Hypertext Markup Language"
-msgstr ""
+#, fuzzy
+#| msgid "VRML Virtual Reality Markup Language"
+msgid "HTML, Hypertext Markup Language"
+msgstr "VRML Virtual Reality Markup Language"
 
 #. Tag: protocol::http, short desc
 #. Tag: filetransfer::http, short desc
@@ -2324,7 +2357,9 @@ msgstr "Italienisch"
 
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
-msgid "JPEG, Joint Picture Expert Group"
+#, fuzzy
+#| msgid "JPEG, Joint Picture Expert Group"
+msgid "JPEG, Joint Photographic Experts Group"
 msgstr "JPEG, Joint Picture Expert Group"
 
 #. Tag: protocol::jabber, short desc
@@ -2371,6 +2406,13 @@ msgstr "KDE"
 #: files/debtags/vocabulary
 msgid "Kerberos"
 msgstr "Kerberos"
+
+#. Tag: role::kernel, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Kernel or Modules"
+msgid "Kernel and modules"
+msgstr "Kernel oder Module"
 
 #. Tag: admin::kernel, short desc
 #: files/debtags/vocabulary
@@ -3072,16 +3114,18 @@ msgstr "Portal"
 msgid "Portuguese"
 msgstr "Portugiesisch"
 
+#. Tag: made-of::data:postscript, short desc
+#. Tag: works-with-format::postscript, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Postscript"
+msgid "PostScript"
+msgstr "Postscript"
+
 #. Tag: protocol::db:psql, short desc
 #: files/debtags/vocabulary
 msgid "PostgreSQL"
 msgstr "PostgreSQL"
-
-#. Tag: made-of::data:postscript, short desc
-#. Tag: works-with-format::postscript, short desc
-#: files/debtags/vocabulary
-msgid "Postscript"
-msgstr "Postscript"
 
 #. Tag: admin::power-management, short desc
 #. Tag: hardware::power, short desc
@@ -3275,11 +3319,6 @@ msgstr "Laufzeit-Unterstützung"
 msgid "Russian"
 msgstr "Russisch"
 
-#. Tag: suite::samba, short desc
-#: files/debtags/vocabulary
-msgid "SAMBA"
-msgstr "SAMBA"
-
 #. Tag: uitoolkit::sdl, short desc
 #: files/debtags/vocabulary
 msgid "SDL"
@@ -3352,6 +3391,11 @@ msgstr "SVG, Scalable Vector Graphics"
 #: files/debtags/vocabulary
 msgid "SWF, ShockWave Flash"
 msgstr "SWF, ShockWave Flash"
+
+#. Tag: suite::samba, short desc
+#: files/debtags/vocabulary
+msgid "Samba"
+msgstr ""
 
 #. Tag: use::scanning, short desc
 #. Tag: network::scanner, short desc
@@ -3582,11 +3626,6 @@ msgstr "Systeminstallation"
 msgid "System software and maintainance"
 msgstr "Systemsoftware und -wartung"
 
-#. Tag: implemented-in::tcl, short desc
-#: files/debtags/vocabulary
-msgid "TCL Tool Command Language"
-msgstr "TCL Tool Command Language"
-
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3627,6 +3666,13 @@ msgstr "Tar-Archive"
 msgid "Tcl Development"
 msgstr "Tcl-Entwicklung"
 
+#. Tag: implemented-in::tcl, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "TCL Tool Command Language"
+msgid "Tcl, Tool Command Language"
+msgstr "TCL Tool Command Language"
+
 #. Tag: works-with-format::dvi, short desc
 #: files/debtags/vocabulary
 msgid "TeX DVI"
@@ -3641,6 +3687,13 @@ msgstr "TeX und LaTeX"
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
 msgstr "TeX, LaTeX und DVI"
+
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Text"
+msgid "Telnet"
+msgstr "Text"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3790,7 +3843,9 @@ msgstr "VRML 3D-Modell"
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
-msgid "VRML Virtual Reality Markup Language"
+#, fuzzy
+#| msgid "VRML Virtual Reality Markup Language"
+msgid "VRML, Virtual Reality Markup Language"
 msgstr "VRML Virtual Reality Markup Language"
 
 #. Tag: works-with::image:vector, short desc
@@ -3860,14 +3915,10 @@ msgid "X Server"
 msgstr "X-Server"
 
 #. Tag: interface::x11, short desc
+#. Facet: x11, short desc
 #: files/debtags/vocabulary
 msgid "X Window System"
 msgstr "X Window-System"
-
-#. Facet: x11, short desc
-#: files/debtags/vocabulary
-msgid "X Windowing System"
-msgstr ""
 
 #. Tag: uitoolkit::xlib, short desc
 #: files/debtags/vocabulary
@@ -3910,15 +3961,17 @@ msgstr ""
 msgid "Yahoo! Messenger"
 msgstr "Yahoo! Messenger"
 
-#. Tag: suite::zope, short desc
-#: files/debtags/vocabulary
-msgid "ZOPE"
-msgstr "ZOPE"
-
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
 msgstr "Zip-Archive"
+
+#. Tag: suite::zope, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "People"
+msgid "Zope"
+msgstr "Leuten"
 
 #. Tag: educational, short desc
 #: files/debtags/vocabulary
@@ -3939,3 +3992,12 @@ msgstr "wxWidgets"
 #: files/debtags/vocabulary
 msgid "xDSL Modem"
 msgstr "xDSL-Modem"
+
+#~ msgid "ZOPE"
+#~ msgstr "ZOPE"
+
+#~ msgid "SAMBA"
+#~ msgstr "SAMBA"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUStep"

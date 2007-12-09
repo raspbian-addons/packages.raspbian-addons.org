@@ -5,7 +5,7 @@ msgstr ""
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-msgid "  GNUStep Desktop and WindowMaker"
+msgid "  GNUstep Desktop and WindowMaker"
 msgstr ""
 
 #. Tag: suite::gpe, long desc
@@ -523,9 +523,20 @@ msgid ""
 " purposes (merged / split packages)"
 msgstr ""
 
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Packages that contain only operating system kernels and kernel modules."
+msgstr ""
+
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
+msgstr ""
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid " Packages used for upgrades and transitions."
 msgstr ""
 
 #. Tag: devel::code-generator, long desc
@@ -810,6 +821,14 @@ msgstr ""
 msgid " Software useful to molecular cloning and related wet biology."
 msgstr ""
 
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+" TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -903,6 +922,11 @@ msgid ""
 " Link: http://www.venkydude.com/articles/yahoo.htm"
 msgstr ""
 
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+msgid " The Zope (web) publishing platform."
+msgstr ""
+
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid " The culture for which the package provides special support"
@@ -959,11 +983,6 @@ msgstr ""
 #. Tag: suite::netscape, long desc
 #: files/debtags/vocabulary
 msgid " The pre-6.0 versions of netscape browser"
-msgstr ""
-
-#. Tag: suite::zope, long desc
-#: files/debtags/vocabulary
-msgid " The zope (web) publishing platform."
 msgstr ""
 
 #. Facet: works-with, long desc
@@ -1294,6 +1313,11 @@ msgstr ""
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
+msgstr ""
+
+#. Tag: made-of::data:audio, short desc
+#: files/debtags/vocabulary
+msgid "Audrio"
 msgstr ""
 
 #. Tag: security::authentication, short desc
@@ -1696,7 +1720,7 @@ msgstr ""
 
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
-msgid "Docbook"
+msgid "DocBook"
 msgstr ""
 
 #. Tag: devel::doc, short desc
@@ -1714,6 +1738,11 @@ msgstr ""
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
 msgid "Downloading"
+msgstr ""
+
+#. Tag: role::dummy, short desc
+#: files/debtags/vocabulary
+msgid "Dummy Package"
 msgstr ""
 
 #. Tag: culture::dutch, short desc
@@ -2020,10 +2049,6 @@ msgid "GNU R Development"
 msgstr ""
 
 #. Tag: suite::gnustep, short desc
-#: files/debtags/vocabulary
-msgid "GNUStep"
-msgstr ""
-
 #. Tag: uitoolkit::gnustep, short desc
 #: files/debtags/vocabulary
 msgid "GNUstep"
@@ -2087,7 +2112,7 @@ msgstr ""
 #. Tag: made-of::data:html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
-msgid "HTML Hypertext Markup Language"
+msgid "HTML, Hypertext Markup Language"
 msgstr ""
 
 #. Tag: protocol::http, short desc
@@ -2288,7 +2313,7 @@ msgstr ""
 
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
-msgid "JPEG, Joint Picture Expert Group"
+msgid "JPEG, Joint Photographic Experts Group"
 msgstr ""
 
 #. Tag: protocol::jabber, short desc
@@ -2334,6 +2359,11 @@ msgstr ""
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
 msgid "Kerberos"
+msgstr ""
+
+#. Tag: role::kernel, short desc
+#: files/debtags/vocabulary
+msgid "Kernel and modules"
 msgstr ""
 
 #. Tag: admin::kernel, short desc
@@ -3036,15 +3066,15 @@ msgstr ""
 msgid "Portuguese"
 msgstr ""
 
-#. Tag: protocol::db:psql, short desc
-#: files/debtags/vocabulary
-msgid "PostgreSQL"
-msgstr ""
-
 #. Tag: made-of::data:postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
-msgid "Postscript"
+msgid "PostScript"
+msgstr ""
+
+#. Tag: protocol::db:psql, short desc
+#: files/debtags/vocabulary
+msgid "PostgreSQL"
 msgstr ""
 
 #. Tag: admin::power-management, short desc
@@ -3239,11 +3269,6 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#. Tag: suite::samba, short desc
-#: files/debtags/vocabulary
-msgid "SAMBA"
-msgstr ""
-
 #. Tag: uitoolkit::sdl, short desc
 #: files/debtags/vocabulary
 msgid "SDL"
@@ -3315,6 +3340,11 @@ msgstr ""
 #. Tag: works-with-format::swf, short desc
 #: files/debtags/vocabulary
 msgid "SWF, ShockWave Flash"
+msgstr ""
+
+#. Tag: suite::samba, short desc
+#: files/debtags/vocabulary
+msgid "Samba"
 msgstr ""
 
 #. Tag: use::scanning, short desc
@@ -3546,11 +3576,6 @@ msgstr ""
 msgid "System software and maintainance"
 msgstr ""
 
-#. Tag: implemented-in::tcl, short desc
-#: files/debtags/vocabulary
-msgid "TCL Tool Command Language"
-msgstr ""
-
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3591,6 +3616,11 @@ msgstr ""
 msgid "Tcl Development"
 msgstr ""
 
+#. Tag: implemented-in::tcl, short desc
+#: files/debtags/vocabulary
+msgid "Tcl, Tool Command Language"
+msgstr ""
+
 #. Tag: works-with-format::dvi, short desc
 #: files/debtags/vocabulary
 msgid "TeX DVI"
@@ -3604,6 +3634,11 @@ msgstr ""
 #. Tag: made-of::data:tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
+msgstr ""
+
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+msgid "Telnet"
 msgstr ""
 
 #. Tag: x11::terminal, short desc
@@ -3754,7 +3789,7 @@ msgstr ""
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
-msgid "VRML Virtual Reality Markup Language"
+msgid "VRML, Virtual Reality Markup Language"
 msgstr ""
 
 #. Tag: works-with::image:vector, short desc
@@ -3824,13 +3859,9 @@ msgid "X Server"
 msgstr ""
 
 #. Tag: interface::x11, short desc
-#: files/debtags/vocabulary
-msgid "X Window System"
-msgstr ""
-
 #. Facet: x11, short desc
 #: files/debtags/vocabulary
-msgid "X Windowing System"
+msgid "X Window System"
 msgstr ""
 
 #. Tag: uitoolkit::xlib, short desc
@@ -3874,14 +3905,14 @@ msgstr ""
 msgid "Yahoo! Messenger"
 msgstr ""
 
-#. Tag: suite::zope, short desc
-#: files/debtags/vocabulary
-msgid "ZOPE"
-msgstr ""
-
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
+msgstr ""
+
+#. Tag: suite::zope, short desc
+#: files/debtags/vocabulary
+msgid "Zope"
 msgstr ""
 
 #. Tag: educational, short desc
