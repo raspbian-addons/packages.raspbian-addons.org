@@ -68,6 +68,7 @@ my %selflang = (
 		id     => 'Indonesia',
 		it     => 'Italiano',
 		ja     => '&#26085;&#26412;&#35486;',
+		'km-kh'=> 'Khmer',
 		ko     => '&#54620;&#44397;&#50612;',
 		lt     => 'Lietuvi&#371;',
 		nl     => 'Nederlands',

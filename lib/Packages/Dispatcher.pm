@@ -198,8 +198,6 @@ sub do_dispatch {
 		    set_param_once( $input, \%params_set, 'suite', $s);
 		} elsif (!$need_pkg && $SECTIONS{$_}) {
 		    set_param_once( $input, \%params_set, 'section', $_);
-		} elsif (!$need_pkg && $ARCHIVES{$_}) {
-		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif (!$need_pkg && $sections_descs{$_}) {
 		    set_param_once( $input, \%params_set, 'subsection', $_);
 		} elsif (!$need_pkg && ($_ eq 'source')) {
@@ -207,6 +205,8 @@ sub do_dispatch {
 		} elsif ($ARCHITECTURES{$_}) {
 		    set_param_once( $input, \%params_set, 'arch', $_)
 			unless $_ eq 'any';
+		} elsif (!$need_pkg && $ARCHIVES{$_}) {
+		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif ($PRIORITIES{$_}) {
 		    set_param_once( $input, \%params_set, 'priority', $_);
 		} else {

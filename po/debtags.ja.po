@@ -16,7 +16,9 @@ msgstr ""
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-msgid "  GNUStep Desktop and WindowMaker"
+#, fuzzy
+#| msgid "  GNUStep Desktop and WindowMaker"
+msgid "  GNUstep Desktop and WindowMaker"
 msgstr "  GNUstep デスクトップや WindowMaker"
 
 #. Tag: suite::gpe, long desc
@@ -557,10 +559,21 @@ msgstr ""
 " もう使われていないパッケージ、またはアップグレードのために残されているだけの"
 "パッケージ (マージや分割が行われたパッケージ)"
 
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Packages that contain only operating system kernels and kernel modules."
+msgstr ""
+
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
 msgstr " 他のいくつかのパッケージをまとめてインストールするパッケージ。"
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid " Packages used for upgrades and transitions."
+msgstr ""
 
 #. Tag: devel::code-generator, long desc
 #: files/debtags/vocabulary
@@ -862,6 +875,14 @@ msgstr ""
 " 分子クローニングやそれに関連するウェットバイオロジーにとって有用なソフトウェ"
 "ア。"
 
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+" TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -955,6 +976,13 @@ msgid ""
 " Link: http://www.venkydude.com/articles/yahoo.htm"
 msgstr ""
 
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid " The zope (web) publishing platform."
+msgid " The Zope (web) publishing platform."
+msgstr " Zope (ウェブ) パブリッシングプラットフォーム。"
+
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid " The culture for which the package provides special support"
@@ -1019,11 +1047,6 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " The pre-6.0 versions of netscape browser"
 msgstr " バージョン 6.0 より前の Netscape ウェブブラウザ"
-
-#. Tag: suite::zope, long desc
-#: files/debtags/vocabulary
-msgid " The zope (web) publishing platform."
-msgstr " Zope (ウェブ) パブリッシングプラットフォーム。"
 
 #. Facet: works-with, long desc
 #: files/debtags/vocabulary
@@ -1370,6 +1393,13 @@ msgstr "Athena ウィジェット"
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
+msgstr "音声"
+
+#. Tag: made-of::data:audio, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Audio"
+msgid "Audrio"
 msgstr "音声"
 
 #. Tag: security::authentication, short desc
@@ -1773,7 +1803,9 @@ msgstr "デジタルカメラ"
 # FIXME: Should be "DocBook"
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
-msgid "Docbook"
+#, fuzzy
+#| msgid "Docbook"
+msgid "DocBook"
 msgstr "DocBook"
 
 #. Tag: devel::doc, short desc
@@ -1792,6 +1824,11 @@ msgstr "Info 形式のドキュメント"
 #: files/debtags/vocabulary
 msgid "Downloading"
 msgstr "ダウンロード"
+
+#. Tag: role::dummy, short desc
+#: files/debtags/vocabulary
+msgid "Dummy Package"
+msgstr ""
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
@@ -2098,10 +2135,6 @@ msgid "GNU R Development"
 msgstr "GNU R での開発"
 
 #. Tag: suite::gnustep, short desc
-#: files/debtags/vocabulary
-msgid "GNUStep"
-msgstr "GNUstep"
-
 #. Tag: uitoolkit::gnustep, short desc
 #: files/debtags/vocabulary
 msgid "GNUstep"
@@ -2165,7 +2198,9 @@ msgstr "グループウェア"
 #. Tag: made-of::data:html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
-msgid "HTML Hypertext Markup Language"
+#, fuzzy
+#| msgid "HTML Hypertext Markup Language"
+msgid "HTML, Hypertext Markup Language"
 msgstr "HyperText Markup Language (HTML)"
 
 #. Tag: protocol::http, short desc
@@ -2368,7 +2403,9 @@ msgstr "イタリア語"
 # FIXME: Should be "Joint Photographic Experts Group"
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
-msgid "JPEG, Joint Picture Expert Group"
+#, fuzzy
+#| msgid "JPEG, Joint Picture Expert Group"
+msgid "JPEG, Joint Photographic Experts Group"
 msgstr "Joint Picture Expert Group (JPEG)"
 
 #. Tag: protocol::jabber, short desc
@@ -2415,6 +2452,13 @@ msgstr "KDE"
 #: files/debtags/vocabulary
 msgid "Kerberos"
 msgstr ""
+
+#. Tag: role::kernel, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Kernel or Modules"
+msgid "Kernel and modules"
+msgstr "カーネルやモジュール"
 
 #. Tag: admin::kernel, short desc
 #: files/debtags/vocabulary
@@ -3116,17 +3160,19 @@ msgstr "ポータルサイト"
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-#. Tag: protocol::db:psql, short desc
-#: files/debtags/vocabulary
-msgid "PostgreSQL"
-msgstr ""
-
 # FIXME: Should be "PostScript"
 #. Tag: made-of::data:postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
-msgid "Postscript"
+#, fuzzy
+#| msgid "Postscript"
+msgid "PostScript"
 msgstr "PostScript"
+
+#. Tag: protocol::db:psql, short desc
+#: files/debtags/vocabulary
+msgid "PostgreSQL"
+msgstr ""
 
 #. Tag: admin::power-management, short desc
 #. Tag: hardware::power, short desc
@@ -3320,11 +3366,6 @@ msgstr "実行時サポート"
 msgid "Russian"
 msgstr "ロシア語"
 
-#. Tag: suite::samba, short desc
-#: files/debtags/vocabulary
-msgid "SAMBA"
-msgstr "Samba"
-
 #. Tag: uitoolkit::sdl, short desc
 #: files/debtags/vocabulary
 msgid "SDL"
@@ -3397,6 +3438,11 @@ msgstr "Scalable Vector Graphics (SVG)"
 #: files/debtags/vocabulary
 msgid "SWF, ShockWave Flash"
 msgstr "ShockWave Flash (SWF)"
+
+#. Tag: suite::samba, short desc
+#: files/debtags/vocabulary
+msgid "Samba"
+msgstr ""
 
 #. Tag: use::scanning, short desc
 #. Tag: network::scanner, short desc
@@ -3627,12 +3673,6 @@ msgstr "システムのインストール"
 msgid "System software and maintainance"
 msgstr ""
 
-# FIXME: "Tcl, Tool Command Language"?
-#. Tag: implemented-in::tcl, short desc
-#: files/debtags/vocabulary
-msgid "TCL Tool Command Language"
-msgstr "Tool Command Language (Tcl)"
-
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3673,6 +3713,14 @@ msgstr "Tar アーカイブ"
 msgid "Tcl Development"
 msgstr "Tcl での開発"
 
+# FIXME: "Tcl, Tool Command Language"?
+#. Tag: implemented-in::tcl, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "TCL Tool Command Language"
+msgid "Tcl, Tool Command Language"
+msgstr "Tool Command Language (Tcl)"
+
 #. Tag: works-with-format::dvi, short desc
 #: files/debtags/vocabulary
 msgid "TeX DVI"
@@ -3687,6 +3735,13 @@ msgstr "TeX や LaTeX"
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
 msgstr "TeX や LaTeX、DVI"
+
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Text"
+msgid "Telnet"
+msgstr "テキスト"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3837,7 +3892,9 @@ msgstr "VRML 3D モデル"
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
-msgid "VRML Virtual Reality Markup Language"
+#, fuzzy
+#| msgid "VRML Virtual Reality Markup Language"
+msgid "VRML, Virtual Reality Markup Language"
 msgstr "Virtual Reality Markup Language (VRML)"
 
 #. Tag: works-with::image:vector, short desc
@@ -3907,14 +3964,9 @@ msgid "X Server"
 msgstr "X サーバ"
 
 #. Tag: interface::x11, short desc
-#: files/debtags/vocabulary
-msgid "X Window System"
-msgstr "X ウィンドウシステム"
-
-# TRANSLATION-FIXME: Why "Windowing"?
 #. Facet: x11, short desc
 #: files/debtags/vocabulary
-msgid "X Windowing System"
+msgid "X Window System"
 msgstr "X ウィンドウシステム"
 
 #. Tag: uitoolkit::xlib, short desc
@@ -3958,15 +4010,17 @@ msgstr "XSL Transformations (XSLT)"
 msgid "Yahoo! Messenger"
 msgstr ""
 
-#. Tag: suite::zope, short desc
-#: files/debtags/vocabulary
-msgid "ZOPE"
-msgstr "Zope"
-
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
 msgstr "Zip アーカイブ"
+
+#. Tag: suite::zope, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Scope"
+msgid "Zope"
+msgstr "対象範囲"
 
 #. Tag: educational, short desc
 #: files/debtags/vocabulary
@@ -3987,3 +4041,16 @@ msgstr "wxWidgets"
 #: files/debtags/vocabulary
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
+
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
+
+# TRANSLATION-FIXME: Why "Windowing"?
+#~ msgid "X Windowing System"
+#~ msgstr "X ウィンドウシステム"
+
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"

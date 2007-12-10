@@ -1382,6 +1382,11 @@ msgstr ""
 msgid " The languages or data formats used to make the package"
 msgstr ""
 
+#. Tag: made-of::data:audio, short desc
+#: files/debtags/vocabulary
+msgid "Audrio"
+msgstr ""
+
 #. Tag: made-of::data:dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionary"
@@ -1398,7 +1403,7 @@ msgstr ""
 #: files/debtags/vocabulary
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
-msgid "HTML Hypertext Markup Language"
+msgid "HTML, Hypertext Markup Language"
 msgstr ""
 
 #. Tag: made-of::data:icons, short desc
@@ -1429,7 +1434,7 @@ msgstr ""
 #: files/debtags/vocabulary
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
-msgid "Postscript"
+msgid "PostScript"
 msgstr ""
 
 #. Tag: made-of::data:sgml, short desc
@@ -1453,7 +1458,7 @@ msgstr ""
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
-msgid "VRML Virtual Reality Markup Language"
+msgid "VRML, Virtual Reality Markup Language"
 msgstr ""
 
 #. Tag: made-of::data:xml, short desc
@@ -1511,6 +1516,8 @@ msgid "World Wide Web"
 msgstr ""
 
 #. Tag: interface::x11, short desc
+#: files/debtags/vocabulary
+#. Facet: x11, short desc
 #: files/debtags/vocabulary
 msgid "X Window System"
 msgstr ""
@@ -1627,7 +1634,7 @@ msgstr ""
 
 #. Tag: implemented-in::tcl, short desc
 #: files/debtags/vocabulary
-msgid "TCL Tool Command Language"
+msgid "Tcl, Tool Command Language"
 msgstr ""
 
 #. Facet: junior, short desc
@@ -2009,7 +2016,7 @@ msgstr ""
 
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
-msgid "JPEG, Joint Picture Expert Group"
+msgid "JPEG, Joint Photographic Experts Group"
 msgstr ""
 
 #. Tag: works-with-format::gif, short desc
@@ -2039,7 +2046,7 @@ msgstr ""
 
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
-msgid "Docbook"
+msgid "DocBook"
 msgstr ""
 
 #. Tag: works-with-format::man, short desc
@@ -2121,34 +2128,14 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
-#. Tag: role::program, short desc
+#. Tag: role::app-data, short desc
 #: files/debtags/vocabulary
-msgid "Program"
+msgid "Application Data"
 msgstr ""
 
-#. Tag: role::program, long desc
+#. Tag: role::data, short desc
 #: files/debtags/vocabulary
-msgid " Executable computer program."
-msgstr ""
-
-#. Tag: role::shared-lib, short desc
-#: files/debtags/vocabulary
-msgid "Shared Library"
-msgstr ""
-
-#. Tag: role::shared-lib, long desc
-#: files/debtags/vocabulary
-msgid " Shared libraries used by one or more programs."
-msgstr ""
-
-#. Tag: role::plugin, short desc
-#: files/debtags/vocabulary
-msgid "Plugin"
-msgstr ""
-
-#. Tag: role::plugin, long desc
-#: files/debtags/vocabulary
-msgid " Add-on, pluggable program fragments enhancing functionality\n of some program or system."
+msgid "Standalone Data"
 msgstr ""
 
 #. Tag: role::debug-symbols, short desc
@@ -2171,24 +2158,24 @@ msgstr ""
 msgid " Library and header files used in software development or building."
 msgstr ""
 
-#. Tag: role::source, short desc
+#. Tag: role::dummy, short desc
 #: files/debtags/vocabulary
-msgid "Source Code"
+msgid "Dummy Package"
 msgstr ""
 
-#. Tag: role::source, long desc
+#. Tag: role::dummy, long desc
 #: files/debtags/vocabulary
-msgid " Human-readable code of a program, library or a part thereof."
+msgid " Packages used for upgrades and transitions."
 msgstr ""
 
-#. Tag: role::data, short desc
+#. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
-msgid "Standalone Data"
+msgid "Kernel and modules"
 msgstr ""
 
-#. Tag: role::app-data, short desc
+#. Tag: role::kernel, long desc
 #: files/debtags/vocabulary
-msgid "Application Data"
+msgid " Packages that contain only operating system kernels and kernel modules."
 msgstr ""
 
 #. Tag: role::metapackage, short desc
@@ -2199,6 +2186,46 @@ msgstr ""
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
+msgstr ""
+
+#. Tag: role::plugin, short desc
+#: files/debtags/vocabulary
+msgid "Plugin"
+msgstr ""
+
+#. Tag: role::plugin, long desc
+#: files/debtags/vocabulary
+msgid " Add-on, pluggable program fragments enhancing functionality\n of some program or system."
+msgstr ""
+
+#. Tag: role::program, short desc
+#: files/debtags/vocabulary
+msgid "Program"
+msgstr ""
+
+#. Tag: role::program, long desc
+#: files/debtags/vocabulary
+msgid " Executable computer program."
+msgstr ""
+
+#. Tag: role::shared-lib, short desc
+#: files/debtags/vocabulary
+msgid "Shared Library"
+msgstr ""
+
+#. Tag: role::shared-lib, long desc
+#: files/debtags/vocabulary
+msgid " Shared libraries used by one or more programs."
+msgstr ""
+
+#. Tag: role::source, short desc
+#: files/debtags/vocabulary
+msgid "Source Code"
+msgstr ""
+
+#. Tag: role::source, long desc
+#: files/debtags/vocabulary
+msgid " Human-readable code of a program, library or a part thereof."
 msgstr ""
 
 #. Facet: security, short desc
@@ -2545,12 +2572,14 @@ msgstr ""
 
 #. Tag: suite::gnustep, short desc
 #: files/debtags/vocabulary
-msgid "GNUStep"
+#. Tag: uitoolkit::gnustep, short desc
+#: files/debtags/vocabulary
+msgid "GNUstep"
 msgstr ""
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-msgid "  GNUStep Desktop and WindowMaker"
+msgid "  GNUstep Desktop and WindowMaker"
 msgstr ""
 
 #. Tag: suite::gpe, short desc
@@ -2605,7 +2634,7 @@ msgstr ""
 
 #. Tag: suite::samba, short desc
 #: files/debtags/vocabulary
-msgid "SAMBA"
+msgid "Samba"
 msgstr ""
 
 #. Tag: suite::webmin, short desc
@@ -2635,12 +2664,12 @@ msgstr ""
 
 #. Tag: suite::zope, short desc
 #: files/debtags/vocabulary
-msgid "ZOPE"
+msgid "Zope"
 msgstr ""
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
-msgid " The zope (web) publishing platform."
+msgid " The Zope (web) publishing platform."
 msgstr ""
 
 #. Facet: protocol, short desc
@@ -2994,6 +3023,16 @@ msgstr ""
 msgid " Secure Socket Layer/Transport Layer Security, a protocol that provides \n secure encrypted communication on the Internet. It is used to authenticate\n the identity of a service provider (such as a Internet banking server) and\n to secure the communications channel.\n .\n Otherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be\n transmitted over SSL/TLS to secure the transmitted data. In this case, an\n \"S\" is added to the protocol name, like HTTPS, FTPS etc.\n .\n Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 msgstr ""
 
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+msgid "Telnet"
+msgstr ""
+
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid " TELecommunication NETwork, a mostly superseded protocol for remote logins.\n .\n Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3112,11 +3151,6 @@ msgstr ""
 #. Tag: uitoolkit::glut, short desc
 #: files/debtags/vocabulary
 msgid "GLUT"
-msgstr ""
-
-#. Tag: uitoolkit::gnustep, short desc
-#: files/debtags/vocabulary
-msgid "GNUstep"
 msgstr ""
 
 #. Tag: uitoolkit::gtk, short desc
@@ -3430,11 +3464,6 @@ msgstr ""
 #. Tag: network::vpn, short desc
 #: files/debtags/vocabulary
 msgid "VPN or Tunneling"
-msgstr ""
-
-#. Facet: x11, short desc
-#: files/debtags/vocabulary
-msgid "X Windowing System"
 msgstr ""
 
 #. Tag: x11::applet, short desc

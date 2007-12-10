@@ -442,7 +442,7 @@ sub build_deps {
 	    my $entry = $entries{$p_name} ||
 		read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite);
 	    my $short_desc = $entry->[-1];
-	    my $desc_md5 = $entry->[-2];
+	    my $desc_md5 = $entry->[-2] || '';
 	    my $arch = $entry->[3];
 	    my $archive = $entry->[1];
 	    my $p_suite = $entry->[2];
