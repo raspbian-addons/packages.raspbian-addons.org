@@ -186,7 +186,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "<em>%s</em> を使いたいミラーに置き換えてください。"
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:145
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:152
 msgid "Experimental package"
 msgstr "試験的な (experimental の) パッケージ"
 
@@ -202,11 +202,11 @@ msgstr ""
 "すかもしれません。使用前には、変更履歴やその他の参照可能なドキュメントを必ず"
 "調べてください。"
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:150
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:157
 msgid "debian-installer udeb package"
 msgstr "debian-installer 用の udeb パッケージ"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:151
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:158
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -278,7 +278,7 @@ msgstr "%s Byte (%s %s)"
 msgid "Exact Size"
 msgstr "正確なサイズ"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:320
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:327
 msgid "MD5 checksum"
 msgstr "MD5 チェックサム"
 
@@ -421,7 +421,7 @@ msgstr "すべてのパッケージ"
 msgid "Source"
 msgstr "ソース"
 
-#: templates/html/index.tmpl:43 templates/html/show.tmpl:247
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:254
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージです: "
@@ -702,7 +702,7 @@ msgid "Sort results by filename"
 msgstr "ファイル名の順に結果を並び換える"
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:320
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:327
 msgid "File"
 msgstr "ファイル"
 
@@ -802,27 +802,35 @@ msgstr "メンテナ:"
 msgid "Maintainers:"
 msgstr "メンテナ:"
 
-#: templates/html/show.tmpl:114
+#: templates/html/show.tmpl:120
 msgid "An overview over the maintainer's packages and uploads"
 msgstr "メンテナのパッケージやアップロードの概要"
 
-#: templates/html/show.tmpl:114
+#: templates/html/show.tmpl:120
 msgid "QA Page"
 msgstr "QA ページ"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:121
+msgid "Archive of the Maintainer Mailinglist"
+msgstr ""
+
+#: templates/html/show.tmpl:121
+msgid "Mail Archive"
+msgstr ""
+
+#: templates/html/show.tmpl:129
 msgid "External Resources:"
 msgstr "外部の資源:"
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:131
 msgid "Homepage"
 msgstr "ホームページ"
 
-#: templates/html/show.tmpl:130
+#: templates/html/show.tmpl:137
 msgid "Similar packages:"
 msgstr "類似のパッケージ:"
 
-#: templates/html/show.tmpl:146
+#: templates/html/show.tmpl:153
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -834,7 +842,7 @@ msgstr ""
 "すかもしれません。使用前には、<a href=\"%s\">変更履歴</a>やその他の参照可能な"
 "ドキュメントを必ず調べてください。"
 
-#: templates/html/show.tmpl:169
+#: templates/html/show.tmpl:176
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -844,63 +852,63 @@ msgstr ""
 "\">仮想パッケージの定義</a>については <a href=\"%s\">Debian ポリシーマニュア"
 "ル</a>を参照してください。"
 
-#: templates/html/show.tmpl:177
+#: templates/html/show.tmpl:184
 msgid "Tags"
 msgstr "タグ"
 
-#: templates/html/show.tmpl:200
+#: templates/html/show.tmpl:207
 msgid "Packages providing %s"
 msgstr "%s を提供するパッケージ"
 
-#: templates/html/show.tmpl:209
+#: templates/html/show.tmpl:216
 msgid "The following binary packages are built from this source package:"
 msgstr "以下のバイナリパッケージがこのソースパッケージからビルドされています。"
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:225
 msgid "Other Packages Related to %s"
 msgstr "その他の %s 関連パッケージ"
 
-#: templates/html/show.tmpl:220
+#: templates/html/show.tmpl:227
 msgid "legend"
 msgstr "凡例"
 
-#: templates/html/show.tmpl:222
+#: templates/html/show.tmpl:229
 msgid "build-depends"
 msgstr "構築依存"
 
-#: templates/html/show.tmpl:223
+#: templates/html/show.tmpl:230
 msgid "build-depends-indep"
 msgstr "構築依存 (アーキテクチャ非依存)"
 
-#: templates/html/show.tmpl:225
+#: templates/html/show.tmpl:232
 msgid "depends"
 msgstr "依存"
 
-#: templates/html/show.tmpl:226
+#: templates/html/show.tmpl:233
 msgid "recommends"
 msgstr "推奨"
 
-#: templates/html/show.tmpl:227
+#: templates/html/show.tmpl:234
 msgid "suggests"
 msgstr "提案"
 
-#: templates/html/show.tmpl:237
+#: templates/html/show.tmpl:244
 msgid "or "
 msgstr "または "
 
-#: templates/html/show.tmpl:245
+#: templates/html/show.tmpl:252
 msgid "also a virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
-#: templates/html/show.tmpl:252
+#: templates/html/show.tmpl:259
 msgid "%u providing packages"
 msgstr "%u 個の提供パッケージ"
 
-#: templates/html/show.tmpl:270
+#: templates/html/show.tmpl:277
 msgid "Download %s"
 msgstr "%s のダウンロード"
 
-#: templates/html/show.tmpl:272
+#: templates/html/show.tmpl:279
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -910,55 +918,55 @@ msgstr ""
 "リンク。加えて、パッケージサイズやインストールサイズに関する情報も含んでいま"
 "す。"
 
-#: templates/html/show.tmpl:273
+#: templates/html/show.tmpl:280
 msgid "Download for all available architectures"
 msgstr "すべての利用可能アーキテクチャ向けのダウンロード"
 
-#: templates/html/show.tmpl:274
+#: templates/html/show.tmpl:281
 msgid "Architecture"
 msgstr "アーキテクチャ"
 
-#: templates/html/show.tmpl:275
+#: templates/html/show.tmpl:282
 msgid "Version"
 msgstr "バージョン"
 
-#: templates/html/show.tmpl:276
+#: templates/html/show.tmpl:283
 msgid "Package Size"
 msgstr "パッケージサイズ"
 
-#: templates/html/show.tmpl:277
+#: templates/html/show.tmpl:284
 msgid "Installed Size"
 msgstr "インストールサイズ"
 
-#: templates/html/show.tmpl:278
+#: templates/html/show.tmpl:285
 msgid "Files"
 msgstr "ファイル"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:293
 msgid "(unofficial port)"
 msgstr "(非公式の移植版)"
 
-#: templates/html/show.tmpl:297 templates/html/show.tmpl:325
+#: templates/html/show.tmpl:304 templates/html/show.tmpl:332
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kB"
 
-#: templates/html/show.tmpl:300
+#: templates/html/show.tmpl:307
 msgid "list of files"
 msgstr "ファイル一覧"
 
-#: templates/html/show.tmpl:302
+#: templates/html/show.tmpl:309
 msgid "no current information"
 msgstr "現在の情報はありません"
 
-#: templates/html/show.tmpl:319
+#: templates/html/show.tmpl:326
 msgid "Download information for the files of this source package"
 msgstr "このソースパッケージのファイルのダウンロードに関する情報"
 
-#: templates/html/show.tmpl:320
+#: templates/html/show.tmpl:327
 msgid "Size (in kB)"
 msgstr "サイズ (単位: kB)"
 
-#: templates/html/show.tmpl:338
+#: templates/html/show.tmpl:345
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -966,7 +974,7 @@ msgstr ""
 "Debian パッケージソースリポジトリ (<acronym title=\"バージョン管理システム"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:342
+#: templates/html/show.tmpl:349
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Debian パッケージソースリポジトリ (ブラウザで表示可能)"
 
@@ -1035,11 +1043,11 @@ msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
 #~ "last 7 days."
 #~ msgstr ""
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
+
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"

@@ -182,7 +182,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr ""
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:145
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:152
 msgid "Experimental package"
 msgstr "Experimenteel pakket"
 
@@ -200,13 +200,13 @@ msgstr ""
 "Als u deze waarschuwing negeert en het pakket toch installeert, dan is dat "
 "op uw eigen risico."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:150
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:157
 #, fuzzy
 #| msgid "List of all packages"
 msgid "debian-installer udeb package"
 msgstr "Lijst van alle pakketten"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:151
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:158
 #, fuzzy
 #| msgid ""
 #| "Warning: This package is intended for the use in building <a href="
@@ -272,7 +272,7 @@ msgstr ""
 msgid "Exact Size"
 msgstr "Pakket niet beschikbaar"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:320
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:327
 msgid "MD5 checksum"
 msgstr ""
 
@@ -441,7 +441,7 @@ msgstr "Alle pakketten"
 msgid "Source"
 msgstr "Bronpakket:"
 
-#: templates/html/index.tmpl:43 templates/html/show.tmpl:247
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:254
 #: templates/txt/index.tmpl:15
 #, fuzzy
 msgid "virtual package provided by"
@@ -731,7 +731,7 @@ msgid "Sort results by filename"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:320
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:327
 msgid "File"
 msgstr "Bestand"
 
@@ -848,30 +848,38 @@ msgstr "Beheerder"
 msgid "Maintainers:"
 msgstr "Beheerder"
 
-#: templates/html/show.tmpl:114
+#: templates/html/show.tmpl:120
 msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
-#: templates/html/show.tmpl:114
+#: templates/html/show.tmpl:120
 #, fuzzy
 #| msgid "All packages"
 msgid "QA Page"
 msgstr "Alle pakketten"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:121
+msgid "Archive of the Maintainer Mailinglist"
+msgstr ""
+
+#: templates/html/show.tmpl:121
+msgid "Mail Archive"
+msgstr ""
+
+#: templates/html/show.tmpl:129
 msgid "External Resources:"
 msgstr ""
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:131
 msgid "Homepage"
 msgstr ""
 
-#: templates/html/show.tmpl:130
+#: templates/html/show.tmpl:137
 #, fuzzy
 msgid "Similar packages:"
 msgstr "virtueel pakket"
 
-#: templates/html/show.tmpl:146
+#: templates/html/show.tmpl:153
 #, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
@@ -885,7 +893,7 @@ msgstr ""
 "Als u deze waarschuwing negeert en het pakket toch installeert, dan is dat "
 "op uw eigen risico."
 
-#: templates/html/show.tmpl:169
+#: templates/html/show.tmpl:176
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -895,131 +903,131 @@ msgstr ""
 "beleidshandboek</a> voor de <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">definitie van een virtueel pakket</a>."
 
-#: templates/html/show.tmpl:177
+#: templates/html/show.tmpl:184
 msgid "Tags"
 msgstr ""
 
-#: templates/html/show.tmpl:200
+#: templates/html/show.tmpl:207
 msgid "Packages providing %s"
 msgstr "Pakketten die %s leveren:"
 
-#: templates/html/show.tmpl:209
+#: templates/html/show.tmpl:216
 msgid "The following binary packages are built from this source package:"
 msgstr "De volgende binaire pakketten worden van dit bronpakket gebouwd:"
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:225
 msgid "Other Packages Related to %s"
 msgstr "Andere pakketten die aan %s zijn gerelateerd"
 
-#: templates/html/show.tmpl:220
+#: templates/html/show.tmpl:227
 msgid "legend"
 msgstr ""
 
-#: templates/html/show.tmpl:222
+#: templates/html/show.tmpl:229
 msgid "build-depends"
 msgstr ""
 
-#: templates/html/show.tmpl:223
+#: templates/html/show.tmpl:230
 msgid "build-depends-indep"
 msgstr ""
 
-#: templates/html/show.tmpl:225
+#: templates/html/show.tmpl:232
 msgid "depends"
 msgstr ""
 
-#: templates/html/show.tmpl:226
+#: templates/html/show.tmpl:233
 msgid "recommends"
 msgstr ""
 
-#: templates/html/show.tmpl:227
+#: templates/html/show.tmpl:234
 msgid "suggests"
 msgstr ""
 
-#: templates/html/show.tmpl:237
+#: templates/html/show.tmpl:244
 #, fuzzy
 #| msgid "or"
 msgid "or "
 msgstr "of"
 
-#: templates/html/show.tmpl:245
+#: templates/html/show.tmpl:252
 #, fuzzy
 msgid "also a virtual package provided by"
 msgstr "virtueel pakket"
 
-#: templates/html/show.tmpl:252
+#: templates/html/show.tmpl:259
 #, fuzzy
 msgid "%u providing packages"
 msgstr "Pakket niet beschikbaar"
 
-#: templates/html/show.tmpl:270
+#: templates/html/show.tmpl:277
 msgid "Download %s"
 msgstr "Download %s"
 
-#: templates/html/show.tmpl:272
+#: templates/html/show.tmpl:279
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
 
-#: templates/html/show.tmpl:273
+#: templates/html/show.tmpl:280
 msgid "Download for all available architectures"
 msgstr ""
 
-#: templates/html/show.tmpl:274
+#: templates/html/show.tmpl:281
 msgid "Architecture"
 msgstr ""
 
-#: templates/html/show.tmpl:275
+#: templates/html/show.tmpl:282
 msgid "Version"
 msgstr "Versie"
 
-#: templates/html/show.tmpl:276
+#: templates/html/show.tmpl:283
 #, fuzzy
 msgid "Package Size"
 msgstr "Pakket niet beschikbaar"
 
-#: templates/html/show.tmpl:277
+#: templates/html/show.tmpl:284
 msgid "Installed Size"
 msgstr "Geïnstalleerde grootte"
 
-#: templates/html/show.tmpl:278
+#: templates/html/show.tmpl:285
 #, fuzzy
 msgid "Files"
 msgstr "Bestand"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:293
 msgid "(unofficial port)"
 msgstr ""
 
-#: templates/html/show.tmpl:297 templates/html/show.tmpl:325
+#: templates/html/show.tmpl:304 templates/html/show.tmpl:332
 msgid "%s&nbsp;kB"
 msgstr ""
 
-#: templates/html/show.tmpl:300
+#: templates/html/show.tmpl:307
 msgid "list of files"
 msgstr "lijst van bestanden"
 
-#: templates/html/show.tmpl:302
+#: templates/html/show.tmpl:309
 #, fuzzy
 msgid "no current information"
 msgstr "Meer informatie over %s"
 
-#: templates/html/show.tmpl:319
+#: templates/html/show.tmpl:326
 msgid "Download information for the files of this source package"
 msgstr ""
 
-#: templates/html/show.tmpl:320
+#: templates/html/show.tmpl:327
 msgid "Size (in kB)"
 msgstr "Grootte (in kB)"
 
-#: templates/html/show.tmpl:338
+#: templates/html/show.tmpl:345
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
 
-#: templates/html/show.tmpl:342
+#: templates/html/show.tmpl:349
 #, fuzzy
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Alle Debianpakketten in \"%s\""
@@ -1100,202 +1108,15 @@ msgid "See <URL:%s> for the license terms."
 msgstr ""
 
 #, fuzzy
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "Bronpakket: %s (%s)"
-
-#, fuzzy
-#~ msgid "No such package in this suite on this architecture."
-#~ msgstr "Geen pakketten in deze sectie en deze suite"
-
-#~ msgid "Virtual package"
-#~ msgstr "Virtueel pakket"
-
-#, fuzzy
-#~ msgid "No such package."
-#~ msgstr "Bronpakket"
-
-#, fuzzy
-#~ msgid "Package not available in this suite."
-#~ msgstr "Pakket niet beschikbaar"
-
-#~ msgid "Package not available"
-#~ msgstr "Pakket niet beschikbaar"
-
-#, fuzzy
-#~ msgid "Software Packages in \"%s\", subsection %s"
-#~ msgstr "Softwarepakketten in \"%s\", %s sectie"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Softwarepakketten in \"%s\", prioriteit %s"
-
-#, fuzzy
-#~ msgid "search for a package"
-#~ msgstr "Lijst van alle pakketten"
-
-#, fuzzy
-#~ msgid " (section %s)"
-#~ msgstr "Sectie"
-
-#, fuzzy
+#~| msgid ""
+#~| "Packages that were added to the unstable Debian archive during the last "
+#~| "7 days."
 #~ msgid ""
-#~ "The following packages were added to suite %s%s in the Debian archive "
-#~ "during the last 7 days."
+#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
+#~ "last 7 days."
 #~ msgstr ""
-#~ "De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
-#~ "distributie toegevoegd."
-
-#, fuzzy
-#~ msgid "Nothing found"
-#~ msgstr "Niet gevonden"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Download %s\n"
-
-#~ msgid "virtual package"
-#~ msgstr "virtueel pakket"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Overzicht van deze distributie"
-
-#~ msgid "md5sum"
-#~ msgstr "md5sum"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Zoek naar <a href=\"%s\">bug-rapporten</a> over %s."
-
-#~ msgid "Source Package:"
-#~ msgstr "Bronpakket:"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Bekijk de <a href=\"%s\">Debian changelog</a>"
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Bekijk het <a href=\"%s\">bestand met auteursrecht-informatie</a>"
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s is verantwoordelijk voor die Debian pakket."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " en %s zijn verantwoordelijk voor dit Debian pakket."
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr "Zie de <a href=\"%s\">informatie voor ontwikkelaars voor %s</a>."
-
-#, fuzzy
-#~ msgid "Search on:"
-#~ msgstr "Zoeken"
-
-#~ msgid "Debian Project"
-#~ msgstr "Debian Project"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "Over&nbsp;Debian"
-
-#~ msgid "News"
-#~ msgstr "Nieuws"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Verkrijgen"
-
-#~ msgid "Support"
-#~ msgstr "Ondersteuning"
-
-#~ msgid "Development"
-#~ msgstr "Ontwikkeling"
-
-#~ msgid "Site map"
-#~ msgstr "Index"
-
-#~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
-#~ msgstr ""
-#~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
-#~ "s/\">Pakketten zoekpagina</a>"
-
-#~ msgid "Last Modified: "
-#~ msgstr "Laatst gewijzigd:"
-
-#~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
-#~ msgstr ""
-#~ "Debian is een geregistreerd handelsmerk van Software in the Public "
-#~ "Interest, Inc."
-
-#~ msgid "Size:"
-#~ msgstr "Grootte:"
-
-#~ msgid ""
-#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
-#~ "contains software that is likely unstable or buggy and may even cause "
-#~ "data loss. If you ignore this warning and install it nevertheless, you do "
-#~ "it on your own risk."
-#~ msgstr ""
-#~ "Waarschuwing: De «<span class=\"pred\">experimental</span>» distributie "
-#~ "bevat programmatuur die hoogstwaarschijnlijk onstabiel is, veel fouten "
-#~ "bevat of zelfs dataverlies kan veroorzaken. Als u deze waarschuwing "
-#~ "negeert en het toch installeert, dan is dat op uw eigen risico."
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Gebruikers van pakketten uit «experimental» kunnen, in het geval van "
-#~ "problemen, het beste direct de beheerder van het pakket contacteren."
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "De grootte is aangegeven in kBytes."
-
-#~ msgid "Uploaders"
-#~ msgstr "Uploaders"
-
-#~ msgid "Priority"
-#~ msgstr "Prioriteit"
-
-#~ msgid "yes"
-#~ msgstr "ja"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Waarschuwing: Deze pakketten zijn alleen bedoeld voor gebruik tijden het "
-#~ "bouwen van het <a href=\"http://www.debian.org/devel/debian-installer"
-#~ "\">Debian installatie programma</a>. Installeer het niet op een normaal "
-#~ "Debian systeem."
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Geen pakketten met deze prioriteit in deze suite"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Softwarepakketten in \"%s\", essentiële pakketten"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Geen essentiële pakketten in deze suite"
-
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "Zie <URL:http://www.debian.org/license>voor de licentievoorwaarden.\n"
-#~ "\n"
-
-#~ msgid "Versions:"
-#~ msgstr "Versies:"
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the <strong>experimental</strong> distribution is not self-"
-#~ "contained; missing dependencies are likely found in the <a href=\"%s"
-#~ "\">unstable</a> distribution."
-#~ msgstr ""
-#~ "Merk op dat de «<span class=\"pred\">experimental</span>» distributie "
-#~ "niet op zichzelf staat; ontbrekende afhankelijkheden kunnen "
-#~ "waarschijnlijk worden gevonden in de «a href=\"../../unstable/"
-#~ "\">unstable</a>» distributie."
+#~ "Pakketten die in de afgelopen 7 dagen aan de «unstable» distributie zijn "
+#~ "toegevoegd."
 
 #, fuzzy
 #~| msgid ""
@@ -1308,12 +1129,199 @@ msgstr ""
 #~ "toegevoegd."
 
 #, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
-#~ "last 7 days."
+#~ "Note that the <strong>experimental</strong> distribution is not self-"
+#~ "contained; missing dependencies are likely found in the <a href=\"%s"
+#~ "\">unstable</a> distribution."
 #~ msgstr ""
-#~ "Pakketten die in de afgelopen 7 dagen aan de «unstable» distributie zijn "
-#~ "toegevoegd."
+#~ "Merk op dat de «<span class=\"pred\">experimental</span>» distributie "
+#~ "niet op zichzelf staat; ontbrekende afhankelijkheden kunnen "
+#~ "waarschijnlijk worden gevonden in de «a href=\"../../unstable/"
+#~ "\">unstable</a>» distributie."
+
+#~ msgid "Versions:"
+#~ msgstr "Versies:"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "Zie <URL:http://www.debian.org/license>voor de licentievoorwaarden.\n"
+#~ "\n"
+
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Geen essentiële pakketten in deze suite"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Softwarepakketten in \"%s\", essentiële pakketten"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Geen pakketten met deze prioriteit in deze suite"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Waarschuwing: Deze pakketten zijn alleen bedoeld voor gebruik tijden het "
+#~ "bouwen van het <a href=\"http://www.debian.org/devel/debian-installer"
+#~ "\">Debian installatie programma</a>. Installeer het niet op een normaal "
+#~ "Debian systeem."
+
+#~ msgid "yes"
+#~ msgstr "ja"
+
+#~ msgid "Priority"
+#~ msgstr "Prioriteit"
+
+#~ msgid "Uploaders"
+#~ msgstr "Uploaders"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "De grootte is aangegeven in kBytes."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Gebruikers van pakketten uit «experimental» kunnen, in het geval van "
+#~ "problemen, het beste direct de beheerder van het pakket contacteren."
+
+#~ msgid ""
+#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
+#~ "contains software that is likely unstable or buggy and may even cause "
+#~ "data loss. If you ignore this warning and install it nevertheless, you do "
+#~ "it on your own risk."
+#~ msgstr ""
+#~ "Waarschuwing: De «<span class=\"pred\">experimental</span>» distributie "
+#~ "bevat programmatuur die hoogstwaarschijnlijk onstabiel is, veel fouten "
+#~ "bevat of zelfs dataverlies kan veroorzaken. Als u deze waarschuwing "
+#~ "negeert en het toch installeert, dan is dat op uw eigen risico."
+
+#~ msgid "Size:"
+#~ msgstr "Grootte:"
+
+#~ msgid ""
+#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
+#~ msgstr ""
+#~ "Debian is een geregistreerd handelsmerk van Software in the Public "
+#~ "Interest, Inc."
+
+#~ msgid "Last Modified: "
+#~ msgstr "Laatst gewijzigd:"
+
+#~ msgid ""
+#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+#~ "\">Packages search page</a>"
+#~ msgstr ""
+#~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
+#~ "s/\">Pakketten zoekpagina</a>"
+
+#~ msgid "Site map"
+#~ msgstr "Index"
+
+#~ msgid "Development"
+#~ msgstr "Ontwikkeling"
+
+#~ msgid "Support"
+#~ msgstr "Ondersteuning"
+
+#~ msgid "Getting&nbsp;Debian"
+#~ msgstr "Verkrijgen"
+
+#~ msgid "News"
+#~ msgstr "Nieuws"
+
+#~ msgid "About&nbsp;Debian"
+#~ msgstr "Over&nbsp;Debian"
+
+#~ msgid "Debian Project"
+#~ msgstr "Debian Project"
+
+#, fuzzy
+#~ msgid "Search on:"
+#~ msgstr "Zoeken"
+
+#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
+#~ msgstr "Zie de <a href=\"%s\">informatie voor ontwikkelaars voor %s</a>."
+
+#~ msgid " and %s are responsible for this Debian package."
+#~ msgstr " en %s zijn verantwoordelijk voor dit Debian pakket."
+
+#~ msgid "%s is responsible for this Debian package."
+#~ msgstr "%s is verantwoordelijk voor die Debian pakket."
+
+#~ msgid "View the <a href=\"%s\">copyright file</a>"
+#~ msgstr "Bekijk het <a href=\"%s\">bestand met auteursrecht-informatie</a>"
+
+#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
+#~ msgstr "Bekijk de <a href=\"%s\">Debian changelog</a>"
+
+#~ msgid "Source Package:"
+#~ msgstr "Bronpakket:"
+
+#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+#~ msgstr "Zoek naar <a href=\"%s\">bug-rapporten</a> over %s."
+
+#~ msgid "md5sum"
+#~ msgstr "md5sum"
+
+#~ msgid "Overview over this distribution"
+#~ msgstr "Overzicht van deze distributie"
+
+#~ msgid "virtual package"
+#~ msgstr "virtueel pakket"
+
+#~ msgid "Download %s\n"
+#~ msgstr "Download %s\n"
+
+#, fuzzy
+#~ msgid "Nothing found"
+#~ msgstr "Niet gevonden"
+
+#, fuzzy
+#~ msgid ""
+#~ "The following packages were added to suite %s%s in the Debian archive "
+#~ "during the last 7 days."
+#~ msgstr ""
+#~ "De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
+#~ "distributie toegevoegd."
+
+#, fuzzy
+#~ msgid " (section %s)"
+#~ msgstr "Sectie"
+
+#, fuzzy
+#~ msgid "search for a package"
+#~ msgstr "Lijst van alle pakketten"
+
+#~ msgid "Software Packages in \"%s\", priority %s"
+#~ msgstr "Softwarepakketten in \"%s\", prioriteit %s"
+
+#, fuzzy
+#~ msgid "Software Packages in \"%s\", subsection %s"
+#~ msgstr "Softwarepakketten in \"%s\", %s sectie"
+
+#~ msgid "Package not available"
+#~ msgstr "Pakket niet beschikbaar"
+
+#, fuzzy
+#~ msgid "Package not available in this suite."
+#~ msgstr "Pakket niet beschikbaar"
+
+#, fuzzy
+#~ msgid "No such package."
+#~ msgstr "Bronpakket"
+
+#~ msgid "Virtual package"
+#~ msgstr "Virtueel pakket"
+
+#, fuzzy
+#~ msgid "No such package in this suite on this architecture."
+#~ msgstr "Geen pakketten in deze sectie en deze suite"
+
+#, fuzzy
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "Bronpakket: %s (%s)"

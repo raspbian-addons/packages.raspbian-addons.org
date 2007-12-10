@@ -1384,7 +1384,9 @@ msgstr ""
 
 #. Tag: made-of::data:audio, short desc
 #: files/debtags/vocabulary
-msgid "Audrio"
+#. Tag: works-with::audio, short desc
+#: files/debtags/vocabulary
+msgid "Audio"
 msgstr ""
 
 #. Tag: made-of::data:dictionary, short desc
@@ -1782,11 +1784,6 @@ msgstr ""
 #. Tag: works-with::archive, short desc
 #: files/debtags/vocabulary
 msgid "Archive"
-msgstr ""
-
-#. Tag: works-with::audio, short desc
-#: files/debtags/vocabulary
-msgid "Audio"
 msgstr ""
 
 #. Tag: works-with::bugs, short desc
@@ -2797,6 +2794,16 @@ msgstr ""
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
 msgid " File Transfer Protocol, a protocol for exchanging and manipulation files over\n networks and extensively used on the Internet.\n .\n The communication between FTP servers and clients uses two channels, the\n control and the data channel. While FTP was originally used with\n authentication only, most FTP servers on the Internet provide anonymous,\n passwordless access. Since FTP does not support encryption, sensitive data\n transfer is carried out over SFTP today.\n .\n Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol\n Link: http://www.ietf.org/rfc/rfc0959.txt"
+msgstr ""
+
+#. Tag: protocol::gadu-gadu, short desc
+#: files/debtags/vocabulary
+msgid "Gadu-Gadu"
+msgstr ""
+
+#. Tag: protocol::gadu-gadu, long desc
+#: files/debtags/vocabulary
+msgid " The Gadu-Gadu protocol is a proprietary protocol that is used by a\n Polish instant messaging network of the same name.\n .\n Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 msgstr ""
 
 #. Tag: protocol::http, short desc
