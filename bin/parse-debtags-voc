@@ -34,7 +34,6 @@ use Packages::Template;
 use Packages::Config qw( $TOPDIR @LANGUAGES );
 use Packages::I18N::Locale;
 &Packages::Config::init( './' );
-&Packages::I18N::Locale::load( "$TOPDIR/po" );
 my $debtagsdir = "$TOPDIR/files/debtags";
 my $wwwdir = "$TOPDIR/www/about";
 my $voc_file = "$debtagsdir/vocabulary";
