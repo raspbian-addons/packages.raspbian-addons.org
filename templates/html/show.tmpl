@@ -108,10 +108,17 @@
 [%- ELSE -%]
   <h3>[% g('Maintainers:') %]</h3>
 [%- END %]
-[%- FOREACH maintainers -%]
+[%- FOREACH maintainers;
+  mailarchiveurl = '';
+  IF (matches = mail.match('^(.*)@lists\.debian\.org$'));
+	mailarchiveurl = 'http://lists.debian.org/' _ matches.0 _ '/';
+  ELSIF (matches = mail.match('^(.*)@lists\.alioth\.debian\.org$'));
+	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ matches.0 _ '/';
+  END -%]
   [%- '<ul>' IF loop.first -%]
 	<li><a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>)
+	(<a href="[% ddpo_url _ mail %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>
+	[%- IF mailarchiveurl %], <a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail Archive') %]</a>[% END %])
 	</li>
   [%- '</ul>' IF loop.last -%]
 [%- END -%]

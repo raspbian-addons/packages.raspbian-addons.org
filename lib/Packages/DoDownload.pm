@@ -72,11 +72,11 @@ sub do_download {
 	    
 	    debug( "final_result=@$final_result", 1 );
 	    $archive = $final_result->[1];
-	    my %data = split /\000/, $packages_all{"$pkg $arch $final_result->[7]"};
+	    my %data = split(/\000/, $packages_all{"$pkg $arch $final_result->[7]"}||'');
 	    if (!%data && $arch ne 'all' && $final_result->[3] eq 'all') {
 		%data = split /\000/, $packages_all{"$pkg all $final_result->[7]"};
-		$arch = 'all';
 		debug( "choosing arch 'all' instead of requested arch $arch", 1 );
+		$arch = 'all';
 #		fatal_error( _g( "No such package." )."<br>".
 #			     sprintf( _g( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) ) unless %data;
 	    }

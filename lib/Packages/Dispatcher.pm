@@ -91,7 +91,6 @@ sub do_dispatch {
     my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
-    &Packages::I18N::Locale::load( "$homedir/po" );
 
     my $acc = I18N::AcceptLanguage->new();
     my %all_langs = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
