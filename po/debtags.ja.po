@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2007-12-02 22:28+0900\n"
+"PO-Revision-Date: 2007-12-11 19:54+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,6 @@ msgstr ""
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "  GNUStep Desktop and WindowMaker"
 msgid "  GNUstep Desktop and WindowMaker"
 msgstr "  GNUstep デスクトップや WindowMaker"
 
@@ -564,6 +562,7 @@ msgstr ""
 msgid ""
 " Packages that contain only operating system kernels and kernel modules."
 msgstr ""
+" オペレーティングシステムのカーネルやカーネルモジュールのみを含むパッケージ。"
 
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
@@ -573,7 +572,7 @@ msgstr " 他のいくつかのパッケージをまとめてインストール�
 #. Tag: role::dummy, long desc
 #: files/debtags/vocabulary
 msgid " Packages used for upgrades and transitions."
-msgstr ""
+msgstr " アップグレードや移行のために使用されるパッケージ。"
 
 #. Tag: devel::code-generator, long desc
 #: files/debtags/vocabulary
@@ -987,8 +986,6 @@ msgstr ""
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid " The zope (web) publishing platform."
 msgid " The Zope (web) publishing platform."
 msgstr " Zope (ウェブ) パブリッシングプラットフォーム。"
 
@@ -1186,7 +1183,6 @@ msgid ""
 " Link: http://www.ietf.org/rfc/rfc768.txt"
 msgstr ""
 
-# FIXME: Should be "Virtual Reality Modeling Language"
 #. Tag: works-with-format::vrml, long desc
 #: files/debtags/vocabulary
 msgid " Virtual Reality Markup Language"
@@ -1803,11 +1799,8 @@ msgstr "辞書"
 msgid "Digital Camera"
 msgstr "デジタルカメラ"
 
-# FIXME: Should be "DocBook"
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Docbook"
 msgid "DocBook"
 msgstr "DocBook"
 
@@ -1831,7 +1824,7 @@ msgstr "ダウンロード"
 #. Tag: role::dummy, short desc
 #: files/debtags/vocabulary
 msgid "Dummy Package"
-msgstr ""
+msgstr "ダミーパッケージ"
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
@@ -2206,8 +2199,6 @@ msgstr "グループウェア"
 #. Tag: made-of::data:html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "HTML Hypertext Markup Language"
 msgid "HTML, Hypertext Markup Language"
 msgstr "HyperText Markup Language (HTML)"
 
@@ -2408,13 +2399,10 @@ msgstr "問題追跡システム"
 msgid "Italian"
 msgstr "イタリア語"
 
-# FIXME: Should be "Joint Photographic Experts Group"
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "JPEG, Joint Picture Expert Group"
 msgid "JPEG, Joint Photographic Experts Group"
-msgstr "Joint Picture Expert Group (JPEG)"
+msgstr "Joint Photographic Experts Group (JPEG)"
 
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
@@ -2463,8 +2451,6 @@ msgstr ""
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Kernel or Modules"
 msgid "Kernel and modules"
 msgstr "カーネルやモジュール"
 
@@ -3168,12 +3154,9 @@ msgstr "ポータルサイト"
 msgid "Portuguese"
 msgstr "ポルトガル語"
 
-# FIXME: Should be "PostScript"
 #. Tag: made-of::data:postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Postscript"
 msgid "PostScript"
 msgstr "PostScript"
 
@@ -3450,7 +3433,7 @@ msgstr "ShockWave Flash (SWF)"
 #. Tag: suite::samba, short desc
 #: files/debtags/vocabulary
 msgid "Samba"
-msgstr ""
+msgstr "Samba"
 
 #. Tag: use::scanning, short desc
 #. Tag: network::scanner, short desc
@@ -3721,11 +3704,8 @@ msgstr "Tar アーカイブ"
 msgid "Tcl Development"
 msgstr "Tcl での開発"
 
-# FIXME: "Tcl, Tool Command Language"?
 #. Tag: implemented-in::tcl, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "TCL Tool Command Language"
 msgid "Tcl, Tool Command Language"
 msgstr "Tool Command Language (Tcl)"
 
@@ -3746,10 +3726,8 @@ msgstr "TeX や LaTeX、DVI"
 
 #. Tag: protocol::telnet, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Text"
 msgid "Telnet"
-msgstr "テキスト"
+msgstr "Telnet"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3900,8 +3878,6 @@ msgstr "VRML 3D モデル"
 
 #. Tag: made-of::data:vrml, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "VRML Virtual Reality Markup Language"
 msgid "VRML, Virtual Reality Markup Language"
 msgstr "Virtual Reality Markup Language (VRML)"
 
@@ -4025,10 +4001,8 @@ msgstr "Zip アーカイブ"
 
 #. Tag: suite::zope, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Scope"
 msgid "Zope"
-msgstr "対象範囲"
+msgstr "Zope"
 
 #. Tag: educational, short desc
 #: files/debtags/vocabulary
@@ -4063,7 +4037,5 @@ msgstr "xDSL モデム"
 #~ msgid "ZOPE"
 #~ msgstr "Zope"
 
-#, fuzzy
-#~| msgid "Audio"
 #~ msgid "Audrio"
 #~ msgstr "音声"
