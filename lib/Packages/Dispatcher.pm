@@ -273,9 +273,8 @@ sub do_dispatch {
     Packages::CGI::init_url( $input, \%params, \%opts );
 
     my $charset = "UTF-8";
-    my $cat = Packages::I18N::Locale->get_handle( $opts{lang} )
-	|| Packages::I18N::Locale->get_handle( 'en' );
-    die "get_handle failed for $opts{lang}" unless $cat;
+    my $cat = Packages::I18N::Locale->get_handle( $opts{lang}, "en" )
+	or die "get_handle failed for $opts{lang}";
     $opts{cat} = $cat;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
