@@ -14,8 +14,8 @@ for dist in sid experimental
   echo "retrieve Release(.gpg) $dist"
   test -d debports/${dist} || mkdir -p debports/${dist}
   (cd debports/${dist} &&
-	    wget -q -N ${debports_ftpsite}/dists/${dist}/Release &&
-	    wget -q -N ${debports_ftpsite}/dists/${dist}/Release.gpg )
+	    $wget_cmd -N ${debports_ftpsite}/dists/${dist}/Release &&
+	    $wget_cmd -N ${debports_ftpsite}/dists/${dist}/Release.gpg )
 
   for arch in $architectures
     do
@@ -24,10 +24,10 @@ for dist in sid experimental
       echo retrieve Packages $dist/$part/$arch
       test -d debports/${dist}/${part}/binary-${arch} || mkdir -p debports/${dist}/${part}/binary-${arch}
       (cd debports/${dist}/${part}/binary-${arch} &&
-	  wget -q -N ${debports_ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+	  $wget_cmd -N ${debports_ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
     done
     echo retrieve Contents $dist/$arch
     (cd debports/${dist} &&
-	wget -q -N ${debports_ftpsite}/dists/${dist}/Contents-${arch}.gz)
+	$wget_cmd -N ${debports_ftpsite}/dists/${dist}/Contents-${arch}.gz)
   done
 done

@@ -22,7 +22,7 @@ then
 	    locale=$(echo $lang|perl -p -e 's/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e')
 	    echo "retrieve translated Descs $dist/$part/$lang ($locale)"
             (cd us/${dist}/${part}/i18n &&
-                wget -q -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translation-$locale.gz)
+                $wget_cmd -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translation-$locale.gz)
 	  done
 	done
     done
