@@ -25,7 +25,7 @@ then
 	        echo retrieve Packages $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		(cd us/${dist}/${part}/binary-${arch} &&
-		    wget -q -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
 	    done
 	done
     done

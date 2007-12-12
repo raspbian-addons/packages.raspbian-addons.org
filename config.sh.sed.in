@@ -32,6 +32,8 @@ amd64_ftpsite=http://amd64.debian.net/debian
 debports_ftpsite=http://ftp.debian-ports.org/debian
 ddtp_ftpsite=http://ddtp.debian.net/debian
 
+wget_cmd="wget --no-verbose --tries=2 --timeout=60" 
+
 root=""
 
 # Architectures
