@@ -150,9 +150,8 @@ msgstr "Overzicht van deze distributie"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
-#, fuzzy
 msgid "Package:"
-msgstr "Pakket niet beschikbaar"
+msgstr "Pakket:"
 
 #: templates/html/download.tmpl:8
 msgid "Download"
@@ -273,8 +272,6 @@ msgid "MD5 checksum"
 msgstr "MD5 checksum"
 
 #: templates/html/download.tmpl:104 templates/html/download.tmpl:105
-#, fuzzy
-#| msgid "Not available"
 msgid "Not Available"
 msgstr "Niet beschikbaar"
 
@@ -339,16 +336,12 @@ msgid "Generated:"
 msgstr "Gegenereerd:"
 
 #: templates/html/foot.tmpl:35
-#, fuzzy
-#| msgid ""
-#| "Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; "
-#| "See <a href=\"%s/license\">license terms</a>."
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
-"Copyright &copy; 1997-2005 <a href=\"http://www.spi-inc.org\">SPI</a>; Ziede "
-"<a href=\"%s/license\">licentievoorwaarden</a>."
+"Copyright &copy; %s <a href=\"%s\">%s</a>. Zie de "
+"<a href=\"%s\">licentievoorwaarden</a>."
 
 #: templates/html/foot.tmpl:39
 #, fuzzy
@@ -411,8 +404,6 @@ msgid "Software Packages in \"%s\""
 msgstr "Softwarepakketten in \"%s\""
 
 #: templates/html/index.tmpl:14
-#, fuzzy
-#| msgid "All packages"
 msgid "All Packages"
 msgstr "Alle pakketten"
 
@@ -427,7 +418,6 @@ msgid "virtual package provided by"
 msgstr "virtueel pakket geboden door"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
-#, fuzzy
 msgid "New Packages in \"%s\""
 msgstr "Nieuwe pakketten in \"%s\""
 
@@ -475,11 +465,9 @@ msgstr ""
 
 #: templates/html/newpkg.tmpl:28
 msgid " <em>(%u days old)</em>"
-msgstr ""
+msgstr " <em>(%u dagen oud)</em>"
 
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
-#, fuzzy
-#| msgid "All packages"
 msgid "All packages"
 msgstr "Alle pakketten"
 
@@ -535,9 +523,8 @@ msgid "suite(s) <em>$suite_enc</em>"
 msgstr "suite(s) <em>$suite_enc</em>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
-#, fuzzy
 msgid "all sections"
-msgstr "Sectie"
+msgstr "alle secties"
 
 #: templates/html/search.tmpl:52
 msgid "section(s) <em>$section_enc</em>"
@@ -729,11 +716,11 @@ msgstr "Sectie:"
 
 #: templates/html/show.tmpl:21
 msgid "Details of source package %s in %s"
-msgstr "Details voor bronpakkett %s in %s"
+msgstr "Details voor bronpakket %s in %s"
 
 #: templates/html/show.tmpl:22
 msgid "Details of package %s in %s"
-msgstr "Details voor pakkett %s in %s"
+msgstr "Details voor pakket %s in %s"
 
 #: templates/html/show.tmpl:45
 #, fuzzy
@@ -814,10 +801,8 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
 #: templates/html/show.tmpl:120
-#, fuzzy
-#| msgid "All packages"
 msgid "QA Page"
-msgstr "Alle pakketten"
+msgstr "QA-pagina"
 
 #: templates/html/show.tmpl:121
 msgid "Archive of the Maintainer Mailinglist"
@@ -825,7 +810,7 @@ msgstr ""
 
 #: templates/html/show.tmpl:121
 msgid "Mail Archive"
-msgstr ""
+msgstr "Mailarchief"
 
 #: templates/html/show.tmpl:129
 msgid "External Resources:"
@@ -833,7 +818,7 @@ msgstr "Externe bronnen:"
 
 #: templates/html/show.tmpl:131
 msgid "Homepage"
-msgstr ""
+msgstr "Homepage"
 
 #: templates/html/show.tmpl:137
 msgid "Similar packages:"
@@ -1016,9 +1001,8 @@ msgid "Debtags"
 msgstr "Debtags"
 
 #: templates/html/tag_index.tmpl:10
-#, fuzzy
 msgid "Facet: %s"
-msgstr "Pakket: %s"
+msgstr "Facet: %s"
 
 #: templates/rss/newpkg.tmpl:16
 #, fuzzy
