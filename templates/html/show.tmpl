@@ -256,7 +256,7 @@
 	  [% js_id = name %]
 	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs.sort %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF providers.pkgs.size > 10 %]
-	<script type="text/javascript">init_toggle_elem("[% js_id %]",[% g('%u providing packages', providers.pkgs.size) %]</script>
+	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% g('%u providing packages', providers.pkgs.size) %]")</script>
 	[% END %]
         [% END %]
         </dd>
