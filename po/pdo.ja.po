@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 21:01+0100\n"
+"POT-Creation-Date: 2008-01-18 01:01+0100\n"
 "PO-Revision-Date: 2007-10-22 14:48+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/create_index_pages:233
+#: bin/create_index_pages:232
 msgid "Section"
 msgstr "セクション"
 
-#: bin/create_index_pages:245
+#: bin/create_index_pages:244
 msgid "Subsection"
 msgstr "サブセクション"
 
-#: bin/create_index_pages:257
+#: bin/create_index_pages:256
 msgid "Priority"
 msgstr "優先度"
 
-#: lib/Packages/Dispatcher.pm:312
+#: lib/Packages/Dispatcher.pm:310
 msgid "requested format not available for this document"
 msgstr "この文書は要求された形式では利用できません"
 
@@ -151,14 +151,8 @@ msgstr "入手不能"
 msgid "package has bad maintainer field"
 msgstr "パッケージのメンテナ (Maintainer) フィールドが不正です"
 
-#~ msgid "Initialization of Template Engine failed: %s"
-#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"
-
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
-
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s がパスに複数入っています"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "search の場合は後ろにパスを追加できません"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -167,5 +161,11 @@ msgstr "パッケージのメンテナ (Maintainer) フィールドが不正で�
 #~ "ここには、dispatch.pl を取得するのではなくホームページを表示することになっ"
 #~ "ています。"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "search の場合は後ろにパスを追加できません"
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s がパスに複数入っています"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
+
+#~ msgid "Initialization of Template Engine failed: %s"
+#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"

@@ -586,7 +586,15 @@ msgid "Binary packages:"
 msgstr "二进制包:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "%u 个二进制包"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "show %u binary packages"
 msgstr "%u 个二进制包"
 
 #: templates/html/search.tmpl:125
@@ -868,7 +876,15 @@ msgid "also a virtual package provided by"
 msgstr "同时作为一个虚包由这些包填实:"
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "%u 个虚包填实者"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "show %u providing packages"
 msgstr "%u 个虚包填实者"
 
 #: templates/html/show.tmpl:277

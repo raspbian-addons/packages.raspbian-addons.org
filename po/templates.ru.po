@@ -11,7 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: templates/config.tmpl:40
 msgid "Debian Web Mailinglist"
@@ -34,7 +35,7 @@ msgstr ""
 "Это экспериментальная версия <a href=\"http://packages.debian.org/"
 "\">packages.debian.org</a>. Возможны ошибки и устаревшая информация"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:56
 msgid "."
 msgstr ","
@@ -223,7 +224,8 @@ msgstr ""
 "сайтов:"
 
 #: templates/html/download.tmpl:75
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Вы можете скачать требуемый файл из подкаталога <tt>%s</tt> c:"
 
 #: templates/html/download.tmpl:77
@@ -295,8 +297,10 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Список файлов пакета %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
@@ -441,13 +445,15 @@ msgstr " Также их можно увидеть <a href=\"%s\">отсорти
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr " Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
+msgstr ""
+" Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
 
 #: templates/html/newpkg.tmpl:22
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
-msgstr "Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
+msgstr ""
+"Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
@@ -502,7 +508,8 @@ msgstr ""
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed due to the search "
 "parameters."
-msgstr "<a href=\"%s\">%u</a> результаты не были показаны из-за параметров поиска."
+msgstr ""
+"<a href=\"%s\">%u</a> результаты не были показаны из-за параметров поиска."
 
 #: templates/html/search.tmpl:51
 msgid "all suites"
@@ -537,7 +544,8 @@ msgid "source packages"
 msgstr "пакеты исходного кода"
 
 #: templates/html/search.tmpl:56
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr "Вы искали %s в именах, которые содержат <em>%s</em> в %s, %s и %s."
 
 #: templates/html/search.tmpl:59
@@ -601,7 +609,15 @@ msgid "Binary packages:"
 msgstr "Бинарный пакет:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "%u бинарных пакетов"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "show %u binary packages"
 msgstr "%u бинарных пакетов"
 
 #: templates/html/search.tmpl:125
@@ -664,7 +680,7 @@ msgstr "файлы с именем"
 msgid "filenames that contain"
 msgstr "имена файлов, содержащих"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr "Вы искали %s <em>%s</em> в комплекте <em>%s</em>, %s и %s."
@@ -886,7 +902,15 @@ msgid "also a virtual package provided by"
 msgstr "также виртуальный пакет, предоставляемый"
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "%u предоставляемых пакетов"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "show %u providing packages"
 msgstr "%u предоставляемых пакетов"
 
 #: templates/html/show.tmpl:277
@@ -1026,4 +1050,3 @@ msgstr "Все %s пакеты в \"%s\""
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
-

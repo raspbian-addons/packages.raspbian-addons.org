@@ -615,7 +615,15 @@ msgid "Binary packages:"
 msgstr "バイナリパッケージ:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "%u 個のバイナリパッケージ"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "show %u binary packages"
 msgstr "%u 個のバイナリパッケージ"
 
 #: templates/html/search.tmpl:125
@@ -901,7 +909,15 @@ msgid "also a virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "%u 個の提供パッケージ"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "show %u providing packages"
 msgstr "%u 個の提供パッケージ"
 
 #: templates/html/show.tmpl:277
@@ -1043,11 +1059,11 @@ msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
 #~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
 #~ "last 7 days."
 #~ msgstr ""
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
-
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"

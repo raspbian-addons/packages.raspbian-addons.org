@@ -36,7 +36,7 @@ msgid ""
 "information should be expected"
 msgstr ""
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:56
 msgid "."
 msgstr ","
@@ -195,12 +195,11 @@ msgid ""
 msgstr ""
 "Waarschuwing: Dit pakket komt uit de <strong>experimental</strong> "
 "distributie. Dit houdt in dat het mogelijk instabiel is of nog fouten bevat; "
-"het is zelfs mogelijk dat het verlies van gegevens kan veroorzaken. Raadpleeg "
-"vooral de changelog en andere beschikbare documentatie voordat u het pakket "
-"gebruikt."
+"het is zelfs mogelijk dat het verlies van gegevens kan veroorzaken. "
+"Raadpleeg vooral de changelog en andere beschikbare documentatie voordat u "
+"het pakket gebruikt."
 
 #: templates/html/download.tmpl:41 templates/html/show.tmpl:157
-#| msgid "List of all packages"
 msgid "debian-installer udeb package"
 msgstr "udeb-pakket voor debian-installer"
 
@@ -226,12 +225,14 @@ msgid ""
 msgstr ""
 
 #: templates/html/download.tmpl:75
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 
 #: templates/html/download.tmpl:77
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr "%s beveiligingsupdates worden officieel alleen verspreid via <tt>%s</tt>."
+msgstr ""
+"%s beveiligingsupdates worden officieel alleen verspreid via <tt>%s</tt>."
 
 #: templates/html/download.tmpl:84
 msgid ""
@@ -255,7 +256,6 @@ msgid ""
 msgstr ""
 
 #: templates/html/download.tmpl:100
-#| msgid "More Information on %s"
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "Nadere informatie over <kbd>%s</kbd>:"
 
@@ -288,15 +288,17 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Bestandenoverzicht voor pakket %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "Bestandenoverzicht voor pakket <em>%s</em> in <em>%s</em> voor het platform <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Bestandenoverzicht voor pakket <em>%s</em> in <em>%s</em> voor het platform "
+"<em>%s</em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
 msgstr "Bestandenoverzicht"
 
 #: templates/html/foot.tmpl:11
-#| msgid "This page is also available in the following languages:\n"
 msgid "This page is also available in the following languages:"
 msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
 
@@ -340,8 +342,8 @@ msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
-"Copyright &copy; %s <a href=\"%s\">%s</a>. Zie de "
-"<a href=\"%s\">licentievoorwaarden</a>."
+"Copyright &copy; %s <a href=\"%s\">%s</a>. Zie de <a href=\"%s"
+"\">licentievoorwaarden</a>."
 
 #: templates/html/foot.tmpl:39
 #, fuzzy
@@ -391,7 +393,6 @@ msgid "Source Packages in \"%s\", %s %s"
 msgstr "Bronpakketten in \"%s\", %s %s"
 
 #: templates/html/index.tmpl:4
-#| msgid "Software Packages in \"%s\""
 msgid "Source Packages in \"%s\""
 msgstr "Bronpakketten in \"%s\""
 
@@ -547,7 +548,8 @@ msgid "source packages"
 msgstr "bronpakketten"
 
 #: templates/html/search.tmpl:56
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
 #: templates/html/search.tmpl:59
@@ -604,7 +606,15 @@ msgid "Binary packages:"
 msgstr "Binaire pakketten:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "%u binaire pakketten"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "show %u binary packages"
 msgstr "%u binaire pakketten"
 
 #: templates/html/search.tmpl:125
@@ -668,7 +678,7 @@ msgstr ""
 msgid "filenames that contain"
 msgstr ""
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -698,7 +708,6 @@ msgid "Sort results by package name"
 msgstr "Bronpakket"
 
 #: templates/html/search_contents.tmpl:114
-#| msgid "not"
 msgid "not %s"
 msgstr "niet %s"
 
@@ -744,7 +753,6 @@ msgid "Package: %s (%s)"
 msgstr "Pakket: %s (%s)"
 
 #: templates/html/show.tmpl:60
-#| msgid "Essential"
 msgid "essential"
 msgstr "essentieel"
 
@@ -787,12 +795,10 @@ msgid "Not found"
 msgstr "Niet gevonden"
 
 #: templates/html/show.tmpl:107
-#| msgid "Maintainer"
 msgid "Maintainer:"
 msgstr "Beheerder:"
 
 #: templates/html/show.tmpl:109
-#| msgid "Maintainer"
 msgid "Maintainers:"
 msgstr "Beheerders:"
 
@@ -897,7 +903,15 @@ msgid "also a virtual package provided by"
 msgstr "Ook een virtueel pakket geboden door:"
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "pakketten die %u bieden"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "show %u providing packages"
 msgstr "pakketten die %u bieden"
 
 #: templates/html/show.tmpl:277
@@ -1032,11 +1046,9 @@ msgid "Copyright ©"
 msgstr "Copyright ©"
 
 #: templates/txt/index.tmpl:2
-#| msgid "New Packages in \"%s\""
 msgid "All %s Packages in \"%s\""
 msgstr "Alle %s pakketten in \"%s\""
 
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr ""
-

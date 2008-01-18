@@ -618,8 +618,12 @@ msgid "Binary packages:"
 msgstr "Binär-Pakete:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
-msgstr "%u binäre Pakete"
+msgid "hide %u binary packages"
+msgstr "verberge %u binäre Pakete"
+
+#: templates/html/search.tmpl:115
+msgid "show %u binary packages"
+msgstr "zeige %u binäre Pakete"
 
 #: templates/html/search.tmpl:125
 msgid ""
@@ -905,8 +909,12 @@ msgid "also a virtual package provided by"
 msgstr "auch ein virtuelles Paket, bereitgestellt durch"
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
-msgstr "%u bereitstellende Pakete"
+msgid "hide %u providing packages"
+msgstr "verberge %u bereitstellende Pakete"
+
+#: templates/html/show.tmpl:259
+msgid "show %u providing packages"
+msgstr "zeige %u bereitstellende Pakete"
 
 #: templates/html/show.tmpl:277
 msgid "Download %s"
