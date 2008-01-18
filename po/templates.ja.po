@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-12-11 19:40+0900\n"
+"PO-Revision-Date: 2008-01-18 14:11+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -615,16 +615,12 @@ msgid "Binary packages:"
 msgstr "バイナリパッケージ:"
 
 #: templates/html/search.tmpl:115
-#, fuzzy
-#| msgid "%u binary packages"
 msgid "hide %u binary packages"
-msgstr "%u 個のバイナリパッケージ"
+msgstr "%u 個のバイナリパッケージを表示"
 
 #: templates/html/search.tmpl:115
-#, fuzzy
-#| msgid "%u binary packages"
 msgid "show %u binary packages"
-msgstr "%u 個のバイナリパッケージ"
+msgstr "%u 個のバイナリパッケージを隠す"
 
 #: templates/html/search.tmpl:125
 msgid ""
@@ -909,16 +905,12 @@ msgid "also a virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
 #: templates/html/show.tmpl:259
-#, fuzzy
-#| msgid "%u providing packages"
 msgid "hide %u providing packages"
-msgstr "%u 個の提供パッケージ"
+msgstr "%u 個の提供パッケージを隠す"
 
 #: templates/html/show.tmpl:259
-#, fuzzy
-#| msgid "%u providing packages"
 msgid "show %u providing packages"
-msgstr "%u 個の提供パッケージ"
+msgstr "%u 個の提供パッケージを表示"
 
 #: templates/html/show.tmpl:277
 msgid "Download %s"
