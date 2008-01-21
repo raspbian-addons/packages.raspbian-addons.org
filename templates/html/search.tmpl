@@ -48,9 +48,9 @@
 
 <div id="psearchres">
 
-[% suite_wording = suite_enc.match("^(default|all)$") ? g("all suites") : g("suite(s) <em>$suite_enc</em>");
-   section_wording = (section_enc == 'all') ? g("all sections") : g("section(s) <em>$section_enc</em>");
-   arch_wording = (architectures_enc == 'any') ? g("all architectures") : g("architecture(s) <em>$architectures_enc</em>");
+[% suite_wording = suite_enc.match("^(default|all)$") ? g("all suites") : g("suite(s) <em>%s</em>", suite_enc);
+   section_wording = (section_enc == 'all') ? g("all sections") : g("section(s) <em>%s</em>", section_enc);
+   arch_wording = (architectures_enc == 'any') ? g("all architectures") : g("architecture(s) <em>%s</em>", architectures_enc);
     IF opts.searchon == "names";
 	source_wording = opts.source ? g("source packages") : g("packages");
 	msg = g("You have searched for %s that names contain <em>%s</em> in %s, %s, and %s.",
