@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2007-12-11 19:40+0900\n"
+"PO-Revision-Date: 2008-01-18 14:23+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -522,24 +522,26 @@ msgid "all suites"
 msgstr "すべてのスイート"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
-msgstr "<em>$suite_enc</em> スイート"
+#, fuzzy
+#| msgid "section(s) <em>%s</em>"
+msgid "suite(s) <em>%s</em>"
+msgstr "<em>%s</em> セクション"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "すべてのセクション"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr "<em>$section_enc</em> セクション"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "<em>%s</em> セクション"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "すべてのアーキテクチャ"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "<em>$architectures_enc</em> アーキテクチャ"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "<em>%s</em> アーキテクチャ"
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -615,8 +617,12 @@ msgid "Binary packages:"
 msgstr "バイナリパッケージ:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
-msgstr "%u 個のバイナリパッケージ"
+msgid "hide %u binary packages"
+msgstr "%u 個のバイナリパッケージを非表示"
+
+#: templates/html/search.tmpl:115
+msgid "show %u binary packages"
+msgstr "%u 個のバイナリパッケージを表示"
 
 #: templates/html/search.tmpl:125
 msgid ""
@@ -657,14 +663,6 @@ msgstr "特定のアーキテクチャに絞って検索:"
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr "<em>%s</em> セクション"
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr "<em>%s</em> アーキテクチャ"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -901,8 +899,12 @@ msgid "also a virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
-msgstr "%u 個の提供パッケージ"
+msgid "hide %u providing packages"
+msgstr "%u 個の提供パッケージを非表示"
+
+#: templates/html/show.tmpl:259
+msgid "show %u providing packages"
+msgstr "%u 個の提供パッケージを表示"
 
 #: templates/html/show.tmpl:277
 msgid "Download %s"
@@ -1051,3 +1053,12 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive during the last 7 days."
 #~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"

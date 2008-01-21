@@ -1,13 +1,14 @@
 
-function init_toggle_elem(id_str,user_str) {
-	toggle_toggle_elem(id_str,user_str,'hide');
+function init_toggle_elem(id_str,show_user_str,hide_user_str) {
+	toggle_toggle_elem(id_str,show_user_str,hide_user_str,'hide');
 }
 
-function toggle_toggle_elem(id_str,user_str,mode) {
+function toggle_toggle_elem(id_str,show_user_str,hide_user_str,mode) {
 	var other_mode = ( mode == "hide" ) ? "show" : "hide";
+	var user_str = ( mode == "hide" ) ? show_user_str : hide_user_str;
 	var link = document.createElement("a");
-	link.setAttribute("href","javascript:toggle_toggle_elem(\""+id_str+"\",\""+user_str+"\",\""+other_mode+"\")");
-	var txt = document.createTextNode("["+other_mode+" "+user_str+"]");
+	link.setAttribute("href","javascript:toggle_toggle_elem(\""+id_str+"\",\""+show_user_str+"\",\""+hide_user_str+"\",\""+other_mode+"\")");
+	var txt = document.createTextNode("["+user_str+"]");
 	link.appendChild(txt);
 	if (document.getElementById("js_"+id_str).childNodes.length > 0) { 
 		document.getElementById("js_"+id_str).replaceChild(link,document.getElementById("js_"+id_str).firstChild);

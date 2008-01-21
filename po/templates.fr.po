@@ -555,7 +555,7 @@ msgid "all suites"
 msgstr ""
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
+msgid "suite(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
@@ -563,8 +563,8 @@ msgstr ""
 msgid "all sections"
 msgstr "Section"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
@@ -572,8 +572,8 @@ msgstr ""
 msgid "all architectures"
 msgstr "Architecture"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:55
@@ -650,7 +650,12 @@ msgstr "paquet virtuel"
 
 #: templates/html/search.tmpl:115
 #, fuzzy
-msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "Taille du paquet"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+msgid "show %u binary packages"
 msgstr "Taille du paquet"
 
 #: templates/html/search.tmpl:125
@@ -693,14 +698,6 @@ msgstr ""
 #| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Chercher d'<a href=\"%s\">autres versions de %s</a>"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr ""
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -960,7 +957,12 @@ msgstr "paquet virtuel"
 
 #: templates/html/show.tmpl:259
 #, fuzzy
-msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "Taille du paquet"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+msgid "show %u providing packages"
 msgstr "Taille du paquet"
 
 #: templates/html/show.tmpl:277
@@ -1190,9 +1192,9 @@ msgstr ""
 #~ "Users of experimental packages are encouraged to contact the package "
 #~ "maintainers directly in case of problems."
 #~ msgstr ""
-#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;"
-#~ "experimental&nbsp;» rencontrant des problèmes à contacter directement le "
-#~ "responsable du paquet."
+#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;experimental&nbsp;» "
+#~ "rencontrant des problèmes à contacter directement le responsable du "
+#~ "paquet."
 
 #~ msgid ""
 #~ "Packages that were added to the \"%s\" component next to the unstable "

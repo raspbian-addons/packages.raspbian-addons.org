@@ -515,23 +515,23 @@ msgid "all suites"
 msgstr "kaikki jakelut"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
+msgid "suite(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "kaikki osastot"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "kaikki arkkitehtuurit"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:55
@@ -604,7 +604,12 @@ msgstr "näennäispaketti"
 
 #: templates/html/search.tmpl:115
 #, fuzzy
-msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "Paketin koko"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+msgid "show %u binary packages"
 msgstr "Paketin koko"
 
 #: templates/html/search.tmpl:125
@@ -646,14 +651,6 @@ msgstr ""
 #, fuzzy
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Hae <a href=\"%s\">paketin %s muita versioita</a>"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr ""
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -894,7 +891,12 @@ msgstr "myös näennäispaketti, jonka toteuttaa"
 
 #: templates/html/show.tmpl:259
 #, fuzzy
-msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "Paketin koko"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+msgid "show %u providing packages"
 msgstr "Paketin koko"
 
 #: templates/html/show.tmpl:277

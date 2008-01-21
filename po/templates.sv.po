@@ -514,24 +514,26 @@ msgid "all suites"
 msgstr "alla sviter"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
-msgstr "svit(er) <em>$suite_enc</em>"
+#, fuzzy
+#| msgid "section(s) <em>%s</em>"
+msgid "suite(s) <em>%s</em>"
+msgstr "sektion(er) <em>%s</em>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "alla sektioner"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr "sektion(er) <em>$section_enc</em>"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "sektion(er) <em>%s</em>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "alla arkitekturer"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "arkitektur(er) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "arkitektur(er) <em>%s</em>"
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -608,7 +610,15 @@ msgid "Binary packages:"
 msgstr "Binärpaket:"
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "hide %u binary packages"
+msgstr "%u binärpaket"
+
+#: templates/html/search.tmpl:115
+#, fuzzy
+#| msgid "%u binary packages"
+msgid "show %u binary packages"
 msgstr "%u binärpaket"
 
 #: templates/html/search.tmpl:125
@@ -650,14 +660,6 @@ msgstr "Begränsa sökningen till en specifik arkitektur:"
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr "sektion(er) <em>%s</em>"
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr "arkitektur(er) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -892,7 +894,15 @@ msgid "also a virtual package provided by"
 msgstr "också ett virtuellt paket som tillhandahålls av"
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "hide %u providing packages"
+msgstr "%u tillhandahåller paketen"
+
+#: templates/html/show.tmpl:259
+#, fuzzy
+#| msgid "%u providing packages"
+msgid "show %u providing packages"
 msgstr "%u tillhandahåller paketen"
 
 #: templates/html/show.tmpl:277
@@ -1031,3 +1041,12 @@ msgstr "Alla %spaket i \"%s\""
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "Se <URL:%s> för licensvillkor."
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "arkitektur(er) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "sektion(er) <em>$section_enc</em>"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "svit(er) <em>$suite_enc</em>"

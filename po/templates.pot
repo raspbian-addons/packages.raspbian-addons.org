@@ -434,7 +434,7 @@ msgid "all suites"
 msgstr ""
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
+msgid "suite(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:52
@@ -443,7 +443,8 @@ msgid "all sections"
 msgstr ""
 
 #: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
+#: templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:53
@@ -452,7 +453,8 @@ msgid "all architectures"
 msgstr ""
 
 #: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
+#: templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search.tmpl:55
@@ -514,7 +516,11 @@ msgid "Binary packages:"
 msgstr ""
 
 #: templates/html/search.tmpl:115
-msgid "%u binary packages"
+msgid "show %u binary packages"
+msgstr ""
+
+#: templates/html/search.tmpl:115
+msgid "hide %u binary packages"
 msgstr ""
 
 #: templates/html/search.tmpl:125
@@ -551,14 +557,6 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:74
@@ -778,7 +776,11 @@ msgid "also a virtual package provided by"
 msgstr ""
 
 #: templates/html/show.tmpl:259
-msgid "%u providing packages"
+msgid "show %u providing packages"
+msgstr ""
+
+#: templates/html/show.tmpl:259
+msgid "hide %u providing packages"
 msgstr ""
 
 #: templates/html/show.tmpl:277

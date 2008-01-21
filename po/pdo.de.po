@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-11-17 21:01+0100\n"
+"POT-Creation-Date: 2008-01-18 01:01+0100\n"
 "PO-Revision-Date: 2007-10-28 17:07+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
@@ -10,19 +10,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/create_index_pages:233
+#: bin/create_index_pages:232
 msgid "Section"
 msgstr "Bereich"
 
-#: bin/create_index_pages:245
+#: bin/create_index_pages:244
 msgid "Subsection"
 msgstr "Unterbereich"
 
-#: bin/create_index_pages:257
+#: bin/create_index_pages:256
 msgid "Priority"
 msgstr "Priorität"
 
-#: lib/Packages/Dispatcher.pm:312
+#: lib/Packages/Dispatcher.pm:310
 msgid "requested format not available for this document"
 msgstr "angefordertes Format für dieses Dokument nicht verfügbar"
 
@@ -150,11 +150,8 @@ msgstr "Nicht verfügbar"
 msgid "package has bad maintainer field"
 msgstr "Paket hat ungültiges Betreuer-Feld"
 
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
-
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s mehr als einmal im Pfad angegeben"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "Suche nimmt keine Pfadelemente mehr an"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -162,5 +159,8 @@ msgstr "Paket hat ungültiges Betreuer-Feld"
 #~ msgstr ""
 #~ "Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "Suche nimmt keine Pfadelemente mehr an"
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s mehr als einmal im Pfad angegeben"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
