@@ -494,24 +494,26 @@ msgid "all suites"
 msgstr "所有发行版"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
-msgstr " <em>$suite_enc</em> 发行版"
+#, fuzzy
+#| msgid "section(s) <em>%s</em>"
+msgid "suite(s) <em>%s</em>"
+msgstr " <em>%s</em> 版面"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "所有版面"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr " <em>$section_enc</em> 版面"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr " <em>%s</em> 版面"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "所有硬件架构"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr " <em>$architectures_enc</em> 硬件架构"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr " <em>%s</em> 硬件架构"
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -636,14 +638,6 @@ msgstr "只搜索某一种硬件架构:"
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "在<a href=\"%s\">所有硬件架构</a>中搜索"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr " <em>%s</em> 版面"
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr " <em>%s</em> 硬件架构"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1019,3 +1013,12 @@ msgstr "\"%2\" 包含所有的 %1 软件包"
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "查看 <URL:%s> 以便了解许可证的各项条款。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr " <em>$architectures_enc</em> 硬件架构"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr " <em>$section_enc</em> 版面"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr " <em>$suite_enc</em> 发行版"

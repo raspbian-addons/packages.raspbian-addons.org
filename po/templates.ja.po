@@ -522,24 +522,26 @@ msgid "all suites"
 msgstr "すべてのスイート"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
-msgstr "<em>$suite_enc</em> スイート"
+#, fuzzy
+#| msgid "section(s) <em>%s</em>"
+msgid "suite(s) <em>%s</em>"
+msgstr "<em>%s</em> セクション"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "すべてのセクション"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr "<em>$section_enc</em> セクション"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "<em>%s</em> セクション"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "すべてのアーキテクチャ"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "<em>$architectures_enc</em> アーキテクチャ"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "<em>%s</em> アーキテクチャ"
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -661,14 +663,6 @@ msgstr "特定のアーキテクチャに絞って検索:"
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr "<em>%s</em> セクション"
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr "<em>%s</em> アーキテクチャ"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1051,11 +1045,20 @@ msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
 #~ "last 7 days."
 #~ msgstr ""
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
+
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"

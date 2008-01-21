@@ -516,24 +516,26 @@ msgid "all suites"
 msgstr "все комплекты"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
-msgstr "комплект(ы) <em>$suite_enc</em>"
+#, fuzzy
+#| msgid "section(s) <em>%s</em>"
+msgid "suite(s) <em>%s</em>"
+msgstr "секция(и) <em>%s</em>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "все секции"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr "секция(и) <em>$section_enc</em>"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "секция(и) <em>%s</em>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "все архитектуры"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "архитектура(ы) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "архитектура(ы) <em>%s</em>"
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -659,14 +661,6 @@ msgstr "Ограничить поиск определённой архитек�
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Поиск во <a href=\"%s\">всех архитектурах</a>"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr "секция(и) <em>%s</em>"
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr "архитектура(ы) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1050,3 +1044,12 @@ msgstr "Все %s пакеты в \"%s\""
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "архитектура(ы) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "секция(и) <em>$section_enc</em>"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "комплект(ы) <em>$suite_enc</em>"

@@ -520,24 +520,26 @@ msgid "all suites"
 msgstr "alle suites"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
+#, fuzzy
+#| msgid "suite(s) <em>$suite_enc</em>"
+msgid "suite(s) <em>%s</em>"
 msgstr "suite(s) <em>$suite_enc</em>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "alle secties"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr "sectie(s) <em>$section_enc</em>"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr ""
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "alle platformen"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "platform(en) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr ""
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -657,14 +659,6 @@ msgstr ""
 #| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr ""
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1052,3 +1046,9 @@ msgstr "Alle %s pakketten in \"%s\""
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr ""
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "platform(en) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "sectie(s) <em>$section_enc</em>"

@@ -522,24 +522,24 @@ msgid "all suites"
 msgstr "allen Suites"
 
 #: templates/html/search.tmpl:51
-msgid "suite(s) <em>$suite_enc</em>"
-msgstr "Suite(s) <em>$suite_enc</em>"
+msgid "suite(s) <em>%s</em>"
+msgstr "Suite(s) <em>%s</em>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "allen Bereichen"
 
-#: templates/html/search.tmpl:52
-msgid "section(s) <em>$section_enc</em>"
-msgstr "Bereich(e) <em>$section_enc</em>"
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "Bereich(e) <em>%s</em>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "auf allen Architekturen"
 
-#: templates/html/search.tmpl:53
-msgid "architecture(s) <em>$architectures_enc</em>"
-msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "Architektur(en) <em>%s</em>"
 
 #: templates/html/search.tmpl:55
 msgid "packages"
@@ -664,14 +664,6 @@ msgstr "Schränke Suche auf bestimmte Architekturen ein:"
 #: templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
-
-#: templates/html/search_contents.tmpl:72
-msgid "section(s) <em>%s</em>"
-msgstr "Bereich(e) <em>%s</em>"
-
-#: templates/html/search_contents.tmpl:73
-msgid "architecture(s) <em>%s</em>"
-msgstr "Architektur(en) <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1053,3 +1045,12 @@ msgstr "Alle %s-Pakete in »%s«"
 #: templates/txt/index.tmpl:6
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "Bereich(e) <em>$section_enc</em>"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"
