@@ -1,12 +1,15 @@
+# Peter Karlsson <peterk@debian.org>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: Debian webwml organization\n"
-"PO-Revision-Date: 2006-10-26 23:10+0100\n"
+"Project-Id-Version: templates\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: (null)\n"
+"PO-Revision-Date: 2008-01-22 07:28+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
-"Language-Team: debian-l10n-swedish@lists.debian.org\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: templates/config.tmpl:40
 msgid "Debian Web Mailinglist"
@@ -30,14 +33,14 @@ msgstr ""
 "debian.org/\">packages.debian.org</a>. Fel och föråldrad information kan "
 "förväntas"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:56
 msgid "."
-msgstr ""
+msgstr ","
 
 #: templates/config.tmpl:57
 msgid ","
-msgstr ""
+msgstr "."
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -220,8 +223,7 @@ msgstr ""
 "dessa platser:"
 
 #: templates/html/download.tmpl:75
-msgid ""
-"You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Du kan hämta den önskade filen från underkatalogen <tt>%s</tt> på:"
 
 #: templates/html/download.tmpl:77
@@ -282,7 +284,7 @@ msgstr "Ej tillgänglig"
 
 #: templates/html/download.tmpl:104
 msgid "SHA1 checksum"
-msgstr "SHA1-kontrollsymma"
+msgstr "SHA1-kontrollsumma"
 
 #: templates/html/download.tmpl:105
 msgid "SHA256 checksum"
@@ -293,8 +295,7 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Filförteckning för paketet %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid ""
-"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
 "Filförteckning för paketet <em>%s</em> i <em>%s</em> för arkitekturen <em>%"
 "s</em>"
@@ -439,8 +440,7 @@ msgstr ""
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr ""
-" Du kan även visa listan <a href=\"%s\">sorterad i bokstavsordning</a>."
+msgstr " Du kan även visa listan <a href=\"%s\">sorterad i bokstavsordning</a>."
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
@@ -506,18 +506,16 @@ msgstr ""
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed due to the search "
 "parameters."
-msgstr ""
-"<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
+msgstr "<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
 
 #: templates/html/search.tmpl:51
 msgid "all suites"
 msgstr "alla sviter"
 
 #: templates/html/search.tmpl:51
-#, fuzzy
 #| msgid "section(s) <em>%s</em>"
 msgid "suite(s) <em>%s</em>"
-msgstr "sektion(er) <em>%s</em>"
+msgstr "svit(en) <em>%s</em>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
 msgid "all sections"
@@ -544,8 +542,7 @@ msgid "source packages"
 msgstr "källkodspaket"
 
 #: templates/html/search.tmpl:56
-msgid ""
-"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr "Du har sökt efter %s vars namn innehåller <em>%s</em> i %s, %s och %s."
 
 #: templates/html/search.tmpl:59
@@ -582,7 +579,7 @@ msgid ""
 "using a longer keyword or more keywords."
 msgstr ""
 "Din sökning var så vid att vi bara visar exakta träffar. Åtminstone <em>%u</"
-"em> resulat har uteslutits och kommer inte att visas. Försök använda ett "
+"em> resultat har uteslutits och kommer inte att visas. Försök använda ett "
 "längre eller fler nyckelord."
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
@@ -610,16 +607,14 @@ msgid "Binary packages:"
 msgstr "Binärpaket:"
 
 #: templates/html/search.tmpl:115
-#, fuzzy
 #| msgid "%u binary packages"
 msgid "hide %u binary packages"
-msgstr "%u binärpaket"
+msgstr "dölj %u binärpaket"
 
 #: templates/html/search.tmpl:115
-#, fuzzy
 #| msgid "%u binary packages"
 msgid "show %u binary packages"
-msgstr "%u binärpaket"
+msgstr "visa %u binärpaket"
 
 #: templates/html/search.tmpl:125
 msgid ""
@@ -643,7 +638,7 @@ msgstr "Sök efter <em>%s</em> i filnamn"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr "Sök exakt filnemn <em>%s</em>"
+msgstr "Sök exakt filnamn <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
@@ -673,7 +668,7 @@ msgstr "filer som heter"
 msgid "filenames that contain"
 msgstr "filnamn som innehåller"
 
-#. @translators: I'm really sorry :/ 
+#. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr "Du har sökt efter %s <em>%s</em> i sviten <em>%s</em>, %s och %s."
@@ -805,11 +800,11 @@ msgstr "QA-sida"
 
 #: templates/html/show.tmpl:121
 msgid "Archive of the Maintainer Mailinglist"
-msgstr ""
+msgstr "Arkiv för paketansvarigas sändlista"
 
 #: templates/html/show.tmpl:121
 msgid "Mail Archive"
-msgstr ""
+msgstr "E-postarkiv"
 
 #: templates/html/show.tmpl:129
 msgid "External Resources:"
@@ -859,11 +854,11 @@ msgstr "Följande binärpaket byggs från detta källkodspaket:"
 
 #: templates/html/show.tmpl:225
 msgid "Other Packages Related to %s"
-msgstr "Andra paket besäktade med %s"
+msgstr "Andra paket besläktade med %s"
 
 #: templates/html/show.tmpl:227
 msgid "legend"
-msgstr "beskrivnign"
+msgstr "beskrivning"
 
 #: templates/html/show.tmpl:229
 msgid "build-depends"
@@ -894,16 +889,14 @@ msgid "also a virtual package provided by"
 msgstr "också ett virtuellt paket som tillhandahålls av"
 
 #: templates/html/show.tmpl:259
-#, fuzzy
 #| msgid "%u providing packages"
 msgid "hide %u providing packages"
-msgstr "%u tillhandahåller paketen"
+msgstr "dölj %u tillhandahållande paket"
 
 #: templates/html/show.tmpl:259
-#, fuzzy
 #| msgid "%u providing packages"
 msgid "show %u providing packages"
-msgstr "%u tillhandahåller paketen"
+msgstr "visa %u tillhandahållande paket"
 
 #: templates/html/show.tmpl:277
 msgid "Download %s"
@@ -1042,11 +1035,3 @@ msgstr "Alla %spaket i \"%s\""
 msgid "See <URL:%s> for the license terms."
 msgstr "Se <URL:%s> för licensvillkor."
 
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "arkitektur(er) <em>$architectures_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "sektion(er) <em>$section_enc</em>"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "svit(er) <em>$suite_enc</em>"
