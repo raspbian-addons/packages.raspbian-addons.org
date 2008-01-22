@@ -105,10 +105,10 @@ my %translit = (
 		ko => "Hangul", # Not sure. "Hanguk-Mal" (=Spoken Korean)?
 		ru => "Russkij",
 		uk => "ukrajins'ka",
-		zh => "Zhongzu",
-		'zh-cn'=> "Zhongzu,&#31616;",
-		'zh-hk'=> "Zhongzu,HK",
-		'zh-tw'=> "Zhongzu,&#32321;",
+		zh => "Zhongwen",
+		'zh-cn'=> "Zhongwen,&#31616;",
+		'zh-hk'=> "Zhongwen,HK",
+		'zh-tw'=> "Zhongwen,&#32321;",
 		);
 
 # second transliteration table, used for languages starting with a latin
