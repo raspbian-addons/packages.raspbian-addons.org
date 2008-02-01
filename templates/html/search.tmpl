@@ -30,17 +30,43 @@
 
 <div id="psearchsug">
 [% UNLESS results %]
-	<p>[% g('You can try a different search on the <a href="%s#search_packages">Packages search page</a>.',
-		searchformurl) %]</p>
-	
 	[% IF opts.searchon != "names" && opts.exact %]
 	<p>[% g('You have searched only for words exactly matching your keywords. You can try to search <a href="%s">allowing subword matching</a>.',
 		make_search_url('',"keywords=$keyword_esc",'exact',0) ) %]</p>
 	[% END %]
 [% END %]
+
+<p>[% g('Search in specific suite:') %]
+[% FOREACH s IN all_suites %]
+	[% IF s != suite_str %]
+	[<a href="[% make_search_url('',"keywords=$keyword_esc",'suite',s) %]">[% s %]</a>]
+	[% ELSE %]
+	[[% s %]]
+	[% END %]
+[% END %]
+[% IF search_suites.size == 1 %]
+<p>[% g('Search in <a href="%s">all suites</a>',
+	make_search_url('',"keywords=$keyword_esc",'suite','all')) %]
+[% END %]
+
+<p>[% g('Limit search to a specific architecture:') %]
+[% FOREACH a IN all_architectures %]
+   [% IF a != arch_str %]
+   [<a href="[% make_search_url('',"keywords=$keyword_esc",'arch',a) %]">[% a %]</a>]
+   [% ELSE %]
+   [[% a %]]
+   [% END %]
+[% END %]
+[% IF search_architectures.size == 1 %]
+<p>[% g('Search in <a href="%s">all architectures</a>',
+	make_search_url('',"keywords=$keyword_esc",'arch','any')) %]
+[% END %]
+
+</div>
+
 [% IF opts.searchon == "names" && non_results %]
-<p>[% g('<a href="%s">%u</a> results have not been displayed due to the search parameters.',
-	"$search_url$keyword_esc", non_results) %]</p>
+<p>[% g('<a href="%s">Some</a> results have not been displayed due to the search parameters.',
+	"$search_url$keyword_esc") %]</p>
 [% END %]
 </div>
 
@@ -71,11 +97,16 @@
 [% IF opts.searchon != "names" %]
 <p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords.") %]</p>
 [% ELSE %]
-<p id="psearchtoomanyhits">[% g('Your search was too wide so we will only display exact matches. At least <em>%u</em> results have been omitted and will not be displayed. Please consider using a longer keyword or more keywords.',
-	too_many_hits) %]</p>
+<p id="psearchtoomanyhits">
+[%- IF results %]
+[% g("Your keyword was too generic, for optimizing reasons some results might have been supressed.<br>Please consider using a longer keyword or more keywords.") %]
+[%- ELSE -%]
+[% g("Your keyword was too generic.<br>Please consider using a longer keyword or more keywords.") %]
+[% END -%]
+</p>
 [% END; END %]
 
-[% UNLESS results %]
+[% UNLESS results || too_many_hits %]
 <p id="psearchnoresult">[% g('Sorry, your search gave no results') %]</p>
 [% END %]
 
