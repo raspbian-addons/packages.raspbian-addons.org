@@ -9,7 +9,7 @@ msgstr ""
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: templates/config.tmpl:40
 msgid "Debian Web Mailinglist"
@@ -33,7 +33,7 @@ msgstr ""
 "debian.org/\">packages.debian.org</a>. Fel och föråldrad information kan "
 "förväntas"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:56
 msgid "."
 msgstr ","
@@ -223,7 +223,8 @@ msgstr ""
 "dessa platser:"
 
 #: templates/html/download.tmpl:75
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Du kan hämta den önskade filen från underkatalogen <tt>%s</tt> på:"
 
 #: templates/html/download.tmpl:77
@@ -295,7 +296,8 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Filförteckning för paketet %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
 "Filförteckning för paketet <em>%s</em> i <em>%s</em> för arkitekturen <em>%"
 "s</em>"
@@ -440,7 +442,8 @@ msgstr ""
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr " Du kan även visa listan <a href=\"%s\">sorterad i bokstavsordning</a>."
+msgstr ""
+" Du kan även visa listan <a href=\"%s\">sorterad i bokstavsordning</a>."
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
@@ -486,15 +489,7 @@ msgstr "Paketsökresultat -- %s"
 msgid "Package Search Results"
 msgstr "Paketsökresultat"
 
-#: templates/html/search.tmpl:33
-msgid ""
-"You can try a different search on the <a href=\"%s#search_packages"
-"\">Packages search page</a>."
-msgstr ""
-"Du kan prova en annan sökning på <a href=\"%s#search_packages"
-"\">paketsöksidan</a>."
-
-#: templates/html/search.tmpl:37
+#: templates/html/search.tmpl:34
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
@@ -502,55 +497,80 @@ msgstr ""
 "Du har bara sökt efter ord som exakt träffar dina nyckelord. Du kan försöka "
 "söka med <a href=\"%s\">träff av delord aktiverade</a>."
 
-#: templates/html/search.tmpl:42
-msgid ""
-"<a href=\"%s\">%u</a> results have not been displayed due to the search "
-"parameters."
-msgstr "<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
+#: templates/html/search.tmpl:39
+#, fuzzy
+#| msgid "Search in other suite:"
+msgid "Search in specific suite:"
+msgstr "Sök i annan svit:"
 
-#: templates/html/search.tmpl:51
+#: templates/html/search.tmpl:48
+#, fuzzy
+#| msgid "Search in <a href=\"%s\">all architectures</a>"
+msgid "Search in <a href=\"%s\">all suites</a>"
+msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
+
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:58
+msgid "Limit search to a specific architecture:"
+msgstr "Begränsa sökningen till en specifik arkitektur:"
+
+#: templates/html/search.tmpl:61 templates/html/search_contents.tmpl:63
+msgid "Search in <a href=\"%s\">all architectures</a>"
+msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
+
+#: templates/html/search.tmpl:68
+#, fuzzy
+#| msgid ""
+#| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
+#| "parameters."
+msgid ""
+"<a href=\"%s\">Some</a> results have not been displayed due to the search "
+"parameters."
+msgstr ""
+"<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
+
+#: templates/html/search.tmpl:77
 msgid "all suites"
 msgstr "alla sviter"
 
-#: templates/html/search.tmpl:51
-#| msgid "section(s) <em>%s</em>"
+#: templates/html/search.tmpl:77
 msgid "suite(s) <em>%s</em>"
 msgstr "svit(en) <em>%s</em>"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "alla sektioner"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "sektion(er) <em>%s</em>"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "alla arkitekturer"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "arkitektur(er) <em>%s</em>"
 
-#: templates/html/search.tmpl:55
+#: templates/html/search.tmpl:81
 msgid "packages"
 msgstr "paket"
 
-#: templates/html/search.tmpl:55
+#: templates/html/search.tmpl:81
 msgid "source packages"
 msgstr "källkodspaket"
 
-#: templates/html/search.tmpl:56
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+#: templates/html/search.tmpl:82
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr "Du har sökt efter %s vars namn innehåller <em>%s</em> i %s, %s och %s."
 
-#: templates/html/search.tmpl:59
+#: templates/html/search.tmpl:85
 msgid " (including subword matching)"
 msgstr " (inkluderar delordsträffar)"
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:61
+#: templates/html/search.tmpl:87
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
@@ -558,11 +578,11 @@ msgstr ""
 "Du har sökt efter <em>%s</em> i paketnamn och beskrivningar i %s, %s och %s%"
 "s."
 
-#: templates/html/search.tmpl:67
+#: templates/html/search.tmpl:93
 msgid "Found <strong>%u</strong> matching packages."
 msgstr "Hittade <strong>%u</strong> paket."
 
-#: templates/html/search.tmpl:72
+#: templates/html/search.tmpl:98
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -572,51 +592,66 @@ msgstr ""
 "de första paketen inte är det du sökte efter, försök använda fler eller "
 "andra nyckelord."
 
-#: templates/html/search.tmpl:74
+#: templates/html/search.tmpl:102
+#, fuzzy
+#| msgid ""
+#| "Your search was too wide so we will only display exact matches. At least "
+#| "<em>%u</em> results have been omitted and will not be displayed. Please "
+#| "consider using a longer keyword or more keywords."
 msgid ""
-"Your search was too wide so we will only display exact matches. At least <em>"
-"%u</em> results have been omitted and will not be displayed. Please consider "
-"using a longer keyword or more keywords."
+"Your keyword was too generic, for optimizing reasons some results might have "
+"been supressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 "Din sökning var så vid att vi bara visar exakta träffar. Åtminstone <em>%u</"
 "em> resultat har uteslutits och kommer inte att visas. Försök använda ett "
 "längre eller fler nyckelord."
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:104
+#, fuzzy
+#| msgid ""
+#| "Note: Your search was too wide so we will only display only the first "
+#| "about 100 matches. Please consider using a longer keyword or more "
+#| "keywords."
+msgid ""
+"Your keyword was too generic.<br>Please consider using a longer keyword or "
+"more keywords."
+msgstr ""
+"Observera: Din sökning var för vid, så vi visar bara de första omkring 100 "
+"träffarna. Försök använda ett längre eller fler nyckelord."
+
+#: templates/html/search.tmpl:110 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr "Din sökning gav dessvärre inga resultat"
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:117
 msgid "Package %s"
 msgstr "Paketet %s"
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "also provided by:"
 msgstr "tillhandahålls också av:"
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "provided by:"
 msgstr "tillhandahålls av:"
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:136
 msgid "Source Package %s"
 msgstr "Källkodspaketet %s"
 
-#: templates/html/search.tmpl:113
+#: templates/html/search.tmpl:144
 msgid "Binary packages:"
 msgstr "Binärpaket:"
 
-#: templates/html/search.tmpl:115
-#| msgid "%u binary packages"
+#: templates/html/search.tmpl:146
 msgid "hide %u binary packages"
 msgstr "dölj %u binärpaket"
 
-#: templates/html/search.tmpl:115
-#| msgid "%u binary packages"
+#: templates/html/search.tmpl:146
 msgid "show %u binary packages"
 msgstr "visa %u binärpaket"
 
-#: templates/html/search.tmpl:125
+#: templates/html/search.tmpl:156
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -648,14 +683,6 @@ msgstr "Sök sökvägar som slutar med <em>%s</em>"
 msgid "Search in other suite:"
 msgstr "Sök i annan svit:"
 
-#: templates/html/search_contents.tmpl:58
-msgid "Limit search to a specific architecture:"
-msgstr "Begränsa sökningen till en specifik arkitektur:"
-
-#: templates/html/search_contents.tmpl:63
-msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
-
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
 msgstr "sökvägar som slutar med"
@@ -668,7 +695,7 @@ msgstr "filer som heter"
 msgid "filenames that contain"
 msgstr "filnamn som innehåller"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr "Du har sökt efter %s <em>%s</em> i sviten <em>%s</em>, %s och %s."
@@ -889,12 +916,10 @@ msgid "also a virtual package provided by"
 msgstr "också ett virtuellt paket som tillhandahålls av"
 
 #: templates/html/show.tmpl:259
-#| msgid "%u providing packages"
 msgid "hide %u providing packages"
 msgstr "dölj %u tillhandahållande paket"
 
 #: templates/html/show.tmpl:259
-#| msgid "%u providing packages"
 msgid "show %u providing packages"
 msgstr "visa %u tillhandahållande paket"
 
@@ -1035,3 +1060,9 @@ msgstr "Alla %spaket i \"%s\""
 msgid "See <URL:%s> for the license terms."
 msgstr "Se <URL:%s> för licensvillkor."
 
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "Du kan prova en annan sökning på <a href=\"%s#search_packages"
+#~ "\">paketsöksidan</a>."

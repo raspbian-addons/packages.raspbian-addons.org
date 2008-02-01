@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
 "PO-Revision-Date: 2007-10-28 17:07+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
@@ -93,15 +93,15 @@ msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 "Suchbegriff zu kurz (Suchbegriffe müssen mindestens zwei Zeichen lang sein)"
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Genaue Treffer"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Andere Treffer"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Virtuelles Paket"
 
@@ -150,8 +150,11 @@ msgstr "Nicht verfügbar"
 msgid "package has bad maintainer field"
 msgstr "Paket hat ungültiges Betreuer-Feld"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "Suche nimmt keine Pfadelemente mehr an"
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s mehr als einmal im Pfad angegeben"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -159,8 +162,5 @@ msgstr "Paket hat ungültiges Betreuer-Feld"
 #~ msgstr ""
 #~ "Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
 
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s mehr als einmal im Pfad angegeben"
-
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "Suche nimmt keine Pfadelemente mehr an"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
 "PO-Revision-Date: 2007-10-26 22:09+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
@@ -92,15 +92,15 @@ msgstr "nyckelordet inte giltigt eller saknas"
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr "nyckelordet för kort (nyckelord måste bestå av minst två tecken)"
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Exakta träffar"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Andra träffar"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Virtuellt paket"
 
@@ -147,11 +147,8 @@ msgstr "Inte tillgängligt"
 msgid "package has bad maintainer field"
 msgstr "paketet har felaktigt ansvarigfält"
 
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "två eller flera paket angavs (%s)"
-
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s satt fler än en gång i sökvägen"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "search tar inte fler sökvägselement"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -159,5 +156,8 @@ msgstr "paketet har felaktigt ansvarigfält"
 #~ msgstr ""
 #~ "Det är meningen att vi ska visa hemsidan här, inte hämta dispatch.pl"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "search tar inte fler sökvägselement"
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s satt fler än en gång i sökvägen"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "två eller flera paket angavs (%s)"

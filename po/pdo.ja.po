@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
 "PO-Revision-Date: 2007-10-22 14:48+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
@@ -96,15 +96,15 @@ msgstr "キーワードが不正か、または指定されていません"
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr "キーワードが短すぎます (キーワードは 2 文字以上である必要があります)"
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "完全なヒット"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "その他のヒット"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "仮想パッケージ"
 
@@ -151,8 +151,14 @@ msgstr "入手不能"
 msgid "package has bad maintainer field"
 msgstr "パッケージのメンテナ (Maintainer) フィールドが不正です"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "search の場合は後ろにパスを追加できません"
+#~ msgid "Initialization of Template Engine failed: %s"
+#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s がパスに複数入っています"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -161,11 +167,5 @@ msgstr "パッケージのメンテナ (Maintainer) フィールドが不正で�
 #~ "ここには、dispatch.pl を取得するのではなくホームページを表示することになっ"
 #~ "ています。"
 
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s がパスに複数入っています"
-
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
-
-#~ msgid "Initialization of Template Engine failed: %s"
-#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "search の場合は後ろにパスを追加できません"

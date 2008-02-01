@@ -494,132 +494,148 @@ msgstr "Alle Debianpakketten in \"%s\""
 msgid "Package Search Results"
 msgstr "Alle Debianpakketten in \"%s\""
 
-#: templates/html/search.tmpl:33
-#, fuzzy
-msgid ""
-"You can try a different search on the <a href=\"%s#search_packages"
-"\">Packages search page</a>."
-msgstr ""
-"Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%s/"
-"\">Pakketten zoekpagina</a>"
-
-#: templates/html/search.tmpl:37
+#: templates/html/search.tmpl:34
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
 
-#: templates/html/search.tmpl:42
+#: templates/html/search.tmpl:39
+msgid "Search in specific suite:"
+msgstr ""
+
+#: templates/html/search.tmpl:48
+#, fuzzy
+#| msgid "Search for <a href=\"%s\">other versions of %s</a>"
+msgid "Search in <a href=\"%s\">all suites</a>"
+msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
+
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:58
+msgid "Limit search to a specific architecture:"
+msgstr ""
+
+#: templates/html/search.tmpl:61 templates/html/search_contents.tmpl:63
+#, fuzzy
+#| msgid "Search for <a href=\"%s\">other versions of %s</a>"
+msgid "Search in <a href=\"%s\">all architectures</a>"
+msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
+
+#: templates/html/search.tmpl:68
 msgid ""
-"<a href=\"%s\">%u</a> results have not been displayed due to the search "
+"<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
 
-#: templates/html/search.tmpl:51
+#: templates/html/search.tmpl:77
 msgid "all suites"
 msgstr "alle suites"
 
-#: templates/html/search.tmpl:51
+#: templates/html/search.tmpl:77
 #, fuzzy
 #| msgid "suite(s) <em>$suite_enc</em>"
 msgid "suite(s) <em>%s</em>"
 msgstr "suite(s) <em>$suite_enc</em>"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "alle secties"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "alle platformen"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:55
+#: templates/html/search.tmpl:81
 msgid "packages"
 msgstr "pakketten"
 
-#: templates/html/search.tmpl:55
+#: templates/html/search.tmpl:81
 msgid "source packages"
 msgstr "bronpakketten"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:82
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
-#: templates/html/search.tmpl:59
+#: templates/html/search.tmpl:85
 msgid " (including subword matching)"
 msgstr ""
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:61
+#: templates/html/search.tmpl:87
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
 
-#: templates/html/search.tmpl:67
+#: templates/html/search.tmpl:93
 msgid "Found <strong>%u</strong> matching packages."
 msgstr ""
 
-#: templates/html/search.tmpl:72
+#: templates/html/search.tmpl:98
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
 "keywords or alternative keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:74
+#: templates/html/search.tmpl:102
 msgid ""
-"Your search was too wide so we will only display exact matches. At least <em>"
-"%u</em> results have been omitted and will not be displayed. Please consider "
-"using a longer keyword or more keywords."
+"Your keyword was too generic, for optimizing reasons some results might have "
+"been supressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:104
+msgid ""
+"Your keyword was too generic.<br>Please consider using a longer keyword or "
+"more keywords."
+msgstr ""
+
+#: templates/html/search.tmpl:110 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr ""
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:117
 msgid "Package %s"
 msgstr "Pakket %s"
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "also provided by:"
 msgstr "ook geboden door:"
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "provided by:"
 msgstr "geboden door:"
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:136
 msgid "Source Package %s"
 msgstr "Bronpakket %s"
 
-#: templates/html/search.tmpl:113
+#: templates/html/search.tmpl:144
 msgid "Binary packages:"
 msgstr "Binaire pakketten:"
 
-#: templates/html/search.tmpl:115
+#: templates/html/search.tmpl:146
 #, fuzzy
 #| msgid "%u binary packages"
 msgid "hide %u binary packages"
 msgstr "%u binaire pakketten"
 
-#: templates/html/search.tmpl:115
+#: templates/html/search.tmpl:146
 #, fuzzy
 #| msgid "%u binary packages"
 msgid "show %u binary packages"
 msgstr "%u binaire pakketten"
 
-#: templates/html/search.tmpl:125
+#: templates/html/search.tmpl:156
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -649,16 +665,6 @@ msgstr ""
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
 msgstr ""
-
-#: templates/html/search_contents.tmpl:58
-msgid "Limit search to a specific architecture:"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:63
-#, fuzzy
-#| msgid "Search for <a href=\"%s\">other versions of %s</a>"
-msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1047,8 +1053,16 @@ msgstr "Alle %s pakketten in \"%s\""
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "sectie(s) <em>$section_enc</em>"
+
 #~ msgid "architecture(s) <em>$architectures_enc</em>"
 #~ msgstr "platform(en) <em>$architectures_enc</em>"
 
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "sectie(s) <em>$section_enc</em>"
+#, fuzzy
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
+#~ "s/\">Pakketten zoekpagina</a>"

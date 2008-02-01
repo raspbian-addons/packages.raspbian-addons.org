@@ -493,15 +493,7 @@ msgstr "Ergebnisse der Debian-Paketsuche -- %s"
 msgid "Package Search Results"
 msgstr "Ergebnisse der Debian-Paketsuche"
 
-#: templates/html/search.tmpl:33
-msgid ""
-"You can try a different search on the <a href=\"%s#search_packages"
-"\">Packages search page</a>."
-msgstr ""
-"Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
-"andere Suche durchführen."
-
-#: templates/html/search.tmpl:37
+#: templates/html/search.tmpl:34
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
@@ -509,59 +501,83 @@ msgstr ""
 "Sie haben nur nach Wörtern gesucht, die exakt auf die Schlüsselwörter "
 "passen. Sie können eine <a href=\"%s\">Teilwortsuche</a> ausprobieren."
 
-#: templates/html/search.tmpl:42
+#: templates/html/search.tmpl:39
+#, fuzzy
+#| msgid "Search in other suite:"
+msgid "Search in specific suite:"
+msgstr "Suche in anderer Suite:"
+
+#: templates/html/search.tmpl:48
+#, fuzzy
+#| msgid "Search in <a href=\"%s\">all architectures</a>"
+msgid "Search in <a href=\"%s\">all suites</a>"
+msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
+
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:58
+msgid "Limit search to a specific architecture:"
+msgstr "Schränke Suche auf bestimmte Architekturen ein:"
+
+#: templates/html/search.tmpl:61 templates/html/search_contents.tmpl:63
+msgid "Search in <a href=\"%s\">all architectures</a>"
+msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
+
+#: templates/html/search.tmpl:68
+#, fuzzy
+#| msgid ""
+#| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
+#| "parameters."
 msgid ""
-"<a href=\"%s\">%u</a> results have not been displayed due to the search "
+"<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
 "<a href=\"%s\">%u</a> Ergebnisse wurden aufgrund der Suchparameter nicht "
 "angezeigt."
 
-#: templates/html/search.tmpl:51
+#: templates/html/search.tmpl:77
 msgid "all suites"
 msgstr "allen Suites"
 
-#: templates/html/search.tmpl:51
+#: templates/html/search.tmpl:77
 msgid "suite(s) <em>%s</em>"
 msgstr "Suite(s) <em>%s</em>"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "allen Bereichen"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "Bereich(e) <em>%s</em>"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "auf allen Architekturen"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "Architektur(en) <em>%s</em>"
 
-#: templates/html/search.tmpl:55
+#: templates/html/search.tmpl:81
 msgid "packages"
 msgstr "Paketen"
 
-#: templates/html/search.tmpl:55
+#: templates/html/search.tmpl:81
 msgid "source packages"
 msgstr "Quellcode-Paketen"
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:82
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 "Sie haben nach %s gesucht, deren Namen <em>%s</em> enthält, in %s, %s, und %"
 "s."
 
-#: templates/html/search.tmpl:59
+#: templates/html/search.tmpl:85
 msgid " (including subword matching)"
 msgstr " (enthält Teilwortabgleich)"
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:61
+#: templates/html/search.tmpl:87
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
@@ -569,11 +585,11 @@ msgstr ""
 "Sie haben nach <em>%s</em> in Paketnamen und -beschreibungen gesucht, in %s, "
 "%s, und %s%s."
 
-#: templates/html/search.tmpl:67
+#: templates/html/search.tmpl:93
 msgid "Found <strong>%u</strong> matching packages."
 msgstr "<strong>%u</strong> passende Pakete gefunden."
 
-#: templates/html/search.tmpl:72
+#: templates/html/search.tmpl:98
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -583,49 +599,67 @@ msgstr ""
 "Relevanz. Falls die ersten paar Pakete nicht auf Ihre Suche passen, "
 "versuchen Sie, mehr oder andere Suchbegriffe zu verwenden."
 
-#: templates/html/search.tmpl:74
+#: templates/html/search.tmpl:102
+#, fuzzy
+#| msgid ""
+#| "Your search was too wide so we will only display exact matches. At least "
+#| "<em>%u</em> results have been omitted and will not be displayed. Please "
+#| "consider using a longer keyword or more keywords."
 msgid ""
-"Your search was too wide so we will only display exact matches. At least <em>"
-"%u</em> results have been omitted and will not be displayed. Please consider "
-"using a longer keyword or more keywords."
+"Your keyword was too generic, for optimizing reasons some results might have "
+"been supressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 "Ihre Suche ergab zu viele Ergebnisse, nur exakte Treffer werden angezeigt. "
 "Mindestens <em>%u</em> weitere Treffer wurden ausgelassen und nicht "
 "angezeigt. Bitte benutzen Sie längere oder mehr Suchbegriffe."
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:104
+#, fuzzy
+#| msgid ""
+#| "Note: Your search was too wide so we will only display only the first "
+#| "about 100 matches. Please consider using a longer keyword or more "
+#| "keywords."
+msgid ""
+"Your keyword was too generic.<br>Please consider using a longer keyword or "
+"more keywords."
+msgstr ""
+"Hinweis: Ihre Suche war zu breit, daher werden nur rund die ersten 100 "
+"Treffer angezeigt. Bitte verwenden Sie ein längeres oder mehr "
+"Schlüsselwörter."
+
+#: templates/html/search.tmpl:110 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr "Leider ergab Ihre Suche kein Ergebnis"
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:117
 msgid "Package %s"
 msgstr "Paket %s"
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "also provided by:"
 msgstr "auch bereitgestellt durch:"
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "provided by:"
 msgstr "bereitgestellt durch:"
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:136
 msgid "Source Package %s"
 msgstr "Quellcode-Paket %s"
 
-#: templates/html/search.tmpl:113
+#: templates/html/search.tmpl:144
 msgid "Binary packages:"
 msgstr "Binär-Pakete:"
 
-#: templates/html/search.tmpl:115
+#: templates/html/search.tmpl:146
 msgid "hide %u binary packages"
 msgstr "verberge %u binäre Pakete"
 
-#: templates/html/search.tmpl:115
+#: templates/html/search.tmpl:146
 msgid "show %u binary packages"
 msgstr "zeige %u binäre Pakete"
 
-#: templates/html/search.tmpl:125
+#: templates/html/search.tmpl:156
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -656,14 +690,6 @@ msgstr "Suche nach Pfaden, die auf <em>%s</em> enden"
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
 msgstr "Suche in anderer Suite:"
-
-#: templates/html/search_contents.tmpl:58
-msgid "Limit search to a specific architecture:"
-msgstr "Schränke Suche auf bestimmte Architekturen ein:"
-
-#: templates/html/search_contents.tmpl:63
-msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
@@ -1046,11 +1072,18 @@ msgstr "Alle %s-Pakete in »%s«"
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
 
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"
 
 #~ msgid "section(s) <em>$section_enc</em>"
 #~ msgstr "Bereich(e) <em>$section_enc</em>"
 
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "Suite(s) <em>$suite_enc</em>"
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
+#~ "andere Suche durchführen."
