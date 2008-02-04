@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-12-16 10:14+0100\n"
+"PO-Revision-Date: 2008-02-04 21:50+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -502,16 +502,12 @@ msgstr ""
 "passen. Sie können eine <a href=\"%s\">Teilwortsuche</a> ausprobieren."
 
 #: templates/html/search.tmpl:39
-#, fuzzy
-#| msgid "Search in other suite:"
 msgid "Search in specific suite:"
-msgstr "Suche in anderer Suite:"
+msgstr "Suche in bestimmter Suite:"
 
 #: templates/html/search.tmpl:48
-#, fuzzy
-#| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
+msgstr "Suche in <a href=\"%s\">allen Suites</a>"
 
 #: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
@@ -522,15 +518,11 @@ msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
 
 #: templates/html/search.tmpl:68
-#, fuzzy
-#| msgid ""
-#| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
-#| "parameters."
 msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
-"<a href=\"%s\">%u</a> Ergebnisse wurden aufgrund der Suchparameter nicht "
+"<a href=\"%s\">Einige</a> Ergebnisse wurden aufgrund der Suchparameter nicht "
 "angezeigt."
 
 #: templates/html/search.tmpl:77
@@ -600,32 +592,21 @@ msgstr ""
 "versuchen Sie, mehr oder andere Suchbegriffe zu verwenden."
 
 #: templates/html/search.tmpl:102
-#, fuzzy
-#| msgid ""
-#| "Your search was too wide so we will only display exact matches. At least "
-#| "<em>%u</em> results have been omitted and will not be displayed. Please "
-#| "consider using a longer keyword or more keywords."
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been supressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
-"Ihre Suche ergab zu viele Ergebnisse, nur exakte Treffer werden angezeigt. "
-"Mindestens <em>%u</em> weitere Treffer wurden ausgelassen und nicht "
-"angezeigt. Bitte benutzen Sie längere oder mehr Suchbegriffe."
+"Ihr Schlüsselwort war zu allgemein. Daher könnten aufgrund von Optimierungen "
+"einige Ergebnisse unterdrückt sein.<br />Bitte verwenden Sie ein längeres "
+"oder weitere Suchbegriffe."
 
 #: templates/html/search.tmpl:104
-#, fuzzy
-#| msgid ""
-#| "Note: Your search was too wide so we will only display only the first "
-#| "about 100 matches. Please consider using a longer keyword or more "
-#| "keywords."
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
-"Hinweis: Ihre Suche war zu breit, daher werden nur rund die ersten 100 "
-"Treffer angezeigt. Bitte verwenden Sie ein längeres oder mehr "
-"Schlüsselwörter."
+"Ihr Schlüsselwort war zu allgemein.<br />Bitte verwenden Sie ein längeres "
+"oder weitere Suchbegriffe."
 
 #: templates/html/search.tmpl:110 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
