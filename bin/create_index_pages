@@ -60,7 +60,8 @@ foreach my $s (@SUITES) {
 	print "writing $key/index (lang=$lang)...\n";
 
 	my %content = ( subsections => [], suite => $s,
-			lang => $lang, charset => $charset, cat => $cat,
+			po_lang => $lang, ddtp_lang => $lang,
+			charset => $charset, cat => $cat,
 			used_langs => \@LANGUAGES, suites => \@SUITES );
 	foreach my $ssec (sort (keys %{$subsections->{$s}}, 'virtual')) {
 	    next if $ssec eq '-';
@@ -200,7 +201,8 @@ sub write_files {
 	    my $cat = Packages::I18N::Locale->get_handle($lang)
 		or die "get_handle failed for $lang";
 
-	    my %lang_vars = ( lang => $lang, charset => $charset,
+	    my %lang_vars = ( po_lang => $lang, ddtp_lang => $lang,
+			      charset => $charset,
 			      cat => $cat, used_langs => \@LANGUAGES );
 	    print "writing $source$s/allpackages (lang=$lang)...\n";
 	    $template->page( 'index', { %lang_vars, packages => $pkgs->{$key},

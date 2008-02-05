@@ -33,8 +33,10 @@
     [% PROCESS marker text=p.section IF p.section != main_section %]
     [% PROCESS marker text=p.archive IF p.archive != main_archive %]
   [% END %]
-  [%- IF p.trans_desc.$lang;
-	sdesc = p.trans_desc.$lang;
+  [%- desclang = 'en';
+      IF p.trans_desc.$ddtp_lang;
+	sdesc = p.trans_desc.$ddtp_lang;
+	desclang = $ddtp_lang;
       ELSE;
 	sdesc = p.desc;
       END -%]
@@ -45,11 +47,11 @@
 	[%- ', ' UNLESS loop.last %][% END %]</dd>
     [% IF p.versions.length %]
       <dt><a href="[% p.name %]">[% p.name %]</a> ([% p.versions %])[% PROCESS markers %]</dt>
-         <dd>[% sdesc | html %]</dd>
+         <dd [% "lang=\"$desclang\"" IF desclang != po_lang %]>[% sdesc | html %]</dd>
     [% END %]
   [% ELSE %]
     <dt><a href="[% p.name %]" id="[% p.name %]">[% p.name %]</a> ([% p.versions %])[% PROCESS markers %]</dt>
-       <dd>[% sdesc | html %]</dd>
+       <dd [% "lang=\"$desclang\"" IF desclang != po_lang %]>[% sdesc | html %]</dd>
   [% END %]
 
   [% '</dl>' IF loop.last %]
