@@ -29,7 +29,7 @@
   navigation = nav_arr
 -%]
 <!-- show.tmpl -->
-[% PROCESS 'html/menu.inc' %]
+[% PROCESS 'html/util.inc' %]
 [% FOREACH s IN suites %]
    [% '<div id="pothers">' IF loop.first %]
    [%- IF s == suite -%]
