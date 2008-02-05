@@ -201,7 +201,7 @@ sub do_show {
 
 			my $provided_by = $page->{provided_by};
 			$contents{providers} = [];
-			pkg_list( \%packages, $opts, $provided_by, 'en', $contents{providers} ) if $provided_by;
+			pkg_list( \%packages, $opts, $provided_by, $contents{providers} ) if $provided_by;
 
 			#
 			# display dependencies
@@ -254,7 +254,7 @@ sub do_show {
 
 			my $provided_by = $page->{provided_by};
 			$contents{providers} = [];
-			pkg_list( \%packages, $opts, $provided_by, 'en', $contents{providers} );
+			pkg_list( \%packages, $opts, $provided_by, $contents{providers} );
 
 		    } # else (unless $page->is_virtual)
 		} else { # unless $opts->{source}
@@ -286,7 +286,7 @@ sub do_show {
 		    my $binaries = find_binaries( $pkg, $archive, $suite, \%src2bin );
 		    if ($binaries && @$binaries) {
 			$contents{binaries} = [];
-			pkg_list( \%packages, $opts, $binaries, 'en', $contents{binaries} );
+			pkg_list( \%packages, $opts, $binaries, $contents{binaries} );
 		    }
 
 		    #
@@ -490,7 +490,7 @@ sub build_deps {
 } # end print_deps
 
 sub pkg_list {
-    my ( $packages, $opts, $pkgs, $lang, $list ) = @_;
+    my ( $packages, $opts, $pkgs, $list ) = @_;
     my $suite = $opts->{suite}[0];
 
     foreach my $p ( sort @$pkgs ) {
