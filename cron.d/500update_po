@@ -96,3 +96,15 @@ do
       done
   fi
 done
+
+# print statistics
+for lang in ${polangs}
+do
+  echo
+  echo "Statistics about $lang:"
+  for po in *.${lang}.po
+  do
+    echo $po:
+    LANG=C msgfmt --statistics --check-format -o- $po >/dev/null
+  done
+done
