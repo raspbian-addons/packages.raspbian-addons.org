@@ -135,3 +135,17 @@
 #   RewriteRule . /index.html
 
 </VirtualHost>
+
+#<VirtualHost *>
+#   ServerAdmin frank@lichtenheld.de
+#   DocumentRoot %TOPDIR%/www/
+#   ServerName packages.ubuntu.net
+#   ServerAlias packages.ubuntulinux.org
+#   ErrorLog /var/log/apache2/%SITE%-error.log
+#   CustomLog /var/log/apache2/%SITE%-access.log combined
+#
+#   ScriptAlias /cgi-bin %TOPDIR%/cgi-bin/
+#
+#   RedirectMatch permanent (.*) http://%SITE%$1
+#</VirtualHost>
+
