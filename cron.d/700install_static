@@ -6,4 +6,5 @@ set -e
 
 test -d "$htmldir" || mkdir -p "$htmldir"
 
-cd "$topdir" && ttree --eval_perl -f ./conf/ttreerc
+cd "$topdir" && ttree --perl5lib=${libdir} --load_perl --eval_perl \
+                   -f ./conf/ttreerc

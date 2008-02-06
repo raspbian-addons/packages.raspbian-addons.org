@@ -74,16 +74,16 @@ sub read_entry_all {
     while (my ($suite, $provides) = each %virt) {
 	next if $suite eq '-';
 	if ($opts->{h_suites}{$suite}) {
-	    push @$results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
+	    push @$results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v', 'v',
 			      $provides];
 	} else {
-	    push @$non_results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v',
+	    push @$non_results, [ $key, "-", $suite, 'virtual', 'v', 'v', 'v', 'v', 'v',
 				  $provides];
 	}
     }
 
     foreach (split(/\000/o, $result||'')) {
-	my @data = split ( /\s/o, $_, 8 );
+	my @data = split ( /\s/o, $_, 9 );
 	debug( "Considering entry ".join( ':', @data), 2) if DEBUG;
 	if ($opts->{h_suites}{$data[1]}
 	    && ($opts->{h_archs}{$data[2]} || $data[2] eq 'all')
@@ -124,7 +124,7 @@ sub read_entry_simple {
     # with correctly, but it's adequate enough for now
     return [ $virt{$suite} ] unless defined $result;
     foreach (split /\000/o, $result) {
-	my @data = split ( /\s/o, $_, 8 );
+	my @data = split ( /\s/o, $_, 9 );
 	debug( "use entry: @data", 2 ) if DEBUG && $data[1] eq $suite;
 	return [ $virt{$suite}, @data ] if $data[1] eq $suite;
     }
@@ -165,14 +165,22 @@ sub do_names_search {
 
     my $first_keyword = lc shift @$keywords;
     @$keywords = map { lc $_ } @$keywords;
-        
+
     my ($key, $prefixes) = ($first_keyword, '');
-    my %pkgs;
+    my (%pkgs, %pkgs_min);
     $postfixes->seq( $key, $prefixes, R_CURSOR );
     while (index($key, $first_keyword) >= 0) {
-	if ($prefixes =~ /^\001(\d+)/o) {
-	    debug( "$key has too many hits", 2 ) if DEBUG;
-	    $too_many_hits += $1;
+	if ($prefixes =~ /^(\^)?\001(\d+)/o) {
+	    debug("$key has too many hits", 2 ) if DEBUG;
+	    $too_many_hits += $2;
+	    if ($1) { # use the empty prefix
+		foreach my $k (@$keywords) {
+		    next unless $key =~ /\Q$k\E/;
+		}
+		debug("add key $key", 2) if DEBUG;
+		$pkgs{$key}++;
+		$pkgs_min{$key}++;
+	    }
 	} else {
 	  PREFIX:
 	    foreach (split /\000/o, $prefixes) {
@@ -181,18 +189,21 @@ sub do_names_search {
 		foreach my $k (@$keywords) {
 		    next PREFIX unless $word =~ /\Q$k\E/;
 		}
-		debug( "add word $word", 2) if DEBUG;
+		debug("add word $word", 2) if DEBUG;
 		$pkgs{$word}++;
+		$pkgs_min{$word}++ if $_ eq '';
 	    }
 	}
 	last if $postfixes->seq( $key, $prefixes, R_NEXT ) != 0;
-	last if $too_many_hits or keys %pkgs >= 100;
+	last if keys %pkgs_min >= 100;
     }
-    
-    my $no_results = keys %pkgs;
-    if ($too_many_hits || ($no_results >= 100)) {
-	$too_many_hits += $no_results;
-	%pkgs = ( $first_keyword => 1 ) unless @$keywords;
+
+    my $nr = keys %pkgs;
+    my $min_nr = keys %pkgs_min;
+    debug("nr=$nr min_nr=$min_nr too_many_hits=$too_many_hits", 1) if DEBUG;
+    if ($nr >= 100) {
+	$too_many_hits += $nr - $min_nr + 1;
+	%pkgs = %pkgs_min;
     }
     foreach my $pkg (sort keys %pkgs) {
 	&$read_entry( $packages, $pkg, $results, $non_results, $opts );
@@ -283,7 +294,9 @@ sub find_similar {
     undef $db;
 
     debug ("ORDER: @order", 2) if DEBUG;
-    return @order[0..10];
+    my $last = 10;
+    $last = $#order if $#order < $last;
+    return @order[0..$last];
 }
 
 sub find_binaries {

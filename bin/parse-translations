@@ -46,8 +46,9 @@ $/ = "";
 my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
 
 foreach my $lang (@DDTP_LANGUAGES) {
-    print "Reading Translations for $lang...";
-    open PKG, "zcat $TOPDIR/archive/*/*/*/i18n/Translation-$lang.gz|";
+    (my $locale = $lang) =~ s/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e;
+    print "Reading Translations for $lang ($locale)...";
+    open PKG, "zcat $TOPDIR/archive/*/*/*/i18n/Translation-$locale.gz|";
     my $count = 0;
     while (<PKG>) {
 	next if /^\s*$/;
@@ -64,12 +65,13 @@ foreach my $lang (@DDTP_LANGUAGES) {
 	# Skip double descriptions
 	next if exists($descriptions{$data{"description-md5"}}{$lang});
 	# some weirdnesses in the files
-	next unless defined $data{"description-".lc($lang)};
+	next unless defined $data{"description-".lc($locale)};
 	if ($lang eq 'ja') {
 	    my $fixed = $fixja->convert($data{"description-ja"});
 	    $data{"description-ja"} = $fixed if $fixed;
 	}
-	$descriptions{$data{"description-md5"}}{$lang} = $data{"description-".lc($lang)};
+	$descriptions{$data{"description-md5"}}{$lang} =
+	    $data{"description-".lc($locale)};
 	$count++;
     }
     print "($count)\n";

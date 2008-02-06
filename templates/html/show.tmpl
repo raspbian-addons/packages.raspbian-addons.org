@@ -16,7 +16,8 @@
     nav_arr.push( { prefix=>g('Section:'), title=>g('All packages in this section'), url=>make_url("$subsection/"), name=>subsection } );
     nav_arr.push( { prefix=>g('Package:'), name=>pkg } ); -%]
 [% desclang = 'en';
-   SET desclang = lang IF desc.$lang.long %]
+   SET desclang = po_lang IF desc.$po_lang.long;
+   SET desclang = ddtp_lang IF desc.$ddtp_lang.long %]
 [%- PROCESS 'html/head.tmpl'
    title_tag = is_source ? g('Details of source package %s in %s', pkg, suite)
 	                 : g('Details of package %s in %s', pkg, suite)
@@ -29,7 +30,7 @@
   navigation = nav_arr
 -%]
 <!-- show.tmpl -->
-[% PROCESS 'html/menu.inc' %]
+[% PROCESS 'html/util.inc' %]
 [% FOREACH s IN suites %]
    [% '<div id="pothers">' IF loop.first %]
    [%- IF s == suite -%]
@@ -64,7 +65,7 @@
 <h2>[% g('Links for %s', pkg) %]</h2>
 <h3>[% g('Debian Resources:') %]</h3>
 <ul>
-<li><a href="[% launchpad_url _ (is_source ? pkg : src.pkg) _ '/+bugs' | uri %]">[% g('Bug Reports') %]</a></li>
+<li><a href="[% launchpad_url _ (is_source ? pkg : src.pkg) _ '/+bugs' %]">[% g('Bug Reports') %]</a></li>
 
 [% IF files && (!archive or archive == main_archive or archive == 'security') %]
 <li><a href="[% changelogs_url _ files.changelog.path %]">[% g('%s Changelog', organisation) %]</a></li>
@@ -102,9 +103,17 @@
 [%- ELSE -%]
   <h3>[% g('Maintainers:') %]</h3>
 [%- END %]
-[%- FOREACH maintainers -%]
+[%- FOREACH maintainers;
+  mailarchiveurl = '';
+  IF (matches = mail.match('^(.*)@lists\.debian\.org$'));
+	mailarchiveurl = 'http://lists.debian.org/' _ matches.0 _ '/';
+  ELSIF (matches = mail.match('^(.*)@lists\.alioth\.debian\.org$'));
+	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ matches.0 _ '/';
+  END -%]
   [%- '<ul>' IF loop.first -%]
-	<li><a href="mailto:[% mail %]">[% name | html %]</a></li>
+	<li><a href="mailto:[% mail %]">[% name | html %]</a>
+	[%- IF mailarchiveurl %](<a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail Archive') %]</a>)[% END %]
+	</li>
   [%- '</ul>' IF loop.last -%]
 [%- END -%]
 
@@ -113,7 +122,7 @@
    IF url %]
 <h3>[% g('External Resources:') %]</h3>
 <ul>
-<li><a href="[% url | uri %]">[% g('Homepage') %]</a> [[% extract_host(url) %]]</li>
+<li><a href="[% url | uri %]">[% g('Homepage') %]</a> [[% extract_host(url) | html %]]</li>
 </ul>
 [% END %]
 
@@ -151,13 +160,14 @@
 
 [% IF desc %]
 <div id="pdesctab">
-<div id="pdesc">
 [% UNLESS is_virtual %]
+<div id="pdesc" [% "lang=\"$desclang\"" IF desclang != po_lang %]>
 	[% IF desc.$desclang.short %]
 	<h2>[% desc.$desclang.short %]</h2>
 	<p>[% desc.$desclang.long %]
 	[% END %]
 [% ELSE %]
+<div id="pdesc">
 	<p>[% g('This is a <em>virtual package</em>. See the <a href="%s">Debian policy</a> for a <a href="%sch-binary.html#s-virtual_pkg">definition of virtual packages</a>.',
 		policy_url, policy_url) %]</p>
 [% END %]
@@ -168,14 +178,16 @@
     <div id="ptags"><p>
     <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">[% g('Tags') %]</a>:
   [%- END %]
-  [% facet = tag.0;
-     facet_name = debtags_voc.$facet;
-     tag_id = "$tag.0::$tag.1";
-     tag_name = debtags_voc.$tag_id;
+  [% facet = tag.0; lfacet = "$facet-$po_lang"; 
+     facet_name = debtags_voc.$lfacet;
+     SET facet_name = debtags_voc.$facet UNLESS facet_name;
+     tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$po_lang";
+     tag_name = debtags_voc.$ltag;
+     SET tag_name = debtags_voc.$tag_id UNLESS tag_name;
    %]
   [% facet_name _ ': ' UNLESS old_facet && facet == old_facet %]
   [% IF tag_name %]
-   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name %]</a>[% ', ' UNLESS loop.last %]
+   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name | html %]</a>[% ', ' UNLESS loop.last %]
   [% ELSE %]
   [% tag_id %][% ', ' UNLESS loop.last %]
   [% END %]
@@ -186,19 +198,19 @@
   [%- END %]
 [% END %]
 
-[% FOREACH providers %]
+[% FOREACH p IN providers %]
   [% IF loop.first %]<div id="pdeps"><h2>[% g('Packages providing %s', pkg) %]</h2><dl>[% END %]
-    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
-    <dd>[% desc %]</dd>
+    <dt>[% IF p.available %]<a href="[% make_url(p.name,'','source','') %]">[% p.name %]</a>[% ELSE; p.name; END %]</dt>
+    [% PROCESS desc_i18n_dd trans_desc=p.trans_desc desc=p.desc %]
   [% '</dl></div>' IF loop.last %]
 [% END %]
 </div> <!-- pdesctab -->
 [% END %]
 
-[% FOREACH binaries %]
+[% FOREACH b IN binaries %]
   [% IF loop.first %]<div id="pbinaries">[% g('The following binary packages are built from this source package:') %]<dl>[% END %]
-    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
-    <dd>[% desc %]</dd>    
+    <dt>[% IF b.available %]<a href="[% make_url(b.name,'','source','') %]">[% b.name %]</a>[% ELSE; b.name; END %]</dt>
+    [% PROCESS desc_i18n_dd trans_desc=b.trans_desc desc=b.desc %]
   [% '</dl></div>' IF loop.last %]
 [% END %]
 
@@ -224,12 +236,12 @@
     [% '<li>' UNLESS is_old_pkgs %]
     [% FOREACH alternatives %]
       [% '<dl>' IF loop.first %]
-      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %]or [% END %]
+      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %][% g('or ') %][% END %]
 	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
       [%- IF !is_old_pkgs -%]
-        <dd>[% desc -%]
+        [% PROCESS desc_i18n_dd no_end_tag=1 trans_desc=trans_desc desc=desc -%]
         [%- IF providers.pkgs.size > 0 -%]
 	  [% IF providers.also;
 		'<br>' _ g('also a virtual package provided by');
@@ -237,9 +249,9 @@
 		g('virtual package provided by');
 	     END; %]
 	  [% js_id = name %]
-	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs.sort %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF providers.pkgs.size > 10 %]
-	<script type="text/javascript">init_toggle_elem("[% js_id %]",[% g('%u providing packages', providers.pkgs.size) %]</script>
+	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% g('show %u providing packages', providers.pkgs.size) %]", "[% g('hide %u providing packages', providers.pkgs.size) %]")</script>
 	[% END %]
         [% END %]
         </dd>
@@ -270,9 +282,9 @@
   [%- END %]
 
 <tr>
-[% download_url = pkg _ '/' _ d.arch _ '/download'
-   filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
-<th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
+[% download_url = pkg _ '/download'
+   filelist_url = pkg _ '/filelist' %]
+<th><a href="[% make_url(download_url,'','arch',d.arch) %]">[% d.arch %]</a>
 [%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>[% g('(unofficial port)') %]</strong>[% END %]</th>
 [% vnorm = d.version.replace( '\+b\d+$', '' ); vlatest = version.replace( '\+b\d+$', '' );
    vup = vnorm.replace( '-[^-]+$', '' ); vuplatest = vlatest.replace( '-[^-]+$', '' );
@@ -284,10 +296,10 @@
 	version_class = 'vold';
    END %]
 [% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
-<td class="size">[% g('%.1f&nbsp;kB', d.pkgsize) %]</td><td class="size">[% g('%u&nbsp;kB', d.instsize) %]</td>
+<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', d.instsize) %]</td>
 <td>
 [% IF d.contents_avail %]
-  [<a href="[% make_url(filelist_url) | uri %]">[% g('list of files') %]</a>]
+  [<a href="[% make_url(filelist_url,'','arch',d.arch) %]">[% g('list of files') %]</a>]
 [% ELSE %]
   [% g('no current information') %]
 [% END %]
@@ -312,7 +324,7 @@
 
 <tr>
 <td><a href="[% server _ path %]">[% filename %]</a></td>
-<td>[% g('%.1f&nbsp;kB', size) %]</td>
+<td>[% g('%s&nbsp;kB', num.format_number(size,1)) %]</td>
 <td class="md5sum">[% md5sum %]</td>
 </tr>
 

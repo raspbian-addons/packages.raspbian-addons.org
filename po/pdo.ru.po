@@ -1,0 +1,158 @@
+# translation of pdo.ru.po to Russian
+# This file is put in the public domain.
+#
+# Yuri Kozlov <kozlov.y@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: pdo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
+"PO-Revision-Date: 2007-11-25 21:31+0300\n"
+"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: bin/create_index_pages:232
+msgid "Section"
+msgstr "Секция"
+
+#: bin/create_index_pages:244
+msgid "Subsection"
+msgstr "Подсекция"
+
+#: bin/create_index_pages:256
+msgid "Priority"
+msgstr "Приоритет"
+
+#: lib/Packages/Dispatcher.pm:310
+msgid "requested format not available for this document"
+msgstr "запрошенный формат недоступен для этого документа"
+
+#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
+#: lib/Packages/DoShow.pm:31
+msgid "package not valid or not specified"
+msgstr "недопустимый или неуказанный пакет"
+
+#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
+#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
+#: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
+msgid "suite not valid or not specified"
+msgstr "недопустимый или неуказанный комплект"
+
+#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
+msgid "architecture not valid or not specified"
+msgstr "недопустимая или неуказанная архитектура"
+
+#: lib/Packages/DoDownload.pm:36
+#, perl-format
+msgid "more than one suite specified for download (%s)"
+msgstr "для загрузки указано более одного комплекта (%s)"
+
+#: lib/Packages/DoDownload.pm:40
+#, perl-format
+msgid "more than one architecture specified for download (%s)"
+msgstr "для загрузки указано более одной архитектуры (%s)"
+
+#: lib/Packages/DoFilelist.pm:48
+msgid "No such package in this suite on this architecture."
+msgstr "Нет такого пакета в этом комплекте для этой архитектуры."
+
+#: lib/Packages/DoFilelist.pm:60
+msgid "Invalid suite/architecture combination"
+msgstr "Неправильная комбинация комплект/архитектура"
+
+#: lib/Packages/DoIndex.pm:34
+#, perl-format
+msgid "more than one suite specified for show_static (%s)"
+msgstr "более одного комплекта указано для show_static (%s)"
+
+#: lib/Packages/DoIndex.pm:38
+#, perl-format
+msgid "more than one subsection specified for show_static (%s)"
+msgstr "более одной подсекции указано для show_static (%s)"
+
+#: lib/Packages/DoIndex.pm:75
+#, perl-format
+msgid "couldn't read index file %s: %s"
+msgstr "невозможно прочитать индексный файл %s: %s"
+
+#: lib/Packages/DoNewPkg.pm:25
+#, perl-format
+msgid "more than one suite specified for newpkg (%s)"
+msgstr "более одного комплекта указано для newpkg (%s)"
+
+#: lib/Packages/DoNewPkg.pm:43
+#, perl-format
+msgid "no newpkg information found for suite %s"
+msgstr "для комплекта %s не найдена информация newpkg"
+
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
+msgid "keyword not valid or missing"
+msgstr "неверное или отсутствующее ключевое слово"
+
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
+msgid "keyword too short (keywords need to have at least two characters)"
+msgstr ""
+"слишком короткое ключевое слово (ключевые слова должны быть длиной не менее "
+"двух символов)"
+
+#: lib/Packages/DoSearch.pm:170
+msgid "Exact hits"
+msgstr "Точные совпадения"
+
+#: lib/Packages/DoSearch.pm:180
+msgid "Other hits"
+msgstr "Другие совпадения"
+
+#: lib/Packages/DoSearch.pm:239
+msgid "Virtual package"
+msgstr "Виртуальный пакет"
+
+#: lib/Packages/DoSearchContents.pm:40
+#, perl-format
+msgid "more than one suite specified for contents search (%s)"
+msgstr "более одного комплекта указано для поиска по содержимому (%s)"
+
+#: lib/Packages/DoSearchContents.pm:82
+msgid "The search mode you selected doesn't support more than one keyword."
+msgstr ""
+"Выбранный вами режим поиска не поддерживает более одного ключевого слова."
+
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr "более одного комплекта указано для show (%s)"
+
+#: lib/Packages/DoShow.pm:73
+msgid "No such package."
+msgstr "Нет такого пакета."
+
+#: lib/Packages/DoShow.pm:85
+msgid "Package not available in this suite."
+msgstr "Пакет недоступен в этом комплекте."
+
+#: lib/Packages/DoShow.pm:198
+msgid " and others"
+msgstr " и другие"
+
+#: lib/Packages/DoShow.pm:429
+#, perl-format
+msgid "not %s"
+msgstr "не %s"
+
+#: lib/Packages/DoShow.pm:479
+msgid "Package not available"
+msgstr "Пакет недоступен"
+
+#: lib/Packages/DoShow.pm:518
+msgid "Not available"
+msgstr "Не доступен"
+
+#: lib/Packages/Page.pm:47
+msgid "package has bad maintainer field"
+msgstr "пакет имеет неправильно заполненное поле сопровождающего"

@@ -1,13 +1,13 @@
 # Finnish translations for packages.debian.org
 # This file is put in the public domain.
-# Tommi Vainikainen <thv+debian@iki.fi>, 2005.
+# Tommi Vainikainen <thv+debian@iki.fi>, 2005-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 21:54+0200\n"
-"PO-Revision-Date: 2007-10-18 22:06+0300\n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
+"PO-Revision-Date: 2007-11-26 08:04+0200\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,39 +15,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: bin/create_index_pages:234
+#: bin/create_index_pages:232
 msgid "Section"
 msgstr "Osasto"
 
-#: bin/create_index_pages:246
+#: bin/create_index_pages:244
 msgid "Subsection"
 msgstr "Alaosasto"
 
-#: bin/create_index_pages:258
+#: bin/create_index_pages:256
 msgid "Priority"
 msgstr "Tärkeys"
 
-#. Done
-#: lib/Packages/Dispatcher.pm:162
-msgid "search doesn't take any more path elements"
-msgstr "haku ei ota enempää polkuelementtejä"
-
-#: lib/Packages/Dispatcher.pm:165
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr "Meidän pitäisi näyttää kotisivu tässä dispatch.pl:n sijaan."
-
-#: lib/Packages/Dispatcher.pm:188
-#, perl-format
-msgid "%s set more than once in path"
-msgstr "%s asetettu useammin kuin kerran polussa"
-
-#: lib/Packages/Dispatcher.pm:223
-#, perl-format
-msgid "two or more packages specified (%s)"
-msgstr "kaksi tai useampi pakettia määritetty (%s)"
-
-#: lib/Packages/Dispatcher.pm:321
+#: lib/Packages/Dispatcher.pm:310
 msgid "requested format not available for this document"
 msgstr "pyydetty muoto ei ole käytettävissä tälle asiakirjalle"
 
@@ -58,7 +38,7 @@ msgstr "paketti ei kelpaa tai määrittelemättä"
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
-#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
+#: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
 msgstr "jakelu ei kelpaa tai määrittelemättä"
 
@@ -71,7 +51,7 @@ msgstr "arkkitehtuuri ei kelpaa tai määrittelemättä"
 msgid "more than one suite specified for download (%s)"
 msgstr "useampi kuin yksi jakelu määritetty imuroinnille (%s)"
 
-#: lib/Packages/DoDownload.pm:39
+#: lib/Packages/DoDownload.pm:40
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
 msgstr "useampi kuin yksi arkkitehtuuri määritetty imuroinnille (%s)"
@@ -89,74 +69,82 @@ msgstr "Virheellinen jakelu/arkkitehtuuri-yhdistelmä"
 msgid "more than one suite specified for show_static (%s)"
 msgstr "useampi kuin yksi jakelu määritetty show_static-metodille (%s)"
 
-#: lib/Packages/DoIndex.pm:37
-#, fuzzy, perl-format
-#| msgid "more than one suite specified for show_static (%s)"
+#: lib/Packages/DoIndex.pm:38
+#, perl-format
 msgid "more than one subsection specified for show_static (%s)"
-msgstr "useampi kuin yksi jakelu määritetty show_static-metodille (%s)"
+msgstr "useampi kuin yksi alaosasto määritetty show_static-metodille (%s)"
 
-#: lib/Packages/DoIndex.pm:73
+#: lib/Packages/DoIndex.pm:75
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr "hakemistotiedostoa %s ei voitu lukea: %s"
 
-#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
+#: lib/Packages/DoNewPkg.pm:25
 #, perl-format
-msgid "more than one suite specified for show (%s)"
-msgstr "useampi kuin yksi jakelu määritetty show-metodille (%s)"
+msgid "more than one suite specified for newpkg (%s)"
+msgstr "useampi kuin yksi jakelu määritetty newpkg-metodille (%s)"
 
-#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
+#: lib/Packages/DoNewPkg.pm:43
+#, perl-format
+msgid "no newpkg information found for suite %s"
+msgstr "newpkg-tietoa ei löytynyt jakelulle %s"
+
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
 msgid "keyword not valid or missing"
 msgstr "hakusana ei kelpaa tai puuttuu"
 
-#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr "hakusana liian lyhyt (hakusanassa täytyy olla vähintään kaksi merkkiä)"
 
-#: lib/Packages/DoSearch.pm:163
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Tarkat hakutulokset"
 
-#: lib/Packages/DoSearch.pm:172
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Muut hakutulokset"
 
-#: lib/Packages/DoSearch.pm:217
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Näennäispaketti"
 
-#: lib/Packages/DoSearchContents.pm:39
+#: lib/Packages/DoSearchContents.pm:40
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
 msgstr "useampi kuin yksi jakelu määritetty sisältöhaulle (%s)"
 
-#: lib/Packages/DoSearchContents.pm:80
+#: lib/Packages/DoSearchContents.pm:82
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr "Valittu hakutapa ei tue useampaa kuin yhtä hakusanaa."
 
-#: lib/Packages/DoShow.pm:72
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr "useampi kuin yksi jakelu määritetty show-metodille (%s)"
+
+#: lib/Packages/DoShow.pm:73
 msgid "No such package."
 msgstr "Pakettia ei löydy."
 
-#: lib/Packages/DoShow.pm:84
+#: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr "Paketti ei ole saatavilla tässä jakelussa."
 
-#: lib/Packages/DoShow.pm:197
+#: lib/Packages/DoShow.pm:198
 msgid " and others"
 msgstr " ja muut"
 
-#: lib/Packages/DoShow.pm:427
-#, fuzzy, perl-format
-#| msgid "not"
+#: lib/Packages/DoShow.pm:429
+#, perl-format
 msgid "not %s"
-msgstr "ei"
+msgstr "ei %s"
 
-#: lib/Packages/DoShow.pm:465
+#: lib/Packages/DoShow.pm:479
 msgid "Package not available"
 msgstr "Paketti ei saatavilla"
 
-#: lib/Packages/DoShow.pm:491
+#: lib/Packages/DoShow.pm:518
 msgid "Not available"
 msgstr "Ei saatavilla"
 
@@ -286,9 +274,6 @@ msgstr "paketin ylläpitäjätietue on virheellinen"
 
 #~ msgid "md5sum"
 #~ msgstr "MD5-summa"
-
-#~ msgid "More Information on %s"
-#~ msgstr "Lisätietoa paketista %s"
 
 #~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
 #~ msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
@@ -472,3 +457,17 @@ msgstr "paketin ylläpitäjätietue on virheellinen"
 
 #~ msgid "Initialization of Template Engine failed: %s"
 #~ msgstr "Mallinemoottorin alustus epäonnistui: %s"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "kaksi tai useampi pakettia määritetty (%s)"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s asetettu useammin kuin kerran polussa"
+
+#~ msgid ""
+#~ "We're supposed to display the homepage here, instead of getting dispatch."
+#~ "pl"
+#~ msgstr "Meidän pitäisi näyttää kotisivu tässä dispatch.pl:n sijaan."
+
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "haku ei ota enempää polkuelementtejä"

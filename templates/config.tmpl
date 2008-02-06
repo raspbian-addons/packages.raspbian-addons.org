@@ -1,6 +1,7 @@
 [%- DEFAULT
    charset = 'UTF-8'
-   lang = 'en'
+   po_lang = 'en'
+   ddtp_lang = 'en'
 
    organisation = 'Ubuntu'
    homepage = 'http://www.ubuntu.com/'
@@ -14,6 +15,9 @@
    ddpo_url = 'http://qa.debian.org/developer.php?login='
    src_bugs_url = bugs_url _ 'src:'
    mirror_url = 'http://archive.ubuntu.com/'
+   security_mirror = 'security.ubuntu.com'
+   security_mirror_url = security_mirror _ '/ubuntu'
+   security_suite_suffix = '-security'
    changelogs_url = 'http://changelogs.ubuntu.com/changelogs/'
    policy_url = 'http://www.debian.org/doc/debian-policy/'
 #   cn_help_url = homepage _ 'intro/cn'
@@ -50,3 +54,7 @@
    sitewidemsg = { importance => "high",
 		   txt => g('Please note that this is an experimental version of <a href="http://packages.ubuntu.com/">packages.ubuntu.com</a>. Errors and obsolete information should be expected') }
 -%]
+[%# @translators: . = decimal_point , = thousands_sep, see Number::Format %]
+[%- USE num = Number.Format( decimal_point => g('.'),
+    	      		     thousands_sep => g(','),
+			     decimal_fill  => 1 ) -%]

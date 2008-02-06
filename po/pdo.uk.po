@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 21:54+0200\n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
 "PO-Revision-Date: 2005-11-02 14:08+0200\n"
 "Last-Translator: Eugeniy Meshcheryakov <eugen@univ.kiev.ua>\n"
 "Language-Team: Ukrainian\n"
@@ -17,43 +17,23 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: bin/create_index_pages:234
+#: bin/create_index_pages:232
 #, fuzzy
 #| msgid "Section:"
 msgid "Section"
 msgstr "Розділ:"
 
-#: bin/create_index_pages:246
+#: bin/create_index_pages:244
 #, fuzzy
 #| msgid "Section:"
 msgid "Subsection"
 msgstr "Розділ:"
 
-#: bin/create_index_pages:258
+#: bin/create_index_pages:256
 msgid "Priority"
 msgstr "Приоритет"
 
-#. Done
-#: lib/Packages/Dispatcher.pm:162
-msgid "search doesn't take any more path elements"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:165
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:188
-#, perl-format
-msgid "%s set more than once in path"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:223
-#, fuzzy, perl-format
-msgid "two or more packages specified (%s)"
-msgstr "Джерельний пакунок: %s (%s)"
-
-#: lib/Packages/Dispatcher.pm:321
+#: lib/Packages/Dispatcher.pm:310
 msgid "requested format not available for this document"
 msgstr ""
 
@@ -64,7 +44,7 @@ msgstr ""
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
-#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
+#: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
 msgstr ""
 
@@ -77,7 +57,7 @@ msgstr ""
 msgid "more than one suite specified for download (%s)"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:39
+#: lib/Packages/DoDownload.pm:40
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
 msgstr ""
@@ -96,75 +76,86 @@ msgstr ""
 msgid "more than one suite specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:37
+#: lib/Packages/DoIndex.pm:38
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:73
+#: lib/Packages/DoIndex.pm:75
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr ""
 
-#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
+#: lib/Packages/DoNewPkg.pm:25
 #, perl-format
-msgid "more than one suite specified for show (%s)"
+msgid "more than one suite specified for newpkg (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
+#: lib/Packages/DoNewPkg.pm:43
+#, fuzzy, perl-format
+#| msgid "More Information on %s"
+msgid "no newpkg information found for suite %s"
+msgstr "Додаткова інформація про %s"
+
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
 msgid "keyword not valid or missing"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:163
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:172
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:217
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Віртуальний пакунок"
 
-#: lib/Packages/DoSearchContents.pm:39
+#: lib/Packages/DoSearchContents.pm:40
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:80
+#: lib/Packages/DoSearchContents.pm:82
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 
-#: lib/Packages/DoShow.pm:72
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr ""
+
+#: lib/Packages/DoShow.pm:73
 #, fuzzy
 msgid "No such package."
 msgstr "Джерельний пакунок"
 
-#: lib/Packages/DoShow.pm:84
+#: lib/Packages/DoShow.pm:85
 #, fuzzy
 msgid "Package not available in this suite."
 msgstr "Пакунок недоступний"
 
-#: lib/Packages/DoShow.pm:197
+#: lib/Packages/DoShow.pm:198
 msgid " and others"
 msgstr ""
 
-#: lib/Packages/DoShow.pm:427
+#: lib/Packages/DoShow.pm:429
 #, fuzzy, perl-format
 #| msgid "not"
 msgid "not %s"
 msgstr "не"
 
-#: lib/Packages/DoShow.pm:465
+#: lib/Packages/DoShow.pm:479
 msgid "Package not available"
 msgstr "Пакунок недоступний"
 
-#: lib/Packages/DoShow.pm:491
+#: lib/Packages/DoShow.pm:518
 msgid "Not available"
 msgstr "Не доступний"
 
@@ -455,9 +446,6 @@ msgstr ""
 #~ msgid "Details of package %s in %s"
 #~ msgstr "Нові пакунки в дистрибутиві %s"
 
-#~ msgid "More Information on %s"
-#~ msgstr "Додаткова інформація про %s"
-
 #~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
 #~ msgstr "Перегляньте <a href=\"%s\">повідомлення про помилки</a> про %s."
 
@@ -680,3 +668,7 @@ msgstr ""
 #~ "Майте на увазі, що „<span class=\"pred\">експериментальний</span>“ "
 #~ "дистрибутив не є самодостатнім; відсутні залежності скоріше за все є „<a "
 #~ "href=\"../../unstable/\">нестабільному</a>“ дистрибутиві."
+
+#, fuzzy
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "Джерельний пакунок: %s (%s)"

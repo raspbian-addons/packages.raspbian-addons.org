@@ -25,26 +25,33 @@
 	navigation = nav_arr
 %]
 
-[% FOREACH packages %]
+[% FOREACH p IN packages %]
   [% '<dl>' IF loop.first %]
 
   [% BLOCK marker %] [<strong class="pmarker">[% text %]</strong>] [%- END %]
   [% BLOCK markers %]
-    [% PROCESS marker text=section IF section != main_section %]
-    [% PROCESS marker text=archive IF archive != main_archive %]
+    [% PROCESS marker text=p.section IF p.section != main_section %]
+    [% PROCESS marker text=p.archive IF p.archive != main_archive %]
   [% END %]
-  [% IF providers.size %]
-    <dt><a href="[% name %]" id="[% name %]">[% name %]</a></dt>
+  [%- desclang = 'en';
+      IF p.trans_desc.$ddtp_lang;
+	sdesc = p.trans_desc.$ddtp_lang;
+	desclang = $ddtp_lang;
+      ELSE;
+	sdesc = p.desc;
+      END -%]
+  [% IF p.providers.size %]
+    <dt><a href="[% p.name %]" id="[% p.name %]">[% p.name %]</a></dt>
        <dd>[% g('virtual package provided by') %]
-	[% FOREACH provider IN providers %]<a href="../[% provider | uri %]">[% provider %]</a>
+	[% FOREACH provider IN p.providers %]<a href="../[% provider | uri %]">[% provider %]</a>
 	[%- ', ' UNLESS loop.last %][% END %]</dd>
-    [% IF versions.length %]
-      <dt><a href="[% name %]">[% name %]</a> ([% versions %])[% PROCESS markers %]</dt>
-         <dd>[% desc | html %]</dd>
+    [% IF p.versions.length %]
+      <dt><a href="[% p.name %]">[% p.name %]</a> ([% p.versions %])[% PROCESS markers %]</dt>
+         <dd [% "lang=\"$desclang\"" IF desclang != po_lang %]>[% sdesc | html %]</dd>
     [% END %]
   [% ELSE %]
-    <dt><a href="[% name %]" id="[% name %]">[% name %]</a> ([% versions %])[% PROCESS markers %]</dt>
-       <dd>[% desc | html %]</dd>
+    <dt><a href="[% p.name %]" id="[% p.name %]">[% p.name %]</a> ([% p.versions %])[% PROCESS markers %]</dt>
+       <dd [% "lang=\"$desclang\"" IF desclang != po_lang %]>[% sdesc | html %]</dd>
   [% END %]
 
   [% '</dl>' IF loop.last %]

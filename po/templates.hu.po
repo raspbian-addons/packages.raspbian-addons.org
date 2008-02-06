@@ -3,23 +3,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:37
+#: templates/config.tmpl:40
 msgid "Debian Web Mailinglist"
 msgstr ""
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:45
 msgid "%s Webmaster"
 msgstr ""
 
-#: templates/config.tmpl:45
+#: templates/config.tmpl:48
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr ""
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:53
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://"
 "packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
 "information should be expected"
+msgstr ""
+
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:56
+msgid "."
+msgstr ""
+
+#: templates/config.tmpl:57
+msgid ","
 msgstr ""
 
 #: templates/config/architectures.tmpl:4
@@ -158,7 +167,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr ""
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:145
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:152
 msgid "Experimental package"
 msgstr ""
 
@@ -170,11 +179,11 @@ msgid ""
 "documentation before using it."
 msgstr ""
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:150
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:157
 msgid "debian-installer udeb package"
 msgstr ""
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:151
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:158
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -193,18 +202,16 @@ msgid ""
 msgstr ""
 
 #: templates/html/download.tmpl:77
-msgid ""
-"Debian security updates are currently officially distributed only via "
-"<tt>security.debian.org</tt>."
+msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 
-#: templates/html/download.tmpl:83
+#: templates/html/download.tmpl:84
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
 msgstr ""
 
-#: templates/html/download.tmpl:91
+#: templates/html/download.tmpl:92
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -212,38 +219,38 @@ msgid ""
 "information."
 msgstr ""
 
-#: templates/html/download.tmpl:95
+#: templates/html/download.tmpl:96
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
 "the Shift key when you click on the URL."
 msgstr ""
 
-#: templates/html/download.tmpl:99
+#: templates/html/download.tmpl:100
 msgid "More information on <kbd>%s</kbd>:"
 msgstr ""
 
-#: templates/html/download.tmpl:101
+#: templates/html/download.tmpl:102
 msgid "%s Byte (%s %s)"
 msgstr ""
 
-#: templates/html/download.tmpl:101
+#: templates/html/download.tmpl:102
 msgid "Exact Size"
 msgstr ""
 
-#: templates/html/download.tmpl:102 templates/html/show.tmpl:318
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:327
 msgid "MD5 checksum"
 msgstr ""
 
-#: templates/html/download.tmpl:103 templates/html/download.tmpl:104
+#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
 msgid "Not Available"
 msgstr ""
 
-#: templates/html/download.tmpl:103
+#: templates/html/download.tmpl:104
 msgid "SHA1 checksum"
 msgstr ""
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:105
 msgid "SHA256 checksum"
 msgstr ""
 
@@ -362,7 +369,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: templates/html/index.tmpl:38 templates/html/show.tmpl:245
+#: templates/html/index.tmpl:43 templates/html/show.tmpl:254
 #: templates/txt/index.tmpl:15
 msgid "virtual package provided by"
 msgstr ""
@@ -429,118 +436,138 @@ msgstr ""
 msgid "Package Search Results"
 msgstr ""
 
-#: templates/html/search.tmpl:33
-msgid ""
-"You can try a different search on the <a href=\"%s#search_packages"
-"\">Packages search page</a>."
-msgstr ""
-
-#: templates/html/search.tmpl:37
+#: templates/html/search.tmpl:34
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
 
-#: templates/html/search.tmpl:42
+#: templates/html/search.tmpl:39
+msgid "Search in specific suite:"
+msgstr ""
+
+#: templates/html/search.tmpl:48
+msgid "Search in <a href=\"%s\">all suites</a>"
+msgstr ""
+
+#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:58
+msgid "Limit search to a specific architecture:"
+msgstr ""
+
+#: templates/html/search.tmpl:61 templates/html/search_contents.tmpl:63
+msgid "Search in <a href=\"%s\">all architectures</a>"
+msgstr ""
+
+#: templates/html/search.tmpl:68
 msgid ""
-"<a href=\"%s\">%u</a> results have not been displayed due to the search "
+"<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
 
-#: templates/html/search.tmpl:52
+#: templates/html/search.tmpl:77
 msgid "all suites"
 msgstr ""
 
-#: templates/html/search.tmpl:52
-msgid "suite(s) <em>$suite_enc</em>"
+#: templates/html/search.tmpl:77
+msgid "suite(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr ""
 
-#: templates/html/search.tmpl:53
-msgid "section(s) <em>$section_enc</em>"
+#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:74
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr ""
 
-#: templates/html/search.tmpl:54
-msgid "architecture(s) <em>$architectures_enc</em>"
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:81
 msgid "packages"
 msgstr ""
 
-#: templates/html/search.tmpl:56
+#: templates/html/search.tmpl:81
 msgid "source packages"
 msgstr ""
 
-#: templates/html/search.tmpl:57
+#: templates/html/search.tmpl:82
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
-#: templates/html/search.tmpl:60
+#: templates/html/search.tmpl:85
 msgid " (including subword matching)"
 msgstr ""
 
-#: templates/html/search.tmpl:61
+#. @translators: I'm really sorry :/
+#: templates/html/search.tmpl:87
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
 
-#: templates/html/search.tmpl:67
+#: templates/html/search.tmpl:93
 msgid "Found <strong>%u</strong> matching packages."
 msgstr ""
 
-#: templates/html/search.tmpl:72
+#: templates/html/search.tmpl:98
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
 "keywords or alternative keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:74
+#: templates/html/search.tmpl:102
 msgid ""
-"Your search was too wide so we will only display exact matches. At least <em>"
-"%u</em> results have been omitted and will not be displayed. Please consider "
-"using a longer keyword or more keywords."
+"Your keyword was too generic, for optimizing reasons some results might have "
+"been supressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:104
+msgid ""
+"Your keyword was too generic.<br>Please consider using a longer keyword or "
+"more keywords."
+msgstr ""
+
+#: templates/html/search.tmpl:110 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr ""
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:117
 msgid "Package %s"
 msgstr ""
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "also provided by:"
 msgstr ""
 
-#: templates/html/search.tmpl:96
+#: templates/html/search.tmpl:127
 msgid "provided by:"
 msgstr ""
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:136
 msgid "Source Package %s"
 msgstr ""
 
-#: templates/html/search.tmpl:113
+#: templates/html/search.tmpl:144
 msgid "Binary packages:"
 msgstr ""
 
-#: templates/html/search.tmpl:115
-msgid "%u binary packages"
+#: templates/html/search.tmpl:146
+msgid "hide %u binary packages"
 msgstr ""
 
-#: templates/html/search.tmpl:125
+#: templates/html/search.tmpl:146
+msgid "show %u binary packages"
+msgstr ""
+
+#: templates/html/search.tmpl:156
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -570,34 +597,19 @@ msgstr ""
 msgid "Search in other suite:"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:58
-msgid "Limit search to a specific architecture:"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:63
-msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:73
-msgid "section(s) <em>%s</em>"
-msgstr ""
-
 #: templates/html/search_contents.tmpl:74
-msgid "architecture(s) <em>%s</em>"
-msgstr ""
-
-#: templates/html/search_contents.tmpl:75
 msgid "paths that end with"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:77
+#: templates/html/search_contents.tmpl:76
 msgid "files named"
 msgstr ""
 
-#: templates/html/search_contents.tmpl:79
+#: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
 msgstr ""
 
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -617,7 +629,7 @@ msgid "Sort results by filename"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:318
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:327
 msgid "File"
 msgstr ""
 
@@ -717,27 +729,35 @@ msgstr ""
 msgid "Maintainers:"
 msgstr ""
 
-#: templates/html/show.tmpl:114
+#: templates/html/show.tmpl:120
 msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
-#: templates/html/show.tmpl:114
+#: templates/html/show.tmpl:120
 msgid "QA Page"
 msgstr ""
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:121
+msgid "Archive of the Maintainer Mailinglist"
+msgstr ""
+
+#: templates/html/show.tmpl:121
+msgid "Mail Archive"
+msgstr ""
+
+#: templates/html/show.tmpl:129
 msgid "External Resources:"
 msgstr ""
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:131
 msgid "Homepage"
 msgstr ""
 
-#: templates/html/show.tmpl:130
+#: templates/html/show.tmpl:137
 msgid "Similar packages:"
 msgstr ""
 
-#: templates/html/show.tmpl:146
+#: templates/html/show.tmpl:153
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -745,131 +765,135 @@ msgid ""
 "and other possible documentation before using it."
 msgstr ""
 
-#: templates/html/show.tmpl:169
+#: templates/html/show.tmpl:176
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
 "packages</a>."
 msgstr ""
 
-#: templates/html/show.tmpl:177
+#: templates/html/show.tmpl:184
 msgid "Tags"
 msgstr ""
 
-#: templates/html/show.tmpl:198
+#: templates/html/show.tmpl:207
 msgid "Packages providing %s"
 msgstr ""
 
-#: templates/html/show.tmpl:207
+#: templates/html/show.tmpl:216
 msgid "The following binary packages are built from this source package:"
 msgstr ""
 
-#: templates/html/show.tmpl:216
+#: templates/html/show.tmpl:225
 msgid "Other Packages Related to %s"
 msgstr ""
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:227
 msgid "legend"
 msgstr ""
 
-#: templates/html/show.tmpl:220
+#: templates/html/show.tmpl:229
 msgid "build-depends"
 msgstr ""
 
-#: templates/html/show.tmpl:221
+#: templates/html/show.tmpl:230
 msgid "build-depends-indep"
 msgstr ""
 
-#: templates/html/show.tmpl:223
+#: templates/html/show.tmpl:232
 msgid "depends"
 msgstr ""
 
-#: templates/html/show.tmpl:224
+#: templates/html/show.tmpl:233
 msgid "recommends"
 msgstr ""
 
-#: templates/html/show.tmpl:225
+#: templates/html/show.tmpl:234
 msgid "suggests"
 msgstr ""
 
-#: templates/html/show.tmpl:243
+#: templates/html/show.tmpl:244
+msgid "or "
+msgstr ""
+
+#: templates/html/show.tmpl:252
 msgid "also a virtual package provided by"
 msgstr ""
 
-#: templates/html/show.tmpl:250
-msgid "%u providing packages"
+#: templates/html/show.tmpl:259
+msgid "hide %u providing packages"
 msgstr ""
 
-#: templates/html/show.tmpl:268
+#: templates/html/show.tmpl:259
+msgid "show %u providing packages"
+msgstr ""
+
+#: templates/html/show.tmpl:277
 msgid "Download %s"
 msgstr ""
 
-#: templates/html/show.tmpl:270
+#: templates/html/show.tmpl:279
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
 
-#: templates/html/show.tmpl:271
+#: templates/html/show.tmpl:280
 msgid "Download for all available architectures"
 msgstr ""
 
-#: templates/html/show.tmpl:272
+#: templates/html/show.tmpl:281
 msgid "Architecture"
 msgstr ""
 
-#: templates/html/show.tmpl:273
+#: templates/html/show.tmpl:282
 msgid "Version"
 msgstr ""
 
-#: templates/html/show.tmpl:274
+#: templates/html/show.tmpl:283
 msgid "Package Size"
 msgstr ""
 
-#: templates/html/show.tmpl:275
+#: templates/html/show.tmpl:284
 msgid "Installed Size"
 msgstr ""
 
-#: templates/html/show.tmpl:276
+#: templates/html/show.tmpl:285
 msgid "Files"
 msgstr ""
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:293
 msgid "(unofficial port)"
 msgstr ""
 
-#: templates/html/show.tmpl:295 templates/html/show.tmpl:323
-msgid "%.1f&nbsp;kB"
+#: templates/html/show.tmpl:304 templates/html/show.tmpl:332
+msgid "%s&nbsp;kB"
 msgstr ""
 
-#: templates/html/show.tmpl:295
-msgid "%u&nbsp;kB"
-msgstr ""
-
-#: templates/html/show.tmpl:298
+#: templates/html/show.tmpl:307
 msgid "list of files"
 msgstr ""
 
-#: templates/html/show.tmpl:300
+#: templates/html/show.tmpl:309
 msgid "no current information"
 msgstr ""
 
-#: templates/html/show.tmpl:317
+#: templates/html/show.tmpl:326
 msgid "Download information for the files of this source package"
 msgstr ""
 
-#: templates/html/show.tmpl:318
+#: templates/html/show.tmpl:327
 msgid "Size (in kB)"
 msgstr ""
 
-#: templates/html/show.tmpl:336
+#: templates/html/show.tmpl:345
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
 
-#: templates/html/show.tmpl:340
+#: templates/html/show.tmpl:349
 msgid "Debian Package Source Repository (Browsable)"
 msgstr ""
 

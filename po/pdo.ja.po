@@ -6,49 +6,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-20 21:54+0200\n"
-"PO-Revision-Date: 2007-10-21 02:55+0900\n"
+"POT-Creation-Date: 2008-02-01 03:55+0100\n"
+"PO-Revision-Date: 2007-10-22 14:48+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/create_index_pages:234
+#: bin/create_index_pages:232
 msgid "Section"
 msgstr "セクション"
 
-#: bin/create_index_pages:246
+#: bin/create_index_pages:244
 msgid "Subsection"
 msgstr "サブセクション"
 
-#: bin/create_index_pages:258
+#: bin/create_index_pages:256
 msgid "Priority"
 msgstr "優先度"
 
-#. Done
-#: lib/Packages/Dispatcher.pm:162
-msgid "search doesn't take any more path elements"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:165
-msgid ""
-"We're supposed to display the homepage here, instead of getting dispatch.pl"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:188
-#, perl-format
-msgid "%s set more than once in path"
-msgstr ""
-
-#: lib/Packages/Dispatcher.pm:223
-#, perl-format
-msgid "two or more packages specified (%s)"
-msgstr "2 つ以上のパッケージが指定されています (%s)"
-
-#: lib/Packages/Dispatcher.pm:321
+#: lib/Packages/Dispatcher.pm:310
 msgid "requested format not available for this document"
-msgstr ""
+msgstr "この文書は要求された形式では利用できません"
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
@@ -57,7 +37,7 @@ msgstr "パッケージが不正か、または指定されていません"
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
-#: lib/Packages/DoSearchContents.pm:29 lib/Packages/DoShow.pm:34
+#: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
 msgid "suite not valid or not specified"
 msgstr "スイートが不正か、または指定されていません"
 
@@ -68,12 +48,12 @@ msgstr "アーキテクチャが不正か、または指定されていません
 #: lib/Packages/DoDownload.pm:36
 #, perl-format
 msgid "more than one suite specified for download (%s)"
-msgstr ""
+msgstr "download に複数のスイートが指定されています (%s)"
 
-#: lib/Packages/DoDownload.pm:39
+#: lib/Packages/DoDownload.pm:40
 #, perl-format
 msgid "more than one architecture specified for download (%s)"
-msgstr ""
+msgstr "download に複数のアーキテクチャが指定されています (%s)"
 
 #: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
@@ -86,74 +66,84 @@ msgstr "スイートとアーキテクチャの組み合わせが不正です"
 #: lib/Packages/DoIndex.pm:34
 #, perl-format
 msgid "more than one suite specified for show_static (%s)"
-msgstr ""
+msgstr "show_static に複数のスイートが指定されています (%s)"
 
-#: lib/Packages/DoIndex.pm:37
+#: lib/Packages/DoIndex.pm:38
 #, perl-format
 msgid "more than one subsection specified for show_static (%s)"
-msgstr ""
+msgstr "show_static に複数のサブセクションが指定されています (%s)"
 
-#: lib/Packages/DoIndex.pm:73
+#: lib/Packages/DoIndex.pm:75
 #, perl-format
 msgid "couldn't read index file %s: %s"
-msgstr ""
+msgstr "索引ファイル %s を読み込めませんでした: %s"
 
-#: lib/Packages/DoNewPkg.pm:25 lib/Packages/DoShow.pm:37
+#: lib/Packages/DoNewPkg.pm:25
 #, perl-format
-msgid "more than one suite specified for show (%s)"
-msgstr ""
+msgid "more than one suite specified for newpkg (%s)"
+msgstr "newpkg に複数のスイートが指定されています (%s)"
 
-#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:23
+#: lib/Packages/DoNewPkg.pm:43
+#, perl-format
+msgid "no newpkg information found for suite %s"
+msgstr "newpkg に %s スイートの情報が見つかりません"
+
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
 msgid "keyword not valid or missing"
 msgstr "キーワードが不正か、または指定されていません"
 
-#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:26
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr "キーワードが短すぎます (キーワードは 2 文字以上である必要があります)"
 
-#: lib/Packages/DoSearch.pm:163
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "完全なヒット"
 
-#: lib/Packages/DoSearch.pm:172
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "その他のヒット"
 
-#: lib/Packages/DoSearch.pm:217
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "仮想パッケージ"
 
-#: lib/Packages/DoSearchContents.pm:39
+#: lib/Packages/DoSearchContents.pm:40
 #, perl-format
 msgid "more than one suite specified for contents search (%s)"
-msgstr ""
+msgstr "内容の検索 (contents search) に複数のスイートが指定されています (%s)"
 
-#: lib/Packages/DoSearchContents.pm:80
+#: lib/Packages/DoSearchContents.pm:82
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr "選択した検索モードでは複数のキーワード指定はサポートされていません。"
 
-#: lib/Packages/DoShow.pm:72
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr "show に複数のスイートが指定されています (%s)"
+
+#: lib/Packages/DoShow.pm:73
 msgid "No such package."
 msgstr "そのようなパッケージはありません。"
 
-#: lib/Packages/DoShow.pm:84
+#: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr "パッケージはこのスイートでは利用できません。"
 
-#: lib/Packages/DoShow.pm:197
+#: lib/Packages/DoShow.pm:198
 msgid " and others"
 msgstr " など"
 
-#: lib/Packages/DoShow.pm:427
+#: lib/Packages/DoShow.pm:429
 #, perl-format
 msgid "not %s"
-msgstr ""
+msgstr "%s 以外"
 
-#: lib/Packages/DoShow.pm:465
+#: lib/Packages/DoShow.pm:479
 msgid "Package not available"
 msgstr "パッケージは利用できません"
 
-#: lib/Packages/DoShow.pm:491
+#: lib/Packages/DoShow.pm:518
 msgid "Not available"
 msgstr "入手不能"
 
@@ -163,3 +153,19 @@ msgstr "パッケージのメンテナ (Maintainer) フィールドが不正で�
 
 #~ msgid "Initialization of Template Engine failed: %s"
 #~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s がパスに複数入っています"
+
+#~ msgid ""
+#~ "We're supposed to display the homepage here, instead of getting dispatch."
+#~ "pl"
+#~ msgstr ""
+#~ "ここには、dispatch.pl を取得するのではなくホームページを表示することになっ"
+#~ "ています。"
+
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "search の場合は後ろにパスを追加できません"

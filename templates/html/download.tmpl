@@ -30,7 +30,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 <p>[% g('Replacing <em>%s</em> with the mirror in question.', mirrors.$archive.europa.0) %]
 [% ELSE %]
 <pre>
-deb http://security.ubuntu.com/ubuntu [% suite _ "-security" %] main [% section IF section != main_section %]
+deb [% 'http://' _ security_mirror_url %] [% suite _ security_suite_suffix %] main [% section IF section != main_section %]
 </pre>
 [%- END %]
 [% IF suite == "experimental" %]
@@ -73,8 +73,9 @@ deb http://security.ubuntu.com/ubuntu [% suite _ "-security" %] main [% section 
   </div>
 [% ELSE %]
 <p>[% g('You can download the requested file from the <tt>%s</tt> subdirectory at:', filename.directory) %]</p>
-<ul><li><a href="http://security.ubuntu.com/ubuntu/[% filename.full %]">security.ubuntu.com/ubuntu</a></li></ul>
-<p>[% g('Ubuntu security updates are currently officially distributed only via <tt>security.ubuntu.com</tt>.') %]</p>
+<ul><li><a href="http://[% security_mirror_url %]/[% filename.full %]">[% security_mirror_url %]</a></li></ul>
+<p>[% g('%s security updates are officially distributed only via <tt>%s</tt>.',
+	organisation, security_mirror) %]</p>
 [% END %]
 
 <div id="pdownloadnotes">
@@ -98,7 +99,7 @@ deb http://security.ubuntu.com/ubuntu [% suite _ "-security" %] main [% section 
 
 <h3>[% g('More information on <kbd>%s</kbd>:', filename.file) %]</h3>
 <table id="pdownloadmeta">
-<tr><th>[% g('Exact Size') %]</th>	<td class="size">[% g('%s Byte (%s %s)', size, pkgsize, pkgsize_unit) %]</td>
+<tr><th>[% g('Exact Size') %]</th>	<td class="size">[% g('%s Byte (%s %s)', size, num.format_number(pkgsize,1), pkgsize_unit) %]</td>
 <tr><th>[% g('MD5 checksum') %]</th>	<td><tt>[% md5sum %]</tt></td>
 <tr><th>[% g('SHA1 checksum') %]</th>	<td><tt>[% sha1 || g('Not Available') %]</tt></td>
 <tr><th>[% g('SHA256 checksum') %]</th>	<td><tt>[% sha256  || g('Not Available') %]</tt></td>

@@ -11,7 +11,6 @@ filesdir=${topdir}/files
 htmldir=${topdir}/www
 archivedir=${topdir}/archive
 podir=${topdir}/po
-localedir=%TOPDIR%/locale
 staticdir=${topdir}/static
 configdir=${topdir}/conf
 templatedir=${topdir}/templates
@@ -29,17 +28,19 @@ ftpsite=http://archive.ubuntu.com/ubuntu
 security_ftpsite=$ftpsite
 ddtp_ftpsite=http://ddtp.debian.net/debian
 
+wget_cmd="wget --no-verbose --tries=2 --timeout=60" 
+
 root=""
 
 # Architectures
 #
-polangs="de fi fr hu ja nl uk"
-ddtplangs="ca cs da de eo es fi fr go hu it ja km_KH ko nl pl pt pt_BR ru sk sv uk zh zh_CN zh_TW"
+polangs="de fi fr hu ja nl ru sv uk zh-cn"
+ddtplangs="ca cs da de eo es fi fr hu it ja km-kh ko nl pl pt pt-br ru sk sv uk zh-cn zh-tw"
 archives="us security"
 sections="main multiverse restricted universe"
-parts="${sections}"
+parts="$sections"
 suites="dapper dapper-updates dapper-backports edgy edgy-updates edgy-backports feisty feisty-updates feisty-backports gutsy gutsy-updates gutsy-backports hardy"
-dists="${suites}"
+dists="$suites"
 priorities="required important standard optional extra"
 architectures="i386 amd64 powerpc"
 arch_dapper="i386 amd64 powerpc"

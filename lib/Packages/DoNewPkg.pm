@@ -9,7 +9,6 @@ use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_newpkg );
 
-use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::CGI;
 use Packages::DB;
@@ -17,12 +16,14 @@ use Packages::Config qw( $TOPDIR @SECTIONS $ROOT );
 
 sub do_newpkg {
     my ($params, $opts, $page_content) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for newpkg (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for newpkg (%s)",
+			      "@{$opts->{suite}}" ) );
     }
 
     my $sort_func = sub { $_[0][0] cmp $_[1][0] };
@@ -39,13 +40,13 @@ sub do_newpkg {
     open NEWPKG, '<', "$TOPDIR/files/packages/newpkg_info_$suite"
 	or do {
 	    warn "can't read newpkg_info_$suite: $!";
-	    fatal_error( sprintf( _g("no newpkg information found for suite %s"),
-				  $suite) );
+	    fatal_error( $cat->g("no newpkg information found for suite %s",
+				 $suite) );
 	    return;
     };
     while (<NEWPKG>) {
 	chomp;
-	my @data = split /\s/, $_, 10;
+	my @data = split /\s/, $_, 11;
 
 	next unless $data[2]; #removed packages
 	next unless $data[3] eq $suite;
