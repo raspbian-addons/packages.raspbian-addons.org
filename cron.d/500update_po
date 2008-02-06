@@ -32,7 +32,6 @@ templates/html/filelist.tmpl
 templates/html/foot.tmpl
 templates/html/head.tmpl
 templates/html/index.tmpl
-templates/html/menu.inc
 templates/html/messages.tmpl
 templates/html/newpkg.tmpl
 templates/html/search.tmpl
@@ -40,6 +39,7 @@ templates/html/search_contents.tmpl
 templates/html/show.tmpl
 templates/html/suite_index.tmpl
 templates/html/tag_index.tmpl
+templates/html/util.inc
 templates/rfc822/search.tmpl
 templates/rss/newpkg.tmpl
 templates/txt/index.tmpl
@@ -95,4 +95,16 @@ do
 	perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
       done
   fi
+done
+
+# print statistics
+for lang in ${polangs}
+do
+  echo
+  echo "Statistics about $lang:"
+  for po in *.${lang}.po
+  do
+    echo $po:
+    LANG=C msgfmt --statistics --check-format -o- $po >/dev/null
+  done
 done
