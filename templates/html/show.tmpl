@@ -109,6 +109,8 @@
 	mailarchiveurl = 'http://lists.debian.org/' _ matches.0 _ '/';
   ELSIF (matches = mail.match('^(.*)@lists\.alioth\.debian\.org$'));
 	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ matches.0 _ '/';
+  ELSIF (matches = mail.match('^(.*)@lists\.ubuntu\.com$'));
+  	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ matches.0 _ '/';
   END -%]
   [%- '<ul>' IF loop.first -%]
 	<li><a href="mailto:[% mail %]">[% name | html %]</a>
