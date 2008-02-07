@@ -1,0 +1,65 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use POSIX;
+use Storable;
+
+use lib './lib';
+
+use Packages::CommonCode qw(:all);
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @LANGUAGES );
+use Packages::Template;
+use Packages::I18N::Locale;
+use Packages::Sections;
+&Packages::Config::init( './' );
+
+my $wwwdir = "$TOPDIR/www";
+
+my $subsections = retrieve "$DBDIR/subsections.info";
+
+#use Data::Dumper;
+#print STDERR Dumper($sections, $subsections, $priorities);
+
+my (%pages);
+
+my $template = new Packages::Template( "$TOPDIR/templates", 'html');
+
+print "write suite index files ...\n";
+foreach my $s (@SUITES) {
+    my $key = $s;
+    mkdirp ( "$wwwdir/$key" );
+    mkdirp ( "$wwwdir/source/$key" );
+    foreach my $lang (@LANGUAGES) {
+	my $charset = 'UTF-8';
+	my $cat = Packages::I18N::Locale->get_handle($lang)
+	    or die "get_handle failed for $lang";
+	print "writing $key/index (lang=$lang)...\n";
+
+	my %content = ( subsections => [], suite => $s,
+			po_lang => $lang, ddtp_lang => $lang,
+			charset => $charset, cat => $cat,
+			used_langs => \@LANGUAGES, suites => \@SUITES );
+	foreach my $ssec (sort (keys %{$subsections->{$s}}, 'virtual')) {
+	    next if $ssec eq '-';
+	    if ($sections_descs{$ssec}) {
+		push @{$content{subsections}}, {
+		    id => $ssec,
+		    name => $cat->g($sections_descs{$ssec}[0]),
+		    desc => $cat->g($sections_descs{$ssec}[1]),
+		};
+	    }
+	}
+
+	$template->page( 'suite_index', \%content,
+			 "$wwwdir/$key/index.$lang.html.new");
+	activate( "$wwwdir/$key/index.$lang.html" );
+
+	$content{source} = 'source';
+	$template->page( 'suite_index', \%content,
+			 "$wwwdir/source/$key/index.$lang.html.new");
+	activate( "$wwwdir/source/$key/index.$lang.html" );
+
+    }
+}
