@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # Main archive
 #
-architectures="armel kfreebsd-i386 kfreebsd-amd64"
+architectures="kfreebsd-i386 kfreebsd-amd64"
 
 for dist in sid experimental
   do
