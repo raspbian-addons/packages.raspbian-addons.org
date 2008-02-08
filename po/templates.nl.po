@@ -108,27 +108,27 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:178
 msgid "North America"
 msgstr "Noord Amerika"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:179
 msgid "South America"
 msgstr "Zuid Amerika"
 
-#: templates/config/mirrors.tmpl:184
+#: templates/config/mirrors.tmpl:180
 msgid "Asia"
 msgstr "Azië"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:181
 msgid "Australia and New Zealand"
 msgstr "Australië en Nieuw Zeeland"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:182
 msgid "Europe"
 msgstr "Europa"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:183
 msgid "Africa"
 msgstr "Afrika"
 
@@ -137,12 +137,12 @@ msgid "Package Download Selection -- %s"
 msgstr "Selectie voor pakketdownload -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Distributie:"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 #, fuzzy
 msgid "Overview over this suite"
 msgstr "Overzicht van deze distributie"
@@ -332,7 +332,7 @@ msgstr ""
 "href=\"mailto:%s\">%s</a>. Voor meer informatie om met ons in contact te "
 "komen, zie de <a href=\"%s/contact\">contact pagina</a>."
 
-#: templates/html/foot.tmpl:33 templates/txt/index.tmpl:4
+#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
 msgid "Generated:"
 msgstr "Gegenereerd:"
 
@@ -387,35 +387,30 @@ msgstr "Pakket niet beschikbaar"
 msgid "Packages"
 msgstr "Pakketten"
 
-#: templates/html/index.tmpl:3
+#: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
 msgstr "Bronpakketten in \"%s\", %s %s"
 
-#: templates/html/index.tmpl:4
+#: templates/html/index_head.tmpl:3
 msgid "Source Packages in \"%s\""
 msgstr "Bronpakketten in \"%s\""
 
-#: templates/html/index.tmpl:6
+#: templates/html/index_head.tmpl:5
 msgid "Software Packages in \"%s\", %s %s"
 msgstr "Softwarepakketten in \"%s\", %s %s"
 
-#: templates/html/index.tmpl:7
+#: templates/html/index_head.tmpl:6
 msgid "Software Packages in \"%s\""
 msgstr "Softwarepakketten in \"%s\""
 
-#: templates/html/index.tmpl:14
+#: templates/html/index_head.tmpl:13
 msgid "All Packages"
 msgstr "Alle pakketten"
 
-#: templates/html/index.tmpl:16 templates/html/show.tmpl:15
+#: templates/html/index_head.tmpl:15 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
 msgstr "Bron"
-
-#: templates/html/index.tmpl:45 templates/html/show.tmpl:256
-#: templates/txt/index.tmpl:15
-msgid "virtual package provided by"
-msgstr "virtueel pakket geboden door"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
@@ -901,6 +896,10 @@ msgstr "of "
 msgid "also a virtual package provided by"
 msgstr "Ook een virtueel pakket geboden door:"
 
+#: templates/html/show.tmpl:256
+msgid "virtual package provided by"
+msgstr "virtueel pakket geboden door"
+
 #: templates/html/show.tmpl:261
 #, fuzzy
 #| msgid "%u providing packages"
@@ -1040,17 +1039,23 @@ msgstr ""
 "De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
 "distributie toegevoegd."
 
-#: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
+#: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
 msgstr "Copyright ©"
 
-#: templates/txt/index.tmpl:2
+#: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
 msgstr "Alle %s pakketten in \"%s\""
 
-#: templates/txt/index.tmpl:6
+#: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr ""
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "sectie(s) <em>$section_enc</em>"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "platform(en) <em>$architectures_enc</em>"
 
 #, fuzzy
 #~ msgid ""
@@ -1059,9 +1064,3 @@ msgstr ""
 #~ msgstr ""
 #~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
 #~ "s/\">Pakketten zoekpagina</a>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "platform(en) <em>$architectures_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "sectie(s) <em>$section_enc</em>"

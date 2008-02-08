@@ -92,27 +92,27 @@ msgstr ""
 msgid "GNU/kFreeBSD (amd64)"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:178
 msgid "North America"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:179
 msgid "South America"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:184
+#: templates/config/mirrors.tmpl:180
 msgid "Asia"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:181
 msgid "Australia and New Zealand"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:182
 msgid "Europe"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:183
 msgid "Africa"
 msgstr ""
 
@@ -122,14 +122,14 @@ msgstr ""
 
 #: templates/html/download.tmpl:5
 #: templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10
+#: templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr ""
 
 #: templates/html/download.tmpl:5
 #: templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10
+#: templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Overview over this suite"
 msgstr ""
@@ -275,7 +275,7 @@ msgid "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a
 msgstr ""
 
 #: templates/html/foot.tmpl:33
-#: templates/txt/index.tmpl:4
+#: templates/txt/index_head.tmpl:3
 msgid "Generated:"
 msgstr ""
 
@@ -325,36 +325,30 @@ msgstr ""
 msgid "Packages"
 msgstr ""
 
-#: templates/html/index.tmpl:3
+#: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
 msgstr ""
 
-#: templates/html/index.tmpl:4
+#: templates/html/index_head.tmpl:3
 msgid "Source Packages in \"%s\""
 msgstr ""
 
-#: templates/html/index.tmpl:6
+#: templates/html/index_head.tmpl:5
 msgid "Software Packages in \"%s\", %s %s"
 msgstr ""
 
-#: templates/html/index.tmpl:7
+#: templates/html/index_head.tmpl:6
 msgid "Software Packages in \"%s\""
 msgstr ""
 
-#: templates/html/index.tmpl:14
+#: templates/html/index_head.tmpl:13
 msgid "All Packages"
 msgstr ""
 
-#: templates/html/index.tmpl:16
+#: templates/html/index_head.tmpl:15
 #: templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
-msgstr ""
-
-#: templates/html/index.tmpl:45
-#: templates/html/show.tmpl:256
-#: templates/txt/index.tmpl:15
-msgid "virtual package provided by"
 msgstr ""
 
 #: templates/html/newpkg.tmpl:2
@@ -785,6 +779,10 @@ msgstr ""
 msgid "also a virtual package provided by"
 msgstr ""
 
+#: templates/html/show.tmpl:256
+msgid "virtual package provided by"
+msgstr ""
+
 #: templates/html/show.tmpl:261
 msgid "show %u providing packages"
 msgstr ""
@@ -906,15 +904,15 @@ msgid "The following packages were added to suite %s in the %s archive during th
 msgstr ""
 
 #: templates/rss/newpkg.tmpl:28
-#: templates/txt/index.tmpl:5
+#: templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
 msgstr ""
 
-#: templates/txt/index.tmpl:2
+#: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
 msgstr ""
 
-#: templates/txt/index.tmpl:6
+#: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 

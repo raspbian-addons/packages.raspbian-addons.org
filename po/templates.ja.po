@@ -31,8 +31,8 @@ msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"注意: このサイトは <a href=\"http://%s/\">%s"
-"</a> の試験版です。エラーや古い情報があると思ってください。"
+"注意: このサイトは <a href=\"http://%s/\">%s</a> の試験版です。エラーや古い情"
+"報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:57
@@ -107,27 +107,27 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:178
 msgid "North America"
 msgstr "北アメリカ"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:179
 msgid "South America"
 msgstr "南アメリカ"
 
-#: templates/config/mirrors.tmpl:184
+#: templates/config/mirrors.tmpl:180
 msgid "Asia"
 msgstr "アジア"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:181
 msgid "Australia and New Zealand"
 msgstr "オーストラリア・ニュージーランド"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:182
 msgid "Europe"
 msgstr "ヨーロッパ"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:183
 msgid "Africa"
 msgstr "アフリカ"
 
@@ -136,12 +136,12 @@ msgid "Package Download Selection -- %s"
 msgstr "パッケージのダウンロードに関する選択 -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "ディストリビューション:"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Overview over this suite"
 msgstr "このスイートの概要"
 
@@ -340,7 +340,7 @@ msgstr ""
 "てください。その他の連絡先に関する情報は、%s の<a href=\"%s\">コンタクトペー"
 "ジ</a>をご覧ください。"
 
-#: templates/html/foot.tmpl:33 templates/txt/index.tmpl:4
+#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
 msgid "Generated:"
 msgstr "生成:"
 
@@ -394,36 +394,31 @@ msgstr "%s パッケージホームページ"
 msgid "Packages"
 msgstr "パッケージ"
 
-#: templates/html/index.tmpl:3
+#: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
 msgstr "\"%s\" の %s %s に含まれるソースパッケージ"
 
-#: templates/html/index.tmpl:4
+#: templates/html/index_head.tmpl:3
 msgid "Source Packages in \"%s\""
 msgstr "\"%s\" に含まれるソースパッケージ"
 
 # TRANSLATION-FIXME: "%3 Section", "%3 Subsection", and "Priority %s" would be the best.
-#: templates/html/index.tmpl:6
+#: templates/html/index_head.tmpl:5
 msgid "Software Packages in \"%s\", %s %s"
 msgstr "\"%s\" の%s %s に含まれるソフトウェアパッケージ"
 
-#: templates/html/index.tmpl:7
+#: templates/html/index_head.tmpl:6
 msgid "Software Packages in \"%s\""
 msgstr "\"%s\" に含まれるソフトウェアパッケージ"
 
-#: templates/html/index.tmpl:14
+#: templates/html/index_head.tmpl:13
 msgid "All Packages"
 msgstr "すべてのパッケージ"
 
-#: templates/html/index.tmpl:16 templates/html/show.tmpl:15
+#: templates/html/index_head.tmpl:15 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
 msgstr "ソース"
-
-#: templates/html/index.tmpl:45 templates/html/show.tmpl:256
-#: templates/txt/index.tmpl:15
-msgid "virtual package provided by"
-msgstr "以下のパッケージによって提供される仮想パッケージです: "
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
@@ -922,6 +917,10 @@ msgstr "または "
 msgid "also a virtual package provided by"
 msgstr "以下のパッケージによって提供される仮想パッケージでもあります: "
 
+#: templates/html/show.tmpl:256
+msgid "virtual package provided by"
+msgstr "以下のパッケージによって提供される仮想パッケージです: "
+
 #: templates/html/show.tmpl:261
 msgid "hide %u providing packages"
 msgstr "%u 個の提供パッケージを非表示"
@@ -1056,24 +1055,30 @@ msgstr ""
 "以下のパッケージは、%2 アーカイブの %1 スイートに最近 7 日間に追加されたもの"
 "です。"
 
-#: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
+#: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
 msgstr "Copyright ©"
 
-#: templates/txt/index.tmpl:2
+#: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
 msgstr "\"%s\" に含まれるすべての %s パッケージ"
 
-#: templates/txt/index.tmpl:6
+#: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
-#~ "きます。"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
@@ -1082,14 +1087,8 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
+#~ "きます。"

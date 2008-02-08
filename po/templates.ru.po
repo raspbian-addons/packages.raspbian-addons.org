@@ -31,8 +31,8 @@ msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Это экспериментальная версия <a href=\"http://%s/"
-"\">%s</a>. Возможны ошибки и устаревшая информация"
+"Это экспериментальная версия <a href=\"http://%s/\">%s</a>. Возможны ошибки "
+"и устаревшая информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:57
@@ -107,27 +107,27 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:178
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:179
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:184
+#: templates/config/mirrors.tmpl:180
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:181
 msgid "Australia and New Zealand"
 msgstr "Австралия и Новая Зеландия"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:182
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:183
 msgid "Africa"
 msgstr "Африка"
 
@@ -136,12 +136,12 @@ msgid "Package Download Selection -- %s"
 msgstr "Выбранный пакет для загрузки -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Дистрибутив:"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Overview over this suite"
 msgstr "Краткое описание комплекта"
 
@@ -335,7 +335,7 @@ msgstr ""
 "контактную информацию см. на странице %s <a href=\"%s\">Как с нами "
 "связаться</a>."
 
-#: templates/html/foot.tmpl:33 templates/txt/index.tmpl:4
+#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
 msgid "Generated:"
 msgstr "Сгенерирована:"
 
@@ -388,35 +388,30 @@ msgstr "Домашняя страница пакетов %s"
 msgid "Packages"
 msgstr "Пакеты"
 
-#: templates/html/index.tmpl:3
+#: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
 msgstr "Пакеты исходного кода в \"%s\", %s %s"
 
-#: templates/html/index.tmpl:4
+#: templates/html/index_head.tmpl:3
 msgid "Source Packages in \"%s\""
 msgstr "Пакеты исходного кода в \"%s\""
 
-#: templates/html/index.tmpl:6
+#: templates/html/index_head.tmpl:5
 msgid "Software Packages in \"%s\", %s %s"
 msgstr "Пакеты программ в \"%s\", %s %s"
 
-#: templates/html/index.tmpl:7
+#: templates/html/index_head.tmpl:6
 msgid "Software Packages in \"%s\""
 msgstr "Пакеты программ в \"%s\""
 
-#: templates/html/index.tmpl:14
+#: templates/html/index_head.tmpl:13
 msgid "All Packages"
 msgstr "Все пакеты"
 
-#: templates/html/index.tmpl:16 templates/html/show.tmpl:15
+#: templates/html/index_head.tmpl:15 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
 msgstr "Исходный код"
-
-#: templates/html/index.tmpl:45 templates/html/show.tmpl:256
-#: templates/txt/index.tmpl:15
-msgid "virtual package provided by"
-msgstr "виртуальный пакет, предоставляемый"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
@@ -920,6 +915,10 @@ msgstr "или "
 msgid "also a virtual package provided by"
 msgstr "также виртуальный пакет, предоставляемый"
 
+#: templates/html/show.tmpl:256
+msgid "virtual package provided by"
+msgstr "виртуальный пакет, предоставляемый"
+
 #: templates/html/show.tmpl:261
 #, fuzzy
 #| msgid "%u providing packages"
@@ -1058,17 +1057,26 @@ msgstr ""
 "За последние 7 дней в комплект %s архива %s были добавлены указанные ниже "
 "пакеты."
 
-#: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
+#: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
 msgstr "Авторские права ©"
 
-#: templates/txt/index.tmpl:2
+#: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
 msgstr "Все %s пакеты в \"%s\""
 
-#: templates/txt/index.tmpl:6
+#: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "комплект(ы) <em>$suite_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "секция(и) <em>$section_enc</em>"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "архитектура(ы) <em>$architectures_enc</em>"
 
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1076,12 +1084,3 @@ msgstr "Об условиях лицензии смотрите <URL:%s>."
 #~ msgstr ""
 #~ "Вы можете попробовать поиск с другими параметрами на <a href=\"%"
 #~ "s#search_packages\">странице поиска пакетов</a>."
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "архитектура(ы) <em>$architectures_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "секция(и) <em>$section_enc</em>"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "комплект(ы) <em>$suite_enc</em>"
