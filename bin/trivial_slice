@@ -39,14 +39,14 @@ warn "langs=@langs\nfiles=@files\n";
 foreach my $file (@files) {
     my ($name, $path, undef) = fileparse($file,qw(.slices));
 
-    warn "name=$name path=$path out=$path$name.LANG.html.tmp\n";
+    warn "name=$name path=$path out=$path$name.LANG.html.new\n";
 
     my %out;
     foreach my $lang (@langs) {
 	my $ulang = uc($lang);
 	open($out{$ulang}, '>',
-	     "$path$name.$lang.html.tmp")
-	    or die "Couldn't open $path$name.$lang.html.tmp\n";
+	     "$path$name.$lang.html.new")
+	    or die "Couldn't open $path$name.$lang.html.new\n";
     }
 
     open my $in, '<', $file
@@ -96,7 +96,7 @@ foreach my $file (@files) {
 
     foreach my $lang (keys %out) {
 	close($out{$lang})
-	    or die "Couldn't close $path$name.$lang.html.tmp\n";
+	    or die "Couldn't close $path$name.$lang.html.new\n";
 	activate("$path$name.$lang.html");
     }
 
