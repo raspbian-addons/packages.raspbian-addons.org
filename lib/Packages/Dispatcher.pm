@@ -315,6 +315,7 @@ sub do_dispatch {
 
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
+	    || ($what_to_do eq 'index' and $opts{format} eq 'html')
 	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
 	fatal_error( $cat->g("requested format not available for this document"),
 		     "406 requested format not available");
