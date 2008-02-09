@@ -94,8 +94,9 @@ foreach my $file (@files) {
 	}
     }
 
-    foreach my $lang (keys %out) {
-	close($out{$lang})
+    foreach my $lang (@langs) {
+	my $ulang = uc($lang);
+	close($out{$ulang})
 	    or die "Couldn't close $path$name.$lang.html.new\n";
 	activate("$path$name.$lang.html");
     }
