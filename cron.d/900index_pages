@@ -27,6 +27,6 @@ date
 #     slice $target $file
 # done 
 
-./bin/trivial_slice en $polangs -- $(find www/ -name *.slices)
+./bin/trivial_slice en $polangs -- $(find "$htmldir" -name "*.slices")
 
 date
