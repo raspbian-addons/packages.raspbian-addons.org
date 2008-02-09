@@ -230,11 +230,13 @@ foreach my $pkg (@PACKAGES) {
 		my %sdescs;
 		my %trans_desc = split /\000|\001/, $trans_desc;
 		while (my ($l, $d) = each %trans_desc) {
-		    $d =~ s/\n.*//os;
+		    # filter out non-po languages
+		    next unless exists $lang_vars{$l};
 
+		    $d =~ s/\n.*//os;
 		    $sdescs{$l} = $d;
 		}
-		$p{trans_desc} = \%sdescs;
+		$p{trans_desc} = \%sdescs if %sdescs;
 	    }
 	    $p{priority} = $entry->get_newest( 'priority' );
 	}
