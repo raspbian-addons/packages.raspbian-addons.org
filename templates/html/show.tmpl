@@ -16,7 +16,8 @@
     nav_arr.push( { prefix=>g('Section:'), title=>g('All packages in this section'), url=>make_url("$subsection/"), name=>subsection } );
     nav_arr.push( { prefix=>g('Package:'), name=>pkg } ); -%]
 [% desclang = 'en';
-   SET desclang = lang IF desc.$lang.long %]
+   SET desclang = po_lang IF desc.$po_lang.long;
+   SET desclang = ddtp_lang IF desc.$ddtp_lang.long %]
 [%- PROCESS 'html/head.tmpl'
    title_tag = is_source ? g('Details of source package %s in %s', pkg, suite)
 	                 : g('Details of package %s in %s', pkg, suite)
@@ -29,7 +30,7 @@
   navigation = nav_arr
 -%]
 <!-- show.tmpl -->
-[% PROCESS 'html/menu.inc' %]
+[% PROCESS 'html/util.inc' %]
 [% FOREACH s IN suites %]
    [% '<div id="pothers">' IF loop.first %]
    [%- IF s == suite -%]
@@ -166,13 +167,14 @@
 
 [% IF desc %]
 <div id="pdesctab">
-<div id="pdesc">
 [% UNLESS is_virtual %]
+<div id="pdesc" [% "lang=\"$desclang\"" IF desclang != po_lang %]>
 	[% IF desc.$desclang.short %]
 	<h2>[% desc.$desclang.short %]</h2>
 	<p>[% desc.$desclang.long %]
 	[% END %]
 [% ELSE %]
+<div id="pdesc">
 	<p>[% g('This is a <em>virtual package</em>. See the <a href="%s">Debian policy</a> for a <a href="%sch-binary.html#s-virtual_pkg">definition of virtual packages</a>.',
 		policy_url, policy_url) %]</p>
 [% END %]
@@ -183,10 +185,10 @@
     <div id="ptags"><p>
     <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">[% g('Tags') %]</a>:
   [%- END %]
-  [% facet = tag.0; lfacet = "$facet-$lang"; 
+  [% facet = tag.0; lfacet = "$facet-$po_lang"; 
      facet_name = debtags_voc.$lfacet;
      SET facet_name = debtags_voc.$facet UNLESS facet_name;
-     tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$lang";
+     tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$po_lang";
      tag_name = debtags_voc.$ltag;
      SET tag_name = debtags_voc.$tag_id UNLESS tag_name;
    %]
@@ -206,7 +208,7 @@
 [% FOREACH p IN providers %]
   [% IF loop.first %]<div id="pdeps"><h2>[% g('Packages providing %s', pkg) %]</h2><dl>[% END %]
     <dt>[% IF p.available %]<a href="[% make_url(p.name,'','source','') %]">[% p.name %]</a>[% ELSE; p.name; END %]</dt>
-    <dd>[% IF p.trans_desc.$lang; p.trans_desc.$lang | html; ELSE; p.desc | html; END %]</dd>
+    [% PROCESS desc_i18n_dd trans_desc=p.trans_desc desc=p.desc %]
   [% '</dl></div>' IF loop.last %]
 [% END %]
 </div> <!-- pdesctab -->
@@ -215,7 +217,7 @@
 [% FOREACH b IN binaries %]
   [% IF loop.first %]<div id="pbinaries">[% g('The following binary packages are built from this source package:') %]<dl>[% END %]
     <dt>[% IF b.available %]<a href="[% make_url(b.name,'','source','') %]">[% b.name %]</a>[% ELSE; b.name; END %]</dt>
-    <dd>[% IF b.trans_desc.$lang; b.trans_desc.$lang | html; ELSE; b.desc | html; END %]</dd>
+    [% PROCESS desc_i18n_dd trans_desc=b.trans_desc desc=b.desc %]
   [% '</dl></div>' IF loop.last %]
 [% END %]
 
@@ -246,7 +248,7 @@
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
       [%- IF !is_old_pkgs -%]
-        <dd>[% IF trans_desc.$lang; trans_desc.$lang | html; ELSE; desc | html; END -%]
+        [% PROCESS desc_i18n_dd no_end_tag=1 trans_desc=trans_desc desc=desc -%]
         [%- IF providers.pkgs.size > 0 -%]
 	  [% IF providers.also;
 		'<br>' _ g('also a virtual package provided by');

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-08 17:22+0100\n"
 "PO-Revision-Date: 2007-11-26 08:04+0200\n"
 "Last-Translator: Tommi Vainikainen <thv+debian@iki.fi>\n"
 "Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
@@ -15,19 +15,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: bin/create_index_pages:232
+#: bin/create_index_pages:68
+msgid "virtual package provided by"
+msgstr "näennäispaketti, jonka toteuttaa"
+
+#: bin/create_index_pages:162 bin/create_index_pages:383
 msgid "Section"
 msgstr "Osasto"
 
-#: bin/create_index_pages:244
+#: bin/create_index_pages:169 bin/create_index_pages:390
 msgid "Subsection"
 msgstr "Alaosasto"
 
-#: bin/create_index_pages:256
+#: bin/create_index_pages:176 bin/create_index_pages:397
 msgid "Priority"
 msgstr "Tärkeys"
 
-#: lib/Packages/Dispatcher.pm:310
+#: lib/Packages/Dispatcher.pm:319
 msgid "requested format not available for this document"
 msgstr "pyydetty muoto ei ole käytettävissä tälle asiakirjalle"
 
@@ -74,7 +78,7 @@ msgstr "useampi kuin yksi jakelu määritetty show_static-metodille (%s)"
 msgid "more than one subsection specified for show_static (%s)"
 msgstr "useampi kuin yksi alaosasto määritetty show_static-metodille (%s)"
 
-#: lib/Packages/DoIndex.pm:75
+#: lib/Packages/DoIndex.pm:70
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr "hakemistotiedostoa %s ei voitu lukea: %s"
@@ -97,15 +101,15 @@ msgstr "hakusana ei kelpaa tai puuttuu"
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr "hakusana liian lyhyt (hakusanassa täytyy olla vähintään kaksi merkkiä)"
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Tarkat hakutulokset"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Muut hakutulokset"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Näennäispaketti"
 
@@ -378,9 +382,6 @@ msgstr "paketin ylläpitäjätietue on virheellinen"
 
 #~ msgid "Overview over this distribution"
 #~ msgstr "Tämän jakelun yleiskuva"
-
-#~ msgid "virtual package"
-#~ msgstr "näennäispaketti"
 
 #~ msgid "list of files"
 #~ msgstr "tiedostoluettelo"

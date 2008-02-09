@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-08 17:22+0100\n"
 "PO-Revision-Date: 2005-10-25 17:52+0200\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -14,23 +14,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/create_index_pages:232
+#: bin/create_index_pages:68
+#, fuzzy
+msgid "virtual package provided by"
+msgstr "paquet virtuel"
+
+#: bin/create_index_pages:162 bin/create_index_pages:383
 #, fuzzy
 #| msgid "Section:"
 msgid "Section"
 msgstr "Section&nbsp;:"
 
-#: bin/create_index_pages:244
+#: bin/create_index_pages:169 bin/create_index_pages:390
 #, fuzzy
 #| msgid "Section:"
 msgid "Subsection"
 msgstr "Section&nbsp;:"
 
-#: bin/create_index_pages:256
+#: bin/create_index_pages:176 bin/create_index_pages:397
 msgid "Priority"
 msgstr "Priorité"
 
-#: lib/Packages/Dispatcher.pm:310
+#: lib/Packages/Dispatcher.pm:319
 msgid "requested format not available for this document"
 msgstr ""
 
@@ -78,7 +83,7 @@ msgstr ""
 msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:75
+#: lib/Packages/DoIndex.pm:70
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr ""
@@ -102,15 +107,15 @@ msgstr ""
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Paquet virtuel"
 
@@ -224,9 +229,9 @@ msgstr ""
 #~ "Users of experimental packages are encouraged to contact the package "
 #~ "maintainers directly in case of problems."
 #~ msgstr ""
-#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;"
-#~ "experimental&nbsp;» rencontrant des problèmes à contacter directement le "
-#~ "responsable du paquet."
+#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;experimental&nbsp;» "
+#~ "rencontrant des problèmes à contacter directement le responsable du "
+#~ "paquet."
 
 #~ msgid ""
 #~ "Packages that were added to the \"%s\" component next to the unstable "
@@ -354,10 +359,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "%s packages"
 #~ msgstr "Taille du paquet"
-
-#, fuzzy
-#~ msgid "virtual package provided by "
-#~ msgstr "paquet virtuel"
 
 #, fuzzy
 #~ msgid "also a virtual package provided by "

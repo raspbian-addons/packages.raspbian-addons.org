@@ -85,8 +85,10 @@ sub page {
 	    sub { return Packages::I18N::Locale::g($page_content->{cat}, @_) };
     }
     $page_content->{used_langs} ||= \@LANGUAGES;
-    $page_content->{langs} = languages( $page_content->{lang}
-					|| $self->{vars}{lang} || 'en',
+    $page_content->{langs} = languages( $page_content->{po_lang}
+					|| $self->{vars}{po_lang} || 'en',
+					$page_content->{ddtp_lang}
+					|| $self->{vars}{ddtp_lang} || 'en',
 					@{$page_content->{used_langs}} );
 
     my $txt;
@@ -114,17 +116,17 @@ sub error_page {
 }
 
 sub languages {
-    my ( $lang, @used_langs ) = @_;
-    my $cat = Packages::I18N::Locale->get_handle($lang)
-	|| Packages::I18N::Locale->get_handle('en');
+    my ( $po_lang, $ddtp_lang, @used_langs ) = @_;
+    my $cat = Packages::I18N::Locale->get_handle($po_lang, 'en');
 
     my @langs;
+    my $skip_lang = ($po_lang eq $ddtp_lang) ? $po_lang : '';
 
     if (@used_langs) {
 
 	my @printed_langs = ();
 	foreach (@used_langs) {
-	    next if $_ eq $lang; # Never print the current language
+	    next if $_ eq $skip_lang; # Don't print the current language
 	    unless (get_selfname($_)) { warn "missing language $_"; next } #DEBUG
 	    push @printed_langs, $_;
 	}

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-08 17:22+0100\n"
 "PO-Revision-Date: 2007-11-25 21:31+0300\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -17,19 +17,23 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: bin/create_index_pages:232
+#: bin/create_index_pages:68
+msgid "virtual package provided by"
+msgstr "виртуальный пакет, предоставляемый"
+
+#: bin/create_index_pages:162 bin/create_index_pages:383
 msgid "Section"
 msgstr "Секция"
 
-#: bin/create_index_pages:244
+#: bin/create_index_pages:169 bin/create_index_pages:390
 msgid "Subsection"
 msgstr "Подсекция"
 
-#: bin/create_index_pages:256
+#: bin/create_index_pages:176 bin/create_index_pages:397
 msgid "Priority"
 msgstr "Приоритет"
 
-#: lib/Packages/Dispatcher.pm:310
+#: lib/Packages/Dispatcher.pm:319
 msgid "requested format not available for this document"
 msgstr "запрошенный формат недоступен для этого документа"
 
@@ -76,7 +80,7 @@ msgstr "более одного комплекта указано для show_st
 msgid "more than one subsection specified for show_static (%s)"
 msgstr "более одной подсекции указано для show_static (%s)"
 
-#: lib/Packages/DoIndex.pm:75
+#: lib/Packages/DoIndex.pm:70
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr "невозможно прочитать индексный файл %s: %s"
@@ -101,15 +105,15 @@ msgstr ""
 "слишком короткое ключевое слово (ключевые слова должны быть длиной не менее "
 "двух символов)"
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Точные совпадения"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Другие совпадения"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Виртуальный пакет"
 

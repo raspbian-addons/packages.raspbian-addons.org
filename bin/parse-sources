@@ -128,11 +128,10 @@ tie %source_postfixes_db, "DB_File", "$DBDIR/source_postfixes.db.new",
 	or die "Error creating DB: $!";
 while (my ($k, $v) = each(%source_postfixes)) {
 	$v =~ s/.$//s;
-	my $nr = $v;
-	$nr =~ s/[^\000]//g;
-	$nr = length($nr) + 1; # < number of hits
+	my $nr = ($v =~ tr/\000/\000/) + 1;
 	if ($nr > $MAX_SOURCE_POSTFIXES) {
-		$v = "\001" . $nr;
+	    $v = ($v =~ /\^/) ? "^\001" . $nr
+		: "\001" . $nr;
 	}
 	$source_postfixes_db{$k} = $v;
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-08 17:22+0100\n"
 "PO-Revision-Date: 2007-12-10 22:42+0100\n"
 "Last-Translator: Frans Pop <elendil@planet.nl>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -17,19 +17,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: bin/create_index_pages:232
+#: bin/create_index_pages:68
+msgid "virtual package provided by"
+msgstr "virtueel pakket geboden door"
+
+#: bin/create_index_pages:162 bin/create_index_pages:383
 msgid "Section"
 msgstr "Sectie"
 
-#: bin/create_index_pages:244
+#: bin/create_index_pages:169 bin/create_index_pages:390
 msgid "Subsection"
 msgstr "Subsectie"
 
-#: bin/create_index_pages:256
+#: bin/create_index_pages:176 bin/create_index_pages:397
 msgid "Priority"
 msgstr "Prioriteit"
 
-#: lib/Packages/Dispatcher.pm:310
+#: lib/Packages/Dispatcher.pm:319
 msgid "requested format not available for this document"
 msgstr ""
 
@@ -76,7 +80,7 @@ msgstr ""
 msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:75
+#: lib/Packages/DoIndex.pm:70
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr ""
@@ -99,15 +103,15 @@ msgstr ""
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr ""
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Exacte resultaten"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Overige resultaten"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Virtueel pakket"
 

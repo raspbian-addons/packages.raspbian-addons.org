@@ -1,7 +1,7 @@
 #!/usr/bin/perl -T
 # Packages::Dispatcher -- CGI interface for packages.debian.org
 #
-# Copyright (C) 2004-2007 Frank Lichtenheld
+# Copyright (C) 2004-2008 Frank Lichtenheld
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -92,14 +92,16 @@ sub do_dispatch {
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
 
-    my $acc = I18N::AcceptLanguage->new();
-    my %all_langs = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
-    my @all_langs = sort keys %all_langs;
-    my $http_lang = $acc->accepts( $input->http("Accept-Language"),
-				   \@all_langs ) || 'en';
-    debug( "LANGUAGES=@all_langs header=".
+    my %PO_LANGUAGES = map { $_ => 1 } @LANGUAGES;
+    my %DDTP_LANGUAGES = map { $_ => 1 } @DDTP_LANGUAGES;
+    my $acc = I18N::AcceptLanguage->new(defaultLanguage => 'en');
+    my $ddtp_lang = $acc->accepts( $input->http("Accept-Language"),
+				   \@DDTP_LANGUAGES );
+    my $po_lang = $acc->accepts( $input->http("Accept-Language"),
+				 \@LANGUAGES );
+    debug( "LANGS=@LANGUAGES DDTP_LANGS=@DDTP_LANGUAGES header=".
 	   ($input->http("Accept-Language")||'').
-	   " http_lang=$http_lang", 1 ) if DEBUG;
+	   " po_lang=$po_lang ddtp_lang=$ddtp_lang", 1 ) if DEBUG;
 
     # backwards compatibility stuff
     debug( "SCRIPT_URL=$ENV{SCRIPT_URL} SCRIPT_URI=$ENV{SCRIPT_URI}" ) if DEBUG;
@@ -141,7 +143,7 @@ sub do_dispatch {
 
 	push @components, 'index' if @components && $path =~ m,/$,;
 
-	my %LANGUAGES = map { $_ => 1 } @all_langs;
+	my %LANGUAGES = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
 	if (@components > 1 and $LANGUAGES{$components[0]}
 	    and !$input->param('lang')) {
 	    $input->param( 'lang', shift(@components) );
@@ -247,7 +249,7 @@ sub do_dispatch {
 					replace => { all => \@ARCHIVES,
 						     default => \@ARCHIVES} },
 		       exact => { default => 0, match => '^(\w+)$',  },
-		       lang => { default => $http_lang, match => '^([\w-]+)$',  },
+		       lang => { default => undef, match => '^([\w-]+)$',  },
 		       source => { default => 0, match => '^(\d+)$',  },
 		       debug => { default => 0, match => '^(\d+)$',  },
 		       searchon => { default => 'names', match => '^(\w+)$', },
@@ -272,9 +274,16 @@ sub do_dispatch {
     my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
     Packages::CGI::init_url( $input, \%params, \%opts );
 
+    if (defined($opts{lang})) {
+	$opts{po_lang} = $PO_LANGUAGES{$opts{lang}} ? $opts{lang} : 'en';
+	$opts{ddtp_lang} = $DDTP_LANGUAGES{$opts{lang}} ? $opts{lang} : 'en';
+    } else {
+	$opts{po_lang} = $po_lang;
+	$opts{ddtp_lang} = $ddtp_lang;
+    }
     my $charset = "UTF-8";
-    my $cat = Packages::I18N::Locale->get_handle( $opts{lang}, "en" )
-	or die "get_handle failed for $opts{lang}";
+    my $cat = Packages::I18N::Locale->get_handle( $opts{po_lang}, 'en' )
+	or die "get_handle failed for $opts{po_lang}";
     $opts{cat} = $cat;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
@@ -299,13 +308,14 @@ sub do_dispatch {
     debug( "Parameter evaluation took ".timestr($petd) ) if DEBUG;
 
     my $template = new Packages::Template( $TEMPLATEDIR, $opts{format},
-					   { lang => $opts{lang}, charset => $charset,
-					     cat => $cat,
+					   { po_lang => $opts{po_lang}, ddtp_lang => $opts{ddtp_lang},
+					     charset => $charset, cat => $cat,
 					     debug => ( DEBUG ? $opts{debug} : 0 ) },
 					   ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
+	    || ($what_to_do eq 'index' and $opts{format} eq 'html')
 	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
 	fatal_error( $cat->g("requested format not available for this document"),
 		     "406 requested format not available");

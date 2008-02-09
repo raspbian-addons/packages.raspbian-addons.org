@@ -23,7 +23,6 @@ then
 	do
 	    test ! "$arch" = "kfreebsd-i386" || continue
 	    test ! "$arch" = "kfreebsd-amd64" || continue
-	    test ! "$arch" = "armel" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
@@ -59,7 +58,6 @@ else
 	do
 	    test ! "$arch" = "kfreebsd-i386" || continue
 	    test ! "$arch" = "kfreebsd-amd64" || continue
-	    test ! "$arch" = "armel" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch

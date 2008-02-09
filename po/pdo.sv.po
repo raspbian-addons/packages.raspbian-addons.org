@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-01-18 01:01+0100\n"
+"POT-Creation-Date: 2008-02-08 17:22+0100\n"
 "PO-Revision-Date: 2007-10-26 22:09+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
@@ -10,19 +10,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: bin/create_index_pages:232
+#: bin/create_index_pages:68
+msgid "virtual package provided by"
+msgstr "virtuellt paket som tillhandahålls av"
+
+#: bin/create_index_pages:162 bin/create_index_pages:383
 msgid "Section"
 msgstr "Sektion"
 
-#: bin/create_index_pages:244
+#: bin/create_index_pages:169 bin/create_index_pages:390
 msgid "Subsection"
 msgstr "Undersektion"
 
-#: bin/create_index_pages:256
+#: bin/create_index_pages:176 bin/create_index_pages:397
 msgid "Priority"
 msgstr "Prioritet"
 
-#: lib/Packages/Dispatcher.pm:310
+#: lib/Packages/Dispatcher.pm:319
 msgid "requested format not available for this document"
 msgstr "angivet format inte tillgängligt för dokumentet"
 
@@ -69,7 +73,7 @@ msgstr "mer än en svit angavs för show_static (%s)"
 msgid "more than one subsection specified for show_static (%s)"
 msgstr "mer än en undersektion angavs för show_static (%s)"
 
-#: lib/Packages/DoIndex.pm:75
+#: lib/Packages/DoIndex.pm:70
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr "kunde inte läsa indexfilen %s: %s"
@@ -92,15 +96,15 @@ msgstr "nyckelordet inte giltigt eller saknas"
 msgid "keyword too short (keywords need to have at least two characters)"
 msgstr "nyckelordet för kort (nyckelord måste bestå av minst två tecken)"
 
-#: lib/Packages/DoSearch.pm:165
+#: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
 msgstr "Exakta träffar"
 
-#: lib/Packages/DoSearch.pm:175
+#: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
 msgstr "Andra träffar"
 
-#: lib/Packages/DoSearch.pm:234
+#: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
 msgstr "Virtuellt paket"
 

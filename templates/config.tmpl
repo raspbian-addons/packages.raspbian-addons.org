@@ -1,6 +1,7 @@
 [%- DEFAULT
    charset = 'UTF-8'
-   lang = 'en'
+   po_lang = 'en'
+   ddtp_lang = 'en'
 
    organisation = 'Debian'
    homepage = 'http://www.debian.org/'
@@ -50,7 +51,7 @@
 [%-
    # possible values for importance: high, normal, low
 #   sitewidemsg = { importance => "high",
-#		   txt => g('Please note that this is an experimental version of <a href="http://packages.debian.org/">packages.debian.org</a>. Errors and obsolete information should be expected') }
+#		   txt => g('Please note that this is an experimental version of <a href="http://%s/">%s</a>. Errors and obsolete information should be expected', 'packages.debian.org', 'packages.debian.org') }
 #		   txt => "Site maintainance in progress, some temporary problems might occour." }
 -%]
 [%# @translators: . = decimal_point , = thousands_sep, see Number::Format %]
