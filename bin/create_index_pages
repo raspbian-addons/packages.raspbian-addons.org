@@ -97,7 +97,7 @@ sub close_file {
     print "closing $key\n";
 
     foreach my $lang (@LANGUAGES) {
-	print {$fh{$key}} "$s{begin}{$lang}\n";
+	print {$fh{$key}} "\n$s{begin}{$lang}\n";
 	$template->page( 'index_foot',
 			 { %{$lang_vars{$lang}},
 			   %$vars },
