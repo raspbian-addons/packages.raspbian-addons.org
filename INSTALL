@@ -12,26 +12,35 @@ case, you might have to adjust some of the steps.
    instead of etch's version.
 2) Download the code from git://source.djpig.de/git/packages.git
    (Something like `git clone git://source.djpig.de/git/packages.git')
-3) Install the needed dependencies. A list can be found in cron.d/050checkinst.
+3) Install the needed dependencies. A list can be found in debian/control.
    One dependency can't be fulfilled directly from etch and is therefor not listed
    there: the Search::Xapian perl module. You can either compile that yourself against
-   libxapian from etch, backport all of xapian and libsearch-xapian-perl from
-   lenny, or install the 0.9.9-1 deb from snapshots.debian.net.
+   libxapian from etch, use the backport on backports.org, or install the 0.9.9-1 deb
+   from snapshots.debian.net.
 4) Install apache2 (apache2-mpm-worker) and mod_perl (libapache2-mod-perl2)
 5) Adjust the configuration to your needs. You should at least edit the following
-   files before starting to test:
+   files before starting to test (don't touch %TOPDIR% and %SITE%, as you will 
+   specify it later):
    - ./config.sh.sed.in
+     (especially : admin_email, and localdir and/or ftproot if you have local caches)
    - ./templates/config.tmpl
+     (especially : packages_homepage)
    - ./templates/config/*
+     (especially if you have your own repositories)
    - ./conf/apache.conf.sed.in
 6) run `./bin/setup-site <topdir> <site>'
    (e.g. `./bin/setup-site /org/packages.debian.org packages.debian.org')
 7) create a cache directory for the compiled templates, it needs to be writable by
    apache (i.e. on default etch by www-data). Default location is
-   <topdir>/cache
+   <topdir>/cache. So
+   chown www-data <topdir>/cache
+   chmod 2770 <topdir>/cache
 7) Include ./conf/apache.conf in apache's configuration, e.g. by symlinking it from
    /etc/apache2/sites-available/ and then using a2ensite
 8) Run ./bin/daily
-9) Setup ./bin/daily to be run regulary. In ./conf/crontab you can find an example crontab
+   (this takes a while, especially the first time, as it downloads a lot of data,
+   [at the time of this writing approx. 900 MB], creates databases, pre-builds heavy
+   pages, etc.)
+9) Set up ./bin/daily to be run regulary. In ./conf/crontab you can find an example crontab
    to do this. Actually preferable is to trigger the script by archive updates, but you
    will know best if and how to implement that in your setup.
