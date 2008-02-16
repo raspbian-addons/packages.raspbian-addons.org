@@ -49,7 +49,8 @@ sub parse_control_par {
 sub activate {
     my ($file) = @_;
 
-    rename("${file}.new", $file);
+    rename("${file}.new", $file)
+    	or die "rename ${file}.new $file failed: $!\n";
 }
 
 sub activate_dir {

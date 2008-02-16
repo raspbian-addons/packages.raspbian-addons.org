@@ -1,0 +1,104 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use File::Basename;
+
+use lib './lib';
+
+use Packages::CommonCode qw(:all);
+
+my @langs;
+my @files;
+
+my $lrx = qr/[a-z]{2}(-[a-z]{2})?/;
+my $ulrx = qr/[A-Z]{2}(-[A-Z]{2})?/;
+
+while ($_ = shift @ARGV) {
+    last if $_ eq '--';
+
+    /^$lrx$/
+	or die "Invalid lang $_\n";
+
+    push @langs, $_;
+}
+
+while ($_ = shift @ARGV) {
+    /\.slices$/ or die "Invalid file $_\n";
+
+    push @files, $_;
+}
+
+if (!@langs || !@files) {
+    die "No langs or no files\n";
+}
+
+warn "langs=@langs\nfiles=@files\n";
+
+foreach my $file (@files) {
+    my ($name, $path, undef) = fileparse($file,qw(.slices));
+
+    warn "name=$name path=$path out=$path$name.LANG.html.new\n";
+
+    my %out;
+    foreach my $lang (@langs) {
+	my $ulang = uc($lang);
+	open($out{$ulang}, '>',
+	     "$path$name.$lang.html.new")
+	    or die "Couldn't open $path$name.$lang.html.new\n";
+    }
+
+    open my $in, '<', $file
+	or die "Couldn't open $file\n";
+
+    my $active_lang;
+    while (<$in>) {
+	/^\s*$/o && next;
+
+	/^\[($ulrx):$/o && do {
+#	    warn "open slice $1";
+	    die "Nested slices" if $active_lang;
+	    die "Unknown lang $1" unless exists $out{$1};
+	    $active_lang = $1;
+	    next;
+	};
+	/^:($ulrx)\]$/o && do {
+#	    warn "close slice $1";
+	    die "No open slice" unless $active_lang;
+	    die "Overlapping slices" unless $1 eq $active_lang;
+	    $active_lang = undef;
+	    next;
+	};
+
+	!$active_lang && /\[($ulrx):.*?:($ulrx)\]/o && do {
+#	    warn "slices found";
+
+	    foreach my $l (keys %out) {
+		my $tmp = $_;
+
+		$tmp =~ s/\[\Q$l\E:(.*?):\Q$l\E\]/$1/g;
+		$tmp =~ s/\[($ulrx):.*?:($ulrx)\]//g;
+
+		print {$out{$l}} $tmp;
+	    }
+	    next;
+	};
+
+	if ($active_lang) {
+	    print {$out{$active_lang}} $_;
+	} else {
+	    foreach my $l (keys %out) {
+		print {$out{$l}} $_;
+	    }
+	}
+    }
+
+    foreach my $lang (@langs) {
+	my $ulang = uc($lang);
+	close($out{$ulang})
+	    or die "Couldn't close $path$name.$lang.html.new\n";
+	activate("$path$name.$lang.html");
+    }
+
+}

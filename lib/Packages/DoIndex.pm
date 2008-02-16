@@ -39,6 +39,9 @@ sub send_file {
 			      "@{$opts->{suite}}" ) );
     }
 
+    if ($opts->{format} eq 'txt.gz') {
+	$opts->{po_lang} = 'en';
+    }
     my $wwwdir = "$TOPDIR/www";
     my $path = "";
     $path .= "source/" if $opts->{source};

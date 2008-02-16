@@ -10,33 +10,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:40
+#: templates/config.tmpl:41
 msgid "Debian Web Mailinglist"
 msgstr "Debian 邮件列表"
 
-#: templates/config.tmpl:45
+#: templates/config.tmpl:46
 msgid "%s Webmaster"
 msgstr "%s 网管"
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 是 %3 的一个<a href=\"%3\">注册商标</a>"
 
-#: templates/config.tmpl:53
+#: templates/config.tmpl:54
 msgid ""
-"Please note that this is an experimental version of <a href=\"http://"
-"packages.debian.org/\">packages.debian.org</a>. Errors and obsolete "
-"information should be expected"
+"Please note that this is an experimental version of <a href=\"http://%s/\">%"
+"s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"注意: 这是 <a href=\"http://packages.debian.org/\">packages.debian.org</a> 的"
-"一个试制版本。错误的以及过时的信息有时难以避免"
+"注意: 这是 <a href=\"http://%s/\">%s</a> 的一个试制版本。错误的以及过时的信息"
+"有时难以避免"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:56
+#: templates/config.tmpl:57
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:57
+#: templates/config.tmpl:58
 msgid ","
 msgstr ""
 
@@ -104,27 +103,27 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:178
 msgid "North America"
 msgstr "北美洲"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:179
 msgid "South America"
 msgstr "南美洲"
 
-#: templates/config/mirrors.tmpl:184
+#: templates/config/mirrors.tmpl:180
 msgid "Asia"
 msgstr "亚洲"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:181
 msgid "Australia and New Zealand"
 msgstr "澳洲和大洋洲"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:182
 msgid "Europe"
 msgstr "欧洲"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:183
 msgid "Africa"
 msgstr "非洲"
 
@@ -133,12 +132,12 @@ msgid "Package Download Selection -- %s"
 msgstr "软件包下载地址选集 -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "发行版:"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index.tmpl:10 templates/html/show.tmpl:14
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Overview over this suite"
 msgstr "该发行版一览"
 
@@ -181,7 +180,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "请使用最终确定的源镜像替换 <em>%s</em>。"
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:152
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:153
 msgid "Experimental package"
 msgstr "试制(Experimental)软件包"
 
@@ -196,11 +195,11 @@ msgstr ""
 "表现出不稳定或者出现 bug ，甚至是导致资料损失。请务必在使用之前查阅 "
 "changelog 以及其他潜在的文档。"
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:157
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:158
 msgid "debian-installer udeb package"
 msgstr "Debian 安装程序 udeb 包"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:158
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:159
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -265,7 +264,7 @@ msgstr "%s 字节(%s %s)"
 msgid "Exact Size"
 msgstr "实际大小"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:327
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:329
 msgid "MD5 checksum"
 msgstr "MD5 校验码"
 
@@ -323,7 +322,7 @@ msgstr ""
 "报告本网站的问题，请发送电子邮件至 <a href=\"mailto:%s\">%s</a>。请查阅 %s "
 "<a href=\"%s\">联系方式</a>了解更多信息。"
 
-#: templates/html/foot.tmpl:33 templates/txt/index.tmpl:4
+#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
 msgid "Generated:"
 msgstr "最近修订日期:"
 
@@ -375,35 +374,30 @@ msgstr "%s 软件包首页"
 msgid "Packages"
 msgstr "软件包"
 
-#: templates/html/index.tmpl:3
+#: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
 msgstr "属于 \"%1\" 发行版 %3 %2的源码包"
 
-#: templates/html/index.tmpl:4
+#: templates/html/index_head.tmpl:3
 msgid "Source Packages in \"%s\""
 msgstr "属于 \"%1\" 发行版的源码包"
 
-#: templates/html/index.tmpl:6
+#: templates/html/index_head.tmpl:5
 msgid "Software Packages in \"%s\", %s %s"
 msgstr "属于 \"%1\" 发行版 %3 %2的软件包"
 
-#: templates/html/index.tmpl:7
+#: templates/html/index_head.tmpl:6
 msgid "Software Packages in \"%s\""
 msgstr "属于 \"%1\" 发行版的软件包"
 
-#: templates/html/index.tmpl:14
+#: templates/html/index_head.tmpl:13
 msgid "All Packages"
 msgstr "所有包"
 
-#: templates/html/index.tmpl:16 templates/html/show.tmpl:15
+#: templates/html/index_head.tmpl:15 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
 msgstr "源代码"
-
-#: templates/html/index.tmpl:43 templates/html/show.tmpl:254
-#: templates/txt/index.tmpl:15
-msgid "virtual package provided by"
-msgstr "本虚包由这些包填实:"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
@@ -467,7 +461,7 @@ msgstr "软件包搜索结果 -- %s"
 msgid "Package Search Results"
 msgstr "软件包搜索结果"
 
-#: templates/html/search.tmpl:34
+#: templates/html/search.tmpl:35
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
@@ -475,27 +469,27 @@ msgstr ""
 "您刚才搜索的仅限于完整匹配您指定关键字的内容。您还可以尝试搜索<a href=\"%s\">"
 "部分匹配</a>您指定关键字的内容。"
 
-#: templates/html/search.tmpl:39
+#: templates/html/search.tmpl:40
 #, fuzzy
 #| msgid "Search in other suite:"
 msgid "Search in specific suite:"
 msgstr "在其他的发行版中搜索:"
 
-#: templates/html/search.tmpl:48
+#: templates/html/search.tmpl:49
 #, fuzzy
 #| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "在<a href=\"%s\">所有硬件架构</a>中搜索"
 
-#: templates/html/search.tmpl:52 templates/html/search_contents.tmpl:58
+#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
 msgstr "只搜索某一种硬件架构:"
 
-#: templates/html/search.tmpl:61 templates/html/search_contents.tmpl:63
+#: templates/html/search.tmpl:62 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "在<a href=\"%s\">所有硬件架构</a>中搜索"
 
-#: templates/html/search.tmpl:68
+#: templates/html/search.tmpl:69
 #, fuzzy
 #| msgid ""
 #| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
@@ -506,51 +500,51 @@ msgid ""
 msgstr ""
 "由于参数界定了搜索范围，导致 <a href=\"%s\">%u</a> 个相关结果没有列出。"
 
-#: templates/html/search.tmpl:77
+#: templates/html/search.tmpl:78
 msgid "all suites"
 msgstr "所有发行版"
 
-#: templates/html/search.tmpl:77
+#: templates/html/search.tmpl:78
 #, fuzzy
 #| msgid "section(s) <em>%s</em>"
 msgid "suite(s) <em>%s</em>"
 msgstr " <em>%s</em> 版面"
 
-#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "所有版面"
 
-#: templates/html/search.tmpl:78 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr " <em>%s</em> 版面"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "所有硬件架构"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr " <em>%s</em> 硬件架构"
 
-#: templates/html/search.tmpl:81
+#: templates/html/search.tmpl:82
 msgid "packages"
 msgstr "软件包"
 
-#: templates/html/search.tmpl:81
+#: templates/html/search.tmpl:82
 msgid "source packages"
 msgstr "源码包"
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr "您在%3中%5下%4里，指定关键字 <em>%2</em> 在%1名称中搜索的结果。"
 
-#: templates/html/search.tmpl:85
+#: templates/html/search.tmpl:86
 msgid " (including subword matching)"
 msgstr "(包括部分关键字匹配)"
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:87
+#: templates/html/search.tmpl:88
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
@@ -558,11 +552,11 @@ msgstr ""
 "您在%2中%4下%3里，指定关键字 <em>%1</em> 在软件包名称和描述信息中搜索的结果%"
 "5。"
 
-#: templates/html/search.tmpl:93
+#: templates/html/search.tmpl:94
 msgid "Found <strong>%u</strong> matching packages."
 msgstr "找到 <strong>%u</strong> 个匹配的软件包。"
 
-#: templates/html/search.tmpl:98
+#: templates/html/search.tmpl:99
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -571,7 +565,7 @@ msgstr ""
 "注意: 这里列出的是最符合搜索关键字要求的结果，并按相关性作了排序。如果前几个"
 "包不是您要找的，请尝试更多的或者其它的关键字。"
 
-#: templates/html/search.tmpl:102
+#: templates/html/search.tmpl:103
 #, fuzzy
 #| msgid ""
 #| "Your search was too wide so we will only display exact matches. At least "
@@ -584,7 +578,7 @@ msgstr ""
 "由于您的搜索范围太大我们只列出了能完整匹配搜索关键字的结果。至少有 <em>%u</"
 "em> 个相关结果没有被列出。请考虑更换一个更准确的关键字或者添加更多的关键字。"
 
-#: templates/html/search.tmpl:104
+#: templates/html/search.tmpl:105
 #, fuzzy
 #| msgid ""
 #| "Note: Your search was too wide so we will only display only the first "
@@ -597,43 +591,43 @@ msgstr ""
 "注意: 由于您的搜索范围太大我们只列出了前 100 个结果。请考虑更换一个更准确的关"
 "键字或者添加更多的关键字。"
 
-#: templates/html/search.tmpl:110 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr "很遗憾，您没能搜索到任何结果"
 
-#: templates/html/search.tmpl:117
+#: templates/html/search.tmpl:118
 msgid "Package %s"
 msgstr "软件包 %s"
 
-#: templates/html/search.tmpl:127
+#: templates/html/search.tmpl:130
 msgid "also provided by:"
 msgstr "同时提供该包的还有:"
 
-#: templates/html/search.tmpl:127
+#: templates/html/search.tmpl:130
 msgid "provided by:"
 msgstr "由这些包填实:"
 
-#: templates/html/search.tmpl:136
+#: templates/html/search.tmpl:139
 msgid "Source Package %s"
 msgstr "源码包 %s"
 
-#: templates/html/search.tmpl:144
+#: templates/html/search.tmpl:146
 msgid "Binary packages:"
 msgstr "二进制包:"
 
-#: templates/html/search.tmpl:146
+#: templates/html/search.tmpl:148
 #, fuzzy
 #| msgid "%u binary packages"
 msgid "hide %u binary packages"
 msgstr "%u 个二进制包"
 
-#: templates/html/search.tmpl:146
+#: templates/html/search.tmpl:148
 #, fuzzy
 #| msgid "%u binary packages"
 msgid "show %u binary packages"
 msgstr "%u 个二进制包"
 
-#: templates/html/search.tmpl:156
+#: templates/html/search.tmpl:158
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -699,7 +693,7 @@ msgid "Sort results by filename"
 msgstr "按文件名排序"
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:327
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:329
 msgid "File"
 msgstr "文件"
 
@@ -723,111 +717,111 @@ msgstr "属于本版面的所有软件包"
 msgid "Section:"
 msgstr "版面:"
 
-#: templates/html/show.tmpl:21
+#: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
 msgstr "在 %2 中的 %1 源码包详细信息"
 
-#: templates/html/show.tmpl:22
+#: templates/html/show.tmpl:23
 msgid "Details of package %s in %s"
 msgstr "在 %2 中的 %1 软件包详细信息"
 
-#: templates/html/show.tmpl:45
+#: templates/html/show.tmpl:46
 msgid "Source package building this package"
 msgstr "构建这个包的源码包"
 
-#: templates/html/show.tmpl:45
+#: templates/html/show.tmpl:46
 msgid "Source:"
 msgstr "源代码:"
 
-#: templates/html/show.tmpl:52
+#: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
 msgstr "虚包: %s"
 
-#: templates/html/show.tmpl:54
+#: templates/html/show.tmpl:55
 msgid "Source Package: %s (%s)"
 msgstr "源码包: %s (%s)"
 
-#: templates/html/show.tmpl:56
+#: templates/html/show.tmpl:57
 msgid "Package: %s (%s)"
 msgstr "软件包: %s (%s)"
 
-#: templates/html/show.tmpl:60
+#: templates/html/show.tmpl:61
 msgid "essential"
 msgstr "必备"
 
-#: templates/html/show.tmpl:64
+#: templates/html/show.tmpl:65
 msgid "Links for %s"
 msgstr "%s 的相关链接"
 
-#: templates/html/show.tmpl:65
+#: templates/html/show.tmpl:66
 msgid "Debian Resources:"
 msgstr "Debian 的资源:"
 
-#: templates/html/show.tmpl:67
+#: templates/html/show.tmpl:68
 msgid "Bug Reports"
 msgstr "报告问题"
 
-#: templates/html/show.tmpl:70 templates/html/show.tmpl:72
+#: templates/html/show.tmpl:71 templates/html/show.tmpl:73
 msgid "Developer Information (PTS)"
 msgstr "开发者信息(PTS)"
 
-#: templates/html/show.tmpl:76
+#: templates/html/show.tmpl:77
 msgid "%s Changelog"
 msgstr "%s Changelog"
 
-#: templates/html/show.tmpl:77
+#: templates/html/show.tmpl:78
 msgid "Copyright File"
 msgstr "版权文件"
 
-#: templates/html/show.tmpl:81
+#: templates/html/show.tmpl:82
 msgid "Debian Source Repository"
 msgstr "Debian 源代码仓库"
 
-#: templates/html/show.tmpl:95
+#: templates/html/show.tmpl:96
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
 msgstr "下载源码包 <a href=\"%s\">%s</a>:"
 
-#: templates/html/show.tmpl:102
+#: templates/html/show.tmpl:103
 msgid "Not found"
 msgstr "未找到"
 
-#: templates/html/show.tmpl:107
+#: templates/html/show.tmpl:108
 msgid "Maintainer:"
 msgstr "维护者:"
 
-#: templates/html/show.tmpl:109
+#: templates/html/show.tmpl:110
 msgid "Maintainers:"
 msgstr "维护小组:"
 
-#: templates/html/show.tmpl:120
+#: templates/html/show.tmpl:121
 msgid "An overview over the maintainer's packages and uploads"
 msgstr "该维护者负责的软件包一览"
 
-#: templates/html/show.tmpl:120
+#: templates/html/show.tmpl:121
 msgid "QA Page"
 msgstr "QA 页面"
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:122
 msgid "Archive of the Maintainer Mailinglist"
 msgstr ""
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:122
 msgid "Mail Archive"
 msgstr ""
 
-#: templates/html/show.tmpl:129
+#: templates/html/show.tmpl:130
 msgid "External Resources:"
 msgstr "外部的资源:"
 
-#: templates/html/show.tmpl:131
+#: templates/html/show.tmpl:132
 msgid "Homepage"
 msgstr "主页"
 
-#: templates/html/show.tmpl:137
+#: templates/html/show.tmpl:138
 msgid "Similar packages:"
 msgstr "相似软件包:"
 
-#: templates/html/show.tmpl:153
+#: templates/html/show.tmpl:154
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -838,7 +832,7 @@ msgstr ""
 "表现出不稳定或者出现 bug ，甚至是导致资料损失。请务必在使用之前查阅 <a href="
 "\"%s\">changelog</a> 以及其他潜在的文档。"
 
-#: templates/html/show.tmpl:176
+#: templates/html/show.tmpl:178
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -847,71 +841,75 @@ msgstr ""
 "这是一个<em>虚包</em>。查看<a href=\"%s\">Debian 政策</a>了解<a href=\"%sch-"
 "binary.html#s-virtual_pkg\">虚包的定义</a>。"
 
-#: templates/html/show.tmpl:184
+#: templates/html/show.tmpl:186
 msgid "Tags"
 msgstr "标签"
 
-#: templates/html/show.tmpl:207
+#: templates/html/show.tmpl:209
 msgid "Packages providing %s"
 msgstr "负责填实 %s 的软件包"
 
-#: templates/html/show.tmpl:216
+#: templates/html/show.tmpl:218
 msgid "The following binary packages are built from this source package:"
 msgstr "本源码包构建了以下这些二进制包:"
 
-#: templates/html/show.tmpl:225
+#: templates/html/show.tmpl:227
 msgid "Other Packages Related to %s"
 msgstr "其它与 %s 有关的软件包"
 
-#: templates/html/show.tmpl:227
+#: templates/html/show.tmpl:229
 msgid "legend"
 msgstr "图例"
 
-#: templates/html/show.tmpl:229
+#: templates/html/show.tmpl:231
 msgid "build-depends"
 msgstr "完整构建时刻依赖"
 
-#: templates/html/show.tmpl:230
+#: templates/html/show.tmpl:232
 msgid "build-depends-indep"
 msgstr "单独构建时刻依赖"
 
-#: templates/html/show.tmpl:232
+#: templates/html/show.tmpl:234
 msgid "depends"
 msgstr "依赖"
 
-#: templates/html/show.tmpl:233
+#: templates/html/show.tmpl:235
 msgid "recommends"
 msgstr "推荐"
 
-#: templates/html/show.tmpl:234
+#: templates/html/show.tmpl:236
 msgid "suggests"
 msgstr "建议"
 
-#: templates/html/show.tmpl:244
+#: templates/html/show.tmpl:246
 msgid "or "
 msgstr "或者"
 
-#: templates/html/show.tmpl:252
+#: templates/html/show.tmpl:254
 msgid "also a virtual package provided by"
 msgstr "同时作为一个虚包由这些包填实:"
 
-#: templates/html/show.tmpl:259
+#: templates/html/show.tmpl:256
+msgid "virtual package provided by"
+msgstr "本虚包由这些包填实:"
+
+#: templates/html/show.tmpl:261
 #, fuzzy
 #| msgid "%u providing packages"
 msgid "hide %u providing packages"
 msgstr "%u 个虚包填实者"
 
-#: templates/html/show.tmpl:259
+#: templates/html/show.tmpl:261
 #, fuzzy
 #| msgid "%u providing packages"
 msgid "show %u providing packages"
 msgstr "%u 个虚包填实者"
 
-#: templates/html/show.tmpl:277
+#: templates/html/show.tmpl:279
 msgid "Download %s"
 msgstr "下载 %s"
 
-#: templates/html/show.tmpl:279
+#: templates/html/show.tmpl:281
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -920,55 +918,55 @@ msgstr ""
 "下载表格中分别链接了软件包的下载地址和软件包内容的浏览地址。同时还给出了软件"
 "包的实际大小和安装后占用空间的情况。"
 
-#: templates/html/show.tmpl:280
+#: templates/html/show.tmpl:282
 msgid "Download for all available architectures"
 msgstr "下载可用于所有硬件架构的"
 
-#: templates/html/show.tmpl:281
+#: templates/html/show.tmpl:283
 msgid "Architecture"
 msgstr "硬件架构"
 
-#: templates/html/show.tmpl:282
+#: templates/html/show.tmpl:284
 msgid "Version"
 msgstr "版本"
 
-#: templates/html/show.tmpl:283
+#: templates/html/show.tmpl:285
 msgid "Package Size"
 msgstr "软件包大小"
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:286
 msgid "Installed Size"
 msgstr "安装后大小"
 
-#: templates/html/show.tmpl:285
+#: templates/html/show.tmpl:287
 msgid "Files"
 msgstr "文件"
 
-#: templates/html/show.tmpl:293
+#: templates/html/show.tmpl:295
 msgid "(unofficial port)"
 msgstr "(非官方移植版)"
 
-#: templates/html/show.tmpl:304 templates/html/show.tmpl:332
+#: templates/html/show.tmpl:306 templates/html/show.tmpl:334
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kB"
 
-#: templates/html/show.tmpl:307
+#: templates/html/show.tmpl:309
 msgid "list of files"
 msgstr "文件列表"
 
-#: templates/html/show.tmpl:309
+#: templates/html/show.tmpl:311
 msgid "no current information"
 msgstr "没有当前信息"
 
-#: templates/html/show.tmpl:326
+#: templates/html/show.tmpl:328
 msgid "Download information for the files of this source package"
 msgstr "源码包文件的下载信息"
 
-#: templates/html/show.tmpl:327
+#: templates/html/show.tmpl:329
 msgid "Size (in kB)"
 msgstr "大小(单位: kB)"
 
-#: templates/html/show.tmpl:345
+#: templates/html/show.tmpl:347
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -976,7 +974,7 @@ msgstr ""
 "Debian 软件包源码仓库(<acronym title=\"Version Control System\">VCS</"
 "acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:349
+#: templates/html/show.tmpl:351
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Debian 软件包源码仓库(可在线浏览)"
 
@@ -1028,15 +1026,15 @@ msgid ""
 "last 7 days."
 msgstr "以下是在最近 7 天内被选进 %2 的 %1 发行版之中的软件包。"
 
-#: templates/rss/newpkg.tmpl:28 templates/txt/index.tmpl:5
+#: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
 msgstr "Copyright ©"
 
-#: templates/txt/index.tmpl:2
+#: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
 msgstr "\"%2\" 包含所有的 %1 软件包"
 
-#: templates/txt/index.tmpl:6
+#: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "查看 <URL:%s> 以便了解许可证的各项条款。"
 

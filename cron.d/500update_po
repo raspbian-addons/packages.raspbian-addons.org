@@ -31,7 +31,8 @@ templates/html/error.tmpl
 templates/html/filelist.tmpl
 templates/html/foot.tmpl
 templates/html/head.tmpl
-templates/html/index.tmpl
+templates/html/index_head.tmpl
+templates/html/index_foot.tmpl
 templates/html/messages.tmpl
 templates/html/newpkg.tmpl
 templates/html/search.tmpl
@@ -42,7 +43,8 @@ templates/html/tag_index.tmpl
 templates/html/util.inc
 templates/rfc822/search.tmpl
 templates/rss/newpkg.tmpl
-templates/txt/index.tmpl
+templates/txt/index_head.tmpl
+templates/txt/index_foot.tmpl
 "
 podomains="pdo templates sections langs debtags"
 
