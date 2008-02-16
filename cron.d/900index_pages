@@ -12,21 +12,6 @@ date
 ./bin/create_index_pages
 date
 
-# for file in $(find www/ -name *.slices)
-# do
-#     dir=$(dirname $file)
-#     base=$(basename $file .slices)
-#     target=
-#     for l in $polangs
-#     do
-# 	lu=$(echo $l|tr /a-z/ /A-Z/)
-# 	target="$target -o ${lu}uUNDEF:$dir/$base.$l.html.tmp"
-#     done
-    
-#     echo slice $target $file
-#     slice $target $file
-# done 
-
-./bin/trivial_slice en $polangs -- $(find "$htmldir" -name "*.slices")
+./bin/trivial_slice en $polangs -- $(find "$htmldir" -maxdepth 4 -name "*.slices")
 
 date
