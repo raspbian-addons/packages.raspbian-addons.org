@@ -73,19 +73,19 @@
 
    ScriptAlias /cgi-bin/ %TOPDIR%/cgi-bin/
   
-#   PerlModule ModPerl::Registry
-#   PerlTaintCheck On
-#   PerlRequire %TOPDIR%/bin/mod_perl-startup
-#   PerlSwitches -T
+   PerlModule ModPerl::Registry
+   PerlTaintCheck On
+   PerlRequire %TOPDIR%/bin/mod_perl-startup
+   PerlSwitches -T
    <Location /cgi-bin/>
-#      SetHandler perl-script
+      SetHandler perl-script
       # mod-perl etch
-#      PerlInitHandler Apache2::Reload
+      PerlInitHandler Apache2::Reload
       # mod-perl sarge
       #PerlInitHandler Apache::Reload
-#      PerlHandler ModPerl::Registry
+      PerlHandler ModPerl::Registry
       Options +ExecCGI
-#      PerlSendHeader On
+      PerlSendHeader On
       allow from all
    </Location>
 
