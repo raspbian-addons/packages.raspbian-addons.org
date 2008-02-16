@@ -2,11 +2,5 @@
 
 . `dirname $0`/../config.sh
 
-echo >&2 This script is disabled by default, since it is not useful without
-echo >&2 further setup and also some advertising of the actual addresses.
-echo >&2 Before you enable this you should have the consent of the people that
-echo >&2 this will send mail to!
-exit 1
-
 cd ${bindir}
 ${bindir}/build-maintainerdb
