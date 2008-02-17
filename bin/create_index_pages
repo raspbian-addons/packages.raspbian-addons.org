@@ -146,8 +146,8 @@ sub close_txt_file {
 }
 
 
-print "write headers ...\n";
 foreach my $source (("", "source/")) {
+    print "write headers ...\n";
     foreach my $s (@SUITES) {
 	mkdirp ( "$wwwdir/$source$s" );
 	my %common_vars = ( suite => $s,
@@ -177,8 +177,44 @@ foreach my $source (("", "source/")) {
 				      name => $prio }});
 	}
     }
+
+    if ($source) {
+	process_source_packages();
+    } else {
+	process_packages();
+    }
+
+    print "write footers ...\n";
+    foreach my $s (@SUITES) {
+	my %common_vars = ( suite => $s,
+			    is_source => $source );
+	close_file("$source$s", \%common_vars, 'allpackages');
+	close_txt_file("$source$s", \%common_vars, 'allpackages');
+
+	foreach my $sec (keys %{$sections->{$s}}) {
+	    close_file("$source$s/$sec",
+		       { %common_vars,
+			 category => { id => N_('Section'),
+				       name => $sec }});
+	}
+	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
+	    next if $ssec eq '-';
+	    close_file("$source$s/$ssec",
+		       { %common_vars,
+			 category => { id => N_('Subsection'),
+				       name => $ssec }});
+	}
+	foreach my $prio (keys %{$priorities->{$s}}) {
+	    next if $prio eq '-';
+	    close_file("$source$s/$prio",
+		       { %common_vars,
+			 category => { id => N_('Priority'),
+				       name => $prio }});
+	}
+    }
 }
 
+sub process_packages {
 
 print "processing package info ...\n";
 my $count = 0;
@@ -306,8 +342,12 @@ foreach my $pkg (@PACKAGES) {
     }
 }
 
+}
+
+sub process_source_packages {
+
 print "collecting source package info ...\n";
-$count = 0;
+my $count = 0;
 foreach my $pkg (@SRC_PACKAGES) {
     warn "pkg=$pkg\n" if DEBUG;
     print "$count\n" unless ++$count % 1000;
@@ -368,36 +408,6 @@ foreach my $pkg (@SRC_PACKAGES) {
     }
 }
 
-
-print "write footers ...\n";
-foreach my $source (("", "source/")) {
-    foreach my $s (@SUITES) {
-	my %common_vars = ( suite => $s,
-			    is_source => $source );
-	close_file("$source$s", \%common_vars, 'allpackages');
-	close_txt_file("$source$s", \%common_vars, 'allpackages');
-
-	foreach my $sec (keys %{$sections->{$s}}) {
-	    close_file("$source$s/$sec",
-		       { %common_vars,
-			 category => { id => N_('Section'),
-				       name => $sec }});
-	}
-	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
-	    next if $ssec eq '-';
-	    close_file("$source$s/$ssec",
-		       { %common_vars,
-			 category => { id => N_('Subsection'),
-				       name => $ssec }});
-	}
-	foreach my $prio (keys %{$priorities->{$s}}) {
-	    next if $prio eq '-';
-	    close_file("$source$s/$prio",
-		       { %common_vars,
-			 category => { id => N_('Priority'),
-				       name => $prio }});
-	}
-    }
 }
 
 __END__
