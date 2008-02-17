@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2008-01-22 14:07+0900\n"
+"PO-Revision-Date: 2008-02-17 13:08+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -496,16 +496,12 @@ msgstr ""
 "な一致を有効にして</a>検索してみるとよいでしょう。"
 
 #: templates/html/search.tmpl:40
-#, fuzzy
-#| msgid "Search in other suite:"
 msgid "Search in specific suite:"
-msgstr "他のスイートでの検索:"
+msgstr "特定のスイートに絞って検索:"
 
 #: templates/html/search.tmpl:49
-#, fuzzy
-#| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
+msgstr "<a href=\"%s\">すべてのスイート</a>で検索"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
@@ -516,16 +512,12 @@ msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "<a href=\"%s\">すべてのアーキテクチャ</a>で検索"
 
 #: templates/html/search.tmpl:69
-#, fuzzy
-#| msgid ""
-#| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
-#| "parameters."
 msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
-"検索パラメータの設定によって、<a href=\"%s\">%u</a> 個の結果が非表示になって"
-"います。"
+"検索パラメータの設定によって、<a href=\"%s\">一部</a>の結果が非表示になってい"
+"ます。"
 
 #: templates/html/search.tmpl:78
 msgid "all suites"
@@ -591,33 +583,21 @@ msgstr ""
 "ワードを追加するか他のキーワードを用いてみてください。"
 
 #: templates/html/search.tmpl:103
-#, fuzzy
-#| msgid ""
-#| "Your search was too wide so we will only display exact matches. At least "
-#| "<em>%u</em> results have been omitted and will not be displayed. Please "
-#| "consider using a longer keyword or more keywords."
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been supressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
-"あまりにも幅の広い検索なので、ここでは完全に一致するものを表示するだけに留め"
-"ています。少なくとも <em>%u</em> 個の結果が省略され、非表示となっています。さ"
-"らに長いキーワードを用いるか、キーワードを追加することを検討してください。"
+"キーワードが一般的すぎるので、最適化上の理由から一部の結果が非表示となってい"
+"る可能性があります。<br>さらに長いキーワードを用いるか、キーワードを追加する"
+"ことを検討してください。"
 
-# FIXME: "... only ... only ..." is OK?
 #: templates/html/search.tmpl:105
-#, fuzzy
-#| msgid ""
-#| "Note: Your search was too wide so we will only display only the first "
-#| "about 100 matches. Please consider using a longer keyword or more "
-#| "keywords."
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
-"注意: あまりにも幅の広い検索なので、ここでは最初の約 100 個の結果のみを表示す"
-"るだけに留めています。さらに長いキーワードを用いるか、キーワードを追加するこ"
-"とを検討してください。"
+"キーワードが一般的すぎます。<br>さらに長いキーワードを用いるか、キーワードを"
+"追加することを検討してください。"
 
 #: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
