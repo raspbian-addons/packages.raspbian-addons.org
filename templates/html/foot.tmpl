@@ -20,7 +20,9 @@ Total page evaluation took [% benchmark %]<br>
 [%- IF l.transliteration %] ([% l.transliteration %])[% END %]</a>
 [% END %]
 </p>
+[% IF cn_help_url %]
 <p>[% g('How to set <a href="%s">the default document language</a>', cn_help_url) %]</p>
+[% END %]
 <!--/UdmComment-->
 [% END %]
 
