@@ -4,12 +4,12 @@ msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: (null)\n"
-"PO-Revision-Date: 2008-01-22 07:28+0100\n"
+"PO-Revision-Date: 2008-02-19 21:37+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: templates/config.tmpl:41
 msgid "Debian Web Mailinglist"
@@ -491,16 +491,14 @@ msgstr ""
 "söka med <a href=\"%s\">träff av delord aktiverade</a>."
 
 #: templates/html/search.tmpl:40
-#, fuzzy
 #| msgid "Search in other suite:"
 msgid "Search in specific suite:"
-msgstr "Sök i annan svit:"
+msgstr "Sök i specifik svit:"
 
 #: templates/html/search.tmpl:49
-#, fuzzy
 #| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
+msgstr "Sök i <a  href=\"%s\">alla sviter</a>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
@@ -511,7 +509,6 @@ msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
 
 #: templates/html/search.tmpl:69
-#, fuzzy
 #| msgid ""
 #| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
 #| "parameters."
@@ -519,7 +516,7 @@ msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
-"<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
+"<a href=\"%s\">Vissa</a> resultat har inte visats på grund av sökparametrarna."
 
 #: templates/html/search.tmpl:78
 msgid "all suites"
@@ -586,7 +583,6 @@ msgstr ""
 "andra nyckelord."
 
 #: templates/html/search.tmpl:103
-#, fuzzy
 #| msgid ""
 #| "Your search was too wide so we will only display exact matches. At least "
 #| "<em>%u</em> results have been omitted and will not be displayed. Please "
@@ -595,12 +591,10 @@ msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
-"Din sökning var så vid att vi bara visar exakta träffar. Åtminstone <em>%u</"
-"em> resultat har uteslutits och kommer inte att visas. Försök använda ett "
-"längre eller fler nyckelord."
+"Ditt nyckelord var för allmänt, och på grund av optimeringar kan vissa "
+"resultat ha dolts.<br>FÖrsök använda ett längre, eller flera, nyckelord."
 
 #: templates/html/search.tmpl:105
-#, fuzzy
 #| msgid ""
 #| "Note: Your search was too wide so we will only display only the first "
 #| "about 100 matches. Please consider using a longer keyword or more "
@@ -609,8 +603,9 @@ msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
-"Observera: Din sökning var för vid, så vi visar bara de första omkring 100 "
-"träffarna. Försök använda ett längre eller fler nyckelord."
+"Ditt nyckelord var för allmänt<br>FÖrsök använda ett längre, eller flera,"
+"nyckelord."
+""
 
 #: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
