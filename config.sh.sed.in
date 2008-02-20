@@ -25,7 +25,7 @@ cachedir=${topdir}/cache
 #ftproot=/org/ftp.root
 
 ftpsite=http://archive.ubuntu.com/ubuntu
-security_ftpsite=$ftpsite
+security_ftpsite=http://archive.ubuntu.com/ubuntu
 ddtp_ftpsite=http://ddtp.debian.net/debian
 
 wget_cmd="wget --no-verbose --tries=2 --timeout=60" 
