@@ -110,6 +110,7 @@
    RewriteRule ^/about/ - [L]
    RewriteRule ^/[^/]+\.css - [L]
    RewriteRule ^/[^/]+\.js - [L]
+   RewriteRule ^/favicon.ico$ - [L]
 
 #   RewriteRule ^/$ http://www.debian.org/distrib/packages
    RewriteRule ^/$ /index.html [L]
