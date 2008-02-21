@@ -232,7 +232,8 @@ sub do_show {
 			    $d{archive} = $archives->{$a};
 			    if ( ($suite ne "experimental")
 				 && ($subsection ne 'debian-installer')
-				 && ($suite !~ /-(backports|updates)$/)) {
+				 && ($suite !~ /-(backports|updates)$/)
+				 && ($suite !~ /dapper/)) {
 				$d{contents_avail} = 1;
 			    }
 			    push @downloads, \%d;
