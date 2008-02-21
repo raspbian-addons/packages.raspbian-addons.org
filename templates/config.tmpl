@@ -4,7 +4,7 @@
    ddtp_lang = 'en'
 
    organisation = 'Debian'
-   homepage = 'http://www.debian.org/'
+   project_homepage = 'http://www.debian.org/'
    packages_homepage = 'http://packages.debian.org/'
    searchformurl = packages_homepage
    search_url = '/'
@@ -19,9 +19,9 @@
    security_suite_suffix = '/updates'
    changelogs_url = 'http://packages.debian.org/changelogs/'
    policy_url = 'http://www.debian.org/doc/debian-policy/'
-   cn_help_url = homepage _ 'intro/cn'
+   cn_help_url = project_homepage _ 'intro/cn'
    logo = {
-	url => homepage,
+	url => project_homepage,
         src => '/Pics/openlogo-nd-25.png',
         alt => organisation,
    }
@@ -31,16 +31,16 @@
         years => '1997 - ' _ timestamp.year,
    }
    license = {
-	url => homepage _ 'license'
+	url => project_homepage _ 'license'
    }
    trademark = {
 	name => copyright.name,
-	url => homepage _ 'trademark'
+	url => project_homepage _ 'trademark'
    }
    contact = {
 	name => g('Debian Web Mailinglist'),
 	mail => 'debian-www@lists.debian.org',
-        url => homepage _ 'contact',
+        url => project_homepage _ 'contact',
    }
    admin = {
 	name => g('%s Webmaster', organisation),

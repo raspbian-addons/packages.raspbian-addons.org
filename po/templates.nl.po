@@ -181,7 +181,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr ""
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:153
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "Experimenteel pakket"
 
@@ -198,11 +198,11 @@ msgstr ""
 "Raadpleeg vooral de changelog en andere beschikbare documentatie voordat u "
 "het pakket gebruikt."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:158
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "udeb-pakket voor debian-installer"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:159
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
 #, fuzzy
 #| msgid ""
 #| "Warning: This package is intended for the use in building <a href="
@@ -266,7 +266,7 @@ msgstr "%s Byte (%s %s)"
 msgid "Exact Size"
 msgstr "Exacte grootte"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:329
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5 checksum"
 
@@ -584,7 +584,7 @@ msgstr ""
 #: templates/html/search.tmpl:103
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
-"been supressed.<br>Please consider using a longer keyword or more keywords."
+"been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 
 #: templates/html/search.tmpl:105
@@ -692,7 +692,7 @@ msgid "Sort results by filename"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:329
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:331
 msgid "File"
 msgstr "Bestand"
 
@@ -796,35 +796,35 @@ msgstr "Beheerder:"
 msgid "Maintainers:"
 msgstr "Beheerders:"
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:123
 msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:123
 msgid "QA Page"
 msgstr "QA-pagina"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:124
 msgid "Archive of the Maintainer Mailinglist"
 msgstr ""
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:124
 msgid "Mail Archive"
 msgstr "Mailarchief"
 
-#: templates/html/show.tmpl:130
+#: templates/html/show.tmpl:132
 msgid "External Resources:"
 msgstr "Externe bronnen:"
 
-#: templates/html/show.tmpl:132
+#: templates/html/show.tmpl:134
 msgid "Homepage"
 msgstr "Homepage"
 
-#: templates/html/show.tmpl:138
+#: templates/html/show.tmpl:140
 msgid "Similar packages:"
 msgstr "Vergelijkbare pakketten:"
 
-#: templates/html/show.tmpl:154
+#: templates/html/show.tmpl:156
 #, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
@@ -838,7 +838,7 @@ msgstr ""
 "Als u deze waarschuwing negeert en het pakket toch installeert, dan is dat "
 "op uw eigen risico."
 
-#: templates/html/show.tmpl:178
+#: templates/html/show.tmpl:180
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -848,136 +848,136 @@ msgstr ""
 "beleidshandboek</a> voor de <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">definitie van een virtueel pakket</a>."
 
-#: templates/html/show.tmpl:186
+#: templates/html/show.tmpl:188
 msgid "Tags"
 msgstr ""
 
-#: templates/html/show.tmpl:209
+#: templates/html/show.tmpl:211
 msgid "Packages providing %s"
 msgstr "Pakketten die %s bieden:"
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:220
 msgid "The following binary packages are built from this source package:"
 msgstr "De volgende binaire pakketten worden van dit bronpakket gebouwd:"
 
-#: templates/html/show.tmpl:227
+#: templates/html/show.tmpl:229
 msgid "Other Packages Related to %s"
 msgstr "Andere aan %s gerelateerde pakketten"
 
-#: templates/html/show.tmpl:229
+#: templates/html/show.tmpl:231
 msgid "legend"
 msgstr ""
 
-#: templates/html/show.tmpl:231
+#: templates/html/show.tmpl:233
 msgid "build-depends"
 msgstr "build-depends"
 
-#: templates/html/show.tmpl:232
+#: templates/html/show.tmpl:234
 msgid "build-depends-indep"
 msgstr "build-depends-indep"
 
-#: templates/html/show.tmpl:234
+#: templates/html/show.tmpl:236
 msgid "depends"
 msgstr "depends"
 
-#: templates/html/show.tmpl:235
+#: templates/html/show.tmpl:237
 msgid "recommends"
 msgstr "recommends"
 
-#: templates/html/show.tmpl:236
+#: templates/html/show.tmpl:238
 msgid "suggests"
 msgstr "suggests"
 
-#: templates/html/show.tmpl:246
+#: templates/html/show.tmpl:248
 msgid "or "
 msgstr "of "
 
-#: templates/html/show.tmpl:254
+#: templates/html/show.tmpl:256
 msgid "also a virtual package provided by"
 msgstr "Ook een virtueel pakket geboden door:"
 
-#: templates/html/show.tmpl:256
+#: templates/html/show.tmpl:258
 msgid "virtual package provided by"
 msgstr "virtueel pakket geboden door"
 
-#: templates/html/show.tmpl:261
+#: templates/html/show.tmpl:263
 #, fuzzy
 #| msgid "%u providing packages"
 msgid "hide %u providing packages"
 msgstr "pakketten die %u bieden"
 
-#: templates/html/show.tmpl:261
+#: templates/html/show.tmpl:263
 #, fuzzy
 #| msgid "%u providing packages"
 msgid "show %u providing packages"
 msgstr "pakketten die %u bieden"
 
-#: templates/html/show.tmpl:279
+#: templates/html/show.tmpl:281
 msgid "Download %s"
 msgstr "%s downloaden"
 
-#: templates/html/show.tmpl:281
+#: templates/html/show.tmpl:283
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
 
-#: templates/html/show.tmpl:282
+#: templates/html/show.tmpl:284
 msgid "Download for all available architectures"
 msgstr "Pakket downloaden voor alle beschikbare platforms"
 
-#: templates/html/show.tmpl:283
+#: templates/html/show.tmpl:285
 msgid "Architecture"
 msgstr "Platform"
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:286
 msgid "Version"
 msgstr "Versie"
 
-#: templates/html/show.tmpl:285
+#: templates/html/show.tmpl:287
 msgid "Package Size"
 msgstr "Pakketgrootte"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:288
 msgid "Installed Size"
 msgstr "Geïnstalleerde grootte"
 
-#: templates/html/show.tmpl:287
+#: templates/html/show.tmpl:289
 msgid "Files"
 msgstr "Bestanden"
 
-#: templates/html/show.tmpl:295
+#: templates/html/show.tmpl:297
 msgid "(unofficial port)"
 msgstr ""
 
-#: templates/html/show.tmpl:306 templates/html/show.tmpl:334
+#: templates/html/show.tmpl:308 templates/html/show.tmpl:336
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kB"
 
-#: templates/html/show.tmpl:309
+#: templates/html/show.tmpl:311
 msgid "list of files"
 msgstr "overzicht"
 
-#: templates/html/show.tmpl:311
+#: templates/html/show.tmpl:313
 msgid "no current information"
 msgstr "geen actuale informatie"
 
-#: templates/html/show.tmpl:328
+#: templates/html/show.tmpl:330
 msgid "Download information for the files of this source package"
 msgstr ""
 
-#: templates/html/show.tmpl:329
+#: templates/html/show.tmpl:331
 msgid "Size (in kB)"
 msgstr "Grootte (in kB)"
 
-#: templates/html/show.tmpl:347
+#: templates/html/show.tmpl:349
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
 
-#: templates/html/show.tmpl:351
+#: templates/html/show.tmpl:353
 #, fuzzy
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Alle Debianpakketten in \"%s\""
@@ -1051,12 +1051,6 @@ msgstr "Alle %s pakketten in \"%s\""
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "sectie(s) <em>$section_enc</em>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "platform(en) <em>$architectures_enc</em>"
-
 #, fuzzy
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1064,3 +1058,9 @@ msgstr ""
 #~ msgstr ""
 #~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
 #~ "s/\">Pakketten zoekpagina</a>"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "platform(en) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "sectie(s) <em>$section_enc</em>"

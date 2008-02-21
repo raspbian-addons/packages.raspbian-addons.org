@@ -4,12 +4,12 @@ msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: (null)\n"
-"PO-Revision-Date: 2008-01-22 07:28+0100\n"
+"PO-Revision-Date: 2008-02-19 21:37+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: templates/config.tmpl:41
 msgid "Debian Web Mailinglist"
@@ -182,7 +182,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "Ersätt <em>%s</em> med spegeln i fråga."
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:153
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "Experimentellt paket"
 
@@ -198,11 +198,11 @@ msgstr ""
 "kanske till och med kan orsaka dataförluster. Se till att läsa "
 "ändringsloggen och annan dokumentation innan du använder det."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:158
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "udeb-paket för debian-installer"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:159
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -273,7 +273,7 @@ msgstr "%s byte (%s %s)"
 msgid "Exact Size"
 msgstr "Exakt storlek"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:329
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5-kontrollsumma"
 
@@ -491,16 +491,14 @@ msgstr ""
 "söka med <a href=\"%s\">träff av delord aktiverade</a>."
 
 #: templates/html/search.tmpl:40
-#, fuzzy
 #| msgid "Search in other suite:"
 msgid "Search in specific suite:"
-msgstr "Sök i annan svit:"
+msgstr "Sök i specifik svit:"
 
 #: templates/html/search.tmpl:49
-#, fuzzy
 #| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
+msgstr "Sök i <a  href=\"%s\">alla sviter</a>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
@@ -511,7 +509,6 @@ msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
 
 #: templates/html/search.tmpl:69
-#, fuzzy
 #| msgid ""
 #| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
 #| "parameters."
@@ -519,7 +516,7 @@ msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
-"<a href=\"%s\">%u</a> resultat har inte visats på grund av sökparametrarna."
+"<a href=\"%s\">Vissa</a> resultat har inte visats på grund av sökparametrarna."
 
 #: templates/html/search.tmpl:78
 msgid "all suites"
@@ -586,21 +583,18 @@ msgstr ""
 "andra nyckelord."
 
 #: templates/html/search.tmpl:103
-#, fuzzy
 #| msgid ""
 #| "Your search was too wide so we will only display exact matches. At least "
 #| "<em>%u</em> results have been omitted and will not be displayed. Please "
 #| "consider using a longer keyword or more keywords."
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
-"been supressed.<br>Please consider using a longer keyword or more keywords."
+"been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
-"Din sökning var så vid att vi bara visar exakta träffar. Åtminstone <em>%u</"
-"em> resultat har uteslutits och kommer inte att visas. Försök använda ett "
-"längre eller fler nyckelord."
+"Ditt nyckelord var för allmänt, och på grund av optimeringar kan vissa "
+"resultat ha dolts.<br>FÖrsök använda ett längre, eller flera, nyckelord."
 
 #: templates/html/search.tmpl:105
-#, fuzzy
 #| msgid ""
 #| "Note: Your search was too wide so we will only display only the first "
 #| "about 100 matches. Please consider using a longer keyword or more "
@@ -609,8 +603,9 @@ msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
-"Observera: Din sökning var för vid, så vi visar bara de första omkring 100 "
-"träffarna. Försök använda ett längre eller fler nyckelord."
+"Ditt nyckelord var för allmänt<br>FÖrsök använda ett längre, eller flera,"
+"nyckelord."
+""
 
 #: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
@@ -710,7 +705,7 @@ msgid "Sort results by filename"
 msgstr "Sök resultat efter filnamn"
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:329
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:331
 msgid "File"
 msgstr "Fil"
 
@@ -810,35 +805,35 @@ msgstr "Ansvarig:"
 msgid "Maintainers:"
 msgstr "Ansvariga:"
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:123
 msgid "An overview over the maintainer's packages and uploads"
 msgstr "En översikt över ansvarigas paket och insändningar"
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:123
 msgid "QA Page"
 msgstr "QA-sida"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:124
 msgid "Archive of the Maintainer Mailinglist"
 msgstr "Arkiv för paketansvarigas sändlista"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:124
 msgid "Mail Archive"
 msgstr "E-postarkiv"
 
-#: templates/html/show.tmpl:130
+#: templates/html/show.tmpl:132
 msgid "External Resources:"
 msgstr "Externa resurser:"
 
-#: templates/html/show.tmpl:132
+#: templates/html/show.tmpl:134
 msgid "Homepage"
 msgstr "Hemsida"
 
-#: templates/html/show.tmpl:138
+#: templates/html/show.tmpl:140
 msgid "Similar packages:"
 msgstr "Liknande paket:"
 
-#: templates/html/show.tmpl:154
+#: templates/html/show.tmpl:156
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -850,7 +845,7 @@ msgstr ""
 "kanske till och med kan orsaka dataförluster. Se till att läsa <a href=\"%s"
 "\">ändringsloggen</a> och annan dokumentation innan du använder det."
 
-#: templates/html/show.tmpl:178
+#: templates/html/show.tmpl:180
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -860,71 +855,71 @@ msgstr ""
 "för en <a href=\"%sch-binary.html#s-virtual_pkg\">definition av virtuella "
 "paket</a>."
 
-#: templates/html/show.tmpl:186
+#: templates/html/show.tmpl:188
 msgid "Tags"
 msgstr "Märken"
 
-#: templates/html/show.tmpl:209
+#: templates/html/show.tmpl:211
 msgid "Packages providing %s"
 msgstr "Paket som tillhandahåller %s"
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:220
 msgid "The following binary packages are built from this source package:"
 msgstr "Följande binärpaket byggs från detta källkodspaket:"
 
-#: templates/html/show.tmpl:227
+#: templates/html/show.tmpl:229
 msgid "Other Packages Related to %s"
 msgstr "Andra paket besläktade med %s"
 
-#: templates/html/show.tmpl:229
+#: templates/html/show.tmpl:231
 msgid "legend"
 msgstr "beskrivning"
 
-#: templates/html/show.tmpl:231
+#: templates/html/show.tmpl:233
 msgid "build-depends"
 msgstr "bygg-beroende"
 
-#: templates/html/show.tmpl:232
+#: templates/html/show.tmpl:234
 msgid "build-depends-indep"
 msgstr "arkitekturoberoende bygg-beroende"
 
-#: templates/html/show.tmpl:234
+#: templates/html/show.tmpl:236
 msgid "depends"
 msgstr "beror"
 
-#: templates/html/show.tmpl:235
+#: templates/html/show.tmpl:237
 msgid "recommends"
 msgstr "rekommenderar"
 
-#: templates/html/show.tmpl:236
+#: templates/html/show.tmpl:238
 msgid "suggests"
 msgstr "föreslår"
 
-#: templates/html/show.tmpl:246
+#: templates/html/show.tmpl:248
 msgid "or "
 msgstr "eller "
 
-#: templates/html/show.tmpl:254
+#: templates/html/show.tmpl:256
 msgid "also a virtual package provided by"
 msgstr "också ett virtuellt paket som tillhandahålls av"
 
-#: templates/html/show.tmpl:256
+#: templates/html/show.tmpl:258
 msgid "virtual package provided by"
 msgstr "virtuellt paket som tillhandahålls av"
 
-#: templates/html/show.tmpl:261
+#: templates/html/show.tmpl:263
 msgid "hide %u providing packages"
 msgstr "dölj %u tillhandahållande paket"
 
-#: templates/html/show.tmpl:261
+#: templates/html/show.tmpl:263
 msgid "show %u providing packages"
 msgstr "visa %u tillhandahållande paket"
 
-#: templates/html/show.tmpl:279
+#: templates/html/show.tmpl:281
 msgid "Download %s"
 msgstr "Hämta %s"
 
-#: templates/html/show.tmpl:281
+#: templates/html/show.tmpl:283
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -933,55 +928,55 @@ msgstr ""
 "Hämtningstabellen länkar till hämtningar för paketet och en filöversikt. "
 "Dessutom innehåller den information om paketstorlek och installerad storlek."
 
-#: templates/html/show.tmpl:282
+#: templates/html/show.tmpl:284
 msgid "Download for all available architectures"
 msgstr "Hämtningar för alla tillgängliga arkitekturer"
 
-#: templates/html/show.tmpl:283
+#: templates/html/show.tmpl:285
 msgid "Architecture"
 msgstr "Arkitektur"
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:286
 msgid "Version"
 msgstr "Version"
 
-#: templates/html/show.tmpl:285
+#: templates/html/show.tmpl:287
 msgid "Package Size"
 msgstr "Paketstorlek"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:288
 msgid "Installed Size"
 msgstr "Installerad storlek"
 
-#: templates/html/show.tmpl:287
+#: templates/html/show.tmpl:289
 msgid "Files"
 msgstr "Filer"
 
-#: templates/html/show.tmpl:295
+#: templates/html/show.tmpl:297
 msgid "(unofficial port)"
 msgstr "(inofficiell anpassning)"
 
-#: templates/html/show.tmpl:306 templates/html/show.tmpl:334
+#: templates/html/show.tmpl:308 templates/html/show.tmpl:336
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kbyte"
 
-#: templates/html/show.tmpl:309
+#: templates/html/show.tmpl:311
 msgid "list of files"
 msgstr "filförteckning"
 
-#: templates/html/show.tmpl:311
+#: templates/html/show.tmpl:313
 msgid "no current information"
 msgstr "ingen aktuell information"
 
-#: templates/html/show.tmpl:328
+#: templates/html/show.tmpl:330
 msgid "Download information for the files of this source package"
 msgstr "Hämtningsinformation för filer i källkodspaketet"
 
-#: templates/html/show.tmpl:329
+#: templates/html/show.tmpl:331
 msgid "Size (in kB)"
 msgstr "Storlek (i kbyte)"
 
-#: templates/html/show.tmpl:347
+#: templates/html/show.tmpl:349
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -989,7 +984,7 @@ msgstr ""
 "Debians paketkällkodsarkiv- (<acronym title=\"Version Control System\">VCS</"
 "acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:351
+#: templates/html/show.tmpl:353
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Debians paketkällkodsarkiv (blädderbart)"
 

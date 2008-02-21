@@ -182,7 +182,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "Ersetzen Sie dabei <em>%s</em> mit dem gewünschten Spiegel-Server."
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:153
+#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "Experimentelles Paket"
 
@@ -199,11 +199,11 @@ msgstr ""
 "Changelog und andere möglicherweise verfügbare Dokumentation, bevor Sie es "
 "benutzen."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:158
+#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "udeb-Paket des Debian-Installers"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:159
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -276,7 +276,7 @@ msgstr "%s Byte (%s %s)"
 msgid "Exact Size"
 msgstr "Genaue Größe"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:329
+#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5-Prüfsumme"
 
@@ -588,7 +588,7 @@ msgstr ""
 #: templates/html/search.tmpl:103
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
-"been supressed.<br>Please consider using a longer keyword or more keywords."
+"been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 "Ihr Schlüsselwort war zu allgemein. Daher könnten aufgrund von Optimierungen "
 "einige Ergebnisse unterdrückt sein.<br />Bitte verwenden Sie ein längeres "
@@ -702,7 +702,7 @@ msgid "Sort results by filename"
 msgstr "Sortiere Ergebnisse nach Dateinamen"
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:329
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:331
 msgid "File"
 msgstr "Datei"
 
@@ -802,35 +802,35 @@ msgstr "Betreuer:"
 msgid "Maintainers:"
 msgstr "Betreuer:"
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:123
 msgid "An overview over the maintainer's packages and uploads"
 msgstr "Eine Übersicht über die Pakete und Uploads des Betreuers"
 
-#: templates/html/show.tmpl:121
+#: templates/html/show.tmpl:123
 msgid "QA Page"
 msgstr "QS-Seite"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:124
 msgid "Archive of the Maintainer Mailinglist"
 msgstr "Archiv der Betreuer-Mailingliste"
 
-#: templates/html/show.tmpl:122
+#: templates/html/show.tmpl:124
 msgid "Mail Archive"
 msgstr "E-Mail-Archiv"
 
-#: templates/html/show.tmpl:130
+#: templates/html/show.tmpl:132
 msgid "External Resources:"
 msgstr "Externe Ressourcen:"
 
-#: templates/html/show.tmpl:132
+#: templates/html/show.tmpl:134
 msgid "Homepage"
 msgstr "Homepage"
 
-#: templates/html/show.tmpl:138
+#: templates/html/show.tmpl:140
 msgid "Similar packages:"
 msgstr "Ähnliche Pakete: "
 
-#: templates/html/show.tmpl:154
+#: templates/html/show.tmpl:156
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -843,7 +843,7 @@ msgstr ""
 "<a href=\"%s\">Changelog</a> und andere möglicherweise verfügbare "
 "Dokumentation, bevor Sie es benutzen."
 
-#: templates/html/show.tmpl:178
+#: templates/html/show.tmpl:180
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -853,71 +853,71 @@ msgstr ""
 "\">Debian-Richtlinien</a> für eine <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">Definition von virtuellen Paketen</a>."
 
-#: templates/html/show.tmpl:186
+#: templates/html/show.tmpl:188
 msgid "Tags"
 msgstr "Markierungen"
 
-#: templates/html/show.tmpl:209
+#: templates/html/show.tmpl:211
 msgid "Packages providing %s"
 msgstr "Pakete, die %s bereitstellen"
 
-#: templates/html/show.tmpl:218
+#: templates/html/show.tmpl:220
 msgid "The following binary packages are built from this source package:"
 msgstr "Die folgenden Binärpakete werden aus diesem Quellcode-Paket gebaut:"
 
-#: templates/html/show.tmpl:227
+#: templates/html/show.tmpl:229
 msgid "Other Packages Related to %s"
 msgstr "Andere Pakete mit Bezug zu %s"
 
-#: templates/html/show.tmpl:229
+#: templates/html/show.tmpl:231
 msgid "legend"
 msgstr "Legende"
 
-#: templates/html/show.tmpl:231
+#: templates/html/show.tmpl:233
 msgid "build-depends"
 msgstr "build-depends"
 
-#: templates/html/show.tmpl:232
+#: templates/html/show.tmpl:234
 msgid "build-depends-indep"
 msgstr "build-depends-indep"
 
-#: templates/html/show.tmpl:234
+#: templates/html/show.tmpl:236
 msgid "depends"
 msgstr "hängt ab von"
 
-#: templates/html/show.tmpl:235
+#: templates/html/show.tmpl:237
 msgid "recommends"
 msgstr "empfiehlt"
 
-#: templates/html/show.tmpl:236
+#: templates/html/show.tmpl:238
 msgid "suggests"
 msgstr "schlägt vor"
 
-#: templates/html/show.tmpl:246
+#: templates/html/show.tmpl:248
 msgid "or "
 msgstr "oder "
 
-#: templates/html/show.tmpl:254
+#: templates/html/show.tmpl:256
 msgid "also a virtual package provided by"
 msgstr "auch ein virtuelles Paket, bereitgestellt durch"
 
-#: templates/html/show.tmpl:256
+#: templates/html/show.tmpl:258
 msgid "virtual package provided by"
 msgstr "virtuelles Paket, bereitgestellt durch"
 
-#: templates/html/show.tmpl:261
+#: templates/html/show.tmpl:263
 msgid "hide %u providing packages"
 msgstr "verberge %u bereitstellende Pakete"
 
-#: templates/html/show.tmpl:261
+#: templates/html/show.tmpl:263
 msgid "show %u providing packages"
 msgstr "zeige %u bereitstellende Pakete"
 
-#: templates/html/show.tmpl:279
+#: templates/html/show.tmpl:281
 msgid "Download %s"
 msgstr "%s herunterladen"
 
-#: templates/html/show.tmpl:281
+#: templates/html/show.tmpl:283
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -927,55 +927,55 @@ msgstr ""
 "Dateiliste. Zusätzlich enthält sie Informationen zur Größe der Paketdatei "
 "und der Größe im installierten Zustand."
 
-#: templates/html/show.tmpl:282
+#: templates/html/show.tmpl:284
 msgid "Download for all available architectures"
 msgstr "Download für alle verfügbaren Architekturen"
 
-#: templates/html/show.tmpl:283
+#: templates/html/show.tmpl:285
 msgid "Architecture"
 msgstr "Architektur"
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:286
 msgid "Version"
 msgstr "Version"
 
-#: templates/html/show.tmpl:285
+#: templates/html/show.tmpl:287
 msgid "Package Size"
 msgstr "Paketgröße"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:288
 msgid "Installed Size"
 msgstr "Größe (installiert)"
 
-#: templates/html/show.tmpl:287
+#: templates/html/show.tmpl:289
 msgid "Files"
 msgstr "Dateien"
 
-#: templates/html/show.tmpl:295
+#: templates/html/show.tmpl:297
 msgid "(unofficial port)"
 msgstr "(inoffizielle Portierung)"
 
-#: templates/html/show.tmpl:306 templates/html/show.tmpl:334
+#: templates/html/show.tmpl:308 templates/html/show.tmpl:336
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kB"
 
-#: templates/html/show.tmpl:309
+#: templates/html/show.tmpl:311
 msgid "list of files"
 msgstr "Liste der Dateien"
 
-#: templates/html/show.tmpl:311
+#: templates/html/show.tmpl:313
 msgid "no current information"
 msgstr "keine aktuellen Informationen"
 
-#: templates/html/show.tmpl:328
+#: templates/html/show.tmpl:330
 msgid "Download information for the files of this source package"
 msgstr "Download-Informationen für die Dateien dieses Quellcode-Pakets"
 
-#: templates/html/show.tmpl:329
+#: templates/html/show.tmpl:331
 msgid "Size (in kB)"
 msgstr "Größe (in kB)"
 
-#: templates/html/show.tmpl:347
+#: templates/html/show.tmpl:349
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -983,7 +983,7 @@ msgstr ""
 "Quellcode-Depot des Debian-Pakets (<acronym lang=\"en\" title=\"Version "
 "Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:351
+#: templates/html/show.tmpl:353
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Quellcode-Depot des Debian-Pakets (browsable)"
 
@@ -1051,18 +1051,18 @@ msgstr "Alle %s-Pakete in »%s«"
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
 
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "Suite(s) <em>$suite_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "Bereich(e) <em>$section_enc</em>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
-
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
 #~ "andere Suche durchführen."
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "Bereich(e) <em>$section_enc</em>"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"

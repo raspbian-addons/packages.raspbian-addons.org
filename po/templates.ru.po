@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Debian webwml templates\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-02-09 17:42+0300\n"
+"PO-Revision-Date: 2008-02-16 16:38+0300\n"
 "Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -326,7 +326,7 @@ msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
-"Чтобы сообщить о проблеме, связанной с web-сайтом, отправьте сообщение (на "
+"Чтобы сообщить о проблеме, связанной с веб-сайтом, отправьте сообщение (на "
 "английском) в список рассылки <a href=\"mailto:%s\">%s</a>. Прочую "
 "контактную информацию см. на странице %s <a href=\"%s\">Как с нами "
 "связаться</a>."
@@ -565,7 +565,7 @@ msgstr ""
 
 #: templates/html/search.tmpl:94
 msgid "Found <strong>%u</strong> matching packages."
-msgstr "Найдено <strong>%u</strong> подходящих пакетов."
+msgstr "Количество подходящих пакетов: <strong>%u</strong>."
 
 #: templates/html/search.tmpl:99
 msgid ""
@@ -629,12 +629,12 @@ msgstr "Бинарный пакет:"
 #: templates/html/search.tmpl:148
 #| msgid "%u binary packages"
 msgid "hide %u binary packages"
-msgstr "скрыть %u бинарных пакетов"
+msgstr "скрыть бинарные пакеты (%u)"
 
 #: templates/html/search.tmpl:148
 #| msgid "%u binary packages"
 msgid "show %u binary packages"
-msgstr "показать %u бинарных пакетов"
+msgstr "показать бинарные пакеты (%u)"
 
 #: templates/html/search.tmpl:158
 msgid ""
@@ -683,11 +683,13 @@ msgstr "имена файлов, содержащих"
 #. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr "Вы искали %s <em>%s</em> в комплекте <em>%s</em>, %s и %s."
+msgstr ""
+"Вы искали %s <em>%s</em> в комплекте <em>%s</em>. "
+"Были просмотрены %s и %s."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr "Найдено <strong>%u совпадений</strong>."
+msgstr "Количество найденных совпадений: <strong>%u</strong>."
 
 #: templates/html/search_contents.tmpl:88
 msgid ""
@@ -875,11 +877,11 @@ msgstr "легенда"
 
 #: templates/html/show.tmpl:231
 msgid "build-depends"
-msgstr "build-depends"
+msgstr "нужен для сборки"
 
 #: templates/html/show.tmpl:232
 msgid "build-depends-indep"
-msgstr "build-depends-indep"
+msgstr "нужен для сборки"
 
 #: templates/html/show.tmpl:234
 msgid "depends"
@@ -908,12 +910,12 @@ msgstr "виртуальный пакет, предоставляемый"
 #: templates/html/show.tmpl:261
 #| msgid "%u providing packages"
 msgid "hide %u providing packages"
-msgstr "скрыть %u предоставляющих пакетов"
+msgstr "скрыть предоставляющие пакеты (%u)"
 
 #: templates/html/show.tmpl:261
 #| msgid "%u providing packages"
 msgid "show %u providing packages"
-msgstr "показаьт %u предоставляющих пакетов"
+msgstr "показать предоставляющие пакеты (%u)"
 
 #: templates/html/show.tmpl:279
 msgid "Download %s"

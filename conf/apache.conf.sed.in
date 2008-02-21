@@ -9,8 +9,9 @@
   # Nice caching..
   ExpiresActive On
   ExpiresDefault "access plus 1 day"
-  ExpiresByType image/gif "access plus 1 week"
-  ExpiresByType image/jpeg "access plus 1 week"
+  ExpiresByType image/gif  "modification plus 1 year"
+  ExpiresByType image/jpeg "modification plus 1 year"
+  ExpiresByType image/png  "modification plus 1 year"
 
   # language stuff
   # you need to keep this in sync with lib/Packages/I18N/Locale.pm
@@ -111,6 +112,7 @@
    RewriteRule ^/about/ - [L]
    RewriteRule ^/[^/]+\.css - [L]
    RewriteRule ^/[^/]+\.js - [L]
+   RewriteRule ^/favicon.ico$ - [L]
 
    RewriteRule ^/$ http://www.debian.org/distrib/packages
 #   RewriteRule ^/$ /index.html [L]
