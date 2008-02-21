@@ -38,6 +38,7 @@ use English;
 use DB_File;
 use Storable;
 use File::Path;
+use File::Basename;
 use Packages::CommonCode qw(:all);
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 &Packages::Config::init( './' );
@@ -142,7 +143,7 @@ for my $suite (@suites) {
 	    activate($filelist_db);
 	    #FIXME: hardcoded archs. (debports has no contrib/non-free)
 	    if ($arch !~ m/^kfreebsd-.*$/) {
-		system("ln", "-sf", $filelist_db,
+		system("ln", "-sf", basename($filelist_db),
 		       "$DBDIR/filelists_${suite}_all.db") == 0
 			   or die "Oops";
 	    }
