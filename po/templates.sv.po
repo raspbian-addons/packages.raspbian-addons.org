@@ -9,7 +9,7 @@ msgstr ""
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: templates/config.tmpl:41
 msgid "Debian Web Mailinglist"
@@ -491,12 +491,10 @@ msgstr ""
 "söka med <a href=\"%s\">träff av delord aktiverade</a>."
 
 #: templates/html/search.tmpl:40
-#| msgid "Search in other suite:"
 msgid "Search in specific suite:"
 msgstr "Sök i specifik svit:"
 
 #: templates/html/search.tmpl:49
-#| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Sök i <a  href=\"%s\">alla sviter</a>"
 
@@ -509,14 +507,12 @@ msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Sök i <a  href=\"%s\">alla arkitekturer</a>"
 
 #: templates/html/search.tmpl:69
-#| msgid ""
-#| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
-#| "parameters."
 msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
-"<a href=\"%s\">Vissa</a> resultat har inte visats på grund av sökparametrarna."
+"<a href=\"%s\">Vissa</a> resultat har inte visats på grund av "
+"sökparametrarna."
 
 #: templates/html/search.tmpl:78
 msgid "all suites"
@@ -583,10 +579,6 @@ msgstr ""
 "andra nyckelord."
 
 #: templates/html/search.tmpl:103
-#| msgid ""
-#| "Your search was too wide so we will only display exact matches. At least "
-#| "<em>%u</em> results have been omitted and will not be displayed. Please "
-#| "consider using a longer keyword or more keywords."
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
@@ -595,17 +587,12 @@ msgstr ""
 "resultat ha dolts.<br>FÖrsök använda ett längre, eller flera, nyckelord."
 
 #: templates/html/search.tmpl:105
-#| msgid ""
-#| "Note: Your search was too wide so we will only display only the first "
-#| "about 100 matches. Please consider using a longer keyword or more "
-#| "keywords."
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
 "Ditt nyckelord var för allmänt<br>FÖrsök använda ett längre, eller flera,"
 "nyckelord."
-""
 
 #: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
@@ -766,8 +753,8 @@ msgid "Links for %s"
 msgstr "Länkar för %s"
 
 #: templates/html/show.tmpl:66
-msgid "Debian Resources:"
-msgstr "Debianresurser:"
+msgid "%s Resources:"
+msgstr "%sresurser:"
 
 #: templates/html/show.tmpl:68
 msgid "Bug Reports"
