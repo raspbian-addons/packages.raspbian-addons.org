@@ -755,8 +755,8 @@ msgid "Links for %s"
 msgstr "Verwijzigingen voor %s"
 
 #: templates/html/show.tmpl:66
-msgid "Debian Resources:"
-msgstr "Debian bronnen:"
+msgid "%s Resources:"
+msgstr "%s bronnen:"
 
 #: templates/html/show.tmpl:68
 msgid "Bug Reports"
@@ -1051,6 +1051,12 @@ msgstr "Alle %s pakketten in \"%s\""
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "sectie(s) <em>$section_enc</em>"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "platform(en) <em>$architectures_enc</em>"
+
 #, fuzzy
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1058,9 +1064,3 @@ msgstr ""
 #~ msgstr ""
 #~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
 #~ "s/\">Pakketten zoekpagina</a>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "platform(en) <em>$architectures_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "sectie(s) <em>$section_enc</em>"
