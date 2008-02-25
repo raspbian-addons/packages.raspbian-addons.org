@@ -760,8 +760,8 @@ msgid "Links for %s"
 msgstr "%s に関するリンク"
 
 #: templates/html/show.tmpl:66
-msgid "Debian Resources:"
-msgstr "Debian の資源:"
+msgid "%s Resources:"
+msgstr "%s の資源:"
 
 #: templates/html/show.tmpl:68
 msgid "Bug Reports"
@@ -1047,12 +1047,18 @@ msgstr "\"%s\" に含まれるすべての %s パッケージ"
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
-#~ "きます。"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
@@ -1061,14 +1067,8 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
+#~ "きます。"

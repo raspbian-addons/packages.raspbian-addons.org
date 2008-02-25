@@ -63,7 +63,7 @@
 [% UNLESS is_virtual %]
 <div id="pmoreinfo">
 <h2>[% g('Links for %s', pkg) %]</h2>
-<h3>[% g('Debian Resources:') %]</h3>
+<h3>[% g('%s Resources:', organisation) %]</h3>
 <ul>
 <li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg %]">[% g('Bug Reports') %]</a></li>
 

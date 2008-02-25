@@ -54,6 +54,7 @@ sub init {
     }
     $DBDIR = "$TOPDIR/files/db";
     unshift @LANGUAGES, 'en';
+    unshift @DDTP_LANGUAGES, 'en';
 }
 
 1;
