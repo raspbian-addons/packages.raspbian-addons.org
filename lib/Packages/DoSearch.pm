@@ -13,7 +13,7 @@ use Deb::Versions;
 use Packages::Search qw( :all );
 use Packages::CGI qw( :DEFAULT );
 use Packages::DB;
-use Packages::Config qw( $DBDIR @SUITES @ARCHIVES $ROOT );
+use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search {
     my ($params, $opts, $page_content) = @_;
@@ -30,7 +30,12 @@ sub do_search {
 
     my @keywords = @{$opts->{keywords}};
     my $searchon = $opts->{searchon};
-    $page_content->{search_keywords} = \@keywords;
+    $page_content->{search_keywords} = $opts->{keywords};
+    $page_content->{all_architectures} = \@ARCHITECTURES;
+    $page_content->{all_suites} = \@SUITES;
+    $page_content->{search_architectures} = $opts->{arch};
+    $page_content->{search_suites} = $opts->{suite};
+    $page_content->{sections} = $opts->{section};
 
     my $st0 = new Benchmark;
     my (@results, @non_results);

@@ -1,0 +1,27 @@
+[% IF is_source;
+	title_common = category ? g('Source Packages in "%s", %s %s', suite, g(category.id), category.name)
+				: g('Source Packages in "%s"', suite);
+   ELSE;
+	title_common = category ? g('Software Packages in "%s", %s %s', suite, g(category.id), category.name)
+				: g('Software Packages in "%s"', suite);
+   END;
+
+   nav_arr = [ { prefix=>g('Distribution:'), title=>g('Overview over this suite'), url=>make_url('/','','suite',suite), name=>suite } ];
+   IF category;
+	nav_last = { prefix=>g(category.id) _ ":", name=>category.name };
+   ELSE;
+	nav_last = { name=>g('All Packages') };
+   END;
+   nav_arr.push( { name=>g('Source'),
+	           url=>make_url('/','','suite',suite,'source','source') } )
+	IF is_source;
+   nav_arr.push( nav_last );
+%]
+[% PROCESS 'html/head.tmpl' 
+	title_tag = title_common
+	page_title = title_common
+	keywords = "$suite, $category.name"
+	navigation = nav_arr
+%]
+
+<dl>

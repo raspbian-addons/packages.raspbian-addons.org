@@ -39,6 +39,9 @@ sub send_file {
 			      "@{$opts->{suite}}" ) );
     }
 
+    if ($opts->{format} eq 'txt.gz') {
+	$opts->{po_lang} = 'en';
+    }
     my $wwwdir = "$TOPDIR/www";
     my $path = "";
     $path .= "source/" if $opts->{source};
@@ -46,12 +49,7 @@ sub send_file {
     $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
     $path .= "$opts->{priority}[0]/" if @{$opts->{priority}};
-
-    #FIXME: ugly hack
-    if ($opts->{lang} ne 'en' and !-f "$wwwdir/$path$file.$opts->{lang}.$opts->{format}") {
-	$opts->{lang} = 'en';
-    }
-    $path .= "$file.$opts->{lang}.$opts->{format}";
+    $path .= "$file.$opts->{po_lang}.$opts->{format}";
 
     unless (@Packages::CGI::fatal_errors) {
 	my $buffer;

@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="[% lang %]">
+<html lang="[% po_lang %]">
 <head>
 <title>[% organisation %] -- [% title_tag %]</title>
 <link rev="made" href="mailto:[% admin.mail %]">
@@ -61,7 +61,7 @@
 
 <p class="hidecss"><a href="#inner">[% g('skip the navigation') %]</a></p>
 <div id="pnavbar">
- &gt;&gt; <a href="[% homepage %]" title="[% g('%s Homepage', organisation) %]">[% organisation %]</a>
+ &gt;&gt; <a href="[% project_homepage %]" title="[% g('%s Homepage', organisation) %]">[% organisation %]</a>
  &gt;&gt; <a href="[% packages_homepage %]" title="[% g('%s Packages Homepage', organisation) %]">[% g('Packages') %]</a>
 [% FOREACH n IN navigation %]
  &gt;&gt; [% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 

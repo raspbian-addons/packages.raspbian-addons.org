@@ -13,6 +13,7 @@ use Compress::Zlib;
 
 use lib './lib';
 
+use Packages::CommonCode qw(:all);
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @LANGUAGES );
 use Packages::Template;
 use Packages::I18N::Locale;
@@ -20,6 +21,8 @@ use Packages::Page;
 use Packages::SrcPage;
 use Packages::Sections;
 &Packages::Config::init( './' );
+
+use constant DEBUG => 0;
 
 my $wwwdir = "$TOPDIR/www";
 
@@ -40,59 +43,188 @@ my $sections = retrieve "$DBDIR/sections.info";
 my $subsections = retrieve "$DBDIR/subsections.info";
 my $priorities = retrieve "$DBDIR/priorities.info";
 
-#use Data::Dumper;
+use Data::Dumper;
 #print STDERR Dumper($sections, $subsections, $priorities);
 
-my (%pages);
+my @PACKAGES = sort keys %packages;
+my @SRC_PACKAGES = sort keys %src_packages;
+
+print "Found ".scalar(@PACKAGES)." packages\n";
+print "Found ".scalar(@SRC_PACKAGES)." source packages\n";
 
 my $template = new Packages::Template( "$TOPDIR/templates", 'html');
 my $txt_template = new Packages::Template( "$TOPDIR/templates", 'txt');
 
-print "write suite index files ...\n";
-foreach my $s (@SUITES) {
-    my $key = $s;
-    mkpath ( "$wwwdir/$key" );
-    mkpath ( "$wwwdir/source/$key" );
+my $charset = 'UTF-8';
+my (%cat, %lang_vars, $prov_string, %s, %fh);
+foreach my $lang (@LANGUAGES) {
+    $cat{$lang} = Packages::I18N::Locale->get_handle($lang)
+	or die "get_handle failed for $lang";
+    $lang_vars{$lang} = { po_lang => $lang, ddtp_lang => $lang,
+			  charset => $charset,
+			  cat => $cat{$lang}, used_langs => \@LANGUAGES };
+    $s{begin}{$lang} = '['.uc($lang).':';
+    $s{end}{$lang} = ':'.uc($lang).']';
+    $prov_string .= $s{begin}{$lang}.$cat{$lang}->g('virtual package provided by').$s{end}{$lang};
+}
+
+sub open_file {
+    my ($key, $vars, $file) = @_;
+
+    $file ||= 'index';
+
+    print "opening $key\n";
+    mkdirp ( "$wwwdir/$key" );
+    open($fh{$key}, '>',
+	 "$wwwdir/$key/$file.slices.new")
+	or die "Cannot open file $wwwdir/$key/$file.slices.new: $!";
+
     foreach my $lang (@LANGUAGES) {
-	my $charset = 'UTF-8';
-	my $cat = Packages::I18N::Locale->get_handle($lang)
-	    or die "get_handle failed for $lang";
-	print "writing $key/index (lang=$lang)...\n";
-
-	my %content = ( subsections => [], suite => $s,
-			lang => $lang, charset => $charset, cat => $cat,
-			used_langs => \@LANGUAGES, suites => \@SUITES );
-	foreach my $ssec (sort (keys %{$subsections->{$s}}, 'virtual')) {
-	    next if $ssec eq '-';
-	    if ($sections_descs{$ssec}) {
-		push @{$content{subsections}}, {
-		    id => $ssec,
-		    name => $cat->g($sections_descs{$ssec}[0]),
-		    desc => $cat->g($sections_descs{$ssec}[1]),
-		};
-	    }
-	}
-
-	$template->page( 'suite_index', \%content,
-			 "$wwwdir/$key/index.$lang.html.new");
-	rename( "$wwwdir/$key/index.$lang.html.new",
-		"$wwwdir/$key/index.$lang.html" );
-
-	$content{source} = 'source';
-	$template->page( 'suite_index', \%content,
-			 "$wwwdir/source/$key/index.$lang.html.new");
-	rename( "$wwwdir/source/$key/index.$lang.html.new",
-		"$wwwdir/source/$key/index.$lang.html" );
-
+	print {$fh{$key}} "$s{begin}{$lang}\n";
+	$template->page( 'index_head',
+			 { %{$lang_vars{$lang}},
+			   %$vars },
+			 $fh{$key});
+	print {$fh{$key}} "\n$s{end}{$lang}\n";
     }
 }
 
-print "collecting package info ...\n";
-my %allpkgs;
-while (my ($pkg, $data) = each %packages) {
+sub close_file {
+    my ($key, $vars, $file) = @_;
+
+    $file ||= 'index';
+
+    print "closing $key\n";
+
+    foreach my $lang (@LANGUAGES) {
+	print {$fh{$key}} "\n$s{begin}{$lang}\n";
+	$template->page( 'index_foot',
+			 { %{$lang_vars{$lang}},
+			   %$vars },
+			 $fh{$key});
+	print {$fh{$key}} "\n$s{end}{$lang}\n";
+    }
+    close($fh{$key})
+	or die "Cannot close file $wwwdir/$key/$file.slices.new: $!";
+
+    activate("$wwwdir/$key/$file.slices");
+}
+
+
+sub open_txt_file {
+    my ($key, $vars, $file) = @_;
+
+    $file ||= 'allpackages';
+    my $lang = 'en';
+
+    print "opening $key (txt,lang=$lang)\n";
+    mkdirp ( "$wwwdir/$key" );
+    $fh{"$key/$lang/txt"} = gzopen("$wwwdir/$key/$file.$lang.txt.gz.new", 'wb9')
+	or die "Cannot open file $wwwdir/$key/$file.$lang.txt.gz.new: $!";
+
+    my $gztxt = $txt_template->page( 'index_head',
+				     { %{$lang_vars{$lang}},
+				       %$vars });
+    $fh{"$key/$lang/txt"}->gzwrite($gztxt);
+}
+
+sub close_txt_file {
+    my ($key, $vars, $file) = @_;
+
+    $file ||= 'allpackages';
+    my $lang = 'en';
+
+    print "closing $key (txt,lang=$lang)\n";
+    my $gztxt = $txt_template->page( 'index_foot',
+				     { %{$lang_vars{$lang}},
+				       %$vars });
+    $fh{"$key/$lang/txt"}->gzwrite($gztxt);
+    ($fh{"$key/$lang/txt"}->gzclose == Z_OK) or
+	warn("can't close text index file $wwwdir/$key/$file.$lang.txt.gz.new: "
+	     . $fh{"$key/$lang/txt"}->gzerror);
+    activate("$wwwdir/$key/$file.$lang.txt.gz");
+}
+
+
+foreach my $source (("", "source/")) {
+    print "write headers ...\n";
+    foreach my $s (@SUITES) {
+	mkdirp ( "$wwwdir/$source$s" );
+	my %common_vars = ( suite => $s,
+			    is_source => $source );
+
+	open_file("$source$s", \%common_vars, 'allpackages');
+	open_txt_file("$source$s", \%common_vars, 'allpackages');
+
+	foreach my $sec (keys %{$sections->{$s}}) {
+	    open_file("$source$s/$sec",
+		      { %common_vars,
+			category => { id => N_('Section'),
+				      name => $sec }});
+	}
+	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
+	    next if $ssec eq '-';
+	    open_file("$source$s/$ssec",
+		      { %common_vars,
+			category => { id => N_('Subsection'),
+				      name => $ssec }});
+	}
+	foreach my $prio (keys %{$priorities->{$s}}) {
+	    next if $prio eq '-';
+	    open_file("$source$s/$prio",
+		      { %common_vars,
+			category => { id => N_('Priority'),
+				      name => $prio }});
+	}
+    }
+
+    if ($source) {
+	process_source_packages();
+    } else {
+	process_packages();
+    }
+
+    print "write footers ...\n";
+    foreach my $s (@SUITES) {
+	my %common_vars = ( suite => $s,
+			    is_source => $source );
+	close_file("$source$s", \%common_vars, 'allpackages');
+	close_txt_file("$source$s", \%common_vars, 'allpackages');
+
+	foreach my $sec (keys %{$sections->{$s}}) {
+	    close_file("$source$s/$sec",
+		       { %common_vars,
+			 category => { id => N_('Section'),
+				       name => $sec }});
+	}
+	foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
+	    next if $ssec eq '-';
+	    close_file("$source$s/$ssec",
+		       { %common_vars,
+			 category => { id => N_('Subsection'),
+				       name => $ssec }});
+	}
+	foreach my $prio (keys %{$priorities->{$s}}) {
+	    next if $prio eq '-';
+	    close_file("$source$s/$prio",
+		       { %common_vars,
+			 category => { id => N_('Priority'),
+				       name => $prio }});
+	}
+    }
+}
+
+sub process_packages {
+
+print "processing package info ...\n";
+my $count = 0;
+foreach my $pkg (@PACKAGES) {
+    warn "pkg=$pkg\n" if DEBUG;
+    print "$count\n" unless ++$count % 1000;
+
     my (%pkg,%virt);
-    my ($virt, $p_data) = split /\000/o, $data, 2;
-    %virt = split /\01/o, $virt; 
+    my ($virt, $p_data) = split /\000/o, $packages{$pkg}, 2;
+    %virt = split /\01/o, $virt;
     foreach (split /\000/o, $p_data||'') {
 	my @data = split ( /\s/o, $_, 9 );
 	$pkg{$data[1]} ||= new Packages::Page( $pkg );
@@ -113,15 +245,16 @@ while (my ($pkg, $data) = each %packages) {
 	$pkg{$_}->add_provided_by([split /\s+/, $virt{$_}]);
     }
 
-    while (my ($key, $entry) = each %pkg) {
-	$allpkgs{$key} ||= [];
+    while (my ($suite, $entry) = each %pkg) {
 
+	warn "\tsuite=$suite\n" if DEBUG;
 	my %p = ( name => $pkg, providers => [], versions => '' );
 	if (my $provided_by = $entry->{provided_by}) {
 	    $p{providers} = $provided_by;
- 	}
-	$p{subsection} = $p{section} = $p{archive} = $p{desc} = $p{priority} = '';
- 	unless ($entry->is_virtual) {
+	}
+	$p{subsection} = $p{section} = $p{archive} =
+	    $p{desc} = $p{priority} = '';
+	unless ($entry->is_virtual) {
 	    (undef, $p{versions}) = $entry->get_version_string;
 	    $p{subsection} = $entry->get_newest( 'subsection' );
 	    $p{section} = $entry->get_newest( 'section' );
@@ -133,25 +266,94 @@ while (my ($pkg, $data) = each %packages) {
 		my %sdescs;
 		my %trans_desc = split /\000|\001/, $trans_desc;
 		while (my ($l, $d) = each %trans_desc) {
-		    $d =~ s/\n.*//os;
+		    # filter out non-po languages
+		    next unless exists $lang_vars{$l};
 
+		    $d =~ s/\n.*//os;
 		    $sdescs{$l} = $d;
 		}
-		$p{trans_desc} = \%sdescs;
+		$p{trans_desc} = \%sdescs if %sdescs;
 	    }
 	    $p{priority} = $entry->get_newest( 'priority' );
 	}
-	push @{$allpkgs{$key}}, \%p;
+
+	my $html = my $txt = "";
+	my $id = " id='$p{name}'";
+	if ($p{versions}) {
+	    warn "\tversions=$p{versions}\n" if DEBUG;
+
+	    $html .= "\n<dt><a href='$p{name}'$id>$p{name}</a> ($p{versions})";
+	    $id = "";
+	    $html .= " [<strong class='pmarker'>$p{section}</strong>]"
+		if $p{section} ne 'main';
+	    $html .= " [<strong class='pmarker'>$p{archive}</strong>]"
+		if $p{archive} ne 'us';
+	    $html .= "</dt>\n<dd";
+
+	    $txt .= "\n$p{name} ($p{versions})";
+	    $txt .= " [$p{section}]" if $p{section} ne 'main';
+	    $txt .= " [$p{archive}]" if $p{archive} ne 'us';
+	    $txt .= " ";
+
+	    if ($p{trans_desc}) {
+		foreach my $lang (@LANGUAGES) {
+		    my ($sdesc, $sdesc_html, $desclang) = ($p{desc},
+							   encode_entities($p{desc}, '<>&"\''),
+							   'en');
+		    if ($p{trans_desc}{$lang}) {
+			$sdesc = $p{trans_desc}{$lang};
+			$sdesc_html = encode_entities($sdesc, '<>&"\'');
+			$desclang = $lang;
+		    }
+
+		    $html .= $s{begin}{$lang};
+		    $html .= " lang='$desclang'" if $desclang ne $lang;
+		    $html .= ">$sdesc_html$s{end}{$lang}";
+		}
+	    } else {
+		$html .= " lang='en'>".encode_entities($p{desc}, '<>&"\'');
+	    }
+	    $html .= "</dd>";
+	    $txt .= $p{desc};
+	}
+
+	if (@{$p{providers}}) {
+	    warn "\tproviders=@{$p{providers}}\n" if DEBUG;
+	    $html .= "\n<dt><a href='$p{name}'$id>$p{name}</a></dt><dd>$prov_string ";
+	    my @prov;
+	    foreach my $prov (@{$p{providers}}) {
+		my $prov_uri = uri_escape($prov);
+		push @prov, "<a href='../$prov_uri'>$prov</a>";
+	    }
+	    $html .= join(', ', @prov)."</dd>";
+	    $txt .= "\n$p{name} virtual package provided by ".
+		join(', ', @{$p{providers}});
+	}
+	warn "HTML=$html\n" if DEBUG > 1;
+	warn "TXT=$txt\n" if DEBUG > 1;
+
+	print {$fh{$suite}} $html;
+	$fh{"$suite/en/txt"}->gzwrite($txt);
+	foreach my $key (qw(section subsection priority)) {
+	    next unless $fh{"$suite/$p{$key}"};
+	    warn "\t\t$suite/$p{$key}\n" if DEBUG;
+	    print {$fh{"$suite/$p{$key}"}} $html;
+	}
     }
 }
 
-write_files(\%allpkgs);
+}
+
+sub process_source_packages {
 
 print "collecting source package info ...\n";
-my %allsrcpkgs;
-while (my ($pkg, $data) = each %src_packages) {
-    my %pkg;    
-    foreach (split /\000/o, $data||'') {
+my $count = 0;
+foreach my $pkg (@SRC_PACKAGES) {
+    warn "pkg=$pkg\n" if DEBUG;
+    print "$count\n" unless ++$count % 1000;
+
+    my %pkg;
+    foreach (split /\000/o, $src_packages{$pkg}||'') {
 	my @data = split ( /\s/o, $_ );
 	$pkg{$data[1]} ||= new Packages::SrcPage( $pkg );
 	$pkg{$data[1]}->merge_package( { package => $pkg,
@@ -164,100 +366,48 @@ while (my ($pkg, $data) = each %src_packages) {
 					 } );
     }
 
-    while (my ($key, $entry) = each %pkg) {
-	$allsrcpkgs{$key} ||= [];
-
+    while (my ($suite, $entry) = each %pkg) {
 	my %p = ( name => $pkg, providers => [], versions => '' );
 	$p{versions} = $entry->{version};
 	$p{subsection} = $entry->get_newest( 'subsection' );
 	$p{section} = $entry->get_newest( 'section' );
 	$p{archive} = $entry->get_newest( 'archive' );
 	$p{priority} = $entry->get_newest( 'priority' );
-	
+
 	$p{desc} = '';
- 	$p{binaries} = [];
-# 	my $binaries = find_binaries( $pkg, $p{archive}, $p{suite}, \%src2bin );
-# 	if ($binaries && @$binaries) {
-# 	    pkg_list( \%packages, $opts, $binaries, 'en', $contents{binaries} );
-# 	}
+	$p{binaries} = [];
+#	my $binaries = find_binaries( $pkg, $p{archive}, $p{suite}, \%src2bin );
+#	if ($binaries && @$binaries) {
+#	    pkg_list( \%packages, $opts, $binaries, 'en', $contents{binaries} );
+#	}
 
-	push @{$allsrcpkgs{$key}}, \%p;
-    }
-}
+	my $html = my $txt = "";
+	warn "\tversions=$p{versions}\n" if DEBUG;
 
-write_files(\%allsrcpkgs, 1);
+	$html .= "\n<dt><a href='$p{name}' id='$p{name}'>$p{name}</a> ($p{versions})";
+	$html .= " [<strong class='pmarker'>$p{section}</strong>]"
+	    if $p{section} ne 'main';
+	$html .= " [<strong class='pmarker'>$p{archive}</strong>]"
+	    if $p{archive} ne 'us';
+	$html .= "</dt>";
 
-sub write_files {
-    my ($pkgs, $source) = @_;
+	$txt .= "\n$p{name} ($p{versions})";
+	$txt .= " [$p{section}]" if $p{section} ne 'main';
+	$txt .= " [$p{archive}]" if $p{archive} ne 'us';
 
-    $source = $source ? 'source/' : '';
-    print "writing files ...\n";
-    foreach my $s (@SUITES) {
-	my $key = $s;
-	mkpath ( "$wwwdir/$source$key" );
-	foreach my $lang (@LANGUAGES) {
-	    my $charset = 'UTF-8';
-	    my $cat = Packages::I18N::Locale->get_handle($lang)
-		or die "get_handle failed for $lang";
+	warn "HTML=$html\n" if DEBUG > 1;
+	warn "TXT=$txt\n" if DEBUG > 1;
 
-	    my %lang_vars = ( lang => $lang, charset => $charset,
-			      cat => $cat, used_langs => \@LANGUAGES );
-	    print "writing $source$s/allpackages (lang=$lang)...\n";
-	    $template->page( 'index', { %lang_vars, packages => $pkgs->{$key},
-					suite => $s, is_source => $source  },
-			     "$wwwdir/$source$key/allpackages.$lang.html.new" );
-	    print "writing $source$s/allpackages (txt,lang=$lang)...\n";
-	    my $gzfh = gzopen("$wwwdir/$source$key/allpackages.$lang.txt.gz.new",
-			      'wb9')
-		or die "can't open text index file for output: $!";
-	    my $gztxt;
-	    $gztxt = $txt_template->page( 'index', { %lang_vars, packages => $pkgs->{$key},
-						     suite => $s, is_source => $source  },
-					  );
-	    $gzfh->gzwrite($gztxt);
-	    ($gzfh->gzclose == Z_OK) or
-		warn "can't close text index file $wwwdir/$source$key/allpackages.$lang.txt.gz.new: ".$gzfh->gzerror;
-
-	    rename( "$wwwdir/$source$key/allpackages.$lang.html.new",
-		    "$wwwdir/$source$key/allpackages.$lang.html" );
-	    rename( "$wwwdir/$source$key/allpackages.$lang.txt.gz.new",
-		    "$wwwdir/$source$key/allpackages.$lang.txt.gz" );
-
-	    foreach my $sec (keys %{$sections->{$s}}) {
-		mkpath ( "$wwwdir/$source$key/$sec" );
-
-		print "writing $source$s/$sec/index (lang=$lang)...\n";
-		$template->page( 'index', { packages => [ grep { $_->{section} eq $sec } @{$pkgs->{$key}} ],
-					    %lang_vars, suite => $s, is_source => $source,
-					    category => { id => $cat->g('Section'), name => $sec } },
-				 "$wwwdir/$source$key/$sec/index.$lang.html.new" );
-		rename( "$wwwdir/$source$key/$sec/index.$lang.html.new",
-			"$wwwdir/$source$key/$sec/index.$lang.html" );
-	    }
-	    foreach my $ssec ((keys %{$subsections->{$s}}, 'virtual')) {
-		next if $ssec eq '-';
-		mkpath ( "$wwwdir/$source$key/$ssec" );
-
-		print "writing $source$s/$ssec/index (lang=$lang)...\n";
-		$template->page( 'index', { packages => [ grep { $_->{subsection} eq $ssec } @{$pkgs->{$key}} ],
-					    %lang_vars, suite => $s, is_source => $source,
-					    category => { id => $cat->g('Subsection'), name => $ssec } },
-				 "$wwwdir/$source$key/$ssec/index.$lang.html.new" );
-		rename( "$wwwdir/$source$key/$ssec/index.$lang.html.new",
-			"$wwwdir/$source$key/$ssec/index.$lang.html" );
-	    }
-	    foreach my $prio (keys %{$priorities->{$s}}) {
-		next if $prio eq '-';
-		mkpath ( "$wwwdir/$source$key/$prio" );
-
-		print "writing $source$s/$prio/index (lang=$lang)...\n";
-		$template->page( 'index', { packages => [ grep { $_->{priority} eq $prio } @{$pkgs->{$key}} ],
-					    %lang_vars, suite => $s, is_source => $source,
-					    category => { id => $cat->g('Priority'), name => $prio } },
-				 "$wwwdir/$source$key/$prio/index.$lang.html.new" );
-		rename( "$wwwdir/$source$key/$prio/index.$lang.html.new",
-			"$wwwdir/$source$key/$prio/index.$lang.html" );
-	    }
+	print {$fh{"source/$suite"}} $html;
+	$fh{"source/$suite/en/txt"}->gzwrite($txt);
+	foreach my $key (qw(section subsection priority)) {
+	    next unless $fh{"source/$suite/$p{$key}"};
+	    warn "\t\tsource/$suite/$p{$key}\n" if DEBUG;
+	    print {$fh{"source/$suite/$p{$key}"}} $html;
 	}
     }
 }
+
+}
+
+__END__

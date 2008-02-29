@@ -20,8 +20,9 @@ then
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    for part in "main/debian-installer"
+	    for part in $parts
 	    do
+		part="$part/debian-installer"
 	        echo retrieve Packages $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		(cd us/${dist}/${part}/binary-${arch} &&
@@ -41,8 +42,9 @@ else
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    for part in "main/debian-installer"
+	    for part in $parts
 	    do
+		part="$part/debian-installer"
 	        echo retrieve Sources $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		rsync -t ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \

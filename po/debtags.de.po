@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2007-12-16 12:44+0100\n"
+"PO-Revision-Date: 2008-02-15 17:30+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "  GPE Palmtop-Umgebung"
 #. Tag: suite::gforge, long desc
 #: files/debtags/vocabulary
 msgid " A collaborative development platform."
-msgstr ""
+msgstr " Eine gemeinschaftliche Entwicklungsplattform."
 
 #. Tag: scope::utility, long desc
 #: files/debtags/vocabulary
@@ -95,6 +95,14 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 msgstr ""
+" »Asynchronous Transfer Mode«, ein Hochgeschwindigkeitsprotokoll zur\n"
+" Kommunikation zwischen Computern in einem Netz.\n"
+" .\n"
+" Obwohl ATM zur Realisierung von *DSL-Netzen verwendet wird, hat es nie einen\n"
+" umfangreichen Einsatz als Technik zum Aufbau lokaler Netze (LANs) gefunden,\n"
+" wofür es ursprünglich gedacht war.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 
 #. Tag: admin::automation, long desc
 #: files/debtags/vocabulary
@@ -104,7 +112,7 @@ msgstr " Automatisierung der Ausführung von Software im System."
 #. Tag: works-with-format::bib, long desc
 #: files/debtags/vocabulary
 msgid " BibTeX list of references"
-msgstr ""
+msgstr " Quellangaben für BibTeX"
 
 #. Tag: protocol::bittorrent, long desc
 #: files/debtags/vocabulary
@@ -128,16 +136,19 @@ msgid ""
 " for 80-90% of use cases. The pieces that remain are usually to be\n"
 " found as utilities."
 msgstr ""
+" Programm mit breiter Zielgruppe für den allgemeinen Einsatz. Für 80-90% "
+" der Anwendungsfälle hat es Funktionalität. Die restlichen Teile werden "
+" typischerweise als Hilfswerkzeuge verteilt."
 
 #. Tag: field::electronics, long desc
 #: files/debtags/vocabulary
 msgid " Circuit editors and other electronics-related software"
-msgstr ""
+msgstr " Schaltkreis-Editoren und andere Software mit Bezug zur Elektronik"
 
 #. Tag: devel::prettyprint, long desc
 #: files/debtags/vocabulary
 msgid " Code pretty-printing and indentation/reformatting."
-msgstr ""
+msgstr " Schöndruck von Code und Einrückung/Neuformatierung."
 
 #. Tag: protocol::corba, long desc
 #: files/debtags/vocabulary
@@ -155,6 +166,17 @@ msgid ""
 " .\n"
 " Link: http://www.corba.org/"
 msgstr ""
+" »Common Object Request Broker Architecture« ist ein Standard für\n"
+" Interoperabilität zwischen in verschiedenen Programmiersprachen\n"
+" geschriebenen und auf verschiedenen Hardware-Plattformen laufenden\n"
+" Programmen. CORBA enthält ein Client-Server-Netzprotokoll für\n"
+" verteiltes Rechnen.\n"
+" .\n"
+" Mit diesem Netzprotokoll können CORBA-Clients aus verschiedenen\n"
+" Programmiersprachen und auf verschiedenen Computern Objekte über einen\n"
+" CORBA-Server wie Orbit2 oder OmniORB austauschen.\n"
+" .\n"
+" Link: http://www.corba.org/"
 
 #. Tag: hardware::storage:cd, long desc
 #: files/debtags/vocabulary
@@ -167,6 +189,8 @@ msgid ""
 " Comprehensive suite of applications and utilities on the scale of\n"
 " desktop environment or base operating system."
 msgstr ""
+" Umfangreiche Suite an Anwendungen und Hilfswerkzeugen in der Größenordnung\n"
+" einer Desktop-Umgebung oder eines Basis-Betriebssystems."
 
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
@@ -184,11 +208,13 @@ msgid ""
 " DeVice Independent page description file, usually generated\n"
 " by TeX or LaTeX."
 msgstr ""
+" Geräteunabhängige (»DeVice Independent«) Seitenbeschreibungsdatei,\n"
+" normalerweise von TeX oder LaTeX erstellt."
 
 #. Tag: role::debug-symbols, long desc
 #: files/debtags/vocabulary
 msgid " Debugging symbols."
-msgstr ""
+msgstr " Debugging-Symbole."
 
 #. Tag: hardware::storage:dvd, long desc
 #: files/debtags/vocabulary
@@ -199,11 +225,12 @@ msgstr " Digital Versatile Disc"
 #: files/debtags/vocabulary
 msgid " Direct Client to Client protocol used by Internet Relay Chat clients."
 msgstr ""
+" Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet Relay Chat"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
 msgid " Display managers (graphical login screens)"
-msgstr ""
+msgstr " Display-Manager (graphische Anmeldebildschirme)"
 
 #. Tag: protocol::dns, long desc
 #: files/debtags/vocabulary
@@ -222,6 +249,16 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Domain_Name_System"
 msgstr ""
+" »Domain Name System«, ein Protokoll, um Informationen im Zusammenhang mit\n"
+" Domainnamen (wie »www.debian.org«) anzufordern, am berühmtesten die IP-\n"
+" Adresse. Das Protokoll wird zur Kommunikation mit einem DNS-Server (wie\n"
+" BIND) verwandt.\n"
+" .\n"
+" Für das Internet gibt es 13 Wurzel-DNS-Server rund um die Welt, die die\n"
+" Adressen aller registrierten Domainnamen behalten und diese Informationen\n"
+" an die DNS-Server der Internet-Diensteanbieter bereitstellen.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Domain_Name_System"
 
 #. Tag: protocol::dhcp, long desc
 #: files/debtags/vocabulary
@@ -238,7 +275,7 @@ msgstr ""
 #. Tag: suite::eclipse, long desc
 #: files/debtags/vocabulary
 msgid " Eclipse tool platform and plugins."
-msgstr ""
+msgstr " Eclipse-Werkzeug-Plattform und Erweiterungen."
 
 #. Tag: protocol::ethernet, long desc
 #: files/debtags/vocabulary
@@ -254,6 +291,15 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Ethernet"
 msgstr ""
+" Ethernet ist die beliebteste Technik zum Aufbau lokaler Netze (LANs).\n"
+" .\n"
+" Die Rechner in einem Ethernet-Netz kommunizieren über verdrillte (»twisted-\n"
+" pair«) Kabel und werden über ihre MAC-Adresse identifiziert. Mehrere Arten\n"
+" von Ethernet existieren, die durch die maximale Verbindungsgeschwindigkeit\n"
+" unterschieden werden können. Am verbreitesten sind heuzutage 100MBit/s\n"
+" (100BASE-*) oder 1GBit/s (1000BASE-*).\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Ethernet"
 
 #. Tag: role::program, long desc
 #: files/debtags/vocabulary
@@ -3946,7 +3992,7 @@ msgstr "XMMS 2"
 #. Tag: works-with-format::xml:xslt, short desc
 #: files/debtags/vocabulary
 msgid "XSL Transformations (XSLT)"
-msgstr ""
+msgstr "XSL-Transformationen (XSLT)"
 
 #. Tag: protocol::yahoo-messenger, short desc
 #: files/debtags/vocabulary
