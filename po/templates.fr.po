@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2008-02-29 10:52+0100\n"
+"PO-Revision-Date: 2008-02-29 19:13+0100\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -209,7 +209,6 @@ msgid "debian-installer udeb package"
 msgstr "paquet de l'installateur Debian udeb"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:161
-#, fuzzy
 #| msgid ""
 #| "Warning: This package is intended for the use in building <a href="
 #| "\"http://www.debian.org/devel/debian-installer\">debian-installer</a> "
@@ -811,7 +810,6 @@ msgid "Bug Reports"
 msgstr "Rapports de bogues"
 
 #: templates/html/show.tmpl:71 templates/html/show.tmpl:73
-#, fuzzy
 #| msgid "More Information on %s"
 msgid "Developer Information (PTS)"
 msgstr "Informations pour les développeurs (PTS)"
@@ -837,14 +835,10 @@ msgid "Not found"
 msgstr "Introuvable"
 
 #: templates/html/show.tmpl:108
-#, fuzzy
-#| msgid "Maintainer"
 msgid "Maintainer:"
 msgstr "Responsable :"
 
 #: templates/html/show.tmpl:110
-#, fuzzy
-#| msgid "Maintainer"
 msgid "Maintainers:"
 msgstr "Responsables :"
 
@@ -853,8 +847,6 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
 #: templates/html/show.tmpl:123
-#, fuzzy
-#| msgid "All packages"
 msgid "QA Page"
 msgstr "Page QA"
 
@@ -875,19 +867,17 @@ msgid "Homepage"
 msgstr "Page d'accueil"
 
 #: templates/html/show.tmpl:140
-#, fuzzy
 msgid "Similar packages:"
 msgstr "Paquets similaires :"
 
 #: templates/html/show.tmpl:156
-#, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Avertissement&nbsp;: ce paquet appartient à la distribution "
+"Avertissement : ce paquet appartient à la distribution "
 "<q><strong>experimental</strong></q>.\n"
 "Cela signifie qu'il peut être instable ou bogué et peut éventuellement "
 "causer des pertes de données.\n"
