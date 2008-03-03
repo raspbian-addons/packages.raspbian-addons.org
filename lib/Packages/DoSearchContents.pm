@@ -58,6 +58,10 @@ sub do_search_contents {
 	# full filename search is tricky
 	my $ffn = $mode eq 'filename';
 
+	unless (-e "$DBDIR/contents/reverse_$suite.db") {
+	    fatal_error($cat->g("No contents information available for this suite"));
+	    return;
+	}
 	my $reverses = tie my %reverses, 'DB_File', "$DBDIR/contents/reverse_$suite.db",
 	    O_RDONLY, 0666, $DB_BTREE
 	    or die "Failed opening reverse DB: $!";
