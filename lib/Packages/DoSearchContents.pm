@@ -117,7 +117,7 @@ sub do_search_contents {
     $page_content->{suite} = $suite;
     $page_content->{archive} = $archive;
     $page_content->{all_architectures} = \@all_archs;
-    $page_content->{all_suites} = \@SUITES;
+    $page_content->{all_suites} = [ grep { $_ !~ /-(updates|backports)$/ } @SUITES ];
     $page_content->{mode} = $mode;
     $page_content->{search_architectures} = $opts->{arch};
     $page_content->{search_keywords} = $opts->{keywords};
