@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-08 17:22+0100\n"
-"PO-Revision-Date: 2005-10-25 17:52+0200\n"
+"PO-Revision-Date: 2008-02-29 10:39+0100\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr ""
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
 msgid "package not valid or not specified"
-msgstr ""
+msgstr "paquet invalide ou non précisé"
 
 #: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
 #: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
@@ -52,7 +52,7 @@ msgstr ""
 
 #: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
 msgid "architecture not valid or not specified"
-msgstr ""
+msgstr "architecture invalide ou non précisée"
 
 #: lib/Packages/DoDownload.pm:36
 #, perl-format
@@ -86,7 +86,7 @@ msgstr ""
 #: lib/Packages/DoIndex.pm:70
 #, perl-format
 msgid "couldn't read index file %s: %s"
-msgstr ""
+msgstr "impossible de lire le fichier d'index %s&nbsp;: %s"
 
 #: lib/Packages/DoNewPkg.pm:25
 #, perl-format
@@ -109,11 +109,11 @@ msgstr ""
 
 #: lib/Packages/DoSearch.pm:170
 msgid "Exact hits"
-msgstr ""
+msgstr "Résultats exacts"
 
 #: lib/Packages/DoSearch.pm:180
 msgid "Other hits"
-msgstr ""
+msgstr "Autres résultats"
 
 #: lib/Packages/DoSearch.pm:239
 msgid "Virtual package"
@@ -163,7 +163,7 @@ msgstr "Indisponible"
 
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
-msgstr ""
+msgstr "paquet doté d'un champ de responsable incorrect"
 
 #, fuzzy
 #~ msgid "two or more packages specified (%s)"
@@ -430,7 +430,7 @@ msgstr ""
 #~ "packages</a>."
 #~ msgstr ""
 #~ "Ceci est un <em>paquet virtuel</em>. Consultez la <a href=\"%s\">Charte "
-#~ "Debian</a> pour une <a href=\"%sch-binary.html#s-virtual_pkg\">définition "
+#~ "Debian</a> pour une <a href=\"%sch-binary.html#s-virtual_pkg\">dÃ©finition "
 #~ "des paquets virtuels</a>."
 
 #~ msgid "Virtual Package: %s"
