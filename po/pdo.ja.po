@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-03 15:11+0100\n"
-"PO-Revision-Date: 2007-10-22 14:48+0900\n"
+"PO-Revision-Date: 2008-03-04 18:56+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -118,10 +118,8 @@ msgid "more than one suite specified for contents search (%s)"
 msgstr "内容の検索 (contents search) に複数のスイートが指定されています (%s)"
 
 #: lib/Packages/DoSearchContents.pm:62
-#, fuzzy
-#| msgid "requested format not available for this document"
 msgid "No contents information available for this suite"
-msgstr "この文書は要求された形式では利用できません"
+msgstr "このスイートでは内容の情報は利用できません"
 
 #: lib/Packages/DoSearchContents.pm:86
 msgid "The search mode you selected doesn't support more than one keyword."
