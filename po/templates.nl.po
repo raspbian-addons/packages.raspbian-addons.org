@@ -3,13 +3,13 @@
 # This file is put in the public domain.
 #
 # Bas Zoetekouw <bas@debian.org>, 2005.
-# Frans Pop <elendil@planet.nl>, 2007.
+# Frans Pop <elendil@planet.nl>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2007-12-16 19:20+0100\n"
+"PO-Revision-Date: 2008-03-10 22:34+0100\n"
 "Last-Translator: Frans Pop <elendil@planet.nl>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: templates/config.tmpl:46
 msgid "%s Webmaster"
-msgstr ""
+msgstr "%s Webmaster"
 
 #: templates/config.tmpl:49
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
@@ -35,7 +35,7 @@ msgid ""
 "s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:57
 msgid "."
 msgstr ","
@@ -143,9 +143,8 @@ msgstr "Distributie:"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
-#, fuzzy
 msgid "Overview over this suite"
-msgstr "Overzicht van deze distributie"
+msgstr "Overzicht van deze suite"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
@@ -203,7 +202,6 @@ msgid "debian-installer udeb package"
 msgstr "udeb-pakket voor debian-installer"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:161
-#, fuzzy
 #| msgid ""
 #| "Warning: This package is intended for the use in building <a href="
 #| "\"http://www.debian.org/devel/debian-installer\">debian-installer</a> "
@@ -214,8 +212,8 @@ msgid ""
 "not install it on a normal %s system."
 msgstr ""
 "Waarschuwing: Dit pakket is alleen bedoeld voor gebruik tijden het bouwen "
-"van het <a href=\"http://www.debian.org/devel/debian-installer\">Debian "
-"installatie programma</a>. Installeer het niet op een normaal Debian systeem."
+"van <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a>. "
+"Installeer het niet op een normaal Debian systeem."
 
 #: templates/html/download.tmpl:49
 msgid ""
@@ -224,14 +222,12 @@ msgid ""
 msgstr ""
 
 #: templates/html/download.tmpl:75
-msgid ""
-"You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 
 #: templates/html/download.tmpl:77
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr ""
-"%s beveiligingsupdates worden officieel alleen verspreid via <tt>%s</tt>."
+msgstr "%s beveiligingsupdates worden officieel alleen verspreid via <tt>%s</tt>."
 
 #: templates/html/download.tmpl:84
 msgid ""
@@ -287,8 +283,7 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Bestandenoverzicht voor pakket %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid ""
-"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
 "Bestandenoverzicht voor pakket <em>%s</em> in <em>%s</em> voor het platform "
 "<em>%s</em>"
@@ -307,19 +302,17 @@ msgstr "Hoe u de <a href=\"%s\">standaard taal kunt instellen</a>"
 
 #: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
 msgid "%s Homepage"
-msgstr ""
+msgstr "%s Homepage"
 
 #: templates/html/foot.tmpl:27
 msgid "Back to:"
 msgstr "Terug naar:"
 
 #: templates/html/foot.tmpl:27
-#, fuzzy
 msgid "Packages search page"
-msgstr "Alle Debianpakketten in \"%s\""
+msgstr "Pakketten zoekpagina"
 
 #: templates/html/foot.tmpl:31
-#, fuzzy
 #| msgid ""
 #| "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</"
 #| "a>. For other contact information, see the Debian <a href=\"%s/contact"
@@ -329,8 +322,8 @@ msgid ""
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
 "Om een probleem met de website te melden, kunt u een e-mail sturen naar <a "
-"href=\"mailto:%s\">%s</a>. Voor meer informatie om met ons in contact te "
-"komen, zie de <a href=\"%s/contact\">contact pagina</a>."
+"href=\"mailto:%s\">%s</a>. Zie de <a href=\"%s/contact\">contact pagina</a> "
+"voor overige contact informatie."
 
 #: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
 msgid "Generated:"
@@ -345,9 +338,8 @@ msgstr ""
 "\">licentievoorwaarden</a>."
 
 #: templates/html/foot.tmpl:39
-#, fuzzy
 msgid "Learn more about this site"
-msgstr "Overzicht van deze distributie"
+msgstr "Informatie over deze site"
 
 #: templates/html/head.tmpl:46
 msgid "Search"
@@ -378,9 +370,8 @@ msgid "skip the navigation"
 msgstr "navigatie overslaan"
 
 #: templates/html/head.tmpl:65
-#, fuzzy
 msgid "%s Packages Homepage"
-msgstr "Pakket niet beschikbaar"
+msgstr "%s Pakketten Homepage"
 
 #: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
@@ -417,33 +408,28 @@ msgid "New Packages in \"%s\""
 msgstr "Nieuwe pakketten in \"%s\""
 
 #: templates/html/newpkg.tmpl:11
-#, fuzzy
 msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
-"distributie toegevoegd."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan suite "
+"<em>%s</em> (sectie %s) in het archief %s."
 
 #: templates/html/newpkg.tmpl:14
-#, fuzzy
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
-"distributie toegevoegd."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan "
+"suite <em>%s</em> in het archief %s."
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr ""
+msgstr " U kunt dit overzicht ook <a href=\"%s\">gesorteerd op naam</a> tonen."
 
 #: templates/html/newpkg.tmpl:20
-#, fuzzy
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr ""
-"Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%s/"
-"\">Pakketten zoekpagina</a>"
+msgstr " U kunt dit overzicht ook <a href=\"%s\">gesorteerd naar ouderdom</a> tonen."
 
 #: templates/html/newpkg.tmpl:22
 #, fuzzy
@@ -456,7 +442,7 @@ msgstr ""
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
-msgstr ""
+msgstr "[RSS 1.0 Feed]"
 
 #: templates/html/newpkg.tmpl:28
 msgid " <em>(%u days old)</em>"
@@ -496,23 +482,21 @@ msgstr ""
 
 #: templates/html/search.tmpl:40
 msgid "Search in specific suite:"
-msgstr ""
+msgstr "IN een specifieke suite zoeken:"
 
 #: templates/html/search.tmpl:49
-#, fuzzy
 #| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
+msgstr "Zoek in <a href=\"%s\">alle suites</a>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
-msgstr ""
+msgstr "Zoeken beperken tot een specifiek platform:"
 
 #: templates/html/search.tmpl:62 templates/html/search_contents.tmpl:63
-#, fuzzy
 #| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Zoek naar <a href=\"%s\">andere versies van %s</a>"
+msgstr "Zoek in <a href=\"%s\">alle platforms</a>"
 
 #: templates/html/search.tmpl:69
 msgid ""
@@ -536,15 +520,15 @@ msgstr "alle secties"
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
-msgstr ""
+msgstr "sectie(s) <em>%s</em>"
 
 #: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "all architectures"
-msgstr "alle platformen"
+msgstr "alle platforms"
 
 #: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
-msgstr ""
+msgstr "platform(s) <em>%s</em>"
 
 #: templates/html/search.tmpl:82
 msgid "packages"
@@ -555,8 +539,7 @@ msgid "source packages"
 msgstr "bronpakketten"
 
 #: templates/html/search.tmpl:83
-msgid ""
-"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
 #: templates/html/search.tmpl:86
@@ -618,16 +601,14 @@ msgid "Binary packages:"
 msgstr "Binaire pakketten:"
 
 #: templates/html/search.tmpl:148
-#, fuzzy
 #| msgid "%u binary packages"
 msgid "hide %u binary packages"
-msgstr "%u binaire pakketten"
+msgstr "verberg %u binaire pakketten"
 
 #: templates/html/search.tmpl:148
-#, fuzzy
 #| msgid "%u binary packages"
 msgid "show %u binary packages"
-msgstr "%u binaire pakketten"
+msgstr "toon %u binaire pakketten"
 
 #: templates/html/search.tmpl:158
 msgid ""
@@ -646,40 +627,40 @@ msgstr "Alle Debianpakketten in \"%s\""
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
-msgstr ""
+msgstr "Zoek naar <em>%s</em> binnen bestandsnamen"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr ""
+msgstr "Zoek exacte bestandsnaam <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
-msgstr ""
+msgstr "Zoek naar paden eindigend op <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
-msgstr ""
+msgstr "Zoek in een andere suite:"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
-msgstr ""
+msgstr "paden die eindigen op"
 
 #: templates/html/search_contents.tmpl:76
 msgid "files named"
-msgstr ""
+msgstr "bestanden genaamd"
 
 #: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
-msgstr ""
+msgstr "bestanden die bevatten"
 
-#. @translators: I'm really sorry :/ 
+#. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr ""
+msgstr "<strong>%u resultaten</strong> gevonden."
 
 #: templates/html/search_contents.tmpl:88
 msgid ""
@@ -689,7 +670,7 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:97
 msgid "Sort results by filename"
-msgstr ""
+msgstr "Sorteer resultaten op bestandsnaam"
 
 #: templates/html/search_contents.tmpl:98
 #: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:331
@@ -697,9 +678,8 @@ msgid "File"
 msgstr "Bestand"
 
 #: templates/html/search_contents.tmpl:99
-#, fuzzy
 msgid "Sort results by package name"
-msgstr "Bronpakket"
+msgstr "Sorteer resultaten op pakketnaam"
 
 #: templates/html/search_contents.tmpl:114
 msgid "not %s"
@@ -726,9 +706,8 @@ msgid "Details of package %s in %s"
 msgstr "Details voor pakket %s in %s"
 
 #: templates/html/show.tmpl:46
-#, fuzzy
 msgid "Source package building this package"
-msgstr "Bronpakket"
+msgstr "Bronpakket dat dit pakket bouwt"
 
 #: templates/html/show.tmpl:46
 msgid "Source:"
@@ -866,7 +845,7 @@ msgstr "Andere aan %s gerelateerde pakketten"
 
 #: templates/html/show.tmpl:231
 msgid "legend"
-msgstr ""
+msgstr "legenda"
 
 #: templates/html/show.tmpl:233
 msgid "build-depends"
@@ -901,16 +880,14 @@ msgid "virtual package provided by"
 msgstr "virtueel pakket geboden door"
 
 #: templates/html/show.tmpl:263
-#, fuzzy
 #| msgid "%u providing packages"
 msgid "hide %u providing packages"
-msgstr "pakketten die %u bieden"
+msgstr "verberg pakketten die %u bieden"
 
 #: templates/html/show.tmpl:263
-#, fuzzy
 #| msgid "%u providing packages"
 msgid "show %u providing packages"
-msgstr "pakketten die %u bieden"
+msgstr "toon pakketten die %u bieden"
 
 #: templates/html/show.tmpl:281
 msgid "Download %s"
@@ -984,12 +961,11 @@ msgstr "Alle Debianpakketten in \"%s\""
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
-msgstr ""
+msgstr "Inhoudsopgave"
 
 #: templates/html/suite_index.tmpl:5 templates/html/suite_index.tmpl:20
-#, fuzzy
 msgid "List of sections in \"%s\""
-msgstr "Overzicht van secties in %s"
+msgstr "Overzicht van secties in \"%s\""
 
 #: templates/html/suite_index.tmpl:38
 msgid "List of all source packages"
@@ -1017,27 +993,24 @@ msgid "Facet: %s"
 msgstr "Facet: %s"
 
 #: templates/rss/newpkg.tmpl:16
-#, fuzzy
 msgid "New %s Packages"
-msgstr "Pakket niet beschikbaar"
+msgstr "Nieuwe %s Pakketten"
 
 #: templates/rss/newpkg.tmpl:20
-#, fuzzy
 msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
-"distributie toegevoegd."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan "
+"suite %s (sectie %s) in het archief %s."
 
 #: templates/rss/newpkg.tmpl:23
-#, fuzzy
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen aan de «unstable» "
-"distributie toegevoegd."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan "
+"suite %s in het archief %s."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
@@ -1051,16 +1024,3 @@ msgstr "Alle %s pakketten in \"%s\""
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "sectie(s) <em>$section_enc</em>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "platform(en) <em>$architectures_enc</em>"
-
-#, fuzzy
-#~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "Terug naar: <a href=\"%s/\">Debian Project hoofdpagina</a> || <a href=\"%"
-#~ "s/\">Pakketten zoekpagina</a>"
