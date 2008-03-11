@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2008-02-29 19:13+0100\n"
+"PO-Revision-Date: 2008-03-11 21:12+0100\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -637,9 +637,8 @@ msgid "Sorry, your search gave no results"
 msgstr "Désolé, votre recherche n'a renvoyé aucun résultat."
 
 #: templates/html/search.tmpl:118
-#, fuzzy
 msgid "Package %s"
-msgstr "Paquet&nbsp;: %s (%s)"
+msgstr "Paquet %s"
 
 #: templates/html/search.tmpl:130
 #, fuzzy
@@ -651,12 +650,10 @@ msgid "provided by:"
 msgstr "fourni par :"
 
 #: templates/html/search.tmpl:139
-#, fuzzy
 msgid "Source Package %s"
 msgstr "Paquet source %s"
 
 #: templates/html/search.tmpl:146
-#, fuzzy
 msgid "Binary packages:"
 msgstr "Paquets binaires :"
 
@@ -751,23 +748,20 @@ msgid "not %s"
 msgstr "non"
 
 #: templates/html/show.tmpl:15
-#, fuzzy
 msgid "Source packages"
-msgstr "Paquet source"
+msgstr "Paquets source"
 
 #: templates/html/show.tmpl:16
 msgid "Section:"
 msgstr "Section&nbsp;:"
 
 #: templates/html/show.tmpl:22
-#, fuzzy
 msgid "Details of source package %s in %s"
-msgstr "Paquets source dans «&nbsp;%s&nbsp;»"
+msgstr "Détails du paquet source %s dans %s"
 
 #: templates/html/show.tmpl:23
-#, fuzzy
 msgid "Details of package %s in %s"
-msgstr "Nouveaux paquets dans «&nbsp;%s&nbsp;»"
+msgstr "Détails du paquet %s dans %s"
 
 #: templates/html/show.tmpl:46
 #, fuzzy
@@ -781,21 +775,19 @@ msgstr "Paquet source"
 
 #: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
-msgstr "Paquet virtuel&nbsp;: %s"
+msgstr "Paquet virtuel : %s"
 
 #: templates/html/show.tmpl:55
-#, fuzzy
 msgid "Source Package: %s (%s)"
-msgstr "Paquet source&nbsp;: %s (%s)"
+msgstr "Paquet source : %s (%s)"
 
 #: templates/html/show.tmpl:57
 msgid "Package: %s (%s)"
-msgstr "Paquet&nbsp;: %s (%s)"
+msgstr "Paquet : %s (%s)"
 
 #: templates/html/show.tmpl:61
-#, fuzzy
 msgid "essential"
-msgstr "Essentiel"
+msgstr "essentiel"
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
@@ -816,15 +808,15 @@ msgstr "Informations pour les développeurs (PTS)"
 
 #: templates/html/show.tmpl:77
 msgid "%s Changelog"
-msgstr ""
+msgstr "Journal des modifications %s"
 
 #: templates/html/show.tmpl:78
 msgid "Copyright File"
-msgstr ""
+msgstr "Fichier Copyright"
 
 #: templates/html/show.tmpl:82
 msgid "Debian Source Repository"
-msgstr ""
+msgstr "Dépôt de source Debian"
 
 #: templates/html/show.tmpl:96
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
@@ -844,7 +836,7 @@ msgstr "Responsables :"
 
 #: templates/html/show.tmpl:123
 msgid "An overview over the maintainer's packages and uploads"
-msgstr ""
+msgstr "Vue d'ensemble des paquets et uploads par responsable"
 
 #: templates/html/show.tmpl:123
 msgid "QA Page"
@@ -915,7 +907,7 @@ msgstr "Autres paquets associés à %s"
 
 #: templates/html/show.tmpl:231
 msgid "legend"
-msgstr ""
+msgstr "légende"
 
 #: templates/html/show.tmpl:233
 msgid "build-depends"
@@ -949,9 +941,8 @@ msgid "also a virtual package provided by"
 msgstr "paquet virtuel"
 
 #: templates/html/show.tmpl:258
-#, fuzzy
 msgid "virtual package provided by"
-msgstr "paquet virtuel"
+msgstr "paquet virtuel fourni par"
 
 #: templates/html/show.tmpl:263
 #, fuzzy
@@ -1031,11 +1022,12 @@ msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
+"Dépôt du paquet source Debian (<acronym title=\"Système de contrôle des versions "
+"(« Version Control System »)\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:353
-#, fuzzy
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "Dépôt du paquet source Debian (interface web)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
@@ -1061,7 +1053,7 @@ msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
 
 #: templates/html/tag_index.tmpl:4
 msgid "About"
-msgstr ""
+msgstr "À propos"
 
 #: templates/html/tag_index.tmpl:5
 msgid "Debtags"
