@@ -119,8 +119,8 @@
   	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ matches.0 _ '/';
   END -%]
   [%- '<ul>' IF loop.first -%]
-	<li><a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>
+	<li><a href="mailto:[% mail | uri %]">[% name | html %]</a>
+	(<a href="[% ddpo_url %][% mail | uri %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>
 	[%- IF mailarchiveurl %], <a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail Archive') %]</a>[% END %])
 	</li>
   [%- '</ul>' IF loop.last -%]
