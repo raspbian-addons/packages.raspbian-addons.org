@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-03 15:11+0100\n"
-"PO-Revision-Date: 2007-10-28 17:07+0100\n"
+"PO-Revision-Date: 2008-03-14 18:08+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -115,10 +115,8 @@ msgid "more than one suite specified for contents search (%s)"
 msgstr "mehr als eine Suite zur Inhaltssuche angegeben (%s)"
 
 #: lib/Packages/DoSearchContents.pm:62
-#, fuzzy
-#| msgid "requested format not available for this document"
 msgid "No contents information available for this suite"
-msgstr "angefordertes Format für dieses Dokument nicht verfügbar"
+msgstr "Für diese Suite sind keine Inhaltsinformationen verfügbar"
 
 #: lib/Packages/DoSearchContents.pm:86
 msgid "The search mode you selected doesn't support more than one keyword."
