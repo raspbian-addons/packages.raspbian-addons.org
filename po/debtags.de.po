@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-02-15 17:30+0100\n"
+"PO-Revision-Date: 2008-03-14 18:38+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -347,32 +347,32 @@ msgstr ""
 #. Tag: game::rpg:rogue, long desc
 #: files/debtags/vocabulary
 msgid " Games like Nethack, Angband etc."
-msgstr ""
+msgstr " Spiele wie Nethack, Angband usw."
 
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
 msgid " Gnu's Not Unix. The package is part of the official GNU project"
-msgstr ""
+msgstr " Gnu's Not Unix. Das Paket ist Teil des offiziellen GNU-Projekts"
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
 msgid " How is the package related to the field of biology."
-msgstr ""
+msgstr " In welcher Beziehung das Paket zur Biologie steht."
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
 msgid " How the package is related to system security"
-msgstr ""
+msgstr "In welcher Beziehung das Paket zur Systemsicherheit steht."
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
 msgid " Human-readable code of a program, library or a part thereof."
-msgstr ""
+msgstr " Menschen-lesbarer Programmcode, Bibliothek oder Teil davon."
 
 #. Tag: filetransfer::http, long desc
 #: files/debtags/vocabulary
 msgid " HyperText Transfer Protocol"
-msgstr ""
+msgstr " HyperText Transfer Protocol"
 
 #. Tag: protocol::http, long desc
 #: files/debtags/vocabulary
@@ -392,16 +392,29 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Http\n"
 " Link: http://www.ietf.org/rfc/rfc2616.txt"
 msgstr ""
+" HyperText Transfer Protocol, eines der wichtigsten Protokolle des\n"
+" World Wide Web.\n"
+" .\n"
+" Es steuert die Datenübertragung zwischen HTTTP-Servern wie Apache und HTTP-\n"
+" Clients (in den meisten Fällen Webbrowser). HTTP-Ressourcen werden über\n"
+" URLs (Universal Resource Locators) angefordert. Während HTTP normalerweise\n"
+" nur Dateiübertragungen vom Server zum Client erlaubt, unterstützt das\n"
+" Protokoll auch den Versand von Informationen an HTTP-Server, am bekanntesten\n"
+" in HTML-Formularen.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Http\n"
+" Link: http://www.ietf.org/rfc/rfc2616.txt"
 
 #. Tag: works-with::image:raster, long desc
 #: files/debtags/vocabulary
 msgid " Images made of dots, such as photos and scans"
-msgstr ""
+msgstr " Bilder wie Photos und eingescanntes, die aus Punkten bestehen"
 
 #. Tag: works-with::image:vector, long desc
 #: files/debtags/vocabulary
 msgid " Images made of lines, such as graphs or most clipart"
 msgstr ""
+" Bilder wie Diagramme oder die meisten Cliparts, die aus Linien bestehen"
 
 #. Tag: devel::ide, long desc
 #: files/debtags/vocabulary
@@ -516,7 +529,7 @@ msgstr ""
 #. Tag: admin::login, long desc
 #: files/debtags/vocabulary
 msgid " Logging into the system"
-msgstr ""
+msgstr " Protokollierung in das System"
 
 #. Tag: game::mud, long desc
 #: files/debtags/vocabulary
@@ -585,12 +598,15 @@ msgid ""
 " Packages that are not used any longer, also packages only left for upgrade\n"
 " purposes (merged / split packages)"
 msgstr ""
+" Pakete, die nicht mehr verwendet werden, auch Pakete, die nur für Upgrade-\n"
+" Zwecke (vereinte / geteilte Pakete) verblieben sind"
 
 #. Tag: role::kernel, long desc
 #: files/debtags/vocabulary
 msgid ""
 " Packages that contain only operating system kernels and kernel modules."
 msgstr ""
+" Pakete, die nur Betriebssystemkernel oder Kernelmodule enthalten."
 
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
@@ -600,7 +616,7 @@ msgstr ""
 #. Tag: role::dummy, long desc
 #: files/debtags/vocabulary
 msgid " Packages used for upgrades and transitions."
-msgstr ""
+msgstr " Pakete, die für Upgrades oder Übergänge verwendet werden."
 
 #. Tag: devel::code-generator, long desc
 #: files/debtags/vocabulary
@@ -676,6 +692,9 @@ msgid ""
 " This tag will be split into admin::recovery\n"
 " and security::forensics."
 msgstr ""
+" Wiederherstellung von verlorenen oder beschädigten Daten.\n"
+" Diese Markierung wird in admin::recovery\n"
+" und security::forensics aufgeteilt."
 
 #. Tag: protocol::radius, long desc
 #: files/debtags/vocabulary

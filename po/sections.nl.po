@@ -1,20 +1,21 @@
+# translation of sections.po to Dutch
 # Dutch translation of packages.debian.org.
 # This file is put in the public domain.
+#
 # Bas Zoetekouw <bas@debian.org>, 2005.
-# , fuzzy
-# 
-# 
+# Frans Pop <elendil@planet.nl>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: packages.debian.org\n"
+"Project-Id-Version: sections\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-19 23:43+0200\n"
-"PO-Revision-Date: 2005-01-03 00:59+0100\n"
-"Last-Translator: Bas Zoetekouw <bas@debian.org>\n"
+"PO-Revision-Date: 2008-03-10 22:00+0100\n"
+"Last-Translator: Frans Pop <elendil@planet.nl>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
@@ -32,7 +33,7 @@ msgstr "Basisgereedschappen"
 
 #: lib/Packages/Sections.pm:15
 msgid "Basic needed utilities of every Debian system."
-msgstr ""
+msgstr "Basisgereedschappen van elk Debian systeem."
 
 #: lib/Packages/Sections.pm:16
 msgid "Communication Programs"
@@ -47,8 +48,7 @@ msgid "Development"
 msgstr "Ontwikkeling"
 
 #: lib/Packages/Sections.pm:19
-msgid ""
-"Development utilities, compilers, development environments, libraries, etc."
+msgid "Development utilities, compilers, development environments, libraries, etc."
 msgstr ""
 "Gereedschappen, compilers, omgevingen, bibliotheken, etc. voor ontwikkeling "
 "van software"
@@ -84,11 +84,11 @@ msgstr "Gereedschappen voor elektronica"
 
 #: lib/Packages/Sections.pm:26
 msgid "Embedded software"
-msgstr ""
+msgstr "Embedded programmatuur"
 
 #: lib/Packages/Sections.pm:27
 msgid "Software suitable for use in embedded applications."
-msgstr "Programma's die geschikt zijn voor gebruik in embedded applicaties."
+msgstr "Programma's die geschikt zijn voor gebruik in embedded toepassingen."
 
 #: lib/Packages/Sections.pm:28
 msgid "Games"
@@ -201,10 +201,8 @@ msgid "Network"
 msgstr "Netwerk"
 
 #: lib/Packages/Sections.pm:51
-msgid ""
-"Daemons and clients to connect your Debian GNU/Linux system to the world."
-msgstr ""
-"Daemon en clients om uw Debian GNU/Linux systeem met de wereld te verbinden."
+msgid "Daemons and clients to connect your Debian GNU/Linux system to the world."
+msgstr "Daemon en clients om uw Debian GNU/Linux systeem met de wereld te verbinden."
 
 #: lib/Packages/Sections.pm:52
 msgid "Newsgroups"
@@ -281,8 +279,7 @@ msgid "Sound"
 msgstr "Geluid"
 
 #: lib/Packages/Sections.pm:67
-msgid ""
-"Utilities to deal with sound: mixers, players, recorders, CD players, etc."
+msgid "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Gereedschappen om om te gaan met geluid: mixers, afspeel- en "
 "opnameprogramma's, CD-spelers, etc."
@@ -305,11 +302,11 @@ msgstr "Gereedschappen om tekstdocumenten op te maken en te printen."
 
 #: lib/Packages/Sections.pm:72
 msgid "Translations"
-msgstr ""
+msgstr "Vertalingen"
 
 #: lib/Packages/Sections.pm:73
 msgid "Translation packages and language support meta packages."
-msgstr ""
+msgstr "Pakketten met vertalingen en meta-pakketten voor taalondersteuning."
 
 #: lib/Packages/Sections.pm:74
 msgid "Utilities"
@@ -363,3 +360,4 @@ msgid ""
 msgstr ""
 "Speciale pakketten om uw eigen varianten van de debian-installer te bouwen. "
 "Installeer deze niet op een normaal systeem!"
+
