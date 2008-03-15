@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-08 17:22+0100\n"
+"POT-Creation-Date: 2008-03-03 15:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,19 +19,19 @@ msgstr ""
 msgid "virtual package provided by"
 msgstr ""
 
-#: bin/create_index_pages:162 bin/create_index_pages:383
+#: bin/create_index_pages:162 bin/create_index_pages:197
 msgid "Section"
 msgstr ""
 
-#: bin/create_index_pages:169 bin/create_index_pages:390
+#: bin/create_index_pages:169 bin/create_index_pages:204
 msgid "Subsection"
 msgstr ""
 
-#: bin/create_index_pages:176 bin/create_index_pages:397
+#: bin/create_index_pages:176 bin/create_index_pages:211
 msgid "Priority"
 msgstr ""
 
-#: lib/Packages/Dispatcher.pm:319
+#: lib/Packages/Dispatcher.pm:320
 msgid "requested format not available for this document"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:70
+#: lib/Packages/DoIndex.pm:73
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr ""
@@ -118,7 +118,11 @@ msgstr ""
 msgid "more than one suite specified for contents search (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:82
+#: lib/Packages/DoSearchContents.pm:62
+msgid "No contents information available for this suite"
+msgstr ""
+
+#: lib/Packages/DoSearchContents.pm:86
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 

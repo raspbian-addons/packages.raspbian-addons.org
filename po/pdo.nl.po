@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-08 17:22+0100\n"
+"POT-Creation-Date: 2008-03-03 15:11+0100\n"
 "PO-Revision-Date: 2007-12-10 22:42+0100\n"
 "Last-Translator: Frans Pop <elendil@planet.nl>\n"
 "Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
@@ -21,19 +21,19 @@ msgstr ""
 msgid "virtual package provided by"
 msgstr "virtueel pakket geboden door"
 
-#: bin/create_index_pages:162 bin/create_index_pages:383
+#: bin/create_index_pages:162 bin/create_index_pages:197
 msgid "Section"
 msgstr "Sectie"
 
-#: bin/create_index_pages:169 bin/create_index_pages:390
+#: bin/create_index_pages:169 bin/create_index_pages:204
 msgid "Subsection"
 msgstr "Subsectie"
 
-#: bin/create_index_pages:176 bin/create_index_pages:397
+#: bin/create_index_pages:176 bin/create_index_pages:211
 msgid "Priority"
 msgstr "Prioriteit"
 
-#: lib/Packages/Dispatcher.pm:319
+#: lib/Packages/Dispatcher.pm:320
 msgid "requested format not available for this document"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "more than one subsection specified for show_static (%s)"
 msgstr ""
 
-#: lib/Packages/DoIndex.pm:70
+#: lib/Packages/DoIndex.pm:73
 #, perl-format
 msgid "couldn't read index file %s: %s"
 msgstr ""
@@ -120,7 +120,13 @@ msgstr "Virtueel pakket"
 msgid "more than one suite specified for contents search (%s)"
 msgstr ""
 
-#: lib/Packages/DoSearchContents.pm:82
+#: lib/Packages/DoSearchContents.pm:62
+#, fuzzy
+#| msgid "Package not available in this suite."
+msgid "No contents information available for this suite"
+msgstr "Pakket niet beschikbaar in deze suite"
+
+#: lib/Packages/DoSearchContents.pm:86
 msgid "The search mode you selected doesn't support more than one keyword."
 msgstr ""
 
