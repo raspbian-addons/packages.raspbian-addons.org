@@ -1,14 +1,15 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.git\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-03 15:11+0100\n"
-"PO-Revision-Date: 2007-10-26 22:09+0100\n"
+"PO-Revision-Date: 2008-03-16 13:53+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: bin/create_index_pages:68
 msgid "virtual package provided by"
@@ -114,10 +115,9 @@ msgid "more than one suite specified for contents search (%s)"
 msgstr "mer än en svit angavs i innehållssökningen (%s)"
 
 #: lib/Packages/DoSearchContents.pm:62
-#, fuzzy
 #| msgid "requested format not available for this document"
 msgid "No contents information available for this suite"
-msgstr "angivet format inte tillgängligt för dokumentet"
+msgstr "Innehållsinformation är inte tillgänglig för denna svit"
 
 #: lib/Packages/DoSearchContents.pm:86
 msgid "The search mode you selected doesn't support more than one keyword."
