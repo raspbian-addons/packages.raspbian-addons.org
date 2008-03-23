@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2008-03-23 10:15+0100\n"
+"PO-Revision-Date: 2008-03-23 10:26+0100\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -407,9 +407,8 @@ msgid "Source Packages in \"%s\", %s %s"
 msgstr "Paquets de «&nbsp;%s&nbsp;», section %s"
 
 #: templates/html/index_head.tmpl:3
-#, fuzzy
 msgid "Source Packages in \"%s\""
-msgstr "Paquets inclus dans «&nbsp;%s&nbsp;»"
+msgstr "Paquets source « %s »"
 
 #: templates/html/index_head.tmpl:5
 #, fuzzy
@@ -784,7 +783,7 @@ msgstr "Journal des modifications %s"
 
 #: templates/html/show.tmpl:78
 msgid "Copyright File"
-msgstr "Fichier Copyright"
+msgstr "Fichier de licence"
 
 #: templates/html/show.tmpl:82
 msgid "Debian Source Repository"
@@ -1040,22 +1039,20 @@ msgid "New %s Packages"
 msgstr "Derniers paquets %s"
 
 #: templates/rss/newpkg.tmpl:20
-#, fuzzy
 msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-"unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+"Les paquets suivants ont été ajoutés à la version %s (section %s) "
+"de l'archive %s au cours des 7 derniers jours."
 
 #: templates/rss/newpkg.tmpl:23
-#, fuzzy
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-"unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+"Les paquets suivants ont été ajoutés à la version %s "
+"de l'archive %s au cours des 7 derniers jours."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
