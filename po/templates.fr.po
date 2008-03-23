@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2008-03-11 21:12+0100\n"
+"PO-Revision-Date: 2008-03-23 10:15+0100\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -366,29 +366,24 @@ msgid "Search"
 msgstr "Recherche"
 
 #: templates/html/head.tmpl:49
-#, fuzzy
 msgid "package names"
-msgstr "Taille du paquet"
+msgstr "nom de paquet"
 
 #: templates/html/head.tmpl:50
-#, fuzzy
 msgid "descriptions"
-msgstr "Distribution :"
+msgstr "descriptions"
 
 #: templates/html/head.tmpl:51
-#, fuzzy
 msgid "source package names"
-msgstr "Paquet source"
+msgstr "paquet source"
 
 #: templates/html/head.tmpl:52
-#, fuzzy
 msgid "package contents"
-msgstr "Taille du paquet"
+msgstr "contenu du paquet"
 
 #: templates/html/head.tmpl:55
-#, fuzzy
 msgid "all options"
-msgstr "Section"
+msgstr "toutes les versions"
 
 #: templates/html/head.tmpl:62
 #, fuzzy
@@ -426,7 +421,6 @@ msgid "Software Packages in \"%s\""
 msgstr "Paquets inclus dans «&nbsp;%s&nbsp;»"
 
 #: templates/html/index_head.tmpl:13
-#, fuzzy
 msgid "All Packages"
 msgstr "Tous les paquets"
 
@@ -437,26 +431,24 @@ msgid "Source"
 msgstr "Paquet source&nbsp;:"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
-#, fuzzy
 msgid "New Packages in \"%s\""
-msgstr "Nouveaux Paquets dans «&nbsp;%s&nbsp;»"
+msgstr "Nouveaux Paquets dans « %s »"
 
 #: templates/html/newpkg.tmpl:11
-#, fuzzy
 msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-"unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+"Les paquets suivants ont été ajoutés à la version <em>%s</em> (section %s) "
+"de l'archive %s au cours des 7 derniers jours."
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Les paquets suivants ont été ajoutés à l'archive Debian <em>%s</em> au cours "
-"des 7&nbsp;derniers jours."
+"Les paquets suivants ont été ajoutés à la version <em>%s</em> "
+"de l'archive %s au cours des 7 derniers jours."
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
@@ -501,14 +493,12 @@ msgid "New packages in "
 msgstr "Nouveaux Paquets dans "
 
 #: templates/html/search.tmpl:19
-#, fuzzy
 msgid "Package Search Results -- %s"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "Résultats de la recherche de paquets -- %s"
 
 #: templates/html/search.tmpl:28
-#, fuzzy
 msgid "Package Search Results"
-msgstr "Tous les paquets Debian dans «&nbsp;%s&nbsp;»"
+msgstr "Résultats de la recherche de paquets"
 
 #: templates/html/search.tmpl:35
 msgid ""
@@ -521,9 +511,8 @@ msgid "Search in specific suite:"
 msgstr ""
 
 #: templates/html/search.tmpl:49
-#, fuzzy
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Chercher d'<a href=\"%s\">autres versions de %s</a>"
+msgstr "Chercher dans <a href=\"%s\">toutes les versions</a>"
 
 #: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
@@ -541,25 +530,23 @@ msgstr ""
 
 #: templates/html/search.tmpl:78
 msgid "all suites"
-msgstr ""
+msgstr "toutes les versions"
 
 #: templates/html/search.tmpl:78
 msgid "suite(s) <em>%s</em>"
-msgstr ""
+msgstr "version(s) <em>%s</em>"
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
-#, fuzzy
 msgid "all sections"
-msgstr "Section"
+msgstr "toutes les sections"
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
-msgstr ""
+msgstr "section(s) <em>%s</em>"
 
 #: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
-#, fuzzy
 msgid "all architectures"
-msgstr "Architecture"
+msgstr "toutes les architectures"
 
 #: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
