@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-03-16 22:36+0100\n"
+"PO-Revision-Date: 2008-04-03 19:04+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -271,6 +271,13 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc2131.txt"
 msgstr ""
+" Dynamic Host Configuration Protocol, ein Client-Server-Netzprotokoll für\n"
+" automatische Zuweisung von dynamischen IP-Adressen zu Computern in einem\n"
+" TCP/IP-Netz,\n"
+" statt jedem Computer eine statische IP-Adresse zu vergeben.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc2131.txt"
 
 #. Tag: suite::eclipse, long desc
 #: files/debtags/vocabulary
@@ -321,6 +328,15 @@ msgid ""
 " Link: http://www.fidonet.org/\n"
 " Link: http://en.wikipedia.org/wiki/Fidonet"
 msgstr ""
+" FidoNet ist ein Mailbox-System, dass in den 1980ern und 1990ern sehr beliebt\n"
+" war.\n"
+" .\n"
+" Die Kommunikation zwischen den Clients und den Fidonet-Servern erfolgte\n"
+" üblicherweise mittels Modems über Telefonnetze und konnte zum Versand von\n"
+" Nachrichten (vergleichbar mit E-Mail) und Dateien verwandt werden.\n"
+" .\n"
+" Link: http://www.fidonet.org/\n"
+" Link: http://de.wikipedia.org/wiki/Fidonet"
 
 #. Tag: filetransfer::ftp, long desc
 #: files/debtags/vocabulary
@@ -510,6 +526,8 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " Library and header files used in software development or building."
 msgstr ""
+" Bibliothek und Header-Dateien, die in der Softwareentwicklung und "
+"-erstellung verwandt werden."
 
 #. Tag: protocol::ldap, long desc
 #: files/debtags/vocabulary
@@ -611,7 +629,7 @@ msgstr ""
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
 msgid " Packages that install suites of other packages."
-msgstr ""
+msgstr " Pakete, die Suites anderer Pakete installieren"
 
 #. Tag: role::dummy, long desc
 #: files/debtags/vocabulary
@@ -637,7 +655,7 @@ msgstr ""
 #. Tag: biology::format:nexus, long desc
 #: files/debtags/vocabulary
 msgid " Popular format for phylogenetic trees."
-msgstr ""
+msgstr " Beliebtes Format für phylogenetische Bäume."
 
 #. Tag: protocol::pop3, long desc
 #: files/debtags/vocabulary
@@ -669,6 +687,8 @@ msgid ""
 " Programs and libraries that support creation of software models\n"
 " with modelling languages like UML or OCL."
 msgstr ""
+" Programme und Bibliotheken, die die Erstellung von Software-Modellen\n"
+" in Modelliersprachen wie UML oder OCL unterstützen."
 
 #. Tag: protocol::db:mysql, long desc
 #: files/debtags/vocabulary
@@ -725,6 +745,8 @@ msgid ""
 " Runs in background, only a control interface is provided, usually on\n"
 " commandline."
 msgstr ""
+" Läuft im Hintergrund, nur eine Steuerschnittstelle wird bereitgestellt,\n"
+" normalerweise auf der Kommandozeile."
 
 #. Tag: devel::runtime, long desc
 #: files/debtags/vocabulary
@@ -812,6 +834,7 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " Shared libraries used by one or more programs."
 msgstr ""
+" Laufzeitbibliotheken, die von einem oder mehreren Programmen verwandt werden."
 
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
@@ -860,12 +883,12 @@ msgstr ""
 #. Tag: use::analysing, long desc
 #: files/debtags/vocabulary
 msgid " Software for turning data into knowledge."
-msgstr ""
+msgstr " Software um Daten in Wissen zu verwandeln."
 
 #. Tag: mail::user-agent, long desc
 #: files/debtags/vocabulary
 msgid " Software that allows users to access e-mail."
-msgstr ""
+msgstr " Software die Benutzern Zugriff auf E-Mail erlaubt."
 
 #. Tag: mail::delivery-agent, long desc
 #: files/debtags/vocabulary
