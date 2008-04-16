@@ -40,13 +40,28 @@ for part in $parts; do
 done
 
 if [ "$successful" -eq 1 ]; then
-    find "${htmldir}/changelogs/" -name log -cmin +14440 \
+    find -H "${htmldir}/changelogs/" -name log -cmin +14440 \
      | while read logfile; do
     	dir=$(dirname "$logfile")
 	echo deleting $dir
  	rm -r "$dir"
 	rmdir --ignore-fail-on-non-empty $(dirname "$dir")
     done
+    cdir=$(pwd)
+    find -H "${htmldir}/changelogs/" -name current -not -xtype d \
+     | while read link; do
+    	dir=$(dirname "$link")
+	echo repairing current link $link
+	rm -v "$link"
+	target=$(ls -t1 "$dir" | tail -n1)
+	if [ -n "$target" ]; then
+		cd $dir && ln -sv $target current
+		cd $cdir
+	else
+		rmdir -v $dir
+	fi
+    done
+
 else
     echo clean-up skipped because at least one of the extraction runs failed >&2
 fi
