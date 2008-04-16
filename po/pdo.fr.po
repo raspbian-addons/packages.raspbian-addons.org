@@ -7,37 +7,12 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-03-03 15:11+0100\n"
-"PO-Revision-Date: 2008-02-29 10:39+0100\n"
+"PO-Revision-Date: 2008-03-23 10:27+0100\n"
 "Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: bin/create_index_pages:68
-#, fuzzy
-msgid "virtual package provided by"
-msgstr "paquet virtuel"
-
-#: bin/create_index_pages:162 bin/create_index_pages:197
-#, fuzzy
-#| msgid "Section:"
-msgid "Section"
-msgstr "Section&nbsp;:"
-
-#: bin/create_index_pages:169 bin/create_index_pages:204
-#, fuzzy
-#| msgid "Section:"
-msgid "Subsection"
-msgstr "Section&nbsp;:"
-
-#: bin/create_index_pages:176 bin/create_index_pages:211
-msgid "Priority"
-msgstr "Priorité"
-
-#: lib/Packages/Dispatcher.pm:320
-msgid "requested format not available for this document"
-msgstr ""
 
 #: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
 #: lib/Packages/DoShow.pm:31
@@ -95,7 +70,6 @@ msgstr ""
 
 #: lib/Packages/DoNewPkg.pm:43
 #, fuzzy, perl-format
-#| msgid "More Information on %s"
 msgid "no newpkg information found for suite %s"
 msgstr "Plus d'informations sur %s"
 
@@ -144,9 +118,8 @@ msgid "No such package."
 msgstr "Paquet source"
 
 #: lib/Packages/DoShow.pm:85
-#, fuzzy
 msgid "Package not available in this suite."
-msgstr "Paquet indisponible"
+msgstr "Paquet indisponible dans cette version"
 
 #: lib/Packages/DoShow.pm:198
 msgid " and others"
@@ -154,7 +127,6 @@ msgstr ""
 
 #: lib/Packages/DoShow.pm:429
 #, fuzzy, perl-format
-#| msgid "not"
 msgid "not %s"
 msgstr "non"
 
@@ -169,6 +141,29 @@ msgstr "Indisponible"
 #: lib/Packages/Page.pm:47
 msgid "package has bad maintainer field"
 msgstr "paquet doté d'un champ de responsable incorrect"
+
+#: lib/Packages/Dispatcher.pm:320
+msgid "requested format not available for this document"
+msgstr ""
+
+#: bin/create_index_pages:68
+#, fuzzy
+msgid "virtual package provided by"
+msgstr "paquet virtuel"
+
+#: bin/create_index_pages:162 bin/create_index_pages:197
+#, fuzzy
+msgid "Section"
+msgstr "Section&nbsp;:"
+
+#: bin/create_index_pages:169 bin/create_index_pages:204
+#, fuzzy
+msgid "Subsection"
+msgstr "Section&nbsp;:"
+
+#: bin/create_index_pages:176 bin/create_index_pages:211
+msgid "Priority"
+msgstr "Priorité"
 
 #, fuzzy
 #~ msgid "Source Packages in \"%s\", %s %s"

@@ -1262,15 +1262,17 @@ msgstr "資源やウェブサイトを記述するのに用いられる XML の�
 msgid "!Not yet tagged packages!"
 msgstr "!タグがまだついていないパッケージ!"
 
+#. Tag: junior::games-gl, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "3D games"
+msgid "3D Games"
+msgstr "3D ゲーム"
+
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
 msgid "3D Model"
 msgstr "3D モデル"
-
-#. Tag: junior::games-gl, short desc
-#: files/debtags/vocabulary
-msgid "3D games"
-msgstr "3D ゲーム"
 
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
@@ -1372,7 +1374,9 @@ msgstr "アラビア語"
 
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
-msgid "Arcade games"
+#, fuzzy
+#| msgid "Arcade games"
+msgid "Arcade Games"
 msgstr "アーケードゲーム"
 
 #. Tag: works-with::archive, short desc
@@ -1408,7 +1412,9 @@ msgstr "認証"
 
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
-msgid "Automation and scheduling"
+#, fuzzy
+#| msgid "Automation and scheduling"
+msgid "Automation and Scheduling"
 msgstr "自動化やスケジューリング"
 
 #. Tag: field::aviation, short desc
@@ -1559,7 +1565,7 @@ msgstr ""
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
-msgid "Calculation and numerical computation"
+msgid "Calculation and Numerical Computation"
 msgstr ""
 
 #. Tag: game::card, short desc
@@ -1728,15 +1734,17 @@ msgstr ""
 msgid "Data Organisation"
 msgstr "データの編成"
 
+#. Tag: admin::recovery, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Data recovery"
+msgid "Data Recovery"
+msgstr "データ復旧"
+
 #. Tag: use::viewing, short desc
 #: files/debtags/vocabulary
 msgid "Data Visualization"
 msgstr "データの可視化"
-
-#. Tag: admin::recovery, short desc
-#: files/debtags/vocabulary
-msgid "Data recovery"
-msgstr "データ復旧"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
@@ -1813,7 +1821,9 @@ msgstr "ドキュメント"
 #. Tag: made-of::data:info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
-msgid "Documentation in Info format"
+#, fuzzy
+#| msgid "Documentation in Info format"
+msgid "Documentation in Info Format"
 msgstr "Info 形式のドキュメント"
 
 #. Tag: use::downloading, short desc
@@ -1962,6 +1972,13 @@ msgstr "分野"
 msgid "File Distribution"
 msgstr "ファイル配布"
 
+#. Tag: file-formats, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "File Transfer"
+msgid "File Formats"
+msgstr "ファイル転送"
+
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
@@ -1971,11 +1988,6 @@ msgstr "ファイル整合性"
 #: files/debtags/vocabulary
 msgid "File Transfer"
 msgstr "ファイル転送"
-
-#. Tag: file-formats, short desc
-#: files/debtags/vocabulary
-msgid "File formats"
-msgstr ""
 
 #. Tag: works-with::file, short desc
 #: files/debtags/vocabulary
@@ -2025,12 +2037,16 @@ msgstr "ファイアーウォール"
 
 #. Tag: game::fps, short desc
 #: files/debtags/vocabulary
-msgid "First person shooter"
+#, fuzzy
+#| msgid "First person shooter"
+msgid "First Person Shooter"
 msgstr "ファーストパーソンシューティングゲーム"
 
 #. Tag: hardware::storage:floppy, short desc
 #: files/debtags/vocabulary
-msgid "Floppy disk"
+#, fuzzy
+#| msgid "Floppy disk"
+msgid "Floppy Disk"
 msgstr "フロッピーディスク"
 
 #. Tag: made-of::data:font, short desc
@@ -2213,6 +2229,13 @@ msgstr "HTTP"
 msgid "Ham Radio"
 msgstr "アマチュア無線"
 
+#. Tag: hardware::detection, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Hardware detection"
+msgid "Hardware Detection"
+msgstr "ハードウェア検出"
+
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Driver"
@@ -2227,11 +2250,6 @@ msgstr "使用を可能にするハードウェア"
 #: files/debtags/vocabulary
 msgid "Hardware Support"
 msgstr "ハードウェアサポート"
-
-#. Tag: hardware::detection, short desc
-#: files/debtags/vocabulary
-msgid "Hardware detection"
-msgstr "ハードウェア検出"
 
 #. Tag: implemented-in::haskell, short desc
 #: files/debtags/vocabulary
@@ -2335,7 +2353,9 @@ msgstr "画像"
 
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
-msgid "Image-scanning hardware"
+#, fuzzy
+#| msgid "Image-scanning hardware"
+msgid "Image-scanning Hardware"
 msgstr "画像読み取り用ハードウェア (イメージスキャナ)"
 
 #. Facet: implemented-in, short desc
@@ -2391,7 +2411,9 @@ msgstr "アイルランド語 (ゲール語)"
 
 #. Tag: admin::issuetracker, short desc
 #: files/debtags/vocabulary
-msgid "Issue tracker"
+#, fuzzy
+#| msgid "Issue tracker"
+msgid "Issue Tracker"
 msgstr "問題追跡システム"
 
 #. Tag: culture::italian, short desc
@@ -2451,7 +2473,9 @@ msgstr ""
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
-msgid "Kernel and modules"
+#, fuzzy
+#| msgid "Kernel and modules"
+msgid "Kernel and Modules"
 msgstr "カーネルやモジュール"
 
 #. Tag: admin::kernel, short desc
@@ -2622,7 +2646,9 @@ msgstr "メール転送エージェント (Mail Transport Agent, MTA)"
 
 #. Tag: mail::user-agent, short desc
 #: files/debtags/vocabulary
-msgid "Mail user agent"
+#, fuzzy
+#| msgid "Mail user agent"
+msgid "Mail User Agent"
 msgstr "メールユーザエージェント (Mail User Agent, MUA)"
 
 #. Tag: mail::list, short desc
@@ -2637,7 +2663,9 @@ msgstr "マニュアルページ"
 
 #. Tag: made-of::data:man, short desc
 #: files/debtags/vocabulary
-msgid "Manuals in nroff format"
+#, fuzzy
+#| msgid "Manuals in nroff format"
+msgid "Manuals in Nroff Format"
 msgstr "nroff 形式のマニュアル"
 
 #. Tag: field::mathematics, short desc
@@ -2682,7 +2710,9 @@ msgstr "モデム"
 
 #. Tag: field::biology:molecular, short desc
 #: files/debtags/vocabulary
-msgid "Molecular biology"
+#, fuzzy
+#| msgid "Molecular biology"
+msgid "Molecular Biology"
 msgstr "分子生物学"
 
 #. Tag: culture::mongolian, short desc
@@ -2788,15 +2818,17 @@ msgstr "Netscape Navigator"
 msgid "Network Protocol"
 msgstr "ネットワークプロトコル"
 
+#. Tag: works-with::network-traffic, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Network traffic"
+msgid "Network Traffic"
+msgstr "ネットワークトラフィック"
+
 #. Tag: netcomm, short desc
 #: files/debtags/vocabulary
 msgid "Network and Communication"
 msgstr ""
-
-#. Tag: works-with::network-traffic, short desc
-#: files/debtags/vocabulary
-msgid "Network traffic"
-msgstr "ネットワークトラフィック"
 
 #. Facet: network, short desc
 #: files/debtags/vocabulary
@@ -2960,7 +2992,9 @@ msgstr "通知"
 
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
-msgid "Nucleic acids"
+#, fuzzy
+#| msgid "Nucleic acids"
+msgid "Nucleic Acids"
 msgstr "核酸"
 
 #. Tag: implemented-in::ocaml, short desc
@@ -2998,15 +3032,17 @@ msgstr "Objective C での開発"
 msgid "Obsolete Packages"
 msgstr "廃止されたパッケージ"
 
+#. Tag: office, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Wiki Software"
+msgid "Office Software"
+msgstr "Wiki ソフトウェア"
+
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
 msgstr "事務・業務"
-
-#. Tag: office, short desc
-#: files/debtags/vocabulary
-msgid "Office software"
-msgstr ""
 
 #. Tag: works-with-format::oggtheora, short desc
 #: files/debtags/vocabulary
@@ -3066,7 +3102,9 @@ msgstr "パッケージ管理"
 
 #. Tag: works-with::software:package, short desc
 #: files/debtags/vocabulary
-msgid "Packaged software"
+#, fuzzy
+#| msgid "Packaged software"
+msgid "Packaged Software"
 msgstr "パッケージ化されたソフトウェア"
 
 #. Tag: devel::packaging, short desc
@@ -3116,7 +3154,9 @@ msgstr "Pike での開発"
 
 #. Tag: works-with-format::plaintext, short desc
 #: files/debtags/vocabulary
-msgid "Plain text"
+#, fuzzy
+#| msgid "Plain text"
+msgid "Plain Text"
 msgstr "プレーンテキスト"
 
 #. Tag: game::platform, short desc
@@ -3208,7 +3248,9 @@ msgstr "プログラム"
 
 #. Tag: office::project-management, short desc
 #: files/debtags/vocabulary
-msgid "Project management"
+#, fuzzy
+#| msgid "Project management"
+msgid "Project Management"
 msgstr "プロジェクト管理"
 
 #. Tag: devel::lang:prolog, short desc
@@ -3253,8 +3295,8 @@ msgstr "Python での開発"
 
 #. Tag: uitoolkit::qt, short desc
 #: files/debtags/vocabulary
-msgid "QT"
-msgstr "QT"
+msgid "Qt"
+msgstr ""
 
 #. Tag: protocol::radius, short desc
 #: files/debtags/vocabulary
@@ -3303,7 +3345,9 @@ msgstr "リビジョン管理"
 
 #. Tag: game::rpg:rogue, short desc
 #: files/debtags/vocabulary
-msgid "Rogue-Like RPG"
+#, fuzzy
+#| msgid "Rogue-Like RPG"
+msgid "Rogue-like RPG"
 msgstr "Rogue 風 RPG"
 
 #. Facet: role, short desc
@@ -3344,7 +3388,9 @@ msgstr "Ruby での開発"
 
 #. Tag: works-with::software:running, short desc
 #: files/debtags/vocabulary
-msgid "Running programs"
+#, fuzzy
+#| msgid "Running programs"
+msgid "Running Programs"
 msgstr "プログラムの実行"
 
 #. Tag: devel::runtime, short desc
@@ -3483,7 +3529,9 @@ msgstr "スクリプトの記述"
 
 #. Tag: web::search-engine, short desc
 #: files/debtags/vocabulary
-msgid "Search engine"
+#, fuzzy
+#| msgid "Search engine"
+msgid "Search Engine"
 msgstr "検索エンジン"
 
 #. Tag: use::searching, short desc
@@ -3547,6 +3595,7 @@ msgstr "ソフトウェア開発"
 msgid "Sound and Music"
 msgstr "音声・音楽"
 
+#. Tag: works-with::software:source, short desc
 #. Tag: role::source, short desc
 #: files/debtags/vocabulary
 msgid "Source Code"
@@ -3556,11 +3605,6 @@ msgstr "ソースコード"
 #: files/debtags/vocabulary
 msgid "Source Editor"
 msgstr "ソースエディタ"
-
-#. Tag: works-with::software:source, short desc
-#: files/debtags/vocabulary
-msgid "Source code"
-msgstr "ソースコード"
 
 #. Tag: culture::spanish, short desc
 #: files/debtags/vocabulary
@@ -3580,7 +3624,9 @@ msgstr "音声合成"
 
 #. Tag: game::sport, short desc
 #: files/debtags/vocabulary
-msgid "Sport games"
+#, fuzzy
+#| msgid "Sport games"
+msgid "Sport Games"
 msgstr "スポーツゲーム"
 
 #. Tag: office::spreadsheet, short desc
@@ -3616,7 +3662,9 @@ msgstr "戦略ゲーム"
 
 #. Tag: field::biology:structural, short desc
 #: files/debtags/vocabulary
-msgid "Structural biology"
+#, fuzzy
+#| msgid "Structural biology"
+msgid "Structural Biology"
 msgstr "構造生物学"
 
 #. Tag: scope::suite, short desc
@@ -3649,19 +3697,21 @@ msgstr "システム管理"
 msgid "System Boot"
 msgstr "システムの起動"
 
+#. Tag: admin::install, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "System installation"
+msgid "System Installation"
+msgstr "システムのインストール"
+
 #. Tag: works-with::logfile, short desc
 #: files/debtags/vocabulary
 msgid "System Logs"
 msgstr "システムログ"
 
-#. Tag: admin::install, short desc
-#: files/debtags/vocabulary
-msgid "System installation"
-msgstr "システムのインストール"
-
 #. Tag: system, short desc
 #: files/debtags/vocabulary
-msgid "System software and maintainance"
+msgid "System Software and Maintainance"
 msgstr ""
 
 #. Tag: protocol::tcp, short desc
@@ -3673,11 +3723,6 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
 msgstr "Tagged Image File Format (TIFF)"
-
-#. Tag: uitoolkit::tk, short desc
-#: files/debtags/vocabulary
-msgid "TK"
-msgstr "TK"
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
@@ -3789,6 +3834,11 @@ msgstr "3 次元"
 msgid "Time and Clock"
 msgstr "時間・時計"
 
+#. Tag: uitoolkit::tk, short desc
+#: files/debtags/vocabulary
+msgid "Tk"
+msgstr ""
+
 #. Tag: game::toys, short desc
 #: files/debtags/vocabulary
 msgid "Toy or Gimmick"
@@ -3863,8 +3913,10 @@ msgstr "ウズベク語"
 
 #. Tag: vi, short desc
 #: files/debtags/vocabulary
-msgid "VI editor"
-msgstr ""
+#, fuzzy
+#| msgid "Source Editor"
+msgid "VI Editor"
+msgstr "ソースエディタ"
 
 #. Tag: network::vpn, short desc
 #: files/debtags/vocabulary
@@ -4024,18 +4076,27 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
+#~ msgid "Audrio"
+#~ msgstr "音声"
 
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
 
 # TRANSLATION-FIXME: Why "Windowing"?
 #~ msgid "X Windowing System"
 #~ msgstr "X ウィンドウシステム"
 
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
 
-#~ msgid "Audrio"
-#~ msgstr "音声"
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "QT"
+#~ msgstr "QT"
