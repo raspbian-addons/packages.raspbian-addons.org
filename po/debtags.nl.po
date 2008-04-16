@@ -2,14 +2,14 @@
 # Frans Pop <elendil@planet.nl>, 2007.
 msgid ""
 msgstr ""
+"Project-Id-Version: debtags\n"
+"PO-Revision-Date: 2007-12-10 23:07+0100\n"
+"Last-Translator: Frans Pop <elendil@planet.nl>\n"
+"Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Frans Pop <elendil@planet.nl>\n"
-"PO-Revision-Date: 2007-12-10 23:07+0100\n"
-"Project-Id-Version: debtags\n"
-"Language-Team: Dutch <debian-l10n-dutch@lists.debian.org>\n"
 "X-Generator: KBabel 1.11.4\n"
-"MIME-Version: 1.0\n"
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
@@ -520,7 +520,8 @@ msgstr ""
 
 #. Tag: biology::emboss, long desc
 #: files/debtags/vocabulary
-msgid " Packages related to the European Molecular Biology Open Software Suite."
+msgid ""
+" Packages related to the European Molecular Biology Open Software Suite."
 msgstr ""
 
 #. Tag: special::obsolete, long desc
@@ -532,7 +533,8 @@ msgstr ""
 
 #. Tag: role::kernel, long desc
 #: files/debtags/vocabulary
-msgid " Packages that contain only operating system kernels and kernel modules."
+msgid ""
+" Packages that contain only operating system kernels and kernel modules."
 msgstr ""
 
 #. Tag: role::metapackage, long desc
@@ -800,12 +802,14 @@ msgstr ""
 
 #. Tag: mail::transport-agent, long desc
 #: files/debtags/vocabulary
-msgid " Software that routes and transmits mail accross the system and the network."
+msgid ""
+" Software that routes and transmits mail accross the system and the network."
 msgstr ""
 
 #. Tag: biology::peptidic, long desc
 #: files/debtags/vocabulary
-msgid " Software that works with sequences of aminoacids: peptides and proteins."
+msgid ""
+" Software that works with sequences of aminoacids: peptides and proteins."
 msgstr ""
 
 #. Tag: biology::nuceleic-acids, long desc
@@ -1191,14 +1195,14 @@ msgstr ""
 msgid "!Not yet tagged packages!"
 msgstr ""
 
+#. Tag: junior::games-gl, short desc
+#: files/debtags/vocabulary
+msgid "3D Games"
+msgstr ""
+
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
 msgid "3D Model"
-msgstr ""
-
-#. Tag: junior::games-gl, short desc
-#: files/debtags/vocabulary
-msgid "3D games"
 msgstr ""
 
 #. Tag: hardware::power:acpi, short desc
@@ -1300,7 +1304,7 @@ msgstr ""
 
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
-msgid "Arcade games"
+msgid "Arcade Games"
 msgstr ""
 
 #. Tag: works-with::archive, short desc
@@ -1336,7 +1340,7 @@ msgstr ""
 
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
-msgid "Automation and scheduling"
+msgid "Automation and Scheduling"
 msgstr ""
 
 #. Tag: field::aviation, short desc
@@ -1487,7 +1491,7 @@ msgstr "CORBA"
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
-msgid "Calculation and numerical computation"
+msgid "Calculation and Numerical Computation"
 msgstr ""
 
 #. Tag: game::card, short desc
@@ -1656,14 +1660,14 @@ msgstr ""
 msgid "Data Organisation"
 msgstr ""
 
+#. Tag: admin::recovery, short desc
+#: files/debtags/vocabulary
+msgid "Data Recovery"
+msgstr ""
+
 #. Tag: use::viewing, short desc
 #: files/debtags/vocabulary
 msgid "Data Visualization"
-msgstr ""
-
-#. Tag: admin::recovery, short desc
-#: files/debtags/vocabulary
-msgid "Data recovery"
 msgstr ""
 
 #. Tag: works-with::db, short desc
@@ -1741,7 +1745,9 @@ msgstr "Documentatie"
 #. Tag: made-of::data:info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
-msgid "Documentation in Info format"
+#, fuzzy
+#| msgid "Documentation in Info format"
+msgid "Documentation in Info Format"
 msgstr "Documentatie in \"info\" formaat"
 
 #. Tag: use::downloading, short desc
@@ -1890,6 +1896,11 @@ msgstr ""
 msgid "File Distribution"
 msgstr ""
 
+#. Tag: file-formats, short desc
+#: files/debtags/vocabulary
+msgid "File Formats"
+msgstr ""
+
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
@@ -1898,11 +1909,6 @@ msgstr ""
 #. Facet: filetransfer, short desc
 #: files/debtags/vocabulary
 msgid "File Transfer"
-msgstr ""
-
-#. Tag: file-formats, short desc
-#: files/debtags/vocabulary
-msgid "File formats"
 msgstr ""
 
 #. Tag: works-with::file, short desc
@@ -1953,12 +1959,12 @@ msgstr ""
 
 #. Tag: game::fps, short desc
 #: files/debtags/vocabulary
-msgid "First person shooter"
+msgid "First Person Shooter"
 msgstr ""
 
 #. Tag: hardware::storage:floppy, short desc
 #: files/debtags/vocabulary
-msgid "Floppy disk"
+msgid "Floppy Disk"
 msgstr ""
 
 #. Tag: made-of::data:font, short desc
@@ -2140,6 +2146,11 @@ msgstr "HTTP"
 msgid "Ham Radio"
 msgstr ""
 
+#. Tag: hardware::detection, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Detection"
+msgstr ""
+
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Driver"
@@ -2153,11 +2164,6 @@ msgstr ""
 #. Tag: admin::hardware, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Support"
-msgstr ""
-
-#. Tag: hardware::detection, short desc
-#: files/debtags/vocabulary
-msgid "Hardware detection"
 msgstr ""
 
 #. Tag: implemented-in::haskell, short desc
@@ -2262,7 +2268,7 @@ msgstr ""
 
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
-msgid "Image-scanning hardware"
+msgid "Image-scanning Hardware"
 msgstr ""
 
 #. Facet: implemented-in, short desc
@@ -2317,7 +2323,7 @@ msgstr ""
 
 #. Tag: admin::issuetracker, short desc
 #: files/debtags/vocabulary
-msgid "Issue tracker"
+msgid "Issue Tracker"
 msgstr ""
 
 #. Tag: culture::italian, short desc
@@ -2377,7 +2383,7 @@ msgstr "Kerberos"
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
-msgid "Kernel and modules"
+msgid "Kernel and Modules"
 msgstr ""
 
 #. Tag: admin::kernel, short desc
@@ -2548,7 +2554,7 @@ msgstr ""
 
 #. Tag: mail::user-agent, short desc
 #: files/debtags/vocabulary
-msgid "Mail user agent"
+msgid "Mail User Agent"
 msgstr ""
 
 #. Tag: mail::list, short desc
@@ -2563,7 +2569,7 @@ msgstr ""
 
 #. Tag: made-of::data:man, short desc
 #: files/debtags/vocabulary
-msgid "Manuals in nroff format"
+msgid "Manuals in Nroff Format"
 msgstr ""
 
 #. Tag: field::mathematics, short desc
@@ -2608,7 +2614,7 @@ msgstr "Modem"
 
 #. Tag: field::biology:molecular, short desc
 #: files/debtags/vocabulary
-msgid "Molecular biology"
+msgid "Molecular Biology"
 msgstr ""
 
 #. Tag: culture::mongolian, short desc
@@ -2714,14 +2720,14 @@ msgstr ""
 msgid "Network Protocol"
 msgstr ""
 
+#. Tag: works-with::network-traffic, short desc
+#: files/debtags/vocabulary
+msgid "Network Traffic"
+msgstr ""
+
 #. Tag: netcomm, short desc
 #: files/debtags/vocabulary
 msgid "Network and Communication"
-msgstr ""
-
-#. Tag: works-with::network-traffic, short desc
-#: files/debtags/vocabulary
-msgid "Network traffic"
 msgstr ""
 
 #. Facet: network, short desc
@@ -2886,7 +2892,7 @@ msgstr ""
 
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
-msgid "Nucleic acids"
+msgid "Nucleic Acids"
 msgstr ""
 
 #. Tag: implemented-in::ocaml, short desc
@@ -2924,14 +2930,14 @@ msgstr "Ontwikkelen in Objective C"
 msgid "Obsolete Packages"
 msgstr ""
 
+#. Tag: office, short desc
+#: files/debtags/vocabulary
+msgid "Office Software"
+msgstr ""
+
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
-msgstr ""
-
-#. Tag: office, short desc
-#: files/debtags/vocabulary
-msgid "Office software"
 msgstr ""
 
 #. Tag: works-with-format::oggtheora, short desc
@@ -2992,7 +2998,7 @@ msgstr ""
 
 #. Tag: works-with::software:package, short desc
 #: files/debtags/vocabulary
-msgid "Packaged software"
+msgid "Packaged Software"
 msgstr ""
 
 #. Tag: devel::packaging, short desc
@@ -3042,7 +3048,7 @@ msgstr "Ontwikkelen in Pike"
 
 #. Tag: works-with-format::plaintext, short desc
 #: files/debtags/vocabulary
-msgid "Plain text"
+msgid "Plain Text"
 msgstr ""
 
 #. Tag: game::platform, short desc
@@ -3134,7 +3140,9 @@ msgstr ""
 
 #. Tag: office::project-management, short desc
 #: files/debtags/vocabulary
-msgid "Project management"
+#, fuzzy
+#| msgid "Project management"
+msgid "Project Management"
 msgstr "Projectmanagement"
 
 #. Tag: devel::lang:prolog, short desc
@@ -3179,8 +3187,8 @@ msgstr "Ontwikkelen in Python"
 
 #. Tag: uitoolkit::qt, short desc
 #: files/debtags/vocabulary
-msgid "QT"
-msgstr "QT"
+msgid "Qt"
+msgstr ""
 
 #. Tag: protocol::radius, short desc
 #: files/debtags/vocabulary
@@ -3229,7 +3237,7 @@ msgstr ""
 
 #. Tag: game::rpg:rogue, short desc
 #: files/debtags/vocabulary
-msgid "Rogue-Like RPG"
+msgid "Rogue-like RPG"
 msgstr ""
 
 #. Facet: role, short desc
@@ -3270,7 +3278,7 @@ msgstr "Ontwikkelen in Ruby"
 
 #. Tag: works-with::software:running, short desc
 #: files/debtags/vocabulary
-msgid "Running programs"
+msgid "Running Programs"
 msgstr ""
 
 #. Tag: devel::runtime, short desc
@@ -3409,7 +3417,7 @@ msgstr ""
 
 #. Tag: web::search-engine, short desc
 #: files/debtags/vocabulary
-msgid "Search engine"
+msgid "Search Engine"
 msgstr ""
 
 #. Tag: use::searching, short desc
@@ -3473,6 +3481,7 @@ msgstr "Softwareontwikkeling"
 msgid "Sound and Music"
 msgstr ""
 
+#. Tag: works-with::software:source, short desc
 #. Tag: role::source, short desc
 #: files/debtags/vocabulary
 msgid "Source Code"
@@ -3481,11 +3490,6 @@ msgstr ""
 #. Tag: devel::editor, short desc
 #: files/debtags/vocabulary
 msgid "Source Editor"
-msgstr ""
-
-#. Tag: works-with::software:source, short desc
-#: files/debtags/vocabulary
-msgid "Source code"
 msgstr ""
 
 #. Tag: culture::spanish, short desc
@@ -3506,7 +3510,7 @@ msgstr ""
 
 #. Tag: game::sport, short desc
 #: files/debtags/vocabulary
-msgid "Sport games"
+msgid "Sport Games"
 msgstr ""
 
 #. Tag: office::spreadsheet, short desc
@@ -3542,7 +3546,7 @@ msgstr ""
 
 #. Tag: field::biology:structural, short desc
 #: files/debtags/vocabulary
-msgid "Structural biology"
+msgid "Structural Biology"
 msgstr ""
 
 #. Tag: scope::suite, short desc
@@ -3575,19 +3579,19 @@ msgstr ""
 msgid "System Boot"
 msgstr ""
 
+#. Tag: admin::install, short desc
+#: files/debtags/vocabulary
+msgid "System Installation"
+msgstr ""
+
 #. Tag: works-with::logfile, short desc
 #: files/debtags/vocabulary
 msgid "System Logs"
 msgstr ""
 
-#. Tag: admin::install, short desc
-#: files/debtags/vocabulary
-msgid "System installation"
-msgstr ""
-
 #. Tag: system, short desc
 #: files/debtags/vocabulary
-msgid "System software and maintainance"
+msgid "System Software and Maintainance"
 msgstr ""
 
 #. Tag: protocol::tcp, short desc
@@ -3599,11 +3603,6 @@ msgstr "TCP"
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
 msgstr "TIFF, Tagged Image File Format"
-
-#. Tag: uitoolkit::tk, short desc
-#: files/debtags/vocabulary
-msgid "TK"
-msgstr "TK"
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
@@ -3715,6 +3714,11 @@ msgstr ""
 msgid "Time and Clock"
 msgstr ""
 
+#. Tag: uitoolkit::tk, short desc
+#: files/debtags/vocabulary
+msgid "Tk"
+msgstr ""
+
 #. Tag: game::toys, short desc
 #: files/debtags/vocabulary
 msgid "Toy or Gimmick"
@@ -3788,7 +3792,7 @@ msgstr ""
 
 #. Tag: vi, short desc
 #: files/debtags/vocabulary
-msgid "VI editor"
+msgid "VI Editor"
 msgstr ""
 
 #. Tag: network::vpn, short desc
@@ -3949,3 +3953,8 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL Modem"
 
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "QT"
+#~ msgstr "QT"

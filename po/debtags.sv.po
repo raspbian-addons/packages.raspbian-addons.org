@@ -1207,14 +1207,14 @@ msgstr ""
 msgid "!Not yet tagged packages!"
 msgstr ""
 
+#. Tag: junior::games-gl, short desc
+#: files/debtags/vocabulary
+msgid "3D Games"
+msgstr ""
+
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
 msgid "3D Model"
-msgstr ""
-
-#. Tag: junior::games-gl, short desc
-#: files/debtags/vocabulary
-msgid "3D games"
 msgstr ""
 
 #. Tag: hardware::power:acpi, short desc
@@ -1316,7 +1316,7 @@ msgstr "Arabiska"
 
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
-msgid "Arcade games"
+msgid "Arcade Games"
 msgstr ""
 
 #. Tag: works-with::archive, short desc
@@ -1352,7 +1352,9 @@ msgstr ""
 
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
-msgid "Automation and scheduling"
+#, fuzzy
+#| msgid "Automation and scheduling"
+msgid "Automation and Scheduling"
 msgstr "Automatisering och schemaläggning"
 
 #. Tag: field::aviation, short desc
@@ -1504,7 +1506,7 @@ msgstr ""
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
-msgid "Calculation and numerical computation"
+msgid "Calculation and Numerical Computation"
 msgstr ""
 
 #. Tag: game::card, short desc
@@ -1676,15 +1678,17 @@ msgstr ""
 msgid "Data Organisation"
 msgstr ""
 
+#. Tag: admin::recovery, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Data recovery"
+msgid "Data Recovery"
+msgstr "Dataåterställning"
+
 #. Tag: use::viewing, short desc
 #: files/debtags/vocabulary
 msgid "Data Visualization"
 msgstr ""
-
-#. Tag: admin::recovery, short desc
-#: files/debtags/vocabulary
-msgid "Data recovery"
-msgstr "Dataåterställning"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
@@ -1762,7 +1766,7 @@ msgstr ""
 #. Tag: made-of::data:info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
-msgid "Documentation in Info format"
+msgid "Documentation in Info Format"
 msgstr ""
 
 #. Tag: use::downloading, short desc
@@ -1914,6 +1918,11 @@ msgstr ""
 msgid "File Distribution"
 msgstr "Fildistribution"
 
+#. Tag: file-formats, short desc
+#: files/debtags/vocabulary
+msgid "File Formats"
+msgstr ""
+
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
@@ -1922,11 +1931,6 @@ msgstr ""
 #. Facet: filetransfer, short desc
 #: files/debtags/vocabulary
 msgid "File Transfer"
-msgstr ""
-
-#. Tag: file-formats, short desc
-#: files/debtags/vocabulary
-msgid "File formats"
 msgstr ""
 
 #. Tag: works-with::file, short desc
@@ -1979,12 +1983,12 @@ msgstr ""
 
 #. Tag: game::fps, short desc
 #: files/debtags/vocabulary
-msgid "First person shooter"
+msgid "First Person Shooter"
 msgstr ""
 
 #. Tag: hardware::storage:floppy, short desc
 #: files/debtags/vocabulary
-msgid "Floppy disk"
+msgid "Floppy Disk"
 msgstr ""
 
 #. Tag: made-of::data:font, short desc
@@ -2168,6 +2172,11 @@ msgstr ""
 msgid "Ham Radio"
 msgstr ""
 
+#. Tag: hardware::detection, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Detection"
+msgstr ""
+
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Driver"
@@ -2182,11 +2191,6 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Hardware Support"
 msgstr "Maskinvarustöd"
-
-#. Tag: hardware::detection, short desc
-#: files/debtags/vocabulary
-msgid "Hardware detection"
-msgstr ""
 
 #. Tag: implemented-in::haskell, short desc
 #: files/debtags/vocabulary
@@ -2290,7 +2294,7 @@ msgstr ""
 
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
-msgid "Image-scanning hardware"
+msgid "Image-scanning Hardware"
 msgstr ""
 
 #. Facet: implemented-in, short desc
@@ -2345,7 +2349,9 @@ msgstr "Iriska (gaelige)"
 
 #. Tag: admin::issuetracker, short desc
 #: files/debtags/vocabulary
-msgid "Issue tracker"
+#, fuzzy
+#| msgid "Issue tracker"
+msgid "Issue Tracker"
 msgstr "Problemspårning"
 
 #. Tag: culture::italian, short desc
@@ -2407,7 +2413,7 @@ msgstr ""
 #: files/debtags/vocabulary
 #, fuzzy
 #| msgid "Kernel or Modules"
-msgid "Kernel and modules"
+msgid "Kernel and Modules"
 msgstr "Kärna eller moduler"
 
 #. Tag: admin::kernel, short desc
@@ -2578,8 +2584,10 @@ msgstr ""
 
 #. Tag: mail::user-agent, short desc
 #: files/debtags/vocabulary
-msgid "Mail user agent"
-msgstr ""
+#, fuzzy
+#| msgid "User Management"
+msgid "Mail User Agent"
+msgstr "Användarhanterin"
 
 #. Tag: mail::list, short desc
 #: files/debtags/vocabulary
@@ -2594,7 +2602,7 @@ msgstr "japanska"
 
 #. Tag: made-of::data:man, short desc
 #: files/debtags/vocabulary
-msgid "Manuals in nroff format"
+msgid "Manuals in Nroff Format"
 msgstr ""
 
 #. Tag: field::mathematics, short desc
@@ -2639,7 +2647,7 @@ msgstr ""
 
 #. Tag: field::biology:molecular, short desc
 #: files/debtags/vocabulary
-msgid "Molecular biology"
+msgid "Molecular Biology"
 msgstr ""
 
 #. Tag: culture::mongolian, short desc
@@ -2745,14 +2753,14 @@ msgstr ""
 msgid "Network Protocol"
 msgstr ""
 
+#. Tag: works-with::network-traffic, short desc
+#: files/debtags/vocabulary
+msgid "Network Traffic"
+msgstr ""
+
 #. Tag: netcomm, short desc
 #: files/debtags/vocabulary
 msgid "Network and Communication"
-msgstr ""
-
-#. Tag: works-with::network-traffic, short desc
-#: files/debtags/vocabulary
-msgid "Network traffic"
 msgstr ""
 
 #. Facet: network, short desc
@@ -2917,7 +2925,9 @@ msgstr ""
 
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
-msgid "Nucleic acids"
+#, fuzzy
+#| msgid "Nucleic acids"
+msgid "Nucleic Acids"
 msgstr "Nukleärsyror"
 
 #. Tag: implemented-in::ocaml, short desc
@@ -2956,14 +2966,14 @@ msgstr ""
 msgid "Obsolete Packages"
 msgstr ""
 
+#. Tag: office, short desc
+#: files/debtags/vocabulary
+msgid "Office Software"
+msgstr ""
+
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
-msgstr ""
-
-#. Tag: office, short desc
-#: files/debtags/vocabulary
-msgid "Office software"
 msgstr ""
 
 #. Tag: works-with-format::oggtheora, short desc
@@ -3024,7 +3034,7 @@ msgstr "Pakethantering"
 
 #. Tag: works-with::software:package, short desc
 #: files/debtags/vocabulary
-msgid "Packaged software"
+msgid "Packaged Software"
 msgstr ""
 
 #. Tag: devel::packaging, short desc
@@ -3074,7 +3084,7 @@ msgstr ""
 
 #. Tag: works-with-format::plaintext, short desc
 #: files/debtags/vocabulary
-msgid "Plain text"
+msgid "Plain Text"
 msgstr ""
 
 #. Tag: game::platform, short desc
@@ -3166,8 +3176,10 @@ msgstr ""
 
 #. Tag: office::project-management, short desc
 #: files/debtags/vocabulary
-msgid "Project management"
-msgstr ""
+#, fuzzy
+#| msgid "Power Management"
+msgid "Project Management"
+msgstr "Strömhantering"
 
 #. Tag: devel::lang:prolog, short desc
 #: files/debtags/vocabulary
@@ -3211,7 +3223,7 @@ msgstr ""
 
 #. Tag: uitoolkit::qt, short desc
 #: files/debtags/vocabulary
-msgid "QT"
+msgid "Qt"
 msgstr ""
 
 #. Tag: protocol::radius, short desc
@@ -3261,7 +3273,7 @@ msgstr ""
 
 #. Tag: game::rpg:rogue, short desc
 #: files/debtags/vocabulary
-msgid "Rogue-Like RPG"
+msgid "Rogue-like RPG"
 msgstr ""
 
 #. Facet: role, short desc
@@ -3302,7 +3314,7 @@ msgstr ""
 
 #. Tag: works-with::software:running, short desc
 #: files/debtags/vocabulary
-msgid "Running programs"
+msgid "Running Programs"
 msgstr ""
 
 #. Tag: devel::runtime, short desc
@@ -3441,8 +3453,9 @@ msgstr ""
 
 #. Tag: web::search-engine, short desc
 #: files/debtags/vocabulary
-msgid "Search engine"
-msgstr ""
+#, fuzzy
+msgid "Search Engine"
+msgstr "serbiska"
 
 #. Tag: use::searching, short desc
 #: files/debtags/vocabulary
@@ -3506,6 +3519,7 @@ msgstr ""
 msgid "Sound and Music"
 msgstr ""
 
+#. Tag: works-with::software:source, short desc
 #. Tag: role::source, short desc
 #: files/debtags/vocabulary
 msgid "Source Code"
@@ -3514,11 +3528,6 @@ msgstr ""
 #. Tag: devel::editor, short desc
 #: files/debtags/vocabulary
 msgid "Source Editor"
-msgstr ""
-
-#. Tag: works-with::software:source, short desc
-#: files/debtags/vocabulary
-msgid "Source code"
 msgstr ""
 
 #. Tag: culture::spanish, short desc
@@ -3539,7 +3548,7 @@ msgstr "Talsyntes"
 
 #. Tag: game::sport, short desc
 #: files/debtags/vocabulary
-msgid "Sport games"
+msgid "Sport Games"
 msgstr ""
 
 #. Tag: office::spreadsheet, short desc
@@ -3575,7 +3584,7 @@ msgstr ""
 
 #. Tag: field::biology:structural, short desc
 #: files/debtags/vocabulary
-msgid "Structural biology"
+msgid "Structural Biology"
 msgstr ""
 
 #. Tag: scope::suite, short desc
@@ -3608,19 +3617,21 @@ msgstr "Systemadministration"
 msgid "System Boot"
 msgstr "Systemstart"
 
+#. Tag: admin::install, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "System installation"
+msgid "System Installation"
+msgstr "Systeminstallation"
+
 #. Tag: works-with::logfile, short desc
 #: files/debtags/vocabulary
 msgid "System Logs"
 msgstr ""
 
-#. Tag: admin::install, short desc
-#: files/debtags/vocabulary
-msgid "System installation"
-msgstr "Systeminstallation"
-
 #. Tag: system, short desc
 #: files/debtags/vocabulary
-msgid "System software and maintainance"
+msgid "System Software and Maintainance"
 msgstr ""
 
 #. Tag: protocol::tcp, short desc
@@ -3631,11 +3642,6 @@ msgstr ""
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
-msgstr ""
-
-#. Tag: uitoolkit::tk, short desc
-#: files/debtags/vocabulary
-msgid "TK"
 msgstr ""
 
 #. Tag: culture::taiwanese, short desc
@@ -3748,6 +3754,11 @@ msgstr ""
 msgid "Time and Clock"
 msgstr ""
 
+#. Tag: uitoolkit::tk, short desc
+#: files/debtags/vocabulary
+msgid "Tk"
+msgstr ""
+
 #. Tag: game::toys, short desc
 #: files/debtags/vocabulary
 msgid "Toy or Gimmick"
@@ -3821,7 +3832,7 @@ msgstr "Uzbekiska"
 
 #. Tag: vi, short desc
 #: files/debtags/vocabulary
-msgid "VI editor"
+msgid "VI Editor"
 msgstr ""
 
 #. Tag: network::vpn, short desc
@@ -3983,122 +3994,122 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Gallegan"
-#~ msgstr "galiciska"
-
-#~ msgid "Zulu"
-#~ msgstr "zulu"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Malayalam"
-#~ msgstr "malayalam"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Latvian"
-#~ msgstr "lettiska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Kannada"
-#~ msgstr "kanaresiska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Irish"
-#~ msgstr "irlÃ¤ndska"
-
-#~ msgid "Galician"
-#~ msgstr "galiciska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Chinese (Simplified)"
-#~ msgstr "kinesiska (fÃ¶renklad)"
-
-#~ msgid "Chinese (Traditional)"
-#~ msgstr "kinesiska (traditionell)"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
-
-#~ msgid "Portuguese (Brazilian)"
-#~ msgstr "portugisiska (Brasilien)"
+#~ msgid "Armenian"
+#~ msgstr "armeniska"
 
 #~ msgid "English"
 #~ msgstr "engelska"
 
-#~ msgid "Armenian"
-#~ msgstr "armeniska"
+#~ msgid "Portuguese (Brazilian)"
+#~ msgstr "portugisiska (Brasilien)"
+
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
+
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "kinesiska (traditionell)"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "kinesiska (fÃ¶renklad)"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Galician"
+#~ msgstr "galiciska"
+
+#~ msgid "Irish"
+#~ msgstr "irlÃ¤ndska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Kannada"
+#~ msgstr "kanaresiska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Latvian"
+#~ msgstr "lettiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Malayalam"
+#~ msgstr "malayalam"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Zulu"
+#~ msgstr "zulu"
+
+#~ msgid "Gallegan"
+#~ msgstr "galiciska"
