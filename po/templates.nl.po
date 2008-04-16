@@ -35,7 +35,7 @@ msgid ""
 "s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:57
 msgid "."
 msgstr ","
@@ -202,18 +202,14 @@ msgid "debian-installer udeb package"
 msgstr "udeb-pakket voor debian-installer"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:161
-#| msgid ""
-#| "Warning: This package is intended for the use in building <a href="
-#| "\"http://www.debian.org/devel/debian-installer\">debian-installer</a> "
-#| "images only. Do not install it on a normal Debian system."
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
 "Waarschuwing: Dit pakket is alleen bedoeld voor gebruik tijden het bouwen "
-"van <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a>. "
-"Installeer het niet op een normaal Debian systeem."
+"van <a href=\"http://www.debian.org/devel/debian-installer\">debian-"
+"installer</a>. Installeer het niet op een normaal Debian systeem."
 
 #: templates/html/download.tmpl:49
 msgid ""
@@ -222,12 +218,14 @@ msgid ""
 msgstr ""
 
 #: templates/html/download.tmpl:75
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 
 #: templates/html/download.tmpl:77
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr "%s beveiligingsupdates worden officieel alleen verspreid via <tt>%s</tt>."
+msgstr ""
+"%s beveiligingsupdates worden officieel alleen verspreid via <tt>%s</tt>."
 
 #: templates/html/download.tmpl:84
 msgid ""
@@ -283,7 +281,8 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Bestandenoverzicht voor pakket %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
 "Bestandenoverzicht voor pakket <em>%s</em> in <em>%s</em> voor het platform "
 "<em>%s</em>"
@@ -313,10 +312,6 @@ msgid "Packages search page"
 msgstr "Pakketten zoekpagina"
 
 #: templates/html/foot.tmpl:31
-#| msgid ""
-#| "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</"
-#| "a>. For other contact information, see the Debian <a href=\"%s/contact"
-#| "\">contact page</a>."
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -412,16 +407,16 @@ msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the %"
 "s archive during the last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan suite "
-"<em>%s</em> (sectie %s) in het archief %s."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan suite <em>%"
+"s</em> (sectie %s) in het archief %s."
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan "
-"suite <em>%s</em> in het archief %s."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan suite <em>%"
+"s</em> in het archief %s."
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
@@ -429,7 +424,8 @@ msgstr " U kunt dit overzicht ook <a href=\"%s\">gesorteerd op naam</a> tonen."
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr " U kunt dit overzicht ook <a href=\"%s\">gesorteerd naar ouderdom</a> tonen."
+msgstr ""
+" U kunt dit overzicht ook <a href=\"%s\">gesorteerd naar ouderdom</a> tonen."
 
 #: templates/html/newpkg.tmpl:22
 #, fuzzy
@@ -485,7 +481,6 @@ msgid "Search in specific suite:"
 msgstr "IN een specifieke suite zoeken:"
 
 #: templates/html/search.tmpl:49
-#| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Zoek in <a href=\"%s\">alle suites</a>"
 
@@ -494,7 +489,6 @@ msgid "Limit search to a specific architecture:"
 msgstr "Zoeken beperken tot een specifiek platform:"
 
 #: templates/html/search.tmpl:62 templates/html/search_contents.tmpl:63
-#| msgid "Search for <a href=\"%s\">other versions of %s</a>"
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Zoek in <a href=\"%s\">alle platforms</a>"
 
@@ -539,7 +533,8 @@ msgid "source packages"
 msgstr "bronpakketten"
 
 #: templates/html/search.tmpl:83
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
 #: templates/html/search.tmpl:86
@@ -601,12 +596,10 @@ msgid "Binary packages:"
 msgstr "Binaire pakketten:"
 
 #: templates/html/search.tmpl:148
-#| msgid "%u binary packages"
 msgid "hide %u binary packages"
 msgstr "verberg %u binaire pakketten"
 
 #: templates/html/search.tmpl:148
-#| msgid "%u binary packages"
 msgid "show %u binary packages"
 msgstr "toon %u binaire pakketten"
 
@@ -653,7 +646,7 @@ msgstr "bestanden genaamd"
 msgid "filenames that contain"
 msgstr "bestanden die bevatten"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -880,12 +873,10 @@ msgid "virtual package provided by"
 msgstr "virtueel pakket geboden door"
 
 #: templates/html/show.tmpl:263
-#| msgid "%u providing packages"
 msgid "hide %u providing packages"
 msgstr "verberg pakketten die %u bieden"
 
 #: templates/html/show.tmpl:263
-#| msgid "%u providing packages"
 msgid "show %u providing packages"
 msgstr "toon pakketten die %u bieden"
 
@@ -948,13 +939,13 @@ msgstr ""
 msgid "Size (in kB)"
 msgstr "Grootte (in kB)"
 
-#: templates/html/show.tmpl:349
+#: templates/html/show.tmpl:352
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
 
-#: templates/html/show.tmpl:353
+#: templates/html/show.tmpl:357
 #, fuzzy
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Alle Debianpakketten in \"%s\""
@@ -1001,16 +992,16 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan "
-"suite %s (sectie %s) in het archief %s."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan suite %s "
+"(sectie %s) in het archief %s."
 
 #: templates/rss/newpkg.tmpl:23
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan "
-"suite %s in het archief %s."
+"De volgende pakketten zijn in de afgelopen 7 dagen toegevoegd aan suite %s "
+"in het archief %s."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
@@ -1023,4 +1014,3 @@ msgstr "Alle %s pakketten in \"%s\""
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr ""
-

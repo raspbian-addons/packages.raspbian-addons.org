@@ -86,9 +86,9 @@
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
    IF vcs_info %]
  (<a href="[% vcs_info %]" class="pvcslink">[% vcs_name %]</a>)
-[% END %]
-</li>
 [% END; END %]
+</li>
+[% END %]
 
 </ul>
 
@@ -112,15 +112,15 @@
 [%- FOREACH maintainers;
   mailarchiveurl = '';
   IF (matches = mail.match('^(.*)@lists\.debian\.org$'));
-	mailarchiveurl = 'http://lists.debian.org/' _ matches.0 _ '/';
+	mailarchiveurl = 'http://lists.debian.org/' _ uri_escape(matches.0) _ '/';
   ELSIF (matches = mail.match('^(.*)@lists\.alioth\.debian\.org$'));
-	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ matches.0 _ '/';
+	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ uri_escape(matches.0) _ '/';
   ELSIF (matches = mail.match('^(.*)@lists\.ubuntu\.com$'));
-  	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ matches.0 _ '/';
+  	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ uri_escape(matches.0) _ '/';
   END -%]
   [%- '<ul>' IF loop.first -%]
-	<li><a href="mailto:[% mail | uri %]">[% name | html %]</a>
-	(<a href="[% ddpo_url %][% mail | uri %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>
+	<li><a href="mailto:[% mail | html %]">[% name | html %]</a>
+	(<a href="[% ddpo_url %][% uri_escape(mail) %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>
 	[%- IF mailarchiveurl %], <a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail Archive') %]</a>[% END %])
 	</li>
   [%- '</ul>' IF loop.last -%]
@@ -131,7 +131,7 @@
    IF url %]
 <h3>[% g('External Resources:') %]</h3>
 <ul>
-<li><a href="[% url | uri %]">[% g('Homepage') %]</a> [[% extract_host(url) | html %]]</li>
+<li><a href="[% url | html %]">[% g('Homepage') %]</a> [[% extract_host(url) | html %]]</li>
 </ul>
 [% END %]
 
@@ -185,7 +185,7 @@
 [% FOREACH tag IN tags %]
   [% IF loop.first -%]
     <div id="ptags"><p>
-    <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">[% g('Tags') %]</a>:
+    <a href="[% tags_url %]edit.html?pkg=[% uri_escape(pkg) %]">[% g('Tags') %]</a>:
   [%- END %]
   [% facet = tag.0; lfacet = "$facet-$po_lang"; 
      facet_name = debtags_voc.$lfacet;
@@ -344,16 +344,21 @@
 	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
 	vcs_info = page.get_newest("vcs-$vcs_id");
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
-	IF vcs_info; %]
+	LAST IF vcs_info;
+   END;
+   IF vcs_info || vcs_link; %]
 <dl>
+[% IF vcs_info %]
 <dt>[% g('Debian Package Source Repository (<acronym title="Version Control System">VCS</acronym>: <a href="%s">%s</a>)',
 	make_url(vcs_pkg,'','source',''), vcs_name ) %]</dt>
 <dd><a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></dd>
-[% IF vcs_link %]
-<dt>[% g('Debian Package Source Repository (Browsable)') %]</dt><dd><a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></dd>
+[% END;
+   IF vcs_link %]
+<dt>[% g('Debian Package Source Repository (Browsable)') %]</dt>
+<dd><a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></dd>
 [% END %]
 </dl>
-[% END; END %]
+[% END %]
 
     </div> <!-- end pdownload -->
   [%- END %]

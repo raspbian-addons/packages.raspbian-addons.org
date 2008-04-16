@@ -11,7 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: templates/config.tmpl:41
 msgid "Debian Web Mailinglist"
@@ -33,7 +34,7 @@ msgstr ""
 "Это экспериментальная версия <a href=\"http://%s/\">%s</a>. Возможны ошибки "
 "и устаревшая информация"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:57
 msgid "."
 msgstr ","
@@ -222,7 +223,8 @@ msgstr ""
 "сайтов:"
 
 #: templates/html/download.tmpl:75
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Вы можете скачать требуемый файл из подкаталога <tt>%s</tt> c:"
 
 #: templates/html/download.tmpl:77
@@ -294,8 +296,10 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Список файлов пакета %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
@@ -435,13 +439,15 @@ msgstr " Также их можно увидеть <a href=\"%s\">отсорти
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr " Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
+msgstr ""
+" Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
 
 #: templates/html/newpkg.tmpl:22
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
-msgstr "Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
+msgstr ""
+"Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
@@ -541,7 +547,8 @@ msgid "source packages"
 msgstr "пакеты исходного кода"
 
 #: templates/html/search.tmpl:83
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 "Вы искали %s, в именах которых есть <em>%s</em>. Были просмотрены %s, %s и %"
 "s."
@@ -574,16 +581,13 @@ msgstr ""
 "использовать больше ключевых слов или другие ключевые слова."
 
 #: templates/html/search.tmpl:103
-#| msgid ""
-#| "Your keyword was too generic, for optimizing reasons some results might "
-#| "have been supressed.<br>Please consider using a longer keyword or more "
-#| "keywords."
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 "Указанное ключевое слово слишком часто используется, с целью оптимизаци "
-"некоторые результаты показаны не будут.<br>Попробуйте использовать более длинное ключевое слово или введите больше ключевых слов."
+"некоторые результаты показаны не будут.<br>Попробуйте использовать более "
+"длинное ключевое слово или введите больше ключевых слов."
 
 #: templates/html/search.tmpl:105
 msgid ""
@@ -669,10 +673,11 @@ msgstr "файлы с именем"
 msgid "filenames that contain"
 msgstr "имена файлов, содержащих"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr "Вы искали %s <em>%s</em> в комплекте <em>%s</em>. Были просмотрены %s и %s."
+msgstr ""
+"Вы искали %s <em>%s</em> в комплекте <em>%s</em>. Были просмотрены %s и %s."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -964,7 +969,7 @@ msgstr "Загрузить информацию о файлах данного �
 msgid "Size (in kB)"
 msgstr "Размер (в Кб)"
 
-#: templates/html/show.tmpl:349
+#: templates/html/show.tmpl:352
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -972,7 +977,7 @@ msgstr ""
 "Репозиторий пакетов исходных кодов Debian (<acronym title=\"Version Control "
 "System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:353
+#: templates/html/show.tmpl:357
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Репозиторий пакетов исходных кодов Debian (просмотр)"
 
@@ -1039,4 +1044,3 @@ msgstr "Все %s пакеты в \"%s\""
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
-
