@@ -10,7 +10,7 @@ use Packages::CGI;
 use Packages::I18N::Locale;
 
 our @ISA = qw( Exporter );
-our @EXPORT_OK = qw( split_name_mail parse_deps );
+our @EXPORT_OK = qw( split_name_mail parse_deps handle_maintainer_fields);
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $ARCHIVE_DEFAULT = '';
@@ -51,6 +51,40 @@ sub split_name_mail {
     return ($name, $email);
 }
 
+sub handle_maintainer_fields {
+    my ($data) = @_;
+    my (@uploaders, @orig_uploaders);
+
+    if ($data->{'original-maintainer'}) {
+	push @orig_uploaders, [ split_name_mail( $data->{'original-maintainer'} ) ];
+
+	$data->{uploaders} ||= '';
+	my @up_tmp = split( /\s*,\s*/,
+			    $data->{uploaders} );
+	foreach my $up (@up_tmp) {
+		push @orig_uploaders, [ split_name_mail( $up ) ];
+	}
+	if ($data->{maintainer} ||= '') {
+	    push @uploaders, [ split_name_mail( $data->{maintainer} ) ];
+	}
+    } else {
+	if ($data->{maintainer} ||= '') {
+	    push @uploaders, [ split_name_mail( $data->{maintainer} ) ];
+	}
+	if ($data->{uploaders}) {
+	    my @up_tmp = split( /\s*,\s*/,
+				$data->{uploaders} );
+	    foreach my $up (@up_tmp) {
+		if ($up ne $data->{maintainer}) { # weed out duplicates
+		    push @uploaders, [ split_name_mail( $up ) ];
+		}
+	    }
+	}
+    }
+
+    return (\@uploaders, \@orig_uploaders);
+}
+
 sub add_src_data {
     my ($self, $src, $data) = @_;
 
@@ -63,20 +97,9 @@ sub add_src_data {
 	$self->{src}{files} = \@files;
     }
     $self->{src}{directory} = $data{directory};
-    my @uploaders;
-    if ($data{maintainer} ||= '') {
-	push @uploaders, [ split_name_mail( $data{maintainer} ) ];
-    }
-    if ($data{uploaders}) {
-        my @up_tmp = split( /\s*,\s*/,
-                            $data{uploaders} );
-        foreach my $up (@up_tmp) {
-            if ($up ne $data{maintainer}) { # weed out duplicates
-                push @uploaders, [ split_name_mail( $up ) ];
-            }
-        }
-    }
-    $self->{src}{uploaders} = \@uploaders;
+    my ($uploaders, $orig_uploaders) = handle_maintainer_fields(\%data);
+    $self->{src}{uploaders} = $uploaders;
+    $self->{src}{orig_uploaders} = $orig_uploaders if @$orig_uploaders;
 
     return 1;
 }
@@ -95,7 +118,7 @@ sub is_virtual {
 }
 
 our @TAKE_NEWEST = qw( description description-md5 essential priority section subsection tag
-		       archive source source-version homepage );
+		       archive source source-version homepage maintainer original-maintainer uploaders);
 our @STORE_ALL = qw( version source source-version installed-size size
 		     filename md5sum sha1 sha256 task
 		     origin bugs suite archive section );
@@ -133,7 +156,7 @@ sub merge_package {
     # packages from the central archive are preferred over all
     # others with the same version number but from other archives
     if ($is_newest = ($cmp > 0)
-    		|| (!$cmp && ($data->{archive} eq 'us') && ($self->{data}{archive} ne 'us'))) {
+	|| (!$cmp && ($data->{archive} eq 'us') && ($self->{data}{archive} ne 'us'))) {
 	$self->{newest} = $version;
 	foreach my $key (@TAKE_NEWEST) {
 	    $self->{data}{$key} = $data->{$key};

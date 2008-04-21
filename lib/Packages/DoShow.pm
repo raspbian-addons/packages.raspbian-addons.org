@@ -386,12 +386,16 @@ sub moreinfo {
 
     if ($info{maintainers}) {
 	my $uploaders = $page->get_src( 'uploaders' );
+	my $orig_uploaders = $page->get_src( 'orig_uploaders' );
 	if ($uploaders && @$uploaders) {
 	    my @maintainers = map { { name => $_->[0], mail => $_->[1] } } @$uploaders;
 	    $contents->{maintainers} = \@maintainers;
 	}
+	if ($orig_uploaders && @$orig_uploaders) {
+	    my @orig_maintainers = map { { name => $_->[0], mail => $_->[1] } } @$orig_uploaders;
+	    $contents->{original_maintainers} = \@orig_maintainers;
+	}
     }
-
 }
 
 sub providers {

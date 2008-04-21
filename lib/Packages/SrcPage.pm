@@ -38,20 +38,9 @@ sub merge_package {
 
 	$self->{data} = $data;
 
-	my @uploaders;
-	if ($data->{maintainer} ||= '') {
-	    push @uploaders, [ split_name_mail( $data->{maintainer} ) ];
-	}
-	if ($data->{uploaders}) {
-	    my @up_tmp = split( /\s*,\s*/,
-				$data->{uploaders} );
-	    foreach my $up (@up_tmp) {
-		if ($up ne $data->{maintainer}) { # weed out duplicates
-		    push @uploaders, [ split_name_mail( $up ) ];
-		}
-	    }
-	}
-	$self->{uploaders} = \@uploaders;
+	my ($uploaders, $orig_uploaders) = handle_maintainer_fields($data);
+	$self->{uploaders} = $uploaders;
+	$self->{orig_uploaders} = $orig_uploaders if @$orig_uploaders;
 
 	if ($data->{files}) {
 	    my @files = split /\01/so, $data->{files};

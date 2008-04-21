@@ -98,12 +98,7 @@
   [% END %]
 [% END %]
 
-[% IF maintainers.size == 1 -%]
-  <h3>[% g('Maintainer:') %]</h3>
-[%- ELSE -%]
-  <h3>[% g('Maintainers:') %]</h3>
-[%- END %]
-[%- FOREACH maintainers;
+[%- BLOCK handle_maintainer;
   mailarchiveurl = '';
   IF (matches = mail.match('^(.*)@lists\.debian\.org$'));
 	mailarchiveurl = 'http://lists.debian.org/' _ uri_escape(matches.0) _ '/';
@@ -112,11 +107,43 @@
   ELSIF (matches = mail.match('^(.*)@lists\.ubuntu\.com$'));
   	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ uri_escape(matches.0) _ '/';
   END -%]
-  [%- '<ul>' IF loop.first -%]
+  [% IF hide_mail %]
+	<li>[% name | html %]
+  [% ELSE %]
 	<li><a href="mailto:[% mail | html %]">[% name | html %]</a>
-	[%- IF mailarchiveurl %](<a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail Archive') %]</a>)[% END %]
+  [% END %]
+	[%- IF mailarchiveurl %] (<a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail&nbsp;Archive') %]</a>)[% END %]
 	</li>
-  [%- '</ul>' IF loop.last -%]
+[% END -%]
+
+[%- IF maintainers.size -%]
+[% IF maintainers.size == 1 -%]
+  <h3>[% g('Maintainer:') %]</h3>
+[%- ELSE -%]
+  <h3>[% g('Maintainers:') %]</h3>
+[%- END %]
+[%- FOREACH m IN maintainers;
+   '<ul>' IF loop.first;
+   PROCESS handle_maintainer name=m.name mail=m.mail;
+   '</ul>' IF loop.last;
+ END -%]
+<p>[% g('Please consider <a href="%s">filing a bug</a> or <a href="%s">asking a question</a> via Launchpad before contacting the maintainer directly.',
+        "https://bugs.launchpad.net/ubuntu/+source/$src.pkg/+filebug",
+        "https://answers.launchpad.net/ubuntu/+source/$src.pkg/+addquestion") %]</p>
+[%- END -%]
+
+[%- IF original_maintainers.size -%]
+[% IF original_maintainers.size == 1 -%]
+  <h3>[% g('Original Maintainer (usually from Debian):') %]</h3>
+[%- ELSE -%]
+  <h3>[% g('Original Maintainers (usually from Debian):') %]</h3>
+[%- END %]
+[%- FOREACH m IN original_maintainers;
+   '<ul>' IF loop.first;
+   PROCESS handle_maintainer name=m.name mail=m.mail hide_mail=1;
+   '</ul>' IF loop.last;
+ END -%]
+<p>[% g('It should generally not be necessary for users to contact the original maintainer.') %]</p>
 [%- END -%]
 
 [% url = page.get_newest('url');
