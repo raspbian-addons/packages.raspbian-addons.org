@@ -38,7 +38,7 @@ sub merge_package {
 
 	$self->{data} = $data;
 
-	my ($uploaders, $orig_uploaders) = handle_maintainer_fields($data);
+	my ($uploaders, $orig_uploaders) = $self->handle_maintainer_fields($data);
 	$self->{uploaders} = $uploaders;
 	$self->{orig_uploaders} = $orig_uploaders if @$orig_uploaders;
 

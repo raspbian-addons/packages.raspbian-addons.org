@@ -10,7 +10,7 @@ use Packages::CGI;
 use Packages::I18N::Locale;
 
 our @ISA = qw( Exporter );
-our @EXPORT_OK = qw( split_name_mail parse_deps handle_maintainer_fields);
+our @EXPORT_OK = qw( split_name_mail parse_deps );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $ARCHIVE_DEFAULT = '';
@@ -51,8 +51,46 @@ sub split_name_mail {
     return ($name, $email);
 }
 
+sub override_maint {
+    my ($self, $data) = @_;
+
+    return if $data->{'original-maintainer'};
+    return unless $data->{maintainer};
+
+    my ($name, $mail) = split_name_mail( $data->{maintainer} );
+
+    # taken from etc/pkgbinarymangler/maintainermangler.overrides
+    return if $mail =~ /\@(ubuntu\.com|canonical\.com|lists\.ubuntu\.com|lists\.canonical\.com|ubuntu\.com\.au|kubuntu\.org)^/o;
+    return if $mail =~ /^(lamont\@debian\.org|q-funk\@iki\.fi|cjwatson\@debian\.org|patrick\.matthaei\@web\.de)^/o;
+
+    if ($mail eq 'adconrad@0c3.net') {
+	$data->{maintainer} = 'Adam Conrad <adconrad@ubuntu.com>';
+	return 1;
+    }
+    if ($mail eq 'mpitt@debian.org') {
+	$data->{maintainer} = 'Martin Pitt <martin.pitt@ubuntu.com>';
+	return 1;
+    }
+
+    $data->{'original-maintainer'} = $data->{maintainer};
+    foreach ($data->{section}) {
+	/^(main|restricted)$/ && do {
+	    $data->{maintainer} = 'Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>';
+	    last;
+	};
+	/^(uni|multi)verse$/ && do {
+	    $data->{maintainer} = 'Ubuntu MOTU Developers <ubuntu-motu@lists.ubuntu.com>';
+	    last;
+	};
+
+	die 'Huh?';
+    }
+
+    return 1;
+}
+
 sub handle_maintainer_fields {
-    my ($data) = @_;
+    my ($self, $data) = @_;
     my (@uploaders, @orig_uploaders);
 
     if ($data->{'original-maintainer'}) {
@@ -69,6 +107,10 @@ sub handle_maintainer_fields {
 	}
     } else {
 	if ($data->{maintainer} ||= '') {
+	    if ($self->override_maint($data)) {
+		return $self->handle_maintainer_fields($data);
+	    }
+
 	    push @uploaders, [ split_name_mail( $data->{maintainer} ) ];
 	}
 	if ($data->{uploaders}) {
@@ -97,7 +139,7 @@ sub add_src_data {
 	$self->{src}{files} = \@files;
     }
     $self->{src}{directory} = $data{directory};
-    my ($uploaders, $orig_uploaders) = handle_maintainer_fields(\%data);
+    my ($uploaders, $orig_uploaders) = $self->handle_maintainer_fields(\%data);
     $self->{src}{uploaders} = $uploaders;
     $self->{src}{orig_uploaders} = $orig_uploaders if @$orig_uploaders;
 
