@@ -7,7 +7,7 @@
 
 packages=`tempfile`
 cache=`tempfile`
-trap "rm -f $packages $locs" INT EXIT
+trap "rm -f $packages $cache" INT EXIT
 
 cd $topdir
 dpkg-checkbuilddeps >> $packages 2>&1
@@ -40,12 +40,6 @@ then
 	    echo "Missing packages:"
 	    echo
 	    cat $packages
-	fi
-	if [ -s $locs ]
-	then
-	    echo "Missing locales:"
-	    echo
-	    cat $locs
 	fi
 	if [ -s $cache ]
 	then
