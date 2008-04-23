@@ -120,8 +120,8 @@
   END -%]
   [%- '<ul>' IF loop.first -%]
 	<li><a href="mailto:[% mail | html %]">[% name | html %]</a>
-	(<a href="[% ddpo_url %][% uri_escape(mail) %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA Page') %]</a>
-	[%- IF mailarchiveurl %], <a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail Archive') %]</a>[% END %])
+	(<a href="[% ddpo_url %][% uri_escape(mail) %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA&nbsp;Page') %]</a>
+	[%- IF mailarchiveurl %], <a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail&nbsp;Archive') %]</a>[% END %])
 	</li>
   [%- '</ul>' IF loop.last -%]
 [%- END -%]

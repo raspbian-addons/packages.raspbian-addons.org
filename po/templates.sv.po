@@ -178,15 +178,15 @@ msgstr ""
 "Du bör kunna använda valfri av de angivna speglarna genom att lägga till en "
 "rad i din <kbd>/etc/apt/sources.list</kbd> på den här formen:"
 
-#: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "Ersätt <em>%s</em> med spegeln i fråga."
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "Experimentellt paket"
 
-#: templates/html/download.tmpl:38
+#: templates/html/download.tmpl:43
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -198,11 +198,11 @@ msgstr ""
 "kanske till och med kan orsaka dataförluster. Se till att läsa "
 "ändringsloggen och annan dokumentation innan du använder det."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "udeb-paket för debian-installer"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -212,7 +212,7 @@ msgstr ""
 "www.debian.org/devel/debian-installer\">debian-installer</a>-avbildningar. "
 "Installera det inte på ett normalt %ssystem."
 
-#: templates/html/download.tmpl:49
+#: templates/html/download.tmpl:54
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
@@ -220,18 +220,18 @@ msgstr ""
 "Du kan hämta den önskade filen från underkatalogen <tt>%s</tt> på någon av "
 "dessa platser:"
 
-#: templates/html/download.tmpl:75
+#: templates/html/download.tmpl:80
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Du kan hämta den önskade filen från underkatalogen <tt>%s</tt> på:"
 
-#: templates/html/download.tmpl:77
+#: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "Säkerhetsuppdateringar för %s distribueras officiellt enbart från <tt>%s</"
 "tt>."
 
-#: templates/html/download.tmpl:84
+#: templates/html/download.tmpl:89
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -239,7 +239,7 @@ msgstr ""
 "Om ingen av platserna ovan är snabb nog för dig, se vår <a href=\"%s"
 "\">fullständiga spegelförteckning</a>."
 
-#: templates/html/download.tmpl:92
+#: templates/html/download.tmpl:97
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -251,7 +251,7 @@ msgstr ""
 "arkivet som möjligt. Se <a href=\"%s\">%s-anpassningssidan</a> för aktuell "
 "information."
 
-#: templates/html/download.tmpl:96
+#: templates/html/download.tmpl:101
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -261,31 +261,31 @@ msgstr ""
 "skall sparas. I Firefox och Mozilla, till exempel, håller du ned Skift-"
 "tangenten medan du klickar på webbadressen."
 
-#: templates/html/download.tmpl:100
+#: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "Ytterligare information om <kbd>%s</kbd>:"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s byte (%s %s)"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "Exakt storlek"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5-kontrollsumma"
 
-#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "Ej tillgänglig"
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "SHA1-kontrollsumma"
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
 msgstr "SHA256-kontrollsumma"
 
@@ -797,7 +797,7 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "En översikt över ansvarigas paket och insändningar"
 
 #: templates/html/show.tmpl:123
-msgid "QA Page"
+msgid "QA&nbsp;Page"
 msgstr "QA-sida"
 
 #: templates/html/show.tmpl:124
@@ -805,7 +805,7 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr "Arkiv för paketansvarigas sändlista"
 
 #: templates/html/show.tmpl:124
-msgid "Mail Archive"
+msgid "Mail&nbsp;Archive"
 msgstr "E-postarkiv"
 
 #: templates/html/show.tmpl:132

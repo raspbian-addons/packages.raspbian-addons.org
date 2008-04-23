@@ -180,15 +180,15 @@ msgstr ""
 "Используйте любой из серверов-зеркал, добавив его в свой файл <kbd>/etc/apt/"
 "sources.list</kbd>, например так:"
 
-#: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "Заменив <em>%s</em> нужным сервером."
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "Экспериментальный пакет"
 
-#: templates/html/download.tmpl:38
+#: templates/html/download.tmpl:43
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -200,11 +200,11 @@ msgstr ""
 "даже может вызвать потерю данных. Перед использованием внимательно "
 "прочитайте журнал изменений пакета и другую доступную документацию."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "пакет udeb для debian-installer"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -214,7 +214,7 @@ msgstr ""
 "\"http://www.debian.org/devel/debian-installer\">debian-installer</a>. Не "
 "устанавливайте его в рабочую систему %s."
 
-#: templates/html/download.tmpl:49
+#: templates/html/download.tmpl:54
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
@@ -222,18 +222,18 @@ msgstr ""
 "Вы можете скачать требуемый файл из подкаталога <tt>%s</tt> с любого из этих "
 "сайтов:"
 
-#: templates/html/download.tmpl:75
+#: templates/html/download.tmpl:80
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Вы можете скачать требуемый файл из подкаталога <tt>%s</tt> c:"
 
-#: templates/html/download.tmpl:77
+#: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "Обновления, связанный с безопасностью, для %s официально распространяются "
 "только через <tt>%s</tt>."
 
-#: templates/html/download.tmpl:84
+#: templates/html/download.tmpl:89
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -241,7 +241,7 @@ msgstr ""
 "Если загрузка с этих сайтов происходит медленно, попробуйте другие из <a "
 "href=\"%s\">полного списка серверов-зеркал</a>."
 
-#: templates/html/download.tmpl:92
+#: templates/html/download.tmpl:97
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -253,7 +253,7 @@ msgstr ""
 "более точно. О текущем состоянии можно узнать со <a href=\"%s\">страницы "
 "переноса на %s</a>."
 
-#: templates/html/download.tmpl:96
+#: templates/html/download.tmpl:101
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -263,31 +263,31 @@ msgstr ""
 "браузеру, что вы хотите сохранить информацию в файл. Например, в Firefox или "
 "Mozilla вам нужно удерживать клавишу Shift при щелчке по URL."
 
-#: templates/html/download.tmpl:100
+#: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "Подробней о <kbd>%s</kbd>:"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s байт (%s %s)"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "Точный размер"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "Контрольная сумма MD5"
 
-#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "Недоступно"
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "Контрольная сумма SHA1"
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
 msgstr "Контрольная сумма SHA256"
 
@@ -802,7 +802,9 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "Обзор пакетов и закачек сопровождающего"
 
 #: templates/html/show.tmpl:123
-msgid "QA Page"
+#, fuzzy
+#| msgid "QA Page"
+msgid "QA&nbsp;Page"
 msgstr "Контроль качества"
 
 #: templates/html/show.tmpl:124
@@ -810,7 +812,9 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr "Архив списка рассылки сопровождающего"
 
 #: templates/html/show.tmpl:124
-msgid "Mail Archive"
+#, fuzzy
+#| msgid "Mail Archive"
+msgid "Mail&nbsp;Archive"
 msgstr "Почтовый архив"
 
 #: templates/html/show.tmpl:132

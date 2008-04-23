@@ -176,15 +176,15 @@ msgstr ""
 "您可以使用以下列表中的任何一个源镜像只要往您的 <kbd>/etc/apt/sources.list</"
 "kbd> 文件中像下面这样添加一行:"
 
-#: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "请使用最终确定的源镜像替换 <em>%s</em>。"
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "试制(Experimental)软件包"
 
-#: templates/html/download.tmpl:38
+#: templates/html/download.tmpl:43
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -195,11 +195,11 @@ msgstr ""
 "表现出不稳定或者出现 bug ，甚至是导致资料损失。请务必在使用之前查阅 "
 "changelog 以及其他潜在的文档。"
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "Debian 安装程序 udeb 包"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -209,22 +209,22 @@ msgstr ""
 "installer\"> Debian 安装程序</a>(debian-installer)镜像。不要在一个普通的 %s "
 "系统上安装它。"
 
-#: templates/html/download.tmpl:49
+#: templates/html/download.tmpl:54
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
 msgstr "您可以从以下任意站点的 <tt>%s</tt> 子目录中下载所需的文件:"
 
-#: templates/html/download.tmpl:75
+#: templates/html/download.tmpl:80
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "您可以从 <tt>%s</tt> 子目录中下载所需的文件:"
 
-#: templates/html/download.tmpl:77
+#: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr "官方认可的 %s 安全更新只经由 <tt>%s</tt> 发布。"
 
-#: templates/html/download.tmpl:84
+#: templates/html/download.tmpl:89
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -232,7 +232,7 @@ msgstr ""
 "如果您感觉以上站点的速度都不够理想，请查看我们的<a href=\"%s\">完整源镜像列表"
 "</a>。"
 
-#: templates/html/download.tmpl:92
+#: templates/html/download.tmpl:97
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -242,7 +242,7 @@ msgstr ""
 "注意: %s 目前还没有被 %s 官方收录，但是有 %s 移植小组负责尽可能的保证它们与官"
 "方收录的档案相一致。请查看 <a href=\"%s\">%s 移植页面</a>了解最新信息。"
 
-#: templates/html/download.tmpl:96
+#: templates/html/download.tmpl:101
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -252,31 +252,31 @@ msgstr ""
 "们。对于 Firefox 或者 Mozilla ，您可能需要在按住 Shift 键的同时点击上面的 "
 "URL 链接。"
 
-#: templates/html/download.tmpl:100
+#: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "有关 <kbd>%s</kbd> 的更多信息:"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s 字节(%s %s)"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "实际大小"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5 校验码"
 
-#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "不存在"
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "SHA1 校验码"
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
 msgstr "SHA256 校验码"
 
@@ -798,7 +798,9 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "该维护者负责的软件包一览"
 
 #: templates/html/show.tmpl:123
-msgid "QA Page"
+#, fuzzy
+#| msgid "QA Page"
+msgid "QA&nbsp;Page"
 msgstr "QA 页面"
 
 #: templates/html/show.tmpl:124
@@ -806,7 +808,7 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr ""
 
 #: templates/html/show.tmpl:124
-msgid "Mail Archive"
+msgid "Mail&nbsp;Archive"
 msgstr ""
 
 #: templates/html/show.tmpl:132
@@ -1038,17 +1040,17 @@ msgstr "\"%2\" 包含所有的 %1 软件包"
 msgid "See <URL:%s> for the license terms."
 msgstr "查看 <URL:%s> 以便了解许可证的各项条款。"
 
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr " <em>$suite_enc</em> 发行版"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr " <em>$section_enc</em> 版面"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr " <em>$architectures_enc</em> 硬件架构"
+
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "您可以在<a href=\"%s#search_packages\">软件包搜索页面</a>重新搜索一次。"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr " <em>$architectures_enc</em> 硬件架构"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr " <em>$section_enc</em> 版面"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr " <em>$suite_enc</em> 发行版"

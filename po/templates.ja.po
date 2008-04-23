@@ -181,15 +181,15 @@ msgstr ""
 "次のような行を <kbd>/etc/apt/sources.list</kbd> に追加して、以下の一覧にある"
 "ミラーのうち使いたいものを利用可能にすべきでしょう。"
 
-#: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "<em>%s</em> を使いたいミラーに置き換えてください。"
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "試験的な (experimental の) パッケージ"
 
-#: templates/html/download.tmpl:38
+#: templates/html/download.tmpl:43
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -201,11 +201,11 @@ msgstr ""
 "すかもしれません。使用前には、変更履歴やその他の参照可能なドキュメントを必ず"
 "調べてください。"
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "debian-installer 用の udeb パッケージ"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -215,7 +215,7 @@ msgstr ""
 "installer\">debian-installer</a> イメージのビルド時における使用のみを意図して"
 "います。通常の %s システムにはインストールしないでください。"
 
-#: templates/html/download.tmpl:49
+#: templates/html/download.tmpl:54
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
@@ -223,19 +223,19 @@ msgstr ""
 "要求のファイルは、以下のいずれのサイトでも <tt>%s</tt> サブディレクトリからダ"
 "ウンロード可能です。"
 
-#: templates/html/download.tmpl:75
+#: templates/html/download.tmpl:80
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 "要求のファイルは、以下のサイトの <tt>%s</tt> サブディレクトリからダウンロード"
 "可能です。"
 
-#: templates/html/download.tmpl:77
+#: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "%s セキュリティアップデートは、<tt>%s</tt> のみで公式に配布されています。"
 
-#: templates/html/download.tmpl:84
+#: templates/html/download.tmpl:89
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -243,7 +243,7 @@ msgstr ""
 "上記のサイトのいずれでも不十分な速度しか出ない場合は、<a href=\"%s\">ミラーの"
 "完全な一覧</a>をご覧ください。"
 
-#: templates/html/download.tmpl:92
+#: templates/html/download.tmpl:97
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -255,7 +255,7 @@ msgstr ""
 "ているのです。現在の情報については <a href=\"%s\">%s 移植版のページ</a>をご覧"
 "ください。"
 
-#: templates/html/download.tmpl:96
+#: templates/html/download.tmpl:101
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -265,31 +265,31 @@ msgstr ""
 "示する必要があります。例えば、Firefox や Mozilla では、Shift キーを押しなが"
 "ら URL をクリックしてください。"
 
-#: templates/html/download.tmpl:100
+#: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "<kbd>%s</kbd> に関するさらに詳しい情報:"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s Byte (%s %s)"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "正確なサイズ"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5 チェックサム"
 
-#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "入手不能"
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "SHA1 チェックサム"
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
 msgstr "SHA256 チェックサム"
 
@@ -804,7 +804,9 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "メンテナのパッケージやアップロードの概要"
 
 #: templates/html/show.tmpl:123
-msgid "QA Page"
+#, fuzzy
+#| msgid "QA Page"
+msgid "QA&nbsp;Page"
 msgstr "QA ページ"
 
 #: templates/html/show.tmpl:124
@@ -812,7 +814,7 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr "メンテナメーリングリストのアーカイブ"
 
 #: templates/html/show.tmpl:124
-msgid "Mail Archive"
+msgid "Mail&nbsp;Archive"
 msgstr "メールアーカイブ"
 
 #: templates/html/show.tmpl:132
@@ -1047,12 +1049,18 @@ msgstr "\"%s\" に含まれるすべての %s パッケージ"
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
-#~ "きます。"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
@@ -1061,14 +1069,8 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
+#~ "きます。"
