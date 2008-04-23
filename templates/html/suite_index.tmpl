@@ -45,4 +45,4 @@
 	(<a href="allpackages?format=txt.gz">[% g('compact compressed textlist') %]</a>)
 </p>
 
-[%- PROCESS 'html/foot.tmpl' -%]
+[%- PROCESS 'html/foot.tmpl' page_name= source ? "source/$suite/" : "$suite/" -%]

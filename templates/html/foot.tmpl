@@ -14,7 +14,7 @@ Total page evaluation took [% benchmark %]<br>
 <a href="[% IF keyword_esc;
 		make_search_url('',"keywords=$keyword_esc",'lang',l.lang);
 	    ELSE;
-		"$page_name?lang=$l.lang";
+		make_url(page_name,"",'lang',l.lang);
 	    END %]" title="[% l.tooltip %]" hreflang="[% l.lang %]" lang="[% l.lang %]" rel="alternate">[% l.selfname %]
 [%- IF l.transliteration %] ([% l.transliteration %])[% END %]</a>
 [% END %]

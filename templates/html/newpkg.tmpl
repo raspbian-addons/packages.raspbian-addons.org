@@ -42,4 +42,4 @@
 [% END %]
 </p>
 
-[%- PROCESS 'html/foot.tmpl' -%]
+[%- PROCESS 'html/foot.tmpl' page_name=section ? "$section/newpkg" : "newpkg" -%]
