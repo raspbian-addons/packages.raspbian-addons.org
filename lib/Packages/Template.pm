@@ -35,6 +35,7 @@ sub new {
     };
     $vars->{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
     $vars->{make_url} = sub { return &Packages::CGI::make_url(@_) };
+    $vars->{g} = sub { my ($f, @a) = @_; return sprintf($f, @a); };
     if ($vars->{cat}) {
 	$vars->{g} = sub { return Packages::I18N::Locale::g($vars->{cat}, @_) };
     }
