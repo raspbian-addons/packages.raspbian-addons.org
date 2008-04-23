@@ -35,9 +35,9 @@
   [% '</dl></div>' IF loop.last %]
 [% END %]
 
-[% link_title = is_source ? g('List of all source packages')
+[% link_title = source ? g('List of all source packages')
 			  : g('List of all packages');
-   link_text = is_source ? g('All source packages')
+   link_text = source ? g('All source packages')
 			 : g('All packages');
 -%]
 <p class="psmallcenter">
