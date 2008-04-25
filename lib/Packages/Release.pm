@@ -98,10 +98,11 @@ sub check {
     $self->config(%$config) if $config;
 
     return unless $self->{config}{file};
+    $self->_v("checking Release file $self->{config}{file}\n");
     my $sigfile = "$self->{config}{file}.gpg";
 
     if ($self->{config}{keyring}) {
-	$self->_v("checking signature\n");
+	$self->_v("\tchecking signature\n");
 
 	die "$self->{config}{keyring} not readable\n"
 	    unless -r $self->{config}{keyring};
