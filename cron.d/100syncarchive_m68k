@@ -42,6 +42,8 @@ then
             (cd us/${dist}-${arch}/${part}/source &&
                 $wget_cmd -N ${ftpsite}/dists/${dist}-${arch}/${part}/source/Sources.gz)
 	done
+
+	$check_release_cmd $archivedir/us/${dist}-${arch}/Release
     done
 else
     echo using local mirror
@@ -76,6 +78,7 @@ else
             rsync -t ${localdir}/dists/${dist}-${arch}/${part}/source/Sources.gz \
 	    	us/${dist}-${arch}/${part}/source/Sources.gz
 	done
+	$check_release_cmd $archivedir/us/${dist}-${arch}/Release
     done
 fi
 

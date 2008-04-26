@@ -37,4 +37,6 @@ do
         (cd volatile/${dist}-volatile/$part/source &&
             $wget_cmd -N ${volatile_ftpsite}/dists/${dist}/volatile/${part}/source/Sources.gz)
     done
+
+    $check_release_cmd $archivedir/volatile/${dist}-volatile/Release
 done

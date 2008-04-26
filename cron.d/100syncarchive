@@ -43,6 +43,8 @@ then
             (cd us/${dist}/${part}/source &&
                 $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/source/Sources.gz)
 	done
+
+	$check_release_cmd $archivedir/us/${dist}/Release
     done
 else
     echo using local mirror
@@ -78,6 +80,8 @@ else
             rsync -t ${localdir}/dists/${dist}/${part}/source/Sources.gz \
 	    	us/${dist}/${part}/source/Sources.gz
 	done
+
+	$check_release_cmd $archivedir/us/${dist}/Release
     done
 fi
 
@@ -109,4 +113,6 @@ do
         (cd security/${dist}/${part}/source &&
             $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/source/Sources.gz)
     done
+
+    $check_release_cmd $archivedir/security/${dist}/Release
 done
