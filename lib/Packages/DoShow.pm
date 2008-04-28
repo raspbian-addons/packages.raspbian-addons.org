@@ -233,7 +233,7 @@ sub do_show {
 			    if ( ($suite ne "experimental")
 				 && ($subsection ne 'debian-installer')
 				 && ($suite !~ /-(backports|updates)$/)
-				 && ($suite !~ /dapper/)) {
+				 && ($suite !~ /(dapper|intrepid)/)) {
 				$d{contents_avail} = 1;
 			    }
 			    push @downloads, \%d;

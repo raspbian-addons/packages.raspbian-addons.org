@@ -39,7 +39,7 @@ ddtplangs="ca cs da de eo es fi fr hu it ja ko nl pl pt pt-br ru sk sv uk zh-cn 
 archives="us security"
 sections="main multiverse restricted universe"
 parts="$sections"
-suites="dapper dapper-updates dapper-backports edgy edgy-updates edgy-backports feisty feisty-updates feisty-backports gutsy gutsy-updates gutsy-backports hardy hardy-updates hardy-backports"
+suites="dapper dapper-updates dapper-backports edgy edgy-updates edgy-backports feisty feisty-updates feisty-backports gutsy gutsy-updates gutsy-backports hardy hardy-updates hardy-backports intrepid"
 dists="$suites"
 priorities="required important standard optional extra"
 architectures="i386 amd64 powerpc"
@@ -58,6 +58,9 @@ arch_gutsy_backports="${arch_gutsy}"
 arch_hardy="i386 amd64"
 arch_hardy_updates="${arch_hardy}"
 arch_hardy_backports="${arch_hardy}"
+arch_intrepid="${arch_hardy}"
+arch_intrepid_updates="${arch_intrepid}"
+arch_intrepid_backports="${arch_intrepid}"
 
 # Miscellaneous
 #
