@@ -110,4 +110,4 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 <tr><th>[% g('SHA256 checksum') %]</th>	<td><tt>[% sha256  || g('Not Available') %]</tt></td>
 </table>
 
-[%- PROCESS 'html/foot.tmpl' -%]
+[%- PROCESS 'html/foot.tmpl' page_name="$pkg/download" -%]

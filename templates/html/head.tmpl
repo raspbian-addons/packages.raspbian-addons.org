@@ -36,7 +36,7 @@
 [%- IF print_search_field %]
 [% checked = 'checked="checked"'
    selected = 'selected="selected"' %]
-<form method="GET" action="/search">
+<form method="GET" action="[% search_url %]">
 <div id="hpacketsearch">
 [% IF search_field_values.mode %]<input type="hidden" name="mode" value="[% search_field_values.mode %]">[% END %]
 [% IF search_field_values.sort_by %]<input type="hidden" name="sort_by" value="[% search_field_values.sort_by %]">[% END %]

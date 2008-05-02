@@ -30,4 +30,6 @@ for dist in sid experimental
     (cd debports/${dist} &&
 	$wget_cmd -N ${debports_ftpsite}/dists/${dist}/Contents-${arch}.gz)
   done
+
+  $check_release_cmd $archivedir/debports/${dist}/Release
 done

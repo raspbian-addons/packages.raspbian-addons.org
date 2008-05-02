@@ -27,5 +27,7 @@ for dist in sarge
   echo retrieve Contents $dist/$arch
   (cd amd64/${dist} &&
       $wget_cmd -N ${amd64_ftpsite}/dists/${dist}/Contents-${arch}.gz)
+
+  $check_release_cmd $archivedir/amd64/${dist}/Release
 done
 

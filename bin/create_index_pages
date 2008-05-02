@@ -188,12 +188,18 @@ foreach my $source (("", "source/")) {
     foreach my $s (@SUITES) {
 	my %common_vars = ( suite => $s,
 			    is_source => $source );
-	close_file("$source$s", \%common_vars, 'allpackages');
-	close_txt_file("$source$s", \%common_vars, 'allpackages');
+	my $page_base = "$source$s/";
+	close_file("$source$s", { %common_vars,
+				  page_name => "${page_base}allpackages" },
+		   'allpackages');
+	close_txt_file("$source$s", { %common_vars,
+				      page_name => "{$page_base}allpackages" },
+		       'allpackages');
 
 	foreach my $sec (keys %{$sections->{$s}}) {
 	    close_file("$source$s/$sec",
 		       { %common_vars,
+			 page_name => "$page_base$sec/",
 			 category => { id => N_('Section'),
 				       name => $sec }});
 	}
@@ -201,6 +207,7 @@ foreach my $source (("", "source/")) {
 	    next if $ssec eq '-';
 	    close_file("$source$s/$ssec",
 		       { %common_vars,
+			 page_name => "$page_base$ssec/",
 			 category => { id => N_('Subsection'),
 				       name => $ssec }});
 	}
@@ -208,6 +215,7 @@ foreach my $source (("", "source/")) {
 	    next if $prio eq '-';
 	    close_file("$source$s/$prio",
 		       { %common_vars,
+			 page_name => "$page_base$prio/",
 			 category => { id => N_('Priority'),
 				       name => $prio }});
 	}

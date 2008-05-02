@@ -36,4 +36,6 @@ do
         (cd backports/${dist}-backports/${part}/source &&
             $wget_cmd -N ${backports_ftpsite}/dists/${dist}-backports/${part}/source/Sources.gz)
     done
+
+    $check_release_cmd $archivedir/backports/${dist}-backports/Release
 done

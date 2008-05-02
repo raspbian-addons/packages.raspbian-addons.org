@@ -125,7 +125,8 @@ foreach (@tags) {
 }
 my %content = ( vocabulary => \%voc,
 		facets => \@facets, tags => \@tags,
-		tags_by_facet => \%tags_by_facet );
+		tags_by_facet => \%tags_by_facet,
+		used_langs => [ 'en' ]);
 print TAGLST $template->page( 'tag_index', \%content );
 close TAGLST or warn "Couldn't close tag list: $!";
 
