@@ -35,7 +35,9 @@ ddtp_ftpsite=http://ddtp.debian.net/debian
 wget_cmd="wget --no-verbose --tries=2 --timeout=60"
 check_release_cmd="perl -I${libdir} ${bindir}/check-release --verbose --ignoremissing --keyring ${configdir}/trusted.gpg"
 
+# URLs that need to be known in the code (as opposed to the templates)
 root=""
+search_url="/search"
 
 # Architectures
 #

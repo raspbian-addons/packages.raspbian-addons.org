@@ -8,11 +8,11 @@ use Packages::CGI qw( :DEFAULT error );
 
 our @ISA = qw( Exporter );
 
-our ( $TOPDIR, $DBDIR, $TEMPLATEDIR, $CACHEDIR, $ROOT,
+our ( $TOPDIR, $DBDIR, $TEMPLATEDIR, $CACHEDIR, $ROOT, $SEARCH_URL,
       @LANGUAGES, @DDTP_LANGUAGES,
       @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
       @PRIORITIES, %FTP_SITES );
-our @EXPORT_OK = qw( $TOPDIR $DBDIR $TEMPLATEDIR $CACHEDIR $ROOT
+our @EXPORT_OK = qw( $TOPDIR $DBDIR $TEMPLATEDIR $CACHEDIR $ROOT $SEARCH_URL
 		     @LANGUAGES @DDTP_LANGUAGES
 		     @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES
 		     @PRIORITIES %FTP_SITES  );
@@ -35,6 +35,7 @@ sub init {
 	    $TEMPLATEDIR = $1 if /^\s*templatedir="?([^\"]*)"?\s*$/o;
 	    $CACHEDIR = $1 if /^\s*cachedir="?([^\"]*)"?\s*$/o;
 	    $ROOT = $1 if /^\s*root="?([^\"]*)"?\s*$/o;
+	    $SEARCH_URL = $1 if /^\s*search_url="?([^\"]*)"?\s*$/o;
 	    $FTP_SITES{us} = $1 if /^\s*ftpsite="?([^\"]*)"?\s*$/o;
 	    $FTP_SITES{$1} = $2 if /^\s*(\w+)_ftpsite="?([^\"]*)"?\s*$/o;
 	    @LANGUAGES = split(/\s+/, $1) if /^\s*polangs="?([^\"]*)"?\s*$/o;
