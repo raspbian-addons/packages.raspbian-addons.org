@@ -178,15 +178,15 @@ msgstr ""
 "Sie können jeden der aufgeführten Spiegel-Server benutzen, indem Sie eine "
 "Zeile der folgenden Art zu Ihrer <kbd>/etc/apt/sources.list</kbd> hinzufügen:"
 
-#: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "Ersetzen Sie dabei <em>%s</em> mit dem gewünschten Spiegel-Server."
 
-#: templates/html/download.tmpl:37 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr "Experimentelles Paket"
 
-#: templates/html/download.tmpl:38
+#: templates/html/download.tmpl:43
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -199,11 +199,11 @@ msgstr ""
 "Changelog und andere möglicherweise verfügbare Dokumentation, bevor Sie es "
 "benutzen."
 
-#: templates/html/download.tmpl:41 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr "udeb-Paket des Debian-Installers"
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -213,7 +213,7 @@ msgstr ""
 "org/devel/debian-installer\">debian-installer</a>-Images zu erzeugen. "
 "Installieren Sie es nicht auf einem normalen %s-System."
 
-#: templates/html/download.tmpl:49
+#: templates/html/download.tmpl:54
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
@@ -221,20 +221,20 @@ msgstr ""
 "Sie können die angeforderte Datei aus dem <tt>%s</tt>-Unterverzeichnis auf "
 "jeder dieser Sites herunterladen:"
 
-#: templates/html/download.tmpl:75
+#: templates/html/download.tmpl:80
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 "Sie können die angeforderte Datei aus dem <tt>%s</tt>-Unterverzeichnis "
 "herunterladen:"
 
-#: templates/html/download.tmpl:77
+#: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "%s-Sicherheitsaktualisierungen werden offiziell nur über <tt>%s</tt> "
 "verbreitet."
 
-#: templates/html/download.tmpl:84
+#: templates/html/download.tmpl:89
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -242,7 +242,7 @@ msgstr ""
 "Falls keine der genannten Seiten schnell genug für Sie ist, beachten Sie "
 "bitte auch unsere <a href=\"%s\">komplette Spiegelliste</a>."
 
-#: templates/html/download.tmpl:92
+#: templates/html/download.tmpl:97
 msgid ""
 "Note that %s is not officially included in the %s archive yet, but the %s "
 "porter group keeps their archive in sync with the official archive as close "
@@ -254,7 +254,7 @@ msgstr ""
 "möglich synchron hält. Lesen Sie die <a href=\"%s\">Portierungsseiten von %"
 "s</a> für aktuelle Informationen."
 
-#: templates/html/download.tmpl:96
+#: templates/html/download.tmpl:101
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -264,31 +264,31 @@ msgstr ""
 "als Datei gespeichert werden soll. Bei Firefox oder Mozilla sollten Sie die "
 "Umschalttaste halten, wenn Sie auf eine URL klicken."
 
-#: templates/html/download.tmpl:100
+#: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "Weitere Informationen über <kbd>%s</kbd>:"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s Byte (%s %s)"
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "Genaue Größe"
 
-#: templates/html/download.tmpl:103 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr "MD5-Prüfsumme"
 
-#: templates/html/download.tmpl:104 templates/html/download.tmpl:105
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "Nicht verfügbar"
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "SHA1-Prüfsumme"
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
 msgstr "SHA256-Prüfsumme"
 
@@ -807,7 +807,7 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "Eine Übersicht über die Pakete und Uploads des Betreuers"
 
 #: templates/html/show.tmpl:123
-msgid "QA Page"
+msgid "QA&nbsp;Page"
 msgstr "QS-Seite"
 
 #: templates/html/show.tmpl:124
@@ -815,7 +815,7 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr "Archiv der Betreuer-Mailingliste"
 
 #: templates/html/show.tmpl:124
-msgid "Mail Archive"
+msgid "Mail&nbsp;Archive"
 msgstr "E-Mail-Archiv"
 
 #: templates/html/show.tmpl:132
@@ -1051,18 +1051,18 @@ msgstr "Alle %s-Pakete in »%s«"
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
 
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "Bereich(e) <em>$section_enc</em>"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
 #~ "andere Suche durchführen."
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "Bereich(e) <em>$section_enc</em>"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "Suite(s) <em>$suite_enc</em>"

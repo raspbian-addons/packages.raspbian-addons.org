@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use lib './lib';
+
+use File::Basename;
+use Getopt::Long;
+use Packages::Release;
+
+my %opts;
+GetOptions(\%opts, 'verbose', 'ignoremissing', 'dieoncheckerror',
+	   'keyring=s', 'directory=s')
+    or die "GetOptions failed\n";
+
+my @files = @ARGV;
+
+unless (@files) {
+    die "no release files specified\n";
+}
+
+foreach my $file (@files) {
+
+    $opts{file} = $file;
+    $opts{base} ||= dirname($file);
+    my $release = Packages::Release->new(\%opts);
+    $release->check;
+}

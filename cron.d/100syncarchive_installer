@@ -29,6 +29,8 @@ then
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
 	    done
 	done
+
+	$check_release_cmd $archivedir/us/${dist}/Release
     done
 else
     echo using local mirror
@@ -51,5 +53,7 @@ else
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
 	    done
 	done
+
+	$check_release_cmd $archivedir/us/${dist}/Release
     done
 fi

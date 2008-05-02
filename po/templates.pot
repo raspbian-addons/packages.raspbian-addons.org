@@ -161,79 +161,80 @@ msgid "You should be able to use any of the listed mirrors by adding a line to y
 msgstr ""
 
 #: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr ""
 
-#: templates/html/download.tmpl:37
+#: templates/html/download.tmpl:42
 #: templates/html/show.tmpl:155
 msgid "Experimental package"
 msgstr ""
 
-#: templates/html/download.tmpl:38
+#: templates/html/download.tmpl:43
 msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the changelog and other possible documentation before using it."
 msgstr ""
 
-#: templates/html/download.tmpl:41
+#: templates/html/download.tmpl:46
 #: templates/html/show.tmpl:160
 msgid "debian-installer udeb package"
 msgstr ""
 
-#: templates/html/download.tmpl:42
+#: templates/html/download.tmpl:47
 #: templates/html/show.tmpl:161
 msgid "Warning: This package is intended for the use in building <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do not install it on a normal %s system."
 msgstr ""
 
-#: templates/html/download.tmpl:49
+#: templates/html/download.tmpl:54
 msgid "You can download the requested file from the <tt>%s</tt> subdirectory at any of these sites:"
 msgstr ""
 
-#: templates/html/download.tmpl:75
+#: templates/html/download.tmpl:80
 msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 
-#: templates/html/download.tmpl:77
+#: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 
-#: templates/html/download.tmpl:84
+#: templates/html/download.tmpl:89
 msgid "If none of the above sites are fast enough for you, please see our <a href=\"%s\">complete mirror list</a>."
 msgstr ""
 
-#: templates/html/download.tmpl:92
+#: templates/html/download.tmpl:97
 msgid "Note that %s is not officially included in the %s archive yet, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 
-#: templates/html/download.tmpl:96
+#: templates/html/download.tmpl:101
 msgid "Note that in some browsers you will need to tell your browser you want the file saved to a file. For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL."
 msgstr ""
 
-#: templates/html/download.tmpl:100
+#: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
 msgstr ""
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr ""
 
-#: templates/html/download.tmpl:102
+#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr ""
 
-#: templates/html/download.tmpl:103
+#: templates/html/download.tmpl:108
 #: templates/html/show.tmpl:331
 msgid "MD5 checksum"
 msgstr ""
 
-#: templates/html/download.tmpl:104
+#: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr ""
 
-#: templates/html/download.tmpl:104
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:109
+#: templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr ""
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
 msgstr ""
 
@@ -700,7 +701,7 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
 #: templates/html/show.tmpl:123
-msgid "QA Page"
+msgid "QA&nbsp;Page"
 msgstr ""
 
 #: templates/html/show.tmpl:124
@@ -708,7 +709,7 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr ""
 
 #: templates/html/show.tmpl:124
-msgid "Mail Archive"
+msgid "Mail&nbsp;Archive"
 msgstr ""
 
 #: templates/html/show.tmpl:132
