@@ -106,8 +106,8 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 <table id="pdownloadmeta">
 <tr><th>[% g('Exact Size') %]</th>	<td class="size">[% g('%s Byte (%s %s)', size, num.format_number(pkgsize,1), pkgsize_unit) %]</td>
 <tr><th>[% g('MD5 checksum') %]</th>	<td><tt>[% md5sum %]</tt></td>
-<tr><th>[% g('SHA1 checksum') %]</th>	<td><tt>[% sha1 || g('Not Available') %]</tt></td>
-<tr><th>[% g('SHA256 checksum') %]</th>	<td><tt>[% sha256  || g('Not Available') %]</tt></td>
+<!-- <tr><th>[% g('SHA1 checksum') %]</th>	<td><tt>[% sha1 || g('Not Available') %]</tt></td>
+<tr><th>[% g('SHA256 checksum') %]</th>	<td><tt>[% sha256  || g('Not Available') %]</tt></td> -->
 </table>
 
 [%- PROCESS 'html/foot.tmpl' page_name="$pkg/download" -%]
