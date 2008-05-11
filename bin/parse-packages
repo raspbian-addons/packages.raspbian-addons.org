@@ -85,6 +85,8 @@ for my $suite (@SUITES) {
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
+		# Skip broken debs
+		next unless $data{architecture};
 		# Skip double package
 		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
 		# Skip arch:all for amd64 & debports, any non-redundancy is
