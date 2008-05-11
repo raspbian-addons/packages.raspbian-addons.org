@@ -11,168 +11,28 @@
  
 mirrors = {
 	us => {
-		mirror_list => 'http://www.debian.org/mirror/list',
+		mirror_list => 'http://www.debian.org/distrib/archive',
 		north_america => [
-#only amd64,i386			"ftp.us.debian.org/debian",
-			"http.us.debian.org/debian",
-#only amd64,i386			"ftp.debian.org/debian",
-			"ftp.egr.msu.edu/debian",
-			"mirrors.kernel.org/debian",
-#not amd64			"ftp-mirror.internap.com/pub/debian",
-#only amd64,i386			"ftp.cerias.purdue.edu/pub/os/debian",
-			"debian.lcs.mit.edu/debian",
-			"debian.oregonstate.edu/debian",
+			"archive.debian.org/debian-archive",
+			"ftp.egr.msu.edu/debian-archive",
+			"ftp3.nrc.ca/debian-archive",
 		],
 		europa => [
-			"ftp.de.debian.org/debian",
-			"ftp.at.debian.org/debian",
-#no amd64			"ftp.bg.debian.org/debian",
-			"ftp.ch.debian.org/debian",
-			"ftp.cz.debian.org/debian",
-			"ftp.dk.debian.org/debian",
-			"ftp.ee.debian.org/debian",
-			"ftp.es.debian.org/debian",
-			"ftp.fi.debian.org/debian",
-			"ftp.fr.debian.org/debian",
-			"ftp.hr.debian.org/debian",
-			"ftp.hu.debian.org/debian",
-			"ftp.ie.debian.org/debian",
-			"ftp.is.debian.org/debian",
-			"ftp.it.debian.org/debian",
-			"ftp.nl.debian.org/debian",
-			"ftp.no.debian.org/debian",
-			"ftp.pl.debian.org/debian",
-#only amd64,i386			"ftp.ru.debian.org/debian",
-			"ftp.se.debian.org/debian",
-#only some arches			"ftp.si.debian.org/debian",
-			"ftp.tr.debian.org/debian",
-			"ftp.uk.debian.org/debian",
-		],
-		south_america => [
-			"ftp.br.debian.org/debian",
-			"ftp.cl.debian.org/debian",
-		],
-		australia => [
-			"ftp.au.debian.org/debian",
-			"ftp.wa.au.debian.org/debian",
-			"ftp.nz.debian.org/debian",
+			"ftp.de.debian.org/debian-archive",
+#			"ftp.ch.debian.org/debian-archive",
+			"ftp.nl.debian.org/debian-archive",
+			"debian.dynamica.it/debian-archive",
+			"debian.org.ua/debian-archive",
+			"ftp2.debian.org.ua/debian-archive",
+#			"ftp.irb.hr/debian-archive",
+			"webb.ens-cachan.fr/ftp/debian-archive",
 		],
 		asia => [
-			"ftp.jp.debian.org/debian",
-			"ftp2.jp.debian.org/debian",
-			"ftp.kr.debian.org/debian",
-#no amd64			"ftp.hk.debian.org/debian",
-			"ftp.tw.debian.org/debian",
-#only amd64,i386			"linux.csie.nctu.edu.tw/debian",
-			"debian.linux.org.tw/debian",
-			"linux.cdpa.nsysu.edu.tw/debian",
-		],
-	},
-
-	volatile => {
-		mirror_list => 'http://www.debian.org/devel/debian-volatile/volatile-mirrors',
-		europa => [
-			"volatile.debian.net/debian-volatile",
-			"ftp2.de.debian.org/debian-volatile",
-			"ftp.sk.debian.org/debian-volatile",
-		],
-		north_america => [
-			"debian.domainmail.org/debian-volatile",
-		],
-		south_america => [
-			"sft.if.usp.br/debian-volatile",
-		],
-		asia => [
-			"ftp2.jp.debian.org/debian-volatile",
-		],
-		australia => [
-			"ftp.nz.debian.org/debian-volatile",
-		],
-	},
-
-	backports => {
-		mirror_list => 'http://www.backports.org/debian/README.mirrors.html',
-		europa => [
-			"www.backports.org/debian",
-			"debian.sil.at/backports.org/",
-		    	"backports.debian.or.at/backports.org",
-		       	"mirror.realroute.net/backports.org",
-			"backports.cisbg.com",
-			"backports.linuxdediziert.de/backports.org",
-			"debian.netcologne.de/debian-backports",
-			"ftp.de.debian.org/backports.org",
-			"mirror.buildd.net/backports.org",
-			"ftp.estpak.ee/backports.org",
-			"debian.acantho.net/backports.org",
-			"backports.essentkabel.com/backports.org",
-			"backports.sipo.nl",
-			"ftp.tuke.sk",
-		],
-		asia => [
-			"backports.mithril-linux.org",
-		],
-		australia => [
-			"mirror.linux.org.au/backports.org",
-			"mirror.pacific.net.au/linux/debian-backports",
-		],
-	},
-
-	amd64 => {
-		mirror_list => 'http://amd64.debian.net/README.mirrors.html',
-		unofficial_port => {
-			amd64 => {
-				url_name => 'amd64',
-				name => 'AMD64',
-			}
-		},
-		europa => [
-			"amd64.debian.net/debian",
-			"ftp.de.debian.org/debian-amd64/debian",
-			"ftp.es.debian.org/debian-amd64/debian",
-			"ftp.nl.debian.org/debian-amd64/debian",
-			"ftp.sk.debian.org/debian-amd64/debian",
-			"bytekeeper.as28747.net/debian-amd64/debian",
-			"mirror.switch.ch/debian-amd64/debian",
-		],
-		asia => [
-			"ftp.jp.debian.org/debian-amd64/debian/",
-			"hanzubon.jp/debian-amd64/debian",
-		],
-		north_america => [
-			"mirror.espri.arizona.edu/debian-amd64/debian",
-			"debian.csail.mit.edu/debian-amd64/debian",
-		],
-		australia => [
-			"public.planetmirror.com/pub/debian-amd64/debian",
-		],
-	},
-
-	debports => {
-		mirror_list => 'http://wiki.debian.org/DebianPorts/Mirrors',
-		unofficial_port => {
-			'kfreebsd-amd64' => {
-				url_name => 'kfreebsd-gnu',
-				name => 'GNU/kFreeBSD',
-			},
-			'kfreebsd-i386' => {
-				url_name => 'kfreebsd-gnu',
-				name => 'GNU/kFreeBSD',
-			},
-		},
-		north_america => [
-			"www.gtlib.gatech.edu/pub/gnuab/debian",
-			"www.superunprivileged.org/debian",
-		],
-		europa => [
-			"ftp.debian-ports.org/debian",
-			"ftp.de.debian.org/debian-ports",
-			"ftp.ch.debian.org/debian-ports",
-			"ftp.easynet.be/ftp/gnuab/debian",
+			"ftp.kr.debian.org/debian-archive",
+#			"ftp.twaren.net/Linux/Debian/debian-archive",
 		],
 	},
 }
-
-ports_url = 'http://www.debian.org/ports/'
 
 continents = {
 		north_america => g('North America'),

@@ -24,12 +24,7 @@ cachedir=${topdir}/cache
 # path to private ftp directory
 #ftproot=/org/ftp.root
 
-ftpsite=http://ftp.de.debian.org/debian
-security_ftpsite=http://security.debian.org/debian-security
-volatile_ftpsite=http://volatile.debian.org/debian-volatile
-backports_ftpsite=http://backports.org/debian
-amd64_ftpsite=http://amd64.debian.net/debian
-debports_ftpsite=http://ftp.debian-ports.org/debian
+ftpsite=http://archive.debian.org/
 ddtp_ftpsite=http://ddtp.debian.net/debian
 
 wget_cmd="wget --no-verbose --tries=2 --timeout=60"
@@ -43,20 +38,18 @@ search_url="/search"
 #
 polangs="de fi fr hu ja nl ru sv uk zh-cn"
 ddtplangs="ca cs da de eo es fi fr hu it ja km-kh ko nl pl pt pt-br ru sk sv uk zh-cn zh-tw"
-archives="us security amd64 debports backports volatile"
+archives="us"
 sections="main contrib non-free"
 parts="$sections"
-suites="sarge sarge-volatile sarge-backports etch etch-m68k etch-volatile etch-backports lenny sid experimental"
+suites="bo hamm slink potato woody"
 priorities="required important standard optional extra"
 dists="$suites"
-architectures="alpha amd64 arm armel hppa hurd-i386 i386 ia64 kfreebsd-i386 kfreebsd-amd64 m68k mips mipsel powerpc s390 sparc"
-arch_sarge="alpha amd64 arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
-arch_etch="alpha amd64 arm hppa i386 ia64 mips mipsel powerpc s390 sparc"
-arch_lenny="${arch_etch} armel"
-arch_sid="${arch_sarge} armel hurd-i386 kfreebsd-i386 kfreebsd-amd64"
-arch_experimental="${arch_sid}"
-arch_lenny_proposed_updates="${arch_lenny}"
-arch_etch_proposed_updates="${arch_etch}"
+architectures="alpha arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
+arch_bo="i386"
+arch_hamm="i386 m68k"
+arch_slink="alpha i386 m68k sparc"
+arch_potato="alpha arm i386 ia64 m68k powerpc sparc"
+arch_woody="alpha arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
 
 # Miscellaneous
 #

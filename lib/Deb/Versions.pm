@@ -152,7 +152,8 @@ sub _lcmp {
     return length( $v1 ) <=> length( $v2 );
 }
 
-our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
+our @SUITES_SORT = qw( bo hamm slink potato woody
+		       oldstable sarge stable stable-proposed-updates
 		       etch etch-m68k testing testing-proposed-updates lenny
 		       sid unstable experimental
 		       warty hoary breezy breezy dapper edgy feisty gutsy );

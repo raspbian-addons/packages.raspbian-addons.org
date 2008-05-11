@@ -4,16 +4,16 @@
 	keywords = "$organisation, Packages"
 -%]
 [%-
-    all_suites = [ 'sarge', 'sarge-volatile', 'sarge-backports',
-    	       	   'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
-		   'lenny', 'sid' ]
-    version_numbers = { sarge => '3.1',
-			etch   => '4.0' }
-    current_release = 'etch'
+    all_suites = [ 'bo', 'hamm', 'slink', 'potato', 'woody' ]
+    version_numbers = { woody  => '3.0',
+			potato => '2.2',
+			slink  => '2.1',
+			hamm   => '2.0',
+			bo     => '1.3.1'}
+    current_release = 'woody'
     all_sections = [ 'main', 'contrib', 'non-free' ]
-    all_architectures = [ 'alpha', 'arm', 'armel', 'amd64', 'hppa', 'i386',
-    		      	  'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
-			  'mipsel', 'powerpc', 's390', 'sparc' ]
+    all_architectures = [ 'alpha', 'arm', 'hppa', 'i386', 'ia64',
+    			  'mips', 'mipsel', 'powerpc', 's390', 'sparc' ]
 -%]
 
 <p>This site provides you with information about all the packages
@@ -31,9 +31,6 @@ if you encounter any problems!</em></p>
 [% IF version_numbers.$s %]([% version_numbers.$s %])[% END %]</li>
 [% END %]
 </ul>
-
-<p>There is also a list of <a href="[% all_suites.-1 %]/main/newpkg">packages
-recently added to [% all_suites.-1 %]</a>.</p>
 
 <h2>Search</h2>
 

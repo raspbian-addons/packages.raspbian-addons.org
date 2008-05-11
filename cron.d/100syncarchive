@@ -84,35 +84,3 @@ else
 	$check_release_cmd $archivedir/us/${dist}/Release
     done
 fi
-
-# security archive
-#
-for dist in sarge etch lenny
-do
-    echo "retrieve Release(.gpg) $dist"
-    test -d security/${dist} || mkdir -p security/${dist}
-    (cd security/${dist} &&
-	$wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/Release &&
-	$wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/Release.gpg )
-        
-    foo=\$arch_${dist//-/_}
-    for arch in `eval echo $foo`
-    do
-      for part in ${parts}
-      do
-	echo retrieve Packages $dist/$part/security/$arch
-	test -d security/${dist}/${part}/binary-${arch} || mkdir -p security/${dist}/${part}/binary-${arch}
-	(cd  security/${dist}/${part}/binary-${arch} &&
-	    $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/binary-${arch}/Packages.gz)
-      done
-    done
-    for part in ${parts}
-    do
-        echo retrieve Sources $dist/$part/security
-        test -d security/${dist}/${part}/source || mkdir -p security/${dist}/${part}/source
-        (cd security/${dist}/${part}/source &&
-            $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/source/Sources.gz)
-    done
-
-    $check_release_cmd $archivedir/security/${dist}/Release
-done

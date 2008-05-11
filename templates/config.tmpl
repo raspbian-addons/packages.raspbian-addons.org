@@ -5,7 +5,7 @@
 
    organisation = 'Debian'
    project_homepage = 'http://www.debian.org/'
-   packages_homepage = 'http://packages.debian.net/'
+   packages_homepage = 'http://archive.debian.net/'
    searchformurl = packages_homepage
    search_url = '/search'
    tags_url = 'http://debtags.alioth.debian.org/'
@@ -38,20 +38,22 @@
 	url => project_homepage _ 'trademark'
    }
    contact = {
-	name => g('Debian Web Mailinglist'),
-	mail => 'debian-www@lists.debian.org',
+	name => 'Frank Lichtenheld',
+	mail => 'djpig@debian.org',
         url => project_homepage _ 'contact',
    }
    admin = {
-	name => g('%s Webmaster', organisation),
-	mail => 'webmaster@debian.org',
+	name => 'Frank Lichtenheld',
+	mail => 'djpig@debian.org',
    }
    trademarknotes = g('%s is a <a href="%s">trademark</a> of %s', organisation, trademark.url, trademark.name)
 -%]
 [%-
    # possible values for importance: high, normal, low
+   #sitewidemsg = { importance => "high",
+   #		   txt => g('Please note that this is an experimental version of <a href="http://%s/">%s</a>. Errors and obsolete information should be expected', 'packages.debian.org', 'packages.debian.org') }
    sitewidemsg = { importance => "high",
-		   txt => g('Please note that this is an experimental version of <a href="http://%s/">%s</a>. Errors and obsolete information should be expected', 'packages.debian.org', 'packages.debian.org') }
+   		   txt => g('Please note that this site contains information about obsolete %s releases; if you search for current data, please use <a href="http://%s/">%s</a>.', organisation, 'packages.debian.org', 'packages.debian.org') }
 -%]
 [%# @translators: . = decimal_point , = thousands_sep, see Number::Format %]
 [%- USE num = Number.Format( decimal_point => g('.'),
