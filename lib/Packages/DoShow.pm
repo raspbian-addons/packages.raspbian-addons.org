@@ -241,11 +241,13 @@ sub do_show {
 			#
 			# more information
 			#
+			my $changesandcopy = 0;
+			$changesandcopy = 1 if $suite eq "woody";
 			moreinfo( name => $pkg, data => $page, vars => \%contents,
 				  opts => $opts,
 				  env => \%FTP_SITES,
 				  bugreports => 1, sourcedownload => 1,
-				  changesandcopy => 0, maintainers => 1,
+				  changesandcopy => $changesandcopy, maintainers => 1,
 				  search => 1 );
 		    } else { # unless $page->is_virtual
 			$contents{is_virtual} = 1;
@@ -321,11 +323,13 @@ sub do_show {
 		    #
 		    # more information
 		    #
+		    my $changesandcopy = 0;
+		    $changesandcopy = 1 if $suite eq "woody";
 		    moreinfo( name => $pkg, data => $page, vars => \%contents,
 			      opts => $opts,
 			      env => \%FTP_SITES,
 			      bugreports => 1,
-			      changesandcopy => 0, maintainers => 1,
+			      changesandcopy => $changesandcopy, maintainers => 1,
 			      search => 1, is_source => 1 );
 
 		} # else (unless $opts->{source})

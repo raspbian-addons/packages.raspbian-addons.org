@@ -19,12 +19,12 @@ cachedir=${topdir}/cache
 # unset this if %SITE% moves somewhere where the packages files
 # cannot be obtained locally
 #
-#localdir=/org/ftp.debian.org/debian
+localdir=/srv/archive.debian.org/ftp
 
 # path to private ftp directory
 #ftproot=/org/ftp.root
 
-ftpsite=http://archive.debian.org/
+ftpsite=http://archive.debian.org/debian-archive
 ddtp_ftpsite=http://ddtp.debian.net/debian
 
 wget_cmd="wget --no-verbose --tries=2 --timeout=60"
