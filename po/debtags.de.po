@@ -369,7 +369,8 @@ msgstr ""
 " .\n"
 " Die Kommunikation zwischen FTP-Servern und -Clients verwendet zwei Kanäle,\n"
 " den Steuer- und den Datenkanal. Während ursprünglich FTP nur mit\n"
-" Authentifizierung verwandt wurde, bieten die meisten FTP-Server im Internet\n"
+" Authentifizierung verwandt wurde, bieten die meisten FTP-Server im "
+"Internet\n"
 " anonymen Zugriff ohne Passwort. Da FTP keine Verschlüsselung unterstützt,\n"
 " erfolgt vertrauenswürdiger Datentransfer heutzutage über SFTP.\n"
 " .\n"
@@ -380,6 +381,11 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " Games like Nethack, Angband etc."
 msgstr " Spiele wie Nethack, Angband usw."
+
+#. Tag: hardware::gps, long desc
+#: files/debtags/vocabulary
+msgid " Global Positioning System"
+msgstr ""
 
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
@@ -561,6 +567,22 @@ msgstr ""
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
+#, fuzzy
+#| msgid ""
+#| " Kerberos is a authentication protocol for computer networks for secure\n"
+#| " authentication over an otherwise insecure network, using symmetric\n"
+#| " cryptography and a third party service provider, that is trusted both "
+#| "by\n"
+#| " client and server.\n"
+#| " . \n"
+#| " The authentication mechanism provided by Kerberos is mutual, so that not "
+#| "only\n"
+#| " a server can be sure of a client's identity, but also a client can be "
+#| "sure a\n"
+#| " connection to a server is not intercepted.\n"
+#| " .\n"
+#| " Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29\n"
+#| " Link: http://www.ietf.org/rfc/rfc4120.txt"
 msgid ""
 " Kerberos is a authentication protocol for computer networks for secure\n"
 " authentication over an otherwise insecure network, using symmetric\n"
@@ -574,7 +596,7 @@ msgid ""
 " connection to a server is not intercepted.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29\n"
-" Link: http://www.ietf.org/rfc/rfc4120.txt"
+" Link: http://http://www.ietf.org/rfc/rfc4120.txt"
 msgstr ""
 " Kerberos ist ein Authentifizierungsprotokoll für Computernetze für sichere\n"
 " Authentifizierung über ansonsten unsichere Netze. Hierzu werden "
@@ -649,10 +671,20 @@ msgstr ""
 
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
+#, fuzzy
+#| msgid ""
+#| " Network News Transfer Protocol, a protocol for reading in writing "
+#| "Usenet\n"
+#| " articles (a Usenet article is comparable with an email), but also used\n"
+#| " among NNTP servers to transfer articles. \n"
+#| " .\n"
+#| " Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
+#| " Link: http://www.ietf.org/rfc/rfc977.txt"
 msgid ""
-" Network News Transfer Protocol, a protocol for reading in writing Usenet\n"
-" articles (a Usenet article is comparable with an email), but also used\n"
-" among NNTP servers to transfer articles. \n"
+" Network News Transfer Protocol, a protocol for reading and writing Usenet\n"
+" articles (a Usenet article is comparable with an email), but also used "
+"among\n"
+" NNTP servers to transfer articles.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc977.txt"
@@ -849,16 +881,31 @@ msgstr " Laufzeit-Umgebungen verschiedener Sprachen und Systeme."
 
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
+#, fuzzy
+#| msgid ""
+#| " SSH File Transfer Protocol, a protocol for secure, encrypting file "
+#| "exchange\n"
+#| " and manipulation over insecure networks, using the SSH protocol.\n"
+#| " .\n"
+#| " SFTP provides a complete set of file system operations, different from "
+#| "its\n"
+#| " predecessor SCP, which only allowed file transfer. It is not, other than "
+#| "the\n"
+#| " name might suggest, the a version of the FTP protocol executed through "
+#| "an\n"
+#| " SSH channel.\n"
+#| " .\n"
+#| " Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgid ""
 " SSH File Transfer Protocol, a protocol for secure, encrypting file "
 "exchange\n"
 " and manipulation over insecure networks, using the SSH protocol.\n"
 " .\n"
 " SFTP provides a complete set of file system operations, different from its\n"
-" predecessor SCP, which only allowed file transfer. It is not, other than "
+" predecessor SCP, which only allows file transfer. It is not, other than "
 "the\n"
-" name might suggest, the a version of the FTP protocol executed through an\n"
-" SSH channel.\n"
+" name might suggest, a version of the FTP protocol executed through an SSH\n"
+" channel.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
@@ -1302,6 +1349,21 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc793.txt"
+msgstr ""
+
+#. Tag: protocol::tftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
+"allows\n"
+" a client to get or put a file onto a remote host.  One of its primary uses "
+"is\n"
+" the network booting of diskless nodes on a Local Area Network.  It is "
+"designed\n"
+" to be easy to implement so it fits on ROM.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
 
 #. Tag: hardware::power:ups, long desc
@@ -2291,6 +2353,13 @@ msgstr "GNUstep"
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
+msgstr "GPE"
+
+#. Tag: hardware::gps, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "GPE"
+msgid "GPS"
 msgstr "GPE"
 
 #. Tag: uitoolkit::gtk, short desc
@@ -3815,6 +3884,13 @@ msgstr "Systemsoftware und -wartung"
 #: files/debtags/vocabulary
 msgid "TCP"
 msgstr "TCP"
+
+#. Tag: protocol::tftp, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "FTP"
+msgid "TFTP"
+msgstr "FTP"
 
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
