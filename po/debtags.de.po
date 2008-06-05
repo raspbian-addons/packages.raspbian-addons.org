@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-05-03 17:01+0200\n"
+"PO-Revision-Date: 2008-06-05 20:29+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -274,7 +274,7 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc2131.txt"
 msgstr ""
-" Dynamic Host Configuration Protocol, ein Client-Server-Netzprotokoll für\n"
+" »Dynamic Host Configuration Protocol«, ein Client-Server-Netzprotokoll für\n"
 " automatische Zuweisung von dynamischen IP-Adressen zu Computern in einem\n"
 " TCP/IP-Netz,\n"
 " statt jedem Computer eine statische IP-Adresse zu vergeben.\n"
@@ -346,7 +346,7 @@ msgstr ""
 #. Tag: filetransfer::ftp, long desc
 #: files/debtags/vocabulary
 msgid " File Transfer Protocol"
-msgstr " File Transfer-Protokoll"
+msgstr " File Transfer Protocol"
 
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
@@ -364,7 +364,7 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc0959.txt"
 msgstr ""
-" File Transfer-Protokoll, ein Protokoll zum Austausch und Bearbeiten von\n"
+" »File Transfer Protocol«, ein Protokoll zum Austausch und Bearbeiten von\n"
 " Dateien über Netze, wird auch extensiv über das Internet verwandt.\n"
 " .\n"
 " Die Kommunikation zwischen FTP-Servern und -Clients verwendet zwei Kanäle,\n"
@@ -430,7 +430,7 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Http\n"
 " Link: http://www.ietf.org/rfc/rfc2616.txt"
 msgstr ""
-" HyperText Transfer Protocol, eines der wichtigsten Protokolle des\n"
+" »HyperText Transfer Protocol«, eines der wichtigsten Protokolle des\n"
 " World Wide Web.\n"
 " .\n"
 " Es steuert die Datenübertragung zwischen HTTP-Servern wie Apache und HTTP-\n"
@@ -472,7 +472,7 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
 msgstr ""
-" Internet Message Access-Protokoll, ein Protokoll, das zum Zugriff auf E-"
+" »Internet Message Access Protocol«, ein Protokoll, das zum Zugriff auf E-"
 "Mail\n"
 " auf einem Server von Clients wie KMail oder Evolution verwandt wird.\n"
 " .\n"
@@ -567,22 +567,6 @@ msgstr ""
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| " Kerberos is a authentication protocol for computer networks for secure\n"
-#| " authentication over an otherwise insecure network, using symmetric\n"
-#| " cryptography and a third party service provider, that is trusted both "
-#| "by\n"
-#| " client and server.\n"
-#| " . \n"
-#| " The authentication mechanism provided by Kerberos is mutual, so that not "
-#| "only\n"
-#| " a server can be sure of a client's identity, but also a client can be "
-#| "sure a\n"
-#| " connection to a server is not intercepted.\n"
-#| " .\n"
-#| " Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29\n"
-#| " Link: http://www.ietf.org/rfc/rfc4120.txt"
 msgid ""
 " Kerberos is a authentication protocol for computer networks for secure\n"
 " authentication over an otherwise insecure network, using symmetric\n"
@@ -609,8 +593,8 @@ msgstr ""
 " sicher ist, sondern auch der Client sicher sein kann, dass die Verbindung\n"
 " zum Server nicht abgefangen wird.\n"
 " .\n"
-" Link: http://de.wikipedia.org/wiki/Kerberos_%28Informatik%29 Link: http://"
-"http://www.ietf.org/rfc/rfc4120.txt"
+" Link: http://de.wikipedia.org/wiki/Kerberos_%28Informatik%29\n"
+" Link: http://http://www.ietf.org/rfc/rfc4120.txt"
 
 #. Tag: role::devel-lib, long desc
 #: files/debtags/vocabulary
@@ -622,12 +606,12 @@ msgstr ""
 #. Tag: protocol::ldap, long desc
 #: files/debtags/vocabulary
 msgid " Lightweight Directory Access Protocol"
-msgstr " Lightweight Directory Access-Protokoll"
+msgstr " Lightweight Directory Access Protocol"
 
 #. Tag: works-with-format::ldif, long desc
 #: files/debtags/vocabulary
 msgid " Lightweight Directory Interchange Format"
-msgstr " Lightweight Directory Interchange-Format"
+msgstr " Lightweight Directory Interchange Format"
 
 #. Tag: suite::xfce, long desc
 #: files/debtags/vocabulary
@@ -661,7 +645,7 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Network_File_System"
 msgstr ""
-" Network File System ist ein Protokoll, das ursprünglich 1984 von Sun\n"
+" »Network File System« ist ein Protokoll, das ursprünglich 1984 von Sun\n"
 " Microsystems entwickelt wurde und in RFCs 1094, 1813 und 3530 (überholt\n"
 " technisch die 3010) als verteiltes Dateisystem definiert ist, das es\n"
 " Benutzern auf Client-Rechnern erlaubt, auf Dateien über ein Netz so leicht\n"
@@ -671,15 +655,6 @@ msgstr ""
 
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| " Network News Transfer Protocol, a protocol for reading in writing "
-#| "Usenet\n"
-#| " articles (a Usenet article is comparable with an email), but also used\n"
-#| " among NNTP servers to transfer articles. \n"
-#| " .\n"
-#| " Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
-#| " Link: http://www.ietf.org/rfc/rfc977.txt"
 msgid ""
 " Network News Transfer Protocol, a protocol for reading and writing Usenet\n"
 " articles (a Usenet article is comparable with an email), but also used "
@@ -689,7 +664,7 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc977.txt"
 msgstr ""
-" Network News Transfer-Protokoll ist ein Protokoll zum Lesen und Schreiben "
+" »Network News Transfer Protocol« ist ein Protokoll zum Lesen und Schreiben "
 "von\n"
 " Usenet-Artikeln (ein Usenet-Artikel kann mit E-Mail verglichen werden). Es\n"
 " wird aber auch zwischen NNTP-Servern zur Übertragung von Artikeln "
@@ -785,7 +760,7 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Post_Office_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc1939.txt"
 msgstr ""
-" Post Office-Protokoll ist ein Protokoll zum Herunterladen von E-Mails von\n"
+" »Post Office Protokol« ist ein Protokoll zum Herunterladen von E-Mails von\n"
 " einem E-Mail-Server. Es wurde für Benutzer entwickelt, die keinen "
 "ständigen\n"
 " Zugriff auf das Internet haben.\n"
@@ -881,21 +856,6 @@ msgstr " Laufzeit-Umgebungen verschiedener Sprachen und Systeme."
 
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| " SSH File Transfer Protocol, a protocol for secure, encrypting file "
-#| "exchange\n"
-#| " and manipulation over insecure networks, using the SSH protocol.\n"
-#| " .\n"
-#| " SFTP provides a complete set of file system operations, different from "
-#| "its\n"
-#| " predecessor SCP, which only allowed file transfer. It is not, other than "
-#| "the\n"
-#| " name might suggest, the a version of the FTP protocol executed through "
-#| "an\n"
-#| " SSH channel.\n"
-#| " .\n"
-#| " Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgid ""
 " SSH File Transfer Protocol, a protocol for secure, encrypting file "
 "exchange\n"
@@ -909,12 +869,12 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
-" SSH File Transfer-Protokoll ist ein Protokoll für den sicheren\n"
+" »SSH File Transfer Protocol« ist ein Protokoll für den sicheren\n"
 " verschlüsselten Dateiaustausch und -bearbeitung über unsichere Netze unter\n"
 " Verwendung des SSH-Protokolls.\n"
 " .\n"
 " SFTP bietet einen kompletten Satz von Dateisystemoperationen, die sich von\n"
-" seinem Vorgänger SCP unterscheiden, der nur Dateiübertragungen erlaubte.\n"
+" seinem Vorgänger SCP unterscheiden, der nur Dateiübertragungen erlaubt.\n"
 " Anders als der Name es erwarten lassen könnte, ist es keine Version des\n"
 " FTP-Protokolls, das durch einen SSH-Tunnel ausgeführt wird.\n"
 " .\n"
@@ -923,7 +883,7 @@ msgstr ""
 #. Tag: filetransfer::sftp, long desc
 #: files/debtags/vocabulary
 msgid " Secure File Transfer Protocol"
-msgstr " Secure File Transfer-Protokoll"
+msgstr " Secure File Transfer Protocol"
 
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
@@ -942,6 +902,18 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgstr ""
+" »Secure Shell«, ein Protokoll für sichere, verschlüsselte Netzverbindungen.\n"
+" SSH kann zum Ausführen von Programmen auf entfernten Rechnern mit einem\n"
+" SSH-Server über sichere und ansonsten unsichere Protokolle über einen\n"
+" SSH-Kanal verwandt werden. Wie der Name andeutet, ist die Hauptanwendung\n"
+" die verschlüsselte Anmeldung und der verschlüsselte Shell-Zugriff auf\n"
+" entfernten Rechnern.\n"
+" .\n"
+" SSH-Authentifizierung kann über Passwörter oder dem bevorzugten Mechanismus\n"
+" der asymetrischen Kryptographie mit öffentlichen/privaten Schlüsseln\n"
+" erfolgen.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Secure_Shell"
 
 #. Tag: protocol::ssl, long desc
 #: files/debtags/vocabulary
@@ -957,6 +929,17 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 msgstr ""
+" »Secure Socket Layer/Transport Layer Security«, ein Protokoll, das eine\n"
+" sichere verschlüsselte Kommunikation über das Internet bereitstellt. Es\n"
+" wird zur Authentifizierung der Identität eines Diensteanbieters (wie eines\n"
+" Internet-Bank-Servers) und zur Absicherung eines Kommunikationskanals\n"
+" verwandt.\n"
+" .\n"
+" Andernfalls unsichere Protokolle wie FTP, HTTP, IMAP oder SMTP können über\n"
+" SSL/TLS übertragen werden, um die übertragenen Daten abzusichern. In diesem\n"
+" Fall wird an den Protokollnamen ein »S« angehängt, wie in HTTPS, FTPS usw.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Secure_Sockets_Layer"
 
 #. Tag: field::biology:bioinformatics, long desc
 #: files/debtags/vocabulary
@@ -980,6 +963,16 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Server_Message_Block\n"
 " Link: http://www.samba.org/"
 msgstr ""
+" »Server Message Block« ist ein Protokoll, um Dateizugriff und gemeinsame\n"
+" Druckernutzung über Netze bereitzustellen. Es wird hauptsächlich von\n"
+" Microsoft Windows(tm) verwandt. CIFS (Common Internet File System) is ein\n"
+" Synonym für SMB.\n"
+" Obwohl SMB ein proprietäres Protokoll ist, hat das Samba-Projekt das\n"
+" Protokoll erschlossen und sowohl Client- als auch Server-Programme für\n"
+" bessere Interoperabilität in gemischten Unix-/Windows-Netzen entwickelt.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Server_Message_Block\n"
+" Link: http://www.samba.org/"
 
 #. Tag: role::shared-lib, long desc
 #: files/debtags/vocabulary
@@ -1003,6 +996,15 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc2821.txt"
 msgstr ""
+" »Simple Mail Transfer Protocol« ist ein Protokoll zur Übertragung von\n"
+" E-Mails über das Internet.\n"
+" .\n"
+" Jeder SMTP-Server verwendet SMTP um E-Mails an den nächsten E-Mail-Server\n"
+" weiterzugeben, bis die E-Mail an ihrem Ziel ankommt, wo sie normalerweise\n"
+" via POP3 oder IMAP abgeholt wird.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc2821.txt"
 
 #. Tag: protocol::snmp, long desc
 #: files/debtags/vocabulary
@@ -1057,12 +1059,14 @@ msgstr " Software, die Benutzer über den Status einer Mailbox benachrichtigt."
 msgid ""
 " Software that routes and transmits mail accross the system and the network."
 msgstr ""
+" Software, die E-Mail über das System und Netz weiterleitet und überträgt."
 
 #. Tag: biology::peptidic, long desc
 #: files/debtags/vocabulary
 msgid ""
 " Software that works with sequences of aminoacids: peptides and proteins."
 msgstr ""
+" Software, die mit einer Sequenz von Aminosäuren arbeitet: Peptiden und Proteinen."
 
 #. Tag: biology::nuceleic-acids, long desc
 #: files/debtags/vocabulary
@@ -1080,6 +1084,8 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " Software useful to molecular cloning and related wet biology."
 msgstr ""
+" Software, die für molekulares Klonen und verwandte nasse Biologie nützlich "
+"ist."
 
 #. Tag: protocol::telnet, long desc
 #: files/debtags/vocabulary
@@ -1106,6 +1112,10 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Ident"
 msgstr ""
+" Das »Ident Internet«-Protokoll hilft bei der Identifizierung oder\n"
+" Authentifizierung von Benutzern einer Netzverbindung.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Ident"
 
 #. Tag: protocol::jabber, long desc
 #: files/debtags/vocabulary
@@ -1194,17 +1204,18 @@ msgstr ""
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
 msgid " The Zope (web) publishing platform."
-msgstr ""
+msgstr " Die Zope-(Web-)Veröffentlichungsplattform"
 
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid " The culture for which the package provides special support"
-msgstr ""
+msgstr " Die Kultur, für die dieses Paket spezielle Unterstützung bietet"
 
 #. Facet: made-of, long desc
 #: files/debtags/vocabulary
 msgid " The languages or data formats used to make the package"
 msgstr ""
+" Die Sprachen oder Datenformate, die zur Paketerstellung verwandt wurden"
 
 #. Tag: accessibility::TODO, long desc
 #. Tag: admin::TODO, long desc
@@ -1295,6 +1306,8 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " To find what relates or differs in two or more objects."
 msgstr ""
+"Um herauszufinden, wie zwei oder mehr Objekte zusammenhängen oder sich "
+"unterscheiden."
 
 #. Tag: devel::docsystem, long desc
 #: files/debtags/vocabulary
@@ -1308,6 +1321,8 @@ msgid ""
 " the ECMA CLI (Common Language Infrastructure), like Mono\n"
 " or DotGNU Portable.NET."
 msgstr ""
+" Werkzeuge und Bibliotheken für Entwicklungen mit Implementationen der ECMA\n"
+" CLI (Common Language Infrastructure), wie Mono oder DotGNU Portable.NET."
 
 #. Tag: devel::ui-builder, long desc
 #: files/debtags/vocabulary
@@ -1330,6 +1345,9 @@ msgid ""
 " Tools to monitor system for changes in filesystem and report changes\n"
 " or tools providing other means to check system integrity."
 msgstr ""
+" Werkzeuge, um System auf Änderungen im Dateisystem zu überwachen und\n"
+" Änderungen zu berichten oder Werkzeuge, um andere Möglichkeiten zur\n"
+" Überprüfung der Systemintegrität bereitzustellen."
 
 #. Tag: devel::debian, long desc
 #: files/debtags/vocabulary
@@ -1386,7 +1404,7 @@ msgstr ""
 #. Tag: biology::format:aln, long desc
 #: files/debtags/vocabulary
 msgid " Used in multiple alignment of biological sequences."
-msgstr ""
+msgstr " Verwendet in mehrfachen Alignments biologischer Sequenzen."
 
 #. Tag: protocol::udp, long desc
 #: files/debtags/vocabulary
@@ -1446,7 +1464,7 @@ msgstr ""
 #. Tag: web::wiki, long desc
 #: files/debtags/vocabulary
 msgid " Wiki software, servers, utilities and plug-ins."
-msgstr ""
+msgstr " Wiki-Software, -Server, -Hilfswerkzeuge und Erweiterungen."
 
 #. Tag: filetransfer::smb, long desc
 #: files/debtags/vocabulary
@@ -1472,6 +1490,7 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid " XML dialect used to describe resources and websites."
 msgstr ""
+" XML-Dialekt, der zur Beschreibung von Ressourcen und Websites verwandt wird."
 
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
@@ -1511,7 +1530,7 @@ msgstr "Unterstützung für Barrierefreiheit"
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
 msgid "Accounting"
-msgstr ""
+msgstr "Buchführung"
 
 #. Tag: game::arcade, short desc
 #: files/debtags/vocabulary
@@ -1573,7 +1592,7 @@ msgstr "Anwendungsdaten"
 #. Tag: web::appserver, short desc
 #: files/debtags/vocabulary
 msgid "Application Server"
-msgstr ""
+msgstr "Anwendungs-Server"
 
 #. Facet: suite, short desc
 #: files/debtags/vocabulary
@@ -2039,7 +2058,7 @@ msgstr "Herunterladen"
 #. Tag: role::dummy, short desc
 #: files/debtags/vocabulary
 msgid "Dummy Package"
-msgstr ""
+msgstr "Pseudo-Paket"
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
@@ -2357,10 +2376,8 @@ msgstr "GPE"
 
 #. Tag: hardware::gps, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "GPE"
 msgid "GPS"
-msgstr "GPE"
+msgstr "GPS"
 
 #. Tag: uitoolkit::gtk, short desc
 #: files/debtags/vocabulary
@@ -3843,7 +3860,7 @@ msgstr ""
 #. Facet: works-with-format, short desc
 #: files/debtags/vocabulary
 msgid "Supports Format"
-msgstr "Unterstützte Formate"
+msgstr "Unterstützt Formate"
 
 #. Tag: culture::swedish, short desc
 #: files/debtags/vocabulary
@@ -3887,10 +3904,8 @@ msgstr "TCP"
 
 #. Tag: protocol::tftp, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "FTP"
 msgid "TFTP"
-msgstr "FTP"
+msgstr "TFTP"
 
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
