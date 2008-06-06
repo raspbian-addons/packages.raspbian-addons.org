@@ -293,6 +293,11 @@ msgstr ""
 msgid " Games like Nethack, Angband etc."
 msgstr ""
 
+#. Tag: hardware::gps, long desc
+#: files/debtags/vocabulary
+msgid " Global Positioning System"
+msgstr ""
+
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
 msgid " Gnu's Not Unix. The package is part of the official GNU project"
@@ -488,9 +493,10 @@ msgstr ""
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
 msgid ""
-" Network News Transfer Protocol, a protocol for reading in writing Usenet\n"
-" articles (a Usenet article is comparable with an email), but also used\n"
-" among NNTP servers to transfer articles. \n"
+" Network News Transfer Protocol, a protocol for reading and writing Usenet\n"
+" articles (a Usenet article is comparable with an email), but also used "
+"among\n"
+" NNTP servers to transfer articles.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc977.txt"
@@ -661,10 +667,10 @@ msgid ""
 " and manipulation over insecure networks, using the SSH protocol.\n"
 " .\n"
 " SFTP provides a complete set of file system operations, different from its\n"
-" predecessor SCP, which only allowed file transfer. It is not, other than "
+" predecessor SCP, which only allows file transfer. It is not, other than "
 "the\n"
-" name might suggest, the a version of the FTP protocol executed through an\n"
-" SSH channel.\n"
+" name might suggest, a version of the FTP protocol executed through an SSH\n"
+" channel.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
@@ -1082,6 +1088,21 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc793.txt"
+msgstr ""
+
+#. Tag: protocol::tftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
+"allows\n"
+" a client to get or put a file onto a remote host.  One of its primary uses "
+"is\n"
+" the network booting of diskless nodes on a Local Area Network.  It is "
+"designed\n"
+" to be easy to implement so it fits on ROM.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
 
 #. Tag: hardware::power:ups, long desc
@@ -2069,6 +2090,11 @@ msgstr ""
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
+msgstr ""
+
+#. Tag: hardware::gps, short desc
+#: files/debtags/vocabulary
+msgid "GPS"
 msgstr ""
 
 #. Tag: uitoolkit::gtk, short desc
@@ -3594,6 +3620,13 @@ msgstr ""
 msgid "TCP"
 msgstr "TCP"
 
+#. Tag: protocol::tftp, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "SFTP"
+msgid "TFTP"
+msgstr "SFTP"
+
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
@@ -3808,6 +3841,11 @@ msgstr ""
 #. Tag: works-with::image:vector, short desc
 #: files/debtags/vocabulary
 msgid "Vector Image"
+msgstr ""
+
+#. Tag: works-with::vcs, short desc
+#: files/debtags/vocabulary
+msgid "Version control system"
 msgstr ""
 
 #. Tag: works-with::video, short desc
