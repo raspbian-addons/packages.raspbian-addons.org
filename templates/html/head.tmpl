@@ -43,6 +43,7 @@
 [% IF search_field_values.suite %]<input type="hidden" name="suite" value="[% search_field_values.suite %]">[% END %]
 [% IF search_field_values.sections %]<input type="hidden" name="section" value="[% search_field_values.sections %]">[% END %]
 [% IF search_field_values.architectures %]<input type="hidden" name="arch" value="[% search_field_values.architectures %]">[% END %]
+[% IF opts.lang %]<input type="hidden" name="lang" value="[% opts.lang %]">[% END %]
 <input type="submit" value="[% g('Search') %]">
 <select size="1" name="searchon">
 <option value="names" [% selected IF search_field_values.searchon == 'names' || search_field_values.searchon == 'default' %]>
