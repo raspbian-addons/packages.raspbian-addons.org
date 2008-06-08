@@ -293,6 +293,11 @@ msgstr ""
 msgid " Games like Nethack, Angband etc."
 msgstr ""
 
+#. Tag: hardware::gps, long desc
+#: files/debtags/vocabulary
+msgid " Global Positioning System"
+msgstr ""
+
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
 msgid " Gnu's Not Unix. The package is part of the official GNU project"
@@ -488,9 +493,10 @@ msgstr ""
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
 msgid ""
-" Network News Transfer Protocol, a protocol for reading in writing Usenet\n"
-" articles (a Usenet article is comparable with an email), but also used\n"
-" among NNTP servers to transfer articles. \n"
+" Network News Transfer Protocol, a protocol for reading and writing Usenet\n"
+" articles (a Usenet article is comparable with an email), but also used "
+"among\n"
+" NNTP servers to transfer articles.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc977.txt"
@@ -664,10 +670,10 @@ msgid ""
 " and manipulation over insecure networks, using the SSH protocol.\n"
 " .\n"
 " SFTP provides a complete set of file system operations, different from its\n"
-" predecessor SCP, which only allowed file transfer. It is not, other than "
+" predecessor SCP, which only allows file transfer. It is not, other than "
 "the\n"
-" name might suggest, the a version of the FTP protocol executed through an\n"
-" SSH channel.\n"
+" name might suggest, a version of the FTP protocol executed through an SSH\n"
+" channel.\n"
 " .\n"
 " Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
@@ -1095,6 +1101,21 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc793.txt"
+msgstr ""
+
+#. Tag: protocol::tftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+" Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
+"allows\n"
+" a client to get or put a file onto a remote host.  One of its primary uses "
+"is\n"
+" the network booting of diskless nodes on a Local Area Network.  It is "
+"designed\n"
+" to be easy to implement so it fits on ROM.\n"
+" .\n"
+" Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
 
 #. Tag: hardware::power:ups, long desc
@@ -2098,6 +2119,11 @@ msgstr ""
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
+msgstr ""
+
+#. Tag: hardware::gps, short desc
+#: files/debtags/vocabulary
+msgid "GPS"
 msgstr ""
 
 #. Tag: uitoolkit::gtk, short desc
@@ -3639,6 +3665,11 @@ msgstr ""
 msgid "TCP"
 msgstr ""
 
+#. Tag: protocol::tftp, short desc
+#: files/debtags/vocabulary
+msgid "TFTP"
+msgstr ""
+
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
@@ -3999,122 +4030,122 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Gallegan"
-#~ msgstr "galiciska"
-
-#~ msgid "Zulu"
-#~ msgstr "zulu"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Malayalam"
-#~ msgstr "malayalam"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Latvian"
-#~ msgstr "lettiska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Kannada"
-#~ msgstr "kanaresiska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Irish"
-#~ msgstr "irlÃ¤ndska"
-
-#~ msgid "Galician"
-#~ msgstr "galiciska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Chinese (Simplified)"
-#~ msgstr "kinesiska (fÃ¶renklad)"
-
-#~ msgid "Chinese (Traditional)"
-#~ msgstr "kinesiska (traditionell)"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
-
-#~ msgid "Portuguese (Brazilian)"
-#~ msgstr "portugisiska (Brasilien)"
+#~ msgid "Armenian"
+#~ msgstr "armeniska"
 
 #~ msgid "English"
 #~ msgstr "engelska"
 
-#~ msgid "Armenian"
-#~ msgstr "armeniska"
+#~ msgid "Portuguese (Brazilian)"
+#~ msgstr "portugisiska (Brasilien)"
+
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
+
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "kinesiska (traditionell)"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "kinesiska (fÃ¶renklad)"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Galician"
+#~ msgstr "galiciska"
+
+#~ msgid "Irish"
+#~ msgstr "irlÃ¤ndska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Kannada"
+#~ msgstr "kanaresiska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Latvian"
+#~ msgstr "lettiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Malayalam"
+#~ msgstr "malayalam"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Zulu"
+#~ msgstr "zulu"
+
+#~ msgid "Gallegan"
+#~ msgstr "galiciska"
