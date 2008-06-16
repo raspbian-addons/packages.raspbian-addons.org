@@ -79,7 +79,7 @@ done
 for domain in ${podomains}
 do
   perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot.new
-  if [ ! -f ${domain}.pot.new ] || diff -I"POT-Creation-Date" -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
+  if [ ! -f ${domain}.pot.new ] || diff -I"POT-Creation-Date" -I"^#: " -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
   then
       echo "${domain}.pot unchanged"
       rm ${domain}.pot.new
