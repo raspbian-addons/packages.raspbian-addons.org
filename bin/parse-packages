@@ -68,11 +68,12 @@ for my $suite (@SUITES) {
 
     for my $archive (@ARCHIVES) {
 	print "Reading $archive/$suite...\n";
-	if (!-d "$TOPDIR/archive/$archive/$suite/") {
+	my $suite_dir = "$TOPDIR/archive/$archive/$suite";
+	if (!-d $suite_dir) {
                 print "\tseems not to exist, skipping...\n";
                 next;
         }
-	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
+	open PKG, "zcat $suite_dir/$what/binary-*/Packages.gz $suite_dir/$what/debian-installer/binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";

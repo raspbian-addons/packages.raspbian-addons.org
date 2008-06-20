@@ -85,9 +85,11 @@ for my $suite (@suites) {
 
 		open CONT, "zcat $filename|$what"
 		    or die $!;
-		while (<CONT>) { last if /^FILE/mo; }
-		if (eof(CONT)) { # no header found
+		my $header_found = 0;
+		while (<CONT>) { /^FILE/mo && do { $header_found = 1; last };}
+		if (eof(CONT)) { # no header found or only header found
 		    close CONT; # explicit close to reset $.
+		    next if $header_found;
 		    open CONT, "zcat $filename|$what";
 		}
 		while (<CONT>) {
