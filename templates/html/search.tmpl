@@ -67,7 +67,7 @@
 
 [% IF opts.searchon == "names" && non_results %]
 <p>[% g('<a href="%s">Some</a> results have not been displayed due to the search parameters.',
-	"$search_url$keyword_esc") %]</p>
+	"$search_url?keywords=$keyword_esc") %]</p>
 [% END %]
 </div>
 
