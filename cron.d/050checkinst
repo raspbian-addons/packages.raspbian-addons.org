@@ -18,7 +18,7 @@ then
     then
     	echo "cachedir missing." >> $cache
     else
-	perm=$(ls -ld "$cachedir" | perl -ne 'print "ok" if /^drwxrws--- \d+ www-data/')
+	perm=$(ls -ld "$cachedir" | perl -ne 'print "ok" if /^drwx...... \d+ www-data/ || /^d...rws... \d+ [\w-]+\/www-data/'
         if [ -z "$perm" ]
 	then
 	    echo "cachedir has wrong permissions." >> $cache

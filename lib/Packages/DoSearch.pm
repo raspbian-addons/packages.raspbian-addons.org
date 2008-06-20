@@ -131,8 +131,7 @@ sub do_search {
 		    $real_archive = $archive;
 		    $archive = 'us';
 		}
-		if (($real_archive eq $archive) &&
-		    $pkgs{$pkg}{$suite}{$archive} &&
+		if ($pkgs{$pkg}{$suite}{$archive} &&
 		    (version_cmp( $pkgs{$pkg}{$suite}{$archive}, $version ) >= 0)) {
 		    next;
 		}

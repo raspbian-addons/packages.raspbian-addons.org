@@ -53,6 +53,8 @@ sub merge_package {
 
 	$self->{version} = $data->{version};
     }
+
+    return 1;
 }
 
 #FIXME: should be mergable with the Packages::Page version
