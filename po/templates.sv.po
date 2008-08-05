@@ -1,11 +1,12 @@
-# Peter Karlsson <peterk@debian.org>, 2008.
+# Peter Krefting <peterk@debian.org>, 2008.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: (null)\n"
-"PO-Revision-Date: 2008-02-19 21:37+0100\n"
-"Last-Translator: Peter Karlsson <peterk@debian.org>\n"
+"PO-Revision-Date: 2008-07-24 06:00+0100\n"
+"Last-Translator: Peter Krefting <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr "Webbansvarig för %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s är ett <a href=\"%s\">varumärke</a> hos %s"
 
-#: templates/config.tmpl:54
+#: templates/config.tmpl:58
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -32,17 +33,17 @@ msgstr ""
 "s</a>. Fel och föråldrad information kan förväntas"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:57
+#: templates/config.tmpl:61
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:62
 msgid ","
 msgstr "."
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
-msgstr "Inte x86"
+msgstr "Intel x86"
 
 #: templates/config/architectures.tmpl:5
 msgid "Motorola 680x0"
@@ -166,9 +167,9 @@ msgid ""
 "and install packages, instead of doing so manually via this website."
 msgstr ""
 "Om du kör %s rekommenderas det å det bestämdaste att du använder en "
-"pakethanterare som a href=\"%s\">aptitude</a> eller <a href=\"%s\">synaptic</"
-"a> för att hämta och installera paket, istället för att göra det manuellt "
-"via webbplatsen."
+"pakethanterare som <a href=\"%s\">aptitude</a> eller <a href=\"%s"
+"\">synaptic</a> för att hämta och installera paket, istället för att göra "
+"det manuellt via webbplatsen."
 
 #: templates/html/download.tmpl:25
 msgid ""
@@ -305,26 +306,14 @@ msgid "Filelist"
 msgstr "Filförteckning"
 
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages:"
-msgstr "Denna sida finns även på följande språk:"
-
-#: templates/html/foot.tmpl:22
-msgid "How to set <a href=\"%s\">the default document language</a>"
+#, fuzzy
+#| msgid "How to set <a href=\"%s\">the default document language</a>"
+msgid ""
+"This page is also available in the following languages (How to set <a href="
+"\"%s\">the default document language</a>):"
 msgstr "Så ställer du in <a href=\"%s\">standardspråkval för dokument</a>"
 
-#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr "%ss startsida"
-
-#: templates/html/foot.tmpl:27
-msgid "Back to:"
-msgstr "Återgå till:"
-
-#: templates/html/foot.tmpl:27
-msgid "Packages search page"
-msgstr "Paketsöksida"
-
-#: templates/html/foot.tmpl:31
+#: templates/html/foot.tmpl:28
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -335,11 +324,7 @@ msgstr ""
 "org\">debian-l10n-swedish@lists.debian.org</a>. För övrig "
 "kontaktinformation, se %ss <a href=\"%s\">kontaktsida</a>."
 
-#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
-msgid "Generated:"
-msgstr "Skapad:"
-
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
@@ -347,43 +332,53 @@ msgstr ""
 "Innehållet upphovsrättsskyddat &copy; %s <a href=\"%s\">%s</a>; Se <a href="
 "\"%s\">licensvillkor</a>."
 
-#: templates/html/foot.tmpl:39
+#: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
 msgstr "Läs mer om denna webbplats"
 
-#: templates/html/head.tmpl:46
+#: templates/html/foot.tmpl:40
+#, fuzzy
+#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgstr "Hämta källkodspaketet <a href=\"%s\">%s</a>:"
+
+#: templates/html/head.tmpl:47
 msgid "Search"
 msgstr "Sök"
 
-#: templates/html/head.tmpl:49
+#: templates/html/head.tmpl:50
 msgid "package names"
 msgstr "namn på paket"
 
-#: templates/html/head.tmpl:50
+#: templates/html/head.tmpl:51
 msgid "descriptions"
 msgstr "beskrivningar"
 
-#: templates/html/head.tmpl:51
+#: templates/html/head.tmpl:52
 msgid "source package names"
 msgstr "namn på källkodspaket"
 
-#: templates/html/head.tmpl:52
+#: templates/html/head.tmpl:53
 msgid "package contents"
 msgstr "innehåll i paket"
 
-#: templates/html/head.tmpl:55
+#: templates/html/head.tmpl:56
 msgid "all options"
 msgstr "alla flaggor"
 
-#: templates/html/head.tmpl:62
+#: templates/html/head.tmpl:63
 msgid "skip the navigation"
 msgstr "hoppa över navigationen"
 
 #: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "%ss startsida"
+
+#: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
 msgstr "%ss startsida för paket"
 
-#: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Paket"
@@ -1035,6 +1030,10 @@ msgstr "Upphovsrättsskyddat ©"
 msgid "All %s Packages in \"%s\""
 msgstr "Alla %spaket i \"%s\""
 
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr "Skapad:"
+
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Se <URL:%s> för licensvillkor."
@@ -1045,3 +1044,12 @@ msgstr "Se <URL:%s> för licensvillkor."
 #~ msgstr ""
 #~ "Du kan prova en annan sökning på <a href=\"%s#search_packages"
 #~ "\">paketsöksidan</a>."
+
+#~ msgid "Packages search page"
+#~ msgstr "Paketsöksida"
+
+#~ msgid "Back to:"
+#~ msgstr "Återgå till:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Denna sida finns även på följande språk:"

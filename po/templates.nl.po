@@ -29,18 +29,18 @@ msgstr "%s Webmaster"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s is een <a href=\"%s\">handelsmerk</a> van %s"
 
-#: templates/config.tmpl:54
+#: templates/config.tmpl:58
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:57
+#: templates/config.tmpl:61
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:62
 msgid ","
 msgstr "."
 
@@ -292,26 +292,14 @@ msgid "Filelist"
 msgstr "Bestandenoverzicht"
 
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages:"
-msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
-
-#: templates/html/foot.tmpl:22
-msgid "How to set <a href=\"%s\">the default document language</a>"
+#, fuzzy
+#| msgid "How to set <a href=\"%s\">the default document language</a>"
+msgid ""
+"This page is also available in the following languages (How to set <a href="
+"\"%s\">the default document language</a>):"
 msgstr "Hoe u de <a href=\"%s\">standaard taal kunt instellen</a>"
 
-#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr "%s Homepage"
-
-#: templates/html/foot.tmpl:27
-msgid "Back to:"
-msgstr "Terug naar:"
-
-#: templates/html/foot.tmpl:27
-msgid "Packages search page"
-msgstr "Pakketten zoekpagina"
-
-#: templates/html/foot.tmpl:31
+#: templates/html/foot.tmpl:28
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -320,11 +308,7 @@ msgstr ""
 "href=\"mailto:%s\">%s</a>. Zie de <a href=\"%s/contact\">contact pagina</a> "
 "voor overige contact informatie."
 
-#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
-msgid "Generated:"
-msgstr "Gegenereerd:"
-
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
@@ -332,43 +316,53 @@ msgstr ""
 "Copyright &copy; %s <a href=\"%s\">%s</a>. Zie de <a href=\"%s"
 "\">licentievoorwaarden</a>."
 
-#: templates/html/foot.tmpl:39
+#: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
 msgstr "Informatie over deze site"
 
-#: templates/html/head.tmpl:46
+#: templates/html/foot.tmpl:40
+#, fuzzy
+#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgstr "Het bronpakket <a href=\"%s\">%s</a> downloaden:"
+
+#: templates/html/head.tmpl:47
 msgid "Search"
 msgstr "Zoeken"
 
-#: templates/html/head.tmpl:49
+#: templates/html/head.tmpl:50
 msgid "package names"
 msgstr "namen van pakketten"
 
-#: templates/html/head.tmpl:50
+#: templates/html/head.tmpl:51
 msgid "descriptions"
 msgstr "omschrijvingen"
 
-#: templates/html/head.tmpl:51
+#: templates/html/head.tmpl:52
 msgid "source package names"
 msgstr "namen van bronpakketten"
 
-#: templates/html/head.tmpl:52
+#: templates/html/head.tmpl:53
 msgid "package contents"
 msgstr "inhoud van pakketten"
 
-#: templates/html/head.tmpl:55
+#: templates/html/head.tmpl:56
 msgid "all options"
 msgstr "alle opties"
 
-#: templates/html/head.tmpl:62
+#: templates/html/head.tmpl:63
 msgid "skip the navigation"
 msgstr "navigatie overslaan"
 
 #: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "%s Homepage"
+
+#: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
 msgstr "%s Pakketten Homepage"
 
-#: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Pakketten"
@@ -1011,6 +1005,19 @@ msgstr "Copyright ©"
 msgid "All %s Packages in \"%s\""
 msgstr "Alle %s pakketten in \"%s\""
 
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr "Gegenereerd:"
+
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr ""
+
+#~ msgid "Packages search page"
+#~ msgstr "Pakketten zoekpagina"
+
+#~ msgid "Back to:"
+#~ msgstr "Terug naar:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
