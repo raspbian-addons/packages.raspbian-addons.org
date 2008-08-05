@@ -26,7 +26,7 @@ msgstr "%s ウェブマスター"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
-#: templates/config.tmpl:54
+#: templates/config.tmpl:58
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +35,11 @@ msgstr ""
 "報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:57
+#: templates/config.tmpl:61
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:62
 msgid ","
 msgstr ","
 
@@ -310,28 +310,15 @@ msgstr "ファイル一覧"
 
 # See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages:"
-msgstr "このページは以下の言語でもご覧になれます。"
-
-# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
-#: templates/html/foot.tmpl:22
-msgid "How to set <a href=\"%s\">the default document language</a>"
+#, fuzzy
+#| msgid "How to set <a href=\"%s\">the default document language</a>"
+msgid ""
+"This page is also available in the following languages (How to set <a href="
+"\"%s\">the default document language</a>):"
 msgstr "<a href=\"%s\">デフォルトの言語を設定するには</a>"
 
-#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr "%s ホームページ"
-
-#: templates/html/foot.tmpl:27
-msgid "Back to:"
-msgstr "戻る:"
-
-#: templates/html/foot.tmpl:27
-msgid "Packages search page"
-msgstr "パッケージ検索ページ"
-
 # See webwml/japanese/po/templates.ja.po in the web site CVS repository.
-#: templates/html/foot.tmpl:31
+#: templates/html/foot.tmpl:28
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -340,12 +327,8 @@ msgstr ""
 "てください。その他の連絡先に関する情報は、%s の<a href=\"%s\">コンタクトペー"
 "ジ</a>をご覧ください。"
 
-#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
-msgid "Generated:"
-msgstr "生成:"
-
 # See webwml/japanese/po/templates.ja.po in the web site CVS repository.
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
@@ -353,43 +336,53 @@ msgstr ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s\">ライセンス"
 "条項</a>をご覧ください。"
 
-#: templates/html/foot.tmpl:39
+#: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
 msgstr "このサイトについてさらに詳しく知るには"
 
-#: templates/html/head.tmpl:46
+#: templates/html/foot.tmpl:40
+#, fuzzy
+#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgstr "<a href=\"%s\">%s</a> ソースパッケージをダウンロード:"
+
+#: templates/html/head.tmpl:47
 msgid "Search"
 msgstr "検索"
 
-#: templates/html/head.tmpl:49
+#: templates/html/head.tmpl:50
 msgid "package names"
 msgstr "パッケージ名"
 
-#: templates/html/head.tmpl:50
+#: templates/html/head.tmpl:51
 msgid "descriptions"
 msgstr "パッケージ説明"
 
-#: templates/html/head.tmpl:51
+#: templates/html/head.tmpl:52
 msgid "source package names"
 msgstr "ソースパッケージ名"
 
-#: templates/html/head.tmpl:52
+#: templates/html/head.tmpl:53
 msgid "package contents"
 msgstr "パッケージの内容"
 
-#: templates/html/head.tmpl:55
+#: templates/html/head.tmpl:56
 msgid "all options"
 msgstr "すべてのオプション"
 
-#: templates/html/head.tmpl:62
+#: templates/html/head.tmpl:63
 msgid "skip the navigation"
 msgstr "ナビゲーションをスキップ"
 
 #: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "%s ホームページ"
+
+#: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
 msgstr "%s パッケージホームページ"
 
-#: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "パッケージ"
@@ -1045,22 +1038,20 @@ msgstr "Copyright ©"
 msgid "All %s Packages in \"%s\""
 msgstr "\"%s\" に含まれるすべての %s パッケージ"
 
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr "生成:"
+
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
+#~ "きます。"
 
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
@@ -1069,8 +1060,24 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
-#~ "きます。"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "Packages search page"
+#~ msgstr "パッケージ検索ページ"
+
+#~ msgid "Back to:"
+#~ msgstr "戻る:"
+
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "このページは以下の言語でもご覧になれます。"

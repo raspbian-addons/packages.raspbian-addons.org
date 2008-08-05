@@ -11,7 +11,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: templates/config.tmpl:41
 msgid "Debian Web Mailinglist"
@@ -25,7 +26,7 @@ msgstr "веб-мастер %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s это <a href=\"%s\">торговый знак</a> компании %s"
 
-#: templates/config.tmpl:54
+#: templates/config.tmpl:58
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -33,12 +34,12 @@ msgstr ""
 "Это экспериментальная версия <a href=\"http://%s/\">%s</a>. Возможны ошибки "
 "и устаревшая информация"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
-#: templates/config.tmpl:57
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:61
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:62
 msgid ","
 msgstr " "
 
@@ -222,7 +223,8 @@ msgstr ""
 "сайтов:"
 
 #: templates/html/download.tmpl:80
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Вы можете скачать требуемый файл из подкаталога <tt>%s</tt> c:"
 
 #: templates/html/download.tmpl:82
@@ -294,34 +296,24 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Список файлов пакета %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
 msgstr "Список файлов"
 
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages:"
-msgstr "Эта страница также доступна на следующих языках:"
-
-#: templates/html/foot.tmpl:22
-msgid "How to set <a href=\"%s\">the default document language</a>"
+#, fuzzy
+#| msgid "How to set <a href=\"%s\">the default document language</a>"
+msgid ""
+"This page is also available in the following languages (How to set <a href="
+"\"%s\">the default document language</a>):"
 msgstr "Как установить <a href=\"%s\">язык по умолчанию</a>"
 
-#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr "Домашняя страница %s"
-
-#: templates/html/foot.tmpl:27
-msgid "Back to:"
-msgstr "Вернуться:"
-
-#: templates/html/foot.tmpl:27
-msgid "Packages search page"
-msgstr "Страница поиска пакетов"
-
-#: templates/html/foot.tmpl:31
+#: templates/html/foot.tmpl:28
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -331,11 +323,7 @@ msgstr ""
 "контактную информацию см. на странице %s <a href=\"%s\">Как с нами "
 "связаться</a>."
 
-#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
-msgid "Generated:"
-msgstr "Сгенерирована:"
-
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
@@ -343,43 +331,53 @@ msgstr ""
 "Авторские права &copy; %s <a href=\"%s\">%s</a>; См. <a href=\"%s\">условия "
 "лицензии</a>."
 
-#: templates/html/foot.tmpl:39
+#: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
 msgstr "Об этом сайте"
 
-#: templates/html/head.tmpl:46
+#: templates/html/foot.tmpl:40
+#, fuzzy
+#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgstr "Загрузка пакета исходного кода <a href=\"%s\">%s</a>:"
+
+#: templates/html/head.tmpl:47
 msgid "Search"
 msgstr "Поиск"
 
-#: templates/html/head.tmpl:49
+#: templates/html/head.tmpl:50
 msgid "package names"
 msgstr "в именах пакетов"
 
-#: templates/html/head.tmpl:50
+#: templates/html/head.tmpl:51
 msgid "descriptions"
 msgstr "в описания"
 
-#: templates/html/head.tmpl:51
+#: templates/html/head.tmpl:52
 msgid "source package names"
 msgstr "в именах пакетов исходного кода"
 
-#: templates/html/head.tmpl:52
+#: templates/html/head.tmpl:53
 msgid "package contents"
 msgstr "в содержимом пакетов"
 
-#: templates/html/head.tmpl:55
+#: templates/html/head.tmpl:56
 msgid "all options"
 msgstr "все параметры"
 
-#: templates/html/head.tmpl:62
+#: templates/html/head.tmpl:63
 msgid "skip the navigation"
 msgstr "не показывать навигацию"
 
 #: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "Домашняя страница %s"
+
+#: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
 msgstr "Домашняя страница пакетов %s"
 
-#: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Пакеты"
@@ -435,13 +433,15 @@ msgstr " Также их можно увидеть <a href=\"%s\">отсорти
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr " Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
+msgstr ""
+" Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
 
 #: templates/html/newpkg.tmpl:22
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
-msgstr "Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
+msgstr ""
+"Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
@@ -541,7 +541,8 @@ msgid "source packages"
 msgstr "пакеты исходного кода"
 
 #: templates/html/search.tmpl:83
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 "Вы искали %s, в именах которых есть <em>%s</em>. Были просмотрены %s, %s и %"
 "s."
@@ -666,10 +667,11 @@ msgstr "файлы с именем"
 msgid "filenames that contain"
 msgstr "имена файлов, содержащих"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr "Вы искали %s <em>%s</em> в комплекте <em>%s</em>. Были просмотрены %s и %s."
+msgstr ""
+"Вы искали %s <em>%s</em> в комплекте <em>%s</em>. Были просмотрены %s и %s."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -794,7 +796,6 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "Обзор пакетов и закачек сопровождающего"
 
 #: templates/html/show.tmpl:123
-#| msgid "QA Page"
 msgid "QA&nbsp;Page"
 msgstr "Страница&nbsp;КК"
 
@@ -803,7 +804,6 @@ msgid "Archive of the Maintainer Mailinglist"
 msgstr "Архив списка рассылки сопровождающего"
 
 #: templates/html/show.tmpl:124
-#| msgid "Mail Archive"
 msgid "Mail&nbsp;Archive"
 msgstr "Почтовый&nbsp;архив"
 
@@ -1035,7 +1035,19 @@ msgstr "Авторские права ©"
 msgid "All %s Packages in \"%s\""
 msgstr "Все %s пакеты в \"%s\""
 
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr "Сгенерирована:"
+
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
 
+#~ msgid "Packages search page"
+#~ msgstr "Страница поиска пакетов"
+
+#~ msgid "Back to:"
+#~ msgstr "Вернуться:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Эта страница также доступна на следующих языках:"

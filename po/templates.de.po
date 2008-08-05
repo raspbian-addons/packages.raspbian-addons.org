@@ -22,7 +22,7 @@ msgstr "%s-Webmaster"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s ist ein eingetragenes <a href=\"%s\">Warenzeichen</a> von %s"
 
-#: templates/config.tmpl:54
+#: templates/config.tmpl:58
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -32,11 +32,11 @@ msgstr ""
 "veralteten Informationen muss gerechnet werden"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:57
+#: templates/config.tmpl:61
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:62
 msgid ","
 msgstr " "
 
@@ -308,26 +308,13 @@ msgid "Filelist"
 msgstr "Liste der Dateien"
 
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages:"
-msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
+msgid ""
+"This page is also available in the following languages (How to set <a href="
+"\"%s\">the default document language</a>):"
+msgstr "Diese Seite gibt es auch in den folgenden Sprachen (Wie wird <a href"
+"=\"%s\">die Standardsprache</a> eingestellt):"
 
-#: templates/html/foot.tmpl:22
-msgid "How to set <a href=\"%s\">the default document language</a>"
-msgstr "Wie wird <a href=\"%s\">die Standardsprache</a> eingestellt"
-
-#: templates/html/foot.tmpl:27 templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr "%s-Homepage"
-
-#: templates/html/foot.tmpl:27
-msgid "Back to:"
-msgstr "Zurück zu:"
-
-#: templates/html/foot.tmpl:27
-msgid "Packages search page"
-msgstr "Paket-Suchseite"
-
-#: templates/html/foot.tmpl:31
+#: templates/html/foot.tmpl:28
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -337,11 +324,7 @@ msgstr ""
 "Kontaktinformationen sollten Sie auf die %s-<a href=\"%s\">Kontakt-Seite</a> "
 "schauen."
 
-#: templates/html/foot.tmpl:33 templates/txt/index_head.tmpl:3
-msgid "Generated:"
-msgstr "Erzeugt:"
-
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
@@ -349,43 +332,53 @@ msgstr ""
 "Inhalt-Copyright &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s"
 "\">Lizenzbestimmungen</a>."
 
-#: templates/html/foot.tmpl:39
+#: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
 msgstr "Mehr Informationen über diese Site"
 
-#: templates/html/head.tmpl:46
+#: templates/html/foot.tmpl:40
+#, fuzzy
+#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgstr "Quellcode-Paket <a href=\"%s\">%s</a> herunterladen:"
+
+#: templates/html/head.tmpl:47
 msgid "Search"
 msgstr "Suche"
 
-#: templates/html/head.tmpl:49
+#: templates/html/head.tmpl:50
 msgid "package names"
 msgstr "Paketnamen"
 
-#: templates/html/head.tmpl:50
+#: templates/html/head.tmpl:51
 msgid "descriptions"
 msgstr "Beschreibungen"
 
-#: templates/html/head.tmpl:51
+#: templates/html/head.tmpl:52
 msgid "source package names"
 msgstr "Quellcodepaketnamen"
 
-#: templates/html/head.tmpl:52
+#: templates/html/head.tmpl:53
 msgid "package contents"
 msgstr "Paket-Inhalte"
 
-#: templates/html/head.tmpl:55
+#: templates/html/head.tmpl:56
 msgid "all options"
 msgstr "Alle Optionen"
 
-#: templates/html/head.tmpl:62
+#: templates/html/head.tmpl:63
 msgid "skip the navigation"
 msgstr "Überspringen der Navigation"
 
 #: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "%s-Homepage"
+
+#: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
 msgstr "%s-Pakete-Homepage"
 
-#: templates/html/head.tmpl:65 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Pakete"
@@ -1047,18 +1040,13 @@ msgstr "Copyright ©"
 msgid "All %s Packages in \"%s\""
 msgstr "Alle %s-Pakete in »%s«"
 
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr "Erzeugt:"
+
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "Suite(s) <em>$suite_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "Bereich(e) <em>$section_enc</em>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
 
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1066,3 +1054,21 @@ msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
 #~ msgstr ""
 #~ "Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
 #~ "andere Suche durchführen."
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "Bereich(e) <em>$section_enc</em>"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"
+
+#~ msgid "Packages search page"
+#~ msgstr "Paket-Suchseite"
+
+#~ msgid "Back to:"
+#~ msgstr "Zurück zu:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
