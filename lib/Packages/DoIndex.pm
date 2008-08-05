@@ -4,6 +4,7 @@ use strict;
 use warnings;
 
 use CGI qw( :cgi );
+use POSIX qw( strftime );
 use Exporter;
 
 use Deb::Versions;
@@ -60,7 +61,8 @@ sub send_file {
 	    $headers{'-content-encoding'} = $encoding{$opts->{format}} if exists $encoding{$opts->{format}};
 	    my ($size,$mtime) = (stat("$wwwdir/$path"))[7,9];
 	    $headers{'-content-length'} = $size;
-	    $headers{'-last-modified'} = gmtime($mtime);
+	    $headers{'-vary'} = 'negotiate,accept-language';
+	    $headers{'-last-modified'} = strftime("%a, %d %b %Y %T %z", localtime($mtime));
 	    print header( %headers );
 
 	    binmode INDEX;
