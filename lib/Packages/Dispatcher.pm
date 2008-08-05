@@ -342,6 +342,7 @@ sub do_dispatch {
     unless (@Packages::CGI::fatal_errors) {
 	print $input->header(-charset => $charset,
 			     -type => get_mime($opts{format}),
+			     -vary => 'negotiate,accept-language',
 			     -last_modified => strftime("%a, %d %b %Y %T %z",
 							localtime($Packages::DB::db_read_time)),
 			     );
