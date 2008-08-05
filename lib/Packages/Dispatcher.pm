@@ -92,10 +92,15 @@ sub do_dispatch {
     my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
+    my $last_modified = $Packages::DB::db_read_time;
+    my $now = time;
+    # allow some fudge, since the db mod time is not the end of
+    # the cron job
+    $last_modified = $now if $last_modified - $now < 3600; 
 
     if ($input->http('If-Modified-Since') and
 	(my $modtime = str2time($input->http('If-Modified-Since'), 'UTC'))) {
-	if ($modtime < $Packages::DB::db_read_time) {
+	if ($modtime <= $last_modified) {
 	    print $input->header(-status => 304);
 	    exit;
 	}
@@ -344,7 +349,7 @@ sub do_dispatch {
 			     -type => get_mime($opts{format}),
 			     -vary => 'negotiate,accept-language',
 			     -last_modified => strftime("%a, %d %b %Y %T %z",
-							localtime($Packages::DB::db_read_time)),
+							localtime($last_modified)),
 			     );
 	#use Data::Dumper;
 	#print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
