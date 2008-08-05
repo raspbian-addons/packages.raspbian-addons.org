@@ -30,6 +30,7 @@ use DB_File;
 use URI::Escape;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
+use Date::Parse;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
@@ -91,6 +92,14 @@ sub do_dispatch {
     my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
+
+    if ($input->http('If-Modified-Since') and
+	(my $modtime = str2time($input->http('If-Modified-Since'), 'UTC'))) {
+	if ($modtime < $Packages::DB::db_read_time) {
+	    print $input->header(-status => 304);
+	    exit;
+	}
+    }
 
     my %PO_LANGUAGES = map { $_ => 1 } @LANGUAGES;
     my %DDTP_LANGUAGES = map { $_ => 1 } @DDTP_LANGUAGES;
@@ -331,7 +340,11 @@ sub do_dispatch {
     $page_content{params} = \%params;
 
     unless (@Packages::CGI::fatal_errors) {
-	print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
+	print $input->header(-charset => $charset,
+			     -type => get_mime($opts{format}),
+			     -last_modified => strftime("%a, %d %b %Y %T %z",
+							localtime($Packages::DB::db_read_time)),
+			     );
 	#use Data::Dumper;
 	#print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
 	print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );
