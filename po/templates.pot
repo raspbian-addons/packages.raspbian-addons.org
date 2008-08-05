@@ -15,16 +15,16 @@ msgstr ""
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr ""
 
-#: templates/config.tmpl:54
+#: templates/config.tmpl:58
 msgid "Please note that this is an experimental version of <a href=\"http://%s/\">%s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:57
+#: templates/config.tmpl:61
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:62
 msgid ","
 msgstr ""
 
@@ -251,76 +251,62 @@ msgid "Filelist"
 msgstr ""
 
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages:"
+msgid "This page is also available in the following languages (How to set <a href=\"%s\">the default document language</a>):"
 msgstr ""
 
-#: templates/html/foot.tmpl:22
-msgid "How to set <a href=\"%s\">the default document language</a>"
-msgstr ""
-
-#: templates/html/foot.tmpl:27
-msgid "Back to:"
-msgstr ""
-
-#: templates/html/foot.tmpl:27
-#: templates/html/head.tmpl:64
-msgid "%s Homepage"
-msgstr ""
-
-#: templates/html/foot.tmpl:27
-msgid "Packages search page"
-msgstr ""
-
-#: templates/html/foot.tmpl:31
+#: templates/html/foot.tmpl:28
 msgid "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
 
-#: templates/html/foot.tmpl:33
-#: templates/txt/index_head.tmpl:3
-msgid "Generated:"
-msgstr ""
-
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:32
 msgid "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s\">license terms</a>."
 msgstr ""
 
-#: templates/html/foot.tmpl:39
+#: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
 msgstr ""
 
-#: templates/html/head.tmpl:46
+#: templates/html/foot.tmpl:40
+msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgstr ""
+
+#: templates/html/head.tmpl:47
 msgid "Search"
 msgstr ""
 
-#: templates/html/head.tmpl:49
+#: templates/html/head.tmpl:50
 msgid "package names"
 msgstr ""
 
-#: templates/html/head.tmpl:50
+#: templates/html/head.tmpl:51
 msgid "descriptions"
 msgstr ""
 
-#: templates/html/head.tmpl:51
+#: templates/html/head.tmpl:52
 msgid "source package names"
 msgstr ""
 
-#: templates/html/head.tmpl:52
+#: templates/html/head.tmpl:53
 msgid "package contents"
 msgstr ""
 
-#: templates/html/head.tmpl:55
+#: templates/html/head.tmpl:56
 msgid "all options"
 msgstr ""
 
-#: templates/html/head.tmpl:62
+#: templates/html/head.tmpl:63
 msgid "skip the navigation"
 msgstr ""
 
 #: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr ""
+
+#: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
 msgstr ""
 
-#: templates/html/head.tmpl:65
+#: templates/html/head.tmpl:66
 #: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
@@ -911,6 +897,10 @@ msgstr ""
 
 #: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
+msgstr ""
+
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
 msgstr ""
 
 #: templates/txt/index_head.tmpl:5

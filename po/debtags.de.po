@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-06-05 21:06+0200\n"
+"PO-Revision-Date: 2008-07-18 17:45+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -385,7 +385,7 @@ msgstr " Spiele wie Nethack, Angband usw."
 #. Tag: hardware::gps, long desc
 #: files/debtags/vocabulary
 msgid " Global Positioning System"
-msgstr ""
+msgstr " Globales Positionierungssystem"
 
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
@@ -564,6 +564,17 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 msgstr ""
+" Internet Relay Chat, ein Protokoll für das Unterhalten mittels Text über\n"
+" Netze, das intensiv im Internet genutzt wird. Es unterstützt Räume\n"
+" sogenannte Kanäle sowie private eins-zu-eins-Kommunikation.\n"
+" .\n"
+" IRC-Server sind in Netzen organisiert, so dass sich Clients mit einem\n"
+" geographisch naheliegenden Server verbinden können, der wiederum mit\n"
+" anderen IRC-Servern auf der ganzen Welt verbunden ist.\n"
+"  .\n"
+" Der offizielle Kanal von Debian ist #debian im freenode-Netz.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Internet_Relay_Chat"
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
@@ -775,7 +786,7 @@ msgstr ""
 #. Tag: security::forensics, long desc
 #: files/debtags/vocabulary
 msgid " Post-mortem analysis of intrusions."
-msgstr ""
+msgstr " Post-mortem-Analyse von Einbrüchen."
 
 #. Tag: devel::profiler, long desc
 #: files/debtags/vocabulary
@@ -827,6 +838,13 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/RADIUS\n"
 " Link: http://www.ietf.org/rfc/rfc2865.txt"
 msgstr ""
+" Remote Authentication Dial In User Service, ein Protokoll für die\n"
+" Authentifizierung, Autorisierung und Buchführung von Netzzugriffen, das\n"
+" hauptsächlich von Internetdiensteanbietern zur Verwaltung von\n"
+" Einwähl-Internetverbindungen verwandt wird.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/RADIUS\n"
+" Link: http://www.ietf.org/rfc/rfc2865.txt"
 
 #. Tag: devel::rpc, long desc
 #: files/debtags/vocabulary
@@ -1018,6 +1036,14 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc3411.txt"
 msgstr ""
+" Simple Network Management Protocol, ein Mitglied in der\n"
+" Internet-Protokoll-Suite. Wird zur Überwachung oder Konfiguration von\n"
+" Netzgeräten verwandt.\n"
+" .\n"
+" SNMP-Server laufen normalerweise auf Netzgeräten wie Routern.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Simple_Network_Management_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc3411.txt"
 
 #. Tag: protocol::soap, long desc
 #: files/debtags/vocabulary
@@ -1033,6 +1059,15 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/SOAP\n"
 " Link: http://www.w3.org/TR/soap/"
 msgstr ""
+" Simple Object Access Protocol, ein Protokoll zum Austausch von Nachrichten\n"
+" zwischen verschiedenen Computern in einem Netz. Die Nachrichten werden in\n"
+" XML-kodiert und normalerweise über HTTP versandt.\n"
+" .\n"
+" SOAP wird für APIs von Webdiensten verwandt, beispielsweise vom Google-API,\n"
+" um Googles Suchmaschine aus Client-Anwendungen heraus zu verwenden.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/SOAP\n"
+" Link: http://www.w3.org/TR/soap/"
 
 #. Tag: use::analysing, long desc
 #: files/debtags/vocabulary
@@ -1074,6 +1109,8 @@ msgid ""
 " Software that works with sequences of nucleic acids: \n"
 " DNA, RNA but also non-natural nucleic acids such as PNA or LNA."
 msgstr ""
+" Software, die mit Sequenzen von Nukleinsäure arbeitet:\n"
+" DNS, RNS aber auch künstlichen Nukleinsäure wie PNS oder LNS."
 
 #. Tag: field::biology:structural, long desc
 #: files/debtags/vocabulary
@@ -1094,6 +1131,10 @@ msgid ""
 " .\n"
 " Link: http://en.wikipedia.org/wiki/TELNET"
 msgstr ""
+" TELecommunication NETwork, ein größtenteils veraltetes Protokoll für\n"
+" entfernte Anmeldung.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/TELNET"
 
 #. Tag: protocol::gadu-gadu, long desc
 #: files/debtags/vocabulary
@@ -1103,6 +1144,10 @@ msgid ""
 " .\n"
 " Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 msgstr ""
+" Das Gadu-Gadu-Protokoll ist ein proprietäres Protokoll, das von einem\n"
+" polnischen »Instant Messaging«-Netz gleichen Namens verwandt wird.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Gadu-Gadu"
 
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
@@ -1287,6 +1332,8 @@ msgid ""
 " This is not hardware emulation, but rather those facilities that allow to\n"
 " create many isolated compartments inside the same system."
 msgstr ""
+" Dies ist keine Hardware-Emulation, sondern eher eine Anlage, die das Erstellen\n"
+" vieler isolierter Abteilungen innerhalb des gleichen Systems erlaubt."
 
 #. Tag: special::invalid-tag, long desc
 #: files/debtags/vocabulary
@@ -1368,6 +1415,14 @@ msgid ""
 " Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol\n"
 " Link: http://www.ietf.org/rfc/rfc793.txt"
 msgstr ""
+" Transport Control Protocol, ein Kern-Protokoll der Internet-Protokoll-Suite,\n"
+" das für Datentransport verwandt wird.\n"
+" .\n"
+" TCP wird als Transportprotokoll für viele Dienste im Internet verwandt, wie\n"
+" FTP, HTTP, SMTP, POP3, IMAP, NNTP usw.\n"
+" .\n"
+" Link: http://de.wikipedia.org/wiki/Transmission_Control_Protocol\n"
+" Link: http://www.ietf.org/rfc/rfc793.txt"
 
 #. Tag: protocol::tftp, long desc
 #: files/debtags/vocabulary
@@ -1510,12 +1565,12 @@ msgstr "3D-Modell"
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
 msgid "ACPI Power Management"
-msgstr ""
+msgstr "ACPI-Stromverwaltung"
 
 #. Tag: hardware::power:apm, short desc
 #: files/debtags/vocabulary
 msgid "APM Power Management"
-msgstr ""
+msgstr "APM-Stromverwaltung"
 
 #. Tag: protocol::atm, short desc
 #: files/debtags/vocabulary
@@ -1555,12 +1610,12 @@ msgstr "Abenteuer"
 #. Tag: culture::afrikaans, short desc
 #: files/debtags/vocabulary
 msgid "Afrikaans"
-msgstr ""
+msgstr "Afrikaans"
 
 #. Tag: use::analysing, short desc
 #: files/debtags/vocabulary
 msgid "Analysing"
-msgstr ""
+msgstr "Analyse"
 
 #. Tag: security::antivirus, short desc
 #: files/debtags/vocabulary
@@ -1597,7 +1652,7 @@ msgstr "Anwendungs-Server"
 #. Facet: suite, short desc
 #: files/debtags/vocabulary
 msgid "Application Suite"
-msgstr ""
+msgstr "Anwendungs-Suite"
 
 #. Tag: culture::arabic, short desc
 #: files/debtags/vocabulary
@@ -1653,7 +1708,7 @@ msgstr "Luftfahrt"
 #. Tag: admin::backup, short desc
 #: files/debtags/vocabulary
 msgid "Backup and Restoration"
-msgstr ""
+msgstr "Datensicherung und -Wiederherstellung"
 
 #. Tag: culture::basque, short desc
 #: files/debtags/vocabulary
