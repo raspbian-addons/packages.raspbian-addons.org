@@ -63,6 +63,7 @@ sub send_file {
 	    $headers{'-content-length'} = $size;
 	    $headers{'-vary'} = 'negotiate,accept-language';
 	    $headers{'-last-modified'} = strftime("%a, %d %b %Y %T %z", localtime($mtime));
+	    $headers{'-expires'} = strftime("%a, %d %b %Y %T %z", localtime($mtime+(12*3600)));
 	    print header( %headers );
 
 	    binmode INDEX;
