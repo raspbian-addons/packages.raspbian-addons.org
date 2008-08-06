@@ -351,7 +351,7 @@ sub do_dispatch {
 			     -last_modified => strftime("%a, %d %b %Y %T %z",
 							localtime($last_modified)),
 			     -expires => strftime("%a, %d %b %Y %T %z",
-						  localtime($last_modified + (12*3600))),
+						  localtime($last_modified + (365*24*3600))),
 			     );
 	#use Data::Dumper;
 	#print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
