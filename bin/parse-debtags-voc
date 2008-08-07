@@ -22,6 +22,7 @@ use lib './lib';
 
 $| = 1;
 
+use POSIX;
 use DB_File;
 use File::Path;
 use Data::Dumper;
@@ -30,8 +31,8 @@ use URI::Escape;
 
 use Deb::Versions;
 use Packages::Template;
-use Packages::Config qw( $TOPDIR );
-use Packages::CGI;
+use Packages::Config qw( $TOPDIR @LANGUAGES );
+use Packages::I18N::Locale;
 &Packages::Config::init( './' );
 my $debtagsdir = "$TOPDIR/files/debtags";
 my $wwwdir = "$TOPDIR/www/about";
@@ -40,10 +41,20 @@ my (%voc, %voc_db);
 
 $/ = "";
 
-delete $ENV{'LANGUAGE'};
-delete $ENV{'LANG'};
-delete $ENV{'LC_ALL'};
-delete $ENV{'LC_MESSAGES'};
+sub process_desc {
+    my ($desc) = @_;
+
+    if ($desc) {
+	$desc = encode_entities($desc);
+
+	$desc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
+	$desc =~ s/\A //o;
+	$desc =~ s/\n /\n/sgo;
+	$desc =~ s/\n.\n/\n<p>\n/go;
+	$desc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
+    }
+    return $desc;
+}
 
 print "Parsing Vocabulary...\n";
 tie %voc_db, "DB_File", "$debtagsdir/vocabulary.db.new",
@@ -72,18 +83,22 @@ while (<VOC>) {
 	warn "Duplicated key found: $voc_key\n";
 	next;
     }
-    my ($sdesc,$ldesc) = split /\n/, encode_entities($data{description}), 2;
+    my ($sdesc,$ldesc) = split /\n/, $data{description}, 2;
 
-    if ($ldesc) {
-	$ldesc =~ s,((ftp|http|https)://[\S~-]+?/?)((\&gt\;)?[)]?[']?[:.\,]?(\s|$)),<a href=\"$1\">$1</a>$3,go; # syntax highlighting -> '];
-	$ldesc =~ s/\A //o;
-	$ldesc =~ s/\n /\n/sgo;
-	$ldesc =~ s/\n.\n/\n<p>\n/go;
-	$ldesc =~ s/(((\n|\A) [^\n]*)+)/\n<pre>$1\n<\/pre>/sgo;
-    }
-    $data{html_description} = [ $sdesc, $ldesc||"" ];
-
+    $data{html_description} = [ encode_entities($sdesc), process_desc($ldesc)||"" ];
     $voc_db{$voc_key} = $sdesc || "";
+
+    foreach my $lang (@LANGUAGES) {
+	next if $lang eq 'en';
+
+	my $cat = Packages::I18N::Locale->get_handle($lang)
+	    or die "get_handle failed for $lang";
+
+	my $sdesc_trans = $cat->maketext($sdesc);
+	$voc_db{"$voc_key-$lang"} = $sdesc_trans
+	    if $sdesc_trans and $sdesc_trans ne $sdesc;
+    }
+
     $voc{$voc_key} = \%data;
 }
 
@@ -102,7 +117,7 @@ my @facets = sort( grep { exists $voc{$_}{facet} } keys %voc );
 my @tags = sort( grep { exists $voc{$_}{tag} } keys %voc );
 my %tags_by_facet;
 foreach (@tags) {
-    my ($facet, $tag) = split /::/, $_, 2;
+    my ($facet, $tag) = split m/::/, $_, 2;
     warn "No facet data available for $facet\n"
 	unless exists $voc{$facet};
     $tags_by_facet{$facet} ||= [];
@@ -110,13 +125,8 @@ foreach (@tags) {
 }
 my %content = ( vocabulary => \%voc,
 		facets => \@facets, tags => \@tags,
-		tags_by_facet => \%tags_by_facet );
-# needed to work around the limitations of the the FILTER syntax
-$content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-$content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-$content{quotemeta} = sub { return quotemeta($_[0]) };
-$content{string2id} = sub { return &Packages::CGI::string2id(@_) };
-
+		tags_by_facet => \%tags_by_facet,
+		used_langs => [ 'en' ]);
 print TAGLST $template->page( 'tag_index', \%content );
 close TAGLST or warn "Couldn't close tag list: $!";
 

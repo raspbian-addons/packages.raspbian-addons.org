@@ -5,9 +5,9 @@ use warnings;
 
 use Data::Dumper;
 use Exporter;
-use Locale::gettext;
 use Deb::Versions;
 use Packages::CGI;
+use Packages::I18N::Locale;
 
 our @ISA = qw( Exporter );
 our @EXPORT_OK = qw( split_name_mail parse_deps );
@@ -44,7 +44,7 @@ sub split_name_mail {
         $name =  $string;
         $email = $string;
     } else {
-        $name = gettext( 'package has bad maintainer field' );
+        $name = N_( 'package has bad maintainer field' );
         $email = '';
     }
     $name =~ s/\s+$//o;
@@ -95,7 +95,7 @@ sub is_virtual {
 }
 
 our @TAKE_NEWEST = qw( description description-md5 essential priority section subsection tag
-		       archive source source-version url homepage );
+		       archive source source-version homepage );
 our @STORE_ALL = qw( version source source-version installed-size size
 		     filename md5sum sha1 sha256 task
 		     origin bugs suite archive section );

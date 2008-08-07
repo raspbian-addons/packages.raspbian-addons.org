@@ -53,6 +53,15 @@ h1 {
              border-top: thin solid black;
 }
 
+#impressum {
+    text-align: left;
+    float: left;
+}
+
+#sponsorfooter {
+	text-align: right;
+}
+
 /*
 
   DESCRIPTIONS
@@ -136,16 +145,6 @@ h1 {
 	padding: 0.5em;
 	margin: 0;
 	clear: both;
-}
-.pnotes {
-	margin: .2em;
-	padding: .5em;
-	border: solid thin black;
-	background-color: #bdf;
-	clear: both;
-}
-.pnotes h2 {
-	color: red;
 }
 .pconstantnag {
 	max-width: 60em;
@@ -311,7 +310,6 @@ table#pdeplegend, #pdownload table {
 	padding-left: 1em;
 	padding-top: 6px;
 	padding-bottom: 4px;
-	width: 100%;
 	height: auto;
 	text-align: left;
 	background: #DF0451;

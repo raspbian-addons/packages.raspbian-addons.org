@@ -12,9 +12,9 @@ use Exporter;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
-			 @ARCHITECTURES %FTP_SITES @DDTP_LANGUAGES);
-use Packages::I18N::Locale;
-use Packages::CGI qw( :DEFAULT make_url make_search_url note );
+			 @ARCHITECTURES %FTP_SITES
+			 @LANGUAGES @DDTP_LANGUAGES);
+use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
 use Packages::Search qw( :all );
 use Packages::Page ();
@@ -25,15 +25,17 @@ our @EXPORT = qw( do_show );
 
 sub do_show {
     my ($params, $opts, $page_contents) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{package}) {
-	fatal_error( _g( "package not valid or not specified" ) );
+	fatal_error( $cat->g( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for show (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for show (%s)",
+			      "@{$opts->{suite}}" ) );
     }
 
     my %contents;
@@ -68,8 +70,8 @@ sub do_show {
 	}
 
 	unless (@results || @non_results ) {
-	    fatal_error( _g( "No such package." )."<br>".
-			 sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
+	    fatal_error( $cat->g( "No such package.") );
+	    #sprintf( _g( '<a href="%s">Search for the package</a>' ), make_search_url('','keywords='.uri_escape($pkg)) ) );
 	} else {
 	    my %all_suites;
 	    foreach (@results, @non_results) {
@@ -80,7 +82,7 @@ sub do_show {
 	    $contents{suites} = [ suites_sort(keys %all_suites) ];
 
 	    unless (@results) {
-		fatal_error( _g( "Package not available in this suite." ) );
+		fatal_error( $cat->g( "Package not available in this suite." ) );
 	    } else {
 		$contents{page} = $page;
 		unless ($opts->{source}) {
@@ -88,7 +90,7 @@ sub do_show {
 		    for my $entry (@results) {
 			debug( join(":", @$entry), 1 ) if DEBUG;
 			my (undef, $archive, undef, $arch, $section, $subsection,
-			    $priority, $version, $provided_by) = @$entry;
+			    $priority, $version, undef, $provided_by) = @$entry;
 			
 			if ($arch ne 'virtual') {
 			    my %data = split /\000/, $packages_all{"$pkg $arch $version"};
@@ -179,7 +181,8 @@ sub do_show {
 			my $trans_desc = $desctrans{$desc_md5};
 			if ($trans_desc) {
 			    my %trans_desc = split /\000|\001/, $trans_desc;
-			    $contents{used_langs} = ['en', sort keys %trans_desc];
+			    my %all_langs = map { $_ => 1 } (@LANGUAGES, keys %trans_desc);
+			    $contents{used_langs} = [ keys %all_langs ];
 			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
 				if DEBUG;
 			    while (my ($l, $d) = each %trans_desc) {
@@ -192,13 +195,13 @@ sub do_show {
 
 			my $v_str = $version;
 			my $multiple_versions = grep { $_ ne $version } values %$versions;
-			$v_str .= _g(" and others") if $multiple_versions;
+			$v_str .= $cat->g(" and others") if $multiple_versions;
 			$contents{versions} = { short => $v_str,
 						multiple => $multiple_versions };
 
 			my $provided_by = $page->{provided_by};
 			$contents{providers} = [];
-			pkg_list( \%packages, $opts, $provided_by, 'en', $contents{providers} ) if $provided_by;
+			pkg_list( \%packages, $opts, $provided_by, $contents{providers} ) if $provided_by;
 
 			#
 			# display dependencies
@@ -222,7 +225,7 @@ sub do_show {
 			my @downloads;
 			foreach my $a ( @archs ) {
 			    my %d = ( arch => $a,
-				      pkgsize => sprintf( '%.1f', floor(($sizes_deb->{$a}/102.4)+0.5)/10 ),
+				      pkgsize => floor(($sizes_deb->{$a}/102.4)+0.5)/10,
 				      instsize => $sizes_inst->{$a}, );
 
 			    $d{version} = $versions->{$a} if $multiple_versions;
@@ -246,12 +249,12 @@ sub do_show {
 				  search => 1 );
 		    } else { # unless $page->is_virtual
 			$contents{is_virtual} = 1;
-			$contents{desc}{short} = _g( "virtual package" );
+			$contents{desc}{short} = $cat->g( "virtual package" );
 			$contents{subsection} = 'virtual';
 
 			my $provided_by = $page->{provided_by};
 			$contents{providers} = [];
-			pkg_list( \%packages, $opts, $provided_by, 'en', $contents{providers} );
+			pkg_list( \%packages, $opts, $provided_by, $contents{providers} );
 
 		    } # else (unless $page->is_virtual)
 		} else { # unless $opts->{source}
@@ -283,7 +286,7 @@ sub do_show {
 		    my $binaries = find_binaries( $pkg, $archive, $suite, \%src2bin );
 		    if ($binaries && @$binaries) {
 			$contents{binaries} = [];
-			pkg_list( \%packages, $opts, $binaries, 'en', $contents{binaries} );
+			pkg_list( \%packages, $opts, $binaries, $contents{binaries} );
 		    }
 
 		    #
@@ -311,7 +314,7 @@ sub do_show {
 			my $path = "/$source_dir/$src_file_name";
 
 			push @{$contents{srcfiles}}, { server => $server, path => $path, filename => $src_file_name,
-						       size => sprintf("%.1f", (floor(($src_file_size/102.4)+0.5)/10)),
+						       size => floor(($src_file_size/102.4)+0.5)/10,
 						       md5sum => $src_file_md5 };
 		    }
 
@@ -404,6 +407,7 @@ sub build_deps {
 		    'suggests' => 'sug', 'build-depends' => 'adep',
 		    'build-depends-indep' => 'idep' );
     my $suite = $opts->{suite}[0];
+    my $cat = $opts->{cat};
 
     my %out = ( id => $dep_type{$type}, terms => [] );
 
@@ -422,7 +426,7 @@ sub build_deps {
 
 	    if ($arch_str ||= '') {
 		if ($arch_neg) {
-		    $arch_str = _g("not")." $arch_str";
+		    $arch_str = $cat->g("not %s", "$arch_str" );
 		} else {
 		    $arch_str = $arch_str;
 		}
@@ -438,11 +442,23 @@ sub build_deps {
 	    my $entry = $entries{$p_name} ||
 		read_entry_simple( $packages, $p_name, $opts->{h_archives}, $suite);
 	    my $short_desc = $entry->[-1];
+	    my $desc_md5 = $entry->[-2] || '';
 	    my $arch = $entry->[3];
 	    my $archive = $entry->[1];
 	    my $p_suite = $entry->[2];
 	    if ( $short_desc ) {
 		$rel_alt_out{desc} = $short_desc;
+		my $trans_desc = $desctrans{$desc_md5};
+		if ($trans_desc) {
+		    my %trans_desc = split /\000|\001/, $trans_desc;
+		    my %sdescs;
+		    while (my ($l, $d) = each %trans_desc) {
+			$d =~ s/\n.*//os;
+
+			$sdescs{$l} = $d;
+		    }
+		    $rel_alt_out{trans_desc} = \%sdescs;
+		}
 		$rel_alt_out{suite} = $p_suite;
 		if ( $rel_out{is_old_pkgs} ) {
 		} elsif (defined $entry->[1]) {
@@ -460,7 +476,7 @@ sub build_deps {
 		}
 	    } elsif ( $rel_out{is_old_pkgs} ) {
 	    } else {
-		$rel_alt_out{desc} = _g( "Package not available" );
+		$rel_alt_out{desc} = $cat->g( "Package not available" );
 		$rel_alt_out{suite} = '';
 	    }
 	    push @{$rel_out{alternatives}}, \%rel_alt_out;
@@ -474,19 +490,32 @@ sub build_deps {
 } # end print_deps
 
 sub pkg_list {
-    my ( $packages, $opts, $pkgs, $lang, $list ) = @_;
+    my ( $packages, $opts, $pkgs, $list ) = @_;
     my $suite = $opts->{suite}[0];
 
     foreach my $p ( sort @$pkgs ) {
 
 	# we don't deal with virtual packages here because for the
 	# current uses of this function this isn't needed
-	my $short_desc = (read_entry_simple( $packages, $p, $opts->{h_archives}, $suite))->[-1];
+	my $data = read_entry_simple( $packages, $p, $opts->{h_archives}, $suite);
+	my ($desc_md5, $short_desc) = ($data->[-2],$data->[-1]);
 
 	if ( $short_desc ) {
-	    push @$list, { name => $p, desc => $short_desc, available => 1 };
+	    my $trans_desc = $desctrans{$desc_md5};
+	    my %sdescs;
+	    if ($trans_desc) {
+		my %trans_desc = split /\000|\001/, $trans_desc;
+		while (my ($l, $d) = each %trans_desc) {
+		    $d =~ s/\n.*//os;
+
+		    $sdescs{$l} = $d;
+		}
+	    }
+	    push @$list, { name => $p, desc => $short_desc,
+			   trans_desc => \%sdescs, available => 1 };
 	} else {
-	    push @$list, { name => $p, desc => _g("Not available") };
+	    push @$list, { name => $p,
+			   desc => $opts->{cat}->g("Not available") };
 	}
     }
 }

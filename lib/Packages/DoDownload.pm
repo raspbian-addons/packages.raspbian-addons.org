@@ -10,7 +10,6 @@ use Benchmark ':hireswallclock';
 use Exporter;
 
 use Deb::Versions;
-use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS @ARCHITECTURES );
 use Packages::CGI;
@@ -22,21 +21,24 @@ our @EXPORT = qw( do_download );
 
 sub do_download {
     my ($params, $opts, $page_content) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{package}) {
-	fatal_error( _g( "package not valid or not specified" ) );
+	fatal_error( $cat->g( "package not valid or not specified" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
     if ($params->{errors}{arch}) {
-	fatal_error( _g( "architecture not valid or not specified" ) );
+	fatal_error( $cat->g( "architecture not valid or not specified" ) );
     }
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for download (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for download (%s)",
+			      "@{$opts->{suite}}" ) );
     }
     if (@{$opts->{arch}} > 1) {
-	fatal_error( sprintf( _g( "more than one architecture specified for download (%s)" ), "@{$opts->{arch}}" ) );
+	fatal_error( $cat->g( "more than one architecture specified for download (%s)",
+			      "@{$opts->{arch}}" ) );
     }
 
     $opts->{h_sections} = { map { $_ => 1 } @SECTIONS };
@@ -70,11 +72,11 @@ sub do_download {
 	    
 	    debug( "final_result=@$final_result", 1 );
 	    $archive = $final_result->[1];
-	    my %data = split /\000/, $packages_all{"$pkg $arch $final_result->[7]"};
+	    my %data = split(/\000/, $packages_all{"$pkg $arch $final_result->[7]"}||'');
 	    if (!%data && $arch ne 'all' && $final_result->[3] eq 'all') {
 		%data = split /\000/, $packages_all{"$pkg all $final_result->[7]"};
-		$arch = 'all';
 		debug( "choosing arch 'all' instead of requested arch $arch", 1 );
+		$arch = 'all';
 #		fatal_error( _g( "No such package." )."<br>".
 #			     sprintf( _g( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) ) unless %data;
 	    }
@@ -87,11 +89,11 @@ sub do_download {
 	    $page_content->{pkg} = $pkg;
 	    my $pkgsize = floor(($data{size}/102.4)+0.5)/10;
 	    if ($pkgsize < 1024) {
-		$page_content->{pkgsize} = sprintf( '%.1f', $pkgsize );
-		$page_content->{pkgsize_unit} = _g( 'kByte' );
+		$page_content->{pkgsize} = $pkgsize;
+		$page_content->{pkgsize_unit} = $cat->g( 'kByte' );
 	    } else {
-		$page_content->{pkgsize} = sprintf( '%.1f', floor(($data{size}/(102.4*102.4))+0.5)/100 );
-		$page_content->{pkgsize_unit} = _g( 'MByte' );
+		$page_content->{pkgsize} = floor(($data{size}/(102.4*102.4))+0.5)/100;
+		$page_content->{pkgsize_unit} = $cat->g( 'MByte' );
 	    }
 	    $page_content->{architecture} = $arch;
 	    foreach (keys %data) {

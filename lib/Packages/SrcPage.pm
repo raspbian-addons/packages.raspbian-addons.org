@@ -4,7 +4,6 @@ use strict;
 use warnings;
 
 use Data::Dumper;
-use Locale::gettext;
 use Deb::Versions;
 use Packages::CGI;
 use Packages::Page qw( :all );
@@ -65,6 +64,8 @@ sub merge_package {
 
 	$self->{version} = $data->{version};
     }
+
+    return 1;
 }
 
 #FIXME: should be mergable with the Packages::Page version

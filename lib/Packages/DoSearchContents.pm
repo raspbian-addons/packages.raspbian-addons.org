@@ -5,8 +5,6 @@ use warnings;
 
 use Benchmark ':hireswallclock';
 use DB_File;
-use URI::Escape;
-use HTML::Entities;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_search_contents );
@@ -20,15 +18,16 @@ use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search_contents {
     my ($params, $opts, $page_content) = @_;
+    my $cat = $opts->{cat};
 
     if ($params->{errors}{keywords}) {
-	fatal_error( _g( "keyword not valid or missing" ) );
+	fatal_error( $cat->g( "keyword not valid or missing" ) );
 	$opts->{keywords} = [];
     } elsif (grep { length($_) < 2 } @{$opts->{keywords}}) {
-	fatal_error( _g( "keyword too short (keywords need to have at least two characters)" ) );
+	fatal_error( $cat->g( "keyword too short (keywords need to have at least two characters)" ) );
     }
     if ($params->{errors}{suite}) {
-	fatal_error( _g( "suite not valid or not specified" ) );
+	fatal_error( $cat->g( "suite not valid or not specified" ) );
     }
 
     #FIXME: that's extremely hacky atm
@@ -38,7 +37,8 @@ sub do_search_contents {
     }
 
     if (@{$opts->{suite}} > 1) {
-	fatal_error( sprintf( _g( "more than one suite specified for contents search (%s)" ), "@{$opts->{suite}}" ) );
+	fatal_error( $cat->g( "more than one suite specified for contents search (%s)",
+			      "@{$opts->{suite}}" ) );
     }
 
     my @keywords = @{$opts->{keywords}};
@@ -58,6 +58,10 @@ sub do_search_contents {
 	# full filename search is tricky
 	my $ffn = $mode eq 'filename';
 
+	unless (-e "$DBDIR/contents/reverse_$suite.db") {
+	    fatal_error($cat->g("No contents information available for this suite"));
+	    return;
+	}
 	my $reverses = tie my %reverses, 'DB_File', "$DBDIR/contents/reverse_$suite.db",
 	    O_RDONLY, 0666, $DB_BTREE
 	    or die "Failed opening reverse DB: $!";
@@ -79,7 +83,7 @@ sub do_search_contents {
 	    close FILENAMES or warn "fgrep error: $!\n";
 	} else {
 
-	    error(_g("The search mode you selected doesn't support more than one keyword."))
+	    error($cat->g("The search mode you selected doesn't support more than one keyword."))
 		if @keywords;
 
 	    my $kw = reverse $first_kw;
@@ -104,7 +108,7 @@ sub do_search_contents {
 	my $file = shift @$result;
 	my %pkgs;
 	foreach (@$result) {
-	    my ($pkg, $arch) = split /:/, $_;
+	    my ($pkg, $arch) = split m/:/, $_;
 	    next unless $opts->{h_archs}{$arch};
 	    $pkgs{$pkg}{$arch}++;
 	    $archs{$arch}++ unless $arch eq 'all';
@@ -173,8 +177,15 @@ sub searchfile
 	last unless index($key, $kw) == 0;
 	debug( "found $key", 2 ) if DEBUG;
 
-	my @hits = split /\0/o, $value;
-	push @$results, [ scalar reverse($key), @hits ];
+	my @files = split /\001/o, $value;
+	foreach my $f (@files) {
+	    my @hits = split /\0/o, $f;
+	    my $file = shift @hits;
+	    if ($file eq '-') {
+		$file = reverse($key);
+	    }
+	    push @$results, [ $file, @hits ];
+	}
 	last if ($$nres)++ > 100;
     }
 

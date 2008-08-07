@@ -16,11 +16,12 @@ case, you might have to adjust some of the steps.
    (Something like `git clone git://source.djpig.de/git/packages.git')
    [ Create a new branch from origin/sourcedeps
    (Something like `git checkout --track -b sourcdeps origin/sourcedeps) ]
-3) Install the needed dependencies. A list can be found in cron.d/050checkinst.
+3) Install the needed dependencies. A list can be found in debian/control.
    [...] [ For sourcedeps you basically only need libtemplate-perl ]
 4) Install apache2 (apache2-mpm-worker) [...]
 5) Adjust the configuration to your needs. You should at least edit the following
-   files before starting to test:
+   files before starting to test (don't touch %TOPDIR% and %SITE%, as you will 
+   specify it later):
    - ./config.sh.sed.in
    - ./conf/apache.conf.sed.in
   [- ./templates/sourcedeps/* ]
@@ -33,7 +34,10 @@ case, you might have to adjust some of the steps.
 [...]
 7) Include ./conf/apache.conf in apache's configuration, e.g. by symlinking it from
    /etc/apache2/sites-available/ and then using a2ensite
-8) Run ./bin/daily and ./bin/cron_sourcedeps ]
+8) Run ./bin/daily [ and ./bin/cron_sourcedeps ]
+   (this takes a while, especially the first time, as it downloads a lot of data,
+   [at the time of this writing approx. 900 MB], creates databases, pre-builds heavy
+   pages, etc.)
 9) Setup ./bin/daily [ and ./bin/cron_sourcedeps ] to be run regulary. In ./conf/crontab you can find an example crontab
    to do this. Actually preferable is to trigger the script by archive updates, but you
    will know best if and how to implement that in your setup.

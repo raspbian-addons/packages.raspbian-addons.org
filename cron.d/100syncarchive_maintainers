@@ -16,6 +16,6 @@ then
 else
     if [ ! -L Maintainers ]
     then
-	wget -q -O Maintainers ftp://ftp.debian.org/debian/indices/Maintainers
+	$wget_cmd -O Maintainers $ftpsite/indices/Maintainers
     fi
 fi

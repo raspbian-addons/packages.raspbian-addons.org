@@ -16,8 +16,8 @@ then
         echo "retrieve Release(.gpg) $dist"
 	test -d us/${dist}-${arch} || mkdir -p us/${dist}-${arch}
 	(cd us/${dist} &&
-	    wget -q -N ${ftpsite}/dists/${dist}-${arch}/Release &&
-	    wget -q -N ${ftpsite}/dists/${dist}-${arch}/Release.gpg )
+	    $wget_cmd -N ${ftpsite}/dists/${dist}-${arch}/Release &&
+	    $wget_cmd -N ${ftpsite}/dists/${dist}-${arch}/Release.gpg )
         
 #	foo=\$arch_${dist//-/_}
 #	for arch in `eval echo $foo`
@@ -27,21 +27,23 @@ then
 	        echo retrieve Packages $dist-${arch}/$part/$arch
 		test -d us/${dist}-${arch}/${part}/binary-${arch} || mkdir -p us/${dist}-${arch}/${part}/binary-${arch}
 		(cd us/${dist}-${arch}/${part}/binary-${arch} &&
-		    wget -q -N ${ftpsite}/dists/${dist}-${arch}/${part}/binary-${arch}/Packages.gz)
+		    $wget_cmd -N ${ftpsite}/dists/${dist}-${arch}/${part}/binary-${arch}/Packages.gz)
 	    done
 	    #FIXME: no Contents files for p-u
 	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    (cd us/${dist}-${arch} &&
-		wget -q -N ${ftpsite}/dists/${dist}-${arch}/Contents-${arch}.gz)
+		$wget_cmd -N ${ftpsite}/dists/${dist}-${arch}/Contents-${arch}.gz)
 #	done
 	for part in ${parts}
 	do
 	    echo retrieve Sources $dist-${arch}/$part
 	    test -d us/${dist}-${arch}/${part}/source || mkdir -p us/${dist}-${arch}/${part}/source
             (cd us/${dist}-${arch}/${part}/source &&
-                wget -q -N ${ftpsite}/dists/${dist}-${arch}/${part}/source/Sources.gz)
+                $wget_cmd -N ${ftpsite}/dists/${dist}-${arch}/${part}/source/Sources.gz)
 	done
+
+	$check_release_cmd $archivedir/us/${dist}-${arch}/Release
     done
 else
     echo using local mirror
@@ -76,6 +78,7 @@ else
             rsync -t ${localdir}/dists/${dist}-${arch}/${part}/source/Sources.gz \
 	    	us/${dist}-${arch}/${part}/source/Sources.gz
 	done
+	$check_release_cmd $archivedir/us/${dist}-${arch}/Release
     done
 fi
 

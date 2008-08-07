@@ -18,6 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 use strict;
+use warnings;
 use lib './lib';
 
 $| = 1;
@@ -33,9 +34,12 @@ my $what = $ARGV[0] ? "head -10000|" : "";
 # temporary files, and is adviced when possible
 my $SORT_REVERSE_CONCURRENTLY = 1;
 
+use English;
 use DB_File;
 use Storable;
 use File::Path;
+use File::Basename;
+use Packages::CommonCode qw(:all);
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 &Packages::Config::init( './' );
 
@@ -44,7 +48,7 @@ my @suites = @SUITES;
 my @archs = @ARCHITECTURES;
 
 $DBDIR .= "/contents";
--d $DBDIR || mkpath( $DBDIR );
+mkdirp( $DBDIR );
 
 for my $suite (@suites) {
     for my $arch (@archs) {
@@ -54,15 +58,15 @@ for my $suite (@suites) {
 	my %packages_contents = ();
 	my %packages_contents_nr = ();
 	my %packages_contents_lastword = ();
-	
+
 	my $extra = "";
 	$extra = "|sort" if $SORT_REVERSE_CONCURRENTLY;
-	
+
 	open REVERSED, "$extra>$DBDIR/reverse.tmp"
 	    or die "Failed to open output reverse file: $!";
 
 	my $changed = 0;
-	for my $archive (@archives) { 
+	for my $archive (@archives) {
 
 	    my $filename = "$TOPDIR/archive/$archive/$suite/Contents-$arch.gz";
 	    next unless -f $filename;
@@ -73,25 +77,29 @@ for my $suite (@suites) {
 	    $changed++;
 	}
 	if ($changed) {
-	    for my $archive (@archives) { 
+	    for my $archive (@archives) {
 
 		my $filename = "$TOPDIR/archive/$archive/$suite/Contents-$arch.gz";
 		next unless -f $filename;
 		print "Reading $archive/$suite/$arch...\n";
-		
+
 		open CONT, "zcat $filename|$what"
 		    or die $!;
-		while (<CONT>) {last if /^FILE/mo;}
-		open CONT, "zcat $filename|$what" if eof(CONT);
+		while (<CONT>) { last if /^FILE/mo; }
+		if (eof(CONT)) { # no header found
+		    close CONT; # explicit close to reset $.
+		    open CONT, "zcat $filename|$what";
+		}
 		while (<CONT>) {
 		    my $data = "";
 		    my %data = ();
 		    chomp;
-		    print "Doing line ".($./1000)."k (out of approx 1.5M)\n" if $. % 250000 == 0;
+		    print "Doing line ".($NR/1000)."k (out of approx 2.0M)\n"
+			if $NR % 250000 == 0;
 		    /^(.+?)\s+(\S+)$/o;
 		    my ($file, $value) = ($1, $2);
 		    $value =~ s#[^,/]+/##og;
-		    my @packages = split /,/, $value;
+		    my @packages = split m/,/, $value;
 		    for (@packages) {
 			$packages_contents_nr{$_}++;
 			my $lw = $packages_contents_lastword{$_} || "\0";
@@ -103,20 +111,23 @@ for my $suite (@suites) {
 			$packages_contents_lastword{$_} = "$file\0";
 		    }
 		    # Searches are case-insensitive
-		    $file =~ tr [A-Z] [a-z];
-		    
-		    print REVERSED (reverse $file)."\0".(join ":$arch\0", @packages).":$arch\n";
+		    (my $nocase = $file) =~ tr [A-Z] [a-z];
+		    my $case = ($nocase eq $file) ? '-' : $file;
+
+		    print REVERSED (reverse $nocase)."\0".$case."\0".
+			(join ":$arch\0", @packages).":$arch\n";
 		}
 		close CONT;
-		
+
 	    }
 	    close REVERSED;
-	    
+
 	    print "Sorting reverse list if needed\n";
-	    system("cd $DBDIR && sort reverse.tmp > reverse.sorted && mv reverse.{sorted,tmp}") == 0
-		or die "Failed to sort reverse"
-		unless $SORT_REVERSE_CONCURRENTLY;
-	    
+	    system("cd $DBDIR && sort reverse.tmp > reverse.sorted &&".
+		   " mv reverse.{sorted,tmp}") == 0
+		   or die "Failed to sort reverse"
+		   unless $SORT_REVERSE_CONCURRENTLY;
+
 	    print "Writing filelist db\n";
 	    tie my %packages_contents_db, "DB_File", "$filelist_db.new",
 	    O_RDWR|O_CREAT, 0666, $DB_BTREE
@@ -126,15 +137,19 @@ for my $suite (@suites) {
 		    . $v;
 	    }
 	    untie %packages_contents_db;
-	
+
 	    rename("$DBDIR/reverse.tmp", "$DBDIR/reverse_${suite}_${arch}.txt");
-	
-	    rename("$filelist_db.new", $filelist_db);
-	    system("ln -sf $filelist_db $DBDIR/filelists_${suite}_all.db") == 0
-		or die "Oops";
+
+	    activate($filelist_db);
+	    #FIXME: hardcoded archs. (debports has no contrib/non-free)
+	    if ($arch !~ m/^kfreebsd-.*$/) {
+		system("ln", "-sf", basename($filelist_db),
+		       "$DBDIR/filelists_${suite}_all.db") == 0
+			   or die "Oops";
+	    }
 	}
     }
-			  
+
     my $go = 0;
     my $suite_mtime = (stat "$DBDIR/reverse_$suite.db")[9];
     for my $file (glob "$DBDIR/reverse_${suite}_*.txt") {
@@ -145,26 +160,33 @@ for my $suite (@suites) {
 
     print "Merging reverse path lists for ${suite}...\n";
 
-    open MERGED, "sort -m $DBDIR/reverse_${suite}_*.txt |"
+    open MERGED, "-|", "sort -m $DBDIR/reverse_${suite}_*.txt"
 	or die "Failed to open merged list";
-    open FILENAMES, "> $DBDIR/filenames_$suite.txt.new"
+    open FILENAMES, ">", "$DBDIR/filenames_$suite.txt.new"
 	or die "Failed to open filenames list";
     tie my %reverse_path_db, "DB_File", "$DBDIR/reverse_${suite}.db.new",
-    O_RDWR|O_CREAT, 0666, $DB_BTREE
+	O_RDWR|O_CREAT, 0666, $DB_BTREE
 	or die "Error creating DB: $!";
 
-    my $lastpath = "";
-    my $lastfile = "";
-    my @matches = ();
+    my $lastpath = my $lastcasepath = my $lastfile = "";
+    my %matches = ();
     while (<MERGED>) {
-	print "Doing line ".($./1000000)."M (out of approx. 16M)\n"
-	    if $. % 1000000 == 0;
+	print "Doing line ".($NR/1000000)."M (out of approx. 20M)\n"
+	    if $NR % 1000000 == 0;
 	chomp;
-	my @line = split /\0/o, $_;
+	my @line = split m/\0/o, $_;
 	my $revpath = shift @line;
+	my $casepath = shift @line;
 	if ($revpath ne $lastpath) {
 	    # Wrap: Do useful stuff with this ($lastpath, @matches)
-	    $reverse_path_db{$lastpath} = join "\0", @matches if $lastpath ne "";
+	    if ($lastpath ne "") {
+		my @matches;
+		while (my ($k, $v) = each %matches) {
+		    push @matches, join("\0", $k, @$v);
+		}
+		$reverse_path_db{$lastpath} = join "\1", @matches;
+		%matches = ();
+	    }
 	    $lastpath =~ s,/.*,,o;
 	    if ($lastfile ne $lastpath) {
 		$lastfile = $lastpath;
@@ -172,21 +194,30 @@ for my $suite (@suites) {
 	    }
 	    #
 	    $lastpath = $revpath;
-	    @matches = @line;
+	    $lastcasepath = $casepath;
+	    $matches{$casepath} = \@line;
 	    next;
+#	} elsif ($lastcasepath ne "" and $casepath ne $lastcasepath) {
+#	    warn reverse($revpath)." has more than one casepath: $casepath $lastcasepath\n";
 	}
-	push @matches, @line
-	}
+	push @{$matches{$casepath}}, @line;
+    }
     # Note: do useful stuff here too, for out last entry. Maybe prevent this by
     # adding a fake ultimate entry?
-    $reverse_path_db{$lastpath} = join "\0", @matches;
-    
+    {
+	my @matches;
+	while (my ($k, $v) = each %matches) {
+	    push @matches, join("\0", $k, @$v);
+	}
+	$reverse_path_db{$lastpath} = join "\1", @matches;
+    }
+
     untie %reverse_path_db;
     close FILENAMES;
     close MERGED;
-    
-    rename "$DBDIR/filenames_$suite.txt.new", "$DBDIR/filenames_$suite.txt";
-    rename "$DBDIR/reverse_$suite.db.new", "$DBDIR/reverse_$suite.db";
+
+    activate("$DBDIR/filenames_$suite.txt");
+    activate("$DBDIR/reverse_$suite.db");
 }
 
 # vim: set ts=4

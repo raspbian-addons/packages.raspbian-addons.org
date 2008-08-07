@@ -1,12 +1,23 @@
-[% PROCESS 'html/head.tmpl' 
+[%- PROCESS 'html/head.tmpl' 
 	title_tag = "$organisation Packages Search"
 	page_title = "$organisation Packages Search"
 	keywords = "$organisation, Packages"
-%]
-
+-%]
+[%-
+    all_suites = [ 'sarge', 'sarge-volatile', 'sarge-backports',
+    	       	   'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
+		   'lenny', 'sid' ]
+    version_numbers = { sarge => '3.1',
+			etch   => '4.0' }
+    current_release = 'etch'
+    all_sections = [ 'main', 'contrib', 'non-free' ]
+    all_architectures = [ 'alpha', 'arm', 'armel', 'amd64', 'hppa', 'i386',
+    		      	  'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
+			  'mipsel', 'powerpc', 's390', 'sparc' ]
+-%]
 
 <p>This site provides you with information about all the packages
-available in the <a href="[% homepage %]">[% organisation %]</a>
+available in the <a href="[% project_homepage %]">[% organisation %]</a>
 Package archive.
 
 <p><em>Please contact <a href="mailto:[% admin.mail %]">[% admin.name %]</a>
@@ -15,12 +26,14 @@ if you encounter any problems!</em></p>
 <h2>Browse through the lists of packages:</h2>
 
 <ul style="font-size:large">
-<!-- FIXME -->
+[% FOREACH s IN all_suites %]
+<li><a href="[% s %]/">[% s %]</a>
+[% IF version_numbers.$s %]([% version_numbers.$s %])[% END %]</li>
+[% END %]
 </ul>
 
-<!-- FIXME -->
-<p>There is also a list of <a href="unstable/newpkg">packages
-recently added to unstable</a>.</p>
+<p>There is also a list of <a href="[% all_suites.-1 %]/main/newpkg">packages
+recently added to [% all_suites.-1 %]</a>.</p>
 
 <h2>Search</h2>
 
@@ -45,22 +58,25 @@ Only show exact matches:
 <br>
 Distribution:
 <select name="suite">
-
-<!-- FIXME -->
+[% FOREACH s IN all_suites %]
+  <option value="[% s %]" [% 'selected="selected"' IF s == current_release %]>[% s %]</option>
+[% END %]
   <option value="all">any</option>
 </select>
 Section:
 <select name="section">
-<!-- FIXME -->
+[% FOREACH s IN all_sections %]
+  <option value="[% s %]">[% s %]</option>
+[% END %]
   <option value="all" selected="selected">any</option>
 </select>
 </form>
 <p>There are shortcuts for some searches available:</p>
 <ul>
-      <li><code>[% packages_homepage %]/<var>name</var></code> for
+      <li><code>[% packages_homepage %]<var>name</var></code> for
       the search on package names.</li>
 
-      <li><code>[% packages_homepage %]/src:<var>name</var></code>
+      <li><code>[% packages_homepage %]src:<var>name</var></code>
       for the search on source package names.</li>
 </ul>
 <hr>
@@ -95,11 +111,16 @@ Display:
 <label for="distro">Distribution:</label>
 
 <select name="suite" id="distro">
-  <option value="stable" selected="selected">stable</option>
+[% FOREACH s IN all_suites %]
+  <option value="[% s %]" [% 'selected="selected"' IF s == current_release %]>[% s %]</option>
+[% END %]
 </select>
 <label for="architecture">Architecture:</label>
 <select name="arch" id="architecture">
-  <option value="i386" selected="selected">Intel x86</option>
+[% FOREACH a IN all_architectures %]
+  <option value="[% a %]">[% a %]</option>
+[% END %]
+  <option value="any" selected="selected">any</option>
 </select>
 </form>
 

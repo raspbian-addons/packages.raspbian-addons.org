@@ -147,8 +147,8 @@ mirrors = {
 		],
 	},
 
-	gnuab => {
-		mirror_list => 'http://wiki.debian.org/Debian_GNU/kFreeBSD_Mirrors',
+	debports => {
+		mirror_list => 'http://wiki.debian.org/DebianPorts/Mirrors',
 		unofficial_port => {
 			'kfreebsd-amd64' => {
 				url_name => 'kfreebsd-gnu',
@@ -158,20 +158,16 @@ mirrors = {
 				url_name => 'kfreebsd-gnu',
 				name => 'GNU/kFreeBSD',
 			},
-			armel => {
-				url => 'http://www.debonaras.org/',
-				name => 'armel',
-			},
 		},
 		north_america => [
 			"www.gtlib.gatech.edu/pub/gnuab/debian",
+			"www.superunprivileged.org/debian",
 		],
 		europa => [
-			# master site, aka ftp.gnuab.org
-			"kfreebsd-gnu.debian.net/debian",
+			"ftp.debian-ports.org/debian",
+			"ftp.de.debian.org/debian-ports",
+			"ftp.ch.debian.org/debian-ports",
 			"ftp.easynet.be/ftp/gnuab/debian",
-			"ftp.de.debian.org/debian-kfreebsd",
-			"ftp.ch.debian.org/debian-kfreebsd",
 		],
 	},
 }
@@ -179,12 +175,12 @@ mirrors = {
 ports_url = 'http://www.debian.org/ports/'
 
 continents = {
-		north_america => 'North America',
-		south_america => 'South America',
-		asia          => 'Asia',
-		australia     => 'Australia and New Zealand',
-		europa        => 'Europa',
-		africa        => 'Africa',
+		north_america => g('North America'),
+		south_america => g('South America'),
+		asia          => g('Asia'),
+		australia     => g('Australia and New Zealand'),
+		europa        => g('Europe'),
+		africa        => g('Africa'),
 	}
 
 %]

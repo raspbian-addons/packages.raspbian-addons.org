@@ -5,34 +5,37 @@ use warnings;
 
 use Benchmark ':hireswallclock';
 use DB_File;
-use URI::Escape;
-use HTML::Entities;
 use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_search );
 
 use Deb::Versions;
-use Packages::I18N::Locale;
 use Packages::Search qw( :all );
 use Packages::CGI qw( :DEFAULT );
 use Packages::DB;
-use Packages::Config qw( $DBDIR @SUITES @ARCHIVES $ROOT );
+use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search {
     my ($params, $opts, $page_content) = @_;
+    my $cat = $opts->{cat};
 
     $Params::Search::too_many_hits = 0;
 
     if ($params->{errors}{keywords}) {
-	fatal_error( _g( "keyword not valid or missing" ) );
+	fatal_error( $cat->g( "keyword not valid or missing" ) );
 	$opts->{keywords} = [];
     } elsif (grep { length($_) < 2 } @{$opts->{keywords}}) {
-	fatal_error( _g( "keyword too short (keywords need to have at least two characters)" ) );
+	fatal_error( $cat->g( "keyword too short (keywords need to have at least two characters)" ) );
     }
 
     my @keywords = @{$opts->{keywords}};
     my $searchon = $opts->{searchon};
-    $page_content->{search_keywords} = \@keywords;
+    $page_content->{search_keywords} = $opts->{keywords};
+    $page_content->{all_architectures} = \@ARCHITECTURES;
+    $page_content->{all_suites} = \@SUITES;
+    $page_content->{search_architectures} = $opts->{arch};
+    $page_content->{search_suites} = $opts->{suite};
+    $page_content->{sections} = $opts->{section};
 
     my $st0 = new Benchmark;
     my (@results, @non_results);
@@ -90,7 +93,7 @@ sub do_search {
 	unless ($opts->{source}) {
 	    foreach (@results) {
 		my ($pkg_t, $archive, $suite, $arch, $section, $subsection,
-		    $priority, $version, $desc) = @$_;
+		    $priority, $version, $desc_md5, $desc) = @$_;
 
 		my ($pkg) = $pkg_t =~ m/^(.+)/; # untaint
 		if ($arch ne 'virtual') {
@@ -99,7 +102,7 @@ sub do_search {
 		    $sect{$pkg}{$suite}{$version} = $section;
 		    $archives{$pkg}{$suite}{$version} ||= $archive;
 
-		    $desc{$pkg}{$suite}{$version} = $desc;
+		    $desc{$pkg}{$suite}{$version} = [ $desc_md5, $desc ];
 		} else {
 		    $provided_by{$pkg}{$suite} = [ split /\s+/, $desc ];
 		}
@@ -112,7 +115,8 @@ sub do_search {
 	    } else {
 		@pkgs = sort { $sort_by_relevance{$a} <=> $sort_by_relevance{$b} } keys %uniq_pkgs;
 	    }
-	    process_packages( $page_content, 'packages', \%pkgs, \@pkgs, $opts, \@keywords,
+	    process_packages( $page_content, 'packages', \%pkgs, \@pkgs,
+			      $opts, \@keywords,
 			      \&process_package, \%provided_by,
 			      \%archives, \%sect, \%subsect,
 			      \%desc );
@@ -127,8 +131,7 @@ sub do_search {
 		    $real_archive = $archive;
 		    $archive = 'us';
 		}
-		if (($real_archive eq $archive) &&
-		    $pkgs{$pkg}{$suite}{$archive} &&
+		if ($pkgs{$pkg}{$suite}{$archive} &&
 		    (version_cmp( $pkgs{$pkg}{$suite}{$archive}, $version ) >= 0)) {
 		    next;
 		}
@@ -143,7 +146,8 @@ sub do_search {
 	    }
 
 	    my @pkgs = sort keys %pkgs;
-	    process_packages( $page_content, 'src_packages', \%pkgs, \@pkgs, $opts, \@keywords,
+	    process_packages( $page_content, 'src_packages', \%pkgs, \@pkgs,
+			      $opts, \@keywords,
 			      \&process_src_package, \%archives,
 			      \%sect, \%subsect, \%binaries );
 	} # else unless $opts->{source}
@@ -162,20 +166,21 @@ sub process_packages {
     my $have_exact;
     if ($keyword && grep { $_ eq $keyword } @$pkgs_list) {
 	$have_exact = 1;
-	$categories[0]{name} = _g( "Exact hits" );
+	$categories[0]{name} = $opts->{cat}->g( "Exact hits" );
 
-	$categories[0]{$target} = [ &$print_func( $keyword, $pkgs->{$keyword}||{},
-						   map { $_->{$keyword}||{} } @func_args ) ];
+	$categories[0]{$target} = [ &$print_func( $opts, $keyword,
+						  $pkgs->{$keyword}||{},
+						  map { $_->{$keyword}||{} } @func_args ) ];
 	@$pkgs_list = grep { $_ ne $keyword } @$pkgs_list;
     }
 	    
     if (@$pkgs_list && (($opts->{searchon} ne 'names') || !$opts->{exact})) {
 	my %cat;
-	$cat{name} = _g( 'Other hits' ) if $have_exact;
+	$cat{name} = $opts->{cat}->g( 'Other hits' ) if $have_exact;
 	
 	$cat{packages} = [];
 	foreach my $pkg (@$pkgs_list) {
-	    push @{$cat{$target}}, &$print_func( $pkg, $pkgs->{$pkg}||{},
+	    push @{$cat{$target}}, &$print_func( $opts, $pkg, $pkgs->{$pkg}||{},
 						 map { $_->{$pkg}||{} } @func_args );
 	}
 	push @categories, \%cat;
@@ -187,7 +192,8 @@ sub process_packages {
 }
 
 sub process_package {
-    my ($pkg, $pkgs, $provided_by, $archives, $sect, $subsect, $desc) = @_;
+    my ($opts, $pkg, $pkgs, $provided_by,
+	$archives, $sect, $subsect, $desc) = @_;
 
     my %pkg = ( pkg => $pkg,
 		suites => [] );
@@ -199,9 +205,22 @@ sub process_package {
 	    my @versions = version_sort keys %{$pkgs->{$suite}};
 	    $suite{section} = $sect->{$suite}{$versions[0]};
 	    $suite{subsection} = $subsect->{$suite}{$versions[0]};
-	    $suite{desc} = $desc->{$suite}{$versions[0]};
+	    my $desc_md5 = $desc->{$suite}{$versions[0]}[0];
+	    $suite{desc} = $desc->{$suite}{$versions[0]}[1];
 	    $suite{versions} = [];
-		
+
+	    my $trans_desc = $desctrans{$desc_md5};
+	    my %sdescs;
+	    if ($trans_desc) {
+		my %trans_desc = split /\000|\001/, $trans_desc;
+		while (my ($l, $d) = each %trans_desc) {
+		    $d =~ s/\n.*//os;
+
+		    $sdescs{$l} = $d;
+		}
+		$suite{trans_desc} = \%sdescs;
+	    }
+
 	    foreach my $v (@versions) {
 		my %version;
 		$version{version} = $v;
@@ -216,7 +235,7 @@ sub process_package {
 		$suite{providers} = $p;
 	    }
 	} elsif (my $p =  $provided_by->{$suite}) {
-	    $suite{desc} = _g('Virtual package');
+	    $suite{desc} = $opts->{cat}->g('Virtual package');
 	    $suite{providers} = $p;
 	}
 	push @{$pkg{suites}}, \%suite if $suite{versions} || $suite{providers};
@@ -226,7 +245,7 @@ sub process_package {
 }
 
 sub process_src_package {
-    my ($pkg, $pkgs, $archives, $sect, $subsect, $binaries) = @_;
+    my ($opts, $pkg, $pkgs, $archives, $sect, $subsect, $binaries) = @_;
 
     my %pkg = ( pkg => $pkg,
 		origins => [] );

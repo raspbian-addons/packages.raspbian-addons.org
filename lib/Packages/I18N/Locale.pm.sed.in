@@ -1,0 +1,35 @@
+package Packages::I18N::Locale;
+
+use strict;
+use warnings;
+
+use base 'Locale::Maketext';
+use Locale::Maketext::Lexicon {
+    'en' => [Gettext => "%TOPDIR%/po/pdo.pot",
+	     Gettext => "%TOPDIR%/po/templates.pot",
+	     Gettext => "%TOPDIR%/po/langs.pot",
+	     Gettext => "%TOPDIR%/po/sections.pot",
+	     Gettext => "%TOPDIR%/po/debtags.pot"],
+    '*' => [Gettext => "%TOPDIR%/po/pdo.*.po",
+	    Gettext => "%TOPDIR%/po/templates.*.po",
+	    Gettext => "%TOPDIR%/po/langs.*.po",
+	    Gettext => "%TOPDIR%/po/sections.*.po",
+	    Gettext => "%TOPDIR%/po/debtags.*.po"],
+    _auto   => 1,
+    _style  => 'gettext',
+};
+
+use base 'Exporter';
+
+our @EXPORT = qw( N_ );
+
+sub N_ { return $_[0]; }
+
+sub g {
+    my ($self, $format, @args) = @_;
+    my $result = $self->maketext($format, @args);
+    return sprintf($result, @args) if $result =~ /%[su]/o;
+    return $result;
+}
+
+1;

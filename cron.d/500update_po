@@ -1,0 +1,112 @@
+#! /bin/bash
+
+. `dirname $0`/../config.sh
+
+cd "$topdir"
+gettextfiles="
+lib/Packages/CGI.pm
+lib/Packages/Config.pm
+lib/Packages/DB.pm
+lib/Packages/DoDownload.pm
+lib/Packages/DoFilelist.pm
+lib/Packages/DoIndex.pm
+lib/Packages/DoNewPkg.pm
+lib/Packages/DoSearch.pm
+lib/Packages/DoSearchContents.pm
+lib/Packages/DoShow.pm
+lib/Packages/Page.pm
+lib/Packages/Search.pm
+lib/Packages/SrcPage.pm
+lib/Packages/Template.pm
+lib/Packages/Dispatcher.pm
+bin/create_index_pages
+"
+templatefiles="
+templates/config.tmpl
+templates/config/architectures.tmpl
+templates/config/archive_layout.tmpl
+templates/config/mirrors.tmpl
+templates/html/download.tmpl
+templates/html/error.tmpl
+templates/html/filelist.tmpl
+templates/html/foot.tmpl
+templates/html/head.tmpl
+templates/html/index_head.tmpl
+templates/html/index_foot.tmpl
+templates/html/messages.tmpl
+templates/html/newpkg.tmpl
+templates/html/search.tmpl
+templates/html/search_contents.tmpl
+templates/html/show.tmpl
+templates/html/suite_index.tmpl
+templates/html/tag_index.tmpl
+templates/html/util.inc
+templates/rfc822/search.tmpl
+templates/rss/newpkg.tmpl
+templates/txt/index_head.tmpl
+templates/txt/index_foot.tmpl
+"
+podomains="pdo templates sections langs debtags"
+
+# Update pot
+#
+# Common options for all calls
+xgettext_opts="--language=Perl --keyword=N_ --keyword=g --foreign-user --add-comments"
+
+echo gettextfiles=$gettextfiles
+echo templatefiles=$templatefiles
+xgettext $xgettext_opts -d pdo -o ${podir}/pdo.pot.new ${gettextfiles}
+xgettext $xgettext_opts -d sections -o ${podir}/sections.pot.new ${libdir}/Packages/Sections.pm
+xgettext $xgettext_opts -d langs -o ${podir}/langs.pot.new ${libdir}/Packages/I18N/LanguageNames.pm
+$topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot.new
+if [ -f files/debtags/vocabulary ]; then
+    $topdir/bin/debtags-xgettext files/debtags/vocabulary >${podir}/debtags.pot.new
+fi
+
+cd $podir
+
+# Create missing po files
+#
+for lang in ${polangs}
+do
+  for domain in ${podomains}
+  do
+    test -f ${domain}.${lang}.po || cp ${domain}.pot ${domain}.${lang}.po
+  done
+done
+
+# normalize paths in .pot files
+for domain in ${podomains}
+do
+  perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot.new
+  if [ ! -f ${domain}.pot.new ] || diff -I"POT-Creation-Date" -I"^#: " -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
+  then
+      echo "${domain}.pot unchanged"
+      rm ${domain}.pot.new
+  else
+      echo "${domain}.pot changed"
+      mv ${domain}.pot.new ${domain}.pot
+      # Update po
+      for lang in ${polangs} 
+      do
+	echo "  update ${domain}.${lang}.po"
+	cp ${domain}.${lang}.po ${domain}.${lang}.po.tmp
+	msgmerge --previous --quiet --sort-by-file -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
+	rm ${domain}.${lang}.po.tmp
+        # normalize paths in .po files
+	perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
+      done
+  fi
+done
+
+# print statistics
+for lang in ${polangs}
+do
+  echo
+  echo "Statistics about $lang:"
+  for po in *.${lang}.po
+  do
+    echo $po:
+    LANG=C msgfmt --statistics --check-format -o- $po >/dev/null
+  done
+done

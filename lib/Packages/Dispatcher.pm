@@ -1,7 +1,7 @@
 #!/usr/bin/perl -T
 # Packages::Dispatcher -- CGI interface for packages.debian.org
 #
-# Copyright (C) 2004-2007 Frank Lichtenheld
+# Copyright (C) 2004-2008 Frank Lichtenheld
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -25,19 +25,17 @@ use warnings;
 use CGI;
 use POSIX;
 use File::Basename;
-use URI;
-use URI::Escape;
-use HTML::Entities;
 use Template;
 use DB_File;
+use URI::Escape;
 use Benchmark ':hireswallclock';
 use I18N::AcceptLanguage;
-use Locale::gettext;
+use Date::Parse;
 
 use Deb::Versions;
 use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
 			 @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES @PRIORITIES
-			 @LANGUAGES @DDTP_LANGUAGES $LOCALES );
+			 @LANGUAGES @DDTP_LANGUAGES );
 use Packages::CGI qw( :DEFAULT error get_all_messages );
 use Packages::DB;
 use Packages::Search qw( :all );
@@ -94,17 +92,30 @@ sub do_dispatch {
     my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
+    my $last_modified = $Packages::DB::db_read_time;
+    my $now = time;
+    # allow some fudge, since the db mod time is not the end of
+    # the cron job
+    $last_modified = $now if $last_modified - $now < 3600; 
 
-    my $acc = I18N::AcceptLanguage->new();
-    my %all_langs = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
-    my @all_langs = sort keys %all_langs;
-    my $http_lang = $acc->accepts( $input->http("Accept-Language"),
-				   \@all_langs ) || 'en';
-    debug( "LANGUAGES=@all_langs header=".
+    if ($input->http('If-Modified-Since') and
+	(my $modtime = str2time($input->http('If-Modified-Since'), 'UTC'))) {
+	if ($modtime <= $last_modified) {
+	    print $input->header(-status => 304);
+	    exit;
+	}
+    }
+
+    my %PO_LANGUAGES = map { $_ => 1 } @LANGUAGES;
+    my %DDTP_LANGUAGES = map { $_ => 1 } @DDTP_LANGUAGES;
+    my $acc = I18N::AcceptLanguage->new(defaultLanguage => 'en');
+    my $ddtp_lang = $acc->accepts( $input->http("Accept-Language"),
+				   \@DDTP_LANGUAGES );
+    my $po_lang = $acc->accepts( $input->http("Accept-Language"),
+				 \@LANGUAGES );
+    debug( "LANGS=@LANGUAGES DDTP_LANGS=@DDTP_LANGUAGES header=".
 	   ($input->http("Accept-Language")||'').
-	   " http_lang=$http_lang", 2 ) if DEBUG;
-    bindtextdomain ( 'pdo', $LOCALES );
-    textdomain( 'pdo' );
+	   " po_lang=$po_lang ddtp_lang=$ddtp_lang", 1 ) if DEBUG;
 
     # backwards compatibility stuff
     debug( "SCRIPT_URL=$ENV{SCRIPT_URL} SCRIPT_URI=$ENV{SCRIPT_URI}" ) if DEBUG;
@@ -139,19 +150,19 @@ sub do_dispatch {
 
     my $what_to_do = 'show';
     my $source = 0;
-    if (my $path = $input->path_info() || $input->param('PATH_INFO')) {
+    if (my $path = $ENV{'PATH_INFO'} || $input->param('PATH_INFO')) {
 	my @components = grep { $_ } map { lc $_ } split /\/+/, $path;
 
 	debug( "PATH_INFO=$path components=@components", 3) if DEBUG;
 
 	push @components, 'index' if @components && $path =~ m,/$,;
 
-	my %LANGUAGES = map { $_ => 1 } @all_langs;
-	if (@components > 0 and $LANGUAGES{$components[0]}
+	my %LANGUAGES = map { $_ => 1 } (@LANGUAGES, @DDTP_LANGUAGES);
+	if (@components > 1 and $LANGUAGES{$components[0]}
 	    and !$input->param('lang')) {
 	    $input->param( 'lang', shift(@components) );
 	}
-	if (@components > 0 and $components[0] eq 'source') {
+	if (@components > 1 and $components[0] eq 'source') {
 	    shift @components;
 	    $input->param( 'source', 1 );
 	}
@@ -159,10 +170,10 @@ sub do_dispatch {
 	    shift @components;
 	    $what_to_do = 'search';
 	    # Done
-	    fatal_error( _g( "search doesn't take any more path elements" ) )
+	    fatal_error( "search doesn't take any more path elements" )
 		if @components;
 	} elsif (@components == 0) {
-	    fatal_error( _g( "We're supposed to display the homepage here, instead of getting dispatch.pl" ) );
+	    fatal_error( "We're supposed to display the homepage here, instead of getting dispatch.pl" );
 	} elsif (@components == 1) {
 	    $what_to_do = 'search';
 	} else {
@@ -185,7 +196,7 @@ sub do_dispatch {
 		my ($cgi, $params_set, $key, $val) = @_;
 		debug("set_param_once key=$key val=$val",4) if DEBUG;
 		if ($params_set->{$key}++) {
-		    fatal_error( sprintf( _g( "%s set more than once in path" ), $key ) );
+		    fatal_error( "$key set more than once in path" );
 		} else {
 		    $cgi->param( $key, $val );
 		}
@@ -202,8 +213,6 @@ sub do_dispatch {
 		    set_param_once( $input, \%params_set, 'suite', $s);
 		} elsif (!$need_pkg && $SECTIONS{$_}) {
 		    set_param_once( $input, \%params_set, 'section', $_);
-		} elsif (!$need_pkg && $ARCHIVES{$_}) {
-		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif (!$need_pkg && $sections_descs{$_}) {
 		    set_param_once( $input, \%params_set, 'subsection', $_);
 		} elsif (!$need_pkg && ($_ eq 'source')) {
@@ -211,6 +220,8 @@ sub do_dispatch {
 		} elsif ($ARCHITECTURES{$_}) {
 		    set_param_once( $input, \%params_set, 'arch', $_)
 			unless $_ eq 'any';
+		} elsif (!$need_pkg && $ARCHIVES{$_}) {
+		    set_param_once( $input, \%params_set, 'archive', $_);
 		} elsif ($PRIORITIES{$_}) {
 		    set_param_once( $input, \%params_set, 'priority', $_);
 		} else {
@@ -220,7 +231,7 @@ sub do_dispatch {
 	    @components = @pkg;
 
 	    if (@components > 1) {
-		fatal_error( sprintf( _g( "two or more packages specified (%s)" ), "@components" ) );
+		fatal_error( "two or more packages specified (@components)" );
 	    }
 	} # else if (@components == 1)
 
@@ -237,9 +248,9 @@ sub do_dispatch {
 				     array => '\s+',
 				     match => '^([-+\@\w\/.:]+)$',
 				 },
-		       package => { default => undef,
-				    match => '^([\w.+-]+)$',
-				    var => \$pkg },
+		       'package' => { default => undef,
+				      match => '^([\w.+-]+)$',
+				      var => \$pkg },
 		       suite => { default => 'default', match => '^([\w-]+)$',
 				  array => ',', var => \@suites,
 				  replace => { all => \@SUITES,
@@ -252,7 +263,7 @@ sub do_dispatch {
 					replace => { all => \@ARCHIVES,
 						     default => \@ARCHIVES} },
 		       exact => { default => 0, match => '^(\w+)$',  },
-		       lang => { default => $http_lang, match => '^(\w+)$',  },
+		       lang => { default => undef, match => '^([\w-]+)$',  },
 		       source => { default => 0, match => '^(\d+)$',  },
 		       debug => { default => 0, match => '^(\d+)$',  },
 		       searchon => { default => 'names', match => '^(\w+)$', },
@@ -269,25 +280,25 @@ sub do_dispatch {
 		       arch => { default => 'any', match => '^([\w-]+)$',
 				 array => ',', var => \@archs, replace =>
 				 { any => \@ARCHITECTURES } },
-		       format => { default => 'html', match => '^([\w.]+)$',  },
-		   mode => { default => '', match => '^(\w+)$',  },
-		   sort_by => { default => 'file', match => '^(\w+)$', },
-		   );
+		       'format' => { default => 'html', match => '^([\w.]+)$',  },
+		       mode => { default => '', match => '^(\w+)$',  },
+		       sort_by => { default => 'file', match => '^(\w+)$', },
+		       );
     my %opts;
     my %params = Packages::CGI::parse_params( $input, \%params_def, \%opts );
-Packages::CGI::init_url( $input, \%params, \%opts );
+    Packages::CGI::init_url( $input, \%params, \%opts );
 
-    my $locale = get_locale($opts{lang});
-    my $charset = get_charset($opts{lang});
-    setlocale ( LC_ALL, $locale )
-	or do { debug( "couldn't set locale $locale, using default" ) if DEBUG;
-		setlocale( LC_ALL, get_locale() )
-		    or do {
-			debug( "couldn't set default locale either" ) if DEBUG;
-			setlocale( LC_ALL, "C" );
-		    };
-	    };
-    debug( "locale=$locale charset=$charset", 2 ) if DEBUG;
+    if (defined($opts{lang})) {
+	$opts{po_lang} = $PO_LANGUAGES{$opts{lang}} ? $opts{lang} : 'en';
+	$opts{ddtp_lang} = $DDTP_LANGUAGES{$opts{lang}} ? $opts{lang} : 'en';
+    } else {
+	$opts{po_lang} = $po_lang;
+	$opts{ddtp_lang} = $ddtp_lang;
+    }
+    my $charset = "UTF-8";
+    my $cat = Packages::I18N::Locale->get_handle( $opts{po_lang}, 'en' )
+	or die "get_handle failed for $opts{po_lang}";
+    $opts{cat} = $cat;
 
     $opts{h_suites} = { map { $_ => 1 } @suites };
     $opts{h_sections} = { map { $_ => 1 } @sections };
@@ -311,14 +322,16 @@ Packages::CGI::init_url( $input, \%params, \%opts );
     debug( "Parameter evaluation took ".timestr($petd) ) if DEBUG;
 
     my $template = new Packages::Template( $TEMPLATEDIR, $opts{format},
-					   { lang => $opts{lang}, charset => $charset,
+					   { po_lang => $opts{po_lang}, ddtp_lang => $opts{ddtp_lang},
+					     charset => $charset, cat => $cat,
 					     debug => ( DEBUG ? $opts{debug} : 0 ) },
 					   ( $CACHEDIR ? { COMPILE_DIR => $CACHEDIR } : {} ) );
 
     #FIXME: ugly hack
     unless (($what_to_do eq 'allpackages' and $opts{format} =~ /^(html|txt\.gz)/)
-            || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
-	fatal_error( "requested format not available for this document",
+	    || ($what_to_do eq 'index' and $opts{format} eq 'html')
+	    || -e "$TEMPLATEDIR/$opts{format}/${what_to_do}.tmpl") {
+	fatal_error( $cat->g("requested format not available for this document"),
 		     "406 requested format not available");
     }
 
@@ -331,21 +344,15 @@ Packages::CGI::init_url( $input, \%params, \%opts );
     $page_content{opts} = \%opts;
     $page_content{params} = \%params;
 
-    $page_content{make_search_url} = sub { return &Packages::CGI::make_search_url(@_) };
-    $page_content{make_url} = sub { return &Packages::CGI::make_url(@_) };
-    $page_content{extract_host} = sub { my $uri = URI->new($_[0]);
-                                        my $host = $uri->host;
-                                        $host .= ':'.$uri->port if $uri->port != $uri->default_port;
-                                        return $host;
-                                      };
-    # needed to work around the limitations of the the FILTER syntax
-    $page_content{html_encode} = sub { return HTML::Entities::encode_entities(@_,'<>&"') };
-    $page_content{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
-    $page_content{quotemeta} = sub { return quotemeta($_[0]) };
-    $page_content{string2id} = sub { return &Packages::CGI::string2id(@_) };
-
     unless (@Packages::CGI::fatal_errors) {
-	print $input->header(-charset => $charset, -type => get_mime($opts{format}) );
+	print $input->header(-charset => $charset,
+			     -type => get_mime($opts{format}),
+			     -vary => 'negotiate,accept-language',
+			     -last_modified => strftime("%a, %d %b %Y %T %z",
+							localtime($last_modified)),
+			     -expires => strftime("%a, %d %b %Y %T %z",
+						  localtime($last_modified + (12*3600))),
+			     );
 	#use Data::Dumper;
 	#print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
 	print $template->page( $what_to_do, { %page_content, %{ get_all_messages() } } );

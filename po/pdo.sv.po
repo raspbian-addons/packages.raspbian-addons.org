@@ -1,0 +1,173 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: packages.git\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-03 15:11+0100\n"
+"PO-Revision-Date: 2008-03-16 13:53+0100\n"
+"Last-Translator: Peter Karlsson <peterk@debian.org>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: bin/create_index_pages:68
+msgid "virtual package provided by"
+msgstr "virtuellt paket som tillhandahålls av"
+
+#: bin/create_index_pages:162 bin/create_index_pages:197
+msgid "Section"
+msgstr "Sektion"
+
+#: bin/create_index_pages:169 bin/create_index_pages:204
+msgid "Subsection"
+msgstr "Undersektion"
+
+#: bin/create_index_pages:176 bin/create_index_pages:211
+msgid "Priority"
+msgstr "Prioritet"
+
+#: lib/Packages/Dispatcher.pm:320
+msgid "requested format not available for this document"
+msgstr "angivet format inte tillgängligt för dokumentet"
+
+#: lib/Packages/DoDownload.pm:27 lib/Packages/DoFilelist.pm:27
+#: lib/Packages/DoShow.pm:31
+msgid "package not valid or not specified"
+msgstr "paketet inte giltigt eller inte angivet"
+
+#: lib/Packages/DoDownload.pm:30 lib/Packages/DoFilelist.pm:30
+#: lib/Packages/DoIndex.pm:31 lib/Packages/DoNewPkg.pm:22
+#: lib/Packages/DoSearchContents.pm:30 lib/Packages/DoShow.pm:34
+msgid "suite not valid or not specified"
+msgstr "sviten inte giltig eller inte angiven"
+
+#: lib/Packages/DoDownload.pm:33 lib/Packages/DoFilelist.pm:33
+msgid "architecture not valid or not specified"
+msgstr "arkitekturen inte giltig eller inte angiven"
+
+#: lib/Packages/DoDownload.pm:36
+#, perl-format
+msgid "more than one suite specified for download (%s)"
+msgstr "mer än en svit angiven för hämtningen (%s)"
+
+#: lib/Packages/DoDownload.pm:40
+#, perl-format
+msgid "more than one architecture specified for download (%s)"
+msgstr "mer än en arkitektur angiven för hämtningen (%s)"
+
+#: lib/Packages/DoFilelist.pm:48
+msgid "No such package in this suite on this architecture."
+msgstr "Paketet finns inte på arkitekturen."
+
+#: lib/Packages/DoFilelist.pm:60
+msgid "Invalid suite/architecture combination"
+msgstr "Ogiltig kombination av svit och arkitektur"
+
+#: lib/Packages/DoIndex.pm:34
+#, perl-format
+msgid "more than one suite specified for show_static (%s)"
+msgstr "mer än en svit angavs för show_static (%s)"
+
+#: lib/Packages/DoIndex.pm:38
+#, perl-format
+msgid "more than one subsection specified for show_static (%s)"
+msgstr "mer än en undersektion angavs för show_static (%s)"
+
+#: lib/Packages/DoIndex.pm:73
+#, perl-format
+msgid "couldn't read index file %s: %s"
+msgstr "kunde inte läsa indexfilen %s: %s"
+
+#: lib/Packages/DoNewPkg.pm:25
+#, perl-format
+msgid "more than one suite specified for newpkg (%s)"
+msgstr "mer än en svit angiven för newpkg (%s)"
+
+#: lib/Packages/DoNewPkg.pm:43
+#, perl-format
+msgid "no newpkg information found for suite %s"
+msgstr "ingen newpkg-information hittades för sviten %s"
+
+#: lib/Packages/DoSearch.pm:25 lib/Packages/DoSearchContents.pm:24
+msgid "keyword not valid or missing"
+msgstr "nyckelordet inte giltigt eller saknas"
+
+#: lib/Packages/DoSearch.pm:28 lib/Packages/DoSearchContents.pm:27
+msgid "keyword too short (keywords need to have at least two characters)"
+msgstr "nyckelordet för kort (nyckelord måste bestå av minst två tecken)"
+
+#: lib/Packages/DoSearch.pm:170
+msgid "Exact hits"
+msgstr "Exakta träffar"
+
+#: lib/Packages/DoSearch.pm:180
+msgid "Other hits"
+msgstr "Andra träffar"
+
+#: lib/Packages/DoSearch.pm:239
+msgid "Virtual package"
+msgstr "Virtuellt paket"
+
+#: lib/Packages/DoSearchContents.pm:40
+#, perl-format
+msgid "more than one suite specified for contents search (%s)"
+msgstr "mer än en svit angavs i innehållssökningen (%s)"
+
+#: lib/Packages/DoSearchContents.pm:62
+#| msgid "requested format not available for this document"
+msgid "No contents information available for this suite"
+msgstr "Innehållsinformation är inte tillgänglig för denna svit"
+
+#: lib/Packages/DoSearchContents.pm:86
+msgid "The search mode you selected doesn't support more than one keyword."
+msgstr "Sökläget du valde stöder inte mer än ett nyckelord."
+
+#: lib/Packages/DoShow.pm:37
+#, perl-format
+msgid "more than one suite specified for show (%s)"
+msgstr "mer är en svit angavs för show (%s)"
+
+#: lib/Packages/DoShow.pm:73
+msgid "No such package."
+msgstr "Paketet finns inte."
+
+#: lib/Packages/DoShow.pm:85
+msgid "Package not available in this suite."
+msgstr "Paketet är inte tillgängligt i sviten."
+
+#: lib/Packages/DoShow.pm:198
+msgid " and others"
+msgstr " och andra"
+
+#: lib/Packages/DoShow.pm:429
+#, perl-format
+msgid "not %s"
+msgstr "inte %s"
+
+#: lib/Packages/DoShow.pm:479
+msgid "Package not available"
+msgstr "Paketet inte tillgängligt"
+
+#: lib/Packages/DoShow.pm:518
+msgid "Not available"
+msgstr "Inte tillgängligt"
+
+#: lib/Packages/Page.pm:47
+msgid "package has bad maintainer field"
+msgstr "paketet har felaktigt ansvarigfält"
+
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "search tar inte fler sökvägselement"
+
+#~ msgid ""
+#~ "We're supposed to display the homepage here, instead of getting dispatch."
+#~ "pl"
+#~ msgstr ""
+#~ "Det är meningen att vi ska visa hemsidan här, inte hämta dispatch.pl"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s satt fler än en gång i sökvägen"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "två eller flera paket angavs (%s)"

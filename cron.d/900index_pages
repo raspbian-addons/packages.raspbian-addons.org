@@ -1,0 +1,17 @@
+#!/bin/bash
+
+. `dirname $0`/../config.sh
+
+cd "$topdir"
+
+set -e
+
+date
+./bin/create_suite_index_pages
+date
+./bin/create_index_pages
+date
+
+./bin/trivial_slice en $polangs -- $(find "$htmldir" -maxdepth 4 -name "*.slices")
+
+date

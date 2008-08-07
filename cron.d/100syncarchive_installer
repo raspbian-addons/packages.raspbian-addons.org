@@ -20,14 +20,17 @@ then
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    for part in "main/debian-installer"
+	    for part in $parts
 	    do
+		part="$part/debian-installer"
 	        echo retrieve Packages $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		(cd us/${dist}/${part}/binary-${arch} &&
-		    wget -q -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
 	    done
 	done
+
+	$check_release_cmd $archivedir/us/${dist}/Release
     done
 else
     echo using local mirror
@@ -41,13 +44,16 @@ else
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    for part in "main/debian-installer"
+	    for part in $parts
 	    do
+		part="$part/debian-installer"
 	        echo retrieve Sources $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		rsync -t ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
 	    done
 	done
+
+	$check_release_cmd $archivedir/us/${dist}/Release
     done
 fi

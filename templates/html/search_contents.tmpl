@@ -11,10 +11,10 @@
    architectures_enc = html_encode(architectures_str);
 -%]
 [%- PROCESS 'html/head.tmpl'
-   title_tag = "Package Contents Search Results -- $keyword_enc"
+   title_tag = g("Package Contents Search Results -- %s", keyword_enc)
    keywords = "$suite"
    print_search_field = 'packages'
-   navigation = [ { title => '', name => 'Package Contents Search Results', url => '' } ]
+   navigation = [ { title => '', name => g('Package Contents Search Results'), url => '' } ]
    search_field_values = {
 	keywords => search_keywords.join(' '),
 	searchon => 'contents',
@@ -30,19 +30,22 @@
 
 <ul class="linklist">
 [% IF mode != 'filename' %]
-<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','filename') %]">Search for <em>[% keyword_enc %]</em> within filenames</a>
+<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','filename') %]">
+[%- g('Search for <em>%s</em> within filenames', keyword_enc) %]</a>
 [% END %]
 
 [% IF mode != 'exactfilename' %]
-<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','exactfilename') %]">Search exact filename <em>[% keyword_enc %]</em></a>
+<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','exactfilename') %]">
+[%- g('Search exact filename <em>%s</em>', keyword_enc) %]</a>
 [% END %]
 
 [% IF mode == 'exactfilename' || mode == 'filename' %]
-<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','') %]">Search for paths ending with <em>[% keyword_enc %]</em></a>
+<li><a href="[% make_search_url('',"keywords=$keyword_esc",'mode','') %]">
+[%- g('Search for paths ending with <em>%s</em>', keyword_enc) %]</a>
 [% END %]
 </ul>
 
-<p>Search in other suite:
+<p>[% g('Search in other suite:') %]
 [% FOREACH s IN all_suites %]
 	[% IF s != suite %]
 	[<a href="[% make_search_url('',"keywords=$keyword_esc",'suite',s) %]">[% s  %]</a>]
@@ -52,12 +55,13 @@
 [% END %]
 
 [% UNLESS search_architectures.size == 1 || all_architectures.size == 1 %]
-<p>Limit search to a specific architecture:
+<p>[% g('Limit search to a specific architecture:') %]
 [% FOREACH a IN all_architectures %] [<a href="[% make_search_url('',"keywords=$keyword_esc",'arch',a) %]">[% a %]</a>][% END %]
 [% END %]
 
 [% IF search_architectures.size == 1 %]
-<p>Search in <a href="[% make_search_url('',"keywords=$keyword_esc",'arch','any') %]">all architectures</a>
+<p>[% g('Search in <a href="%s">all architectures</a>',
+	make_search_url('',"keywords=$keyword_esc",'arch','any')) %]
 [% END %]
 
 </div>
@@ -65,23 +69,23 @@
 [%- PROCESS 'html/messages.tmpl' -%]
 <div id="pcontentsres">
 
-[% suite_wording = "suite <em>$suite</em>";
-   section_wording = ( section_enc == 'all' ? "all sections" : "section(s) <em>$section_enc</em>" );
-   arch_wording = ( architectures_enc == 'any' ? "all architectures" : "architecture(s) <em>$architectures_enc</em>" );
-   wording = "paths that end with";
+[% section_wording = ( section_enc == 'all' ? g("all sections") : g("section(s) <em>%s</em>", section_enc) );
+   arch_wording = ( architectures_enc == 'any' ? g("all architectures") : g("architecture(s) <em>%s</em>", architectures_enc) );
+   wording = g("paths that end with");
    IF mode == 'filename';
-	wording =  "files named";
+	wording = g("files named");
    ELSIF mode == 'exactfilename';
-	wording = "filenames that contain";
+	wording = g("filenames that contain");
    END %]
-<p>You have searched for [% wording %] <em>[% keyword_enc %]</em> in [% suite_wording %], [% section_wording %], and [% arch_wording %].
+[%# @translators: I'm really sorry :/ %]
+<p>[% g('You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s.',
+	wording, keyword_enc, suite, section_wording, arch_wording) %]
 
 [% IF results.size %]
-Found <strong>[% results.size %] results</strong>.
+[% g('Found <strong>%u results</strong>.', results.size) %]
 
 [% IF too_many_hits %]
-<p id="psearchtoomanyhits">Note: Your search was too wide so we will only display only the first about 100 matches.
-Please consider using a longer keyword or more keywords.</p>
+<p id="psearchtoomanyhits">[% g('Note: Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords.') %]</p>
 [% END %]
 
 <table>
@@ -90,8 +94,10 @@ Please consider using a longer keyword or more keywords.</p>
 	<col>
 	</colgroup>
 <tr>
-	<th><a title="Sort results by filename" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=file") %]">File</a></th>
-	<th><a title="Sort results by package name" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=pkg") %]">Packages</a></th>
+	<th><a title="[% g('Sort results by filename') %]" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=file") %]">
+		[%- g('File') %]</a></th>
+	<th><a title="[% g('Sort results by package name') %]" href="[% make_search_url('',"keywords=$keyword_esc&amp;sort_by=pkg") %]">
+		[%- g('Packages') %]</a></th>
 </tr>
 [% FOREACH results %]
 [% file = html_encode(file);
@@ -105,7 +111,7 @@ Please consider using a longer keyword or more keywords.</p>
         <td>
         [% FOREACH packages %]
 	[% arch_str = architectures.join(', ');
-	   SET arch_str = "not $arch_str" IF ( arch_str && architectures_are_rev );
+	   SET arch_str = g("not %s", arch_str) IF ( arch_str && architectures_are_rev );
 	   SET arch_str = " [$arch_str]" IF arch_str;
            pkg_esc = uri_escape(pkg)  %]
 	<a href="[% make_url(pkg_esc,'','suite',suite,'arch','') %]">[% pkg | html %]</a>[% arch_str %][% ', ' UNLESS loop.last %]
@@ -115,14 +121,14 @@ Please consider using a longer keyword or more keywords.</p>
 [% END %]
 
 [% IF results.size > 20 %]
-<tr><th>File</th><th>Packages</th></tr>
+<tr><th>[% g('File') %]</th><th>[% g('Packages') %]</th></tr>
 [% END %]
 </table>
 </div>
 
 [% ELSE %]
 
-<p id="psearchnoresult">Sorry, your search gave no results</p>
+<p id="psearchnoresult">[% g('Sorry, your search gave no results') %]</p>
 
 [% END %]
 

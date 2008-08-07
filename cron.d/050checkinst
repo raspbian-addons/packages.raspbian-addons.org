@@ -1,42 +1,16 @@
 #! /bin/sh
 
+. `dirname $0`/../config.sh
+
 # Test whether all required packages are installed and generate a mail
 # if they aren't, so that the admin is informed.
 
-required="subversion gettext locales rsync dpkg-dev procmail"
-required="$required libcompress-zlib-perl"
-required="$required libhtml-parser-perl libio-stringy-perl"
-required="$required liblocale-gettext-perl libmldbm-perl"
-required="$required libtext-iconv-perl libhtml-template-perl"
-required="$required libclass-accessor-perl"
-required="$required liburi-perl libxml-rss-perl"
-required="$required libtemplate-perl libi18n-acceptlanguage-perl"
-required="$required liblingua-stem-perl"
-
-locales="de_DE.UTF-8 en_US.UTF-8 nl_NL fr_FR.UTF-8 uk_UA.UTF-8"
-
 packages=`tempfile`
-locs=`tempfile`
 cache=`tempfile`
-trap "rm -f $packages $locs" INT EXIT
+trap "rm -f $packages $cache" INT EXIT
 
-for p in $required
-do
-    if [ -z "$(dpkg -l $p|grep ^ii)" ]
-    then
-	echo "Package $p missing." >> $packages
-	echo >> $packages
-    fi
-done
-
-for l in $locales
-do
-    if ! grep -q "^$l" /etc/locale.gen
-    then
-	echo "Locale $l missing." >> $locs
-	echo >> $locs
-    fi
-done
+cd $topdir
+dpkg-checkbuilddeps >> $packages 2>&1
 
 if [ -n "$cachedir" ]
 then
@@ -44,7 +18,7 @@ then
     then
     	echo "cachedir missing." >> $cache
     else
-	perm=$(ls -ld "$cachedir" | perl -ne 'print "ok" if /^drwxrws--- \d+ www-data/')
+	perm=$(ls -ld "$cachedir" | perl -ne 'print "ok" if /^drwx...... \d+ www-data/ || /^d...rws... \d+ [\w-]+\/www-data/'
         if [ -z "$perm" ]
 	then
 	    echo "cachedir has wrong permissions." >> $cache
@@ -53,7 +27,7 @@ then
     fi
 fi
 
-if [ -s $packages -o -s $locs -o -s $cache ]
+if [ -s $packages -o -s $cache ]
 then
     (
 	echo "Subject: Problem packages.debian.org on `hostname -s`"
@@ -67,18 +41,11 @@ then
 	    echo
 	    cat $packages
 	fi
-	if [ -s $locs ]
-	then
-	    echo "Missing locales:"
-	    echo
-	    cat $locs
-	fi
 	if [ -s $cache ]
 	then
 	    echo "Problems with cachedir:"
 	    echo
 	    cat $cache
 	fi
-    ) | /usr/sbin/sendmail -t
+    ) | tee /dev/stderr | /usr/sbin/sendmail -t
 fi
-

@@ -1,22 +1,36 @@
 #!/bin/bash
 
-topdir=$1
-site=$2
+[ -f ./setup-site.conf ] && source ./setup-site.conf
 
-if [ -z "$topdir" -o -z "$site" ];
+if [ "$1" = "-v" ];
 then
-	echo "Usage: setup-site <topdir> <site>" >&2
+    verbose=1
+    shift
+fi
+
+if [ -n "$1" -a -n "$2" ];
+then
+    topdir=$1
+    site=$2
+    shift
+    shift
+fi
+
+if [ -z "$topdir" -o -z "$site" -o \( "$#" -gt 0 \) ];
+then
+	echo "Usage: setup-site [-v] [<topdir> <site>]" >&2
 	exit 1
 fi
 
 echo -e "Using\n\ttopdir=$topdir\n\tsite=$site"
 
-find "$topdir" -maxdepth 2 -name '*.sed.in' | while read file;
+find "$topdir" -maxdepth 4 -name '*.sed.in' | while read file;
 do
 	wdir=$(dirname "$file")
 	newfile="$wdir/"$(basename "$file" .sed.in)
-	echo -e "processing\n\t$file\n->\t$newfile"
+	echo -e "processing\t$file"
+	[ -n "$verbose" ] && echo -e "->\t$newfile"
 	cp -p "$file" "$newfile"
 	sed -i -e "s#%SITE%#$site#g;s#%TOPDIR%#$topdir#g" "$newfile"
-	diff -u "$file" "$newfile"
+	[ -n "$verbose" ] && diff -u "$file" "$newfile"
 done

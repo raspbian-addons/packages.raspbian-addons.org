@@ -11,15 +11,16 @@
 -%]
 [%- suite_name = suite;
     SET suite_name = suite_name _ ' (' _ suite_aliases.$suite _ ')' IF suite_aliases.$suite;
-    nav_arr = [ { prefix=>'Distribution:', title=>'Overview over this suite', url=>make_url('/','','source',''), name=>suite_name }, ];
-    nav_arr.push( { title => 'Source packages', url=>make_url('/'), name=>'Source' } ) IF is_source;
-    nav_arr.push( { prefix=>'Section:', title=>'All packages in this section', url=>make_url("$subsection/"), name=>subsection } );
-    nav_arr.push( { prefix=>'Package:', name=>pkg } ); -%]
+    nav_arr = [ { prefix=>g('Distribution:'), title=>g('Overview over this suite'), url=>make_url('/','','source',''), name=>suite_name }, ];
+    nav_arr.push( { title =>g('Source packages'), url=>make_url('/'), name=>g('Source') } ) IF is_source;
+    nav_arr.push( { prefix=>g('Section:'), title=>g('All packages in this section'), url=>make_url("$subsection/"), name=>subsection } );
+    nav_arr.push( { prefix=>g('Package:'), name=>pkg } ); -%]
 [% desclang = 'en';
-   SET desclang = lang IF desc.$lang.long %]
+   SET desclang = po_lang IF desc.$po_lang.long;
+   SET desclang = ddtp_lang IF desc.$ddtp_lang.long %]
 [%- PROCESS 'html/head.tmpl'
-   title_tag = ( is_source ? "Details of source package $pkg in $suite"
-	                   : "Details of package $pkg in $suite" )
+   title_tag = is_source ? g('Details of source package %s in %s', pkg, suite)
+	                 : g('Details of package %s in %s', pkg, suite)
    description = desc.$desclang.short
    keywords = "$suite, $archive, $section, $subsection, $version"
    print_search_field = 'packages'
@@ -29,7 +30,7 @@
   navigation = nav_arr
 -%]
 <!-- show.tmpl -->
-[% PROCESS 'html/menu.inc' %]
+[% PROCESS 'html/util.inc' %]
 [% FOREACH s IN suites %]
    [% '<div id="pothers">' IF loop.first %]
    [%- IF s == suite -%]
@@ -42,76 +43,85 @@
 
 [% IF src %]
 <div id="psource">
-[% PROCESS menuitem prefix='Source:' title='Source package building this package' url=make_url(src.pkg,'','source','source') name=src.pkg %]
+[% PROCESS menuitem prefix=g('Source:') title=g('Source package building this package') url=make_url(src.pkg,'','source','source') name=src.pkg %]
 </div>
 [% END %]
 
 [%- PROCESS 'html/messages.tmpl' -%]
 
 [% IF is_virtual %]
-<h1>Virtual Package: [% pkg %]
+<h1>[% g('Virtual Package: %s', pkg) %]
 [% ELSIF is_source %]
-<h1>Source Package: [% pkg %] ([% version %])
+<h1>[% g('Source Package: %s (%s)', pkg, version) %]
 [% ELSE %]
-<h1>Package: [% pkg %] ([% versions.short %])
+<h1>[% g('Package: %s (%s)', pkg, versions.short) %]
 [% END %]
 [%- PROCESS marker text=archive IF archive && archive != main_archive %]
 [%- PROCESS marker text=section IF section && section != main_section %]
-[%- PROCESS marker text='essential' IF page.get_newest('essential') == 'yes' %]</h1>
+[%- PROCESS marker text=g('essential') IF page.get_newest('essential') == 'yes' %]</h1>
 
 [% UNLESS is_virtual %]
 <div id="pmoreinfo">
-<h2>Links for [% pkg %]</h2>
-<h3>Debian Resources:</h3>
+<h2>[% g('Links for %s', pkg) %]</h2>
+<h3>[% g('%s Resources:', organisation) %]</h3>
 <ul>
-<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg | uri %]">Bug Reports</a></li>
+<li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg %]">[% g('Bug Reports') %]</a></li>
 
 [% IF src.pkg -%]
-<li><a href="[% pts_url _ src.pkg | uri %]">Developer Information (PTS)</a></li>
+<li><a href="[% pts_url _ src.pkg %]">[% g('Developer Information (PTS)') %]</a></li>
 [% ELSIF is_source %]
-<li><a href="[% pts_url _ pkg | uri %]">Developer Information (PTS)</a></li>
+<li><a href="[% pts_url _ pkg %]">[% g('Developer Information (PTS)') %]</a></li>
 [%- END %]
 
 [% IF files && (!archive or archive == main_archive or archive == 'security') %]
-<li><a href="[% changelogs_url _ files.changelog.path %]">Debian Changelog</a></li>
-<li><a href="[% changelogs_url _ files.copyright.path %]">Copyright File</a></li>
+<li><a href="[% changelogs_url _ files.changelog.path %]">[% g('%s Changelog', organisation) %]</a></li>
+<li><a href="[% changelogs_url _ files.copyright.path %]">[% g('Copyright File') %]</a></li>
 [% END %]
 
 [% IF vcs_link %]
-<li><a href="[% vcs_link %]" class="pvcslink">Debian Source Repository</a>
+<li><a href="[% vcs_link %]" class="pvcslink">[% g('Debian Source Repository') %]</a>
 [%- FOREACH vcs IN known_vcs;
 	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
 	vcs_info = page.get_newest("vcs-$vcs_id");
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
    IF vcs_info %]
  (<a href="[% vcs_info %]" class="pvcslink">[% vcs_name %]</a>)
-[% END %]
-</li>
 [% END; END %]
+</li>
+[% END %]
 
 </ul>
 
 [% IF src %]
-  <p>Download Source Package <a href="[% src.url %]">[% src.pkg %]</a>:
+  <p>[% g('Download Source Package <a href="%s">%s</a>:', src.url, src.pkg) %]
   [% FOREACH src.downloads %]
     [% '<ul>' IF loop.first %]
     <li><a href="[% server _ path %]">[[% name %]]</a></li>
     [% '</ul>' IF loop.last %]
   [% END %]
   [% IF src.downloads.size == 0 %]
-  Not found
+  [% g('Not found') %]
   [% END %]
 [% END %]
 
 [% IF maintainers.size == 1 -%]
-  <h3>Maintainer:</h3>
+  <h3>[% g('Maintainer:') %]</h3>
 [%- ELSE -%]
-  <h3>Maintainers:</h3>
+  <h3>[% g('Maintainers:') %]</h3>
 [%- END %]
-[%- FOREACH maintainers -%]
+[%- FOREACH maintainers;
+  mailarchiveurl = '';
+  IF (matches = mail.match('^(.*)@lists\.debian\.org$'));
+	mailarchiveurl = 'http://lists.debian.org/' _ uri_escape(matches.0) _ '/';
+  ELSIF (matches = mail.match('^(.*)@lists\.alioth\.debian\.org$'));
+	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ uri_escape(matches.0) _ '/';
+  ELSIF (matches = mail.match('^(.*)@lists\.ubuntu\.com$'));
+  	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ uri_escape(matches.0) _ '/';
+  END -%]
   [%- '<ul>' IF loop.first -%]
-	<li><a href="mailto:[% mail %]">[% name | html %]</a>
-	(<a href="[% ddpo_url _ mail %]" title="An overview over the maintainer's packages and uploads">QA Page</a>)
+	<li><a href="mailto:[% mail | html %]">[% name | html %]</a>
+	(<a href="[% ddpo_url %][% uri_escape(mail) %]" title="[% g("An overview over the maintainer's packages and uploads") %]">[% g('QA&nbsp;Page') %]</a>
+	[%- IF mailarchiveurl %], <a href="[% mailarchiveurl %]" title="[% g('Archive of the Maintainer Mailinglist') %]">[% g('Mail&nbsp;Archive') %]</a>[% END %])
 	</li>
   [%- '</ul>' IF loop.last -%]
 [%- END -%]
@@ -119,15 +129,15 @@
 [% url = page.get_newest('url');
    SET url = page.get_newest('homepage') IF page.get_newest('homepage');
    IF url %]
-<h3>External Resources:</h3>
+<h3>[% g('External Resources:') %]</h3>
 <ul>
-<li><a href="[% url | uri %]">Homepage</a> [[% extract_host(url) %]]</li>
+<li><a href="[% url | html %]">[% g('Homepage') %]</a> [[% extract_host(url) | html %]]</li>
 </ul>
 [% END %]
 
 [% FOREACH sim IN similar %]
 	[% IF loop.first %]
-	<h3>Similar packages:</h3>
+	<h3>[% g('Similar packages:') %]</h3>
 	<ul>
 	[% END %]
 	<li><a href="/[% sim %]">[% sim %]</a></li>
@@ -141,18 +151,15 @@
 <div class="pconstantnag">
 [% IF suite == "experimental" %]
 [% changelog_link = 'changelog';
-   changelog_link = "<a href='$changelogs_url$files.changelog.path'>changelog</a>" %] 
-<h2>Experimental package</h2>
-<p>Warning: This package is from the <strong>experimental</strong> distribution.
-That means it is likely unstable or buggy, and it may even cause data loss.
-Please be sure to consult the [% changelog_link %] and other possible documentation before
-using it.</p>
+   changelog_link = "$changelogs_url$files.changelog.path" %] 
+<h2>[% g('Experimental package') %]</h2>
+<p>[% g('Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the <a href="%s">changelog</a> and other possible documentation before using it.',
+	changelog_link) %]</p>
 [% END %]
 [% IF subsection == "debian-installer" %]
-<h2>debian-installer udeb package</h2>
-<p>Warning: This package is intended for the use in building
-<a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only.
-Do not install it on a normal Debian system.</p>
+<h2>[% g('debian-installer udeb package') %]</h2>
+<p>[% g('Warning: This package is intended for the use in building <a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only. Do not install it on a normal %s system.',
+	organisation ) %]</p>
 [% END %]
 </div>
 [% END %]
@@ -162,30 +169,34 @@ Do not install it on a normal Debian system.</p>
 
 [% IF desc %]
 <div id="pdesctab">
-<div id="pdesc">
 [% UNLESS is_virtual %]
+<div id="pdesc" [% "lang=\"$desclang\"" IF desclang != po_lang %]>
 	[% IF desc.$desclang.short %]
 	<h2>[% desc.$desclang.short %]</h2>
 	<p>[% desc.$desclang.long %]
 	[% END %]
 [% ELSE %]
-	<p>This is a <em>virtual package</em>. See the <a href="[% policy_url %]">Debian policy</a> for a <a href="[% policy_url %]ch-binary.html#s-virtual_pkg">definition of virtual packages</a>.</p>
+<div id="pdesc">
+	<p>[% g('This is a <em>virtual package</em>. See the <a href="%s">Debian policy</a> for a <a href="%sch-binary.html#s-virtual_pkg">definition of virtual packages</a>.',
+		policy_url, policy_url) %]</p>
 [% END %]
 </div> <!-- end pdesc -->
 
 [% FOREACH tag IN tags %]
   [% IF loop.first -%]
     <div id="ptags"><p>
-    <a href="[% tags_url %]edit.html?pkg=[% pkg | uri %]">Tags</a>:
+    <a href="[% tags_url %]edit.html?pkg=[% uri_escape(pkg) %]">[% g('Tags') %]</a>:
   [%- END %]
-  [% facet = tag.0;
-     facet_name = debtags_voc.$facet;
-     tag_id = "$tag.0::$tag.1";
-     tag_name = debtags_voc.$tag_id;
+  [% facet = tag.0; lfacet = "$facet-$po_lang"; 
+     facet_name = debtags_voc.$lfacet;
+     SET facet_name = debtags_voc.$facet UNLESS facet_name;
+     tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$po_lang";
+     tag_name = debtags_voc.$ltag;
+     SET tag_name = debtags_voc.$tag_id UNLESS tag_name;
    %]
   [% facet_name _ ': ' UNLESS old_facet && facet == old_facet %]
   [% IF tag_name %]
-   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name %]</a>[% ', ' UNLESS loop.last %]
+   <a href="/about/debtags#[% string2id(tag_id) %]">[% tag_name | html %]</a>[% ', ' UNLESS loop.last %]
   [% ELSE %]
   [% tag_id %][% ', ' UNLESS loop.last %]
   [% END %]
@@ -196,35 +207,35 @@ Do not install it on a normal Debian system.</p>
   [%- END %]
 [% END %]
 
-[% FOREACH providers %]
-  [% IF loop.first %]<div id="pdeps"><h2>Packages providing [% pkg %]</h2><dl>[% END %]
-    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
-    <dd>[% desc %]</dd>
+[% FOREACH p IN providers %]
+  [% IF loop.first %]<div id="pdeps"><h2>[% g('Packages providing %s', pkg) %]</h2><dl>[% END %]
+    <dt>[% IF p.available %]<a href="[% make_url(p.name,'','source','') %]">[% p.name %]</a>[% ELSE; p.name; END %]</dt>
+    [% PROCESS desc_i18n_dd trans_desc=p.trans_desc desc=p.desc %]
   [% '</dl></div>' IF loop.last %]
 [% END %]
 </div> <!-- pdesctab -->
 [% END %]
 
-[% FOREACH binaries %]
-  [% IF loop.first %]<div id="pbinaries">The following binary packages are built from this source package:<dl>[% END %]
-    <dt>[% IF available %]<a href="[% make_url(name,'','source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]</dt>
-    <dd>[% desc %]</dd>    
+[% FOREACH b IN binaries %]
+  [% IF loop.first %]<div id="pbinaries">[% g('The following binary packages are built from this source package:') %]<dl>[% END %]
+    <dt>[% IF b.available %]<a href="[% make_url(b.name,'','source','') %]">[% b.name %]</a>[% ELSE; b.name; END %]</dt>
+    [% PROCESS desc_i18n_dd trans_desc=b.trans_desc desc=b.desc %]
   [% '</dl></div>' IF loop.last %]
 [% END %]
 
 [% FOREACH relations %]
   [% IF loop.first -%]
     <div id="pdeps">
-    <h2>Other Packages Related to [% pkg %]</h2>
+    <h2>[% g('Other Packages Related to %s', pkg) %]</h2>
 
-    <table id="pdeplegend" class="visual" summary="legend"><tr>
+    <table id="pdeplegend" class="visual" summary="[% g('legend') %]"><tr>
     [% IF is_source %]
-    <td><ul class="uladep"><li>build-depends</li></ul></td>
-    <td><ul class="ulidep"><li>build-depends-indep</li></ul></td>
+    <td><ul class="uladep"><li>[% g('build-depends') %]</li></ul></td>
+    <td><ul class="ulidep"><li>[% g('build-depends-indep') %]</li></ul></td>
     [% ELSE %]
-    <td><ul class="uldep"><li>depends</li></ul></td>
-    <td><ul class="ulrec"><li>recommends</li></ul></td>
-    <td><ul class="ulsug"><li>suggests</li></ul></td>
+    <td><ul class="uldep"><li>[% g('depends') %]</li></ul></td>
+    <td><ul class="ulrec"><li>[% g('recommends') %]</li></ul></td>
+    <td><ul class="ulsug"><li>[% g('suggests') %]</li></ul></td>
     [% END %]
     </tr></table>
   [%- END %]
@@ -234,18 +245,22 @@ Do not install it on a normal Debian system.</p>
     [% '<li>' UNLESS is_old_pkgs %]
     [% FOREACH alternatives %]
       [% '<dl>' IF loop.first %]
-      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %]or [% END %]
+      <dt>[% IF loop.first %]<span class="nonvisual">[% id %]:</span>[% ELSE %][% g('or ') %][% END %]
 	[% IF suite %]<a href="[% make_url(name,'','suite',suite,'source','') %]">[% name %]</a>[% ELSE %][% name %][% END %]
 	[% ' (' _ version _ ')' IF version %]
         [% ' [' _ arch_str _ ']' IF arch_str %]</dt>
       [%- IF !is_old_pkgs -%]
-        <dd>[% desc -%]
+        [% PROCESS desc_i18n_dd no_end_tag=1 trans_desc=trans_desc desc=desc -%]
         [%- IF providers.pkgs.size > 0 -%]
-          [% '<br>also a ' IF providers.also %]virtual package provided by
+	  [% IF providers.also;
+		'<br>' _ g('also a virtual package provided by');
+	     ELSE;
+		g('virtual package provided by');
+	     END; %]
 	  [% js_id = name %]
-	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
+	    <span id="js_[% js_id %]" class="p_js_elem"></span> <span id="html_[% js_id %]">[% FOREACH provider IN providers.pkgs.sort %]<a href="[% make_url(provider,'','suite',suite,'source','') %]">[% provider %]</a>[% ', ' UNLESS loop.last %][% END %]</span>
 	[% IF providers.pkgs.size > 10 %]
-	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% providers.pkgs.size %] providing packages")</script>
+	<script type="text/javascript">init_toggle_elem("[% js_id %]","[% g('show %u providing packages', providers.pkgs.size) %]", "[% g('hide %u providing packages', providers.pkgs.size) %]")</script>
 	[% END %]
         [% END %]
         </dd>
@@ -263,18 +278,23 @@ Do not install it on a normal Debian system.</p>
 [% FOREACH d IN downloads %]
   [% IF loop.first -%]
     <div id="pdownload">
-    <h2>Download [% pkg %]</h2>
+    <h2>[% g('Download %s', pkg) %]</h2>
     
-    <table summary="The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.">
-    <caption class="hidecss">Download for all available architectures</caption>
-    <tr><th>Architecture</th>[% '<th>Version</th>' IF versions.multiple %]<th>Package Size</th><th>Installed Size</th><th>Files</th></tr>
+    <table summary="[% g('The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size.') %]">
+    <caption class="hidecss">[% g('Download for all available architectures') %]</caption>
+    <tr><th>[% g('Architecture') %]</th>
+	[% '<th>'_ g('Version') _'</th>' IF versions.multiple %]
+	<th>[% g('Package Size') %]</th>
+	<th>[% g('Installed Size') %]</th>
+	<th>[% g('Files') %]</th>
+    </tr>
   [%- END %]
 
 <tr>
-[% download_url = pkg _ '/' _ d.arch _ '/download'
-   filelist_url = pkg _ '/' _ d.arch _ '/filelist' %]
-<th><a href="[% make_url(download_url) | uri %]">[% d.arch %]</a>
-[%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>(unofficial port)</strong>[% END %]</th>
+[% download_url = pkg _ '/download'
+   filelist_url = pkg _ '/filelist' %]
+<th><a href="[% make_url(download_url,'','arch',d.arch) %]">[% d.arch %]</a>
+[%- SET a = d.archive; IF mirrors.$a.unofficial_port  %] <strong>[% g('(unofficial port)') %]</strong>[% END %]</th>
 [% vnorm = d.version.replace( '\+b\d+$', '' ); vlatest = version.replace( '\+b\d+$', '' );
    vup = vnorm.replace( '-[^-]+$', '' ); vuplatest = vlatest.replace( '-[^-]+$', '' );
    IF vnorm == vlatest;
@@ -285,12 +305,12 @@ Do not install it on a normal Debian system.</p>
 	version_class = 'vold';
    END %]
 [% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
-<td class="size">[% d.pkgsize %]&nbsp;kB</td><td class="size">[% d.instsize %]&nbsp;kB</td>
+<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', d.instsize) %]</td>
 <td>
 [% IF d.contents_avail %]
-  [<a href="[% make_url(filelist_url) | uri %]">list of files</a>]
+  [<a href="[% make_url(filelist_url,'','arch',d.arch) %]">[% g('list of files') %]</a>]
 [% ELSE %]
-  no current information
+  [% g('no current information') %]
 [% END %]
 </td>
 </tr>
@@ -307,13 +327,13 @@ Do not install it on a normal Debian system.</p>
     <div id="pdownload">
     <h2>Download [% pkg %]</h2>
     
-    <table summary="Download information for the files of this source package">
-    <tr><th>File</th><th>Size (in kB)</th><th>md5sum</th></tr>
+    <table summary="[% g('Download information for the files of this source package') %]">
+    <tr><th>[% g('File') %]</th><th>[% g('Size (in kB)') %]</th><th>[% g('MD5 checksum') %]</th></tr>
   [%- END %]
 
 <tr>
 <td><a href="[% server _ path %]">[% filename %]</a></td>
-<td>[% size %]</td>
+<td>[% g('%s&nbsp;kB', num.format_number(size,1)) %]</td>
 <td class="md5sum">[% md5sum %]</td>
 </tr>
 
@@ -324,15 +344,21 @@ Do not install it on a normal Debian system.</p>
 	vcs_id = vcs.0; vcs_name = vcs.1; vcs_pkg = vcs.2;
 	vcs_info = page.get_newest("vcs-$vcs_id");
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
-	IF vcs_info; %]
+	LAST IF vcs_info;
+   END;
+   IF vcs_info || vcs_link; %]
 <dl>
-<dt>Debian Package Source Repository (<acronym title="Version Control System">VCS</acronym>: <a href="[% make_url(vcs_pkg,'','source','') %]">[% vcs_name %]</a>)</dt>
+[% IF vcs_info %]
+<dt>[% g('Debian Package Source Repository (<acronym title="Version Control System">VCS</acronym>: <a href="%s">%s</a>)',
+	make_url(vcs_pkg,'','source',''), vcs_name ) %]</dt>
 <dd><a href="[% vcs_info %]" class="pvcslink">[% vcs_info %]</a></dd>
-[% IF vcs_link %]
-<dt>Debian Package Source Repository (Browsable)</dt><dd><a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></dd>
+[% END;
+   IF vcs_link %]
+<dt>[% g('Debian Package Source Repository (Browsable)') %]</dt>
+<dd><a href="[% vcs_link %]" class="pvcslink">[% vcs_link %]</a></dd>
 [% END %]
 </dl>
-[% END; END %]
+[% END %]
 
     </div> <!-- end pdownload -->
   [%- END %]
@@ -340,4 +366,4 @@ Do not install it on a normal Debian system.</p>
 
 [%# <script type="text/javascript">init_tab_list("ptablist")</script> %]
 
-[%- PROCESS 'html/foot.tmpl' -%]
+[%- PROCESS 'html/foot.tmpl' page_name=pkg -%]
