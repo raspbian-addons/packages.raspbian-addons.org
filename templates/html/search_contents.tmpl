@@ -73,9 +73,9 @@
    arch_wording = ( architectures_enc == 'any' ? g("all architectures") : g("architecture(s) <em>%s</em>", architectures_enc) );
    wording = g("paths that end with");
    IF mode == 'filename';
-	wording = g("files named");
-   ELSIF mode == 'exactfilename';
 	wording = g("filenames that contain");
+   ELSIF mode == 'exactfilename';
+	wording = g("files named");
    END %]
 [%# @translators: I'm really sorry :/ %]
 <p>[% g('You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s.',
