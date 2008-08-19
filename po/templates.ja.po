@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2008-02-17 13:25+0900\n"
+"PO-Revision-Date: 2008-08-19 18:48+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -310,12 +310,12 @@ msgstr "ファイル一覧"
 
 # See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:11
-#, fuzzy
-#| msgid "How to set <a href=\"%s\">the default document language</a>"
 msgid ""
 "This page is also available in the following languages (How to set <a href="
 "\"%s\">the default document language</a>):"
-msgstr "<a href=\"%s\">デフォルトの言語を設定するには</a>"
+msgstr ""
+"このページは以下の言語でもご覧になれます (<a href=\"%s\">デフォルトの言語を設"
+"定するには</a>):"
 
 # See webwml/japanese/po/templates.ja.po in the web site CVS repository.
 #: templates/html/foot.tmpl:28
@@ -341,10 +341,8 @@ msgid "Learn more about this site"
 msgstr "このサイトについてさらに詳しく知るには"
 
 #: templates/html/foot.tmpl:40
-#, fuzzy
-#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
 msgid "Hosting provided by <a href=\"%s\">%s</a>."
-msgstr "<a href=\"%s\">%s</a> ソースパッケージをダウンロード:"
+msgstr "ホスティングサービス提供者: <a href=\"%s\">%s</a>"
 
 #: templates/html/head.tmpl:47
 msgid "Search"
@@ -797,10 +795,8 @@ msgid "An overview over the maintainer's packages and uploads"
 msgstr "メンテナのパッケージやアップロードの概要"
 
 #: templates/html/show.tmpl:123
-#, fuzzy
-#| msgid "QA Page"
 msgid "QA&nbsp;Page"
-msgstr "QA ページ"
+msgstr "QA&nbsp;ページ"
 
 #: templates/html/show.tmpl:124
 msgid "Archive of the Maintainer Mailinglist"
