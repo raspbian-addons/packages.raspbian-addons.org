@@ -25,7 +25,7 @@ localdir=/srv/archive.debian.org/ftp
 #ftproot=/org/ftp.root
 
 ftpsite=http://archive.debian.org/debian-archive
-ddtp_ftpsite=http://ddtp.debian.net/debian
+ddtp_ftpsite=
 
 wget_cmd="wget --no-verbose --tries=2 --timeout=60"
 check_release_cmd="perl -I${libdir} ${bindir}/check-release --verbose --ignoremissing --keyring ${configdir}/trusted.gpg"
