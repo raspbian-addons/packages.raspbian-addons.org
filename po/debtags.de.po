@@ -262,10 +262,8 @@ msgstr "Luftfahrt"
 
 #. Tag: suite::bsd, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "SDL"
 msgid "BSD"
-msgstr "SDL"
+msgstr "BSD"
 
 #. Tag: admin::backup, short desc
 #: files/debtags/vocabulary
@@ -1704,16 +1702,6 @@ msgstr "Kerberos"
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Kerberos is a authentication protocol for computer networks for secure "
-#| "authentication over an otherwise insecure network, using symmetric "
-#| "cryptography and a third party service provider, that is trusted both by "
-#| "client and server. . The authentication mechanism provided by Kerberos is "
-#| "mutual, so that not only a server can be sure of a client's identity, but "
-#| "also a client can be sure a connection to a server is not intercepted.\n"
-#| "Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://"
-#| "http://www.ietf.org/rfc/rfc4120.txt"
 msgid ""
 "Kerberos is an authentication protocol for computer networks for secure "
 "authentication over an otherwise insecure network, using symmetric "
@@ -1733,7 +1721,7 @@ msgstr ""
 "gegenseitig, so dass sich nicht nur der Server der Identität des Clients "
 "sicher ist, sondern auch der Client sicher sein kann, dass die Verbindung "
 "zum Server nicht abgefangen wird.\n"
-"Link: http://de.wikipedia.org/wiki/Kerberos_%28Informatik%29 Link: http://"
+"Link: http://de.wikipedia.org/wiki/Kerberos_%28Informatik%29 Link: "
 "http://www.ietf.org/rfc/rfc4120.txt"
 
 #. Tag: role::kernel, short desc
@@ -3056,16 +3044,6 @@ msgstr "Secure File Transfer Protocol"
 
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Secure Shell, a protocol for secure, encrypted network connections. SSH "
-#| "can be used to execute programs on a remote host with an SSH server over "
-#| "secure otherwise insecure protocols through an SSH channel. The main use "
-#| "is, as the name suggest, to provide encrypted login and shell access on "
-#| "remote servers.\n"
-#| "SSH authentication can be done with password or, which is the preferred "
-#| "mechanism, via asymmetric public/private key cryptography.\n"
-#| "Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgid ""
 "Secure Shell, a protocol for secure, encrypted network connections. SSH can "
 "be used to execute programs on a remote host with an SSH server over "
@@ -3078,7 +3056,7 @@ msgid ""
 msgstr ""
 "»Secure Shell«, ein Protokoll für sichere, verschlüsselte Netzverbindungen. "
 "SSH kann zum Ausführen von Programmen auf entfernten Rechnern mit einem SSH-"
-"Server über sichere und ansonsten unsichere Protokolle über einen SSH-Kanal "
+"Server über ansonsten unsichere Protokolle über einen SSH-Kanal "
 "verwandt werden. Wie der Name andeutet, ist die Hauptanwendung die "
 "verschlüsselte Anmeldung und der verschlüsselte Shell-Zugriff auf entfernten "
 "Rechnern.\n"
@@ -3132,16 +3110,6 @@ msgstr "Server"
 
 #. Tag: protocol::smb, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Server Message Block, a protocol for providing file access and printer "
-#| "sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
-#| "Internet File System) is a synonym for SMB\n"
-#| "Although SMB is a proprietary protocol, the Samba project reverse-"
-#| "engineered the protocol and developed both client and server programs for "
-#| "better interoperability in mixed Unix/Windows networks.\n"
-#| "Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
-#| "samba.org/"
 msgid ""
 "Server Message Block, a protocol for providing file access and printer "
 "sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
@@ -3185,15 +3153,6 @@ msgstr ""
 
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
-#| "the Internet.\n"
-#| "Every SMTP server utilizes SMTP to hand on emails to the next mail server "
-#| "until an email arrives at its destination, from where it is usually "
-#| "retrieved via POP3 or IMAP\n"
-#| "Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
-#| "http://www.ietf.org/rfc/rfc2821.txt"
 msgid ""
 "Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
 "the Internet.\n"
