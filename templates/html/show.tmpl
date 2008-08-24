@@ -56,9 +56,9 @@
 [% ELSE %]
 <h1>[% g('Package: %s (%s)', pkg, versions.short) %]
 [% END %]
-[%- PROCESS marker text=archive IF archive && archive != main_archive %]
-[%- PROCESS marker text=section IF section && section != main_section %]
-[%- PROCESS marker text=g('essential') IF page.get_newest('essential') == 'yes' %]</h1>
+[%- PROCESS marker text=archive title=mirrors.$archive.title IF archive && archive != main_archive %]
+[%- PROCESS marker text=section title=section_titles.$section IF section && section != main_section %]
+[%- PROCESS marker text=g('essential') title=g('package manager will refuse to remove this package by default') IF page.get_newest('essential') == 'yes' %]</h1>
 
 [% UNLESS is_virtual %]
 <div id="pmoreinfo">

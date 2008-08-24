@@ -70,6 +70,7 @@ mirrors = {
 	},
 
 	volatile => {
+		title => g('volatile packages that need major changes during the life of a stable release'),
 		mirror_list => 'http://www.debian.org/devel/debian-volatile/volatile-mirrors',
 		europa => [
 			"volatile.debian.net/debian-volatile",
@@ -91,6 +92,7 @@ mirrors = {
 	},
 
 	backports => {
+		title => g('newer packages that have been adapted to stable releases of Debian'),
 		mirror_list => 'http://www.backports.org/debian/README.mirrors.html',
 		europa => [
 			"www.backports.org/debian",
@@ -118,6 +120,7 @@ mirrors = {
 	},
 
 	debports => {
+		title => g('ports of packages to architectures not yet available in Debian'),
 		mirror_list => 'http://wiki.debian.org/DebianPorts/Mirrors',
 		unofficial_port => {
 			'kfreebsd-amd64' => {
@@ -151,6 +154,12 @@ continents = {
 		australia     => g('Australia and New Zealand'),
 		europa        => g('Europe'),
 		africa        => g('Africa'),
+	}
+
+section_titles = {
+		'main' => g('packages that meet the Debian Free Software Guidelines'),
+		'contrib' => g('packages that meet the Debian Free Software Guidelines but need software not in Debian main'),
+		'non-free' => g('packages that do not meet the Debian Free Software Guidelines'),
 	}
 
 %]
