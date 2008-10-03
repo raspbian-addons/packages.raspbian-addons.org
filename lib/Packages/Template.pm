@@ -128,7 +128,8 @@ sub languages {
 	my @printed_langs = ();
 	foreach (@used_langs) {
 	    next if $_ eq $skip_lang; # Don't print the current language
-	    unless (get_selfname($_)) { warn "missing language $_"; next } #DEBUG
+	    unless (get_selfname($_)) { warn "missing language selfname $_"; next } #DEBUG
+	    unless (get_language_name($_)) { warn "missing language name $_"; next } #DEBUG
 	    push @printed_langs, $_;
 	}
 	return [] unless scalar @printed_langs;
