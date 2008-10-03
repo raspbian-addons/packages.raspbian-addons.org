@@ -45,7 +45,7 @@ my $maildomain = "packages.debian.org";
 my $ptsdomain = "packages.qa.debian.org";
 
 
-my $maintainerfile = "$topdir/../ftp.root/debian/indices/Maintainers";
+my $maintainerfile = "$topdir/../ftp.debian.org/ftp/indices/Maintainers";
 my $maintainerdb = "$topdir/conf/maintainer";
 my $overridefile = "$topdir/conf/maintainerdb.override";
 my @postcall = ( "/usr/sbin/postmap", $maintainerdb );
