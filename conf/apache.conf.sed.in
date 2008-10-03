@@ -69,6 +69,7 @@
    ServerAdmin webmaster@debian.org
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
+   ServerAlias newpackages.debian.org
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
 
