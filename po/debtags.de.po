@@ -3,1554 +3,12 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-07-18 17:45+0200\n"
+"PO-Revision-Date: 2008-10-02 21:37+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#. Tag: suite::gnustep, long desc
-#: files/debtags/vocabulary
-msgid "  GNUstep Desktop and WindowMaker"
-msgstr "  GNUstep-Desktop und WindowMaker"
-
-#. Tag: suite::gpe, long desc
-#: files/debtags/vocabulary
-msgid "  GPE Palmtop Environment"
-msgstr "  GPE Palmtop-Umgebung"
-
-#. Tag: suite::gforge, long desc
-#: files/debtags/vocabulary
-msgid " A collaborative development platform."
-msgstr " Eine gemeinschaftliche Entwicklungsplattform."
-
-#. Tag: scope::utility, long desc
-#: files/debtags/vocabulary
-msgid ""
-" A narrow-scoped program for particular use case or few use cases. It\n"
-" only does something 10-20% of users in the field will need. Often has\n"
-" functionality missing from related applications."
-msgstr ""
-" Ein Programm mit eng-begrenztem Umfang für bestimmte oder wenige\n"
-" Anwendungsfälle. Es ist nur von 10-20% der Benutzer des Fachgebietes von\n"
-" Nutzen. Oft fehlt Funktionalität verwandter Anwendungen."
-
-#. Tag: field::finance, long desc
-#: files/debtags/vocabulary
-msgid " Accounting and financial software"
-msgstr " Buchführung und Finanzsoftware"
-
-#. Tag: role::plugin, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Add-on, pluggable program fragments enhancing functionality\n"
-" of some program or system."
-msgstr ""
-" Erweiterung, einsetzbare Programmfragmente, die die Funktionalität\n"
-" eines Programmes oder Systems erweitern."
-
-#. Tag: use::checking, long desc
-#: files/debtags/vocabulary
-msgid ""
-" All sorts of checking, checking a filesystem for validity, checking\n"
-" a document for incorrectly spelled words, checking a network for \n"
-" routing problems. Verifying."
-msgstr ""
-" Alle Arten von Prüfungen, Überprüfungen eines Dateisystems auf Gültigkeit,\n"
-" Überprüfung eines Dokuments auf Rechtschreibfehler, Überprüfung eines\n"
-" Netzes auf Routing-Probleme. Nachprüfungen."
-
-#. Facet: junior, long desc
-#: files/debtags/vocabulary
-msgid " Applications recommended for younger users"
-msgstr " Für jüngere Benutzer empfohlene Anwendungen"
-
-#. Tag: accessibility::input, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Applies to input methods for non-latin languages as well as special input\n"
-" systems."
-msgstr ""
-" Gilt für Eingabemethoden für nicht-lateinische Sprachen sowie spezielle\n"
-" Eingabesysteme."
-
-#. Tag: devel::machinecode, long desc
-#: files/debtags/vocabulary
-msgid " Assemblers and other machine-code development tools."
-msgstr " Assembler und andere Maschinencode-Entwicklungswerkzeuge."
-
-#. Tag: protocol::atm, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Asynchronous Transfer Mode, a high speed protocol for communication "
-"between\n"
-" computers in a network.\n"
-" .\n"
-" While ATM is used to implement *DSL networks, it has never gained "
-"widespread\n"
-" use as a technology for building local area networks (LANs), for which it "
-"was\n"
-" originally intended.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
-msgstr ""
-" »Asynchronous Transfer Mode«, ein Hochgeschwindigkeitsprotokoll zur\n"
-" Kommunikation zwischen Computern in einem Netz.\n"
-" .\n"
-" Obwohl ATM zur Realisierung von *DSL-Netzen verwendet wird, hat es nie "
-"einen\n"
-" umfangreichen Einsatz als Technik zum Aufbau lokaler Netze (LANs) "
-"gefunden,\n"
-" wofür es ursprünglich gedacht war.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
-
-#. Tag: admin::automation, long desc
-#: files/debtags/vocabulary
-msgid " Automating the execution of software in the system."
-msgstr " Automatisierung der Ausführung von Software im System."
-
-#. Tag: works-with-format::bib, long desc
-#: files/debtags/vocabulary
-msgid " BibTeX list of references"
-msgstr " Quellangaben für BibTeX"
-
-#. Tag: protocol::bittorrent, long desc
-#: files/debtags/vocabulary
-msgid ""
-" BitTorrent is a protocol for peer-to-peer based file distribution over\n"
-" network.\n"
-" .\n"
-" Although the actual data transport happens between BitTorrent clients, one\n"
-" central node, the so-called trackers, is needed to keep a list of all "
-"clients\n"
-" that download or provide the same file.\n"
-" .\n"
-" Link: http://www.bittorrent.com/\n"
-" Link: http://en.wikipedia.org/wiki/BitTorrent"
-msgstr ""
-
-#. Tag: scope::application, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Broad-scoped program for general use. It probably has functionality\n"
-" for 80-90% of use cases. The pieces that remain are usually to be\n"
-" found as utilities."
-msgstr ""
-" Programm mit breiter Zielgruppe für den allgemeinen Einsatz. Für 80-90%\n"
-" der Anwendungsfälle hat es Funktionalität. Die restlichen Teile werden\n"
-" typischerweise als Hilfswerkzeuge verteilt."
-
-#. Tag: field::electronics, long desc
-#: files/debtags/vocabulary
-msgid " Circuit editors and other electronics-related software"
-msgstr " Schaltkreis-Editoren und andere Software mit Bezug zur Elektronik"
-
-#. Tag: devel::prettyprint, long desc
-#: files/debtags/vocabulary
-msgid " Code pretty-printing and indentation/reformatting."
-msgstr " Schöndruck von Code und Einrückung/Neuformatierung."
-
-#. Tag: protocol::corba, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Common Object Request Broker Architecture, a standard for interoperability\n"
-" between programs written in different languages and running on different \n"
-" hardware platforms. CORBA includes a client-server network protocol for\n"
-" distributed computing.\n"
-" .\n"
-" With this network protocol, CORBA clients on different computers and "
-"written\n"
-" in different languages can exchange objects over a CORBA server such as "
-"orbit2\n"
-" or omniORB.\n"
-" .\n"
-" Link: http://www.corba.org/"
-msgstr ""
-" »Common Object Request Broker Architecture« ist ein Standard für\n"
-" Interoperabilität zwischen in verschiedenen Programmiersprachen\n"
-" geschriebenen und auf verschiedenen Hardware-Plattformen laufenden\n"
-" Programmen. CORBA enthält ein Client-Server-Netzprotokoll für\n"
-" verteiltes Rechnen.\n"
-" .\n"
-" Mit diesem Netzprotokoll können CORBA-Clients aus verschiedenen\n"
-" Programmiersprachen und auf verschiedenen Computern Objekte über einen\n"
-" CORBA-Server wie Orbit2 oder OmniORB austauschen.\n"
-" .\n"
-" Link: http://www.corba.org/"
-
-#. Tag: hardware::storage:cd, long desc
-#: files/debtags/vocabulary
-msgid " Compact Disc"
-msgstr " Compact Disc"
-
-#. Tag: scope::suite, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Comprehensive suite of applications and utilities on the scale of\n"
-" desktop environment or base operating system."
-msgstr ""
-" Umfangreiche Suite an Anwendungen und Hilfswerkzeugen in der Größenordnung\n"
-" einer Desktop-Umgebung oder eines Basis-Betriebssystems."
-
-#. Tag: admin::filesystem, long desc
-#: files/debtags/vocabulary
-msgid " Creation, maintenance, and use of filesystems"
-msgstr " Erstellung, Wartung und Verwendung von Dateisystemen"
-
-#. Tag: security::cryptography, long desc
-#: files/debtags/vocabulary
-msgid " Cryptographic and privacy-oriented tools."
-msgstr " Kryptographische oder Datenschutz-bezogene Anwendungen."
-
-#. Tag: works-with-format::dvi, long desc
-#: files/debtags/vocabulary
-msgid ""
-" DeVice Independent page description file, usually generated\n"
-" by TeX or LaTeX."
-msgstr ""
-" Geräteunabhängige (»DeVice Independent«) Seitenbeschreibungsdatei,\n"
-" normalerweise von TeX oder LaTeX erstellt."
-
-#. Tag: role::debug-symbols, long desc
-#: files/debtags/vocabulary
-msgid " Debugging symbols."
-msgstr " Debugging-Symbole."
-
-#. Tag: hardware::storage:dvd, long desc
-#: files/debtags/vocabulary
-msgid " Digital Versatile Disc"
-msgstr " Digital Versatile Disc"
-
-#. Tag: filetransfer::dcc, long desc
-#: files/debtags/vocabulary
-msgid " Direct Client to Client protocol used by Internet Relay Chat clients."
-msgstr ""
-" Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
-"Relay Chat"
-
-#. Tag: x11::display-manager, long desc
-#: files/debtags/vocabulary
-msgid " Display managers (graphical login screens)"
-msgstr " Display-Manager (graphische Anmeldebildschirme)"
-
-#. Tag: protocol::dns, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Domain Name System, a protocol to request information associated with "
-"domain\n"
-" names (like \"www.debian.org\"), most prominently the IP address. The "
-"protocol\n"
-" is used in communication with a DNS server (like BIND).\n"
-" .\n"
-" For the Internet, there are 13 root DNS servers around the world that keep "
-"the\n"
-" addresses of all registered domain names and provide this information to "
-"the\n"
-" DNS servers of Internet service providers.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Domain_Name_System"
-msgstr ""
-" »Domain Name System«, ein Protokoll, um Informationen im Zusammenhang mit\n"
-" Domainnamen (wie »www.debian.org«) anzufordern, am berühmtesten die IP-\n"
-" Adresse. Das Protokoll wird zur Kommunikation mit einem DNS-Server (wie\n"
-" BIND) verwandt.\n"
-" .\n"
-" Für das Internet gibt es 13 Wurzel-DNS-Server rund um die Welt, die die\n"
-" Adressen aller registrierten Domainnamen behalten und diese Informationen\n"
-" an die DNS-Server der Internet-Diensteanbieter bereitstellen.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Domain_Name_System"
-
-#. Tag: protocol::dhcp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Dynamic Host Configuration Protocol, a client-server network protocol for\n"
-" automatic assignment of dynamic IP addresses to computers in a TCP/IP "
-"network,\n"
-" rather than giving each computer a static IP address.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc2131.txt"
-msgstr ""
-" »Dynamic Host Configuration Protocol«, ein Client-Server-Netzprotokoll für\n"
-" automatische Zuweisung von dynamischen IP-Adressen zu Computern in einem\n"
-" TCP/IP-Netz,\n"
-" statt jedem Computer eine statische IP-Adresse zu vergeben.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc2131.txt"
-
-#. Tag: suite::eclipse, long desc
-#: files/debtags/vocabulary
-msgid " Eclipse tool platform and plugins."
-msgstr " Eclipse-Werkzeug-Plattform und Erweiterungen."
-
-#. Tag: protocol::ethernet, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Ethernet is the most popular networking technology for creating local area\n"
-" networks (LANs).\n"
-" .\n"
-" The computers in an Ethernet network communicate over twisted-pair or "
-"fibre\n"
-" cables and are identified by their MAC address. Several different types of\n"
-" Ethernet exist, distinguishable by the maximum connection speed. The most\n"
-" widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Ethernet"
-msgstr ""
-" Ethernet ist die beliebteste Technik zum Aufbau lokaler Netze (LANs).\n"
-" .\n"
-" Die Rechner in einem Ethernet-Netz kommunizieren über verdrillte "
-"(»twisted-\n"
-" pair«) Kabel und werden über ihre MAC-Adresse identifiziert. Mehrere Arten\n"
-" von Ethernet existieren, die durch die maximale Verbindungsgeschwindigkeit\n"
-" unterschieden werden können. Am verbreitesten sind heuzutage 100MBit/s\n"
-" (100BASE-*) oder 1GBit/s (1000BASE-*).\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Ethernet"
-
-#. Tag: role::program, long desc
-#: files/debtags/vocabulary
-msgid " Executable computer program."
-msgstr " Ausführbares Computer-Programm."
-
-#. Tag: protocol::fidonet, long desc
-#: files/debtags/vocabulary
-msgid ""
-" FidoNet is a mailbox system that enjoyed large popularity in the 1980s and\n"
-" 1990s.\n"
-" .\n"
-" The communication between the clients and FidoNet servers  was usually "
-"carried\n"
-" out over the telephone network using modems and could be used for "
-"transferring\n"
-" messages (comparable to email) and files.\n"
-" .\n"
-" Link: http://www.fidonet.org/\n"
-" Link: http://en.wikipedia.org/wiki/Fidonet"
-msgstr ""
-" FidoNet ist ein Mailbox-System, dass in den 1980ern und 1990ern sehr "
-"beliebt\n"
-" war.\n"
-" .\n"
-" Die Kommunikation zwischen den Clients und den Fidonet-Servern erfolgte\n"
-" üblicherweise mittels Modems über Telefonnetze und konnte zum Versand von\n"
-" Nachrichten (vergleichbar mit E-Mail) und Dateien verwandt werden.\n"
-" .\n"
-" Link: http://www.fidonet.org/\n"
-" Link: http://de.wikipedia.org/wiki/Fidonet"
-
-#. Tag: filetransfer::ftp, long desc
-#: files/debtags/vocabulary
-msgid " File Transfer Protocol"
-msgstr " File Transfer Protocol"
-
-#. Tag: protocol::ftp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" File Transfer Protocol, a protocol for exchanging and manipulation files "
-"over\n"
-" networks and extensively used on the Internet.\n"
-" .\n"
-" The communication between FTP servers and clients uses two channels, the\n"
-" control and the data channel. While FTP was originally used with\n"
-" authentication only, most FTP servers on the Internet provide anonymous,\n"
-" passwordless access. Since FTP does not support encryption, sensitive data\n"
-" transfer is carried out over SFTP today.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc0959.txt"
-msgstr ""
-" »File Transfer Protocol«, ein Protokoll zum Austausch und Bearbeiten von\n"
-" Dateien über Netze, wird auch extensiv über das Internet verwandt.\n"
-" .\n"
-" Die Kommunikation zwischen FTP-Servern und -Clients verwendet zwei Kanäle,\n"
-" den Steuer- und den Datenkanal. Während ursprünglich FTP nur mit\n"
-" Authentifizierung verwandt wurde, bieten die meisten FTP-Server im "
-"Internet\n"
-" anonymen Zugriff ohne Passwort. Da FTP keine Verschlüsselung unterstützt,\n"
-" erfolgt vertrauenswürdiger Datentransfer heutzutage über SFTP.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/File_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc0959.txt"
-
-#. Tag: game::rpg:rogue, long desc
-#: files/debtags/vocabulary
-msgid " Games like Nethack, Angband etc."
-msgstr " Spiele wie Nethack, Angband usw."
-
-#. Tag: hardware::gps, long desc
-#: files/debtags/vocabulary
-msgid " Global Positioning System"
-msgstr " Globales Positionierungssystem"
-
-#. Tag: suite::gnu, long desc
-#: files/debtags/vocabulary
-msgid " Gnu's Not Unix. The package is part of the official GNU project"
-msgstr " Gnu's Not Unix. Das Paket ist Teil des offiziellen GNU-Projekts"
-
-#. Facet: biology, long desc
-#: files/debtags/vocabulary
-msgid " How is the package related to the field of biology."
-msgstr " In welcher Beziehung das Paket zur Biologie steht."
-
-#. Facet: security, long desc
-#: files/debtags/vocabulary
-msgid " How the package is related to system security"
-msgstr " In welcher Beziehung das Paket zur Systemsicherheit steht."
-
-#. Tag: role::source, long desc
-#: files/debtags/vocabulary
-msgid " Human-readable code of a program, library or a part thereof."
-msgstr " Menschen-lesbarer Programmcode, Bibliothek oder Teil davon."
-
-#. Tag: filetransfer::http, long desc
-#: files/debtags/vocabulary
-msgid " HyperText Transfer Protocol"
-msgstr " HyperText Transfer Protocol"
-
-#. Tag: protocol::http, long desc
-#: files/debtags/vocabulary
-msgid ""
-" HyperText Transfer Protocol, one of the most important protocols for the\n"
-" World Wide Web.\n"
-" .\n"
-" It controls the data transfer between HTTP servers such as Apache and HTTP\n"
-" clients, which are web browsers in most cases. HTTP resources are "
-"requested\n"
-" via URLs (Universal Resource Locators). While HTTP normally only supports "
-"file\n"
-" transfer from server to client, the protocol supports sending information "
-"to\n"
-" HTTP servers, most prominently used in HTML forms.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Http\n"
-" Link: http://www.ietf.org/rfc/rfc2616.txt"
-msgstr ""
-" »HyperText Transfer Protocol«, eines der wichtigsten Protokolle des\n"
-" World Wide Web.\n"
-" .\n"
-" Es steuert die Datenübertragung zwischen HTTP-Servern wie Apache und HTTP-\n"
-" Clients (in den meisten Fällen Webbrowser). HTTP-Ressourcen werden über\n"
-" URLs (Universal Resource Locators) angefordert. Während HTTP normalerweise\n"
-" nur Dateiübertragungen vom Server zum Client erlaubt, unterstützt das\n"
-" Protokoll auch den Versand von Informationen an HTTP-Server, am "
-"bekanntesten\n"
-" in HTML-Formularen.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Http\n"
-" Link: http://www.ietf.org/rfc/rfc2616.txt"
-
-#. Tag: works-with::image:raster, long desc
-#: files/debtags/vocabulary
-msgid " Images made of dots, such as photos and scans"
-msgstr " Bilder wie Photos und Eingescanntes, die aus Punkten bestehen"
-
-#. Tag: works-with::image:vector, long desc
-#: files/debtags/vocabulary
-msgid " Images made of lines, such as graphs or most clipart"
-msgstr ""
-" Bilder wie Diagramme oder die meisten Cliparts, die aus Linien bestehen"
-
-#. Tag: devel::ide, long desc
-#: files/debtags/vocabulary
-msgid " Integrated Development Environment"
-msgstr " Integrierte Entwicklungsumgebung"
-
-#. Tag: protocol::imap, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Internet Message Access Protocol, a protocol used for accessing email on a\n"
-" server from a email client such as KMail or Evolution.\n"
-" .\n"
-" When using IMAP, emails stay on the server and can be categorized, edited,\n"
-" deleted etc. there, instead of having the user download all messages onto\n"
-" the local computer, as POP3 does.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
-msgstr ""
-" »Internet Message Access Protocol«, ein Protokoll, das zum Zugriff auf E-"
-"Mail\n"
-" auf einem Server von Clients wie KMail oder Evolution verwandt wird.\n"
-" .\n"
-" Beim Einsatz von IMAP verbleiben E-Mails auf dem Server, wo sie "
-"kategoriert,\n"
-" bearbeitet, gelöscht usw. werden können, statt wie bei POP3 vom Benutzer\n"
-" komplett auf den lokalen Computer heruntergeladen zu werden.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Internet_Message_Access_Protocol"
-
-#. Tag: protocol::ip, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Internet Protocol (v4), a core protocol of the Internet protocol suite and\n"
-" the very basis of the Internet.\n"
-" .\n"
-" Every computer that is connected to the Internet has an IP address (a 4-"
-"byte\n"
-" number, typically represented in dotted notation like 192.25.206.10).\n"
-" Internet IP addresses are given out by the Internet Corporation for "
-"Assigned\n"
-" Names and Numbers (ICANN). Normally, computers on the Internet are not\n"
-" accessed by their IP address, but by their domain name.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/IPv4\n"
-" Link: http://www.ietf.org/rfc/rfc791.txt"
-msgstr ""
-" Internet-Protokoll (v4) ist ein Kernprotokoll der Internetprotokollsuite "
-"und\n"
-" die absolute Grundlage des Internets.\n"
-" .\n"
-" Jeder Computer, der mit dem Internet verbunden ist, verfügt über eine\n"
-" IP-Adresse (eine 4 Byte-Zahl, typischerweise in gepunkteter Notation der "
-"Form\n"
-" 192.25.206.10 angegeben). Internet-IP-Adressen werden von der »Internet\n"
-" Corporation for Assigned Names and Numbers« (ICANN) vergeben. Normalerweise\n"
-" wird auf Computer im Internet nicht über ihre IP-Adresse sondern über "
-"ihren\n"
-" Domainnamen zugegriffen.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/IPv4\n"
-" Link: http://www.ietf.org/rfc/rfc791.txt"
-
-#. Tag: protocol::ipv6, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Internet Protocol (v6), the next-generation Internet protocol, which "
-"overcomes\n"
-" the restrictions of IP (v4), like shortage of IP addresses, and is supposed "
-"to\n"
-" form the new basis of the Internet in the future, replacing IP (v4).\n"
-" .\n"
-" Many programs already support IPv6 along with IP (v4), although it is "
-"still\n"
-" seldomly used.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/IPv6\n"
-" Link: http://www.ipv6.org/"
-msgstr ""
-" Internet-Protokoll (v6) ist das Internet-Protokoll der nächsten "
-"Generation,\n"
-" das die Begrenzungen von IP (v4) wie den Mangel an IP-Adressen überkommt, "
-"und\n"
-" die neue Basis des Internets in der Zukunft formen und IP (v4) ersetzen "
-"soll.\n"
-" .\n"
-" Viele Programme unterstützen IPv6 zusammen mit IP (v4) bereits, allerdings\n"
-" wird es immer noch selten benutzt.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/IPv6\n"
-" Link: http://www.ipv6.org/"
-
-#. Tag: protocol::irc, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Internet Relay Chat, a protocol for text chatting over network, "
-"extensively\n"
-" used on the Internet. It supports chat rooms, so-called channels, as well "
-"as\n"
-" private, one-to-one communication.\n"
-" .\n"
-" IRC servers are organized in networks, so that a client can connect to a\n"
-" geographically near IRC server, that itself is connected to other IRC "
-"servers\n"
-" spread over the whole world.\n"
-" .\n"
-" The official Debian channel is #debian on the freenode network.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
-msgstr ""
-" Internet Relay Chat, ein Protokoll für das Unterhalten mittels Text über\n"
-" Netze, das intensiv im Internet genutzt wird. Es unterstützt Räume\n"
-" sogenannte Kanäle sowie private eins-zu-eins-Kommunikation.\n"
-" .\n"
-" IRC-Server sind in Netzen organisiert, so dass sich Clients mit einem\n"
-" geographisch naheliegenden Server verbinden können, der wiederum mit\n"
-" anderen IRC-Servern auf der ganzen Welt verbunden ist.\n"
-"  .\n"
-" Der offizielle Kanal von Debian ist #debian im freenode-Netz.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Internet_Relay_Chat"
-
-#. Tag: protocol::kerberos, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Kerberos is a authentication protocol for computer networks for secure\n"
-" authentication over an otherwise insecure network, using symmetric\n"
-" cryptography and a third party service provider, that is trusted both by\n"
-" client and server.\n"
-" . \n"
-" The authentication mechanism provided by Kerberos is mutual, so that not "
-"only\n"
-" a server can be sure of a client's identity, but also a client can be sure "
-"a\n"
-" connection to a server is not intercepted.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29\n"
-" Link: http://http://www.ietf.org/rfc/rfc4120.txt"
-msgstr ""
-" Kerberos ist ein Authentifizierungsprotokoll für Computernetze für sichere\n"
-" Authentifizierung über ansonsten unsichere Netze. Hierzu werden "
-"symmetrische\n"
-" Kryptographie und Diensteanbieter dritter Parteien verwandt, denen sowohl\n"
-" vom Client als auch vom Server vertraut wird.\n"
-" .\n"
-" Der von Kerberos bereitgestellte Authentifizierungsmechanismus ist\n"
-" gegenseitig, so dass sich nicht nur der Server der Identität des Clients\n"
-" sicher ist, sondern auch der Client sicher sein kann, dass die Verbindung\n"
-" zum Server nicht abgefangen wird.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Kerberos_%28Informatik%29\n"
-" Link: http://http://www.ietf.org/rfc/rfc4120.txt"
-
-#. Tag: role::devel-lib, long desc
-#: files/debtags/vocabulary
-msgid " Library and header files used in software development or building."
-msgstr ""
-" Bibliothek und Header-Dateien, die in der Softwareentwicklung und -"
-"erstellung verwandt werden."
-
-#. Tag: protocol::ldap, long desc
-#: files/debtags/vocabulary
-msgid " Lightweight Directory Access Protocol"
-msgstr " Lightweight Directory Access Protocol"
-
-#. Tag: works-with-format::ldif, long desc
-#: files/debtags/vocabulary
-msgid " Lightweight Directory Interchange Format"
-msgstr " Lightweight Directory Interchange Format"
-
-#. Tag: suite::xfce, long desc
-#: files/debtags/vocabulary
-msgid " Lightweight desktop environment for X11."
-msgstr " Leichtgewichtige Desktop-Umgebung für X11"
-
-#. Tag: admin::login, long desc
-#: files/debtags/vocabulary
-msgid " Logging into the system"
-msgstr " Protokollierung in das System"
-
-#. Tag: game::mud, long desc
-#: files/debtags/vocabulary
-msgid " MUDs, MOOs, and other multiplayer RPGs"
-msgstr ""
-
-#. Tag: suite::mozilla, long desc
-#: files/debtags/vocabulary
-msgid " Mozilla Browser and extensions"
-msgstr " Mozilla Browser und Erweiterungen"
-
-#. Tag: protocol::nfs, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Network File System, a protocol originally developed by Sun Microsystems "
-"in\n"
-" 1984 and defined in RFCs 1094, 1813, and 3530 (obsoletes 3010) as a\n"
-" distributed file system, allows a user on a client computer to access "
-"files\n"
-" over a network as easily as if attached to its local disks.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Network_File_System"
-msgstr ""
-" »Network File System« ist ein Protokoll, das ursprünglich 1984 von Sun\n"
-" Microsystems entwickelt wurde und in RFCs 1094, 1813 und 3530 (überholt\n"
-" technisch die 3010) als verteiltes Dateisystem definiert ist, das es\n"
-" Benutzern auf Client-Rechnern erlaubt, auf Dateien über ein Netz so leicht\n"
-" zuzugreifen, als ob diese auf lokalen Platten lägen.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Network_File_System"
-
-#. Tag: protocol::nntp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Network News Transfer Protocol, a protocol for reading and writing Usenet\n"
-" articles (a Usenet article is comparable with an email), but also used "
-"among\n"
-" NNTP servers to transfer articles.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc977.txt"
-msgstr ""
-" »Network News Transfer Protocol« ist ein Protokoll zum Lesen und Schreiben "
-"von\n"
-" Usenet-Artikeln (ein Usenet-Artikel kann mit E-Mail verglichen werden). Es\n"
-" wird aber auch zwischen NNTP-Servern zur Übertragung von Artikeln "
-"verwandt.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Network_News_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc977.txt"
-
-#. Tag: protocol::oscar, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Open System for CommunicAtion in Realtime, an instant messaging used by\n"
-" AOL's instant messaging network (AIM). The protocol versions 7, 8 and 9\n"
-" of the ICQ IM network are also instances of the OSCAR protocol.\n"
-" .\n"
-" OSCAR is a binary proprietary protocol. Since there is no official "
-"documentation,\n"
-" clients that connect to AIM or ICQ have to rely on information that has\n"
-" been reverse-engineered.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/OSCAR_protocol\n"
-" Link: http://www.oilcan.org/oscar/"
-msgstr ""
-
-#. Tag: accessibility::ocr, long desc
-#: files/debtags/vocabulary
-msgid " Optical Character Recognition"
-msgstr " Optische Zeichenerkennung"
-
-#. Tag: biology::emboss, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Packages related to the European Molecular Biology Open Software Suite."
-msgstr " Pakete mit Bezug zur »European Molecular Biology Open Software Suite«."
-
-#. Tag: special::obsolete, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Packages that are not used any longer, also packages only left for upgrade\n"
-" purposes (merged / split packages)"
-msgstr ""
-" Pakete, die nicht mehr verwendet werden, auch Pakete, die nur für Upgrade-\n"
-" Zwecke (vereinte / geteilte Pakete) verblieben sind"
-
-#. Tag: role::kernel, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Packages that contain only operating system kernels and kernel modules."
-msgstr " Pakete, die nur Betriebssystemkernel oder Kernelmodule enthalten."
-
-#. Tag: role::metapackage, long desc
-#: files/debtags/vocabulary
-msgid " Packages that install suites of other packages."
-msgstr " Pakete, die Suites anderer Pakete installieren"
-
-#. Tag: role::dummy, long desc
-#: files/debtags/vocabulary
-msgid " Packages used for upgrades and transitions."
-msgstr " Pakete, die für Upgrades und Übergänge verwendet werden."
-
-#. Tag: devel::code-generator, long desc
-#: files/debtags/vocabulary
-msgid " Parser, lexer and other code generators"
-msgstr ""
-
-#. Tag: works-with::unicode, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Please do not tag programs with simple unicode support,\n"
-" doing so would make this tag useless.\n"
-" Ultimately all applications should have unicode support."
-msgstr ""
-" Bitte markiern Sie keine Programme mit einfacher Unicode-Unterstützung,\n"
-" denn dadurch würde diese Markierung nutzlos.\n"
-" Letztendlich sollten alle Anwendungen Unicode unterstützen."
-
-#. Tag: biology::format:nexus, long desc
-#: files/debtags/vocabulary
-msgid " Popular format for phylogenetic trees."
-msgstr " Beliebtes Format für phylogenetische Bäume."
-
-#. Tag: protocol::pop3, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Post Office Protocol, a protocol to download emails from a mail server,\n"
-" designed for users that have only intermittent connection to the Internet.\n"
-" .\n"
-" In contrast to IMAP server, messages that are downloaded via POP3 are not\n"
-" supposed to stay on the server afterwards, since POP3 does not support\n"
-" multiple mailboxes for one account on the server.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Post_Office_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc1939.txt"
-msgstr ""
-" »Post Office Protocol« ist ein Protokoll zum Herunterladen von E-Mails von\n"
-" einem E-Mail-Server. Es wurde für Benutzer entwickelt, die keinen "
-"ständigen\n"
-" Zugriff auf das Internet haben.\n"
-" .\n"
-" Im Gegensatz zum IMAP-Server sollen Nachrichten, die via POP3\n"
-" heruntergeladen wurden, nicht danach auf dem Server verbleiben, da POP3\n"
-" nicht mehrere E-Mail-Postfächer für ein Konto auf dem Server unterstützt.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Post_Office_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc1939.txt"
-
-#. Tag: security::forensics, long desc
-#: files/debtags/vocabulary
-msgid " Post-mortem analysis of intrusions."
-msgstr " Post-mortem-Analyse von Einbrüchen."
-
-#. Tag: devel::profiler, long desc
-#: files/debtags/vocabulary
-msgid " Profiling and optimization tools."
-msgstr ""
-
-#. Tag: devel::modelling, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Programs and libraries that support creation of software models\n"
-" with modelling languages like UML or OCL."
-msgstr ""
-" Programme und Bibliotheken, die die Erstellung von Software-Modellen\n"
-" in Modelliersprachen wie UML oder OCL unterstützen."
-
-#. Tag: protocol::db:mysql, long desc
-#: files/debtags/vocabulary
-msgid " Protocol for accessing MySQL database server."
-msgstr " Protokoll zum Zugriff auf MySQL-Datenbankserver."
-
-#. Tag: protocol::db:psql, long desc
-#: files/debtags/vocabulary
-msgid " Protocol for accessing PostgreSQL database server."
-msgstr " Protokoll zum Zugriff auf PostgreSQL-Datenbankserver."
-
-#. Tag: devel::rcs, long desc
-#: files/debtags/vocabulary
-msgid " RCS (Revision Control System) and SCM (Software Configuration Manager)"
-msgstr ""
-
-#. Tag: admin::forensics, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Recovering lost or damaged data.\n"
-" This tag will be split into admin::recovery\n"
-" and security::forensics."
-msgstr ""
-" Wiederherstellung von verlorenen oder beschädigten Daten.\n"
-" Diese Markierung wird in admin::recovery\n"
-" und security::forensics aufgeteilt."
-
-#. Tag: protocol::radius, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Remote Authentication Dial In User Service, a protocol for authentication,\n"
-" authorization and accounting of network access, mostly used by Internet\n"
-" service providers handle handle dial-up Internet connections.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/RADIUS\n"
-" Link: http://www.ietf.org/rfc/rfc2865.txt"
-msgstr ""
-" Remote Authentication Dial In User Service, ein Protokoll für die\n"
-" Authentifizierung, Autorisierung und Buchführung von Netzzugriffen, das\n"
-" hauptsächlich von Internetdiensteanbietern zur Verwaltung von\n"
-" Einwähl-Internetverbindungen verwandt wird.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/RADIUS\n"
-" Link: http://www.ietf.org/rfc/rfc2865.txt"
-
-#. Tag: devel::rpc, long desc
-#: files/debtags/vocabulary
-msgid " Remote Procedure Call, Network transparent programming"
-msgstr " Remote Procedure Call, Netz-transparente Programmierung"
-
-#. Tag: works-with::network-traffic, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Routers, shapers, sniffers, firewalls and other tools\n"
-" that work with a stream of network packets."
-msgstr ""
-
-#. Tag: interface::daemon, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Runs in background, only a control interface is provided, usually on\n"
-" commandline."
-msgstr ""
-" Läuft im Hintergrund, nur eine Steuerschnittstelle wird bereitgestellt,\n"
-" normalerweise auf der Kommandozeile."
-
-#. Tag: devel::runtime, long desc
-#: files/debtags/vocabulary
-msgid " Runtime environments of various languages and systems."
-msgstr " Laufzeit-Umgebungen verschiedener Sprachen und Systeme."
-
-#. Tag: protocol::sftp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" SSH File Transfer Protocol, a protocol for secure, encrypting file "
-"exchange\n"
-" and manipulation over insecure networks, using the SSH protocol.\n"
-" .\n"
-" SFTP provides a complete set of file system operations, different from its\n"
-" predecessor SCP, which only allows file transfer. It is not, other than "
-"the\n"
-" name might suggest, a version of the FTP protocol executed through an SSH\n"
-" channel.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
-msgstr ""
-" »SSH File Transfer Protocol« ist ein Protokoll für den sicheren\n"
-" verschlüsselten Dateiaustausch und -bearbeitung über unsichere Netze unter\n"
-" Verwendung des SSH-Protokolls.\n"
-" .\n"
-" SFTP bietet einen kompletten Satz von Dateisystemoperationen, die sich von\n"
-" seinem Vorgänger SCP unterscheiden, der nur Dateiübertragungen erlaubt.\n"
-" Anders als der Name es erwarten lassen könnte, ist es keine Version des\n"
-" FTP-Protokolls, das durch einen SSH-Tunnel ausgeführt wird.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/SSH_File_Transfer_Protocol"
-
-#. Tag: filetransfer::sftp, long desc
-#: files/debtags/vocabulary
-msgid " Secure File Transfer Protocol"
-msgstr " Secure File Transfer Protocol"
-
-#. Tag: protocol::ssh, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Secure Shell, a protocol for secure, encrypted network connections. SSH "
-"can\n"
-" be used to execute programs on a remote host with an SSH server over "
-"secure\n"
-" otherwise insecure protocols through an SSH channel. The main use is, as "
-"the\n"
-" name suggest, to provide encrypted login and shell access on remote "
-"servers.\n"
-" .\n"
-" SSH authentication can be done with password or, which is the preferred\n"
-" mechanism, via asymmetric public/private key cryptography.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Secure_Shell"
-msgstr ""
-" »Secure Shell«, ein Protokoll für sichere, verschlüsselte Netzverbindungen.\n"
-" SSH kann zum Ausführen von Programmen auf entfernten Rechnern mit einem\n"
-" SSH-Server über sichere und ansonsten unsichere Protokolle über einen\n"
-" SSH-Kanal verwandt werden. Wie der Name andeutet, ist die Hauptanwendung\n"
-" die verschlüsselte Anmeldung und der verschlüsselte Shell-Zugriff auf\n"
-" entfernten Rechnern.\n"
-" .\n"
-" SSH-Authentifizierung kann über Passwörter oder dem bevorzugten "
-"Mechanismus\n"
-" der asymmetrische Kryptographie mit öffentlichen/privaten Schlüsseln\n"
-" erfolgen.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Secure_Shell"
-
-#. Tag: protocol::ssl, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Secure Socket Layer/Transport Layer Security, a protocol that provides \n"
-" secure encrypted communication on the Internet. It is used to authenticate\n"
-" the identity of a service provider (such as a Internet banking server) and\n"
-" to secure the communications channel.\n"
-" .\n"
-" Otherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be\n"
-" transmitted over SSL/TLS to secure the transmitted data. In this case, an\n"
-" \"S\" is added to the protocol name, like HTTPS, FTPS etc.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
-msgstr ""
-" »Secure Socket Layer/Transport Layer Security«, ein Protokoll, das eine\n"
-" sichere verschlüsselte Kommunikation über das Internet bereitstellt. Es\n"
-" wird zur Authentifizierung der Identität eines Diensteanbieters (wie eines\n"
-" Internet-Bank-Servers) und zur Absicherung eines Kommunikationskanals\n"
-" verwandt.\n"
-" .\n"
-" Andernfalls unsichere Protokolle wie FTP, HTTP, IMAP oder SMTP können über\n"
-" SSL/TLS übertragen werden, um die übertragenen Daten abzusichern. In "
-"diesem\n"
-" Fall wird an den Protokollnamen ein »S« angehängt, wie in HTTPS, FTPS usw.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Secure_Sockets_Layer"
-
-#. Tag: field::biology:bioinformatics, long desc
-#: files/debtags/vocabulary
-msgid " Sequence analysis software."
-msgstr " Sequenz-Analyse-Software."
-
-#. Tag: protocol::smb, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Server Message Block, a protocol for providing file access and printer "
-"sharing\n"
-" over network, mainly used by Microsoft Windows(tm). CIFS (Common Internet "
-"File\n"
-" System) is a synonym for SMB\n"
-" .\n"
-" Although SMB is a proprietary protocol, the Samba project reverse-"
-"engineered\n"
-" the protocol and developed both client and server programs for better\n"
-" interoperability in mixed Unix/Windows networks.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Server_Message_Block\n"
-" Link: http://www.samba.org/"
-msgstr ""
-" »Server Message Block« ist ein Protokoll, um Dateizugriff und gemeinsame\n"
-" Druckernutzung über Netze bereitzustellen. Es wird hauptsächlich von\n"
-" Microsoft Windows(tm) verwandt. CIFS (Common Internet File System) ist ein\n"
-" Synonym für SMB.\n"
-" Obwohl SMB ein proprietäres Protokoll ist, hat das Samba-Projekt das\n"
-" Protokoll erschlossen und sowohl Client- als auch Server-Programme für\n"
-" bessere Interoperabilität in gemischten Unix-/Windows-Netzen entwickelt.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Server_Message_Block\n"
-" Link: http://www.samba.org/"
-
-#. Tag: role::shared-lib, long desc
-#: files/debtags/vocabulary
-msgid " Shared libraries used by one or more programs."
-msgstr ""
-" Laufzeitbibliotheken, die von einem oder mehreren Programmen verwandt "
-"werden."
-
-#. Tag: protocol::smtp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
-"the\n"
-" Internet.\n"
-" .\n"
-" Every SMTP server utilizes SMTP to hand on emails to the next mail server\n"
-" until an email arrives at its destination, from where it is usually "
-"retrieved\n"
-" via POP3 or IMAP \n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc2821.txt"
-msgstr ""
-" »Simple Mail Transfer Protocol« ist ein Protokoll zur Übertragung von\n"
-" E-Mails über das Internet.\n"
-" .\n"
-" Jeder SMTP-Server verwendet SMTP, um E-Mails an den nächsten E-Mail-Server\n"
-" weiterzugeben, bis die E-Mail an ihrem Ziel ankommt, wo sie normalerweise\n"
-" via POP3 oder IMAP abgeholt wird.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc2821.txt"
-
-#. Tag: protocol::snmp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Simple Network Management Protocol, a member of the Internet protocol "
-"suite\n"
-" and used for monitoring or configuring network devices.\n"
-" .\n"
-" SNMP servers normally run on network equipment like routers.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc3411.txt"
-msgstr ""
-" Simple Network Management Protocol, ein Mitglied in der\n"
-" Internet-Protokoll-Suite. Wird zur Überwachung oder Konfiguration von\n"
-" Netzgeräten verwandt.\n"
-" .\n"
-" SNMP-Server laufen normalerweise auf Netzgeräten wie Routern.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Simple_Network_Management_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc3411.txt"
-
-#. Tag: protocol::soap, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Simple Object Access Protocol, a protocol for exchanging messages between\n"
-" different computers in a network. The messages are encoded in XML and "
-"usually\n"
-" sent over HTTP.\n"
-" .\n"
-" SOAP is used to provide APIs to web services, such as the Google API to\n"
-" utilize Google's searching engine from client applications.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/SOAP\n"
-" Link: http://www.w3.org/TR/soap/"
-msgstr ""
-" Simple Object Access Protocol, ein Protokoll zum Austausch von Nachrichten\n"
-" zwischen verschiedenen Computern in einem Netz. Die Nachrichten werden in\n"
-" XML-kodiert und normalerweise über HTTP versandt.\n"
-" .\n"
-" SOAP wird für APIs von Webdiensten verwandt, beispielsweise vom Google-"
-"API,\n"
-" um Googles Suchmaschine aus Client-Anwendungen heraus zu verwenden.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/SOAP\n"
-" Link: http://www.w3.org/TR/soap/"
-
-#. Tag: use::analysing, long desc
-#: files/debtags/vocabulary
-msgid " Software for turning data into knowledge."
-msgstr " Software, um Daten in Wissen zu verwandeln."
-
-#. Tag: mail::user-agent, long desc
-#: files/debtags/vocabulary
-msgid " Software that allows users to access e-mail."
-msgstr " Software, die Benutzern Zugriff auf E-Mail erlaubt."
-
-#. Tag: mail::delivery-agent, long desc
-#: files/debtags/vocabulary
-msgid " Software that delivers mail to users' mailboxes."
-msgstr ""
-
-#. Tag: mail::notification, long desc
-#: files/debtags/vocabulary
-msgid " Software that notifies users about status of mailbox."
-msgstr " Software, die Benutzer über den Status einer Mailbox benachrichtigt."
-
-#. Tag: mail::transport-agent, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Software that routes and transmits mail accross the system and the network."
-msgstr ""
-" Software, die E-Mail über das System und Netz weiterleitet und überträgt."
-
-#. Tag: biology::peptidic, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Software that works with sequences of aminoacids: peptides and proteins."
-msgstr ""
-" Software, die mit einer Sequenz von Aminosäuren arbeitet: Peptiden und "
-"Proteinen."
-
-#. Tag: biology::nuceleic-acids, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Software that works with sequences of nucleic acids: \n"
-" DNA, RNA but also non-natural nucleic acids such as PNA or LNA."
-msgstr ""
-" Software, die mit Sequenzen von Nukleinsäure arbeitet:\n"
-" DNS, RNS aber auch künstlichen Nukleinsäure wie PNS oder LNS."
-
-#. Tag: field::biology:structural, long desc
-#: files/debtags/vocabulary
-msgid " Software useful to model tridimentional structures."
-msgstr ""
-
-#. Tag: field::biology:molecular, long desc
-#: files/debtags/vocabulary
-msgid " Software useful to molecular cloning and related wet biology."
-msgstr ""
-" Software, die für molekulares Klonen und verwandte nasse Biologie nützlich "
-"ist."
-
-#. Tag: protocol::telnet, long desc
-#: files/debtags/vocabulary
-msgid ""
-" TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/TELNET"
-msgstr ""
-" TELecommunication NETwork, ein größtenteils veraltetes Protokoll für\n"
-" entfernte Anmeldung.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/TELNET"
-
-#. Tag: protocol::gadu-gadu, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The Gadu-Gadu protocol is a proprietary protocol that is used by a\n"
-" Polish instant messaging network of the same name.\n"
-" .\n"
-" Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
-msgstr ""
-" Das Gadu-Gadu-Protokoll ist ein proprietäres Protokoll, das von einem\n"
-" polnischen »Instant Messaging«-Netz gleichen Namens verwandt wird.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Gadu-Gadu"
-
-#. Tag: protocol::ident, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The Ident Internet protocol helps to identify or authenticate the user of\n"
-" a network connection.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Ident"
-msgstr ""
-" Das »Ident Internet«-Protokoll hilft bei der Identifizierung oder\n"
-" Authentifizierung von Benutzern einer Netzverbindung.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Ident"
-
-#. Tag: protocol::jabber, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The Jabber protocol is an instant messaging protocol on the basis of the "
-"XMPP\n"
-" protocol. Additionally to private one-to-one communication, it also "
-"supports\n"
-" chat rooms, and it is used in the Jabber IM network as well as for the IM\n"
-" capabilities for the new GoogleTalk network.\n"
-" .\n"
-" In contrast to other IM networks like MSN, ICQ or AIM, the Jabber servers "
-"are\n"
-" free software and can be used to create a private chat platform or have an "
-"own\n"
-" server to connect to the Jabber network.\n"
-" .\n"
-" Link: http://www.jabber.org\n"
-" Link: http://en.wikipedia.org/wiki/Jabber"
-msgstr ""
-
-#. Tag: protocol::lpr, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The Line Printer Daemon protocol, a protocol used for accessing or "
-"providing\n"
-" network print services in a Unix network, but also used for local setups.\n"
-" .\n"
-" CUPS, the Common Unix Printing System, was developed to replace the old\n"
-" LPD/LPR system, while maintaining backwards compatibility.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol\n"
-" Link: http://www.ietf.org/rfc/rfc1179.txt"
-msgstr ""
-
-#. Tag: protocol::msn-messenger, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The MSN messenger protocol is the protocol that is used by Microsoft's own\n"
-" instant messaging network.\n"
-" .\n"
-" The protocol is a proprietary protocol. Although Microsoft once send a "
-"draft\n"
-" of the protocol specification to the IETF, it has since dated out and "
-"clients\n"
-" that connect to the MSN Messenger network have to rely on reverse-"
-"engineered\n"
-" information.\n"
-" .\n"
-" Link: http://www.hypothetic.org/docs/msn/"
-msgstr ""
-
-#. Tag: protocol::finger, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The Name/Finger protocol is a simple network protocol to provide "
-"extensive, \n"
-" public information about users of a computer, such as email address, "
-"telephone\n"
-" numbers, full names etc.\n"
-" .\n"
-" Due to privacy concerns, the Finger protocol is not widely used any more,\n"
-" while it widespread distribution in the early 1990s.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Finger_protocol\n"
-" Link: http://www.ietf.org/rfc/rfc1288.txt"
-msgstr ""
-
-#. Tag: protocol::yahoo-messenger, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The Yahoo! Messenger protocol is used to connect to Yahoo!'s instant "
-"messaging\n"
-" network.\n"
-" .\n"
-" This a proprietary binary protocol without any official documentation. "
-"Clients\n"
-" that connect to the Yahoo! Messenger network have to rely on reverse-"
-"engineered\n"
-" information.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger\n"
-" Link: http://www.venkydude.com/articles/yahoo.htm"
-msgstr ""
-
-#. Tag: suite::zope, long desc
-#: files/debtags/vocabulary
-msgid " The Zope (web) publishing platform."
-msgstr " Die Zope-(Web-)Veröffentlichungsplattform"
-
-#. Facet: culture, long desc
-#: files/debtags/vocabulary
-msgid " The culture for which the package provides special support"
-msgstr " Die Kultur, für die dieses Paket spezielle Unterstützung bietet"
-
-#. Facet: made-of, long desc
-#: files/debtags/vocabulary
-msgid " The languages or data formats used to make the package"
-msgstr ""
-" Die Sprachen oder Datenformate, die zur Paketerstellung verwandt wurden"
-
-#. Tag: accessibility::TODO, long desc
-#. Tag: admin::TODO, long desc
-#. Tag: culture::TODO, long desc
-#. Tag: devel::TODO, long desc
-#. Tag: field::TODO, long desc
-#. Tag: game::TODO, long desc
-#. Tag: hardware::TODO, long desc
-#. Tag: made-of::TODO, long desc
-#. Tag: interface::TODO, long desc
-#. Tag: implemented-in::TODO, long desc
-#. Tag: junior::TODO, long desc
-#. Tag: mail::TODO, long desc
-#. Tag: office::TODO, long desc
-#. Tag: works-with::TODO, long desc
-#. Tag: works-with-format::TODO, long desc
-#. Tag: scope::TODO, long desc
-#. Tag: role::TODO, long desc
-#. Tag: security::TODO, long desc
-#. Tag: sound::TODO, long desc
-#. Tag: special::TODO, long desc
-#. Tag: suite::TODO, long desc
-#. Tag: protocol::TODO, long desc
-#. Tag: filetransfer::TODO, long desc
-#. Tag: uitoolkit::TODO, long desc
-#. Tag: use::TODO, long desc
-#. Tag: web::TODO, long desc
-#. Tag: network::TODO, long desc
-#. Tag: x11::TODO, long desc
-#: files/debtags/vocabulary
-msgid ""
-" The package can be categorised along this facet, but the right tag for it "
-"is\n"
-" missing.\n"
-" .\n"
-" Mark a package with this tag to signal the vocabulary maintainers of cases\n"
-" where the current tag set is lacking."
-msgstr ""
-" Dieses Paket kann zusemman mit diesem Aspekt kategorisiert werden, aber\n"
-" die richtige Markierung fehlt noch.\n"
-" .\n"
-" Markieren Sie ein Paket mit dieser Markierung um den Betreuern des\n"
-" Vokabulars die Stellen zu signalisieren, an denen die aktuelle Menge an\n"
-" Markierungen noch nicht ausreicht."
-
-#. Tag: works-with::im, long desc
-#: files/debtags/vocabulary
-msgid " The package can connect to some IM network (or networks)."
-msgstr ""
-
-#. Tag: suite::netscape, long desc
-#: files/debtags/vocabulary
-msgid " The pre-6.0 versions of netscape browser"
-msgstr " Netscape-Browser vor Version 6.0"
-
-#. Facet: works-with, long desc
-#: files/debtags/vocabulary
-msgid ""
-" These tags describe what is the kind of data (or even processes, or "
-"people)\n"
-" that the package can work with."
-msgstr ""
-" Diese Markierungen beschreiben mit welcher Art von Daten (oder sogar\n"
-" Prozessen oder Leuten) dieses Paket arbeiten kann."
-
-#. Tag: admin::virtualization, long desc
-#: files/debtags/vocabulary
-msgid ""
-" This is not hardware emulation, but rather those facilities that allow to\n"
-" create many isolated compartments inside the same system."
-msgstr ""
-" Dies ist keine Hardware-Emulation, sondern eher eine Anlage, die das "
-"Erstellen\n"
-" vieler isolierter Abteilungen innerhalb des gleichen Systems erlaubt."
-
-#. Tag: special::invalid-tag, long desc
-#: files/debtags/vocabulary
-msgid ""
-" This tag means that the tag database contains a tag which is not present "
-"in\n"
-" the tag vocabulary.  The presence of this tag indicates a software bug: "
-"this\n"
-" should never show up."
-msgstr ""
-" Diese Markierung bedeutet, dass die Markierungsdatenbank eine Markierung\n"
-" enthält, die nicht im Makierungsvokabular enthalten ist. Das Vorkommen\n"
-" dieser Markierung stellt einen Software-Fehler dar: sie sollte nie  "
-"auftauchen."
-
-#. Tag: use::comparing, long desc
-#: files/debtags/vocabulary
-msgid " To find what relates or differs in two or more objects."
-msgstr ""
-" Um herauszufinden, wie zwei oder mehr Objekte zusammenhängen oder sich "
-"unterscheiden."
-
-#. Tag: devel::docsystem, long desc
-#: files/debtags/vocabulary
-msgid " Tools and auto-documenters"
-msgstr ""
-
-#. Tag: devel::ecma-cli, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Tools and libraries for development with implementations of \n"
-" the ECMA CLI (Common Language Infrastructure), like Mono\n"
-" or DotGNU Portable.NET."
-msgstr ""
-" Werkzeuge und Bibliotheken für Entwicklungen mit Implementationen der ECMA\n"
-" CLI (Common Language Infrastructure), wie Mono oder DotGNU Portable.NET."
-
-#. Tag: devel::ui-builder, long desc
-#: files/debtags/vocabulary
-msgid " Tools for designing user interfaces."
-msgstr " Werkzuge zum Entwickeln von Benutzer-Schnittstellen."
-
-#. Tag: devel::packaging, long desc
-#: files/debtags/vocabulary
-msgid " Tools for packaging software."
-msgstr " Werkzeuge zum Paketieren von Software"
-
-#. Tag: devel::testing-qa, long desc
-#: files/debtags/vocabulary
-msgid " Tools for software testing and quality assurance."
-msgstr " Werkzeuge zum Testen und Qualitätssicherung von Software."
-
-#. Tag: security::integrity, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Tools to monitor system for changes in filesystem and report changes\n"
-" or tools providing other means to check system integrity."
-msgstr ""
-" Werkzeuge, um ein System auf Änderungen im Dateisystem zu überwachen und\n"
-" Änderungen zu berichten oder Werkzeuge, um andere Möglichkeiten zur\n"
-" Überprüfung der Systemintegrität bereitzustellen."
-
-#. Tag: devel::debian, long desc
-#: files/debtags/vocabulary
-msgid " Tools, documentation, etc. of use primarily to Debian developers."
-msgstr ""
-" Werkzeuge, Dokumentation usw., primär zur Verwendung durch Debian-"
-"Entwickler."
-
-#. Tag: protocol::tcp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Transport Control Protocol, a core protocol of the Internet protocol suite\n"
-" and used for data transport.\n"
-" .\n"
-" TCP is used as the transport protocol for many services on the Internet,\n"
-" such as FTP, HTTP, SMTP, POP3, IMAP, NNTP etc.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc793.txt"
-msgstr ""
-" Transport Control Protocol, ein Kern-Protokoll der Internet-Protokoll-"
-"Suite,\n"
-" das für Datentransport verwandt wird.\n"
-" .\n"
-" TCP wird als Transportprotokoll für viele Dienste im Internet verwandt, "
-"wie\n"
-" FTP, HTTP, SMTP, POP3, IMAP, NNTP usw.\n"
-" .\n"
-" Link: http://de.wikipedia.org/wiki/Transmission_Control_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc793.txt"
-
-#. Tag: protocol::tftp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
-"allows\n"
-" a client to get or put a file onto a remote host.  One of its primary uses "
-"is\n"
-" the network booting of diskless nodes on a Local Area Network.  It is "
-"designed\n"
-" to be easy to implement so it fits on ROM.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc1350.txt"
-msgstr ""
-
-#. Tag: hardware::power:ups, long desc
-#: files/debtags/vocabulary
-msgid " Uninterruptible Power Supply"
-msgstr " Unterbrechungsfreie Stromversorgung"
-
-#. Tag: hardware::usb, long desc
-#: files/debtags/vocabulary
-msgid " Universal Serial Bus"
-msgstr " Universal Serial Bus"
-
-#. Tag: special::ipv6-nosupport, long desc
-#: files/debtags/vocabulary
-msgid " Use this for packages that cannot yet or will never support IPv6."
-msgstr ""
-" Für Programme zu verwenden, die noch nicht oder nie IPv6 unterstützen "
-"werden."
-
-#. Tag: biology::format:aln, long desc
-#: files/debtags/vocabulary
-msgid " Used in multiple alignment of biological sequences."
-msgstr " Verwendet in mehrfachen Alignments biologischer Sequenzen."
-
-#. Tag: protocol::udp, long desc
-#: files/debtags/vocabulary
-msgid ""
-" User Datagram Protocol, a core protocol of the Internet protocol suite\n"
-" and used for data transport.\n"
-" .\n"
-" UDP is not as reliable as TCP, but faster and thus better fit for\n"
-" time-sensitive purposes, like the DNS protocol and VoIP.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol\n"
-" Link: http://www.ietf.org/rfc/rfc768.txt"
-msgstr ""
-
-#. Tag: works-with-format::vrml, long desc
-#: files/debtags/vocabulary
-msgid " Virtual Reality Markup Language"
-msgstr " Virtual Reality Markup Language"
-
-#. Tag: protocol::voip, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Voice over IP, a general term for protocols that route voice conversations\n"
-" over the Internet.\n"
-" .\n"
-" Popular VoIP protocols are SIP, H.323 and IAX.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/Voice_over_IP"
-msgstr ""
-
-#. Tag: works-with-format::wav, long desc
-#: files/debtags/vocabulary
-msgid " Wave uncompressed audio format"
-msgstr ""
-
-#. Tag: protocol::webdav, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Web-based Distributed Authoring and Versioning, a extension of the HTTP\n"
-" protocol to support creating and changing documents on an HTTP server. "
-"Thus,\n"
-" the client can access the documents on an HTTP server as it would those on "
-"the\n"
-" local file system.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/WebDAV\n"
-" Link: http://www.ietf.org/rfc/rfc2518.txt"
-msgstr ""
-
-#. Tag: devel::web, long desc
-#: files/debtags/vocabulary
-msgid ""
-" Web-centric frameworks, CGI libraries and other web-specific development\n"
-" tools."
-msgstr ""
-
-#. Tag: web::wiki, long desc
-#: files/debtags/vocabulary
-msgid " Wiki software, servers, utilities and plug-ins."
-msgstr " Wiki-Software, -Server, -Hilfswerkzeuge und -Erweiterungen."
-
-#. Tag: filetransfer::smb, long desc
-#: files/debtags/vocabulary
-msgid " Windows file and printer sharing (SMB)"
-msgstr ""
-
-#. Tag: protocol::xmlrpc, long desc
-#: files/debtags/vocabulary
-msgid ""
-" XML Remote Procedure Call, a simple protocol for remote procedure calls "
-"that\n"
-" uses XML for encoding and the HTTP protocol for transport.\n"
-" .\n"
-" SOAP, which is a considerably more sophisticated protocol, was developed "
-"from\n"
-" XML-RPC.\n"
-" .\n"
-" Link: http://en.wikipedia.org/wiki/XML-RPC\n"
-" Link: http://www.xmlrpc.com/"
-msgstr ""
-
-#. Tag: works-with-format::xml:rss, long desc
-#: files/debtags/vocabulary
-msgid " XML dialect used to describe resources and websites."
-msgstr ""
-" XML-Dialekt, der zur Beschreibung von Ressourcen und Websites verwandt wird."
 
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
@@ -1566,6 +24,22 @@ msgstr "3D-Spiele"
 #: files/debtags/vocabulary
 msgid "3D Model"
 msgstr "3D-Modell"
+
+#. Tag: suite::gforge, long desc
+#: files/debtags/vocabulary
+msgid "A collaborative development platform."
+msgstr "Eine gemeinschaftliche Entwicklungsplattform."
+
+#. Tag: scope::utility, long desc
+#: files/debtags/vocabulary
+msgid ""
+"A narrow-scoped program for particular use case or few use cases. It only "
+"does something 10-20% of users in the field will need. Often has "
+"functionality missing from related applications."
+msgstr ""
+"Ein Programm mit eng-begrenztem Zweck für bestimmte oder wenige "
+"Anwendungsfälle. Es ist nur von 10-20% der Benutzer des Fachgebietes von "
+"Nutzen. Oft fehlt Funktionalität verwandter Anwendungen."
 
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
@@ -1592,6 +66,11 @@ msgstr "Unterstützung für Barrierefreiheit"
 msgid "Accounting"
 msgstr "Buchführung"
 
+#. Tag: field::finance, long desc
+#: files/debtags/vocabulary
+msgid "Accounting and financial software"
+msgstr "Buchführung und Finanzsoftware"
+
 #. Tag: game::arcade, short desc
 #: files/debtags/vocabulary
 msgid "Action and Arcade"
@@ -1607,6 +86,15 @@ msgstr "Ada"
 msgid "Ada Development"
 msgstr "Ada-Entwicklung"
 
+#. Tag: role::plugin, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Add-on, pluggable program fragments enhancing functionality of some program "
+"or system."
+msgstr ""
+"Erweiterung, einsetzbare Programmfragmente, die die Funktionalität eines "
+"Programmes oder Systems erweitern."
+
 #. Tag: game::adventure, short desc
 #: files/debtags/vocabulary
 msgid "Adventure"
@@ -1616,6 +104,17 @@ msgstr "Abenteuer"
 #: files/debtags/vocabulary
 msgid "Afrikaans"
 msgstr "Afrikaans"
+
+#. Tag: use::checking, long desc
+#: files/debtags/vocabulary
+msgid ""
+"All sorts of checking, checking a filesystem for validity, checking a "
+"document for incorrectly spelled words, checking a network for routing "
+"problems. Verifying."
+msgstr ""
+"Alle Arten von Prüfungen, Überprüfungen eines Dateisystems auf Gültigkeit, "
+"Überprüfung eines Dokuments auf Rechtschreibfehler, Überprüfung eines Netzes "
+"auf Routing-Probleme. Nachprüfungen."
 
 #. Tag: use::analysing, short desc
 #: files/debtags/vocabulary
@@ -1659,6 +158,20 @@ msgstr "Anwendungs-Server"
 msgid "Application Suite"
 msgstr "Anwendungs-Suite"
 
+#. Facet: junior, long desc
+#: files/debtags/vocabulary
+msgid "Applications recommended for younger users"
+msgstr "Für jüngere Benutzer empfohlene Anwendungen"
+
+#. Tag: accessibility::input, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Applies to input methods for non-latin languages as well as special input "
+"systems."
+msgstr ""
+"Gilt für Eingabemethoden für nicht-lateinische Sprachen sowie spezielle "
+"Eingabesysteme."
+
 #. Tag: culture::arabic, short desc
 #: files/debtags/vocabulary
 msgid "Arabic"
@@ -1679,10 +192,32 @@ msgstr "Archiv"
 msgid "Arts"
 msgstr "Kunst"
 
+#. Tag: devel::machinecode, long desc
+#: files/debtags/vocabulary
+msgid "Assemblers and other machine-code development tools."
+msgstr "Assembler und andere Maschinencode-Entwicklungswerkzeuge."
+
 #. Tag: field::astronomy, short desc
 #: files/debtags/vocabulary
 msgid "Astronomy"
 msgstr "Astronomie"
+
+#. Tag: protocol::atm, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Asynchronous Transfer Mode, a high speed protocol for communication between "
+"computers in a network.\n"
+"While ATM is used to implement *DSL networks, it has never gained widespread "
+"use as a technology for building local area networks (LANs), for which it "
+"was originally intended.\n"
+"Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
+msgstr ""
+"»Asynchronous Transfer Mode«, ein Hochgeschwindigkeitsprotokoll zur "
+"Kommunikation zwischen Computern in einem Netz.\n"
+"Obwohl ATM zur Realisierung von *DSL-Netzen verwendet wird, hat es nie einen "
+"umfangreichen Einsatz als Technik zum Aufbau lokaler Netze (LANs) gefunden, "
+"wofür es ursprünglich gedacht war.\n"
+"Link: http://de.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 
 #. Tag: uitoolkit::athena, short desc
 #: files/debtags/vocabulary
@@ -1700,6 +235,11 @@ msgstr "Audio"
 msgid "Authentication"
 msgstr "Authentisierung"
 
+#. Tag: admin::automation, long desc
+#: files/debtags/vocabulary
+msgid "Automating the execution of software in the system."
+msgstr "Automatisierung der Ausführung von Software im System."
+
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
 msgid "Automation and Scheduling"
@@ -1709,6 +249,11 @@ msgstr "Automatisierung und Planung"
 #: files/debtags/vocabulary
 msgid "Aviation"
 msgstr "Luftfahrt"
+
+#. Tag: suite::bsd, short desc
+#: files/debtags/vocabulary
+msgid "BSD"
+msgstr "BSD"
 
 #. Tag: admin::backup, short desc
 #: files/debtags/vocabulary
@@ -1730,10 +275,26 @@ msgstr ""
 msgid "Bengali"
 msgstr ""
 
+#. Tag: suite::bsd, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Berkeley Software Distribution, sometimes called Berkeley Unix or BSD Unix, "
+"and its family of descendants: FreeBSD, NetBSD or OpenBSD.\n"
+"Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
+msgstr ""
+"Berkeley Software Distribution, manchmal auch Berkeley Unix oder BSD Unix "
+"genannt, und die Familie an Abkömmlingen: FreeBSD, NetBSD oder OpenBSD.\n"
+"Link: http://de.wikipedia.org/wiki/Berkeley_Software_Distribution"
+
 #. Tag: works-with-format::bib, short desc
 #: files/debtags/vocabulary
 msgid "BibTeX"
 msgstr "BibTeX"
+
+#. Tag: works-with-format::bib, long desc
+#: files/debtags/vocabulary
+msgid "BibTeX list of references"
+msgstr "Quellangaben für BibTeX"
 
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
@@ -1750,6 +311,18 @@ msgstr "Biologie"
 #: files/debtags/vocabulary
 msgid "BitTorrent"
 msgstr "BitTorrent"
+
+#. Tag: protocol::bittorrent, long desc
+#: files/debtags/vocabulary
+msgid ""
+"BitTorrent is a protocol for peer-to-peer based file distribution over "
+"network.\n"
+"Although the actual data transport happens between BitTorrent clients, one "
+"central node, the so-called trackers, is needed to keep a list of all "
+"clients that download or provide the same file.\n"
+"Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/"
+"BitTorrent"
+msgstr ""
 
 #. Tag: web::blog, short desc
 #: files/debtags/vocabulary
@@ -1770,6 +343,17 @@ msgstr "Bosnisch"
 #: files/debtags/vocabulary
 msgid "Brazilian"
 msgstr "Brasilianisch"
+
+#. Tag: scope::application, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Broad-scoped program for general use. It probably has functionality for 80-"
+"90% of use cases. The pieces that remain are usually to be found as "
+"utilities."
+msgstr ""
+"Programm mit breiter Zielgruppe für den allgemeinen Einsatz. Für 80-90% der "
+"Anwendungsfälle hat es Funktionalität. Die restlichen Teile werden "
+"typischerweise als Hilfswerkzeuge verteilt."
 
 #. Tag: web::browser, short desc
 #: files/debtags/vocabulary
@@ -1891,6 +475,11 @@ msgstr "Schach"
 msgid "Chinese"
 msgstr "Chinesisch"
 
+#. Tag: field::electronics, long desc
+#: files/debtags/vocabulary
+msgid "Circuit editors and other electronics-related software"
+msgstr "Schaltkreis-Editoren und andere Software mit Bezug zur Elektronik"
+
 #. Tag: network::client, short desc
 #: files/debtags/vocabulary
 msgid "Client"
@@ -1911,6 +500,11 @@ msgstr "Verclustern"
 msgid "Code Generation"
 msgstr "Code-Erzeugung"
 
+#. Tag: devel::prettyprint, long desc
+#: files/debtags/vocabulary
+msgid "Code pretty-printing and indentation/reformatting."
+msgstr "Schöndruck von Code und Einrückung/Neuformatierung."
+
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
 msgid "Command Line"
@@ -1921,6 +515,33 @@ msgstr "Kommandozeile"
 msgid "Command Shell"
 msgstr "Befehls-Shell"
 
+#. Tag: protocol::corba, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Common Object Request Broker Architecture, a standard for interoperability "
+"between programs written in different languages and running on different "
+"hardware platforms. CORBA includes a client-server network protocol for "
+"distributed computing.\n"
+"With this network protocol, CORBA clients on different computers and written "
+"in different languages can exchange objects over a CORBA server such as "
+"orbit2 or omniORB.\n"
+"Link: http://www.corba.org/"
+msgstr ""
+"»Common Object Request Broker Architecture« ist ein Standard für "
+"Interoperabilität zwischen in verschiedenen Programmiersprachen "
+"geschriebenen und auf verschiedenen Hardware-Plattformen laufenden "
+"Programmen. CORBA enthält ein Client-Server-Netzprotokoll für verteiltes "
+"Rechnen.\n"
+"Mit diesem Netzprotokoll können CORBA-Clients aus verschiedenen "
+"Programmiersprachen und auf verschiedenen Computern Objekte über einen CORBA-"
+"Server wie Orbit2 oder OmniORB austauschen.\n"
+"Link: http://www.corba.org/"
+
+#. Tag: hardware::storage:cd, long desc
+#: files/debtags/vocabulary
+msgid "Compact Disc"
+msgstr "Compact Disc"
+
 #. Tag: use::comparing, short desc
 #: files/debtags/vocabulary
 msgid "Comparing"
@@ -1930,6 +551,15 @@ msgstr "Vergleichen"
 #: files/debtags/vocabulary
 msgid "Compiler"
 msgstr "Compiler"
+
+#. Tag: scope::suite, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Comprehensive suite of applications and utilities on the scale of desktop "
+"environment or base operating system."
+msgstr ""
+"Umfangreiche Suite an Anwendungen und Hilfswerkzeugen in der Größenordnung "
+"einer Desktop-Umgebung oder eines Basis-Betriebssystems."
 
 #. Tag: use::compressing, short desc
 #: files/debtags/vocabulary
@@ -1962,10 +592,20 @@ msgstr "Konsole SVGA"
 msgid "Content Management (CMS)"
 msgstr "Inhaltsverwaltung (CMS)"
 
+#. Tag: admin::filesystem, long desc
+#: files/debtags/vocabulary
+msgid "Creation, maintenance, and use of filesystems"
+msgstr "Erstellung, Wartung und Verwendung von Dateisystemen"
+
 #. Tag: culture::croatian, short desc
 #: files/debtags/vocabulary
 msgid "Croatian"
 msgstr "Kroatisch"
+
+#. Tag: security::cryptography, long desc
+#: files/debtags/vocabulary
+msgid "Cryptographic and privacy-oriented tools."
+msgstr "Kryptographische oder Datenschutz-bezogene Anwendungen."
 
 #. Tag: security::cryptography, short desc
 #: files/debtags/vocabulary
@@ -2037,6 +677,14 @@ msgstr "Daten-Visualisierung"
 msgid "Databases"
 msgstr "Datenbanken"
 
+#. Tag: works-with-format::dvi, long desc
+#: files/debtags/vocabulary
+msgid ""
+"DeVice Independent page description file, usually generated by TeX or LaTeX."
+msgstr ""
+"Geräteunabhängige (»DeVice Independent«) Seitenbeschreibungsdatei, "
+"normalerweise von TeX oder LaTeX erstellt."
+
 #. Tag: devel::debian, short desc
 #. Tag: suite::debian, short desc
 #: files/debtags/vocabulary
@@ -2052,6 +700,11 @@ msgstr "Debuggen"
 #: files/debtags/vocabulary
 msgid "Debugging symbols"
 msgstr "Debugging-Symbole"
+
+#. Tag: role::debug-symbols, long desc
+#: files/debtags/vocabulary
+msgid "Debugging symbols."
+msgstr "Debugging-Symbole."
 
 #. Tag: game::demos, short desc
 #: files/debtags/vocabulary
@@ -2093,6 +746,28 @@ msgstr "Wörterbuch"
 msgid "Digital Camera"
 msgstr "Digitale Kamera"
 
+#. Tag: hardware::storage:dvd, long desc
+#: files/debtags/vocabulary
+msgid "Digital Versatile Disc"
+msgstr "Digital Versatile Disc"
+
+#. Tag: filetransfer::dcc, long desc
+#: files/debtags/vocabulary
+msgid "Direct Client to Client protocol used by Internet Relay Chat clients."
+msgstr ""
+"Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
+"Relay Chat"
+
+#. Tag: x11::display-manager, long desc
+#: files/debtags/vocabulary
+msgid "Display managers (graphical login screens)"
+msgstr "Display-Manager (graphische Anmeldebildschirme)"
+
+#. Tag: works-with-format::djvu, short desc
+#: files/debtags/vocabulary
+msgid "DjVu"
+msgstr "DjVu"
+
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
 msgid "DocBook"
@@ -2110,6 +785,26 @@ msgstr "Dokumentation"
 msgid "Documentation in Info Format"
 msgstr "Dokumentation im Info-Format"
 
+#. Tag: protocol::dns, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Domain Name System, a protocol to request information associated with domain "
+"names (like \"www.debian.org\"), most prominently the IP address. The "
+"protocol is used in communication with a DNS server (like BIND).\n"
+"For the Internet, there are 13 root DNS servers around the world that keep "
+"the addresses of all registered domain names and provide this information to "
+"the DNS servers of Internet service providers.\n"
+"Link: http://en.wikipedia.org/wiki/Domain_Name_System"
+msgstr ""
+"»Domain Name System«, ein Protokoll, um Informationen im Zusammenhang mit "
+"Domainnamen (wie »www.debian.org«) anzufordern, am berühmtesten die IP- "
+"Adresse. Das Protokoll wird zur Kommunikation mit einem DNS-Server (wie "
+"BIND) verwandt.\n"
+"Für das Internet gibt es 13 Wurzel-DNS-Server rund um die Welt, die die "
+"Adressen aller registrierten Domainnamen behalten und diese Informationen an "
+"die DNS-Server der Internet-Diensteanbieter bereitstellen.\n"
+"Link: http://de.wikipedia.org/wiki/Domain_Name_System"
+
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
 msgid "Downloading"
@@ -2124,6 +819,21 @@ msgstr "Pseudo-Paket"
 #: files/debtags/vocabulary
 msgid "Dutch"
 msgstr "Holländisch"
+
+#. Tag: protocol::dhcp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Dynamic Host Configuration Protocol, a client-server network protocol for "
+"automatic assignment of dynamic IP addresses to computers in a TCP/IP "
+"network, rather than giving each computer a static IP address.\n"
+"Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2131.txt"
+msgstr ""
+"»Dynamic Host Configuration Protocol«, ein Client-Server-Netzprotokoll für "
+"automatische Zuweisung von dynamischen IP-Adressen zu Computern in einem TCP/"
+"IP-Netz, statt jedem Computer eine statische IP-Adresse zu vergeben.\n"
+"Link: http://de.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2131.txt"
 
 #. Tag: web::commerce, short desc
 #: files/debtags/vocabulary
@@ -2144,6 +854,11 @@ msgstr "EMBOSS"
 #: files/debtags/vocabulary
 msgid "Eclipse"
 msgstr "Eclipse"
+
+#. Tag: suite::eclipse, long desc
+#: files/debtags/vocabulary
+msgid "Eclipse tool platform and plugins."
+msgstr "Eclipse-Werkzeug-Plattform und Erweiterungen."
 
 #. Tag: devel::lang:ecmascript, short desc
 #: files/debtags/vocabulary
@@ -2210,10 +925,34 @@ msgstr "Estnisch"
 msgid "Ethernet"
 msgstr "Ethernet"
 
+#. Tag: protocol::ethernet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Ethernet is the most popular networking technology for creating local area "
+"networks (LANs).\n"
+"The computers in an Ethernet network communicate over twisted-pair or fibre "
+"cables and are identified by their MAC address. Several different types of "
+"Ethernet exist, distinguishable by the maximum connection speed. The most "
+"widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
+"Link: http://en.wikipedia.org/wiki/Ethernet"
+msgstr ""
+"Ethernet ist die beliebteste Technik zum Aufbau lokaler Netze (LANs).\n"
+"Die Rechner in einem Ethernet-Netz kommunizieren über verdrillte (»twisted- "
+"pair«) Kabel und werden über ihre MAC-Adresse identifiziert. Mehrere Arten "
+"von Ethernet existieren, die durch die maximale Verbindungsgeschwindigkeit "
+"unterschieden werden können. Am verbreitesten sind heuzutage 100MBit/s "
+"(100BASE-*) oder 1GBit/s (1000BASE-*).\n"
+"Link: http://de.wikipedia.org/wiki/Ethernet"
+
 #. Tag: devel::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
 msgstr "Beispiele"
+
+#. Tag: role::program, long desc
+#: files/debtags/vocabulary
+msgid "Executable computer program."
+msgstr "Ausführbares Computer-Programm."
 
 #. Tag: uitoolkit::fltk, short desc
 #: files/debtags/vocabulary
@@ -2246,6 +985,23 @@ msgstr "Faxe"
 msgid "FidoNet"
 msgstr "FidoNet"
 
+#. Tag: protocol::fidonet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
+"1990s.\n"
+"The communication between the clients and FidoNet servers was usually "
+"carried out over the telephone network using modems and could be used for "
+"transferring messages (comparable to email) and files.\n"
+"Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
+msgstr ""
+"FidoNet ist ein Mailbox-System, dass in den 1980ern und 1990ern sehr beliebt "
+"war.\n"
+"Die Kommunikation zwischen den Clients und den Fidonet-Servern erfolgte "
+"üblicherweise mittels Modems über Telefonnetze und konnte zum Versand von "
+"Nachrichten (vergleichbar mit E-Mail) und Dateien verwandt werden.\n"
+"Link: http://www.fidonet.org/ Link: http://de.wikipedia.org/wiki/Fidonet"
+
 #. Facet: field, short desc
 #: files/debtags/vocabulary
 msgid "Field"
@@ -2270,6 +1026,43 @@ msgstr "Datei-Integrität"
 #: files/debtags/vocabulary
 msgid "File Transfer"
 msgstr "Datei-Übertragung"
+
+#. Tag: filetransfer::ftp, long desc
+#: files/debtags/vocabulary
+msgid "File Transfer Protocol"
+msgstr "File Transfer Protocol"
+
+#. Tag: protocol::ftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"File Transfer Protocol, a protocol for exchanging and manipulation files "
+"over networks and extensively used on the Internet.\n"
+"The communication between FTP servers and clients uses two channels, the "
+"control and the data channel. While FTP was originally used with "
+"authentication only, most FTP servers on the Internet provide anonymous, "
+"passwordless access. Since FTP does not support encryption, sensitive data "
+"transfer is carried out over SFTP today.\n"
+"Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
+"ietf.org/rfc/rfc0959.txt"
+msgstr ""
+"»File Transfer Protocol«, ein Protokoll zum Austausch und Bearbeiten von "
+"Dateien über Netze, wird auch extensiv über das Internet verwandt.\n"
+"Die Kommunikation zwischen FTP-Servern und -Clients verwendet zwei Kanäle, "
+"den Steuer- und den Datenkanal. Während ursprünglich FTP nur mit "
+"Authentifizierung verwandt wurde, bieten die meisten FTP-Server im Internet "
+"anonymen Zugriff ohne Passwort. Da FTP keine Verschlüsselung unterstützt, "
+"erfolgt vertrauenswürdiger Datentransfer heutzutage über SFTP.\n"
+"Link: http://de.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
+"ietf.org/rfc/rfc0959.txt"
+
+#. Tag: works-with-format::djvu, long desc
+#: files/debtags/vocabulary
+msgid ""
+"File format to store scanned documents.\n"
+"Link: http://en.wikipedia.org/wiki/Djvu"
+msgstr ""
+"Dateiformat, um eingescannte Dokumente zu speichern.\n"
+"Link: http://de.wikipedia.org/wiki/Djvu"
 
 #. Tag: works-with::file, short desc
 #: files/debtags/vocabulary
@@ -2429,10 +1222,20 @@ msgstr "GNU R-Entwicklung"
 msgid "GNUstep"
 msgstr "GNUstep"
 
+#. Tag: suite::gnustep, long desc
+#: files/debtags/vocabulary
+msgid "GNUstep Desktop and WindowMaker"
+msgstr "GNUstep-Desktop und WindowMaker"
+
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
 msgstr "GPE"
+
+#. Tag: suite::gpe, long desc
+#: files/debtags/vocabulary
+msgid "GPE Palmtop Environment"
+msgstr "GPE Palmtop-Umgebung"
 
 #. Tag: hardware::gps, short desc
 #: files/debtags/vocabulary
@@ -2459,6 +1262,11 @@ msgstr "Spiele spielen"
 msgid "Games and Amusement"
 msgstr "Spiele und Vergnügungen"
 
+#. Tag: game::rpg:rogue, long desc
+#: files/debtags/vocabulary
+msgid "Games like Nethack, Angband etc."
+msgstr "Spiele wie Nethack, Angband usw."
+
 #. Tag: field::genealogy, short desc
 #: files/debtags/vocabulary
 msgid "Genealogy"
@@ -2478,6 +1286,16 @@ msgstr "Geologie"
 #: files/debtags/vocabulary
 msgid "German"
 msgstr "Deutsch"
+
+#. Tag: hardware::gps, long desc
+#: files/debtags/vocabulary
+msgid "Global Positioning System"
+msgstr "Globales Positionierungssystem"
+
+#. Tag: suite::gnu, long desc
+#: files/debtags/vocabulary
+msgid "Gnu's Not Unix. The package is part of the official GNU project"
+msgstr "Gnu's Not Unix. Das Paket ist Teil des offiziellen GNU-Projekts"
 
 #. Tag: hardware::video, short desc
 #: files/debtags/vocabulary
@@ -2556,10 +1374,54 @@ msgstr "Hochverfügbarkeit"
 msgid "Hindi"
 msgstr "Hindi"
 
+#. Facet: biology, long desc
+#: files/debtags/vocabulary
+msgid "How is the package related to the field of biology."
+msgstr "In welcher Beziehung das Paket zur Biologie steht."
+
+#. Facet: security, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to system security"
+msgstr "In welcher Beziehung das Paket zur Systemsicherheit steht."
+
+#. Tag: role::source, long desc
+#: files/debtags/vocabulary
+msgid "Human-readable code of a program, library or a part thereof."
+msgstr "Menschen-lesbarer Programmcode, Bibliothek oder Teil davon."
+
 #. Tag: culture::hungarian, short desc
 #: files/debtags/vocabulary
 msgid "Hungarian"
 msgstr "Ungarisch"
+
+#. Tag: filetransfer::http, long desc
+#: files/debtags/vocabulary
+msgid "HyperText Transfer Protocol"
+msgstr "HyperText Transfer Protocol"
+
+#. Tag: protocol::http, long desc
+#: files/debtags/vocabulary
+msgid ""
+"HyperText Transfer Protocol, one of the most important protocols for the "
+"World Wide Web.\n"
+"It controls the data transfer between HTTP servers such as Apache and HTTP "
+"clients, which are web browsers in most cases. HTTP resources are requested "
+"via URLs (Universal Resource Locators). While HTTP normally only supports "
+"file transfer from server to client, the protocol supports sending "
+"information to HTTP servers, most prominently used in HTML forms.\n"
+"Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
+"rfc2616.txt"
+msgstr ""
+"»HyperText Transfer Protocol«, eines der wichtigsten Protokolle des World "
+"Wide Web.\n"
+"Es steuert die Datenübertragung zwischen HTTP-Servern wie Apache und HTTP- "
+"Clients (in den meisten Fällen Webbrowser). HTTP-Ressourcen werden über URLs "
+"(Universal Resource Locators) angefordert. Während HTTP normalerweise nur "
+"Dateiübertragungen vom Server zum Client erlaubt, unterstützt das Protokoll "
+"auch den Versand von Informationen an HTTP-Server, am bekanntesten in HTML-"
+"Formularen.\n"
+"Link: http://de.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
+"rfc2616.txt"
 
 #. Tag: devel::ide, short desc
 #: files/debtags/vocabulary
@@ -2636,6 +1498,17 @@ msgstr "Bild"
 msgid "Image-scanning Hardware"
 msgstr "Hardware zum Scannen von Bildern"
 
+#. Tag: works-with::image:raster, long desc
+#: files/debtags/vocabulary
+msgid "Images made of dots, such as photos and scans"
+msgstr "Bilder wie Photos und Eingescanntes, die aus Punkten bestehen"
+
+#. Tag: works-with::image:vector, long desc
+#: files/debtags/vocabulary
+msgid "Images made of lines, such as graphs or most clipart"
+msgstr ""
+"Bilder wie Diagramme oder die meisten Cliparts, die aus Linien bestehen"
+
 #. Facet: implemented-in, short desc
 #: files/debtags/vocabulary
 msgid "Implemented in"
@@ -2656,6 +1529,11 @@ msgstr "Eingabesysteme"
 msgid "Instant Messages"
 msgstr ""
 
+#. Tag: devel::ide, long desc
+#: files/debtags/vocabulary
+msgid "Integrated Development Environment"
+msgstr "Integrierte Entwicklungsumgebung"
+
 #. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
 msgid "Interface Toolkit"
@@ -2665,6 +1543,87 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Internationalization"
 msgstr ""
+
+#. Tag: protocol::imap, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Message Access Protocol, a protocol used for accessing email on a "
+"server from a email client such as KMail or Evolution.\n"
+"When using IMAP, emails stay on the server and can be categorized, edited, "
+"deleted etc. there, instead of having the user download all messages onto "
+"the local computer, as POP3 does.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
+msgstr ""
+"»Internet Message Access Protocol«, ein Protokoll, das zum Zugriff auf E-Mail "
+"auf einem Server von Clients wie KMail oder Evolution verwandt wird.\n"
+"Beim Einsatz von IMAP verbleiben E-Mails auf dem Server, wo sie kategoriert, "
+"bearbeitet, gelöscht usw. werden können, statt wie bei POP3 vom Benutzer "
+"komplett auf den lokalen Computer heruntergeladen zu werden.\n"
+"Link: http://de.wikipedia.org/wiki/Internet_Message_Access_Protocol"
+
+#. Tag: protocol::ip, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Protocol (v4), a core protocol of the Internet protocol suite and "
+"the very basis of the Internet.\n"
+"Every computer that is connected to the Internet has an IP address (a 4-byte "
+"number, typically represented in dotted notation like 192.25.206.10). "
+"Internet IP addresses are given out by the Internet Corporation for Assigned "
+"Names and Numbers (ICANN). Normally, computers on the Internet are not "
+"accessed by their IP address, but by their domain name.\n"
+"Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
+"txt"
+msgstr ""
+"Internet-Protokoll (v4) ist ein Kernprotokoll der Internetprotokollsuite und "
+"die absolute Grundlage des Internets.\n"
+"Jeder Computer, der mit dem Internet verbunden ist, verfügt über eine IP-"
+"Adresse (eine 4 Byte-Zahl, typischerweise in gepunkteter Notation der Form "
+"192.25.206.10 angegeben). Internet-IP-Adressen werden von der »Internet "
+"Corporation for Assigned Names and Numbers« (ICANN) vergeben. Normalerweise "
+"wird auf Computer im Internet nicht über ihre IP-Adresse sondern über ihren "
+"Domainnamen zugegriffen.\n"
+"Link: http://de.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
+"txt"
+
+#. Tag: protocol::ipv6, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Protocol (v6), the next-generation Internet protocol, which "
+"overcomes the restrictions of IP (v4), like shortage of IP addresses, and is "
+"supposed to form the new basis of the Internet in the future, replacing IP "
+"(v4).\n"
+"Many programs already support IPv6 along with IP (v4), although it is still "
+"seldomly used.\n"
+"Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
+msgstr ""
+"Internet-Protokoll (v6) ist das Internet-Protokoll der nächsten Generation, "
+"das die Begrenzungen von IP (v4) wie den Mangel an IP-Adressen überkommt, "
+"und die neue Basis des Internets in der Zukunft formen und IP (v4) ersetzen "
+"soll.\n"
+"Viele Programme unterstützen IPv6 zusammen mit IP (v4) bereits, allerdings "
+"wird es immer noch selten benutzt.\n"
+"Link: http://de.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
+
+#. Tag: protocol::irc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Relay Chat, a protocol for text chatting over network, extensively "
+"used on the Internet. It supports chat rooms, so-called channels, as well as "
+"private, one-to-one communication.\n"
+"IRC servers are organized in networks, so that a client can connect to a "
+"geographically near IRC server, that itself is connected to other IRC "
+"servers spread over the whole world.\n"
+"The official Debian channel is #debian on the freenode network.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
+msgstr ""
+"Internet Relay Chat, ein Protokoll für das Unterhalten mittels Text über "
+"Netze, das intensiv im Internet genutzt wird. Es unterstützt Räume "
+"sogenannte Kanäle sowie private eins-zu-eins-Kommunikation.\n"
+"IRC-Server sind in Netzen organisiert, so dass sich Clients mit einem "
+"geographisch naheliegenden Server verbinden können, der wiederum mit anderen "
+"IRC-Servern auf der ganzen Welt verbunden ist.\n"
+"Der offizielle Kanal von Debian ist #debian im freenode-Netz.\n"
+"Link: http://de.wikipedia.org/wiki/Internet_Relay_Chat"
 
 #. Tag: devel::interpreter, short desc
 #: files/debtags/vocabulary
@@ -2734,7 +1693,7 @@ msgstr ""
 #. Facet: junior, short desc
 #: files/debtags/vocabulary
 msgid "Junior Applications"
-msgstr ""
+msgstr "Anwendungen für Kinder"
 
 #. Tag: suite::kde, short desc
 #: files/debtags/vocabulary
@@ -2745,6 +1704,30 @@ msgstr "KDE"
 #: files/debtags/vocabulary
 msgid "Kerberos"
 msgstr "Kerberos"
+
+#. Tag: protocol::kerberos, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Kerberos is an authentication protocol for computer networks for secure "
+"authentication over an otherwise insecure network, using symmetric "
+"cryptography and a third party service provider, that is trusted both by "
+"client and server.\n"
+"The authentication mechanism provided by Kerberos is mutual, so that not "
+"only a server can be sure of a client's identity, but also a client can be "
+"sure a connection to a server is not intercepted.\n"
+"Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
+"ietf.org/rfc/rfc4120.txt"
+msgstr ""
+"Kerberos ist ein Authentifizierungsprotokoll für Computernetze für sichere "
+"Authentifizierung über ansonsten unsichere Netze. Hierzu werden symmetrische "
+"Kryptographie und Diensteanbieter dritter Parteien verwandt, denen sowohl "
+"vom Client als auch vom Server vertraut wird.\n"
+"Der von Kerberos bereitgestellte Authentifizierungsmechanismus ist "
+"gegenseitig, so dass sich nicht nur der Server der Identität des Clients "
+"sicher ist, sondern auch der Client sicher sein kann, dass die Verbindung "
+"zum Server nicht abgefangen wird.\n"
+"Link: http://de.wikipedia.org/wiki/Kerberos_%28Informatik%29 Link: http://"
+"www.ietf.org/rfc/rfc4120.txt"
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
@@ -2811,6 +1794,28 @@ msgstr "Bibliotheken"
 msgid "Library"
 msgstr "Bibliothek"
 
+#. Tag: role::devel-lib, long desc
+#: files/debtags/vocabulary
+msgid "Library and header files used in software development or building."
+msgstr ""
+"Bibliothek und Header-Dateien, die in der Softwareentwicklung und -"
+"erstellung verwandt werden."
+
+#. Tag: protocol::ldap, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight Directory Access Protocol"
+msgstr "Lightweight Directory Access Protocol"
+
+#. Tag: works-with-format::ldif, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight Directory Interchange Format"
+msgstr "Lightweight Directory Interchange Format"
+
+#. Tag: suite::xfce, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight desktop environment for X11."
+msgstr "Leichtgewichtige Desktop-Umgebung für X11"
+
 #. Tag: field::linguistics, short desc
 #: files/debtags/vocabulary
 msgid "Linguistics"
@@ -2845,6 +1850,11 @@ msgstr "Protokoll-Analysierer"
 #: files/debtags/vocabulary
 msgid "Logging"
 msgstr "Protokollierung"
+
+#. Tag: admin::login, long desc
+#: files/debtags/vocabulary
+msgid "Logging into the system"
+msgstr "Protokollierung in das System"
 
 #. Tag: admin::login, short desc
 #. Tag: use::login, short desc
@@ -2901,6 +1911,11 @@ msgstr "MS RIFF-Audio"
 #: files/debtags/vocabulary
 msgid "MSN Messenger"
 msgstr "MSN-Messenger"
+
+#. Tag: game::mud, long desc
+#: files/debtags/vocabulary
+msgid "MUDs, MOOs, and other multiplayer RPGs"
+msgstr ""
 
 #. Tag: devel::machinecode, short desc
 #: files/debtags/vocabulary
@@ -2970,7 +1985,7 @@ msgstr "Meta-Pakete"
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
 msgid "Mixing"
-msgstr ""
+msgstr "Mischen"
 
 #. Tag: devel::modelling, short desc
 #: files/debtags/vocabulary
@@ -3007,6 +2022,11 @@ msgstr "Maus"
 #: files/debtags/vocabulary
 msgid "Mozilla"
 msgstr "Mozilla"
+
+#. Tag: suite::mozilla, long desc
+#: files/debtags/vocabulary
+msgid "Mozilla Browser and extensions"
+msgstr "Mozilla Browser und Erweiterungen"
 
 #. Tag: game::mud, short desc
 #: files/debtags/vocabulary
@@ -3084,6 +2104,38 @@ msgstr "Benötige eine zusätzliche Markierung"
 #: files/debtags/vocabulary
 msgid "Netscape Navigator"
 msgstr "Netscape Navigator"
+
+#. Tag: protocol::nfs, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Network File System, a protocol originally developed by Sun Microsystems in "
+"1984 and defined in RFCs 1094, 1813, and 3530 (obsoletes 3010) as a "
+"distributed file system, allows a user on a client computer to access files "
+"over a network as easily as if attached to its local disks.\n"
+"Link: http://en.wikipedia.org/wiki/Network_File_System"
+msgstr ""
+"»Network File System« ist ein Protokoll, das ursprünglich 1984 von Sun "
+"Microsystems entwickelt wurde und in RFCs 1094, 1813 und 3530 (überholt "
+"technisch die 3010) als verteiltes Dateisystem definiert ist, das es "
+"Benutzern auf Client-Rechnern erlaubt, auf Dateien über ein Netz so leicht "
+"zuzugreifen, als ob diese auf lokalen Platten lägen.\n"
+"Link: http://de.wikipedia.org/wiki/Network_File_System"
+
+#. Tag: protocol::nntp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Network News Transfer Protocol, a protocol for reading and writing Usenet "
+"articles (a Usenet article is comparable with an email), but also used among "
+"NNTP servers to transfer articles.\n"
+"Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc977.txt"
+msgstr ""
+"»Network News Transfer Protocol« ist ein Protokoll zum Lesen und Schreiben "
+"von Usenet-Artikeln (ein Usenet-Artikel kann mit E-Mail verglichen werden). "
+"Es wird aber auch zwischen NNTP-Servern zur Übertragung von Artikeln "
+"verwandt.\n"
+"Link: http://de.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc977.txt"
 
 #. Facet: protocol, short desc
 #: files/debtags/vocabulary
@@ -3325,10 +2377,28 @@ msgstr "Ogg Vorbis-Audio"
 msgid "Open Palmtop (OPIE)"
 msgstr "Open Palmtop (OPIE)"
 
+#. Tag: protocol::oscar, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Open System for CommunicAtion in Realtime, an instant messaging used by "
+"AOL's instant messaging network (AIM). The protocol versions 7, 8 and 9 of "
+"the ICQ IM network are also instances of the OSCAR protocol.\n"
+"OSCAR is a binary proprietary protocol. Since there is no official "
+"documentation, clients that connect to AIM or ICQ have to rely on "
+"information that has been reverse-engineered.\n"
+"Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
+"org/oscar/"
+msgstr ""
+
 #. Tag: suite::openoffice, short desc
 #: files/debtags/vocabulary
 msgid "OpenOffice.org"
 msgstr "OpenOffice.org"
+
+#. Tag: accessibility::ocr, long desc
+#: files/debtags/vocabulary
+msgid "Optical Character Recognition"
+msgstr "Optische Zeichenerkennung"
 
 #. Tag: made-of::data:pdf, short desc
 #. Tag: works-with-format::pdf, short desc
@@ -3361,6 +2431,11 @@ msgstr "POP3"
 msgid "POP3 Protocol"
 msgstr "POP3-Protokoll"
 
+#. Tag: devel::lang:posix-shell, short desc
+#: files/debtags/vocabulary
+msgid "POSIX shell"
+msgstr ""
+
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
 msgid "Package Management"
@@ -3371,10 +2446,44 @@ msgstr "Paketverwaltung"
 msgid "Packaged Software"
 msgstr "Paketierte Software"
 
+#. Tag: biology::emboss, long desc
+#: files/debtags/vocabulary
+msgid "Packages related to the European Molecular Biology Open Software Suite."
+msgstr "Pakete mit Bezug zur »European Molecular Biology Open Software Suite«."
+
+#. Tag: special::obsolete, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Packages that are not used any longer, also packages only left for upgrade "
+"purposes (merged / split packages)"
+msgstr ""
+"Pakete, die nicht mehr verwendet werden, auch Pakete, die nur für Upgrade- "
+"Zwecke (vereinte / geteilte Pakete) verblieben sind"
+
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid "Packages that contain only operating system kernels and kernel modules."
+msgstr "Pakete, die nur Betriebssystemkernel oder Kernelmodule enthalten."
+
+#. Tag: role::metapackage, long desc
+#: files/debtags/vocabulary
+msgid "Packages that install suites of other packages."
+msgstr "Pakete, die Suites anderer Pakete installieren"
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid "Packages used for upgrades and transitions."
+msgstr "Pakete, die für Upgrades und Übergänge verwendet werden."
+
 #. Tag: devel::packaging, short desc
 #: files/debtags/vocabulary
 msgid "Packaging"
 msgstr "Paketierung"
+
+#. Tag: devel::code-generator, long desc
+#: files/debtags/vocabulary
+msgid "Parser, lexer and other code generators"
+msgstr ""
 
 #. Tag: devel::lang:pascal, short desc
 #: files/debtags/vocabulary
@@ -3436,6 +2545,16 @@ msgstr "Wiedergabe"
 msgid "Playing Media"
 msgstr "Medien-Wiedergabe"
 
+#. Tag: works-with::unicode, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Please do not tag programs with simple unicode support, doing so would make "
+"this tag useless. Ultimately all applications should have unicode support."
+msgstr ""
+"Bitte markiern Sie keine Programme mit einfacher Unicode-Unterstützung, denn "
+"dadurch würde diese Markierung nutzlos. Letztendlich sollten alle "
+"Anwendungen Unicode unterstützen."
+
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
 msgid "Plugin"
@@ -3446,6 +2565,11 @@ msgstr "Erweiterung"
 msgid "Polish"
 msgstr "Polnisch"
 
+#. Tag: biology::format:nexus, long desc
+#: files/debtags/vocabulary
+msgid "Popular format for phylogenetic trees."
+msgstr "Beliebtes Format für phylogenetische Bäume."
+
 #. Tag: web::portal, short desc
 #: files/debtags/vocabulary
 msgid "Portal"
@@ -3455,6 +2579,31 @@ msgstr "Portal"
 #: files/debtags/vocabulary
 msgid "Portuguese"
 msgstr "Portugiesisch"
+
+#. Tag: protocol::pop3, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Post Office Protocol, a protocol to download emails from a mail server, "
+"designed for users that have only intermittent connection to the Internet.\n"
+"In contrast to IMAP server, messages that are downloaded via POP3 are not "
+"supposed to stay on the server afterwards, since POP3 does not support "
+"multiple mailboxes for one account on the server.\n"
+"Link: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www."
+"ietf.org/rfc/rfc1939.txt"
+msgstr ""
+"»Post Office Protocol« ist ein Protokoll zum Herunterladen von E-Mails von "
+"einem E-Mail-Server. Es wurde für Benutzer entwickelt, die keinen ständigen "
+"Zugriff auf das Internet haben.\n"
+"Im Gegensatz zum IMAP-Server sollen Nachrichten, die via POP3 "
+"heruntergeladen wurden, nicht danach auf dem Server verbleiben, da POP3 "
+"nicht mehrere E-Mail-Postfächer für ein Konto auf dem Server unterstützt.\n"
+"Link: http://de.wikipedia.org/wiki/Post_Office_Protocol Link: http://www."
+"ietf.org/rfc/rfc1939.txt"
+
+#. Tag: security::forensics, long desc
+#: files/debtags/vocabulary
+msgid "Post-mortem analysis of intrusions."
+msgstr "Post-mortem-Analyse von Einbrüchen."
 
 #. Tag: made-of::data:postscript, short desc
 #. Tag: works-with-format::postscript, short desc
@@ -3481,7 +2630,7 @@ msgstr "Präsentation"
 #. Tag: devel::prettyprint, short desc
 #: files/debtags/vocabulary
 msgid "Prettyprint"
-msgstr ""
+msgstr "Schöndruck"
 
 #. Tag: hardware::printer, short desc
 #: files/debtags/vocabulary
@@ -3503,10 +2652,24 @@ msgstr "Datenschutz"
 msgid "Profiling"
 msgstr ""
 
+#. Tag: devel::profiler, long desc
+#: files/debtags/vocabulary
+msgid "Profiling and optimization tools."
+msgstr ""
+
 #. Tag: role::program, short desc
 #: files/debtags/vocabulary
 msgid "Program"
 msgstr "Programm"
+
+#. Tag: devel::modelling, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Programs and libraries that support creation of software models with "
+"modelling languages like UML or OCL."
+msgstr ""
+"Programme und Bibliotheken, die die Erstellung von Software-Modellen in "
+"Modelliersprachen wie UML oder OCL unterstützen."
 
 #. Tag: office::project-management, short desc
 #: files/debtags/vocabulary
@@ -3522,6 +2685,16 @@ msgstr "Prolog-Entwicklung"
 #: files/debtags/vocabulary
 msgid "Proteins"
 msgstr "Proteine"
+
+#. Tag: protocol::db:mysql, long desc
+#: files/debtags/vocabulary
+msgid "Protocol for accessing MySQL database server."
+msgstr "Protokoll zum Zugriff auf MySQL-Datenbankserver."
+
+#. Tag: protocol::db:psql, long desc
+#: files/debtags/vocabulary
+msgid "Protocol for accessing PostgreSQL database server."
+msgstr "Protokoll zum Zugriff auf PostgreSQL-Datenbankserver."
 
 #. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
@@ -3563,6 +2736,11 @@ msgstr "Qt"
 msgid "RADIUS"
 msgstr "RADIUS"
 
+#. Tag: devel::rcs, long desc
+#: files/debtags/vocabulary
+msgid "RCS (Revision Control System) and SCM (Software Configuration Manager)"
+msgstr ""
+
 #. Tag: devel::rpc, short desc
 #: files/debtags/vocabulary
 msgid "RPC"
@@ -3588,10 +2766,40 @@ msgstr "Raster-Bild"
 msgid "Recording"
 msgstr "Aufnahme"
 
+#. Tag: admin::forensics, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Recovering lost or damaged data. This tag will be split into admin::recovery "
+"and security::forensics."
+msgstr ""
+"Wiederherstellung von verlorenen oder beschädigten Daten. Diese Markierung "
+"wird in admin::recovery und security::forensics aufgeteilt."
+
 #. Tag: field::religion, short desc
 #: files/debtags/vocabulary
 msgid "Religion"
 msgstr "Religion"
+
+#. Tag: protocol::radius, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Remote Authentication Dial In User Service, a protocol for authentication, "
+"authorization and accounting of network access, mostly used by Internet "
+"service providers to handle dial-up Internet connections.\n"
+"Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
+"rfc2865.txt"
+msgstr ""
+"Remote Authentication Dial In User Service, ein Protokoll für die "
+"Authentifizierung, Autorisierung und Buchführung von Netzzugriffen, das "
+"hauptsächlich von Internetdiensteanbietern zur Verwaltung von Einwähl-"
+"Internetverbindungen verwandt wird.\n"
+"Link: http://de.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
+"rfc2865.txt"
+
+#. Tag: devel::rpc, long desc
+#: files/debtags/vocabulary
+msgid "Remote Procedure Call, Network transparent programming"
+msgstr "Remote Procedure Call, Netz-transparente Programmierung"
 
 #. Tag: hardware::opengl, short desc
 #: files/debtags/vocabulary
@@ -3623,6 +2831,13 @@ msgstr "Rollenspiele"
 msgid "Romanian"
 msgstr "Rumänisch"
 
+#. Tag: works-with::network-traffic, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Routers, shapers, sniffers, firewalls and other tools that work with a "
+"stream of network packets."
+msgstr ""
+
 #. Tag: use::routing, short desc
 #. Tag: network::routing, short desc
 #: files/debtags/vocabulary
@@ -3649,10 +2864,24 @@ msgstr "Ruby-Entwicklung"
 msgid "Running Programs"
 msgstr "Laufende Programme"
 
+#. Tag: interface::daemon, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Runs in background, only a control interface is provided, usually on "
+"commandline."
+msgstr ""
+"Läuft im Hintergrund, nur eine Steuerschnittstelle wird bereitgestellt, "
+"normalerweise auf der Kommandozeile."
+
 #. Tag: devel::runtime, short desc
 #: files/debtags/vocabulary
 msgid "Runtime Support"
 msgstr "Laufzeit-Unterstützung"
+
+#. Tag: devel::runtime, long desc
+#: files/debtags/vocabulary
+msgid "Runtime environments of various languages and systems."
+msgstr "Laufzeit-Umgebungen verschiedener Sprachen und Systeme."
 
 #. Tag: culture::russian, short desc
 #: files/debtags/vocabulary
@@ -3716,6 +2945,26 @@ msgstr "SQL"
 msgid "SSH"
 msgstr "SSH"
 
+#. Tag: protocol::sftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"SSH File Transfer Protocol, a protocol for secure, encrypting file exchange "
+"and manipulation over insecure networks, using the SSH protocol.\n"
+"SFTP provides a complete set of file system operations, different from its "
+"predecessor SCP, which only allows file transfer. It is not, other than the "
+"name might suggest, a version of the FTP protocol executed through an SSH "
+"channel.\n"
+"Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
+msgstr ""
+"»SSH File Transfer Protocol« ist ein Protokoll für den sicheren "
+"verschlüsselten Dateiaustausch und -bearbeitung über unsichere Netze unter "
+"Verwendung des SSH-Protokolls.\n"
+"SFTP bietet einen kompletten Satz von Dateisystemoperationen, die sich von "
+"seinem Vorgänger SCP unterscheiden, der nur Dateiübertragungen erlaubt. "
+"Anders als der Name es erwarten lassen könnte, ist es keine Version des FTP-"
+"Protokolls, das durch einen SSH-Tunnel ausgeführt wird.\n"
+"Link: http://de.wikipedia.org/wiki/SSH_File_Transfer_Protocol"
+
 #. Tag: protocol::ssl, short desc
 #: files/debtags/vocabulary
 msgid "SSL/TLS"
@@ -3761,7 +3010,7 @@ msgstr "Wissenschaft"
 #. Facet: scope, short desc
 #: files/debtags/vocabulary
 msgid "Scope"
-msgstr ""
+msgstr "Zweck"
 
 #. Tag: accessibility::screen-magnify, short desc
 #: files/debtags/vocabulary
@@ -3771,7 +3020,7 @@ msgstr "Bildschirmvergrößerung"
 #. Tag: accessibility::screen-reader, short desc
 #: files/debtags/vocabulary
 msgid "Screen Reading"
-msgstr ""
+msgstr "Vorlesen des Bildschirms"
 
 #. Tag: x11::screensaver, short desc
 #: files/debtags/vocabulary
@@ -3798,10 +3047,64 @@ msgstr "Suchen"
 msgid "Secondary packages users won't install directly"
 msgstr "Sekundäre Pakete, die Benutzer nicht direkt installieren werden"
 
+#. Tag: filetransfer::sftp, long desc
+#: files/debtags/vocabulary
+msgid "Secure File Transfer Protocol"
+msgstr "Secure File Transfer Protocol"
+
+#. Tag: protocol::ssh, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Secure Shell, a protocol for secure, encrypted network connections. SSH can "
+"be used to execute programs on a remote host with an SSH server over "
+"otherwise insecure protocols through an SSH channel. The main use is, as the "
+"name suggest, to provide encrypted login and shell access on remote "
+"servers.\n"
+"SSH authentication can be done with password or, which is the preferred "
+"mechanism, via asymmetric public/private key cryptography.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Shell"
+msgstr ""
+"»Secure Shell«, ein Protokoll für sichere, verschlüsselte Netzverbindungen. "
+"SSH kann zum Ausführen von Programmen auf entfernten Rechnern mit einem SSH-"
+"Server über ansonsten unsichere Protokolle über einen SSH-Kanal verwandt "
+"werden. Wie der Name andeutet, ist die Hauptanwendung die verschlüsselte "
+"Anmeldung und der verschlüsselte Shell-Zugriff auf entfernten Rechnern.\n"
+"SSH-Authentifizierung kann über Passwörter oder dem bevorzugten Mechanismus "
+"der asymmetrische Kryptographie mit öffentlichen/privaten Schlüsseln "
+"erfolgen.\n"
+"Link: http://de.wikipedia.org/wiki/Secure_Shell"
+
+#. Tag: protocol::ssl, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Secure Socket Layer/Transport Layer Security, a protocol that provides "
+"secure encrypted communication on the Internet. It is used to authenticate "
+"the identity of a service provider (such as a Internet banking server) and "
+"to secure the communications channel.\n"
+"Otherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be "
+"transmitted over SSL/TLS to secure the transmitted data. In this case, an \"S"
+"\" is added to the protocol name, like HTTPS, FTPS etc.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
+msgstr ""
+"»Secure Socket Layer/Transport Layer Security«, ein Protokoll, das eine "
+"sichere verschlüsselte Kommunikation über das Internet bereitstellt. Es wird "
+"zur Authentifizierung der Identität eines Diensteanbieters (wie eines "
+"Internet-Bank-Servers) und zur Absicherung eines Kommunikationskanals "
+"verwandt.\n"
+"Andernfalls unsichere Protokolle wie FTP, HTTP, IMAP oder SMTP können über "
+"SSL/TLS übertragen werden, um die übertragenen Daten abzusichern. In diesem "
+"Fall wird an den Protokollnamen ein »S« angehängt, wie in HTTPS, FTPS usw.\n"
+"Link: http://de.wikipedia.org/wiki/Secure_Sockets_Layer"
+
 #. Facet: security, short desc
 #: files/debtags/vocabulary
 msgid "Security"
 msgstr "Sicherheit"
+
+#. Tag: field::biology:bioinformatics, long desc
+#: files/debtags/vocabulary
+msgid "Sequence analysis software."
+msgstr "Sequenz-Analyse-Software."
 
 #. Tag: culture::serbian, short desc
 #: files/debtags/vocabulary
@@ -3813,6 +3116,28 @@ msgstr "Serbisch"
 #: files/debtags/vocabulary
 msgid "Server"
 msgstr "Server"
+
+#. Tag: protocol::smb, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Server Message Block, a protocol for providing file access and printer "
+"sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
+"Internet File System) is a synonym for SMB.\n"
+"Although SMB is a proprietary protocol, the Samba project reverse-engineered "
+"the protocol and developed both client and server programs for better "
+"interoperability in mixed Unix/Windows networks.\n"
+"Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
+"samba.org/"
+msgstr ""
+"»Server Message Block« ist ein Protokoll, um Dateizugriff und gemeinsame "
+"Druckernutzung über Netze bereitzustellen. Es wird hauptsächlich von "
+"Microsoft Windows(tm) verwandt. CIFS (Common Internet File System) ist ein "
+"Synonym für SMB. Obwohl SMB ein proprietäres Protokoll ist, hat das Samba-"
+"Projekt das Protokoll erschlossen und sowohl Client- als auch Server-"
+"Programme für bessere Interoperabilität in gemischten Unix-/Windows-Netzen "
+"entwickelt.\n"
+"Link: http://de.wikipedia.org/wiki/Server_Message_Block Link: http://www."
+"samba.org/"
 
 #. Tag: network::service, short desc
 #: files/debtags/vocabulary
@@ -3829,6 +3154,63 @@ msgstr "Service-Markierungen"
 msgid "Shared Library"
 msgstr "Laufzeit-Bibliothek"
 
+#. Tag: role::shared-lib, long desc
+#: files/debtags/vocabulary
+msgid "Shared libraries used by one or more programs."
+msgstr ""
+"Laufzeitbibliotheken, die von einem oder mehreren Programmen verwandt werden."
+
+#. Tag: protocol::smtp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
+"Internet.\n"
+"Every SMTP server utilizes SMTP to hand on emails to the next mail server "
+"until an email arrives at its destination, from where it is usually "
+"retrieved via POP3 or IMAP.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2821.txt"
+msgstr ""
+"»Simple Mail Transfer Protocol« ist ein Protokoll zur Übertragung von E-Mails "
+"über das Internet.\n"
+"Jeder SMTP-Server verwendet SMTP, um E-Mails an den nächsten E-Mail-Server "
+"weiterzugeben, bis die E-Mail an ihrem Ziel ankommt, wo sie normalerweise "
+"via POP3 oder IMAP abgeholt wird.\n"
+"Link: http://de.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2821.txt"
+
+#. Tag: protocol::snmp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Network Management Protocol, a member of the Internet protocol suite "
+"and used for monitoring or configuring network devices.\n"
+"SNMP servers normally run on network equipment like routers.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: "
+"http://www.ietf.org/rfc/rfc3411.txt"
+msgstr ""
+"Simple Network Management Protocol, ein Mitglied in der Internet-Protokoll-"
+"Suite. Wird zur Überwachung oder Konfiguration von Netzgeräten verwandt.\n"
+"SNMP-Server laufen normalerweise auf Netzgeräten wie Routern.\n"
+"Link: http://de.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: "
+"http://www.ietf.org/rfc/rfc3411.txt"
+
+#. Tag: protocol::soap, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Object Access Protocol, a protocol for exchanging messages between "
+"different computers in a network. The messages are encoded in XML and "
+"usually sent over HTTP.\n"
+"SOAP is used to provide APIs to web services, such as the Google API to "
+"utilize Google's searching engine from client applications.\n"
+"Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
+msgstr ""
+"Simple Object Access Protocol, ein Protokoll zum Austausch von Nachrichten "
+"zwischen verschiedenen Computern in einem Netz. Die Nachrichten werden in "
+"XML-kodiert und normalerweise über HTTP versandt.\n"
+"SOAP wird für APIs von Webdiensten verwandt, beispielsweise vom Google-API, "
+"um Googles Suchmaschine aus Client-Anwendungen heraus zu verwenden.\n"
+"Link: http://de.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
+
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
 msgid "Simulation"
@@ -3843,6 +3225,62 @@ msgstr "Slovakisch"
 #: files/debtags/vocabulary
 msgid "Software Development"
 msgstr "Software-Entwicklung"
+
+#. Tag: use::analysing, long desc
+#: files/debtags/vocabulary
+msgid "Software for turning data into knowledge."
+msgstr "Software, um Daten in Wissen zu verwandeln."
+
+#. Tag: mail::user-agent, long desc
+#: files/debtags/vocabulary
+msgid "Software that allows users to access e-mail."
+msgstr "Software, die Benutzern Zugriff auf E-Mail erlaubt."
+
+#. Tag: mail::delivery-agent, long desc
+#: files/debtags/vocabulary
+msgid "Software that delivers mail to users' mailboxes."
+msgstr ""
+
+#. Tag: mail::notification, long desc
+#: files/debtags/vocabulary
+msgid "Software that notifies users about status of mailbox."
+msgstr "Software, die Benutzer über den Status einer Mailbox benachrichtigt."
+
+#. Tag: mail::transport-agent, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that routes and transmits mail accross the system and the network."
+msgstr ""
+"Software, die E-Mail über das System und Netz weiterleitet und überträgt."
+
+#. Tag: biology::peptidic, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that works with sequences of aminoacids: peptides and proteins."
+msgstr ""
+"Software, die mit einer Sequenz von Aminosäuren arbeitet: Peptiden und "
+"Proteinen."
+
+#. Tag: biology::nuceleic-acids, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that works with sequences of nucleic acids: DNA, RNA but also non-"
+"natural nucleic acids such as PNA or LNA."
+msgstr ""
+"Software, die mit Sequenzen von Nukleinsäure arbeitet: DNS, RNS aber auch "
+"künstlichen Nukleinsäure wie PNS oder LNS."
+
+#. Tag: field::biology:structural, long desc
+#: files/debtags/vocabulary
+msgid "Software useful to model tridimentional structures."
+msgstr ""
+
+#. Tag: field::biology:molecular, long desc
+#: files/debtags/vocabulary
+msgid "Software useful to molecular cloning and related wet biology."
+msgstr ""
+"Software, die für molekulares Klonen und verwandte nasse Biologie nützlich "
+"ist."
 
 #. Facet: sound, short desc
 #: files/debtags/vocabulary
@@ -3920,7 +3358,7 @@ msgstr "Strukturelle Biologie"
 #. Tag: scope::suite, short desc
 #: files/debtags/vocabulary
 msgid "Suite"
-msgstr ""
+msgstr "Suite"
 
 #. Facet: works-with-format, short desc
 #: files/debtags/vocabulary
@@ -3966,6 +3404,16 @@ msgstr "Systemsoftware und -wartung"
 #: files/debtags/vocabulary
 msgid "TCP"
 msgstr "TCP"
+
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+"Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+"TELecommunication NETwork, ein größtenteils veraltetes Protokoll für "
+"entfernte Anmeldung.\n"
+"Link: http://de.wikipedia.org/wiki/TELNET"
 
 #. Tag: protocol::tftp, short desc
 #: files/debtags/vocabulary
@@ -4072,10 +3520,190 @@ msgstr "Thailändisch"
 msgid "The GIMP"
 msgstr "The GIMP"
 
+#. Tag: protocol::gadu-gadu, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Gadu-Gadu protocol is a proprietary protocol that is used by a Polish "
+"instant messaging network of the same name.\n"
+"Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
+msgstr ""
+"Das Gadu-Gadu-Protokoll ist ein proprietäres Protokoll, das von einem "
+"polnischen »Instant Messaging«-Netz gleichen Namens verwandt wird.\n"
+"Link: http://de.wikipedia.org/wiki/Gadu-Gadu"
+
+#. Tag: protocol::ident, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Ident Internet protocol helps to identify or authenticate the user of a "
+"network connection.\n"
+"Link: http://en.wikipedia.org/wiki/Ident"
+msgstr ""
+"Das »Ident Internet«-Protokoll hilft bei der Identifizierung oder "
+"Authentifizierung von Benutzern einer Netzverbindung.\n"
+"Link: http://de.wikipedia.org/wiki/Ident"
+
+#. Tag: protocol::jabber, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Jabber protocol is an instant messaging protocol on the basis of the "
+"XMPP protocol. Additionally to private one-to-one communication, it also "
+"supports chat rooms, and it is used in the Jabber IM network as well as for "
+"the IM capabilities for the new GoogleTalk network.\n"
+"In contrast to other IM networks like MSN, ICQ or AIM, the Jabber servers "
+"are free software and can be used to create a private chat platform or have "
+"an own server to connect to the Jabber network.\n"
+"Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
+msgstr ""
+
+#. Tag: protocol::lpr, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Line Printer Daemon protocol, a protocol used for accessing or providing "
+"network print services in a Unix network, but also used for local setups.\n"
+"CUPS, the Common Unix Printing System, was developed to replace the old LPD/"
+"LPR system, while maintaining backwards compatibility.\n"
+"Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://"
+"www.ietf.org/rfc/rfc1179.txt"
+msgstr ""
+
+#. Tag: protocol::msn-messenger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The MSN messenger protocol is the protocol that is used by Microsoft's own "
+"instant messaging network.\n"
+"The protocol is a proprietary protocol. Although Microsoft once send a draft "
+"of the protocol specification to the IETF, it has since dated out and "
+"clients that connect to the MSN Messenger network have to rely on reverse-"
+"engineered information.\n"
+"Link: http://www.hypothetic.org/docs/msn/"
+msgstr ""
+
+#. Tag: protocol::finger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Name/Finger protocol is a simple network protocol to provide extensive, "
+"public information about users of a computer, such as email address, "
+"telephone numbers, full names etc.\n"
+"Due to privacy concerns, the Finger protocol is not widely used any more, "
+"while it widespread distribution in the early 1990s.\n"
+"Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
+"rfc/rfc1288.txt"
+msgstr ""
+
+#. Tag: protocol::yahoo-messenger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Yahoo! Messenger protocol is used to connect to Yahoo!'s instant "
+"messaging network.\n"
+"This a proprietary binary protocol without any official documentation. "
+"Clients that connect to the Yahoo! Messenger network have to rely on reverse-"
+"engineered information.\n"
+"Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
+msgstr ""
+
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+msgid "The Zope (web) publishing platform."
+msgstr "Die Zope-(Web-)Veröffentlichungsplattform"
+
+#. Facet: culture, long desc
+#: files/debtags/vocabulary
+msgid "The culture for which the package provides special support"
+msgstr "Die Kultur, für die dieses Paket spezielle Unterstützung bietet"
+
+#. Facet: made-of, long desc
+#: files/debtags/vocabulary
+msgid "The languages or data formats used to make the package"
+msgstr ""
+"Die Sprachen oder Datenformate, die zur Paketerstellung verwandt wurden"
+
+#. Tag: accessibility::TODO, long desc
+#. Tag: admin::TODO, long desc
+#. Tag: culture::TODO, long desc
+#. Tag: devel::TODO, long desc
+#. Tag: field::TODO, long desc
+#. Tag: game::TODO, long desc
+#. Tag: hardware::TODO, long desc
+#. Tag: made-of::TODO, long desc
+#. Tag: interface::TODO, long desc
+#. Tag: implemented-in::TODO, long desc
+#. Tag: junior::TODO, long desc
+#. Tag: mail::TODO, long desc
+#. Tag: office::TODO, long desc
+#. Tag: works-with::TODO, long desc
+#. Tag: works-with-format::TODO, long desc
+#. Tag: scope::TODO, long desc
+#. Tag: role::TODO, long desc
+#. Tag: security::TODO, long desc
+#. Tag: sound::TODO, long desc
+#. Tag: special::TODO, long desc
+#. Tag: suite::TODO, long desc
+#. Tag: protocol::TODO, long desc
+#. Tag: filetransfer::TODO, long desc
+#. Tag: uitoolkit::TODO, long desc
+#. Tag: use::TODO, long desc
+#. Tag: web::TODO, long desc
+#. Tag: network::TODO, long desc
+#. Tag: x11::TODO, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The package can be categorised along this facet, but the right tag for it is "
+"missing.\n"
+"Mark a package with this tag to signal the vocabulary maintainers of cases "
+"where the current tag set is lacking."
+msgstr ""
+"Dieses Paket kann zusemman mit diesem Aspekt kategorisiert werden, aber die "
+"richtige Markierung fehlt noch.\n"
+"Markieren Sie ein Paket mit dieser Markierung um den Betreuern des "
+"Vokabulars die Stellen zu signalisieren, an denen die aktuelle Menge an "
+"Markierungen noch nicht ausreicht."
+
+#. Tag: works-with::im, long desc
+#: files/debtags/vocabulary
+msgid "The package can connect to some IM network (or networks)."
+msgstr ""
+
+#. Tag: suite::netscape, long desc
+#: files/debtags/vocabulary
+msgid "The pre-6.0 versions of netscape browser"
+msgstr "Netscape-Browser vor Version 6.0"
+
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
 msgid "Theme"
 msgstr ""
+
+#. Facet: works-with, long desc
+#: files/debtags/vocabulary
+msgid ""
+"These tags describe what is the kind of data (or even processes, or people) "
+"that the package can work with."
+msgstr ""
+"Diese Markierungen beschreiben mit welcher Art von Daten (oder sogar "
+"Prozessen oder Leuten) dieses Paket arbeiten kann."
+
+#. Tag: admin::virtualization, long desc
+#: files/debtags/vocabulary
+msgid ""
+"This is not hardware emulation, but rather those facilities that allow to "
+"create many isolated compartments inside the same system."
+msgstr ""
+"Dies ist keine Hardware-Emulation, sondern eher eine Anlage, die das "
+"Erstellen vieler isolierter Abteilungen innerhalb des gleichen Systems "
+"erlaubt."
+
+#. Tag: special::invalid-tag, long desc
+#: files/debtags/vocabulary
+msgid ""
+"This tag means that the tag database contains a tag which is not present in "
+"the tag vocabulary.  The presence of this tag indicates a software bug: this "
+"should never show up."
+msgstr ""
+"Diese Markierung bedeutet, dass die Markierungsdatenbank eine Markierung "
+"enthält, die nicht im Makierungsvokabular enthalten ist. Das Vorkommen "
+"dieser Markierung stellt einen Software-Fehler dar: sie sollte nie  "
+"auftauchen."
 
 #. Tag: interface::3d, short desc
 #: files/debtags/vocabulary
@@ -4092,6 +3720,58 @@ msgstr "Zeit und Uhr"
 msgid "Tk"
 msgstr "Tk"
 
+#. Tag: use::comparing, long desc
+#: files/debtags/vocabulary
+msgid "To find what relates or differs in two or more objects."
+msgstr ""
+"Um herauszufinden, wie zwei oder mehr Objekte zusammenhängen oder sich "
+"unterscheiden."
+
+#. Tag: devel::docsystem, long desc
+#: files/debtags/vocabulary
+msgid "Tools and auto-documenters"
+msgstr ""
+
+#. Tag: devel::ecma-cli, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Tools and libraries for development with implementations of the ECMA CLI "
+"(Common Language Infrastructure), like Mono or DotGNU Portable.NET."
+msgstr ""
+"Werkzeuge und Bibliotheken für Entwicklungen mit Implementationen der ECMA "
+"CLI (Common Language Infrastructure), wie Mono oder DotGNU Portable.NET."
+
+#. Tag: devel::ui-builder, long desc
+#: files/debtags/vocabulary
+msgid "Tools for designing user interfaces."
+msgstr "Werkzuge zum Entwickeln von Benutzer-Schnittstellen."
+
+#. Tag: devel::packaging, long desc
+#: files/debtags/vocabulary
+msgid "Tools for packaging software."
+msgstr "Werkzeuge zum Paketieren von Software"
+
+#. Tag: devel::testing-qa, long desc
+#: files/debtags/vocabulary
+msgid "Tools for software testing and quality assurance."
+msgstr "Werkzeuge zum Testen und Qualitätssicherung von Software."
+
+#. Tag: security::integrity, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Tools to monitor system for changes in filesystem and report changes or "
+"tools providing other means to check system integrity."
+msgstr ""
+"Werkzeuge, um ein System auf Änderungen im Dateisystem zu überwachen und "
+"Änderungen zu berichten oder Werkzeuge, um andere Möglichkeiten zur "
+"Überprüfung der Systemintegrität bereitzustellen."
+
+#. Tag: devel::debian, long desc
+#: files/debtags/vocabulary
+msgid "Tools, documentation, etc. of use primarily to Debian developers."
+msgstr ""
+"Werkzeuge, Dokumentation usw., primär zur Verwendung durch Debian-Entwickler."
+
 #. Tag: game::toys, short desc
 #: files/debtags/vocabulary
 msgid "Toy or Gimmick"
@@ -4101,6 +3781,34 @@ msgstr "Spiel(erei)"
 #: files/debtags/vocabulary
 msgid "Transmission"
 msgstr "Übertragung"
+
+#. Tag: protocol::tcp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Transport Control Protocol, a core protocol of the Internet protocol suite "
+"and used for data transport.\n"
+"TCP is used as the transport protocol for many services on the Internet, "
+"such as FTP, HTTP, SMTP, POP3, IMAP, NNTP etc.\n"
+"Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
+"http://www.ietf.org/rfc/rfc793.txt"
+msgstr ""
+"Transport Control Protocol, ein Kern-Protokoll der Internet-Protokoll-Suite, "
+"das für Datentransport verwandt wird.\n"
+"TCP wird als Transportprotokoll für viele Dienste im Internet verwandt, wie "
+"FTP, HTTP, SMTP, POP3, IMAP, NNTP usw.\n"
+"Link: http://de.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
+"http://www.ietf.org/rfc/rfc793.txt"
+
+#. Tag: protocol::tftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
+"allows a client to get or put a file onto a remote host.  One of its primary "
+"uses is the network booting of diskless nodes on a Local Area Network.  It "
+"is designed to be easy to implement so it fits on ROM.\n"
+"Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc1350.txt"
+msgstr ""
 
 #. Tag: culture::turkish, short desc
 #: files/debtags/vocabulary
@@ -4141,6 +3849,38 @@ msgstr "Ukrainisch"
 #: files/debtags/vocabulary
 msgid "Unicode"
 msgstr "Unicode"
+
+#. Tag: hardware::power:ups, long desc
+#: files/debtags/vocabulary
+msgid "Uninterruptible Power Supply"
+msgstr "Unterbrechungsfreie Stromversorgung"
+
+#. Tag: hardware::usb, long desc
+#: files/debtags/vocabulary
+msgid "Universal Serial Bus"
+msgstr "Universal Serial Bus"
+
+#. Tag: special::ipv6-nosupport, long desc
+#: files/debtags/vocabulary
+msgid "Use this for packages that cannot yet or will never support IPv6."
+msgstr ""
+"Für Programme zu verwenden, die noch nicht oder nie IPv6 unterstützen werden."
+
+#. Tag: biology::format:aln, long desc
+#: files/debtags/vocabulary
+msgid "Used in multiple alignment of biological sequences."
+msgstr "Verwendet in mehrfachen Alignments biologischer Sequenzen."
+
+#. Tag: protocol::udp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"User Datagram Protocol, a core protocol of the Internet protocol suite and "
+"used for data transport.\n"
+"UDP is not as reliable as TCP, but faster and thus better fit for time-"
+"sensitive purposes, like the DNS protocol and VoIP.\n"
+"Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
+"ietf.org/rfc/rfc768.txt"
+msgstr ""
 
 #. Tag: devel::ui-builder, short desc
 #. Facet: interface, short desc
@@ -4200,6 +3940,11 @@ msgstr ""
 msgid "Video and Animation"
 msgstr "Video und Animation"
 
+#. Tag: works-with-format::vrml, long desc
+#: files/debtags/vocabulary
+msgid "Virtual Reality Markup Language"
+msgstr "Virtual Reality Markup Language"
+
 #. Tag: admin::virtualization, short desc
 #: files/debtags/vocabulary
 msgid "Virtualization"
@@ -4210,10 +3955,42 @@ msgstr "Virtualisierung"
 msgid "VoIP"
 msgstr "VoIP"
 
+#. Tag: protocol::voip, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Voice over IP, a general term for protocols that route voice conversations "
+"over the Internet.\n"
+"Popular VoIP protocols are SIP, H.323 and IAX.\n"
+"Link: http://en.wikipedia.org/wiki/Voice_over_IP"
+msgstr ""
+
+#. Tag: works-with-format::wav, long desc
+#: files/debtags/vocabulary
+msgid "Wave uncompressed audio format"
+msgstr ""
+
 #. Tag: devel::web, short desc
 #: files/debtags/vocabulary
 msgid "Web"
 msgstr "Web"
+
+#. Tag: protocol::webdav, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Web-based Distributed Authoring and Versioning, a extension of the HTTP "
+"protocol to support creating and changing documents on an HTTP server. Thus, "
+"the client can access the documents on an HTTP server as it would those on "
+"the local file system.\n"
+"Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
+"rfc2518.txt"
+msgstr ""
+
+#. Tag: devel::web, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Web-centric frameworks, CGI libraries and other web-specific development "
+"tools."
+msgstr ""
 
 #. Tag: protocol::webdav, short desc
 #: files/debtags/vocabulary
@@ -4235,10 +4012,20 @@ msgstr "Walisisch"
 msgid "Wiki Software"
 msgstr "Wiki-Software"
 
+#. Tag: web::wiki, long desc
+#: files/debtags/vocabulary
+msgid "Wiki software, servers, utilities and plug-ins."
+msgstr "Wiki-Software, -Server, -Hilfswerkzeuge und -Erweiterungen."
+
 #. Tag: x11::window-manager, short desc
 #: files/debtags/vocabulary
 msgid "Window Manager"
 msgstr "Window-Manager"
+
+#. Tag: filetransfer::smb, long desc
+#: files/debtags/vocabulary
+msgid "Windows file and printer sharing (SMB)"
+msgstr ""
 
 #. Facet: works-with, short desc
 #: files/debtags/vocabulary
@@ -4277,6 +4064,22 @@ msgstr "XFce"
 #: files/debtags/vocabulary
 msgid "XML"
 msgstr "XML"
+
+#. Tag: protocol::xmlrpc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"XML Remote Procedure Call, a simple protocol for remote procedure calls that "
+"uses XML for encoding and the HTTP protocol for transport.\n"
+"SOAP, which is a considerably more sophisticated protocol, was developed "
+"from XML-RPC.\n"
+"Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
+msgstr ""
+
+#. Tag: works-with-format::xml:rss, long desc
+#: files/debtags/vocabulary
+msgid "XML dialect used to describe resources and websites."
+msgstr ""
+"XML-Dialekt, der zur Beschreibung von Ressourcen und Websites verwandt wird."
 
 #. Tag: protocol::xmlrpc, short desc
 #: files/debtags/vocabulary
