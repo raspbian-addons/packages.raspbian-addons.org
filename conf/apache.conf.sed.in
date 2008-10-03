@@ -72,8 +72,6 @@
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
 
-   CBandUser pdo
-
    Alias /cgi-bin/ %TOPDIR%/cgi-bin/
   
    PerlModule ModPerl::Registry
