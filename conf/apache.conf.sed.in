@@ -65,7 +65,7 @@
   AddEncoding x-gzip .gz
 </Directory>
 
-<VirtualHost *>
+<VirtualHost *:80>
    ServerAdmin webmaster@debian.org
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
