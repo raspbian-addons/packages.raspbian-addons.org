@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:41
+#: templates/config.tmpl:42
 msgid "Debian Web Mailinglist"
 msgstr "Liste de diffusion du site Debian"
 
-#: templates/config.tmpl:46
+#: templates/config.tmpl:47
 msgid "%s Webmaster"
 msgstr "Responsable du site %s"
 
-#: templates/config.tmpl:49
+#: templates/config.tmpl:50
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s est une <a href=\"%s\">marque</a> de %s"
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:59
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -36,11 +36,11 @@ msgstr ""
 "et des informations obsolètes."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:61
+#: templates/config.tmpl:62
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:63
 msgid ","
 msgstr ","
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "En remplaçant <em>%s</em> par le miroir en question."
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:169
 msgid "Experimental package"
 msgstr "Paquet «&nbsp;experimental&nbsp;»"
 
@@ -204,11 +204,11 @@ msgstr ""
 "des modifications (<q>changelog</q>) et les autres documentations possibles "
 "avant toute utilisation."
 
-#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:174
 msgid "debian-installer udeb package"
 msgstr "paquet de l'installateur Debian udeb"
 
-#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:175
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -281,7 +281,7 @@ msgstr "%s octets (%s %s)"
 msgid "Exact Size"
 msgstr "Taille exacte"
 
-#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:345
 msgid "MD5 checksum"
 msgstr "Somme MD5"
 
@@ -665,12 +665,12 @@ msgid "paths that end with"
 msgstr "chemins se terminant par"
 
 #: templates/html/search_contents.tmpl:76
-msgid "files named"
-msgstr "fichiers nommés"
-
-#: templates/html/search_contents.tmpl:78
 msgid "filenames that contain"
 msgstr "noms de fichier contenant"
+
+#: templates/html/search_contents.tmpl:78
+msgid "files named"
+msgstr "fichiers nommés"
 
 #. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
@@ -695,7 +695,7 @@ msgid "Sort results by filename"
 msgstr "Trier les résultats par nom de fichier"
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:331
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:345
 msgid "File"
 msgstr "Fichier"
 
@@ -783,51 +783,55 @@ msgstr "Fichier de licence"
 msgid "Debian Source Repository"
 msgstr "Dépôt de source Debian"
 
-#: templates/html/show.tmpl:96
+#: templates/html/show.tmpl:96 templates/html/show.tmpl:102
+msgid "%s Patch Tracking"
+msgstr ""
+
+#: templates/html/show.tmpl:110
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
 msgstr "Télécharger le paquet source <a href=\"%s\">%s</a>:"
 
-#: templates/html/show.tmpl:103
+#: templates/html/show.tmpl:117
 msgid "Not found"
 msgstr "Introuvable"
 
-#: templates/html/show.tmpl:108
+#: templates/html/show.tmpl:122
 msgid "Maintainer:"
 msgstr "Responsable :"
 
-#: templates/html/show.tmpl:110
+#: templates/html/show.tmpl:124
 msgid "Maintainers:"
 msgstr "Responsables :"
 
-#: templates/html/show.tmpl:123
+#: templates/html/show.tmpl:137
 msgid "An overview over the maintainer's packages and uploads"
 msgstr "Vue d'ensemble des paquets et uploads par responsable"
 
-#: templates/html/show.tmpl:123
+#: templates/html/show.tmpl:137
 msgid "QA&nbsp;Page"
 msgstr "Page&nbsp;QA"
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:138
 msgid "Archive of the Maintainer Mailinglist"
 msgstr ""
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:138
 msgid "Mail&nbsp;Archive"
 msgstr ""
 
-#: templates/html/show.tmpl:132
+#: templates/html/show.tmpl:146
 msgid "External Resources:"
 msgstr "Ressources externes :"
 
-#: templates/html/show.tmpl:134
+#: templates/html/show.tmpl:148
 msgid "Homepage"
 msgstr "Page d'accueil"
 
-#: templates/html/show.tmpl:140
+#: templates/html/show.tmpl:154
 msgid "Similar packages:"
 msgstr "Paquets similaires :"
 
-#: templates/html/show.tmpl:156
+#: templates/html/show.tmpl:170
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -842,7 +846,7 @@ msgstr ""
 "(<q>changelog</q>)</a> et les autres documentations existantes avant de "
 "l'utiliser."
 
-#: templates/html/show.tmpl:180
+#: templates/html/show.tmpl:194
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -852,77 +856,77 @@ msgstr ""
 "Debian</a> pour une <a href=\"%sch-binary.html#s-virtual_pkg\">définition "
 "des paquets virtuels</a>."
 
-#: templates/html/show.tmpl:188
+#: templates/html/show.tmpl:202
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: templates/html/show.tmpl:211
+#: templates/html/show.tmpl:225
 msgid "Packages providing %s"
 msgstr "Paquets fournissant %s"
 
-#: templates/html/show.tmpl:220
+#: templates/html/show.tmpl:234
 msgid "The following binary packages are built from this source package:"
 msgstr ""
 "Les paquets binaires suivants sont compilés à partir de ce paquet "
 "source&nbsp;:"
 
-#: templates/html/show.tmpl:229
+#: templates/html/show.tmpl:243
 msgid "Other Packages Related to %s"
 msgstr "Autres paquets associés à %s"
 
-#: templates/html/show.tmpl:231
+#: templates/html/show.tmpl:245
 msgid "legend"
 msgstr "légende"
 
-#: templates/html/show.tmpl:233
+#: templates/html/show.tmpl:247
 msgid "build-depends"
 msgstr ""
 
-#: templates/html/show.tmpl:234
+#: templates/html/show.tmpl:248
 msgid "build-depends-indep"
 msgstr ""
 
-#: templates/html/show.tmpl:236
+#: templates/html/show.tmpl:250
 msgid "depends"
 msgstr ""
 
-#: templates/html/show.tmpl:237
+#: templates/html/show.tmpl:251
 msgid "recommends"
 msgstr ""
 
-#: templates/html/show.tmpl:238
+#: templates/html/show.tmpl:252
 msgid "suggests"
 msgstr ""
 
-#: templates/html/show.tmpl:248
+#: templates/html/show.tmpl:262
 #, fuzzy
 msgid "or "
 msgstr "ou "
 
-#: templates/html/show.tmpl:256
+#: templates/html/show.tmpl:270
 #, fuzzy
 msgid "also a virtual package provided by"
 msgstr "paquet virtuel"
 
-#: templates/html/show.tmpl:258
+#: templates/html/show.tmpl:272
 msgid "virtual package provided by"
 msgstr "paquet virtuel fourni par"
 
-#: templates/html/show.tmpl:263
+#: templates/html/show.tmpl:277
 #, fuzzy
 msgid "hide %u providing packages"
 msgstr "Taille du paquet"
 
-#: templates/html/show.tmpl:263
+#: templates/html/show.tmpl:277
 #, fuzzy
 msgid "show %u providing packages"
 msgstr "Taille du paquet"
 
-#: templates/html/show.tmpl:281
+#: templates/html/show.tmpl:295
 msgid "Download %s"
 msgstr "Télécharger %s"
 
-#: templates/html/show.tmpl:283
+#: templates/html/show.tmpl:297
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -932,56 +936,56 @@ msgstr ""
 "un aperçu du fichier. Il indique par ailleurs la taille du paquet et "
 "l'espace occupé une fois installé."
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:298
 msgid "Download for all available architectures"
 msgstr "Télécharger pour toutes les architectures proposées"
 
-#: templates/html/show.tmpl:285
+#: templates/html/show.tmpl:299
 msgid "Architecture"
 msgstr "Architecture"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:300
 msgid "Version"
 msgstr "Version"
 
-#: templates/html/show.tmpl:287
+#: templates/html/show.tmpl:301
 msgid "Package Size"
 msgstr "Taille du paquet"
 
-#: templates/html/show.tmpl:288
+#: templates/html/show.tmpl:302
 msgid "Installed Size"
 msgstr "Espace occupé"
 
-#: templates/html/show.tmpl:289
+#: templates/html/show.tmpl:303
 msgid "Files"
 msgstr "Fichiers"
 
-#: templates/html/show.tmpl:297
+#: templates/html/show.tmpl:311
 msgid "(unofficial port)"
 msgstr "(portage non officiel)"
 
-#: templates/html/show.tmpl:308 templates/html/show.tmpl:336
+#: templates/html/show.tmpl:322 templates/html/show.tmpl:350
 msgid "%s&nbsp;kB"
 msgstr "%s ko"
 
-#: templates/html/show.tmpl:311
+#: templates/html/show.tmpl:325
 msgid "list of files"
 msgstr "liste des fichiers"
 
-#: templates/html/show.tmpl:313
+#: templates/html/show.tmpl:327
 #, fuzzy
 msgid "no current information"
 msgstr "Plus d'informations sur %s"
 
-#: templates/html/show.tmpl:330
+#: templates/html/show.tmpl:344
 msgid "Download information for the files of this source package"
 msgstr ""
 
-#: templates/html/show.tmpl:331
+#: templates/html/show.tmpl:345
 msgid "Size (in kB)"
 msgstr "Taille (en ko)"
 
-#: templates/html/show.tmpl:352
+#: templates/html/show.tmpl:366
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -989,7 +993,7 @@ msgstr ""
 "Dépôt du paquet source Debian (<acronym title=\"Système de contrôle des "
 "versions (« Version Control System »)\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:357
+#: templates/html/show.tmpl:371
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Dépôt du paquet source Debian (interface web)"
 
@@ -1065,106 +1069,137 @@ msgstr "Généré le :"
 msgid "See <URL:%s> for the license terms."
 msgstr "Consultez <URL:%s> pour obtenir les termes de la licence."
 
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Cette page est aussi disponible dans les langues suivantes :"
+
+#~ msgid "Back to:"
+#~ msgstr "Revenir à :"
+
+#~ msgid "Packages search page"
+#~ msgstr "Page de recherche des paquets"
+
+#, fuzzy
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "Paquet source&nbsp;: %s (%s)"
+
+#, fuzzy
+#~ msgid "No such package in this suite on this architecture."
+#~ msgstr "Aucun paquet dans cette section et cette distribution"
+
+#~ msgid "Virtual package"
+#~ msgstr "Paquet virtuel"
+
+#, fuzzy
+#~ msgid "No such package."
+#~ msgstr "Paquet source"
+
+#, fuzzy
+#~ msgid "Package not available in this suite."
+#~ msgstr "Paquet indisponible"
+
+#~ msgid "Package not available"
+#~ msgstr "Paquet indisponible"
+
+#, fuzzy
+#~ msgid "Software Packages in \"%s\", subsection %s"
+#~ msgstr "Paquets de «&nbsp;%s&nbsp;», section %s"
+
+#~ msgid "Software Packages in \"%s\", priority %s"
+#~ msgstr "Paquets de «&nbsp;%s&nbsp;», priorité %s"
+
+#, fuzzy
+#~ msgid "search for a package"
+#~ msgstr "Liste de tous les paquets"
+
+#, fuzzy
+#~ msgid " (section %s)"
+#~ msgstr "Section"
+
 #, fuzzy
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
+#~ "The following packages were added to suite %s%s in the Debian archive "
+#~ "during the last 7 days."
+#~ msgstr ""
+#~ "Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
+#~ "unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+
+#, fuzzy
+#~ msgid "Nothing found"
+#~ msgstr "Introuvable"
+
+#~ msgid "Download %s\n"
+#~ msgstr "Télécharger %s\n"
+
+#~ msgid "virtual package"
+#~ msgstr "paquet virtuel"
+
+#~ msgid "Overview over this distribution"
+#~ msgstr "Vue d'ensemble de cette distribution"
+
+#~ msgid "md5sum"
+#~ msgstr "code de contrôle MD5"
+
+#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+#~ msgstr "Consulter les <a href=\"%s\">rapports de bogues</a> de %s."
+
+#~ msgid "Source Package:"
+#~ msgstr "Paquet source&nbsp;:"
+
+#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
+#~ msgstr "Consulter le <a href=\"%s\">journal des modifications Debian</a>"
+
+#~ msgid "View the <a href=\"%s\">copyright file</a>"
+#~ msgstr "Consulter le <a href=\"%s\">fichier de licence</a>"
+
+#~ msgid "%s is responsible for this Debian package."
+#~ msgstr "%s est responsable de ce paquet Debian."
+
+#~ msgid " and %s are responsible for this Debian package."
+#~ msgstr " et %s sont responsables de ce paquet Debian."
+
+#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
+#~ msgstr ""
+#~ "Consulter les <a href=\"%s\">informations de développement de %s</a>."
+
+#, fuzzy
+#~ msgid "Search on:"
+#~ msgstr "Recherche"
+
+#~ msgid "Debian Project"
+#~ msgstr "Projet Debian"
+
+#~ msgid "About&nbsp;Debian"
+#~ msgstr "À&nbsp;propos&nbsp;de&nbsp;Debian"
+
+#~ msgid "News"
+#~ msgstr "Actualités"
+
+#~ msgid "Getting&nbsp;Debian"
+#~ msgstr "Obtenir&nbsp;Debian"
+
+#~ msgid "Support"
+#~ msgstr "Assistance"
+
+#~ msgid "Development"
+#~ msgstr "Le&nbsp;coin&nbsp;du&nbsp;développeur"
+
+#~ msgid "Site map"
+#~ msgstr "Plan&nbsp;du&nbsp;site"
+
+#~ msgid ""
+#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+#~ "\">Packages search page</a>"
 #~ msgstr ""
 #~ "Retour à la&nbsp;: <a href=\"%s/\">Page d'accueil du Projet Debian</a> || "
 #~ "<a href=\"%s/\">Page de recherche de paquets</a>"
 
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
-#~ "last 7 days."
-#~ msgstr ""
-#~ "Paquets ayant été ajoutés à l'archive Debian «&nbsp;unstable&nbsp;» au "
-#~ "cours des 7&nbsp;derniers jours."
-
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr ""
-#~ "Paquets ayant été ajoutés à l'archive Debian «&nbsp;unstable&nbsp;» au "
-#~ "cours des 7&nbsp;derniers jours."
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the <strong>experimental</strong> distribution is not self-"
-#~ "contained; missing dependencies are likely found in the <a href=\"%s"
-#~ "\">unstable</a> distribution."
-#~ msgstr ""
-#~ "Veuillez noter que la distribution «&nbsp;\"<span class=\"pred"
-#~ "\">experimental</span>\"&nbsp;» n'est pas autosuffisante&nbsp;; certaines "
-#~ "dépendances peuvent se trouver dans la distribution «&nbsp;\"<a href="
-#~ "\"../../unstable/\">unstable</a>\"&nbsp;»."
-
-#~ msgid "Versions:"
-#~ msgstr "Versions&nbsp;:"
+#~ msgid "Last Modified: "
+#~ msgstr "Dernière modification&nbsp;: "
 
 #~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
+#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
 #~ msgstr ""
-#~ "Copyright © 1997-2005 SPI&nbsp;;voir <URL:http://www.debian.org/license> "
-#~ "les termes de la licence.\n"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Paquets de «&nbsp;%s&nbsp;», paquets essentiels"
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Aucun paquet de cette priorité et cette distribution"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Avertissement&nbsp;: ces paquets sont réservés à la construction des "
-#~ "images de l'<a href=\"http://www.debian.org/devel/debian-installer"
-#~ "\">installateur Debian</a>. Ils ne doivent pas être installés sur un "
-#~ "système Debian classique."
-
-#~ msgid "yes"
-#~ msgstr "oui"
-
-#~ msgid "Priority"
-#~ msgstr "Priorité"
-
-#~ msgid "Uploaders"
-#~ msgstr "Expéditeurs"
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "La taille est indiquée en kOctets"
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;experimental&nbsp;» "
-#~ "rencontrant des problèmes à contacter directement le responsable du "
-#~ "paquet."
-
-#~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Paquets ayant été ajoutés à la section «&nbsp;%s&nbsp;» de l'archive "
-#~ "Debian «&nbsp;unstable&nbsp;» au cours des 7&nbsp;derniers jours."
-
-#~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Les paquets suivants ont été ajoutés à la section «&nbsp;%s&nbsp;» de "
-#~ "l'archive Debian au cours des 7&nbsp;derniers jours."
+#~ "Debian est une marque déposée de Software in the Public Interest, Inc."
 
 #~ msgid ""
 #~ "Warning: The <span class=\"pred\">experimental</span> distribution "
@@ -1178,133 +1213,102 @@ msgstr "Consultez <URL:%s> pour obtenir les termes de la licence."
 #~ "installation s'effectue donc à vos risques et périls."
 
 #~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
 #~ msgstr ""
-#~ "Debian est une marque déposée de Software in the Public Interest, Inc."
-
-#~ msgid "Last Modified: "
-#~ msgstr "Dernière modification&nbsp;: "
+#~ "Les paquets suivants ont été ajoutés à la section «&nbsp;%s&nbsp;» de "
+#~ "l'archive Debian au cours des 7&nbsp;derniers jours."
 
 #~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Paquets ayant été ajoutés à la section «&nbsp;%s&nbsp;» de l'archive "
+#~ "Debian «&nbsp;unstable&nbsp;» au cours des 7&nbsp;derniers jours."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;experimental&nbsp;» "
+#~ "rencontrant des problèmes à contacter directement le responsable du "
+#~ "paquet."
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "La taille est indiquée en kOctets"
+
+#~ msgid "Uploaders"
+#~ msgstr "Expéditeurs"
+
+#~ msgid "Priority"
+#~ msgstr "Priorité"
+
+#~ msgid "yes"
+#~ msgstr "oui"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Avertissement&nbsp;: ces paquets sont réservés à la construction des "
+#~ "images de l'<a href=\"http://www.debian.org/devel/debian-installer"
+#~ "\">installateur Debian</a>. Ils ne doivent pas être installés sur un "
+#~ "système Debian classique."
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Aucun paquet de cette priorité et cette distribution"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Paquets de «&nbsp;%s&nbsp;», paquets essentiels"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright © 1997-2005 SPI&nbsp;;voir <URL:http://www.debian.org/license> "
+#~ "les termes de la licence.\n"
+
+#~ msgid "Versions:"
+#~ msgstr "Versions&nbsp;:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Note that the <strong>experimental</strong> distribution is not self-"
+#~ "contained; missing dependencies are likely found in the <a href=\"%s"
+#~ "\">unstable</a> distribution."
+#~ msgstr ""
+#~ "Veuillez noter que la distribution «&nbsp;\"<span class=\"pred"
+#~ "\">experimental</span>\"&nbsp;» n'est pas autosuffisante&nbsp;; certaines "
+#~ "dépendances peuvent se trouver dans la distribution «&nbsp;\"<a href="
+#~ "\"../../unstable/\">unstable</a>\"&nbsp;»."
+
+#, fuzzy
+#~| msgid ""
+#~| "Packages that were added to the unstable Debian archive during the last "
+#~| "7 days."
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr ""
+#~ "Paquets ayant été ajoutés à l'archive Debian «&nbsp;unstable&nbsp;» au "
+#~ "cours des 7&nbsp;derniers jours."
+
+#, fuzzy
+#~| msgid ""
+#~| "Packages that were added to the unstable Debian archive during the last "
+#~| "7 days."
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
+#~ "last 7 days."
+#~ msgstr ""
+#~ "Paquets ayant été ajoutés à l'archive Debian «&nbsp;unstable&nbsp;» au "
+#~ "cours des 7&nbsp;derniers jours."
+
+#, fuzzy
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Retour à la&nbsp;: <a href=\"%s/\">Page d'accueil du Projet Debian</a> || "
 #~ "<a href=\"%s/\">Page de recherche de paquets</a>"
-
-#~ msgid "Site map"
-#~ msgstr "Plan&nbsp;du&nbsp;site"
-
-#~ msgid "Development"
-#~ msgstr "Le&nbsp;coin&nbsp;du&nbsp;développeur"
-
-#~ msgid "Support"
-#~ msgstr "Assistance"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Obtenir&nbsp;Debian"
-
-#~ msgid "News"
-#~ msgstr "Actualités"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "À&nbsp;propos&nbsp;de&nbsp;Debian"
-
-#~ msgid "Debian Project"
-#~ msgstr "Projet Debian"
-
-#, fuzzy
-#~ msgid "Search on:"
-#~ msgstr "Recherche"
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr ""
-#~ "Consulter les <a href=\"%s\">informations de développement de %s</a>."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " et %s sont responsables de ce paquet Debian."
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s est responsable de ce paquet Debian."
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Consulter le <a href=\"%s\">fichier de licence</a>"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Consulter le <a href=\"%s\">journal des modifications Debian</a>"
-
-#~ msgid "Source Package:"
-#~ msgstr "Paquet source&nbsp;:"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Consulter les <a href=\"%s\">rapports de bogues</a> de %s."
-
-#~ msgid "md5sum"
-#~ msgstr "code de contrôle MD5"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Vue d'ensemble de cette distribution"
-
-#~ msgid "virtual package"
-#~ msgstr "paquet virtuel"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Télécharger %s\n"
-
-#, fuzzy
-#~ msgid "Nothing found"
-#~ msgstr "Introuvable"
-
-#, fuzzy
-#~ msgid ""
-#~ "The following packages were added to suite %s%s in the Debian archive "
-#~ "during the last 7 days."
-#~ msgstr ""
-#~ "Les paquets suivants ont été ajoutés à l'archive Debian «&nbsp;"
-#~ "unstable&nbsp;» au cours des 7&nbsp;derniers jours."
-
-#, fuzzy
-#~ msgid " (section %s)"
-#~ msgstr "Section"
-
-#, fuzzy
-#~ msgid "search for a package"
-#~ msgstr "Liste de tous les paquets"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Paquets de «&nbsp;%s&nbsp;», priorité %s"
-
-#, fuzzy
-#~ msgid "Software Packages in \"%s\", subsection %s"
-#~ msgstr "Paquets de «&nbsp;%s&nbsp;», section %s"
-
-#~ msgid "Package not available"
-#~ msgstr "Paquet indisponible"
-
-#, fuzzy
-#~ msgid "Package not available in this suite."
-#~ msgstr "Paquet indisponible"
-
-#, fuzzy
-#~ msgid "No such package."
-#~ msgstr "Paquet source"
-
-#~ msgid "Virtual package"
-#~ msgstr "Paquet virtuel"
-
-#, fuzzy
-#~ msgid "No such package in this suite on this architecture."
-#~ msgstr "Aucun paquet dans cette section et cette distribution"
-
-#, fuzzy
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "Paquet source&nbsp;: %s (%s)"
-
-#~ msgid "Packages search page"
-#~ msgstr "Page de recherche des paquets"
-
-#~ msgid "Back to:"
-#~ msgstr "Revenir à :"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Cette page est aussi disponible dans les langues suivantes :"

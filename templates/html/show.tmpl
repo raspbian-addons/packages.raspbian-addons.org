@@ -86,9 +86,23 @@
 	SET vcs_info = page.get_newest("x-vcs-$vcs_id") UNLESS vcs_info;
    IF vcs_info %]
  (<a href="[% vcs_info %]" class="pvcslink">[% vcs_name %]</a>)
-[% END; END %]
+[% END; END -%]
 </li>
-[% END %]
+[% END -%]
+
+[% IF patch_tracking_url && src %]
+  [% FOREACH src.downloads %]
+    [% IF name.match('\.diff\.(gz|bz2|lzma)$') %]
+    <li><a href="[% "$patch_tracking_url/$src.pkg/$src.version" %]">[% g("%s Patch Tracking", organisation) %]</a></li>
+    [% END -%]
+  [% END -%]
+[% ELSIF patch_tracking_url && is_source %]
+  [% FOREACH srcfiles %]
+    [% IF filename.match('\.diff\.(gz|bz2|lzma)$') %]
+    <li><a href="[% "$patch_tracking_url/$pkg/$version" %]">[% g("%s Patch Tracking", organisation) %]</a></li>
+    [% END -%]
+  [% END -%]
+[% END -%]
 
 </ul>
 
