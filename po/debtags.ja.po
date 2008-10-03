@@ -14,16 +14,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Tag: suite::gnustep, long desc
-#: files/debtags/vocabulary
-msgid " GNUstep Desktop and WindowMaker"
-msgstr " GNUstep デスクトップや WindowMaker"
-
-#. Tag: suite::gpe, long desc
-#: files/debtags/vocabulary
-msgid " GPE Palmtop Environment"
-msgstr " GPE Palmtop Environment"
-
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
@@ -970,7 +960,7 @@ msgstr "FidoNet"
 msgid ""
 "FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
 "1990s.\n"
-"The communication between the clients and FidoNet servers  was usually "
+"The communication between the clients and FidoNet servers was usually "
 "carried out over the telephone network using modems and could be used for "
 "transferring messages (comparable to email) and files.\n"
 "Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
@@ -1188,10 +1178,24 @@ msgstr "GNU R での開発"
 msgid "GNUstep"
 msgstr "GNUstep"
 
+#. Tag: suite::gnustep, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid " GNUstep Desktop and WindowMaker"
+msgid "GNUstep Desktop and WindowMaker"
+msgstr " GNUstep デスクトップや WindowMaker"
+
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
 msgstr "GPE"
+
+#. Tag: suite::gpe, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid " GPE Palmtop Environment"
+msgid "GPE Palmtop Environment"
+msgstr " GPE Palmtop Environment"
 
 #. Tag: hardware::gps, short desc
 #: files/debtags/vocabulary
@@ -2323,6 +2327,11 @@ msgstr "POP3"
 msgid "POP3 Protocol"
 msgstr "POP3 プロトコル"
 
+#. Tag: devel::lang:posix-shell, short desc
+#: files/debtags/vocabulary
+msgid "POSIX shell"
+msgstr ""
+
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
 msgid "Package Management"
@@ -2666,7 +2675,7 @@ msgstr "宗教"
 msgid ""
 "Remote Authentication Dial In User Service, a protocol for authentication, "
 "authorization and accounting of network access, mostly used by Internet "
-"service providers handle handle dial-up Internet connections.\n"
+"service providers to handle dial-up Internet connections.\n"
 "Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
 "rfc2865.txt"
 msgstr ""
@@ -3004,8 +3013,8 @@ msgstr "1 つ以上のプログラムが共同利用するライブラリ。"
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
 msgid ""
-"Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
-"the Internet.\n"
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
+"Internet.\n"
 "Every SMTP server utilizes SMTP to hand on emails to the next mail server "
 "until an email arrives at its destination, from where it is usually "
 "retrieved via POP3 or IMAP.\n"
@@ -3938,27 +3947,27 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
-#~ msgid "Audrio"
-#~ msgstr "音声"
+#~ msgid "QT"
+#~ msgstr "QT"
 
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
 
 # TRANSLATION-FIXME: Why "Windowing"?
 #~ msgid "X Windowing System"
 #~ msgstr "X ウィンドウシステム"
 
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
 
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
-
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "Source code"
-#~ msgstr "ソースコード"
-
-#~ msgid "QT"
-#~ msgstr "QT"
+#~ msgid "Audrio"
+#~ msgstr "音声"

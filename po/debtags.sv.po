@@ -8,16 +8,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Tag: suite::gnustep, long desc
-#: files/debtags/vocabulary
-msgid " GNUstep Desktop and WindowMaker"
-msgstr ""
-
-#. Tag: suite::gpe, long desc
-#: files/debtags/vocabulary
-msgid " GPE Palmtop Environment"
-msgstr ""
-
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
@@ -955,7 +945,7 @@ msgstr ""
 msgid ""
 "FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
 "1990s.\n"
-"The communication between the clients and FidoNet servers  was usually "
+"The communication between the clients and FidoNet servers was usually "
 "carried out over the telephone network using modems and could be used for "
 "transferring messages (comparable to email) and files.\n"
 "Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
@@ -1174,9 +1164,19 @@ msgstr ""
 msgid "GNUstep"
 msgstr ""
 
+#. Tag: suite::gnustep, long desc
+#: files/debtags/vocabulary
+msgid "GNUstep Desktop and WindowMaker"
+msgstr ""
+
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
+msgstr ""
+
+#. Tag: suite::gpe, long desc
+#: files/debtags/vocabulary
+msgid "GPE Palmtop Environment"
 msgstr ""
 
 #. Tag: hardware::gps, short desc
@@ -2317,6 +2317,11 @@ msgstr ""
 msgid "POP3 Protocol"
 msgstr ""
 
+#. Tag: devel::lang:posix-shell, short desc
+#: files/debtags/vocabulary
+msgid "POSIX shell"
+msgstr ""
+
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
 msgid "Package Management"
@@ -2653,7 +2658,7 @@ msgstr ""
 msgid ""
 "Remote Authentication Dial In User Service, a protocol for authentication, "
 "authorization and accounting of network access, mostly used by Internet "
-"service providers handle handle dial-up Internet connections.\n"
+"service providers to handle dial-up Internet connections.\n"
 "Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
 "rfc2865.txt"
 msgstr ""
@@ -2989,8 +2994,8 @@ msgstr ""
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
 msgid ""
-"Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
-"the Internet.\n"
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
+"Internet.\n"
 "Every SMTP server utilizes SMTP to hand on emails to the next mail server "
 "until an email arrives at its destination, from where it is usually "
 "retrieved via POP3 or IMAP.\n"
@@ -3906,119 +3911,119 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Armenian"
-#~ msgstr "armeniska"
-
-#~ msgid "English"
-#~ msgstr "engelska"
-
-#~ msgid "Portuguese (Brazilian)"
-#~ msgstr "portugisiska (Brasilien)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Traditional)"
-#~ msgstr "kinesiska (traditionell)"
-
-#~ msgid "Chinese (Simplified)"
-#~ msgstr "kinesiska (fÃ¶renklad)"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Galician"
+#~ msgid "Gallegan"
 #~ msgstr "galiciska"
-
-#~ msgid "Irish"
-#~ msgstr "irlÃ¤ndska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Kannada"
-#~ msgstr "kanaresiska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Malayalam"
-#~ msgstr "malayalam"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
 
 #~ msgid "Zulu"
 #~ msgstr "zulu"
 
-#~ msgid "Gallegan"
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Malayalam"
+#~ msgstr "malayalam"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Kannada"
+#~ msgstr "kanaresiska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Irish"
+#~ msgstr "irlÃ¤ndska"
+
+#~ msgid "Galician"
 #~ msgstr "galiciska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "kinesiska (fÃ¶renklad)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "kinesiska (traditionell)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
+
+#~ msgid "Portuguese (Brazilian)"
+#~ msgstr "portugisiska (Brasilien)"
+
+#~ msgid "English"
+#~ msgstr "engelska"
+
+#~ msgid "Armenian"
+#~ msgstr "armeniska"

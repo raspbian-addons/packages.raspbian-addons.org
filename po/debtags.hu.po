@@ -3,16 +3,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. Tag: suite::gnustep, long desc
-#: files/debtags/vocabulary
-msgid " GNUstep Desktop and WindowMaker"
-msgstr ""
-
-#. Tag: suite::gpe, long desc
-#: files/debtags/vocabulary
-msgid " GPE Palmtop Environment"
-msgstr ""
-
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
@@ -936,7 +926,7 @@ msgstr ""
 msgid ""
 "FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
 "1990s.\n"
-"The communication between the clients and FidoNet servers  was usually "
+"The communication between the clients and FidoNet servers was usually "
 "carried out over the telephone network using modems and could be used for "
 "transferring messages (comparable to email) and files.\n"
 "Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
@@ -1151,9 +1141,19 @@ msgstr ""
 msgid "GNUstep"
 msgstr ""
 
+#. Tag: suite::gnustep, long desc
+#: files/debtags/vocabulary
+msgid "GNUstep Desktop and WindowMaker"
+msgstr ""
+
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
+msgstr ""
+
+#. Tag: suite::gpe, long desc
+#: files/debtags/vocabulary
+msgid "GPE Palmtop Environment"
 msgstr ""
 
 #. Tag: hardware::gps, short desc
@@ -2284,6 +2284,11 @@ msgstr ""
 msgid "POP3 Protocol"
 msgstr ""
 
+#. Tag: devel::lang:posix-shell, short desc
+#: files/debtags/vocabulary
+msgid "POSIX shell"
+msgstr ""
+
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
 msgid "Package Management"
@@ -2616,7 +2621,7 @@ msgstr ""
 msgid ""
 "Remote Authentication Dial In User Service, a protocol for authentication, "
 "authorization and accounting of network access, mostly used by Internet "
-"service providers handle handle dial-up Internet connections.\n"
+"service providers to handle dial-up Internet connections.\n"
 "Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
 "rfc2865.txt"
 msgstr ""
@@ -2950,8 +2955,8 @@ msgstr ""
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
 msgid ""
-"Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
-"the Internet.\n"
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
+"Internet.\n"
 "Every SMTP server utilizes SMTP to hand on emails to the next mail server "
 "until an email arrives at its destination, from where it is usually "
 "retrieved via POP3 or IMAP.\n"
