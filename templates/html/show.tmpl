@@ -265,7 +265,7 @@
         [% ' [' _ a.arch_str _ ']' IF a.arch_str %]</dt>
       [%- IF !t.is_old_pkgs -%]
         [% PROCESS desc_i18n_dd no_end_tag=1 trans_desc=a.trans_desc desc=a.desc -%]
-        [%- IF a.providers.pkgs.size > 0 -%]
+        [%- IF a.providers.pkgs && a.providers.pkgs.size > 0 -%]
 	  [% IF a.providers.also;
 		'<br>' _ g('also a virtual package provided by');
 	     ELSE;
