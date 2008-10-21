@@ -41,13 +41,16 @@ while (<C>) {
 }
 close (C);
 
-my $maildomain = "packages.debian.org";
+#my $maildomain = "packages.debian.org";
 my $ptsdomain = "packages.qa.debian.org";
 
 
 my $maintainerfile = "$topdir/../mirrors/ftp.debian.org/indices/Maintainers";
 my $maintainerdb = "$topdir/conf/maintainer";
 my $overridefile = "$topdir/conf/maintainerdb.override";
+my $rblfile = "$topdir/conf/rbllist";
+my $rhsblfile = "$topdir/mail/rhsbllist";
+my $calloutfile = "$topdir/mail/callout_users";
 my @postcall = ( "/usr/sbin/postmap", $maintainerdb );
 my $opt_verbose = 0;
 my $dbdir = "$topdir/files/db";
@@ -179,6 +182,10 @@ sub write_maintainer
 
     printf "Writing to %s.new\n", $file if ($opt_verbose > 0);
     open (CONF, ">$file.new") || die "Can't open $file.new, $!";
+    open (WRITE, "| cdbmake $file.cdb $file.cdb.tmp") || die "Can't talk to cdbmake, $!";
+    open (RBL, ">$rblfile.new") || die "Can't open $file.new, $!";
+    open (RHSBL, ">$rhsblfile.new") || die "Can't open $file.new, $!";
+    open (CALLOUT, ">$calloutfile.new") || die "Can't open $file.new, $!";
     my $forward;
     foreach my $package (sort(keys(%maint))) {
 # It is possible that we do not know a source package -> in that case fall back to old behaviour
@@ -189,15 +196,27 @@ sub write_maintainer
 	    $forward .= ", $binsrc{$package}_contact\@$ptsdomain";
 	}
 	printf "%s -> %s\n", $package, $forward if ($opt_verbose);
-	printf CONF "%s@%s\t%s\n", $package, $maildomain, $forward;
+	printf CONF "%s:\t%s\n", $package, $forward;
+	printf WRITE "+%d,%d:%s->%s\n", length($package), length($forward), $package, $forward;
+	printf RBL "%s : zen.spamhaus.org : cbl.abuseat.org\n", $package; 
+	printf RHSBL "%s : bogusmx.rfc-ignorant.org/\$sender_address_domain : dsn.rfc-ignorant.org/\$sender_address_domain\n", $package;
+	printf CALLOUT "%s\n", $package;
 #	printf "%s -> %s and pts: %s\n", $package, $maint{$package}, $binsrc{$package} if ($opt_verbose);
 #	printf CONF "%s@%s\t%s, %s_contact@%s\n", $package, $maildomain, $maint{$package}, $binsrc{$package}, $ptsdomain;
     }
+    print WRITE "\n";
     close (CONF);
-    printf "Renaming to %s\n", $file if ($opt_verbose > 0);
+    close (WRITE);
+    close (RBL);
+    close (RHSBL);
+    close (CALLOUT);
+    printf "Renaming the new files\n" if ($opt_verbose > 0);
     system "mv -f $file.new $file";
-    printf "Executing @postcall\n" if ($opt_verbose > 0);
-    system @postcall;
+    system "mv -f $rblfile.new $rblfile";
+    system "mv -f $rhsblfile.new $rhsblfile";
+    system "mv -f $calloutfile.new $calloutfile";
+#    printf "Executing @postcall\n" if ($opt_verbose > 0);
+#    system @postcall;
 }
 
 sub help
