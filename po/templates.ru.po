@@ -107,27 +107,54 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:178
+#: templates/config/archive_layout.tmpl:14
+msgid "packages that meet the Debian Free Software Guidelines"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:15
+msgid ""
+"packages that meet the Debian Free Software Guidelines but need software not "
+"in Debian main"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:16
+msgid "packages that do not meet the Debian Free Software Guidelines"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:73
+msgid ""
+"volatile packages that need major changes during the life of a stable release"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:95
+msgid "newer packages that have been adapted to stable releases of Debian"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:123
+msgid "ports of packages to architectures not yet available in Debian"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:151
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:179
+#: templates/config/mirrors.tmpl:152
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:180
+#: templates/config/mirrors.tmpl:153
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:181
+#: templates/config/mirrors.tmpl:154
 msgid "Australia and New Zealand"
 msgstr "Австралия и Новая Зеландия"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:155
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:156
 msgid "Africa"
 msgstr "Африка"
 
@@ -467,15 +494,15 @@ msgstr "сжатый текстовый список"
 msgid "New packages in "
 msgstr "Новые пакеты в "
 
-#: templates/html/search.tmpl:19
+#: templates/html/search.tmpl:20
 msgid "Package Search Results -- %s"
 msgstr "Результаты поиска пакетов -- %s"
 
-#: templates/html/search.tmpl:28
+#: templates/html/search.tmpl:29
 msgid "Package Search Results"
 msgstr "Результаты поиска пакетов"
 
-#: templates/html/search.tmpl:35
+#: templates/html/search.tmpl:36
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
@@ -484,23 +511,23 @@ msgstr ""
 "попытаться выполнить поиск с <a href=\"%s\">совпадением отдельных частей "
 "слова</a>."
 
-#: templates/html/search.tmpl:40
+#: templates/html/search.tmpl:41
 msgid "Search in specific suite:"
 msgstr "Поиск в заданном комплекте:"
 
-#: templates/html/search.tmpl:49
+#: templates/html/search.tmpl:50
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Поиск во <a href=\"%s\">всех комплектах</a>"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
+#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
 msgstr "Ограничить поиск определённой архитектурой:"
 
-#: templates/html/search.tmpl:62 templates/html/search_contents.tmpl:63
+#: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Поиск во <a href=\"%s\">всех архитектурах</a>"
 
-#: templates/html/search.tmpl:69
+#: templates/html/search.tmpl:70
 msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
@@ -508,51 +535,51 @@ msgstr ""
 "<a href=\"%s\">Некоторые</a> результаты не были показаны из-за параметров "
 "поиска."
 
-#: templates/html/search.tmpl:78
+#: templates/html/search.tmpl:79
 msgid "all suites"
 msgstr "все комплекты"
 
-#: templates/html/search.tmpl:78
+#: templates/html/search.tmpl:79
 msgid "suite(s) <em>%s</em>"
 msgstr "комплект(ы) <em>%s</em>"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "все секции"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "секция(и) <em>%s</em>"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "все архитектуры"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "архитектура(ы) <em>%s</em>"
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid "packages"
 msgstr "пакеты"
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid "source packages"
 msgstr "пакеты исходного кода"
 
-#: templates/html/search.tmpl:83
+#: templates/html/search.tmpl:84
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 "Вы искали %s, в именах которых есть <em>%s</em>. Были просмотрены %s, %s и %"
 "s."
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:87
 msgid " (including subword matching)"
 msgstr " (включая совпадение части слова)"
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:88
+#: templates/html/search.tmpl:89
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
@@ -560,11 +587,11 @@ msgstr ""
 "Вы искали <em>%s</em> в именах пакетов и описаниях. Были просмотрены %s, %s "
 "и %s%s."
 
-#: templates/html/search.tmpl:94
+#: templates/html/search.tmpl:95
 msgid "Found <strong>%u</strong> matching packages."
 msgstr "Количество подходящих пакетов: <strong>%u</strong>."
 
-#: templates/html/search.tmpl:99
+#: templates/html/search.tmpl:100
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -574,7 +601,7 @@ msgstr ""
 "значимости. Если первые несколько пакетов не то, что вы искали, попробуйте "
 "использовать больше ключевых слов или другие ключевые слова."
 
-#: templates/html/search.tmpl:103
+#: templates/html/search.tmpl:104
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
@@ -583,7 +610,7 @@ msgstr ""
 "некоторые результаты показаны не будут.<br>Попробуйте использовать более "
 "длинное ключевое слово или введите больше ключевых слов."
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:106
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
@@ -591,39 +618,39 @@ msgstr ""
 "Вы указали слишком общее ключевое слово.<br>Попробуйте использовать более "
 "длинное ключевое слово или введите больше ключевых слов."
 
-#: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:112 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr "Ничего не найдено"
 
-#: templates/html/search.tmpl:118
+#: templates/html/search.tmpl:119
 msgid "Package %s"
 msgstr "Пакет %s"
 
-#: templates/html/search.tmpl:130
+#: templates/html/search.tmpl:131
 msgid "also provided by:"
 msgstr "также предоставляется:"
 
-#: templates/html/search.tmpl:130
+#: templates/html/search.tmpl:131
 msgid "provided by:"
 msgstr "предоставляется:"
 
-#: templates/html/search.tmpl:139
+#: templates/html/search.tmpl:140
 msgid "Source Package %s"
 msgstr "Пакет исходного кода %s"
 
-#: templates/html/search.tmpl:146
+#: templates/html/search.tmpl:147
 msgid "Binary packages:"
 msgstr "Бинарный пакет:"
 
-#: templates/html/search.tmpl:148
+#: templates/html/search.tmpl:149
 msgid "hide %u binary packages"
 msgstr "скрыть бинарные пакеты (%u)"
 
-#: templates/html/search.tmpl:148
+#: templates/html/search.tmpl:149
 msgid "show %u binary packages"
 msgstr "показать бинарные пакеты (%u)"
 
-#: templates/html/search.tmpl:158
+#: templates/html/search.tmpl:159
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -746,6 +773,10 @@ msgstr "Пакет: %s (%s)"
 #: templates/html/show.tmpl:61
 msgid "essential"
 msgstr "значимый"
+
+#: templates/html/show.tmpl:61
+msgid "package manager will refuse to remove this package by default"
+msgstr ""
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
