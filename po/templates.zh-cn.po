@@ -103,27 +103,54 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:178
+#: templates/config/archive_layout.tmpl:14
+msgid "packages that meet the Debian Free Software Guidelines"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:15
+msgid ""
+"packages that meet the Debian Free Software Guidelines but need software not "
+"in Debian main"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:16
+msgid "packages that do not meet the Debian Free Software Guidelines"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:73
+msgid ""
+"volatile packages that need major changes during the life of a stable release"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:95
+msgid "newer packages that have been adapted to stable releases of Debian"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:123
+msgid "ports of packages to architectures not yet available in Debian"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:151
 msgid "North America"
 msgstr "北美洲"
 
-#: templates/config/mirrors.tmpl:179
+#: templates/config/mirrors.tmpl:152
 msgid "South America"
 msgstr "南美洲"
 
-#: templates/config/mirrors.tmpl:180
+#: templates/config/mirrors.tmpl:153
 msgid "Asia"
 msgstr "亚洲"
 
-#: templates/config/mirrors.tmpl:181
+#: templates/config/mirrors.tmpl:154
 msgid "Australia and New Zealand"
 msgstr "澳洲和大洋洲"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:155
 msgid "Europe"
 msgstr "欧洲"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:156
 msgid "Africa"
 msgstr "非洲"
 
@@ -447,15 +474,15 @@ msgstr "经过压缩的文本清单"
 msgid "New packages in "
 msgstr "所属的新进软件包"
 
-#: templates/html/search.tmpl:19
+#: templates/html/search.tmpl:20
 msgid "Package Search Results -- %s"
 msgstr "软件包搜索结果 -- %s"
 
-#: templates/html/search.tmpl:28
+#: templates/html/search.tmpl:29
 msgid "Package Search Results"
 msgstr "软件包搜索结果"
 
-#: templates/html/search.tmpl:35
+#: templates/html/search.tmpl:36
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
@@ -463,27 +490,27 @@ msgstr ""
 "您刚才搜索的仅限于完整匹配您指定关键字的内容。您还可以尝试搜索<a href=\"%s\">"
 "部分匹配</a>您指定关键字的内容。"
 
-#: templates/html/search.tmpl:40
+#: templates/html/search.tmpl:41
 #, fuzzy
 #| msgid "Search in other suite:"
 msgid "Search in specific suite:"
 msgstr "在其他的发行版中搜索:"
 
-#: templates/html/search.tmpl:49
+#: templates/html/search.tmpl:50
 #, fuzzy
 #| msgid "Search in <a href=\"%s\">all architectures</a>"
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "在<a href=\"%s\">所有硬件架构</a>中搜索"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
+#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
 msgstr "只搜索某一种硬件架构:"
 
-#: templates/html/search.tmpl:62 templates/html/search_contents.tmpl:63
+#: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "在<a href=\"%s\">所有硬件架构</a>中搜索"
 
-#: templates/html/search.tmpl:69
+#: templates/html/search.tmpl:70
 #, fuzzy
 #| msgid ""
 #| "<a href=\"%s\">%u</a> results have not been displayed due to the search "
@@ -494,51 +521,51 @@ msgid ""
 msgstr ""
 "由于参数界定了搜索范围，导致 <a href=\"%s\">%u</a> 个相关结果没有列出。"
 
-#: templates/html/search.tmpl:78
+#: templates/html/search.tmpl:79
 msgid "all suites"
 msgstr "所有发行版"
 
-#: templates/html/search.tmpl:78
+#: templates/html/search.tmpl:79
 #, fuzzy
 #| msgid "section(s) <em>%s</em>"
 msgid "suite(s) <em>%s</em>"
 msgstr " <em>%s</em> 版面"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "所有版面"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr " <em>%s</em> 版面"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "所有硬件架构"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr " <em>%s</em> 硬件架构"
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid "packages"
 msgstr "软件包"
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid "source packages"
 msgstr "源码包"
 
-#: templates/html/search.tmpl:83
+#: templates/html/search.tmpl:84
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr "您在%3中%5下%4里，指定关键字 <em>%2</em> 在%1名称中搜索的结果。"
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:87
 msgid " (including subword matching)"
 msgstr "(包括部分关键字匹配)"
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:88
+#: templates/html/search.tmpl:89
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
@@ -546,11 +573,11 @@ msgstr ""
 "您在%2中%4下%3里，指定关键字 <em>%1</em> 在软件包名称和描述信息中搜索的结果%"
 "5。"
 
-#: templates/html/search.tmpl:94
+#: templates/html/search.tmpl:95
 msgid "Found <strong>%u</strong> matching packages."
 msgstr "找到 <strong>%u</strong> 个匹配的软件包。"
 
-#: templates/html/search.tmpl:99
+#: templates/html/search.tmpl:100
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -559,7 +586,7 @@ msgstr ""
 "注意: 这里列出的是最符合搜索关键字要求的结果，并按相关性作了排序。如果前几个"
 "包不是您要找的，请尝试更多的或者其它的关键字。"
 
-#: templates/html/search.tmpl:103
+#: templates/html/search.tmpl:104
 #, fuzzy
 #| msgid ""
 #| "Your search was too wide so we will only display exact matches. At least "
@@ -572,7 +599,7 @@ msgstr ""
 "由于您的搜索范围太大我们只列出了能完整匹配搜索关键字的结果。至少有 <em>%u</"
 "em> 个相关结果没有被列出。请考虑更换一个更准确的关键字或者添加更多的关键字。"
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:106
 #, fuzzy
 #| msgid ""
 #| "Note: Your search was too wide so we will only display only the first "
@@ -585,43 +612,43 @@ msgstr ""
 "注意: 由于您的搜索范围太大我们只列出了前 100 个结果。请考虑更换一个更准确的关"
 "键字或者添加更多的关键字。"
 
-#: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:112 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr "很遗憾，您没能搜索到任何结果"
 
-#: templates/html/search.tmpl:118
+#: templates/html/search.tmpl:119
 msgid "Package %s"
 msgstr "软件包 %s"
 
-#: templates/html/search.tmpl:130
+#: templates/html/search.tmpl:131
 msgid "also provided by:"
 msgstr "同时提供该包的还有:"
 
-#: templates/html/search.tmpl:130
+#: templates/html/search.tmpl:131
 msgid "provided by:"
 msgstr "由这些包填实:"
 
-#: templates/html/search.tmpl:139
+#: templates/html/search.tmpl:140
 msgid "Source Package %s"
 msgstr "源码包 %s"
 
-#: templates/html/search.tmpl:146
+#: templates/html/search.tmpl:147
 msgid "Binary packages:"
 msgstr "二进制包:"
 
-#: templates/html/search.tmpl:148
+#: templates/html/search.tmpl:149
 #, fuzzy
 #| msgid "%u binary packages"
 msgid "hide %u binary packages"
 msgstr "%u 个二进制包"
 
-#: templates/html/search.tmpl:148
+#: templates/html/search.tmpl:149
 #, fuzzy
 #| msgid "%u binary packages"
 msgid "show %u binary packages"
 msgstr "%u 个二进制包"
 
-#: templates/html/search.tmpl:158
+#: templates/html/search.tmpl:159
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -742,6 +769,10 @@ msgstr "软件包: %s (%s)"
 #: templates/html/show.tmpl:61
 msgid "essential"
 msgstr "必备"
+
+#: templates/html/show.tmpl:61
+msgid "package manager will refuse to remove this package by default"
+msgstr ""
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"

@@ -1,4 +1,5 @@
 [%- PROCESS 'config/archive_layout.tmpl' -%]
+[%- PROCESS 'config/mirrors.tmpl' -%]
 [%- keyword_str = search_keywords.join(' ');
    keyword_esc = uri_escape(keyword_str);
    keyword_enc = html_encode(keyword_str);
