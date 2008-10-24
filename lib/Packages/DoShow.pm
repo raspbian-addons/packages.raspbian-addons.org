@@ -356,6 +356,7 @@ sub moreinfo {
     if ($info{sourcedownload}) {
 	$contents->{src}{url} = make_url($source,'',{source=>'source'});
 	$contents->{src}{pkg} = $source;
+	$contents->{src}{version} = $source_version;
 
 	my @downloads;
 	my $files = $page->get_src( 'files' );

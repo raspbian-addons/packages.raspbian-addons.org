@@ -15,19 +15,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/config.tmpl:41
+#: templates/config.tmpl:42
 msgid "Debian Web Mailinglist"
 msgstr ""
 
-#: templates/config.tmpl:46
+#: templates/config.tmpl:47
 msgid "%s Webmaster"
 msgstr "%s-seittimestari"
 
-#: templates/config.tmpl:49
+#: templates/config.tmpl:50
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 on %3'n <a href=\"%2\">tavaramerkki</a>"
 
-#: templates/config.tmpl:58
+#: templates/config.tmpl:59
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -36,11 +36,11 @@ msgstr ""
 "palvelusta. Varauduttehan virheisiin ja vanhentuneeseen tietoon"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:61
+#: templates/config.tmpl:62
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:63
 msgid ","
 msgstr ""
 
@@ -108,27 +108,54 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
-#: templates/config/mirrors.tmpl:178
+#: templates/config/archive_layout.tmpl:14
+msgid "packages that meet the Debian Free Software Guidelines"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:15
+msgid ""
+"packages that meet the Debian Free Software Guidelines but need software not "
+"in Debian main"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:16
+msgid "packages that do not meet the Debian Free Software Guidelines"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:73
+msgid ""
+"volatile packages that need major changes during the life of a stable release"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:95
+msgid "newer packages that have been adapted to stable releases of Debian"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:123
+msgid "ports of packages to architectures not yet available in Debian"
+msgstr ""
+
+#: templates/config/mirrors.tmpl:151
 msgid "North America"
 msgstr "Pohjois-Amerikka"
 
-#: templates/config/mirrors.tmpl:179
+#: templates/config/mirrors.tmpl:152
 msgid "South America"
 msgstr "Etelä-Amerikka"
 
-#: templates/config/mirrors.tmpl:180
+#: templates/config/mirrors.tmpl:153
 msgid "Asia"
 msgstr "Aasia"
 
-#: templates/config/mirrors.tmpl:181
+#: templates/config/mirrors.tmpl:154
 msgid "Australia and New Zealand"
 msgstr "Australia ja Uusi-Seelanti"
 
-#: templates/config/mirrors.tmpl:182
+#: templates/config/mirrors.tmpl:155
 msgid "Europe"
 msgstr "Eurooppa"
 
-#: templates/config/mirrors.tmpl:183
+#: templates/config/mirrors.tmpl:156
 msgid "Africa"
 msgstr "Afrikka"
 
@@ -180,7 +207,7 @@ msgstr ""
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr ""
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:155
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:169
 msgid "Experimental package"
 msgstr "Kokeellinen paketti"
 
@@ -196,11 +223,11 @@ msgstr ""
 "jopa tiedonhäviötä. Kannattaa ehdottomasti tutustua muutoslokiin ja muuhun "
 "mahdolliseen dokumenaatioon ennen käyttöönottoa."
 
-#: templates/html/download.tmpl:46 templates/html/show.tmpl:160
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:174
 msgid "debian-installer udeb package"
 msgstr "debian-asentimen udeb-paketti"
 
-#: templates/html/download.tmpl:47 templates/html/show.tmpl:161
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:175
 #, fuzzy
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
@@ -266,7 +293,7 @@ msgstr "%s tavua (%s %s)"
 msgid "Exact Size"
 msgstr "Tarkka koko"
 
-#: templates/html/download.tmpl:108 templates/html/show.tmpl:331
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:345
 msgid "MD5 checksum"
 msgstr "MD5-tarkiste"
 
@@ -467,152 +494,152 @@ msgstr "pieni tiivistetty tekstiluettelo"
 msgid "New packages in "
 msgstr "Uudet paketit komponentissa "
 
-#: templates/html/search.tmpl:19
+#: templates/html/search.tmpl:20
 msgid "Package Search Results -- %s"
 msgstr "Pakettihaun tulokset -- %s"
 
-#: templates/html/search.tmpl:28
+#: templates/html/search.tmpl:29
 msgid "Package Search Results"
 msgstr "Pakettihaun tulokset"
 
-#: templates/html/search.tmpl:35
+#: templates/html/search.tmpl:36
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
 
-#: templates/html/search.tmpl:40
+#: templates/html/search.tmpl:41
 msgid "Search in specific suite:"
 msgstr ""
 
-#: templates/html/search.tmpl:49
+#: templates/html/search.tmpl:50
 #, fuzzy
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Hae <a href=\"%s\">paketin %s muita versioita</a>"
 
-#: templates/html/search.tmpl:53 templates/html/search_contents.tmpl:58
+#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
 msgstr ""
 
-#: templates/html/search.tmpl:62 templates/html/search_contents.tmpl:63
+#: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 #, fuzzy
 msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Hae <a href=\"%s\">paketin %s muita versioita</a>"
 
-#: templates/html/search.tmpl:69
+#: templates/html/search.tmpl:70
 msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
 msgstr ""
 
-#: templates/html/search.tmpl:78
+#: templates/html/search.tmpl:79
 msgid "all suites"
 msgstr "kaikki jakelut"
 
-#: templates/html/search.tmpl:78
+#: templates/html/search.tmpl:79
 msgid "suite(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "kaikki osastot"
 
-#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "kaikki arkkitehtuurit"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr ""
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid "packages"
 msgstr "paketit"
 
-#: templates/html/search.tmpl:82
+#: templates/html/search.tmpl:83
 msgid "source packages"
 msgstr "lähdepaketit"
 
-#: templates/html/search.tmpl:83
+#: templates/html/search.tmpl:84
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 
-#: templates/html/search.tmpl:86
+#: templates/html/search.tmpl:87
 msgid " (including subword matching)"
 msgstr ""
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:88
+#: templates/html/search.tmpl:89
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
 
-#: templates/html/search.tmpl:94
+#: templates/html/search.tmpl:95
 msgid "Found <strong>%u</strong> matching packages."
 msgstr ""
 
-#: templates/html/search.tmpl:99
+#: templates/html/search.tmpl:100
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
 "keywords or alternative keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:103
+#: templates/html/search.tmpl:104
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:105
+#: templates/html/search.tmpl:106
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
 
-#: templates/html/search.tmpl:111 templates/html/search_contents.tmpl:131
+#: templates/html/search.tmpl:112 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
 msgstr "Haullasi ei löytynyt yhtään tulosta"
 
-#: templates/html/search.tmpl:118
+#: templates/html/search.tmpl:119
 msgid "Package %s"
 msgstr "Paketti %s"
 
-#: templates/html/search.tmpl:130
+#: templates/html/search.tmpl:131
 msgid "also provided by:"
 msgstr "jonka toteuttaa myös:"
 
-#: templates/html/search.tmpl:130
+#: templates/html/search.tmpl:131
 msgid "provided by:"
 msgstr "jonka toteuttaa:"
 
-#: templates/html/search.tmpl:139
+#: templates/html/search.tmpl:140
 #, fuzzy
 msgid "Source Package %s"
 msgstr "Lähdepaketti"
 
-#: templates/html/search.tmpl:146
+#: templates/html/search.tmpl:147
 #, fuzzy
 msgid "Binary packages:"
 msgstr "näennäispaketti"
 
-#: templates/html/search.tmpl:148
+#: templates/html/search.tmpl:149
 #, fuzzy
 msgid "hide %u binary packages"
 msgstr "Paketin koko"
 
-#: templates/html/search.tmpl:148
+#: templates/html/search.tmpl:149
 #, fuzzy
 msgid "show %u binary packages"
 msgstr "Paketin koko"
 
-#: templates/html/search.tmpl:158
+#: templates/html/search.tmpl:159
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -648,11 +675,11 @@ msgid "paths that end with"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:76
-msgid "files named"
+msgid "filenames that contain"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:78
-msgid "filenames that contain"
+msgid "files named"
 msgstr ""
 
 #. @translators: I'm really sorry :/ 
@@ -675,7 +702,7 @@ msgid "Sort results by filename"
 msgstr ""
 
 #: templates/html/search_contents.tmpl:98
-#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:331
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:345
 msgid "File"
 msgstr "Tiedosto"
 
@@ -738,6 +765,10 @@ msgstr "Paketti: %s (%s)"
 msgid "essential"
 msgstr "Välttämätön"
 
+#: templates/html/show.tmpl:61
+msgid "package manager will refuse to remove this package by default"
+msgstr ""
+
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
 msgstr ""
@@ -766,51 +797,55 @@ msgstr "Tekijänoikeustiedosto"
 msgid "Debian Source Repository"
 msgstr ""
 
-#: templates/html/show.tmpl:96
+#: templates/html/show.tmpl:96 templates/html/show.tmpl:102
+msgid "%s Patch Tracking"
+msgstr ""
+
+#: templates/html/show.tmpl:110
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
 msgstr "Imuroi lähdekoodipaketti <a href=\"%s\">%s</a>:"
 
-#: templates/html/show.tmpl:103
+#: templates/html/show.tmpl:117
 msgid "Not found"
 msgstr "Ei löytynyt"
 
-#: templates/html/show.tmpl:108
+#: templates/html/show.tmpl:122
 msgid "Maintainer:"
 msgstr "Ylläpitäjä:"
 
-#: templates/html/show.tmpl:110
+#: templates/html/show.tmpl:124
 msgid "Maintainers:"
 msgstr "Ylläpitäjät:"
 
-#: templates/html/show.tmpl:123
+#: templates/html/show.tmpl:137
 msgid "An overview over the maintainer's packages and uploads"
 msgstr ""
 
-#: templates/html/show.tmpl:123
+#: templates/html/show.tmpl:137
 msgid "QA&nbsp;Page"
 msgstr "Laadunvalvontasivu"
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:138
 msgid "Archive of the Maintainer Mailinglist"
 msgstr ""
 
-#: templates/html/show.tmpl:124
+#: templates/html/show.tmpl:138
 msgid "Mail&nbsp;Archive"
 msgstr ""
 
-#: templates/html/show.tmpl:132
+#: templates/html/show.tmpl:146
 msgid "External Resources:"
 msgstr ""
 
-#: templates/html/show.tmpl:134
+#: templates/html/show.tmpl:148
 msgid "Homepage"
 msgstr "Kotisivu"
 
-#: templates/html/show.tmpl:140
+#: templates/html/show.tmpl:154
 msgid "Similar packages:"
 msgstr "Samankaltaisia paketteja:"
 
-#: templates/html/show.tmpl:156
+#: templates/html/show.tmpl:170
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -822,7 +857,7 @@ msgstr ""
 "jopa tiedonhäviötä. Kannattaa ehdottomasti tutustua <a href=\"%s"
 "\">muutoslokiin</a> ja muihin mahdollisiin ohjeisiin ennen käyttöönottoa."
 
-#: templates/html/show.tmpl:180
+#: templates/html/show.tmpl:194
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
@@ -832,73 +867,73 @@ msgstr ""
 "kuvaksesta</a> <a href=\"%sch-binary.html#s-virtual_pkg\">näennäispaketin "
 "määritelmä</a>."
 
-#: templates/html/show.tmpl:188
+#: templates/html/show.tmpl:202
 msgid "Tags"
 msgstr "Tagit"
 
-#: templates/html/show.tmpl:211
+#: templates/html/show.tmpl:225
 msgid "Packages providing %s"
 msgstr "Paketit, jotka toteuttavat paketin %s"
 
-#: templates/html/show.tmpl:220
+#: templates/html/show.tmpl:234
 msgid "The following binary packages are built from this source package:"
 msgstr "Seuraavat binääripaketit on käännetty tästä lähdepaketista:"
 
-#: templates/html/show.tmpl:229
+#: templates/html/show.tmpl:243
 msgid "Other Packages Related to %s"
 msgstr "Muut pakettiin %s liittyvät paketit"
 
-#: templates/html/show.tmpl:231
+#: templates/html/show.tmpl:245
 msgid "legend"
 msgstr ""
 
-#: templates/html/show.tmpl:233
+#: templates/html/show.tmpl:247
 msgid "build-depends"
 msgstr ""
 
-#: templates/html/show.tmpl:234
+#: templates/html/show.tmpl:248
 msgid "build-depends-indep"
 msgstr ""
 
-#: templates/html/show.tmpl:236
+#: templates/html/show.tmpl:250
 msgid "depends"
 msgstr ""
 
-#: templates/html/show.tmpl:237
+#: templates/html/show.tmpl:251
 msgid "recommends"
 msgstr ""
 
-#: templates/html/show.tmpl:238
+#: templates/html/show.tmpl:252
 msgid "suggests"
 msgstr ""
 
-#: templates/html/show.tmpl:248
+#: templates/html/show.tmpl:262
 msgid "or "
 msgstr "tai "
 
-#: templates/html/show.tmpl:256
+#: templates/html/show.tmpl:270
 msgid "also a virtual package provided by"
 msgstr "myös näennäispaketti, jonka toteuttaa"
 
-#: templates/html/show.tmpl:258
+#: templates/html/show.tmpl:272
 msgid "virtual package provided by"
 msgstr "näennäispaketti, jonka toteuttaa"
 
-#: templates/html/show.tmpl:263
+#: templates/html/show.tmpl:277
 #, fuzzy
 msgid "hide %u providing packages"
 msgstr "Paketin koko"
 
-#: templates/html/show.tmpl:263
+#: templates/html/show.tmpl:277
 #, fuzzy
 msgid "show %u providing packages"
 msgstr "Paketin koko"
 
-#: templates/html/show.tmpl:281
+#: templates/html/show.tmpl:295
 msgid "Download %s"
 msgstr "Imuroi %s"
 
-#: templates/html/show.tmpl:283
+#: templates/html/show.tmpl:297
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -908,62 +943,62 @@ msgstr ""
 "Lisäksi se antaa tietoa paketin koosta sekä asennukseen tarvittavasta "
 "levytilasta."
 
-#: templates/html/show.tmpl:284
+#: templates/html/show.tmpl:298
 msgid "Download for all available architectures"
 msgstr "Imurointi kaikille saataville arkkitehtuureille"
 
-#: templates/html/show.tmpl:285
+#: templates/html/show.tmpl:299
 msgid "Architecture"
 msgstr "Arkkitehtuuri"
 
-#: templates/html/show.tmpl:286
+#: templates/html/show.tmpl:300
 msgid "Version"
 msgstr "Versio"
 
-#: templates/html/show.tmpl:287
+#: templates/html/show.tmpl:301
 msgid "Package Size"
 msgstr "Paketin koko"
 
-#: templates/html/show.tmpl:288
+#: templates/html/show.tmpl:302
 msgid "Installed Size"
 msgstr "Koko asennettuna"
 
-#: templates/html/show.tmpl:289
+#: templates/html/show.tmpl:303
 msgid "Files"
 msgstr "Tiedostot"
 
-#: templates/html/show.tmpl:297
+#: templates/html/show.tmpl:311
 msgid "(unofficial port)"
 msgstr "(epävirallinen siirros)"
 
-#: templates/html/show.tmpl:308 templates/html/show.tmpl:336
+#: templates/html/show.tmpl:322 templates/html/show.tmpl:350
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kt"
 
-#: templates/html/show.tmpl:311
+#: templates/html/show.tmpl:325
 msgid "list of files"
 msgstr "tiedostoluettelo"
 
-#: templates/html/show.tmpl:313
+#: templates/html/show.tmpl:327
 #, fuzzy
 msgid "no current information"
 msgstr "Lisätietoa paketista %s"
 
-#: templates/html/show.tmpl:330
+#: templates/html/show.tmpl:344
 msgid "Download information for the files of this source package"
 msgstr ""
 
-#: templates/html/show.tmpl:331
+#: templates/html/show.tmpl:345
 msgid "Size (in kB)"
 msgstr "Koko (kt)"
 
-#: templates/html/show.tmpl:352
+#: templates/html/show.tmpl:366
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
 
-#: templates/html/show.tmpl:357
+#: templates/html/show.tmpl:371
 #, fuzzy
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Kaikki jakelun \"%s\" Debian-paketit"
@@ -1041,92 +1076,78 @@ msgstr "Muodostettu:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Lisenssiehdot sivulla <URL:%s>."
 
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Tämä sivu on saatavilla myös seuraavilla kielillä:"
+
+#~ msgid "Back to:"
+#~ msgstr "Takaisin:"
+
 #, fuzzy
-#~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
-#~ "s/\">Pakettien hakusivulle</a>"
+#~ msgid "Packages search page"
+#~ msgstr "Kaikki jakelun \"%s\" Debian-paketit"
 
-#~ msgid "Virtual package"
-#~ msgstr "Näennäispaketti"
-
-#~ msgid "Package not available"
-#~ msgstr "Paketti ei saatavilla"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Ohjelmistopaketit jakelussa \"%s\" tärkeysasteella %s"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Imuroi %s\n"
-
-#~ msgid "virtual package"
-#~ msgstr "näennäispaketti"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Tämän jakelun yleiskuva"
-
-#~ msgid "md5sum"
-#~ msgstr "MD5-summa"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
-
-#~ msgid "Source Package:"
-#~ msgstr "Lähdepaketti:"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Katso <a href=\"%s\">Debian-muutoslokia</a>"
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Katso <a href=\"%s\">copyright-tiedostoa</a>"
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s on vastuussa tästä Debian-paketista."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " ja %s ovat vastuussa tästä Debian-paketista."
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr "Katso <a href=\"%s\">paketin %s kehittäjätietoja</a>."
-
-#~ msgid "Debian Project"
-#~ msgstr "Debian-projekti"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "Tietoja&nbsp;Debianista"
-
-#~ msgid "News"
-#~ msgstr "Uutiset"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Debianin&nbsp;hankkiminen"
-
-#~ msgid "Support"
-#~ msgstr "Tuki"
-
-#~ msgid "Development"
-#~ msgstr "Kehitys"
-
-#~ msgid "Site map"
-#~ msgstr "Sivustokartta"
+#~ msgid "Versions:"
+#~ msgstr "Versiot:"
 
 #~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
 #~ msgstr ""
-#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
-#~ "s/\">Pakettien hakusivulle</a>"
+#~ "Copyright © 1997-2005 SPI;\n"
+#~ "Katso lisenssiehdot sivulta <URL:http://www.debian.org/license>.\n"
+#~ "\n"
 
-#~ msgid "Last Modified: "
-#~ msgstr "Viimeksi muutettu: "
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Kokoelmassa ei ole välttämättömiä paketteja"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Ohjelmistopaketit jakelussa \"%s\", välttämättömät paketit"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Kokoelmassa ei ole paketteja tällä tärkeysasteella"
 
 #~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
 #~ msgstr ""
-#~ "Debian on Software in the Public Interest, Inc.'in rekisteröimä "
-#~ "tavaramerkki."
+#~ "Varoitus: Nämä paketit on tarkoitettu käytettäväksi vain rakennettaessa "
+#~ "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
+#~ "asentimen</a> vedoksia. Älä asenna normaaliin Debian-järjestelmään."
+
+#~ msgid "yes"
+#~ msgstr "kyllä"
+
+#~ msgid "Priority"
+#~ msgstr "Tärkeys"
+
+#~ msgid "Uploaders"
+#~ msgstr "Uploadaajat"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Koko mitataan kilotavuissa."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Kokeellisten pakettien käyttäjiä kehotetaan ottamaan ongelmatapauksissa "
+#~ "yhteyttä suoraan paketin ylläpitäjiin."
+
+#~ msgid ""
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Paketit, jotka on lisätty komponenttiin \"%s\" epävakaaseen Debian-"
+#~ "arkistoon viimeisen seitsemän (7) päivän aikana."
+
+#~ msgid ""
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Seuraavat paketit on lisätty komponenttiin \"%s\" Debian-arkistoon "
+#~ "viimeisen seitsemän (7) päivän aikana."
 
 #~ msgid ""
 #~ "Warning: The <span class=\"pred\">experimental</span> distribution "
@@ -1140,74 +1161,88 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 #~ "paketin kaikesta huolimatta, otat vastuun itsellesi."
 
 #~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
+#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
 #~ msgstr ""
-#~ "Seuraavat paketit on lisätty komponenttiin \"%s\" Debian-arkistoon "
-#~ "viimeisen seitsemän (7) päivän aikana."
+#~ "Debian on Software in the Public Interest, Inc.'in rekisteröimä "
+#~ "tavaramerkki."
+
+#~ msgid "Last Modified: "
+#~ msgstr "Viimeksi muutettu: "
 
 #~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
+#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+#~ "\">Packages search page</a>"
 #~ msgstr ""
-#~ "Paketit, jotka on lisätty komponenttiin \"%s\" epävakaaseen Debian-"
-#~ "arkistoon viimeisen seitsemän (7) päivän aikana."
+#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
+#~ "s/\">Pakettien hakusivulle</a>"
 
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Kokeellisten pakettien käyttäjiä kehotetaan ottamaan ongelmatapauksissa "
-#~ "yhteyttä suoraan paketin ylläpitäjiin."
+#~ msgid "Site map"
+#~ msgstr "Sivustokartta"
 
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "Koko mitataan kilotavuissa."
+#~ msgid "Development"
+#~ msgstr "Kehitys"
 
-#~ msgid "Uploaders"
-#~ msgstr "Uploadaajat"
+#~ msgid "Support"
+#~ msgstr "Tuki"
 
-#~ msgid "Priority"
-#~ msgstr "Tärkeys"
+#~ msgid "Getting&nbsp;Debian"
+#~ msgstr "Debianin&nbsp;hankkiminen"
 
-#~ msgid "yes"
-#~ msgstr "kyllä"
+#~ msgid "News"
+#~ msgstr "Uutiset"
 
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Varoitus: Nämä paketit on tarkoitettu käytettäväksi vain rakennettaessa "
-#~ "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
-#~ "asentimen</a> vedoksia. Älä asenna normaaliin Debian-järjestelmään."
+#~ msgid "About&nbsp;Debian"
+#~ msgstr "Tietoja&nbsp;Debianista"
 
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Kokoelmassa ei ole paketteja tällä tärkeysasteella"
+#~ msgid "Debian Project"
+#~ msgstr "Debian-projekti"
 
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Ohjelmistopaketit jakelussa \"%s\", välttämättömät paketit"
+#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
+#~ msgstr "Katso <a href=\"%s\">paketin %s kehittäjätietoja</a>."
 
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Kokoelmassa ei ole välttämättömiä paketteja"
+#~ msgid " and %s are responsible for this Debian package."
+#~ msgstr " ja %s ovat vastuussa tästä Debian-paketista."
 
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright © 1997-2005 SPI;\n"
-#~ "Katso lisenssiehdot sivulta <URL:http://www.debian.org/license>.\n"
-#~ "\n"
+#~ msgid "%s is responsible for this Debian package."
+#~ msgstr "%s on vastuussa tästä Debian-paketista."
 
-#~ msgid "Versions:"
-#~ msgstr "Versiot:"
+#~ msgid "View the <a href=\"%s\">copyright file</a>"
+#~ msgstr "Katso <a href=\"%s\">copyright-tiedostoa</a>"
+
+#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
+#~ msgstr "Katso <a href=\"%s\">Debian-muutoslokia</a>"
+
+#~ msgid "Source Package:"
+#~ msgstr "Lähdepaketti:"
+
+#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+#~ msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
+
+#~ msgid "md5sum"
+#~ msgstr "MD5-summa"
+
+#~ msgid "Overview over this distribution"
+#~ msgstr "Tämän jakelun yleiskuva"
+
+#~ msgid "virtual package"
+#~ msgstr "näennäispaketti"
+
+#~ msgid "Download %s\n"
+#~ msgstr "Imuroi %s\n"
+
+#~ msgid "Software Packages in \"%s\", priority %s"
+#~ msgstr "Ohjelmistopaketit jakelussa \"%s\" tärkeysasteella %s"
+
+#~ msgid "Package not available"
+#~ msgstr "Paketti ei saatavilla"
+
+#~ msgid "Virtual package"
+#~ msgstr "Näennäispaketti"
 
 #, fuzzy
-#~ msgid "Packages search page"
-#~ msgstr "Kaikki jakelun \"%s\" Debian-paketit"
-
-#~ msgid "Back to:"
-#~ msgstr "Takaisin:"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Tämä sivu on saatavilla myös seuraavilla kielillä:"
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
+#~ "s/\">Pakettien hakusivulle</a>"
