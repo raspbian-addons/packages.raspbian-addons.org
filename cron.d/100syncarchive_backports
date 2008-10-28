@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # backports archive
 #
-for dist in sarge etch
+for dist in etch
 do
   echo "retrieve Release(.gpg) $dist-backports"
   test -d backports/${dist}-backports || mkdir -p backports/${dist}-backports

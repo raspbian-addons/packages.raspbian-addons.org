@@ -103,8 +103,6 @@ sub read_entry {
 
 #FIXME: make configurable
 my %fallback_suites = (
-		       'sarge-backports' => 'sarge',
-		       'sarge-volatile' => 'sarge',
 		       'etch-backports' => 'etch',
 		       'etch-volatile' => 'etch',
 		       experimental => 'sid' );
