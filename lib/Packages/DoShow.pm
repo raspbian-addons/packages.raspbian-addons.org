@@ -242,7 +242,7 @@ sub do_show {
 			# more information
 			#
 			my $changesandcopy = 0;
-			$changesandcopy = 1 if $suite eq "woody";
+			$changesandcopy = 1 if suites_cmp($suite, "woody") >= 0;
 			moreinfo( name => $pkg, data => $page, vars => \%contents,
 				  opts => $opts,
 				  env => \%FTP_SITES,
@@ -324,7 +324,7 @@ sub do_show {
 		    # more information
 		    #
 		    my $changesandcopy = 0;
-		    $changesandcopy = 1 if $suite eq "woody";
+		    $changesandcopy = 1 if suites_cmp($suite, "woody") >= 0;
 		    moreinfo( name => $pkg, data => $page, vars => \%contents,
 			      opts => $opts,
 			      env => \%FTP_SITES,

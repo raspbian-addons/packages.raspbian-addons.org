@@ -41,7 +41,7 @@ ddtplangs="ca cs da de eo es eu fi fr hu it ja km ko nl pl pt pt-br ru sk sv uk 
 archives="us"
 sections="main contrib non-free"
 parts="$sections"
-suites="bo hamm slink potato woody"
+suites="bo hamm slink potato woody sarge"
 priorities="required important standard optional extra"
 dists="$suites"
 architectures="alpha arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
@@ -50,6 +50,7 @@ arch_hamm="i386 m68k"
 arch_slink="alpha i386 m68k sparc"
 arch_potato="alpha arm i386 ia64 m68k powerpc sparc"
 arch_woody="alpha arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
+arch_sarge="${arch_woody}"
 
 # Miscellaneous
 #

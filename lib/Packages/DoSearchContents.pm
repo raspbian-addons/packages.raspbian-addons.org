@@ -33,7 +33,7 @@ sub do_search_contents {
     #FIXME: that's extremely hacky atm
     if ($params->{values}{suite}{no_replace}[0] eq 'default') {
 	$params->{values}{suite}{no_replace} =
-	    $params->{values}{suite}{final} = $opts->{suite} = [ 'woody' ];
+	    $params->{values}{suite}{final} = $opts->{suite} = [ 'sarge' ];
     }
 
     if (@{$opts->{suite}} > 1) {
