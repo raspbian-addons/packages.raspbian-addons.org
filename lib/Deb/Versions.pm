@@ -176,11 +176,11 @@ sub suites_cmp {
 	$cmp_b = $suites_sort{$1} - $archive_sort{$2}
 	if $s_b =~ m;^(.+?)[/-](.*)$;o;
     }
-    return ($cmp_a <=> $cmp_b);
+    return ($cmp_b <=> $cmp_a);
 }
 
 sub suites_sort {
-    return sort { suites_cmp( $b, $a ) } @_;
+    return sort { suites_cmp( $a, $b ) } @_;
 }
 
 sub priority_cmp {
