@@ -43,7 +43,6 @@ Cron
 010git                     -- pull changes from git
 050checkinst               -- check if all needed packages are installed
 100syncarchive             -- retrieve data from main Debian archive
-100syncarchive_amd64       -- retrieve data from sarge amd64 archive
 100syncarchive_backports   -- retrieve data from backports.org
 100syncarchive_debports    -- retrieve data from debian-ports.org
                               (kfreebsd-*, armel)
@@ -57,7 +56,7 @@ Cron
                               (see BACKEND)
 300maintainerdb            -- create data for @packages.d.o aliases
 400changelogs_map          -- create changelogs map (for changelog: shortcut)
-500update_mo               -- update .pot and .po files and generate .gmo
+500update_po               -- update .pot and .po files and generate .gmo
 600index_pages             -- create static index pages
                               <suite>/, <suite>/<subsection>, and
                               allpackages

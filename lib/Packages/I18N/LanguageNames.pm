@@ -24,6 +24,7 @@ my %ctrans = (
 	hy    => N_("Armenian"),
 	it    => N_("Italian"),
 	ja    => N_("Japanese"),
+	km    => N_("Khmer"),
 	ko    => N_("Korean"),
 	es    => N_("Spanish"),
 	pt    => N_("Portuguese"),

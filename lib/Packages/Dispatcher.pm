@@ -64,11 +64,10 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
-    my %SUITES_ALIAS = ( oldstable => 'sarge',
+    my %SUITES_ALIAS = ( #oldstable => 'sarge',
 			 stable => 'etch',
 			 testing => 'lenny',
 			 unstable => 'sid',
-			 '3.1' => 'sarge',
 			 '4.0' => 'etch' );
 
     # Read in all the variables set by the form
@@ -94,9 +93,11 @@ sub do_dispatch {
     &Packages::DB::init();
     my $last_modified = $Packages::DB::db_read_time;
     my $now = time;
+    my $expires = $last_modified + (12*3600);
+    $expires = $now + 3600 if $expires < $now;
     # allow some fudge, since the db mod time is not the end of
     # the cron job
-    $last_modified = $now if $last_modified - $now < 3600; 
+    $last_modified = $now if $now - $last_modified < 3600;
 
     if ($input->http('If-Modified-Since') and
 	(my $modtime = str2time($input->http('If-Modified-Since'), 'UTC'))) {
@@ -351,7 +352,7 @@ sub do_dispatch {
 			     -last_modified => strftime("%a, %d %b %Y %T %z",
 							localtime($last_modified)),
 			     -expires => strftime("%a, %d %b %Y %T %z",
-						  localtime($last_modified + (12*3600))),
+						  localtime($expires)),
 			     );
 	#use Data::Dumper;
 	#print '<pre>'.Dumper(\%ENV, \%page_content, get_all_messages()).'</pre>';
