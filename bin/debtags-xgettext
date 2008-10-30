@@ -18,7 +18,9 @@ sub escape {
         my $text = shift;
         $text =~ s/\\/\\\\/g;
         $text =~ s/"/\\"/g;
-        $text =~ s/\n/\\n/g;
+        $text =~ s/\n\s*\.\n\s?/\\n/g;
+        $text =~ s/\n  /\\n/g;
+        $text =~ s/\n//g;
         $text =~ s/\t/\\t/g;
         return $text;
 }
@@ -59,6 +61,7 @@ sub processFile {
 
 	    if ($long) {
 		$long = escape($long);
+		$long =~ s/^\s//;
 		push (@msgids, $long);
 		push (@{$messages->{$long}}, $comment.", long desc", $file);
 	    }

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for i in po/debtags.*.po
+do
+	perl -i -p -e 'if (/^\s*$/) { $seen=1 };
+	  if ($begin) { s/^"\s/"/ } $begin=0;
+	  s/^(msg(id|str) ")\s/$1/;
+	  if ($seen) { s/^"\s*\.\\n"/"\001"/g; s/\s*\\n//g; s/\001/\\n/g }
+	  if (/^msg(id|str) ""/) { $begin=1 };
+	  if (/^"\\n"/) { $begin=2 };
+	' $i
+done

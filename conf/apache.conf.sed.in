@@ -80,10 +80,7 @@
    PerlSwitches -T
    <Location /cgi-bin/>
       SetHandler perl-script
-      # mod-perl etch
       PerlInitHandler Apache2::Reload
-      # mod-perl sarge
-      #PerlInitHandler Apache::Reload
       PerlHandler ModPerl::Registry
       Options +ExecCGI
       PerlSendHeader On
@@ -117,12 +114,12 @@
 #   RewriteRule ^/$ http://www.debian.org/distrib/packages
    RewriteRule ^/$			/index.html [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$	"/$1%%{%}2B$3" [N]
-   RewriteRule ^/changelog:(.+)$	http://%SITE%/changelogs/${changelog-url:$1} [R,L,NE]
-   RewriteRule ^/src:([^/]+)$		http://%SITE%/search?searchon=sourcenames&keywords=$1 [R,L,NE]
-   RewriteRule ^/file:(.+)$		http://%SITE%/search?searchon=contents&keywords=$1 [R,L,NE]
+   RewriteRule ^/changelog:(.+)$	/changelogs/${changelog-url:$1} [R,L,NE]
+   RewriteRule ^/src:([^/]+)$		/search?searchon=sourcenames&keywords=$1 [R,L,NE]
+   RewriteRule ^/file:(.+)$		/search?searchon=contents&keywords=$1 [R,L,NE]
    RewriteCond %{REQUEST_URI} !^/search$ [OR]
    RewriteCond %{QUERY_STRING} ^$
-   RewriteRule ^/([^/]+)$		http://%SITE%/search?keywords=$1 [R,L,NE]
+   RewriteRule ^/([^/]+)$		/search?keywords=$1 [R,L,NE]
 
    RewriteCond %{QUERY_STRING} =""
    RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -f [OR]
