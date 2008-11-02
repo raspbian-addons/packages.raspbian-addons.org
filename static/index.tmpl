@@ -86,7 +86,7 @@ Section:
 distributions for any files (or just parts of file names) that are
 part of packages.
 You can also get a full list of files in a given package.
-<BR>
+<br>
 <form method="GET" action="/search">
 <input type="hidden" name="searchon" value="contents">
 
@@ -106,7 +106,7 @@ Display:
 <br>
 <input type="radio" name="mode" value="filename" id="filename">
   <label for="filename">packages that contain files whose names contain the keyword</label>
-
+<br>
 <label for="distro">Distribution:</label>
 
 <select name="suite" id="distro">
@@ -125,4 +125,4 @@ Display:
 
 [% PROCESS 'html/foot.tmpl'
 	langs.size = 0
-	copyright.years = '1997 - 2007' %]
+	copyright.years = '1997 - 2008' %]
