@@ -25,7 +25,10 @@ localdir=/srv/archive.debian.org/ftp
 #ftproot=/org/ftp.root
 
 ftpsite=http://archive.debian.org/debian-archive
-ddtp_ftpsite=
+security_ftpsite=http://archive.debian.org/debian-security
+volatile_ftpsite=http://archive.debian.org/debian-volatile
+backports_ftpsite=http://archive.debian.org.org/backports.org
+ddtp_ftpsite=http://ftp.de.debian.org/debian
 
 wget_cmd="wget --no-verbose --tries=2 --timeout=60"
 check_release_cmd="perl -I${libdir} ${bindir}/check-release --verbose --ignoremissing --keyring ${configdir}/trusted.gpg"
@@ -38,10 +41,10 @@ search_url="/search"
 #
 polangs="de fi fr hu ja nl ru sv uk zh-cn"
 ddtplangs="ca cs da de eo es eu fi fr hu it ja km ko nl pl pt pt-br ru sk sv uk zh zh-cn zh-tw"
-archives="us"
+archives="us security backports volatile"
 sections="main contrib non-free"
 parts="$sections"
-suites="bo hamm slink potato woody sarge"
+suites="bo hamm slink potato woody sarge sarge-volatile sarge-backports"
 priorities="required important standard optional extra"
 dists="$suites"
 architectures="alpha arm hppa i386 ia64 m68k mips mipsel powerpc s390 sparc"
