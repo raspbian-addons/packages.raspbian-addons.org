@@ -13,11 +13,11 @@ mirrors = {
 	us => {
 		mirror_list => 'http://www.debian.org/distrib/archive',
 		north_america => [
-			"archive.debian.org/debian-archive",
 			"ftp.egr.msu.edu/debian-archive",
 			"ftp3.nrc.ca/debian-archive",
 		],
 		europa => [
+			"archive.debian.org/debian-archive",
 			"ftp.de.debian.org/debian-archive",
 #			"ftp.ch.debian.org/debian-archive",
 			"ftp.nl.debian.org/debian-archive",
@@ -30,6 +30,18 @@ mirrors = {
 		asia => [
 			"ftp.kr.debian.org/debian-archive",
 #			"ftp.twaren.net/Linux/Debian/debian-archive",
+		],
+	},
+	volatile => {
+		title => g('volatile packages that need major changes during the life of a stable release'),
+		europa => [
+			"archive.debian.org/debian-volatile",
+		],
+	},
+	backports => {
+		title => g('newer packages that have been adapted to stable releases of Debian'),
+		europa => [
+			"archive.debian.org/backports.org",
 		],
 	},
 }
