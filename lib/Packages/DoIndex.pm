@@ -47,7 +47,7 @@ sub send_file {
     my $path = "";
     $path .= "source/" if $opts->{source};
     $path .= "$opts->{suite}[0]/";
-#    $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
+    $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
     $path .= "$opts->{priority}[0]/" if @{$opts->{priority}};
     $path .= "$file.$opts->{po_lang}.$opts->{format}";
