@@ -53,3 +53,6 @@ else
     echo "couldn't aquire changelogs lock file in due time"
 fi
 date
+
+$topdir/bin/create_mirror $topdir
+date
