@@ -44,8 +44,8 @@ do
       --exclude '*.new' --exclude '*.sed.in' \
       --exclude '*.slices' --exclude '*~' \
       --exclude '*.lock' --exclude '*.ttc' --exclude 'logs/' \
-      --exclude 'packages/*/' --exclude 'changelogs.*' \
-      --exclude 'changelogs/**/log' \
+      --exclude 'packages/*/' --exclude 'changelogs.*.dump' \
+      --exclude 'changelogs.cache' --exclude 'changelogs/**/log' \
       --exclude "/auto" --exclude "/Search" --exclude "/perl" \
       --delete-excluded --delete-after \
       "$topdir/$d/" "$new/$d/"
