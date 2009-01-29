@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2008-08-22 04:27+0900\n"
+"PO-Revision-Date: 2009-01-30 01:54+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -1634,6 +1634,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
 "ietf.org/rfc/rfc4120.txt"
 msgstr ""
+"Kerberos は、クライアント・サーバ双方から信頼される第三者認証局と共通鍵暗号を"
+"用いて、本来なら安全でないネットワーク上で安全な認証を行うための、コンピュー"
+"タネットワーク用認証プロトコルです。\n"
+"Kerberos が提供する認証機構は双方向なので、クライアントが本物であることをサー"
+"バが確認できるだけでなく、サーバへの接続が傍受されていないことをクライアント"
+"が確認できます。\n"
+"Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
+"ietf.org/rfc/rfc4120.txt"
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
@@ -2827,6 +2835,7 @@ msgstr "SQL"
 msgid "SSH"
 msgstr "SSH"
 
+# FIXME: encrypting -> encrypted?
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -2838,6 +2847,13 @@ msgid ""
 "channel.\n"
 "Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
+"安全でないネットワーク上で、SSH プロトコルを用いて、安全で暗号化されたファイ"
+"ル交換やファイル操作を行うためのプロトコル、SSH File Transfer Protocol。\n"
+"前身となる SCP ではファイル転送のみが可能だったのに対し、SFTP では、完全な"
+"ファイルシステム操作一式が提供されています。名前からは、「SSH チャネルを通じ"
+"て実行されるバージョンの FTP プロトコル」ととられそうですが、SFTP はそのよう"
+"なものではありません。\n"
+"Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 
 #. Tag: protocol::ssl, short desc
 #: files/debtags/vocabulary
@@ -2938,6 +2954,14 @@ msgid ""
 "mechanism, via asymmetric public/private key cryptography.\n"
 "Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgstr ""
+"安全で暗号化されたネットワーク接続のためのプロトコル、Secure Shell。SSH は、"
+"本来なら安全でないプロトコル上で、SSH チャネルを通じて、SSH サーバを立ててい"
+"るリモートホストにおいてプログラムを実行するのに利用できます。名前が示すとお"
+"り、主な用途は、リモートサーバにおいて、暗号化されたログインやシェルアクセス"
+"を提供することです。\n"
+"SSH の認証には、パスワードか、(より好ましい方法である) 公開鍵・秘密鍵を用いた"
+"非対称鍵暗号を用いることができます。\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Shell"
 
 #. Tag: protocol::ssl, long desc
 #: files/debtags/vocabulary
@@ -2951,6 +2975,14 @@ msgid ""
 "\" is added to the protocol name, like HTTPS, FTPS etc.\n"
 "Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 msgstr ""
+"インターネット上で、安全で暗号化された通信を提供するためのプロトコル、Secure "
+"Socket Layer/Transport Layer Security。SSL/TLS は、サービス提供者 (インター"
+"ネットバンキングサーバなど) が本物であることの証明や、通信チャネルを保護する"
+"のに用いられます。\n"
+"FTP、HTTP、IMAP、SMTP などの本来なら安全でないプロトコルは、SSL/TLS 上で送信"
+"することで、送信データを保護できます。この場合、HTTPS や FTPS というように、"
+"プロトコル名に「S」が付けられます。\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 
 #. Facet: security, short desc
 #: files/debtags/vocabulary
