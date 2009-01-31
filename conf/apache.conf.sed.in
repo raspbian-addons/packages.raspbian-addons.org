@@ -65,10 +65,11 @@
   AddEncoding x-gzip .gz
 </Directory>
 
-<VirtualHost *>
+<VirtualHost 91.189.94.219:80>
    ServerAdmin frank@lichtenheld.de
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
+   ServerAlias packages.ubunut.com
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
 
@@ -140,7 +141,7 @@
 
 </VirtualHost>
 
-<VirtualHost *>
+<VirtualHost 91.189.94.219:80>
    ServerAdmin frank@lichtenheld.de
    DocumentRoot %TOPDIR%/www/
    ServerName packages.ubuntu.net
