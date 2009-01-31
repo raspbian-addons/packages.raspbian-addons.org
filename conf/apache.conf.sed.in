@@ -116,8 +116,9 @@
    RewriteRule ^/changelog:(.+)$	/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$		/search?searchon=sourcenames&keywords=$1 [R,L,NE]
    RewriteRule ^/file:(.+)$		/search?searchon=contents&keywords=$1 [R,L,NE]
-   RewriteCond %{REQUEST_URI} !^/search$ [OR]
-   RewriteCond %{QUERY_STRING} ^$
+   RewriteCond %{QUERY_STRING} ^$ [OR]
+   RewriteCond %{REQUEST_URI} !^/search$
+   RewriteCond %{REQUEST_URI} !^/cgi-bin/search_(contents|packages)\.pl$
    RewriteRule ^/([^/]+)$		/search?keywords=$1 [R,L,NE]
 
    RewriteCond %{QUERY_STRING} =""
