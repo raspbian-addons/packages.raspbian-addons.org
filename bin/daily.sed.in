@@ -55,4 +55,5 @@ fi
 date
 
 $topdir/bin/create_mirror $topdir
+sudo -H -u archvsync /home/archvsync/bin/pushpdo &
 date
