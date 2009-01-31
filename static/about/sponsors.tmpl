@@ -1,0 +1,30 @@
+[% PROCESS 'html/head.tmpl' 
+	title_tag = "$organisation Packages - Sponsors"
+	page_title = "$organisation Packages - Sponsors"
+	keywords = "$organisation, Sponsoring, Hardware, Hosting"
+%]
+
+<h2>Sponsors of <tt>packages.debian.org</tt></h2>
+
+<p>Providing this popular service wouldn't be possible
+without the help of the following companies and organisations:</p> 
+
+<table id="sponsorslist">
+<tr>
+ <th>Machine</th> <th>Purpose</th> <th>Sponsor Hardware</th> <th>Sponsor Hosting</th>
+</tr>
+<tr>
+ <td><a href="http://db.debian.org/machines.cgi?host=powell">powell.debian.org</a></td>
+ <td>Main Web/Data Server, Mail Handling</td>
+ <td colspan="2"><a href="http://1und1.de/">1&amp;1 Internet AG</a></td>
+</tr>
+<tr>
+ <td><a href="http://db.debian.org/machines.cgi?host=piatti">piatti.debian.org</a></td>
+ <td>Mirror</td>
+ <td><a href="http://www.hp.com/">Hewlett-Packard</a></td>
+ <td><a href="http://cs.helsinki.fi/index.en.html">University of Helsinki - Department of Computer Science</a></td>
+</tr>
+</table>
+
+[% PROCESS 'html/foot.tmpl'
+	langs.size = 0 %]
