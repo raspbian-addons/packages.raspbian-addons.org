@@ -208,7 +208,7 @@ msgstr ""
 msgid "Athena Widgets"
 msgstr ""
 
-#. Tag: made-of::data:audio, short desc
+#. Tag: made-of::audio, short desc
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
@@ -279,9 +279,21 @@ msgstr ""
 msgid "BibTeX list of references"
 msgstr ""
 
+#. Tag: science::bibliogaphy, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Biology"
+msgid "Bibliography"
+msgstr "Biologi"
+
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
 msgid "Bioinformatics"
+msgstr ""
+
+#. Tag: works-with::biological-sequence, short desc
+#: files/debtags/vocabulary
+msgid "Biological Sequence"
 msgstr ""
 
 #. Facet: biology, short desc
@@ -326,6 +338,13 @@ msgstr "Bosniska"
 #: files/debtags/vocabulary
 msgid "Brazilian"
 msgstr "Brasiliansk"
+
+#. Tag: culture::british, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Irish"
+msgid "British"
+msgstr "irlÃ¤ndska"
 
 #. Tag: scope::application, long desc
 #: files/debtags/vocabulary
@@ -415,6 +434,13 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "CORBA"
 msgstr ""
+
+#. Tag: use::calculating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Clustering"
+msgid "Calculating"
+msgstr "Klustring"
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
@@ -595,6 +621,11 @@ msgstr "Kultur"
 msgid "Czech"
 msgstr "Tjeckiska"
 
+#. Tag: protocol::dcc, short desc
+#: files/debtags/vocabulary
+msgid "DCC"
+msgstr ""
+
 #. Tag: protocol::dhcp, short desc
 #: files/debtags/vocabulary
 msgid "DHCP"
@@ -645,6 +676,11 @@ msgstr "Dataåterställning"
 #. Tag: use::viewing, short desc
 #: files/debtags/vocabulary
 msgid "Data Visualization"
+msgstr ""
+
+#. Tag: science::data-acquisition, short desc
+#: files/debtags/vocabulary
+msgid "Data acquisition"
 msgstr ""
 
 #. Tag: works-with::db, short desc
@@ -710,7 +746,7 @@ msgstr ""
 msgid "Dictionaries"
 msgstr ""
 
-#. Tag: made-of::data:dictionary, short desc
+#. Tag: made-of::dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionary"
 msgstr ""
@@ -725,9 +761,13 @@ msgstr ""
 msgid "Digital Versatile Disc"
 msgstr ""
 
-#. Tag: filetransfer::dcc, long desc
+#. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
-msgid "Direct Client to Client protocol used by Internet Relay Chat clients."
+msgid ""
+"Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers "
+"to interconnect using an IRC server for handshaking in order to exchange "
+"files or perform non-relayed chats.\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
 
 #. Tag: x11::display-manager, long desc
@@ -751,7 +791,7 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#. Tag: made-of::data:info, short desc
+#. Tag: made-of::info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
 msgid "Documentation in Info Format"
@@ -899,6 +939,7 @@ msgid ""
 msgstr ""
 
 #. Tag: devel::examples, short desc
+#. Tag: role::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
 msgstr ""
@@ -914,7 +955,6 @@ msgid "FLTK"
 msgstr ""
 
 #. Tag: protocol::ftp, short desc
-#. Tag: filetransfer::ftp, short desc
 #: files/debtags/vocabulary
 msgid "FTP"
 msgstr ""
@@ -969,16 +1009,6 @@ msgstr ""
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
-msgstr ""
-
-#. Facet: filetransfer, short desc
-#: files/debtags/vocabulary
-msgid "File Transfer"
-msgstr ""
-
-#. Tag: filetransfer::ftp, long desc
-#: files/debtags/vocabulary
-msgid "File Transfer Protocol"
 msgstr ""
 
 #. Tag: protocol::ftp, long desc
@@ -1060,7 +1090,7 @@ msgstr ""
 msgid "Floppy Disk"
 msgstr ""
 
-#. Tag: made-of::data:font, short desc
+#. Tag: made-of::font, short desc
 #. Tag: x11::font, short desc
 #: files/debtags/vocabulary
 msgid "Font"
@@ -1254,14 +1284,13 @@ msgstr "Grekiska"
 msgid "Groupware"
 msgstr ""
 
-#. Tag: made-of::data:html, short desc
+#. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
 msgid "HTML, Hypertext Markup Language"
 msgstr ""
 
 #. Tag: protocol::http, short desc
-#. Tag: filetransfer::http, short desc
 #: files/debtags/vocabulary
 msgid "HTTP"
 msgstr ""
@@ -1336,11 +1365,6 @@ msgstr ""
 msgid "Hungarian"
 msgstr "Ungerska"
 
-#. Tag: filetransfer::http, long desc
-#: files/debtags/vocabulary
-msgid "HyperText Transfer Protocol"
-msgstr ""
-
 #. Tag: protocol::http, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -1395,11 +1419,6 @@ msgstr ""
 msgid "IRC"
 msgstr ""
 
-#. Tag: filetransfer::dcc, short desc
-#: files/debtags/vocabulary
-msgid "IRC DCC"
-msgstr ""
-
 #. Tag: works-with-format::iso9660, short desc
 #: files/debtags/vocabulary
 msgid "ISO 9660 CD Filesystem"
@@ -1410,7 +1429,7 @@ msgstr ""
 msgid "Icelandic"
 msgstr "Isländska"
 
-#. Tag: made-of::data:icons, short desc
+#. Tag: made-of::icons, short desc
 #: files/debtags/vocabulary
 msgid "Icons"
 msgstr ""
@@ -1847,7 +1866,7 @@ msgstr ""
 msgid "Manpages"
 msgstr "japanska"
 
-#. Tag: made-of::data:man, short desc
+#. Tag: made-of::man, short desc
 #: files/debtags/vocabulary
 msgid "Manuals in Nroff Format"
 msgstr ""
@@ -1856,6 +1875,12 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Mathematics"
 msgstr ""
+
+#. Tag: use::measuring, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Measuring"
+msgstr "serbiska"
 
 #. Tag: field::medicine:imaging, short desc
 #: files/debtags/vocabulary
@@ -1883,6 +1908,7 @@ msgid "Mixing"
 msgstr ""
 
 #. Tag: devel::modelling, short desc
+#. Tag: science::modelling, short desc
 #: files/debtags/vocabulary
 msgid "Modelling"
 msgstr ""
@@ -1985,7 +2011,6 @@ msgstr ""
 #. Tag: special::TODO, short desc
 #. Tag: suite::TODO, short desc
 #. Tag: protocol::TODO, short desc
-#. Tag: filetransfer::TODO, short desc
 #. Tag: uitoolkit::TODO, short desc
 #. Tag: use::TODO, short desc
 #. Tag: web::TODO, short desc
@@ -2286,7 +2311,7 @@ msgstr ""
 msgid "Optical Character Recognition"
 msgstr "Optisk teckenigenkänning"
 
-#. Tag: made-of::data:pdf, short desc
+#. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
 #: files/debtags/vocabulary
 msgid "PDF Documents"
@@ -2436,6 +2461,12 @@ msgid ""
 "this tag useless. Ultimately all applications should have unicode support."
 msgstr ""
 
+#. Tag: science::plotting, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Plotting"
+msgstr "kroatiska"
+
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
 msgid "Plugin"
@@ -2478,7 +2509,7 @@ msgstr ""
 msgid "Post-mortem analysis of intrusions."
 msgstr ""
 
-#. Tag: made-of::data:postscript, short desc
+#. Tag: made-of::postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
 msgid "PostScript"
@@ -2573,6 +2604,13 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Proxying"
 msgstr ""
+
+#. Tag: science::publishing, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Polish"
+msgid "Publishing"
+msgstr "Polska"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
@@ -2759,12 +2797,11 @@ msgid "SDL"
 msgstr ""
 
 #. Tag: protocol::sftp, short desc
-#. Tag: filetransfer::sftp, short desc
 #: files/debtags/vocabulary
 msgid "SFTP"
 msgstr ""
 
-#. Tag: made-of::data:sgml, short desc
+#. Tag: made-of::sgml, short desc
 #. Tag: works-with-format::sgml, short desc
 #: files/debtags/vocabulary
 msgid "SGML, Standard Generalized Markup Language"
@@ -2773,11 +2810,6 @@ msgstr ""
 #. Tag: protocol::smb, short desc
 #: files/debtags/vocabulary
 msgid "SMB"
-msgstr ""
-
-#. Tag: filetransfer::smb, short desc
-#: files/debtags/vocabulary
-msgid "SMB and CIFS"
 msgstr ""
 
 #. Tag: protocol::smtp, short desc
@@ -2827,7 +2859,7 @@ msgstr ""
 msgid "SSL/TLS"
 msgstr ""
 
-#. Tag: made-of::data:svg, short desc
+#. Tag: made-of::svg, short desc
 #. Tag: works-with-format::svg, short desc
 #: files/debtags/vocabulary
 msgid "SVG, Scalable Vector Graphics"
@@ -2860,6 +2892,7 @@ msgid "Scheme Development"
 msgstr ""
 
 #. Tag: science, short desc
+#. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
 msgstr ""
@@ -2904,11 +2937,6 @@ msgstr "serbiska"
 #. Tag: special::auto-inst-parts, short desc
 #: files/debtags/vocabulary
 msgid "Secondary packages users won't install directly"
-msgstr ""
-
-#. Tag: filetransfer::sftp, long desc
-#: files/debtags/vocabulary
-msgid "Secure File Transfer Protocol"
 msgstr ""
 
 #. Tag: protocol::ssh, long desc
@@ -3023,6 +3051,12 @@ msgid ""
 "utilize Google's searching engine from client applications.\n"
 "Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 msgstr ""
+
+#. Tag: use::simulating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Simulating"
+msgstr "interlingua"
 
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
@@ -3273,7 +3307,7 @@ msgstr ""
 msgid "TeX and LaTeX"
 msgstr ""
 
-#. Tag: made-of::data:tex, short desc
+#. Tag: made-of::tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
 msgstr ""
@@ -3441,7 +3475,6 @@ msgstr ""
 #. Tag: special::TODO, long desc
 #. Tag: suite::TODO, long desc
 #. Tag: protocol::TODO, long desc
-#. Tag: filetransfer::TODO, long desc
 #. Tag: uitoolkit::TODO, long desc
 #. Tag: use::TODO, long desc
 #. Tag: web::TODO, long desc
@@ -3577,6 +3610,11 @@ msgid ""
 "http://www.ietf.org/rfc/rfc793.txt"
 msgstr ""
 
+#. Tag: works-with::graphs, short desc
+#: files/debtags/vocabulary
+msgid "Trees and Graphs"
+msgstr ""
+
 #. Tag: protocol::tftp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3695,7 +3733,7 @@ msgstr ""
 msgid "VRML 3D Model"
 msgstr ""
 
-#. Tag: made-of::data:vrml, short desc
+#. Tag: made-of::vrml, short desc
 #: files/debtags/vocabulary
 msgid "VRML, Virtual Reality Markup Language"
 msgstr ""
@@ -3798,11 +3836,6 @@ msgstr ""
 msgid "Window Manager"
 msgstr ""
 
-#. Tag: filetransfer::smb, long desc
-#: files/debtags/vocabulary
-msgid "Windows file and printer sharing (SMB)"
-msgstr ""
-
 #. Facet: works-with, short desc
 #: files/debtags/vocabulary
 msgid "Works with"
@@ -3835,7 +3868,7 @@ msgstr ""
 msgid "XFce"
 msgstr ""
 
-#. Tag: made-of::data:xml, short desc
+#. Tag: made-of::xml, short desc
 #. Tag: works-with-format::xml, short desc
 #: files/debtags/vocabulary
 msgid "XML"
@@ -3881,6 +3914,24 @@ msgstr ""
 msgid "Yahoo! Messenger"
 msgstr ""
 
+#. Tag: protocol::zeroconf, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Zero Configuration Networking (Zeroconfig), is a set of techniques that "
+"automatically creates a usable IP network without configuration or special "
+"servers.\n"
+"This tag is used for packages that implement one or more of:\n"
+"* IPv4LL for choosing addresses\n"
+"* mDNS for name resolution\n"
+"* DNS-SD for service discovery\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
+msgstr ""
+
+#. Tag: protocol::zeroconf, short desc
+#: files/debtags/vocabulary
+msgid "Zeroconf"
+msgstr ""
+
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
@@ -3911,119 +3962,116 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Gallegan"
-#~ msgstr "galiciska"
-
-#~ msgid "Zulu"
-#~ msgstr "zulu"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Malayalam"
-#~ msgstr "malayalam"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Kannada"
-#~ msgstr "kanaresiska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Irish"
-#~ msgstr "irlÃ¤ndska"
-
-#~ msgid "Galician"
-#~ msgstr "galiciska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Chinese (Simplified)"
-#~ msgstr "kinesiska (fÃ¶renklad)"
-
-#~ msgid "Chinese (Traditional)"
-#~ msgstr "kinesiska (traditionell)"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
-
-#~ msgid "Portuguese (Brazilian)"
-#~ msgstr "portugisiska (Brasilien)"
+#~ msgid "Armenian"
+#~ msgstr "armeniska"
 
 #~ msgid "English"
 #~ msgstr "engelska"
 
-#~ msgid "Armenian"
-#~ msgstr "armeniska"
+#~ msgid "Portuguese (Brazilian)"
+#~ msgstr "portugisiska (Brasilien)"
+
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
+
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Chinese (Traditional)"
+#~ msgstr "kinesiska (traditionell)"
+
+#~ msgid "Chinese (Simplified)"
+#~ msgstr "kinesiska (fÃ¶renklad)"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Galician"
+#~ msgstr "galiciska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Kannada"
+#~ msgstr "kanaresiska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Malayalam"
+#~ msgstr "malayalam"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Zulu"
+#~ msgstr "zulu"
+
+#~ msgid "Gallegan"
+#~ msgstr "galiciska"

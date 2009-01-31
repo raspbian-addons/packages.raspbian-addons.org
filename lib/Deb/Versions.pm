@@ -155,7 +155,7 @@ sub _lcmp {
 our @SUITES_SORT = qw( woody oldstable sarge stable stable-proposed-updates
 		       etch etch-m68k testing testing-proposed-updates lenny
 		       sid unstable experimental
-		       warty hoary breezy breezy dapper edgy feisty gutsy );
+		       warty hoary breezy dapper edgy feisty gutsy hardy intrepid jaunty);
 our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
 our @PRIORITY_SORT = qw( required important standard optional extra );
 my $i = 1000;
@@ -176,11 +176,11 @@ sub suites_cmp {
 	$cmp_b = $suites_sort{$1} - $archive_sort{$2}
 	if $s_b =~ m;^(.+?)[/-](.*)$;o;
     }
-    return ($cmp_a <=> $cmp_b);
+    return ($cmp_b <=> $cmp_a);
 }
 
 sub suites_sort {
-    return sort { suites_cmp( $b, $a ) } @_;
+    return sort { suites_cmp( $a, $b ) } @_;
 }
 
 sub priority_cmp {

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-09-23 17:42+0200\n"
+"PO-Revision-Date: 2008-11-17 23:00+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -106,30 +106,36 @@ msgstr "GNU/kFreeBSD (amd64)"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
-msgstr ""
+msgstr "Pakete, die die Debian-Richtlinien für Freie Software erfüllen"
 
 #: templates/config/archive_layout.tmpl:15
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
 msgstr ""
+"Pakete, die die Debian-Richtlinien für Freie Software erfüllen, aber Software "
+"benötigen, die nicht in Main ist"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
-msgstr ""
+msgstr "Pakete, die die Debian-Richtlinien für Freie Software nicht erfüllen"
 
 #: templates/config/mirrors.tmpl:73
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
+"unbeständige Pakete, die größere Änderungen während der Lebensdauer einer "
+"stabilen Veröffentlichung benötigen"
 
 #: templates/config/mirrors.tmpl:95
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
+"neuere Pakete, die an stabile Veröffentlichungen von Debian angepasst wurden"
 
 #: templates/config/mirrors.tmpl:123
 msgid "ports of packages to architectures not yet available in Debian"
 msgstr ""
+"Portierungen von Paketen auf Architekturen, die nicht in Debian verfügbar sind"
 
 #: templates/config/mirrors.tmpl:151
 msgid "North America"
@@ -780,6 +786,7 @@ msgstr "Essenziell"
 #: templates/html/show.tmpl:61
 msgid "package manager will refuse to remove this package by default"
 msgstr ""
+"standardmäßig werden Paket-Manager das Entfernen dieses Paketes verhindern"
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
@@ -811,7 +818,7 @@ msgstr "Debian-Quellcode-Depot"
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
 msgid "%s Patch Tracking"
-msgstr ""
+msgstr "%s Patch-Verfolgung"
 
 #: templates/html/show.tmpl:110
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
