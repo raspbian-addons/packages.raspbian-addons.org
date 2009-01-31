@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2008-08-22 04:27+0900\n"
+"PO-Revision-Date: 2009-01-30 01:54+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -223,7 +223,7 @@ msgstr ""
 msgid "Athena Widgets"
 msgstr "Athena ウィジェット"
 
-#. Tag: made-of::data:audio, short desc
+#. Tag: made-of::audio, short desc
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
@@ -295,10 +295,22 @@ msgstr "BibTeX"
 msgid "BibTeX list of references"
 msgstr "BibTeX 参考文献リスト"
 
+#. Tag: science::bibliogaphy, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Geography"
+msgid "Bibliography"
+msgstr "地理学"
+
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
 msgid "Bioinformatics"
 msgstr "バイオインフォマティクス"
+
+#. Tag: works-with::biological-sequence, short desc
+#: files/debtags/vocabulary
+msgid "Biological Sequence"
+msgstr ""
 
 #. Facet: biology, short desc
 #. Tag: field::biology, short desc
@@ -342,6 +354,11 @@ msgstr "ボスニア語"
 #: files/debtags/vocabulary
 msgid "Brazilian"
 msgstr "ブラジルポルトガル語"
+
+#. Tag: culture::british, short desc
+#: files/debtags/vocabulary
+msgid "British"
+msgstr ""
 
 #. Tag: scope::application, long desc
 #: files/debtags/vocabulary
@@ -433,6 +450,13 @@ msgstr "CGI"
 #: files/debtags/vocabulary
 msgid "CORBA"
 msgstr "CORBA"
+
+#. Tag: use::calculating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Clustering"
+msgid "Calculating"
+msgstr "クラスタリング"
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
@@ -612,6 +636,13 @@ msgstr "文化"
 msgid "Czech"
 msgstr "チェコ語"
 
+#. Tag: protocol::dcc, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "IRC DCC"
+msgid "DCC"
+msgstr "IRC DCC"
+
 #. Tag: protocol::dhcp, short desc
 #: files/debtags/vocabulary
 msgid "DHCP"
@@ -661,6 +692,13 @@ msgstr "データ復旧"
 #: files/debtags/vocabulary
 msgid "Data Visualization"
 msgstr "データの可視化"
+
+#. Tag: science::data-acquisition, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Data Organisation"
+msgid "Data acquisition"
+msgstr "データの編成"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
@@ -726,7 +764,7 @@ msgstr "ダイアルアップ接続"
 msgid "Dictionaries"
 msgstr "辞書"
 
-#. Tag: made-of::data:dictionary, short desc
+#. Tag: made-of::dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionary"
 msgstr "辞書"
@@ -741,12 +779,14 @@ msgstr "デジタルカメラ"
 msgid "Digital Versatile Disc"
 msgstr "Digital Versatile Disc"
 
-#. Tag: filetransfer::dcc, long desc
+#. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
-msgid "Direct Client to Client protocol used by Internet Relay Chat clients."
+msgid ""
+"Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers "
+"to interconnect using an IRC server for handshaking in order to exchange "
+"files or perform non-relayed chats.\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
-"インターネット・リレー・チャット (IRC) クライアントが使用する Direct Client-"
-"to-Client プロトコル。"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
@@ -769,7 +809,7 @@ msgstr "DocBook"
 msgid "Documentation"
 msgstr "ドキュメント"
 
-#. Tag: made-of::data:info, short desc
+#. Tag: made-of::info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
 msgid "Documentation in Info Format"
@@ -915,6 +955,7 @@ msgid ""
 msgstr ""
 
 #. Tag: devel::examples, short desc
+#. Tag: role::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
 msgstr "サンプル"
@@ -930,7 +971,6 @@ msgid "FLTK"
 msgstr "FLTK"
 
 #. Tag: protocol::ftp, short desc
-#. Tag: filetransfer::ftp, short desc
 #: files/debtags/vocabulary
 msgid "FTP"
 msgstr "FTP"
@@ -985,16 +1025,6 @@ msgstr "ファイル形式"
 #: files/debtags/vocabulary
 msgid "File Integrity"
 msgstr "ファイル整合性"
-
-#. Facet: filetransfer, short desc
-#: files/debtags/vocabulary
-msgid "File Transfer"
-msgstr "ファイル転送"
-
-#. Tag: filetransfer::ftp, long desc
-#: files/debtags/vocabulary
-msgid "File Transfer Protocol"
-msgstr "ファイル転送プロトコル (File Transfer Protocol)"
 
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
@@ -1075,7 +1105,7 @@ msgstr "ファーストパーソンシューティングゲーム"
 msgid "Floppy Disk"
 msgstr "フロッピーディスク"
 
-#. Tag: made-of::data:font, short desc
+#. Tag: made-of::font, short desc
 #. Tag: x11::font, short desc
 #: files/debtags/vocabulary
 msgid "Font"
@@ -1180,10 +1210,8 @@ msgstr "GNUstep"
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid " GNUstep Desktop and WindowMaker"
 msgid "GNUstep Desktop and WindowMaker"
-msgstr " GNUstep デスクトップや WindowMaker"
+msgstr "GNUstep デスクトップや WindowMaker"
 
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
@@ -1192,10 +1220,8 @@ msgstr "GPE"
 
 #. Tag: suite::gpe, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid " GPE Palmtop Environment"
 msgid "GPE Palmtop Environment"
-msgstr " GPE Palmtop Environment"
+msgstr "GPE Palmtop Environment"
 
 #. Tag: hardware::gps, short desc
 #: files/debtags/vocabulary
@@ -1273,14 +1299,13 @@ msgstr "ギリシャ語"
 msgid "Groupware"
 msgstr "グループウェア"
 
-#. Tag: made-of::data:html, short desc
+#. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
 msgid "HTML, Hypertext Markup Language"
 msgstr "HyperText Markup Language (HTML)"
 
 #. Tag: protocol::http, short desc
-#. Tag: filetransfer::http, short desc
 #: files/debtags/vocabulary
 msgid "HTTP"
 msgstr "HTTP"
@@ -1355,11 +1380,6 @@ msgstr "プログラムやライブラリ、またはその一部の、人間が
 msgid "Hungarian"
 msgstr "ハンガリー語"
 
-#. Tag: filetransfer::http, long desc
-#: files/debtags/vocabulary
-msgid "HyperText Transfer Protocol"
-msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
-
 #. Tag: protocol::http, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -1414,11 +1434,6 @@ msgstr "IPv6"
 msgid "IRC"
 msgstr "IRC"
 
-#. Tag: filetransfer::dcc, short desc
-#: files/debtags/vocabulary
-msgid "IRC DCC"
-msgstr "IRC DCC"
-
 #. Tag: works-with-format::iso9660, short desc
 #: files/debtags/vocabulary
 msgid "ISO 9660 CD Filesystem"
@@ -1429,7 +1444,7 @@ msgstr "ISO 9660 CD ファイルシステム"
 msgid "Icelandic"
 msgstr "アイスランド語"
 
-#. Tag: made-of::data:icons, short desc
+#. Tag: made-of::icons, short desc
 #: files/debtags/vocabulary
 msgid "Icons"
 msgstr "アイコン"
@@ -1638,6 +1653,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
 "ietf.org/rfc/rfc4120.txt"
 msgstr ""
+"Kerberos は、クライアント・サーバ双方から信頼される第三者認証局と共通鍵暗号を"
+"用いて、本来なら安全でないネットワーク上で安全な認証を行うための、コンピュー"
+"タネットワーク用認証プロトコルです。\n"
+"Kerberos が提供する認証機構は双方向なので、クライアントが本物であることをサー"
+"バが確認できるだけでなく、サーバへの接続が傍受されていないことをクライアント"
+"が確認できます。\n"
+"Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
+"ietf.org/rfc/rfc4120.txt"
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
@@ -1860,7 +1883,7 @@ msgstr "メーリングリスト"
 msgid "Manpages"
 msgstr "マニュアルページ"
 
-#. Tag: made-of::data:man, short desc
+#. Tag: made-of::man, short desc
 #: files/debtags/vocabulary
 msgid "Manuals in Nroff Format"
 msgstr "nroff 形式のマニュアル"
@@ -1869,6 +1892,13 @@ msgstr "nroff 形式のマニュアル"
 #: files/debtags/vocabulary
 msgid "Mathematics"
 msgstr "数学"
+
+#. Tag: use::measuring, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Learning"
+msgid "Measuring"
+msgstr "学習"
 
 #. Tag: field::medicine:imaging, short desc
 #: files/debtags/vocabulary
@@ -1896,6 +1926,7 @@ msgid "Mixing"
 msgstr "ミキシング"
 
 #. Tag: devel::modelling, short desc
+#. Tag: science::modelling, short desc
 #: files/debtags/vocabulary
 msgid "Modelling"
 msgstr "モデリング"
@@ -1998,7 +2029,6 @@ msgstr "Ncurses TUI"
 #. Tag: special::TODO, short desc
 #. Tag: suite::TODO, short desc
 #. Tag: protocol::TODO, short desc
-#. Tag: filetransfer::TODO, short desc
 #. Tag: uitoolkit::TODO, short desc
 #. Tag: use::TODO, short desc
 #. Tag: web::TODO, short desc
@@ -2296,7 +2326,7 @@ msgstr "OpenOffice.org"
 msgid "Optical Character Recognition"
 msgstr "光学文字認識"
 
-#. Tag: made-of::data:pdf, short desc
+#. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
 #: files/debtags/vocabulary
 msgid "PDF Documents"
@@ -2330,7 +2360,7 @@ msgstr "POP3 プロトコル"
 #. Tag: devel::lang:posix-shell, short desc
 #: files/debtags/vocabulary
 msgid "POSIX shell"
-msgstr ""
+msgstr "POSIX シェル"
 
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
@@ -2453,6 +2483,13 @@ msgstr ""
 "い。そんなことをしてしまうと、このタグの意味がなくなってしまいます。最終的に"
 "は、すべてのアプリケーションが Unicode をサポートすべきなのです。"
 
+#. Tag: science::plotting, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Routing"
+msgid "Plotting"
+msgstr "ルーティング"
+
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
 msgid "Plugin"
@@ -2495,7 +2532,7 @@ msgstr ""
 msgid "Post-mortem analysis of intrusions."
 msgstr "侵入を受けたときの事後解析ツール。"
 
-#. Tag: made-of::data:postscript, short desc
+#. Tag: made-of::postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
 msgid "PostScript"
@@ -2579,17 +2616,24 @@ msgstr "タンパク質"
 #. Tag: protocol::db:mysql, long desc
 #: files/debtags/vocabulary
 msgid "Protocol for accessing MySQL database server."
-msgstr ""
+msgstr "MySQL データベースサーバへのアクセス用のプロトコル。"
 
 #. Tag: protocol::db:psql, long desc
 #: files/debtags/vocabulary
 msgid "Protocol for accessing PostgreSQL database server."
-msgstr ""
+msgstr "PostgreSQL データベースサーバへのアクセス用のプロトコル。"
 
 #. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
 msgid "Proxying"
 msgstr "プロキシ"
+
+#. Tag: science::publishing, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Polish"
+msgid "Publishing"
+msgstr "ポーランド語"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
@@ -2780,12 +2824,11 @@ msgid "SDL"
 msgstr "SDL"
 
 #. Tag: protocol::sftp, short desc
-#. Tag: filetransfer::sftp, short desc
 #: files/debtags/vocabulary
 msgid "SFTP"
 msgstr "SFTP"
 
-#. Tag: made-of::data:sgml, short desc
+#. Tag: made-of::sgml, short desc
 #. Tag: works-with-format::sgml, short desc
 #: files/debtags/vocabulary
 msgid "SGML, Standard Generalized Markup Language"
@@ -2795,11 +2838,6 @@ msgstr "Standard Generalized Markup Language (SGML)"
 #: files/debtags/vocabulary
 msgid "SMB"
 msgstr "SMB"
-
-#. Tag: filetransfer::smb, short desc
-#: files/debtags/vocabulary
-msgid "SMB and CIFS"
-msgstr "SMB や CIFS"
 
 #. Tag: protocol::smtp, short desc
 #: files/debtags/vocabulary
@@ -2831,6 +2869,7 @@ msgstr "SQL"
 msgid "SSH"
 msgstr "SSH"
 
+# FIXME: encrypting -> encrypted?
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -2842,13 +2881,20 @@ msgid ""
 "channel.\n"
 "Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
+"安全でないネットワーク上で、SSH プロトコルを用いて、安全で暗号化されたファイ"
+"ル交換やファイル操作を行うためのプロトコル、SSH File Transfer Protocol。\n"
+"前身となる SCP ではファイル転送のみが可能だったのに対し、SFTP では、完全な"
+"ファイルシステム操作一式が提供されています。名前からは、「SSH チャネルを通じ"
+"て実行されるバージョンの FTP プロトコル」ととられそうですが、SFTP はそのよう"
+"なものではありません。\n"
+"Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 
 #. Tag: protocol::ssl, short desc
 #: files/debtags/vocabulary
 msgid "SSL/TLS"
 msgstr "SSL/TLS"
 
-#. Tag: made-of::data:svg, short desc
+#. Tag: made-of::svg, short desc
 #. Tag: works-with-format::svg, short desc
 #: files/debtags/vocabulary
 msgid "SVG, Scalable Vector Graphics"
@@ -2881,6 +2927,7 @@ msgid "Scheme Development"
 msgstr "Scheme での開発"
 
 #. Tag: science, short desc
+#. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
 msgstr "科学"
@@ -2925,11 +2972,6 @@ msgstr "検索"
 msgid "Secondary packages users won't install directly"
 msgstr "ユーザが直接インストールすることはない補助的なパッケージ"
 
-#. Tag: filetransfer::sftp, long desc
-#: files/debtags/vocabulary
-msgid "Secure File Transfer Protocol"
-msgstr "Secure File Transfer Protocol"
-
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -2942,6 +2984,14 @@ msgid ""
 "mechanism, via asymmetric public/private key cryptography.\n"
 "Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgstr ""
+"安全で暗号化されたネットワーク接続のためのプロトコル、Secure Shell。SSH は、"
+"本来なら安全でないプロトコル上で、SSH チャネルを通じて、SSH サーバを立ててい"
+"るリモートホストにおいてプログラムを実行するのに利用できます。名前が示すとお"
+"り、主な用途は、リモートサーバにおいて、暗号化されたログインやシェルアクセス"
+"を提供することです。\n"
+"SSH の認証には、パスワードか、(より好ましい方法である) 公開鍵・秘密鍵を用いた"
+"非対称鍵暗号を用いることができます。\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Shell"
 
 #. Tag: protocol::ssl, long desc
 #: files/debtags/vocabulary
@@ -2955,6 +3005,14 @@ msgid ""
 "\" is added to the protocol name, like HTTPS, FTPS etc.\n"
 "Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 msgstr ""
+"インターネット上で、安全で暗号化された通信を提供するためのプロトコル、Secure "
+"Socket Layer/Transport Layer Security。SSL/TLS は、サービス提供者 (インター"
+"ネットバンキングサーバなど) が本物であることの証明や、通信チャネルを保護する"
+"のに用いられます。\n"
+"FTP、HTTP、IMAP、SMTP などの本来なら安全でないプロトコルは、SSL/TLS 上で送信"
+"することで、送信データを保護できます。この場合、HTTPS や FTPS というように、"
+"プロトコル名に「S」が付けられます。\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 
 #. Facet: security, short desc
 #: files/debtags/vocabulary
@@ -3042,6 +3100,13 @@ msgid ""
 "utilize Google's searching engine from client applications.\n"
 "Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 msgstr ""
+
+#. Tag: use::simulating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Simulation"
+msgid "Simulating"
+msgstr "シミュレーションゲーム"
 
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
@@ -3294,7 +3359,7 @@ msgstr "TeX DVI"
 msgid "TeX and LaTeX"
 msgstr "TeX や LaTeX"
 
-#. Tag: made-of::data:tex, short desc
+#. Tag: made-of::tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
 msgstr "TeX や LaTeX、DVI"
@@ -3462,7 +3527,6 @@ msgstr "パッケージの作成に用いられている言語やデータ形式
 #. Tag: special::TODO, long desc
 #. Tag: suite::TODO, long desc
 #. Tag: protocol::TODO, long desc
-#. Tag: filetransfer::TODO, long desc
 #. Tag: uitoolkit::TODO, long desc
 #. Tag: use::TODO, long desc
 #. Tag: web::TODO, long desc
@@ -3611,6 +3675,11 @@ msgid ""
 "http://www.ietf.org/rfc/rfc793.txt"
 msgstr ""
 
+#. Tag: works-with::graphs, short desc
+#: files/debtags/vocabulary
+msgid "Trees and Graphs"
+msgstr ""
+
 #. Tag: protocol::tftp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3731,7 +3800,7 @@ msgstr "VPN やトンネリング"
 msgid "VRML 3D Model"
 msgstr "VRML 3D モデル"
 
-#. Tag: made-of::data:vrml, short desc
+#. Tag: made-of::vrml, short desc
 #: files/debtags/vocabulary
 msgid "VRML, Virtual Reality Markup Language"
 msgstr "Virtual Reality Markup Language (VRML)"
@@ -3834,11 +3903,6 @@ msgstr "Wiki ソフトウェアやサーバ、ユーティリティ、プラグ�
 msgid "Window Manager"
 msgstr "ウィンドウマネージャ"
 
-#. Tag: filetransfer::smb, long desc
-#: files/debtags/vocabulary
-msgid "Windows file and printer sharing (SMB)"
-msgstr "Windows ファイル・プリンタ共有 (SMB)"
-
 #. Facet: works-with, short desc
 #: files/debtags/vocabulary
 msgid "Works with"
@@ -3871,7 +3935,7 @@ msgstr "X ライブラリ"
 msgid "XFce"
 msgstr "XFce"
 
-#. Tag: made-of::data:xml, short desc
+#. Tag: made-of::xml, short desc
 #. Tag: works-with-format::xml, short desc
 #: files/debtags/vocabulary
 msgid "XML"
@@ -3917,6 +3981,24 @@ msgstr "XSL Transformations (XSLT)"
 msgid "Yahoo! Messenger"
 msgstr "Yahoo! Messenger"
 
+#. Tag: protocol::zeroconf, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Zero Configuration Networking (Zeroconfig), is a set of techniques that "
+"automatically creates a usable IP network without configuration or special "
+"servers.\n"
+"This tag is used for packages that implement one or more of:\n"
+"* IPv4LL for choosing addresses\n"
+"* mDNS for name resolution\n"
+"* DNS-SD for service discovery\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
+msgstr ""
+
+#. Tag: protocol::zeroconf, short desc
+#: files/debtags/vocabulary
+msgid "Zeroconf"
+msgstr ""
+
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
 msgid "Zip Archives"
@@ -3947,27 +4029,51 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
-#~ msgid "QT"
-#~ msgstr "QT"
+#~ msgid "Audrio"
+#~ msgstr "音声"
 
-#~ msgid "Source code"
-#~ msgstr "ソースコード"
-
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
-
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
 
 # TRANSLATION-FIXME: Why "Windowing"?
 #~ msgid "X Windowing System"
 #~ msgstr "X ウィンドウシステム"
 
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
 
-#~ msgid "Audrio"
-#~ msgstr "音声"
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "QT"
+#~ msgstr "QT"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB や CIFS"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
+
+#~ msgid "File Transfer"
+#~ msgstr "ファイル転送"
+
+#~ msgid ""
+#~ "Direct Client to Client protocol used by Internet Relay Chat clients."
+#~ msgstr ""
+#~ "インターネット・リレー・チャット (IRC) クライアントが使用する Direct "
+#~ "Client-to-Client プロトコル。"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2008-10-02 21:37+0200\n"
+"PO-Revision-Date: 2009-01-12 18:36+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Athena Widgets"
 msgstr ""
 
-#. Tag: made-of::data:audio, short desc
+#. Tag: made-of::audio, short desc
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
@@ -296,10 +296,22 @@ msgstr "BibTeX"
 msgid "BibTeX list of references"
 msgstr "Quellangaben für BibTeX"
 
+#. Tag: science::bibliogaphy, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Geography"
+msgid "Bibliography"
+msgstr "Geographie"
+
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
 msgid "Bioinformatics"
 msgstr "Bioinformatik"
+
+#. Tag: works-with::biological-sequence, short desc
+#: files/debtags/vocabulary
+msgid "Biological Sequence"
+msgstr ""
 
 #. Facet: biology, short desc
 #. Tag: field::biology, short desc
@@ -343,6 +355,11 @@ msgstr "Bosnisch"
 #: files/debtags/vocabulary
 msgid "Brazilian"
 msgstr "Brasilianisch"
+
+#. Tag: culture::british, short desc
+#: files/debtags/vocabulary
+msgid "British"
+msgstr ""
 
 #. Tag: scope::application, long desc
 #: files/debtags/vocabulary
@@ -434,6 +451,13 @@ msgstr "CGI"
 #: files/debtags/vocabulary
 msgid "CORBA"
 msgstr "CORBA"
+
+#. Tag: use::calculating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Clustering"
+msgid "Calculating"
+msgstr "Verclustern"
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
@@ -622,6 +646,13 @@ msgstr "Kultur"
 msgid "Czech"
 msgstr "Tschechisch"
 
+#. Tag: protocol::dcc, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "IRC DCC"
+msgid "DCC"
+msgstr "IRC DCC"
+
 #. Tag: protocol::dhcp, short desc
 #: files/debtags/vocabulary
 msgid "DHCP"
@@ -671,6 +702,13 @@ msgstr "Daten-Wiederherstellung"
 #: files/debtags/vocabulary
 msgid "Data Visualization"
 msgstr "Daten-Visualisierung"
+
+#. Tag: science::data-acquisition, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Data Organisation"
+msgid "Data acquisition"
+msgstr "Daten-Organisation"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
@@ -736,7 +774,7 @@ msgstr "Einwählzugriff"
 msgid "Dictionaries"
 msgstr "Wörterbücher"
 
-#. Tag: made-of::data:dictionary, short desc
+#. Tag: made-of::dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionary"
 msgstr "Wörterbuch"
@@ -751,12 +789,14 @@ msgstr "Digitale Kamera"
 msgid "Digital Versatile Disc"
 msgstr "Digital Versatile Disc"
 
-#. Tag: filetransfer::dcc, long desc
+#. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
-msgid "Direct Client to Client protocol used by Internet Relay Chat clients."
+msgid ""
+"Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers "
+"to interconnect using an IRC server for handshaking in order to exchange "
+"files or perform non-relayed chats.\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
-"Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
-"Relay Chat"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
@@ -779,7 +819,7 @@ msgstr "DocBook"
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#. Tag: made-of::data:info, short desc
+#. Tag: made-of::info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
 msgid "Documentation in Info Format"
@@ -945,6 +985,7 @@ msgstr ""
 "Link: http://de.wikipedia.org/wiki/Ethernet"
 
 #. Tag: devel::examples, short desc
+#. Tag: role::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
 msgstr "Beispiele"
@@ -960,7 +1001,6 @@ msgid "FLTK"
 msgstr "FLTK"
 
 #. Tag: protocol::ftp, short desc
-#. Tag: filetransfer::ftp, short desc
 #: files/debtags/vocabulary
 msgid "FTP"
 msgstr "FTP"
@@ -1021,16 +1061,6 @@ msgstr "Dateiformate"
 #: files/debtags/vocabulary
 msgid "File Integrity"
 msgstr "Datei-Integrität"
-
-#. Facet: filetransfer, short desc
-#: files/debtags/vocabulary
-msgid "File Transfer"
-msgstr "Datei-Übertragung"
-
-#. Tag: filetransfer::ftp, long desc
-#: files/debtags/vocabulary
-msgid "File Transfer Protocol"
-msgstr "File Transfer Protocol"
 
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
@@ -1120,7 +1150,7 @@ msgstr ""
 msgid "Floppy Disk"
 msgstr "Diskette"
 
-#. Tag: made-of::data:font, short desc
+#. Tag: made-of::font, short desc
 #. Tag: x11::font, short desc
 #: files/debtags/vocabulary
 msgid "Font"
@@ -1312,14 +1342,13 @@ msgstr "Griechisch"
 msgid "Groupware"
 msgstr ""
 
-#. Tag: made-of::data:html, short desc
+#. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
 msgid "HTML, Hypertext Markup Language"
 msgstr "HTML, Hypertext Markup Language (Hypertext-Auszeichnungssprache)"
 
 #. Tag: protocol::http, short desc
-#. Tag: filetransfer::http, short desc
 #: files/debtags/vocabulary
 msgid "HTTP"
 msgstr "HTTP"
@@ -1394,11 +1423,6 @@ msgstr "Menschen-lesbarer Programmcode, Bibliothek oder Teil davon."
 msgid "Hungarian"
 msgstr "Ungarisch"
 
-#. Tag: filetransfer::http, long desc
-#: files/debtags/vocabulary
-msgid "HyperText Transfer Protocol"
-msgstr "HyperText Transfer Protocol"
-
 #. Tag: protocol::http, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -1463,11 +1487,6 @@ msgstr "IPv6"
 msgid "IRC"
 msgstr "IRC"
 
-#. Tag: filetransfer::dcc, short desc
-#: files/debtags/vocabulary
-msgid "IRC DCC"
-msgstr "IRC DCC"
-
 #. Tag: works-with-format::iso9660, short desc
 #: files/debtags/vocabulary
 msgid "ISO 9660 CD Filesystem"
@@ -1478,7 +1497,7 @@ msgstr "ISO 9660 CD-Dateisystem"
 msgid "Icelandic"
 msgstr "Isländisch"
 
-#. Tag: made-of::data:icons, short desc
+#. Tag: made-of::icons, short desc
 #: files/debtags/vocabulary
 msgid "Icons"
 msgstr ""
@@ -1865,7 +1884,7 @@ msgstr "Anmeldung"
 #. Tag: x11::display-manager, short desc
 #: files/debtags/vocabulary
 msgid "Login Manager"
-msgstr ""
+msgstr "Anmelde-Verwalter"
 
 #. Tag: implemented-in::lua, short desc
 #: files/debtags/vocabulary
@@ -1880,7 +1899,7 @@ msgstr "Lua-Entwicklung"
 #. Tag: sound::sequencer, short desc
 #: files/debtags/vocabulary
 msgid "MIDI Sequencing"
-msgstr ""
+msgstr "MIDI-Steuerung"
 
 #. Tag: sound::midi, short desc
 #: files/debtags/vocabulary
@@ -1930,17 +1949,17 @@ msgstr "Hergestellt aus"
 #. Tag: mail::delivery-agent, short desc
 #: files/debtags/vocabulary
 msgid "Mail Delivery Agent"
-msgstr ""
+msgstr "E-Mail-Auslieferungs-Agent"
 
 #. Tag: mail::transport-agent, short desc
 #: files/debtags/vocabulary
 msgid "Mail Transport Agent"
-msgstr ""
+msgstr "E-Mail-Transport-Agent"
 
 #. Tag: mail::user-agent, short desc
 #: files/debtags/vocabulary
 msgid "Mail User Agent"
-msgstr ""
+msgstr "E-Mail-Benutzer-Agent"
 
 #. Tag: mail::list, short desc
 #: files/debtags/vocabulary
@@ -1952,7 +1971,7 @@ msgstr "Mailinglisten"
 msgid "Manpages"
 msgstr "Handbuchseiten"
 
-#. Tag: made-of::data:man, short desc
+#. Tag: made-of::man, short desc
 #: files/debtags/vocabulary
 msgid "Manuals in Nroff Format"
 msgstr "Handbücher im Nroff-Format"
@@ -1961,6 +1980,13 @@ msgstr "Handbücher im Nroff-Format"
 #: files/debtags/vocabulary
 msgid "Mathematics"
 msgstr "Mathematik"
+
+#. Tag: use::measuring, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Learning"
+msgid "Measuring"
+msgstr "Lernen"
 
 #. Tag: field::medicine:imaging, short desc
 #: files/debtags/vocabulary
@@ -1988,6 +2014,7 @@ msgid "Mixing"
 msgstr "Mischen"
 
 #. Tag: devel::modelling, short desc
+#. Tag: science::modelling, short desc
 #: files/debtags/vocabulary
 msgid "Modelling"
 msgstr "Modellierung"
@@ -2090,7 +2117,6 @@ msgstr "Ncurses TUI"
 #. Tag: special::TODO, short desc
 #. Tag: suite::TODO, short desc
 #. Tag: protocol::TODO, short desc
-#. Tag: filetransfer::TODO, short desc
 #. Tag: uitoolkit::TODO, short desc
 #. Tag: use::TODO, short desc
 #. Tag: web::TODO, short desc
@@ -2400,7 +2426,7 @@ msgstr "OpenOffice.org"
 msgid "Optical Character Recognition"
 msgstr "Optische Zeichenerkennung"
 
-#. Tag: made-of::data:pdf, short desc
+#. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
 #: files/debtags/vocabulary
 msgid "PDF Documents"
@@ -2555,6 +2581,13 @@ msgstr ""
 "dadurch würde diese Markierung nutzlos. Letztendlich sollten alle "
 "Anwendungen Unicode unterstützen."
 
+#. Tag: science::plotting, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Printing"
+msgid "Plotting"
+msgstr "Drucken"
+
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
 msgid "Plugin"
@@ -2605,7 +2638,7 @@ msgstr ""
 msgid "Post-mortem analysis of intrusions."
 msgstr "Post-mortem-Analyse von Einbrüchen."
 
-#. Tag: made-of::data:postscript, short desc
+#. Tag: made-of::postscript, short desc
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
 msgid "PostScript"
@@ -2700,6 +2733,13 @@ msgstr "Protokoll zum Zugriff auf PostgreSQL-Datenbankserver."
 #: files/debtags/vocabulary
 msgid "Proxying"
 msgstr ""
+
+#. Tag: science::publishing, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Polish"
+msgid "Publishing"
+msgstr "Polnisch"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
@@ -2894,12 +2934,11 @@ msgid "SDL"
 msgstr "SDL"
 
 #. Tag: protocol::sftp, short desc
-#. Tag: filetransfer::sftp, short desc
 #: files/debtags/vocabulary
 msgid "SFTP"
 msgstr "SFTP"
 
-#. Tag: made-of::data:sgml, short desc
+#. Tag: made-of::sgml, short desc
 #. Tag: works-with-format::sgml, short desc
 #: files/debtags/vocabulary
 msgid "SGML, Standard Generalized Markup Language"
@@ -2909,11 +2948,6 @@ msgstr "SGML, Standard Generalized Markup Language"
 #: files/debtags/vocabulary
 msgid "SMB"
 msgstr "SMB"
-
-#. Tag: filetransfer::smb, short desc
-#: files/debtags/vocabulary
-msgid "SMB and CIFS"
-msgstr "SMB und CIFS"
 
 #. Tag: protocol::smtp, short desc
 #: files/debtags/vocabulary
@@ -2970,7 +3004,7 @@ msgstr ""
 msgid "SSL/TLS"
 msgstr "SSL/TLS"
 
-#. Tag: made-of::data:svg, short desc
+#. Tag: made-of::svg, short desc
 #. Tag: works-with-format::svg, short desc
 #: files/debtags/vocabulary
 msgid "SVG, Scalable Vector Graphics"
@@ -3003,6 +3037,7 @@ msgid "Scheme Development"
 msgstr "Scheme-Entwicklung"
 
 #. Tag: science, short desc
+#. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
 msgstr "Wissenschaft"
@@ -3046,11 +3081,6 @@ msgstr "Suchen"
 #: files/debtags/vocabulary
 msgid "Secondary packages users won't install directly"
 msgstr "Sekundäre Pakete, die Benutzer nicht direkt installieren werden"
-
-#. Tag: filetransfer::sftp, long desc
-#: files/debtags/vocabulary
-msgid "Secure File Transfer Protocol"
-msgstr "Secure File Transfer Protocol"
 
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
@@ -3210,6 +3240,13 @@ msgstr ""
 "SOAP wird für APIs von Webdiensten verwandt, beispielsweise vom Google-API, "
 "um Googles Suchmaschine aus Client-Anwendungen heraus zu verwenden.\n"
 "Link: http://de.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
+
+#. Tag: use::simulating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Simulation"
+msgid "Simulating"
+msgstr "Simulation"
 
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
@@ -3465,7 +3502,7 @@ msgstr "TeX DVI"
 msgid "TeX and LaTeX"
 msgstr "TeX und LaTeX"
 
-#. Tag: made-of::data:tex, short desc
+#. Tag: made-of::tex, short desc
 #: files/debtags/vocabulary
 msgid "TeX, LaTeX and DVI"
 msgstr "TeX, LaTeX und DVI"
@@ -3640,7 +3677,6 @@ msgstr ""
 #. Tag: special::TODO, long desc
 #. Tag: suite::TODO, long desc
 #. Tag: protocol::TODO, long desc
-#. Tag: filetransfer::TODO, long desc
 #. Tag: uitoolkit::TODO, long desc
 #. Tag: use::TODO, long desc
 #. Tag: web::TODO, long desc
@@ -3799,6 +3835,11 @@ msgstr ""
 "Link: http://de.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
 "http://www.ietf.org/rfc/rfc793.txt"
 
+#. Tag: works-with::graphs, short desc
+#: files/debtags/vocabulary
+msgid "Trees and Graphs"
+msgstr ""
+
 #. Tag: protocol::tftp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3918,7 +3959,7 @@ msgstr "VPN oder Tunneln"
 msgid "VRML 3D Model"
 msgstr "VRML 3D-Modell"
 
-#. Tag: made-of::data:vrml, short desc
+#. Tag: made-of::vrml, short desc
 #: files/debtags/vocabulary
 msgid "VRML, Virtual Reality Markup Language"
 msgstr ""
@@ -3963,6 +4004,10 @@ msgid ""
 "Popular VoIP protocols are SIP, H.323 and IAX.\n"
 "Link: http://en.wikipedia.org/wiki/Voice_over_IP"
 msgstr ""
+"Voice over IP, ein allgemeiner Ausdruck für Protokolle, die Sprache über das "
+"Internet übertragen.\n"
+"Beliebte VoIP-Protokolle sind SIP, H.323 und IAX.\n"
+"Link: http://de.wikipedia.org/wiki/Voice_over_IP"
 
 #. Tag: works-with-format::wav, long desc
 #: files/debtags/vocabulary
@@ -3984,6 +4029,12 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
 "rfc2518.txt"
 msgstr ""
+"Web-based Distributed Authoring and Versioning, eine Erweiterung des HTTP-"
+"Protokolls zur Unterstützung der Erstellung und Änderung von Dokumenten auf "
+"einem HTTP-Server. Daher kann der Client auf die Dokumente auf einem HTTP-"
+"Server genauso wie auf Dateien im lokalen Dateisystem zugreifen.\n"
+"Link: http://de.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
+"rfc2518.txt"
 
 #. Tag: devel::web, long desc
 #: files/debtags/vocabulary
@@ -3991,6 +4042,8 @@ msgid ""
 "Web-centric frameworks, CGI libraries and other web-specific development "
 "tools."
 msgstr ""
+"Web-zentrische Rahmenwerke, CGI-Bibliotheken und andere Web-spezifische "
+"Entwicklungswerkzeuge."
 
 #. Tag: protocol::webdav, short desc
 #: files/debtags/vocabulary
@@ -4021,11 +4074,6 @@ msgstr "Wiki-Software, -Server, -Hilfswerkzeuge und -Erweiterungen."
 #: files/debtags/vocabulary
 msgid "Window Manager"
 msgstr "Window-Manager"
-
-#. Tag: filetransfer::smb, long desc
-#: files/debtags/vocabulary
-msgid "Windows file and printer sharing (SMB)"
-msgstr ""
 
 #. Facet: works-with, short desc
 #: files/debtags/vocabulary
@@ -4059,7 +4107,7 @@ msgstr "X-Bibliothek"
 msgid "XFce"
 msgstr "XFce"
 
-#. Tag: made-of::data:xml, short desc
+#. Tag: made-of::xml, short desc
 #. Tag: works-with-format::xml, short desc
 #: files/debtags/vocabulary
 msgid "XML"
@@ -4074,6 +4122,11 @@ msgid ""
 "from XML-RPC.\n"
 "Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 msgstr ""
+"XML Remote Procedure Call, ein einfaches Protokoll für Prozeduraufrufe aus "
+"der Ferne, das XML zur Kodierung und das HTTP-Protokoll zum Transport "
+"verwendet.\n"
+"SOAP, ein eindeutig ausgefeilteres Protokoll, wurde aus XML-RPC entwickelt.\n"
+"Link: http://de.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 
 #. Tag: works-with-format::xml:rss, long desc
 #: files/debtags/vocabulary
@@ -4105,6 +4158,24 @@ msgstr "XSL-Transformationen (XSLT)"
 #: files/debtags/vocabulary
 msgid "Yahoo! Messenger"
 msgstr "Yahoo! Messenger"
+
+#. Tag: protocol::zeroconf, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Zero Configuration Networking (Zeroconfig), is a set of techniques that "
+"automatically creates a usable IP network without configuration or special "
+"servers.\n"
+"This tag is used for packages that implement one or more of:\n"
+"* IPv4LL for choosing addresses\n"
+"* mDNS for name resolution\n"
+"* DNS-SD for service discovery\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
+msgstr ""
+
+#. Tag: protocol::zeroconf, short desc
+#: files/debtags/vocabulary
+msgid "Zeroconf"
+msgstr ""
 
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
@@ -4138,3 +4209,27 @@ msgstr "xDSL-Modem"
 
 #~ msgid "Source code"
 #~ msgstr "Quellcode"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB und CIFS"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "HyperText Transfer Protocol"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "File Transfer Protocol"
+
+#~ msgid "File Transfer"
+#~ msgstr "Datei-Übertragung"
+
+#~ msgid ""
+#~ "Direct Client to Client protocol used by Internet Relay Chat clients."
+#~ msgstr ""
+#~ "Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
+#~ "Relay Chat"
