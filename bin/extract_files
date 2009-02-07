@@ -235,7 +235,7 @@ sub to_update {
     if ($config_data->{structure} == PKGPOOL) {
 	my $dir = "$target/".pkg_pool_directory( $pkg_data );
 	if (!$force && -d $dir && -f "$dir/log") {
-	    touch("$dir/log")
+	    (utime(undef,undef,"$dir/log") == 1)
 		or do_warning( "touch of $dir/log failed" );
 	    return 0;
 	} else {
