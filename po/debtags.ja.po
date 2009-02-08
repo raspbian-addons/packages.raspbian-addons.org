@@ -1516,6 +1516,12 @@ msgid ""
 "the local computer, as POP3 does.\n"
 "Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
 msgstr ""
+"KMail や Evolution のようなメールクライアントから、サーバ上のメールにアクセス"
+"するのに用いられるプロトコル、Internet Message Access Protocol。\n"
+"POP3 ではユーザがすべてのメッセージをローカルにダウンロードする必要があります"
+"が、IMAP を使用する場合はそれとは異なり、メールをサーバに残したまま、サーバ上"
+"でカテゴリ化・編集・削除などができます。\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
 
 #. Tag: protocol::ip, long desc
 #: files/debtags/vocabulary
@@ -2519,6 +2525,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www."
 "ietf.org/rfc/rfc1939.txt"
 msgstr ""
+"インターネットに断続的にしかアクセスできないユーザ向けに設計された、メール"
+"サーバからメールをダウンロードするためのプロトコル、Post Office Protocol。\n"
+"同一サーバ上の単一アカウントが複数のメールボックスを持つことは POP3 ではサ"
+"ポートされていないので、IMAP サーバの場合とは対照的に、POP3 を用いてダウン"
+"ロードされるメッセージは、ダウンロード後はサーバに残るという仮定はされていま"
+"せん。\n"
+"Link: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www."
+"ietf.org/rfc/rfc1939.txt"
 
 #. Tag: security::forensics, long desc
 #: files/debtags/vocabulary
@@ -3059,6 +3073,7 @@ msgstr "共有ライブラリ"
 msgid "Shared libraries used by one or more programs."
 msgstr "1 つ以上のプログラムが共同利用するライブラリ。"
 
+# FIXME: "from where" is odd.  Should be either "from which" or "where".
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3070,6 +3085,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
 "http://www.ietf.org/rfc/rfc2821.txt"
 msgstr ""
+"インターネットでメールを送信するためのプロトコル、簡易メール転送プロトコル "
+"(Simple Mail Transfer Protocol)。\n"
+"メールが目的地に届くまで、各 SMTP サーバは SMTP を利用してメールを次のメール"
+"サーバに配送します。目的地に到着すると、通常、POP3 か IMAP でユーザがメールを"
+"取り出すことになります。\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2821.txt"
 
 #. Tag: protocol::snmp, long desc
 #: files/debtags/vocabulary
