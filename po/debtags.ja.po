@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-01-30 01:54+0900\n"
+"PO-Revision-Date: 2009-02-08 23:21+0900\n"
 "Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -2044,6 +2044,7 @@ msgstr "追加のタグが必要"
 msgid "Netscape Navigator"
 msgstr "Netscape Navigator"
 
+# TRANSLATOR'S COMMENT: "(be) attached to" の主語は user であるかのように読めるのだが……。
 #. Tag: protocol::nfs, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -2053,6 +2054,12 @@ msgid ""
 "over a network as easily as if attached to its local disks.\n"
 "Link: http://en.wikipedia.org/wiki/Network_File_System"
 msgstr ""
+"Network File System は、元々 Sun Microsystems が 1984 年に開発したプロトコル"
+"で、RFC 1094、1813、3530 (これは RFC 3010 を廃止しました) で分散ファイルシス"
+"テムとして定義されています。このプロトコルを用いると、クライアントコンピュー"
+"タ上のユーザは、あたかもローカルディスクに取り付けられたものであるかのよう"
+"に、ネットワーク越しに容易にファイルにアクセスできます。\n"
+"Link: http://en.wikipedia.org/wiki/Network_File_System"
 
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
@@ -3052,6 +3059,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
 "samba.org/"
 msgstr ""
+"主に Microsoft Windows(TM) が利用する、ネットワーク経由でのファイルアクセスと"
+"プリンタ共有を提供するプロトコル、Server Message Block。CIFS (Common "
+"Internet File System) は SMB の同義語です。\n"
+"SMB はプロプライエタリなプロトコルですが、Samba プロジェクトがプロトコルをリ"
+"バースエンジニアリングし、Unix/Windows 混在ネットワークでよりよい相互運用を実"
+"現するためのクライアントプログラムとサーバプログラムの両方を開発しました。\n"
+"Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
+"samba.org/"
 
 #. Tag: network::service, short desc
 #: files/debtags/vocabulary
