@@ -557,6 +557,10 @@ sub read_deb {
 	}
     }
     $cache{$debname} ||= qx/dpkg-deb --info "$debname" control/;
+    unless ( $cache{$debname} ) {
+    	do_warning( "extracting control information of file $debname failed" );
+	return;
+    }
     my $control = $cache{$debname};
 
     unless ( $raw_data = $parser->parse_mem( $control,
