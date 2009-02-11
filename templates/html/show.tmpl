@@ -142,8 +142,8 @@
    '</ul>' IF loop.last;
  END -%]
 <p>[% g('Please consider <a href="%s">filing a bug</a> or <a href="%s">asking a question</a> via Launchpad before contacting the maintainer directly.',
-        "https://bugs.launchpad.net/ubuntu/+source/$src.pkg/+filebug",
-        "https://answers.launchpad.net/ubuntu/+source/$src.pkg/+addquestion") %]</p>
+        "https://bugs.launchpad.net/ubuntu/+source/" _ (is_source ? pkg : src.pkg) _ "/+filebug",
+        "https://answers.launchpad.net/ubuntu/+source/" _ (is_source ? pkg : src.pkg) _ "/+addquestion") %]</p>
 [%- END -%]
 
 [%- IF original_maintainers.size -%]
