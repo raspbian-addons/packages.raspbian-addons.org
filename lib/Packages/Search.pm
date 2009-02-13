@@ -105,6 +105,8 @@ sub read_entry {
 my %fallback_suites = (
 		       'etch-backports' => 'etch',
 		       'etch-volatile' => 'etch',
+		       'lenny-backports' => 'lenny',
+		       'lenny-volatile' => 'lenny',
 		       experimental => 'sid' );
 
 sub read_entry_simple {

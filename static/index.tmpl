@@ -5,14 +5,15 @@
 -%]
 [%-
     all_suites = [ 'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
-		   'lenny', 'lenny-volatile', 'sid' ]
+		   'lenny', 'lenny-volatile', 'lenny-backports', 'squeeze', 'sid' ]
     version_numbers = { sarge => '3.1',
-			etch   => '4.0' }
-    current_release = 'etch'
+			etch  => '4.0',
+			lenny => '5.0' }
+    current_release = 'lenny'
     all_sections = [ 'main', 'contrib', 'non-free' ]
     all_architectures = [ 'alpha', 'arm', 'armel', 'amd64', 'hppa', 'i386',
     		      	  'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
-			  'mipsel', 'powerpc', 's390', 'sparc' ]
+			  'mipsel', 'm68k', 'powerpc', 's390', 'sparc' ]
 -%]
 
 <p>This site provides you with information about all the packages
