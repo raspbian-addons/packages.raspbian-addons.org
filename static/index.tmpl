@@ -5,14 +5,15 @@
 -%]
 [%-
     all_suites = [ 'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
-		   'lenny', 'lenny-volatile', 'sid' ]
+		   'lenny', 'lenny-volatile', 'lenny-backports', 'squeeze', 'sid' ]
     version_numbers = { sarge => '3.1',
-			etch   => '4.0' }
-    current_release = 'etch'
+			etch  => '4.0',
+			lenny => '5.0' }
+    current_release = 'lenny'
     all_sections = [ 'main', 'contrib', 'non-free' ]
     all_architectures = [ 'alpha', 'arm', 'armel', 'amd64', 'hppa', 'i386',
     		      	  'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
-			  'mipsel', 'powerpc', 's390', 'sparc' ]
+			  'mipsel', 'm68k', 'powerpc', 's390', 'sparc' ]
 -%]
 
 <p>This site provides you with information about all the packages
@@ -86,7 +87,7 @@ Section:
 distributions for any files (or just parts of file names) that are
 part of packages.
 You can also get a full list of files in a given package.
-<BR>
+<br>
 <form method="GET" action="/search">
 <input type="hidden" name="searchon" value="contents">
 
@@ -106,7 +107,7 @@ Display:
 <br>
 <input type="radio" name="mode" value="filename" id="filename">
   <label for="filename">packages that contain files whose names contain the keyword</label>
-
+<br>
 <label for="distro">Distribution:</label>
 
 <select name="suite" id="distro">
@@ -125,4 +126,4 @@ Display:
 
 [% PROCESS 'html/foot.tmpl'
 	langs.size = 0
-	copyright.years = '1997 - 2007' %]
+	copyright.years = '1997 - 2008' %]

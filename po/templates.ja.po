@@ -109,30 +109,36 @@ msgstr "GNU/kFreeBSD (amd64)"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
-msgstr ""
+msgstr "Debian フリーソフトウェアガイドラインに適合するパッケージ"
 
 #: templates/config/archive_layout.tmpl:15
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
 msgstr ""
+"Debian フリーソフトウェアガイドラインに適合しているが、Debian の main に含ま"
+"れないソフトウェアが必要となるパッケージ"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
-msgstr ""
+msgstr "Debian フリーソフトウェアガイドラインに適合しないパッケージ"
 
 #: templates/config/mirrors.tmpl:73
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
+"安定版 (stable) リリースのサポート期間内に大きな変更が必要となる、時代遅れに"
+"なりやすいパッケージ"
 
 #: templates/config/mirrors.tmpl:95
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
+"Debian の安定版 (stable) リリースに合うように作られた、新しいバージョンのパッ"
+"ケージ"
 
 #: templates/config/mirrors.tmpl:123
 msgid "ports of packages to architectures not yet available in Debian"
-msgstr ""
+msgstr "Debian でまだ利用可能でないアーキテクチャに移植されたパッケージ"
 
 #: templates/config/mirrors.tmpl:151
 msgid "North America"
@@ -775,7 +781,7 @@ msgstr "必須"
 
 #: templates/html/show.tmpl:61
 msgid "package manager will refuse to remove this package by default"
-msgstr ""
+msgstr "パッケージマネージャはデフォルトではこのパッケージの削除を拒みます"
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
@@ -807,7 +813,7 @@ msgstr "Debian ソースリポジトリ"
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
 msgid "%s Patch Tracking"
-msgstr ""
+msgstr "%s パッチ追跡システム"
 
 #: templates/html/show.tmpl:110
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
