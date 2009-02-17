@@ -31,7 +31,6 @@ then
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
 	    done
 	    #FIXME: no Contents files for p-u
-	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    (cd us/${dist} &&
 		$wget_cmd -N ${ftpsite}/dists/${dist}/Contents-${arch}.gz)
@@ -68,7 +67,6 @@ else
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
 	    done
 	    #FIXME: no Contents files for p-u
-	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    rsync -t ${localdir}/dists/${dist}/Contents-${arch}.gz \
 		us/${dist}/Contents-${arch}.gz
