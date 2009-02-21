@@ -48,7 +48,7 @@ my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
 foreach my $lang (@DDTP_LANGUAGES) {
     (my $locale = $lang) =~ s/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e;
     print "Reading Translations for $lang ($locale)...";
-    open PKG, "zcat $TOPDIR/archive/*/*/*/i18n/Translation-$locale.gz|";
+    open PKG, "bzcat $TOPDIR/archive/*/*/*/i18n/Translation-$locale.bz2|";
     my $count = 0;
     while (<PKG>) {
 	next if /^\s*$/;
