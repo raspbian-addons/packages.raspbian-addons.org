@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2009-01-12 18:36+0100\n"
+"PO-Revision-Date: 2009-02-07 16:00+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -298,10 +298,8 @@ msgstr "Quellangaben für BibTeX"
 
 #. Tag: science::bibliogaphy, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Geography"
 msgid "Bibliography"
-msgstr "Geographie"
+msgstr "Bibliographie"
 
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
@@ -311,7 +309,7 @@ msgstr "Bioinformatik"
 #. Tag: works-with::biological-sequence, short desc
 #: files/debtags/vocabulary
 msgid "Biological Sequence"
-msgstr ""
+msgstr "Biologische Sequenz"
 
 #. Facet: biology, short desc
 #. Tag: field::biology, short desc
@@ -454,10 +452,8 @@ msgstr "CORBA"
 
 #. Tag: use::calculating, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Clustering"
 msgid "Calculating"
-msgstr "Verclustern"
+msgstr "Berechnung"
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
@@ -648,10 +644,8 @@ msgstr "Tschechisch"
 
 #. Tag: protocol::dcc, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "IRC DCC"
 msgid "DCC"
-msgstr "IRC DCC"
+msgstr "DCC"
 
 #. Tag: protocol::dhcp, short desc
 #: files/debtags/vocabulary
@@ -705,10 +699,8 @@ msgstr "Daten-Visualisierung"
 
 #. Tag: science::data-acquisition, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Data Organisation"
 msgid "Data acquisition"
-msgstr "Daten-Organisation"
+msgstr "Datenerfassung"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
@@ -1272,6 +1264,11 @@ msgstr "GPE Palmtop-Umgebung"
 msgid "GPS"
 msgstr "GPS"
 
+#. Tag: works-with-format::xml:gpx, short desc
+#: files/debtags/vocabulary
+msgid "GPX, GPS eXchange Format"
+msgstr "GPX, GPS eXchange Format"
+
 #. Tag: uitoolkit::gtk, short desc
 #: files/debtags/vocabulary
 msgid "GTK"
@@ -1573,8 +1570,8 @@ msgid ""
 "the local computer, as POP3 does.\n"
 "Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
 msgstr ""
-"»Internet Message Access Protocol«, ein Protokoll, das zum Zugriff auf E-Mail "
-"auf einem Server von Clients wie KMail oder Evolution verwandt wird.\n"
+"»Internet Message Access Protocol«, ein Protokoll, das zum Zugriff auf E-"
+"Mail auf einem Server von Clients wie KMail oder Evolution verwandt wird.\n"
 "Beim Einsatz von IMAP verbleiben E-Mails auf dem Server, wo sie kategoriert, "
 "bearbeitet, gelöscht usw. werden können, statt wie bei POP3 vom Benutzer "
 "komplett auf den lokalen Computer heruntergeladen zu werden.\n"
@@ -1983,10 +1980,8 @@ msgstr "Mathematik"
 
 #. Tag: use::measuring, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Learning"
 msgid "Measuring"
-msgstr "Lernen"
+msgstr "Messung"
 
 #. Tag: field::medicine:imaging, short desc
 #: files/debtags/vocabulary
@@ -2583,10 +2578,8 @@ msgstr ""
 
 #. Tag: science::plotting, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Printing"
 msgid "Plotting"
-msgstr "Drucken"
+msgstr "Plotten"
 
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
@@ -2736,10 +2729,8 @@ msgstr ""
 
 #. Tag: science::publishing, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Polish"
 msgid "Publishing"
-msgstr "Polnisch"
+msgstr "Publikationswesen"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
@@ -2779,7 +2770,7 @@ msgstr "RADIUS"
 #. Tag: devel::rcs, long desc
 #: files/debtags/vocabulary
 msgid "RCS (Revision Control System) and SCM (Software Configuration Manager)"
-msgstr ""
+msgstr "RCS (Revision Control System) und SCM (Software Configuration Manager)"
 
 #. Tag: devel::rpc, short desc
 #: files/debtags/vocabulary
@@ -2789,7 +2780,7 @@ msgstr "RPC"
 #. Tag: works-with-format::xml:rss, short desc
 #: files/debtags/vocabulary
 msgid "RSS Rich Site Summary"
-msgstr ""
+msgstr "RSS Rich Site Summary"
 
 #. Tag: game::sport:racing, short desc
 #: files/debtags/vocabulary
@@ -3201,8 +3192,8 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
 "http://www.ietf.org/rfc/rfc2821.txt"
 msgstr ""
-"»Simple Mail Transfer Protocol« ist ein Protokoll zur Übertragung von E-Mails "
-"über das Internet.\n"
+"»Simple Mail Transfer Protocol« ist ein Protokoll zur Übertragung von E-"
+"Mails über das Internet.\n"
 "Jeder SMTP-Server verwendet SMTP, um E-Mails an den nächsten E-Mail-Server "
 "weiterzugeben, bis die E-Mail an ihrem Ziel ankommt, wo sie normalerweise "
 "via POP3 oder IMAP abgeholt wird.\n"
@@ -3243,10 +3234,8 @@ msgstr ""
 
 #. Tag: use::simulating, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Simulation"
 msgid "Simulating"
-msgstr "Simulation"
+msgstr "Simulierung"
 
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
@@ -3276,7 +3265,7 @@ msgstr "Software, die Benutzern Zugriff auf E-Mail erlaubt."
 #. Tag: mail::delivery-agent, long desc
 #: files/debtags/vocabulary
 msgid "Software that delivers mail to users' mailboxes."
-msgstr ""
+msgstr "Software, die E-Mail in die Mailboxen der Benutzer ausliefert."
 
 #. Tag: mail::notification, long desc
 #: files/debtags/vocabulary
@@ -3311,6 +3300,7 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Software useful to model tridimentional structures."
 msgstr ""
+"Software, die zum Modellieren dreidimensionaler Strukturen nützlich ist."
 
 #. Tag: field::biology:molecular, long desc
 #: files/debtags/vocabulary
@@ -3333,7 +3323,7 @@ msgstr "Quellcode"
 #. Tag: devel::editor, short desc
 #: files/debtags/vocabulary
 msgid "Source Editor"
-msgstr ""
+msgstr "Quellcode-Editor"
 
 #. Tag: culture::spanish, short desc
 #: files/debtags/vocabulary
@@ -3365,7 +3355,7 @@ msgstr "Tabellenkalkulation"
 #. Tag: role::data, short desc
 #: files/debtags/vocabulary
 msgid "Standalone Data"
-msgstr ""
+msgstr "Unabhängige Daten"
 
 #. Tag: field::statistics, short desc
 #: files/debtags/vocabulary
@@ -4207,29 +4197,29 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL-Modem"
 
-#~ msgid "Source code"
-#~ msgstr "Quellcode"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB und CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "HyperText Transfer Protocol"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "File Transfer Protocol"
-
-#~ msgid "File Transfer"
-#~ msgstr "Datei-Übertragung"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
 #~ "Relay Chat"
+
+#~ msgid "File Transfer"
+#~ msgstr "Datei-Übertragung"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "File Transfer Protocol"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "HyperText Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB und CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
+
+#~ msgid "Source code"
+#~ msgstr "Quellcode"
