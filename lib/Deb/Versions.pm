@@ -70,22 +70,6 @@ our @EXPORT = qw( version_cmp version_sort suites_cmp suites_sort );
 
 our $VERSION = v1.0.0;
 
-BEGIN {
-    eval {
-	use AptPkg::Config '$_config';
-	use AptPkg::System '$_system';
-	use AptPkg::Version;
-
-	$_config->init;
-	$_system = $_config->system;
-	my $apt_ver = $_system->versioning;
-	*version_cmp = sub { return $apt_ver->compare(@_) };
-    };
-    unless( *version_cmp ){
-	*version_cmp = \&version_cmp_pp;
-    }
-}
-
 my $re = qr/^(?:(\d+):)?([\w.+:~-]+?)(?:-([\w+.~]+))?$/;
 sub version_cmp_pp {
     return 0 if $_[0] eq $_[1];
@@ -118,6 +102,18 @@ sub version_cmp_pp {
     $res = _cmp_part ( $d1, $d2 );
     return $res;
 }
+
+*version_cmp = \&version_cmp_pp;
+eval {
+    require AptPkg::Config;
+    require AptPkg::System;
+    require AptPkg::Version;
+    
+    $AptPkg::Config::_config->init;
+    $AptPkg::System::_system = $AptPkg::Config::_config->system;
+    my $apt_ver = $AptPkg::System::_system->versioning;
+    *version_cmp = sub { return $apt_ver->compare(@_) };
+};
 
 sub version_sort {
     return sort { version_cmp( $b, $a ) } @_;
