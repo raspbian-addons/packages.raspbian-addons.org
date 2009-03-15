@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.git\n"
-"POT-Creation-Date: 2007-10-19 23:43+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-15 18:49+0100\n"
 "PO-Revision-Date: 2007-10-36 22:21+0100\n"
 "Last-Translator: Peter Karlsson <peterk@debian.org>\n"
 "Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
@@ -9,90 +10,117 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ./lib/Packages/Sections.pm:12
+#: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
 msgstr "Administrativa verktyg"
 
-#: ./lib/Packages/Sections.pm:13
+#: lib/Packages/Sections.pm:13
 msgid "Utilities to administer system resources, manage user accounts, etc."
-msgstr "Verktyg för att administrera systemresurser, hantera användarkonton, osv."
+msgstr ""
+"Verktyg för att administrera systemresurser, hantera användarkonton, osv."
 
-#: ./lib/Packages/Sections.pm:14
+#: lib/Packages/Sections.pm:14
 msgid "Base Utilities"
 msgstr "Basverktyg"
 
-#: ./lib/Packages/Sections.pm:15
+#: lib/Packages/Sections.pm:15
 msgid "Basic needed utilities of every Debian system."
 msgstr "Grundläggande verktyg som behövs på alla Debiansystem."
 
-#: ./lib/Packages/Sections.pm:16
+#: lib/Packages/Sections.pm:16
+msgid "Mono/CLI"
+msgstr ""
+
+#: lib/Packages/Sections.pm:17
+msgid "Everything about Mono and the Common Language Infrastructure."
+msgstr ""
+
+#: lib/Packages/Sections.pm:18
 msgid "Communication Programs"
 msgstr "Kommunikationsprogram"
 
-#: ./lib/Packages/Sections.pm:17
+#: lib/Packages/Sections.pm:19
 msgid "Software to use your modem in the old fashioned style."
 msgstr "Progarmvara för att använda ditt modem på det gamla viset."
 
-#: ./lib/Packages/Sections.pm:18
+#: lib/Packages/Sections.pm:20
+msgid "Databases"
+msgstr ""
+
+#: lib/Packages/Sections.pm:21
+msgid "Database Servers and Clients."
+msgstr ""
+
+#: lib/Packages/Sections.pm:22
+#, fuzzy
+#| msgid "Virtual packages"
+msgid "Debug packages"
+msgstr "Virtuella paket"
+
+#: lib/Packages/Sections.pm:23
+msgid ""
+"Packages providing debugging information for executables and shared "
+"libraries."
+msgstr ""
+
+#: lib/Packages/Sections.pm:24
 msgid "Development"
 msgstr "Utveckling"
 
-#: ./lib/Packages/Sections.pm:19
+#: lib/Packages/Sections.pm:25
 msgid ""
 "Development utilities, compilers, development environments, libraries, etc."
-msgstr ""
-"Utvecklingsverktyg, kompilatorer, utvecklingsmiljöer, bibliotek, osv."
+msgstr "Utvecklingsverktyg, kompilatorer, utvecklingsmiljöer, bibliotek, osv."
 
-#: ./lib/Packages/Sections.pm:20
+#: lib/Packages/Sections.pm:26
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: ./lib/Packages/Sections.pm:21
+#: lib/Packages/Sections.pm:27
 msgid ""
 "FAQs, HOWTOs and other documents trying to explain everything related to "
 "Debian, and software needed to browse documentation (man, info, etc)."
 msgstr ""
 "FAQ:er, guider och andra dokument som försöker förklara allt som har med "
-"Debian att göra, och programvara för att visa dokumentation (man, info, "
-"osv)."
+"Debian att göra, och programvara för att visa dokumentation (man, info, osv)."
 
-#: ./lib/Packages/Sections.pm:22
+#: lib/Packages/Sections.pm:28
 msgid "Editors"
 msgstr "Redigeringsprogram"
 
-#: ./lib/Packages/Sections.pm:23
+#: lib/Packages/Sections.pm:29
 msgid "Software to edit files. Programming environments."
 msgstr "Programvara för att redigera filer. Programmeringsmiljöer."
 
-#: ./lib/Packages/Sections.pm:24
+#: lib/Packages/Sections.pm:30
 msgid "Electronics"
 msgstr "Elektronik"
 
-#: ./lib/Packages/Sections.pm:25
+#: lib/Packages/Sections.pm:31
 msgid "Electronics utilities."
 msgstr "Elektronikverktyg."
 
-#: ./lib/Packages/Sections.pm:26
+#: lib/Packages/Sections.pm:32
 msgid "Embedded software"
 msgstr "Inbyggt programvara"
 
-#: ./lib/Packages/Sections.pm:27
+#: lib/Packages/Sections.pm:33
 msgid "Software suitable for use in embedded applications."
 msgstr "Programvara avsedd att användas i inbyggda program."
 
-#: ./lib/Packages/Sections.pm:28
+#: lib/Packages/Sections.pm:34
 msgid "Games"
 msgstr "Spel"
 
-#: ./lib/Packages/Sections.pm:29
+#: lib/Packages/Sections.pm:35
 msgid "Programs to spend a nice time with after all this setting up."
 msgstr "Program att ha kul med efter all den här konfigureringen."
 
-#: ./lib/Packages/Sections.pm:30
+#: lib/Packages/Sections.pm:36
 msgid "GNOME"
 msgstr "GNOME"
 
-#: ./lib/Packages/Sections.pm:31
+#: lib/Packages/Sections.pm:37
 msgid ""
 "The GNOME desktop environment, a powerful, easy to use set of integrated "
 "applications."
@@ -100,47 +128,107 @@ msgstr ""
 "Skrivbordsmiljön GNOME, en kraftfull, lättanvänd uppsättning integrerade "
 "program."
 
-#: ./lib/Packages/Sections.pm:32
+#: lib/Packages/Sections.pm:38
+msgid "GNU R"
+msgstr ""
+
+#: lib/Packages/Sections.pm:39
+msgid "Everything about GNU R, a statistical computation and graphics system."
+msgstr ""
+
+#: lib/Packages/Sections.pm:40
+msgid "GNUstep"
+msgstr ""
+
+#: lib/Packages/Sections.pm:41
+msgid "The GNUstep environment."
+msgstr ""
+
+#: lib/Packages/Sections.pm:42
 msgid "Graphics"
 msgstr "Grafik"
 
-#: ./lib/Packages/Sections.pm:33
+#: lib/Packages/Sections.pm:43
 msgid "Editors, viewers, converters... Everything to become an artist."
-msgstr "Redigeringsprogram, visare, konverterare... Allt för att bli en konstnär."
+msgstr ""
+"Redigeringsprogram, visare, konverterare... Allt för att bli en konstnär."
 
-#: ./lib/Packages/Sections.pm:34
+#: lib/Packages/Sections.pm:44
 msgid "Ham Radio"
 msgstr "Amatörradio"
 
-#: ./lib/Packages/Sections.pm:35
+#: lib/Packages/Sections.pm:45
 msgid "Software for ham radio."
 msgstr "Programvara för amatörradio."
 
-#: ./lib/Packages/Sections.pm:36
+#: lib/Packages/Sections.pm:46
+msgid "Fonts"
+msgstr ""
+
+#: lib/Packages/Sections.pm:47
+#, fuzzy
+#| msgid "Virtual packages."
+msgid "Font packages."
+msgstr "Virtuella paket."
+
+#: lib/Packages/Sections.pm:48
+msgid "Haskell"
+msgstr ""
+
+#: lib/Packages/Sections.pm:49
+msgid "Everything about Haskell."
+msgstr ""
+
+#: lib/Packages/Sections.pm:50
+#, fuzzy
+#| msgid "Web Software"
+msgid "Web Servers"
+msgstr "Webbprogramvara"
+
+#: lib/Packages/Sections.pm:51
+msgid "Web servers and their modules."
+msgstr ""
+
+#: lib/Packages/Sections.pm:52
 msgid "Interpreters"
 msgstr "Tolkar"
 
-#: ./lib/Packages/Sections.pm:37
+#: lib/Packages/Sections.pm:53
 msgid "All kind of interpreters for interpreted languages. Macro processors."
 msgstr "Alla sorters tolkar för tolkade språk. Makrohanterare."
 
-#: ./lib/Packages/Sections.pm:38
+#: lib/Packages/Sections.pm:54
+msgid "Java"
+msgstr ""
+
+#: lib/Packages/Sections.pm:55
+msgid "Everything about Java."
+msgstr ""
+
+#: lib/Packages/Sections.pm:56
+msgid "Kernels"
+msgstr ""
+
+#: lib/Packages/Sections.pm:57
+msgid "Operating System Kernels and related modules."
+msgstr ""
+
+#: lib/Packages/Sections.pm:58
 msgid "KDE"
 msgstr "KDE"
 
-#: ./lib/Packages/Sections.pm:39
+#: lib/Packages/Sections.pm:59
 msgid ""
 "The K Desktop Environment, a powerful, easy to use set of integrated "
 "applications."
 msgstr ""
-"Skrivbordsmiljön K, en kraftfull, lättanvänd uppsättning integrerade "
-"program."
+"Skrivbordsmiljön K, en kraftfull, lättanvänd uppsättning integrerade program."
 
-#: ./lib/Packages/Sections.pm:40
+#: lib/Packages/Sections.pm:60
 msgid "Libraries"
 msgstr "Bibliotek"
 
-#: ./lib/Packages/Sections.pm:41
+#: lib/Packages/Sections.pm:61
 msgid ""
 "Libraries to make other programs work. They provide special features to "
 "developers."
@@ -148,73 +236,101 @@ msgstr ""
 "Bibliotek för att få andra program att fungera. De innehåller "
 "specialfunktioner för utvecklare."
 
-#: ./lib/Packages/Sections.pm:42
+#: lib/Packages/Sections.pm:62
 msgid "Library development"
 msgstr "Bibliotek för utveckling"
 
-#: ./lib/Packages/Sections.pm:43
+#: lib/Packages/Sections.pm:63
 msgid "Libraries necessary for developers to write programs that use them."
-msgstr "Bibliotek som behövs av utvecklare för att skriva program som använder dem."
+msgstr ""
+"Bibliotek som behövs av utvecklare för att skriva program som använder dem."
 
-#: ./lib/Packages/Sections.pm:44
+#: lib/Packages/Sections.pm:64
+msgid "Lisp"
+msgstr ""
+
+#: lib/Packages/Sections.pm:65
+msgid "Everything about Lisp."
+msgstr ""
+
+#: lib/Packages/Sections.pm:66
+msgid "Language packs"
+msgstr ""
+
+#: lib/Packages/Sections.pm:67
+msgid "Localization support for big software packages."
+msgstr ""
+
+#: lib/Packages/Sections.pm:68
 msgid "Mail"
 msgstr "E-post"
 
-#: ./lib/Packages/Sections.pm:45
+#: lib/Packages/Sections.pm:69
 msgid "Programs to route, read, and compose E-mail messages."
 msgstr "Program för att sända, ta emot, läsa och skriva e-postmeddelanden."
 
-#: ./lib/Packages/Sections.pm:46
+#: lib/Packages/Sections.pm:70
 msgid "Mathematics"
 msgstr "Matematik"
 
-#: ./lib/Packages/Sections.pm:47
+#: lib/Packages/Sections.pm:71
 msgid "Math software."
 msgstr "Matteprogram."
 
-#: ./lib/Packages/Sections.pm:48
+#: lib/Packages/Sections.pm:72
 msgid "Miscellaneous"
 msgstr "Blandat"
 
-#: ./lib/Packages/Sections.pm:49
+#: lib/Packages/Sections.pm:73
 msgid "Miscellaneous utilities that didn't fit well anywhere else."
 msgstr "Blandade verktyg som inte passar bra in någon annanstans."
 
-#: ./lib/Packages/Sections.pm:50
+#: lib/Packages/Sections.pm:74
 msgid "Network"
 msgstr "Nätverk"
 
-#: ./lib/Packages/Sections.pm:51
+#: lib/Packages/Sections.pm:75
 msgid ""
 "Daemons and clients to connect your Debian GNU/Linux system to the world."
 msgstr ""
-"Servrar och klienter för att ansluta ditt Debian GNU/Linux-system mot omvärlden."
+"Servrar och klienter för att ansluta ditt Debian GNU/Linux-system mot "
+"omvärlden."
 
-#: ./lib/Packages/Sections.pm:52
+#: lib/Packages/Sections.pm:76
 msgid "Newsgroups"
 msgstr "Diskussionsgrupper"
 
-#: ./lib/Packages/Sections.pm:53
+#: lib/Packages/Sections.pm:77
 msgid "Software to access Usenet, to set up news servers, etc."
-msgstr "Programvara för att ansluta till Usenet, sätta upp diskussionsgruppsservrar, osv."
+msgstr ""
+"Programvara för att ansluta till Usenet, sätta upp diskussionsgruppsservrar, "
+"osv."
 
-#: ./lib/Packages/Sections.pm:54
+#: lib/Packages/Sections.pm:78
 msgid "Old Libraries"
 msgstr "Gamla bibliotek"
 
-#: ./lib/Packages/Sections.pm:55
+#: lib/Packages/Sections.pm:79
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
 msgstr ""
-"Gamla versioner av bibliotek som behålls för bakåtkompatibilitet med "
-"gamla program."
+"Gamla versioner av bibliotek som behålls för bakåtkompatibilitet med gamla "
+"program."
 
-#: ./lib/Packages/Sections.pm:56
+#: lib/Packages/Sections.pm:80
+msgid "OCaml"
+msgstr ""
+
+#: lib/Packages/Sections.pm:81
+msgid "Everything about OCaml, an ML language implementation."
+msgstr ""
+
+#: lib/Packages/Sections.pm:82
 msgid "Other OS's and file systems"
 msgstr "Andra operativsystem och filsystem"
 
-#: ./lib/Packages/Sections.pm:57
+#: lib/Packages/Sections.pm:83
 msgid ""
 "Software to run programs compiled for other operating system, and to use "
 "their filesystems."
@@ -222,120 +338,170 @@ msgstr ""
 "Programvara för att köra program som kompilerats för andra operativsystem, "
 "och för att använda deras filsystem."
 
-#: ./lib/Packages/Sections.pm:58
+#: lib/Packages/Sections.pm:84
 msgid "Perl"
 msgstr "Perl"
 
-#: ./lib/Packages/Sections.pm:59
+#: lib/Packages/Sections.pm:85
 msgid "Everything about Perl, an interpreted scripting language."
 msgstr "Allt om Perl, ett tolkat skriptspråk."
 
-#: ./lib/Packages/Sections.pm:60
+#: lib/Packages/Sections.pm:86
+msgid "PHP"
+msgstr ""
+
+#: lib/Packages/Sections.pm:87
+msgid "Everything about PHP."
+msgstr ""
+
+#: lib/Packages/Sections.pm:88
 msgid "Python"
 msgstr "Python"
 
-#: ./lib/Packages/Sections.pm:61
+#: lib/Packages/Sections.pm:89
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
-msgstr ""
-"Allt om Python, ett tolkat, interaktivt objektorienterat språk."
+msgstr "Allt om Python, ett tolkat, interaktivt objektorienterat språk."
 
-#: ./lib/Packages/Sections.pm:62
+#: lib/Packages/Sections.pm:90
+msgid "Ruby"
+msgstr ""
+
+#: lib/Packages/Sections.pm:91
+#, fuzzy
+#| msgid ""
+#| "Everything about Python, an interpreted, interactive object oriented "
+#| "language."
+msgid "Everything about Ruby, an interpreted object oriented language."
+msgstr "Allt om Python, ett tolkat, interaktivt objektorienterat språk."
+
+#: lib/Packages/Sections.pm:92
 msgid "Science"
 msgstr "Vetenskap"
 
-#: ./lib/Packages/Sections.pm:63
+#: lib/Packages/Sections.pm:93
 msgid "Basic tools for scientific work"
 msgstr "Grundläggande verktyg för vetenskapligt bruk"
 
-#: ./lib/Packages/Sections.pm:64
+#: lib/Packages/Sections.pm:94
 msgid "Shells"
 msgstr "Skal"
 
-#: ./lib/Packages/Sections.pm:65
+#: lib/Packages/Sections.pm:95
 msgid "Command shells. Friendly user interfaces for beginners."
 msgstr "Kommandoskal. Vänliga användargränssnitt för nybörjare."
 
-#: ./lib/Packages/Sections.pm:66
+#: lib/Packages/Sections.pm:96
 msgid "Sound"
 msgstr "Ljud"
 
-#: ./lib/Packages/Sections.pm:67
+#: lib/Packages/Sections.pm:97
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
-msgstr ""
-"Verktyg för att hantera ljud: mixare, (in)spelare, cd-spelare, osv."
+msgstr "Verktyg för att hantera ljud: mixare, (in)spelare, cd-spelare, osv."
 
-#: ./lib/Packages/Sections.pm:68
+#: lib/Packages/Sections.pm:98
 msgid "TeX"
 msgstr "TeX"
 
-#: ./lib/Packages/Sections.pm:69
+#: lib/Packages/Sections.pm:99
 msgid "The famous typesetting software and related programs."
 msgstr "Den berömda typsättningsprogramvaran och relaterade program."
 
-#: ./lib/Packages/Sections.pm:70
+#: lib/Packages/Sections.pm:100
 msgid "Text Processing"
 msgstr "Textbehandling"
 
-#: ./lib/Packages/Sections.pm:71
+#: lib/Packages/Sections.pm:101
 msgid "Utilities to format and print text documents."
 msgstr "Verktyg för att formatera och skriva textdokument."
 
-#: ./lib/Packages/Sections.pm:72
+#: lib/Packages/Sections.pm:102
 msgid "Translations"
 msgstr "Översättningar"
 
-#: ./lib/Packages/Sections.pm:73
+#: lib/Packages/Sections.pm:103
 msgid "Translation packages and language support meta packages."
 msgstr "Översättningspaket och metapaket för språkstöd."
 
-#: ./lib/Packages/Sections.pm:74
+#: lib/Packages/Sections.pm:104
 msgid "Utilities"
 msgstr "Verktyg"
 
-#: ./lib/Packages/Sections.pm:75
+#: lib/Packages/Sections.pm:105
 msgid ""
 "Utilities for file/disk manipulation, backup and archive tools, system "
 "monitoring, input systems, etc."
 msgstr ""
-"Verktyg för fil-/diskmanipulering, säkerhetskopiering och arkiveringsverktyg, "
-"systemövervakning, inmatningssystem, osv."
+"Verktyg för fil-/diskmanipulering, säkerhetskopiering och "
+"arkiveringsverktyg, systemövervakning, inmatningssystem, osv."
 
-#: ./lib/Packages/Sections.pm:76
+#: lib/Packages/Sections.pm:106
+msgid "Version Control Systems"
+msgstr ""
+
+#: lib/Packages/Sections.pm:107
+msgid "Version control systems and related utilities."
+msgstr ""
+
+#: lib/Packages/Sections.pm:108
+msgid "Video"
+msgstr ""
+
+#: lib/Packages/Sections.pm:109
+msgid "Video viewers, editors, recording, streaming."
+msgstr ""
+
+#: lib/Packages/Sections.pm:110
 msgid "Virtual packages"
 msgstr "Virtuella paket"
 
-#: ./lib/Packages/Sections.pm:77
+#: lib/Packages/Sections.pm:111
 msgid "Virtual packages."
 msgstr "Virtuella paket."
 
-#: ./lib/Packages/Sections.pm:78
+#: lib/Packages/Sections.pm:112
 msgid "Web Software"
 msgstr "Webbprogramvara"
 
-#: ./lib/Packages/Sections.pm:79
+#: lib/Packages/Sections.pm:113
 msgid "Web servers, browsers, proxies, download tools etc."
 msgstr "Webbservrar, webbläsare, mellanservrar, hämtningsverktyg osv."
 
-#: ./lib/Packages/Sections.pm:80
+#: lib/Packages/Sections.pm:114
 msgid "X Window System software"
 msgstr "X Window System-programvara"
 
-#: ./lib/Packages/Sections.pm:81
+#: lib/Packages/Sections.pm:115
 msgid ""
 "X servers, libraries, fonts, window managers, terminal emulators and many "
 "related applications."
 msgstr ""
-"X-servrar, bibliotek, teckensnitt, fönsterhanterare, terminalemulatorer "
-"och många relaterade program."
+"X-servrar, bibliotek, teckensnitt, fönsterhanterare, terminalemulatorer och "
+"många relaterade program."
 
-#: ./lib/Packages/Sections.pm:82
+#: lib/Packages/Sections.pm:116
+msgid "Xfce"
+msgstr ""
+
+#: lib/Packages/Sections.pm:117
+msgid "Xfce, a fast and lightweight Desktop Environment."
+msgstr ""
+
+#: lib/Packages/Sections.pm:118
+msgid "Zope/Plone Framework"
+msgstr ""
+
+#: lib/Packages/Sections.pm:119
+msgid "Zope Application Server and Plone Content Managment System."
+msgstr ""
+
+#: lib/Packages/Sections.pm:120
 msgid "debian-installer udeb packages"
 msgstr "udeb-paket för debian-installer"
 
-#: ./lib/Packages/Sections.pm:83
+#: lib/Packages/Sections.pm:121
 msgid ""
 "Special packages for building customized debian-installer variants. Do not "
 "install them on a normal system!"

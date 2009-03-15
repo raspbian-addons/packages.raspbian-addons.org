@@ -26,7 +26,7 @@ msgstr "веб-мастер %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s это <a href=\"%s\">торговый знак</a> компании %s"
 
-#: templates/config.tmpl:59
+#: templates/config.tmpl:65
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +35,11 @@ msgstr ""
 "и устаревшая информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:68
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:63
+#: templates/config.tmpl:69
 msgid ","
 msgstr " "
 
@@ -126,35 +126,35 @@ msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:113
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:123
+#: templates/config/mirrors.tmpl:141
 msgid "ports of packages to architectures not yet available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:151
+#: templates/config/mirrors.tmpl:169
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:152
+#: templates/config/mirrors.tmpl:170
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:153
+#: templates/config/mirrors.tmpl:171
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:154
+#: templates/config/mirrors.tmpl:172
 msgid "Australia and New Zealand"
 msgstr "Австралия и Новая Зеландия"
 
-#: templates/config/mirrors.tmpl:155
+#: templates/config/mirrors.tmpl:173
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:156
+#: templates/config/mirrors.tmpl:174
 msgid "Africa"
 msgstr "Африка"
 
@@ -362,10 +362,10 @@ msgstr ""
 msgid "Learn more about this site"
 msgstr "Об этом сайте"
 
-#: templates/html/foot.tmpl:40
+#: templates/html/foot.tmpl:41
 #, fuzzy
 #| msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Загрузка пакета исходного кода <a href=\"%s\">%s</a>:"
 
 #: templates/html/head.tmpl:47
