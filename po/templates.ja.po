@@ -26,7 +26,7 @@ msgstr "%s ウェブマスター"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
-#: templates/config.tmpl:59
+#: templates/config.tmpl:65
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +35,11 @@ msgstr ""
 "報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:68
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:63
+#: templates/config.tmpl:69
 msgid ","
 msgstr ","
 
@@ -130,37 +130,37 @@ msgstr ""
 "安定版 (stable) リリースのサポート期間内に大きな変更が必要となる、時代遅れに"
 "なりやすいパッケージ"
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:113
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 "Debian の安定版 (stable) リリースに合うように作られた、新しいバージョンのパッ"
 "ケージ"
 
-#: templates/config/mirrors.tmpl:123
+#: templates/config/mirrors.tmpl:141
 msgid "ports of packages to architectures not yet available in Debian"
 msgstr "Debian でまだ利用可能でないアーキテクチャに移植されたパッケージ"
 
-#: templates/config/mirrors.tmpl:151
+#: templates/config/mirrors.tmpl:169
 msgid "North America"
 msgstr "北アメリカ"
 
-#: templates/config/mirrors.tmpl:152
+#: templates/config/mirrors.tmpl:170
 msgid "South America"
 msgstr "南アメリカ"
 
-#: templates/config/mirrors.tmpl:153
+#: templates/config/mirrors.tmpl:171
 msgid "Asia"
 msgstr "アジア"
 
-#: templates/config/mirrors.tmpl:154
+#: templates/config/mirrors.tmpl:172
 msgid "Australia and New Zealand"
 msgstr "オーストラリア・ニュージーランド"
 
-#: templates/config/mirrors.tmpl:155
+#: templates/config/mirrors.tmpl:173
 msgid "Europe"
 msgstr "ヨーロッパ"
 
-#: templates/config/mirrors.tmpl:156
+#: templates/config/mirrors.tmpl:174
 msgid "Africa"
 msgstr "アフリカ"
 
@@ -373,8 +373,10 @@ msgstr ""
 msgid "Learn more about this site"
 msgstr "このサイトについてさらに詳しく知るには"
 
-#: templates/html/foot.tmpl:40
-msgid "Hosting provided by <a href=\"%s\">%s</a>."
+#: templates/html/foot.tmpl:41
+#, fuzzy
+#| msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "ホスティングサービス提供者: <a href=\"%s\">%s</a>"
 
 #: templates/html/head.tmpl:47

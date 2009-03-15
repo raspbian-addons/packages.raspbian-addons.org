@@ -27,7 +27,7 @@ msgstr "Responsable du site %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s est une <a href=\"%s\">marque</a> de %s"
 
-#: templates/config.tmpl:59
+#: templates/config.tmpl:65
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -37,11 +37,11 @@ msgstr ""
 "et des informations obsolètes."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:68
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:63
+#: templates/config.tmpl:69
 msgid ","
 msgstr " "
 
@@ -135,37 +135,37 @@ msgstr ""
 "paquets non définitifs nécessitant des changements majeurs pendant la durée "
 "de vie de la version stable"
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:113
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr "nouveaux paquets ayant été adaptés à la version stable de Debian"
 
-#: templates/config/mirrors.tmpl:123
+#: templates/config/mirrors.tmpl:141
 msgid "ports of packages to architectures not yet available in Debian"
 msgstr ""
 "portage de paquets pour des architectures qui ne sont pas encore prises en "
 "charge par Debian"
 
-#: templates/config/mirrors.tmpl:151
+#: templates/config/mirrors.tmpl:169
 msgid "North America"
 msgstr "Amérique du nord"
 
-#: templates/config/mirrors.tmpl:152
+#: templates/config/mirrors.tmpl:170
 msgid "South America"
 msgstr "Amérique du sud"
 
-#: templates/config/mirrors.tmpl:153
+#: templates/config/mirrors.tmpl:171
 msgid "Asia"
 msgstr "Asie"
 
-#: templates/config/mirrors.tmpl:154
+#: templates/config/mirrors.tmpl:172
 msgid "Australia and New Zealand"
 msgstr "Australie et Nouvelle-Zélande"
 
-#: templates/config/mirrors.tmpl:155
+#: templates/config/mirrors.tmpl:173
 msgid "Europe"
 msgstr "Europe"
 
-#: templates/config/mirrors.tmpl:156
+#: templates/config/mirrors.tmpl:174
 msgid "Africa"
 msgstr "Afrique"
 
@@ -310,24 +310,24 @@ msgid "More information on <kbd>%s</kbd>:"
 msgstr "Plus d'informations sur <kbd>%s<kbd> :"
 
 #: templates/html/download.tmpl:107
-msgid "Exact Size"
-msgstr "Taille exacte"
-
-#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s octet (%s %s)"
+
+#: templates/html/download.tmpl:107
+msgid "Exact Size"
+msgstr "Taille exacte"
 
 #: templates/html/download.tmpl:108 templates/html/show.tmpl:345
 msgid "MD5 checksum"
 msgstr "Somme MD5"
 
-#: templates/html/download.tmpl:109
-msgid "SHA1 checksum"
-msgstr "Somme SHA1"
-
 #: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "Indisponible"
+
+#: templates/html/download.tmpl:109
+msgid "SHA1 checksum"
+msgstr "Somme SHA1"
 
 #: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
@@ -379,8 +379,10 @@ msgstr ""
 msgid "Learn more about this site"
 msgstr "Plus de détails sur ce site"
 
-#: templates/html/foot.tmpl:40
-msgid "Hosting provided by <a href=\"%s\">%s</a>."
+#: templates/html/foot.tmpl:41
+#, fuzzy
+#| msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Hébergement fourni par <a href=\"%s\">%s</a>."
 
 #: templates/html/head.tmpl:47
@@ -495,13 +497,13 @@ msgstr "[Fil RSS 1.0]"
 msgid " <em>(%u days old)</em>"
 msgstr " <em>(il y a %u jours)</em>"
 
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
-msgid "List of all packages"
-msgstr "Liste de tous les paquets"
-
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
 msgid "All packages"
 msgstr "Tous les paquets"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
+msgid "List of all packages"
+msgstr "Liste de tous les paquets"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
@@ -577,12 +579,12 @@ msgid "architecture(s) <em>%s</em>"
 msgstr "architecture(s) <em>%s</em>"
 
 #: templates/html/search.tmpl:83
-msgid "source packages"
-msgstr "Paquets sources"
-
-#: templates/html/search.tmpl:83
 msgid "packages"
 msgstr "paquets"
+
+#: templates/html/search.tmpl:83
+msgid "source packages"
+msgstr "Paquets sources"
 
 #: templates/html/search.tmpl:84
 msgid ""
@@ -660,12 +662,12 @@ msgid "Binary packages:"
 msgstr "Paquets binaires :"
 
 #: templates/html/search.tmpl:149
-msgid "show %u binary packages"
-msgstr "montrer les paquets binaires %u"
-
-#: templates/html/search.tmpl:149
 msgid "hide %u binary packages"
 msgstr "cacher les paquets binaires %u"
+
+#: templates/html/search.tmpl:149
+msgid "show %u binary packages"
+msgstr "montrer les paquets binaires %u"
 
 #: templates/html/search.tmpl:159
 msgid ""
@@ -752,12 +754,12 @@ msgid "Source packages"
 msgstr "Paquets sources"
 
 #: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "Section :"
-
-#: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "Tous les paquets dans cette section"
+
+#: templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Section :"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
@@ -768,12 +770,12 @@ msgid "Details of package %s in %s"
 msgstr "Détails du paquet %s dans %s"
 
 #: templates/html/show.tmpl:46
-msgid "Source:"
-msgstr "Paquet source :"
-
-#: templates/html/show.tmpl:46
 msgid "Source package building this package"
 msgstr "Paquets sources composant ce paquet"
+
+#: templates/html/show.tmpl:46
+msgid "Source:"
+msgstr "Paquet source :"
 
 #: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
@@ -950,12 +952,12 @@ msgid "virtual package provided by"
 msgstr "paquet virtuel fourni par"
 
 #: templates/html/show.tmpl:277
-msgid "show %u providing packages"
-msgstr "montrer %u paquets fournissant"
-
-#: templates/html/show.tmpl:277
 msgid "hide %u providing packages"
 msgstr "cacher %u paquets fournissant"
+
+#: templates/html/show.tmpl:277
+msgid "show %u providing packages"
+msgstr "montrer %u paquets fournissant"
 
 #: templates/html/show.tmpl:295
 msgid "Download %s"
@@ -1260,9 +1262,9 @@ msgstr "Consultez <URL:%s> pour obtenir les termes de la licence."
 #~ "Users of experimental packages are encouraged to contact the package "
 #~ "maintainers directly in case of problems."
 #~ msgstr ""
-#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;experimental&nbsp;» "
-#~ "rencontrant des problèmes à contacter directement le responsable du "
-#~ "paquet."
+#~ "Nous encourageons les utilisateurs de paquets d'«&nbsp;"
+#~ "experimental&nbsp;» rencontrant des problèmes à contacter directement le "
+#~ "responsable du paquet."
 
 #~ msgid "Size is measured in kBytes."
 #~ msgstr "La taille est indiquée en kOctets"
