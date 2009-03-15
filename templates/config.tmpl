@@ -48,10 +48,16 @@
 	mail => 'webmaster@debian.org',
    }
    trademarknotes = g('%s is a <a href="%s">trademark</a> of %s', organisation, trademark.url, trademark.name)
-#   sponsor = {
-#   	url => 'http://example.invalid/',
-#	name => 'Example Sponsor, Inc.',
-#   }
+   sponsors = [
+   {
+   	url => 'http://example.invalid/',
+	name => 'Example Sponsor, Inc.',
+   },
+   {
+   	url => 'http://example2.invalid/',
+	name => 'Example2 Sponsor, Inc.',
+   },
+   ]
 -%]
 [%-
    # possible values for importance: high, normal, low
