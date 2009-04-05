@@ -138,16 +138,12 @@ mirrors = {
 	},
 
 	debports => {
-		title => g('ports of packages to architectures not yet available in Debian'),
+		title => g('ports of packages to architectures not yet or not anymore available in Debian'),
 		mirror_list => 'http://wiki.debian.org/DebianPorts/Mirrors',
 		unofficial_port => {
-			'kfreebsd-amd64' => {
-				url_name => 'kfreebsd-gnu',
-				name => 'GNU/kFreeBSD',
-			},
-			'kfreebsd-i386' => {
-				url_name => 'kfreebsd-gnu',
-				name => 'GNU/kFreeBSD',
+			m68k => {
+				url_name => 'm68k',
+				name => 'M68K',
 			},
 		},
 		north_america => [

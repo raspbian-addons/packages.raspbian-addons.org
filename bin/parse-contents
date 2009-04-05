@@ -142,7 +142,7 @@ for my $suite (@suites) {
 
 	    activate($filelist_db);
 	    #FIXME: hardcoded archs. (debports has no contrib/non-free)
-	    if ($arch !~ m/^kfreebsd-.*$/) {
+	    if ($arch ne 'm68k') {
 		system("ln", "-sf", basename($filelist_db),
 		       "$DBDIR/filelists_${suite}_all.db") == 0
 			   or die "Oops";

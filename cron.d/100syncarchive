@@ -21,8 +21,6 @@ then
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    test ! "$arch" = "kfreebsd-i386" || continue
-	    test ! "$arch" = "kfreebsd-amd64" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
@@ -57,8 +55,6 @@ else
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    test ! "$arch" = "kfreebsd-i386" || continue
-	    test ! "$arch" = "kfreebsd-amd64" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
