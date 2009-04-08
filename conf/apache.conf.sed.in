@@ -69,7 +69,7 @@
    ServerAdmin webmaster@debian.org
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
-   ServerAlias packages-piatti.debian.org packages-powell.debian.org
+   ServerAlias packages-piatti.debian.org packages-powell.debian.org packages-carver.debian.org
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
 
