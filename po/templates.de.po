@@ -10,19 +10,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
 msgstr "Debian Webseiten-Mailingliste"
 
-#: templates/config.tmpl:47
+#: templates/config.tmpl:48
 msgid "%s Webmaster"
 msgstr "%s-Webmaster"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:51
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s ist ein eingetragenes <a href=\"%s\">Warenzeichen</a> von %s"
 
-#: templates/config.tmpl:65
+#: templates/config.tmpl:66
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -32,11 +32,11 @@ msgstr ""
 "veralteten Informationen muss gerechnet werden"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:68
+#: templates/config.tmpl:69
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid ","
 msgstr " "
 
@@ -120,45 +120,48 @@ msgstr ""
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr "Pakete, die die Debian-Richtlinien für Freie Software nicht erfüllen"
 
-#: templates/config/mirrors.tmpl:73
+#: templates/config/mirrors.tmpl:92
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 "unbeständige Pakete, die größere Änderungen während der Lebensdauer einer "
 "stabilen Veröffentlichung benötigen"
 
-#: templates/config/mirrors.tmpl:113
+#: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 "neuere Pakete, die an stabile Veröffentlichungen von Debian angepasst wurden"
 
-#: templates/config/mirrors.tmpl:141
-msgid "ports of packages to architectures not yet available in Debian"
+#: templates/config/mirrors.tmpl:160
+#, fuzzy
+#| msgid "ports of packages to architectures not yet available in Debian"
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 "Portierungen von Paketen auf Architekturen, die nicht in Debian verfügbar "
 "sind"
 
-#: templates/config/mirrors.tmpl:169
+#: templates/config/mirrors.tmpl:185
 msgid "North America"
 msgstr "Nordamerika"
 
-#: templates/config/mirrors.tmpl:170
+#: templates/config/mirrors.tmpl:186
 msgid "South America"
 msgstr "Südamerika"
 
-#: templates/config/mirrors.tmpl:171
+#: templates/config/mirrors.tmpl:187
 msgid "Asia"
 msgstr "Asien"
 
-#: templates/config/mirrors.tmpl:172
+#: templates/config/mirrors.tmpl:188
 msgid "Australia and New Zealand"
 msgstr "Australien und Neuseeland"
 
-#: templates/config/mirrors.tmpl:173
+#: templates/config/mirrors.tmpl:189
 msgid "Europe"
 msgstr "Europa"
 
-#: templates/config/mirrors.tmpl:174
+#: templates/config/mirrors.tmpl:190
 msgid "Africa"
 msgstr "Afrika"
 
@@ -277,11 +280,16 @@ msgstr ""
 "bitte auch unsere <a href=\"%s\">komplette Spiegelliste</a>."
 
 #: templates/html/download.tmpl:97
+#, fuzzy
+#| msgid ""
+#| "Note that %s is not officially included in the %s archive yet, but the %s "
+#| "porter group keeps their archive in sync with the official archive as "
+#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
+#| "information."
 msgid ""
-"Note that %s is not officially included in the %s archive yet, but the %s "
-"porter group keeps their archive in sync with the official archive as close "
-"as possible. See the <a href=\"%s\">%s ports page</a> for current "
-"information."
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 "Beachten Sie, dass %s noch nicht offiziell im %s-Archiv ist, aber die "
 "Portierungsgruppe %s ihr Archiv mit dem offiziellen Archiv so eng wie "
@@ -1090,27 +1098,27 @@ msgstr "Erzeugt:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
-
-#~ msgid "Back to:"
-#~ msgstr "Zurück zu:"
-
-#~ msgid "Packages search page"
-#~ msgstr "Paket-Suchseite"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "Suite(s) <em>$suite_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "Bereich(e) <em>$section_enc</em>"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
-
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
 #~ "andere Suche durchführen."
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "Bereich(e) <em>$section_enc</em>"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"
+
+#~ msgid "Packages search page"
+#~ msgstr "Paket-Suchseite"
+
+#~ msgid "Back to:"
+#~ msgstr "Zurück zu:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
