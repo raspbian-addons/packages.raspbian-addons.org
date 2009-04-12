@@ -10,19 +10,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
 msgstr "Debian 邮件列表"
 
-#: templates/config.tmpl:47
+#: templates/config.tmpl:48
 msgid "%s Webmaster"
 msgstr "%s 网管"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:51
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 是 %3 的一个<a href=\"%3\">注册商标</a>"
 
-#: templates/config.tmpl:65
+#: templates/config.tmpl:66
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -31,11 +31,11 @@ msgstr ""
 "有时难以避免"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:68
+#: templates/config.tmpl:69
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid ","
 msgstr ""
 
@@ -117,40 +117,41 @@ msgstr ""
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:73
+#: templates/config/mirrors.tmpl:92
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:113
+#: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:141
-msgid "ports of packages to architectures not yet available in Debian"
+#: templates/config/mirrors.tmpl:160
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:169
+#: templates/config/mirrors.tmpl:185
 msgid "North America"
 msgstr "北美洲"
 
-#: templates/config/mirrors.tmpl:170
+#: templates/config/mirrors.tmpl:186
 msgid "South America"
 msgstr "南美洲"
 
-#: templates/config/mirrors.tmpl:171
+#: templates/config/mirrors.tmpl:187
 msgid "Asia"
 msgstr "亚洲"
 
-#: templates/config/mirrors.tmpl:172
+#: templates/config/mirrors.tmpl:188
 msgid "Australia and New Zealand"
 msgstr "澳洲和大洋洲"
 
-#: templates/config/mirrors.tmpl:173
+#: templates/config/mirrors.tmpl:189
 msgid "Europe"
 msgstr "欧洲"
 
-#: templates/config/mirrors.tmpl:174
+#: templates/config/mirrors.tmpl:190
 msgid "Africa"
 msgstr "非洲"
 
@@ -260,11 +261,16 @@ msgstr ""
 "</a>。"
 
 #: templates/html/download.tmpl:97
+#, fuzzy
+#| msgid ""
+#| "Note that %s is not officially included in the %s archive yet, but the %s "
+#| "porter group keeps their archive in sync with the official archive as "
+#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
+#| "information."
 msgid ""
-"Note that %s is not officially included in the %s archive yet, but the %s "
-"porter group keeps their archive in sync with the official archive as close "
-"as possible. See the <a href=\"%s\">%s ports page</a> for current "
-"information."
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 "注意: %s 目前还没有被 %s 官方收录，但是有 %s 移植小组负责尽可能的保证它们与官"
 "方收录的档案相一致。请查看 <a href=\"%s\">%s 移植页面</a>了解最新信息。"
@@ -1073,26 +1079,26 @@ msgstr "最近修订日期:"
 msgid "See <URL:%s> for the license terms."
 msgstr "查看 <URL:%s> 以便了解许可证的各项条款。"
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "本页面还能应用以下各种语言浏览:"
-
-#~ msgid "Back to:"
-#~ msgstr "返回到:"
-
-#~ msgid "Packages search page"
-#~ msgstr "软件包搜索页面"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr " <em>$suite_enc</em> 发行版"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr " <em>$section_enc</em> 版面"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr " <em>$architectures_enc</em> 硬件架构"
-
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "您可以在<a href=\"%s#search_packages\">软件包搜索页面</a>重新搜索一次。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr " <em>$architectures_enc</em> 硬件架构"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr " <em>$section_enc</em> 版面"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr " <em>$suite_enc</em> 发行版"
+
+#~ msgid "Packages search page"
+#~ msgstr "软件包搜索页面"
+
+#~ msgid "Back to:"
+#~ msgstr "返回到:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "本页面还能应用以下各种语言浏览:"

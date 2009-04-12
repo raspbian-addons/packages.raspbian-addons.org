@@ -14,19 +14,19 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
 msgstr "Список рассылки редакторов веб-страниц Debian"
 
-#: templates/config.tmpl:47
+#: templates/config.tmpl:48
 msgid "%s Webmaster"
 msgstr "веб-мастер %s"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:51
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s это <a href=\"%s\">торговый знак</a> компании %s"
 
-#: templates/config.tmpl:65
+#: templates/config.tmpl:66
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +35,11 @@ msgstr ""
 "и устаревшая информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:68
+#: templates/config.tmpl:69
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid ","
 msgstr " "
 
@@ -121,40 +121,41 @@ msgstr ""
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:73
+#: templates/config/mirrors.tmpl:92
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:113
+#: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:141
-msgid "ports of packages to architectures not yet available in Debian"
+#: templates/config/mirrors.tmpl:160
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:169
+#: templates/config/mirrors.tmpl:185
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:170
+#: templates/config/mirrors.tmpl:186
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:171
+#: templates/config/mirrors.tmpl:187
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:172
+#: templates/config/mirrors.tmpl:188
 msgid "Australia and New Zealand"
 msgstr "Австралия и Новая Зеландия"
 
-#: templates/config/mirrors.tmpl:173
+#: templates/config/mirrors.tmpl:189
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:174
+#: templates/config/mirrors.tmpl:190
 msgid "Africa"
 msgstr "Африка"
 
@@ -269,11 +270,16 @@ msgstr ""
 "href=\"%s\">полного списка серверов-зеркал</a>."
 
 #: templates/html/download.tmpl:97
+#, fuzzy
+#| msgid ""
+#| "Note that %s is not officially included in the %s archive yet, but the %s "
+#| "porter group keeps their archive in sync with the official archive as "
+#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
+#| "information."
 msgid ""
-"Note that %s is not officially included in the %s archive yet, but the %s "
-"porter group keeps their archive in sync with the official archive as close "
-"as possible. See the <a href=\"%s\">%s ports page</a> for current "
-"information."
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 "Заметим, что %s пока официально не включён в архив %s, но группа переноса %s "
 "поддерживает свой архив синхронизированным с официальным архивом как можно "
@@ -1078,11 +1084,11 @@ msgstr "Сгенерирована:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Эта страница также доступна на следующих языках:"
+#~ msgid "Packages search page"
+#~ msgstr "Страница поиска пакетов"
 
 #~ msgid "Back to:"
 #~ msgstr "Вернуться:"
 
-#~ msgid "Packages search page"
-#~ msgstr "Страница поиска пакетов"
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Эта страница также доступна на следующих языках:"
