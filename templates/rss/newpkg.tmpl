@@ -9,7 +9,7 @@
  xmlns:admin="http://webns.net/mvcb/"
 >
 
-[%- root_url = "$packages_homepage$suite/";
+[%- root_url = "$packages_homepage_abs$suite/";
     SET root_url = "$root_url$section/" IF section -%]
 
 <channel rdf:about="[% root_url %]newpkg">
