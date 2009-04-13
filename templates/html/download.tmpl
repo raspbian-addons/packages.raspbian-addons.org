@@ -54,7 +54,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
   <p>[% g('You can download the requested file from the <tt>%s</tt> subdirectory at any of these sites:',
 	filename.directory) %]</p>
   <div class="cardleft">
-  [% FOREACH continent IN [ 'north_america', 'south_america', 'asia', 'africa', 'australia' ] %]
+  [% FOREACH continent IN [ 'north_america', 'south_america', 'asia', 'africa' ] %]
     [% IF a.$continent %]
 	<p><em>[% continents.$continent %]</em></p>
 	<ul>
@@ -65,7 +65,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
     [% END %]
   [% END %]
   </div><div class="cardright">
-  [% FOREACH continent IN [ 'europa' ] %]
+  [% FOREACH continent IN [ 'europa', 'australia' ] %]
     [% IF a.$continent %]
 	<p><em>[% continents.$continent %]</em></p>
 	<ul>
