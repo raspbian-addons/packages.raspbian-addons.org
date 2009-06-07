@@ -14,6 +14,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Tag: x11::xserver, long desc
+#: files/debtags/vocabulary
+msgid " X servers and drivers for the X server (input and video)"
+msgstr ""
+
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
@@ -1920,6 +1925,13 @@ msgstr "メタパッケージ"
 #: files/debtags/vocabulary
 msgid "Metapackages"
 msgstr "メタパッケージ"
+
+#. Tag: field::meteorology, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Geology"
+msgid "Meteorology"
+msgstr "地質学"
 
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
@@ -3942,8 +3954,8 @@ msgstr "World Wide Web"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
-msgid "X Server"
-msgstr "X サーバ"
+msgid "X Server and Drivers"
+msgstr ""
 
 #. Tag: interface::x11, short desc
 #. Facet: x11, short desc
@@ -4055,51 +4067,54 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
-#~ msgid "Audrio"
-#~ msgstr "音声"
-
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
-
-# TRANSLATION-FIXME: Why "Windowing"?
-#~ msgid "X Windowing System"
-#~ msgstr "X ウィンドウシステム"
-
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
-
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
-
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "Source code"
-#~ msgstr "ソースコード"
-
-#~ msgid "QT"
-#~ msgstr "QT"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB や CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
-
-#~ msgid "File Transfer"
-#~ msgstr "ファイル転送"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "インターネット・リレー・チャット (IRC) クライアントが使用する Direct "
 #~ "Client-to-Client プロトコル。"
+
+#~ msgid "File Transfer"
+#~ msgstr "ファイル転送"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB や CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
+
+#~ msgid "QT"
+#~ msgstr "QT"
+
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
+
+# TRANSLATION-FIXME: Why "Windowing"?
+#~ msgid "X Windowing System"
+#~ msgstr "X ウィンドウシステム"
+
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
+
+#~ msgid "Audrio"
+#~ msgstr "音声"
+
+#~ msgid "X Server"
+#~ msgstr "X サーバ"

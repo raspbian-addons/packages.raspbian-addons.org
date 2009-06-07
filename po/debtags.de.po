@@ -10,6 +10,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#. Tag: x11::xserver, long desc
+#: files/debtags/vocabulary
+msgid " X servers and drivers for the X server (input and video)"
+msgstr ""
+
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
@@ -339,7 +344,8 @@ msgstr ""
 "stattfindet, wird ein zentraler Knoten, der sogenannte Tracker, benötigt, um "
 "eine Liste aller Clients zu bewahren, die die gleiche Datei herunterladen "
 "oder zur Verfügung stellen.\n"
-"Link: http://www.bittorrent.com/ Link: http://de.wikipedia.org/wiki/BitTorrent"
+"Link: http://www.bittorrent.com/ Link: http://de.wikipedia.org/wiki/"
+"BitTorrent"
 
 #. Tag: web::blog, short desc
 #: files/debtags/vocabulary
@@ -2010,6 +2016,13 @@ msgstr "Meta-Paket"
 msgid "Metapackages"
 msgstr "Meta-Pakete"
 
+#. Tag: field::meteorology, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Geology"
+msgid "Meteorology"
+msgstr "Geologie"
+
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
 msgid "Mixing"
@@ -3599,13 +3612,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://"
 "www.ietf.org/rfc/rfc1179.txt"
 msgstr ""
-"Das »Line Printer Daemon«-Protokoll dient dem Zugriff oder der Bereitstellung "
-"von Netzdruckdiensten in einem Unix-Netz, kann aber auch für lokale "
-"Installationen verwandt werden.\n"
+"Das »Line Printer Daemon«-Protokoll dient dem Zugriff oder der "
+"Bereitstellung von Netzdruckdiensten in einem Unix-Netz, kann aber auch für "
+"lokale Installationen verwandt werden.\n"
 "CUPS, das »Common Unix Printing System«, wurde als Ersatz für das alte LPD-/"
 "LPR-System unter Beibehaltung der Rückwärtskompatibilität entwickelt.\n"
-"Link: http://de.wikipedia.org/wiki/Berkeley_Printing_System Link: http://"
-"www.ietf.org/rfc/rfc1179.txt"
+"Link: http://de.wikipedia.org/wiki/Berkeley_Printing_System Link: http://www."
+"ietf.org/rfc/rfc1179.txt"
 
 #. Tag: protocol::msn-messenger, long desc
 #: files/debtags/vocabulary
@@ -3863,9 +3876,10 @@ msgid ""
 msgstr ""
 "»Trivial File Transfer Protocol«, ein einfaches Dateiübertragungsprotokoll. "
 "TFTP erlaubt es Clients, eine Datei von einem Rechner in der Ferne abzuholen "
-"oder dort abzulegen. Eines der Haupteinsatzzwecke ist das Booten von Rechnern "
-"ohne Festplatten über Netz in einem »Local Area Network« (lokalen Netz). "
-"Entwicklungsziel war die einfache Implementierung, so dass es ins ROM passt.\n"
+"oder dort abzulegen. Eines der Haupteinsatzzwecke ist das Booten von "
+"Rechnern ohne Festplatten über Netz in einem »Local Area Network« (lokalen "
+"Netz). Entwicklungsziel war die einfache Implementierung, so dass es ins ROM "
+"passt.\n"
 "Link: http://de.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
 "http://www.ietf.org/rfc/rfc1350.txt"
 
@@ -3940,8 +3954,8 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
 "ietf.org/rfc/rfc768.txt"
 msgstr ""
-"»User Datagram Protocol«, ein Kernprotokoll der Internet-Protokoll-Suite wird "
-"für den Datentransport eingesetzt.\n"
+"»User Datagram Protocol«, ein Kernprotokoll der Internet-Protokoll-Suite "
+"wird für den Datentransport eingesetzt.\n"
 "UDP ist nicht so zuverlässig wie TCP, aber schneller und daher für "
 "zeitkritische Zwecke wie das DNS-Protokoll oder VoIP besser geeignet.\n"
 "Link: http://de.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
@@ -4112,8 +4126,8 @@ msgstr "World Wide Web"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
-msgid "X Server"
-msgstr "X-Server"
+msgid "X Server and Drivers"
+msgstr ""
 
 #. Tag: interface::x11, short desc
 #. Facet: x11, short desc
@@ -4195,9 +4209,9 @@ msgid ""
 "* DNS-SD for service discovery\n"
 "Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
 msgstr ""
-"»Zero Configuration Networking« (Zeroconfig) ist eine Sammlung von Techniken, "
-"die automatisch ein benutzbares IP-Netz ohne Konfiguration oder spezielle "
-"Server erstellt.\n"
+"»Zero Configuration Networking« (Zeroconfig) ist eine Sammlung von "
+"Techniken, die automatisch ein benutzbares IP-Netz ohne Konfiguration oder "
+"spezielle Server erstellt.\n"
 "Diese Markierung wird für Pakete verwandt, die eines oder mehrere der "
 "folgenden Punkte implementieren:\n"
 "* IPv4LL zur Adressauswahl\n"
@@ -4240,29 +4254,32 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL-Modem"
 
-#~ msgid "Source code"
-#~ msgstr "Quellcode"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB und CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "HyperText Transfer Protocol"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "File Transfer Protocol"
-
-#~ msgid "File Transfer"
-#~ msgstr "Datei-Übertragung"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
 #~ "Relay Chat"
+
+#~ msgid "File Transfer"
+#~ msgstr "Datei-Übertragung"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "File Transfer Protocol"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "HyperText Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB und CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
+
+#~ msgid "Source code"
+#~ msgstr "Quellcode"
+
+#~ msgid "X Server"
+#~ msgstr "X-Server"

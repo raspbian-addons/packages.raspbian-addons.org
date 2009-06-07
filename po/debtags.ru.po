@@ -17,6 +17,11 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#. Tag: x11::xserver, long desc
+#: files/debtags/vocabulary
+msgid " X servers and drivers for the X server (input and video)"
+msgstr ""
+
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
@@ -2079,6 +2084,13 @@ msgstr "Метапакет"
 #: files/debtags/vocabulary
 msgid "Metapackages"
 msgstr "Метапакеты"
+
+#. Tag: field::meteorology, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Geology"
+msgid "Meteorology"
+msgstr "Геология"
 
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
@@ -4283,8 +4295,8 @@ msgstr "World Wide Web"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
-msgid "X Server"
-msgstr "X-сервер"
+msgid "X Server and Drivers"
+msgstr ""
 
 #. Tag: interface::x11, short desc
 #. Facet: x11, short desc
@@ -4400,33 +4412,36 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL модем"
 
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "QT"
-#~ msgstr "QT"
-
-#~ msgid "Source code"
-#~ msgstr "Исходный код"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Общий доступ к файлам и принтерам Windows (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Протокол безопасной передачи файлов"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB и CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "Протокол передачи гипертекста"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "Протокол передачи файлов"
+#~ msgid ""
+#~ "Direct Client to Client protocol used by Internet Relay Chat clients."
+#~ msgstr "Протокол прямой передачи клиент-клиент используется клиентами IRC."
 
 #~ msgid "File Transfer"
 #~ msgstr "Передача файлов"
 
-#~ msgid ""
-#~ "Direct Client to Client protocol used by Internet Relay Chat clients."
-#~ msgstr "Протокол прямой передачи клиент-клиент используется клиентами IRC."
+#~ msgid "File Transfer Protocol"
+#~ msgstr "Протокол передачи файлов"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "Протокол передачи гипертекста"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB и CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Протокол безопасной передачи файлов"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Общий доступ к файлам и принтерам Windows (SMB)"
+
+#~ msgid "Source code"
+#~ msgstr "Исходный код"
+
+#~ msgid "QT"
+#~ msgstr "QT"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "X Server"
+#~ msgstr "X-сервер"
