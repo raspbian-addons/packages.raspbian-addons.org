@@ -79,7 +79,7 @@ fi
 
 # security archive
 #
-for dist in $dists
+for dist in $suites_real
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}

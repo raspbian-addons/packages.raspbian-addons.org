@@ -10,7 +10,7 @@ cd ${archivedir}
 if [ -z "${localdir}" ]
 then
     echo using remote mirror
-    for dist in ${dists}
+    for dist in $suites_real
     do
 
       if [ $dist = experimental ]; then
@@ -34,7 +34,7 @@ then
     done
 else
     echo using local mirror
-    for dist in ${dists}
+    for dist in $suites_real
     do
 
       if [ $dist = experimental ]; then
