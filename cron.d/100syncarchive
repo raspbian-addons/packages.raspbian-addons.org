@@ -21,8 +21,6 @@ then
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    test ! "$arch" = "kfreebsd-i386" || continue
-	    test ! "$arch" = "kfreebsd-amd64" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
@@ -31,7 +29,6 @@ then
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
 	    done
 	    #FIXME: no Contents files for p-u
-	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    (cd us/${dist} &&
 		$wget_cmd -N ${ftpsite}/dists/${dist}/Contents-${arch}.gz)
@@ -58,8 +55,6 @@ else
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
-	    test ! "$arch" = "kfreebsd-i386" || continue
-	    test ! "$arch" = "kfreebsd-amd64" || continue
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
@@ -68,7 +63,6 @@ else
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
 	    done
 	    #FIXME: no Contents files for p-u
-	    test ! "$dist" = "experimental" || continue
 	    echo retrieve Contents $dist/$arch
 	    rsync -t ${localdir}/dists/${dist}/Contents-${arch}.gz \
 		us/${dist}/Contents-${arch}.gz

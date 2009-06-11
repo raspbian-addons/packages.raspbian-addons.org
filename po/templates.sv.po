@@ -12,19 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
 msgstr "Debians webbsändlista"
 
-#: templates/config.tmpl:47
+#: templates/config.tmpl:48
 msgid "%s Webmaster"
 msgstr "Webbansvarig för %s"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:51
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s är ett <a href=\"%s\">varumärke</a> hos %s"
 
-#: templates/config.tmpl:59
+#: templates/config.tmpl:66
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -33,11 +33,11 @@ msgstr ""
 "s</a>. Fel och föråldrad information kan förväntas"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:69
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:63
+#: templates/config.tmpl:70
 msgid ","
 msgstr "."
 
@@ -105,6 +105,10 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr ""
@@ -119,40 +123,41 @@ msgstr ""
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:73
+#: templates/config/mirrors.tmpl:92
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:123
-msgid "ports of packages to architectures not yet available in Debian"
+#: templates/config/mirrors.tmpl:160
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:151
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "Nordamerika"
 
-#: templates/config/mirrors.tmpl:152
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "Sydamerika"
 
-#: templates/config/mirrors.tmpl:153
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "Asien"
 
-#: templates/config/mirrors.tmpl:154
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "Australien och Nya Zeeland"
 
-#: templates/config/mirrors.tmpl:155
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "Europa"
 
-#: templates/config/mirrors.tmpl:156
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "Afrika"
 
@@ -268,11 +273,16 @@ msgstr ""
 "\">fullständiga spegelförteckning</a>."
 
 #: templates/html/download.tmpl:97
+#, fuzzy
+#| msgid ""
+#| "Note that %s is not officially included in the %s archive yet, but the %s "
+#| "porter group keeps their archive in sync with the official archive as "
+#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
+#| "information."
 msgid ""
-"Note that %s is not officially included in the %s archive yet, but the %s "
-"porter group keeps their archive in sync with the official archive as close "
-"as possible. See the <a href=\"%s\">%s ports page</a> for current "
-"information."
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 "Observera att %s ännu inte officiellt ingår i %sarkivet, men att %s-"
 "anpassningsgruppen håller sina arkiv så nära i synk med det officiella "
@@ -363,10 +373,10 @@ msgstr ""
 msgid "Learn more about this site"
 msgstr "Läs mer om denna webbplats"
 
-#: templates/html/foot.tmpl:40
+#: templates/html/foot.tmpl:41
 #, fuzzy
 #| msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Hämta källkodspaketet <a href=\"%s\">%s</a>:"
 
 #: templates/html/head.tmpl:47

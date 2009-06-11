@@ -10,42 +10,6 @@ use Exporter;
 our @ISA = qw( Exporter );
 our @EXPORT = qw( langcmp get_transliteration get_selfname );
 
-# language directory name => ISO 639 two-letter code for the language name
-my %langs = (
-	     english    => "en",
-	     arabic     => "ar",
-	     armenian   => "hy",
-	     bulgarian  => "bg",
-	     catalan    => "ca",
-	     chinese    => "zh",
-	     croatian   => "hr",
-	     czech	=> "cs",
-	     danish     => "da",
-	     dutch      => "nl",
-	     german     => "de",
-	     greek      => "el",
-	     esperanto  => "eo",
-	     spanish    => "es",
-	     finnish    => "fi",
-	     french     => "fr",
-	     hungarian  => "hu",
-	     indonesian => "id",
-	     italian    => "it",
-	     japanese   => "ja",
-	     korean     => "ko",
-	     lithuanian => "lt",
-	     norwegian  => "no",
-	     persian    => "fa",
-	     polish     => "pl",
-	     portuguese => "pt",
-	     romanian   => "ro",
-	     russian    => "ru",
-	     swedish    => "sv",
-	     slovene    => "sl",
-	     slovak     => "sk",
-	     turkish    => "tr",
-	     );
-
 # language directory name => native name of the language
 # non-ASCII letters must be escaped (using entities)!
 my %selflang = (

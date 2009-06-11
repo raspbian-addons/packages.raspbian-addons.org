@@ -1,11 +1,12 @@
 # translation of templates.ru.po to Russian
 # Yuri Kozlov <kozlov.y@gmail.com>, 2007, 2008.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian webwml templates\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2008-05-11 10:06+0400\n"
-"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"PO-Revision-Date: 2009-06-06 17:03+0400\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,19 +15,19 @@ msgstr ""
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
 msgstr "Список рассылки редакторов веб-страниц Debian"
 
-#: templates/config.tmpl:47
+#: templates/config.tmpl:48
 msgid "%s Webmaster"
 msgstr "веб-мастер %s"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:51
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s это <a href=\"%s\">торговый знак</a> компании %s"
 
-#: templates/config.tmpl:59
+#: templates/config.tmpl:66
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +36,11 @@ msgstr ""
 "и устаревшая информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:69
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:63
+#: templates/config.tmpl:70
 msgid ","
 msgstr " "
 
@@ -107,54 +108,66 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
-msgstr ""
+msgstr "пакеты, удовлетворяющие критериям Debian по определению свободного ПО"
 
 #: templates/config/archive_layout.tmpl:15
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
 msgstr ""
+"пакеты, удовлетворяющие критериям Debian по определению свободного ПО, но "
+"требующие ПО не из раздела Debian main"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
+"пакеты, не удовлетворяющие критериям Debian по определению свободного ПО"
 
-#: templates/config/mirrors.tmpl:73
+#: templates/config/mirrors.tmpl:92
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
+"изменчивые пакеты, для работы в них нужно вносить значительные изменения на "
+"всём времени существования стабильного выпуска"
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
+"новейшие пакеты, которые были адаптированы для стабильных выпусков Debian"
 
-#: templates/config/mirrors.tmpl:123
-msgid "ports of packages to architectures not yet available in Debian"
+#: templates/config/mirrors.tmpl:160
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
+"переносы пакетов под архитектуры, которых ещё или уже недоступны в Debian"
 
-#: templates/config/mirrors.tmpl:151
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:152
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:153
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:154
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "Австралия и Новая Зеландия"
 
-#: templates/config/mirrors.tmpl:155
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:156
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "Африка"
 
@@ -270,14 +283,13 @@ msgstr ""
 
 #: templates/html/download.tmpl:97
 msgid ""
-"Note that %s is not officially included in the %s archive yet, but the %s "
-"porter group keeps their archive in sync with the official archive as close "
-"as possible. See the <a href=\"%s\">%s ports page</a> for current "
-"information."
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"Заметим, что %s пока официально не включён в архив %s, но группа переноса %s "
+"Заметим, что %s официально не включён в архив %s, но команда по переносу %s "
 "поддерживает свой архив синхронизированным с официальным архивом как можно "
-"более точно. О текущем состоянии можно узнать со <a href=\"%s\">страницы "
+"более полно. О текущем состоянии можно узнать со <a href=\"%s\">страницы "
 "переноса на %s</a>."
 
 #: templates/html/download.tmpl:101
@@ -333,12 +345,12 @@ msgid "Filelist"
 msgstr "Список файлов"
 
 #: templates/html/foot.tmpl:11
-#, fuzzy
-#| msgid "How to set <a href=\"%s\">the default document language</a>"
 msgid ""
 "This page is also available in the following languages (How to set <a href="
 "\"%s\">the default document language</a>):"
-msgstr "Как установить <a href=\"%s\">язык по умолчанию</a>"
+msgstr ""
+"Эта страница также доступна на следующих языках (Как установить <a href=\"%s"
+"\">язык по умолчанию</a>):"
 
 #: templates/html/foot.tmpl:28
 msgid ""
@@ -362,11 +374,9 @@ msgstr ""
 msgid "Learn more about this site"
 msgstr "Об этом сайте"
 
-#: templates/html/foot.tmpl:40
-#, fuzzy
-#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgid "Hosting provided by <a href=\"%s\">%s</a>."
-msgstr "Загрузка пакета исходного кода <a href=\"%s\">%s</a>:"
+#: templates/html/foot.tmpl:41
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
+msgstr "Спонсор сайта <a href=\"%s\">%s</a>."
 
 #: templates/html/head.tmpl:47
 msgid "Search"
@@ -606,7 +616,7 @@ msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
-"Указанное ключевое слово слишком часто используется, с целью оптимизаци "
+"Указанное ключевое слово слишком часто используется, с целью оптимизации "
 "некоторые результаты показаны не будут.<br>Попробуйте использовать более "
 "длинное ключевое слово или введите больше ключевых слов."
 
@@ -777,6 +787,7 @@ msgstr "значимый"
 #: templates/html/show.tmpl:61
 msgid "package manager will refuse to remove this package by default"
 msgstr ""
+"программа управления пакетами не станет удалять этот пакет по умолчанию"
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
@@ -788,7 +799,7 @@ msgstr "Ресурсы %s:"
 
 #: templates/html/show.tmpl:68
 msgid "Bug Reports"
-msgstr "Отчёты об ошибках"
+msgstr "Сообщения об ошибках"
 
 #: templates/html/show.tmpl:71 templates/html/show.tmpl:73
 msgid "Developer Information (PTS)"
@@ -808,11 +819,11 @@ msgstr "Репозиторий исходного кода Debian"
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
 msgid "%s Patch Tracking"
-msgstr ""
+msgstr "Отслеживание заплат %s"
 
 #: templates/html/show.tmpl:110
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgstr "Загрузка пакета исходного кода <a href=\"%s\">%s</a>:"
+msgstr "Исходный код <a href=\"%s\">%s</a>:"
 
 #: templates/html/show.tmpl:117
 msgid "Not found"
@@ -1003,12 +1014,12 @@ msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
-"Репозиторий пакетов исходных кодов Debian (<acronym title=\"Version Control "
+"Репозиторий пакетов исходного кода Debian (<acronym title=\"Version Control "
 "System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:371
 msgid "Debian Package Source Repository (Browsable)"
-msgstr "Репозиторий пакетов исходных кодов Debian (просмотр)"
+msgstr "Репозиторий пакетов исходного кода Debian (доступен просмотр)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
@@ -1077,12 +1088,3 @@ msgstr "Сгенерирована:"
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Эта страница также доступна на следующих языках:"
-
-#~ msgid "Back to:"
-#~ msgstr "Вернуться:"
-
-#~ msgid "Packages search page"
-#~ msgstr "Страница поиска пакетов"

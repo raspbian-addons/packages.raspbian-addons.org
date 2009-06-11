@@ -1,7 +1,19 @@
+# Slovak translations of packages.debian.org
+# This file is put in the public domain.
+# Ivan Masár <helix84@centrum.sk>, 2009.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: debtags\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-03 12:09+0200\n"
+"PO-Revision-Date: 2009-06-09 14:32+0100\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 
 #. Facet: accessibility, short desc
 #: files/debtags/vocabulary
@@ -39,7 +51,6 @@ msgid "Screen Reading"
 msgstr ""
 
 #. Tag: accessibility::speech, short desc
-#: files/debtags/vocabulary
 #. Tag: sound::speech, short desc
 #: files/debtags/vocabulary
 msgid "Speech Synthesis"
@@ -51,117 +62,67 @@ msgid "Speech Recognition"
 msgstr ""
 
 #. Tag: accessibility::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: admin::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: culture::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: devel::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: field::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: game::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: hardware::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: made-of::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: interface::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: implemented-in::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: junior::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: mail::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: office::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: scope::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: role::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: security::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: sound::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: special::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: suite::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: protocol::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: uitoolkit::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: use::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: web::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: network::TODO, short desc
-#: files/debtags/vocabulary
 #. Tag: x11::TODO, short desc
 #: files/debtags/vocabulary
 msgid "Need an extra tag"
 msgstr ""
 
 #. Tag: accessibility::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: admin::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: culture::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: devel::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: field::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: game::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: hardware::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: made-of::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: interface::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: implemented-in::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: junior::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: mail::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: office::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: works-with::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: scope::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: role::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: security::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: sound::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: special::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: suite::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: protocol::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: uitoolkit::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: use::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: web::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: network::TODO, long desc
-#: files/debtags/vocabulary
 #. Tag: x11::TODO, long desc
 #: files/debtags/vocabulary
-msgid "The package can be categorised along this facet, but the right tag for it is missing.\nMark a package with this tag to signal the vocabulary maintainers of cases where the current tag set is lacking."
+msgid ""
+"The package can be categorised along this facet, but the right tag for it is missing.\n"
+"Mark a package with this tag to signal the vocabulary maintainers of cases where the current tag set is lacking."
 msgstr ""
 
 #. Facet: admin, short desc
@@ -260,7 +221,6 @@ msgid "Logging"
 msgstr ""
 
 #. Tag: admin::login, short desc
-#: files/debtags/vocabulary
 #. Tag: use::login, short desc
 #: files/debtags/vocabulary
 msgid "Login"
@@ -272,7 +232,6 @@ msgid "Logging into the system"
 msgstr ""
 
 #. Tag: admin::monitoring, short desc
-#: files/debtags/vocabulary
 #. Tag: use::monitor, short desc
 #: files/debtags/vocabulary
 msgid "Monitoring"
@@ -284,7 +243,6 @@ msgid "Package Management"
 msgstr ""
 
 #. Tag: admin::power-management, short desc
-#: files/debtags/vocabulary
 #. Tag: hardware::power, short desc
 #: files/debtags/vocabulary
 msgid "Power Management"
@@ -311,7 +269,6 @@ msgid "This is not hardware emulation, but rather those facilities that allow to
 msgstr ""
 
 #. Facet: biology, short desc
-#: files/debtags/vocabulary
 #. Tag: field::biology, short desc
 #: files/debtags/vocabulary
 msgid "Biology"
@@ -385,262 +342,262 @@ msgstr ""
 #. Tag: culture::afrikaans, short desc
 #: files/debtags/vocabulary
 msgid "Afrikaans"
-msgstr ""
+msgstr "afrikánčina"
 
 #. Tag: culture::arabic, short desc
 #: files/debtags/vocabulary
 msgid "Arabic"
-msgstr ""
+msgstr "arabčina"
 
 #. Tag: culture::basque, short desc
 #: files/debtags/vocabulary
 msgid "Basque"
-msgstr ""
+msgstr "baskičtina"
 
 #. Tag: culture::bengali, short desc
 #: files/debtags/vocabulary
 msgid "Bengali"
-msgstr ""
+msgstr "bengálčina"
 
 #. Tag: culture::bokmaal, short desc
 #: files/debtags/vocabulary
 msgid "Norwegian Bokmaal"
-msgstr ""
+msgstr "nórsky bokmål"
 
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
 msgid "Bosnian"
-msgstr ""
+msgstr "bosniačtina"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
 msgid "Brazilian"
-msgstr ""
+msgstr "brazílska portugalčina"
 
 #. Tag: culture::british, short desc
 #: files/debtags/vocabulary
 msgid "British"
-msgstr ""
+msgstr "britská angličtina"
 
 #. Tag: culture::bulgarian, short desc
 #: files/debtags/vocabulary
 msgid "Bulgarian"
-msgstr ""
+msgstr "bulharčina"
 
 #. Tag: culture::catalan, short desc
 #: files/debtags/vocabulary
 msgid "Catalan"
-msgstr ""
+msgstr "katalánčina"
 
 #. Tag: culture::chinese, short desc
 #: files/debtags/vocabulary
 msgid "Chinese"
-msgstr ""
+msgstr "čínština"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
 msgid "Czech"
-msgstr ""
+msgstr "čeština"
 
 #. Tag: culture::croatian, short desc
 #: files/debtags/vocabulary
 msgid "Croatian"
-msgstr ""
+msgstr "chorvátčina"
 
 #. Tag: culture::danish, short desc
 #: files/debtags/vocabulary
 msgid "Danish"
-msgstr ""
+msgstr "dánčina"
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
 msgid "Dutch"
-msgstr ""
+msgstr "holandčina"
 
 #. Tag: culture::esperanto, short desc
 #: files/debtags/vocabulary
 msgid "Esperanto"
-msgstr ""
+msgstr "esperanto"
 
 #. Tag: culture::estonian, short desc
 #: files/debtags/vocabulary
 msgid "Estonian"
-msgstr ""
+msgstr "estónčina"
 
 #. Tag: culture::faroese, short desc
 #: files/debtags/vocabulary
 msgid "Faroese"
-msgstr ""
+msgstr "faerčina"
 
 #. Tag: culture::farsi, short desc
 #: files/debtags/vocabulary
 msgid "Farsi"
-msgstr ""
+msgstr "perzština"
 
 #. Tag: culture::finnish, short desc
 #: files/debtags/vocabulary
 msgid "Finnish"
-msgstr ""
+msgstr "fínčina"
 
 #. Tag: culture::french, short desc
 #: files/debtags/vocabulary
 msgid "French"
-msgstr ""
+msgstr "francúzština"
 
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
 msgid "German"
-msgstr ""
+msgstr "nemčina"
 
 #. Tag: culture::greek, short desc
 #: files/debtags/vocabulary
 msgid "Greek"
-msgstr ""
+msgstr "gréčtina"
 
 #. Tag: culture::hebrew, short desc
 #: files/debtags/vocabulary
 msgid "Hebrew"
-msgstr ""
+msgstr "hebrejčina"
 
 #. Tag: culture::hindi, short desc
 #: files/debtags/vocabulary
 msgid "Hindi"
-msgstr ""
+msgstr "hindčina"
 
 #. Tag: culture::hungarian, short desc
 #: files/debtags/vocabulary
 msgid "Hungarian"
-msgstr ""
+msgstr "maďarčina"
 
 #. Tag: culture::icelandic, short desc
 #: files/debtags/vocabulary
 msgid "Icelandic"
-msgstr ""
+msgstr "islandčina"
 
 #. Tag: culture::irish, short desc
 #: files/debtags/vocabulary
 msgid "Irish (Gaeilge)"
-msgstr ""
+msgstr "írska gaelčina"
 
 #. Tag: culture::italian, short desc
 #: files/debtags/vocabulary
 msgid "Italian"
-msgstr ""
+msgstr "taliančina"
 
 #. Tag: culture::japanese, short desc
 #: files/debtags/vocabulary
 msgid "Japanese"
-msgstr ""
+msgstr "japončina"
 
 #. Tag: culture::korean, short desc
 #: files/debtags/vocabulary
 msgid "Korean"
-msgstr ""
+msgstr "kórejčina"
 
 #. Tag: culture::latvian, short desc
 #: files/debtags/vocabulary
 msgid "Latvian"
-msgstr ""
+msgstr "lotyština"
 
 #. Tag: culture::mongolian, short desc
 #: files/debtags/vocabulary
 msgid "Mongolian"
-msgstr ""
+msgstr "mongolčina"
 
 #. Tag: culture::nynorsk, short desc
 #: files/debtags/vocabulary
 msgid "Norwegian Nynorsk"
-msgstr ""
+msgstr "nórsky nynorsk"
 
 #. Tag: culture::norwegian, short desc
 #: files/debtags/vocabulary
 msgid "Norwegian"
-msgstr ""
+msgstr "nórčina"
 
 #. Tag: culture::polish, short desc
 #: files/debtags/vocabulary
 msgid "Polish"
-msgstr ""
+msgstr "poľština"
 
 #. Tag: culture::portuguese, short desc
 #: files/debtags/vocabulary
 msgid "Portuguese"
-msgstr ""
+msgstr "portugalčina"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
 msgid "Punjabi"
-msgstr ""
+msgstr "pandžábčina"
 
 #. Tag: culture::romanian, short desc
 #: files/debtags/vocabulary
 msgid "Romanian"
-msgstr ""
+msgstr "rumunčina"
 
 #. Tag: culture::russian, short desc
 #: files/debtags/vocabulary
 msgid "Russian"
-msgstr ""
+msgstr "ruština"
 
 #. Tag: culture::serbian, short desc
 #: files/debtags/vocabulary
 msgid "Serbian"
-msgstr ""
+msgstr "srbčina"
 
 #. Tag: culture::slovak, short desc
 #: files/debtags/vocabulary
 msgid "Slovak"
-msgstr ""
+msgstr "slovenčina"
 
 #. Tag: culture::spanish, short desc
 #: files/debtags/vocabulary
 msgid "Spanish"
-msgstr ""
+msgstr "španielčina"
 
 #. Tag: culture::swedish, short desc
 #: files/debtags/vocabulary
 msgid "Swedish"
-msgstr ""
+msgstr "švédčina"
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
 msgid "Taiwanese"
-msgstr ""
+msgstr "tajwanská čínština"
 
 #. Tag: culture::tajik, short desc
 #: files/debtags/vocabulary
 msgid "Tajik"
-msgstr ""
+msgstr "tadžičtina"
 
 #. Tag: culture::tamil, short desc
 #: files/debtags/vocabulary
 msgid "Tamil"
-msgstr ""
+msgstr "tamilčina"
 
 #. Tag: culture::thai, short desc
 #: files/debtags/vocabulary
 msgid "Thai"
-msgstr ""
+msgstr "thajčina"
 
 #. Tag: culture::turkish, short desc
 #: files/debtags/vocabulary
 msgid "Turkish"
-msgstr ""
+msgstr "turečtina"
 
 #. Tag: culture::ukrainian, short desc
 #: files/debtags/vocabulary
 msgid "Ukrainian"
-msgstr ""
+msgstr "ukrajinčina"
 
 #. Tag: culture::uzbek, short desc
 #: files/debtags/vocabulary
 msgid "Uzbek"
-msgstr ""
+msgstr "uzbečtina"
 
 #. Tag: culture::welsh, short desc
 #: files/debtags/vocabulary
 msgid "Welsh"
-msgstr ""
+msgstr "waleština"
 
 #. Facet: devel, short desc
 #: files/debtags/vocabulary
@@ -673,7 +630,6 @@ msgid "Compiler"
 msgstr ""
 
 #. Tag: devel::debian, short desc
-#: files/debtags/vocabulary
 #. Tag: suite::debian, short desc
 #: files/debtags/vocabulary
 msgid "Debian"
@@ -690,7 +646,6 @@ msgid "Debugging"
 msgstr ""
 
 #. Tag: devel::doc, short desc
-#: files/debtags/vocabulary
 #. Tag: role::documentation, short desc
 #: files/debtags/vocabulary
 msgid "Documentation"
@@ -722,7 +677,6 @@ msgid "Source Editor"
 msgstr ""
 
 #. Tag: devel::examples, short desc
-#: files/debtags/vocabulary
 #. Tag: role::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
@@ -894,7 +848,6 @@ msgid "Assemblers and other machine-code development tools."
 msgstr ""
 
 #. Tag: devel::modelling, short desc
-#: files/debtags/vocabulary
 #. Tag: science::modelling, short desc
 #: files/debtags/vocabulary
 msgid "Modelling"
@@ -976,7 +929,6 @@ msgid "Tools for software testing and quality assurance."
 msgstr ""
 
 #. Tag: devel::ui-builder, short desc
-#: files/debtags/vocabulary
 #. Facet: interface, short desc
 #: files/debtags/vocabulary
 msgid "User Interface"
@@ -1413,7 +1365,6 @@ msgid "The languages or data formats used to make the package"
 msgstr ""
 
 #. Tag: made-of::audio, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
@@ -1425,14 +1376,12 @@ msgid "Dictionary"
 msgstr ""
 
 #. Tag: made-of::font, short desc
-#: files/debtags/vocabulary
 #. Tag: x11::font, short desc
 #: files/debtags/vocabulary
 msgid "Font"
 msgstr ""
 
 #. Tag: made-of::html, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
 msgid "HTML, Hypertext Markup Language"
@@ -1444,7 +1393,6 @@ msgid "Icons"
 msgstr ""
 
 #. Tag: made-of::info, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
 msgid "Documentation in Info Format"
@@ -1456,28 +1404,24 @@ msgid "Manuals in Nroff Format"
 msgstr ""
 
 #. Tag: made-of::pdf, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::pdf, short desc
 #: files/debtags/vocabulary
 msgid "PDF Documents"
 msgstr ""
 
 #. Tag: made-of::postscript, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::postscript, short desc
 #: files/debtags/vocabulary
 msgid "PostScript"
 msgstr ""
 
 #. Tag: made-of::sgml, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::sgml, short desc
 #: files/debtags/vocabulary
 msgid "SGML, Standard Generalized Markup Language"
 msgstr ""
 
 #. Tag: made-of::svg, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::svg, short desc
 #: files/debtags/vocabulary
 msgid "SVG, Scalable Vector Graphics"
@@ -1494,7 +1438,6 @@ msgid "VRML, Virtual Reality Markup Language"
 msgstr ""
 
 #. Tag: made-of::xml, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with-format::xml, short desc
 #: files/debtags/vocabulary
 msgid "XML"
@@ -1541,14 +1484,12 @@ msgid "Text-based Interactive"
 msgstr ""
 
 #. Tag: interface::web, short desc
-#: files/debtags/vocabulary
 #. Facet: web, short desc
 #: files/debtags/vocabulary
 msgid "World Wide Web"
 msgstr ""
 
 #. Tag: interface::x11, short desc
-#: files/debtags/vocabulary
 #. Facet: x11, short desc
 #: files/debtags/vocabulary
 msgid "X Window System"
@@ -1790,7 +1731,6 @@ msgid "Project Management"
 msgstr ""
 
 #. Tag: office::spreadsheet, short desc
-#: files/debtags/vocabulary
 #. Tag: works-with::spreadsheet, short desc
 #: files/debtags/vocabulary
 msgid "Spreadsheet"
@@ -1942,7 +1882,6 @@ msgid "Running Programs"
 msgstr ""
 
 #. Tag: works-with::software:source, short desc
-#: files/debtags/vocabulary
 #. Tag: role::source, short desc
 #: files/debtags/vocabulary
 msgid "Source Code"
@@ -1995,7 +1934,9 @@ msgstr ""
 
 #. Tag: works-with-format::djvu, long desc
 #: files/debtags/vocabulary
-msgid "File format to store scanned documents.\nLink: http://en.wikipedia.org/wiki/Djvu"
+msgid ""
+"File format to store scanned documents.\n"
+"Link: http://en.wikipedia.org/wiki/Djvu"
 msgstr ""
 
 #. Tag: works-with-format::docbook, short desc
@@ -2159,9 +2100,7 @@ msgid "A narrow-scoped program for particular use case or few use cases. It only
 msgstr ""
 
 #. Tag: scope::application, short desc
-#: files/debtags/vocabulary
 #. Tag: web::application, short desc
-#: files/debtags/vocabulary
 #. Tag: x11::application, short desc
 #: files/debtags/vocabulary
 msgid "Application"
@@ -2313,7 +2252,6 @@ msgid "Cryptographic and privacy-oriented tools."
 msgstr ""
 
 #. Tag: security::firewall, short desc
-#: files/debtags/vocabulary
 #. Tag: network::firewall, short desc
 #: files/debtags/vocabulary
 msgid "Firewall"
@@ -2581,7 +2519,9 @@ msgstr ""
 
 #. Tag: suite::bsd, long desc
 #: files/debtags/vocabulary
-msgid "Berkeley Software Distribution, sometimes called Berkeley Unix or BSD Unix, and its family of descendants: FreeBSD, NetBSD or OpenBSD.\nLink: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
+msgid ""
+"Berkeley Software Distribution, sometimes called Berkeley Unix or BSD Unix, and its family of descendants: FreeBSD, NetBSD or OpenBSD.\n"
+"Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
 msgstr ""
 
 #. Tag: suite::eclipse, short desc
@@ -2635,7 +2575,6 @@ msgid "Gnu's Not Unix. The package is part of the official GNU project"
 msgstr ""
 
 #. Tag: suite::gnustep, short desc
-#: files/debtags/vocabulary
 #. Tag: uitoolkit::gnustep, short desc
 #: files/debtags/vocabulary
 msgid "GNUstep"
@@ -2748,7 +2687,10 @@ msgstr ""
 
 #. Tag: protocol::atm, long desc
 #: files/debtags/vocabulary
-msgid "Asynchronous Transfer Mode, a high speed protocol for communication between computers in a network.\nWhile ATM is used to implement *DSL networks, it has never gained widespread use as a technology for building local area networks (LANs), for which it was originally intended.\nLink: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
+msgid ""
+"Asynchronous Transfer Mode, a high speed protocol for communication between computers in a network.\n"
+"While ATM is used to implement *DSL networks, it has never gained widespread use as a technology for building local area networks (LANs), for which it was originally intended.\n"
+"Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 msgstr ""
 
 #. Tag: protocol::bittorrent, short desc
@@ -2758,7 +2700,10 @@ msgstr ""
 
 #. Tag: protocol::bittorrent, long desc
 #: files/debtags/vocabulary
-msgid "BitTorrent is a protocol for peer-to-peer based file distribution over network.\nAlthough the actual data transport happens between BitTorrent clients, one central node, the so-called trackers, is needed to keep a list of all clients that download or provide the same file.\nLink: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/BitTorrent"
+msgid ""
+"BitTorrent is a protocol for peer-to-peer based file distribution over network.\n"
+"Although the actual data transport happens between BitTorrent clients, one central node, the so-called trackers, is needed to keep a list of all clients that download or provide the same file.\n"
+"Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/BitTorrent"
 msgstr ""
 
 #. Tag: protocol::corba, short desc
@@ -2768,7 +2713,10 @@ msgstr ""
 
 #. Tag: protocol::corba, long desc
 #: files/debtags/vocabulary
-msgid "Common Object Request Broker Architecture, a standard for interoperability between programs written in different languages and running on different hardware platforms. CORBA includes a client-server network protocol for distributed computing.\nWith this network protocol, CORBA clients on different computers and written in different languages can exchange objects over a CORBA server such as orbit2 or omniORB.\nLink: http://www.corba.org/"
+msgid ""
+"Common Object Request Broker Architecture, a standard for interoperability between programs written in different languages and running on different hardware platforms. CORBA includes a client-server network protocol for distributed computing.\n"
+"With this network protocol, CORBA clients on different computers and written in different languages can exchange objects over a CORBA server such as orbit2 or omniORB.\n"
+"Link: http://www.corba.org/"
 msgstr ""
 
 #. Tag: protocol::db:mysql, short desc
@@ -2798,7 +2746,9 @@ msgstr ""
 
 #. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
-msgid "Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers to interconnect using an IRC server for handshaking in order to exchange files or perform non-relayed chats.\nLink: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
+msgid ""
+"Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers to interconnect using an IRC server for handshaking in order to exchange files or perform non-relayed chats.\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
 
 #. Tag: protocol::dhcp, short desc
@@ -2808,7 +2758,9 @@ msgstr ""
 
 #. Tag: protocol::dhcp, long desc
 #: files/debtags/vocabulary
-msgid "Dynamic Host Configuration Protocol, a client-server network protocol for automatic assignment of dynamic IP addresses to computers in a TCP/IP network, rather than giving each computer a static IP address.\nLink: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: http://www.ietf.org/rfc/rfc2131.txt"
+msgid ""
+"Dynamic Host Configuration Protocol, a client-server network protocol for automatic assignment of dynamic IP addresses to computers in a TCP/IP network, rather than giving each computer a static IP address.\n"
+"Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: http://www.ietf.org/rfc/rfc2131.txt"
 msgstr ""
 
 #. Tag: protocol::dns, short desc
@@ -2818,7 +2770,10 @@ msgstr ""
 
 #. Tag: protocol::dns, long desc
 #: files/debtags/vocabulary
-msgid "Domain Name System, a protocol to request information associated with domain names (like \"www.debian.org\"), most prominently the IP address. The protocol is used in communication with a DNS server (like BIND).\nFor the Internet, there are 13 root DNS servers around the world that keep the addresses of all registered domain names and provide this information to the DNS servers of Internet service providers.\nLink: http://en.wikipedia.org/wiki/Domain_Name_System"
+msgid ""
+"Domain Name System, a protocol to request information associated with domain names (like \"www.debian.org\"), most prominently the IP address. The protocol is used in communication with a DNS server (like BIND).\n"
+"For the Internet, there are 13 root DNS servers around the world that keep the addresses of all registered domain names and provide this information to the DNS servers of Internet service providers.\n"
+"Link: http://en.wikipedia.org/wiki/Domain_Name_System"
 msgstr ""
 
 #. Tag: protocol::ethernet, short desc
@@ -2828,7 +2783,10 @@ msgstr ""
 
 #. Tag: protocol::ethernet, long desc
 #: files/debtags/vocabulary
-msgid "Ethernet is the most popular networking technology for creating local area networks (LANs).\nThe computers in an Ethernet network communicate over twisted-pair or fibre cables and are identified by their MAC address. Several different types of Ethernet exist, distinguishable by the maximum connection speed. The most widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\nLink: http://en.wikipedia.org/wiki/Ethernet"
+msgid ""
+"Ethernet is the most popular networking technology for creating local area networks (LANs).\n"
+"The computers in an Ethernet network communicate over twisted-pair or fibre cables and are identified by their MAC address. Several different types of Ethernet exist, distinguishable by the maximum connection speed. The most widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
+"Link: http://en.wikipedia.org/wiki/Ethernet"
 msgstr ""
 
 #. Tag: protocol::fidonet, short desc
@@ -2838,7 +2796,10 @@ msgstr ""
 
 #. Tag: protocol::fidonet, long desc
 #: files/debtags/vocabulary
-msgid "FidoNet is a mailbox system that enjoyed large popularity in the 1980s and 1990s.\nThe communication between the clients and FidoNet servers was usually carried out over the telephone network using modems and could be used for transferring messages (comparable to email) and files.\nLink: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
+msgid ""
+"FidoNet is a mailbox system that enjoyed large popularity in the 1980s and 1990s.\n"
+"The communication between the clients and FidoNet servers was usually carried out over the telephone network using modems and could be used for transferring messages (comparable to email) and files.\n"
+"Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
 msgstr ""
 
 #. Tag: protocol::finger, short desc
@@ -2848,7 +2809,10 @@ msgstr ""
 
 #. Tag: protocol::finger, long desc
 #: files/debtags/vocabulary
-msgid "The Name/Finger protocol is a simple network protocol to provide extensive, public information about users of a computer, such as email address, telephone numbers, full names etc.\nDue to privacy concerns, the Finger protocol is not widely used any more, while it widespread distribution in the early 1990s.\nLink: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/rfc/rfc1288.txt"
+msgid ""
+"The Name/Finger protocol is a simple network protocol to provide extensive, public information about users of a computer, such as email address, telephone numbers, full names etc.\n"
+"Due to privacy concerns, the Finger protocol is not widely used any more, while it widespread distribution in the early 1990s.\n"
+"Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/rfc/rfc1288.txt"
 msgstr ""
 
 #. Tag: protocol::ftp, short desc
@@ -2858,7 +2822,10 @@ msgstr ""
 
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
-msgid "File Transfer Protocol, a protocol for exchanging and manipulation files over networks and extensively used on the Internet.\nThe communication between FTP servers and clients uses two channels, the control and the data channel. While FTP was originally used with authentication only, most FTP servers on the Internet provide anonymous, passwordless access. Since FTP does not support encryption, sensitive data transfer is carried out over SFTP today.\nLink: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc0959.txt"
+msgid ""
+"File Transfer Protocol, a protocol for exchanging and manipulation files over networks and extensively used on the Internet.\n"
+"The communication between FTP servers and clients uses two channels, the control and the data channel. While FTP was originally used with authentication only, most FTP servers on the Internet provide anonymous, passwordless access. Since FTP does not support encryption, sensitive data transfer is carried out over SFTP today.\n"
+"Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc0959.txt"
 msgstr ""
 
 #. Tag: protocol::gadu-gadu, short desc
@@ -2868,7 +2835,9 @@ msgstr ""
 
 #. Tag: protocol::gadu-gadu, long desc
 #: files/debtags/vocabulary
-msgid "The Gadu-Gadu protocol is a proprietary protocol that is used by a Polish instant messaging network of the same name.\nLink: http://pl.wikipedia.org/wiki/Gadu-Gadu"
+msgid ""
+"The Gadu-Gadu protocol is a proprietary protocol that is used by a Polish instant messaging network of the same name.\n"
+"Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 msgstr ""
 
 #. Tag: protocol::http, short desc
@@ -2878,7 +2847,10 @@ msgstr ""
 
 #. Tag: protocol::http, long desc
 #: files/debtags/vocabulary
-msgid "HyperText Transfer Protocol, one of the most important protocols for the World Wide Web.\nIt controls the data transfer between HTTP servers such as Apache and HTTP clients, which are web browsers in most cases. HTTP resources are requested via URLs (Universal Resource Locators). While HTTP normally only supports file transfer from server to client, the protocol supports sending information to HTTP servers, most prominently used in HTML forms.\nLink: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/rfc2616.txt"
+msgid ""
+"HyperText Transfer Protocol, one of the most important protocols for the World Wide Web.\n"
+"It controls the data transfer between HTTP servers such as Apache and HTTP clients, which are web browsers in most cases. HTTP resources are requested via URLs (Universal Resource Locators). While HTTP normally only supports file transfer from server to client, the protocol supports sending information to HTTP servers, most prominently used in HTML forms.\n"
+"Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/rfc2616.txt"
 msgstr ""
 
 #. Tag: protocol::ident, short desc
@@ -2888,7 +2860,9 @@ msgstr ""
 
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
-msgid "The Ident Internet protocol helps to identify or authenticate the user of a network connection.\nLink: http://en.wikipedia.org/wiki/Ident"
+msgid ""
+"The Ident Internet protocol helps to identify or authenticate the user of a network connection.\n"
+"Link: http://en.wikipedia.org/wiki/Ident"
 msgstr ""
 
 #. Tag: protocol::imap, short desc
@@ -2898,7 +2872,10 @@ msgstr ""
 
 #. Tag: protocol::imap, long desc
 #: files/debtags/vocabulary
-msgid "Internet Message Access Protocol, a protocol used for accessing email on a server from a email client such as KMail or Evolution.\nWhen using IMAP, emails stay on the server and can be categorized, edited, deleted etc. there, instead of having the user download all messages onto the local computer, as POP3 does.\nLink: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
+msgid ""
+"Internet Message Access Protocol, a protocol used for accessing email on a server from a email client such as KMail or Evolution.\n"
+"When using IMAP, emails stay on the server and can be categorized, edited, deleted etc. there, instead of having the user download all messages onto the local computer, as POP3 does.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
 msgstr ""
 
 #. Tag: protocol::ip, short desc
@@ -2908,7 +2885,10 @@ msgstr ""
 
 #. Tag: protocol::ip, long desc
 #: files/debtags/vocabulary
-msgid "Internet Protocol (v4), a core protocol of the Internet protocol suite and the very basis of the Internet.\nEvery computer that is connected to the Internet has an IP address (a 4-byte number, typically represented in dotted notation like 192.25.206.10). Internet IP addresses are given out by the Internet Corporation for Assigned Names and Numbers (ICANN). Normally, computers on the Internet are not accessed by their IP address, but by their domain name.\nLink: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791.txt"
+msgid ""
+"Internet Protocol (v4), a core protocol of the Internet protocol suite and the very basis of the Internet.\n"
+"Every computer that is connected to the Internet has an IP address (a 4-byte number, typically represented in dotted notation like 192.25.206.10). Internet IP addresses are given out by the Internet Corporation for Assigned Names and Numbers (ICANN). Normally, computers on the Internet are not accessed by their IP address, but by their domain name.\n"
+"Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791.txt"
 msgstr ""
 
 #. Tag: protocol::ipv6, short desc
@@ -2918,7 +2898,10 @@ msgstr ""
 
 #. Tag: protocol::ipv6, long desc
 #: files/debtags/vocabulary
-msgid "Internet Protocol (v6), the next-generation Internet protocol, which overcomes the restrictions of IP (v4), like shortage of IP addresses, and is supposed to form the new basis of the Internet in the future, replacing IP (v4).\nMany programs already support IPv6 along with IP (v4), although it is still seldomly used.\nLink: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
+msgid ""
+"Internet Protocol (v6), the next-generation Internet protocol, which overcomes the restrictions of IP (v4), like shortage of IP addresses, and is supposed to form the new basis of the Internet in the future, replacing IP (v4).\n"
+"Many programs already support IPv6 along with IP (v4), although it is still seldomly used.\n"
+"Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 msgstr ""
 
 #. Tag: protocol::irc, short desc
@@ -2928,7 +2911,11 @@ msgstr ""
 
 #. Tag: protocol::irc, long desc
 #: files/debtags/vocabulary
-msgid "Internet Relay Chat, a protocol for text chatting over network, extensively used on the Internet. It supports chat rooms, so-called channels, as well as private, one-to-one communication.\nIRC servers are organized in networks, so that a client can connect to a geographically near IRC server, that itself is connected to other IRC servers spread over the whole world.\nThe official Debian channel is #debian on the freenode network.\nLink: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
+msgid ""
+"Internet Relay Chat, a protocol for text chatting over network, extensively used on the Internet. It supports chat rooms, so-called channels, as well as private, one-to-one communication.\n"
+"IRC servers are organized in networks, so that a client can connect to a geographically near IRC server, that itself is connected to other IRC servers spread over the whole world.\n"
+"The official Debian channel is #debian on the freenode network.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 msgstr ""
 
 #. Tag: protocol::jabber, short desc
@@ -2938,7 +2925,10 @@ msgstr ""
 
 #. Tag: protocol::jabber, long desc
 #: files/debtags/vocabulary
-msgid "The Jabber protocol is an instant messaging protocol on the basis of the XMPP protocol. Additionally to private one-to-one communication, it also supports chat rooms, and it is used in the Jabber IM network as well as for the IM capabilities for the new GoogleTalk network.\nIn contrast to other IM networks like MSN, ICQ or AIM, the Jabber servers are free software and can be used to create a private chat platform or have an own server to connect to the Jabber network.\nLink: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
+msgid ""
+"The Jabber protocol is an instant messaging protocol on the basis of the XMPP protocol. Additionally to private one-to-one communication, it also supports chat rooms, and it is used in the Jabber IM network as well as for the IM capabilities for the new GoogleTalk network.\n"
+"In contrast to other IM networks like MSN, ICQ or AIM, the Jabber servers are free software and can be used to create a private chat platform or have an own server to connect to the Jabber network.\n"
+"Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 msgstr ""
 
 #. Tag: protocol::kerberos, short desc
@@ -2948,7 +2938,10 @@ msgstr ""
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
-msgid "Kerberos is an authentication protocol for computer networks for secure authentication over an otherwise insecure network, using symmetric cryptography and a third party service provider, that is trusted both by client and server.\nThe authentication mechanism provided by Kerberos is mutual, so that not only a server can be sure of a client's identity, but also a client can be sure a connection to a server is not intercepted.\nLink: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www.ietf.org/rfc/rfc4120.txt"
+msgid ""
+"Kerberos is an authentication protocol for computer networks for secure authentication over an otherwise insecure network, using symmetric cryptography and a third party service provider, that is trusted both by client and server.\n"
+"The authentication mechanism provided by Kerberos is mutual, so that not only a server can be sure of a client's identity, but also a client can be sure a connection to a server is not intercepted.\n"
+"Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www.ietf.org/rfc/rfc4120.txt"
 msgstr ""
 
 #. Tag: protocol::ldap, short desc
@@ -2968,7 +2961,10 @@ msgstr ""
 
 #. Tag: protocol::lpr, long desc
 #: files/debtags/vocabulary
-msgid "The Line Printer Daemon protocol, a protocol used for accessing or providing network print services in a Unix network, but also used for local setups.\nCUPS, the Common Unix Printing System, was developed to replace the old LPD/LPR system, while maintaining backwards compatibility.\nLink: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://www.ietf.org/rfc/rfc1179.txt"
+msgid ""
+"The Line Printer Daemon protocol, a protocol used for accessing or providing network print services in a Unix network, but also used for local setups.\n"
+"CUPS, the Common Unix Printing System, was developed to replace the old LPD/LPR system, while maintaining backwards compatibility.\n"
+"Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://www.ietf.org/rfc/rfc1179.txt"
 msgstr ""
 
 #. Tag: protocol::msn-messenger, short desc
@@ -2978,7 +2974,10 @@ msgstr ""
 
 #. Tag: protocol::msn-messenger, long desc
 #: files/debtags/vocabulary
-msgid "The MSN messenger protocol is the protocol that is used by Microsoft's own instant messaging network.\nThe protocol is a proprietary protocol. Although Microsoft once send a draft of the protocol specification to the IETF, it has since dated out and clients that connect to the MSN Messenger network have to rely on reverse-engineered information.\nLink: http://www.hypothetic.org/docs/msn/"
+msgid ""
+"The MSN messenger protocol is the protocol that is used by Microsoft's own instant messaging network.\n"
+"The protocol is a proprietary protocol. Although Microsoft once send a draft of the protocol specification to the IETF, it has since dated out and clients that connect to the MSN Messenger network have to rely on reverse-engineered information.\n"
+"Link: http://www.hypothetic.org/docs/msn/"
 msgstr ""
 
 #. Tag: protocol::nfs, short desc
@@ -2988,7 +2987,9 @@ msgstr ""
 
 #. Tag: protocol::nfs, long desc
 #: files/debtags/vocabulary
-msgid "Network File System, a protocol originally developed by Sun Microsystems in 1984 and defined in RFCs 1094, 1813, and 3530 (obsoletes 3010) as a distributed file system, allows a user on a client computer to access files over a network as easily as if attached to its local disks.\nLink: http://en.wikipedia.org/wiki/Network_File_System"
+msgid ""
+"Network File System, a protocol originally developed by Sun Microsystems in 1984 and defined in RFCs 1094, 1813, and 3530 (obsoletes 3010) as a distributed file system, allows a user on a client computer to access files over a network as easily as if attached to its local disks.\n"
+"Link: http://en.wikipedia.org/wiki/Network_File_System"
 msgstr ""
 
 #. Tag: protocol::nntp, short desc
@@ -2998,7 +2999,9 @@ msgstr ""
 
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
-msgid "Network News Transfer Protocol, a protocol for reading and writing Usenet articles (a Usenet article is comparable with an email), but also used among NNTP servers to transfer articles.\nLink: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc977.txt"
+msgid ""
+"Network News Transfer Protocol, a protocol for reading and writing Usenet articles (a Usenet article is comparable with an email), but also used among NNTP servers to transfer articles.\n"
+"Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc977.txt"
 msgstr ""
 
 #. Tag: protocol::oscar, short desc
@@ -3008,7 +3011,10 @@ msgstr ""
 
 #. Tag: protocol::oscar, long desc
 #: files/debtags/vocabulary
-msgid "Open System for CommunicAtion in Realtime, an instant messaging used by AOL's instant messaging network (AIM). The protocol versions 7, 8 and 9 of the ICQ IM network are also instances of the OSCAR protocol.\nOSCAR is a binary proprietary protocol. Since there is no official documentation, clients that connect to AIM or ICQ have to rely on information that has been reverse-engineered.\nLink: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan.org/oscar/"
+msgid ""
+"Open System for CommunicAtion in Realtime, an instant messaging used by AOL's instant messaging network (AIM). The protocol versions 7, 8 and 9 of the ICQ IM network are also instances of the OSCAR protocol.\n"
+"OSCAR is a binary proprietary protocol. Since there is no official documentation, clients that connect to AIM or ICQ have to rely on information that has been reverse-engineered.\n"
+"Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan.org/oscar/"
 msgstr ""
 
 #. Tag: protocol::pop3, short desc
@@ -3018,7 +3024,10 @@ msgstr ""
 
 #. Tag: protocol::pop3, long desc
 #: files/debtags/vocabulary
-msgid "Post Office Protocol, a protocol to download emails from a mail server, designed for users that have only intermittent connection to the Internet.\nIn contrast to IMAP server, messages that are downloaded via POP3 are not supposed to stay on the server afterwards, since POP3 does not support multiple mailboxes for one account on the server.\nLink: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www.ietf.org/rfc/rfc1939.txt"
+msgid ""
+"Post Office Protocol, a protocol to download emails from a mail server, designed for users that have only intermittent connection to the Internet.\n"
+"In contrast to IMAP server, messages that are downloaded via POP3 are not supposed to stay on the server afterwards, since POP3 does not support multiple mailboxes for one account on the server.\n"
+"Link: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www.ietf.org/rfc/rfc1939.txt"
 msgstr ""
 
 #. Tag: protocol::radius, short desc
@@ -3028,7 +3037,9 @@ msgstr ""
 
 #. Tag: protocol::radius, long desc
 #: files/debtags/vocabulary
-msgid "Remote Authentication Dial In User Service, a protocol for authentication, authorization and accounting of network access, mostly used by Internet service providers to handle dial-up Internet connections.\nLink: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/rfc2865.txt"
+msgid ""
+"Remote Authentication Dial In User Service, a protocol for authentication, authorization and accounting of network access, mostly used by Internet service providers to handle dial-up Internet connections.\n"
+"Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/rfc2865.txt"
 msgstr ""
 
 #. Tag: protocol::sftp, short desc
@@ -3038,7 +3049,10 @@ msgstr ""
 
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
-msgid "SSH File Transfer Protocol, a protocol for secure, encrypting file exchange and manipulation over insecure networks, using the SSH protocol.\nSFTP provides a complete set of file system operations, different from its predecessor SCP, which only allows file transfer. It is not, other than the name might suggest, a version of the FTP protocol executed through an SSH channel.\nLink: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
+msgid ""
+"SSH File Transfer Protocol, a protocol for secure, encrypting file exchange and manipulation over insecure networks, using the SSH protocol.\n"
+"SFTP provides a complete set of file system operations, different from its predecessor SCP, which only allows file transfer. It is not, other than the name might suggest, a version of the FTP protocol executed through an SSH channel.\n"
+"Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
 msgstr ""
 
 #. Tag: protocol::smb, short desc
@@ -3048,7 +3062,10 @@ msgstr ""
 
 #. Tag: protocol::smb, long desc
 #: files/debtags/vocabulary
-msgid "Server Message Block, a protocol for providing file access and printer sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common Internet File System) is a synonym for SMB.\nAlthough SMB is a proprietary protocol, the Samba project reverse-engineered the protocol and developed both client and server programs for better interoperability in mixed Unix/Windows networks.\nLink: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www.samba.org/"
+msgid ""
+"Server Message Block, a protocol for providing file access and printer sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common Internet File System) is a synonym for SMB.\n"
+"Although SMB is a proprietary protocol, the Samba project reverse-engineered the protocol and developed both client and server programs for better interoperability in mixed Unix/Windows networks.\n"
+"Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www.samba.org/"
 msgstr ""
 
 #. Tag: protocol::smtp, short desc
@@ -3058,7 +3075,10 @@ msgstr ""
 
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
-msgid "Simple Mail Transfer Protocol, a protocol for transmitting emails over the Internet.\nEvery SMTP server utilizes SMTP to hand on emails to the next mail server until an email arrives at its destination, from where it is usually retrieved via POP3 or IMAP.\nLink: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc2821.txt"
+msgid ""
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the Internet.\n"
+"Every SMTP server utilizes SMTP to hand on emails to the next mail server until an email arrives at its destination, from where it is usually retrieved via POP3 or IMAP.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc2821.txt"
 msgstr ""
 
 #. Tag: protocol::snmp, short desc
@@ -3068,7 +3088,10 @@ msgstr ""
 
 #. Tag: protocol::snmp, long desc
 #: files/debtags/vocabulary
-msgid "Simple Network Management Protocol, a member of the Internet protocol suite and used for monitoring or configuring network devices.\nSNMP servers normally run on network equipment like routers.\nLink: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: http://www.ietf.org/rfc/rfc3411.txt"
+msgid ""
+"Simple Network Management Protocol, a member of the Internet protocol suite and used for monitoring or configuring network devices.\n"
+"SNMP servers normally run on network equipment like routers.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: http://www.ietf.org/rfc/rfc3411.txt"
 msgstr ""
 
 #. Tag: protocol::soap, short desc
@@ -3078,7 +3101,10 @@ msgstr ""
 
 #. Tag: protocol::soap, long desc
 #: files/debtags/vocabulary
-msgid "Simple Object Access Protocol, a protocol for exchanging messages between different computers in a network. The messages are encoded in XML and usually sent over HTTP.\nSOAP is used to provide APIs to web services, such as the Google API to utilize Google's searching engine from client applications.\nLink: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
+msgid ""
+"Simple Object Access Protocol, a protocol for exchanging messages between different computers in a network. The messages are encoded in XML and usually sent over HTTP.\n"
+"SOAP is used to provide APIs to web services, such as the Google API to utilize Google's searching engine from client applications.\n"
+"Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 msgstr ""
 
 #. Tag: protocol::ssh, short desc
@@ -3088,7 +3114,10 @@ msgstr ""
 
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
-msgid "Secure Shell, a protocol for secure, encrypted network connections. SSH can be used to execute programs on a remote host with an SSH server over otherwise insecure protocols through an SSH channel. The main use is, as the name suggest, to provide encrypted login and shell access on remote servers.\nSSH authentication can be done with password or, which is the preferred mechanism, via asymmetric public/private key cryptography.\nLink: http://en.wikipedia.org/wiki/Secure_Shell"
+msgid ""
+"Secure Shell, a protocol for secure, encrypted network connections. SSH can be used to execute programs on a remote host with an SSH server over otherwise insecure protocols through an SSH channel. The main use is, as the name suggest, to provide encrypted login and shell access on remote servers.\n"
+"SSH authentication can be done with password or, which is the preferred mechanism, via asymmetric public/private key cryptography.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgstr ""
 
 #. Tag: protocol::ssl, short desc
@@ -3098,7 +3127,10 @@ msgstr ""
 
 #. Tag: protocol::ssl, long desc
 #: files/debtags/vocabulary
-msgid "Secure Socket Layer/Transport Layer Security, a protocol that provides secure encrypted communication on the Internet. It is used to authenticate the identity of a service provider (such as a Internet banking server) and to secure the communications channel.\nOtherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be transmitted over SSL/TLS to secure the transmitted data. In this case, an \"S\" is added to the protocol name, like HTTPS, FTPS etc.\nLink: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
+msgid ""
+"Secure Socket Layer/Transport Layer Security, a protocol that provides secure encrypted communication on the Internet. It is used to authenticate the identity of a service provider (such as a Internet banking server) and to secure the communications channel.\n"
+"Otherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be transmitted over SSL/TLS to secure the transmitted data. In this case, an \"S\" is added to the protocol name, like HTTPS, FTPS etc.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
 msgstr ""
 
 #. Tag: protocol::telnet, short desc
@@ -3108,7 +3140,9 @@ msgstr ""
 
 #. Tag: protocol::telnet, long desc
 #: files/debtags/vocabulary
-msgid "TELecommunication NETwork, a mostly superseded protocol for remote logins.\nLink: http://en.wikipedia.org/wiki/TELNET"
+msgid ""
+"TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+"Link: http://en.wikipedia.org/wiki/TELNET"
 msgstr ""
 
 #. Tag: protocol::tcp, short desc
@@ -3118,7 +3152,10 @@ msgstr ""
 
 #. Tag: protocol::tcp, long desc
 #: files/debtags/vocabulary
-msgid "Transport Control Protocol, a core protocol of the Internet protocol suite and used for data transport.\nTCP is used as the transport protocol for many services on the Internet, such as FTP, HTTP, SMTP, POP3, IMAP, NNTP etc.\nLink: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: http://www.ietf.org/rfc/rfc793.txt"
+msgid ""
+"Transport Control Protocol, a core protocol of the Internet protocol suite and used for data transport.\n"
+"TCP is used as the transport protocol for many services on the Internet, such as FTP, HTTP, SMTP, POP3, IMAP, NNTP etc.\n"
+"Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: http://www.ietf.org/rfc/rfc793.txt"
 msgstr ""
 
 #. Tag: protocol::tftp, short desc
@@ -3128,7 +3165,9 @@ msgstr ""
 
 #. Tag: protocol::tftp, long desc
 #: files/debtags/vocabulary
-msgid "Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP allows a client to get or put a file onto a remote host.  One of its primary uses is the network booting of diskless nodes on a Local Area Network.  It is designed to be easy to implement so it fits on ROM.\nLink: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc1350.txt"
+msgid ""
+"Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP allows a client to get or put a file onto a remote host.  One of its primary uses is the network booting of diskless nodes on a Local Area Network.  It is designed to be easy to implement so it fits on ROM.\n"
+"Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
 
 #. Tag: protocol::udp, short desc
@@ -3138,7 +3177,10 @@ msgstr ""
 
 #. Tag: protocol::udp, long desc
 #: files/debtags/vocabulary
-msgid "User Datagram Protocol, a core protocol of the Internet protocol suite and used for data transport.\nUDP is not as reliable as TCP, but faster and thus better fit for time-sensitive purposes, like the DNS protocol and VoIP.\nLink: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www.ietf.org/rfc/rfc768.txt"
+msgid ""
+"User Datagram Protocol, a core protocol of the Internet protocol suite and used for data transport.\n"
+"UDP is not as reliable as TCP, but faster and thus better fit for time-sensitive purposes, like the DNS protocol and VoIP.\n"
+"Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www.ietf.org/rfc/rfc768.txt"
 msgstr ""
 
 #. Tag: protocol::voip, short desc
@@ -3148,7 +3190,10 @@ msgstr ""
 
 #. Tag: protocol::voip, long desc
 #: files/debtags/vocabulary
-msgid "Voice over IP, a general term for protocols that route voice conversations over the Internet.\nPopular VoIP protocols are SIP, H.323 and IAX.\nLink: http://en.wikipedia.org/wiki/Voice_over_IP"
+msgid ""
+"Voice over IP, a general term for protocols that route voice conversations over the Internet.\n"
+"Popular VoIP protocols are SIP, H.323 and IAX.\n"
+"Link: http://en.wikipedia.org/wiki/Voice_over_IP"
 msgstr ""
 
 #. Tag: protocol::webdav, short desc
@@ -3158,7 +3203,9 @@ msgstr ""
 
 #. Tag: protocol::webdav, long desc
 #: files/debtags/vocabulary
-msgid "Web-based Distributed Authoring and Versioning, a extension of the HTTP protocol to support creating and changing documents on an HTTP server. Thus, the client can access the documents on an HTTP server as it would those on the local file system.\nLink: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/rfc2518.txt"
+msgid ""
+"Web-based Distributed Authoring and Versioning, a extension of the HTTP protocol to support creating and changing documents on an HTTP server. Thus, the client can access the documents on an HTTP server as it would those on the local file system.\n"
+"Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/rfc2518.txt"
 msgstr ""
 
 #. Tag: protocol::xmlrpc, short desc
@@ -3168,7 +3215,10 @@ msgstr ""
 
 #. Tag: protocol::xmlrpc, long desc
 #: files/debtags/vocabulary
-msgid "XML Remote Procedure Call, a simple protocol for remote procedure calls that uses XML for encoding and the HTTP protocol for transport.\nSOAP, which is a considerably more sophisticated protocol, was developed from XML-RPC.\nLink: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
+msgid ""
+"XML Remote Procedure Call, a simple protocol for remote procedure calls that uses XML for encoding and the HTTP protocol for transport.\n"
+"SOAP, which is a considerably more sophisticated protocol, was developed from XML-RPC.\n"
+"Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 msgstr ""
 
 #. Tag: protocol::yahoo-messenger, short desc
@@ -3178,7 +3228,10 @@ msgstr ""
 
 #. Tag: protocol::yahoo-messenger, long desc
 #: files/debtags/vocabulary
-msgid "The Yahoo! Messenger protocol is used to connect to Yahoo!'s instant messaging network.\nThis a proprietary binary protocol without any official documentation. Clients that connect to the Yahoo! Messenger network have to rely on reverse-engineered information.\nLink: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www.venkydude.com/articles/yahoo.htm"
+msgid ""
+"The Yahoo! Messenger protocol is used to connect to Yahoo!'s instant messaging network.\n"
+"This a proprietary binary protocol without any official documentation. Clients that connect to the Yahoo! Messenger network have to rely on reverse-engineered information.\n"
+"Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www.venkydude.com/articles/yahoo.htm"
 msgstr ""
 
 #. Tag: protocol::zeroconf, short desc
@@ -3188,7 +3241,13 @@ msgstr ""
 
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
-msgid "Zero Configuration Networking (Zeroconfig), is a set of techniques that automatically creates a usable IP network without configuration or special servers.\nThis tag is used for packages that implement one or more of:\n* IPv4LL for choosing addresses\n* mDNS for name resolution\n* DNS-SD for service discovery\nLink: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
+msgid ""
+"Zero Configuration Networking (Zeroconfig), is a set of techniques that automatically creates a usable IP network without configuration or special servers.\n"
+"This tag is used for packages that implement one or more of:\n"
+"* IPv4LL for choosing addresses\n"
+"* mDNS for name resolution\n"
+"* DNS-SD for service discovery\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
 msgstr ""
 
 #. Facet: uitoolkit, short desc
@@ -3307,7 +3366,6 @@ msgid "Compressing"
 msgstr ""
 
 #. Tag: use::configuring, short desc
-#: files/debtags/vocabulary
 #. Tag: network::configuration, short desc
 #: files/debtags/vocabulary
 msgid "Configuration"
@@ -3384,7 +3442,6 @@ msgid "Proxying"
 msgstr ""
 
 #. Tag: use::routing, short desc
-#: files/debtags/vocabulary
 #. Tag: network::routing, short desc
 #: files/debtags/vocabulary
 msgid "Routing"
@@ -3396,7 +3453,6 @@ msgid "Searching"
 msgstr ""
 
 #. Tag: use::scanning, short desc
-#: files/debtags/vocabulary
 #. Tag: network::scanner, short desc
 #: files/debtags/vocabulary
 msgid "Scanning"
@@ -3493,7 +3549,6 @@ msgid "Search Engine"
 msgstr ""
 
 #. Tag: web::server, short desc
-#: files/debtags/vocabulary
 #. Tag: network::server, short desc
 #: files/debtags/vocabulary
 msgid "Server"
@@ -3640,7 +3695,6 @@ msgid "IP protocol support"
 msgstr ""
 
 #. Tag: science, short desc
-#: files/debtags/vocabulary
 #. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
@@ -3675,4 +3729,1065 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Publishing"
 msgstr ""
+
+#~ msgid "Afar"
+#~ msgstr "afarčina"
+#~ msgid "Abkhazian"
+#~ msgstr "abcházčina"
+#~ msgid "Achinese"
+#~ msgstr "acehčina"
+#~ msgid "Acoli"
+#~ msgstr "ačoli"
+#~ msgid "Adangme"
+#~ msgstr "adangme"
+#~ msgid "Adyghe; Adygei"
+#~ msgstr "adygčina; adygejčina"
+
+#, fuzzy
+#~ msgid "Afro-Asiatic languages"
+#~ msgstr "apačské jazyky"
+#~ msgid "Afrihili"
+#~ msgstr "afrihili"
+#~ msgid "Ainu"
+#~ msgstr "ainčina"
+#~ msgid "Akan"
+#~ msgstr "akančina"
+#~ msgid "Akkadian"
+#~ msgstr "akkadčina"
+#~ msgid "Albanian"
+#~ msgstr "albánčina"
+#~ msgid "Aleut"
+#~ msgstr "aleutčina"
+#~ msgid "Algonquian languages"
+#~ msgstr "algonkinské jazyky"
+#~ msgid "Southern Altai"
+#~ msgstr "južná altajčina"
+#~ msgid "Amharic"
+#~ msgstr "amharčina"
+
+# alebo anglosaština
+#~ msgid "English, Old (ca. 450-1100)"
+#~ msgstr "angličtina, stará (ca. 450-1100)"
+# nemám poňatia, ale krajina sa po slovensky píše s –g- (Anga) takže by to bez problémov malo ostať angika
+#~ msgid "Angika"
+#~ msgstr "angika"
+#~ msgid "Apache languages"
+#~ msgstr "apačské jazyky"
+#~ msgid "Aragonese"
+#~ msgstr "aragónčina"
+#~ msgid "Armenian"
+#~ msgstr "arménčina"
+#~ msgid "Mapudungun; Mapuche"
+#~ msgstr "araukánčina; mapudingun; mapuche"
+#~ msgid "Arapaho"
+#~ msgstr "arapaho"
+#, fuzzy
+#~ msgid "Artificial languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+#~ msgid "Arawak"
+#~ msgstr "arawačtina"
+#~ msgid "Assamese"
+#~ msgstr "ásámčina"
+#~ msgid "Athapascan languages"
+#~ msgstr "athabaské jazyky"
+#~ msgid "Australian languages"
+#~ msgstr "austrálske jazyky"
+#~ msgid "Avaric"
+#~ msgstr "avarčina"
+#~ msgid "Avestan"
+#~ msgstr "avestčina"
+#~ msgid "Awadhi"
+#~ msgstr "avadhčina"
+#~ msgid "Aymara"
+#~ msgstr "aymarčina"
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdžančina"
+#~ msgid "Banda languages"
+#~ msgstr "jazyky banda"
+#~ msgid "Bamileke languages"
+#~ msgstr "bamileke"
+#~ msgid "Bashkir"
+#~ msgstr "baškirčina"
+#~ msgid "Baluchi"
+#~ msgstr "balúčtina"
+#~ msgid "Bambara"
+#~ msgstr "bambara"
+#~ msgid "Balinese"
+#~ msgstr "balijčina"
+#~ msgid "Basa"
+#~ msgstr "basa"
+
+#, fuzzy
+#~ msgid "Baltic languages"
+#~ msgstr "batacké jazyky"
+#~ msgid "Belarusian"
+#~ msgstr "bieloruština"
+#~ msgid "Bemba"
+#~ msgstr "bemba"
+
+#, fuzzy
+#~ msgid "Berber languages"
+#~ msgstr "karenské jazyky"
+#~ msgid "Bhojpuri"
+#~ msgstr "bhódžpurčina"
+#~ msgid "Bihari"
+#~ msgstr "bihárske jazyky"
+
+# plurál
+#~ msgid "Bikol"
+#~ msgstr "bikol"
+#~ msgid "Bini; Edo"
+#~ msgstr "bini; edo"
+#~ msgid "Bislama"
+#~ msgstr "bislama"
+#~ msgid "Siksika"
+#~ msgstr "siksika"
+#, fuzzy
+#~ msgid "Bantu languages"
+#~ msgstr "jazyky banda"
+#~ msgid "Braj"
+#~ msgstr "bradžčina"
+#~ msgid "Breton"
+#~ msgstr "bretónčina"
+#~ msgid "Batak languages"
+#~ msgstr "batacké jazyky"
+#~ msgid "Buriat"
+#~ msgstr "buriatčina"
+#~ msgid "Buginese"
+#~ msgstr "bugiština"
+#~ msgid "Burmese"
+#~ msgstr "barmčina"
+#~ msgid "Blin; Bilin"
+#~ msgstr "blin; bilin"
+#~ msgid "Caddo"
+#~ msgstr "kaddo"
+
+#, fuzzy
+#~ msgid "Central American Indian languages"
+#~ msgstr "indiánske jazyky strednej Ameriky (iné)"
+#~ msgid "Galibi Carib"
+#~ msgstr "gálibská karibčina"
+#~ msgid "Catalan; Valencian"
+#~ msgstr "katalánčina; valencijčina"
+
+#, fuzzy
+#~ msgid "Caucasian languages"
+#~ msgstr "wakašské jazyky"
+#~ msgid "Cebuano"
+#~ msgstr "cebuánčina"
+
+#, fuzzy
+#~ msgid "Celtic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Chamorro"
+#~ msgstr "čamorčina"
+#~ msgid "Chibcha"
+#~ msgstr "čibča"
+#~ msgid "Chechen"
+#~ msgstr "čečenčina"
+#~ msgid "Chagatai"
+#~ msgstr "čagatajčina"
+#~ msgid "Chuukese"
+#~ msgstr "truk"
+#~ msgid "Mari"
+#~ msgstr "marijčina"
+#~ msgid "Chinook jargon"
+#~ msgstr "činucký žargón"
+#~ msgid "Choctaw"
+#~ msgstr "čoktavčina"
+#~ msgid "Cherokee"
+#~ msgstr "čerokí"
+#~ msgid ""
+#~ "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church "
+#~ "Slavonic"
+#~ msgstr "cirkevná slovančina; slovienčina; staroslovenčina; staroslovienčina"
+#~ msgid "Chuvash"
+#~ msgstr "čuvaština"
+#~ msgid "Cheyenne"
+#~ msgstr "čejenčina"
+#~ msgid "Chamic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Coptic"
+#~ msgstr "koptčina"
+#~ msgid "Cornish"
+#~ msgstr "kornčina"
+#~ msgid "Corsican"
+#~ msgstr "korzičtina"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins, English based"
+#~ msgstr "kreolské jazyky a pidžiny na základe angličtiny (iné)"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins, French-based"
+#~ msgstr "kreolské jazyky a pidžiny na základe francúzštiny (iné)"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins, Portuguese-based"
+#~ msgstr "kreolské jazyky a pidžiny na základe portugalčiny (iné)"
+#~ msgid "Cree"
+#~ msgstr "krí"
+#~ msgid "Crimean Tatar; Crimean Turkish"
+#~ msgstr "krymská tatárčina; krymská turečtina"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins"
+#~ msgstr "kreolské jazyky a pidžiny (iné)"
+#~ msgid "Kashubian"
+#~ msgstr "kašubčina"
+
+#, fuzzy
+#~ msgid "Cushitic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Dakota"
+#~ msgstr "dakotčina"
+#~ msgid "Dargwa"
+#~ msgstr "darginčina"
+
+# ?
+#~ msgid "Land Dayak languages"
+#~ msgstr "vnútrozemská dajačtina"
+#~ msgid "Delaware"
+#~ msgstr "delawarčina"
+# toto je nejaké čudné, slov. názov je slávčina, ale podľa en wiki to premenovali, ale ak je tá výslovnosť správna, tak by to malo byť slevejčina
+#~ msgid "Slave (Athapascan)"
+#~ msgstr "slavejčina (athabaský jazyk)"
+#~ msgid "Dogrib"
+#~ msgstr "dogribčina"
+#~ msgid "Dinka"
+#~ msgstr "dinka"
+#~ msgid "Divehi; Dhivehi; Maldivian"
+#~ msgstr "divehi; maldivčina"
+#~ msgid "Dogri"
+#~ msgstr "dógrí"
+#, fuzzy
+#~ msgid "Dravidian languages"
+#~ msgstr "lužickosrbské jazyky"
+#~ msgid "Lower Sorbian"
+#~ msgstr "dolnolužická srbčina"
+#~ msgid "Duala"
+#~ msgstr "duala"
+#~ msgid "Dutch, Middle (ca. 1050-1350)"
+#~ msgstr "holandčina, stredná (ca. 1050-1350)"
+#~ msgid "Dutch; Flemish"
+#~ msgstr "holandčina; flámčina"
+#~ msgid "Dyula"
+#~ msgstr "ďula"
+#~ msgid "Dzongkha"
+#~ msgstr "dzongkä"
+#~ msgid "Efik"
+#~ msgstr "efik (ibibio)"
+#~ msgid "Egyptian (Ancient)"
+#~ msgstr "egyptčina (staroveká)"
+#~ msgid "Ekajuk"
+#~ msgstr "ekadžuk"
+#~ msgid "Elamite"
+#~ msgstr "elamčina"
+#~ msgid "English"
+#~ msgstr "angličtina"
+#~ msgid "English, Middle (1100-1500)"
+#~ msgstr "angličtina, stredná (1100-1500)"
+#~ msgid "Ewe"
+#~ msgstr "ewe"
+#~ msgid "Ewondo"
+#~ msgstr "ewondo"
+#~ msgid "Fang"
+#~ msgstr "fangčina"
+#~ msgid "Fanti"
+#~ msgstr "fanti"
+#~ msgid "Fijian"
+#~ msgstr "fidžijčina"
+#~ msgid "Filipino; Pilipino"
+#~ msgstr "filipínčina"
+
+#, fuzzy
+#~ msgid "Finno-Ugrian languages"
+#~ msgstr "lužickosrbské jazyky"
+#~ msgid "Fon"
+#~ msgstr "fončina"
+#~ msgid "French, Middle (ca. 1400-1600)"
+#~ msgstr "francúzština, stredná (ca. 1400-1600)"
+#~ msgid "French, Old (842-ca. 1400)"
+#~ msgstr "francúzština, stará (842-ca.1400)"
+#~ msgid "Northern Frisian"
+#~ msgstr "severná frízština"
+#~ msgid "Eastern Frisian"
+#~ msgstr "východná frízština"
+#~ msgid "Western Frisian"
+#~ msgstr "západná frízština"
+#~ msgid "Fulah"
+#~ msgstr "fulbčina"
+
+# alebo furlančina furlandčina
+#~ msgid "Friulian"
+#~ msgstr "friulčina"
+#~ msgid "Ga"
+#~ msgstr "ga"
+#~ msgid "Gayo"
+#~ msgstr "gayo"
+#~ msgid "Gbaya"
+#~ msgstr "gbaja"
+#, fuzzy
+#~ msgid "Germanic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Georgian"
+#~ msgstr "gruzínčina"
+
+# alebo ge’ez
+#~ msgid "Geez"
+#~ msgstr "etiópčina"
+#~ msgid "Gilbertese"
+#~ msgstr "kiribatčina"
+#~ msgid "Gaelic; Scottish Gaelic"
+#~ msgstr "gaelčina; škótska gaelčina"
+#~ msgid "Irish"
+#~ msgstr "írčina"
+#~ msgid "Galician"
+#~ msgstr "galícijčina"
+#~ msgid "Manx"
+#~ msgstr "mančina"
+#~ msgid "German, Middle High (ca. 1050-1500)"
+#~ msgstr "nemčina, stredná horná (ca. 1050-1500)"
+#~ msgid "German, Old High (ca. 750-1050)"
+#~ msgstr "nemčina, stará horná (ca. 750-1050)"
+#~ msgid "Gondi"
+#~ msgstr "góndčina"
+#~ msgid "Gorontalo"
+#~ msgstr "gorontalo"
+#~ msgid "Gothic"
+#~ msgstr "gótčina"
+#~ msgid "Grebo"
+#~ msgstr "grebo"
+#~ msgid "Greek, Ancient (to 1453)"
+#~ msgstr "starogréčtina (do 1453)"
+#~ msgid "Greek, Modern (1453-)"
+#~ msgstr "novogréčtina (po 1453)"
+#~ msgid "Guarani"
+#~ msgstr "guaraní"
+#, fuzzy
+#~ msgid "Swiss German; Alemannic; Alsatian"
+#~ msgstr "švajčiarska nemčina; alemančina"
+
+# http://209.85.129.104/search?q=cache:VS8RqjDUI34J:https://www.kis3g.sk/kodovniky/Kody_jazykovM04def.doc+afar%C4%8Dina&hl=sk&ct=clnk&cd=1&gl=sk&client=firefox-a
+# http://www.ethnologue.com/14/iso639/codes.asp
+# http://209.85.129.104/search?q=cache:mUD7_zD5SeoJ:www.snk.sk/nbuu/kodovniky/kodyjazykov.html+%22horn%C3%A1+altaj%C4%8Dina%22&hl=sk&ct=clnk&cd=1&gl=sk&client=firefox-a
+#~ msgid "Gujarati"
+#~ msgstr "gudžarátčina"
+#, fuzzy
+#~ msgid "Gwich'in"
+#~ msgstr "gwich'in"
+#~ msgid "Haida"
+#~ msgstr "haida"
+#~ msgid "Haitian; Haitian Creole"
+#~ msgstr "haitská francúzska kreolčina"
+#~ msgid "Hausa"
+#~ msgstr "hauština"
+#~ msgid "Hawaiian"
+#~ msgstr "havajčina"
+#~ msgid "Herero"
+#~ msgstr "hererčina"
+#~ msgid "Hiligaynon"
+#~ msgstr "hiligajnončina"
+#~ msgid "Himachali"
+#~ msgstr "himačalské jazyky"
+#~ msgid "Hittite"
+#~ msgstr "chetitčina"
+#~ msgid "Hmong"
+#~ msgstr "miaočina"
+#~ msgid "Hiri Motu"
+#~ msgstr "hiri motu"
+#~ msgid "Upper Sorbian"
+#~ msgstr "hornolužická srbčina"
+#~ msgid "Hupa"
+#~ msgstr "hupčina"
+#~ msgid "Iban"
+#~ msgstr "ibančina"
+#~ msgid "Igbo"
+#~ msgstr "igbo"
+
+# medzinárodný jazyk ido (vylepšené esperanto)
+#~ msgid "Ido"
+#~ msgstr "ido"
+#, fuzzy
+#~ msgid "Sichuan Yi; Nuosu"
+#~ msgstr "s’čchuanská ioština"
+#~ msgid "Ijo languages"
+#~ msgstr "jazyky idžo"
+#~ msgid "Inuktitut"
+#~ msgstr "inuktitut"
+
+#, fuzzy
+#~ msgid "Interlingue; Occidental"
+#~ msgstr "interlingue"
+#~ msgid "Iloko"
+#~ msgstr "ilokánčina"
+#~ msgid "Interlingua (International Auxiliary Language Association)"
+#~ msgstr "interlingua (International Auxiliary Language Association)"
+
+#, fuzzy
+#~ msgid "Indic languages"
+#~ msgstr "jazyky banda"
+#~ msgid "Indonesian"
+#~ msgstr "indonézština"
+
+#, fuzzy
+#~ msgid "Indo-European languages"
+#~ msgstr "irokézske jazyky"
+#~ msgid "Ingush"
+#~ msgstr "inguština"
+#~ msgid "Inupiaq"
+#~ msgstr "inupiaq"
+
+#, fuzzy
+#~ msgid "Iranian languages"
+#~ msgstr "irokézske jazyky"
+#~ msgid "Iroquoian languages"
+#~ msgstr "irokézske jazyky"
+#~ msgid "Javanese"
+#~ msgstr "jávčina"
+#~ msgid "Lojban"
+#~ msgstr "lojban (umelý jazyk)"
+#~ msgid "Judeo-Persian"
+#~ msgstr "židovská perzština"
+#~ msgid "Judeo-Arabic"
+#~ msgstr "židovská arabčina"
+#~ msgid "Kara-Kalpak"
+#~ msgstr "karakalpačtina"
+#~ msgid "Kabyle"
+#~ msgstr "kabylčina"
+#~ msgid "Kachin; Jingpho"
+#~ msgstr "kačjinčina"
+#~ msgid "Kalaallisut; Greenlandic"
+#~ msgstr "grónčina"
+#~ msgid "Kamba"
+#~ msgstr "kamba"
+#~ msgid "Kannada"
+#~ msgstr "kannadčina"
+#~ msgid "Karen languages"
+#~ msgstr "karenské jazyky"
+#~ msgid "Kashmiri"
+#~ msgstr "kašmírčina"
+#~ msgid "Kanuri"
+#~ msgstr "kanurijčina"
+#~ msgid "Kawi"
+#~ msgstr "kawi"
+#~ msgid "Kazakh"
+#~ msgstr "kazaština"
+#~ msgid "Kabardian"
+#~ msgstr "kabardčina"
+#~ msgid "Khasi"
+#~ msgstr "khasijčina"
+
+#, fuzzy
+#~ msgid "Khoisan languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+#~ msgid "Central Khmer"
+#~ msgstr "kambodžská khmérčina"
+
+#, fuzzy
+#~ msgid "Khotanese;Sakan"
+#~ msgstr "kotčina"
+#~ msgid "Kikuyu; Gikuyu"
+#~ msgstr "kikuju"
+#~ msgid "Kinyarwanda"
+#~ msgstr "rwandčina"
+#~ msgid "Kirghiz; Kyrgyz"
+#~ msgstr "kirgizština"
+#~ msgid "Kimbundu"
+#~ msgstr "kimbundu"
+#~ msgid "Konkani"
+#~ msgstr "konkánčina"
+#~ msgid "Komi"
+#~ msgstr "komijčina"
+#~ msgid "Kongo"
+#~ msgstr "konžština"
+#~ msgid "Kosraean"
+#~ msgstr "kusaie"
+#~ msgid "Kpelle"
+#~ msgstr "kpelle"
+#~ msgid "Karachay-Balkar"
+#~ msgstr "karačajevsko-balkarský jazyk"
+#~ msgid "Karelian"
+#~ msgstr "karelčina"
+#~ msgid "Kru languages"
+#~ msgstr "jazyky kru"
+#~ msgid "Kurukh"
+#~ msgstr "kurukhčina"
+#~ msgid "Kuanyama; Kwanyama"
+#~ msgstr "kuaňama"
+#~ msgid "Kumyk"
+#~ msgstr "kumyčtina"
+#~ msgid "Kurdish"
+#~ msgstr "kurdčina"
+#~ msgid "Kutenai"
+#~ msgstr "kutenajčina"
+
+# ladinčina je niečo iné!
+#~ msgid "Ladino"
+#~ msgstr "židovská španielčina"
+#~ msgid "Lahnda"
+#~ msgstr "lahandčina"
+#~ msgid "Lamba"
+#~ msgstr "lamba"
+#~ msgid "Lao"
+#~ msgstr "laoština"
+#~ msgid "Latin"
+#~ msgstr "latinčina"
+#~ msgid "Lezghian"
+#~ msgstr "lezginčina"
+#~ msgid "Limburgan; Limburger; Limburgish"
+#~ msgstr "limburčina"
+#~ msgid "Lingala"
+#~ msgstr "lingalčina"
+#~ msgid "Lithuanian"
+#~ msgstr "litovčina"
+#~ msgid "Mongo"
+#~ msgstr "mongo"
+#~ msgid "Lozi"
+#~ msgstr "lozi"
+#~ msgid "Luxembourgish; Letzeburgesch"
+#~ msgstr "luxemburčina"
+#~ msgid "Luba-Lulua"
+#~ msgstr "luba-luluánčina"
+#~ msgid "Luba-Katanga"
+#~ msgstr "luba-katančina"
+#~ msgid "Ganda"
+#~ msgstr "ganda"
+#~ msgid "Luiseno"
+#~ msgstr "luiseňo"
+#~ msgid "Lunda"
+#~ msgstr "lunda"
+#~ msgid "Luo (Kenya and Tanzania)"
+#~ msgstr "luo (Keňa a Tanzánia)"
+#~ msgid "Lushai"
+#~ msgstr "lušáí"
+#~ msgid "Macedonian"
+#~ msgstr "macedónčina"
+#~ msgid "Madurese"
+#~ msgstr "madurčina"
+#~ msgid "Magahi"
+#~ msgstr "magadhčina"
+#~ msgid "Marshallese"
+#~ msgstr "maršalčina"
+#~ msgid "Maithili"
+#~ msgstr "maithilčina"
+#~ msgid "Makasar"
+#~ msgstr "makasarčina"
+#~ msgid "Malayalam"
+#~ msgstr "malajálamčina"
+#~ msgid "Mandingo"
+#~ msgstr "mandingo"
+#~ msgid "Maori"
+#~ msgstr "maorčina"
+#, fuzzy
+#~ msgid "Austronesian languages"
+#~ msgstr "austrálske jazyky"
+#~ msgid "Marathi"
+#~ msgstr "maráthčina"
+#~ msgid "Masai"
+#~ msgstr "masajčina"
+#~ msgid "Malay"
+#~ msgstr "malajčina"
+#~ msgid "Moksha"
+#~ msgstr "mokšiančina"
+#~ msgid "Mandar"
+#~ msgstr "mandarčina"
+#~ msgid "Mende"
+#~ msgstr "mendi"
+#~ msgid "Irish, Middle (900-1200)"
+#~ msgstr "írčina, stredná (900-1200)"
+#~ msgid "Mi'kmaq; Micmac"
+#~ msgstr "mikmakčina"
+#~ msgid "Minangkabau"
+#~ msgstr "minangkabaučina"
+
+#, fuzzy
+#~ msgid "Uncoded languages"
+#~ msgstr "zandské jazyky"
+
+#, fuzzy
+#~ msgid "Mon-Khmer languages"
+#~ msgstr "jazyky kru"
+#~ msgid "Malagasy"
+#~ msgstr "malgaština"
+#~ msgid "Maltese"
+#~ msgstr "maltčina"
+#~ msgid "Manchu"
+#~ msgstr "mandžuština"
+#~ msgid "Manipuri"
+#~ msgstr "manípurčina"
+#~ msgid "Manobo languages"
+#~ msgstr "jazyky manobo"
+#~ msgid "Mohawk"
+#~ msgstr "mohawk"
+
+#, fuzzy
+#~ msgid "Moldavian; Moldovan"
+#~ msgstr "moldavčina"
+#~ msgid "Mossi"
+#~ msgstr "mossi"
+#~ msgid "Multiple languages"
+#~ msgstr "viaceré jazyky"
+#~ msgid "Munda languages"
+#~ msgstr "mundské jazyky"
+#~ msgid "Creek"
+#~ msgstr "kríkčina"
+#~ msgid "Mirandese"
+#~ msgstr "mirandčina"
+#~ msgid "Marwari"
+#~ msgstr "marawari"
+#~ msgid "Mayan languages"
+#~ msgstr "mayské jazyky"
+#~ msgid "Erzya"
+#~ msgstr "erzjančina"
+#~ msgid "Nahuatl languages"
+#~ msgstr "nahuaské jazyky"
+
+# keď si dal indiánske jazyky strednej Ameriky namiesto mezoamerické jazyky strednej Ameriky (čo nemusí byť nevyhnutne to isté) tak aby to bolo konzistentné
+#, fuzzy
+#~ msgid "North American Indian languages"
+#~ msgstr "indiánske jazyky severnej Ameriky"
+#~ msgid "Neapolitan"
+#~ msgstr "neapolčina"
+#~ msgid "Nauru"
+#~ msgstr "nauruština"
+#~ msgid "Navajo; Navaho"
+#~ msgstr "navajo; navaho"
+#~ msgid "Ndebele, South; South Ndebele"
+#~ msgstr "ndebelčina, južná; južná ndebelčina"
+#~ msgid "Ndebele, North; North Ndebele"
+#~ msgstr "ndebelčina, severná; severná ndebelčina"
+#~ msgid "Ndonga"
+#~ msgstr "ndonga"
+#~ msgid "Low German; Low Saxon; German, Low; Saxon, Low"
+#~ msgstr "dolná nemčina; dolná saština; nemčina, dolná; saština, dolná"
+#~ msgid "Nepali"
+#~ msgstr "nepálčina"
+#~ msgid "Nias"
+#~ msgstr "niasánčina"
+
+#, fuzzy
+#~ msgid "Niger-Kordofanian languages"
+#~ msgstr "nigersko-kordofánske jazyky (iné)"
+#~ msgid "Niuean"
+#~ msgstr "niueština"
+#~ msgid "Norwegian Nynorsk; Nynorsk, Norwegian"
+#~ msgstr "nórsky nynorsk; nynorsk, nórsky"
+#~ msgid "Nogai"
+#~ msgstr "nogajčina"
+#~ msgid "Norse, Old"
+#~ msgstr "nórčina, stará"
+
+#, fuzzy
+#~ msgid "N'Ko"
+#~ msgstr "N'ko"
+#~ msgid "Nubian languages"
+#~ msgstr "núbijské jazyky"
+#~ msgid "Classical Newari; Old Newari; Classical Nepal Bhasa"
+#~ msgstr "klasická nevárčina; stará nevárčina"
+#~ msgid "Chichewa; Chewa; Nyanja"
+#~ msgstr "čičewa; čewa; ňandža"
+#~ msgid "Nyamwezi"
+#~ msgstr "ňamwezi"
+#~ msgid "Nyankole"
+#~ msgstr "ňankole"
+#~ msgid "Nyoro"
+#~ msgstr "ňoro"
+#~ msgid "Nzima"
+#~ msgstr "nzima"
+
+#, fuzzy
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "okcitánčina (po roku 1500); provensalčina"
+#~ msgid "Ojibwa"
+#~ msgstr "odžibwa"
+#~ msgid "Oriya"
+#~ msgstr "uríjčina"
+#~ msgid "Oromo"
+#~ msgstr "oromčina"
+#~ msgid "Osage"
+#~ msgstr "osagčina"
+#~ msgid "Ossetian; Ossetic"
+#~ msgstr "osetčina"
+#~ msgid "Turkish, Ottoman (1500-1928)"
+#~ msgstr "turečtina, osmanská (1500-1928)"
+#~ msgid "Otomian languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+
+#, fuzzy
+#~ msgid "Papuan languages"
+#~ msgstr "mayské jazyky"
+#~ msgid "Pangasinan"
+#~ msgstr "pangasinančina"
+#~ msgid "Pahlavi"
+#~ msgstr "pahlaví"
+#~ msgid "Panjabi; Punjabi"
+#~ msgstr "pandžábčina"
+#~ msgid "Papiamento"
+#~ msgstr "papiamento"
+#~ msgid "Palauan"
+#~ msgstr "palaučina"
+#~ msgid "Persian, Old (ca. 600-400 B.C.)"
+#~ msgstr "staroperzština (ca. 600-400 pred Kr.)"
+#~ msgid "Persian"
+#~ msgstr "perzština"
+
+#, fuzzy
+#~ msgid "Philippine languages"
+#~ msgstr "viaceré jazyky"
+#~ msgid "Phoenician"
+#~ msgstr "feničtina"
+#~ msgid "Pali"
+#~ msgstr "pálí"
+#~ msgid "Pohnpeian"
+#~ msgstr "pohnpeičina"
+#~ msgid "Prakrit languages"
+#~ msgstr "prakrity"
+
+#, fuzzy
+#~ msgid "Provençal, Old (to 1500); Occitan, Old (to 1500)"
+#~ msgstr "provensalčina, stará (do 1500)"
+
+#, fuzzy
+#~ msgid "Pushto; Pashto"
+#~ msgstr "paštčina"
+#~ msgid "Reserved for local use"
+#~ msgstr "vyhradené pre lokálne použitie"
+#~ msgid "Quechua"
+#~ msgstr "kečuánčina"
+#~ msgid "Rajasthani"
+#~ msgstr "radžastančina"
+#~ msgid "Rapanui"
+#~ msgstr "rapanujčina"
+
+#, fuzzy
+#~ msgid "Rarotongan; Cook Islands Maori"
+#~ msgstr "rarotongská maorijčina; maorijčina Cookových ostrovov"
+
+#, fuzzy
+#~ msgid "Romance languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+#~ msgid "Romansh"
+#~ msgstr "romanši"
+#~ msgid "Romany"
+#~ msgstr "rómčina"
+#~ msgid "Rundi"
+#~ msgstr "rundčina"
+#~ msgid "Aromanian; Arumanian; Macedo-Romanian"
+#~ msgstr "arumunčina; macedónska rumunčina"
+#~ msgid "Sandawe"
+#~ msgstr "sandawe"
+#~ msgid "Sango"
+#~ msgstr "sango"
+#~ msgid "Yakut"
+#~ msgstr "jakutčina"
+
+# tu platí to isté ako pre severoamerické
+#, fuzzy
+#~ msgid "South American Indian languages"
+#~ msgstr "indiánske jazyky južnej Ameriky (iné)"
+#~ msgid "Salishan languages"
+#~ msgstr "sališské jazyky"
+#~ msgid "Samaritan Aramaic"
+#~ msgstr "samaritánska aramejčina"
+#~ msgid "Sanskrit"
+#~ msgstr "sanskrit"
+#~ msgid "Sasak"
+#~ msgstr "sasačtina"
+#~ msgid "Santali"
+#~ msgstr "santalčina"
+#~ msgid "Sicilian"
+#~ msgstr "sicílčina"
+#~ msgid "Scots"
+#~ msgstr "škótčina"
+#~ msgid "Selkup"
+#~ msgstr "selkupčina"
+
+#, fuzzy
+#~ msgid "Semitic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Irish, Old (to 900)"
+#~ msgstr "írčina, stará (do 900)"
+#~ msgid "Sign Languages"
+#~ msgstr "posunkové reči"
+#~ msgid "Shan"
+#~ msgstr "šančina"
+#~ msgid "Sidamo"
+#~ msgstr "sidamo"
+#~ msgid "Sinhala; Sinhalese"
+#~ msgstr "sinhalčina"
+#~ msgid "Siouan languages"
+#~ msgstr "siouské jazyky"
+
+#, fuzzy
+#~ msgid "Sino-Tibetan languages"
+#~ msgstr "siouské jazyky"
+
+#, fuzzy
+#~ msgid "Slavic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Slovenian"
+#~ msgstr "slovinčina"
+#~ msgid "Southern Sami"
+#~ msgstr "južná saamčina"
+#~ msgid "Northern Sami"
+#~ msgstr "severná saamčina"
+
+#, fuzzy
+#~ msgid "Sami languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Lule Sami"
+#~ msgstr "luleská saamčina"
+#~ msgid "Inari Sami"
+#~ msgstr "inariská saamčina"
+#~ msgid "Samoan"
+#~ msgstr "samojčina"
+#~ msgid "Skolt Sami"
+#~ msgstr "(laponský) jazyk, skolt"
+#~ msgid "Shona"
+#~ msgstr "šona"
+#~ msgid "Sindhi"
+#~ msgstr "sindhčina"
+#~ msgid "Soninke"
+#~ msgstr "soninke"
+#~ msgid "Sogdian"
+#~ msgstr "sogdčina"
+#~ msgid "Somali"
+#~ msgstr "somálčina"
+#~ msgid "Songhai languages"
+#~ msgstr "songhajské jazyky"
+#~ msgid "Sotho, Southern"
+#~ msgstr "sothčina, južná"
+#~ msgid "Spanish; Castilian"
+#~ msgstr "španielčina; kastílčina"
+#~ msgid "Sardinian"
+#~ msgstr "sardínčina"
+#~ msgid "Sranan Tongo"
+#~ msgstr "sranan"
+#~ msgid "Serer"
+#~ msgstr "serer"
+
+#, fuzzy
+#~ msgid "Nilo-Saharan languages"
+#~ msgstr "sališské jazyky"
+#~ msgid "Swati"
+#~ msgstr "swati"
+#~ msgid "Sukuma"
+#~ msgstr "sukuma"
+#~ msgid "Sundanese"
+#~ msgstr "sundčina"
+#~ msgid "Susu"
+#~ msgstr "susu"
+#~ msgid "Sumerian"
+#~ msgstr "sumerčina"
+#~ msgid "Swahili"
+#~ msgstr "svahilčina"
+#~ msgid "Classical Syriac"
+#~ msgstr "sýrčina"
+#~ msgid "Syriac"
+#~ msgstr "sýrčina"
+#~ msgid "Tahitian"
+#~ msgstr "tahitčina"
+
+#, fuzzy
+#~ msgid "Tai languages"
+#~ msgstr "jazyky tupi"
+#~ msgid "Tatar"
+#~ msgstr "tatárčina"
+#~ msgid "Telugu"
+#~ msgstr "telugčina"
+#~ msgid "Timne"
+#~ msgstr "temne"
+#~ msgid "Tereno"
+#~ msgstr "tereno"
+#~ msgid "Tetum"
+#~ msgstr "tetumčina"
+#~ msgid "Tagalog"
+#~ msgstr "tagalčina"
+#~ msgid "Tibetan"
+#~ msgstr "tibetčina"
+#~ msgid "Tigre"
+#~ msgstr "tigrejčina"
+#~ msgid "Tigrinya"
+#~ msgstr "tigriňa"
+#~ msgid "Tiv"
+#~ msgstr "tiv"
+#~ msgid "Tokelau"
+#~ msgstr "tokelaučina"
+#~ msgid "Klingon; tlhIngan-Hol"
+#~ msgstr "klingónčina; tlhIngan-Hol"
+#~ msgid "Tlingit"
+#~ msgstr "tlingitčina"
+#~ msgid "Tamashek"
+#~ msgstr "tamašek"
+#~ msgid "Tonga (Nyasa)"
+#~ msgstr "tonga (Ňasa)"
+#~ msgid "Tonga (Tonga Islands)"
+#~ msgstr "tongčina (Tongské ostrovy)"
+#~ msgid "Tok Pisin"
+#~ msgstr "tok pisin"
+#~ msgid "Tsimshian"
+#~ msgstr "tsimshijské jazyky"
+#~ msgid "Tswana"
+#~ msgstr "čwančina"
+#~ msgid "Tsonga"
+#~ msgstr "tsonga"
+#~ msgid "Turkmen"
+#~ msgstr "turkménčina"
+#~ msgid "Tumbuka"
+#~ msgstr "tumbuka"
+#~ msgid "Tupi languages"
+#~ msgstr "jazyky tupi"
+
+#, fuzzy
+#~ msgid "Altaic languages"
+#~ msgstr "apačské jazyky"
+#~ msgid "Tuvalu"
+#~ msgstr "tuvalčina"
+#~ msgid "Twi"
+#~ msgstr "twi"
+#~ msgid "Tuvinian"
+#~ msgstr "tuviančina"
+#~ msgid "Udmurt"
+#~ msgstr "udmurtčina"
+#~ msgid "Ugaritic"
+#~ msgstr "ugaritčina"
+#~ msgid "Uighur; Uyghur"
+#~ msgstr "ujgurčina"
+#~ msgid "Umbundu"
+#~ msgstr "umbundu"
+#~ msgid "Undetermined"
+#~ msgstr "neurčený"
+#~ msgid "Urdu"
+#~ msgstr "urdčina"
+#~ msgid "Vai"
+#~ msgstr "vai"
+#~ msgid "Venda"
+#~ msgstr "venda"
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamčina"
+#~ msgid "Volapük"
+#~ msgstr "volapük"
+#~ msgid "Votic"
+#~ msgstr "vodčina"
+#~ msgid "Wakashan languages"
+#~ msgstr "wakašské jazyky"
+#~ msgid "Waray"
+#~ msgstr "waray"
+#~ msgid "Washo"
+#~ msgstr "washo"
+#~ msgid "Sorbian languages"
+#~ msgstr "lužickosrbské jazyky"
+#~ msgid "Walloon"
+#~ msgstr "valónčina"
+#~ msgid "Wolof"
+#~ msgstr "wolof"
+#~ msgid "Kalmyk; Oirat"
+#~ msgstr "kalmyčtina; ojračtina"
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+#~ msgid "Yao"
+#~ msgstr "jao"
+#~ msgid "Yapese"
+#~ msgstr "japčina"
+#~ msgid "Yiddish"
+#~ msgstr "jidiš"
+#~ msgid "Yoruba"
+#~ msgstr "jorubčina"
+#~ msgid "Yupik languages"
+#~ msgstr "juitsko-jupické jazyky"
+#~ msgid "Zapotec"
+#~ msgstr "zapotéčtina"
+#~ msgid "Zenaga"
+#~ msgstr "zenaga"
+#~ msgid "Zhuang; Chuang"
+#~ msgstr "čuangčina; šuongčina"
+#~ msgid "Zande languages"
+#~ msgstr "zandské jazyky"
+#~ msgid "Zulu"
+#~ msgstr "zuluština"
+#~ msgid "Zuni"
+#~ msgstr "zuniština"
+
+#, fuzzy
+#~ msgid "No linguistic content; Not applicable"
+#~ msgstr "bez lingvistického obsahu"
+#~ msgid "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"
+#~ msgstr "zázá; dimili; dimli; kirdki; kirmančki; zazaki"
+#~ msgid "Afro-Asiatic (Other)"
+#~ msgstr "afroázijské jazyky (iné)"
+#~ msgid "Aramaic"
+#~ msgstr "aramejčina"
+#~ msgid "Artificial (Other)"
+#~ msgstr "umelé jazyky (iné)"
+#~ msgid "Asturian; Bable"
+#~ msgstr "astúrčina; bable"
+#~ msgid "Baltic (Other)"
+#~ msgstr "baltské jazyky (iné)"
+#~ msgid "Beja"
+#~ msgstr "bedža"
+#~ msgid "Berber (Other)"
+#~ msgstr "berberské jazyky (iné)"
+#~ msgid "Bantu (Other)"
+#~ msgstr "bantuské jazyky (iné)"
+#~ msgid "Caucasian (Other)"
+#~ msgstr "kaukazské jazyky (iné)"
+#~ msgid "Celtic (Other)"
+#~ msgstr "keltské jazyky (iné)"
+#~ msgid "Chipewyan"
+#~ msgstr "čipevajčina"
+#~ msgid "Cushitic (Other)"
+#~ msgstr "kušitské jazyky (iné)"
+#~ msgid "Dravidian (Other)"
+#~ msgstr "drávidské jazyky (iné)"
+#~ msgid "Finno-Ugrian (Other)"
+#~ msgstr "ugrofínske jazyky (iné)"
+#~ msgid "Germanic (Other)"
+#~ msgstr "germánske jazyky (iné)"
+#~ msgid "Indic (Other)"
+#~ msgstr "indické jazyky (iné)"
+#~ msgid "Indo-European (Other)"
+#~ msgstr "indoeurópske jazyky (iné)"
+#~ msgid "Iranian (Other)"
+#~ msgstr "iránske jazyky (iné)"
+#~ msgid "Khoisan (Other)"
+#~ msgstr "khoisanské jazyky (iné)"
+#~ msgid "Austronesian (Other)"
+#~ msgstr "austronézske (iné)"
+#~ msgid "Miscellaneous languages"
+#~ msgstr "rozličné jazyky"
+#~ msgid "Mon-Khmer (Other)"
+#~ msgstr "monsko-khmérske jazyky (iné)"
+#~ msgid "Newari; Nepal Bhasa"
+#~ msgstr "nevárčina"
+#~ msgid "Norwegian Bokmål; Bokmål, Norwegian"
+#~ msgstr "nórsky bokmål; bokmål, nórsky"
+#~ msgid "Northern Sotho, Pedi; Sepedi"
+#~ msgstr "severná sothčina, pedi; sepedi"
+#~ msgid "Papuan (Other)"
+#~ msgstr "papuánske jazyky (iné)"
+#~ msgid "Pampanga"
+#~ msgstr "pampangančina"
+#~ msgid "Philippine (Other)"
+#~ msgstr "filipínske jazyky (iné)"
+#~ msgid "Romance (Other)"
+#~ msgstr "románske jazyky (iné)"
+#~ msgid "Semitic (Other)"
+#~ msgstr "semitské jazyky (iné)"
+#~ msgid "Sino-Tibetan (Other)"
+#~ msgstr "sino-tibetské jazyky (iné)"
+#~ msgid "Slavic (Other)"
+#~ msgstr "slovanské jazyky (iné)"
+#~ msgid "Sami languages (Other)"
+#~ msgstr "saamské jazyky (iné)"
+#~ msgid "Nilo-Saharan (Other)"
+#~ msgstr "nílsko-saharské jazyky (iné)"
+#~ msgid "Tai (Other)"
+#~ msgstr "thajské jazyky (iné)"
+#~ msgid "Altaic (Other)"
+#~ msgstr "altajské jazyky"
+#~ msgid "Walamo"
+#~ msgstr "walamčina"
+#~ msgid "Araucanian"
+#~ msgstr "araukánčina"
 

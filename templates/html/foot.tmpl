@@ -35,9 +35,10 @@ Total page evaluation took [% benchmark %]<br>
  <a href="/about/">[% g('Learn more about this site') %]</a>.</p>
 [% END %]
 </div> <!-- end impressum -->
-[% IF sponsor.name %]
+[% IF sponsors.size %]
 <div id="sponsorfooter"><p>
-[% g('Hosting provided by <a href="%s">%s</a>.', sponsor.url, sponsor.name) %]
+[% USE Math; random = Math.int(Math.rand(sponsors.size));
+  g('This service is sponsored by <a href="%s">%s</a>.', sponsors.${random}.url, sponsors.${random}.name) -%]
 </p></div>
 [% END %]
 </div> <!-- end fineprint -->

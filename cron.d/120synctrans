@@ -22,7 +22,7 @@ then
 	    locale=$(echo $lang|perl -p -e 's/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e')
 	    echo "retrieve translated Descs $dist/$part/$lang ($locale)"
             (cd us/${dist}/${part}/i18n &&
-                $wget_cmd -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translation-$locale.gz)
+                $wget_cmd -N ${ddtp_ftpsite}/dists/${dist}/${part}/i18n/Translation-$locale.bz2)
 	  done
 	done
     done
@@ -37,8 +37,8 @@ else
 	  do
 	    locale=$(echo $lang|perl -p -e 's/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e')
 	    echo "retrieve translated Descs $dist/$part/$lang ($locale)"
-            rsync -t ${localdir}/dists/${dist}/${part}/i18n/Translation-$locale.gz \
-	    	us/${dist}/${part}/i18n/Translation-$locale.gz
+            rsync -t ${localdir}/dists/${dist}/${part}/i18n/Translation-$locale.bz2 \
+	    	us/${dist}/${part}/i18n/Translation-$locale.bz2
 	  done
 	done
     done

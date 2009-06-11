@@ -5,7 +5,8 @@
 
    organisation = 'Debian'
    project_homepage = 'http://www.debian.org/'
-   packages_homepage = 'http://archive.debian.net/'
+   packages_homepage = '/'
+   packages_homepage_abs = 'http://archive.debian.net/'
    searchformurl = packages_homepage
    search_url = '/search'
    tags_url = 'http://debtags.alioth.debian.org/'
@@ -48,10 +49,16 @@
 	mail => 'djpig@debian.org',
    }
    trademarknotes = g('%s is a <a href="%s">trademark</a> of %s', organisation, trademark.url, trademark.name)
-#   sponsor = {
-#   	url => 'http://example.invalid/',
-#	name => 'Example Sponsor, Inc.',
-#   }
+   sponsors = [
+   {
+   	url => 'http://example.invalid/',
+	name => 'Example Sponsor, Inc.',
+   },
+   {
+   	url => 'http://example2.invalid/',
+	name => 'Example2 Sponsor, Inc.',
+   },
+   ]
 -%]
 [%-
    # possible values for importance: high, normal, low

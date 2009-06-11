@@ -10,19 +10,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:42
+#: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
 msgstr "Debian 邮件列表"
 
-#: templates/config.tmpl:47
+#: templates/config.tmpl:48
 msgid "%s Webmaster"
 msgstr "%s 网管"
 
-#: templates/config.tmpl:50
+#: templates/config.tmpl:51
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 是 %3 的一个<a href=\"%3\">注册商标</a>"
 
-#: templates/config.tmpl:59
+#: templates/config.tmpl:66
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -31,11 +31,11 @@ msgstr ""
 "有时难以避免"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:62
+#: templates/config.tmpl:69
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:63
+#: templates/config.tmpl:70
 msgid ","
 msgstr ""
 
@@ -103,6 +103,10 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr ""
@@ -117,40 +121,41 @@ msgstr ""
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:73
+#: templates/config/mirrors.tmpl:92
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:123
-msgid "ports of packages to architectures not yet available in Debian"
+#: templates/config/mirrors.tmpl:160
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:151
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "北美洲"
 
-#: templates/config/mirrors.tmpl:152
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "南美洲"
 
-#: templates/config/mirrors.tmpl:153
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "亚洲"
 
-#: templates/config/mirrors.tmpl:154
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "澳洲和大洋洲"
 
-#: templates/config/mirrors.tmpl:155
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "欧洲"
 
-#: templates/config/mirrors.tmpl:156
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "非洲"
 
@@ -260,11 +265,16 @@ msgstr ""
 "</a>。"
 
 #: templates/html/download.tmpl:97
+#, fuzzy
+#| msgid ""
+#| "Note that %s is not officially included in the %s archive yet, but the %s "
+#| "porter group keeps their archive in sync with the official archive as "
+#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
+#| "information."
 msgid ""
-"Note that %s is not officially included in the %s archive yet, but the %s "
-"porter group keeps their archive in sync with the official archive as close "
-"as possible. See the <a href=\"%s\">%s ports page</a> for current "
-"information."
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 "注意: %s 目前还没有被 %s 官方收录，但是有 %s 移植小组负责尽可能的保证它们与官"
 "方收录的档案相一致。请查看 <a href=\"%s\">%s 移植页面</a>了解最新信息。"
@@ -348,10 +358,10 @@ msgstr ""
 msgid "Learn more about this site"
 msgstr "了解更多有关本站点的内容"
 
-#: templates/html/foot.tmpl:40
+#: templates/html/foot.tmpl:41
 #, fuzzy
 #| msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "下载源码包 <a href=\"%s\">%s</a>:"
 
 #: templates/html/head.tmpl:47

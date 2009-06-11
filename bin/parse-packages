@@ -117,10 +117,12 @@ for my $suite (@SUITES) {
 		    foreach (@complete_tags) {
 			my ($facet, $tag) = split( /::/, $_, 2);
 			if ($tag =~ s/^\{(.+)\}$/$1/) {
+			    warn "pkg=$data{package} tags=$data{tag}\n" unless $facet && $tag;
 			    foreach (split( /,/, $tag )) {
 				push @tags, "${facet}::$_";
 			    }
 			} else {
+			    warn "pkg=$data{package} tags=$data{tag}\n" unless $facet && $tag;
 			    push @tags, "${facet}::$tag";
 			}
 		    }
