@@ -2,20 +2,20 @@
 # This file is put in the public domain.
 #
 # Yuri Kozlov <kozlov.y@gmail.com>, 2007.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo_sections\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-03-15 18:49+0100\n"
-"PO-Revision-Date: 2007-11-25 19:25+0300\n"
-"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"PO-Revision-Date: 2009-06-11 23:05+0400\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
@@ -37,11 +37,11 @@ msgstr "Жизненно важные утилиты для каждой сис�
 
 #: lib/Packages/Sections.pm:16
 msgid "Mono/CLI"
-msgstr ""
+msgstr "Mono/CLI"
 
 #: lib/Packages/Sections.pm:17
 msgid "Everything about Mono and the Common Language Infrastructure."
-msgstr ""
+msgstr "Всё, что связано с Mono и спецификацией общеязыковой инфраструктуры (Common Language Infrastructure)."
 
 #: lib/Packages/Sections.pm:18
 msgid "Communication Programs"
@@ -53,33 +53,32 @@ msgstr "Программы для работы через модем \"по ст
 
 #: lib/Packages/Sections.pm:20
 msgid "Databases"
-msgstr ""
+msgstr "Базы данных"
 
 #: lib/Packages/Sections.pm:21
 msgid "Database Servers and Clients."
-msgstr ""
+msgstr "Клиенты и серверы баз данных."
 
 #: lib/Packages/Sections.pm:22
-#, fuzzy
 #| msgid "Virtual packages"
 msgid "Debug packages"
-msgstr "Виртуальные пакеты"
+msgstr "Пакеты отладки"
 
 #: lib/Packages/Sections.pm:23
 msgid ""
 "Packages providing debugging information for executables and shared "
 "libraries."
 msgstr ""
+"Пакеты, предоставляющие отладочную информацию для исполняемых файлов и "
+"динамически подключаемых библиотек."
 
 #: lib/Packages/Sections.pm:24
 msgid "Development"
 msgstr "Разработка"
 
 #: lib/Packages/Sections.pm:25
-msgid ""
-"Development utilities, compilers, development environments, libraries, etc."
-msgstr ""
-"Утилиты для разработки, компиляторы, среды разработки, библиотеки и т.д."
+msgid "Development utilities, compilers, development environments, libraries, etc."
+msgstr "Утилиты для разработки, компиляторы, среды разработки, библиотеки и т.д."
 
 #: lib/Packages/Sections.pm:26
 msgid "Documentation"
@@ -139,19 +138,19 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:38
 msgid "GNU R"
-msgstr ""
+msgstr "GNU R"
 
 #: lib/Packages/Sections.pm:39
 msgid "Everything about GNU R, a statistical computation and graphics system."
-msgstr ""
+msgstr "Всё, что связано с GNU R, системы для статистической обработки данных и работы с графикой."
 
 #: lib/Packages/Sections.pm:40
 msgid "GNUstep"
-msgstr ""
+msgstr "GNUstep"
 
 #: lib/Packages/Sections.pm:41
 msgid "The GNUstep environment."
-msgstr ""
+msgstr "Окружение GNUstep."
 
 #: lib/Packages/Sections.pm:42
 msgid "Graphics"
@@ -159,8 +158,7 @@ msgstr "Графика"
 
 #: lib/Packages/Sections.pm:43
 msgid "Editors, viewers, converters... Everything to become an artist."
-msgstr ""
-"Редакторы, программы просмотра, конвертеры... Всё, чтобы стать художником."
+msgstr "Редакторы, программы просмотра, конвертеры... Всё, чтобы стать художником."
 
 #: lib/Packages/Sections.pm:44
 msgid "Ham Radio"
@@ -172,31 +170,29 @@ msgstr "ПО для любительского радио."
 
 #: lib/Packages/Sections.pm:46
 msgid "Fonts"
-msgstr ""
+msgstr "Шрифты"
 
 #: lib/Packages/Sections.pm:47
-#, fuzzy
 #| msgid "Virtual packages."
 msgid "Font packages."
-msgstr "Виртуальные пакеты."
+msgstr "Пакеты с шрифтами."
 
 #: lib/Packages/Sections.pm:48
 msgid "Haskell"
-msgstr ""
+msgstr "Haskell"
 
 #: lib/Packages/Sections.pm:49
 msgid "Everything about Haskell."
-msgstr ""
+msgstr "Всё, что связано с Haskell."
 
 #: lib/Packages/Sections.pm:50
-#, fuzzy
 #| msgid "Web Software"
 msgid "Web Servers"
-msgstr "Программы для WEB"
+msgstr "Веб-серверы"
 
 #: lib/Packages/Sections.pm:51
 msgid "Web servers and their modules."
-msgstr ""
+msgstr "Веб-серверы и их модули."
 
 #: lib/Packages/Sections.pm:52
 msgid "Interpreters"
@@ -204,24 +200,23 @@ msgstr "Интерпретаторы"
 
 #: lib/Packages/Sections.pm:53
 msgid "All kind of interpreters for interpreted languages. Macro processors."
-msgstr ""
-"Всевозможные интерпретаторы для интерпретируемых языков. Макропроцессоры."
+msgstr "Всевозможные интерпретаторы для интерпретируемых языков. Макропроцессоры."
 
 #: lib/Packages/Sections.pm:54
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: lib/Packages/Sections.pm:55
 msgid "Everything about Java."
-msgstr ""
+msgstr "Всё, что связано с Java."
 
 #: lib/Packages/Sections.pm:56
 msgid "Kernels"
-msgstr ""
+msgstr "Ядра"
 
 #: lib/Packages/Sections.pm:57
 msgid "Operating System Kernels and related modules."
-msgstr ""
+msgstr "Ядра операционной системы и их модули."
 
 #: lib/Packages/Sections.pm:58
 msgid "KDE"
@@ -257,19 +252,19 @@ msgstr "Библиотеки, необходимые разработчикам 
 
 #: lib/Packages/Sections.pm:64
 msgid "Lisp"
-msgstr ""
+msgstr "Lisp"
 
 #: lib/Packages/Sections.pm:65
 msgid "Everything about Lisp."
-msgstr ""
+msgstr "Всё, что связано с Lisp."
 
 #: lib/Packages/Sections.pm:66
 msgid "Language packs"
-msgstr ""
+msgstr "Языковые пакеты"
 
 #: lib/Packages/Sections.pm:67
 msgid "Localization support for big software packages."
-msgstr ""
+msgstr "Поддержка локализации больших пакетов ПО."
 
 #: lib/Packages/Sections.pm:68
 msgid "Mail"
@@ -300,10 +295,8 @@ msgid "Network"
 msgstr "Сеть"
 
 #: lib/Packages/Sections.pm:75
-msgid ""
-"Daemons and clients to connect your Debian GNU/Linux system to the world."
-msgstr ""
-"Сервисы и клиенты для соединения вашей системы Debian GNU/Linux с миром."
+msgid "Daemons and clients to connect your Debian GNU/Linux system to the world."
+msgstr "Службы и клиенты для соединения вашей системы Debian GNU/Linux с миром."
 
 #: lib/Packages/Sections.pm:76
 msgid "Newsgroups"
@@ -327,11 +320,11 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:80
 msgid "OCaml"
-msgstr ""
+msgstr "OCaml"
 
 #: lib/Packages/Sections.pm:81
 msgid "Everything about OCaml, an ML language implementation."
-msgstr ""
+msgstr "Всё, что связано с OCaml, реализации языка ML."
 
 #: lib/Packages/Sections.pm:82
 msgid "Other OS's and file systems"
@@ -355,11 +348,11 @@ msgstr "Всё для Perl, интерпретируемом языке сцен
 
 #: lib/Packages/Sections.pm:86
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: lib/Packages/Sections.pm:87
 msgid "Everything about PHP."
-msgstr ""
+msgstr "Всё, что связано с PHP."
 
 #: lib/Packages/Sections.pm:88
 msgid "Python"
@@ -375,17 +368,14 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:90
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #: lib/Packages/Sections.pm:91
-#, fuzzy
 #| msgid ""
 #| "Everything about Python, an interpreted, interactive object oriented "
 #| "language."
 msgid "Everything about Ruby, an interpreted object oriented language."
-msgstr ""
-"Всё для Python, интерпретируемом, интерактивном, объектно-ориентированном "
-"языке."
+msgstr "Всё, что связано с Ruby, интерпретируемом, объектно-ориентированном языком."
 
 #: lib/Packages/Sections.pm:92
 msgid "Science"
@@ -408,8 +398,7 @@ msgid "Sound"
 msgstr "Звук"
 
 #: lib/Packages/Sections.pm:97
-msgid ""
-"Utilities to deal with sound: mixers, players, recorders, CD players, etc."
+msgid "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Утилиты для работы со звуком: микшеры, проигрыватели, программы записи, "
 "проигрыватели CD и т.д."
@@ -454,19 +443,19 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:106
 msgid "Version Control Systems"
-msgstr ""
+msgstr "Системы контроля версий"
 
 #: lib/Packages/Sections.pm:107
 msgid "Version control systems and related utilities."
-msgstr ""
+msgstr "Системы контроля версий и связанные с ними утилиты."
 
 #: lib/Packages/Sections.pm:108
 msgid "Video"
-msgstr ""
+msgstr "Видео"
 
 #: lib/Packages/Sections.pm:109
 msgid "Video viewers, editors, recording, streaming."
-msgstr ""
+msgstr "Программы для просмотра, редактирования, трансляции видео."
 
 #: lib/Packages/Sections.pm:110
 msgid "Virtual packages"
@@ -498,19 +487,19 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:116
 msgid "Xfce"
-msgstr ""
+msgstr "Xfce"
 
 #: lib/Packages/Sections.pm:117
 msgid "Xfce, a fast and lightweight Desktop Environment."
-msgstr ""
+msgstr "Xfce, быстрое и легковесное окружение рабочего стола."
 
 #: lib/Packages/Sections.pm:118
 msgid "Zope/Plone Framework"
-msgstr ""
+msgstr "Инфраструктура Zope/Plone"
 
 #: lib/Packages/Sections.pm:119
 msgid "Zope Application Server and Plone Content Managment System."
-msgstr ""
+msgstr "Сервер приложений Zope и система управления содержимым Plone."
 
 #: lib/Packages/Sections.pm:120
 msgid "debian-installer udeb packages"
@@ -523,3 +512,4 @@ msgid ""
 msgstr ""
 "Специальные пакеты для сборки адаптированных вариаций debian-installer. Не "
 "устанавливайте их в рабочую систему!"
+
