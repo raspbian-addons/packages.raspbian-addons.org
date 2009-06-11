@@ -108,6 +108,10 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr ""
@@ -136,27 +140,27 @@ msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "Pohjois-Amerikka"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "Etelä-Amerikka"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "Aasia"
 
-#: templates/config/mirrors.tmpl:188
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "Australia ja Uusi-Seelanti"
 
-#: templates/config/mirrors.tmpl:189
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "Eurooppa"
 
-#: templates/config/mirrors.tmpl:190
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "Afrikka"
 
@@ -1082,92 +1086,78 @@ msgstr "Muodostettu:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Lisenssiehdot sivulla <URL:%s>."
 
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Tämä sivu on saatavilla myös seuraavilla kielillä:"
+
+#~ msgid "Back to:"
+#~ msgstr "Takaisin:"
+
 #, fuzzy
-#~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
-#~ "s/\">Pakettien hakusivulle</a>"
+#~ msgid "Packages search page"
+#~ msgstr "Kaikki jakelun \"%s\" Debian-paketit"
 
-#~ msgid "Virtual package"
-#~ msgstr "Näennäispaketti"
-
-#~ msgid "Package not available"
-#~ msgstr "Paketti ei saatavilla"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Ohjelmistopaketit jakelussa \"%s\" tärkeysasteella %s"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Imuroi %s\n"
-
-#~ msgid "virtual package"
-#~ msgstr "näennäispaketti"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Tämän jakelun yleiskuva"
-
-#~ msgid "md5sum"
-#~ msgstr "MD5-summa"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
-
-#~ msgid "Source Package:"
-#~ msgstr "Lähdepaketti:"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Katso <a href=\"%s\">Debian-muutoslokia</a>"
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Katso <a href=\"%s\">copyright-tiedostoa</a>"
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s on vastuussa tästä Debian-paketista."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " ja %s ovat vastuussa tästä Debian-paketista."
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr "Katso <a href=\"%s\">paketin %s kehittäjätietoja</a>."
-
-#~ msgid "Debian Project"
-#~ msgstr "Debian-projekti"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "Tietoja&nbsp;Debianista"
-
-#~ msgid "News"
-#~ msgstr "Uutiset"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Debianin&nbsp;hankkiminen"
-
-#~ msgid "Support"
-#~ msgstr "Tuki"
-
-#~ msgid "Development"
-#~ msgstr "Kehitys"
-
-#~ msgid "Site map"
-#~ msgstr "Sivustokartta"
+#~ msgid "Versions:"
+#~ msgstr "Versiot:"
 
 #~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
 #~ msgstr ""
-#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
-#~ "s/\">Pakettien hakusivulle</a>"
+#~ "Copyright © 1997-2005 SPI;\n"
+#~ "Katso lisenssiehdot sivulta <URL:http://www.debian.org/license>.\n"
+#~ "\n"
 
-#~ msgid "Last Modified: "
-#~ msgstr "Viimeksi muutettu: "
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Kokoelmassa ei ole välttämättömiä paketteja"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Ohjelmistopaketit jakelussa \"%s\", välttämättömät paketit"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Kokoelmassa ei ole paketteja tällä tärkeysasteella"
 
 #~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
 #~ msgstr ""
-#~ "Debian on Software in the Public Interest, Inc.'in rekisteröimä "
-#~ "tavaramerkki."
+#~ "Varoitus: Nämä paketit on tarkoitettu käytettäväksi vain rakennettaessa "
+#~ "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
+#~ "asentimen</a> vedoksia. Älä asenna normaaliin Debian-järjestelmään."
+
+#~ msgid "yes"
+#~ msgstr "kyllä"
+
+#~ msgid "Priority"
+#~ msgstr "Tärkeys"
+
+#~ msgid "Uploaders"
+#~ msgstr "Uploadaajat"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Koko mitataan kilotavuissa."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Kokeellisten pakettien käyttäjiä kehotetaan ottamaan ongelmatapauksissa "
+#~ "yhteyttä suoraan paketin ylläpitäjiin."
+
+#~ msgid ""
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Paketit, jotka on lisätty komponenttiin \"%s\" epävakaaseen Debian-"
+#~ "arkistoon viimeisen seitsemän (7) päivän aikana."
+
+#~ msgid ""
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Seuraavat paketit on lisätty komponenttiin \"%s\" Debian-arkistoon "
+#~ "viimeisen seitsemän (7) päivän aikana."
 
 #~ msgid ""
 #~ "Warning: The <span class=\"pred\">experimental</span> distribution "
@@ -1181,74 +1171,88 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 #~ "paketin kaikesta huolimatta, otat vastuun itsellesi."
 
 #~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
+#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
 #~ msgstr ""
-#~ "Seuraavat paketit on lisätty komponenttiin \"%s\" Debian-arkistoon "
-#~ "viimeisen seitsemän (7) päivän aikana."
+#~ "Debian on Software in the Public Interest, Inc.'in rekisteröimä "
+#~ "tavaramerkki."
+
+#~ msgid "Last Modified: "
+#~ msgstr "Viimeksi muutettu: "
 
 #~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
+#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+#~ "\">Packages search page</a>"
 #~ msgstr ""
-#~ "Paketit, jotka on lisätty komponenttiin \"%s\" epävakaaseen Debian-"
-#~ "arkistoon viimeisen seitsemän (7) päivän aikana."
+#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
+#~ "s/\">Pakettien hakusivulle</a>"
 
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Kokeellisten pakettien käyttäjiä kehotetaan ottamaan ongelmatapauksissa "
-#~ "yhteyttä suoraan paketin ylläpitäjiin."
+#~ msgid "Site map"
+#~ msgstr "Sivustokartta"
 
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "Koko mitataan kilotavuissa."
+#~ msgid "Development"
+#~ msgstr "Kehitys"
 
-#~ msgid "Uploaders"
-#~ msgstr "Uploadaajat"
+#~ msgid "Support"
+#~ msgstr "Tuki"
 
-#~ msgid "Priority"
-#~ msgstr "Tärkeys"
+#~ msgid "Getting&nbsp;Debian"
+#~ msgstr "Debianin&nbsp;hankkiminen"
 
-#~ msgid "yes"
-#~ msgstr "kyllä"
+#~ msgid "News"
+#~ msgstr "Uutiset"
 
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Varoitus: Nämä paketit on tarkoitettu käytettäväksi vain rakennettaessa "
-#~ "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
-#~ "asentimen</a> vedoksia. Älä asenna normaaliin Debian-järjestelmään."
+#~ msgid "About&nbsp;Debian"
+#~ msgstr "Tietoja&nbsp;Debianista"
 
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Kokoelmassa ei ole paketteja tällä tärkeysasteella"
+#~ msgid "Debian Project"
+#~ msgstr "Debian-projekti"
 
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Ohjelmistopaketit jakelussa \"%s\", välttämättömät paketit"
+#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
+#~ msgstr "Katso <a href=\"%s\">paketin %s kehittäjätietoja</a>."
 
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Kokoelmassa ei ole välttämättömiä paketteja"
+#~ msgid " and %s are responsible for this Debian package."
+#~ msgstr " ja %s ovat vastuussa tästä Debian-paketista."
 
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright © 1997-2005 SPI;\n"
-#~ "Katso lisenssiehdot sivulta <URL:http://www.debian.org/license>.\n"
-#~ "\n"
+#~ msgid "%s is responsible for this Debian package."
+#~ msgstr "%s on vastuussa tästä Debian-paketista."
 
-#~ msgid "Versions:"
-#~ msgstr "Versiot:"
+#~ msgid "View the <a href=\"%s\">copyright file</a>"
+#~ msgstr "Katso <a href=\"%s\">copyright-tiedostoa</a>"
+
+#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
+#~ msgstr "Katso <a href=\"%s\">Debian-muutoslokia</a>"
+
+#~ msgid "Source Package:"
+#~ msgstr "Lähdepaketti:"
+
+#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+#~ msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
+
+#~ msgid "md5sum"
+#~ msgstr "MD5-summa"
+
+#~ msgid "Overview over this distribution"
+#~ msgstr "Tämän jakelun yleiskuva"
+
+#~ msgid "virtual package"
+#~ msgstr "näennäispaketti"
+
+#~ msgid "Download %s\n"
+#~ msgstr "Imuroi %s\n"
+
+#~ msgid "Software Packages in \"%s\", priority %s"
+#~ msgstr "Ohjelmistopaketit jakelussa \"%s\" tärkeysasteella %s"
+
+#~ msgid "Package not available"
+#~ msgstr "Paketti ei saatavilla"
+
+#~ msgid "Virtual package"
+#~ msgstr "Näennäispaketti"
 
 #, fuzzy
-#~ msgid "Packages search page"
-#~ msgstr "Kaikki jakelun \"%s\" Debian-paketit"
-
-#~ msgid "Back to:"
-#~ msgstr "Takaisin:"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Tämä sivu on saatavilla myös seuraavilla kielillä:"
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "Takaisin: <a href=\"%s/\">Debian-projektin kotisivulle</a> || <a href=\"%"
+#~ "s/\">Pakettien hakusivulle</a>"

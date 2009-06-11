@@ -1,0 +1,2094 @@
+# Slovak translations of packages.debian.org
+# This file is put in the public domain.
+# Ivan Masár <helix84@centrum.sk>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: templates\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-03 12:09+0200\n"
+"PO-Revision-Date: 2009-06-09 14:32+0100\n"
+"Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+
+#: templates/config.tmpl:43
+msgid "Debian Web Mailinglist"
+msgstr "Konferencia webu Debian"
+
+#: templates/config.tmpl:48
+msgid "%s Webmaster"
+msgstr "Webmaster %s"
+
+#: templates/config.tmpl:51
+msgid "%s is a <a href=\"%s\">trademark</a> of %s"
+msgstr "%s je <a href=\"%s\">obchodná značka</a> %s"
+
+#: templates/config.tmpl:66
+msgid "Please note that this is an experimental version of <a href=\"http://%s/\">%s</a>. Errors and obsolete information should be expected"
+msgstr "Všimnite si prosím, že toto je experimentálna verzia <a href=\"http://%s/\">%s</a>. Mali by ste očakávať chyby a zastaralé informácie"
+
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#: templates/config.tmpl:69
+msgid "."
+msgstr "."
+
+#: templates/config.tmpl:70
+msgid ","
+msgstr ","
+
+#: templates/config/architectures.tmpl:4
+msgid "Intel x86"
+msgstr "Intel x86"
+
+#: templates/config/architectures.tmpl:5
+msgid "Motorola 680x0"
+msgstr "Motorola 680x0"
+
+#: templates/config/architectures.tmpl:6
+msgid "SPARC"
+msgstr "SPARC"
+
+#: templates/config/architectures.tmpl:7
+msgid "Alpha"
+msgstr "Alpha"
+
+#: templates/config/architectures.tmpl:8
+msgid "PowerPC"
+msgstr "PowerPC"
+
+#: templates/config/architectures.tmpl:9
+msgid "ARM"
+msgstr "ARM"
+
+#: templates/config/architectures.tmpl:10
+msgid "HP PA-RISC"
+msgstr "HP PA-RISC"
+
+#: templates/config/architectures.tmpl:11
+msgid "Intel IA-64"
+msgstr "Intel IA-64"
+
+#: templates/config/architectures.tmpl:12
+msgid "MIPS (big-endian)"
+msgstr "MIPS (big-endian)"
+
+#: templates/config/architectures.tmpl:13
+msgid "MIPS (little-endian)"
+msgstr "MIPS (little-endian)"
+
+#: templates/config/architectures.tmpl:14
+msgid "IBM S/390"
+msgstr "IBM S/390"
+
+#: templates/config/architectures.tmpl:15
+msgid "Hurd (i386)"
+msgstr "Hurd (i386)"
+
+#: templates/config/architectures.tmpl:16
+msgid "AMD64"
+msgstr "AMD64"
+
+#: templates/config/architectures.tmpl:17
+msgid "EABI ARM"
+msgstr "EABI ARM"
+
+#: templates/config/architectures.tmpl:18
+msgid "GNU/kFreeBSD (i386)"
+msgstr "GNU/kFreeBSD (i386)"
+
+#: templates/config/architectures.tmpl:19
+msgid "GNU/kFreeBSD (amd64)"
+msgstr "GNU/kFreeBSD (amd64)"
+
+#: templates/config/archive_layout.tmpl:14
+msgid "packages that meet the Debian Free Software Guidelines"
+msgstr "balíky zodpovedajúce Určeniu slobodného softvéru Debianu (DFSG)"
+
+#: templates/config/archive_layout.tmpl:15
+msgid "packages that meet the Debian Free Software Guidelines but need software not in Debian main"
+msgstr "balíky zodpovedajúce Určeniu slobodného softvéru Debianu (DFSG) ale vyžadujúce softvér, ktorý sa nenachádza v Debian main"
+
+#: templates/config/archive_layout.tmpl:16
+msgid "packages that do not meet the Debian Free Software Guidelines"
+msgstr "balíky nezodpovedajúce Určeniu slobodného softvéru Debianu (DFSG)"
+
+#: templates/config/mirrors.tmpl:92
+msgid "volatile packages that need major changes during the life of a stable release"
+msgstr "balíky volatile, ktoré vyžadujú počas života stabilného vydania veľké zmeny"
+
+#: templates/config/mirrors.tmpl:132
+msgid "newer packages that have been adapted to stable releases of Debian"
+msgstr "novšie balíky, ktoré boli prispôsobené pre stabilné vydania Debianu"
+
+#: templates/config/mirrors.tmpl:160
+msgid "ports of packages to architectures not yet or not anymore available in Debian"
+msgstr "porty balíkov na architektúry, ktoré zatiaľ alebo už nie sú v Debiane dostupné"
+
+#: templates/config/mirrors.tmpl:185
+msgid "North America"
+msgstr "Severná Amerika"
+
+#: templates/config/mirrors.tmpl:186
+msgid "South America"
+msgstr "Južná Amerika"
+
+#: templates/config/mirrors.tmpl:187
+msgid "Asia"
+msgstr "Ázia"
+
+#: templates/config/mirrors.tmpl:188
+msgid "Australia and New Zealand"
+msgstr "Austrália a Nový Zéland"
+
+#: templates/config/mirrors.tmpl:189
+msgid "Europe"
+msgstr "Európa"
+
+#: templates/config/mirrors.tmpl:190
+msgid "Africa"
+msgstr "Afrika"
+
+#: templates/html/download.tmpl:2
+msgid "Package Download Selection -- %s"
+msgstr "Výber balíka na stiahnutie -- %s"
+
+#: templates/html/download.tmpl:5
+#: templates/html/filelist.tmpl:5
+#: templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
+msgid "Distribution:"
+msgstr "Distribúcia:"
+
+#: templates/html/download.tmpl:5
+#: templates/html/filelist.tmpl:5
+#: templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
+msgid "Overview over this suite"
+msgstr "Prehľad tejto sady"
+
+#: templates/html/download.tmpl:6
+#: templates/html/filelist.tmpl:6
+#: templates/html/show.tmpl:17
+msgid "Package:"
+msgstr "Balík:"
+
+#: templates/html/download.tmpl:8
+msgid "Download"
+msgstr "Stiahnuť"
+
+#: templates/html/download.tmpl:17
+msgid "Download Page for <kbd>%s</kbd> on %s machines"
+msgstr "Sťahovacia stránka pre <kbd>%s</kbd> na strojoch %s"
+
+#: templates/html/download.tmpl:19
+msgid "Download Page for <kbd>%s</kbd>"
+msgstr "Sťahovacia stránka pre <kbd>%s</kbd>"
+
+#: templates/html/download.tmpl:23
+msgid "If you are running %s, it is strongly suggested to use a package manager like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download and install packages, instead of doing so manually via this website."
+msgstr "Ak používate %s, dôrazne sa odporúča používať správcu balíkov ako <a href=\"%s\">aptitude</a> alebo <a href=\"%s\">synaptic</a> na sťahovanie a inštaláciu balíkov namiesto manuálneho sťahovania z tejto webstránky."
+
+#: templates/html/download.tmpl:25
+msgid "You should be able to use any of the listed mirrors by adding a line to your <kbd>/etc/apt/sources.list</kbd> like this:"
+msgstr "Mali by ste byť schopný použiť ktorékoľvek z uvedených zrkadiel pridaním riadka do vášho súboru <kbd>/etc/apt/sources.list</kbd> takto:"
+
+#: templates/html/download.tmpl:30
+#: templates/html/download.tmpl:39
+msgid "Replacing <em>%s</em> with the mirror in question."
+msgstr "Kde <em>%s</em> nahradíte dotyčným zrkadlom."
+
+#: templates/html/download.tmpl:42
+#: templates/html/show.tmpl:169
+msgid "Experimental package"
+msgstr "Experimentálny balík"
+
+#: templates/html/download.tmpl:43
+msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the changelog and other possible documentation before using it."
+msgstr "Upozornenie: Tento balík pochádza z distribúcie <strong>experimental</strong>. To znamená, že je pravdepodobne nestabilný alebo obsahuje chyby a môže dokonca spôsobiť stratu údajov. predtým než ho začnete používať sa prosím pozrite do záznamu zmien a ďalšej možnej dokumentácie."
+
+#: templates/html/download.tmpl:46
+#: templates/html/show.tmpl:174
+msgid "debian-installer udeb package"
+msgstr "udeb balík inštalátora debianu"
+
+#: templates/html/download.tmpl:47
+#: templates/html/show.tmpl:175
+msgid "Warning: This package is intended for the use in building <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do not install it on a normal %s system."
+msgstr "Upozornenie: Tento balík je určený iba na zostavovanie obrazov <a href=\"http://www.debian.org/devel/debian-installer\">inštalátora Debianu</a>. Neinštalujte ho na normálnom systéme %s."
+
+#: templates/html/download.tmpl:54
+msgid "You can download the requested file from the <tt>%s</tt> subdirectory at any of these sites:"
+msgstr "Požadovaný súbor môžete stiahnuť z podadresára <tt>%s</tt> na ktorejkoľvek z týchto lokalít:"
+
+#: templates/html/download.tmpl:80
+msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgstr "Požadovaný súbor môžete stiahnuť z podadresára <tt>%s</tt> na:"
+
+#: templates/html/download.tmpl:82
+msgid "%s security updates are officially distributed only via <tt>%s</tt>."
+msgstr "Bezpečnostné aktualizácie %s sa oficiálne šíria iba prostredníctvom <tt>%s</tt>."
+
+#: templates/html/download.tmpl:89
+msgid "If none of the above sites are fast enough for you, please see our <a href=\"%s\">complete mirror list</a>."
+msgstr "Ak žiadna z hore uvedených lokalít pre vás nie je dosť rýchla, pozrite si prosím náš <a href=\"%s\">úplný zoznam zrkadiel</a>."
+
+#: templates/html/download.tmpl:97
+msgid "Note that %s is not officially included in the %s archive, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href=\"%s\">%s ports page</a> for current information."
+msgstr "Všimnite si, že %s nie je oficiálne súčasťou archívu %s, ale skupina porterov %s udržiava svoj archív synchronizovaný s oficiálnym archívom v čo nabližšej možnej miere. Aktuálne informácie nájdete na <a href=\"%s\">stránke portov %s</a>."
+
+#: templates/html/download.tmpl:101
+msgid "Note that in some browsers you will need to tell your browser you want the file saved to a file. For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL."
+msgstr "V niektorých prehliadačoch budete musieť prehliadaču povedať, že chcete súbor uložiť na disk. Napr. vo Firefoxe alebo Mozille by ste bali pri kliknutí na odkaz podržať kláves Shift."
+
+#: templates/html/download.tmpl:105
+msgid "More information on <kbd>%s</kbd>:"
+msgstr "Ďalšie informácie o <kbd>%s</kbd>:"
+
+#: templates/html/download.tmpl:107
+msgid "Exact Size"
+msgstr "Presná veľkosť"
+
+#: templates/html/download.tmpl:107
+msgid "%s Byte (%s %s)"
+msgstr "%s bajtov (%s %s)"
+
+#: templates/html/download.tmpl:108
+#: templates/html/show.tmpl:345
+msgid "MD5 checksum"
+msgstr "kontrolný súčet MD5"
+
+#: templates/html/download.tmpl:109
+msgid "SHA1 checksum"
+msgstr "kontrolný súčet SHA1"
+
+#: templates/html/download.tmpl:109
+#: templates/html/download.tmpl:110
+msgid "Not Available"
+msgstr "Nedostupné"
+
+#: templates/html/download.tmpl:110
+msgid "SHA256 checksum"
+msgstr "kontrolný súčet SHA256"
+
+#: templates/html/filelist.tmpl:2
+msgid "Filelist of package %s/%s/%s"
+msgstr "Zoznam súborov balíka %s/%s/%s"
+
+#: templates/html/filelist.tmpl:3
+msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr "Zoznam súborov balíka <em>%s</em> v <em>%s</em> architektúry <em>%s</em>"
+
+#: templates/html/filelist.tmpl:8
+msgid "Filelist"
+msgstr "Zoznam súborov"
+
+#: templates/html/foot.tmpl:11
+msgid "This page is also available in the following languages (How to set <a href=\"%s\">the default document language</a>):"
+msgstr "Táto stránka je tiež dostupná v nasledovných jazykov (Ako nastaviť <a href=\"%s\">predvolený jazyk dokumentov</a>):"
+
+#: templates/html/foot.tmpl:28
+msgid "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the %s <a href=\"%s\">contact page</a>."
+msgstr "Ak chcete nahlásiť problém s touto webstránkou, pošlite e-mail na adresu <a href=\"mailto:%s\">%s</a>. Ďalšie kontaktné informácie nájdete na %s <a href=\"%s\">stránke kontaktov</a>."
+
+#: templates/html/foot.tmpl:32
+msgid "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s\">license terms</a>."
+msgstr "Obsah je Copyright &copy; %s <a href=\"%s\">%s</a>; Pozri <a href=\"%s\">licenčné podmienky</a>."
+
+#: templates/html/foot.tmpl:35
+msgid "Learn more about this site"
+msgstr "Dozvedieť sa viac o tejto stránke"
+
+#: templates/html/foot.tmpl:41
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
+msgstr "Túto službu sponzoruje <a href=\"%s\">%s</a>."
+
+#: templates/html/head.tmpl:47
+msgid "Search"
+msgstr "Hľadať"
+
+#: templates/html/head.tmpl:50
+msgid "package names"
+msgstr "názvy balíkov"
+
+#: templates/html/head.tmpl:51
+msgid "descriptions"
+msgstr "popisy"
+
+#: templates/html/head.tmpl:52
+msgid "source package names"
+msgstr "názvy zdrojových balíkov"
+
+#: templates/html/head.tmpl:53
+msgid "package contents"
+msgstr "obsah balíkov"
+
+#: templates/html/head.tmpl:56
+msgid "all options"
+msgstr "všetky možnosti"
+
+#: templates/html/head.tmpl:63
+msgid "skip the navigation"
+msgstr "preskočiť navigáciu"
+
+#: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "Domovská stránka %s"
+
+#: templates/html/head.tmpl:66
+msgid "%s Packages Homepage"
+msgstr "Domovská stránka balíkov %s"
+
+#: templates/html/head.tmpl:66
+#: templates/html/search_contents.tmpl:100
+#: templates/html/search_contents.tmpl:124
+msgid "Packages"
+msgstr "Balíky"
+
+#: templates/html/index_head.tmpl:2
+msgid "Source Packages in \"%s\", %s %s"
+msgstr "Zdrojové balíky v „%s“, %s %s"
+
+#: templates/html/index_head.tmpl:3
+msgid "Source Packages in \"%s\""
+msgstr "Zdrojové balíky v „%s“"
+
+#: templates/html/index_head.tmpl:5
+msgid "Software Packages in \"%s\", %s %s"
+msgstr "Balíky softvéru v „%s“, %s %s"
+
+#: templates/html/index_head.tmpl:6
+msgid "Software Packages in \"%s\""
+msgstr "Balíky softvéru v „%s“"
+
+#: templates/html/index_head.tmpl:13
+msgid "All Packages"
+msgstr "Všetky balíky"
+
+#: templates/html/index_head.tmpl:15
+#: templates/html/show.tmpl:15
+#: templates/html/suite_index.tmpl:2
+msgid "Source"
+msgstr "Zdroj"
+
+#: templates/html/newpkg.tmpl:2
+#: templates/html/newpkg.tmpl:7
+msgid "New Packages in \"%s\""
+msgstr "Nové balíky v „%s“"
+
+#: templates/html/newpkg.tmpl:11
+msgid "The following packages were added to suite <em>%s</em> (section %s) in the %s archive during the last 7 days."
+msgstr "Nasledovné balíky boli pridané do sady  <em>%s</em> (sekcia %s) v archíve %s za posledných 7 dní."
+
+#: templates/html/newpkg.tmpl:14
+msgid "The following packages were added to suite <em>%s</em> in the %s archive during the last 7 days."
+msgstr "Nasledovné balíky boli pridané do sady  <em>%s</em> v archíve %s za posledných 7 dní."
+
+#: templates/html/newpkg.tmpl:18
+msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
+msgstr "Tento zoznam si tiež môžete pozrieť <a href=\"%s\">zoradený podľa názvu</a>."
+
+#: templates/html/newpkg.tmpl:20
+msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
+msgstr "Tento zoznam si tiež môžete pozrieť <a href=\"%s\">zoradený podľa veku</a>."
+
+#: templates/html/newpkg.tmpl:22
+msgid "This information is also available as an <a href=\"newpkg?format=rss\">RSS feed</a>"
+msgstr "Tieto informácie sú tiež dostupné vo forme <a href=\"newpkg?format=rss\">kanála RSS</a>"
+
+#: templates/html/newpkg.tmpl:23
+msgid "[RSS 1.0 Feed]"
+msgstr "[kanál RSS 1.0]"
+
+#: templates/html/newpkg.tmpl:28
+msgid " <em>(%u days old)</em>"
+msgstr " <em>(%u dní starý)</em>"
+
+#: templates/html/newpkg.tmpl:32
+#: templates/html/suite_index.tmpl:39
+msgid "List of all packages"
+msgstr "Zoznam všetkých balíkov"
+
+#: templates/html/newpkg.tmpl:32
+#: templates/html/suite_index.tmpl:41
+msgid "All packages"
+msgstr "Všetky balíky"
+
+#: templates/html/newpkg.tmpl:33
+#: templates/html/suite_index.tmpl:45
+msgid "compact compressed textlist"
+msgstr "komprimovaný kompaktný textový zoznam"
+
+#: templates/html/newpkg.tmpl:34
+msgid "New packages in "
+msgstr "Nové balíky v "
+
+#: templates/html/search.tmpl:20
+msgid "Package Search Results -- %s"
+msgstr "Výsledky hľadania balíkov -- %s"
+
+#: templates/html/search.tmpl:29
+msgid "Package Search Results"
+msgstr "Výsledky hľadania balíkov"
+
+#: templates/html/search.tmpl:36
+msgid "You have searched only for words exactly matching your keywords. You can try to search <a href=\"%s\">allowing subword matching</a>."
+msgstr "Hľadali ste iba výrazy presne vyhovujúce vašim kľúčovým slovám. Môžete skúsiť hľadať aj <a href=\"%s\">kľúčové slová ako časti slov</a>."
+
+#: templates/html/search.tmpl:41
+msgid "Search in specific suite:"
+msgstr "Hľadať v konkrétnej sade:"
+
+#: templates/html/search.tmpl:50
+msgid "Search in <a href=\"%s\">all suites</a>"
+msgstr "Hľadať <a href=\"%s\">vo všetkých sadách</a>"
+
+#: templates/html/search.tmpl:54
+#: templates/html/search_contents.tmpl:58
+msgid "Limit search to a specific architecture:"
+msgstr "Obmedziť hľadanie na konkrétnu architektúru:"
+
+#: templates/html/search.tmpl:63
+#: templates/html/search_contents.tmpl:63
+msgid "Search in <a href=\"%s\">all architectures</a>"
+msgstr "Hľadať <a href=\"%s\">vo všetkých architektúrach</a>"
+
+#: templates/html/search.tmpl:70
+msgid "<a href=\"%s\">Some</a> results have not been displayed due to the search parameters."
+msgstr "<a href=\"%s\">Niektoré</a> výsledky neboli zobrazené kvôli parametrom vyhľadávania."
+
+#: templates/html/search.tmpl:79
+msgid "all suites"
+msgstr "všetky sady"
+
+#: templates/html/search.tmpl:79
+msgid "suite(s) <em>%s</em>"
+msgstr "sady <em>%s</em>"
+
+#: templates/html/search.tmpl:80
+#: templates/html/search_contents.tmpl:72
+msgid "all sections"
+msgstr "všetky sekcie"
+
+#: templates/html/search.tmpl:80
+#: templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "sekcie <em>%s</em>"
+
+#: templates/html/search.tmpl:81
+#: templates/html/search_contents.tmpl:73
+msgid "all architectures"
+msgstr "všetky architektúry"
+
+#: templates/html/search.tmpl:81
+#: templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "architektúry <em>%s</em>"
+
+#: templates/html/search.tmpl:83
+msgid "source packages"
+msgstr "zdrojové balíky"
+
+#: templates/html/search.tmpl:83
+msgid "packages"
+msgstr "balíky"
+
+#: templates/html/search.tmpl:84
+msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgstr "Hľadali ste %s ktorých názvy obsahujú <em>%s</em> v %s, %s a %s."
+
+#: templates/html/search.tmpl:87
+msgid " (including subword matching)"
+msgstr " (vrátane častí slov)"
+
+#. @translators: I'm really sorry :/
+#: templates/html/search.tmpl:89
+msgid "You have searched for <em>%s</em> in packages names and descriptions in %s, %s, and %s%s."
+msgstr "Hľadali ste <em>%s</em> v názvoch a popisoch balíkov %s, %s a %s%s."
+
+#: templates/html/search.tmpl:95
+msgid "Found <strong>%u</strong> matching packages."
+msgstr "Našlo sa <strong>%u</strong> zodpovedajúcich balíkov."
+
+#: templates/html/search.tmpl:100
+msgid "Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords."
+msgstr "Pamútajte, že tu sa zobrazujú iba najlepšie výsledky zoradené podľa relevantnosti. Ak prvých pár balíkov nie je to čo hľadáte, skúste použiť ďalšie alebo iné kľúčové slová."
+
+#: templates/html/search.tmpl:104
+msgid "Your keyword was too generic, for optimizing reasons some results might have been suppressed.<br>Please consider using a longer keyword or more keywords."
+msgstr "Vaše kľúčové slovo bolo príliš všeobecné, z dôvodov optimalizácie sa niektoré výsledky nemusia zobraziť.<br>Prosím zvážte použitie dlhších alebo iných kľúčových slov."
+
+#: templates/html/search.tmpl:106
+msgid "Your keyword was too generic.<br>Please consider using a longer keyword or more keywords."
+msgstr "Vaše kľúčové slovo bolo príliš všeobecné.<br>Prosím zvážte použitie dlhších alebo iných kľúčových slov."
+
+#: templates/html/search.tmpl:112
+#: templates/html/search_contents.tmpl:131
+msgid "Sorry, your search gave no results"
+msgstr "Ľutujeme hľadané kľúčové slová nevrátili žiadne výsledky"
+
+#: templates/html/search.tmpl:119
+msgid "Package %s"
+msgstr "Balík %s"
+
+#: templates/html/search.tmpl:131
+msgid "also provided by:"
+msgstr "je tiež poskytovaný balíkom:"
+
+#: templates/html/search.tmpl:131
+msgid "provided by:"
+msgstr "poskytovaný balíkom:"
+
+#: templates/html/search.tmpl:140
+msgid "Source Package %s"
+msgstr "Zdrojový balík %s"
+
+#: templates/html/search.tmpl:147
+msgid "Binary packages:"
+msgstr "Binárne balíky:"
+
+#: templates/html/search.tmpl:149
+msgid "show %u binary packages"
+msgstr "zobraziť %u binárnych balíkov"
+
+#: templates/html/search.tmpl:149
+msgid "hide %u binary packages"
+msgstr "skryť %u binárnych balíkov"
+
+#: templates/html/search.tmpl:159
+msgid "<a href=\"%s\">%u</a> results have not been displayed because you requested only exact matches."
+msgstr "<a href=\"%s\">%u</a> výsledkov nebolo zobrazených, pretože požadujete iba presné výsledky."
+
+#: templates/html/search_contents.tmpl:14
+msgid "Package Contents Search Results -- %s"
+msgstr "Výsledky hľadania v obsahu balíkov -- %s"
+
+#: templates/html/search_contents.tmpl:17
+msgid "Package Contents Search Results"
+msgstr "Výsledky hľadania v obsahu balíkov"
+
+#: templates/html/search_contents.tmpl:34
+msgid "Search for <em>%s</em> within filenames"
+msgstr "Hľadať <em>%s</em> v názvoch súborov"
+
+#: templates/html/search_contents.tmpl:39
+msgid "Search exact filename <em>%s</em>"
+msgstr "Hľadať presný názov súboru <em>%s</em>"
+
+#: templates/html/search_contents.tmpl:44
+msgid "Search for paths ending with <em>%s</em>"
+msgstr "Hľadať cesty končiace na <em>%s</em>"
+
+#: templates/html/search_contents.tmpl:48
+msgid "Search in other suite:"
+msgstr "Hľadať v inej sade:"
+
+#: templates/html/search_contents.tmpl:74
+msgid "paths that end with"
+msgstr "cesty, ktoré končia"
+
+#: templates/html/search_contents.tmpl:76
+msgid "filenames that contain"
+msgstr "názvy súborov, ktoré obsahujú"
+
+#: templates/html/search_contents.tmpl:78
+msgid "files named"
+msgstr "súbory s názvom"
+
+#. @translators: I'm really sorry :/
+#: templates/html/search_contents.tmpl:81
+msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
+msgstr "Hľadali ste %s <em>%s</em> v sade <em>%s</em>, %s a %s."
+
+#: templates/html/search_contents.tmpl:85
+msgid "Found <strong>%u results</strong>."
+msgstr "Nájdených <strong>%u výsledkov</strong>."
+
+#: templates/html/search_contents.tmpl:88
+msgid "Note: Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords."
+msgstr "Pozn.: Vaše hľadanie bolo príliš široké, preto zobrazíme iba približne prvých 100 výsledkov. Prosím zvážte použitie dlhších alebo iných kľúčových slov."
+
+#: templates/html/search_contents.tmpl:97
+msgid "Sort results by filename"
+msgstr "Zoradiť výsledky podľa názvu súboru"
+
+#: templates/html/search_contents.tmpl:98
+#: templates/html/search_contents.tmpl:124
+#: templates/html/show.tmpl:345
+msgid "File"
+msgstr "Súbor"
+
+#: templates/html/search_contents.tmpl:99
+msgid "Sort results by package name"
+msgstr "Zoradiť výsledky podľa názvu balíka"
+
+#: templates/html/search_contents.tmpl:114
+msgid "not %s"
+msgstr "nie %s"
+
+#: templates/html/show.tmpl:15
+msgid "Source packages"
+msgstr "Zdrojové balíky"
+
+#: templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Sekcia:"
+
+#: templates/html/show.tmpl:16
+msgid "All packages in this section"
+msgstr "Všetky balíky v tejto sekcii"
+
+#: templates/html/show.tmpl:22
+msgid "Details of source package %s in %s"
+msgstr "Podrobnosti zdrojového balíka %s v %s"
+
+#: templates/html/show.tmpl:23
+msgid "Details of package %s in %s"
+msgstr "Podrobnosti balíka %s v %s"
+
+#: templates/html/show.tmpl:46
+msgid "Source:"
+msgstr "Zdroj:"
+
+#: templates/html/show.tmpl:46
+msgid "Source package building this package"
+msgstr "Zdrojový balík, z ktorého sa zostavuje tento balík"
+
+#: templates/html/show.tmpl:53
+msgid "Virtual Package: %s"
+msgstr "Virtuálny balík: %s"
+
+#: templates/html/show.tmpl:55
+msgid "Source Package: %s (%s)"
+msgstr "Zdrojový balík: %s (%s)"
+
+#: templates/html/show.tmpl:57
+msgid "Package: %s (%s)"
+msgstr "Balík: %s (%s)"
+
+#: templates/html/show.tmpl:61
+msgid "essential"
+msgstr "nevyhnutné"
+
+#: templates/html/show.tmpl:61
+msgid "package manager will refuse to remove this package by default"
+msgstr "správca balíkov štandardne odmietne odstrániť tento balík"
+
+#: templates/html/show.tmpl:65
+msgid "Links for %s"
+msgstr "Odkazy pre %s"
+
+#: templates/html/show.tmpl:66
+msgid "%s Resources:"
+msgstr "Zdroje %s:"
+
+#: templates/html/show.tmpl:68
+msgid "Bug Reports"
+msgstr "Hlásenia chýb"
+
+#: templates/html/show.tmpl:71
+#: templates/html/show.tmpl:73
+msgid "Developer Information (PTS)"
+msgstr "Informácie pre vývojárov (PTS)"
+
+#: templates/html/show.tmpl:77
+msgid "%s Changelog"
+msgstr "Záznam zmien %s"
+
+#: templates/html/show.tmpl:78
+msgid "Copyright File"
+msgstr "Autori a licencia"
+
+#: templates/html/show.tmpl:82
+msgid "Debian Source Repository"
+msgstr "Zdrojové úložisko Debianu"
+
+#: templates/html/show.tmpl:96
+#: templates/html/show.tmpl:102
+msgid "%s Patch Tracking"
+msgstr "Sledovanie záplat %s"
+
+#: templates/html/show.tmpl:110
+msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgstr "Stiahnuť zdrojový balík <a href=\"%s\">%s</a>:"
+
+#: templates/html/show.tmpl:117
+msgid "Not found"
+msgstr "Nenájdený"
+
+#: templates/html/show.tmpl:122
+msgid "Maintainer:"
+msgstr "Správca:"
+
+#: templates/html/show.tmpl:124
+msgid "Maintainers:"
+msgstr "Správcovia:"
+
+#: templates/html/show.tmpl:137
+msgid "An overview over the maintainer's packages and uploads"
+msgstr "Prehľad balíkov a nahraní správcu"
+
+#: templates/html/show.tmpl:137
+msgid "QA&nbsp;Page"
+msgstr "Stránka&nbsp;QA"
+
+#: templates/html/show.tmpl:138
+msgid "Archive of the Maintainer Mailinglist"
+msgstr "Archív konferencie správcov"
+
+#: templates/html/show.tmpl:138
+msgid "Mail&nbsp;Archive"
+msgstr "Konferencia"
+
+#: templates/html/show.tmpl:146
+msgid "External Resources:"
+msgstr "Externé zdroje:"
+
+#: templates/html/show.tmpl:148
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: templates/html/show.tmpl:154
+msgid "Similar packages:"
+msgstr "Podobné balíky:"
+
+#: templates/html/show.tmpl:170
+msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> and other possible documentation before using it."
+msgstr "Upozornenie: Tento balík pochádza z distribúcie <strong>experimental</strong>. To znamená, že je pravdepodobne nestabilný alebo môže dokonca spôsobiť stratu údajov. predtým než ho začnete používať sa prosím pozrite do <a href=\"%s\">záznamu zmien</a> a ďalšej možnej dokumentácie."
+
+#: templates/html/show.tmpl:194
+msgid "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual packages</a>."
+msgstr "Toto je <em>virtuálny balík</em>. Pozrite si <a href=\"%s\">politiku Debianu</a>, kde nájdete <a href=\"%sch-binary.html#s-virtual_pkg\">definíciu virtuálnych balíkov</a>."
+
+#: templates/html/show.tmpl:202
+msgid "Tags"
+msgstr "Značky"
+
+#: templates/html/show.tmpl:225
+msgid "Packages providing %s"
+msgstr "Balíky poskytujúce %s"
+
+#: templates/html/show.tmpl:234
+msgid "The following binary packages are built from this source package:"
+msgstr "Nasledovné binárne balíky sú zostavované z tohto zdrojového balíka:"
+
+#: templates/html/show.tmpl:243
+msgid "Other Packages Related to %s"
+msgstr "Ostatné balíky súvisiace s %s"
+
+#: templates/html/show.tmpl:245
+msgid "legend"
+msgstr "legenda"
+
+#: templates/html/show.tmpl:247
+msgid "build-depends"
+msgstr "build-depends"
+
+#: templates/html/show.tmpl:248
+msgid "build-depends-indep"
+msgstr "build-depends-indep"
+
+#: templates/html/show.tmpl:250
+msgid "depends"
+msgstr "závisí"
+
+#: templates/html/show.tmpl:251
+msgid "recommends"
+msgstr "odporúča"
+
+#: templates/html/show.tmpl:252
+msgid "suggests"
+msgstr "navrhuje"
+
+#: templates/html/show.tmpl:262
+msgid "or "
+msgstr "alebo"
+
+#: templates/html/show.tmpl:270
+msgid "also a virtual package provided by"
+msgstr "tiež virtuálny balík poskytovaný balíkom"
+
+#: templates/html/show.tmpl:272
+msgid "virtual package provided by"
+msgstr "virtuálny balík poskytovaný balíkom"
+
+#: templates/html/show.tmpl:277
+msgid "show %u providing packages"
+msgstr "zobraziť %u poskytujúciich balíkov"
+
+#: templates/html/show.tmpl:277
+msgid "hide %u providing packages"
+msgstr "skryť %u poskytujúciich balíkov"
+
+#: templates/html/show.tmpl:295
+msgid "Download %s"
+msgstr "Stiahnuť %s"
+
+#: templates/html/show.tmpl:297
+msgid "The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size."
+msgstr "Zoznam sťahovaní vedie na stiahnutie balíka a prehľad jeho súborov. Naviac poskytuje informácie o veľkosti balíka a veľkosti nainštalovaných súborov."
+
+#: templates/html/show.tmpl:298
+msgid "Download for all available architectures"
+msgstr "Stiahnuť pre všetky dostupné architektúry"
+
+#: templates/html/show.tmpl:299
+msgid "Architecture"
+msgstr "Architektúra"
+
+#: templates/html/show.tmpl:300
+msgid "Version"
+msgstr "Verzia"
+
+#: templates/html/show.tmpl:301
+msgid "Package Size"
+msgstr "Veľkosť balíka"
+
+#: templates/html/show.tmpl:302
+msgid "Installed Size"
+msgstr "Nainštalovaná veľkosť"
+
+#: templates/html/show.tmpl:303
+msgid "Files"
+msgstr "Súbory"
+
+#: templates/html/show.tmpl:311
+msgid "(unofficial port)"
+msgstr "(neoficiálny port)"
+
+#: templates/html/show.tmpl:322
+#: templates/html/show.tmpl:350
+msgid "%s&nbsp;kB"
+msgstr "%s&nbsp;kB"
+
+#: templates/html/show.tmpl:325
+msgid "list of files"
+msgstr "zoznam súborov"
+
+#: templates/html/show.tmpl:327
+msgid "no current information"
+msgstr "nie sú aktuálne informácie"
+
+#: templates/html/show.tmpl:344
+msgid "Download information for the files of this source package"
+msgstr "Informácie o sťahovaní súborov tohto zdrojového balíka"
+
+#: templates/html/show.tmpl:345
+msgid "Size (in kB)"
+msgstr "Veľkosť (v kB)"
+
+#: templates/html/show.tmpl:366
+msgid "Debian Package Source Repository (<acronym title=\"Version Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
+msgstr "Úložisko zdrojových balíkov Debianu (<acronym title=\"Version Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
+
+#: templates/html/show.tmpl:371
+msgid "Debian Package Source Repository (Browsable)"
+msgstr "Úložisko zdrojových balíkov Debianu (možno prezerať)"
+
+#: templates/html/suite_index.tmpl:3
+msgid "Index"
+msgstr "Index"
+
+#: templates/html/suite_index.tmpl:5
+#: templates/html/suite_index.tmpl:20
+msgid "List of sections in \"%s\""
+msgstr "Zoznam sekcií v „%s“"
+
+#: templates/html/suite_index.tmpl:38
+msgid "List of all source packages"
+msgstr "Zoznam všetkých zdrojových balíkov"
+
+#: templates/html/suite_index.tmpl:40
+msgid "All source packages"
+msgstr "Všetky zdrojové balíky"
+
+#: templates/html/tag_index.tmpl:2
+#: templates/html/tag_index.tmpl:7
+msgid "Overview of available Debian Package Tags"
+msgstr "Prehľad dostupných značiek balíkov Debianu"
+
+#: templates/html/tag_index.tmpl:4
+msgid "About"
+msgstr "O&nbsp;Debiane"
+
+#: templates/html/tag_index.tmpl:5
+msgid "Debtags"
+msgstr "Debtags"
+
+#: templates/html/tag_index.tmpl:10
+msgid "Facet: %s"
+msgstr "Kategória: %s"
+
+#: templates/rss/newpkg.tmpl:16
+msgid "New %s Packages"
+msgstr "%s nových balíkov"
+
+#: templates/rss/newpkg.tmpl:20
+msgid "The following packages were added to suite %s (section %s) in the %s archive during the last 7 days."
+msgstr "Nasledovné balíky boli pridané do sady %s (sekcia %s) v archíve %s počas posledných 7 dní."
+
+#: templates/rss/newpkg.tmpl:23
+msgid "The following packages were added to suite %s in the %s archive during the last 7 days."
+msgstr "Nasledovné balíky boli pridané do sady %s v archíve %s počas posledných 7 dní."
+
+#: templates/rss/newpkg.tmpl:28
+#: templates/txt/index_head.tmpl:4
+msgid "Copyright ©"
+msgstr "Copyright ©"
+
+#: templates/txt/index_head.tmpl:1
+msgid "All %s Packages in \"%s\""
+msgstr "Všetky %s balíky v „%s“"
+
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr "Vygenerované:"
+
+#: templates/txt/index_head.tmpl:5
+msgid "See <URL:%s> for the license terms."
+msgstr "Licenčné podmienky nájdete na <URL:%s>."
+
+#~ msgid "Afar"
+#~ msgstr "afarčina"
+#~ msgid "Abkhazian"
+#~ msgstr "abcházčina"
+#~ msgid "Achinese"
+#~ msgstr "acehčina"
+#~ msgid "Acoli"
+#~ msgstr "ačoli"
+#~ msgid "Adangme"
+#~ msgstr "adangme"
+#~ msgid "Adyghe; Adygei"
+#~ msgstr "adygčina; adygejčina"
+
+#, fuzzy
+#~ msgid "Afro-Asiatic languages"
+#~ msgstr "apačské jazyky"
+#~ msgid "Afrihili"
+#~ msgstr "afrihili"
+#~ msgid "Afrikaans"
+#~ msgstr "afrikánčina"
+#~ msgid "Ainu"
+#~ msgstr "ainčina"
+#~ msgid "Akan"
+#~ msgstr "akančina"
+#~ msgid "Akkadian"
+#~ msgstr "akkadčina"
+#~ msgid "Albanian"
+#~ msgstr "albánčina"
+#~ msgid "Aleut"
+#~ msgstr "aleutčina"
+#~ msgid "Algonquian languages"
+#~ msgstr "algonkinské jazyky"
+#~ msgid "Southern Altai"
+#~ msgstr "južná altajčina"
+#~ msgid "Amharic"
+#~ msgstr "amharčina"
+
+# alebo anglosaština
+#~ msgid "English, Old (ca. 450-1100)"
+#~ msgstr "angličtina, stará (ca. 450-1100)"
+# nemám poňatia, ale krajina sa po slovensky píše s –g- (Anga) takže by to bez problémov malo ostať angika
+#~ msgid "Angika"
+#~ msgstr "angika"
+#~ msgid "Apache languages"
+#~ msgstr "apačské jazyky"
+#~ msgid "Arabic"
+#~ msgstr "arabčina"
+#~ msgid "Aragonese"
+#~ msgstr "aragónčina"
+#~ msgid "Armenian"
+#~ msgstr "arménčina"
+#~ msgid "Mapudungun; Mapuche"
+#~ msgstr "araukánčina; mapudingun; mapuche"
+#~ msgid "Arapaho"
+#~ msgstr "arapaho"
+#, fuzzy
+#~ msgid "Artificial languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+#~ msgid "Arawak"
+#~ msgstr "arawačtina"
+#~ msgid "Assamese"
+#~ msgstr "ásámčina"
+#~ msgid "Athapascan languages"
+#~ msgstr "athabaské jazyky"
+#~ msgid "Australian languages"
+#~ msgstr "austrálske jazyky"
+#~ msgid "Avaric"
+#~ msgstr "avarčina"
+#~ msgid "Avestan"
+#~ msgstr "avestčina"
+#~ msgid "Awadhi"
+#~ msgstr "avadhčina"
+#~ msgid "Aymara"
+#~ msgstr "aymarčina"
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdžančina"
+#~ msgid "Banda languages"
+#~ msgstr "jazyky banda"
+#~ msgid "Bamileke languages"
+#~ msgstr "bamileke"
+#~ msgid "Bashkir"
+#~ msgstr "baškirčina"
+#~ msgid "Baluchi"
+#~ msgstr "balúčtina"
+#~ msgid "Bambara"
+#~ msgstr "bambara"
+#~ msgid "Balinese"
+#~ msgstr "balijčina"
+#~ msgid "Basque"
+#~ msgstr "baskičtina"
+#~ msgid "Basa"
+#~ msgstr "basa"
+
+#, fuzzy
+#~ msgid "Baltic languages"
+#~ msgstr "batacké jazyky"
+#~ msgid "Belarusian"
+#~ msgstr "bieloruština"
+#~ msgid "Bemba"
+#~ msgstr "bemba"
+#~ msgid "Bengali"
+#~ msgstr "bengálčina"
+
+#, fuzzy
+#~ msgid "Berber languages"
+#~ msgstr "karenské jazyky"
+#~ msgid "Bhojpuri"
+#~ msgstr "bhódžpurčina"
+#~ msgid "Bihari"
+#~ msgstr "bihárske jazyky"
+
+# plurál
+#~ msgid "Bikol"
+#~ msgstr "bikol"
+#~ msgid "Bini; Edo"
+#~ msgstr "bini; edo"
+#~ msgid "Bislama"
+#~ msgstr "bislama"
+#~ msgid "Siksika"
+#~ msgstr "siksika"
+#, fuzzy
+#~ msgid "Bantu languages"
+#~ msgstr "jazyky banda"
+#~ msgid "Bosnian"
+#~ msgstr "bosniačtina"
+#~ msgid "Braj"
+#~ msgstr "bradžčina"
+#~ msgid "Breton"
+#~ msgstr "bretónčina"
+#~ msgid "Batak languages"
+#~ msgstr "batacké jazyky"
+#~ msgid "Buriat"
+#~ msgstr "buriatčina"
+#~ msgid "Buginese"
+#~ msgstr "bugiština"
+#~ msgid "Bulgarian"
+#~ msgstr "bulharčina"
+#~ msgid "Burmese"
+#~ msgstr "barmčina"
+#~ msgid "Blin; Bilin"
+#~ msgstr "blin; bilin"
+#~ msgid "Caddo"
+#~ msgstr "kaddo"
+
+#, fuzzy
+#~ msgid "Central American Indian languages"
+#~ msgstr "indiánske jazyky strednej Ameriky (iné)"
+#~ msgid "Galibi Carib"
+#~ msgstr "gálibská karibčina"
+#~ msgid "Catalan; Valencian"
+#~ msgstr "katalánčina; valencijčina"
+
+#, fuzzy
+#~ msgid "Caucasian languages"
+#~ msgstr "wakašské jazyky"
+#~ msgid "Cebuano"
+#~ msgstr "cebuánčina"
+
+#, fuzzy
+#~ msgid "Celtic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Chamorro"
+#~ msgstr "čamorčina"
+#~ msgid "Chibcha"
+#~ msgstr "čibča"
+#~ msgid "Chechen"
+#~ msgstr "čečenčina"
+#~ msgid "Chagatai"
+#~ msgstr "čagatajčina"
+#~ msgid "Chinese"
+#~ msgstr "čínština"
+#~ msgid "Chuukese"
+#~ msgstr "truk"
+#~ msgid "Mari"
+#~ msgstr "marijčina"
+#~ msgid "Chinook jargon"
+#~ msgstr "činucký žargón"
+#~ msgid "Choctaw"
+#~ msgstr "čoktavčina"
+#~ msgid "Cherokee"
+#~ msgstr "čerokí"
+#~ msgid ""
+#~ "Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church "
+#~ "Slavonic"
+#~ msgstr "cirkevná slovančina; slovienčina; staroslovenčina; staroslovienčina"
+#~ msgid "Chuvash"
+#~ msgstr "čuvaština"
+#~ msgid "Cheyenne"
+#~ msgstr "čejenčina"
+#~ msgid "Chamic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Coptic"
+#~ msgstr "koptčina"
+#~ msgid "Cornish"
+#~ msgstr "kornčina"
+#~ msgid "Corsican"
+#~ msgstr "korzičtina"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins, English based"
+#~ msgstr "kreolské jazyky a pidžiny na základe angličtiny (iné)"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins, French-based"
+#~ msgstr "kreolské jazyky a pidžiny na základe francúzštiny (iné)"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins, Portuguese-based"
+#~ msgstr "kreolské jazyky a pidžiny na základe portugalčiny (iné)"
+#~ msgid "Cree"
+#~ msgstr "krí"
+#~ msgid "Crimean Tatar; Crimean Turkish"
+#~ msgstr "krymská tatárčina; krymská turečtina"
+
+#, fuzzy
+#~ msgid "Creoles and pidgins"
+#~ msgstr "kreolské jazyky a pidžiny (iné)"
+#~ msgid "Kashubian"
+#~ msgstr "kašubčina"
+
+#, fuzzy
+#~ msgid "Cushitic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Czech"
+#~ msgstr "čeština"
+#~ msgid "Dakota"
+#~ msgstr "dakotčina"
+#~ msgid "Danish"
+#~ msgstr "dánčina"
+#~ msgid "Dargwa"
+#~ msgstr "darginčina"
+
+# ?
+#~ msgid "Land Dayak languages"
+#~ msgstr "vnútrozemská dajačtina"
+#~ msgid "Delaware"
+#~ msgstr "delawarčina"
+# toto je nejaké čudné, slov. názov je slávčina, ale podľa en wiki to premenovali, ale ak je tá výslovnosť správna, tak by to malo byť slevejčina
+#~ msgid "Slave (Athapascan)"
+#~ msgstr "slavejčina (athabaský jazyk)"
+#~ msgid "Dogrib"
+#~ msgstr "dogribčina"
+#~ msgid "Dinka"
+#~ msgstr "dinka"
+#~ msgid "Divehi; Dhivehi; Maldivian"
+#~ msgstr "divehi; maldivčina"
+#~ msgid "Dogri"
+#~ msgstr "dógrí"
+#, fuzzy
+#~ msgid "Dravidian languages"
+#~ msgstr "lužickosrbské jazyky"
+#~ msgid "Lower Sorbian"
+#~ msgstr "dolnolužická srbčina"
+#~ msgid "Duala"
+#~ msgstr "duala"
+#~ msgid "Dutch, Middle (ca. 1050-1350)"
+#~ msgstr "holandčina, stredná (ca. 1050-1350)"
+#~ msgid "Dutch; Flemish"
+#~ msgstr "holandčina; flámčina"
+#~ msgid "Dyula"
+#~ msgstr "ďula"
+#~ msgid "Dzongkha"
+#~ msgstr "dzongkä"
+#~ msgid "Efik"
+#~ msgstr "efik (ibibio)"
+#~ msgid "Egyptian (Ancient)"
+#~ msgstr "egyptčina (staroveká)"
+#~ msgid "Ekajuk"
+#~ msgstr "ekadžuk"
+#~ msgid "Elamite"
+#~ msgstr "elamčina"
+#~ msgid "English"
+#~ msgstr "angličtina"
+#~ msgid "English, Middle (1100-1500)"
+#~ msgstr "angličtina, stredná (1100-1500)"
+#~ msgid "Esperanto"
+#~ msgstr "esperanto"
+#~ msgid "Estonian"
+#~ msgstr "estónčina"
+#~ msgid "Ewe"
+#~ msgstr "ewe"
+#~ msgid "Ewondo"
+#~ msgstr "ewondo"
+#~ msgid "Fang"
+#~ msgstr "fangčina"
+#~ msgid "Faroese"
+#~ msgstr "faerčina"
+#~ msgid "Fanti"
+#~ msgstr "fanti"
+#~ msgid "Fijian"
+#~ msgstr "fidžijčina"
+#~ msgid "Filipino; Pilipino"
+#~ msgstr "filipínčina"
+#~ msgid "Finnish"
+#~ msgstr "fínčina"
+
+#, fuzzy
+#~ msgid "Finno-Ugrian languages"
+#~ msgstr "lužickosrbské jazyky"
+#~ msgid "Fon"
+#~ msgstr "fončina"
+#~ msgid "French"
+#~ msgstr "francúzština"
+#~ msgid "French, Middle (ca. 1400-1600)"
+#~ msgstr "francúzština, stredná (ca. 1400-1600)"
+#~ msgid "French, Old (842-ca. 1400)"
+#~ msgstr "francúzština, stará (842-ca.1400)"
+#~ msgid "Northern Frisian"
+#~ msgstr "severná frízština"
+#~ msgid "Eastern Frisian"
+#~ msgstr "východná frízština"
+#~ msgid "Western Frisian"
+#~ msgstr "západná frízština"
+#~ msgid "Fulah"
+#~ msgstr "fulbčina"
+
+# alebo furlančina furlandčina
+#~ msgid "Friulian"
+#~ msgstr "friulčina"
+#~ msgid "Ga"
+#~ msgstr "ga"
+#~ msgid "Gayo"
+#~ msgstr "gayo"
+#~ msgid "Gbaya"
+#~ msgstr "gbaja"
+#, fuzzy
+#~ msgid "Germanic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Georgian"
+#~ msgstr "gruzínčina"
+#~ msgid "German"
+#~ msgstr "nemčina"
+
+# alebo ge’ez
+#~ msgid "Geez"
+#~ msgstr "etiópčina"
+#~ msgid "Gilbertese"
+#~ msgstr "kiribatčina"
+#~ msgid "Gaelic; Scottish Gaelic"
+#~ msgstr "gaelčina; škótska gaelčina"
+#~ msgid "Irish"
+#~ msgstr "írčina"
+#~ msgid "Galician"
+#~ msgstr "galícijčina"
+#~ msgid "Manx"
+#~ msgstr "mančina"
+#~ msgid "German, Middle High (ca. 1050-1500)"
+#~ msgstr "nemčina, stredná horná (ca. 1050-1500)"
+#~ msgid "German, Old High (ca. 750-1050)"
+#~ msgstr "nemčina, stará horná (ca. 750-1050)"
+#~ msgid "Gondi"
+#~ msgstr "góndčina"
+#~ msgid "Gorontalo"
+#~ msgstr "gorontalo"
+#~ msgid "Gothic"
+#~ msgstr "gótčina"
+#~ msgid "Grebo"
+#~ msgstr "grebo"
+#~ msgid "Greek, Ancient (to 1453)"
+#~ msgstr "starogréčtina (do 1453)"
+#~ msgid "Greek, Modern (1453-)"
+#~ msgstr "novogréčtina (po 1453)"
+#~ msgid "Guarani"
+#~ msgstr "guaraní"
+#, fuzzy
+#~ msgid "Swiss German; Alemannic; Alsatian"
+#~ msgstr "švajčiarska nemčina; alemančina"
+
+# http://209.85.129.104/search?q=cache:VS8RqjDUI34J:https://www.kis3g.sk/kodovniky/Kody_jazykovM04def.doc+afar%C4%8Dina&hl=sk&ct=clnk&cd=1&gl=sk&client=firefox-a
+# http://www.ethnologue.com/14/iso639/codes.asp
+# http://209.85.129.104/search?q=cache:mUD7_zD5SeoJ:www.snk.sk/nbuu/kodovniky/kodyjazykov.html+%22horn%C3%A1+altaj%C4%8Dina%22&hl=sk&ct=clnk&cd=1&gl=sk&client=firefox-a
+#~ msgid "Gujarati"
+#~ msgstr "gudžarátčina"
+#, fuzzy
+#~ msgid "Gwich'in"
+#~ msgstr "gwich'in"
+#~ msgid "Haida"
+#~ msgstr "haida"
+#~ msgid "Haitian; Haitian Creole"
+#~ msgstr "haitská francúzska kreolčina"
+#~ msgid "Hausa"
+#~ msgstr "hauština"
+#~ msgid "Hawaiian"
+#~ msgstr "havajčina"
+#~ msgid "Hebrew"
+#~ msgstr "hebrejčina"
+#~ msgid "Herero"
+#~ msgstr "hererčina"
+#~ msgid "Hiligaynon"
+#~ msgstr "hiligajnončina"
+#~ msgid "Himachali"
+#~ msgstr "himačalské jazyky"
+#~ msgid "Hindi"
+#~ msgstr "hindčina"
+#~ msgid "Hittite"
+#~ msgstr "chetitčina"
+#~ msgid "Hmong"
+#~ msgstr "miaočina"
+#~ msgid "Hiri Motu"
+#~ msgstr "hiri motu"
+#~ msgid "Croatian"
+#~ msgstr "chorvátčina"
+#~ msgid "Upper Sorbian"
+#~ msgstr "hornolužická srbčina"
+#~ msgid "Hungarian"
+#~ msgstr "maďarčina"
+#~ msgid "Hupa"
+#~ msgstr "hupčina"
+#~ msgid "Iban"
+#~ msgstr "ibančina"
+#~ msgid "Igbo"
+#~ msgstr "igbo"
+#~ msgid "Icelandic"
+#~ msgstr "islandčina"
+
+# medzinárodný jazyk ido (vylepšené esperanto)
+#~ msgid "Ido"
+#~ msgstr "ido"
+#, fuzzy
+#~ msgid "Sichuan Yi; Nuosu"
+#~ msgstr "s’čchuanská ioština"
+#~ msgid "Ijo languages"
+#~ msgstr "jazyky idžo"
+#~ msgid "Inuktitut"
+#~ msgstr "inuktitut"
+
+#, fuzzy
+#~ msgid "Interlingue; Occidental"
+#~ msgstr "interlingue"
+#~ msgid "Iloko"
+#~ msgstr "ilokánčina"
+#~ msgid "Interlingua (International Auxiliary Language Association)"
+#~ msgstr "interlingua (International Auxiliary Language Association)"
+
+#, fuzzy
+#~ msgid "Indic languages"
+#~ msgstr "jazyky banda"
+#~ msgid "Indonesian"
+#~ msgstr "indonézština"
+
+#, fuzzy
+#~ msgid "Indo-European languages"
+#~ msgstr "irokézske jazyky"
+#~ msgid "Ingush"
+#~ msgstr "inguština"
+#~ msgid "Inupiaq"
+#~ msgstr "inupiaq"
+
+#, fuzzy
+#~ msgid "Iranian languages"
+#~ msgstr "irokézske jazyky"
+#~ msgid "Iroquoian languages"
+#~ msgstr "irokézske jazyky"
+#~ msgid "Italian"
+#~ msgstr "taliančina"
+#~ msgid "Javanese"
+#~ msgstr "jávčina"
+#~ msgid "Lojban"
+#~ msgstr "lojban (umelý jazyk)"
+#~ msgid "Japanese"
+#~ msgstr "japončina"
+#~ msgid "Judeo-Persian"
+#~ msgstr "židovská perzština"
+#~ msgid "Judeo-Arabic"
+#~ msgstr "židovská arabčina"
+#~ msgid "Kara-Kalpak"
+#~ msgstr "karakalpačtina"
+#~ msgid "Kabyle"
+#~ msgstr "kabylčina"
+#~ msgid "Kachin; Jingpho"
+#~ msgstr "kačjinčina"
+#~ msgid "Kalaallisut; Greenlandic"
+#~ msgstr "grónčina"
+#~ msgid "Kamba"
+#~ msgstr "kamba"
+#~ msgid "Kannada"
+#~ msgstr "kannadčina"
+#~ msgid "Karen languages"
+#~ msgstr "karenské jazyky"
+#~ msgid "Kashmiri"
+#~ msgstr "kašmírčina"
+#~ msgid "Kanuri"
+#~ msgstr "kanurijčina"
+#~ msgid "Kawi"
+#~ msgstr "kawi"
+#~ msgid "Kazakh"
+#~ msgstr "kazaština"
+#~ msgid "Kabardian"
+#~ msgstr "kabardčina"
+#~ msgid "Khasi"
+#~ msgstr "khasijčina"
+
+#, fuzzy
+#~ msgid "Khoisan languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+#~ msgid "Central Khmer"
+#~ msgstr "kambodžská khmérčina"
+
+#, fuzzy
+#~ msgid "Khotanese;Sakan"
+#~ msgstr "kotčina"
+#~ msgid "Kikuyu; Gikuyu"
+#~ msgstr "kikuju"
+#~ msgid "Kinyarwanda"
+#~ msgstr "rwandčina"
+#~ msgid "Kirghiz; Kyrgyz"
+#~ msgstr "kirgizština"
+#~ msgid "Kimbundu"
+#~ msgstr "kimbundu"
+#~ msgid "Konkani"
+#~ msgstr "konkánčina"
+#~ msgid "Komi"
+#~ msgstr "komijčina"
+#~ msgid "Kongo"
+#~ msgstr "konžština"
+#~ msgid "Korean"
+#~ msgstr "kórejčina"
+#~ msgid "Kosraean"
+#~ msgstr "kusaie"
+#~ msgid "Kpelle"
+#~ msgstr "kpelle"
+#~ msgid "Karachay-Balkar"
+#~ msgstr "karačajevsko-balkarský jazyk"
+#~ msgid "Karelian"
+#~ msgstr "karelčina"
+#~ msgid "Kru languages"
+#~ msgstr "jazyky kru"
+#~ msgid "Kurukh"
+#~ msgstr "kurukhčina"
+#~ msgid "Kuanyama; Kwanyama"
+#~ msgstr "kuaňama"
+#~ msgid "Kumyk"
+#~ msgstr "kumyčtina"
+#~ msgid "Kurdish"
+#~ msgstr "kurdčina"
+#~ msgid "Kutenai"
+#~ msgstr "kutenajčina"
+
+# ladinčina je niečo iné!
+#~ msgid "Ladino"
+#~ msgstr "židovská španielčina"
+#~ msgid "Lahnda"
+#~ msgstr "lahandčina"
+#~ msgid "Lamba"
+#~ msgstr "lamba"
+#~ msgid "Lao"
+#~ msgstr "laoština"
+#~ msgid "Latin"
+#~ msgstr "latinčina"
+#~ msgid "Latvian"
+#~ msgstr "lotyština"
+#~ msgid "Lezghian"
+#~ msgstr "lezginčina"
+#~ msgid "Limburgan; Limburger; Limburgish"
+#~ msgstr "limburčina"
+#~ msgid "Lingala"
+#~ msgstr "lingalčina"
+#~ msgid "Lithuanian"
+#~ msgstr "litovčina"
+#~ msgid "Mongo"
+#~ msgstr "mongo"
+#~ msgid "Lozi"
+#~ msgstr "lozi"
+#~ msgid "Luxembourgish; Letzeburgesch"
+#~ msgstr "luxemburčina"
+#~ msgid "Luba-Lulua"
+#~ msgstr "luba-luluánčina"
+#~ msgid "Luba-Katanga"
+#~ msgstr "luba-katančina"
+#~ msgid "Ganda"
+#~ msgstr "ganda"
+#~ msgid "Luiseno"
+#~ msgstr "luiseňo"
+#~ msgid "Lunda"
+#~ msgstr "lunda"
+#~ msgid "Luo (Kenya and Tanzania)"
+#~ msgstr "luo (Keňa a Tanzánia)"
+#~ msgid "Lushai"
+#~ msgstr "lušáí"
+#~ msgid "Macedonian"
+#~ msgstr "macedónčina"
+#~ msgid "Madurese"
+#~ msgstr "madurčina"
+#~ msgid "Magahi"
+#~ msgstr "magadhčina"
+#~ msgid "Marshallese"
+#~ msgstr "maršalčina"
+#~ msgid "Maithili"
+#~ msgstr "maithilčina"
+#~ msgid "Makasar"
+#~ msgstr "makasarčina"
+#~ msgid "Malayalam"
+#~ msgstr "malajálamčina"
+#~ msgid "Mandingo"
+#~ msgstr "mandingo"
+#~ msgid "Maori"
+#~ msgstr "maorčina"
+#, fuzzy
+#~ msgid "Austronesian languages"
+#~ msgstr "austrálske jazyky"
+#~ msgid "Marathi"
+#~ msgstr "maráthčina"
+#~ msgid "Masai"
+#~ msgstr "masajčina"
+#~ msgid "Malay"
+#~ msgstr "malajčina"
+#~ msgid "Moksha"
+#~ msgstr "mokšiančina"
+#~ msgid "Mandar"
+#~ msgstr "mandarčina"
+#~ msgid "Mende"
+#~ msgstr "mendi"
+#~ msgid "Irish, Middle (900-1200)"
+#~ msgstr "írčina, stredná (900-1200)"
+#~ msgid "Mi'kmaq; Micmac"
+#~ msgstr "mikmakčina"
+#~ msgid "Minangkabau"
+#~ msgstr "minangkabaučina"
+
+#, fuzzy
+#~ msgid "Uncoded languages"
+#~ msgstr "zandské jazyky"
+
+#, fuzzy
+#~ msgid "Mon-Khmer languages"
+#~ msgstr "jazyky kru"
+#~ msgid "Malagasy"
+#~ msgstr "malgaština"
+#~ msgid "Maltese"
+#~ msgstr "maltčina"
+#~ msgid "Manchu"
+#~ msgstr "mandžuština"
+#~ msgid "Manipuri"
+#~ msgstr "manípurčina"
+#~ msgid "Manobo languages"
+#~ msgstr "jazyky manobo"
+#~ msgid "Mohawk"
+#~ msgstr "mohawk"
+
+#, fuzzy
+#~ msgid "Moldavian; Moldovan"
+#~ msgstr "moldavčina"
+#~ msgid "Mongolian"
+#~ msgstr "mongolčina"
+#~ msgid "Mossi"
+#~ msgstr "mossi"
+#~ msgid "Multiple languages"
+#~ msgstr "viaceré jazyky"
+#~ msgid "Munda languages"
+#~ msgstr "mundské jazyky"
+#~ msgid "Creek"
+#~ msgstr "kríkčina"
+#~ msgid "Mirandese"
+#~ msgstr "mirandčina"
+#~ msgid "Marwari"
+#~ msgstr "marawari"
+#~ msgid "Mayan languages"
+#~ msgstr "mayské jazyky"
+#~ msgid "Erzya"
+#~ msgstr "erzjančina"
+#~ msgid "Nahuatl languages"
+#~ msgstr "nahuaské jazyky"
+
+# keď si dal indiánske jazyky strednej Ameriky namiesto mezoamerické jazyky strednej Ameriky (čo nemusí byť nevyhnutne to isté) tak aby to bolo konzistentné
+#, fuzzy
+#~ msgid "North American Indian languages"
+#~ msgstr "indiánske jazyky severnej Ameriky"
+#~ msgid "Neapolitan"
+#~ msgstr "neapolčina"
+#~ msgid "Nauru"
+#~ msgstr "nauruština"
+#~ msgid "Navajo; Navaho"
+#~ msgstr "navajo; navaho"
+#~ msgid "Ndebele, South; South Ndebele"
+#~ msgstr "ndebelčina, južná; južná ndebelčina"
+#~ msgid "Ndebele, North; North Ndebele"
+#~ msgstr "ndebelčina, severná; severná ndebelčina"
+#~ msgid "Ndonga"
+#~ msgstr "ndonga"
+#~ msgid "Low German; Low Saxon; German, Low; Saxon, Low"
+#~ msgstr "dolná nemčina; dolná saština; nemčina, dolná; saština, dolná"
+#~ msgid "Nepali"
+#~ msgstr "nepálčina"
+#~ msgid "Nias"
+#~ msgstr "niasánčina"
+
+#, fuzzy
+#~ msgid "Niger-Kordofanian languages"
+#~ msgstr "nigersko-kordofánske jazyky (iné)"
+#~ msgid "Niuean"
+#~ msgstr "niueština"
+#~ msgid "Norwegian Nynorsk; Nynorsk, Norwegian"
+#~ msgstr "nórsky nynorsk; nynorsk, nórsky"
+#~ msgid "Nogai"
+#~ msgstr "nogajčina"
+#~ msgid "Norse, Old"
+#~ msgstr "nórčina, stará"
+#~ msgid "Norwegian"
+#~ msgstr "nórčina"
+
+#, fuzzy
+#~ msgid "N'Ko"
+#~ msgstr "N'ko"
+#~ msgid "Nubian languages"
+#~ msgstr "núbijské jazyky"
+#~ msgid "Classical Newari; Old Newari; Classical Nepal Bhasa"
+#~ msgstr "klasická nevárčina; stará nevárčina"
+#~ msgid "Chichewa; Chewa; Nyanja"
+#~ msgstr "čičewa; čewa; ňandža"
+#~ msgid "Nyamwezi"
+#~ msgstr "ňamwezi"
+#~ msgid "Nyankole"
+#~ msgstr "ňankole"
+#~ msgid "Nyoro"
+#~ msgstr "ňoro"
+#~ msgid "Nzima"
+#~ msgstr "nzima"
+
+#, fuzzy
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "okcitánčina (po roku 1500); provensalčina"
+#~ msgid "Ojibwa"
+#~ msgstr "odžibwa"
+#~ msgid "Oriya"
+#~ msgstr "uríjčina"
+#~ msgid "Oromo"
+#~ msgstr "oromčina"
+#~ msgid "Osage"
+#~ msgstr "osagčina"
+#~ msgid "Ossetian; Ossetic"
+#~ msgstr "osetčina"
+#~ msgid "Turkish, Ottoman (1500-1928)"
+#~ msgstr "turečtina, osmanská (1500-1928)"
+#~ msgid "Otomian languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+
+#, fuzzy
+#~ msgid "Papuan languages"
+#~ msgstr "mayské jazyky"
+#~ msgid "Pangasinan"
+#~ msgstr "pangasinančina"
+#~ msgid "Pahlavi"
+#~ msgstr "pahlaví"
+#~ msgid "Panjabi; Punjabi"
+#~ msgstr "pandžábčina"
+#~ msgid "Papiamento"
+#~ msgstr "papiamento"
+#~ msgid "Palauan"
+#~ msgstr "palaučina"
+#~ msgid "Persian, Old (ca. 600-400 B.C.)"
+#~ msgstr "staroperzština (ca. 600-400 pred Kr.)"
+#~ msgid "Persian"
+#~ msgstr "perzština"
+
+#, fuzzy
+#~ msgid "Philippine languages"
+#~ msgstr "viaceré jazyky"
+#~ msgid "Phoenician"
+#~ msgstr "feničtina"
+#~ msgid "Pali"
+#~ msgstr "pálí"
+#~ msgid "Polish"
+#~ msgstr "poľština"
+#~ msgid "Pohnpeian"
+#~ msgstr "pohnpeičina"
+#~ msgid "Portuguese"
+#~ msgstr "portugalčina"
+#~ msgid "Prakrit languages"
+#~ msgstr "prakrity"
+
+#, fuzzy
+#~ msgid "Provençal, Old (to 1500); Occitan, Old (to 1500)"
+#~ msgstr "provensalčina, stará (do 1500)"
+
+#, fuzzy
+#~ msgid "Pushto; Pashto"
+#~ msgstr "paštčina"
+#~ msgid "Reserved for local use"
+#~ msgstr "vyhradené pre lokálne použitie"
+#~ msgid "Quechua"
+#~ msgstr "kečuánčina"
+#~ msgid "Rajasthani"
+#~ msgstr "radžastančina"
+#~ msgid "Rapanui"
+#~ msgstr "rapanujčina"
+
+#, fuzzy
+#~ msgid "Rarotongan; Cook Islands Maori"
+#~ msgstr "rarotongská maorijčina; maorijčina Cookových ostrovov"
+
+#, fuzzy
+#~ msgid "Romance languages"
+#~ msgstr "oto-pameské jazyky okrem pameských jazykov"
+#~ msgid "Romansh"
+#~ msgstr "romanši"
+#~ msgid "Romany"
+#~ msgstr "rómčina"
+#~ msgid "Romanian"
+#~ msgstr "rumunčina"
+#~ msgid "Rundi"
+#~ msgstr "rundčina"
+#~ msgid "Aromanian; Arumanian; Macedo-Romanian"
+#~ msgstr "arumunčina; macedónska rumunčina"
+#~ msgid "Russian"
+#~ msgstr "ruština"
+#~ msgid "Sandawe"
+#~ msgstr "sandawe"
+#~ msgid "Sango"
+#~ msgstr "sango"
+#~ msgid "Yakut"
+#~ msgstr "jakutčina"
+
+# tu platí to isté ako pre severoamerické
+#, fuzzy
+#~ msgid "South American Indian languages"
+#~ msgstr "indiánske jazyky južnej Ameriky (iné)"
+#~ msgid "Salishan languages"
+#~ msgstr "sališské jazyky"
+#~ msgid "Samaritan Aramaic"
+#~ msgstr "samaritánska aramejčina"
+#~ msgid "Sanskrit"
+#~ msgstr "sanskrit"
+#~ msgid "Sasak"
+#~ msgstr "sasačtina"
+#~ msgid "Santali"
+#~ msgstr "santalčina"
+#~ msgid "Sicilian"
+#~ msgstr "sicílčina"
+#~ msgid "Scots"
+#~ msgstr "škótčina"
+#~ msgid "Selkup"
+#~ msgstr "selkupčina"
+
+#, fuzzy
+#~ msgid "Semitic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Irish, Old (to 900)"
+#~ msgstr "írčina, stará (do 900)"
+#~ msgid "Sign Languages"
+#~ msgstr "posunkové reči"
+#~ msgid "Shan"
+#~ msgstr "šančina"
+#~ msgid "Sidamo"
+#~ msgstr "sidamo"
+#~ msgid "Sinhala; Sinhalese"
+#~ msgstr "sinhalčina"
+#~ msgid "Siouan languages"
+#~ msgstr "siouské jazyky"
+
+#, fuzzy
+#~ msgid "Sino-Tibetan languages"
+#~ msgstr "siouské jazyky"
+
+#, fuzzy
+#~ msgid "Slavic languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Slovak"
+#~ msgstr "slovenčina"
+#~ msgid "Slovenian"
+#~ msgstr "slovinčina"
+#~ msgid "Southern Sami"
+#~ msgstr "južná saamčina"
+#~ msgid "Northern Sami"
+#~ msgstr "severná saamčina"
+
+#, fuzzy
+#~ msgid "Sami languages"
+#~ msgstr "čamaské jazyky"
+#~ msgid "Lule Sami"
+#~ msgstr "luleská saamčina"
+#~ msgid "Inari Sami"
+#~ msgstr "inariská saamčina"
+#~ msgid "Samoan"
+#~ msgstr "samojčina"
+#~ msgid "Skolt Sami"
+#~ msgstr "(laponský) jazyk, skolt"
+#~ msgid "Shona"
+#~ msgstr "šona"
+#~ msgid "Sindhi"
+#~ msgstr "sindhčina"
+#~ msgid "Soninke"
+#~ msgstr "soninke"
+#~ msgid "Sogdian"
+#~ msgstr "sogdčina"
+#~ msgid "Somali"
+#~ msgstr "somálčina"
+#~ msgid "Songhai languages"
+#~ msgstr "songhajské jazyky"
+#~ msgid "Sotho, Southern"
+#~ msgstr "sothčina, južná"
+#~ msgid "Spanish; Castilian"
+#~ msgstr "španielčina; kastílčina"
+#~ msgid "Sardinian"
+#~ msgstr "sardínčina"
+#~ msgid "Sranan Tongo"
+#~ msgstr "sranan"
+#~ msgid "Serbian"
+#~ msgstr "srbčina"
+#~ msgid "Serer"
+#~ msgstr "serer"
+
+#, fuzzy
+#~ msgid "Nilo-Saharan languages"
+#~ msgstr "sališské jazyky"
+#~ msgid "Swati"
+#~ msgstr "swati"
+#~ msgid "Sukuma"
+#~ msgstr "sukuma"
+#~ msgid "Sundanese"
+#~ msgstr "sundčina"
+#~ msgid "Susu"
+#~ msgstr "susu"
+#~ msgid "Sumerian"
+#~ msgstr "sumerčina"
+#~ msgid "Swahili"
+#~ msgstr "svahilčina"
+#~ msgid "Swedish"
+#~ msgstr "švédčina"
+#~ msgid "Classical Syriac"
+#~ msgstr "sýrčina"
+#~ msgid "Syriac"
+#~ msgstr "sýrčina"
+#~ msgid "Tahitian"
+#~ msgstr "tahitčina"
+
+#, fuzzy
+#~ msgid "Tai languages"
+#~ msgstr "jazyky tupi"
+#~ msgid "Tamil"
+#~ msgstr "tamilčina"
+#~ msgid "Tatar"
+#~ msgstr "tatárčina"
+#~ msgid "Telugu"
+#~ msgstr "telugčina"
+#~ msgid "Timne"
+#~ msgstr "temne"
+#~ msgid "Tereno"
+#~ msgstr "tereno"
+#~ msgid "Tetum"
+#~ msgstr "tetumčina"
+#~ msgid "Tajik"
+#~ msgstr "tadžičtina"
+#~ msgid "Tagalog"
+#~ msgstr "tagalčina"
+#~ msgid "Thai"
+#~ msgstr "thajčina"
+#~ msgid "Tibetan"
+#~ msgstr "tibetčina"
+#~ msgid "Tigre"
+#~ msgstr "tigrejčina"
+#~ msgid "Tigrinya"
+#~ msgstr "tigriňa"
+#~ msgid "Tiv"
+#~ msgstr "tiv"
+#~ msgid "Tokelau"
+#~ msgstr "tokelaučina"
+#~ msgid "Klingon; tlhIngan-Hol"
+#~ msgstr "klingónčina; tlhIngan-Hol"
+#~ msgid "Tlingit"
+#~ msgstr "tlingitčina"
+#~ msgid "Tamashek"
+#~ msgstr "tamašek"
+#~ msgid "Tonga (Nyasa)"
+#~ msgstr "tonga (Ňasa)"
+#~ msgid "Tonga (Tonga Islands)"
+#~ msgstr "tongčina (Tongské ostrovy)"
+#~ msgid "Tok Pisin"
+#~ msgstr "tok pisin"
+#~ msgid "Tsimshian"
+#~ msgstr "tsimshijské jazyky"
+#~ msgid "Tswana"
+#~ msgstr "čwančina"
+#~ msgid "Tsonga"
+#~ msgstr "tsonga"
+#~ msgid "Turkmen"
+#~ msgstr "turkménčina"
+#~ msgid "Tumbuka"
+#~ msgstr "tumbuka"
+#~ msgid "Tupi languages"
+#~ msgstr "jazyky tupi"
+#~ msgid "Turkish"
+#~ msgstr "turečtina"
+
+#, fuzzy
+#~ msgid "Altaic languages"
+#~ msgstr "apačské jazyky"
+#~ msgid "Tuvalu"
+#~ msgstr "tuvalčina"
+#~ msgid "Twi"
+#~ msgstr "twi"
+#~ msgid "Tuvinian"
+#~ msgstr "tuviančina"
+#~ msgid "Udmurt"
+#~ msgstr "udmurtčina"
+#~ msgid "Ugaritic"
+#~ msgstr "ugaritčina"
+#~ msgid "Uighur; Uyghur"
+#~ msgstr "ujgurčina"
+#~ msgid "Ukrainian"
+#~ msgstr "ukrajinčina"
+#~ msgid "Umbundu"
+#~ msgstr "umbundu"
+#~ msgid "Undetermined"
+#~ msgstr "neurčený"
+#~ msgid "Urdu"
+#~ msgstr "urdčina"
+#~ msgid "Uzbek"
+#~ msgstr "uzbečtina"
+#~ msgid "Vai"
+#~ msgstr "vai"
+#~ msgid "Venda"
+#~ msgstr "venda"
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamčina"
+#~ msgid "Volapük"
+#~ msgstr "volapük"
+#~ msgid "Votic"
+#~ msgstr "vodčina"
+#~ msgid "Wakashan languages"
+#~ msgstr "wakašské jazyky"
+#~ msgid "Waray"
+#~ msgstr "waray"
+#~ msgid "Washo"
+#~ msgstr "washo"
+#~ msgid "Welsh"
+#~ msgstr "waleština"
+#~ msgid "Sorbian languages"
+#~ msgstr "lužickosrbské jazyky"
+#~ msgid "Walloon"
+#~ msgstr "valónčina"
+#~ msgid "Wolof"
+#~ msgstr "wolof"
+#~ msgid "Kalmyk; Oirat"
+#~ msgstr "kalmyčtina; ojračtina"
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+#~ msgid "Yao"
+#~ msgstr "jao"
+#~ msgid "Yapese"
+#~ msgstr "japčina"
+#~ msgid "Yiddish"
+#~ msgstr "jidiš"
+#~ msgid "Yoruba"
+#~ msgstr "jorubčina"
+#~ msgid "Yupik languages"
+#~ msgstr "juitsko-jupické jazyky"
+#~ msgid "Zapotec"
+#~ msgstr "zapotéčtina"
+#~ msgid "Zenaga"
+#~ msgstr "zenaga"
+#~ msgid "Zhuang; Chuang"
+#~ msgstr "čuangčina; šuongčina"
+#~ msgid "Zande languages"
+#~ msgstr "zandské jazyky"
+#~ msgid "Zulu"
+#~ msgstr "zuluština"
+#~ msgid "Zuni"
+#~ msgstr "zuniština"
+
+#, fuzzy
+#~ msgid "No linguistic content; Not applicable"
+#~ msgstr "bez lingvistického obsahu"
+#~ msgid "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"
+#~ msgstr "zázá; dimili; dimli; kirdki; kirmančki; zazaki"
+#~ msgid "Afro-Asiatic (Other)"
+#~ msgstr "afroázijské jazyky (iné)"
+#~ msgid "Aramaic"
+#~ msgstr "aramejčina"
+#~ msgid "Artificial (Other)"
+#~ msgstr "umelé jazyky (iné)"
+#~ msgid "Asturian; Bable"
+#~ msgstr "astúrčina; bable"
+#~ msgid "Baltic (Other)"
+#~ msgstr "baltské jazyky (iné)"
+#~ msgid "Beja"
+#~ msgstr "bedža"
+#~ msgid "Berber (Other)"
+#~ msgstr "berberské jazyky (iné)"
+#~ msgid "Bantu (Other)"
+#~ msgstr "bantuské jazyky (iné)"
+#~ msgid "Caucasian (Other)"
+#~ msgstr "kaukazské jazyky (iné)"
+#~ msgid "Celtic (Other)"
+#~ msgstr "keltské jazyky (iné)"
+#~ msgid "Chipewyan"
+#~ msgstr "čipevajčina"
+#~ msgid "Cushitic (Other)"
+#~ msgstr "kušitské jazyky (iné)"
+#~ msgid "Dravidian (Other)"
+#~ msgstr "drávidské jazyky (iné)"
+#~ msgid "Finno-Ugrian (Other)"
+#~ msgstr "ugrofínske jazyky (iné)"
+#~ msgid "Germanic (Other)"
+#~ msgstr "germánske jazyky (iné)"
+#~ msgid "Indic (Other)"
+#~ msgstr "indické jazyky (iné)"
+#~ msgid "Indo-European (Other)"
+#~ msgstr "indoeurópske jazyky (iné)"
+#~ msgid "Iranian (Other)"
+#~ msgstr "iránske jazyky (iné)"
+#~ msgid "Khoisan (Other)"
+#~ msgstr "khoisanské jazyky (iné)"
+#~ msgid "Austronesian (Other)"
+#~ msgstr "austronézske (iné)"
+#~ msgid "Miscellaneous languages"
+#~ msgstr "rozličné jazyky"
+#~ msgid "Mon-Khmer (Other)"
+#~ msgstr "monsko-khmérske jazyky (iné)"
+#~ msgid "Newari; Nepal Bhasa"
+#~ msgstr "nevárčina"
+#~ msgid "Norwegian Bokmål; Bokmål, Norwegian"
+#~ msgstr "nórsky bokmål; bokmål, nórsky"
+#~ msgid "Northern Sotho, Pedi; Sepedi"
+#~ msgstr "severná sothčina, pedi; sepedi"
+#~ msgid "Papuan (Other)"
+#~ msgstr "papuánske jazyky (iné)"
+#~ msgid "Pampanga"
+#~ msgstr "pampangančina"
+#~ msgid "Philippine (Other)"
+#~ msgstr "filipínske jazyky (iné)"
+#~ msgid "Romance (Other)"
+#~ msgstr "románske jazyky (iné)"
+#~ msgid "Semitic (Other)"
+#~ msgstr "semitské jazyky (iné)"
+#~ msgid "Sino-Tibetan (Other)"
+#~ msgstr "sino-tibetské jazyky (iné)"
+#~ msgid "Slavic (Other)"
+#~ msgstr "slovanské jazyky (iné)"
+#~ msgid "Sami languages (Other)"
+#~ msgstr "saamské jazyky (iné)"
+#~ msgid "Nilo-Saharan (Other)"
+#~ msgstr "nílsko-saharské jazyky (iné)"
+#~ msgid "Tai (Other)"
+#~ msgstr "thajské jazyky (iné)"
+#~ msgid "Altaic (Other)"
+#~ msgstr "altajské jazyky"
+#~ msgid "Walamo"
+#~ msgstr "walamčina"
+#~ msgid "Araucanian"
+#~ msgstr "araukánčina"
+
