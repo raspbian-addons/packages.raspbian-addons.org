@@ -12,7 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: templates/config.tmpl:43
 msgid "Debian Web Mailinglist"
@@ -34,7 +35,7 @@ msgstr ""
 "Это экспериментальная версия <a href=\"http://%s/\">%s</a>. Возможны ошибки "
 "и устаревшая информация"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:69
 msgid "."
 msgstr ","
@@ -107,6 +108,10 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr "пакеты, удовлетворяющие критериям Debian по определению свободного ПО"
@@ -116,48 +121,53 @@ msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
 msgstr ""
-"пакеты, удовлетворяющие критериям Debian по определению "
-"свободного ПО, но требующие ПО не из раздела Debian main"
+"пакеты, удовлетворяющие критериям Debian по определению свободного ПО, но "
+"требующие ПО не из раздела Debian main"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
-msgstr "пакеты, не удовлетворяющие критериям Debian по определению свободного ПО"
+msgstr ""
+"пакеты, не удовлетворяющие критериям Debian по определению свободного ПО"
 
 #: templates/config/mirrors.tmpl:92
-msgid "volatile packages that need major changes during the life of a stable release"
+msgid ""
+"volatile packages that need major changes during the life of a stable release"
 msgstr ""
-"изменчивые пакеты, для работы в них нужно вносить значительные изменения "
-"на всём времени существования стабильного выпуска"
+"изменчивые пакеты, для работы в них нужно вносить значительные изменения на "
+"всём времени существования стабильного выпуска"
 
 #: templates/config/mirrors.tmpl:132
 msgid "newer packages that have been adapted to stable releases of Debian"
-msgstr "новейшие пакеты, которые были адаптированы для стабильных выпусков Debian"
+msgstr ""
+"новейшие пакеты, которые были адаптированы для стабильных выпусков Debian"
 
 #: templates/config/mirrors.tmpl:160
-msgid "ports of packages to architectures not yet or not anymore available in Debian"
-msgstr "переносы пакетов под архитектуры, которых ещё или уже недоступны в Debian"
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
+msgstr ""
+"переносы пакетов под архитектуры, которых ещё или уже недоступны в Debian"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:188
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "Австралия и Новая Зеландия"
 
-#: templates/config/mirrors.tmpl:189
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:190
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "Африка"
 
@@ -253,7 +263,8 @@ msgstr ""
 "сайтов:"
 
 #: templates/html/download.tmpl:80
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Вы можете скачать требуемый файл из подкаталога <tt>%s</tt> c:"
 
 #: templates/html/download.tmpl:82
@@ -271,20 +282,15 @@ msgstr ""
 "href=\"%s\">полного списка серверов-зеркал</a>."
 
 #: templates/html/download.tmpl:97
-#| msgid ""
-#| "Note that %s is not officially included in the %s archive yet, but the %s "
-#| "porter group keeps their archive in sync with the official archive as "
-#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
-#| "information."
 msgid ""
 "Note that %s is not officially included in the %s archive, but the %s porter "
 "group keeps their archive in sync with the official archive as close as "
 "possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"Заметим, что %s официально не включён в архив %s, но команда по "
-"переносу %s поддерживает свой архив синхронизированным с официальным "
-"архивом как можно более полно. О текущем состоянии можно "
-"узнать со <a href=\"%s\">страницы переноса на %s</a>."
+"Заметим, что %s официально не включён в архив %s, но команда по переносу %s "
+"поддерживает свой архив синхронизированным с официальным архивом как можно "
+"более полно. О текущем состоянии можно узнать со <a href=\"%s\">страницы "
+"переноса на %s</a>."
 
 #: templates/html/download.tmpl:101
 msgid ""
@@ -329,21 +335,22 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Список файлов пакета %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Список файлов пакета <em>%s</em> в <em>%s</em> для архитектуры <em>%s</em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
 msgstr "Список файлов"
 
 #: templates/html/foot.tmpl:11
-#| msgid "How to set <a href=\"%s\">the default document language</a>"
 msgid ""
 "This page is also available in the following languages (How to set <a href="
 "\"%s\">the default document language</a>):"
 msgstr ""
-"Эта страница также доступна на следующих языках (Как "
-"установить <a href=\"%s\">язык по умолчанию</a>):"
+"Эта страница также доступна на следующих языках (Как установить <a href=\"%s"
+"\">язык по умолчанию</a>):"
 
 #: templates/html/foot.tmpl:28
 msgid ""
@@ -368,7 +375,6 @@ msgid "Learn more about this site"
 msgstr "Об этом сайте"
 
 #: templates/html/foot.tmpl:41
-#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Спонсор сайта <a href=\"%s\">%s</a>."
 
@@ -464,13 +470,15 @@ msgstr " Также их можно увидеть <a href=\"%s\">отсорти
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr " Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
+msgstr ""
+" Также их можно увидеть <a href=\"%s\">отсортированными по возрасту</a>."
 
 #: templates/html/newpkg.tmpl:22
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
-msgstr "Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
+msgstr ""
+"Эта информация также доступна на <a href=\"newpkg?format=rss\">ленте RSS</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
@@ -570,7 +578,8 @@ msgid "source packages"
 msgstr "пакеты исходного кода"
 
 #: templates/html/search.tmpl:84
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
 "Вы искали %s, в именах которых есть <em>%s</em>. Были просмотрены %s, %s и %"
 "s."
@@ -695,10 +704,11 @@ msgstr "имена файлов, содержащих"
 msgid "files named"
 msgstr "файлы с именем"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr "Вы искали %s <em>%s</em> в комплекте <em>%s</em>. Были просмотрены %s и %s."
+msgstr ""
+"Вы искали %s <em>%s</em> в комплекте <em>%s</em>. Были просмотрены %s и %s."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -776,7 +786,8 @@ msgstr "значимый"
 
 #: templates/html/show.tmpl:61
 msgid "package manager will refuse to remove this package by default"
-msgstr "программа управления пакетами не станет удалять этот пакет по умолчанию"
+msgstr ""
+"программа управления пакетами не станет удалять этот пакет по умолчанию"
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
@@ -1077,4 +1088,3 @@ msgstr "Сгенерирована:"
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
-

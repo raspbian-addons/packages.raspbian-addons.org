@@ -107,6 +107,10 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr "Debian フリーソフトウェアガイドラインに適合するパッケージ"
@@ -143,27 +147,27 @@ msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr "Debian でまだ利用可能でないアーキテクチャに移植されたパッケージ"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "北アメリカ"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "南アメリカ"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "アジア"
 
-#: templates/config/mirrors.tmpl:188
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "オーストラリア・ニュージーランド"
 
-#: templates/config/mirrors.tmpl:189
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "ヨーロッパ"
 
-#: templates/config/mirrors.tmpl:190
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "アフリカ"
 
@@ -1093,12 +1097,28 @@ msgstr "生成:"
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "このページは以下の言語でもご覧になれます。"
+
+#~ msgid "Back to:"
+#~ msgstr "戻る:"
+
+#~ msgid "Packages search page"
+#~ msgstr "パッケージ検索ページ"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
-#~ "きます。"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
@@ -1107,24 +1127,8 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
-
-#~ msgid "Packages search page"
-#~ msgstr "パッケージ検索ページ"
-
-#~ msgid "Back to:"
-#~ msgstr "戻る:"
-
-# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "このページは以下の言語でもご覧になれます。"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
+#~ "きます。"
