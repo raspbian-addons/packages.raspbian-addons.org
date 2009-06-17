@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-03 12:09+0200\n"
-"PO-Revision-Date: 2009-06-09 14:32+0100\n"
+"PO-Revision-Date: 2009-06-12 13:48+0100\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -208,7 +208,7 @@ msgstr "Experimentálny balík"
 
 #: templates/html/download.tmpl:43
 msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the changelog and other possible documentation before using it."
-msgstr "Upozornenie: Tento balík pochádza z distribúcie <strong>experimental</strong>. To znamená, že je pravdepodobne nestabilný alebo obsahuje chyby a môže dokonca spôsobiť stratu údajov. predtým než ho začnete používať sa prosím pozrite do záznamu zmien a ďalšej možnej dokumentácie."
+msgstr "Upozornenie: Tento balík pochádza z distribúcie <strong>experimental</strong>. To znamená, že je pravdepodobne nestabilný alebo obsahuje chyby a môže dokonca spôsobiť stratu údajov. Predtým, než ho začnete používať sa prosím pozrite do záznamu zmien a ďalšej možnej dokumentácie."
 
 #: templates/html/download.tmpl:46
 #: templates/html/show.tmpl:174
@@ -288,7 +288,7 @@ msgstr "Zoznam súborov"
 
 #: templates/html/foot.tmpl:11
 msgid "This page is also available in the following languages (How to set <a href=\"%s\">the default document language</a>):"
-msgstr "Táto stránka je tiež dostupná v nasledovných jazykov (Ako nastaviť <a href=\"%s\">predvolený jazyk dokumentov</a>):"
+msgstr "Táto stránka je tiež dostupná v nasledovných jazykov (ako nastaviť <a href=\"%s\">predvolený jazyk dokumentov</a>):"
 
 #: templates/html/foot.tmpl:28
 msgid "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -757,7 +757,7 @@ msgstr "Podobné balíky:"
 
 #: templates/html/show.tmpl:170
 msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> and other possible documentation before using it."
-msgstr "Upozornenie: Tento balík pochádza z distribúcie <strong>experimental</strong>. To znamená, že je pravdepodobne nestabilný alebo môže dokonca spôsobiť stratu údajov. predtým než ho začnete používať sa prosím pozrite do <a href=\"%s\">záznamu zmien</a> a ďalšej možnej dokumentácie."
+msgstr "Upozornenie: Tento balík pochádza z distribúcie <strong>experimental</strong>. To znamená, že je pravdepodobne nestabilný alebo môže dokonca spôsobiť stratu údajov. Predtým, než ho začnete používať sa prosím pozrite do <a href=\"%s\">záznamu zmien</a> a ďalšej možnej dokumentácie."
 
 #: templates/html/show.tmpl:194
 msgid "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual packages</a>."
@@ -777,7 +777,7 @@ msgstr "Nasledovné binárne balíky sú zostavované z tohto zdrojového balík
 
 #: templates/html/show.tmpl:243
 msgid "Other Packages Related to %s"
-msgstr "Ostatné balíky súvisiace s %s"
+msgstr "Ostatné balíky súvisiace s balíkom %s"
 
 #: templates/html/show.tmpl:245
 msgid "legend"
