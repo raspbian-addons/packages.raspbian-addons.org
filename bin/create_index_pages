@@ -10,6 +10,7 @@ use Storable;
 use HTML::Entities;
 use URI::Escape;
 use Compress::Zlib;
+use IO::Handle;
 
 use lib './lib';
 
@@ -75,6 +76,10 @@ sub open_file {
 
     print "opening $key\n";
     mkdirp ( "$wwwdir/$key" );
+    if ($fh{$key}) {
+	warn "filehandle for $key already open\n";
+	return;
+    }
     open($fh{$key}, '>',
 	 "$wwwdir/$key/$file.slices.new")
 	or die "Cannot open file $wwwdir/$key/$file.slices.new: $!";
@@ -95,6 +100,10 @@ sub close_file {
     $file ||= 'index';
 
     print "closing $key\n";
+    unless ($fh{$key}->opened()) {
+	warn "filehandle for $key already closed\n";
+	return;
+    }
 
     foreach my $lang (@LANGUAGES) {
 	print {$fh{$key}} "\n$s{begin}{$lang}\n";
