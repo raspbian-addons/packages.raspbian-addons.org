@@ -1,0 +1,116 @@
+[%- PROCESS 'html/head.tmpl' 
+	title_tag = "$organisation Packages Search"
+	page_title = "$organisation Packages Search"
+	keywords = "$organisation, Packages"
+-%]
+[%-
+    all_suites = [ 'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
+		   'lenny', 'lenny-volatile', 'lenny-backports', 'squeeze', 'sid' ]
+    version_numbers = { sarge => '3.1',
+			etch  => '4.0',
+			lenny => '5.0' }
+    current_release = 'lenny'
+    all_sections = [ 'main', 'contrib', 'non-free' ]
+    all_architectures = [ 'alpha', 'arm', 'armel', 'amd64', 'avr32', 'hppa', 'i386',
+    		      	  'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
+			  'mipsel', 'm68k', 'powerpc', 's390', 'sparc' ]
+-%]
+
+<p>[% g('This site provides you with information about all the packages available in the <a href="%s">%s</a> Package archive.', project_homepage, organisation) %]</p>
+
+<p><em>[% g('Please contact <a href="mailto:%s">%s</a> if you encounter any problems!', admin.mail, admin.name) %]</em></p>
+
+<h2>[% g('Browse through the lists of packages:') %]</h2>
+
+<ul style="font-size:large">
+[% FOREACH s IN all_suites %]
+<li><a href="[% s %]/">[% s %]</a>
+[% IF version_numbers.$s %]([% version_numbers.$s %])[% END %]</li>
+[% END %]
+</ul>
+
+<p>[% g('There is also a list of <a href="%s/main/newpkg">packages recently added to %s</a>.', all_suites.-1, all_suites.-1) %]</p>
+
+<h2>[% g('Search') %]</h2>
+
+<h3>[% g('Search package directories') %]</h3>
+
+<form method="GET" action="/search">
+<label for="kw">[% g('Keyword:') %]</label>
+<input type="text" size="30" name="keywords" id="kw">
+<input type="submit" value="[% g('Search') %]"> <input type="reset" value="[% g('Reset') %]">
+<br>
+[% g('Search on:') %]
+<input type="radio" name="searchon" value="names" id="onlynames" checked="checked">
+<label for="onlynames">[% g('Package names only') %]</label>&nbsp;&nbsp;
+<input type="radio" name="searchon" value="all" id="descs">
+<label for="descs">[% g('Descriptions') %]</label>
+<input type="radio" name="searchon" value="sourcenames" id="src">
+<label for="src">[% g('Source package names') %]</label>
+<br>
+[% g('Only show exact matches:') %]
+<input type="checkbox" name="exact" value="1">
+<br>
+Distribution:
+<select name="suite">
+[% FOREACH s IN all_suites %]
+  <option value="[% s %]" [% 'selected="selected"' IF s == current_release %]>[% s %]</option>
+[% END %]
+  <option value="all">[% g('any') %]</option>
+</select>
+[% g('Section:') %]
+<select name="section">
+[% FOREACH s IN all_sections %]
+  <option value="[% s %]">[% s %]</option>
+[% END %]
+  <option value="all" selected="selected">[% g('any') %]</option>
+</select>
+</form>
+<p>[% g('There are shortcuts for some searches available:') %]</p>
+<ul>
+      <li>[% g('<code>%s<var>name</var></code> for the search on package names.', packages_homepage_abs) %]</li>
+
+      <li>[% g('<code>%ssrc:<var>name</var></code> for the search on source package names.', packages_homepage_abs) %]</li>
+</ul>
+<hr>
+
+<h3><a name="search_contents">[% g('Search the contents of packages') %]</a></h3>
+
+<p>[% g('This search engine allows you to search the contents of %s distributions for any files (or just parts of file names) that are part of packages. You can also get a full list of files in a given package.', organisation) %]<br>
+<form method="GET" action="/search">
+<input type="hidden" name="searchon" value="contents">
+
+<label for="keyword">[% g('Keyword:') %]</label>
+<input type="text" size="30" name="keywords" id="keyword"> &nbsp;
+
+<input type="submit" value="[% g('Search') %]">
+&nbsp;<input type="reset" value="[% g('Reset') %]">
+<br>
+[% g('Display:') %]
+<br>
+<input type="radio" name="mode" value="exactfilename" id="exactfilename" checked="checked">
+  <label for="exactfilename">[% g('packages that contain files named like this') %]</label>
+<br>
+<input type="radio" name="mode" value="" id="suffixpathname">
+  <label for="suffixpathname">[% g('packages that contain files whose names end with the keyword') %]</label>
+<br>
+<input type="radio" name="mode" value="filename" id="filename">
+  <label for="filename">[% g('packages that contain files whose names contain the keyword') %]</label>
+<br>
+<label for="distro">[% g('Distribution:') %]</label>
+
+<select name="suite" id="distro">
+[% FOREACH s IN all_suites %]
+  <option value="[% s %]" [% 'selected="selected"' IF s == current_release %]>[% s %]</option>
+[% END %]
+</select>
+<label for="architecture">[% g('Architecture:') %]</label>
+<select name="arch" id="architecture">
+[% FOREACH a IN all_architectures %]
+  <option value="[% a %]">[% a %]</option>
+[% END %]
+  <option value="any" selected="selected">[% g('any') %]</option>
+</select>
+</form>
+
+[% PROCESS 'html/foot.tmpl' copyright.years = '1997 - 2009' %]
