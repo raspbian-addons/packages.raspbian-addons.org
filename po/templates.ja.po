@@ -14,19 +14,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:43
+#: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
 msgstr "Debian ウェブメーリングリスト"
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s Webmaster"
 msgstr "%s ウェブマスター"
 
-#: templates/config.tmpl:51
+#: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
-#: templates/config.tmpl:66
+#: templates/config.tmpl:67
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +35,11 @@ msgstr ""
 "報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:70
+#: templates/config.tmpl:71
 msgid ","
 msgstr ","
 
@@ -176,7 +176,8 @@ msgid "Package Download Selection -- %s"
 msgstr "パッケージのダウンロードに関する選択 -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
+#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "ディストリビューション:"
 
@@ -391,7 +392,8 @@ msgstr "このサイトについてさらに詳しく知るには"
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "ホスティングサービス提供者: <a href=\"%s\">%s</a>"
 
-#: templates/html/head.tmpl:47
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
 msgid "Search"
 msgstr "検索"
 
@@ -431,6 +433,128 @@ msgstr "%s パッケージホームページ"
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "パッケージ"
+
+#: templates/html/homepage.tmpl:19
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+
+#: templates/html/homepage.tmpl:21
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr ""
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:32
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
+"to %s</a>."
+msgstr ""
+
+#: templates/html/homepage.tmpl:34
+#, fuzzy
+#| msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "ホスティングサービス提供者: <a href=\"%s\">%s</a>"
+
+#: templates/html/homepage.tmpl:38
+msgid "Search package directories"
+msgstr ""
+
+#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+msgid "Keyword:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+msgid "Reset"
+msgstr ""
+
+#: templates/html/homepage.tmpl:45
+#, fuzzy
+#| msgid "Search"
+msgid "Search on:"
+msgstr "検索"
+
+#: templates/html/homepage.tmpl:47
+#, fuzzy
+#| msgid "package names"
+msgid "Package names only"
+msgstr "パッケージ名"
+
+#: templates/html/homepage.tmpl:49
+#, fuzzy
+#| msgid "descriptions"
+msgid "Descriptions"
+msgstr "パッケージ説明"
+
+#: templates/html/homepage.tmpl:51
+#, fuzzy
+#| msgid "source package names"
+msgid "Source package names"
+msgstr "ソースパッケージ名"
+
+#: templates/html/homepage.tmpl:53
+msgid "Only show exact matches:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
+#: templates/html/homepage.tmpl:114
+msgid "any"
+msgstr ""
+
+#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "セクション:"
+
+#: templates/html/homepage.tmpl:71
+msgid "There are shortcuts for some searches available:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:73
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr ""
+
+#: templates/html/homepage.tmpl:75
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr ""
+
+#: templates/html/homepage.tmpl:79
+msgid "Search the contents of packages"
+msgstr ""
+
+#: templates/html/homepage.tmpl:81
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+
+#: templates/html/homepage.tmpl:91
+msgid "Display:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:94
+msgid "packages that contain files named like this"
+msgstr ""
+
+#: templates/html/homepage.tmpl:97
+msgid "packages that contain files whose names end with the keyword"
+msgstr ""
+
+#: templates/html/homepage.tmpl:100
+msgid "packages that contain files whose names contain the keyword"
+msgstr ""
+
+#: templates/html/homepage.tmpl:109
+#, fuzzy
+#| msgid "Architecture"
+msgid "Architecture:"
+msgstr "アーキテクチャ"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -756,10 +880,6 @@ msgstr "ソースパッケージ"
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "このセクションのすべてのパッケージ"
-
-#: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "セクション:"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
@@ -1097,28 +1217,12 @@ msgstr "生成:"
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
-# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "このページは以下の言語でもご覧になれます。"
-
-#~ msgid "Back to:"
-#~ msgstr "戻る:"
-
-#~ msgid "Packages search page"
-#~ msgstr "パッケージ検索ページ"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
+#~ msgstr ""
+#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
+#~ "きます。"
 
 #~ msgid ""
 #~ "Packages that were added to the %s %s archive (section \"%s\") during the "
@@ -1127,8 +1231,24 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
-#~ msgstr ""
-#~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
-#~ "きます。"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "Packages search page"
+#~ msgstr "パッケージ検索ページ"
+
+#~ msgid "Back to:"
+#~ msgstr "戻る:"
+
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "このページは以下の言語でもご覧になれます。"

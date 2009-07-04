@@ -17,30 +17,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: templates/config.tmpl:43
+#: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
 msgstr ""
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s Webmaster"
 msgstr "%s Webmaster"
 
-#: templates/config.tmpl:51
+#: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s is een <a href=\"%s\">handelsmerk</a> van %s"
 
-#: templates/config.tmpl:66
+#: templates/config.tmpl:67
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:70
+#: templates/config.tmpl:71
 msgid ","
 msgstr "."
 
@@ -169,7 +169,8 @@ msgid "Package Download Selection -- %s"
 msgstr "Selectie voor pakketdownload -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
+#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Distributie:"
 
@@ -357,7 +358,8 @@ msgstr "Informatie over deze site"
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Het bronpakket <a href=\"%s\">%s</a> downloaden:"
 
-#: templates/html/head.tmpl:47
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
 msgid "Search"
 msgstr "Zoeken"
 
@@ -397,6 +399,128 @@ msgstr "%s Pakketten Homepage"
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Pakketten"
+
+#: templates/html/homepage.tmpl:19
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+
+#: templates/html/homepage.tmpl:21
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr ""
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:32
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
+"to %s</a>."
+msgstr ""
+
+#: templates/html/homepage.tmpl:34
+#, fuzzy
+#| msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "Het bronpakket <a href=\"%s\">%s</a> downloaden:"
+
+#: templates/html/homepage.tmpl:38
+msgid "Search package directories"
+msgstr ""
+
+#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+msgid "Keyword:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+msgid "Reset"
+msgstr ""
+
+#: templates/html/homepage.tmpl:45
+#, fuzzy
+#| msgid "Search"
+msgid "Search on:"
+msgstr "Zoeken"
+
+#: templates/html/homepage.tmpl:47
+#, fuzzy
+#| msgid "package names"
+msgid "Package names only"
+msgstr "namen van pakketten"
+
+#: templates/html/homepage.tmpl:49
+#, fuzzy
+#| msgid "descriptions"
+msgid "Descriptions"
+msgstr "omschrijvingen"
+
+#: templates/html/homepage.tmpl:51
+#, fuzzy
+#| msgid "source package names"
+msgid "Source package names"
+msgstr "namen van bronpakketten"
+
+#: templates/html/homepage.tmpl:53
+msgid "Only show exact matches:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
+#: templates/html/homepage.tmpl:114
+msgid "any"
+msgstr ""
+
+#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Sectie:"
+
+#: templates/html/homepage.tmpl:71
+msgid "There are shortcuts for some searches available:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:73
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr ""
+
+#: templates/html/homepage.tmpl:75
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr ""
+
+#: templates/html/homepage.tmpl:79
+msgid "Search the contents of packages"
+msgstr ""
+
+#: templates/html/homepage.tmpl:81
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+
+#: templates/html/homepage.tmpl:91
+msgid "Display:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:94
+msgid "packages that contain files named like this"
+msgstr ""
+
+#: templates/html/homepage.tmpl:97
+msgid "packages that contain files whose names end with the keyword"
+msgstr ""
+
+#: templates/html/homepage.tmpl:100
+msgid "packages that contain files whose names contain the keyword"
+msgstr ""
+
+#: templates/html/homepage.tmpl:109
+#, fuzzy
+#| msgid "Architecture"
+msgid "Architecture:"
+msgstr "Platform"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -710,10 +834,6 @@ msgstr "Bronpakketten"
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "Alle pakketten in deze sectie"
-
-#: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "Sectie:"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
@@ -1052,11 +1172,11 @@ msgstr "Gegenereerd:"
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
+#~ msgid "Packages search page"
+#~ msgstr "Pakketten zoekpagina"
 
 #~ msgid "Back to:"
 #~ msgstr "Terug naar:"
 
-#~ msgid "Packages search page"
-#~ msgstr "Pakketten zoekpagina"
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
