@@ -12,7 +12,12 @@ use Packages::Config qw( $TOPDIR );
 use Packages::CGI;
 
 our @ISA = qw( Exporter );
-our @EXPORT = qw( do_index do_allpackages );
+our @EXPORT = qw( do_homepage do_index do_allpackages );
+
+sub do_homepage {
+    $_[1]->{suite} = [];
+    return send_file( 'index', @_ );
+}
 
 sub do_index {
     return send_file( 'index', @_ );
@@ -46,7 +51,7 @@ sub send_file {
     my $wwwdir = "$TOPDIR/www";
     my $path = "";
     $path .= "source/" if $opts->{source};
-    $path .= "$opts->{suite}[0]/";
+    $path .= "$opts->{suite}[0]/" if @{$opts->{suite}};
     $path .= "$opts->{archive}[0]/" if @{$opts->{archive}} == 1;
     $path .= "$opts->{subsection}[0]/" if @{$opts->{subsection}};
     $path .= "$opts->{priority}[0]/" if @{$opts->{priority}};
