@@ -165,7 +165,12 @@ sub _lcmp {
     return length( $v1 ) <=> length( $v2 );
 }
 
-our @SUITES_SORT = qw(  woody
+our @SUITES_SORT = qw(  
+			bo
+			hamm
+			slink
+			potato
+			woody
 			sarge
 			oldstable
 			etch etch-m68k
