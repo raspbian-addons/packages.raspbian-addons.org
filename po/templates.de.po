@@ -10,19 +10,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:43
+#: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
 msgstr "Debian Webseiten-Mailingliste"
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s Webmaster"
 msgstr "%s-Webmaster"
 
-#: templates/config.tmpl:51
+#: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s ist ein eingetragenes <a href=\"%s\">Warenzeichen</a> von %s"
 
-#: templates/config.tmpl:66
+#: templates/config.tmpl:67
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -32,11 +32,11 @@ msgstr ""
 "veralteten Informationen muss gerechnet werden"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:70
+#: templates/config.tmpl:71
 msgid ","
 msgstr " "
 
@@ -172,7 +172,8 @@ msgid "Package Download Selection -- %s"
 msgstr "Paket-Download-Auswahl -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
+#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Distribution:"
 
@@ -379,7 +380,8 @@ msgstr "Mehr Informationen über diese Site"
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Dieser Service wird von <a href=\"%s\">%s</a> unterstützt."
 
-#: templates/html/head.tmpl:47
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
 msgid "Search"
 msgstr "Suche"
 
@@ -415,10 +417,134 @@ msgstr "%s-Homepage"
 msgid "%s Packages Homepage"
 msgstr "%s-Pakete-Homepage"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Pakete"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+msgid "%s Packages Search"
+msgstr "%s-Paket-Suche"
+
+#: templates/html/homepage.tmpl:19
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+"Diese Seite bietet Ihnen Informationen über alle Pakete, die im <a href=\"%s"
+"\">%s</a>-Paketarchiv verfügbar sind."
+
+#: templates/html/homepage.tmpl:21
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr ""
+"Bitte kontaktieren Sie <a href=\"mailto:%s\">%s</a>, wenn Sie Probleme "
+"bemerken!"
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr "Stöbern in den Paketlisten:"
+
+#: templates/html/homepage.tmpl:32
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
+"to %s</a>."
+msgstr ""
+"Es gibt auch eine Liste der <a href=\"%s/main/newpkg\">Pakete, die kürzlich "
+"zu %s hinzugefügt wurden</a>."
+
+#: templates/html/homepage.tmpl:34
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "Alte Veröffentlichungen finden Sie auf <a href=\"%s\">%s</a>."
+
+#: templates/html/homepage.tmpl:38
+msgid "Search package directories"
+msgstr "Durchsuchen der Paketlisten"
+
+#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+msgid "Keyword:"
+msgstr "Suchbegriff:"
+
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#: templates/html/homepage.tmpl:45
+msgid "Search on:"
+msgstr "Suche in:"
+
+#: templates/html/homepage.tmpl:47
+msgid "Package names only"
+msgstr "Paketnamen"
+
+#: templates/html/homepage.tmpl:49
+msgid "Descriptions"
+msgstr "Beschreibungen"
+
+#: templates/html/homepage.tmpl:51
+msgid "Source package names"
+msgstr "Quellcodepaketnamen"
+
+#: templates/html/homepage.tmpl:53
+msgid "Only show exact matches:"
+msgstr "Zeige nur genaue Treffer:"
+
+#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
+#: templates/html/homepage.tmpl:114
+msgid "any"
+msgstr "alle"
+
+#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Bereiche:"
+
+#: templates/html/homepage.tmpl:71
+msgid "There are shortcuts for some searches available:"
+msgstr "Für einige Suchaufrufe sind Kurzschreibweisen verfügbar:"
+
+#: templates/html/homepage.tmpl:73
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr "<code>%s<var>name</var></code> für die Suche in Paketnamen."
+
+#: templates/html/homepage.tmpl:75
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr "<code>%ssrc:<var>name</var></code> für die Suche in Quellpaketnamen."
+
+#: templates/html/homepage.tmpl:79
+msgid "Search the contents of packages"
+msgstr "Durchsuche Paketinhalte"
+
+#: templates/html/homepage.tmpl:81
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+"Diese Suchmaschine erlaubt es Ihnen, in den Inhalten der %s-Veröffentlichungen nach Dateien (oder Teilen von Dateinamen)"
+" zu suchen, die in den Paketen enthalten sind. Sie können auch die komplette Liste der in einem bestimmten Paket enthaltenen"
+" Dateien anzeigen."
+
+#: templates/html/homepage.tmpl:91
+msgid "Display:"
+msgstr "Zeige:"
+
+#: templates/html/homepage.tmpl:94
+msgid "packages that contain files named like this"
+msgstr "Pakete, die Dateien dieses Namens enthalten"
+
+#: templates/html/homepage.tmpl:97
+msgid "packages that contain files whose names end with the keyword"
+msgstr "Pakete, die Dateien enthalten, deren Name mit dem Suchbegriff enden"
+
+#: templates/html/homepage.tmpl:100
+msgid "packages that contain files whose names contain the keyword"
+msgstr "Pakete, die Dateien enthalten, deren Name den Suchbegriff enthält"
+
+#: templates/html/homepage.tmpl:109
+msgid "Architecture:"
+msgstr "Architektur:"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -751,10 +877,6 @@ msgstr "Quellcode-Pakete"
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "Alle Pakete in diesem Bereich"
-
-#: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "Bereiche:"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"

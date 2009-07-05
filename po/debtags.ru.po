@@ -2,13 +2,14 @@
 # This file is put in the public domain.
 #
 # Yuri Kozlov <kozlov.y@gmail.com>, 2007.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 21:01+0100\n"
-"PO-Revision-Date: 2007-12-16 19:18+0300\n"
-"Last-Translator: Yuri Kozlov <kozlov.y@gmail.com>\n"
+"PO-Revision-Date: 2009-06-18 20:45+0400\n"
+"Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,17 +21,15 @@ msgstr ""
 #. Tag: x11::xserver, long desc
 #: files/debtags/vocabulary
 msgid " X servers and drivers for the X server (input and video)"
-msgstr ""
+msgstr " X-серверы и драйверы к X-серверу (для устройств ввода и видео)"
 
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
-msgstr "!Пока не тегированные пакеты!"
+msgstr "!Пакеты без меток!"
 
 #. Tag: junior::games-gl, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "3D games"
 msgid "3D Games"
 msgstr "3D-игры"
 
@@ -120,6 +119,16 @@ msgstr "Приключенческая"
 msgid "Afrikaans"
 msgstr "Африкаанс"
 
+#. Tag: iso15924::jpan, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Han + Hiragana + Katakana."
+msgstr ""
+
+#. Tag: iso15924::kore, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Hangul + Han"
+msgstr ""
+
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -188,14 +197,13 @@ msgstr ""
 "системам ввода."
 
 #. Tag: culture::arabic, short desc
+#. Tag: iso15924::arab, short desc
 #: files/debtags/vocabulary
 msgid "Arabic"
 msgstr "Арабская"
 
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Arcade games"
 msgid "Arcade Games"
 msgstr "Аркадные игры"
 
@@ -203,6 +211,13 @@ msgstr "Аркадные игры"
 #: files/debtags/vocabulary
 msgid "Archive"
 msgstr "Архив"
+
+#. Tag: iso15924::armn, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Romanian"
+msgid "Armenian"
+msgstr "Румынская"
 
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
@@ -259,8 +274,6 @@ msgstr "Автоматизация выполнения программ в си
 
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Automation and scheduling"
 msgid "Automation and Scheduling"
 msgstr "Автоматизация и планирование"
 
@@ -271,10 +284,8 @@ msgstr "Авиация"
 
 #. Tag: suite::bsd, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "SDL"
 msgid "BSD"
-msgstr "SDL"
+msgstr "BSD"
 
 #. Tag: admin::backup, short desc
 #: files/debtags/vocabulary
@@ -292,6 +303,7 @@ msgid "Benchmarking"
 msgstr "Эталонное тестирование"
 
 #. Tag: culture::bengali, short desc
+#. Tag: iso15924::beng, short desc
 #: files/debtags/vocabulary
 msgid "Bengali"
 msgstr "Бенгальская"
@@ -303,6 +315,9 @@ msgid ""
 "and its family of descendants: FreeBSD, NetBSD or OpenBSD.\n"
 "Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
 msgstr ""
+"Berkeley Software Distribution, иногда называют как Berkeley Unix и BSD "
+"Unix, и его семейство потомков: FreeBSD, NetBSD или OpenBSD.\n"
+"Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
 
 #. Tag: works-with-format::bib, short desc
 #: files/debtags/vocabulary
@@ -316,10 +331,8 @@ msgstr "список ссылок BibTeX"
 
 #. Tag: science::bibliography, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Geography"
 msgid "Bibliography"
-msgstr "География"
+msgstr "Библиография"
 
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
@@ -329,7 +342,7 @@ msgstr "Биоинформатика"
 #. Tag: works-with::biological-sequence, short desc
 #: files/debtags/vocabulary
 msgid "Biological Sequence"
-msgstr ""
+msgstr "Биологические последовательности"
 
 #. Facet: biology, short desc
 #. Tag: field::biology, short desc
@@ -370,10 +383,22 @@ msgstr "ПО для блогов"
 msgid "Board"
 msgstr "Настольная"
 
+#. Tag: iso15924::bopo, short desc
+#: files/debtags/vocabulary
+msgid "Bopomofo"
+msgstr ""
+
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
 msgid "Bosnian"
 msgstr "Боснийская"
+
+#. Tag: iso15924::brai, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Brazilian"
+msgid "Braille"
+msgstr "Бразильская"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -383,7 +408,7 @@ msgstr "Бразильская"
 #. Tag: culture::british, short desc
 #: files/debtags/vocabulary
 msgid "British"
-msgstr ""
+msgstr "Британская"
 
 #. Tag: scope::application, long desc
 #: files/debtags/vocabulary
@@ -478,15 +503,11 @@ msgstr "CORBA"
 
 #. Tag: use::calculating, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Clustering"
 msgid "Calculating"
-msgstr "Кластеризация"
+msgstr "Вычислительный"
 
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Calculation and numerical computation"
 msgid "Calculation and Numerical Computation"
 msgstr "Расчёт и численный анализ"
 
@@ -582,9 +603,9 @@ msgstr ""
 "возможность взаимодействия между программами, написанными на разных языках и "
 "работающими на разных аппаратных платформах. CORBA включает клиент-серверный "
 "сетевой протокол для распределённых вычислений.\n"
-"С помощью этого сетевого протокола, клиенты CORBA на разных компьютерах "
-"инаписанные на разных языках могут обмениваться объектами через сервер "
-"CORBA, напримерorbit2 или omniORB.\n"
+"С помощью этого сетевого протокола, клиенты CORBA на разных компьютерах и "
+"написанные на разных языках могут обмениваться объектами через сервер CORBA, "
+"например orbit2 или omniORB.\n"
 "Ссылка: http://www.corba.org/"
 
 #. Tag: hardware::storage:cd, long desc
@@ -640,7 +661,7 @@ msgstr "SVGA консоль"
 #. Tag: web::cms, short desc
 #: files/debtags/vocabulary
 msgid "Content Management (CMS)"
-msgstr "Управление контентом (CMS)"
+msgstr "Управление содержимым (CMS)"
 
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
@@ -667,6 +688,11 @@ msgstr "Шифрование"
 msgid "Culture"
 msgstr "Культура"
 
+#. Tag: iso15924::cyrl, short desc
+#: files/debtags/vocabulary
+msgid "Cyrillic"
+msgstr ""
+
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
 msgid "Czech"
@@ -674,10 +700,8 @@ msgstr "Чешская"
 
 #. Tag: protocol::dcc, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "IRC DCC"
 msgid "DCC"
-msgstr "IRC DCC"
+msgstr "DCC"
 
 #. Tag: protocol::dhcp, short desc
 #: files/debtags/vocabulary
@@ -721,8 +745,6 @@ msgstr "Организация данных"
 
 #. Tag: admin::recovery, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Data recovery"
 msgid "Data Recovery"
 msgstr "Восстановление данных"
 
@@ -733,8 +755,6 @@ msgstr "Визуализация данных"
 
 #. Tag: science::data-acquisition, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Data Organisation"
 msgid "Data acquisition"
 msgstr "Организация данных"
 
@@ -787,6 +807,11 @@ msgstr "Окружение рабочего стола"
 msgid "Desktop Publishing (DTP)"
 msgstr "Настольная издательская система (DTP)"
 
+#. Tag: iso15924::deva, short desc
+#: files/debtags/vocabulary
+msgid "Devanagari (Nagari)"
+msgstr ""
+
 #. Tag: role::devel-lib, short desc
 #: files/debtags/vocabulary
 msgid "Development Library"
@@ -825,6 +850,11 @@ msgid ""
 "files or perform non-relayed chats.\n"
 "Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
+"Direct Client-to-Client (DCC) -- относящийся к IRC под-протокол, позволяющий "
+"одноранговым узлам взаимодействовать с помощью сервера IRC для "
+"предварительной договорённости об обмене файлами или создании канала обмена "
+"сообщениями напрямую друг с другом.\n"
+"Ссылка: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
@@ -834,7 +864,7 @@ msgstr "Менеджер экрана (графическое приглашен
 #. Tag: works-with-format::djvu, short desc
 #: files/debtags/vocabulary
 msgid "DjVu"
-msgstr ""
+msgstr "DjVu"
 
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
@@ -850,8 +880,6 @@ msgstr "Документация"
 #. Tag: made-of::info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Documentation in Info format"
 msgid "Documentation in Info Format"
 msgstr "Документация в формате Info"
 
@@ -1014,6 +1042,11 @@ msgstr ""
 "(100BASE-*) или 1ГБ/с (1000BASE-*).\n"
 "Ссылка: http://ru.wikipedia.org/wiki/Ethernet"
 
+#. Tag: iso15924::ethi, short desc
+#: files/debtags/vocabulary
+msgid "Ethiopic (Geʻez)"
+msgstr ""
+
 #. Tag: devel::examples, short desc
 #. Tag: role::examples, short desc
 #: files/debtags/vocabulary
@@ -1057,14 +1090,6 @@ msgstr "FidoNet"
 
 #. Tag: protocol::fidonet, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "FidoNet is a mailbox system that enjoyed large popularity in the 1980s "
-#| "and 1990s.\n"
-#| "The communication between the clients and FidoNet servers  was usually "
-#| "carried out over the telephone network using modems and could be used for "
-#| "transferring messages (comparable to email) and files.\n"
-#| "Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
 msgid ""
 "FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
 "1990s.\n"
@@ -1092,8 +1117,6 @@ msgstr "Распространение файлов"
 
 #. Tag: file-formats, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "File formats"
 msgid "File Formats"
 msgstr "Форматы файлов"
 
@@ -1115,7 +1138,7 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
 "ietf.org/rfc/rfc0959.txt"
 msgstr ""
-"Протокол передачи файлов -- это протокол обмена и управления файламичерез "
+"Протокол передачи файлов -- это протокол обмена и управления файлами через "
 "сеть, часто используется в Интернет.\n"
 "Для взаимодействия между серверами FTP и клиентами используется два канала, "
 "управляющий и данных. Хотя первоначально FTP использовался только для "
@@ -1131,6 +1154,8 @@ msgid ""
 "File format to store scanned documents.\n"
 "Link: http://en.wikipedia.org/wiki/Djvu"
 msgstr ""
+"Формат файлов для хранения отсканированных документов.\n"
+"Ссылка: http://en.wikipedia.org/wiki/Djvu"
 
 #. Tag: works-with::file, short desc
 #: files/debtags/vocabulary
@@ -1180,15 +1205,11 @@ msgstr "Межсетевой экран"
 
 #. Tag: game::fps, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "First person shooter"
 msgid "First Person Shooter"
 msgstr "Стрелялка от первого лица"
 
 #. Tag: hardware::storage:floppy, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Floppy disk"
 msgid "Floppy Disk"
 msgstr "Дискета"
 
@@ -1296,10 +1317,8 @@ msgstr "GNUstep"
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid " GNUstep Desktop and WindowMaker"
 msgid "GNUstep Desktop and WindowMaker"
-msgstr " Рабочий стол GNUStep и WindowMaker"
+msgstr "Рабочий стол GNUStep и WindowMaker"
 
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
@@ -1308,24 +1327,18 @@ msgstr "GPE"
 
 #. Tag: suite::gpe, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid " GPE Palmtop Environment"
 msgid "GPE Palmtop Environment"
-msgstr " Окружение GPE Palmtop"
+msgstr "Окружение GPE Palmtop"
 
 #. Tag: hardware::gps, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "GPE"
 msgid "GPS"
-msgstr "GPE"
+msgstr "GPS"
 
 #. Tag: works-with-format::xml:gpx, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "GIF, Graphics Interchange Format"
 msgid "GPX, GPS eXchange Format"
-msgstr "GIF, формат обмена графическими данными"
+msgstr "GPX, формат обмена GPS"
 
 #. Tag: uitoolkit::gtk, short desc
 #: files/debtags/vocabulary
@@ -1367,6 +1380,11 @@ msgstr "География"
 msgid "Geology"
 msgstr "Геология"
 
+#. Tag: iso15924::geor, short desc
+#: files/debtags/vocabulary
+msgid "Georgian (Mkhedruli)"
+msgstr ""
+
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
 msgid "German"
@@ -1375,7 +1393,7 @@ msgstr "Немецкая"
 #. Tag: hardware::gps, long desc
 #: files/debtags/vocabulary
 msgid "Global Positioning System"
-msgstr ""
+msgstr "Система глобального позиционирования"
 
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
@@ -1388,6 +1406,7 @@ msgid "Graphics and Video"
 msgstr "Графика и видео"
 
 #. Tag: culture::greek, short desc
+#. Tag: iso15924::grek, short desc
 #: files/debtags/vocabulary
 msgid "Greek"
 msgstr "Греческая"
@@ -1396,6 +1415,16 @@ msgstr "Греческая"
 #: files/debtags/vocabulary
 msgid "Groupware"
 msgstr "Групповая работа"
+
+#. Tag: iso15924::gujr, short desc
+#: files/debtags/vocabulary
+msgid "Gujarati"
+msgstr ""
+
+#. Tag: iso15924::guru, short desc
+#: files/debtags/vocabulary
+msgid "Gurmukhi"
+msgstr ""
 
 #. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
@@ -1413,10 +1442,28 @@ msgstr "HTTP"
 msgid "Ham Radio"
 msgstr "Любительское радио"
 
+#. Tag: iso15924::hani, short desc
+#: files/debtags/vocabulary
+msgid "Han (Hanzi, Kanji, Hanja)"
+msgstr ""
+
+#. Tag: iso15924::hans, short desc
+#: files/debtags/vocabulary
+msgid "Han (Simplified variant)"
+msgstr ""
+
+#. Tag: iso15924::hant, short desc
+#: files/debtags/vocabulary
+msgid "Han (Traditional variant)"
+msgstr ""
+
+#. Tag: iso15924::hang, short desc
+#: files/debtags/vocabulary
+msgid "Hangul (Hangŭl, Hangeul)"
+msgstr ""
+
 #. Tag: hardware::detection, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Hardware detection"
 msgid "Hardware Detection"
 msgstr "Определение аппаратного обеспечения"
 
@@ -1446,6 +1493,7 @@ msgid "Haskell Development"
 msgstr "Разработка на Haskell"
 
 #. Tag: culture::hebrew, short desc
+#. Tag: iso15924::hebr, short desc
 #: files/debtags/vocabulary
 msgid "Hebrew"
 msgstr "Еврейская"
@@ -1459,6 +1507,11 @@ msgstr "Высокая готовность"
 #: files/debtags/vocabulary
 msgid "Hindi"
 msgstr "Хинди"
+
+#. Tag: iso15924::hira, short desc
+#: files/debtags/vocabulary
+msgid "Hiragana"
+msgstr ""
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
@@ -1570,8 +1623,6 @@ msgstr "Изображение"
 
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Image-scanning hardware"
 msgid "Image-scanning Hardware"
 msgstr "Устройство сканирования изображений"
 
@@ -1725,8 +1776,6 @@ msgstr "Ирландская (Гаэльская)"
 
 #. Tag: admin::issuetracker, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Issue tracker"
 msgid "Issue Tracker"
 msgstr "Отслеживание проблемы"
 
@@ -1746,6 +1795,7 @@ msgid "Jabber"
 msgstr "Jabber"
 
 #. Tag: culture::japanese, short desc
+#. Tag: iso15924::jpan, short desc
 #: files/debtags/vocabulary
 msgid "Japanese"
 msgstr "Японская"
@@ -1780,6 +1830,18 @@ msgstr "Программы для маленьких"
 msgid "KDE"
 msgstr "KDE"
 
+#. Tag: iso15924::knda, short desc
+#: files/debtags/vocabulary
+msgid "Kannada"
+msgstr ""
+
+#. Tag: iso15924::kana, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Catalan"
+msgid "Katakana"
+msgstr "Каталонская"
+
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
 msgid "Kerberos"
@@ -1787,16 +1849,6 @@ msgstr "Kerberos"
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Kerberos is a authentication protocol for computer networks for secure "
-#| "authentication over an otherwise insecure network, using symmetric "
-#| "cryptography and a third party service provider, that is trusted both by "
-#| "client and server. . The authentication mechanism provided by Kerberos is "
-#| "mutual, so that not only a server can be sure of a client's identity, but "
-#| "also a client can be sure a connection to a server is not intercepted.\n"
-#| "Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://"
-#| "http://www.ietf.org/rfc/rfc4120.txt"
 msgid ""
 "Kerberos is an authentication protocol for computer networks for secure "
 "authentication over an otherwise insecure network, using symmetric "
@@ -1810,32 +1862,38 @@ msgid ""
 msgstr ""
 "Kerberos -- это протокол аутентификации в компьютерных сетях для безопасной "
 "аутентификации через другую небезопасную сеть, использует симметричные "
-"алгоритмы шифрования и сторонний сервис, который доверяет одновременно "
-"клиенту и серверу. . Предоставляемый Kerberos механизм аутентификации "
-"взаимен, так что не только сервер может быть уверен в подлинности клиента, "
-"но и клиент может быть уверен, что подключение к серверу не было "
-"перехвачено.\n"
+"алгоритмы шифрования и сторонний сервис, которому доверяют одновременно, и "
+"клиент, и сервер.\n"
+"Предоставляемый Kerberos механизм аутентификации взаимен, так что не только "
+"сервер может быть уверен в подлинности клиента, но и клиент может быть "
+"уверен, что подключение к серверу не было перехвачено.\n"
 "Ссылка: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Ссылка: http://"
 "http://www.ietf.org/rfc/rfc4120.txt"
 
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Kernel and modules"
 msgid "Kernel and Modules"
 msgstr "Ядро и модули"
 
 #. Tag: admin::kernel, short desc
 #: files/debtags/vocabulary
 msgid "Kernel or Modules"
-msgstr "Ядро и модули"
+msgstr "Ядро или модули"
 
 #. Tag: hardware::input:keyboard, short desc
 #: files/debtags/vocabulary
 msgid "Keyboard"
 msgstr "Клавиатура"
 
+#. Tag: iso15924::khmr, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Theme"
+msgid "Khmer"
+msgstr "Тема"
+
 #. Tag: culture::korean, short desc
+#. Tag: iso15924::kore, short desc
 #: files/debtags/vocabulary
 msgid "Korean"
 msgstr "Корейская"
@@ -1855,17 +1913,29 @@ msgstr "LDIF"
 msgid "LPR"
 msgstr "LPR"
 
+#. Tag: iso15924::laoo, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Laptop"
+msgid "Lao"
+msgstr "Ноутбук"
+
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
 msgid "Laptop"
 msgstr "Ноутбук"
 
-#. Tag: culture::latvian, short desc
+#. Tag: iso15924::latn, short desc
 #: files/debtags/vocabulary
 #, fuzzy
-#| msgid "Croatian"
+#| msgid "Latvian"
+msgid "Latin"
+msgstr "Латышская"
+
+#. Tag: culture::latvian, short desc
+#: files/debtags/vocabulary
 msgid "Latvian"
-msgstr "Хорватская"
+msgstr "Латышская"
 
 #. Tag: use::learning, short desc
 #: files/debtags/vocabulary
@@ -2031,27 +2101,28 @@ msgstr "Агент пересылки почты"
 
 #. Tag: mail::user-agent, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Mail user agent"
 msgid "Mail User Agent"
-msgstr "Пользовательский почтовый посредник"
+msgstr "Клиент электронной почты"
 
 #. Tag: mail::list, short desc
 #: files/debtags/vocabulary
 msgid "Mailing Lists"
 msgstr "Списки почтовой рассылки"
 
+#. Tag: iso15924::mlym, short desc
+#: files/debtags/vocabulary
+msgid "Malayalam"
+msgstr ""
+
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
 msgid "Manpages"
-msgstr "Страницы руководства"
+msgstr "Справочные страницы"
 
 #. Tag: made-of::man, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Manuals in nroff format"
 msgid "Manuals in Nroff Format"
-msgstr "Руководства в формате nroff"
+msgstr "Руководства в формате Nroff"
 
 #. Tag: field::mathematics, short desc
 #: files/debtags/vocabulary
@@ -2060,10 +2131,8 @@ msgstr "Математика"
 
 #. Tag: use::measuring, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Learning"
 msgid "Measuring"
-msgstr "Обучение"
+msgstr "Измерение"
 
 #. Tag: field::medicine:imaging, short desc
 #: files/debtags/vocabulary
@@ -2087,10 +2156,8 @@ msgstr "Метапакеты"
 
 #. Tag: field::meteorology, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Geology"
 msgid "Meteorology"
-msgstr "Геология"
+msgstr "Метеорология"
 
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
@@ -2110,12 +2177,11 @@ msgstr "Модем"
 
 #. Tag: field::biology:molecular, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Molecular biology"
 msgid "Molecular Biology"
 msgstr "Молекулярная биология"
 
 #. Tag: culture::mongolian, short desc
+#. Tag: iso15924::mong, short desc
 #: files/debtags/vocabulary
 msgid "Mongolian"
 msgstr "Монгольская"
@@ -2160,6 +2226,11 @@ msgstr "Ноты"
 #: files/debtags/vocabulary
 msgid "MySQL"
 msgstr "MySQL"
+
+#. Tag: iso15924::mymr, short desc
+#: files/debtags/vocabulary
+msgid "Myanmar (Burmese)"
+msgstr ""
 
 #. Tag: protocol::nfs, short desc
 #: files/debtags/vocabulary
@@ -2235,13 +2306,6 @@ msgstr ""
 
 #. Tag: protocol::nntp, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| " Network News Transfer Protocol, a protocol for reading in writing Usenet "
-#| "articles (a Usenet article is comparable with an email), but also used "
-#| "among NNTP servers to transfer articles. . Link: http://en.wikipedia.org/"
-#| "wiki/Network_News_Transfer_Protocol Link: http://www.ietf.org/rfc/rfc977."
-#| "txt"
 msgid ""
 "Network News Transfer Protocol, a protocol for reading and writing Usenet "
 "articles (a Usenet article is comparable with an email), but also used among "
@@ -2262,8 +2326,6 @@ msgstr "Сетевой протокол"
 
 #. Tag: works-with::network-traffic, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Network traffic"
 msgid "Network Traffic"
 msgstr "Сетевой трафик"
 
@@ -2300,132 +2362,132 @@ msgstr "Норвежская нюнорск"
 #. Tag: special::not-yet-tagged::a, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with a"
-msgstr "Пока не тегированные пакеты на a"
+msgstr "Пакеты без меток на букву a"
 
 #. Tag: special::not-yet-tagged::b, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with b"
-msgstr "Пока не тегированные пакеты на b"
+msgstr "Пакеты без меток на букву b"
 
 #. Tag: special::not-yet-tagged::c, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with c"
-msgstr "Пока не тегированные пакеты на c"
+msgstr "Пакеты без меток на букву c"
 
 #. Tag: special::not-yet-tagged::d, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with d"
-msgstr "Пока не тегированные пакеты на d"
+msgstr "Пакеты без меток на букву d"
 
 #. Tag: special::not-yet-tagged::e, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with e"
-msgstr "Пока не тегированные пакеты на e"
+msgstr "Пакеты без меток на букву e"
 
 #. Tag: special::not-yet-tagged::f, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with f"
-msgstr "Пока не тегированные пакеты на f"
+msgstr "Пакеты без меток на букву f"
 
 #. Tag: special::not-yet-tagged::g, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with g"
-msgstr "Пока не тегированные пакеты на g"
+msgstr "Пакеты без меток на букву g"
 
 #. Tag: special::not-yet-tagged::h, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with h"
-msgstr "Пока не тегированные пакеты на h"
+msgstr "Пакеты без меток на букву h"
 
 #. Tag: special::not-yet-tagged::i, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with i"
-msgstr "Пока не тегированные пакеты на i"
+msgstr "Пакеты без меток на букву i"
 
 #. Tag: special::not-yet-tagged::j, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with j"
-msgstr "Пока не тегированные пакеты на j"
+msgstr "Пакеты без меток на букву j"
 
 #. Tag: special::not-yet-tagged::k, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with k"
-msgstr "Пока не тегированные пакеты на k"
+msgstr "Пакеты без меток на букву k"
 
 #. Tag: special::not-yet-tagged::l, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with l"
-msgstr "Пока не тегированные пакеты на l"
+msgstr "Пакеты без меток на букву l"
 
 #. Tag: special::not-yet-tagged::m, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with m"
-msgstr "Пока не тегированные пакеты на m"
+msgstr "Пакеты без меток на букву m"
 
 #. Tag: special::not-yet-tagged::n, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with n"
-msgstr "Пока не тегированные пакеты на n"
+msgstr "Пакеты без меток на букву n"
 
 #. Tag: special::not-yet-tagged::o, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with o"
-msgstr "Пока не тегированные пакеты на o"
+msgstr "Пакеты без меток на букву o"
 
 #. Tag: special::not-yet-tagged::p, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with p"
-msgstr "Пока не тегированные пакеты на p"
+msgstr "Пакеты без меток на букву p"
 
 #. Tag: special::not-yet-tagged::q, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with q"
-msgstr "Пока не тегированные пакеты на q"
+msgstr "Пакеты без меток на букву q"
 
 #. Tag: special::not-yet-tagged::r, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with r"
-msgstr "Пока не тегированные пакеты на r"
+msgstr "Пакеты без меток на букву r"
 
 #. Tag: special::not-yet-tagged::s, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with s"
-msgstr "Пока не тегированные пакеты на s"
+msgstr "Пакеты без меток на букву s"
 
 #. Tag: special::not-yet-tagged::t, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with t"
-msgstr "Пока не тегированные пакеты на t"
+msgstr "Пакеты без меток на букву t"
 
 #. Tag: special::not-yet-tagged::u, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with u"
-msgstr "Пока не тегированные пакеты на u"
+msgstr "Пакеты без меток на букву u"
 
 #. Tag: special::not-yet-tagged::v, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with v"
-msgstr "Пока не тегированные пакеты на v"
+msgstr "Пакеты без меток на букву v"
 
 #. Tag: special::not-yet-tagged::w, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with w"
-msgstr "Пока не тегированные пакеты на w"
+msgstr "Пакеты без меток на букву w"
 
 #. Tag: special::not-yet-tagged::x, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with x"
-msgstr "Пока не тегированные пакеты на x"
+msgstr "Пакеты без меток на букву x"
 
 #. Tag: special::not-yet-tagged::y, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with y"
-msgstr "Пока не тегированные пакеты на y"
+msgstr "Пакеты без меток на букву y"
 
 #. Tag: special::not-yet-tagged::z, short desc
 #: files/debtags/vocabulary
 msgid "Not yet tagged packages with z"
-msgstr "Пока не тегированные пакеты на z"
+msgstr "Пакеты без меток на букву z"
 
 #. Tag: mail::notification, short desc
 #: files/debtags/vocabulary
@@ -2434,8 +2496,6 @@ msgstr "Уведомители"
 
 #. Tag: biology::nuceleic-acids, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Nucleic acids"
 msgid "Nucleic Acids"
 msgstr "Нуклеиновые кислоты"
 
@@ -2476,8 +2536,6 @@ msgstr "Устаревшие пакеты"
 
 #. Tag: office, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Office software"
 msgid "Office Software"
 msgstr "Офисное ПО"
 
@@ -2516,9 +2574,9 @@ msgstr ""
 "Открытая система для общения в реальном времени -- это протокол мгновенного "
 "обмена сообщениями, используемый в сети AOL instant messaging (AIM). "
 "Протокол версий 7, 8 и 9 сети ICQ IM также считаются протоколом OSCAR.\n"
-"OSCAR является патентованным бинарным протоколом. Так как нет официальной "
+"OSCAR является патентованным двоичным протоколом. Так как нет официальной "
 "документации, клиентские программы, подключающиеся к AIM или ICQ написаны с "
-"использованиеминформации, полученной путём инженерного анализа.\n"
+"использованием информации, полученной путём инженерного анализа.\n"
 "Ссылка: http://ru.wikipedia.org/wiki/OSCAR_%28%D0%BF%D1%80%D0%BE%D1%82%D0%BE%"
 "D0%BA%D0%BE%D0%BB%29 Ссылка: http://www.oilcan.org/oscar/"
 
@@ -2531,6 +2589,11 @@ msgstr "OpenOffice.org"
 #: files/debtags/vocabulary
 msgid "Optical Character Recognition"
 msgstr "Оптическое распознавание символов"
+
+#. Tag: iso15924::orya, short desc
+#: files/debtags/vocabulary
+msgid "Oriya"
+msgstr ""
 
 #. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
@@ -2566,7 +2629,7 @@ msgstr "Протокол POP3"
 #. Tag: devel::lang:posix-shell, short desc
 #: files/debtags/vocabulary
 msgid "POSIX shell"
-msgstr ""
+msgstr "Оболочка POSIX"
 
 #. Tag: admin::package-management, short desc
 #: files/debtags/vocabulary
@@ -2575,8 +2638,6 @@ msgstr "Управление пакетами"
 
 #. Tag: works-with::software:package, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Packaged software"
 msgid "Packaged Software"
 msgstr "Упакованное ПО"
 
@@ -2597,7 +2658,7 @@ msgstr ""
 #. Tag: role::kernel, long desc
 #: files/debtags/vocabulary
 msgid "Packages that contain only operating system kernels and kernel modules."
-msgstr "Пакеты, содержащие только ядра операцонной системы и ядерные модули."
+msgstr "Пакеты, содержащие только ядра операционной системы и ядерные модули."
 
 #. Tag: role::metapackage, long desc
 #: files/debtags/vocabulary
@@ -2661,8 +2722,6 @@ msgstr "Разработка на Pike"
 
 #. Tag: works-with-format::plaintext, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Plain text"
 msgid "Plain Text"
 msgstr "Простой текст"
 
@@ -2693,10 +2752,8 @@ msgstr ""
 
 #. Tag: science::plotting, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Routing"
 msgid "Plotting"
-msgstr "Маршрутизирование"
+msgstr "Черчение"
 
 #. Tag: role::plugin, short desc
 #: files/debtags/vocabulary
@@ -2816,8 +2873,6 @@ msgstr ""
 
 #. Tag: office::project-management, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Project management"
 msgid "Project Management"
 msgstr "Управление проектами"
 
@@ -2848,10 +2903,8 @@ msgstr "Проксирование"
 
 #. Tag: science::publishing, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Polish"
 msgid "Publishing"
-msgstr "Польская"
+msgstr "Опубликование"
 
 #. Tag: culture::punjabi, short desc
 #: files/debtags/vocabulary
@@ -2881,7 +2934,7 @@ msgstr "Разработка на Python"
 #. Tag: uitoolkit::qt, short desc
 #: files/debtags/vocabulary
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 #. Tag: protocol::radius, short desc
 #: files/debtags/vocabulary
@@ -2934,14 +2987,6 @@ msgstr "Религия"
 
 #. Tag: protocol::radius, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Remote Authentication Dial In User Service, a protocol for "
-#| "authentication, authorization and accounting of network access, mostly "
-#| "used by Internet service providers handle handle dial-up Internet "
-#| "connections.\n"
-#| "Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
-#| "rfc2865.txt"
 msgid ""
 "Remote Authentication Dial In User Service, a protocol for authentication, "
 "authorization and accounting of network access, mostly used by Internet "
@@ -2973,8 +3018,6 @@ msgstr "Управление ревизиями"
 
 #. Tag: game::rpg:rogue, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Rogue-Like RPG"
 msgid "Rogue-like RPG"
 msgstr "Ролевая игра в стиле Rogue"
 
@@ -2999,14 +3042,14 @@ msgid ""
 "Routers, shapers, sniffers, firewalls and other tools that work with a "
 "stream of network packets."
 msgstr ""
-"Маршрутизаторы, ограничители трафика, сниферы, межсетевые экраны и "
-"другиеинструменты, которые работают с потоком сетевых пакетов."
+"Маршрутизаторы, ограничители трафика, сниферы, межсетевые экраны и другие "
+"инструменты, которые работают с потоком сетевых пакетов."
 
 #. Tag: use::routing, short desc
 #. Tag: network::routing, short desc
 #: files/debtags/vocabulary
 msgid "Routing"
-msgstr "Маршрутизирование"
+msgstr "Маршрутизация"
 
 #. Tag: suite::roxen, short desc
 #: files/debtags/vocabulary
@@ -3025,8 +3068,6 @@ msgstr "Разработка на Ruby"
 
 #. Tag: works-with::software:running, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Running programs"
 msgid "Running Programs"
 msgstr "Работающие программы"
 
@@ -3107,15 +3148,6 @@ msgstr "SSH"
 
 #. Tag: protocol::sftp, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| " SSH File Transfer Protocol, a protocol for secure, encrypting file "
-#| "exchange and manipulation over insecure networks, using the SSH "
-#| "protocol. . SFTP provides a complete set of file system operations, "
-#| "different from its predecessor SCP, which only allowed file transfer. It "
-#| "is not, other than the name might suggest, the a version of the FTP "
-#| "protocol executed through an SSH channel. . Link: http://en.wikipedia.org/"
-#| "wiki/SSH_file_transfer_protocol"
 msgid ""
 "SSH File Transfer Protocol, a protocol for secure, encrypting file exchange "
 "and manipulation over insecure networks, using the SSH protocol.\n"
@@ -3204,8 +3236,6 @@ msgstr "Написание сценария"
 
 #. Tag: web::search-engine, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Search engine"
 msgid "Search Engine"
 msgstr "Поисковый механизм"
 
@@ -3221,16 +3251,6 @@ msgstr "Вторичные пользователи пакетов не буду
 
 #. Tag: protocol::ssh, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Secure Shell, a protocol for secure, encrypted network connections. SSH "
-#| "can be used to execute programs on a remote host with an SSH server over "
-#| "secure otherwise insecure protocols through an SSH channel. The main use "
-#| "is, as the name suggest, to provide encrypted login and shell access on "
-#| "remote servers.\n"
-#| "SSH authentication can be done with password or, which is the preferred "
-#| "mechanism, via asymmetric public/private key cryptography.\n"
-#| "Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgid ""
 "Secure Shell, a protocol for secure, encrypted network connections. SSH can "
 "be used to execute programs on a remote host with an SSH server over "
@@ -3243,11 +3263,11 @@ msgid ""
 msgstr ""
 "Безопасная оболочка -- это протокол для безопасных, зашифрованных сетевых "
 "соединений. SSH может быть использован для запуска программ на удалённом "
-"хосте, имеющим сервер SSH или по небезопасным протоколам в туннеле SSH. "
+"хосте, имеющим сервер SSH, или по небезопасным протоколам в туннеле SSH. "
 "Основным предназначением, как следует из названия, является предоставление "
 "шифрованного входа и доступа через оболочку на удалённые серверы.\n"
-"Аутентификация в SSHможет выполняться по паролю или, что предпочтительней, с "
-"помощью ассиметричных ключей шифрования.\n"
+"Аутентификация в SSH может выполняться по паролю или, что предпочтительней, "
+"с помощью асимметричных ключей шифрования.\n"
 "Ссылка: http://ru.wikipedia.org/wiki/Secure_Shell"
 
 #. Tag: protocol::ssl, long desc
@@ -3295,16 +3315,6 @@ msgstr "Сервер"
 
 #. Tag: protocol::smb, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Server Message Block, a protocol for providing file access and printer "
-#| "sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
-#| "Internet File System) is a synonym for SMB\n"
-#| "Although SMB is a proprietary protocol, the Samba project reverse-"
-#| "engineered the protocol and developed both client and server programs for "
-#| "better interoperability in mixed Unix/Windows networks.\n"
-#| "Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
-#| "samba.org/"
 msgid ""
 "Server Message Block, a protocol for providing file access and printer "
 "sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
@@ -3326,34 +3336,27 @@ msgstr ""
 #. Tag: network::service, short desc
 #: files/debtags/vocabulary
 msgid "Service"
-msgstr "Сервис"
+msgstr "Служба"
 
 #. Facet: special, short desc
 #: files/debtags/vocabulary
 msgid "Service tags"
-msgstr "Сервисные теги"
+msgstr "Служебные метки"
 
 #. Tag: role::shared-lib, short desc
 #: files/debtags/vocabulary
 msgid "Shared Library"
-msgstr "Разделяемая библиотека"
+msgstr "Динамическая библиотека"
 
 #. Tag: role::shared-lib, long desc
 #: files/debtags/vocabulary
 msgid "Shared libraries used by one or more programs."
-msgstr "Разделяемые библиотеки используются одной или несколькими программами."
+msgstr ""
+"Динамически подключаемые библиотеки используются одной или несколькими "
+"программами."
 
 #. Tag: protocol::smtp, long desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid ""
-#| "Simple Mail Transfer Protocol, a protocol or for transmitting emails over "
-#| "the Internet.\n"
-#| "Every SMTP server utilizes SMTP to hand on emails to the next mail server "
-#| "until an email arrives at its destination, from where it is usually "
-#| "retrieved via POP3 or IMAP\n"
-#| "Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
-#| "http://www.ietf.org/rfc/rfc2821.txt"
 msgid ""
 "Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
 "Internet.\n"
@@ -3366,8 +3369,8 @@ msgstr ""
 "Простой протокол передачи почты -- это протокол для передачи электронных "
 "сообщений через Интернет.\n"
 "Каждый сервер SMTP использует SMTP для дальнейшей передачи на следующий "
-"почтовый сервер до тех пор пока письмо не достигнет места назначения, "
-"откуда, обычно, оно забирается по протоколам POP3 или IMAP\n"
+"почтовый сервер до тех пор, пока письмо не достигнет места назначения, "
+"откуда, обычно, оно забирается по протоколам POP3 или IMAP.\n"
 "Ссылка: http://ru.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Ссылка: "
 "http://www.ietf.org/rfc/rfc2821.txt"
 
@@ -3406,15 +3409,18 @@ msgstr ""
 
 #. Tag: use::simulating, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Simulation"
 msgid "Simulating"
-msgstr "Симулятор"
+msgstr "Симулирование"
 
 #. Tag: game::simulation, short desc
 #: files/debtags/vocabulary
 msgid "Simulation"
 msgstr "Симулятор"
+
+#. Tag: iso15924::sinh, short desc
+#: files/debtags/vocabulary
+msgid "Sinhala"
+msgstr ""
 
 #. Tag: culture::slovak, short desc
 #: files/debtags/vocabulary
@@ -3512,8 +3518,6 @@ msgstr "Синтез речи"
 
 #. Tag: game::sport, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Sport games"
 msgid "Sport Games"
 msgstr "Спортивные игры"
 
@@ -3550,8 +3554,6 @@ msgstr "Стратегия"
 
 #. Tag: field::biology:structural, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Structural biology"
 msgid "Structural Biology"
 msgstr "Структурная биология"
 
@@ -3570,10 +3572,22 @@ msgstr "Поддерживаемые форматы"
 msgid "Swedish"
 msgstr "Шведская"
 
+#. Tag: iso15924::zsym, short desc
+#: files/debtags/vocabulary
+msgid "Symbols"
+msgstr ""
+
 #. Tag: use::synchronizing, short desc
 #: files/debtags/vocabulary
 msgid "Synchronisation"
 msgstr "Синхронизация"
+
+#. Tag: iso15924::syrc, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Privacy"
+msgid "Syriac"
+msgstr "Конфиденциальность"
 
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
@@ -3587,8 +3601,6 @@ msgstr "Загрузка системы"
 
 #. Tag: admin::install, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "System installation"
 msgid "System Installation"
 msgstr "Установка системы"
 
@@ -3599,8 +3611,6 @@ msgstr "Журналы системных сообщений"
 
 #. Tag: system, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "System software and maintainance"
 msgid "System Software and Maintainance"
 msgstr "Системное ПО и сопровождение"
 
@@ -3620,15 +3630,18 @@ msgstr ""
 
 #. Tag: protocol::tftp, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "FTP"
 msgid "TFTP"
-msgstr "FTP"
+msgstr "TFTP"
 
 #. Tag: works-with-format::tiff, short desc
 #: files/debtags/vocabulary
 msgid "TIFF, Tagged Image File Format"
 msgstr "TIFF, тегированный формат файлов изображений"
+
+#. Tag: iso15924::tavt, short desc
+#: files/debtags/vocabulary
+msgid "Tai Viet"
+msgstr ""
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
@@ -3641,6 +3654,7 @@ msgid "Tajik"
 msgstr "Таджикская"
 
 #. Tag: culture::tamil, short desc
+#. Tag: iso15924::taml, short desc
 #: files/debtags/vocabulary
 msgid "Tamil"
 msgstr "Тамильская"
@@ -3680,6 +3694,11 @@ msgstr "TeX, LaTeX и DVI"
 msgid "Telnet"
 msgstr "Telnet"
 
+#. Tag: iso15924::telu, short desc
+#: files/debtags/vocabulary
+msgid "Telugu"
+msgstr ""
+
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
 msgid "Terminal Emulator"
@@ -3716,6 +3735,7 @@ msgid "Text-based Interactive"
 msgstr "Интерактивный, на основе вводимого текста"
 
 #. Tag: culture::thai, short desc
+#. Tag: iso15924::thai, short desc
 #: files/debtags/vocabulary
 msgid "Thai"
 msgstr "Тайская"
@@ -3819,7 +3839,7 @@ msgstr ""
 "Протокол Name/Finger -- это простой сетевой протокол, который предоставляет "
 "всестороннюю, открытую информацию о пользователях компьютера, например, "
 "адрес электронной почты, телефонные номера, ФИО и т.д.\n"
-"По соображениям конфедициальности, протокол Finger больше не используется "
+"По соображениям конфиденциальности, протокол Finger больше не используется "
 "так широко как это было в начале 1990х.\n"
 "Ссылка: http://ru.wikipedia.org/wiki/Finger Ссылка: http://www.ietf.org/rfc/"
 "rfc1288.txt"
@@ -3946,6 +3966,11 @@ msgstr ""
 msgid "Three-Dimensional"
 msgstr "Трёхмерный"
 
+#. Tag: iso15924::tibt, short desc
+#: files/debtags/vocabulary
+msgid "Tibetan"
+msgstr ""
+
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
 msgid "Time and Clock"
@@ -3954,7 +3979,7 @@ msgstr "Часы и время"
 #. Tag: uitoolkit::tk, short desc
 #: files/debtags/vocabulary
 msgid "Tk"
-msgstr ""
+msgstr "Tk"
 
 #. Tag: use::comparing, long desc
 #: files/debtags/vocabulary
@@ -4037,7 +4062,7 @@ msgstr ""
 #. Tag: works-with::graphs, short desc
 #: files/debtags/vocabulary
 msgid "Trees and Graphs"
-msgstr ""
+msgstr "Деревья и графы"
 
 #. Tag: protocol::tftp, long desc
 #: files/debtags/vocabulary
@@ -4049,6 +4074,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
 "http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
+"Простой протокол передач файлов служит для передачи файлов. TFTP позволяет "
+"клиенту читать и записывать файл на удалённый хост. Основным применением "
+"является сетевая загрузка бездисковых станций в локальной сети. "
+"Разрабатывался для достижения простоты в реализации, чтобы мог уместиться в "
+"ROM.\n"
+"Ссылка: http://ru.wikipedia.org/wiki/TFTP Ссылка: http://www.ietf.org/rfc/"
+"rfc1350.txt"
 
 #. Tag: culture::turkish, short desc
 #: files/debtags/vocabulary
@@ -4089,6 +4121,11 @@ msgstr "Украинская"
 #: files/debtags/vocabulary
 msgid "Unicode"
 msgstr "Юникод"
+
+#. Tag: iso15924::cans, short desc
+#: files/debtags/vocabulary
+msgid "Unified Canadian Aboriginal Syllabics"
+msgstr ""
 
 #. Tag: hardware::power:ups, long desc
 #: files/debtags/vocabulary
@@ -4152,8 +4189,6 @@ msgstr "Узбекская"
 
 #. Tag: vi, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "VI editor"
 msgid "VI Editor"
 msgstr "Редактор VI"
 
@@ -4179,10 +4214,8 @@ msgstr "Векторное изображение"
 
 #. Tag: works-with::vcs, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Revision Control"
 msgid "Version control system"
-msgstr "Управление ревизиями"
+msgstr "Система контроля версий"
 
 #. Tag: works-with::video, short desc
 #: files/debtags/vocabulary
@@ -4293,10 +4326,15 @@ msgstr "Работает с"
 msgid "World Wide Web"
 msgstr "World Wide Web"
 
+#. Facet: iso15924, short desc
+#: files/debtags/vocabulary
+msgid "Writing script"
+msgstr ""
+
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
 msgid "X Server and Drivers"
-msgstr ""
+msgstr "X-сервер и драйверы"
 
 #. Tag: interface::x11, short desc
 #. Facet: x11, short desc
@@ -4364,6 +4402,11 @@ msgstr "Трансформации XSL (XSLT)"
 msgid "Yahoo! Messenger"
 msgstr "Yahoo! Messenger"
 
+#. Tag: iso15924::yiii, short desc
+#: files/debtags/vocabulary
+msgid "Yi"
+msgstr ""
+
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -4376,11 +4419,19 @@ msgid ""
 "* DNS-SD for service discovery\n"
 "Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
 msgstr ""
+"Zero Configuration Networking (Zeroconfig), --набор методов для "
+"автоматического создания работающей IP-сети без какой-либо настройки и "
+"серверов.\n"
+"Эта метка используется для пакетов, в которых реализовано одно и более из:\n"
+"* IPv4LL для выбора адресов\n"
+"* mDNS для определения имён\n"
+"* DNS-SD для обнаружения служб\n"
+"Ссылка: http://www.zeroconf.org Ссылка: http://ru.wikipedia.org/wiki/Zeroconf"
 
 #. Tag: protocol::zeroconf, short desc
 #: files/debtags/vocabulary
 msgid "Zeroconf"
-msgstr ""
+msgstr "Zeroconf"
 
 #. Tag: works-with-format::zip, short desc
 #: files/debtags/vocabulary
@@ -4411,37 +4462,3 @@ msgstr "wxWidgets"
 #: files/debtags/vocabulary
 msgid "xDSL Modem"
 msgstr "xDSL модем"
-
-#~ msgid ""
-#~ "Direct Client to Client protocol used by Internet Relay Chat clients."
-#~ msgstr "Протокол прямой передачи клиент-клиент используется клиентами IRC."
-
-#~ msgid "File Transfer"
-#~ msgstr "Передача файлов"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "Протокол передачи файлов"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "Протокол передачи гипертекста"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB и CIFS"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Протокол безопасной передачи файлов"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Общий доступ к файлам и принтерам Windows (SMB)"
-
-#~ msgid "Source code"
-#~ msgstr "Исходный код"
-
-#~ msgid "QT"
-#~ msgstr "QT"
-
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "X Server"
-#~ msgstr "X-сервер"

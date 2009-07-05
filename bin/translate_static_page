@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use POSIX;
+use File::Basename;
+
+use lib './lib';
+
+use Packages::CommonCode qw(:all);
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @LANGUAGES );
+use Packages::Template;
+use Packages::I18N::Locale;
+&Packages::Config::init( './' );
+
+my $template = new Packages::Template( "$TOPDIR/templates", 'html');
+
+if( @ARGV % 2 ){
+    die "usage: translate_static_page [[template outputfile]...]\n";
+}
+my %pages = @ARGV;
+print "translate static pages ...\n";
+while( my ($tmpl, $output) = each %pages ) {
+    my $outdir = dirname($output);
+    my $outfile = basename($output);
+    mkdirp ( $outdir );
+    foreach my $lang (@LANGUAGES) {
+	my $charset = 'UTF-8';
+	my $cat = Packages::I18N::Locale->get_handle($lang)
+	    or die "get_handle failed for $lang";
+	print "writing $outfile (lang=$lang)...\n";
+
+	my %content = ( po_lang => $lang, ddtp_lang => $lang,
+			charset => $charset, cat => $cat,
+			used_langs => \@LANGUAGES );
+
+	$template->page( $tmpl, \%content,
+			 "$TOPDIR/$output.$lang.html.new");
+	activate( "$TOPDIR/$output.$lang.html" );
+    }
+}

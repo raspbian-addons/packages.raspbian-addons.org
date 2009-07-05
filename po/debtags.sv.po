@@ -103,6 +103,16 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
+#. Tag: iso15924::jpan, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Han + Hiragana + Katakana."
+msgstr ""
+
+#. Tag: iso15924::kore, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Hangul + Han"
+msgstr ""
+
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -168,6 +178,7 @@ msgstr ""
 "inmatningssytem."
 
 #. Tag: culture::arabic, short desc
+#. Tag: iso15924::arab, short desc
 #: files/debtags/vocabulary
 msgid "Arabic"
 msgstr "Arabiska"
@@ -181,6 +192,11 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Archive"
 msgstr ""
+
+#. Tag: iso15924::armn, short desc
+#: files/debtags/vocabulary
+msgid "Armenian"
+msgstr "armeniska"
 
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
@@ -262,6 +278,7 @@ msgid "Benchmarking"
 msgstr "Prestandamätning"
 
 #. Tag: culture::bengali, short desc
+#. Tag: iso15924::beng, short desc
 #: files/debtags/vocabulary
 msgid "Bengali"
 msgstr "Bengali"
@@ -334,10 +351,22 @@ msgstr ""
 msgid "Board"
 msgstr ""
 
+#. Tag: iso15924::bopo, short desc
+#: files/debtags/vocabulary
+msgid "Bopomofo"
+msgstr ""
+
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
 msgid "Bosnian"
 msgstr "Bosniska"
+
+#. Tag: iso15924::brai, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Brazilian"
+msgid "Braille"
+msgstr "Brasiliansk"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -621,6 +650,11 @@ msgstr ""
 msgid "Culture"
 msgstr "Kultur"
 
+#. Tag: iso15924::cyrl, short desc
+#: files/debtags/vocabulary
+msgid "Cyrillic"
+msgstr ""
+
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
 msgid "Czech"
@@ -734,6 +768,11 @@ msgstr ""
 #. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
+msgstr ""
+
+#. Tag: iso15924::deva, short desc
+#: files/debtags/vocabulary
+msgid "Devanagari (Nagari)"
 msgstr ""
 
 #. Tag: role::devel-lib, short desc
@@ -941,6 +980,11 @@ msgid ""
 "Ethernet exist, distinguishable by the maximum connection speed. The most "
 "widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
 "Link: http://en.wikipedia.org/wiki/Ethernet"
+msgstr ""
+
+#. Tag: iso15924::ethi, short desc
+#: files/debtags/vocabulary
+msgid "Ethiopic (Geʻez)"
 msgstr ""
 
 #. Tag: devel::examples, short desc
@@ -1264,6 +1308,11 @@ msgstr ""
 msgid "Geology"
 msgstr ""
 
+#. Tag: iso15924::geor, short desc
+#: files/debtags/vocabulary
+msgid "Georgian (Mkhedruli)"
+msgstr ""
+
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
 msgid "German"
@@ -1285,6 +1334,7 @@ msgid "Graphics and Video"
 msgstr ""
 
 #. Tag: culture::greek, short desc
+#. Tag: iso15924::grek, short desc
 #: files/debtags/vocabulary
 msgid "Greek"
 msgstr "Grekiska"
@@ -1292,6 +1342,16 @@ msgstr "Grekiska"
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
 msgid "Groupware"
+msgstr ""
+
+#. Tag: iso15924::gujr, short desc
+#: files/debtags/vocabulary
+msgid "Gujarati"
+msgstr ""
+
+#. Tag: iso15924::guru, short desc
+#: files/debtags/vocabulary
+msgid "Gurmukhi"
 msgstr ""
 
 #. Tag: made-of::html, short desc
@@ -1308,6 +1368,30 @@ msgstr ""
 #. Tag: hardware::hamradio, short desc
 #: files/debtags/vocabulary
 msgid "Ham Radio"
+msgstr ""
+
+#. Tag: iso15924::hani, short desc
+#: files/debtags/vocabulary
+msgid "Han (Hanzi, Kanji, Hanja)"
+msgstr ""
+
+#. Tag: iso15924::hans, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Chinese (Simplified)"
+msgid "Han (Simplified variant)"
+msgstr "kinesiska (fÃ¶renklad)"
+
+#. Tag: iso15924::hant, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Chinese (Traditional)"
+msgid "Han (Traditional variant)"
+msgstr "kinesiska (traditionell)"
+
+#. Tag: iso15924::hang, short desc
+#: files/debtags/vocabulary
+msgid "Hangul (Hangŭl, Hangeul)"
 msgstr ""
 
 #. Tag: hardware::detection, short desc
@@ -1341,6 +1425,7 @@ msgid "Haskell Development"
 msgstr ""
 
 #. Tag: culture::hebrew, short desc
+#. Tag: iso15924::hebr, short desc
 #: files/debtags/vocabulary
 msgid "Hebrew"
 msgstr "Hebreiska"
@@ -1354,6 +1439,11 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Hindi"
 msgstr "Hindi"
+
+#. Tag: iso15924::hira, short desc
+#: files/debtags/vocabulary
+msgid "Hiragana"
+msgstr ""
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
@@ -1597,6 +1687,7 @@ msgid "Jabber"
 msgstr ""
 
 #. Tag: culture::japanese, short desc
+#. Tag: iso15924::jpan, short desc
 #: files/debtags/vocabulary
 msgid "Japanese"
 msgstr "Japanska"
@@ -1630,6 +1721,18 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "KDE"
 msgstr ""
+
+#. Tag: iso15924::knda, short desc
+#: files/debtags/vocabulary
+msgid "Kannada"
+msgstr "kanaresiska"
+
+#. Tag: iso15924::kana, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Catalan"
+msgid "Katakana"
+msgstr "Katalanska"
 
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
@@ -1667,7 +1770,13 @@ msgstr "Kärna eller moduler"
 msgid "Keyboard"
 msgstr ""
 
+#. Tag: iso15924::khmr, short desc
+#: files/debtags/vocabulary
+msgid "Khmer"
+msgstr ""
+
 #. Tag: culture::korean, short desc
+#. Tag: iso15924::kore, short desc
 #: files/debtags/vocabulary
 msgid "Korean"
 msgstr "Koreanska"
@@ -1687,10 +1796,22 @@ msgstr ""
 msgid "LPR"
 msgstr ""
 
+#. Tag: iso15924::laoo, short desc
+#: files/debtags/vocabulary
+msgid "Lao"
+msgstr ""
+
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
 msgid "Laptop"
 msgstr ""
+
+#. Tag: iso15924::latn, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Latvian"
+msgid "Latin"
+msgstr "lettiska"
 
 #. Tag: culture::latvian, short desc
 #: files/debtags/vocabulary
@@ -1870,6 +1991,11 @@ msgstr "Användarhanterin"
 msgid "Mailing Lists"
 msgstr ""
 
+#. Tag: iso15924::mlym, short desc
+#: files/debtags/vocabulary
+msgid "Malayalam"
+msgstr "malayalam"
+
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
 #, fuzzy
@@ -1939,6 +2065,7 @@ msgid "Molecular Biology"
 msgstr ""
 
 #. Tag: culture::mongolian, short desc
+#. Tag: iso15924::mong, short desc
 #: files/debtags/vocabulary
 msgid "Mongolian"
 msgstr "Mongoliska"
@@ -1982,6 +2109,11 @@ msgstr ""
 #. Tag: protocol::db:mysql, short desc
 #: files/debtags/vocabulary
 msgid "MySQL"
+msgstr ""
+
+#. Tag: iso15924::mymr, short desc
+#: files/debtags/vocabulary
+msgid "Myanmar (Burmese)"
 msgstr ""
 
 #. Tag: protocol::nfs, short desc
@@ -2325,6 +2457,11 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Optical Character Recognition"
 msgstr "Optisk teckenigenkänning"
+
+#. Tag: iso15924::orya, short desc
+#: files/debtags/vocabulary
+msgid "Oriya"
+msgstr ""
 
 #. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
@@ -3078,6 +3215,11 @@ msgstr "interlingua"
 msgid "Simulation"
 msgstr ""
 
+#. Tag: iso15924::sinh, short desc
+#: files/debtags/vocabulary
+msgid "Sinhala"
+msgstr ""
+
 #. Tag: culture::slovak, short desc
 #: files/debtags/vocabulary
 msgid "Slovak"
@@ -3228,10 +3370,22 @@ msgstr ""
 msgid "Swedish"
 msgstr "Svenska"
 
+#. Tag: iso15924::zsym, short desc
+#: files/debtags/vocabulary
+msgid "Symbols"
+msgstr ""
+
 #. Tag: use::synchronizing, short desc
 #: files/debtags/vocabulary
 msgid "Synchronisation"
 msgstr ""
+
+#. Tag: iso15924::syrc, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Serbian"
+msgid "Syriac"
+msgstr "Serbiska"
 
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
@@ -3282,6 +3436,11 @@ msgstr ""
 msgid "TIFF, Tagged Image File Format"
 msgstr ""
 
+#. Tag: iso15924::tavt, short desc
+#: files/debtags/vocabulary
+msgid "Tai Viet"
+msgstr ""
+
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
 msgid "Taiwanese"
@@ -3293,6 +3452,7 @@ msgid "Tajik"
 msgstr "Tadjikiska"
 
 #. Tag: culture::tamil, short desc
+#. Tag: iso15924::taml, short desc
 #: files/debtags/vocabulary
 msgid "Tamil"
 msgstr "Tamil"
@@ -3332,6 +3492,11 @@ msgstr ""
 msgid "Telnet"
 msgstr ""
 
+#. Tag: iso15924::telu, short desc
+#: files/debtags/vocabulary
+msgid "Telugu"
+msgstr ""
+
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
 msgid "Terminal Emulator"
@@ -3368,6 +3533,7 @@ msgid "Text-based Interactive"
 msgstr ""
 
 #. Tag: culture::thai, short desc
+#. Tag: iso15924::thai, short desc
 #: files/debtags/vocabulary
 msgid "Thai"
 msgstr "Thailändska"
@@ -3550,6 +3716,11 @@ msgstr ""
 msgid "Three-Dimensional"
 msgstr ""
 
+#. Tag: iso15924::tibt, short desc
+#: files/debtags/vocabulary
+msgid "Tibetan"
+msgstr ""
+
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
 msgid "Time and Clock"
@@ -3679,6 +3850,11 @@ msgstr "Ukrainska"
 #. Tag: works-with::unicode, short desc
 #: files/debtags/vocabulary
 msgid "Unicode"
+msgstr ""
+
+#. Tag: iso15924::cans, short desc
+#: files/debtags/vocabulary
+msgid "Unified Canadian Aboriginal Syllabics"
 msgstr ""
 
 #. Tag: hardware::power:ups, long desc
@@ -3862,6 +4038,11 @@ msgstr ""
 msgid "World Wide Web"
 msgstr ""
 
+#. Facet: iso15924, short desc
+#: files/debtags/vocabulary
+msgid "Writing script"
+msgstr ""
+
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
 msgid "X Server and Drivers"
@@ -3929,6 +4110,11 @@ msgstr ""
 msgid "Yahoo! Messenger"
 msgstr ""
 
+#. Tag: iso15924::yiii, short desc
+#: files/debtags/vocabulary
+msgid "Yi"
+msgstr ""
+
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3977,116 +4163,101 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Gallegan"
-#~ msgstr "galiciska"
-
-#~ msgid "Zulu"
-#~ msgstr "zulu"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Malayalam"
-#~ msgstr "malayalam"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Kannada"
-#~ msgstr "kanaresiska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Galician"
-#~ msgstr "galiciska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Chinese (Simplified)"
-#~ msgstr "kinesiska (fÃ¶renklad)"
-
-#~ msgid "Chinese (Traditional)"
-#~ msgstr "kinesiska (traditionell)"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
+#~ msgid "English"
+#~ msgstr "engelska"
 
 #~ msgid "Portuguese (Brazilian)"
 #~ msgstr "portugisiska (Brasilien)"
 
-#~ msgid "English"
-#~ msgstr "engelska"
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
 
-#~ msgid "Armenian"
-#~ msgstr "armeniska"
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Galician"
+#~ msgstr "galiciska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Zulu"
+#~ msgstr "zulu"
+
+#~ msgid "Gallegan"
+#~ msgstr "galiciska"
