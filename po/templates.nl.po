@@ -395,10 +395,17 @@ msgstr "%s Homepage"
 msgid "%s Packages Homepage"
 msgstr "%s Pakketten Homepage"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Pakketten"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
+#| msgid "%s Packages Homepage"
+msgid "%s Packages Search"
+msgstr "%s Pakketten Homepage"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
@@ -1172,11 +1179,11 @@ msgstr "Gegenereerd:"
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
-#~ msgid "Packages search page"
-#~ msgstr "Pakketten zoekpagina"
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
 
 #~ msgid "Back to:"
 #~ msgstr "Terug naar:"
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
+#~ msgid "Packages search page"
+#~ msgstr "Pakketten zoekpagina"

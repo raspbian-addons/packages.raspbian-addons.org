@@ -417,10 +417,17 @@ msgstr "%ss startsida"
 msgid "%s Packages Homepage"
 msgstr "%ss startsida för paket"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Paket"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
+#| msgid "%s Packages Homepage"
+msgid "%s Packages Search"
+msgstr "%ss startsida för paket"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
@@ -1203,18 +1210,18 @@ msgstr "Skapad:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Se <URL:%s> för licensvillkor."
 
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Denna sida finns även på följande språk:"
+
+#~ msgid "Back to:"
+#~ msgstr "Återgå till:"
+
+#~ msgid "Packages search page"
+#~ msgstr "Paketsöksida"
+
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Du kan prova en annan sökning på <a href=\"%s#search_packages"
 #~ "\">paketsöksidan</a>."
-
-#~ msgid "Packages search page"
-#~ msgstr "Paketsöksida"
-
-#~ msgid "Back to:"
-#~ msgstr "Återgå till:"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Denna sida finns även på följande språk:"

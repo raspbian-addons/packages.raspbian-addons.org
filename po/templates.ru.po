@@ -416,10 +416,17 @@ msgstr "Домашняя страница %s"
 msgid "%s Packages Homepage"
 msgstr "Домашняя страница пакетов %s"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Пакеты"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
+#| msgid "%s Packages Homepage"
+msgid "%s Packages Search"
+msgstr "Домашняя страница пакетов %s"
 
 #: templates/html/homepage.tmpl:19
 msgid ""

@@ -402,10 +402,17 @@ msgstr "%s 首页"
 msgid "%s Packages Homepage"
 msgstr "%s 软件包首页"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "软件包"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
+#| msgid "%s Packages Homepage"
+msgid "%s Packages Search"
+msgstr "%s 软件包首页"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
@@ -1203,26 +1210,26 @@ msgstr "最近修订日期:"
 msgid "See <URL:%s> for the license terms."
 msgstr "查看 <URL:%s> 以便了解许可证的各项条款。"
 
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "本页面还能应用以下各种语言浏览:"
+
+#~ msgid "Back to:"
+#~ msgstr "返回到:"
+
+#~ msgid "Packages search page"
+#~ msgstr "软件包搜索页面"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr " <em>$suite_enc</em> 发行版"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr " <em>$section_enc</em> 版面"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr " <em>$architectures_enc</em> 硬件架构"
+
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "您可以在<a href=\"%s#search_packages\">软件包搜索页面</a>重新搜索一次。"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr " <em>$architectures_enc</em> 硬件架构"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr " <em>$section_enc</em> 版面"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr " <em>$suite_enc</em> 发行版"
-
-#~ msgid "Packages search page"
-#~ msgstr "软件包搜索页面"
-
-#~ msgid "Back to:"
-#~ msgstr "返回到:"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "本页面还能应用以下各种语言浏览:"

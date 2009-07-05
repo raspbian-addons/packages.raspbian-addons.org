@@ -417,21 +417,32 @@ msgstr "%s-Homepage"
 msgid "%s Packages Homepage"
 msgstr "%s-Pakete-Homepage"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Pakete"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
+#| msgid "%s Packages Homepage"
+msgid "%s Packages Search"
+msgstr "%s-Pakete-Homepage"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
-msgstr "Diese Seite bietet Ihnen Informationen über alle Pakete, die im <a href=\"%s\">%s</a>-Paketarchiv verfügbar sind."
+msgstr ""
+"Diese Seite bietet Ihnen Informationen über alle Pakete, die im <a href=\"%s"
+"\">%s</a>-Paketarchiv verfügbar sind."
 
 #: templates/html/homepage.tmpl:21
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
-msgstr "Bitte kontaktieren Sie <a href=\"mailto:%s\">%s</a>, wenn Sie Probleme bemerken!"
+msgstr ""
+"Bitte kontaktieren Sie <a href=\"mailto:%s\">%s</a>, wenn Sie Probleme "
+"bemerken!"
 
 #: templates/html/homepage.tmpl:23
 msgid "Browse through the lists of packages:"
@@ -441,7 +452,9 @@ msgstr "Stöbern in den Paketlisten:"
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
-msgstr "Es gibt auch eine Liste der <a href=\"%s/main/newpkg\">Pakete, die kürzlich zu %s hinzugefügt wurden</a>."
+msgstr ""
+"Es gibt auch eine Liste der <a href=\"%s/main/newpkg\">Pakete, die kürzlich "
+"zu %s hinzugefügt wurden</a>."
 
 #: templates/html/homepage.tmpl:34
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
@@ -1202,27 +1215,27 @@ msgstr "Erzeugt:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Siehe <URL:%s> für die Lizenz-Bestimmungen."
 
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
+
+#~ msgid "Back to:"
+#~ msgstr "Zurück zu:"
+
+#~ msgid "Packages search page"
+#~ msgstr "Paket-Suchseite"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "Suite(s) <em>$suite_enc</em>"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "Bereich(e) <em>$section_enc</em>"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
+
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
 #~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Sie können auf der <a href=\"%s#search_packages\">Paketsuchseite</a> eine "
 #~ "andere Suche durchführen."
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "auf Architektur(en) <em>$architectures_enc</em>"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "Bereich(e) <em>$section_enc</em>"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "Suite(s) <em>$suite_enc</em>"
-
-#~ msgid "Packages search page"
-#~ msgstr "Paket-Suchseite"
-
-#~ msgid "Back to:"
-#~ msgstr "Zurück zu:"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Diese Seite gibt es auch in den folgenden Sprachen:"
