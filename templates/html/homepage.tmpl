@@ -1,7 +1,7 @@
 [%- PROCESS 'html/head.tmpl' 
-	title_tag = "$organisation Packages Search"
-	page_title = "$organisation Packages Search"
-	keywords = "$organisation, Packages"
+	title_tag = g('%s Packages Search', organisation)
+	page_title = g('%s Packages Search', organisation)
+	keywords = g('Packages')
 -%]
 [%-
     all_suites = [ 'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
