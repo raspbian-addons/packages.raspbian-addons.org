@@ -426,73 +426,63 @@ msgstr "Pakete"
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
-msgstr ""
+msgstr "Diese Seite bietet Ihnen Informationen über alle Pakete, die im <a href=\"%s\">%s</a>-Paketarchiv verfügbar sind."
 
 #: templates/html/homepage.tmpl:21
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
-msgstr ""
+msgstr "Bitte kontaktieren Sie <a href=\"mailto:%s\">%s</a>, wenn Sie Probleme bemerken!"
 
 #: templates/html/homepage.tmpl:23
 msgid "Browse through the lists of packages:"
-msgstr ""
+msgstr "Stöbern in den Paketlisten:"
 
 #: templates/html/homepage.tmpl:32
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
-msgstr ""
+msgstr "Es gibt auch eine Liste der <a href=\"%s/main/newpkg\">Pakete, die kürzlich zu %s hinzugefügt wurden</a>."
 
 #: templates/html/homepage.tmpl:34
-#, fuzzy
-#| msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
-msgstr "Dieser Service wird von <a href=\"%s\">%s</a> unterstützt."
+msgstr "Alte Veröffentlichungen finden Sie auf <a href=\"%s\">%s</a>."
 
 #: templates/html/homepage.tmpl:38
 msgid "Search package directories"
-msgstr ""
+msgstr "Durchsuchen der Paketlisten"
 
 #: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
 msgid "Keyword:"
-msgstr ""
+msgstr "Suchbegriff:"
 
 #: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: templates/html/homepage.tmpl:45
-#, fuzzy
-#| msgid "Search"
 msgid "Search on:"
-msgstr "Suche"
+msgstr "Suche in:"
 
 #: templates/html/homepage.tmpl:47
-#, fuzzy
-#| msgid "package names"
 msgid "Package names only"
 msgstr "Paketnamen"
 
 #: templates/html/homepage.tmpl:49
-#, fuzzy
-#| msgid "descriptions"
 msgid "Descriptions"
 msgstr "Beschreibungen"
 
 #: templates/html/homepage.tmpl:51
-#, fuzzy
-#| msgid "source package names"
 msgid "Source package names"
 msgstr "Quellcodepaketnamen"
 
 #: templates/html/homepage.tmpl:53
 msgid "Only show exact matches:"
-msgstr ""
+msgstr "Zeige nur genaue Treffer:"
 
 #: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
 #: templates/html/homepage.tmpl:114
 msgid "any"
-msgstr ""
+msgstr "alle"
 
 #: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
 msgid "Section:"
@@ -500,20 +490,20 @@ msgstr "Bereiche:"
 
 #: templates/html/homepage.tmpl:71
 msgid "There are shortcuts for some searches available:"
-msgstr ""
+msgstr "Für einige Suchaufrufe sind Kurzschreibweisen verfügbar:"
 
 #: templates/html/homepage.tmpl:73
 msgid "<code>%s<var>name</var></code> for the search on package names."
-msgstr ""
+msgstr "<code>%s<var>name</var></code> für die Suche in Paketnamen."
 
 #: templates/html/homepage.tmpl:75
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
-msgstr ""
+msgstr "<code>%ssrc:<var>name</var></code> für die Suche in Quellpaketnamen."
 
 #: templates/html/homepage.tmpl:79
 msgid "Search the contents of packages"
-msgstr ""
+msgstr "Durchsuche Paketinhalte"
 
 #: templates/html/homepage.tmpl:81
 msgid ""
@@ -524,25 +514,23 @@ msgstr ""
 
 #: templates/html/homepage.tmpl:91
 msgid "Display:"
-msgstr ""
+msgstr "Zeige:"
 
 #: templates/html/homepage.tmpl:94
 msgid "packages that contain files named like this"
-msgstr ""
+msgstr "Pakete, die Dateien dieses Namens enthalten"
 
 #: templates/html/homepage.tmpl:97
 msgid "packages that contain files whose names end with the keyword"
-msgstr ""
+msgstr "Pakete, die Dateien enthalten, deren Name mit dem Suchbegriff enden"
 
 #: templates/html/homepage.tmpl:100
 msgid "packages that contain files whose names contain the keyword"
-msgstr ""
+msgstr "Pakete, die Dateien enthalten, deren Name den Suchbegriff enthält"
 
 #: templates/html/homepage.tmpl:109
-#, fuzzy
-#| msgid "Architecture"
 msgid "Architecture:"
-msgstr "Architektur"
+msgstr "Architektur:"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
