@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2009-04-14 22:53+0200\n"
+"PO-Revision-Date: 2009-07-06 18:43+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -425,14 +425,14 @@ msgstr "Pakete"
 
 #: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
 msgid "%s Packages Search"
-msgstr "%s-Paket-Suche"
+msgstr "%s-Paketsuche"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
 msgstr ""
-"Diese Seite bietet Ihnen Informationen über alle Pakete, die im <a href=\"%s"
+"Diese Site bietet Ihnen Informationen über alle Pakete, die im <a href=\"%s"
 "\">%s</a>-Paketarchiv verfügbar sind."
 
 #: templates/html/homepage.tmpl:21
@@ -460,7 +460,7 @@ msgstr "Alte Veröffentlichungen finden Sie auf <a href=\"%s\">%s</a>."
 
 #: templates/html/homepage.tmpl:38
 msgid "Search package directories"
-msgstr "Durchsuchen der Paketlisten"
+msgstr "Durchsuchen der Paketverzeichnisse"
 
 #: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
 msgid "Keyword:"
@@ -476,7 +476,7 @@ msgstr "Suche in:"
 
 #: templates/html/homepage.tmpl:47
 msgid "Package names only"
-msgstr "Paketnamen"
+msgstr "Nur Paketnamen"
 
 #: templates/html/homepage.tmpl:49
 msgid "Descriptions"
@@ -497,7 +497,7 @@ msgstr "alle"
 
 #: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
 msgid "Section:"
-msgstr "Bereiche:"
+msgstr "Bereich:"
 
 #: templates/html/homepage.tmpl:71
 msgid "There are shortcuts for some searches available:"
@@ -505,12 +505,12 @@ msgstr "Für einige Suchaufrufe sind Kurzschreibweisen verfügbar:"
 
 #: templates/html/homepage.tmpl:73
 msgid "<code>%s<var>name</var></code> for the search on package names."
-msgstr "<code>%s<var>name</var></code> für die Suche in Paketnamen."
+msgstr "<code>%s<var>Name</var></code> für die Suche in Paketnamen."
 
 #: templates/html/homepage.tmpl:75
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
-msgstr "<code>%ssrc:<var>name</var></code> für die Suche in Quellpaketnamen."
+msgstr "<code>%ssrc:<var>Name</var></code> für die Suche in Quellpaketnamen."
 
 #: templates/html/homepage.tmpl:79
 msgid "Search the contents of packages"
@@ -522,9 +522,10 @@ msgid ""
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
-"Diese Suchmaschine erlaubt es Ihnen, in den Inhalten der %s-Veröffentlichungen nach Dateien (oder Teilen von Dateinamen)"
-" zu suchen, die in den Paketen enthalten sind. Sie können auch die komplette Liste der in einem bestimmten Paket enthaltenen"
-" Dateien anzeigen."
+"Diese Suchmaschine erlaubt es Ihnen, in den Inhalten der "
+"%s-Veröffentlichungen nach Dateien (oder Teilen von Dateinamen) zu suchen, "
+"die in den Paketen enthalten sind. Sie können auch die komplette Liste der in "
+"einem bestimmten Paket enthaltenen Dateien anzeigen."
 
 #: templates/html/homepage.tmpl:91
 msgid "Display:"
@@ -540,7 +541,7 @@ msgstr "Pakete, die Dateien enthalten, deren Name mit dem Suchbegriff enden"
 
 #: templates/html/homepage.tmpl:100
 msgid "packages that contain files whose names contain the keyword"
-msgstr "Pakete, die Dateien enthalten, deren Name den Suchbegriff enthält"
+msgstr "Pakete, die Dateien enthalten, deren Name den Suchbegriff enthalten"
 
 #: templates/html/homepage.tmpl:109
 msgid "Architecture:"
