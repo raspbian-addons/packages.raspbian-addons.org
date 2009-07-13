@@ -12,7 +12,7 @@ STAMP=$(date "+%Y%m%d%H%M")
 new="$mirror/$STAMP"
 mkdir $new
 
-if lockfile -! -r2 -300 "$mirror/mirror.lock"
+if lockfile -! -l 3600 -r2 -300 "$mirror/mirror.lock"
 then
     echo "couldn't aquire mirror.lock in due time"
     exit 1;
