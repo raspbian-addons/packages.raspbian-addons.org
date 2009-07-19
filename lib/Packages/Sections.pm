@@ -72,7 +72,7 @@ our %sections_descs = (
 		      misc	=> [ N_("Miscellaneous"),
 				     N_("Miscellaneous utilities that didn\'t fit well anywhere else.") ],
 		      net	=> [ N_("Network"),
-				     N_("Daemons and clients to connect your Debian GNU/Linux system to the world.") ],
+				     N_("Daemons and clients to connect your system to the world.") ],
 		      news	=> [ N_("Newsgroups"),
 				     N_("Software to access Usenet, to set up news servers, etc.") ],
 		      oldlibs	=> [ N_("Old Libraries"),
