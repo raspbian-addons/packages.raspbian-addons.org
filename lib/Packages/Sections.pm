@@ -80,7 +80,7 @@ our %sections_descs = (
 		      ocaml	=> [ N_("OCaml"),
 				     N_("Everything about OCaml, an ML language implementation.") ],
 		      otherosfs	=> [ N_("Other OS\'s and file systems"),
-				     N_("Software to run programs compiled for other operating system, and to use their filesystems.") ],
+				     N_("Software to run programs compiled for other operating systems, and to use their filesystems.") ],
 		      perl	=> [ N_("Perl"),
 				     N_("Everything about Perl, an interpreted scripting language.") ],
 		      php	=> [ N_("PHP"),
