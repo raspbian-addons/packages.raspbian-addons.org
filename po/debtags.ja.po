@@ -580,6 +580,14 @@ msgid ""
 "orbit2 or omniORB.\n"
 "Link: http://www.corba.org/"
 msgstr ""
+"異なる言語で書かれた、異なるハードウェアプラットフォームで動作するプログラム"
+"の間の相互運用のための標準規格、Common Object Request Broker Architecture。"
+"CORBA には、分散コンピューティングのためのクライアントサーバ方式のネットワー"
+"クプロトコルが含まれています。\n"
+"異なるコンピュータ上の、異なる言語で書かれた CORBA クライアントは、このネット"
+"ワークプロトコルを用いて、ORBit2 や omniORB などの CORBA サーバを経由してオブ"
+"ジェクトを交換できます。\n"
+"Link: http://www.corba.org/"
 
 #. Tag: hardware::storage:cd, long desc
 #: files/debtags/vocabulary
@@ -3267,6 +3275,13 @@ msgid ""
 "utilize Google's searching engine from client applications.\n"
 "Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 msgstr ""
+"同一ネットワーク内の異なるコンピュータの間でメッセージを交換するためのプロト"
+"コル、Simple Object Access Protocol。メッセージは XML で符号化され、通常は "
+"HTTP で送信されます。\n"
+"SOAP は、ウェブサービスに対する API を提供するのに用いられます。例としては、"
+"クライアントアプリケーションから Google の検索エンジンを利用するための "
+"Google API があります。\n"
+"Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 
 #. Tag: use::simulating, short desc
 #: files/debtags/vocabulary
@@ -4157,6 +4172,10 @@ msgid ""
 "from XML-RPC.\n"
 "Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 msgstr ""
+"符号化に XML、転送機構に HTTP を使用する、リモートプロシージャコール用の単純"
+"なプロトコル、XML Remote Procedure Call。\n"
+"大幅に機能が追加されたプロトコル SOAP は、XML-RPC から発展しました。\n"
+"Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 
 #. Tag: works-with-format::xml:rss, long desc
 #: files/debtags/vocabulary
