@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-02-08 23:21+0900\n"
+"PO-Revision-Date: 2009-10-11 00:13+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -115,15 +115,17 @@ msgstr "アドベンチャーゲーム"
 msgid "Afrikaans"
 msgstr "アフリカーンス語"
 
+# FIXME: culture::xxx and iso15924::xxx have the same descriptions in some cases.
 #. Tag: iso15924::jpan, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Han + Hiragana + Katakana."
-msgstr ""
+msgstr "漢字 + 平仮名 + 片仮名の通称。"
 
+# FIXME: A trailing period missing.
 #. Tag: iso15924::kore, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Hangul + Han"
-msgstr ""
+msgstr "ハングル + 漢字の通称。"
 
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
@@ -196,7 +198,7 @@ msgstr ""
 #. Tag: iso15924::arab, short desc
 #: files/debtags/vocabulary
 msgid "Arabic"
-msgstr "アラビア語"
+msgstr "アラビア語・アラビア文字"
 
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
@@ -210,10 +212,8 @@ msgstr "アーカイブ"
 
 #. Tag: iso15924::armn, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Romanian"
 msgid "Armenian"
-msgstr "ルーマニア語"
+msgstr "アルメニア文字"
 
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
@@ -296,7 +296,7 @@ msgstr "ベンチマーク"
 #. Tag: iso15924::beng, short desc
 #: files/debtags/vocabulary
 msgid "Bengali"
-msgstr "ベンガル語"
+msgstr "ベンガル語・ベンガル文字"
 
 #. Tag: suite::bsd, long desc
 #: files/debtags/vocabulary
@@ -370,7 +370,7 @@ msgstr "ボードゲーム"
 #. Tag: iso15924::bopo, short desc
 #: files/debtags/vocabulary
 msgid "Bopomofo"
-msgstr ""
+msgstr "注音符号 (ボポモフォ)"
 
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
@@ -379,10 +379,8 @@ msgstr "ボスニア語"
 
 #. Tag: iso15924::brai, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Brazilian"
 msgid "Braille"
-msgstr "ブラジルポルトガル語"
+msgstr "ブライユ式点字"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -666,7 +664,7 @@ msgstr "文化"
 #. Tag: iso15924::cyrl, short desc
 #: files/debtags/vocabulary
 msgid "Cyrillic"
-msgstr ""
+msgstr "キリル文字"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
@@ -785,7 +783,7 @@ msgstr "デスクトップパブリッシング (DTP)"
 #. Tag: iso15924::deva, short desc
 #: files/debtags/vocabulary
 msgid "Devanagari (Nagari)"
-msgstr ""
+msgstr "デーヴァナーガリー (ナーガリー文字)"
 
 #. Tag: role::devel-lib, short desc
 #: files/debtags/vocabulary
@@ -995,7 +993,7 @@ msgstr ""
 #. Tag: iso15924::ethi, short desc
 #: files/debtags/vocabulary
 msgid "Ethiopic (Geʻez)"
-msgstr ""
+msgstr "エチオピア文字 (ゲエズ)"
 
 #. Tag: devel::examples, short desc
 #. Tag: role::examples, short desc
@@ -1319,7 +1317,7 @@ msgstr "地質学"
 #. Tag: iso15924::geor, short desc
 #: files/debtags/vocabulary
 msgid "Georgian (Mkhedruli)"
-msgstr ""
+msgstr "グルジア文字 (ムヘドルリ)"
 
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
@@ -1346,7 +1344,7 @@ msgstr "画像・映像"
 #. Tag: iso15924::grek, short desc
 #: files/debtags/vocabulary
 msgid "Greek"
-msgstr "ギリシャ語"
+msgstr "ギリシャ語・ギリシャ文字"
 
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
@@ -1356,12 +1354,12 @@ msgstr "グループウェア"
 #. Tag: iso15924::gujr, short desc
 #: files/debtags/vocabulary
 msgid "Gujarati"
-msgstr ""
+msgstr "グジャラーティー文字"
 
 #. Tag: iso15924::guru, short desc
 #: files/debtags/vocabulary
 msgid "Gurmukhi"
-msgstr ""
+msgstr "グルムキー文字"
 
 #. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
@@ -1382,22 +1380,22 @@ msgstr "アマチュア無線"
 #. Tag: iso15924::hani, short desc
 #: files/debtags/vocabulary
 msgid "Han (Hanzi, Kanji, Hanja)"
-msgstr ""
+msgstr "漢字"
 
 #. Tag: iso15924::hans, short desc
 #: files/debtags/vocabulary
 msgid "Han (Simplified variant)"
-msgstr ""
+msgstr "漢字 (簡体字)"
 
 #. Tag: iso15924::hant, short desc
 #: files/debtags/vocabulary
 msgid "Han (Traditional variant)"
-msgstr ""
+msgstr "漢字 (伝統字)"
 
 #. Tag: iso15924::hang, short desc
 #: files/debtags/vocabulary
 msgid "Hangul (Hangŭl, Hangeul)"
-msgstr ""
+msgstr "ハングル"
 
 #. Tag: hardware::detection, short desc
 #: files/debtags/vocabulary
@@ -1433,7 +1431,7 @@ msgstr "Haskell での開発"
 #. Tag: iso15924::hebr, short desc
 #: files/debtags/vocabulary
 msgid "Hebrew"
-msgstr "ヘブライ語"
+msgstr "ヘブライ語・ヘブライ文字"
 
 #. Tag: network::hiavailability, short desc
 #: files/debtags/vocabulary
@@ -1448,7 +1446,7 @@ msgstr "ヒンディー語"
 #. Tag: iso15924::hira, short desc
 #: files/debtags/vocabulary
 msgid "Hiragana"
-msgstr ""
+msgstr "平仮名"
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
@@ -1700,7 +1698,7 @@ msgstr "Jabber"
 #. Tag: iso15924::jpan, short desc
 #: files/debtags/vocabulary
 msgid "Japanese"
-msgstr "日本語"
+msgstr "日本語・日本語文字"
 
 #. Tag: implemented-in::java, short desc
 #: files/debtags/vocabulary
@@ -1735,14 +1733,12 @@ msgstr "KDE"
 #. Tag: iso15924::knda, short desc
 #: files/debtags/vocabulary
 msgid "Kannada"
-msgstr ""
+msgstr "カンナダ文字"
 
 #. Tag: iso15924::kana, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Catalan"
 msgid "Katakana"
-msgstr "カタルーニャ語"
+msgstr "片仮名"
 
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
@@ -1788,16 +1784,14 @@ msgstr "キーボード"
 
 #. Tag: iso15924::khmr, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Theme"
 msgid "Khmer"
-msgstr "テーマ"
+msgstr "クメール文字"
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
 #: files/debtags/vocabulary
 msgid "Korean"
-msgstr "韓国語"
+msgstr "朝鮮語 (韓国語)・朝鮮語 (韓国語) 文字"
 
 #. Tag: protocol::ldap, short desc
 #: files/debtags/vocabulary
@@ -1816,10 +1810,8 @@ msgstr "LPR"
 
 #. Tag: iso15924::laoo, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Laptop"
 msgid "Lao"
-msgstr "ラップトップ"
+msgstr "ラーオ文字"
 
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
@@ -1828,10 +1820,8 @@ msgstr "ラップトップ"
 
 #. Tag: iso15924::latn, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Latvian"
 msgid "Latin"
-msgstr "ラトビア語"
+msgstr "ラテン文字"
 
 #. Tag: culture::latvian, short desc
 #: files/debtags/vocabulary
@@ -2012,7 +2002,7 @@ msgstr "メーリングリスト"
 #. Tag: iso15924::mlym, short desc
 #: files/debtags/vocabulary
 msgid "Malayalam"
-msgstr ""
+msgstr "マラヤーラム文字"
 
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
@@ -2084,7 +2074,7 @@ msgstr "分子生物学"
 #. Tag: iso15924::mong, short desc
 #: files/debtags/vocabulary
 msgid "Mongolian"
-msgstr "モンゴル語"
+msgstr "モンゴル語・モンゴル文字"
 
 #. Tag: admin::monitoring, short desc
 #. Tag: use::monitor, short desc
@@ -2130,7 +2120,7 @@ msgstr "MySQL"
 #. Tag: iso15924::mymr, short desc
 #: files/debtags/vocabulary
 msgid "Myanmar (Burmese)"
-msgstr ""
+msgstr "ビルマ文字"
 
 #. Tag: protocol::nfs, short desc
 #: files/debtags/vocabulary
@@ -2481,7 +2471,7 @@ msgstr "光学文字認識"
 #. Tag: iso15924::orya, short desc
 #: files/debtags/vocabulary
 msgid "Oriya"
-msgstr ""
+msgstr "オリヤー文字"
 
 #. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
@@ -3291,7 +3281,7 @@ msgstr "シミュレーションゲーム"
 #. Tag: iso15924::sinh, short desc
 #: files/debtags/vocabulary
 msgid "Sinhala"
-msgstr ""
+msgstr "シンハラ文字"
 
 #. Tag: culture::slovak, short desc
 #: files/debtags/vocabulary
@@ -3450,7 +3440,7 @@ msgstr "スウェーデン語"
 #. Tag: iso15924::zsym, short desc
 #: files/debtags/vocabulary
 msgid "Symbols"
-msgstr ""
+msgstr "シンボル"
 
 #. Tag: use::synchronizing, short desc
 #: files/debtags/vocabulary
@@ -3459,10 +3449,8 @@ msgstr "同期"
 
 #. Tag: iso15924::syrc, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Privacy"
 msgid "Syriac"
-msgstr "プライバシー"
+msgstr "シリア文字"
 
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
@@ -3514,7 +3502,7 @@ msgstr "Tagged Image File Format (TIFF)"
 #. Tag: iso15924::tavt, short desc
 #: files/debtags/vocabulary
 msgid "Tai Viet"
-msgstr ""
+msgstr "タイ・ヴィエト文字"
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
@@ -3530,7 +3518,7 @@ msgstr "タジク語"
 #. Tag: iso15924::taml, short desc
 #: files/debtags/vocabulary
 msgid "Tamil"
-msgstr "タミル語"
+msgstr "タミル語・タミル文字"
 
 #. Tag: works-with-format::tar, short desc
 #: files/debtags/vocabulary
@@ -3570,7 +3558,7 @@ msgstr "Telnet"
 #. Tag: iso15924::telu, short desc
 #: files/debtags/vocabulary
 msgid "Telugu"
-msgstr ""
+msgstr "テルグ文字"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3611,7 +3599,7 @@ msgstr "テキストベースの対話"
 #. Tag: iso15924::thai, short desc
 #: files/debtags/vocabulary
 msgid "Thai"
-msgstr "タイ語"
+msgstr "タイ語・タイ文字"
 
 #. Tag: suite::gimp, short desc
 #: files/debtags/vocabulary
@@ -3802,7 +3790,7 @@ msgstr "3 次元"
 #. Tag: iso15924::tibt, short desc
 #: files/debtags/vocabulary
 msgid "Tibetan"
-msgstr ""
+msgstr "チベット文字"
 
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
@@ -3943,7 +3931,7 @@ msgstr "Unicode"
 #. Tag: iso15924::cans, short desc
 #: files/debtags/vocabulary
 msgid "Unified Canadian Aboriginal Syllabics"
-msgstr ""
+msgstr "統合カナダ先住民文字"
 
 #. Tag: hardware::power:ups, long desc
 #: files/debtags/vocabulary
@@ -4131,7 +4119,7 @@ msgstr "World Wide Web"
 #. Facet: iso15924, short desc
 #: files/debtags/vocabulary
 msgid "Writing script"
-msgstr ""
+msgstr "表記文字"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
@@ -4203,7 +4191,7 @@ msgstr "Yahoo! Messenger"
 #. Tag: iso15924::yiii, short desc
 #: files/debtags/vocabulary
 msgid "Yi"
-msgstr ""
+msgstr "ロロ文字"
 
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
