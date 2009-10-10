@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-10-11 00:13+0900\n"
+"PO-Revision-Date: 2009-10-11 03:21+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -2465,6 +2465,15 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
 "org/oscar/"
 msgstr ""
+"AOL のインスタントメッセージングネットワーク (AIM) で使用されるインスタント"
+"メッセージングプロトコル、Open System for CommunicAtion in Realtime。ICQ IM "
+"ネットワークのプロトコルのバージョン 7、8、9 も OSCAR プロトコルのインスタン"
+"スです。\n"
+"OSCAR はプロプライエタリなバイナリのプロトコルです。公式のドキュメントはない"
+"ので、AIM や ICQ に接続するクライアントは、リバースエンジニアリングによって得"
+"られた情報に依存せざるをえません。\n"
+"Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
+"org/oscar/"
 
 #. Tag: suite::openoffice, short desc
 #: files/debtags/vocabulary
@@ -3628,6 +3637,9 @@ msgid ""
 "instant messaging network of the same name.\n"
 "Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 msgstr ""
+"Gadu-Gadu プロトコルは、ポーランドの同名のインスタントメッセージングネット"
+"ワークで使用されるプロプライエタリなプロトコルです。\n"
+"Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
@@ -3649,6 +3661,14 @@ msgid ""
 "an own server to connect to the Jabber network.\n"
 "Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 msgstr ""
+"Jabber プロトコルは、XMPP プロトコルをベースとするインスタントメッセージング"
+"プロトコルです。私的な一対一のコミュニケーションの他にチャットルームもサポー"
+"トしており、Jabber IM ネットワーク以外に、新しい GoogleTalk ネットワークの "
+"IM 機能にも使用されています。\n"
+"MSN、ICQ、AIM などの他の IM ネットワークとは異なり、Jabber サーバはフリーソフ"
+"トウェアなので、内輪のチャットプラットフォームを作ったり、Jabber ネットワーク"
+"に接続する独自のサーバを立てたりするのに使用できます。\n"
+"Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 
 #. Tag: protocol::lpr, long desc
 #: files/debtags/vocabulary
@@ -3672,6 +3692,13 @@ msgid ""
 "engineered information.\n"
 "Link: http://www.hypothetic.org/docs/msn/"
 msgstr ""
+"MSN メッセンジャープロトコルは、Microsoft の独自のインスタントメッセージング"
+"ネットワークで使用されるプロトコルです。\n"
+"プロトコルはプロプライエタリです。Microsoft は以前、プロトコルの仕様の草案を "
+"IETF に送りましたが、その内容は古くなってしまったため、MSN メッセンジャーネッ"
+"トワークに接続するクライアントは、リバースエンジニアリングによって得られた情"
+"報に依存せざるをえません。\n"
+"Link: http://www.hypothetic.org/docs/msn/"
 
 #. Tag: protocol::finger, long desc
 #: files/debtags/vocabulary
@@ -3685,6 +3712,7 @@ msgid ""
 "rfc/rfc1288.txt"
 msgstr ""
 
+# FIXME: "This a" -> "This is a"
 #. Tag: protocol::yahoo-messenger, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3696,6 +3724,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
 "venkydude.com/articles/yahoo.htm"
 msgstr ""
+"Yahoo! Messenger プロトコルは、Yahoo! のインスタントメッセージングネットワー"
+"クに接続するのに使用されるプロトコルです。\n"
+"このプロトコルはプロプライエタリかつバイナリで、公式のドキュメントもありませ"
+"ん。\n"
+"Yahoo! Messenger ネットワークに接続するクライアントは、リバースエンジニアリン"
+"グによって得られた情報に依存せざるをえません。\n"
+"Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
