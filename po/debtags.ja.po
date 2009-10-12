@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-10-11 03:21+0900\n"
+"PO-Revision-Date: 2009-10-12 13:59+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -823,6 +823,7 @@ msgstr "デジタルカメラ"
 msgid "Digital Versatile Disc"
 msgstr "Digital Versatile Disc"
 
+# 「non-relayed」は「非リレー式」?
 #. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -831,6 +832,10 @@ msgid ""
 "files or perform non-relayed chats.\n"
 "Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
+"Direct Client-to-Client (DCC) は IRC に関連したサブプロトコルです。このプロト"
+"コルを用いると、ピア同士が IRC サーバを介して接続しあい、ハンドシェイクして、"
+"ファイルの交換や非リレー式チャットを行うことが可能になります。\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
@@ -1648,6 +1653,7 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 msgstr ""
 
+# 日本語化にあたって多少意訳。
 #. Tag: protocol::irc, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -1660,6 +1666,14 @@ msgid ""
 "The official Debian channel is #debian on the freenode network.\n"
 "Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 msgstr ""
+"インターネットで広く使われている、ネットワーク上でのテキストチャット用プロト"
+"コル、Internet Relay Chat。チャットルーム (いわゆるチャンネル) の他に、私的な"
+"一対一のコミュニケーションもサポートしています。\n"
+"IRC サーバはネットワークで組織化されているため、クライアントは地理的に近い "
+"IRC サーバに接続することで、その IRC サーバ自体が接続する、世界中にある他の "
+"IRC サーバとやりとりできます。\n"
+"Debian の公式のチャンネルは、フリーノードネットワークの #debian です。\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 
 #. Tag: devel::interpreter, short desc
 #: files/debtags/vocabulary
