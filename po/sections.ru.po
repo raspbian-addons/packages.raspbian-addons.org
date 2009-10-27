@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo_sections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-15 18:49+0100\n"
+"POT-Creation-Date: 2009-10-27 22:41+0100\n"
 "PO-Revision-Date: 2009-06-11 23:05+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
@@ -41,7 +42,9 @@ msgstr "Mono/CLI"
 
 #: lib/Packages/Sections.pm:17
 msgid "Everything about Mono and the Common Language Infrastructure."
-msgstr "Всё, что связано с Mono и спецификацией общеязыковой инфраструктуры (Common Language Infrastructure)."
+msgstr ""
+"Всё, что связано с Mono и спецификацией общеязыковой инфраструктуры (Common "
+"Language Infrastructure)."
 
 #: lib/Packages/Sections.pm:18
 msgid "Communication Programs"
@@ -60,7 +63,6 @@ msgid "Database Servers and Clients."
 msgstr "Клиенты и серверы баз данных."
 
 #: lib/Packages/Sections.pm:22
-#| msgid "Virtual packages"
 msgid "Debug packages"
 msgstr "Пакеты отладки"
 
@@ -77,8 +79,10 @@ msgid "Development"
 msgstr "Разработка"
 
 #: lib/Packages/Sections.pm:25
-msgid "Development utilities, compilers, development environments, libraries, etc."
-msgstr "Утилиты для разработки, компиляторы, среды разработки, библиотеки и т.д."
+msgid ""
+"Development utilities, compilers, development environments, libraries, etc."
+msgstr ""
+"Утилиты для разработки, компиляторы, среды разработки, библиотеки и т.д."
 
 #: lib/Packages/Sections.pm:26
 msgid "Documentation"
@@ -142,7 +146,9 @@ msgstr "GNU R"
 
 #: lib/Packages/Sections.pm:39
 msgid "Everything about GNU R, a statistical computation and graphics system."
-msgstr "Всё, что связано с GNU R, системы для статистической обработки данных и работы с графикой."
+msgstr ""
+"Всё, что связано с GNU R, системы для статистической обработки данных и "
+"работы с графикой."
 
 #: lib/Packages/Sections.pm:40
 msgid "GNUstep"
@@ -158,7 +164,8 @@ msgstr "Графика"
 
 #: lib/Packages/Sections.pm:43
 msgid "Editors, viewers, converters... Everything to become an artist."
-msgstr "Редакторы, программы просмотра, конвертеры... Всё, чтобы стать художником."
+msgstr ""
+"Редакторы, программы просмотра, конвертеры... Всё, чтобы стать художником."
 
 #: lib/Packages/Sections.pm:44
 msgid "Ham Radio"
@@ -173,7 +180,6 @@ msgid "Fonts"
 msgstr "Шрифты"
 
 #: lib/Packages/Sections.pm:47
-#| msgid "Virtual packages."
 msgid "Font packages."
 msgstr "Пакеты с шрифтами."
 
@@ -186,7 +192,6 @@ msgid "Everything about Haskell."
 msgstr "Всё, что связано с Haskell."
 
 #: lib/Packages/Sections.pm:50
-#| msgid "Web Software"
 msgid "Web Servers"
 msgstr "Веб-серверы"
 
@@ -200,7 +205,8 @@ msgstr "Интерпретаторы"
 
 #: lib/Packages/Sections.pm:53
 msgid "All kind of interpreters for interpreted languages. Macro processors."
-msgstr "Всевозможные интерпретаторы для интерпретируемых языков. Макропроцессоры."
+msgstr ""
+"Всевозможные интерпретаторы для интерпретируемых языков. Макропроцессоры."
 
 #: lib/Packages/Sections.pm:54
 msgid "Java"
@@ -295,8 +301,12 @@ msgid "Network"
 msgstr "Сеть"
 
 #: lib/Packages/Sections.pm:75
-msgid "Daemons and clients to connect your Debian GNU/Linux system to the world."
-msgstr "Службы и клиенты для соединения вашей системы Debian GNU/Linux с миром."
+#, fuzzy
+#| msgid ""
+#| "Daemons and clients to connect your Debian GNU/Linux system to the world."
+msgid "Daemons and clients to connect your system to the world."
+msgstr ""
+"Службы и клиенты для соединения вашей системы Debian GNU/Linux с миром."
 
 #: lib/Packages/Sections.pm:76
 msgid "Newsgroups"
@@ -331,8 +341,12 @@ msgid "Other OS's and file systems"
 msgstr "Другие ОС и файловые системы"
 
 #: lib/Packages/Sections.pm:83
+#, fuzzy
+#| msgid ""
+#| "Software to run programs compiled for other operating system, and to use "
+#| "their filesystems."
 msgid ""
-"Software to run programs compiled for other operating system, and to use "
+"Software to run programs compiled for other operating systems, and to use "
 "their filesystems."
 msgstr ""
 "ПО для работы программ, собранных для других операционных систем и "
@@ -371,11 +385,9 @@ msgid "Ruby"
 msgstr "Ruby"
 
 #: lib/Packages/Sections.pm:91
-#| msgid ""
-#| "Everything about Python, an interpreted, interactive object oriented "
-#| "language."
 msgid "Everything about Ruby, an interpreted object oriented language."
-msgstr "Всё, что связано с Ruby, интерпретируемом, объектно-ориентированном языком."
+msgstr ""
+"Всё, что связано с Ruby, интерпретируемом, объектно-ориентированном языком."
 
 #: lib/Packages/Sections.pm:92
 msgid "Science"
@@ -398,7 +410,8 @@ msgid "Sound"
 msgstr "Звук"
 
 #: lib/Packages/Sections.pm:97
-msgid "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
+msgid ""
+"Utilities to deal with sound: mixers, players, recorders, CD players, etc."
 msgstr ""
 "Утилиты для работы со звуком: микшеры, проигрыватели, программы записи, "
 "проигрыватели CD и т.д."
@@ -512,4 +525,3 @@ msgid ""
 msgstr ""
 "Специальные пакеты для сборки адаптированных вариаций debian-installer. Не "
 "устанавливайте их в рабочую систему!"
-
