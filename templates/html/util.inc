@@ -7,7 +7,7 @@
   [%- END -%]
   &nbsp;]
 [%- END -%]
-[% BLOCK marker %] [<strong class="pmarker" [% 'title="' _ title _ '"' IF title %]>[% text %]</strong>] [%- END %]
+[% BLOCK marker %] [[% IF url %]<a href="[% url %]">[% END %]<strong class="pmarker" [% 'title="' _ title _ '"' IF title %]>[% text %]</strong>[% IF url %]</a>[% END %]] [%- END %]
 [%- BLOCK desc_i18n;
    IF trans_desc.$ddtp_lang;
       trans_desc.$ddtp_lang | html;

@@ -7,26 +7,26 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-14 03:22+0200\n"
-"PO-Revision-Date: 2008-08-19 18:48+0900\n"
-"Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
+"PO-Revision-Date: 2009-10-10 22:31+0900\n"
+"Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:43
+#: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
 msgstr "Debian ウェブメーリングリスト"
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s Webmaster"
 msgstr "%s ウェブマスター"
 
-#: templates/config.tmpl:51
+#: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
-#: templates/config.tmpl:66
+#: templates/config.tmpl:67
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -35,11 +35,11 @@ msgstr ""
 "報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:70
+#: templates/config.tmpl:71
 msgid ","
 msgstr ","
 
@@ -109,7 +109,7 @@ msgstr "GNU/kFreeBSD (amd64)"
 
 #: templates/config/architectures.tmpl:20
 msgid "AVR32"
-msgstr ""
+msgstr "AVR32"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
@@ -141,11 +141,11 @@ msgstr ""
 "ケージ"
 
 #: templates/config/mirrors.tmpl:160
-#, fuzzy
-#| msgid "ports of packages to architectures not yet available in Debian"
 msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
-msgstr "Debian でまだ利用可能でないアーキテクチャに移植されたパッケージ"
+msgstr ""
+"Debian でまだ (または、もう) 利用可能でないアーキテクチャに移植されたパッケー"
+"ジ"
 
 #: templates/config/mirrors.tmpl:189
 msgid "North America"
@@ -176,7 +176,8 @@ msgid "Package Download Selection -- %s"
 msgstr "パッケージのダウンロードに関する選択 -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
+#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "ディストリビューション:"
 
@@ -284,21 +285,15 @@ msgstr ""
 "完全な一覧</a>をご覧ください。"
 
 #: templates/html/download.tmpl:97
-#, fuzzy
-#| msgid ""
-#| "Note that %s is not officially included in the %s archive yet, but the %s "
-#| "porter group keeps their archive in sync with the official archive as "
-#| "close as possible. See the <a href=\"%s\">%s ports page</a> for current "
-#| "information."
 msgid ""
 "Note that %s is not officially included in the %s archive, but the %s porter "
 "group keeps their archive in sync with the official archive as close as "
 "possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"注意: %s はまだ、%s のアーカイブに公式に含まれているわけではありません。%s 移"
-"植グループが、このアーカイブと公式アーカイブが可能なかぎり同期するよう維持し"
-"ているのです。現在の情報については <a href=\"%s\">%s 移植版のページ</a>をご覧"
-"ください。"
+"注意: %s は、%s のアーカイブに公式に含まれているわけではありません。%s 移植グ"
+"ループが、このアーカイブと公式アーカイブが可能なかぎり同期するよう維持してい"
+"るのです。現在の情報については <a href=\"%s\">%s 移植版のページ</a>をご覧くだ"
+"さい。"
 
 #: templates/html/download.tmpl:101
 msgid ""
@@ -386,12 +381,11 @@ msgid "Learn more about this site"
 msgstr "このサイトについてさらに詳しく知るには"
 
 #: templates/html/foot.tmpl:41
-#, fuzzy
-#| msgid "Hosting provided by <a href=\"%s\">%s</a>."
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
-msgstr "ホスティングサービス提供者: <a href=\"%s\">%s</a>"
+msgstr "本サービスのスポンサー: <a href=\"%s\">%s</a>"
 
-#: templates/html/head.tmpl:47
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
 msgid "Search"
 msgstr "検索"
 
@@ -427,10 +421,137 @@ msgstr "%s ホームページ"
 msgid "%s Packages Homepage"
 msgstr "%s パッケージホームページ"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "パッケージ"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+msgid "%s Packages Search"
+msgstr "%s パッケージ検索"
+
+#: templates/html/homepage.tmpl:19
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+"このサイトでは、<a href=\"%s\">%s</a> のパッケージアーカイブで入手可能なすべ"
+"てのパッケージに関する情報を提供します。"
+
+#: templates/html/homepage.tmpl:21
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr ""
+"何か問題に遭遇した場合は、<a href=\"mailto:%s\">%s</a> に連絡してください!"
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr "パッケージ一覧に目を通す:"
+
+#: templates/html/homepage.tmpl:32
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
+"to %s</a>."
+msgstr ""
+"<a href=\"%s/main/newpkg\">最近 %s に追加されたパッケージの一覧</a>もありま"
+"す。"
+
+#: templates/html/homepage.tmpl:34
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "以前のリリースは <a href=\"%s\">%s</a> にあります。"
+
+#: templates/html/homepage.tmpl:38
+msgid "Search package directories"
+msgstr "パッケージディレクトリを検索"
+
+#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+msgid "Keyword:"
+msgstr "キーワード:"
+
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+msgid "Reset"
+msgstr "リセット"
+
+#: templates/html/homepage.tmpl:45
+msgid "Search on:"
+msgstr "検索対象:"
+
+#: templates/html/homepage.tmpl:47
+msgid "Package names only"
+msgstr "パッケージ名のみ"
+
+#: templates/html/homepage.tmpl:49
+msgid "Descriptions"
+msgstr "パッケージ説明"
+
+#: templates/html/homepage.tmpl:51
+msgid "Source package names"
+msgstr "ソースパッケージ名"
+
+#: templates/html/homepage.tmpl:53
+msgid "Only show exact matches:"
+msgstr "完全にマッチするもののみを表示:"
+
+#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
+#: templates/html/homepage.tmpl:114
+msgid "any"
+msgstr "すべて"
+
+#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "セクション:"
+
+#: templates/html/homepage.tmpl:71
+msgid "There are shortcuts for some searches available:"
+msgstr "一部の検索では、さらに簡便な方法が利用できます:"
+
+#: templates/html/homepage.tmpl:73
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr ""
+"<code>%s<var>名前</var></code> という URL で、(バイナリ) パッケージ名で検索で"
+"きます。"
+
+#: templates/html/homepage.tmpl:75
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr ""
+"<code>%ssrc:<var>パッケージ名</var></code> という URL で、ソースパッケージ名"
+"で検索できます。"
+
+#: templates/html/homepage.tmpl:79
+msgid "Search the contents of packages"
+msgstr "パッケージの内容を検索"
+
+#: templates/html/homepage.tmpl:81
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+"この検索エンジンを用いると、%s ディストリビューションの中から、パッケージに含"
+"まれるあらゆるファイル (またはファイル名の一部) を検索することができます。ま"
+"た、指定したパッケージに含まれるファイルの一覧を見ることもできます。"
+
+#: templates/html/homepage.tmpl:91
+msgid "Display:"
+msgstr "結果表示方法:"
+
+#: templates/html/homepage.tmpl:94
+msgid "packages that contain files named like this"
+msgstr "キーワードに似た名前のファイルが含まれるパッケージ"
+
+#: templates/html/homepage.tmpl:97
+msgid "packages that contain files whose names end with the keyword"
+msgstr "キーワードを名前の末尾に含むファイルが含まれるパッケージ"
+
+#: templates/html/homepage.tmpl:100
+msgid "packages that contain files whose names contain the keyword"
+msgstr "キーワードを名前に含むファイルが含まれるパッケージ"
+
+#: templates/html/homepage.tmpl:109
+msgid "Architecture:"
+msgstr "アーキテクチャ:"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -756,10 +877,6 @@ msgstr "ソースパッケージ"
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "このセクションのすべてのパッケージ"
-
-#: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "セクション:"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"

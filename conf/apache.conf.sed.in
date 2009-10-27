@@ -112,21 +112,22 @@
    RewriteRule ^/robots.txt$ - [L]
 
    RewriteRule ^/$ http://www.debian.org/distrib/packages
-#   RewriteRule ^/$ /index.html [L]
+#   RewriteRule ^/$ /index [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$	"/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$	/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$		/search?searchon=sourcenames&keywords=$1 [R,L,NE]
    RewriteRule ^/file:(.+)$		/search?searchon=contents&keywords=$1 [R,L,NE]
-   RewriteCond %{QUERY_STRING} ^$ [OR]
-   RewriteCond %{REQUEST_URI} !^/search$
-   RewriteCond %{REQUEST_URI} !^/cgi-bin/search_(contents|packages)\.pl$
-   RewriteRule ^/([^/]+)$		/search?keywords=$1 [R,L,NE]
-
+   
    RewriteCond %{QUERY_STRING} =""
    RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -f [OR]
    RewriteCond %TOPDIR%/www%{REQUEST_FILENAME}.en.html -f [OR]
    RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -l
    RewriteRule . - [L]
+
+   RewriteCond %{QUERY_STRING} ^$ [OR]
+   RewriteCond %{REQUEST_URI} !^/search$
+   RewriteCond %{REQUEST_URI} !^/cgi-bin/search_(contents|packages)\.pl$
+   RewriteRule ^/([^/]+)$		/search?keywords=$1 [R,L,NE]
 
    RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
 

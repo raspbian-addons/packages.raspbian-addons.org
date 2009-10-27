@@ -15,19 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: templates/config.tmpl:43
+#: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
 msgstr "Liste de diffusion du site Debian"
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s Webmaster"
 msgstr "Responsable du site %s"
 
-#: templates/config.tmpl:51
+#: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s est une <a href=\"%s\">marque</a> de %s"
 
-#: templates/config.tmpl:66
+#: templates/config.tmpl:67
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
 "s</a>. Errors and obsolete information should be expected"
@@ -37,11 +37,11 @@ msgstr ""
 "et des informations obsolètes."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:70
+#: templates/config.tmpl:71
 msgid ","
 msgstr " "
 
@@ -181,7 +181,8 @@ msgid "Package Download Selection -- %s"
 msgstr "Choix de téléchargement de paquet -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
+#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Distribution :"
 
@@ -397,7 +398,8 @@ msgstr "Plus de détails sur ce site"
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Hébergement fourni par <a href=\"%s\">%s</a>."
 
-#: templates/html/head.tmpl:47
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
 msgid "Search"
 msgstr "Recherche"
 
@@ -433,10 +435,139 @@ msgstr "Page d'accueil de %s"
 msgid "%s Packages Homepage"
 msgstr "Page web du paquet %s"
 
-#: templates/html/head.tmpl:66 templates/html/search_contents.tmpl:100
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Paquets"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
+#| msgid "%s Packages Homepage"
+msgid "%s Packages Search"
+msgstr "Page web du paquet %s"
+
+#: templates/html/homepage.tmpl:19
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+
+#: templates/html/homepage.tmpl:21
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr ""
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:32
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
+"to %s</a>."
+msgstr ""
+
+#: templates/html/homepage.tmpl:34
+#, fuzzy
+#| msgid "Hosting provided by <a href=\"%s\">%s</a>."
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "Hébergement fourni par <a href=\"%s\">%s</a>."
+
+#: templates/html/homepage.tmpl:38
+msgid "Search package directories"
+msgstr ""
+
+#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+msgid "Keyword:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+msgid "Reset"
+msgstr ""
+
+#: templates/html/homepage.tmpl:45
+#, fuzzy
+msgid "Search on:"
+msgstr "Recherche"
+
+#: templates/html/homepage.tmpl:47
+#, fuzzy
+#| msgid "package names"
+msgid "Package names only"
+msgstr "noms de paquets"
+
+#: templates/html/homepage.tmpl:49
+#, fuzzy
+#| msgid "descriptions"
+msgid "Descriptions"
+msgstr "descriptions"
+
+#: templates/html/homepage.tmpl:51
+#, fuzzy
+#| msgid "source package names"
+msgid "Source package names"
+msgstr "noms de paquets sources"
+
+#: templates/html/homepage.tmpl:53
+msgid "Only show exact matches:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
+#: templates/html/homepage.tmpl:114
+msgid "any"
+msgstr ""
+
+#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Section :"
+
+#: templates/html/homepage.tmpl:71
+msgid "There are shortcuts for some searches available:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:73
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr ""
+
+#: templates/html/homepage.tmpl:75
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr ""
+
+#: templates/html/homepage.tmpl:79
+#, fuzzy
+msgid "Search the contents of packages"
+msgstr "Liste de tous les paquets"
+
+#: templates/html/homepage.tmpl:81
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+
+#: templates/html/homepage.tmpl:91
+msgid "Display:"
+msgstr ""
+
+#: templates/html/homepage.tmpl:94
+msgid "packages that contain files named like this"
+msgstr ""
+
+#: templates/html/homepage.tmpl:97
+msgid "packages that contain files whose names end with the keyword"
+msgstr ""
+
+#: templates/html/homepage.tmpl:100
+msgid "packages that contain files whose names contain the keyword"
+msgstr ""
+
+#: templates/html/homepage.tmpl:109
+#, fuzzy
+#| msgid "Architecture"
+msgid "Architecture:"
+msgstr "Architecture"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -768,10 +899,6 @@ msgstr "Paquets sources"
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
 msgstr "Tous les paquets dans cette section"
-
-#: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "Section :"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
@@ -1152,10 +1279,6 @@ msgstr "Consultez <URL:%s> pour obtenir les termes de la licence."
 #~ msgstr "Paquets de «&nbsp;%s&nbsp;», priorité %s"
 
 #, fuzzy
-#~ msgid "search for a package"
-#~ msgstr "Liste de tous les paquets"
-
-#, fuzzy
 #~ msgid " (section %s)"
 #~ msgstr "Section"
 
@@ -1204,10 +1327,6 @@ msgstr "Consultez <URL:%s> pour obtenir les termes de la licence."
 #~ msgid "See the <a href=\"%s\">developer information for %s</a>."
 #~ msgstr ""
 #~ "Consulter les <a href=\"%s\">informations de développement de %s</a>."
-
-#, fuzzy
-#~ msgid "Search on:"
-#~ msgstr "Recherche"
 
 #~ msgid "Debian Project"
 #~ msgstr "Projet Debian"

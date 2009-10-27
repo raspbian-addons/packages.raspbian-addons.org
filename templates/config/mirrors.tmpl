@@ -11,6 +11,7 @@
  
 mirrors = {
 	us => {
+		url => 'http://www.debian.org/',
 		mirror_list => 'http://www.debian.org/mirror/list',
 		north_america => [
 			"ftp.us.debian.org/debian",
@@ -89,6 +90,7 @@ mirrors = {
 	},
 
 	volatile => {
+		url => 'http://www.debian.org/volatile/',
 		title => g('volatile packages that need major changes during the life of a stable release'),
 		mirror_list => 'http://www.debian.org/volatile/volatile-mirrors',
 		europa => [
@@ -129,6 +131,7 @@ mirrors = {
 	},
 
 	backports => {
+		url => 'http://www.backports.org/',
 		title => g('newer packages that have been adapted to stable releases of Debian'),
 		mirror_list => 'http://www.backports.org/debian/README.mirrors.html',
 		europa => [
@@ -157,6 +160,7 @@ mirrors = {
 	},
 
 	debports => {
+		url => 'http://www.debian-ports.org/',
 		title => g('ports of packages to architectures not yet or not anymore available in Debian'),
 		mirror_list => 'http://wiki.debian.org/DebianPorts/Mirrors',
 		unofficial_port => {

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-03 12:09+0200\n"
-"PO-Revision-Date: 2009-06-12 13:48+0100\n"
+"PO-Revision-Date: 2009-07-06 09:03+0100\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -15,28 +15,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 
-#: templates/config.tmpl:43
+#: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
 msgstr "Konferencia webu Debian"
 
-#: templates/config.tmpl:48
+#: templates/config.tmpl:49
 msgid "%s Webmaster"
 msgstr "Webmaster %s"
 
-#: templates/config.tmpl:51
+#: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s je <a href=\"%s\">obchodná značka</a> %s"
 
-#: templates/config.tmpl:66
+#: templates/config.tmpl:67
 msgid "Please note that this is an experimental version of <a href=\"http://%s/\">%s</a>. Errors and obsolete information should be expected"
 msgstr "Všimnite si prosím, že toto je experimentálna verzia <a href=\"http://%s/\">%s</a>. Mali by ste očakávať chyby a zastaralé informácie"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format
-#: templates/config.tmpl:69
+#: templates/config.tmpl:70
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:70
+#: templates/config.tmpl:71
 msgid ","
 msgstr ","
 
@@ -104,6 +104,10 @@ msgstr "GNU/kFreeBSD (i386)"
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr "AVR32"
+
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr "balíky zodpovedajúce Určeniu slobodného softvéru Debianu (DFSG)"
@@ -128,27 +132,27 @@ msgstr "novšie balíky, ktoré boli prispôsobené pre stabilné vydania Debian
 msgid "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr "porty balíkov na architektúry, ktoré zatiaľ alebo už nie sú v Debiane dostupné"
 
-#: templates/config/mirrors.tmpl:185
+#: templates/config/mirrors.tmpl:189
 msgid "North America"
 msgstr "Severná Amerika"
 
-#: templates/config/mirrors.tmpl:186
+#: templates/config/mirrors.tmpl:190
 msgid "South America"
 msgstr "Južná Amerika"
 
-#: templates/config/mirrors.tmpl:187
+#: templates/config/mirrors.tmpl:191
 msgid "Asia"
 msgstr "Ázia"
 
-#: templates/config/mirrors.tmpl:188
+#: templates/config/mirrors.tmpl:192
 msgid "Australia and New Zealand"
 msgstr "Austrália a Nový Zéland"
 
-#: templates/config/mirrors.tmpl:189
+#: templates/config/mirrors.tmpl:193
 msgid "Europe"
 msgstr "Európa"
 
-#: templates/config/mirrors.tmpl:190
+#: templates/config/mirrors.tmpl:194
 msgid "Africa"
 msgstr "Afrika"
 
@@ -158,6 +162,7 @@ msgstr "Výber balíka na stiahnutie -- %s"
 
 #: templates/html/download.tmpl:5
 #: templates/html/filelist.tmpl:5
+#: templates/html/homepage.tmpl:102
 #: templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
@@ -307,6 +312,9 @@ msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Túto službu sponzoruje <a href=\"%s\">%s</a>."
 
 #: templates/html/head.tmpl:47
+#: templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:43
+#: templates/html/homepage.tmpl:88
 msgid "Search"
 msgstr "Hľadať"
 
@@ -343,10 +351,121 @@ msgid "%s Packages Homepage"
 msgstr "Domovská stránka balíkov %s"
 
 #: templates/html/head.tmpl:66
+#: templates/html/homepage.tmpl:4
 #: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
 msgstr "Balíky"
+
+#: templates/html/homepage.tmpl:2
+#: templates/html/homepage.tmpl:3
+msgid "%s Packages Search"
+msgstr "Hľadanie balíkov %s"
+
+#: templates/html/homepage.tmpl:19
+msgid "This site provides you with information about all the packages available in the <a href=\"%s\">%s</a> Package archive."
+msgstr "Táto lokalita poskytuje informácie o všetkých balíkoch dostupnných v Archíve balíkov <a href=\"%s\">%s</a>."
+
+#: templates/html/homepage.tmpl:21
+msgid "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr "Ak narazíte na akýkoľvek problém, kontaktujte prosím <a href=\"mailto:%s\">%s</a>."
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr "Prechádzať zoznamami balíkov:"
+
+#: templates/html/homepage.tmpl:32
+msgid "There is also a list of <a href=\"%s/main/newpkg\">packages recently added to %s</a>."
+msgstr "Existuje tiež zoznam <a href=\"%s/main/newpkg\">balíkov novo pridaných do %s</a>."
+
+#: templates/html/homepage.tmpl:34
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "Staré vydania možno nájsť na <a href=\"%s\">%s</a>."
+
+#: templates/html/homepage.tmpl:38
+msgid "Search package directories"
+msgstr "Hľadať adresáre balíkov"
+
+#: templates/html/homepage.tmpl:41
+#: templates/html/homepage.tmpl:85
+msgid "Keyword:"
+msgstr "Kľúčové slovo:"
+
+#: templates/html/homepage.tmpl:43
+#: templates/html/homepage.tmpl:89
+msgid "Reset"
+msgstr "Vyčistiť"
+
+#: templates/html/homepage.tmpl:45
+msgid "Search on:"
+msgstr "Hľadať v:"
+
+#: templates/html/homepage.tmpl:47
+msgid "Package names only"
+msgstr "Iba názvy balíkov"
+
+#: templates/html/homepage.tmpl:49
+msgid "Descriptions"
+msgstr "Popisy"
+
+#: templates/html/homepage.tmpl:51
+msgid "Source package names"
+msgstr "Názvy zdrojových balíkov"
+
+#: templates/html/homepage.tmpl:53
+msgid "Only show exact matches:"
+msgstr "Zobraziť iba presné zhody:"
+
+#: templates/html/homepage.tmpl:61
+#: templates/html/homepage.tmpl:68
+#: templates/html/homepage.tmpl:114
+msgid "any"
+msgstr "ľubovoľné"
+
+#: templates/html/homepage.tmpl:63
+#: templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Sekcia:"
+
+#: templates/html/homepage.tmpl:71
+msgid "There are shortcuts for some searches available:"
+msgstr "Pre niektoré typy hľadaní možno použiť skratky:"
+
+#: templates/html/homepage.tmpl:73
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr "<code>%s<var>názov</var></code> hľadá v názvoch balíkov."
+
+#: templates/html/homepage.tmpl:75
+msgid "<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr "<code>%ssrc:<var>názov</var></code> hľadá názvoch zdrojových balíkov."
+
+#: templates/html/homepage.tmpl:79
+msgid "Search the contents of packages"
+msgstr "Hľadať v obsahu balíkov"
+
+#: templates/html/homepage.tmpl:81
+msgid "This search engine allows you to search the contents of %s distributions for any files (or just parts of file names) that are part of packages. You can also get a full list of files in a given package."
+msgstr "Tento vyhľadávač vám umožňuje hľadať v obsahu distribúcií %s ľubovoľné súbory (alebo len časti názvov súborov), ktoré sú súčasťou balíkov. Môžete si tiež zobraziť úplný zoznam súborv v balíku."
+
+#: templates/html/homepage.tmpl:91
+msgid "Display:"
+msgstr "Zobraziť:"
+
+#: templates/html/homepage.tmpl:94
+msgid "packages that contain files named like this"
+msgstr "balíky obsahujúce takto pomenované súbory"
+
+#: templates/html/homepage.tmpl:97
+msgid "packages that contain files whose names end with the keyword"
+msgstr "balíky obsahujúce súbory, ktorých názvy končia kľúčovým slovom"
+
+#: templates/html/homepage.tmpl:100
+msgid "packages that contain files whose names contain the keyword"
+msgstr "balíky obsahujúce súbory s kľúčovým slovom v názve"
+
+#: templates/html/homepage.tmpl:109
+msgid "Architecture:"
+msgstr "Architektúra:"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -632,10 +751,6 @@ msgstr "nie %s"
 #: templates/html/show.tmpl:15
 msgid "Source packages"
 msgstr "Zdrojové balíky"
-
-#: templates/html/show.tmpl:16
-msgid "Section:"
-msgstr "Sekcia:"
 
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
@@ -1746,8 +1861,6 @@ msgstr "Licenčné podmienky nájdete na <URL:%s>."
 #~ msgstr "oto-pameské jazyky okrem pameských jazykov"
 #~ msgid "Romansh"
 #~ msgstr "romanši"
-#~ msgid "Romany"
-#~ msgstr "rómčina"
 #~ msgid "Romanian"
 #~ msgstr "rumunčina"
 #~ msgid "Rundi"
