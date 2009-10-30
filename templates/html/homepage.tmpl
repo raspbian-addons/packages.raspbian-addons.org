@@ -9,13 +9,15 @@
 		   'hardy', 'hardy-updates', 'hardy-backports',
 		   'intrepid', 'intrepid-updates', 'intrepid-backports',
 		   'jaunty', 'jaunty-updates', 'jaunty-backports',
-		   'karmic', ]
+		   'karmic', 'karmic-updates', 'karmic-backports',
+		   'lucid' ]
     version_numbers = { dapper => '6.06LTS',
 			hardy  => '8.04LTS',
 			intrepid => '8.10',
 			jaunty => '9.04',
+                        karmic => '9.10',
 		      }
-    current_release = 'jaunty'
+    current_release = 'karmic'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -124,6 +126,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2009-10-30</dt>
+<dd>Reflect karmic release, add lucid.</dd>
 <dt>2009-04-24</dt>
 <dd>Reflect jaunty release, add karmic, remove gutsy</dd>
 <dt>2009-02-21</dt>

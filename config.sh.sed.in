@@ -42,7 +42,7 @@ ddtplangs="be ca cs da de en-gb eo es et eu fi fr gl hu id it ja ka km ko lt ml 
 archives="us security"
 sections="main multiverse restricted universe"
 parts="$sections"
-suites="dapper dapper-updates dapper-backports hardy hardy-updates hardy-backports intrepid intrepid-updates intrepid-backports jaunty jaunty-updates jaunty-backports karmic"
+suites="dapper dapper-updates dapper-backports hardy hardy-updates hardy-backports intrepid intrepid-updates intrepid-backports jaunty jaunty-updates jaunty-backports karmic karmic-updates karmic-backports lucid"
 dists="$suites"
 priorities="required important standard optional extra"
 architectures="i386 amd64 powerpc"
@@ -61,6 +61,9 @@ arch_jaunty_backports="${arch_jaunty}"
 arch_karmic="${arch_jaunty}"
 arch_karmic_updates="${arch_karmic}"
 arch_karmic_backports="${arch_karmic}"
+arch_lucid="${arch_karmic}"
+arch_lucid_updates="${arch_lucid}"
+arch_lucid_backports="${arch_lucid}"
 
 # Miscellaneous
 #
