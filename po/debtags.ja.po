@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-02-08 23:21+0900\n"
-"Last-Translator: Noritada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>\n"
+"PO-Revision-Date: 2009-10-12 13:59+0900\n"
+"Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 #. Tag: x11::xserver, long desc
 #: files/debtags/vocabulary
 msgid " X servers and drivers for the X server (input and video)"
-msgstr ""
+msgstr "X サーバと X サーバ用ドライバ (入力・映像装置)"
 
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
@@ -115,15 +115,17 @@ msgstr "アドベンチャーゲーム"
 msgid "Afrikaans"
 msgstr "アフリカーンス語"
 
+# FIXME: culture::xxx and iso15924::xxx have the same descriptions in some cases.
 #. Tag: iso15924::jpan, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Han + Hiragana + Katakana."
-msgstr ""
+msgstr "漢字 + 平仮名 + 片仮名の通称。"
 
+# FIXME: A trailing period missing.
 #. Tag: iso15924::kore, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Hangul + Han"
-msgstr ""
+msgstr "ハングル + 漢字の通称。"
 
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
@@ -196,7 +198,7 @@ msgstr ""
 #. Tag: iso15924::arab, short desc
 #: files/debtags/vocabulary
 msgid "Arabic"
-msgstr "アラビア語"
+msgstr "アラビア語・アラビア文字"
 
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
@@ -210,10 +212,8 @@ msgstr "アーカイブ"
 
 #. Tag: iso15924::armn, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Romanian"
 msgid "Armenian"
-msgstr "ルーマニア語"
+msgstr "アルメニア文字"
 
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
@@ -296,7 +296,7 @@ msgstr "ベンチマーク"
 #. Tag: iso15924::beng, short desc
 #: files/debtags/vocabulary
 msgid "Bengali"
-msgstr "ベンガル語"
+msgstr "ベンガル語・ベンガル文字"
 
 #. Tag: suite::bsd, long desc
 #: files/debtags/vocabulary
@@ -370,7 +370,7 @@ msgstr "ボードゲーム"
 #. Tag: iso15924::bopo, short desc
 #: files/debtags/vocabulary
 msgid "Bopomofo"
-msgstr ""
+msgstr "注音符号 (ボポモフォ)"
 
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
@@ -379,10 +379,8 @@ msgstr "ボスニア語"
 
 #. Tag: iso15924::brai, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Brazilian"
 msgid "Braille"
-msgstr "ブラジルポルトガル語"
+msgstr "ブライユ式点字"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -490,6 +488,13 @@ msgstr "CORBA"
 msgid "Calculating"
 msgstr "計算"
 
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Calculating"
+msgid "Calculation"
+msgstr "計算"
+
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
 msgid "Calculation and Numerical Computation"
@@ -582,6 +587,14 @@ msgid ""
 "orbit2 or omniORB.\n"
 "Link: http://www.corba.org/"
 msgstr ""
+"異なる言語で書かれた、異なるハードウェアプラットフォームで動作するプログラム"
+"の間の相互運用のための標準規格、Common Object Request Broker Architecture。"
+"CORBA には、分散コンピューティングのためのクライアントサーバ方式のネットワー"
+"クプロトコルが含まれています。\n"
+"異なるコンピュータ上の、異なる言語で書かれた CORBA クライアントは、このネット"
+"ワークプロトコルを用いて、ORBit2 や omniORB などの CORBA サーバを経由してオブ"
+"ジェクトを交換できます。\n"
+"Link: http://www.corba.org/"
 
 #. Tag: hardware::storage:cd, long desc
 #: files/debtags/vocabulary
@@ -666,7 +679,7 @@ msgstr "文化"
 #. Tag: iso15924::cyrl, short desc
 #: files/debtags/vocabulary
 msgid "Cyrillic"
-msgstr ""
+msgstr "キリル文字"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
@@ -785,7 +798,7 @@ msgstr "デスクトップパブリッシング (DTP)"
 #. Tag: iso15924::deva, short desc
 #: files/debtags/vocabulary
 msgid "Devanagari (Nagari)"
-msgstr ""
+msgstr "デーヴァナーガリー (ナーガリー文字)"
 
 #. Tag: role::devel-lib, short desc
 #: files/debtags/vocabulary
@@ -817,6 +830,7 @@ msgstr "デジタルカメラ"
 msgid "Digital Versatile Disc"
 msgstr "Digital Versatile Disc"
 
+# 「non-relayed」は「非リレー式」?
 #. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -825,6 +839,10 @@ msgid ""
 "files or perform non-relayed chats.\n"
 "Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
+"Direct Client-to-Client (DCC) は IRC に関連したサブプロトコルです。このプロト"
+"コルを用いると、ピア同士が IRC サーバを介して接続しあい、ハンドシェイクして、"
+"ファイルの交換や非リレー式チャットを行うことが可能になります。\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
@@ -995,7 +1013,7 @@ msgstr ""
 #. Tag: iso15924::ethi, short desc
 #: files/debtags/vocabulary
 msgid "Ethiopic (Geʻez)"
-msgstr ""
+msgstr "エチオピア文字 (ゲエズ)"
 
 #. Tag: devel::examples, short desc
 #. Tag: role::examples, short desc
@@ -1319,7 +1337,7 @@ msgstr "地質学"
 #. Tag: iso15924::geor, short desc
 #: files/debtags/vocabulary
 msgid "Georgian (Mkhedruli)"
-msgstr ""
+msgstr "グルジア文字 (ムヘドルリ)"
 
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
@@ -1346,7 +1364,7 @@ msgstr "画像・映像"
 #. Tag: iso15924::grek, short desc
 #: files/debtags/vocabulary
 msgid "Greek"
-msgstr "ギリシャ語"
+msgstr "ギリシャ語・ギリシャ文字"
 
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
@@ -1356,12 +1374,12 @@ msgstr "グループウェア"
 #. Tag: iso15924::gujr, short desc
 #: files/debtags/vocabulary
 msgid "Gujarati"
-msgstr ""
+msgstr "グジャラーティー文字"
 
 #. Tag: iso15924::guru, short desc
 #: files/debtags/vocabulary
 msgid "Gurmukhi"
-msgstr ""
+msgstr "グルムキー文字"
 
 #. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
@@ -1382,22 +1400,22 @@ msgstr "アマチュア無線"
 #. Tag: iso15924::hani, short desc
 #: files/debtags/vocabulary
 msgid "Han (Hanzi, Kanji, Hanja)"
-msgstr ""
+msgstr "漢字"
 
 #. Tag: iso15924::hans, short desc
 #: files/debtags/vocabulary
 msgid "Han (Simplified variant)"
-msgstr ""
+msgstr "漢字 (簡体字)"
 
 #. Tag: iso15924::hant, short desc
 #: files/debtags/vocabulary
 msgid "Han (Traditional variant)"
-msgstr ""
+msgstr "漢字 (伝統字)"
 
 #. Tag: iso15924::hang, short desc
 #: files/debtags/vocabulary
 msgid "Hangul (Hangŭl, Hangeul)"
-msgstr ""
+msgstr "ハングル"
 
 #. Tag: hardware::detection, short desc
 #: files/debtags/vocabulary
@@ -1433,7 +1451,7 @@ msgstr "Haskell での開発"
 #. Tag: iso15924::hebr, short desc
 #: files/debtags/vocabulary
 msgid "Hebrew"
-msgstr "ヘブライ語"
+msgstr "ヘブライ語・ヘブライ文字"
 
 #. Tag: network::hiavailability, short desc
 #: files/debtags/vocabulary
@@ -1448,7 +1466,7 @@ msgstr "ヒンディー語"
 #. Tag: iso15924::hira, short desc
 #: files/debtags/vocabulary
 msgid "Hiragana"
-msgstr ""
+msgstr "平仮名"
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
@@ -1642,6 +1660,7 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 msgstr ""
 
+# 日本語化にあたって多少意訳。
 #. Tag: protocol::irc, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -1654,6 +1673,14 @@ msgid ""
 "The official Debian channel is #debian on the freenode network.\n"
 "Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 msgstr ""
+"インターネットで広く使われている、ネットワーク上でのテキストチャット用プロト"
+"コル、Internet Relay Chat。チャットルーム (いわゆるチャンネル) の他に、私的な"
+"一対一のコミュニケーションもサポートしています。\n"
+"IRC サーバはネットワークで組織化されているため、クライアントは地理的に近い "
+"IRC サーバに接続することで、その IRC サーバ自体が接続する、世界中にある他の "
+"IRC サーバとやりとりできます。\n"
+"Debian の公式のチャンネルは、フリーノードネットワークの #debian です。\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 
 #. Tag: devel::interpreter, short desc
 #: files/debtags/vocabulary
@@ -1691,6 +1718,11 @@ msgstr "イタリア語"
 msgid "JPEG, Joint Photographic Experts Group"
 msgstr "Joint Photographic Experts Group (JPEG)"
 
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr ""
+
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
 msgid "Jabber"
@@ -1700,7 +1732,7 @@ msgstr "Jabber"
 #. Tag: iso15924::jpan, short desc
 #: files/debtags/vocabulary
 msgid "Japanese"
-msgstr "日本語"
+msgstr "日本語・日本語文字"
 
 #. Tag: implemented-in::java, short desc
 #: files/debtags/vocabulary
@@ -1711,6 +1743,11 @@ msgstr "Java"
 #: files/debtags/vocabulary
 msgid "Java Development"
 msgstr "Java での開発"
+
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr ""
 
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
@@ -1735,14 +1772,12 @@ msgstr "KDE"
 #. Tag: iso15924::knda, short desc
 #: files/debtags/vocabulary
 msgid "Kannada"
-msgstr ""
+msgstr "カンナダ文字"
 
 #. Tag: iso15924::kana, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Catalan"
 msgid "Katakana"
-msgstr "カタルーニャ語"
+msgstr "片仮名"
 
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
@@ -1788,16 +1823,14 @@ msgstr "キーボード"
 
 #. Tag: iso15924::khmr, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Theme"
 msgid "Khmer"
-msgstr "テーマ"
+msgstr "クメール文字"
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
 #: files/debtags/vocabulary
 msgid "Korean"
-msgstr "韓国語"
+msgstr "朝鮮語 (韓国語)・朝鮮語 (韓国語) 文字"
 
 #. Tag: protocol::ldap, short desc
 #: files/debtags/vocabulary
@@ -1816,10 +1849,8 @@ msgstr "LPR"
 
 #. Tag: iso15924::laoo, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Laptop"
 msgid "Lao"
-msgstr "ラップトップ"
+msgstr "ラーオ文字"
 
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
@@ -1828,10 +1859,8 @@ msgstr "ラップトップ"
 
 #. Tag: iso15924::latn, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Latvian"
 msgid "Latin"
-msgstr "ラトビア語"
+msgstr "ラテン文字"
 
 #. Tag: culture::latvian, short desc
 #: files/debtags/vocabulary
@@ -2012,7 +2041,7 @@ msgstr "メーリングリスト"
 #. Tag: iso15924::mlym, short desc
 #: files/debtags/vocabulary
 msgid "Malayalam"
-msgstr ""
+msgstr "マラヤーラム文字"
 
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
@@ -2056,10 +2085,8 @@ msgstr "メタパッケージ"
 
 #. Tag: field::meteorology, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Geology"
 msgid "Meteorology"
-msgstr "地質学"
+msgstr "気象学"
 
 #. Tag: sound::mixer, short desc
 #: files/debtags/vocabulary
@@ -2086,7 +2113,7 @@ msgstr "分子生物学"
 #. Tag: iso15924::mong, short desc
 #: files/debtags/vocabulary
 msgid "Mongolian"
-msgstr "モンゴル語"
+msgstr "モンゴル語・モンゴル文字"
 
 #. Tag: admin::monitoring, short desc
 #. Tag: use::monitor, short desc
@@ -2132,7 +2159,7 @@ msgstr "MySQL"
 #. Tag: iso15924::mymr, short desc
 #: files/debtags/vocabulary
 msgid "Myanmar (Burmese)"
-msgstr ""
+msgstr "ビルマ文字"
 
 #. Tag: protocol::nfs, short desc
 #: files/debtags/vocabulary
@@ -2469,6 +2496,15 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
 "org/oscar/"
 msgstr ""
+"AOL のインスタントメッセージングネットワーク (AIM) で使用されるインスタント"
+"メッセージングプロトコル、Open System for CommunicAtion in Realtime。ICQ IM "
+"ネットワークのプロトコルのバージョン 7、8、9 も OSCAR プロトコルのインスタン"
+"スです。\n"
+"OSCAR はプロプライエタリなバイナリのプロトコルです。公式のドキュメントはない"
+"ので、AIM や ICQ に接続するクライアントは、リバースエンジニアリングによって得"
+"られた情報に依存せざるをえません。\n"
+"Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
+"org/oscar/"
 
 #. Tag: suite::openoffice, short desc
 #: files/debtags/vocabulary
@@ -2483,7 +2519,7 @@ msgstr "光学文字認識"
 #. Tag: iso15924::orya, short desc
 #: files/debtags/vocabulary
 msgid "Oriya"
-msgstr ""
+msgstr "オリヤー文字"
 
 #. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
@@ -3279,6 +3315,13 @@ msgid ""
 "utilize Google's searching engine from client applications.\n"
 "Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 msgstr ""
+"同一ネットワーク内の異なるコンピュータの間でメッセージを交換するためのプロト"
+"コル、Simple Object Access Protocol。メッセージは XML で符号化され、通常は "
+"HTTP で送信されます。\n"
+"SOAP は、ウェブサービスに対する API を提供するのに用いられます。例としては、"
+"クライアントアプリケーションから Google の検索エンジンを利用するための "
+"Google API があります。\n"
+"Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
 
 #. Tag: use::simulating, short desc
 #: files/debtags/vocabulary
@@ -3293,7 +3336,7 @@ msgstr "シミュレーションゲーム"
 #. Tag: iso15924::sinh, short desc
 #: files/debtags/vocabulary
 msgid "Sinhala"
-msgstr ""
+msgstr "シンハラ文字"
 
 #. Tag: culture::slovak, short desc
 #: files/debtags/vocabulary
@@ -3452,7 +3495,7 @@ msgstr "スウェーデン語"
 #. Tag: iso15924::zsym, short desc
 #: files/debtags/vocabulary
 msgid "Symbols"
-msgstr ""
+msgstr "シンボル"
 
 #. Tag: use::synchronizing, short desc
 #: files/debtags/vocabulary
@@ -3461,10 +3504,8 @@ msgstr "同期"
 
 #. Tag: iso15924::syrc, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Privacy"
 msgid "Syriac"
-msgstr "プライバシー"
+msgstr "シリア文字"
 
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
@@ -3516,7 +3557,7 @@ msgstr "Tagged Image File Format (TIFF)"
 #. Tag: iso15924::tavt, short desc
 #: files/debtags/vocabulary
 msgid "Tai Viet"
-msgstr ""
+msgstr "タイ・ヴィエト文字"
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
@@ -3532,7 +3573,7 @@ msgstr "タジク語"
 #. Tag: iso15924::taml, short desc
 #: files/debtags/vocabulary
 msgid "Tamil"
-msgstr "タミル語"
+msgstr "タミル語・タミル文字"
 
 #. Tag: works-with-format::tar, short desc
 #: files/debtags/vocabulary
@@ -3572,7 +3613,7 @@ msgstr "Telnet"
 #. Tag: iso15924::telu, short desc
 #: files/debtags/vocabulary
 msgid "Telugu"
-msgstr ""
+msgstr "テルグ文字"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3613,7 +3654,7 @@ msgstr "テキストベースの対話"
 #. Tag: iso15924::thai, short desc
 #: files/debtags/vocabulary
 msgid "Thai"
-msgstr "タイ語"
+msgstr "タイ語・タイ文字"
 
 #. Tag: suite::gimp, short desc
 #: files/debtags/vocabulary
@@ -3627,6 +3668,9 @@ msgid ""
 "instant messaging network of the same name.\n"
 "Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 msgstr ""
+"Gadu-Gadu プロトコルは、ポーランドの同名のインスタントメッセージングネット"
+"ワークで使用されるプロプライエタリなプロトコルです。\n"
+"Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
 
 #. Tag: protocol::ident, long desc
 #: files/debtags/vocabulary
@@ -3648,6 +3692,14 @@ msgid ""
 "an own server to connect to the Jabber network.\n"
 "Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 msgstr ""
+"Jabber プロトコルは、XMPP プロトコルをベースとするインスタントメッセージング"
+"プロトコルです。私的な一対一のコミュニケーションの他にチャットルームもサポー"
+"トしており、Jabber IM ネットワーク以外に、新しい GoogleTalk ネットワークの "
+"IM 機能にも使用されています。\n"
+"MSN、ICQ、AIM などの他の IM ネットワークとは異なり、Jabber サーバはフリーソフ"
+"トウェアなので、内輪のチャットプラットフォームを作ったり、Jabber ネットワーク"
+"に接続する独自のサーバを立てたりするのに使用できます。\n"
+"Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 
 #. Tag: protocol::lpr, long desc
 #: files/debtags/vocabulary
@@ -3671,6 +3723,13 @@ msgid ""
 "engineered information.\n"
 "Link: http://www.hypothetic.org/docs/msn/"
 msgstr ""
+"MSN メッセンジャープロトコルは、Microsoft の独自のインスタントメッセージング"
+"ネットワークで使用されるプロトコルです。\n"
+"プロトコルはプロプライエタリです。Microsoft は以前、プロトコルの仕様の草案を "
+"IETF に送りましたが、その内容は古くなってしまったため、MSN メッセンジャーネッ"
+"トワークに接続するクライアントは、リバースエンジニアリングによって得られた情"
+"報に依存せざるをえません。\n"
+"Link: http://www.hypothetic.org/docs/msn/"
 
 #. Tag: protocol::finger, long desc
 #: files/debtags/vocabulary
@@ -3684,6 +3743,7 @@ msgid ""
 "rfc/rfc1288.txt"
 msgstr ""
 
+# FIXME: "This a" -> "This is a"
 #. Tag: protocol::yahoo-messenger, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3695,6 +3755,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
 "venkydude.com/articles/yahoo.htm"
 msgstr ""
+"Yahoo! Messenger プロトコルは、Yahoo! のインスタントメッセージングネットワー"
+"クに接続するのに使用されるプロトコルです。\n"
+"このプロトコルはプロプライエタリかつバイナリで、公式のドキュメントもありませ"
+"ん。\n"
+"Yahoo! Messenger ネットワークに接続するクライアントは、リバースエンジニアリン"
+"グによって得られた情報に依存せざるをえません。\n"
+"Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
@@ -3804,7 +3872,7 @@ msgstr "3 次元"
 #. Tag: iso15924::tibt, short desc
 #: files/debtags/vocabulary
 msgid "Tibetan"
-msgstr ""
+msgstr "チベット文字"
 
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
@@ -3945,7 +4013,7 @@ msgstr "Unicode"
 #. Tag: iso15924::cans, short desc
 #: files/debtags/vocabulary
 msgid "Unified Canadian Aboriginal Syllabics"
-msgstr ""
+msgstr "統合カナダ先住民文字"
 
 #. Tag: hardware::power:ups, long desc
 #: files/debtags/vocabulary
@@ -4046,6 +4114,13 @@ msgstr "Virtual Reality Markup Language"
 msgid "Virtualization"
 msgstr "仮想化"
 
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Virtualization"
+msgid "Visualization"
+msgstr "仮想化"
+
 #. Tag: protocol::voip, short desc
 #: files/debtags/vocabulary
 msgid "VoIP"
@@ -4133,12 +4208,12 @@ msgstr "World Wide Web"
 #. Facet: iso15924, short desc
 #: files/debtags/vocabulary
 msgid "Writing script"
-msgstr ""
+msgstr "表記文字"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
 msgid "X Server and Drivers"
-msgstr ""
+msgstr "X サーバとドライバ"
 
 #. Tag: interface::x11, short desc
 #. Facet: x11, short desc
@@ -4171,6 +4246,10 @@ msgid ""
 "from XML-RPC.\n"
 "Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 msgstr ""
+"符号化に XML、転送機構に HTTP を使用する、リモートプロシージャコール用の単純"
+"なプロトコル、XML Remote Procedure Call。\n"
+"大幅に機能が追加されたプロトコル SOAP は、XML-RPC から発展しました。\n"
+"Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
 
 #. Tag: works-with-format::xml:rss, long desc
 #: files/debtags/vocabulary
@@ -4205,7 +4284,7 @@ msgstr "Yahoo! Messenger"
 #. Tag: iso15924::yiii, short desc
 #: files/debtags/vocabulary
 msgid "Yi"
-msgstr ""
+msgstr "ロロ文字"
 
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
@@ -4255,54 +4334,54 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
-#~ msgid "X Server"
-#~ msgstr "X サーバ"
-
-#~ msgid "Audrio"
-#~ msgstr "音声"
-
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
-
-# TRANSLATION-FIXME: Why "Windowing"?
-#~ msgid "X Windowing System"
-#~ msgstr "X ウィンドウシステム"
-
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
-
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
-
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "Source code"
-#~ msgstr "ソースコード"
-
-#~ msgid "QT"
-#~ msgstr "QT"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB や CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
-
-#~ msgid "File Transfer"
-#~ msgstr "ファイル転送"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "インターネット・リレー・チャット (IRC) クライアントが使用する Direct "
 #~ "Client-to-Client プロトコル。"
+
+#~ msgid "File Transfer"
+#~ msgstr "ファイル転送"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB や CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
+
+#~ msgid "QT"
+#~ msgstr "QT"
+
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
+
+# TRANSLATION-FIXME: Why "Windowing"?
+#~ msgid "X Windowing System"
+#~ msgstr "X ウィンドウシステム"
+
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
+
+#~ msgid "Audrio"
+#~ msgstr "音声"
+
+#~ msgid "X Server"
+#~ msgstr "X サーバ"

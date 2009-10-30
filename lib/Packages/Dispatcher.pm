@@ -177,7 +177,11 @@ sub do_dispatch {
 	} elsif (@components == 0) {
 	    fatal_error( "We're supposed to display the homepage here, instead of getting dispatch.pl" );
 	} elsif (@components == 1) {
-	    $what_to_do = 'search';
+	    if ($components[0] eq 'index') {
+		$what_to_do = 'homepage';
+	    } else {
+		$what_to_do = 'search';
+	    }
 	} else {
 
 	    for ($components[-1]) {
