@@ -2,18 +2,22 @@
 	title_tag = g('%s Packages Search', organisation)
 	page_title = g('%s Packages Search', organisation)
 	keywords = g('Packages')
+	html_meta = '<meta name="verify-v1" content="Rg2bDR1kWPGd8k8v9NOgnmtUQHO6UaKX2glZWVDptok=">'
 -%]
 [%-
-    all_suites = [ 'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
-		   'lenny', 'lenny-volatile', 'lenny-backports', 'squeeze', 'sid' ]
-    version_numbers = { sarge => '3.1',
-			etch  => '4.0',
-			lenny => '5.0' }
-    current_release = 'lenny'
-    all_sections = [ 'main', 'contrib', 'non-free' ]
-    all_architectures = [ 'alpha', 'arm', 'armel', 'amd64', 'avr32', 'hppa', 'i386',
-    		      	  'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
-			  'mipsel', 'm68k', 'powerpc', 's390', 'sparc' ]
+    all_suites = [ 'dapper', 'dapper-updates', 'dapper-backports',
+		   'hardy', 'hardy-updates', 'hardy-backports',
+		   'intrepid', 'intrepid-updates', 'intrepid-backports',
+		   'jaunty', 'jaunty-updates', 'jaunty-backports',
+		   'karmic', ]
+    version_numbers = { dapper => '6.06LTS',
+			hardy  => '8.04LTS',
+			intrepid => '8.10',
+			jaunty => '9.04',
+		      }
+    current_release = 'jaunty'
+    all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
+    all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
 
 <p>[% g('This site provides you with information about all the packages available in the <a href="%s">%s</a> Package archive.', project_homepage, organisation) %]</p>
@@ -116,5 +120,217 @@ Distribution:
   <option value="any" selected="selected">[% g('any') %]</option>
 </select>
 </form>
+
+<hr>
+<h2>News</h2>
+<dl>
+<dt>2009-04-24</dt>
+<dd>Reflect jaunty release, add karmic, remove gutsy</dd>
+<dt>2009-02-21</dt>
+<dd>Remove feisty.</dd>
+<dt>2008-11-03</dt>
+<dd>Add jaunty.</dd>
+<dt>2008-10-30</dt>
+<dd>Reflect intrepid release.</dd>
+<dt>2008-06-10</dt>
+<dd>
+<p>Removed edgy</p>
+</dd>
+<dt>2008-04-28</dt>
+<dd>
+<p>Added intrepid</p>
+</dt>
+<dt>2008-04-26</dt>
+<dd>
+<p>Adapted for hardy release. Removed the obsolete powerpc data for hardy. I'm currently evaluation if and how I should
+include information about <tt>ports.ubuntu.com</tt> packages here. Since <tt>archive.ubuntu.com</tt> is currently unusable
+I use <tt>nl.archive.ubuntu.com</tt> as source for the data until the situation normalizes again.</p>
+</dd>
+<dt>2008-02-21</dt>
+<dd>
+<p>The downtime today was caused by some yet undiagnosed kernel troubles after
+a faulty hard disk was exchanged. Sorry for any inconvenience.
+</dd>
+<dt>2008-02-19</dt>
+<dd>
+<p>Switched packages.ubuntu.com to the newer codebase that also runs
+on packages.debian.org. The two most important changes for users
+are that most pages are now generated dynamically (which makes
+for faster updates and more flexibility) and that the search
+functions should be much faster now.
+<p>Still waiting for a volunteer that optimizes the used stylesheets,
+I myself have not much talent in this area...
+</dd>
+<dt>2007-10-21</dt>
+<dd>
+Add hardy.
+</dd>
+<dt>2007-10-18</dt>
+<dd>
+Change default release to gutsy.
+</dd>
+<dt>2007-07-28</dt>
+<dd>
+Drop old releases since they also got dropped from archive.ubuntu.com.
+</dd>
+<dt>2007-04-29</dt>
+<dd>
+Feisty is released. Pages updated accordingly.
+</dd>
+<dt>2006-11-20</dt>
+<dd>
+<ul>
+<li>The hard drive of the server was replaced today after it began to act
+up. Most stuff should be up and running again. I accidentally deleted the
+info about new packages though, so that will be not reliable for the next
+few days.
+<li>Added edgy-backports to the homepage and the search forms
+</ul>
+</dd>
+<dt>2006-10-29</dt>
+<dd>
+<ul>
+<li>Add feisty. The changes for the edgy release were already done some days ago.
+</ul>
+</dd>
+<dt>2006-10-18</dt>
+<dd>
+<ul>
+<li>The "Bug reports" links now correctly point to Launchpad for all packages.
+Thanks to all the people that reported this error to me.
+<li>I added an <code>robots.txt</code> to ban some people trying to
+mirror the site by means of <code>wget -r</code>. If forever reason
+you need to mirror the site please contact me by mail so we can do
+this by other means that won't stress the server as much.
+</ul>
+</dd>
+<dt>2006-06-12</dt>
+<dd>
+Finally make dapper the default for searches and add edgy. Sorry for the delay.
+</dd>
+<dt>2006-01-17</dt>
+<dd>
+I hope everyone had a good start into the new year. Some small status
+updates:
+<ul>
+<li>While looking at the log statistics I noticed that apparently
+<code>packages.ubuntulinux.org</code> also points to my server
+without me knowing. I fixed the apache configuration so that it now
+knows about that and handles it correctly.</li>
+<li>Linking to a CSS file on the official Ubuntu homepage
+was a bad idea and the page had some glitches when it disappeared.
+Most of the issues should be fixed by now.</li>
+<li>Sorry for any performance issues with the site. My little server
+is not always able to handle the many hits of this site (close to
+2,000,000 per month). I guess I will have to search for another
+hosting solution in the near future.</li>
+</ul>
+</dd>
+<dt>2005-10-13</dt>
+<dd>
+Changed all defaults to point to breezy
+</dd>
+<dt>2005-09-28</dt>
+<dd>
+<ul>
+<li>The contents files are updated again, so I removed any warnings
+and added the appropriate links back</li>
+<li>The "Check for bug reports" links now point to Launchpad for
+universe/multiverse packages. Suggested by
+<tt>j -at- bootlab -dot- org</tt>.
+<li>Finally, I migrated to the "new" layout. Comments and Patches
+about the remaining quirks welcome.
+</ul>
+</dd>
+<dt>2005-09-25</dt>
+<dd>
+I've merged the new changelog to HTML conversion code from the Debian
+branch. I still have no idea how to handle the requests to link Ubuntu
+bugs to the Ubuntu BTS and Debian bugs to the Debian BTS. Suggestions
+welcome.
+</dd>
+<dt>2005-08-30</dt>
+<dd>
+<ul>
+<li>I've added a warning to this site about the outdated Contents
+files in the Ubuntu archive which make the contents search completely
+useless for anything after warty. I've actually no idea whom to ask
+about this since I don't seem to be able to find out on the Ubuntu
+web site who is ftp-master in Ubuntu?</li>
+<li>You can now also browse the packages from
+<a href="hoary-backports/">hoary-backports</a></li>
+</ul>
+</dd>
+<dt>2005-06-10</dt>
+<dd>
+I have begun to work on integrating the current Ubuntu web design with
+my pages. There are still some issues to work out but as a teaser I
+already converted the front page. Feel free to mail me with comments
+on how I could use the new layout better.
+</dd>
+<dt>2005-04-14</dt>
+<dd>
+hoary is released and now this fact is also beginning to show on this
+page. Please report all errors you find with the new breezy pages.
+</dd>
+<dt>2005-04-06</dt>
+<dd>
+The transition should be completed by now and I've installed some
+rewrite rules so that old URLs should also point to the new location.
+The changelog extraction script is still running so there are still
+some (more) broken links. Please report all other problems you might
+encounter.
+</dd>
+<dt>2005-04-05</dt>
+<dd>
+From tomorrow on this site will be available at <a
+href="http://packages.ubuntu.com/">packages.ubuntu.com</a>.
+The necessary setup is done on both my side and on the side of the
+ubuntu people but I will use the occasion for some configuration
+clean-up and a full rebuild. Stay tuned <tt>;)</tt>
+</dd>
+<dt>2005-04-02</dt>
+<dd>
+<ul>
+<li>On request of the MOTUs I've added links to the build logs for
+hoary packages.</li>
+<li>Also, the Portuguese LoCoTeam (hmm, Ubuntu teams have
+all very l33t names ;) asked me
+how to translate the pages. Here my answer:
+
+<blockquote style="font-family: monospace">
+<p>At http://cvs.infodrom.org/packages.debian.org/po/?cvsroot=debian.de
+you can find some .pot files. Please translate them and send them back
+to me (You may want to take a look at the translations available at
+http://cvs.debian.org/webwml/portuguese/po/?cvsroot=webwml
+especially for files like langs.pot). This will ensure that at least
+the constant strings on all the pages are translated (Some of the
+strings in these file are only needed on packages.debian.org)</p>
+
+<p>The translations of package descriptions I took from the DDTP (Debian
+Descriptions Translation Project) which seems to be rather inactive
+lately. Unless this is fully revived or another similar project is
+created there is little I can do on this front.</p>
+</blockquote>
+</li>
+<li>Thanks to all people that provided me with positive feedback about
+these pages.</li>
+</ul>
+</dd>
+<dt>2005-03-02</dt>
+<dd>I talked briefly with Daniel Silverstone of Canonical at
+<a href="http:://www.fosdem.org">FOSDEM</a>. He said that Ubuntu
+will get his own Packages page, but <q>It will be a while</q>.</dd>
+<dt>2005-01-24</dt>
+<dd>In the last two days there were several reboots of the server
+needed (kernel upgrades, activation and testing of a new rescue
+system). Sorry for any inconviences this caused.</dd>
+<dt>2005-01-11</dt>
+<dd>There are changelogs and copyright files available now. I also
+added links to the Ubuntu bugzilla, but I'm not sure yet that they
+work completly. Feedback welcome. (Changelogs and copyright files
+may be missing for some packages since I can only mirror the
+i386 and powerpc debs due to space constraints)</dd>
+</dl>
 
 [% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2009' %]
