@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-11-01 17:13+0900\n"
+"PO-Revision-Date: 2009-11-01 19:11+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -240,6 +240,12 @@ msgid ""
 "was originally intended.\n"
 "Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 msgstr ""
+"単一ネットワークに所属するコンピュータ間の通信用の高速プロトコル、"
+"Asynchronous Transfer Mode (非同期転送モード)。\n"
+"ATM は、*DSL ネットワークの実装には利用されていますが、当初意図されたローカル"
+"エリアネットワーク (LAN) の構築のための技術としては、広くは利用されていませ"
+"ん。\n"
+"Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 
 #. Tag: uitoolkit::athena, short desc
 #: files/debtags/vocabulary
@@ -1007,6 +1013,13 @@ msgid ""
 "widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
 "Link: http://en.wikipedia.org/wiki/Ethernet"
 msgstr ""
+"イーサネットは、ローカルエリアネットワーク (LAN) 構築のための技術として最も人"
+"気があります。\n"
+"イーサネットネットワーク内のコンピュータは、ツイストペアケーブルやファイバー"
+"ケーブルを通じて通信しあい、MAC アドレスで識別されます。複数の異なる形式の"
+"イーサネットがあり、最大通信速度によって区別できます。現在最も広く使われてい"
+"る形式は、100MBit/s (100BASE-*) や 1GBit/s (1000BASE-*) です。\n"
+"Link: http://en.wikipedia.org/wiki/Ethernet"
 
 #. Tag: iso15924::ethi, short desc
 #: files/debtags/vocabulary
@@ -1645,6 +1658,15 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
 "txt"
 msgstr ""
+"インターネットプロトコルスイートの核となるプロトコルで、まさにインターネット"
+"の基盤である Internet Protocol (v4)。\n"
+"インターネットに接続されたあらゆるコンピュータには、IP アドレス (通常は "
+"192.25.206.10 のようなドットつきの表記法で表現される、4 バイトの数値) がつけ"
+"られます。インターネットの IP アドレスは、Internet Corporation for Assigned "
+"Names and Numbers (ICANN) が分配しています。通常、インターネット上のコン"
+"ピュータは、IP アドレスではなくドメイン名でアクセスされます。\n"
+"Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
+"txt"
 
 #. Tag: protocol::ipv6, long desc
 #: files/debtags/vocabulary
@@ -1657,6 +1679,12 @@ msgid ""
 "seldomly used.\n"
 "Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 msgstr ""
+"次世代のインターネットプロトコル、Internet Protocol (v6)。IP アドレスの不足な"
+"ど IP (v4) の制約を克服し、IP (v4) に取って代わって将来のインターネットの新し"
+"い基盤を形成することになっています。\n"
+"既に多くのプログラムが、IP (v4) に加えて IPv6 をサポートしていますが、IPv6 は"
+"まだほとんど使われていません。\n"
+"Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 
 # 日本語化にあたって多少意訳。
 #. Tag: protocol::irc, long desc
@@ -3941,6 +3969,7 @@ msgstr "おもちゃやからくり"
 msgid "Transmission"
 msgstr "通信"
 
+# FIXME: WikipediaではTransmission Control Protocolとなっているが……?
 #. Tag: protocol::tcp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3951,6 +3980,12 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
 "http://www.ietf.org/rfc/rfc793.txt"
 msgstr ""
+"インターネットプロトコルスイートの核となるプロトコルで、データ伝送に使用され"
+"る、Transport Control Protocol。\n"
+"TCP は、FTP、HTTP、SMTP、POP3、IMAP、NNTP など、インターネット上の多くのサー"
+"ビスの伝送プロトコルとして使用されています。\n"
+"Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
+"http://www.ietf.org/rfc/rfc793.txt"
 
 #. Tag: works-with::graphs, short desc
 #: files/debtags/vocabulary
@@ -4045,6 +4080,12 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
 "ietf.org/rfc/rfc768.txt"
 msgstr ""
+"インターネットプロトコルスイートの核となるプロトコルで、データ伝送に使用され"
+"る、User Datagram Protocol。\n"
+"UDP は TCP ほど信頼性はありませんが、高速なので、DNS プロトコルや VoIP のよう"
+"な時間的制約のある目的にはより適しています。\n"
+"Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
+"ietf.org/rfc/rfc768.txt"
 
 #. Tag: devel::ui-builder, short desc
 #. Facet: interface, short desc
