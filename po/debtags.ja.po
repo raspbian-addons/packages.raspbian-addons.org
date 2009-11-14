@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-11-01 19:11+0900\n"
+"PO-Revision-Date: 2009-11-14 23:50+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -1933,7 +1933,7 @@ msgstr "ソフトウェアの開発や構築に使用されるライブラリや
 #. Tag: protocol::ldap, long desc
 #: files/debtags/vocabulary
 msgid "Lightweight Directory Access Protocol"
-msgstr ""
+msgstr "Lightweight Directory Access Protocol"
 
 #. Tag: works-with-format::ldif, long desc
 #: files/debtags/vocabulary
@@ -2960,6 +2960,11 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
 "rfc2865.txt"
 msgstr ""
+"ネットワークアクセスの認証や認可、記録 (アカウンティング) のためのプロトコ"
+"ル、Remote Authentication Dial In User Service。主に、ダイヤルアップインター"
+"ネット接続を扱うインターネットサービスプロバイダが使用します。\n"
+"Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
+"rfc2865.txt"
 
 #. Tag: devel::rpc, long desc
 #: files/debtags/vocabulary
@@ -3717,6 +3722,9 @@ msgid ""
 "network connection.\n"
 "Link: http://en.wikipedia.org/wiki/Ident"
 msgstr ""
+"Ident インターネットプロトコルは、ネットワーク接続のユーザを識別したり認証し"
+"たりするのに役立ちます。\n"
+"Link: http://en.wikipedia.org/wiki/Ident"
 
 #. Tag: protocol::jabber, long desc
 #: files/debtags/vocabulary
@@ -3769,6 +3777,7 @@ msgstr ""
 "報に依存せざるをえません。\n"
 "Link: http://www.hypothetic.org/docs/msn/"
 
+# FIXME: grammatical error: "while it widespread distribution".
 #. Tag: protocol::finger, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3780,6 +3789,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
 "rfc/rfc1288.txt"
 msgstr ""
+"Name/Finger プロトコルは、メールアドレスや電話番号、フルネームなど、コン"
+"ピュータのユーザについて、広範囲にわたる公開情報を提供するためのシンプルな"
+"ネットワークプロトコルです。\n"
+"Finger プロトコルは 1990 年代初頭には広く使われていましたが、プライバシーに対"
+"する懸念から、もはや広範には使用されていません。\n"
+"Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
+"rfc/rfc1288.txt"
 
 # FIXME: "This a" -> "This is a"
 #. Tag: protocol::yahoo-messenger, long desc
