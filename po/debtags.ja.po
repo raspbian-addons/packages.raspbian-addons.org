@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2009-10-12 13:59+0900\n"
+"PO-Revision-Date: 2010-01-02 17:08+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -240,6 +240,12 @@ msgid ""
 "was originally intended.\n"
 "Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 msgstr ""
+"単一ネットワークに所属するコンピュータ間の通信用の高速プロトコル、"
+"Asynchronous Transfer Mode (非同期転送モード)。\n"
+"ATM は、*DSL ネットワークの実装には利用されていますが、当初意図されたローカル"
+"エリアネットワーク (LAN) の構築のための技術としては、広くは利用されていませ"
+"ん。\n"
+"Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 
 #. Tag: uitoolkit::athena, short desc
 #: files/debtags/vocabulary
@@ -486,6 +492,11 @@ msgstr "CORBA"
 #. Tag: use::calculating, short desc
 #: files/debtags/vocabulary
 msgid "Calculating"
+msgstr "計算"
+
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+msgid "Calculation"
 msgstr "計算"
 
 #. Tag: numerical, short desc
@@ -875,6 +886,13 @@ msgid ""
 "the DNS servers of Internet service providers.\n"
 "Link: http://en.wikipedia.org/wiki/Domain_Name_System"
 msgstr ""
+"ドメイン名 (\"www.debian.org\" など) に関する情報、特に IP アドレスを要求する"
+"ためのプロトコル、Domain Name System。プロトコルは、DNS サーバ (BIND など) と"
+"の通信に使用されます。\n"
+"インターネットについては、登録されたすべてのドメイン名のアドレスを管理する"
+"ルート DNS サーバが世界中に 13 台あり、インターネットサービスプロバイダの "
+"DNS サーバにこの情報を提供しています。\n"
+"Link: http://en.wikipedia.org/wiki/Domain_Name_System"
 
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
@@ -900,6 +918,11 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
 "http://www.ietf.org/rfc/rfc2131.txt"
 msgstr ""
+"TCP/IP ネットワーク内の各コンピュータに静的な IP アドレスを振るのではなく、動"
+"的な IP アドレスを自動的に割り当てるための、クライアントサーバ方式のネット"
+"ワークプロトコル、Dynamic Host Configuration Protocol。\n"
+"Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2131.txt"
 
 #. Tag: web::commerce, short desc
 #: files/debtags/vocabulary
@@ -1002,6 +1025,13 @@ msgid ""
 "widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
 "Link: http://en.wikipedia.org/wiki/Ethernet"
 msgstr ""
+"イーサネットは、ローカルエリアネットワーク (LAN) 構築のための技術として最も人"
+"気があります。\n"
+"イーサネットネットワーク内のコンピュータは、ツイストペアケーブルやファイバー"
+"ケーブルを通じて通信しあい、MAC アドレスで識別されます。複数の異なる形式の"
+"イーサネットがあり、最大通信速度によって区別できます。現在最も広く使われてい"
+"る形式は、100MBit/s (100BASE-*) や 1GBit/s (1000BASE-*) です。\n"
+"Link: http://en.wikipedia.org/wiki/Ethernet"
 
 #. Tag: iso15924::ethi, short desc
 #: files/debtags/vocabulary
@@ -1093,6 +1123,16 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
 "ietf.org/rfc/rfc0959.txt"
 msgstr ""
+"ファイル転送プロトコル (File Transfer Protocol) は、ネットワーク経由でのファ"
+"イルの交換や操作のためのプロトコルで、インターネット上で広く使われていま"
+"す。\n"
+"FTP サーバと FTP クライアントとの間の通信に使用されるチャネルは、コントロール"
+"チャネルとデータチャネルの 2 つがあります。FTP は元々は認証を必要とするアクセ"
+"スのみに使用されていましたが、現在、インターネット上の大半の FTP サーバはパス"
+"ワードなしの匿名アクセスを提供しています。FTP は暗号化をサポートしていないた"
+"め、機密データの転送には今日では SFTP が用いられます。\n"
+"Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
+"ietf.org/rfc/rfc0959.txt"
 
 #. Tag: works-with-format::djvu, long desc
 #: files/debtags/vocabulary
@@ -1494,6 +1534,15 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
 "rfc2616.txt"
 msgstr ""
+"HyperText Transfer Protocol は、World Wide Web 用のプロトコルの中で最も重要な"
+"ものの一つです。\n"
+"このプロトコルは、Apache などの HTTP サーバと HTTP クライアント (大抵の場合は"
+"ウェブブラウザ) との間のデータ転送を制御します。HTTP リソースのリクエストに"
+"は URL (Universal Resource Locator) が使われます。通常、HTTP はサーバからクラ"
+"イアントへのファイル転送をサポートするだけですが、HTTP サーバへの情報の送信も"
+"サポートしています。これは、特に HTML のフォームで使われます。\n"
+"Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
+"rfc2616.txt"
 
 #. Tag: devel::ide, short desc
 #: files/debtags/vocabulary
@@ -1640,6 +1689,15 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
 "txt"
 msgstr ""
+"インターネットプロトコルスイートの核となるプロトコルで、まさにインターネット"
+"の基盤である Internet Protocol (v4)。\n"
+"インターネットに接続されたあらゆるコンピュータには、IP アドレス (通常は "
+"192.25.206.10 のようなドットつきの表記法で表現される、4 バイトの数値) がつけ"
+"られます。インターネットの IP アドレスは、Internet Corporation for Assigned "
+"Names and Numbers (ICANN) が分配しています。通常、インターネット上のコン"
+"ピュータは、IP アドレスではなくドメイン名でアクセスされます。\n"
+"Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
+"txt"
 
 #. Tag: protocol::ipv6, long desc
 #: files/debtags/vocabulary
@@ -1652,6 +1710,12 @@ msgid ""
 "seldomly used.\n"
 "Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 msgstr ""
+"次世代のインターネットプロトコル、Internet Protocol (v6)。IP アドレスの不足な"
+"ど IP (v4) の制約を克服し、IP (v4) に取って代わって将来のインターネットの新し"
+"い基盤を形成することになっています。\n"
+"既に多くのプログラムが、IP (v4) に加えて IPv6 をサポートしていますが、IPv6 は"
+"まだほとんど使われていません。\n"
+"Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
 
 # 日本語化にあたって多少意訳。
 #. Tag: protocol::irc, long desc
@@ -1711,6 +1775,11 @@ msgstr "イタリア語"
 msgid "JPEG, Joint Photographic Experts Group"
 msgstr "Joint Photographic Experts Group (JPEG)"
 
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr "JSON"
+
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
 msgid "Jabber"
@@ -1731,6 +1800,11 @@ msgstr "Java"
 #: files/debtags/vocabulary
 msgid "Java Development"
 msgstr "Java での開発"
+
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr "JavaScript Object Notation"
 
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
@@ -1878,7 +1952,7 @@ msgstr "ソフトウェアの開発や構築に使用されるライブラリや
 #. Tag: protocol::ldap, long desc
 #: files/debtags/vocabulary
 msgid "Lightweight Directory Access Protocol"
-msgstr ""
+msgstr "Lightweight Directory Access Protocol"
 
 #. Tag: works-with-format::ldif, long desc
 #: files/debtags/vocabulary
@@ -2905,6 +2979,11 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
 "rfc2865.txt"
 msgstr ""
+"ネットワークアクセスの認証や認可、記録 (アカウンティング) のためのプロトコ"
+"ル、Remote Authentication Dial In User Service。主に、ダイヤルアップインター"
+"ネット接続を扱うインターネットサービスプロバイダが使用します。\n"
+"Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
+"rfc2865.txt"
 
 #. Tag: devel::rpc, long desc
 #: files/debtags/vocabulary
@@ -3662,6 +3741,9 @@ msgid ""
 "network connection.\n"
 "Link: http://en.wikipedia.org/wiki/Ident"
 msgstr ""
+"Ident インターネットプロトコルは、ネットワーク接続のユーザを識別したり認証し"
+"たりするのに役立ちます。\n"
+"Link: http://en.wikipedia.org/wiki/Ident"
 
 #. Tag: protocol::jabber, long desc
 #: files/debtags/vocabulary
@@ -3714,6 +3796,7 @@ msgstr ""
 "報に依存せざるをえません。\n"
 "Link: http://www.hypothetic.org/docs/msn/"
 
+# FIXME: grammatical error: "while it widespread distribution".
 #. Tag: protocol::finger, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3725,6 +3808,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
 "rfc/rfc1288.txt"
 msgstr ""
+"Name/Finger プロトコルは、メールアドレスや電話番号、フルネームなど、コン"
+"ピュータのユーザについて、広範囲にわたる公開情報を提供するためのシンプルな"
+"ネットワークプロトコルです。\n"
+"Finger プロトコルは 1990 年代初頭には広く使われていましたが、プライバシーに対"
+"する懸念から、もはや広範には使用されていません。\n"
+"Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
+"rfc/rfc1288.txt"
 
 # FIXME: "This a" -> "This is a"
 #. Tag: protocol::yahoo-messenger, long desc
@@ -3926,6 +4016,7 @@ msgstr "おもちゃやからくり"
 msgid "Transmission"
 msgstr "通信"
 
+# FIXME: WikipediaではTransmission Control Protocolとなっているが……?
 #. Tag: protocol::tcp, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -3936,6 +4027,12 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
 "http://www.ietf.org/rfc/rfc793.txt"
 msgstr ""
+"インターネットプロトコルスイートの核となるプロトコルで、データ伝送に使用され"
+"る、Transport Control Protocol。\n"
+"TCP は、FTP、HTTP、SMTP、POP3、IMAP、NNTP など、インターネット上の多くのサー"
+"ビスの伝送プロトコルとして使用されています。\n"
+"Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
+"http://www.ietf.org/rfc/rfc793.txt"
 
 #. Tag: works-with::graphs, short desc
 #: files/debtags/vocabulary
@@ -3952,6 +4049,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
 "http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
+"Trivial File Transfer Protocol は、シンプルなファイル転送プロトコルです。"
+"TFTP を使うと、クライアントから、リモートホスト上のファイルの GET や PUT がで"
+"きます。主な用途の一つは、ローカルエリアネットワーク (LAN) 上のディスクレス"
+"ノードのネットワークブートです。このプロトコルは実装が容易になるよう設計され"
+"ているため、ROM にも収まります。\n"
+"Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc1350.txt"
 
 #. Tag: culture::turkish, short desc
 #: files/debtags/vocabulary
@@ -4030,6 +4134,12 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
 "ietf.org/rfc/rfc768.txt"
 msgstr ""
+"インターネットプロトコルスイートの核となるプロトコルで、データ伝送に使用され"
+"る、User Datagram Protocol。\n"
+"UDP は TCP ほど信頼性はありませんが、高速なので、DNS プロトコルや VoIP のよう"
+"な時間的制約のある目的にはより適しています。\n"
+"Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
+"ietf.org/rfc/rfc768.txt"
 
 #. Tag: devel::ui-builder, short desc
 #. Facet: interface, short desc
@@ -4097,6 +4207,11 @@ msgstr "Virtual Reality Markup Language"
 msgid "Virtualization"
 msgstr "仮想化"
 
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+msgid "Visualization"
+msgstr "可視化"
+
 #. Tag: protocol::voip, short desc
 #: files/debtags/vocabulary
 msgid "VoIP"
@@ -4131,6 +4246,12 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
 "rfc2518.txt"
 msgstr ""
+"Web-based Distributed Authoring and Versioning は HTTP プロトコルを拡張したも"
+"ので、HTTP サーバ上での文書の作成や改変をサポートします。したがって、クライア"
+"ントは、HTTP サーバ上の文書に対して、ローカルファイルシステム上の文書と同じよ"
+"うにアクセスできます。\n"
+"Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
+"rfc2518.txt"
 
 #. Tag: devel::web, long desc
 #: files/debtags/vocabulary
@@ -4310,54 +4431,54 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
-#~ msgid "X Server"
-#~ msgstr "X サーバ"
-
-#~ msgid "Audrio"
-#~ msgstr "音声"
-
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
-
-# TRANSLATION-FIXME: Why "Windowing"?
-#~ msgid "X Windowing System"
-#~ msgstr "X ウィンドウシステム"
-
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
-
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
-
-#~ msgid "TK"
-#~ msgstr "TK"
-
-#~ msgid "Source code"
-#~ msgstr "ソースコード"
-
-#~ msgid "QT"
-#~ msgstr "QT"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB や CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
-
-#~ msgid "File Transfer"
-#~ msgstr "ファイル転送"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "インターネット・リレー・チャット (IRC) クライアントが使用する Direct "
 #~ "Client-to-Client プロトコル。"
+
+#~ msgid "File Transfer"
+#~ msgstr "ファイル転送"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB や CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
+
+#~ msgid "QT"
+#~ msgstr "QT"
+
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
+
+# TRANSLATION-FIXME: Why "Windowing"?
+#~ msgid "X Windowing System"
+#~ msgstr "X ウィンドウシステム"
+
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
+
+#~ msgid "Audrio"
+#~ msgstr "音声"
+
+#~ msgid "X Server"
+#~ msgstr "X サーバ"

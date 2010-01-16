@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 21:01+0100\n"
-"PO-Revision-Date: 2009-07-11 12:32+0400\n"
+"PO-Revision-Date: 2009-11-07 08:52+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -213,7 +213,6 @@ msgstr "Архив"
 
 #. Tag: iso15924::armn, short desc
 #: files/debtags/vocabulary
-#| msgid "Romanian"
 msgid "Armenian"
 msgstr "Армянская"
 
@@ -393,7 +392,6 @@ msgstr "Боснийская"
 
 #. Tag: iso15924::brai, short desc
 #: files/debtags/vocabulary
-#| msgid "Brazilian"
 msgid "Braille"
 msgstr "Брайля"
 
@@ -503,10 +501,16 @@ msgstr "CORBA"
 msgid "Calculating"
 msgstr "Вычислительный"
 
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+#| msgid "Calculating"
+msgid "Calculation"
+msgstr "Вычисление"
+
 #. Tag: numerical, short desc
 #: files/debtags/vocabulary
 msgid "Calculation and Numerical Computation"
-msgstr "Расчёт и численный анализ"
+msgstr "Вычисления и численный анализ"
 
 #. Tag: game::card, short desc
 #: files/debtags/vocabulary
@@ -1784,6 +1788,11 @@ msgstr "Итальянская"
 msgid "JPEG, Joint Photographic Experts Group"
 msgstr "JPEG, объединенная группа экспертов в области фотографии"
 
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr "JSON"
+
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
 msgid "Jabber"
@@ -1804,6 +1813,11 @@ msgstr "Java"
 #: files/debtags/vocabulary
 msgid "Java Development"
 msgstr "Разработка на Java"
+
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr "Представление объектов JavaScript"
 
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
@@ -1832,7 +1846,6 @@ msgstr "Каннада"
 
 #. Tag: iso15924::kana, short desc
 #: files/debtags/vocabulary
-#| msgid "Catalan"
 msgid "Katakana"
 msgstr "Катакана"
 
@@ -1881,7 +1894,6 @@ msgstr "Клавиатура"
 
 #. Tag: iso15924::khmr, short desc
 #: files/debtags/vocabulary
-#| msgid "Theme"
 msgid "Khmer"
 msgstr "Кхмерская"
 
@@ -1908,7 +1920,6 @@ msgstr "LPR"
 
 #. Tag: iso15924::laoo, short desc
 #: files/debtags/vocabulary
-#| msgid "Laptop"
 msgid "Lao"
 msgstr "Лао"
 
@@ -1919,7 +1930,6 @@ msgstr "Ноутбук"
 
 #. Tag: iso15924::latn, short desc
 #: files/debtags/vocabulary
-#| msgid "Latvian"
 msgid "Latin"
 msgstr "Латинская"
 
@@ -3571,7 +3581,6 @@ msgstr "Синхронизация"
 
 #. Tag: iso15924::syrc, short desc
 #: files/debtags/vocabulary
-#| msgid "Privacy"
 msgid "Syriac"
 msgstr "Сирийская"
 
@@ -4217,6 +4226,12 @@ msgstr "Язык моделирования виртуальной реальн�
 #: files/debtags/vocabulary
 msgid "Virtualization"
 msgstr "Виртуализация"
+
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+#| msgid "Virtualization"
+msgid "Visualization"
+msgstr "Визуализация"
 
 #. Tag: protocol::voip, short desc
 #: files/debtags/vocabulary

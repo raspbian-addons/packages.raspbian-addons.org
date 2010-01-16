@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2009-09-06 15:43+0200\n"
+"PO-Revision-Date: 2009-11-10 19:36+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -493,6 +493,11 @@ msgstr "CORBA"
 #. Tag: use::calculating, short desc
 #: files/debtags/vocabulary
 msgid "Calculating"
+msgstr "Berechnen"
+
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+msgid "Calculation"
 msgstr "Berechnung"
 
 #. Tag: numerical, short desc
@@ -791,8 +796,8 @@ msgstr "Demonstration"
 msgid "Desktop Environment"
 msgstr "Desktop-Umgebung"
 
-#. Tag: works-with::dtp, short desc
 # Vorschlag Sebastian Kapfer: Publizieren (Desktop Publishing)
+#. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
 msgstr "Desktop-Publishing (DTP)"
@@ -1652,8 +1657,8 @@ msgstr "Instant Messages"
 msgid "Integrated Development Environment"
 msgstr "Integrierte Entwicklungsumgebung"
 
-#. Facet: uitoolkit, short desc
 # Vorschlag Chris Leick: Schnittstellen-Werkzeugkasten
+#. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
 msgid "Interface Toolkit"
 msgstr "GUI-Baukasten"
@@ -1735,9 +1740,9 @@ msgid ""
 "The official Debian channel is #debian on the freenode network.\n"
 "Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 msgstr ""
-"Internet Relay Chat, ein Protokoll für das Plaudern mittels Text über "
-"Netze, das intensiv im Internet genutzt wird. Es unterstützt Räume "
-"sogenannte Kanäle sowie private eins-zu-eins-Kommunikation.\n"
+"Internet Relay Chat, ein Protokoll für das Plaudern mittels Text über Netze, "
+"das intensiv im Internet genutzt wird. Es unterstützt Räume, sogenannte "
+"Kanäle, sowie private eins-zu-eins-Kommunikation.\n"
 "IRC-Server sind in Netzen organisiert, so dass sich Clients mit einem "
 "geographisch naheliegenden Server verbinden können, der wiederum mit anderen "
 "IRC-Servern auf der ganzen Welt verbunden ist.\n"
@@ -1779,6 +1784,11 @@ msgstr "Italienisch"
 msgid "JPEG, Joint Photographic Experts Group"
 msgstr "JPEG, Joint Photographic Experts Group"
 
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr "JSON"
+
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
 msgid "Jabber"
@@ -1799,6 +1809,11 @@ msgstr "Java"
 #: files/debtags/vocabulary
 msgid "Java Development"
 msgstr "Java-Entwicklung"
+
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr "JavaScript-Objekt-Notation"
 
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
@@ -2561,8 +2576,8 @@ msgstr ""
 "verwandt wird. Die Protokollversionen 7, 8 und 9 des ICQ-IM-Netzes sind "
 "ebenfalls Realisierungen des OSCAR-Protokolls.\n"
 "OSCAR ist ein proprietäres Binärprotokoll ohne offizielle Dokumentation. "
-"Daher müssen sich Clients, die sich mit AIM oder ICQ verbinden, auf "
-"inverse entwickelte (reverse engineered) Information stützen.\n"
+"Daher müssen sich Clients, die sich mit AIM oder ICQ verbinden, auf inverse "
+"entwickelte (reverse engineered) Information stützen.\n"
 "Link: http://de.wikipedia.org/wiki/OSCAR_(Protokoll) Link: http://www.oilcan."
 "org/oscar/"
 
@@ -2882,8 +2897,8 @@ msgstr "Protokoll zum Zugriff auf MySQL-Datenbankserver."
 msgid "Protocol for accessing PostgreSQL database server."
 msgstr "Protokoll zum Zugriff auf PostgreSQL-Datenbankserver."
 
-#. Tag: use::proxying, short desc
 # Vorschlag Sebastian Kapfer: Weiterleiten (Proxy)
+#. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
 msgid "Proxying"
 msgstr ""
@@ -2998,8 +3013,8 @@ msgstr "Remote Procedure Call, Netz-transparente Programmierung"
 msgid "Requires video hardware acceleration"
 msgstr "Benötigt Videohardware-Beschleunigung"
 
-#. Tag: devel::rcs, short desc
 # Vorschlag Chris Leick: Versionierung
+#. Tag: devel::rcs, short desc
 #: files/debtags/vocabulary
 msgid "Revision Control"
 msgstr "Änderungsverwaltung"
@@ -3772,10 +3787,11 @@ msgid ""
 "an own server to connect to the Jabber network.\n"
 "Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 msgstr ""
-"Das Jabber-Protokoll ist ein Instant-Messaging- (Sofortnachrichten-)Protokoll "
-"auf Basis des XMPP-Protokolls. Neben privater Eins-zu-eins-Kommunikation "
-"unterstützt es auch Chatrooms (Plauderräume). Es wird im Jabber-IM-Netz sowie "
-"für die IM-Funktionalität im neuen GoogleTalk-Netz eingesetzt.\n"
+"Das Jabber-Protokoll ist ein Instant-Messaging- (Sofortnachrichten-)"
+"Protokoll auf Basis des XMPP-Protokolls. Neben privater Eins-zu-eins-"
+"Kommunikation unterstützt es auch Chatrooms (Plauderräume). Es wird im "
+"Jabber-IM-Netz sowie für die IM-Funktionalität im neuen GoogleTalk-Netz "
+"eingesetzt.\n"
 "Anders als die anderen IM-Protokolle wie MSN, ICQ und AIM sind die Jabber-"
 "Server Freie Software und können eingesetzt werden, um eine eigene Chat- "
 "(Plauder)-Plattform oder einen eigenen Einwahlserver zum Jabber-Netz zu "
@@ -3849,13 +3865,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
 "venkydude.com/articles/yahoo.htm"
 msgstr ""
-"Das »Yahoo! Messenger«-Protokoll wird verwandt, um sich mit Yahoo!s "
-"Instant-Messaging- (Sofortnachrichten-)Netz zu verbinden.\n"
+"Das »Yahoo! Messenger«-Protokoll wird verwandt, um sich mit Yahoo!s Instant-"
+"Messaging- (Sofortnachrichten-)Netz zu verbinden.\n"
 "Dies ist ein proprietäres Binärprotokoll ohne offizielle Dokumentation. "
 "Clients, die sich mit dem Yahoo!-Messenger-Netz verbinden, müssen sich auf "
 "invers entwickelte (reverse engineered) Informationen stützen.\n"
-"Link: http://de.wikipedia.org/wiki/Yahoo_Messenger Link: "
-"http://www.venkydude.com/articles/yahoo.htm"
+"Link: http://de.wikipedia.org/wiki/Yahoo_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
@@ -3986,8 +4002,8 @@ msgstr ""
 "Um herauszufinden, wie zwei oder mehr Objekte zusammenhängen oder sich "
 "unterscheiden."
 
-#. Tag: devel::docsystem, long desc
 # Vorschlag Sebastian Kapfer: Automatische Dokumentation
+#. Tag: devel::docsystem, long desc
 #: files/debtags/vocabulary
 msgid "Tools and auto-documenters"
 msgstr ""
@@ -4214,8 +4230,8 @@ msgstr ""
 msgid "Vector Image"
 msgstr "Vektor-Bild"
 
-#. Tag: works-with::vcs, short desc
 # Vorschlag Chris Leick: Versionskontrollsystem
+#. Tag: works-with::vcs, short desc
 #: files/debtags/vocabulary
 msgid "Version control system"
 msgstr "Versionsverwaltungssystem"
@@ -4234,6 +4250,11 @@ msgstr "Virtual Reality Markup Language"
 #: files/debtags/vocabulary
 msgid "Virtualization"
 msgstr "Virtualisierung"
+
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+msgid "Visualization"
+msgstr "Visualisierung"
 
 #. Tag: protocol::voip, short desc
 #: files/debtags/vocabulary
@@ -4470,32 +4491,32 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL-Modem"
 
-#~ msgid "X Server"
-#~ msgstr "X-Server"
-
-#~ msgid "Source code"
-#~ msgstr "Quellcode"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB und CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "HyperText Transfer Protocol"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "File Transfer Protocol"
-
-#~ msgid "File Transfer"
-#~ msgstr "Datei-Übertragung"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
 #~ "Relay Chat"
+
+#~ msgid "File Transfer"
+#~ msgstr "Datei-Übertragung"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "File Transfer Protocol"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "HyperText Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB und CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
+
+#~ msgid "Source code"
+#~ msgstr "Quellcode"
+
+#~ msgid "X Server"
+#~ msgstr "X-Server"

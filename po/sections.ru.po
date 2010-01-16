@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo_sections\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-15 18:49+0100\n"
-"PO-Revision-Date: 2009-06-11 23:05+0400\n"
+"POT-Creation-Date: 2009-10-27 22:41+0100\n"
+"PO-Revision-Date: 2009-11-07 08:55+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,9 @@ msgstr "Mono/CLI"
 
 #: lib/Packages/Sections.pm:17
 msgid "Everything about Mono and the Common Language Infrastructure."
-msgstr "Всё, что связано с Mono и спецификацией общеязыковой инфраструктуры (Common Language Infrastructure)."
+msgstr ""
+"Всё, что связано с Mono и спецификацией общеязыковой инфраструктуры (Common "
+"Language Infrastructure)."
 
 #: lib/Packages/Sections.pm:18
 msgid "Communication Programs"
@@ -60,7 +62,6 @@ msgid "Database Servers and Clients."
 msgstr "Клиенты и серверы баз данных."
 
 #: lib/Packages/Sections.pm:22
-#| msgid "Virtual packages"
 msgid "Debug packages"
 msgstr "Пакеты отладки"
 
@@ -142,7 +143,9 @@ msgstr "GNU R"
 
 #: lib/Packages/Sections.pm:39
 msgid "Everything about GNU R, a statistical computation and graphics system."
-msgstr "Всё, что связано с GNU R, системы для статистической обработки данных и работы с графикой."
+msgstr ""
+"Всё, что связано с GNU R, системы для статистической обработки данных и "
+"работы с графикой."
 
 #: lib/Packages/Sections.pm:40
 msgid "GNUstep"
@@ -173,7 +176,6 @@ msgid "Fonts"
 msgstr "Шрифты"
 
 #: lib/Packages/Sections.pm:47
-#| msgid "Virtual packages."
 msgid "Font packages."
 msgstr "Пакеты с шрифтами."
 
@@ -186,7 +188,6 @@ msgid "Everything about Haskell."
 msgstr "Всё, что связано с Haskell."
 
 #: lib/Packages/Sections.pm:50
-#| msgid "Web Software"
 msgid "Web Servers"
 msgstr "Веб-серверы"
 
@@ -295,7 +296,9 @@ msgid "Network"
 msgstr "Сеть"
 
 #: lib/Packages/Sections.pm:75
-msgid "Daemons and clients to connect your Debian GNU/Linux system to the world."
+#| msgid ""
+#| "Daemons and clients to connect your Debian GNU/Linux system to the world."
+msgid "Daemons and clients to connect your system to the world."
 msgstr "Службы и клиенты для соединения вашей системы Debian GNU/Linux с миром."
 
 #: lib/Packages/Sections.pm:76
@@ -331,8 +334,11 @@ msgid "Other OS's and file systems"
 msgstr "Другие ОС и файловые системы"
 
 #: lib/Packages/Sections.pm:83
+#| msgid ""
+#| "Software to run programs compiled for other operating system, and to use "
+#| "their filesystems."
 msgid ""
-"Software to run programs compiled for other operating system, and to use "
+"Software to run programs compiled for other operating systems, and to use "
 "their filesystems."
 msgstr ""
 "ПО для работы программ, собранных для других операционных систем и "
@@ -371,9 +377,6 @@ msgid "Ruby"
 msgstr "Ruby"
 
 #: lib/Packages/Sections.pm:91
-#| msgid ""
-#| "Everything about Python, an interpreted, interactive object oriented "
-#| "language."
 msgid "Everything about Ruby, an interpreted object oriented language."
 msgstr "Всё, что связано с Ruby, интерпретируемом, объектно-ориентированном языком."
 
