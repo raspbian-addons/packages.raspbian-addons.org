@@ -50,7 +50,7 @@ do
       --delete-excluded --delete-after \
       "$topdir/$d/" "$new/$d/"
 done
-date -u > "$new/www/Pics/.trace"
+LC_ALL=POSIX LANG=POSIX date -u > "$new/www/Pics/.trace"
 
 ln -sfT $new $mirror/current
 find $mirror -mindepth 1 -maxdepth 1 -not -name "${STAMP}" -type d -print0 \
