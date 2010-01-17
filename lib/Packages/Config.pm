@@ -24,7 +24,7 @@ sub init {
     my ($dir) = @_;
     my $modtime = (stat( "$dir/config.sh" ))[9] || 0;
     $config_read_time ||= 0;
-    if ($modtime >= $config_read_time) {
+    if ($modtime > $config_read_time) {
 	if (!open (C, '<', "$dir/config.sh")) {
 	    error( "Internal: Cannot open configuration file." );
 	}
@@ -50,12 +50,12 @@ sub init {
 	    s/\$\{?topdir\}?/$TOPDIR/g;
 	}
 	close (C);
+	unshift @LANGUAGES, 'en';
+	unshift @DDTP_LANGUAGES, 'en';
 	debug( "read config ($modtime > $config_read_time)" ) if DEBUG;
 	$config_read_time = $modtime;
     }
     $DBDIR = "$TOPDIR/files/db";
-    unshift @LANGUAGES, 'en';
-    unshift @DDTP_LANGUAGES, 'en';
 }
 
 1;
