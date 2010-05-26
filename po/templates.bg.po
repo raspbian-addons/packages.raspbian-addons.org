@@ -1,0 +1,1184 @@
+# Bulgarian translation of templates.pot
+# This file is put in the public domain.
+# (null) <>, 2010.
+# Damyan Ivanov <dmn@debian.org>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: packages.debian.org\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-10-14 00:02+0200\n"
+"PO-Revision-Date: 2010-05-26 23:45+0300\n"
+"Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/config.tmpl:44
+msgid "Debian Web Mailinglist"
+msgstr ""
+
+#: templates/config.tmpl:49
+msgid "%s Webmaster"
+msgstr ""
+
+#: templates/config.tmpl:52
+msgid "%s is a <a href=\"%s\">trademark</a> of %s"
+msgstr "%s е <a href=\"%s\">търговска марка</a> на %s"
+
+#: templates/config.tmpl:67
+msgid ""
+"Please note that this is an experimental version of <a href=\"http://%s/\">"
+"%s</a>. Errors and obsolete information should be expected"
+msgstr ""
+"Това е експериментална версия на <a href=\"http://%s/\">%s</a>. Нормално е "
+"да има грешки и остаряла информация"
+
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:70
+msgid "."
+msgstr ""
+
+#: templates/config.tmpl:71
+msgid ","
+msgstr ""
+
+#: templates/config/architectures.tmpl:4
+msgid "Intel x86"
+msgstr ""
+
+#: templates/config/architectures.tmpl:5
+msgid "Motorola 680x0"
+msgstr ""
+
+#: templates/config/architectures.tmpl:6
+msgid "SPARC"
+msgstr ""
+
+#: templates/config/architectures.tmpl:7
+msgid "Alpha"
+msgstr ""
+
+#: templates/config/architectures.tmpl:8
+msgid "PowerPC"
+msgstr ""
+
+#: templates/config/architectures.tmpl:9
+msgid "ARM"
+msgstr ""
+
+#: templates/config/architectures.tmpl:10
+msgid "HP PA-RISC"
+msgstr ""
+
+#: templates/config/architectures.tmpl:11
+msgid "Intel IA-64"
+msgstr ""
+
+#: templates/config/architectures.tmpl:12
+msgid "MIPS (big-endian)"
+msgstr ""
+
+#: templates/config/architectures.tmpl:13
+msgid "MIPS (little-endian)"
+msgstr ""
+
+#: templates/config/architectures.tmpl:14
+msgid "IBM S/390"
+msgstr ""
+
+#: templates/config/architectures.tmpl:15
+msgid "Hurd (i386)"
+msgstr ""
+
+#: templates/config/architectures.tmpl:16
+msgid "AMD64"
+msgstr ""
+
+#: templates/config/architectures.tmpl:17
+msgid "EABI ARM"
+msgstr ""
+
+#: templates/config/architectures.tmpl:18
+msgid "GNU/kFreeBSD (i386)"
+msgstr ""
+
+#: templates/config/architectures.tmpl:19
+msgid "GNU/kFreeBSD (amd64)"
+msgstr ""
+
+#: templates/config/architectures.tmpl:20
+msgid "AVR32"
+msgstr ""
+
+#: templates/config/archive_layout.tmpl:14
+msgid "packages that meet the Debian Free Software Guidelines"
+msgstr "пакети, които отговарят на препоръките на Дебиан за свободен софтуер"
+
+#: templates/config/archive_layout.tmpl:15
+msgid ""
+"packages that meet the Debian Free Software Guidelines but need software not "
+"in Debian main"
+msgstr ""
+"пакети, които отговарят на препоръките на Дебиан за свободен софтуер, но "
+"имат нужда от софтуер, който не отговаря"
+
+#: templates/config/archive_layout.tmpl:16
+msgid "packages that do not meet the Debian Free Software Guidelines"
+msgstr ""
+"пакети, които не отговарят на препоруките на Дебиан за свободен софтуер"
+
+#: templates/config/mirrors.tmpl:94
+#, fuzzy
+msgid ""
+"volatile packages that need major changes during the life of a stable release"
+msgstr ""
+"капризни пакети, които имат нужда от големи промени в рамките на стабилните "
+"издания"
+
+#: templates/config/mirrors.tmpl:135
+msgid "newer packages that have been adapted to stable releases of Debian"
+msgstr "осувременени пакети, адаптирани за стабилните издания на Дебиан"
+
+#: templates/config/mirrors.tmpl:164
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
+msgstr "пакети за архитектури, които още или вече не се поддъържат от Дебиан"
+
+#: templates/config/mirrors.tmpl:193
+msgid "North America"
+msgstr "Северна Америка"
+
+#: templates/config/mirrors.tmpl:194
+msgid "South America"
+msgstr "Южна Америка"
+
+#: templates/config/mirrors.tmpl:195
+msgid "Asia"
+msgstr "Азия"
+
+#: templates/config/mirrors.tmpl:196
+msgid "Oceania"
+msgstr "Океания"
+
+#: templates/config/mirrors.tmpl:197
+msgid "Europe"
+msgstr "Европа"
+
+#: templates/config/mirrors.tmpl:198
+msgid "Africa"
+msgstr "Африка"
+
+#: templates/html/download.tmpl:2
+msgid "Package Download Selection -- %s"
+msgstr ""
+
+#: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
+#: templates/html/homepage.tmpl:104 templates/html/index_head.tmpl:9
+#: templates/html/show.tmpl:14
+msgid "Distribution:"
+msgstr "Дистрибуция:"
+
+#: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
+#: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
+msgid "Overview over this suite"
+msgstr ""
+
+#: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
+#: templates/html/show.tmpl:17
+msgid "Package:"
+msgstr "Пакет:"
+
+#: templates/html/download.tmpl:8
+msgid "Download"
+msgstr "Изтегляне"
+
+#: templates/html/download.tmpl:17
+msgid "Download Page for <kbd>%s</kbd> on %s machines"
+msgstr "Страница за изтегляне на <kbd>%s</kbd> за %s машини"
+
+#: templates/html/download.tmpl:19
+msgid "Download Page for <kbd>%s</kbd>"
+msgstr "Страница за изтегляне на <kbd>%s</kbd>"
+
+#: templates/html/download.tmpl:23
+msgid ""
+"If you are running %s, it is strongly suggested to use a package manager "
+"like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
+"and install packages, instead of doing so manually via this website."
+msgstr ""
+"Ако използвате %s се препоръчва използването на програма за управление на "
+"пакетите като <a href=\"%s\">aptitude</a> или <a href=\"%s\">synaptic</a> за "
+"изтегляне и инсталиране на пакети, вместо ръчната процедура."
+
+#: templates/html/download.tmpl:25
+msgid ""
+"You should be able to use any of the listed mirrors by adding a line to your "
+"<kbd>/etc/apt/sources.list</kbd> like this:"
+msgstr ""
+"Можете да използвате всеки от показаните огледални сървъри чрез добавяне на "
+"ред в <kbd>/etc/apt/sources.list</kbd>, подобен на този:"
+
+#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
+msgid "Replacing <em>%s</em> with the mirror in question."
+msgstr "Заместете <em>%s</em> с предпочитания огледален сървър."
+
+#: templates/html/download.tmpl:42 templates/html/show.tmpl:169
+msgid "Experimental package"
+msgstr "Експериментален пакет"
+
+#: templates/html/download.tmpl:43
+msgid ""
+"Warning: This package is from the <strong>experimental</strong> "
+"distribution. That means it is likely unstable or buggy, and it may even "
+"cause data loss. Please be sure to consult the changelog and other possible "
+"documentation before using it."
+msgstr ""
+"Предупреждение: Този пакет е от дистрибуцията <strong>experimental</strong>. "
+"Това означава, че е възможно да е нестабилен или да има грешки, а може дори "
+"да доведе до загуба на данни. Преди да го използвате проверете списъка с "
+"промени и останалата документация."
+
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:174
+msgid "debian-installer udeb package"
+msgstr "пакет за инсталатора на Дебиан"
+
+#: templates/html/download.tmpl:47 templates/html/show.tmpl:175
+msgid ""
+"Warning: This package is intended for the use in building <a href=\"http://"
+"www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
+"not install it on a normal %s system."
+msgstr ""
+"Предупреждение: Този пакет е предназначен за използване единствено за "
+"компилиране на <a href=\"http://www.debian.org/devel/debian-installer"
+"\">инсталатора на Дебиан</a>. Не го инсталирайте на нормална система %s."
+
+#: templates/html/download.tmpl:54
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at any "
+"of these sites:"
+msgstr ""
+"Можете да изтеглите искания файл от директорията <tt>%s</tt> на всеки от "
+"следните сайтове:"
+
+#: templates/html/download.tmpl:80
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgstr "Можете да изтеглите искания файл от директорията <tt>%s</tt> на:"
+
+#: templates/html/download.tmpl:82
+msgid "%s security updates are officially distributed only via <tt>%s</tt>."
+msgstr ""
+"Обновленията по сигурността на пакета %s се разпространяват официално само "
+"от <tt>%s</tt>"
+
+#: templates/html/download.tmpl:89
+msgid ""
+"If none of the above sites are fast enough for you, please see our <a href="
+"\"%s\">complete mirror list</a>."
+msgstr ""
+"Ако никой от горните сървъри не е достатъчно бърз за вас, вижте <a href=\"%s"
+"\">пълния списък с огледални сървъри</a>."
+
+#: templates/html/download.tmpl:97
+msgid ""
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
+msgstr ""
+"Официално пакетът %s не е включен в архива %s, но групата за поддръжка на %s "
+"синхронизира техния архив с официалния. За повече информация вижте <a href="
+"\"%s\">страницата на %s</a>."
+
+#: templates/html/download.tmpl:101
+msgid ""
+"Note that in some browsers you will need to tell your browser you want the "
+"file saved to a file. For example, in Firefox or Mozilla, you should hold "
+"the Shift key when you click on the URL."
+msgstr ""
+"На някои браузъри трябва изрично да се каже да запишат изтеглянето във файл. "
+"Във Firefox или Mozilla, например, това става със задържане на клавиша Shift "
+"при избиране на връзката."
+
+#: templates/html/download.tmpl:105
+msgid "More information on <kbd>%s</kbd>:"
+msgstr "Още информация за <kbd>%s</kbd>:"
+
+#: templates/html/download.tmpl:107
+msgid "Exact Size"
+msgstr "Точна големина"
+
+#: templates/html/download.tmpl:107
+msgid "%s Byte (%s %s)"
+msgstr "%s байт (%s %s)"
+
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:345
+msgid "MD5 checksum"
+msgstr "контролна сума MD5"
+
+#: templates/html/download.tmpl:109
+msgid "SHA1 checksum"
+msgstr "контролна сума SHA1"
+
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
+msgid "Not Available"
+msgstr "Няма информация"
+
+#: templates/html/download.tmpl:110
+msgid "SHA256 checksum"
+msgstr "контролна сума SHA256"
+
+#: templates/html/filelist.tmpl:2
+msgid "Filelist of package %s/%s/%s"
+msgstr "Списък на файловете в пакета %s/%s/%s"
+
+#: templates/html/filelist.tmpl:3
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Списък на файловете в пакета <em>%s</em> в <em>%s</em>, архитектура <em>%s</"
+"em>"
+
+#: templates/html/filelist.tmpl:8
+msgid "Filelist"
+msgstr "Списък на файловете"
+
+#: templates/html/foot.tmpl:11
+msgid ""
+"This page is also available in the following languages (How to set <a href="
+"\"%s\">the default document language</a>):"
+msgstr ""
+"Тази страница е налична и на следните езици (Настройване на <a href=\"%s"
+"\">езика по подразбиране</a>):"
+
+#: templates/html/foot.tmpl:28
+msgid ""
+"To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
+"For other contact information, see the %s <a href=\"%s\">contact page</a>."
+msgstr ""
+
+#: templates/html/foot.tmpl:32
+msgid ""
+"Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
+"\">license terms</a>."
+msgstr ""
+
+#: templates/html/foot.tmpl:35
+msgid "Learn more about this site"
+msgstr "Научете повече за този сайт"
+
+#: templates/html/foot.tmpl:41
+msgid "This service is sponsored by <a href=\"%s\">%s</a>."
+msgstr "Услугата е спонсорирана от <a href=\"%s\">%s</a>."
+
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:90
+msgid "Search"
+msgstr "Търсене"
+
+#: templates/html/head.tmpl:50
+msgid "package names"
+msgstr "имена на пакети"
+
+#: templates/html/head.tmpl:51
+msgid "descriptions"
+msgstr "описания"
+
+#: templates/html/head.tmpl:52
+msgid "source package names"
+msgstr "имена на пакети-източници"
+
+#: templates/html/head.tmpl:53
+msgid "package contents"
+msgstr "съдържание на пакети"
+
+#: templates/html/head.tmpl:56
+msgid "all options"
+msgstr "всички настройки"
+
+#: templates/html/head.tmpl:63
+msgid "skip the navigation"
+msgstr "прескачане на навигацията"
+
+#: templates/html/head.tmpl:65
+msgid "%s Homepage"
+msgstr "Начална страница на %s"
+
+#: templates/html/head.tmpl:66
+msgid "%s Packages Homepage"
+msgstr "Начална страница на пакети за %s"
+
+#: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
+#: templates/html/search_contents.tmpl:100
+#: templates/html/search_contents.tmpl:124
+msgid "Packages"
+msgstr "Пакети"
+
+#: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+msgid "%s Packages Search"
+msgstr "Търсене на пакети за %s"
+
+#: templates/html/homepage.tmpl:19
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+"Този сайт предлага информация за всички пакети, налични в архива <a href=\"%s"
+"\">%s</a>."
+
+#: templates/html/homepage.tmpl:21
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr "Свържете се с <a href=\"mailto:%s\">%s</a> ако срещнете проблеми."
+
+#: templates/html/homepage.tmpl:23
+msgid "Browse through the lists of packages:"
+msgstr "Разглеждане на списъка с пакети:"
+
+#: templates/html/homepage.tmpl:32
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
+"to %s</a>."
+msgstr ""
+"Има и списък на <a href=\"%s/main/newpkg\">пакетите, скоро добавени в %s</a>."
+
+#: templates/html/homepage.tmpl:35
+msgid "Old releases can be found at <a href=\"%s\">%s</a>."
+msgstr "Стари издания могат да бъдат намерени на <a href=\"%s\">%s</a>."
+
+#: templates/html/homepage.tmpl:40
+msgid "Search package directories"
+msgstr "Търсене на каталозите с пакети"
+
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:87
+msgid "Keyword:"
+msgstr "Ключова дума:"
+
+#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:91
+msgid "Reset"
+msgstr "Отначало"
+
+#: templates/html/homepage.tmpl:47
+msgid "Search on:"
+msgstr "Търсене по:"
+
+#: templates/html/homepage.tmpl:49
+msgid "Package names only"
+msgstr "Име на пакет"
+
+#: templates/html/homepage.tmpl:51
+msgid "Descriptions"
+msgstr "Описание"
+
+#: templates/html/homepage.tmpl:53
+msgid "Source package names"
+msgstr "Име на пакет-източник"
+
+#: templates/html/homepage.tmpl:55
+msgid "Only show exact matches:"
+msgstr "Показване само на точните съвпадения:"
+
+#: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
+#: templates/html/homepage.tmpl:116
+msgid "any"
+msgstr ""
+
+#: templates/html/homepage.tmpl:65 templates/html/show.tmpl:16
+msgid "Section:"
+msgstr "Раздел:"
+
+#: templates/html/homepage.tmpl:73
+msgid "There are shortcuts for some searches available:"
+msgstr "За някои търсения има съкратен запис:"
+
+#: templates/html/homepage.tmpl:75
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr "<code>%s<var>име</var></code> за търсене по име на пакет."
+
+#: templates/html/homepage.tmpl:77
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr "<code>%ssrc:<var>име</var></code> за търсене по име на пакет-източник."
+
+#: templates/html/homepage.tmpl:81
+msgid "Search the contents of packages"
+msgstr "Търрсене в съдържанието на пакетите"
+
+#: templates/html/homepage.tmpl:83
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+"Търсачката позволява търсене в съдържаните на дистрибуциите на %s за файлове "
+"(или части от имена на файлове), които присъстват в пакетите. Можете да "
+"получите и пълен списък на файловете, включени в даден пакет."
+
+#: templates/html/homepage.tmpl:93
+msgid "Display:"
+msgstr "Показване:"
+
+#: templates/html/homepage.tmpl:96
+msgid "packages that contain files named like this"
+msgstr "пакети, съдържащи файлове с даденото име"
+
+#: templates/html/homepage.tmpl:99
+msgid "packages that contain files whose names end with the keyword"
+msgstr "пакети, съдържащи файлове, чиито имена завършват с ключовата дума"
+
+#: templates/html/homepage.tmpl:102
+msgid "packages that contain files whose names contain the keyword"
+msgstr "пакети, съдържащи файлове, чиито имена съдържат ключовата дума"
+
+#: templates/html/homepage.tmpl:111
+msgid "Architecture:"
+msgstr "Архитектура:"
+
+#: templates/html/index_head.tmpl:2
+msgid "Source Packages in \"%s\", %s %s"
+msgstr "Пакети-източници в „%s“, %s %s"
+
+#: templates/html/index_head.tmpl:3
+msgid "Source Packages in \"%s\""
+msgstr "Пакети-източници в „%s“"
+
+#: templates/html/index_head.tmpl:5
+msgid "Software Packages in \"%s\", %s %s"
+msgstr "Пакети в „%s“, %s %s"
+
+#: templates/html/index_head.tmpl:6
+msgid "Software Packages in \"%s\""
+msgstr "Пакети вв „%s“"
+
+#: templates/html/index_head.tmpl:13
+msgid "All Packages"
+msgstr "Всички пакети"
+
+#: templates/html/index_head.tmpl:15 templates/html/show.tmpl:15
+#: templates/html/suite_index.tmpl:2
+msgid "Source"
+msgstr "Източник"
+
+#: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
+msgid "New Packages in \"%s\""
+msgstr "Нови пакети в „%s“"
+
+#: templates/html/newpkg.tmpl:11
+msgid ""
+"The following packages were added to suite <em>%s</em> (section %s) in the "
+"%s archive during the last 7 days."
+msgstr ""
+"Следните пакети са добавени в дистрибуцията <em>%s</em> (раздел %s) на "
+"архива %s през последните 7 дни."
+
+#: templates/html/newpkg.tmpl:14
+msgid ""
+"The following packages were added to suite <em>%s</em> in the %s archive "
+"during the last 7 days."
+msgstr ""
+"Следните пакети са добавени в дистрибуцията <em>%s</em> на архива %s през "
+"последните 7 дни."
+
+#: templates/html/newpkg.tmpl:18
+msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
+msgstr "Списъкът е наличен и <a href=\"%s\">сортиран по име</a>."
+
+#: templates/html/newpkg.tmpl:20
+msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
+msgstr "Списъкът е наличен и <a href=\"%s\">сортиран по възраст</a>."
+
+#: templates/html/newpkg.tmpl:22
+msgid ""
+"This information is also available as an <a href=\"newpkg?format=rss\">RSS "
+"feed</a>"
+msgstr ""
+"Информацията е налична и като <a href=\"newpkg?format=rss\">RSS хранилка</a>"
+
+#: templates/html/newpkg.tmpl:23
+msgid "[RSS 1.0 Feed]"
+msgstr "[Хранилка RSS 1.0]"
+
+#: templates/html/newpkg.tmpl:28
+msgid " <em>(%u days old)</em>"
+msgstr "<em>(%u дни)</em>"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
+msgid "List of all packages"
+msgstr "Списък на всички пакети"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
+msgid "All packages"
+msgstr "Всички пакети"
+
+#: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
+msgid "compact compressed textlist"
+msgstr "компактен компресиран списък"
+
+#: templates/html/newpkg.tmpl:34
+msgid "New packages in "
+msgstr "Нови пакети в "
+
+#: templates/html/search.tmpl:20
+msgid "Package Search Results -- %s"
+msgstr "Резултат от търсенето на пакети -- %s"
+
+#: templates/html/search.tmpl:29
+msgid "Package Search Results"
+msgstr "Резултат от търсенето на пакети"
+
+#: templates/html/search.tmpl:36
+msgid ""
+"You have searched only for words exactly matching your keywords. You can try "
+"to search <a href=\"%s\">allowing subword matching</a>."
+msgstr ""
+"Търсенето бе извършено само по точно съвпадение на ключовите думи. Можете да "
+"опитате и търсене <a href=\"%s\">позволяващо частично съвпадение</a>."
+
+#: templates/html/search.tmpl:41
+msgid "Search in specific suite:"
+msgstr "Търсене в конкретна дистрибуция:"
+
+#: templates/html/search.tmpl:50
+msgid "Search in <a href=\"%s\">all suites</a>"
+msgstr "Търсене във <a href=\"%s\">всички дистрибуции</a>"
+
+#: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
+msgid "Limit search to a specific architecture:"
+msgstr "Ограничаване на търсенето до дадена архитектура:"
+
+#: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
+msgid "Search in <a href=\"%s\">all architectures</a>"
+msgstr "Търсене във <a href=\"%s\">всички архитектури</a>"
+
+#: templates/html/search.tmpl:70
+msgid ""
+"<a href=\"%s\">Some</a> results have not been displayed due to the search "
+"parameters."
+msgstr ""
+"<a href=\"%s\">Някои</a> резултати не са показани поради ограничения на "
+"търсенето."
+
+#: templates/html/search.tmpl:79
+msgid "all suites"
+msgstr "всички дистрибуции"
+
+#: templates/html/search.tmpl:79
+msgid "suite(s) <em>%s</em>"
+msgstr "дистрибуция(и) <em>%s</em>"
+
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
+msgid "all sections"
+msgstr "всички раздели"
+
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
+msgid "section(s) <em>%s</em>"
+msgstr "раздел(и) <em>%s</em>"
+
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
+msgid "all architectures"
+msgstr "всички архитектури"
+
+#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
+msgid "architecture(s) <em>%s</em>"
+msgstr "архитектира(и) <em>%s</em>"
+
+#: templates/html/search.tmpl:83
+msgid "source packages"
+msgstr "пакети-източници"
+
+#: templates/html/search.tmpl:83
+msgid "packages"
+msgstr "пакети"
+
+#: templates/html/search.tmpl:84
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgstr "Търсене за %s, чиито имена съдържат <em>%s</em> в %s, %s и %s."
+
+#: templates/html/search.tmpl:87
+msgid " (including subword matching)"
+msgstr "(включително частични съвпадения)"
+
+#. @translators: I'm really sorry :/
+#: templates/html/search.tmpl:89
+msgid ""
+"You have searched for <em>%s</em> in packages names and descriptions in %s, "
+"%s, and %s%s."
+msgstr ""
+"Търсене на <em>%s</em> в имената и описанията на пакетите в %s, %s и %s%s"
+
+#: templates/html/search.tmpl:95
+msgid "Found <strong>%u</strong> matching packages."
+msgstr "Намерени са <strong>%u</strong> пакета."
+
+#: templates/html/search.tmpl:100
+msgid ""
+"Note that this only shows the best matches, sorted by relevance. If the "
+"first few packages don't match what you searched for, try using more "
+"keywords or alternative keywords."
+msgstr ""
+"Показани са само най-пълните съвпадения, подредени по уместност. Ако не "
+"намирате търсения пакет, опитайте с повече или различни ключови думи."
+
+#: templates/html/search.tmpl:104
+msgid ""
+"Your keyword was too generic, for optimizing reasons some results might have "
+"been suppressed.<br>Please consider using a longer keyword or more keywords."
+msgstr ""
+"Понеже ключовата дума е твърде често срещана, някои резултати може да са "
+"пропуснати.<br>Опитайте с по-дълга ключова дума или с повече ключови думи."
+
+#: templates/html/search.tmpl:106
+msgid ""
+"Your keyword was too generic.<br>Please consider using a longer keyword or "
+"more keywords."
+msgstr ""
+"Ключовата дума е твърде често срещана.<br>Опитайте с по-дълга ключова дума "
+"или с повече ключови думи."
+
+#: templates/html/search.tmpl:112 templates/html/search_contents.tmpl:131
+msgid "Sorry, your search gave no results"
+msgstr "За съжаление търсенето не доведе до резултат."
+
+#: templates/html/search.tmpl:119
+msgid "Package %s"
+msgstr "Пакет %s"
+
+#: templates/html/search.tmpl:131
+msgid "also provided by:"
+msgstr "предлаган също и от:"
+
+#: templates/html/search.tmpl:131
+msgid "provided by:"
+msgstr "предлаган от:"
+
+#: templates/html/search.tmpl:140
+msgid "Source Package %s"
+msgstr "Пакет-източник %s"
+
+#: templates/html/search.tmpl:147
+msgid "Binary packages:"
+msgstr "Двоични пакети:"
+
+#: templates/html/search.tmpl:149
+msgid "show %u binary packages"
+msgstr "Показване на двоичните пакети на %u"
+
+#: templates/html/search.tmpl:149
+msgid "hide %u binary packages"
+msgstr "Скриване на двоичните пакети на %u"
+
+#: templates/html/search.tmpl:159
+msgid ""
+"<a href=\"%s\">%u</a> results have not been displayed because you requested "
+"only exact matches."
+msgstr ""
+"<a href=\"%s\">%s</a> резултата не бяха показани, понеже пожелахте да видите "
+"само точните съвпадения."
+
+#: templates/html/search_contents.tmpl:14
+msgid "Package Contents Search Results -- %s"
+msgstr "Резултат от търсенето в съдържанието на пакетите -- %s"
+
+#: templates/html/search_contents.tmpl:17
+msgid "Package Contents Search Results"
+msgstr "Разултат от търсенето в съдържанието на пакетите"
+
+#: templates/html/search_contents.tmpl:34
+msgid "Search for <em>%s</em> within filenames"
+msgstr "Търсене на <em>%s</em> в имената на файловете"
+
+#: templates/html/search_contents.tmpl:39
+msgid "Search exact filename <em>%s</em>"
+msgstr "Търсене на точно име на файл <em>%s</em>"
+
+#: templates/html/search_contents.tmpl:44
+msgid "Search for paths ending with <em>%s</em>"
+msgstr "Търсене на пътища, завършващи с <em>%s</em>"
+
+#: templates/html/search_contents.tmpl:48
+msgid "Search in other suite:"
+msgstr "Търсене в друга дистрибуция:"
+
+#: templates/html/search_contents.tmpl:74
+msgid "paths that end with"
+msgstr "пътища, завършващи с"
+
+#: templates/html/search_contents.tmpl:76
+msgid "filenames that contain"
+msgstr "имена на файлове, съдържащи"
+
+#: templates/html/search_contents.tmpl:78
+msgid "files named"
+msgstr "файлове с име"
+
+#. @translators: I'm really sorry :/ 
+#: templates/html/search_contents.tmpl:81
+msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
+msgstr "Търсене за %s <em>%s</em> в дистрибуция <em>%s</em>, %s и %s."
+
+#: templates/html/search_contents.tmpl:85
+msgid "Found <strong>%u results</strong>."
+msgstr "Намерени са <strong>%u пакет(а)</strong>."
+
+#: templates/html/search_contents.tmpl:88
+msgid ""
+"Note: Your search was too wide so we will only display only the first about "
+"100 matches. Please consider using a longer keyword or more keywords."
+msgstr ""
+"Забележка: Търсенето е твърде общо и ще бъдат показани само първите стотина "
+"резултата. Опитайте с по-дълга ключова дума или повече ключови думи."
+
+#: templates/html/search_contents.tmpl:97
+msgid "Sort results by filename"
+msgstr "Подреждане на реззултатите по име на файл"
+
+#: templates/html/search_contents.tmpl:98
+#: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:345
+msgid "File"
+msgstr "Файл"
+
+#: templates/html/search_contents.tmpl:99
+msgid "Sort results by package name"
+msgstr "Подреждане на резултатите по име на пакет"
+
+#: templates/html/search_contents.tmpl:114
+msgid "not %s"
+msgstr "не %s"
+
+#: templates/html/show.tmpl:15
+msgid "Source packages"
+msgstr "Пакети-източници"
+
+#: templates/html/show.tmpl:16
+msgid "All packages in this section"
+msgstr "Всиаки пакети в този раздел"
+
+#: templates/html/show.tmpl:22
+msgid "Details of source package %s in %s"
+msgstr "Подробна информация за пакета-източник %s в %s"
+
+#: templates/html/show.tmpl:23
+msgid "Details of package %s in %s"
+msgstr "Подробна информация за пакета %s в %s"
+
+#: templates/html/show.tmpl:46
+msgid "Source:"
+msgstr "Източник:"
+
+#: templates/html/show.tmpl:46
+msgid "Source package building this package"
+msgstr "Пакет-източник, който зъздава този пакет"
+
+#: templates/html/show.tmpl:53
+msgid "Virtual Package: %s"
+msgstr "Виртуален пакет: %s"
+
+#: templates/html/show.tmpl:55
+msgid "Source Package: %s (%s)"
+msgstr "Пакет-източник: %s (%s)"
+
+#: templates/html/show.tmpl:57
+msgid "Package: %s (%s)"
+msgstr "Пакет: %s (%s)"
+
+#: templates/html/show.tmpl:61
+msgid "essential"
+msgstr "критично-важен"
+
+#: templates/html/show.tmpl:61
+msgid "package manager will refuse to remove this package by default"
+msgstr "програмите за управление на пакети ще откажат да премахнат този пакет"
+
+#: templates/html/show.tmpl:65
+msgid "Links for %s"
+msgstr "Връзки за %s"
+
+#: templates/html/show.tmpl:66
+msgid "%s Resources:"
+msgstr "Ресурси за %s:"
+
+#: templates/html/show.tmpl:68
+msgid "Bug Reports"
+msgstr "Доклади за грешки"
+
+#: templates/html/show.tmpl:71 templates/html/show.tmpl:73
+msgid "Developer Information (PTS)"
+msgstr "Информация за разработчици (PTS)"
+
+#: templates/html/show.tmpl:77
+msgid "%s Changelog"
+msgstr "Журнал на промените в %s"
+
+#: templates/html/show.tmpl:78
+msgid "Copyright File"
+msgstr "Авторски права"
+
+#: templates/html/show.tmpl:82
+msgid "Debian Source Repository"
+msgstr "Хранилище на изходен код"
+
+#: templates/html/show.tmpl:96 templates/html/show.tmpl:102
+msgid "%s Patch Tracker"
+msgstr "Управление на кръпките в %s"
+
+#: templates/html/show.tmpl:110
+msgid "Download Source Package <a href=\"%s\">%s</a>:"
+msgstr "Изтегляне на пакет-източник <a href=\"%s\">%s</a>."
+
+#: templates/html/show.tmpl:117
+msgid "Not found"
+msgstr ""
+
+#: templates/html/show.tmpl:122
+msgid "Maintainer:"
+msgstr "Отговорник:"
+
+#: templates/html/show.tmpl:124
+msgid "Maintainers:"
+msgstr "Отговорници:"
+
+#: templates/html/show.tmpl:137
+msgid "An overview over the maintainer's packages and uploads"
+msgstr ""
+
+#: templates/html/show.tmpl:137
+msgid "QA&nbsp;Page"
+msgstr "Страница&nbsp;за&nbsp;QA"
+
+#: templates/html/show.tmpl:138
+msgid "Archive of the Maintainer Mailinglist"
+msgstr "Архив на пощенскияя списък на отговорниците"
+
+#: templates/html/show.tmpl:138
+msgid "Mail&nbsp;Archive"
+msgstr "Пощенски&nbsp;архив"
+
+#: templates/html/show.tmpl:146
+msgid "External Resources:"
+msgstr "Външни препратки:"
+
+#: templates/html/show.tmpl:148
+msgid "Homepage"
+msgstr "Начална страница"
+
+#: templates/html/show.tmpl:154
+msgid "Similar packages:"
+msgstr "Подобни пакети:"
+
+#: templates/html/show.tmpl:170
+msgid ""
+"Warning: This package is from the <strong>experimental</strong> "
+"distribution. That means it is likely unstable or buggy, and it may even "
+"cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
+"and other possible documentation before using it."
+msgstr ""
+"Предупреждение: Този пакет е от дистрибуцията <strong>experimental</strong>. "
+"Това означава, че е вузможно да е нестабилен или да има грешки, а може дори "
+"и да предизвика загуба на данни. Прочетете информация за <a href=\"%s"
+"\">промените</a> и останалата документация преди да го използвате."
+
+#: templates/html/show.tmpl:194
+msgid ""
+"This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
+"for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
+"packages</a>."
+msgstr ""
+
+#: templates/html/show.tmpl:202
+msgid "Tags"
+msgstr "Етикети"
+
+#: templates/html/show.tmpl:225
+msgid "Packages providing %s"
+msgstr "Пакети, предлагащи %s"
+
+#: templates/html/show.tmpl:234
+msgid "The following binary packages are built from this source package:"
+msgstr "Следните двоични пакети са компилирани от този пакет-източник:"
+
+#: templates/html/show.tmpl:243
+msgid "Other Packages Related to %s"
+msgstr "Други пакети, свързани с %s"
+
+#: templates/html/show.tmpl:245
+msgid "legend"
+msgstr "легенда"
+
+#: templates/html/show.tmpl:247
+msgid "build-depends"
+msgstr "зависимости при компилиране"
+
+#: templates/html/show.tmpl:248
+msgid "build-depends-indep"
+msgstr "зависимости при компилиране (архитектурно-независими)"
+
+#: templates/html/show.tmpl:250
+msgid "depends"
+msgstr "зависимости"
+
+#: templates/html/show.tmpl:251
+msgid "recommends"
+msgstr "препоръчани"
+
+#: templates/html/show.tmpl:252
+msgid "suggests"
+msgstr "предложени"
+
+#: templates/html/show.tmpl:262
+msgid "or "
+msgstr "или"
+
+#: templates/html/show.tmpl:270
+msgid "also a virtual package provided by"
+msgstr "също и виртуален пакет, предлаган от"
+
+#: templates/html/show.tmpl:272
+msgid "virtual package provided by"
+msgstr "виртуален пакет, предлаган от"
+
+#: templates/html/show.tmpl:277
+msgid "show %u providing packages"
+msgstr "показване на пакетите, предлагащи %u"
+
+#: templates/html/show.tmpl:277
+msgid "hide %u providing packages"
+msgstr "скриване на пакетите, предлагащи %u"
+
+#: templates/html/show.tmpl:295
+msgid "Download %s"
+msgstr "Изтегляне на %s"
+
+#: templates/html/show.tmpl:297
+msgid ""
+"The download table links to the download of the package and a file overview. "
+"In addition it gives information about the package size and the installed "
+"size."
+msgstr ""
+
+#: templates/html/show.tmpl:298
+msgid "Download for all available architectures"
+msgstr "Изтегляне за всички налични атхитектури"
+
+#: templates/html/show.tmpl:299
+msgid "Architecture"
+msgstr "Архитектура"
+
+#: templates/html/show.tmpl:300
+msgid "Version"
+msgstr "Версия"
+
+#: templates/html/show.tmpl:301
+msgid "Package Size"
+msgstr "Големина на пакета"
+
+#: templates/html/show.tmpl:302
+msgid "Installed Size"
+msgstr "Големина след инсталиране"
+
+#: templates/html/show.tmpl:303
+msgid "Files"
+msgstr "Файлове"
+
+#: templates/html/show.tmpl:311
+msgid "(unofficial port)"
+msgstr "(неофициална архитектура)"
+
+#: templates/html/show.tmpl:322 templates/html/show.tmpl:350
+msgid "%s&nbsp;kB"
+msgstr "%s&nbsp;кБ"
+
+#: templates/html/show.tmpl:325
+msgid "list of files"
+msgstr "списък на файловете"
+
+#: templates/html/show.tmpl:327
+msgid "no current information"
+msgstr "няма текуща информация"
+
+#: templates/html/show.tmpl:344
+msgid "Download information for the files of this source package"
+msgstr "Информация за изтеглянето на файловете на пакета-източник"
+
+#: templates/html/show.tmpl:345
+msgid "Size (in kB)"
+msgstr "Големина (в кБ)"
+
+#: templates/html/show.tmpl:366
+msgid ""
+"Debian Package Source Repository (<acronym title=\"Version Control System"
+"\">VCS</acronym>: <a href=\"%s\">%s</a>)"
+msgstr ""
+
+#: templates/html/show.tmpl:371
+msgid "Debian Package Source Repository (Browsable)"
+msgstr ""
+
+#: templates/html/suite_index.tmpl:3
+msgid "Index"
+msgstr "Индекс"
+
+#: templates/html/suite_index.tmpl:5 templates/html/suite_index.tmpl:20
+msgid "List of sections in \"%s\""
+msgstr "Списък на разделите в „%s“"
+
+#: templates/html/suite_index.tmpl:38
+msgid "List of all source packages"
+msgstr "Списък на всички пакети-източници"
+
+#: templates/html/suite_index.tmpl:40
+msgid "All source packages"
+msgstr "Всички пакети-източници"
+
+#: templates/html/tag_index.tmpl:2 templates/html/tag_index.tmpl:7
+msgid "Overview of available Debian Package Tags"
+msgstr "Преглед на наличните етикети"
+
+#: templates/html/tag_index.tmpl:4
+msgid "About"
+msgstr ""
+
+#: templates/html/tag_index.tmpl:5
+msgid "Debtags"
+msgstr ""
+
+#: templates/html/tag_index.tmpl:10
+msgid "Facet: %s"
+msgstr ""
+
+#: templates/rss/newpkg.tmpl:16
+msgid "New %s Packages"
+msgstr "Нови пакети в %s"
+
+#: templates/rss/newpkg.tmpl:20
+msgid ""
+"The following packages were added to suite %s (section %s) in the %s archive "
+"during the last 7 days."
+msgstr ""
+"Следните пакети са добавени в дистрибуцията %s (раздел %s) на архива %s през "
+"последните 7 дни."
+
+#: templates/rss/newpkg.tmpl:23
+msgid ""
+"The following packages were added to suite %s in the %s archive during the "
+"last 7 days."
+msgstr ""
+"Следните пакети са добавени в дистрибуцията %s на архива %s през последните "
+"7 дни."
+
+#: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
+msgid "Copyright ©"
+msgstr ""
+
+#: templates/txt/index_head.tmpl:1
+msgid "All %s Packages in \"%s\""
+msgstr "Всички пакети %s в „%s“"
+
+#: templates/txt/index_head.tmpl:3
+msgid "Generated:"
+msgstr ""
+
+#: templates/txt/index_head.tmpl:5
+msgid "See <URL:%s> for the license terms."
+msgstr "Вижте <URL:%s> за лицензните условия."
