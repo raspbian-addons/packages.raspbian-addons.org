@@ -4,8 +4,7 @@
 	keywords = g('Packages')
 -%]
 [%-
-    all_suites = [ 'etch', 'etch-m68k', 'etch-volatile', 'etch-backports',
-		   'lenny', 'lenny-volatile', 'lenny-backports', 'squeeze', 'squeeze-backports', 'sid' ]
+    all_suites = [ 'lenny', 'lenny-volatile', 'lenny-backports', 'squeeze', 'squeeze-backports', 'sid' ]
     version_numbers = { sarge => '3.1',
 			etch  => '4.0',
 			lenny => '5.0' }
@@ -118,4 +117,4 @@ Distribution:
 </select>
 </form>
 
-[% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2009' %]
+[% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2010' %]
