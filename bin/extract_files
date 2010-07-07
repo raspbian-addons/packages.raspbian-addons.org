@@ -607,7 +607,7 @@ sub collect_deb {
     return unless $pkg_data;
 
     if (exists $bin_packages{$pkg_data->{bin_name}}{$pkg_data->{bin_version}}{$pkg_data->{bin_arch}}) {
-	do_warning( "duplicated package $pkg_data->{bin_name}, version {$pkg_data->{bin_version}{$pkg_data->{bin_arch}}" );
+	do_warning( "duplicated package $pkg_data->{bin_name}, version $pkg_data->{bin_version}, arch $pkg_data->{bin_arch}" );
 	return;
     } else {
 	$bin_packages{$pkg_data->{bin_name}}{$pkg_data->{bin_version}}{$pkg_data->{bin_arch}} = $pkg_data;

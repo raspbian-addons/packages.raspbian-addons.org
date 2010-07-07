@@ -112,41 +112,41 @@ msgstr ""
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:92
+#: templates/config/mirrors.tmpl:94
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:132
+#: templates/config/mirrors.tmpl:135
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:160
+#: templates/config/mirrors.tmpl:164
 msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:189
+#: templates/config/mirrors.tmpl:193
 msgid "North America"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:190
+#: templates/config/mirrors.tmpl:194
 msgid "South America"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:191
+#: templates/config/mirrors.tmpl:195
 msgid "Asia"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:192
-msgid "Australia and New Zealand"
+#: templates/config/mirrors.tmpl:196
+msgid "Oceania"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:193
+#: templates/config/mirrors.tmpl:197
 msgid "Europe"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:194
+#: templates/config/mirrors.tmpl:198
 msgid "Africa"
 msgstr ""
 
@@ -155,7 +155,7 @@ msgid "Package Download Selection -- %s"
 msgstr ""
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/homepage.tmpl:104 templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr ""
@@ -324,8 +324,8 @@ msgstr ""
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr ""
 
-#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
-#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:90
 msgid "Search"
 msgstr ""
 
@@ -392,92 +392,92 @@ msgid ""
 "to %s</a>."
 msgstr ""
 
-#: templates/html/homepage.tmpl:34
+#: templates/html/homepage.tmpl:35
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
 msgstr ""
 
-#: templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:40
 msgid "Search package directories"
 msgstr ""
 
-#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:87
 msgid "Keyword:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:91
 msgid "Reset"
 msgstr ""
 
-#: templates/html/homepage.tmpl:45
+#: templates/html/homepage.tmpl:47
 msgid "Search on:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:47
+#: templates/html/homepage.tmpl:49
 msgid "Package names only"
 msgstr ""
 
-#: templates/html/homepage.tmpl:49
+#: templates/html/homepage.tmpl:51
 msgid "Descriptions"
 msgstr ""
 
-#: templates/html/homepage.tmpl:51
+#: templates/html/homepage.tmpl:53
 msgid "Source package names"
 msgstr ""
 
-#: templates/html/homepage.tmpl:53
+#: templates/html/homepage.tmpl:55
 msgid "Only show exact matches:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
-#: templates/html/homepage.tmpl:114
+#: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
+#: templates/html/homepage.tmpl:116
 msgid "any"
 msgstr ""
 
-#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+#: templates/html/homepage.tmpl:65 templates/html/show.tmpl:16
 msgid "Section:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:71
+#: templates/html/homepage.tmpl:73
 msgid "There are shortcuts for some searches available:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:73
+#: templates/html/homepage.tmpl:75
 msgid "<code>%s<var>name</var></code> for the search on package names."
 msgstr ""
 
-#: templates/html/homepage.tmpl:75
+#: templates/html/homepage.tmpl:77
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
 msgstr ""
 
-#: templates/html/homepage.tmpl:79
+#: templates/html/homepage.tmpl:81
 msgid "Search the contents of packages"
 msgstr ""
 
-#: templates/html/homepage.tmpl:81
+#: templates/html/homepage.tmpl:83
 msgid ""
 "This search engine allows you to search the contents of %s distributions for "
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
 
-#: templates/html/homepage.tmpl:91
+#: templates/html/homepage.tmpl:93
 msgid "Display:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:94
+#: templates/html/homepage.tmpl:96
 msgid "packages that contain files named like this"
 msgstr ""
 
-#: templates/html/homepage.tmpl:97
+#: templates/html/homepage.tmpl:99
 msgid "packages that contain files whose names end with the keyword"
 msgstr ""
 
-#: templates/html/homepage.tmpl:100
+#: templates/html/homepage.tmpl:102
 msgid "packages that contain files whose names contain the keyword"
 msgstr ""
 
-#: templates/html/homepage.tmpl:109
+#: templates/html/homepage.tmpl:111
 msgid "Architecture:"
 msgstr ""
 
@@ -846,7 +846,7 @@ msgid "Debian Source Repository"
 msgstr ""
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
-msgid "%s Patch Tracking"
+msgid "%s Patch Tracker"
 msgstr ""
 
 #: templates/html/show.tmpl:110
