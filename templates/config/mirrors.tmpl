@@ -11,6 +11,7 @@
  
 mirrors = {
 	us => {
+		url => 'http://www.debian.org/',
 		mirror_list => 'http://www.debian.org/distrib/archive',
 		north_america => [
 			"ftp.egr.msu.edu/debian-archive",
@@ -33,12 +34,14 @@ mirrors = {
 		],
 	},
 	volatile => {
+		url => 'http://www.debian.org/volatile/',
 		title => g('volatile packages that need major changes during the life of a stable release'),
 		europa => [
 			"archive.debian.org/debian-volatile",
 		],
 	},
 	backports => {
+		url => 'http://www.backports.org/',
 		title => g('newer packages that have been adapted to stable releases of Debian'),
 		europa => [
 			"archive.debian.org/backports.org",
@@ -50,7 +53,7 @@ continents = {
 		north_america => g('North America'),
 		south_america => g('South America'),
 		asia          => g('Asia'),
-		australia     => g('Australia and New Zealand'),
+		oceania       => g('Oceania'),
 		europa        => g('Europe'),
 		africa        => g('Africa'),
 	}

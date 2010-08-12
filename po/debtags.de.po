@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: debtags.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2009-06-09 18:05+0200\n"
+"PO-Revision-Date: 2010-01-25 18:23+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -113,12 +113,12 @@ msgstr "Afrikaans"
 #. Tag: iso15924::jpan, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Han + Hiragana + Katakana."
-msgstr ""
+msgstr "Alias für Han, Hiragana und Katakana."
 
 #. Tag: iso15924::kore, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Hangul + Han"
-msgstr ""
+msgstr "Alias für Hangul und Han"
 
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
@@ -205,10 +205,8 @@ msgstr "Archiv"
 
 #. Tag: iso15924::armn, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Romanian"
 msgid "Armenian"
-msgstr "Rumänisch"
+msgstr "Armenisch"
 
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
@@ -379,7 +377,7 @@ msgstr "Brettspiel"
 #. Tag: iso15924::bopo, short desc
 #: files/debtags/vocabulary
 msgid "Bopomofo"
-msgstr ""
+msgstr "Zhuyin"
 
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
@@ -388,10 +386,8 @@ msgstr "Bosnisch"
 
 #. Tag: iso15924::brai, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Brazilian"
 msgid "Braille"
-msgstr "Brasilianisch"
+msgstr "Brailleschrift"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -497,6 +493,11 @@ msgstr "CORBA"
 #. Tag: use::calculating, short desc
 #: files/debtags/vocabulary
 msgid "Calculating"
+msgstr "Berechnen"
+
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+msgid "Calculation"
 msgstr "Berechnung"
 
 #. Tag: numerical, short desc
@@ -684,7 +685,7 @@ msgstr "Kultur"
 #. Tag: iso15924::cyrl, short desc
 #: files/debtags/vocabulary
 msgid "Cyrillic"
-msgstr ""
+msgstr "Kyrillisch"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
@@ -795,15 +796,16 @@ msgstr "Demonstration"
 msgid "Desktop Environment"
 msgstr "Desktop-Umgebung"
 
+# Vorschlag Sebastian Kapfer: Publizieren (Desktop Publishing)
 #. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
-msgstr ""
+msgstr "Desktop-Publishing (DTP)"
 
 #. Tag: iso15924::deva, short desc
 #: files/debtags/vocabulary
 msgid "Devanagari (Nagari)"
-msgstr ""
+msgstr "Devanagari (Nagari)"
 
 #. Tag: role::devel-lib, short desc
 #: files/debtags/vocabulary
@@ -1037,7 +1039,7 @@ msgstr ""
 #. Tag: iso15924::ethi, short desc
 #: files/debtags/vocabulary
 msgid "Ethiopic (Geʻez)"
-msgstr ""
+msgstr "Äthiopisch (Geʻez)"
 
 #. Tag: devel::examples, short desc
 #. Tag: role::examples, short desc
@@ -1375,7 +1377,7 @@ msgstr "Geologie"
 #. Tag: iso15924::geor, short desc
 #: files/debtags/vocabulary
 msgid "Georgian (Mkhedruli)"
-msgstr ""
+msgstr "Georgisch (Mchedruli)"
 
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
@@ -1411,12 +1413,12 @@ msgstr "Gruppen-Software (Groupware)"
 #. Tag: iso15924::gujr, short desc
 #: files/debtags/vocabulary
 msgid "Gujarati"
-msgstr ""
+msgstr "Gujarati"
 
 #. Tag: iso15924::guru, short desc
 #: files/debtags/vocabulary
 msgid "Gurmukhi"
-msgstr ""
+msgstr "Gurmukhi"
 
 #. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
@@ -1437,22 +1439,22 @@ msgstr "Amateurfunk"
 #. Tag: iso15924::hani, short desc
 #: files/debtags/vocabulary
 msgid "Han (Hanzi, Kanji, Hanja)"
-msgstr ""
+msgstr "Han (Hanzi, Kanji, Hanja)"
 
 #. Tag: iso15924::hans, short desc
 #: files/debtags/vocabulary
 msgid "Han (Simplified variant)"
-msgstr ""
+msgstr "Han (vereinfacht)"
 
 #. Tag: iso15924::hant, short desc
 #: files/debtags/vocabulary
 msgid "Han (Traditional variant)"
-msgstr ""
+msgstr "Han (traditionell)"
 
 #. Tag: iso15924::hang, short desc
 #: files/debtags/vocabulary
 msgid "Hangul (Hangŭl, Hangeul)"
-msgstr ""
+msgstr "Hangul (Hangŭl, Hangeul)"
 
 #. Tag: hardware::detection, short desc
 #: files/debtags/vocabulary
@@ -1503,7 +1505,7 @@ msgstr "Hindi"
 #. Tag: iso15924::hira, short desc
 #: files/debtags/vocabulary
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
@@ -1602,7 +1604,7 @@ msgstr "Isländisch"
 #. Tag: made-of::icons, short desc
 #: files/debtags/vocabulary
 msgid "Icons"
-msgstr ""
+msgstr "Icons"
 
 #. Tag: protocol::ident, short desc
 #: files/debtags/vocabulary
@@ -1648,17 +1650,18 @@ msgstr "Eingabesysteme"
 #. Tag: works-with::im, short desc
 #: files/debtags/vocabulary
 msgid "Instant Messages"
-msgstr ""
+msgstr "Instant Messages"
 
 #. Tag: devel::ide, long desc
 #: files/debtags/vocabulary
 msgid "Integrated Development Environment"
 msgstr "Integrierte Entwicklungsumgebung"
 
+# Vorschlag Chris Leick: Schnittstellen-Werkzeugkasten
 #. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
 msgid "Interface Toolkit"
-msgstr ""
+msgstr "GUI-Baukasten"
 
 #. Tag: devel::i18n, short desc
 #: files/debtags/vocabulary
@@ -1737,9 +1740,9 @@ msgid ""
 "The official Debian channel is #debian on the freenode network.\n"
 "Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
 msgstr ""
-"Internet Relay Chat, ein Protokoll für das Unterhalten mittels Text über "
-"Netze, das intensiv im Internet genutzt wird. Es unterstützt Räume "
-"sogenannte Kanäle sowie private eins-zu-eins-Kommunikation.\n"
+"Internet Relay Chat, ein Protokoll für das Plaudern mittels Text über Netze, "
+"das intensiv im Internet genutzt wird. Es unterstützt Räume, sogenannte "
+"Kanäle, sowie private eins-zu-eins-Kommunikation.\n"
 "IRC-Server sind in Netzen organisiert, so dass sich Clients mit einem "
 "geographisch naheliegenden Server verbinden können, der wiederum mit anderen "
 "IRC-Servern auf der ganzen Welt verbunden ist.\n"
@@ -1781,6 +1784,11 @@ msgstr "Italienisch"
 msgid "JPEG, Joint Photographic Experts Group"
 msgstr "JPEG, Joint Photographic Experts Group"
 
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr "JSON"
+
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
 msgid "Jabber"
@@ -1802,6 +1810,11 @@ msgstr "Java"
 msgid "Java Development"
 msgstr "Java-Entwicklung"
 
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr "JavaScript-Objekt-Notation"
+
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
 msgid "Joystick"
@@ -1810,7 +1823,7 @@ msgstr "Joystick"
 #. Tag: hardware::joystick, short desc
 #: files/debtags/vocabulary
 msgid "Joystick (legacy)"
-msgstr ""
+msgstr "Joystick (veraltet)"
 
 #. Facet: junior, short desc
 #: files/debtags/vocabulary
@@ -1825,14 +1838,12 @@ msgstr "KDE"
 #. Tag: iso15924::knda, short desc
 #: files/debtags/vocabulary
 msgid "Kannada"
-msgstr ""
+msgstr "Kannada"
 
 #. Tag: iso15924::kana, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Catalan"
 msgid "Katakana"
-msgstr "Katalanisch"
+msgstr "Katakana"
 
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
@@ -1880,10 +1891,8 @@ msgstr "Tastatur"
 
 #. Tag: iso15924::khmr, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Theme"
 msgid "Khmer"
-msgstr "Thema"
+msgstr "Khmer"
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
@@ -1908,10 +1917,8 @@ msgstr "LPR"
 
 #. Tag: iso15924::laoo, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Laptop"
 msgid "Lao"
-msgstr "Laptop"
+msgstr "Laotisch"
 
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
@@ -1920,10 +1927,8 @@ msgstr "Laptop"
 
 #. Tag: iso15924::latn, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Latvian"
 msgid "Latin"
-msgstr "Lettisch"
+msgstr "Latein"
 
 #. Tag: culture::latvian, short desc
 #: files/debtags/vocabulary
@@ -1990,7 +1995,7 @@ msgstr "Lisp-Entwicklung"
 #. Tag: devel::docsystem, short desc
 #: files/debtags/vocabulary
 msgid "Literate Programming"
-msgstr ""
+msgstr "Literate Programming"
 
 #. Tag: network::load-balancing, short desc
 #: files/debtags/vocabulary
@@ -2106,7 +2111,7 @@ msgstr "Mailinglisten"
 #. Tag: iso15924::mlym, short desc
 #: files/debtags/vocabulary
 msgid "Malayalam"
-msgstr ""
+msgstr "Malayalam"
 
 #. Tag: works-with-format::man, short desc
 #: files/debtags/vocabulary
@@ -2224,7 +2229,7 @@ msgstr "MySQL"
 #. Tag: iso15924::mymr, short desc
 #: files/debtags/vocabulary
 msgid "Myanmar (Burmese)"
-msgstr ""
+msgstr "Myanmar (Birmanisch)"
 
 #. Tag: protocol::nfs, short desc
 #: files/debtags/vocabulary
@@ -2566,6 +2571,15 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
 "org/oscar/"
 msgstr ""
+"»Open System for CommunicAtion in Realtime«, ein Instant-Messaging- "
+"(Sofortnachrichten-)Protokoll, das in AOLs Instant-Messaging-Netzwerk (AIM) "
+"verwandt wird. Die Protokollversionen 7, 8 und 9 des ICQ-IM-Netzes sind "
+"ebenfalls Realisierungen des OSCAR-Protokolls.\n"
+"OSCAR ist ein proprietäres Binärprotokoll ohne offizielle Dokumentation. "
+"Daher müssen sich Clients, die sich mit AIM oder ICQ verbinden, auf inverse "
+"entwickelte (reverse engineered) Information stützen.\n"
+"Link: http://de.wikipedia.org/wiki/OSCAR_(Protokoll) Link: http://www.oilcan."
+"org/oscar/"
 
 #. Tag: suite::openoffice, short desc
 #: files/debtags/vocabulary
@@ -2580,7 +2594,7 @@ msgstr "Optische Zeichenerkennung"
 #. Tag: iso15924::orya, short desc
 #: files/debtags/vocabulary
 msgid "Oriya"
-msgstr ""
+msgstr "Oriya"
 
 #. Tag: made-of::pdf, short desc
 #. Tag: works-with-format::pdf, short desc
@@ -2883,6 +2897,7 @@ msgstr "Protokoll zum Zugriff auf MySQL-Datenbankserver."
 msgid "Protocol for accessing PostgreSQL database server."
 msgstr "Protokoll zum Zugriff auf PostgreSQL-Datenbankserver."
 
+# Vorschlag Sebastian Kapfer: Weiterleiten (Proxy)
 #. Tag: use::proxying, short desc
 #: files/debtags/vocabulary
 msgid "Proxying"
@@ -2998,10 +3013,11 @@ msgstr "Remote Procedure Call, Netz-transparente Programmierung"
 msgid "Requires video hardware acceleration"
 msgstr "Benötigt Videohardware-Beschleunigung"
 
+# Vorschlag Chris Leick: Versionierung
 #. Tag: devel::rcs, short desc
 #: files/debtags/vocabulary
 msgid "Revision Control"
-msgstr ""
+msgstr "Änderungsverwaltung"
 
 #. Tag: game::rpg:rogue, short desc
 #: files/debtags/vocabulary
@@ -3408,7 +3424,7 @@ msgstr "Simulation"
 #. Tag: iso15924::sinh, short desc
 #: files/debtags/vocabulary
 msgid "Sinhala"
-msgstr ""
+msgstr "Singhalesisch"
 
 #. Tag: culture::slovak, short desc
 #: files/debtags/vocabulary
@@ -3568,7 +3584,7 @@ msgstr "Schwedisch"
 #. Tag: iso15924::zsym, short desc
 #: files/debtags/vocabulary
 msgid "Symbols"
-msgstr ""
+msgstr "Symbole"
 
 #. Tag: use::synchronizing, short desc
 #: files/debtags/vocabulary
@@ -3577,10 +3593,8 @@ msgstr "Synchronisieren"
 
 #. Tag: iso15924::syrc, short desc
 #: files/debtags/vocabulary
-#, fuzzy
-#| msgid "Privacy"
 msgid "Syriac"
-msgstr "Datenschutz"
+msgstr "Syrisch"
 
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
@@ -3635,7 +3649,7 @@ msgstr "TIFF, Tagged Image File Format"
 #. Tag: iso15924::tavt, short desc
 #: files/debtags/vocabulary
 msgid "Tai Viet"
-msgstr ""
+msgstr "Tai Viet"
 
 #. Tag: culture::taiwanese, short desc
 #: files/debtags/vocabulary
@@ -3691,7 +3705,7 @@ msgstr "Telnet"
 #. Tag: iso15924::telu, short desc
 #: files/debtags/vocabulary
 msgid "Telugu"
-msgstr ""
+msgstr "Telugu"
 
 #. Tag: x11::terminal, short desc
 #: files/debtags/vocabulary
@@ -3773,6 +3787,16 @@ msgid ""
 "an own server to connect to the Jabber network.\n"
 "Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
 msgstr ""
+"Das Jabber-Protokoll ist ein Instant-Messaging- (Sofortnachrichten-)"
+"Protokoll auf Basis des XMPP-Protokolls. Neben privater Eins-zu-eins-"
+"Kommunikation unterstützt es auch Chatrooms (Plauderräume). Es wird im "
+"Jabber-IM-Netz sowie für die IM-Funktionalität im neuen GoogleTalk-Netz "
+"eingesetzt.\n"
+"Anders als die anderen IM-Protokolle wie MSN, ICQ und AIM sind die Jabber-"
+"Server Freie Software und können eingesetzt werden, um eine eigene Chat- "
+"(Plauder)-Plattform oder einen eigenen Einwahlserver zum Jabber-Netz zu "
+"betreiben.\n"
+"Link: http://www.jabber.org Link: http://de.wikipedia.org/wiki/Jabber"
 
 #. Tag: protocol::lpr, long desc
 #: files/debtags/vocabulary
@@ -3803,6 +3827,13 @@ msgid ""
 "engineered information.\n"
 "Link: http://www.hypothetic.org/docs/msn/"
 msgstr ""
+"Das »MSN Messenger«-Protokoll ist das Protokoll von Microsofts eigenem "
+"Instant-Messaging (Sofortnachrichten-)Netz.\n"
+"Dieses Protokoll ist proprietär. Microsoft sandte einmal einen Entwurf der "
+"Protokollspezifikation an die IETF. Dieser ist mittlerweile allerdings "
+"veraltet und Clients, die sich mit dem MSN-Netz verbinden, müssen sich auf "
+"invers-entwicklete (reverse engineered) Information stützen.\n"
+"Link: http://www.hypothetic.org/docs/msn/"
 
 #. Tag: protocol::finger, long desc
 #: files/debtags/vocabulary
@@ -3834,6 +3865,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
 "venkydude.com/articles/yahoo.htm"
 msgstr ""
+"Das »Yahoo! Messenger«-Protokoll wird verwandt, um sich mit Yahoo!s Instant-"
+"Messaging- (Sofortnachrichten-)Netz zu verbinden.\n"
+"Dies ist ein proprietäres Binärprotokoll ohne offizielle Dokumentation. "
+"Clients, die sich mit dem Yahoo!-Messenger-Netz verbinden, müssen sich auf "
+"invers entwickelte (reverse engineered) Informationen stützen.\n"
+"Link: http://de.wikipedia.org/wiki/Yahoo_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
 
 #. Tag: suite::zope, long desc
 #: files/debtags/vocabulary
@@ -3945,7 +3983,7 @@ msgstr "Dreidimensional"
 #. Tag: iso15924::tibt, short desc
 #: files/debtags/vocabulary
 msgid "Tibetan"
-msgstr ""
+msgstr "Tibetisch"
 
 #. Tag: use::timekeeping, short desc
 #: files/debtags/vocabulary
@@ -3964,10 +4002,11 @@ msgstr ""
 "Um herauszufinden, wie zwei oder mehr Objekte zusammenhängen oder sich "
 "unterscheiden."
 
+# Vorschlag Sebastian Kapfer: Automatische Dokumentation
 #. Tag: devel::docsystem, long desc
 #: files/debtags/vocabulary
 msgid "Tools and auto-documenters"
-msgstr ""
+msgstr "Werkzeuge und automatische Dokumentenersteller"
 
 #. Tag: devel::ecma-cli, long desc
 #: files/debtags/vocabulary
@@ -4103,7 +4142,7 @@ msgstr "Unicode"
 #. Tag: iso15924::cans, short desc
 #: files/debtags/vocabulary
 msgid "Unified Canadian Aboriginal Syllabics"
-msgstr ""
+msgstr "Vereinheitlichte Silbenzeichen kanadischer Ureinwohner"
 
 #. Tag: hardware::power:ups, long desc
 #: files/debtags/vocabulary
@@ -4191,10 +4230,11 @@ msgstr ""
 msgid "Vector Image"
 msgstr "Vektor-Bild"
 
+# Vorschlag Chris Leick: Versionskontrollsystem
 #. Tag: works-with::vcs, short desc
 #: files/debtags/vocabulary
 msgid "Version control system"
-msgstr ""
+msgstr "Versionsverwaltungssystem"
 
 #. Tag: works-with::video, short desc
 #: files/debtags/vocabulary
@@ -4210,6 +4250,11 @@ msgstr "Virtual Reality Markup Language"
 #: files/debtags/vocabulary
 msgid "Virtualization"
 msgstr "Virtualisierung"
+
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+msgid "Visualization"
+msgstr "Visualisierung"
 
 #. Tag: protocol::voip, short desc
 #: files/debtags/vocabulary
@@ -4232,7 +4277,7 @@ msgstr ""
 #. Tag: works-with-format::wav, long desc
 #: files/debtags/vocabulary
 msgid "Wave uncompressed audio format"
-msgstr ""
+msgstr "Unkomprimiertes Wave-Audio-Format"
 
 #. Tag: devel::web, short desc
 #: files/debtags/vocabulary
@@ -4309,7 +4354,7 @@ msgstr "World Wide Web"
 #. Facet: iso15924, short desc
 #: files/debtags/vocabulary
 msgid "Writing script"
-msgstr ""
+msgstr "Schriftsystem"
 
 #. Tag: x11::xserver, short desc
 #: files/debtags/vocabulary
@@ -4387,7 +4432,7 @@ msgstr "Yahoo! Messenger"
 #. Tag: iso15924::yiii, short desc
 #: files/debtags/vocabulary
 msgid "Yi"
-msgstr ""
+msgstr "Yi"
 
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
@@ -4446,32 +4491,32 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL-Modem"
 
-#~ msgid "X Server"
-#~ msgstr "X-Server"
-
-#~ msgid "Source code"
-#~ msgstr "Quellcode"
-
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
-
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
-
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB und CIFS"
-
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "HyperText Transfer Protocol"
-
-#~ msgid "File Transfer Protocol"
-#~ msgstr "File Transfer Protocol"
-
-#~ msgid "File Transfer"
-#~ msgstr "Datei-Übertragung"
-
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "Direktes Client-zu-Client-Protokoll, verwendet von Clients für Internet "
 #~ "Relay Chat"
+
+#~ msgid "File Transfer"
+#~ msgstr "Datei-Übertragung"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "File Transfer Protocol"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "HyperText Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB und CIFS"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Datei- und Druckerfreigabe von Windows (SMB)"
+
+#~ msgid "Source code"
+#~ msgstr "Quellcode"
+
+#~ msgid "X Server"
+#~ msgstr "X-Server"

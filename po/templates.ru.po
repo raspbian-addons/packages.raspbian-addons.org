@@ -1,19 +1,19 @@
 # translation of templates.ru.po to Russian
 # Yuri Kozlov <kozlov.y@gmail.com>, 2007, 2008.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: Debian webwml templates\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-06-18 20:44+0400\n"
+"PO-Revision-Date: 2010-08-08 21:48+0400\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
@@ -35,7 +35,7 @@ msgstr ""
 "Это экспериментальная версия <a href=\"http://%s/\">%s</a>. Возможны ошибки "
 "и устаревшая информация"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:70
 msgid "."
 msgstr ","
@@ -129,45 +129,45 @@ msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 "пакеты, не удовлетворяющие критериям Debian по определению свободного ПО"
 
-#: templates/config/mirrors.tmpl:92
+#: templates/config/mirrors.tmpl:94
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 "изменчивые пакеты, для работы в них нужно вносить значительные изменения на "
 "всём времени существования стабильного выпуска"
 
-#: templates/config/mirrors.tmpl:132
+#: templates/config/mirrors.tmpl:135
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr ""
 "новейшие пакеты, которые были адаптированы для стабильных выпусков Debian"
 
-#: templates/config/mirrors.tmpl:160
+#: templates/config/mirrors.tmpl:164
 msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 "переносы пакетов под архитектуры, которых ещё или уже недоступны в Debian"
 
-#: templates/config/mirrors.tmpl:189
+#: templates/config/mirrors.tmpl:193
 msgid "North America"
 msgstr "Северная Америка"
 
-#: templates/config/mirrors.tmpl:190
+#: templates/config/mirrors.tmpl:194
 msgid "South America"
 msgstr "Южная Америка"
 
-#: templates/config/mirrors.tmpl:191
+#: templates/config/mirrors.tmpl:195
 msgid "Asia"
 msgstr "Азия"
 
-#: templates/config/mirrors.tmpl:192
-msgid "Australia and New Zealand"
-msgstr "Австралия и Новая Зеландия"
+#: templates/config/mirrors.tmpl:196
+msgid "Oceania"
+msgstr "Океания"
 
-#: templates/config/mirrors.tmpl:193
+#: templates/config/mirrors.tmpl:197
 msgid "Europe"
 msgstr "Европа"
 
-#: templates/config/mirrors.tmpl:194
+#: templates/config/mirrors.tmpl:198
 msgid "Africa"
 msgstr "Африка"
 
@@ -176,7 +176,7 @@ msgid "Package Download Selection -- %s"
 msgstr "Выбранный пакет для загрузки -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/homepage.tmpl:102 templates/html/index_head.tmpl:9
+#: templates/html/homepage.tmpl:104 templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Дистрибутив:"
@@ -379,8 +379,8 @@ msgstr "Об этом сайте"
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Спонсор сайта <a href=\"%s\">%s</a>."
 
-#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:36
-#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:88
+#: templates/html/head.tmpl:47 templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:90
 msgid "Search"
 msgstr "Поиск"
 
@@ -423,132 +423,127 @@ msgid "Packages"
 msgstr "Пакеты"
 
 #: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
-#, fuzzy
-#| msgid "%s Packages Homepage"
 msgid "%s Packages Search"
-msgstr "Домашняя страница пакетов %s"
+msgstr "Поиск пакетов в %s"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
 msgstr ""
+"Здесь представлена информация о всех пакетах, доступны в архиве пакетов <a "
+"href=\"%s\">%s</a>."
 
 #: templates/html/homepage.tmpl:21
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
 msgstr ""
+"При возникновении проблем, обратитесь по адресу <a href=\"mailto:%s\">%s</a>!"
 
 #: templates/html/homepage.tmpl:23
 msgid "Browse through the lists of packages:"
-msgstr ""
+msgstr "Обзор списка пакетов:"
 
 #: templates/html/homepage.tmpl:32
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
 msgstr ""
+"Также есть список <a href=\"%s/main/newpkg\">недавно добавленных в %s "
+"пакетов</a>."
 
-#: templates/html/homepage.tmpl:34
-#, fuzzy
-#| msgid "This service is sponsored by <a href=\"%s\">%s</a>."
+#: templates/html/homepage.tmpl:35
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
-msgstr "Спонсор сайта <a href=\"%s\">%s</a>."
+msgstr "Старые выпуски можно найти на <a href=\"%s\">%s</a>."
 
-#: templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:40
 msgid "Search package directories"
-msgstr ""
+msgstr "Поиск по каталогам пакетов"
 
-#: templates/html/homepage.tmpl:41 templates/html/homepage.tmpl:85
+#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:87
 msgid "Keyword:"
-msgstr ""
+msgstr "Ключевое слово:"
 
-#: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:89
+#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:91
 msgid "Reset"
-msgstr ""
-
-#: templates/html/homepage.tmpl:45
-#, fuzzy
-#| msgid "Search"
-msgid "Search on:"
-msgstr "Поиск"
+msgstr "Очистка"
 
 #: templates/html/homepage.tmpl:47
-#, fuzzy
-#| msgid "package names"
-msgid "Package names only"
-msgstr "в именах пакетов"
+msgid "Search on:"
+msgstr "Поиск:"
 
 #: templates/html/homepage.tmpl:49
-#, fuzzy
-#| msgid "descriptions"
-msgid "Descriptions"
-msgstr "в описания"
+msgid "Package names only"
+msgstr "Только в именах пакетов"
 
 #: templates/html/homepage.tmpl:51
-#, fuzzy
-#| msgid "source package names"
-msgid "Source package names"
-msgstr "в именах пакетов исходного кода"
+msgid "Descriptions"
+msgstr "Описания"
 
 #: templates/html/homepage.tmpl:53
+msgid "Source package names"
+msgstr "Имена пакетов исходного кода"
+
+#: templates/html/homepage.tmpl:55
 msgid "Only show exact matches:"
-msgstr ""
+msgstr "Показать только точные совпадения:"
 
-#: templates/html/homepage.tmpl:61 templates/html/homepage.tmpl:68
-#: templates/html/homepage.tmpl:114
+#: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
+#: templates/html/homepage.tmpl:116
 msgid "any"
-msgstr ""
+msgstr "любой"
 
-#: templates/html/homepage.tmpl:63 templates/html/show.tmpl:16
+#: templates/html/homepage.tmpl:65 templates/html/show.tmpl:16
 msgid "Section:"
 msgstr "Секция:"
 
-#: templates/html/homepage.tmpl:71
-msgid "There are shortcuts for some searches available:"
-msgstr ""
-
 #: templates/html/homepage.tmpl:73
-msgid "<code>%s<var>name</var></code> for the search on package names."
-msgstr ""
+msgid "There are shortcuts for some searches available:"
+msgstr "Доступны краткие поисковые запросы:"
 
 #: templates/html/homepage.tmpl:75
+msgid "<code>%s<var>name</var></code> for the search on package names."
+msgstr "<code>%s<var>имя</var></code> для поиска в именах пакетов."
+
+#: templates/html/homepage.tmpl:77
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
 msgstr ""
-
-#: templates/html/homepage.tmpl:79
-msgid "Search the contents of packages"
-msgstr ""
+"<code>%ssrc:<var>имя</var></code> для поиска имени в пакетах исходного кода."
 
 #: templates/html/homepage.tmpl:81
+msgid "Search the contents of packages"
+msgstr "Поиск по содержимому пакетов"
+
+#: templates/html/homepage.tmpl:83
 msgid ""
 "This search engine allows you to search the contents of %s distributions for "
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
+"Механизм поиска позволяет искать в содержимом дистрибутивов %s любые файлы "
+"(или только части пути имени файла), которые входят в пакеты. Также вы "
+"можете получить полный список файлов заданного пакета."
 
-#: templates/html/homepage.tmpl:91
+#: templates/html/homepage.tmpl:93
 msgid "Display:"
-msgstr ""
+msgstr "Показать:"
 
-#: templates/html/homepage.tmpl:94
+#: templates/html/homepage.tmpl:96
 msgid "packages that contain files named like this"
-msgstr ""
+msgstr "пакеты, содержащие файлы с подобным именем"
 
-#: templates/html/homepage.tmpl:97
+#: templates/html/homepage.tmpl:99
 msgid "packages that contain files whose names end with the keyword"
-msgstr ""
+msgstr "пакеты, содержащие файлы с именем, заканчивающимся ключевым словом"
 
-#: templates/html/homepage.tmpl:100
+#: templates/html/homepage.tmpl:102
 msgid "packages that contain files whose names contain the keyword"
-msgstr ""
+msgstr "пакеты, содержащие файлы с именем, содержащим ключевое слово"
 
-#: templates/html/homepage.tmpl:109
-#, fuzzy
-#| msgid "Architecture"
+#: templates/html/homepage.tmpl:111
 msgid "Architecture:"
-msgstr "Архитектура"
+msgstr "Архитектура:"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -835,7 +830,7 @@ msgstr "имена файлов, содержащих"
 msgid "files named"
 msgstr "файлы с именем"
 
-#. @translators: I'm really sorry :/ 
+#. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -945,7 +940,8 @@ msgid "Debian Source Repository"
 msgstr "Репозиторий исходного кода Debian"
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
-msgid "%s Patch Tracking"
+#| msgid "%s Patch Tracking"
+msgid "%s Patch Tracker"
 msgstr "Отслеживание заплат %s"
 
 #: templates/html/show.tmpl:110
@@ -1215,3 +1211,6 @@ msgstr "Сгенерирована:"
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "Австралия и Новая Зеландия"
