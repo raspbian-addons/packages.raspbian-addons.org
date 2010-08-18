@@ -60,6 +60,13 @@ General:
   Bugs      -- not needed
   Task
   Python-Version(s) -- not needed
+- screenshots - http://bugs.debian.org/262617. Possible filtering for not
+  displaying the screenshot part:
+  * http://screenshots.debian.net/json/screenshots contains all available
+    screenshots (for potential filtered out ones to force-display them)
+  * filter on debtags: interface::3d interface::framebuffer interface::svga
+    interface::text-mode interface::web interface::x11
+  * filter on sections: libs, oldlibs, debug, ... Ask for input.
 
 Cron:
 - Verify Release files
