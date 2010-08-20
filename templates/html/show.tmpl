@@ -63,6 +63,9 @@
 [% UNLESS is_virtual %]
 <div id="pmoreinfo">
 <h2>[% g('Links for %s', pkg) %]</h2>
+[% IF screenshots_url && screenshots_thumb_url && !is_source %]
+<a id="screenshot" href="[% screenshots_url _ pkg %]"><img src="[% screenshots_thumb_url _ pkg %]" alt="Screenshot" border="0"/></a>
+[% END %]
 <h3>[% g('%s Resources:', organisation) %]</h3>
 <ul>
 <li><a href="[% launchpad_url _ (is_source ? pkg : src.pkg) _ '/+bugs' %]">[% g('Bug Reports') %]</a></li>
