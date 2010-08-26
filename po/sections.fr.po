@@ -9,13 +9,14 @@ msgstr ""
 "Project-Id-Version: 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-27 22:41+0100\n"
-"PO-Revision-Date: 2008-02-04 23:11+0100\n"
-"Last-Translator: Guilhelm Panaget <guilhelm.panaget@free.fr>\n"
-"Language-Team:  French <debian-l10n-french@lists.debian.org>\n"
+"PO-Revision-Date: 2010-08-26 14:04-0400\n"
+"Last-Translator: David Prévot <david@tilapin.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
@@ -37,11 +38,11 @@ msgstr "Outils de base nécessaires à tout système Debian"
 
 #: lib/Packages/Sections.pm:16
 msgid "Mono/CLI"
-msgstr ""
+msgstr "Mono et CLI"
 
 #: lib/Packages/Sections.pm:17
 msgid "Everything about Mono and the Common Language Infrastructure."
-msgstr ""
+msgstr "Tout ce qui concerne Mono et le Common Language Infrastructure."
 
 #: lib/Packages/Sections.pm:18
 msgid "Communication Programs"
@@ -53,23 +54,24 @@ msgstr "Programmes pour utiliser votre modem à l'ancienne."
 
 #: lib/Packages/Sections.pm:20
 msgid "Databases"
-msgstr ""
+msgstr "Bases de données"
 
 #: lib/Packages/Sections.pm:21
 msgid "Database Servers and Clients."
-msgstr ""
+msgstr "Clients et serveurs de bases de données."
 
 #: lib/Packages/Sections.pm:22
-#, fuzzy
 #| msgid "Virtual packages"
 msgid "Debug packages"
-msgstr "Paquets virtuels"
+msgstr "Paquets de débogage"
 
 #: lib/Packages/Sections.pm:23
 msgid ""
 "Packages providing debugging information for executables and shared "
 "libraries."
 msgstr ""
+"Paquets fournissant des renseignement de débogage pour les exécutables et "
+"les bibliothèques partagées."
 
 #: lib/Packages/Sections.pm:24
 msgid "Development"
@@ -141,19 +143,20 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:38
 msgid "GNU R"
-msgstr ""
+msgstr "GNU R"
 
 #: lib/Packages/Sections.pm:39
 msgid "Everything about GNU R, a statistical computation and graphics system."
 msgstr ""
+"Tout ce qui concerne GNU R, analyse statistique et fonctions graphiques."
 
 #: lib/Packages/Sections.pm:40
 msgid "GNUstep"
-msgstr ""
+msgstr "GNUstep"
 
 #: lib/Packages/Sections.pm:41
 msgid "The GNUstep environment."
-msgstr ""
+msgstr "L'environnement de bureau GNUstep."
 
 #: lib/Packages/Sections.pm:42
 msgid "Graphics"
@@ -174,31 +177,29 @@ msgstr "Logiciels pour radioamateurs."
 
 #: lib/Packages/Sections.pm:46
 msgid "Fonts"
-msgstr ""
+msgstr "Polices"
 
 #: lib/Packages/Sections.pm:47
-#, fuzzy
 #| msgid "Virtual packages."
 msgid "Font packages."
-msgstr "Paquets virtuels"
+msgstr "Paquets de police."
 
 #: lib/Packages/Sections.pm:48
 msgid "Haskell"
-msgstr ""
+msgstr "Haskell"
 
 #: lib/Packages/Sections.pm:49
 msgid "Everything about Haskell."
-msgstr ""
+msgstr "Tout ce qui concerne Haskell."
 
 #: lib/Packages/Sections.pm:50
-#, fuzzy
 #| msgid "Web Software"
 msgid "Web Servers"
-msgstr "Logiciels pour le Web"
+msgstr "Serveurs web"
 
 #: lib/Packages/Sections.pm:51
 msgid "Web servers and their modules."
-msgstr ""
+msgstr "Serveurs web et leurs modules."
 
 #: lib/Packages/Sections.pm:52
 msgid "Interpreters"
@@ -211,19 +212,19 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:54
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: lib/Packages/Sections.pm:55
 msgid "Everything about Java."
-msgstr ""
+msgstr "Tout ce qui concerne Java."
 
 #: lib/Packages/Sections.pm:56
 msgid "Kernels"
-msgstr ""
+msgstr "Noyaux"
 
 #: lib/Packages/Sections.pm:57
 msgid "Operating System Kernels and related modules."
-msgstr ""
+msgstr "Noyaux du système d'exploitation et modules associés."
 
 #: lib/Packages/Sections.pm:58
 msgid "KDE"
@@ -259,19 +260,19 @@ msgstr "Fichiers nécessaires aux développeurs pour utiliser les bibliothèques
 
 #: lib/Packages/Sections.pm:64
 msgid "Lisp"
-msgstr ""
+msgstr "Lisp"
 
 #: lib/Packages/Sections.pm:65
 msgid "Everything about Lisp."
-msgstr ""
+msgstr "Tout ce qui concerne Lisp."
 
 #: lib/Packages/Sections.pm:66
 msgid "Language packs"
-msgstr ""
+msgstr "Paquets de langue."
 
 #: lib/Packages/Sections.pm:67
 msgid "Localization support for big software packages."
-msgstr ""
+msgstr "Prise en charge de la localisation pour les gros paquets logiciels."
 
 #: lib/Packages/Sections.pm:68
 msgid "Mail"
@@ -302,12 +303,11 @@ msgid "Network"
 msgstr "Réseaux"
 
 #: lib/Packages/Sections.pm:75
-#, fuzzy
 #| msgid ""
 #| "Daemons and clients to connect your Debian GNU/Linux system to the world."
 msgid "Daemons and clients to connect your system to the world."
 msgstr ""
-"Démons et clients pour connecter votre système Debian GNU/Linux à "
+"Démons et clients pour connecter votre système à "
 "l'extérieur."
 
 #: lib/Packages/Sections.pm:76
@@ -334,18 +334,17 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:80
 msgid "OCaml"
-msgstr ""
+msgstr "OCaml"
 
 #: lib/Packages/Sections.pm:81
 msgid "Everything about OCaml, an ML language implementation."
-msgstr ""
+msgstr "Tout ce qui concerne OCaml, une implémentation de language ML."
 
 #: lib/Packages/Sections.pm:82
 msgid "Other OS's and file systems"
 msgstr "Autres OS et systèmes de fichiers"
 
 #: lib/Packages/Sections.pm:83
-#, fuzzy
 #| msgid ""
 #| "Software to run programs compiled for other operating system, and to use "
 #| "their filesystems."
@@ -362,15 +361,15 @@ msgstr "Perl"
 
 #: lib/Packages/Sections.pm:85
 msgid "Everything about Perl, an interpreted scripting language."
-msgstr "Tout à propos de Perl, langage interprété pour scripts."
+msgstr "Tout ce qui concerne Perl, langage interprété pour scripts."
 
 #: lib/Packages/Sections.pm:86
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: lib/Packages/Sections.pm:87
 msgid "Everything about PHP."
-msgstr ""
+msgstr "Tout ce qui concerne PHP."
 
 #: lib/Packages/Sections.pm:88
 msgid "Python"
@@ -381,20 +380,18 @@ msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
 msgstr ""
-"Tout à propos de Python, langage interprété, interactif et orienté objet."
+"Tout ce qui concerne Python, langage interprété, interactif et orienté objet."
 
 #: lib/Packages/Sections.pm:90
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #: lib/Packages/Sections.pm:91
-#, fuzzy
 #| msgid ""
 #| "Everything about Python, an interpreted, interactive object oriented "
 #| "language."
 msgid "Everything about Ruby, an interpreted object oriented language."
-msgstr ""
-"Tout à propos de Python, langage interprété, interactif et orienté objet."
+msgstr "Tout ce qui concerne Ruby, langage interprété et orienté objet."
 
 #: lib/Packages/Sections.pm:92
 msgid "Science"
@@ -461,19 +458,19 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:106
 msgid "Version Control Systems"
-msgstr ""
+msgstr "Systèmes de gestion de version"
 
 #: lib/Packages/Sections.pm:107
 msgid "Version control systems and related utilities."
-msgstr ""
+msgstr "Systèmes de gestion de version et utilitaires associés."
 
 #: lib/Packages/Sections.pm:108
 msgid "Video"
-msgstr ""
+msgstr "Vidéo"
 
 #: lib/Packages/Sections.pm:109
 msgid "Video viewers, editors, recording, streaming."
-msgstr ""
+msgstr "Lecture, édition, enregistrement et flux vidéo."
 
 #: lib/Packages/Sections.pm:110
 msgid "Virtual packages"
@@ -507,11 +504,11 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:116
 msgid "Xfce"
-msgstr ""
+msgstr "Xfce"
 
 #: lib/Packages/Sections.pm:117
 msgid "Xfce, a fast and lightweight Desktop Environment."
-msgstr ""
+msgstr "Environnement de bureau Xfce, léger et rapide."
 
 #: lib/Packages/Sections.pm:118
 msgid "Zope/Plone Framework"
@@ -531,4 +528,4 @@ msgid ""
 "install them on a normal system!"
 msgstr ""
 "Paquets spécifiques pour la création de variantes personnalisées de "
-"l'installateur Debian. Ne pas installer sur un système normal !"
+"l'installateur Debian. Ne pas installer sur un système normal !"
