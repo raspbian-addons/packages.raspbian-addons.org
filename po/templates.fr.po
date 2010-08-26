@@ -1,19 +1,23 @@
-# French translation of PACKAGE.
-# This file is put in the public domain.
+# Translation of templates to French
+# Copyright (C) 2010 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the package.debian.org website.
+#
 # Guilhelm Panaget <guilhelm.panaget@free.fr>, 2009.
-#
-#
+# Gabriel Sbodio <sbogab@laposte.net>, 2009.
+# David Prévot <david@tilapin.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2009-02-22 13:32+0100\n"
-"Last-Translator: Gabriel Sbodio <sbogab@laposte.net>\n"
+"PO-Revision-Date: 2010-08-26 12:39-0400\n"
+"Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
@@ -36,7 +40,7 @@ msgstr ""
 "packages.debian.org/\">packages.debian.org</a>. Attendez-vous à des erreurs "
 "et des informations obsolètes."
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:70
 msgid "."
 msgstr ","
@@ -111,7 +115,7 @@ msgstr "GNU/kFreeBSD (amd64)"
 
 #: templates/config/architectures.tmpl:20
 msgid "AVR32"
-msgstr ""
+msgstr "AVR32"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
@@ -144,13 +148,12 @@ msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr "nouveaux paquets ayant été adaptés à la version stable de Debian"
 
 #: templates/config/mirrors.tmpl:164
-#, fuzzy
 #| msgid "ports of packages to architectures not yet available in Debian"
 msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
-"portage de paquets pour des architectures qui ne sont pas encore prises en "
-"charge par Debian"
+"portage de paquets pour des architectures qui ne sont pas encore ou plus "
+"prises en charge par Debian"
 
 #: templates/config/mirrors.tmpl:193
 msgid "North America"
@@ -166,7 +169,7 @@ msgstr "Asie"
 
 #: templates/config/mirrors.tmpl:196
 msgid "Oceania"
-msgstr ""
+msgstr "Océanie"
 
 #: templates/config/mirrors.tmpl:197
 msgid "Europe"
@@ -292,7 +295,6 @@ msgstr ""
 "consulter notre <a href=\"%s\">liste complète des miroirs</a>."
 
 #: templates/html/download.tmpl:97
-#, fuzzy
 #| msgid ""
 #| "Note that %s is not officially included in the %s archive yet, but the %s "
 #| "porter group keeps their archive in sync with the official archive as "
@@ -303,7 +305,7 @@ msgid ""
 "group keeps their archive in sync with the official archive as close as "
 "possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"Notez que %s n'est pas encore officiellement présent dans l'archive %s, mais "
+"Notez que %s n'est pas officiellement présent dans l'archive %s, mais "
 "le groupe de portage %s garde son archive à jour avec l'archive officielle "
 "autant que possible. Consultez la <a href=\"%s\">page du portage %s</a> pour "
 "des informations récentes."
@@ -393,10 +395,9 @@ msgid "Learn more about this site"
 msgstr "Plus de détails sur ce site"
 
 #: templates/html/foot.tmpl:41
-#, fuzzy
 #| msgid "Hosting provided by <a href=\"%s\">%s</a>."
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
-msgstr "Hébergement fourni par <a href=\"%s\">%s</a>."
+msgstr "Ce service est parrainé par <a href=\"%s\">%s</a>."
 
 #: templates/html/head.tmpl:47 templates/html/homepage.tmpl:38
 #: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:90
@@ -442,81 +443,80 @@ msgid "Packages"
 msgstr "Paquets"
 
 #: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
-#, fuzzy
 #| msgid "%s Packages Homepage"
 msgid "%s Packages Search"
-msgstr "Page web du paquet %s"
+msgstr "Recherche de paquets %s"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
 msgstr ""
+"Ce site fournit des renseignements sur les paquets disponibles dans "
+"l'archive des paquet de <a href=\"%s\">%s</a>."
 
 #: templates/html/homepage.tmpl:21
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
-msgstr ""
+msgstr "Veuilles contacter <a href=\"mailto:%s\">%s</a> en cas de problème !"
 
 #: templates/html/homepage.tmpl:23
 msgid "Browse through the lists of packages:"
-msgstr ""
+msgstr "Naviguer parmi les listes de paquets :"
 
 #: templates/html/homepage.tmpl:32
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
 msgstr ""
+"Il existe également une liste des <a href=\"%s/main/newpkg\">paquets "
+"récemment ajoutés à %s</a>."
 
 #: templates/html/homepage.tmpl:35
-#, fuzzy
 #| msgid "Hosting provided by <a href=\"%s\">%s</a>."
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
-msgstr "Hébergement fourni par <a href=\"%s\">%s</a>."
+msgstr ""
+"Les anciennes publications peuvent être trouvées sur <a href=\"%s\">%s</a>."
 
 #: templates/html/homepage.tmpl:40
 msgid "Search package directories"
-msgstr ""
+msgstr "Recherche dans les répertoires de paquets"
 
 #: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:87
 msgid "Keyword:"
-msgstr ""
+msgstr "Mot-clé :"
 
 #: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:91
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: templates/html/homepage.tmpl:47
-#, fuzzy
 msgid "Search on:"
-msgstr "Recherche"
+msgstr "Rechercher sur :"
 
 #: templates/html/homepage.tmpl:49
-#, fuzzy
 #| msgid "package names"
 msgid "Package names only"
-msgstr "noms de paquets"
+msgstr "Noms de paquets seulement"
 
 #: templates/html/homepage.tmpl:51
-#, fuzzy
 #| msgid "descriptions"
 msgid "Descriptions"
-msgstr "descriptions"
+msgstr "Descriptions"
 
 #: templates/html/homepage.tmpl:53
-#, fuzzy
 #| msgid "source package names"
 msgid "Source package names"
-msgstr "noms de paquets sources"
+msgstr "Noms de paquets-sources"
 
 #: templates/html/homepage.tmpl:55
 msgid "Only show exact matches:"
-msgstr ""
+msgstr "N'afficher que les correspondances exactes :"
 
 #: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
 #: templates/html/homepage.tmpl:116
 msgid "any"
-msgstr ""
+msgstr "toutes"
 
 #: templates/html/homepage.tmpl:65 templates/html/show.tmpl:16
 msgid "Section:"
@@ -524,21 +524,23 @@ msgstr "Section :"
 
 #: templates/html/homepage.tmpl:73
 msgid "There are shortcuts for some searches available:"
-msgstr ""
+msgstr "Voici quelques raccourcis pour certaines recherches :"
 
 #: templates/html/homepage.tmpl:75
 msgid "<code>%s<var>name</var></code> for the search on package names."
 msgstr ""
+"<code>%s<var>nom</var></code> pour une recherche sur les noms des paquets."
 
 #: templates/html/homepage.tmpl:77
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
 msgstr ""
+"<code>%ssrc:<var>nom</var></code> pour une recherche sur les noms des "
+"paquets source."
 
 #: templates/html/homepage.tmpl:81
-#, fuzzy
 msgid "Search the contents of packages"
-msgstr "Liste de tous les paquets"
+msgstr "Recherche dans le contenu des paquets"
 
 #: templates/html/homepage.tmpl:83
 msgid ""
@@ -546,28 +548,31 @@ msgid ""
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
+"Ce moteur de recherche vous permet de chercher dans le contenu de la "
+"distribution Debian en indiquant le nom d'un fichier (ou juste une partie du "
+"nom) contenu dans un paquet. Vous pouvez aussi obtenir la liste complète des "
+"fichiers d'un paquet donné."
 
 #: templates/html/homepage.tmpl:93
 msgid "Display:"
-msgstr ""
+msgstr "Afficher :"
 
 #: templates/html/homepage.tmpl:96
 msgid "packages that contain files named like this"
-msgstr ""
+msgstr "les paquets contenant un fichier de ce nom"
 
 #: templates/html/homepage.tmpl:99
 msgid "packages that contain files whose names end with the keyword"
-msgstr ""
+msgstr "les paquets contenant un fichier dont le nom finit par le mot-clé"
 
 #: templates/html/homepage.tmpl:102
 msgid "packages that contain files whose names contain the keyword"
-msgstr ""
+msgstr "les paquets contenant un fichier dont le nom contient le mot-clé"
 
 #: templates/html/homepage.tmpl:111
-#, fuzzy
 #| msgid "Architecture"
 msgid "Architecture:"
-msgstr "Architecture"
+msgstr "Architecture :"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
@@ -856,7 +861,7 @@ msgstr "noms de fichiers contenant"
 msgid "files named"
 msgstr "fichiers nommés"
 
-#. @translators: I'm really sorry :/ 
+#. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -965,7 +970,6 @@ msgid "Debian Source Repository"
 msgstr "Dépôt de source Debian"
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
-#, fuzzy
 #| msgid "%s Patch Tracking"
 msgid "%s Patch Tracker"
 msgstr "Suivis des correctifs pour %s"
