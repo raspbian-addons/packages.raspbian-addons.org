@@ -1,112 +1,107 @@
-# Bulgarian translation of templates.pot
-# This file is put in the public domain.
-# Damyan Ivanov <dmn@debian.org>, 2010.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: packages.debian.org\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2010-07-13 08:20+0300\n"
-"Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Project-Id-Version: packages.debian.org trunk\n"
+"Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
+"POT-Creation-Date: 2007-10-14 03:22+0200\n"
+"PO-Revision-Date: 2008-11-29 14:40+0800\n"
+"Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
+"Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
+"debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: binary\n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
-msgstr ""
+msgstr "Debian 網路郵件列表"
 
 #: templates/config.tmpl:49
 msgid "%s Webmaster"
-msgstr ""
+msgstr "%s 網管"
 
 #: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
-msgstr "%s е <a href=\"%s\">търговска марка</a> на %s"
+msgstr "%1 是 %3 的一個<a href=\"%2\">註冊商標</a>"
 
 #: templates/config.tmpl:67
 msgid ""
-"Please note that this is an experimental version of <a href=\"http://%s/\">"
-"%s</a>. Errors and obsolete information should be expected"
+"Please note that this is an experimental version of <a href=\"http://%s/\">%"
+"s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Това е експериментална версия на <a href=\"http://%s/\">%s</a>. Нормално е "
-"да има грешки и остаряла информация"
+"注意這是實驗版的 <a href=\"http://%s/\">%s</a>，難免會有錯誤和過時的訊息。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:70
 msgid "."
-msgstr ","
+msgstr "."
 
 #: templates/config.tmpl:71
 msgid ","
-msgstr " "
+msgstr ","
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
-msgstr ""
+msgstr "Intel x86"
 
 #: templates/config/architectures.tmpl:5
 msgid "Motorola 680x0"
-msgstr ""
+msgstr "Motorola 680x0"
 
 #: templates/config/architectures.tmpl:6
 msgid "SPARC"
-msgstr ""
+msgstr "SPARC"
 
 #: templates/config/architectures.tmpl:7
 msgid "Alpha"
-msgstr ""
+msgstr "Alpha"
 
 #: templates/config/architectures.tmpl:8
 msgid "PowerPC"
-msgstr ""
+msgstr "PowerPC"
 
 #: templates/config/architectures.tmpl:9
 msgid "ARM"
-msgstr ""
+msgstr "ARM"
 
 #: templates/config/architectures.tmpl:10
 msgid "HP PA-RISC"
-msgstr ""
+msgstr "HP PA-RISC"
 
 #: templates/config/architectures.tmpl:11
 msgid "Intel IA-64"
-msgstr ""
+msgstr "Intel IA-64"
 
 #: templates/config/architectures.tmpl:12
 msgid "MIPS (big-endian)"
-msgstr ""
+msgstr "MIPS (big-endian)"
 
 #: templates/config/architectures.tmpl:13
 msgid "MIPS (little-endian)"
-msgstr ""
+msgstr "MIPS (little-endian)"
 
 #: templates/config/architectures.tmpl:14
 msgid "IBM S/390"
-msgstr ""
+msgstr "IBM S/390"
 
 #: templates/config/architectures.tmpl:15
 msgid "Hurd (i386)"
-msgstr ""
+msgstr "Hurd (i386)"
 
 #: templates/config/architectures.tmpl:16
 msgid "AMD64"
-msgstr ""
+msgstr "AMD64"
 
 #: templates/config/architectures.tmpl:17
 msgid "EABI ARM"
-msgstr ""
+msgstr "EABI ARM"
 
 #: templates/config/architectures.tmpl:18
 msgid "GNU/kFreeBSD (i386)"
-msgstr ""
+msgstr "GNU/kFreeBSD (i386)"
 
 #: templates/config/architectures.tmpl:19
 msgid "GNU/kFreeBSD (amd64)"
-msgstr ""
+msgstr "GNU/kFreeBSD (amd64)"
 
 #: templates/config/architectures.tmpl:20
 msgid "AVR32"
@@ -114,92 +109,87 @@ msgstr ""
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
-msgstr "пакети, които отговарят на препоръките на Дебиан за свободен софтуер"
+msgstr "符合 Debian 自由軟體指南的套件"
 
 #: templates/config/archive_layout.tmpl:15
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
-msgstr ""
-"пакети, които отговарят на препоръките на Дебиан за свободен софтуер, но "
-"имат нужда от софтуер, който не отговаря"
+msgstr "符合 Debian 自由軟體指南的套件，但相依的套件不在 Debian main 裡面"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
-msgstr ""
-"пакети, които не отговарят на препоръките на Дебиан за свободен софтуер"
+msgstr "不符合 Debian 自由軟體指南的套件"
 
 #: templates/config/mirrors.tmpl:94
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
-msgstr ""
-"капризни пакети, които имат нужда от големи промени в рамките на стабилните "
-"издания"
+msgstr "在穩定發行版中仍會不斷改變、更新的套件"
 
 #: templates/config/mirrors.tmpl:135
 msgid "newer packages that have been adapted to stable releases of Debian"
-msgstr "осъвременени пакети, адаптирани за стабилните издания на Дебиан"
+msgstr "在穩定發行版中更新的套件"
 
 #: templates/config/mirrors.tmpl:164
 msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
-msgstr "пакети за архитектури, които още или вече не се поддържат от Дебиан"
+msgstr ""
 
 #: templates/config/mirrors.tmpl:193
 msgid "North America"
-msgstr "Северна Америка"
+msgstr "北美洲"
 
 #: templates/config/mirrors.tmpl:194
 msgid "South America"
-msgstr "Южна Америка"
+msgstr "南美洲"
 
 #: templates/config/mirrors.tmpl:195
 msgid "Asia"
-msgstr "Азия"
+msgstr "亞洲"
 
 #: templates/config/mirrors.tmpl:196
 msgid "Oceania"
-msgstr "Океания"
+msgstr ""
 
 #: templates/config/mirrors.tmpl:197
 msgid "Europe"
-msgstr "Европа"
+msgstr "歐洲"
 
 #: templates/config/mirrors.tmpl:198
 msgid "Africa"
-msgstr "Африка"
+msgstr "非洲"
 
 #: templates/html/download.tmpl:2
 msgid "Package Download Selection -- %s"
-msgstr "Изтегляне на пакети – %s"
+msgstr "套件下載選擇 -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/homepage.tmpl:104 templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
-msgstr "Дистрибуция:"
+msgstr "發行版："
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Overview over this suite"
-msgstr ""
+msgstr "發行版概觀"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
 msgid "Package:"
-msgstr "Пакет:"
+msgstr "套件："
 
 #: templates/html/download.tmpl:8
 msgid "Download"
-msgstr "Изтегляне"
+msgstr "下載"
 
 #: templates/html/download.tmpl:17
 msgid "Download Page for <kbd>%s</kbd> on %s machines"
-msgstr "Страница за изтегляне на <kbd>%s</kbd> за %s машини"
+msgstr "用在 %2 上 <kbd>%1</kbd> 的下載頁面"
 
 #: templates/html/download.tmpl:19
 msgid "Download Page for <kbd>%s</kbd>"
-msgstr "Страница за изтегляне на <kbd>%s</kbd>"
+msgstr "<kbd>%s</kbd> 的下載頁面"
 
 #: templates/html/download.tmpl:23
 msgid ""
@@ -207,25 +197,25 @@ msgid ""
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
 "and install packages, instead of doing so manually via this website."
 msgstr ""
-"Ако използвате %s се препоръчва използването на програма за управление на "
-"пакетите като <a href=\"%s\">aptitude</a> или <a href=\"%s\">synaptic</a> за "
-"изтегляне и инсталиране на пакети, вместо ръчната процедура."
+"如果您正在使用 %s，請儘量使用像 <a href=\"%s\">aptitude</a> 或者 <ahref=\"%s"
+"\">synaptic</a> 的套件管理程式，代替人工手動操作的方式從這個網頁下載並安裝套"
+"件。"
 
 #: templates/html/download.tmpl:25
 msgid ""
 "You should be able to use any of the listed mirrors by adding a line to your "
 "<kbd>/etc/apt/sources.list</kbd> like this:"
 msgstr ""
-"Можете да използвате всеки от показаните огледални сървъри чрез добавяне на "
-"ред в <kbd>/etc/apt/sources.list</kbd>, подобен на този:"
+"您可以使用以下列表中的任何一個鏡像站，只要在您的 <kbd>/etc/apt/sources.list</"
+"kbd> 文件中像下面這樣添加一行："
 
 #: templates/html/download.tmpl:30 templates/html/download.tmpl:39
 msgid "Replacing <em>%s</em> with the mirror in question."
-msgstr "Заместете <em>%s</em> с предпочитания огледален сървър."
+msgstr "請使用最終確定的鏡像站替換 <em>%s</em>。"
 
 #: templates/html/download.tmpl:42 templates/html/show.tmpl:169
 msgid "Experimental package"
-msgstr "Експериментален пакет"
+msgstr "試作(Experimental)套件"
 
 #: templates/html/download.tmpl:43
 msgid ""
@@ -234,14 +224,13 @@ msgid ""
 "cause data loss. Please be sure to consult the changelog and other possible "
 "documentation before using it."
 msgstr ""
-"Предупреждение: Този пакет е от дистрибуцията <strong>experimental</strong>. "
-"Това означава, че е възможно да е нестабилен или да има грешки, а може дори "
-"да доведе до загуба на данни. Преди да го използвате проверете списъка с "
-"промени и останалата документация."
+"警告: 這個套件來自於 <strong>experimental</strong> 發行版。這表示它很有可能表"
+"現出不穩定或者出現 bug ，甚至是導致資料損失。請務必在使用之前查閱 changelog "
+"以及其他潛在的文件。"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:174
 msgid "debian-installer udeb package"
-msgstr "пакет за инсталатора на Дебиан"
+msgstr "Debian 安裝程式 udeb 包"
 
 #: templates/html/download.tmpl:47 templates/html/show.tmpl:175
 msgid ""
@@ -249,46 +238,42 @@ msgid ""
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"Предупреждение: Този пакет е предназначен за използване единствено за "
-"компилиране на <a href=\"http://www.debian.org/devel/debian-installer"
-"\">инсталатора на Дебиан</a>. Не го инсталирайте на нормална система %s."
+"警告: 這個套件專門用於構建 <a href=\"http://www.debian.org/devel/debian-"
+"installer\"> Debian 安裝程式</a>(debian-installer)映像檔。不要在一個普通的 %"
+"s 系統上安裝它。"
 
 #: templates/html/download.tmpl:54
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
-msgstr ""
-"Можете да изтеглите искания файл от директорията <tt>%s</tt> на всеки от "
-"следните сайтове:"
+msgstr "您可以從以下任意站台的 <tt>%s</tt> 子目錄中下載所需的文件："
 
 #: templates/html/download.tmpl:80
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
-msgstr "Можете да изтеглите искания файл от директорията <tt>%s</tt> на:"
+msgstr "您可以從 <tt>%s</tt> 子目錄中下載所需的文件："
 
 #: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr ""
-"Обновленията по сигурността на пакета %s се разпространяват официално само "
-"от <tt>%s</tt>"
+msgstr "官方認可的 %s 安全更新只經由 <tt>%s</tt> 發佈。"
 
 #: templates/html/download.tmpl:89
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
 msgstr ""
-"Ако никой от горните сървъри не е достатъчно бърз за вас, вижте <a href=\"%s"
-"\">пълния списък с огледални сървъри</a>."
+"如果您感覺以上站台的速度都不夠理想，請檢視我們的<a href=\"%s\">完整鏡像站列表"
+"</a>。"
 
 #: templates/html/download.tmpl:97
+#, fuzzy
 msgid ""
 "Note that %s is not officially included in the %s archive, but the %s porter "
 "group keeps their archive in sync with the official archive as close as "
 "possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"Официално пакетът %s не е включен в архива %s, но групата за поддръжка на %s "
-"синхронизира техния архив с официалния. За повече информация вижте <a href="
-"\"%s\">страницата на %s</a>."
+"注意: %s 目前還沒有被 %s 官方收錄，但是有 %s 移植小組負責儘可能的保證它們與官"
+"方收錄的檔案相一致。請檢視 <a href=\"%s\">%s 移植頁面</a>瞭解最新資訊。"
 
 #: templates/html/download.tmpl:101
 msgid ""
@@ -296,187 +281,191 @@ msgid ""
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
 "the Shift key when you click on the URL."
 msgstr ""
-"На някои браузъри трябва изрично да се каже да запишат изтеглянето във файл. "
-"Във Firefox или Mozilla, например, това става със задържане на клавиша Shift "
-"при избиране на връзката."
+"注意: 某些瀏覽器需要您明確告訴它們，您僅僅是想保存這些文件，並非檢視或執行它"
+"們。對於 Firefox 或者 Mozilla ，您可能需要在按住 Shift 鍵的同時點擊上面的 "
+"URL 超連結。"
 
 #: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
-msgstr "Още информация за <kbd>%s</kbd>:"
+msgstr "有關 <kbd>%s</kbd> 的更多資訊："
 
 #: templates/html/download.tmpl:107
 msgid "Exact Size"
-msgstr "Точна големина"
+msgstr "實際大小"
 
 #: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
-msgstr "%s байт (%s %s)"
+msgstr "%s 位元(%s %s)"
 
 #: templates/html/download.tmpl:108 templates/html/show.tmpl:345
 msgid "MD5 checksum"
-msgstr "контролна сума MD5"
+msgstr "MD5 檢查碼"
 
 #: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
-msgstr "контролна сума SHA1"
+msgstr "SHA1 檢查碼"
 
 #: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
-msgstr "Няма информация"
+msgstr "不存在"
 
 #: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
-msgstr "контролна сума SHA256"
+msgstr "SHA256 檢查碼"
 
 #: templates/html/filelist.tmpl:2
 msgid "Filelist of package %s/%s/%s"
-msgstr "Списък на файловете в пакета %s/%s/%s"
+msgstr "套件的文件清單: %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
 msgid ""
 "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
 msgstr ""
-"Списък на файловете в пакета <em>%s</em> в <em>%s</em>, архитектура <em>%s</"
-"em>"
+"在 <em>%2</em> 發行版中 <em>%3</em> 硬體架構下的 <em>%1</em> 套件文件清單"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
-msgstr "Списък на файловете"
+msgstr "文件清單"
 
 #: templates/html/foot.tmpl:11
 msgid ""
 "This page is also available in the following languages (How to set <a href="
 "\"%s\">the default document language</a>):"
-msgstr ""
-"Тази страница е налична и на следните езици (Настройване на <a href=\"%s"
-"\">езика по подразбиране</a>):"
+msgstr "本頁其他語言版本如下 (<a href=\"%s\">如何設置預設語言</a>)："
 
 #: templates/html/foot.tmpl:28
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
+"回報本網頁的問題，請以英文撰寫，發送電子郵件至 <a href=\"mailto:%s\">%s</a>。"
+"請查閱 %s <a href=\"%s\">聯繫方式</a>瞭解更多資訊。"
 
 #: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
+"版權所有 &copy; %s <a href=\"%s\">%s</a>; 查閱<a href=\"%s\">許可證條款</a>。"
 
 #: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
-msgstr "Научете повече за този сайт"
+msgstr "瞭解更多有關本站台的內容"
 
 #: templates/html/foot.tmpl:41
+#, fuzzy
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
-msgstr "Услугата е спонсорирана от <a href=\"%s\">%s</a>."
+msgstr "本站資源由 <a href=\"%s\">%s</a> 提供。"
 
 #: templates/html/head.tmpl:47 templates/html/homepage.tmpl:38
 #: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:90
 msgid "Search"
-msgstr "Търсене"
+msgstr "搜尋"
 
 #: templates/html/head.tmpl:50
 msgid "package names"
-msgstr "имена на пакети"
+msgstr "套件名"
 
 #: templates/html/head.tmpl:51
 msgid "descriptions"
-msgstr "описания"
+msgstr "描述資訊"
 
 #: templates/html/head.tmpl:52
 msgid "source package names"
-msgstr "имена на пакети-източници"
+msgstr "原始碼套件名"
 
 #: templates/html/head.tmpl:53
 msgid "package contents"
-msgstr "съдържание на пакети"
+msgstr "套件內容"
 
 #: templates/html/head.tmpl:56
 msgid "all options"
-msgstr "всички настройки"
+msgstr "全部搜尋項"
 
 #: templates/html/head.tmpl:63
 msgid "skip the navigation"
-msgstr "прескачане на навигацията"
+msgstr "略過導覽欄"
 
 #: templates/html/head.tmpl:65
 msgid "%s Homepage"
-msgstr "Начална страница на %s"
+msgstr "%s 首頁"
 
 #: templates/html/head.tmpl:66
 msgid "%s Packages Homepage"
-msgstr "Начална страница на пакети за %s"
+msgstr "%s 套件首頁"
 
 #: templates/html/head.tmpl:66 templates/html/homepage.tmpl:4
 #: templates/html/search_contents.tmpl:100
 #: templates/html/search_contents.tmpl:124
 msgid "Packages"
-msgstr "Пакети"
+msgstr "套件"
 
 #: templates/html/homepage.tmpl:2 templates/html/homepage.tmpl:3
+#, fuzzy
 msgid "%s Packages Search"
-msgstr "Търсене на пакети за %s"
+msgstr "%s 套件首頁"
 
 #: templates/html/homepage.tmpl:19
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
 msgstr ""
-"Този сайт предлага информация за всички пакети, налични в архива <a href=\"%s"
-"\">%s</a>."
 
 #: templates/html/homepage.tmpl:21
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
-msgstr "Свържете се с <a href=\"mailto:%s\">%s</a> ако срещнете проблеми."
+msgstr ""
 
 #: templates/html/homepage.tmpl:23
 msgid "Browse through the lists of packages:"
-msgstr "Разглеждане на списъка с пакети:"
+msgstr ""
 
 #: templates/html/homepage.tmpl:32
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
 msgstr ""
-"Има и списък на <a href=\"%s/main/newpkg\">пакетите, скоро добавени в %s</a>."
 
 #: templates/html/homepage.tmpl:35
+#, fuzzy
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
-msgstr "Стари издания могат да бъдат намерени на <a href=\"%s\">%s</a>."
+msgstr "下載原始碼套件 <a href=\"%s\">%s</a>："
 
 #: templates/html/homepage.tmpl:40
 msgid "Search package directories"
-msgstr "Търсене на каталозите с пакети"
+msgstr ""
 
 #: templates/html/homepage.tmpl:43 templates/html/homepage.tmpl:87
 msgid "Keyword:"
-msgstr "Ключова дума:"
+msgstr ""
 
 #: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:91
 msgid "Reset"
-msgstr "Отначало"
+msgstr ""
 
 #: templates/html/homepage.tmpl:47
+#, fuzzy
 msgid "Search on:"
-msgstr "Търсене по:"
+msgstr "搜尋"
 
 #: templates/html/homepage.tmpl:49
+#, fuzzy
 msgid "Package names only"
-msgstr "Име на пакет"
+msgstr "套件名"
 
 #: templates/html/homepage.tmpl:51
+#, fuzzy
 msgid "Descriptions"
-msgstr "Описание"
+msgstr "描述資訊"
 
 #: templates/html/homepage.tmpl:53
+#, fuzzy
 msgid "Source package names"
-msgstr "Име на пакет-източник"
+msgstr "原始碼套件名"
 
 #: templates/html/homepage.tmpl:55
 msgid "Only show exact matches:"
-msgstr "Показване само на точните съвпадения:"
+msgstr ""
 
 #: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
 #: templates/html/homepage.tmpl:116
@@ -485,24 +474,24 @@ msgstr ""
 
 #: templates/html/homepage.tmpl:65 templates/html/show.tmpl:16
 msgid "Section:"
-msgstr "Раздел:"
+msgstr "區域："
 
 #: templates/html/homepage.tmpl:73
 msgid "There are shortcuts for some searches available:"
-msgstr "За някои търсения има съкратен запис:"
+msgstr ""
 
 #: templates/html/homepage.tmpl:75
 msgid "<code>%s<var>name</var></code> for the search on package names."
-msgstr "<code>%s<var>име</var></code> за търсене по име на пакет."
+msgstr ""
 
 #: templates/html/homepage.tmpl:77
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
-msgstr "<code>%ssrc:<var>име</var></code> за търсене по име на пакет-източник."
+msgstr ""
 
 #: templates/html/homepage.tmpl:81
 msgid "Search the contents of packages"
-msgstr "Търсене в съдържанието на пакетите"
+msgstr ""
 
 #: templates/html/homepage.tmpl:83
 msgid ""
@@ -510,206 +499,197 @@ msgid ""
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
-"Търсачката позволява търсене в съдържаните на дистрибуциите на %s за файлове "
-"(или части от имена на файлове), които присъстват в пакетите. Можете да "
-"получите и пълен списък на файловете, включени в даден пакет."
 
 #: templates/html/homepage.tmpl:93
 msgid "Display:"
-msgstr "Показване:"
+msgstr ""
 
 #: templates/html/homepage.tmpl:96
 msgid "packages that contain files named like this"
-msgstr "пакети, съдържащи файлове с даденото име"
+msgstr ""
 
 #: templates/html/homepage.tmpl:99
 msgid "packages that contain files whose names end with the keyword"
-msgstr "пакети, съдържащи файлове, чиито имена завършват с ключовата дума"
+msgstr ""
 
 #: templates/html/homepage.tmpl:102
 msgid "packages that contain files whose names contain the keyword"
-msgstr "пакети, съдържащи файлове, чиито имена съдържат ключовата дума"
+msgstr ""
 
 #: templates/html/homepage.tmpl:111
+#, fuzzy
 msgid "Architecture:"
-msgstr "Архитектура:"
+msgstr "硬體架構"
 
 #: templates/html/index_head.tmpl:2
 msgid "Source Packages in \"%s\", %s %s"
-msgstr "Пакети-източници в „%s“, %s %s"
+msgstr "屬於 \"%1\" 發行版 %3 %2的原始碼套件"
 
 #: templates/html/index_head.tmpl:3
 msgid "Source Packages in \"%s\""
-msgstr "Пакети-източници в „%s“"
+msgstr "屬於 \"%1\" 發行版的原始碼套件"
 
 #: templates/html/index_head.tmpl:5
 msgid "Software Packages in \"%s\", %s %s"
-msgstr "Пакети в „%s“, %s %s"
+msgstr "屬於 \"%1\" 發行版 %3 %2的套件"
 
 #: templates/html/index_head.tmpl:6
 msgid "Software Packages in \"%s\""
-msgstr "Пакети в „%s“"
+msgstr "屬於 \"%1\" 發行版的套件"
 
 #: templates/html/index_head.tmpl:13
 msgid "All Packages"
-msgstr "Всички пакети"
+msgstr "所有套件"
 
 #: templates/html/index_head.tmpl:15 templates/html/show.tmpl:15
 #: templates/html/suite_index.tmpl:2
 msgid "Source"
-msgstr "Източник"
+msgstr "原始碼"
 
 #: templates/html/newpkg.tmpl:2 templates/html/newpkg.tmpl:7
 msgid "New Packages in \"%s\""
-msgstr "Нови пакети в „%s“"
+msgstr "屬於 \"%s\" 發行版的新進套件"
 
 #: templates/html/newpkg.tmpl:11
 msgid ""
-"The following packages were added to suite <em>%s</em> (section %s) in the "
-"%s archive during the last 7 days."
-msgstr ""
-"Следните пакети са добавени в дистрибуцията <em>%s</em> (раздел %s) на "
-"архива %s през последните 7 дни."
+"The following packages were added to suite <em>%s</em> (section %s) in the %"
+"s archive during the last 7 days."
+msgstr "以下是在最近 7 天內被選進 <em>%s</em> 發行版( %s 區域)之中的套件。"
 
 #: templates/html/newpkg.tmpl:14
 msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
-msgstr ""
-"Следните пакети са добавени в дистрибуцията <em>%s</em> на архива %s през "
-"последните 7 дни."
+msgstr "以下是在最近 7 天內被選進 %2 的 %1 發行版之中的套件。"
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr "Списъкът е наличен и <a href=\"%s\">сортиран по име</a>."
+msgstr " 您還可以<a href=\"%s\">按文件名順序</a>顯示這個列表。"
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr "Списъкът е наличен и <a href=\"%s\">сортиран по възраст</a>."
+msgstr " 您還可以<a href=\"%s\">按入選時間順序</a>顯示這個列表。"
 
 #: templates/html/newpkg.tmpl:22
 msgid ""
 "This information is also available as an <a href=\"newpkg?format=rss\">RSS "
 "feed</a>"
-msgstr ""
-"Информацията е налична и като <a href=\"newpkg?format=rss\">RSS хранилка</a>"
+msgstr "這些資訊還可以被 <a href=\"newpkg?format=rss\">RSS 訂閱</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
-msgstr "[Хранилка RSS 1.0]"
+msgstr "[RSS 1.0 Feed]"
 
 #: templates/html/newpkg.tmpl:28
 msgid " <em>(%u days old)</em>"
-msgstr "<em>(%u дни)</em>"
+msgstr " <em>(%u 天前)</em>"
 
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
 msgid "List of all packages"
-msgstr "Списък на всички пакети"
+msgstr "所有套件列表"
 
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
 msgid "All packages"
-msgstr "Всички пакети"
+msgstr "所有套件"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
-msgstr "компактен компресиран списък"
+msgstr "經過壓縮的文本清單"
 
 #: templates/html/newpkg.tmpl:34
 msgid "New packages in "
-msgstr "Нови пакети в "
+msgstr "所屬的新進套件"
 
 #: templates/html/search.tmpl:20
 msgid "Package Search Results -- %s"
-msgstr "Резултат от търсенето на пакети -- %s"
+msgstr "套件搜尋結果 -- %s"
 
 #: templates/html/search.tmpl:29
 msgid "Package Search Results"
-msgstr "Резултат от търсенето на пакети"
+msgstr "套件搜尋結果"
 
 #: templates/html/search.tmpl:36
 msgid ""
 "You have searched only for words exactly matching your keywords. You can try "
 "to search <a href=\"%s\">allowing subword matching</a>."
 msgstr ""
-"Търсенето бе извършено само по точно съвпадение на ключовите думи. Можете да "
-"опитате и търсене <a href=\"%s\">позволяващо частично съвпадение</a>."
+"您剛才搜尋的僅限於完整匹配您指定關鍵字的內容。您還可以嘗試搜尋<a href=\"%s\">"
+"部分匹配</a>您指定關鍵字的內容。"
 
 #: templates/html/search.tmpl:41
 msgid "Search in specific suite:"
-msgstr "Търсене в конкретна дистрибуция:"
+msgstr "在特定發行版中搜尋："
 
 #: templates/html/search.tmpl:50
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Търсене във <a href=\"%s\">всички дистрибуции</a>"
+msgstr "在<a href=\"%s\">所有發行版</a>中搜尋"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
-msgstr "Ограничаване на търсенето до дадена архитектура:"
+msgstr "只搜尋某一種硬體架構："
 
 #: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Търсене във <a href=\"%s\">всички архитектури</a>"
+msgstr "在<a href=\"%s\">所有硬體架構</a>中搜尋"
 
 #: templates/html/search.tmpl:70
 msgid ""
 "<a href=\"%s\">Some</a> results have not been displayed due to the search "
 "parameters."
-msgstr ""
-"<a href=\"%s\">Някои</a> резултати не са показани поради ограничения на "
-"търсенето."
+msgstr "由於參數界定了搜尋範圍，導致<a href=\"%s\">一些</a>相關結果沒有列出。"
 
 #: templates/html/search.tmpl:79
 msgid "all suites"
-msgstr "всички дистрибуции"
+msgstr "所有發行版"
 
 #: templates/html/search.tmpl:79
 msgid "suite(s) <em>%s</em>"
-msgstr "дистрибуция(и) <em>%s</em>"
+msgstr " <em>%s</em> 發行版"
 
 #: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "all sections"
-msgstr "всички раздели"
+msgstr "所有區域"
 
 #: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
-msgstr "раздел(и) <em>%s</em>"
+msgstr " <em>%s</em> 區域"
 
 #: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "all architectures"
-msgstr "всички архитектури"
+msgstr "所有硬體架構"
 
 #: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
-msgstr "архитектура(и) <em>%s</em>"
+msgstr " <em>%s</em> 硬體架構"
 
 #: templates/html/search.tmpl:83
 msgid "source packages"
-msgstr "пакети-източници"
+msgstr "原始碼套件"
 
 #: templates/html/search.tmpl:83
 msgid "packages"
-msgstr "пакети"
+msgstr "套件"
 
 #: templates/html/search.tmpl:84
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
-msgstr "Търсене за %s, чиито имена съдържат <em>%s</em> в %s, %s и %s."
+msgstr "您在%3中%5下%4里，指定關鍵字 <em>%2</em> 在%1名稱中搜尋的結果。"
 
 #: templates/html/search.tmpl:87
 msgid " (including subword matching)"
-msgstr "(включително частични съвпадения)"
+msgstr "(包括部分關鍵字匹配)"
 
 #. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:89
 msgid ""
-"You have searched for <em>%s</em> in packages names and descriptions in %s, "
-"%s, and %s%s."
+"You have searched for <em>%s</em> in packages names and descriptions in %s, %"
+"s, and %s%s."
 msgstr ""
-"Търсене на <em>%s</em> в имената и описанията на пакетите в %s, %s и %s%s"
+"您在%2中%4下%3里，指定關鍵字 <em>%1</em> 在套件名稱和描述資訊中搜尋的結果%5。"
 
 #: templates/html/search.tmpl:95
 msgid "Found <strong>%u</strong> matching packages."
-msgstr "Намерени са <strong>%u</strong> пакета."
+msgstr "找到 <strong>%u</strong> 個匹配的套件。"
 
 #: templates/html/search.tmpl:100
 msgid ""
@@ -717,254 +697,254 @@ msgid ""
 "first few packages don't match what you searched for, try using more "
 "keywords or alternative keywords."
 msgstr ""
-"Показани са само най-пълните съвпадения, подредени по уместност. Ако не "
-"намирате търсения пакет, опитайте с повече или различни ключови думи."
+"注意: 這裡列出的是最符合搜尋關鍵字要求的結果，並按相關性作了排序。如果前幾個"
+"包不是您要找的，請嘗試更多的或者其它的關鍵字。"
 
 #: templates/html/search.tmpl:104
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
 msgstr ""
-"Понеже ключовата дума е твърде често срещана, някои резултати може да са "
-"пропуснати.<br>Опитайте с по-дълга ключова дума или с повече ключови думи."
+"由於您的關鍵字太普通，基於效率考量我們只列出部分結果。<br>請考慮更換一個更準"
+"確的關鍵字或者添加更多的關鍵字。"
 
 #: templates/html/search.tmpl:106
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
 msgstr ""
-"Ключовата дума е твърде често срещана.<br>Опитайте с по-дълга ключова дума "
-"или с повече ключови думи."
+"您的關鍵字太普通。<br>請考慮更換一個更準確的關鍵字或者添加更多的關鍵字。"
 
 #: templates/html/search.tmpl:112 templates/html/search_contents.tmpl:131
 msgid "Sorry, your search gave no results"
-msgstr "За съжаление търсенето не доведе до резултат."
+msgstr "很遺憾，您沒能搜尋到任何結果"
 
 #: templates/html/search.tmpl:119
 msgid "Package %s"
-msgstr "Пакет %s"
+msgstr "套件 %s"
 
 #: templates/html/search.tmpl:131
 msgid "also provided by:"
-msgstr "предлаган също и от:"
+msgstr "同時提供該套件的還有："
 
 #: templates/html/search.tmpl:131
 msgid "provided by:"
-msgstr "предлаган от:"
+msgstr "由這些套件提供："
 
 #: templates/html/search.tmpl:140
 msgid "Source Package %s"
-msgstr "Пакет-източник %s"
+msgstr "原始碼套件 %s"
 
 #: templates/html/search.tmpl:147
 msgid "Binary packages:"
-msgstr "Двоични пакети:"
+msgstr "二進制套件："
 
 #: templates/html/search.tmpl:149
 msgid "show %u binary packages"
-msgstr "Показване на двоичните пакети на %u"
+msgstr "顯示 %u 二進制套件"
 
 #: templates/html/search.tmpl:149
 msgid "hide %u binary packages"
-msgstr "Скриване на двоичните пакети на %u"
+msgstr "隱藏 %u 二進制套件"
 
 #: templates/html/search.tmpl:159
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
 msgstr ""
-"<a href=\"%s\">%s</a> резултата не бяха показани, понеже пожелахте да видите "
-"само точните съвпадения."
+"<a href=\"%s\">%u</a> 個相關結果沒有被列出，原因是您要求搜尋能完整匹配您指定"
+"關鍵字的內容。"
 
 #: templates/html/search_contents.tmpl:14
 msgid "Package Contents Search Results -- %s"
-msgstr "Резултат от търсенето в съдържанието на пакетите -- %s"
+msgstr "套件內容搜尋結果 -- %s"
 
 #: templates/html/search_contents.tmpl:17
 msgid "Package Contents Search Results"
-msgstr "Резултат от търсенето в съдържанието на пакетите"
+msgstr "套件內容搜尋結果"
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
-msgstr "Търсене на <em>%s</em> в имената на файловете"
+msgstr "搜尋文件名與 <em>%s</em> 相似的內容"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr "Търсене на точно име на файл <em>%s</em>"
+msgstr "搜尋文件名和 <em>%s</em> 相同的內容"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
-msgstr "Търсене на пътища, завършващи с <em>%s</em>"
+msgstr "搜尋文件名以 <em>%s</em> 結尾的內容"
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
-msgstr "Търсене в друга дистрибуция:"
+msgstr "在其他的發行版中搜尋："
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
-msgstr "пътища, завършващи с"
+msgstr "路徑結尾是"
 
 #: templates/html/search_contents.tmpl:76
 msgid "filenames that contain"
-msgstr "имена на файлове, съдържащи"
+msgstr "文件名含有"
 
 #: templates/html/search_contents.tmpl:78
 msgid "files named"
-msgstr "файлове с име"
+msgstr "文件名稱為"
 
 #. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
-msgstr "Търсене за %s <em>%s</em> в дистрибуция <em>%s</em>, %s и %s."
+msgstr "您在 <em>%3</em> 發行版中%5下%4里，搜尋了%1 <em>%2</em> 的內容。"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr "Намерени са <strong>%u пакет(а)</strong>."
+msgstr "找到了 <strong>%u</strong> 個相關結果。"
 
 #: templates/html/search_contents.tmpl:88
 msgid ""
 "Note: Your search was too wide so we will only display only the first about "
 "100 matches. Please consider using a longer keyword or more keywords."
 msgstr ""
-"Забележка: Търсенето е твърде общо и ще бъдат показани само първите стотина "
-"резултата. Опитайте с по-дълга ключова дума или повече ключови думи."
+"注意: 由於您的搜尋範圍太大我們只列出了前 100 個結果。請考慮更換一個更準確的關"
+"鍵字或者添加更多的關鍵字。"
 
 #: templates/html/search_contents.tmpl:97
 msgid "Sort results by filename"
-msgstr "Подреждане на резултатите по име на файл"
+msgstr "按文件名排序"
 
 #: templates/html/search_contents.tmpl:98
 #: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:345
 msgid "File"
-msgstr "Файл"
+msgstr "文件"
 
 #: templates/html/search_contents.tmpl:99
 msgid "Sort results by package name"
-msgstr "Подреждане на резултатите по име на пакет"
+msgstr "按套件名排序"
 
 #: templates/html/search_contents.tmpl:114
 msgid "not %s"
-msgstr "не %s"
+msgstr "除 %s"
 
 #: templates/html/show.tmpl:15
 msgid "Source packages"
-msgstr "Пакети-източници"
+msgstr "原始碼套件"
 
 #: templates/html/show.tmpl:16
 msgid "All packages in this section"
-msgstr "Всички пакети в този раздел"
+msgstr "屬於本區域的所有套件"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
-msgstr "Подробна информация за пакета-източник %s в %s"
+msgstr "在 %2 中的 %1 原始碼套件詳細資訊"
 
 #: templates/html/show.tmpl:23
 msgid "Details of package %s in %s"
-msgstr "Подробна информация за пакета %s в %s"
+msgstr "在 %2 中的 %1 套件詳細資訊"
 
 #: templates/html/show.tmpl:46
 msgid "Source:"
-msgstr "Източник:"
+msgstr "原始碼："
 
 #: templates/html/show.tmpl:46
 msgid "Source package building this package"
-msgstr "Пакет-източник, който създава този пакет"
+msgstr "構建這個套件的原始碼套件"
 
 #: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
-msgstr "Виртуален пакет: %s"
+msgstr "虛擬套件： %s"
 
 #: templates/html/show.tmpl:55
 msgid "Source Package: %s (%s)"
-msgstr "Пакет-източник: %s (%s)"
+msgstr "原始碼套件： %s (%s)"
 
 #: templates/html/show.tmpl:57
 msgid "Package: %s (%s)"
-msgstr "Пакет: %s (%s)"
+msgstr "套件： %s (%s)"
 
 #: templates/html/show.tmpl:61
 msgid "essential"
-msgstr "критично-важен"
+msgstr "必備"
 
 #: templates/html/show.tmpl:61
 msgid "package manager will refuse to remove this package by default"
-msgstr "програмите за управление на пакети ще откажат да премахнат този пакет"
+msgstr "套件管理程式預設會拒絕移除此套件"
 
 #: templates/html/show.tmpl:65
 msgid "Links for %s"
-msgstr "Връзки за %s"
+msgstr "%s 的相關超連結"
 
 #: templates/html/show.tmpl:66
 msgid "%s Resources:"
-msgstr "Ресурси за %s:"
+msgstr "%s 的資源："
 
 #: templates/html/show.tmpl:68
 msgid "Bug Reports"
-msgstr "Доклади за грешки"
+msgstr "報告問題"
 
 #: templates/html/show.tmpl:71 templates/html/show.tmpl:73
 msgid "Developer Information (PTS)"
-msgstr "Информация за разработчици (PTS)"
+msgstr "開發者資訊(PTS)"
 
 #: templates/html/show.tmpl:77
 msgid "%s Changelog"
-msgstr "Журнал на промените в %s"
+msgstr "%s Changelog"
 
 #: templates/html/show.tmpl:78
 msgid "Copyright File"
-msgstr "Авторски права"
+msgstr "版權文件"
 
 #: templates/html/show.tmpl:82
 msgid "Debian Source Repository"
-msgstr "Хранилище на изходен код"
+msgstr "Debian 原始碼倉庫"
 
 #: templates/html/show.tmpl:96 templates/html/show.tmpl:102
+#, fuzzy
 msgid "%s Patch Tracker"
-msgstr "Управление на кръпките в %s"
+msgstr "%s 補丁追蹤"
 
 #: templates/html/show.tmpl:110
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
-msgstr "Изтегляне на пакет-източник <a href=\"%s\">%s</a>."
+msgstr "下載原始碼套件 <a href=\"%s\">%s</a>："
 
 #: templates/html/show.tmpl:117
 msgid "Not found"
-msgstr ""
+msgstr "未找到"
 
 #: templates/html/show.tmpl:122
 msgid "Maintainer:"
-msgstr "Отговорник:"
+msgstr "維護者："
 
 #: templates/html/show.tmpl:124
 msgid "Maintainers:"
-msgstr "Отговорници:"
+msgstr "維護小組："
 
 #: templates/html/show.tmpl:137
 msgid "An overview over the maintainer's packages and uploads"
-msgstr ""
+msgstr "該維護者負責的套件一覽"
 
 #: templates/html/show.tmpl:137
 msgid "QA&nbsp;Page"
-msgstr "Страница&nbsp;за&nbsp;QA"
+msgstr "QA 頁面"
 
 #: templates/html/show.tmpl:138
 msgid "Archive of the Maintainer Mailinglist"
-msgstr "Архив на пощенския списък на отговорниците"
+msgstr "維護者郵件列表"
 
 #: templates/html/show.tmpl:138
 msgid "Mail&nbsp;Archive"
-msgstr "Пощенски&nbsp;архив"
+msgstr "郵件存檔"
 
 #: templates/html/show.tmpl:146
 msgid "External Resources:"
-msgstr "Външни препратки:"
+msgstr "外部的資源："
 
 #: templates/html/show.tmpl:148
 msgid "Homepage"
-msgstr "Начална страница"
+msgstr "主頁"
 
 #: templates/html/show.tmpl:154
 msgid "Similar packages:"
-msgstr "Подобни пакети:"
+msgstr "相似套件："
 
 #: templates/html/show.tmpl:170
 msgid ""
@@ -973,10 +953,9 @@ msgid ""
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Предупреждение: Този пакет е от дистрибуцията <strong>experimental</strong>. "
-"Това означава, че е възможно да е нестабилен или да има грешки, а може дори "
-"и да предизвика загуба на данни. Прочетете информация за <a href=\"%s"
-"\">промените</a> и останалата документация преди да го използвате."
+"警告: 這個套件來自於 <strong>experimental</strong> 發行版。這表示它很有可能表"
+"現出不穩定或者出現 bug ，甚至是導致資料損失。請務必在使用之前查閱 <a href=\"%"
+"s\">changelog</a> 以及其他潛在的文件。"
 
 #: templates/html/show.tmpl:194
 msgid ""
@@ -984,70 +963,72 @@ msgid ""
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
 "packages</a>."
 msgstr ""
+"這是一個<em>虛擬套件</em>。檢視<a href=\"%s\">Debian 政策</a>瞭解<a href=\"%"
+"sch-binary.html#s-virtual_pkg\">虛擬套件的定義</a>。"
 
 #: templates/html/show.tmpl:202
 msgid "Tags"
-msgstr "Етикети"
+msgstr "標籤"
 
 #: templates/html/show.tmpl:225
 msgid "Packages providing %s"
-msgstr "Пакети, предлагащи %s"
+msgstr "提供 %s 的套件"
 
 #: templates/html/show.tmpl:234
 msgid "The following binary packages are built from this source package:"
-msgstr "Следните двоични пакети са компилирани от този пакет-източник:"
+msgstr "本原始碼套件構建了以下這些二進制套件："
 
 #: templates/html/show.tmpl:243
 msgid "Other Packages Related to %s"
-msgstr "Други пакети, свързани с %s"
+msgstr "其它與 %s 有關的套件"
 
 #: templates/html/show.tmpl:245
 msgid "legend"
-msgstr "легенда"
+msgstr "圖例"
 
 #: templates/html/show.tmpl:247
 msgid "build-depends"
-msgstr "зависимости при компилиране"
+msgstr "完整構建時刻依賴"
 
 #: templates/html/show.tmpl:248
 msgid "build-depends-indep"
-msgstr "зависимости при компилиране (архитектурно-независими)"
+msgstr "單獨構建時刻依賴"
 
 #: templates/html/show.tmpl:250
 msgid "depends"
-msgstr "зависимости"
+msgstr "依賴"
 
 #: templates/html/show.tmpl:251
 msgid "recommends"
-msgstr "препоръчани"
+msgstr "推薦"
 
 #: templates/html/show.tmpl:252
 msgid "suggests"
-msgstr "предложени"
+msgstr "建議"
 
 #: templates/html/show.tmpl:262
 msgid "or "
-msgstr "или"
+msgstr "或者"
 
 #: templates/html/show.tmpl:270
 msgid "also a virtual package provided by"
-msgstr "също и виртуален пакет, предлаган от"
+msgstr "同時作為一個虛擬套件由這些套件提供："
 
 #: templates/html/show.tmpl:272
 msgid "virtual package provided by"
-msgstr "виртуален пакет, предлаган от"
+msgstr "本虛擬套件由這些套件提供："
 
 #: templates/html/show.tmpl:277
 msgid "show %u providing packages"
-msgstr "показване на пакетите, предлагащи %u"
+msgstr "顯示 %u 套件提供者"
 
 #: templates/html/show.tmpl:277
 msgid "hide %u providing packages"
-msgstr "скриване на пакетите, предлагащи %u"
+msgstr "隱藏 %u 套件提供者"
 
 #: templates/html/show.tmpl:295
 msgid "Download %s"
-msgstr "Изтегляне на %s"
+msgstr "下載 %s"
 
 #: templates/html/show.tmpl:297
 msgid ""
@@ -1055,129 +1036,132 @@ msgid ""
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
+"下載表格中分別超連結了套件的下載地址和套件內容的瀏覽地址。同時還給出了套件的"
+"實際大小和安裝後佔用空間的情況。"
 
 #: templates/html/show.tmpl:298
 msgid "Download for all available architectures"
-msgstr "Изтегляне за всички налични архитектури"
+msgstr "下載可用於所有硬體架構的"
 
 #: templates/html/show.tmpl:299
 msgid "Architecture"
-msgstr "Архитектура"
+msgstr "硬體架構"
 
 #: templates/html/show.tmpl:300
 msgid "Version"
-msgstr "Версия"
+msgstr "版本"
 
 #: templates/html/show.tmpl:301
 msgid "Package Size"
-msgstr "Големина на пакета"
+msgstr "套件大小"
 
 #: templates/html/show.tmpl:302
 msgid "Installed Size"
-msgstr "Големина след инсталиране"
+msgstr "安裝後大小"
 
 #: templates/html/show.tmpl:303
 msgid "Files"
-msgstr "Файлове"
+msgstr "文件"
 
 #: templates/html/show.tmpl:311
 msgid "(unofficial port)"
-msgstr "(неофициална архитектура)"
+msgstr "(非官方移植版)"
 
 #: templates/html/show.tmpl:322 templates/html/show.tmpl:350
 msgid "%s&nbsp;kB"
-msgstr "%s&nbsp;кБ"
+msgstr "%s&nbsp;kB"
 
 #: templates/html/show.tmpl:325
 msgid "list of files"
-msgstr "списък на файловете"
+msgstr "文件列表"
 
 #: templates/html/show.tmpl:327
 msgid "no current information"
-msgstr "няма текуща информация"
+msgstr "沒有當前資訊"
 
 #: templates/html/show.tmpl:344
 msgid "Download information for the files of this source package"
-msgstr "Информация за изтеглянето на файловете на пакета-източник"
+msgstr "原始碼套件文件的下載資訊"
 
 #: templates/html/show.tmpl:345
 msgid "Size (in kB)"
-msgstr "Големина (в кБ)"
+msgstr "大小(單位: kB)"
 
 #: templates/html/show.tmpl:366
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
+"Debian 套件原始碼倉庫(<acronym title=\"Version Control System\">VCS</"
+"acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:371
 msgid "Debian Package Source Repository (Browsable)"
-msgstr ""
+msgstr "Debian 套件原始碼倉庫(可在線瀏覽)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
-msgstr "Индекс"
+msgstr "索引"
 
 #: templates/html/suite_index.tmpl:5 templates/html/suite_index.tmpl:20
 msgid "List of sections in \"%s\""
-msgstr "Списък на разделите в „%s“"
+msgstr "\"%s\" 區域列表"
 
 #: templates/html/suite_index.tmpl:38
 msgid "List of all source packages"
-msgstr "Списък на всички пакети-източници"
+msgstr "所有原始碼套件列表"
 
 #: templates/html/suite_index.tmpl:40
 msgid "All source packages"
-msgstr "Всички пакети-източници"
+msgstr "所有原始碼套件"
 
 #: templates/html/tag_index.tmpl:2 templates/html/tag_index.tmpl:7
 msgid "Overview of available Debian Package Tags"
-msgstr "Преглед на наличните етикети"
+msgstr "Debian 套件合法標籤一覽"
 
 #: templates/html/tag_index.tmpl:4
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #: templates/html/tag_index.tmpl:5
 msgid "Debtags"
-msgstr ""
+msgstr "Debtags"
 
 #: templates/html/tag_index.tmpl:10
 msgid "Facet: %s"
-msgstr ""
+msgstr "分類: %s"
 
 #: templates/rss/newpkg.tmpl:16
 msgid "New %s Packages"
-msgstr "Нови пакети в %s"
+msgstr "新的 %s 套件"
 
 #: templates/rss/newpkg.tmpl:20
 msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
-msgstr ""
-"Следните пакети са добавени в дистрибуцията %s (раздел %s) на архива %s през "
-"последните 7 дни."
+msgstr "以下是在最近 7 天內被選進 %3 的 %1 發行版( %2 區域)之中的套件。"
 
 #: templates/rss/newpkg.tmpl:23
 msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
-msgstr ""
-"Следните пакети са добавени в дистрибуцията %s на архива %s през последните "
-"7 дни."
+msgstr "以下是在最近 7 天內被選進 %2 的 %1 發行版之中的套件。"
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
-msgstr ""
+msgstr "Copyright ©"
 
 #: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
-msgstr "Всички пакети %s в „%s“"
+msgstr "\"%2\" 包含所有的 %1 套件"
 
 #: templates/txt/index_head.tmpl:3
 msgid "Generated:"
-msgstr ""
+msgstr "最近修訂日期："
 
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
-msgstr "Вижте <URL:%s> за лицензните условия."
+msgstr "檢視 <URL:%s> 以便瞭解許可證的各項條款。"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "澳洲和紐西蘭"

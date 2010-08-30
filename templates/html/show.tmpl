@@ -63,6 +63,9 @@
 [% UNLESS is_virtual %]
 <div id="pmoreinfo">
 <h2>[% g('Links for %s', pkg) %]</h2>
+[% IF screenshots_url && screenshots_thumb_url && !is_source %]
+<a id="screenshot" href="[% screenshots_url _ pkg %]"><img src="[% screenshots_thumb_url _ pkg %]" alt="Screenshot" border="0"/></a>
+[% END %]
 <h3>[% g('%s Resources:', organisation) %]</h3>
 <ul>
 <li><a href="[% (is_source ? src_bugs_url : bugs_url) _ pkg %]">[% g('Bug Reports') %]</a></li>
@@ -92,13 +95,13 @@
 
 [% IF patch_tracking_url && src %]
   [% FOREACH src.downloads %]
-    [% IF name.match('\.(debian|diff)\.(gz|bz2|lzma)$') %]
+    [% IF name.match('\.(debian\.tar|diff)\.(gz|bz2|lzma)$') %]
     <li><a href="[% "$patch_tracking_url/$src.pkg/$src.version" %]">[% g("%s Patch Tracker", organisation) %]</a></li>
     [% END -%]
   [% END -%]
 [% ELSIF patch_tracking_url && is_source %]
   [% FOREACH srcfiles %]
-    [% IF filename.match('\.(debian|diff)\.(gz|bz2|lzma)$') %]
+    [% IF filename.match('\.(debian\.tar|diff)\.(gz|bz2|lzma)$') %]
     <li><a href="[% "$patch_tracking_url/$pkg/$version" %]">[% g("%s Patch Tracker", organisation) %]</a></li>
     [% END -%]
   [% END -%]

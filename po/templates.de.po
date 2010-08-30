@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2010-01-21 20:36+0100\n"
+"PO-Revision-Date: 2010-08-17 21:57+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr ","
 
 #: templates/config.tmpl:71
 msgid ","
-msgstr " "
+msgstr "."
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -118,7 +118,7 @@ msgid ""
 "in Debian main"
 msgstr ""
 "Pakete, die die Debian-Richtlinien für Freie Software erfüllen, aber "
-"Software benötigen, die nicht in Main ist"
+"Software benötigen, die nicht in Main enthalten ist"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
@@ -128,7 +128,7 @@ msgstr "Pakete, die die Debian-Richtlinien für Freie Software nicht erfüllen"
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
-"unbeständige Pakete, die größere Änderungen während der Lebensdauer einer "
+"unstetige Pakete, die größere Änderungen während der Lebensdauer einer "
 "stabilen Veröffentlichung benötigen"
 
 #: templates/config/mirrors.tmpl:135
@@ -233,7 +233,7 @@ msgid ""
 "cause data loss. Please be sure to consult the changelog and other possible "
 "documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-"
+"Warnung: Dieses Paket stammt aus der <strong>Experimental</strong>-"
 "Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil oder "
 "fehlerhaft ist und sogar Datenverlust verursachen kann. Bitte lesen Sie den "
 "Changelog und andere möglicherweise verfügbare Dokumentation, bevor Sie es "
@@ -383,7 +383,7 @@ msgstr "Dieser Service wird von <a href=\"%s\">%s</a> unterstützt."
 #: templates/html/head.tmpl:47 templates/html/homepage.tmpl:38
 #: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:90
 msgid "Search"
-msgstr "Suche"
+msgstr "Suchen"
 
 #: templates/html/head.tmpl:50
 msgid "package names"
@@ -472,7 +472,7 @@ msgstr "Zurücksetzen"
 
 #: templates/html/homepage.tmpl:47
 msgid "Search on:"
-msgstr "Suche in:"
+msgstr "Suchen in:"
 
 #: templates/html/homepage.tmpl:49
 msgid "Package names only"
@@ -488,7 +488,7 @@ msgstr "Quellcodepaketnamen"
 
 #: templates/html/homepage.tmpl:55
 msgid "Only show exact matches:"
-msgstr "Zeige nur genaue Treffer:"
+msgstr "Nur genaue Treffer anzeigen:"
 
 #: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
 #: templates/html/homepage.tmpl:116
@@ -514,7 +514,7 @@ msgstr "<code>%ssrc:<var>Name</var></code> für die Suche in Quellpaketnamen."
 
 #: templates/html/homepage.tmpl:81
 msgid "Search the contents of packages"
-msgstr "Durchsuche Paketinhalte"
+msgstr "Durchsuchen des Inhalts von Paketen"
 
 #: templates/html/homepage.tmpl:83
 msgid ""
@@ -529,7 +529,7 @@ msgstr ""
 
 #: templates/html/homepage.tmpl:93
 msgid "Display:"
-msgstr "Zeige:"
+msgstr "Anzeigen:"
 
 #: templates/html/homepage.tmpl:96
 msgid "packages that contain files named like this"
@@ -654,19 +654,19 @@ msgstr ""
 
 #: templates/html/search.tmpl:41
 msgid "Search in specific suite:"
-msgstr "Suche in bestimmter Suite:"
+msgstr "Suchen in bestimmter Suite:"
 
 #: templates/html/search.tmpl:50
 msgid "Search in <a href=\"%s\">all suites</a>"
-msgstr "Suche in <a href=\"%s\">allen Suites</a>"
+msgstr "Suchen in <a href=\"%s\">allen Suites</a>"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
 msgid "Limit search to a specific architecture:"
-msgstr "Schränke Suche auf bestimmte Architekturen ein:"
+msgstr "Suche auf bestimmte Architekturen einschränken:"
 
 #: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
-msgstr "Suche in <a href=\"%s\">allen Architekturen</a>"
+msgstr "Suchen in <a href=\"%s\">allen Architekturen</a>"
 
 #: templates/html/search.tmpl:70
 msgid ""
@@ -712,8 +712,8 @@ msgstr "Quellcode-Paketen"
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
-"Sie haben nach %s gesucht, deren Namen <em>%s</em> enthält, in %s, %s, und %"
-"s."
+"Ihre Suche nach Paketen, deren Name <em>%s</em> enthält, in %s, %s, und "
+"%s:"
 
 #: templates/html/search.tmpl:87
 msgid " (including subword matching)"
@@ -725,12 +725,12 @@ msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, %"
 "s, and %s%s."
 msgstr ""
-"Sie haben nach <em>%s</em> in Paketnamen und -beschreibungen gesucht, in %s, "
-"%s, und %s%s."
+"Ihre Suche nach <em>%s</em> in Paketnamen und -beschreibungen, in "
+"%s, %s und %s%s:"
 
 #: templates/html/search.tmpl:95
 msgid "Found <strong>%u</strong> matching packages."
-msgstr "<strong>%u</strong> passende Pakete gefunden."
+msgstr "<strong>%u Treffer</strong>."
 
 #: templates/html/search.tmpl:100
 msgid ""
@@ -801,31 +801,31 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:14
 msgid "Package Contents Search Results -- %s"
-msgstr "Ergebnisse der Debian-Inhalts-Paketsuche -- %s"
+msgstr "Ergebnisse der Debian-Suche nach Paketinhalten -- %s"
 
 #: templates/html/search_contents.tmpl:17
 msgid "Package Contents Search Results"
-msgstr "Ergebnisse der Debian-Inhalts-Paketsuche "
+msgstr "Ergebnisse der Debian-Suche nach Paketinhalten"
 
 #: templates/html/search_contents.tmpl:34
 msgid "Search for <em>%s</em> within filenames"
-msgstr "Suche nach <em>%s</em> in Dateinamen"
+msgstr "Nach <em>%s</em> in Dateinamen suchen"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr "Suche exakten Dateinamen <em>%s</em>"
+msgstr "Nach exaktem Dateinamen <em>%s</em> suchen"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
-msgstr "Suche nach Pfaden, die auf <em>%s</em> enden"
+msgstr "Nach Pfaden suchen, die auf <em>%s</em> enden"
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
-msgstr "Suche in anderer Suite:"
+msgstr "In anderer Suite suchen:"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
-msgstr "Pfade die wie folgt enden:"
+msgstr "Pfaden, die wie folgt enden:"
 
 #: templates/html/search_contents.tmpl:76
 msgid "filenames that contain"
@@ -839,7 +839,7 @@ msgstr "Dateien mit Namen"
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
-"Sie haben nach %s <em>%s</em> in der Suite <em>%s</em>, %s und %s gesucht."
+"Ihre Suche nach %s <em>%s</em> in der Suite <em>%s</em>, %s und %s:"
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -856,7 +856,7 @@ msgstr ""
 
 #: templates/html/search_contents.tmpl:97
 msgid "Sort results by filename"
-msgstr "Sortiere Ergebnisse nach Dateinamen"
+msgstr "Ergebnisse werden nach Dateinamen sortiert"
 
 #: templates/html/search_contents.tmpl:98
 #: templates/html/search_contents.tmpl:124 templates/html/show.tmpl:345
@@ -865,7 +865,7 @@ msgstr "Datei"
 
 #: templates/html/search_contents.tmpl:99
 msgid "Sort results by package name"
-msgstr "Sortiere Ergebnisse nach Paketnamen"
+msgstr "Ergebnisse werden nach Paketnamen sortiert"
 
 #: templates/html/search_contents.tmpl:114
 msgid "not %s"
@@ -999,7 +999,7 @@ msgid ""
 "cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> "
 "and other possible documentation before using it."
 msgstr ""
-"Warnung: Dieses Paket ist aus der <strong>Experimental</strong>-"
+"Warnung: Dieses Paket stammt aus der <strong>Experimental</strong>-"
 "Distribution. Dies bedeutet, dass es höchstwahrscheinlich instabil oder "
 "fehlerhaft ist und sogar Datenverlust verursachen kann. Bitte lesen Sie den "
 "<a href=\"%s\">Changelog</a> und andere möglicherweise verfügbare "
@@ -1012,7 +1012,7 @@ msgid ""
 "packages</a>."
 msgstr ""
 "Dies ist ein <em>virtuelles Paket</em>. Sehen Sie in die <a href=\"%s"
-"\">Debian-Richtlinien</a> für eine <a href=\"%sch-binary.html#s-virtual_pkg"
+"\">Debian-Richtlinien</a> bezüglich einer <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">Definition von virtuellen Paketen</a>."
 
 #: templates/html/show.tmpl:202

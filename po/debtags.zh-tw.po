@@ -1,0 +1,4156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: packages.debian.org trunk\n"
+"Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
+"POT-Creation-Date: 2007-10-21 18:33+0200\n"
+"PO-Revision-Date: 2008-11-29 17:50+0800\n"
+"Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
+"Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
+"debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Facet: accessibility, short desc
+#: files/debtags/vocabulary
+msgid "Accessibility Support"
+msgstr "無障礙支持"
+
+#. Tag: accessibility::input, short desc
+#: files/debtags/vocabulary
+msgid "Input Systems"
+msgstr "輸入系統"
+
+#. Tag: accessibility::input, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Applies to input methods for non-latin languages as well as special input "
+"systems."
+msgstr "適用於非拉丁語言的輸入法以及特殊的輸入系統。"
+
+#. Tag: accessibility::ocr, short desc
+#: files/debtags/vocabulary
+msgid "Text Recognition (OCR)"
+msgstr "文本識別 (OCR)"
+
+#. Tag: accessibility::ocr, long desc
+#: files/debtags/vocabulary
+msgid "Optical Character Recognition"
+msgstr "光學字符辨識"
+
+#. Tag: accessibility::screen-magnify, short desc
+#: files/debtags/vocabulary
+msgid "Screen Magnification"
+msgstr "屏幕放大"
+
+#. Tag: accessibility::screen-reader, short desc
+#: files/debtags/vocabulary
+msgid "Screen Reading"
+msgstr "屏幕閱讀"
+
+#. Tag: accessibility::speech, short desc
+#. Tag: sound::speech, short desc
+#: files/debtags/vocabulary
+msgid "Speech Synthesis"
+msgstr "語音合成"
+
+#. Tag: accessibility::speech-recognition, short desc
+#: files/debtags/vocabulary
+msgid "Speech Recognition"
+msgstr "語音辨識"
+
+#. Tag: accessibility::TODO, short desc
+#. Tag: admin::TODO, short desc
+#. Tag: culture::TODO, short desc
+#. Tag: devel::TODO, short desc
+#. Tag: field::TODO, short desc
+#. Tag: game::TODO, short desc
+#. Tag: hardware::TODO, short desc
+#. Tag: made-of::TODO, short desc
+#. Tag: interface::TODO, short desc
+#. Tag: implemented-in::TODO, short desc
+#. Tag: junior::TODO, short desc
+#. Tag: mail::TODO, short desc
+#. Tag: office::TODO, short desc
+#. Tag: works-with::TODO, short desc
+#. Tag: works-with-format::TODO, short desc
+#. Tag: scope::TODO, short desc
+#. Tag: role::TODO, short desc
+#. Tag: security::TODO, short desc
+#. Tag: sound::TODO, short desc
+#. Tag: special::TODO, short desc
+#. Tag: suite::TODO, short desc
+#. Tag: protocol::TODO, short desc
+#. Tag: uitoolkit::TODO, short desc
+#. Tag: use::TODO, short desc
+#. Tag: web::TODO, short desc
+#. Tag: network::TODO, short desc
+#. Tag: x11::TODO, short desc
+#: files/debtags/vocabulary
+msgid "Need an extra tag"
+msgstr "需要一個額外的標籤"
+
+#. Tag: accessibility::TODO, long desc
+#. Tag: admin::TODO, long desc
+#. Tag: culture::TODO, long desc
+#. Tag: devel::TODO, long desc
+#. Tag: field::TODO, long desc
+#. Tag: game::TODO, long desc
+#. Tag: hardware::TODO, long desc
+#. Tag: made-of::TODO, long desc
+#. Tag: interface::TODO, long desc
+#. Tag: implemented-in::TODO, long desc
+#. Tag: junior::TODO, long desc
+#. Tag: mail::TODO, long desc
+#. Tag: office::TODO, long desc
+#. Tag: works-with::TODO, long desc
+#. Tag: works-with-format::TODO, long desc
+#. Tag: scope::TODO, long desc
+#. Tag: role::TODO, long desc
+#. Tag: security::TODO, long desc
+#. Tag: sound::TODO, long desc
+#. Tag: special::TODO, long desc
+#. Tag: suite::TODO, long desc
+#. Tag: protocol::TODO, long desc
+#. Tag: uitoolkit::TODO, long desc
+#. Tag: use::TODO, long desc
+#. Tag: web::TODO, long desc
+#. Tag: network::TODO, long desc
+#. Tag: x11::TODO, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The package can be categorised along this facet, but the right tag for it is "
+"missing.\n"
+"Mark a package with this tag to signal the vocabulary maintainers of cases "
+"where the current tag set is lacking."
+msgstr ""
+"此套件可以分在此類，但缺少適合的標籤。\n"
+"標記此標籤提醒維護者目前的標籤不足。"
+
+#. Facet: admin, short desc
+#: files/debtags/vocabulary
+msgid "System Administration"
+msgstr "系統管理"
+
+#. Tag: admin::accounting, short desc
+#: files/debtags/vocabulary
+msgid "Accounting"
+msgstr "帳號"
+
+#. Tag: admin::automation, short desc
+#: files/debtags/vocabulary
+msgid "Automation and Scheduling"
+msgstr "自動化和排程"
+
+#. Tag: admin::automation, long desc
+#: files/debtags/vocabulary
+msgid "Automating the execution of software in the system."
+msgstr "自動執行系統中的軟體。"
+
+#. Tag: admin::backup, short desc
+#: files/debtags/vocabulary
+msgid "Backup and Restoration"
+msgstr "備份和還原"
+
+#. Tag: admin::benchmarking, short desc
+#: files/debtags/vocabulary
+msgid "Benchmarking"
+msgstr "效能評估"
+
+#. Tag: admin::boot, short desc
+#: files/debtags/vocabulary
+msgid "System Boot"
+msgstr "系統開機"
+
+#. Tag: admin::cluster, short desc
+#: files/debtags/vocabulary
+msgid "Clustering"
+msgstr "分散式計算"
+
+#. Tag: admin::configuring, short desc
+#: files/debtags/vocabulary
+msgid "Configuration Tool"
+msgstr "設定工具"
+
+#. Tag: admin::file-distribution, short desc
+#: files/debtags/vocabulary
+msgid "File Distribution"
+msgstr "檔案描述"
+
+#. Tag: admin::filesystem, short desc
+#: files/debtags/vocabulary
+msgid "Filesystem Tool"
+msgstr "檔案系統工具"
+
+#. Tag: admin::filesystem, long desc
+#: files/debtags/vocabulary
+msgid "Creation, maintenance, and use of filesystems"
+msgstr "創建，維護和使用檔案系統"
+
+#. Tag: admin::forensics, short desc
+#: files/debtags/vocabulary
+msgid "Forensics and Recovery"
+msgstr "調查和回復"
+
+#. Tag: admin::forensics, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Recovering lost or damaged data. This tag will be split into admin::recovery "
+"and security::forensics."
+msgstr ""
+"回復遺失或損壞的資料。此標籤將分成 admin::recovery 與 security::forensics。"
+
+#. Tag: admin::hardware, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Support"
+msgstr "硬體支援"
+
+#. Tag: admin::install, short desc
+#: files/debtags/vocabulary
+msgid "System Installation"
+msgstr "系統安裝"
+
+#. Tag: admin::issuetracker, short desc
+#: files/debtags/vocabulary
+msgid "Issue Tracker"
+msgstr "問題追蹤系統"
+
+#. Tag: admin::kernel, short desc
+#: files/debtags/vocabulary
+msgid "Kernel or Modules"
+msgstr "核心或模組"
+
+#. Tag: admin::logging, short desc
+#: files/debtags/vocabulary
+msgid "Logging"
+msgstr "日誌"
+
+#. Tag: admin::login, short desc
+#. Tag: use::login, short desc
+#: files/debtags/vocabulary
+msgid "Login"
+msgstr "登入"
+
+#. Tag: admin::login, long desc
+#: files/debtags/vocabulary
+msgid "Logging into the system"
+msgstr "登入系統"
+
+#. Tag: admin::monitoring, short desc
+#. Tag: use::monitor, short desc
+#: files/debtags/vocabulary
+msgid "Monitoring"
+msgstr "監看"
+
+#. Tag: admin::package-management, short desc
+#: files/debtags/vocabulary
+msgid "Package Management"
+msgstr "套件管理"
+
+#. Tag: admin::power-management, short desc
+#. Tag: hardware::power, short desc
+#: files/debtags/vocabulary
+msgid "Power Management"
+msgstr "電源管理"
+
+#. Tag: admin::recovery, short desc
+#: files/debtags/vocabulary
+msgid "Data Recovery"
+msgstr "資料回復"
+
+#. Tag: admin::user-management, short desc
+#: files/debtags/vocabulary
+msgid "User Management"
+msgstr "使用者管理"
+
+#. Tag: admin::virtualization, short desc
+#: files/debtags/vocabulary
+msgid "Virtualization"
+msgstr "虛擬化"
+
+#. Tag: admin::virtualization, long desc
+#: files/debtags/vocabulary
+msgid ""
+"This is not hardware emulation, but rather those facilities that allow to "
+"create many isolated compartments inside the same system."
+msgstr "這不是硬體模擬，而是允許在單一系統中使用許多獨立環境。"
+
+#. Facet: biology, short desc
+#. Tag: field::biology, short desc
+#: files/debtags/vocabulary
+msgid "Biology"
+msgstr "生物學"
+
+#. Facet: biology, long desc
+#: files/debtags/vocabulary
+msgid "How is the package related to the field of biology."
+msgstr "此套件與何生物學領域相關。"
+
+#. Tag: biology::emboss, short desc
+#: files/debtags/vocabulary
+msgid "EMBOSS"
+msgstr "EMBOSS"
+
+#. Tag: biology::emboss, long desc
+#: files/debtags/vocabulary
+msgid "Packages related to the European Molecular Biology Open Software Suite."
+msgstr "與歐洲分子生物學開放軟體套件相關套件。"
+
+#. Tag: biology::format:aln, short desc
+#: files/debtags/vocabulary
+msgid "Clustal/ALN"
+msgstr "Clustal/ALN"
+
+#. Tag: biology::format:aln, long desc
+#: files/debtags/vocabulary
+msgid "Used in multiple alignment of biological sequences."
+msgstr "用於多種排列的生物序列。"
+
+#. Tag: biology::format:nexus, short desc
+#: files/debtags/vocabulary
+msgid "Nexus"
+msgstr "Nexus"
+
+#. Tag: biology::format:nexus, long desc
+#: files/debtags/vocabulary
+msgid "Popular format for phylogenetic trees."
+msgstr "流行的系統發生樹格式。"
+
+#. Tag: biology::nuceleic-acids, short desc
+#: files/debtags/vocabulary
+msgid "Nucleic Acids"
+msgstr "核酸"
+
+#. Tag: biology::nuceleic-acids, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that works with sequences of nucleic acids: DNA, RNA but also non-"
+"natural nucleic acids such as PNA or LNA."
+msgstr "用在處理核酸序列： DNA, RNA 但也可以處理非自然的核酸如 PNA 或 LNA。"
+
+#. Tag: biology::peptidic, short desc
+#: files/debtags/vocabulary
+msgid "Proteins"
+msgstr "蛋白質"
+
+#. Tag: biology::peptidic, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that works with sequences of aminoacids: peptides and proteins."
+msgstr "用在處理氨基酸序列：多肽與蛋白質。"
+
+#. Facet: culture, short desc
+#: files/debtags/vocabulary
+msgid "Culture"
+msgstr "文化"
+
+#. Facet: culture, long desc
+#: files/debtags/vocabulary
+msgid "The culture for which the package provides special support"
+msgstr "此套件為該文化提供特殊支援"
+
+#. Tag: culture::afrikaans, short desc
+#: files/debtags/vocabulary
+msgid "Afrikaans"
+msgstr "南非荷蘭語"
+
+#. Tag: culture::arabic, short desc
+#. Tag: iso15924::arab, short desc
+#: files/debtags/vocabulary
+msgid "Arabic"
+msgstr "阿拉伯語"
+
+#. Tag: culture::basque, short desc
+#: files/debtags/vocabulary
+msgid "Basque"
+msgstr "巴斯克語"
+
+#. Tag: culture::bengali, short desc
+#. Tag: iso15924::beng, short desc
+#: files/debtags/vocabulary
+msgid "Bengali"
+msgstr "孟加拉語"
+
+#. Tag: culture::bokmaal, short desc
+#: files/debtags/vocabulary
+msgid "Norwegian Bokmaal"
+msgstr "挪威語"
+
+#. Tag: culture::bosnian, short desc
+#: files/debtags/vocabulary
+msgid "Bosnian"
+msgstr "波士尼亞語"
+
+#. Tag: culture::brazilian, short desc
+#: files/debtags/vocabulary
+msgid "Brazilian"
+msgstr "巴西語"
+
+#. Tag: culture::british, short desc
+#: files/debtags/vocabulary
+msgid "British"
+msgstr ""
+
+#. Tag: culture::bulgarian, short desc
+#: files/debtags/vocabulary
+msgid "Bulgarian"
+msgstr "保加利亞語"
+
+#. Tag: culture::catalan, short desc
+#: files/debtags/vocabulary
+msgid "Catalan"
+msgstr "卡達隆尼亞語"
+
+#. Tag: culture::chinese, short desc
+#: files/debtags/vocabulary
+msgid "Chinese"
+msgstr "中文"
+
+#. Tag: culture::czech, short desc
+#: files/debtags/vocabulary
+msgid "Czech"
+msgstr "捷克語"
+
+#. Tag: culture::croatian, short desc
+#: files/debtags/vocabulary
+msgid "Croatian"
+msgstr "克羅埃西亞語"
+
+#. Tag: culture::danish, short desc
+#: files/debtags/vocabulary
+msgid "Danish"
+msgstr "丹麥語"
+
+#. Tag: culture::dutch, short desc
+#: files/debtags/vocabulary
+msgid "Dutch"
+msgstr "荷蘭語"
+
+#. Tag: culture::esperanto, short desc
+#: files/debtags/vocabulary
+msgid "Esperanto"
+msgstr "世界語"
+
+#. Tag: culture::estonian, short desc
+#: files/debtags/vocabulary
+msgid "Estonian"
+msgstr "愛沙尼亞"
+
+#. Tag: culture::faroese, short desc
+#: files/debtags/vocabulary
+msgid "Faroese"
+msgstr "法羅語"
+
+#. Tag: culture::farsi, short desc
+#: files/debtags/vocabulary
+msgid "Farsi"
+msgstr "波斯語"
+
+#. Tag: culture::finnish, short desc
+#: files/debtags/vocabulary
+msgid "Finnish"
+msgstr "芬蘭語"
+
+#. Tag: culture::french, short desc
+#: files/debtags/vocabulary
+msgid "French"
+msgstr "法語"
+
+#. Tag: culture::german, short desc
+#: files/debtags/vocabulary
+msgid "German"
+msgstr "德語"
+
+#. Tag: culture::greek, short desc
+#. Tag: iso15924::grek, short desc
+#: files/debtags/vocabulary
+msgid "Greek"
+msgstr "希臘語"
+
+#. Tag: culture::hebrew, short desc
+#. Tag: iso15924::hebr, short desc
+#: files/debtags/vocabulary
+msgid "Hebrew"
+msgstr "希伯來語"
+
+#. Tag: culture::hindi, short desc
+#: files/debtags/vocabulary
+msgid "Hindi"
+msgstr "印地語"
+
+#. Tag: culture::hungarian, short desc
+#: files/debtags/vocabulary
+msgid "Hungarian"
+msgstr "匈牙利語"
+
+#. Tag: culture::icelandic, short desc
+#: files/debtags/vocabulary
+msgid "Icelandic"
+msgstr "冰島語"
+
+#. Tag: culture::irish, short desc
+#: files/debtags/vocabulary
+msgid "Irish (Gaeilge)"
+msgstr "愛爾蘭語 (Gaeilge)"
+
+#. Tag: culture::italian, short desc
+#: files/debtags/vocabulary
+msgid "Italian"
+msgstr "意大利語"
+
+#. Tag: culture::japanese, short desc
+#. Tag: iso15924::jpan, short desc
+#: files/debtags/vocabulary
+msgid "Japanese"
+msgstr "日語"
+
+#. Tag: culture::korean, short desc
+#. Tag: iso15924::kore, short desc
+#: files/debtags/vocabulary
+msgid "Korean"
+msgstr "韓語"
+
+#. Tag: culture::latvian, short desc
+#: files/debtags/vocabulary
+msgid "Latvian"
+msgstr "拉脫維亞"
+
+#. Tag: culture::mongolian, short desc
+#. Tag: iso15924::mong, short desc
+#: files/debtags/vocabulary
+msgid "Mongolian"
+msgstr "蒙古語"
+
+#. Tag: culture::nynorsk, short desc
+#: files/debtags/vocabulary
+msgid "Norwegian Nynorsk"
+msgstr "挪威語 (Nynorsk)"
+
+#. Tag: culture::norwegian, short desc
+#: files/debtags/vocabulary
+msgid "Norwegian"
+msgstr "挪威語"
+
+#. Tag: culture::polish, short desc
+#: files/debtags/vocabulary
+msgid "Polish"
+msgstr "波蘭語"
+
+#. Tag: culture::portuguese, short desc
+#: files/debtags/vocabulary
+msgid "Portuguese"
+msgstr "葡萄牙語"
+
+#. Tag: culture::punjabi, short desc
+#: files/debtags/vocabulary
+msgid "Punjabi"
+msgstr "旁遮普語"
+
+#. Tag: culture::romanian, short desc
+#: files/debtags/vocabulary
+msgid "Romanian"
+msgstr "羅馬尼亞語"
+
+#. Tag: culture::russian, short desc
+#: files/debtags/vocabulary
+msgid "Russian"
+msgstr "俄語"
+
+#. Tag: culture::serbian, short desc
+#: files/debtags/vocabulary
+msgid "Serbian"
+msgstr "塞爾維亞語"
+
+#. Tag: culture::slovak, short desc
+#: files/debtags/vocabulary
+msgid "Slovak"
+msgstr "斯洛伐克語"
+
+#. Tag: culture::spanish, short desc
+#: files/debtags/vocabulary
+msgid "Spanish"
+msgstr "西班牙語"
+
+#. Tag: culture::swedish, short desc
+#: files/debtags/vocabulary
+msgid "Swedish"
+msgstr "瑞典語"
+
+#. Tag: culture::taiwanese, short desc
+#: files/debtags/vocabulary
+msgid "Taiwanese"
+msgstr "台灣"
+
+#. Tag: culture::tajik, short desc
+#: files/debtags/vocabulary
+msgid "Tajik"
+msgstr "塔吉克語"
+
+#. Tag: culture::tamil, short desc
+#. Tag: iso15924::taml, short desc
+#: files/debtags/vocabulary
+msgid "Tamil"
+msgstr "泰米爾語"
+
+#. Tag: culture::thai, short desc
+#. Tag: iso15924::thai, short desc
+#: files/debtags/vocabulary
+msgid "Thai"
+msgstr "泰語"
+
+#. Tag: culture::turkish, short desc
+#: files/debtags/vocabulary
+msgid "Turkish"
+msgstr "土耳其語"
+
+#. Tag: culture::ukrainian, short desc
+#: files/debtags/vocabulary
+msgid "Ukrainian"
+msgstr "烏克蘭語"
+
+#. Tag: culture::uzbek, short desc
+#: files/debtags/vocabulary
+msgid "Uzbek"
+msgstr "烏茲別克語"
+
+#. Tag: culture::welsh, short desc
+#: files/debtags/vocabulary
+msgid "Welsh"
+msgstr "威爾士語"
+
+#. Facet: devel, short desc
+#: files/debtags/vocabulary
+msgid "Software Development"
+msgstr "軟體開發"
+
+#. Tag: devel::bugtracker, short desc
+#: files/debtags/vocabulary
+msgid "Bug Tracking"
+msgstr "臭蟲追蹤"
+
+#. Tag: devel::buildtools, short desc
+#: files/debtags/vocabulary
+msgid "Build Tool"
+msgstr "建立工具"
+
+#. Tag: devel::code-generator, short desc
+#: files/debtags/vocabulary
+msgid "Code Generation"
+msgstr "程式碼生成"
+
+#. Tag: devel::code-generator, long desc
+#: files/debtags/vocabulary
+msgid "Parser, lexer and other code generators"
+msgstr "Parser, lexer 與其他程式碼生成器"
+
+#. Tag: devel::compiler, short desc
+#: files/debtags/vocabulary
+msgid "Compiler"
+msgstr "編譯器"
+
+#. Tag: devel::debian, short desc
+#. Tag: suite::debian, short desc
+#: files/debtags/vocabulary
+msgid "Debian"
+msgstr "Debian"
+
+#. Tag: devel::debian, long desc
+#: files/debtags/vocabulary
+msgid "Tools, documentation, etc. of use primarily to Debian developers."
+msgstr "工具，文件……等，主要是 Debian 開發人員用。"
+
+#. Tag: devel::debugger, short desc
+#: files/debtags/vocabulary
+msgid "Debugging"
+msgstr "除錯"
+
+#. Tag: devel::doc, short desc
+#. Tag: role::documentation, short desc
+#: files/debtags/vocabulary
+msgid "Documentation"
+msgstr "文件"
+
+#. Tag: devel::docsystem, short desc
+#: files/debtags/vocabulary
+msgid "Literate Programming"
+msgstr "文學編程"
+
+#. Tag: devel::docsystem, long desc
+#: files/debtags/vocabulary
+msgid "Tools and auto-documenters"
+msgstr "工具與文件產生器"
+
+#. Tag: devel::ecma-cli, short desc
+#: files/debtags/vocabulary
+msgid "ECMA CLI"
+msgstr "ECMA CLI"
+
+#. Tag: devel::ecma-cli, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Tools and libraries for development with implementations of the ECMA CLI "
+"(Common Language Infrastructure), like Mono or DotGNU Portable.NET."
+msgstr ""
+"用 ECMA CLI (Common Language Infrastructure) 實做如 Mono, DotGNU Portable."
+"NET 等開發環境所需的工具與函式庫。"
+
+#. Tag: devel::editor, short desc
+#: files/debtags/vocabulary
+msgid "Source Editor"
+msgstr "原始碼編輯器"
+
+#. Tag: devel::examples, short desc
+#. Tag: role::examples, short desc
+#: files/debtags/vocabulary
+msgid "Examples"
+msgstr "範例"
+
+#. Tag: devel::ide, short desc
+#: files/debtags/vocabulary
+msgid "IDE"
+msgstr "IDE"
+
+#. Tag: devel::ide, long desc
+#: files/debtags/vocabulary
+msgid "Integrated Development Environment"
+msgstr "整合開發環境"
+
+#. Tag: devel::interpreter, short desc
+#: files/debtags/vocabulary
+msgid "Interpreter"
+msgstr "直譯器"
+
+#. Tag: devel::i18n, short desc
+#: files/debtags/vocabulary
+msgid "Internationalization"
+msgstr "國際化"
+
+#. Tag: devel::lang:ada, short desc
+#: files/debtags/vocabulary
+msgid "Ada Development"
+msgstr "Ada 開發"
+
+#. Tag: devel::lang:c, short desc
+#: files/debtags/vocabulary
+msgid "C Development"
+msgstr "C 開發"
+
+#. Tag: devel::lang:c++, short desc
+#: files/debtags/vocabulary
+msgid "C++ Development"
+msgstr "C++ 開發"
+
+#. Tag: devel::lang:c-sharp, short desc
+#: files/debtags/vocabulary
+msgid "C# Development"
+msgstr "C# 開發"
+
+#. Tag: devel::lang:fortran, short desc
+#: files/debtags/vocabulary
+msgid "Fortran Development"
+msgstr "Fortran 開發"
+
+#. Tag: devel::lang:haskell, short desc
+#: files/debtags/vocabulary
+msgid "Haskell Development"
+msgstr "Haskell 開發"
+
+#. Tag: devel::lang:java, short desc
+#: files/debtags/vocabulary
+msgid "Java Development"
+msgstr "Java 開發"
+
+#. Tag: devel::lang:ecmascript, short desc
+#: files/debtags/vocabulary
+msgid "Ecmascript/JavaScript Development"
+msgstr "Ecmascript/JavaScript 開發"
+
+#. Tag: devel::lang:lisp, short desc
+#: files/debtags/vocabulary
+msgid "Lisp Development"
+msgstr "Lisp 開發"
+
+#. Tag: devel::lang:lua, short desc
+#: files/debtags/vocabulary
+msgid "Lua Development"
+msgstr "Lua 開發"
+
+#. Tag: devel::lang:ml, short desc
+#: files/debtags/vocabulary
+msgid "ML Development"
+msgstr "ML 開發"
+
+#. Tag: devel::lang:objc, short desc
+#: files/debtags/vocabulary
+msgid "Objective-C Development"
+msgstr "Objective-C 開發"
+
+#. Tag: devel::lang:ocaml, short desc
+#: files/debtags/vocabulary
+msgid "OCaml Development"
+msgstr "OCaml 開發"
+
+#. Tag: devel::lang:octave, short desc
+#: files/debtags/vocabulary
+msgid "GNU Octave Development"
+msgstr "GNU Octave 開發"
+
+#. Tag: devel::lang:pascal, short desc
+#: files/debtags/vocabulary
+msgid "Pascal Development"
+msgstr "Pascal 開發"
+
+#. Tag: devel::lang:perl, short desc
+#: files/debtags/vocabulary
+msgid "Perl Development"
+msgstr "Perl 開發"
+
+#. Tag: devel::lang:posix-shell, short desc
+#: files/debtags/vocabulary
+msgid "POSIX shell"
+msgstr "POSIX shell"
+
+#. Tag: devel::lang:php, short desc
+#: files/debtags/vocabulary
+msgid "PHP Development"
+msgstr "PHP 開發"
+
+#. Tag: devel::lang:pike, short desc
+#: files/debtags/vocabulary
+msgid "Pike Development"
+msgstr "Pike 開發"
+
+#. Tag: devel::lang:prolog, short desc
+#: files/debtags/vocabulary
+msgid "Prolog Development"
+msgstr "Prolog 開發"
+
+#. Tag: devel::lang:python, short desc
+#: files/debtags/vocabulary
+msgid "Python Development"
+msgstr "Python 開發"
+
+#. Tag: devel::lang:r, short desc
+#: files/debtags/vocabulary
+msgid "GNU R Development"
+msgstr "GNU 開發"
+
+#. Tag: devel::lang:ruby, short desc
+#: files/debtags/vocabulary
+msgid "Ruby Development"
+msgstr "Ruby 開發"
+
+#. Tag: devel::lang:scheme, short desc
+#: files/debtags/vocabulary
+msgid "Scheme Development"
+msgstr "Scheme 開發"
+
+#. Tag: devel::lang:sql, short desc
+#: files/debtags/vocabulary
+msgid "SQL"
+msgstr "SQL"
+
+#. Tag: devel::lang:tcl, short desc
+#: files/debtags/vocabulary
+msgid "Tcl Development"
+msgstr "Tcl 開發"
+
+#. Tag: devel::library, short desc
+#: files/debtags/vocabulary
+msgid "Libraries"
+msgstr "函式庫"
+
+#. Tag: devel::machinecode, short desc
+#: files/debtags/vocabulary
+msgid "Machine Code"
+msgstr "機器碼"
+
+#. Tag: devel::machinecode, long desc
+#: files/debtags/vocabulary
+msgid "Assemblers and other machine-code development tools."
+msgstr "組譯器以及其他機器碼開發工具。"
+
+#. Tag: devel::modelling, short desc
+#. Tag: science::modelling, short desc
+#: files/debtags/vocabulary
+msgid "Modelling"
+msgstr "建模"
+
+#. Tag: devel::modelling, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Programs and libraries that support creation of software models with "
+"modelling languages like UML or OCL."
+msgstr "支援使用建模語言如 UML 或 OCL 產生軟體模型的程式與函式庫。"
+
+#. Tag: devel::packaging, short desc
+#: files/debtags/vocabulary
+msgid "Packaging"
+msgstr "打包"
+
+#. Tag: devel::packaging, long desc
+#: files/debtags/vocabulary
+msgid "Tools for packaging software."
+msgstr "用來打包軟體的工具。"
+
+#. Tag: devel::prettyprint, short desc
+#: files/debtags/vocabulary
+msgid "Prettyprint"
+msgstr "美觀列印"
+
+#. Tag: devel::prettyprint, long desc
+#: files/debtags/vocabulary
+msgid "Code pretty-printing and indentation/reformatting."
+msgstr "程式碼美化，調整縮排與格式。"
+
+#. Tag: devel::profiler, short desc
+#: files/debtags/vocabulary
+msgid "Profiling"
+msgstr "效能分析"
+
+#. Tag: devel::profiler, long desc
+#: files/debtags/vocabulary
+msgid "Profiling and optimization tools."
+msgstr "效能分析與最佳化工具。"
+
+#. Tag: devel::rcs, short desc
+#: files/debtags/vocabulary
+msgid "Revision Control"
+msgstr "版本控制"
+
+#. Tag: devel::rcs, long desc
+#: files/debtags/vocabulary
+msgid "RCS (Revision Control System) and SCM (Software Configuration Manager)"
+msgstr "RCS (版本控制系統) 與 SCM (軟體設定管理)"
+
+#. Tag: devel::rpc, short desc
+#: files/debtags/vocabulary
+msgid "RPC"
+msgstr "RPC"
+
+#. Tag: devel::rpc, long desc
+#: files/debtags/vocabulary
+msgid "Remote Procedure Call, Network transparent programming"
+msgstr "遠端程式呼叫，透明的網絡編程"
+
+#. Tag: devel::runtime, short desc
+#: files/debtags/vocabulary
+msgid "Runtime Support"
+msgstr "執行期支援"
+
+#. Tag: devel::runtime, long desc
+#: files/debtags/vocabulary
+msgid "Runtime environments of various languages and systems."
+msgstr "不同語言和系統的執行環境。"
+
+#. Tag: devel::testing-qa, short desc
+#: files/debtags/vocabulary
+msgid "Testing and QA"
+msgstr "測試與品管"
+
+#. Tag: devel::testing-qa, long desc
+#: files/debtags/vocabulary
+msgid "Tools for software testing and quality assurance."
+msgstr "用來做軟體測試與品管的工具。"
+
+#. Tag: devel::ui-builder, short desc
+#. Facet: interface, short desc
+#: files/debtags/vocabulary
+msgid "User Interface"
+msgstr "使用者介面"
+
+#. Tag: devel::ui-builder, long desc
+#: files/debtags/vocabulary
+msgid "Tools for designing user interfaces."
+msgstr "用來設計使用者介面的工具。"
+
+#. Tag: devel::web, short desc
+#: files/debtags/vocabulary
+msgid "Web"
+msgstr "網路"
+
+#. Tag: devel::web, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Web-centric frameworks, CGI libraries and other web-specific development "
+"tools."
+msgstr "網頁框架，CGI 函式庫和其他網路相關開發工具。"
+
+#. Tag: educational, short desc
+#: files/debtags/vocabulary
+msgid "[Edu] Educational Software"
+msgstr "[Edu] 教學軟體"
+
+#. Facet: field, short desc
+#: files/debtags/vocabulary
+msgid "Field"
+msgstr "領域"
+
+#. Tag: field::arts, short desc
+#: files/debtags/vocabulary
+msgid "Arts"
+msgstr "藝術"
+
+#. Tag: field::astronomy, short desc
+#: files/debtags/vocabulary
+msgid "Astronomy"
+msgstr "天文學"
+
+#. Tag: field::aviation, short desc
+#: files/debtags/vocabulary
+msgid "Aviation"
+msgstr "航空"
+
+#. Tag: field::biology:bioinformatics, short desc
+#: files/debtags/vocabulary
+msgid "Bioinformatics"
+msgstr "生物資訊學"
+
+#. Tag: field::biology:bioinformatics, long desc
+#: files/debtags/vocabulary
+msgid "Sequence analysis software."
+msgstr "序列分析軟體"
+
+#. Tag: field::biology:molecular, short desc
+#: files/debtags/vocabulary
+msgid "Molecular Biology"
+msgstr "分子生物學"
+
+#. Tag: field::biology:molecular, long desc
+#: files/debtags/vocabulary
+msgid "Software useful to molecular cloning and related wet biology."
+msgstr "用於分子複製與濕生物學相關的軟體。"
+
+#. Tag: field::biology:structural, short desc
+#: files/debtags/vocabulary
+msgid "Structural Biology"
+msgstr "結構生物學"
+
+#. Tag: field::biology:structural, long desc
+#: files/debtags/vocabulary
+msgid "Software useful to model tridimentional structures."
+msgstr "用於建立立體結構模型的軟體。"
+
+#. Tag: field::chemistry, short desc
+#: files/debtags/vocabulary
+msgid "Chemistry"
+msgstr "化學"
+
+#. Tag: field::electronics, short desc
+#: files/debtags/vocabulary
+msgid "Electronics"
+msgstr "電子學"
+
+#. Tag: field::electronics, long desc
+#: files/debtags/vocabulary
+msgid "Circuit editors and other electronics-related software"
+msgstr "電路編輯器以及其他電子學相關軟體"
+
+#. Tag: field::finance, short desc
+#: files/debtags/vocabulary
+msgid "Financial"
+msgstr "財金學"
+
+#. Tag: field::finance, long desc
+#: files/debtags/vocabulary
+msgid "Accounting and financial software"
+msgstr "賬務以及財金相關軟體"
+
+#. Tag: field::genealogy, short desc
+#: files/debtags/vocabulary
+msgid "Genealogy"
+msgstr "家系學"
+
+#. Tag: field::geography, short desc
+#: files/debtags/vocabulary
+msgid "Geography"
+msgstr "地理學"
+
+#. Tag: field::geology, short desc
+#: files/debtags/vocabulary
+msgid "Geology"
+msgstr "地質學"
+
+#. Tag: field::linguistics, short desc
+#: files/debtags/vocabulary
+msgid "Linguistics"
+msgstr "語言學"
+
+#. Tag: field::mathematics, short desc
+#: files/debtags/vocabulary
+msgid "Mathematics"
+msgstr "數學"
+
+#. Tag: field::medicine, short desc
+#: files/debtags/vocabulary
+msgid "Medicine"
+msgstr "醫學"
+
+#. Tag: field::medicine:imaging, short desc
+#: files/debtags/vocabulary
+msgid "Medical Imaging"
+msgstr "醫學影像"
+
+#. Tag: field::meteorology, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Meteorology"
+msgstr "地質學"
+
+#. Tag: field::physics, short desc
+#: files/debtags/vocabulary
+msgid "Physics"
+msgstr "物理學"
+
+#. Tag: field::religion, short desc
+#: files/debtags/vocabulary
+msgid "Religion"
+msgstr "宗教"
+
+#. Tag: field::statistics, short desc
+#: files/debtags/vocabulary
+msgid "Statistics"
+msgstr "統計學"
+
+#. Facet: game, short desc
+#: files/debtags/vocabulary
+msgid "Games and Amusement"
+msgstr "遊戲與娛樂"
+
+#. Tag: game::adventure, short desc
+#: files/debtags/vocabulary
+msgid "Adventure"
+msgstr "冒險"
+
+#. Tag: game::arcade, short desc
+#: files/debtags/vocabulary
+msgid "Action and Arcade"
+msgstr "動作"
+
+#. Tag: game::board, short desc
+#: files/debtags/vocabulary
+msgid "Board"
+msgstr "棋盤"
+
+#. Tag: game::board:chess, short desc
+#: files/debtags/vocabulary
+msgid "Chess"
+msgstr "西洋棋"
+
+#. Tag: game::card, short desc
+#: files/debtags/vocabulary
+msgid "Card"
+msgstr "紙牌"
+
+#. Tag: game::demos, short desc
+#: files/debtags/vocabulary
+msgid "Demo"
+msgstr "展示"
+
+#. Tag: game::fps, short desc
+#: files/debtags/vocabulary
+msgid "First Person Shooter"
+msgstr "第一人稱射擊"
+
+#. Tag: game::mud, short desc
+#: files/debtags/vocabulary
+msgid "Multiplayer RPG"
+msgstr "多人角色扮演"
+
+#. Tag: game::mud, long desc
+#: files/debtags/vocabulary
+msgid "MUDs, MOOs, and other multiplayer RPGs"
+msgstr "MUDs, MOOs, 和其他多人角色扮演遊戲"
+
+#. Tag: game::platform, short desc
+#: files/debtags/vocabulary
+msgid "Platform"
+msgstr "平台"
+
+#. Tag: game::puzzle, short desc
+#: files/debtags/vocabulary
+msgid "Puzzle"
+msgstr "益智"
+
+#. Tag: game::rpg, short desc
+#: files/debtags/vocabulary
+msgid "Role-playing"
+msgstr "角色扮演"
+
+#. Tag: game::rpg:rogue, short desc
+#: files/debtags/vocabulary
+msgid "Rogue-like RPG"
+msgstr "Rogue-類角色扮演"
+
+#. Tag: game::rpg:rogue, long desc
+#: files/debtags/vocabulary
+msgid "Games like Nethack, Angband etc."
+msgstr "類似 Nethack, Angband 的遊戲。"
+
+#. Tag: game::simulation, short desc
+#: files/debtags/vocabulary
+msgid "Simulation"
+msgstr "模擬"
+
+#. Tag: game::sport, short desc
+#: files/debtags/vocabulary
+msgid "Sport Games"
+msgstr "運動遊戲"
+
+#. Tag: game::sport:racing, short desc
+#: files/debtags/vocabulary
+msgid "Racing"
+msgstr "競速"
+
+#. Tag: game::strategy, short desc
+#: files/debtags/vocabulary
+msgid "Strategy"
+msgstr "戰略"
+
+#. Tag: game::tetris, short desc
+#: files/debtags/vocabulary
+msgid "Tetris-like"
+msgstr "俄羅斯方塊類"
+
+#. Tag: game::toys, short desc
+#: files/debtags/vocabulary
+msgid "Toy or Gimmick"
+msgstr "小玩具"
+
+#. Tag: game::typing, short desc
+#: files/debtags/vocabulary
+msgid "Typing Tutor"
+msgstr "打字教學"
+
+#. Facet: hardware, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Enablement"
+msgstr "硬體相關"
+
+#. Tag: hardware::camera, short desc
+#: files/debtags/vocabulary
+msgid "Digital Camera"
+msgstr "數位相機"
+
+#. Tag: hardware::detection, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Detection"
+msgstr "硬體偵測"
+
+#. Tag: hardware::embedded, short desc
+#: files/debtags/vocabulary
+msgid "Embedded"
+msgstr "嵌入式"
+
+#. Tag: hardware::emulation, short desc
+#: files/debtags/vocabulary
+msgid "Emulation"
+msgstr "模擬"
+
+#. Tag: hardware::gps, short desc
+#: files/debtags/vocabulary
+msgid "GPS"
+msgstr "GPS"
+
+#. Tag: hardware::gps, long desc
+#: files/debtags/vocabulary
+msgid "Global Positioning System"
+msgstr "全球定位系統"
+
+#. Tag: hardware::input, short desc
+#: files/debtags/vocabulary
+msgid "Input Devices"
+msgstr "輸入設備"
+
+#. Tag: hardware::input:joystick, short desc
+#: files/debtags/vocabulary
+msgid "Joystick"
+msgstr "搖桿"
+
+#. Tag: hardware::input:keyboard, short desc
+#: files/debtags/vocabulary
+msgid "Keyboard"
+msgstr "鍵盤"
+
+#. Tag: hardware::input:mouse, short desc
+#: files/debtags/vocabulary
+msgid "Mouse"
+msgstr "滑鼠"
+
+#. Tag: hardware::joystick, short desc
+#: files/debtags/vocabulary
+msgid "Joystick (legacy)"
+msgstr "搖桿 (傳統)"
+
+#. Tag: hardware::hamradio, short desc
+#: files/debtags/vocabulary
+msgid "Ham Radio"
+msgstr "業餘無線電"
+
+#. Tag: hardware::laptop, short desc
+#: files/debtags/vocabulary
+msgid "Laptop"
+msgstr "筆記型電腦"
+
+#. Tag: hardware::modem, short desc
+#: files/debtags/vocabulary
+msgid "Modem"
+msgstr "數據機"
+
+#. Tag: hardware::modem:dsl, short desc
+#: files/debtags/vocabulary
+msgid "xDSL Modem"
+msgstr "xDSL 數據機"
+
+#. Tag: hardware::opengl, short desc
+#: files/debtags/vocabulary
+msgid "Requires video hardware acceleration"
+msgstr "需要硬體加速"
+
+#. Tag: hardware::power:ups, short desc
+#: files/debtags/vocabulary
+msgid "UPS"
+msgstr "UPS"
+
+#. Tag: hardware::power:ups, long desc
+#: files/debtags/vocabulary
+msgid "Uninterruptible Power Supply"
+msgstr "不斷電系統"
+
+#. Tag: hardware::power:acpi, short desc
+#: files/debtags/vocabulary
+msgid "ACPI Power Management"
+msgstr "ACPI 電源管理"
+
+#. Tag: hardware::power:apm, short desc
+#: files/debtags/vocabulary
+msgid "APM Power Management"
+msgstr "APM 電源管理"
+
+#. Tag: hardware::printer, short desc
+#: files/debtags/vocabulary
+msgid "Printer"
+msgstr "印表機"
+
+#. Tag: hardware::scanner, short desc
+#: files/debtags/vocabulary
+msgid "Image-scanning Hardware"
+msgstr "影像掃描裝置"
+
+#. Tag: hardware::storage, short desc
+#: files/debtags/vocabulary
+msgid "Storage"
+msgstr "儲存設備"
+
+#. Tag: hardware::storage:cd, short desc
+#: files/debtags/vocabulary
+msgid "CD"
+msgstr "CD"
+
+#. Tag: hardware::storage:cd, long desc
+#: files/debtags/vocabulary
+msgid "Compact Disc"
+msgstr "光碟片"
+
+#. Tag: hardware::storage:dvd, short desc
+#: files/debtags/vocabulary
+msgid "DVD"
+msgstr "DVD"
+
+#. Tag: hardware::storage:dvd, long desc
+#: files/debtags/vocabulary
+msgid "Digital Versatile Disc"
+msgstr "數位視訊影碟"
+
+#. Tag: hardware::storage:floppy, short desc
+#: files/debtags/vocabulary
+msgid "Floppy Disk"
+msgstr "軟碟片"
+
+#. Tag: hardware::usb, short desc
+#: files/debtags/vocabulary
+msgid "USB"
+msgstr "USB"
+
+#. Tag: hardware::usb, long desc
+#: files/debtags/vocabulary
+msgid "Universal Serial Bus"
+msgstr "通用序列匯排流"
+
+#. Tag: hardware::video, short desc
+#: files/debtags/vocabulary
+msgid "Graphics and Video"
+msgstr "圖形與影像"
+
+#. Facet: made-of, short desc
+#: files/debtags/vocabulary
+msgid "Made Of"
+msgstr "原料"
+
+#. Facet: made-of, long desc
+#: files/debtags/vocabulary
+msgid "The languages or data formats used to make the package"
+msgstr "製造此套件的語言或是資料格式"
+
+#. Tag: made-of::audio, short desc
+#. Tag: works-with::audio, short desc
+#: files/debtags/vocabulary
+msgid "Audio"
+msgstr "聲音"
+
+#. Tag: made-of::dictionary, short desc
+#: files/debtags/vocabulary
+msgid "Dictionary"
+msgstr "字典"
+
+#. Tag: made-of::font, short desc
+#. Tag: x11::font, short desc
+#: files/debtags/vocabulary
+msgid "Font"
+msgstr "字型"
+
+#. Tag: made-of::html, short desc
+#. Tag: works-with-format::html, short desc
+#: files/debtags/vocabulary
+msgid "HTML, Hypertext Markup Language"
+msgstr "HTML, 超本文標記語言"
+
+#. Tag: made-of::icons, short desc
+#: files/debtags/vocabulary
+msgid "Icons"
+msgstr "圖示"
+
+#. Tag: made-of::info, short desc
+#. Tag: works-with-format::info, short desc
+#: files/debtags/vocabulary
+msgid "Documentation in Info Format"
+msgstr "Info 格式的文件"
+
+#. Tag: made-of::man, short desc
+#: files/debtags/vocabulary
+msgid "Manuals in Nroff Format"
+msgstr "Nroff 格式的手冊"
+
+#. Tag: made-of::pdf, short desc
+#. Tag: works-with-format::pdf, short desc
+#: files/debtags/vocabulary
+msgid "PDF Documents"
+msgstr "PDF 文件"
+
+#. Tag: made-of::postscript, short desc
+#. Tag: works-with-format::postscript, short desc
+#: files/debtags/vocabulary
+msgid "PostScript"
+msgstr "PostScript"
+
+#. Tag: made-of::sgml, short desc
+#. Tag: works-with-format::sgml, short desc
+#: files/debtags/vocabulary
+msgid "SGML, Standard Generalized Markup Language"
+msgstr "SGML, 標準通用標記語言"
+
+#. Tag: made-of::svg, short desc
+#. Tag: works-with-format::svg, short desc
+#: files/debtags/vocabulary
+msgid "SVG, Scalable Vector Graphics"
+msgstr "SVG, 可延展向量圖形"
+
+#. Tag: made-of::tex, short desc
+#: files/debtags/vocabulary
+msgid "TeX, LaTeX and DVI"
+msgstr "TeX, LaTeX 與 DVI"
+
+#. Tag: made-of::vrml, short desc
+#: files/debtags/vocabulary
+msgid "VRML, Virtual Reality Markup Language"
+msgstr "VRML, 虛擬實境標記語言"
+
+#. Tag: made-of::xml, short desc
+#. Tag: works-with-format::xml, short desc
+#: files/debtags/vocabulary
+msgid "XML"
+msgstr "XML"
+
+#. Tag: interface::3d, short desc
+#: files/debtags/vocabulary
+msgid "Three-Dimensional"
+msgstr "三維"
+
+#. Tag: interface::commandline, short desc
+#: files/debtags/vocabulary
+msgid "Command Line"
+msgstr "命令行"
+
+#. Tag: interface::daemon, short desc
+#: files/debtags/vocabulary
+msgid "Daemon"
+msgstr "常駐程式"
+
+#. Tag: interface::daemon, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Runs in background, only a control interface is provided, usually on "
+"commandline."
+msgstr "於背景執行，只有提供控制介面，通常是命令行。"
+
+#. Tag: interface::framebuffer, short desc
+#: files/debtags/vocabulary
+msgid "Framebuffer"
+msgstr "Framebuffer"
+
+#. Tag: interface::shell, short desc
+#: files/debtags/vocabulary
+msgid "Command Shell"
+msgstr "Command Shell"
+
+#. Tag: interface::svga, short desc
+#: files/debtags/vocabulary
+msgid "Console SVGA"
+msgstr "Console SVGA"
+
+#. Tag: interface::text-mode, short desc
+#: files/debtags/vocabulary
+msgid "Text-based Interactive"
+msgstr "文字模式"
+
+#. Tag: interface::web, short desc
+#. Facet: web, short desc
+#: files/debtags/vocabulary
+msgid "World Wide Web"
+msgstr "全球資訊網"
+
+#. Tag: interface::x11, short desc
+#. Facet: x11, short desc
+#: files/debtags/vocabulary
+msgid "X Window System"
+msgstr "X 視窗系統"
+
+#. Facet: implemented-in, short desc
+#: files/debtags/vocabulary
+msgid "Implemented in"
+msgstr "實做語言"
+
+#. Tag: implemented-in::ada, short desc
+#: files/debtags/vocabulary
+msgid "Ada"
+msgstr "Ada"
+
+#. Tag: implemented-in::c, short desc
+#: files/debtags/vocabulary
+msgid "C"
+msgstr "C"
+
+#. Tag: implemented-in::c++, short desc
+#: files/debtags/vocabulary
+msgid "C++"
+msgstr "C++"
+
+#. Tag: implemented-in::c-sharp, short desc
+#: files/debtags/vocabulary
+msgid "C#"
+msgstr "C#"
+
+#. Tag: implemented-in::fortran, short desc
+#: files/debtags/vocabulary
+msgid "Fortran"
+msgstr "Fortran"
+
+#. Tag: implemented-in::haskell, short desc
+#: files/debtags/vocabulary
+msgid "Haskell"
+msgstr "Haskell"
+
+#. Tag: implemented-in::java, short desc
+#: files/debtags/vocabulary
+msgid "Java"
+msgstr "Java"
+
+#. Tag: implemented-in::ecmascript, short desc
+#: files/debtags/vocabulary
+msgid "Ecmascript/Javascript"
+msgstr "Ecmascript/Javascript"
+
+#. Tag: implemented-in::lisp, short desc
+#: files/debtags/vocabulary
+msgid "Lisp"
+msgstr "Lisp"
+
+#. Tag: implemented-in::lua, short desc
+#: files/debtags/vocabulary
+msgid "Lua"
+msgstr "Lua"
+
+#. Tag: implemented-in::ml, short desc
+#: files/debtags/vocabulary
+msgid "ML"
+msgstr "ML"
+
+#. Tag: implemented-in::objc, short desc
+#: files/debtags/vocabulary
+msgid "Objective C"
+msgstr "Objective C"
+
+#. Tag: implemented-in::ocaml, short desc
+#: files/debtags/vocabulary
+msgid "OCaml"
+msgstr "OCaml"
+
+#. Tag: implemented-in::perl, short desc
+#: files/debtags/vocabulary
+msgid "Perl"
+msgstr "Perl"
+
+#. Tag: implemented-in::php, short desc
+#: files/debtags/vocabulary
+msgid "PHP"
+msgstr "PHP"
+
+#. Tag: implemented-in::pike, short desc
+#: files/debtags/vocabulary
+msgid "Pike"
+msgstr "Pike"
+
+#. Tag: implemented-in::python, short desc
+#: files/debtags/vocabulary
+msgid "Python"
+msgstr "Python"
+
+#. Tag: implemented-in::r, short desc
+#: files/debtags/vocabulary
+msgid "GNU R"
+msgstr "GNU R"
+
+#. Tag: implemented-in::ruby, short desc
+#: files/debtags/vocabulary
+msgid "Ruby"
+msgstr "Ruby"
+
+#. Tag: implemented-in::scheme, short desc
+#: files/debtags/vocabulary
+msgid "Scheme"
+msgstr "Scheme"
+
+#. Tag: implemented-in::shell, short desc
+#: files/debtags/vocabulary
+msgid "sh, bash, ksh, tcsh and other shells"
+msgstr "sh, bash, ksh, tcsh 或其他 shells"
+
+#. Tag: implemented-in::tcl, short desc
+#: files/debtags/vocabulary
+msgid "Tcl, Tool Command Language"
+msgstr "Tcl, Tool Command Language"
+
+#. Facet: junior, short desc
+#: files/debtags/vocabulary
+msgid "Junior Applications"
+msgstr "青少年應用"
+
+#. Facet: junior, long desc
+#: files/debtags/vocabulary
+msgid "Applications recommended for younger users"
+msgstr "推薦給教年輕使用者的程式"
+
+#. Tag: junior::arcade, short desc
+#: files/debtags/vocabulary
+msgid "Arcade Games"
+msgstr "動作遊戲"
+
+#. Tag: junior::games-gl, short desc
+#: files/debtags/vocabulary
+msgid "3D Games"
+msgstr "3D 遊戲"
+
+#. Tag: junior::meta, short desc
+#: files/debtags/vocabulary
+msgid "Metapackages"
+msgstr "元套件"
+
+#. Facet: mail, short desc
+#: files/debtags/vocabulary
+msgid "Electronic Mail"
+msgstr "電子郵件"
+
+#. Tag: mail::filters, short desc
+#: files/debtags/vocabulary
+msgid "Filters"
+msgstr "過濾器"
+
+#. Tag: mail::imap, short desc
+#: files/debtags/vocabulary
+msgid "IMAP Protocol"
+msgstr "IMAP 協定"
+
+#. Tag: mail::list, short desc
+#: files/debtags/vocabulary
+msgid "Mailing Lists"
+msgstr "郵件列表"
+
+#. Tag: mail::notification, short desc
+#: files/debtags/vocabulary
+msgid "Notification"
+msgstr "提醒"
+
+#. Tag: mail::notification, long desc
+#: files/debtags/vocabulary
+msgid "Software that notifies users about status of mailbox."
+msgstr "提醒使用者有新信件的程式。"
+
+#. Tag: mail::pop, short desc
+#: files/debtags/vocabulary
+msgid "POP3 Protocol"
+msgstr "POP3 協定"
+
+#. Tag: mail::smtp, short desc
+#: files/debtags/vocabulary
+msgid "SMTP Protocol"
+msgstr "SMTP 協定"
+
+#. Tag: mail::delivery-agent, short desc
+#: files/debtags/vocabulary
+msgid "Mail Delivery Agent"
+msgstr "郵件遞送代理"
+
+#. Tag: mail::delivery-agent, long desc
+#: files/debtags/vocabulary
+msgid "Software that delivers mail to users' mailboxes."
+msgstr "傳遞郵件到使用者信箱的程式。"
+
+#. Tag: mail::transport-agent, short desc
+#: files/debtags/vocabulary
+msgid "Mail Transport Agent"
+msgstr "郵件傳送代理"
+
+#. Tag: mail::transport-agent, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that routes and transmits mail accross the system and the network."
+msgstr "在系統與網路間轉送郵件的程式。"
+
+#. Tag: mail::user-agent, short desc
+#: files/debtags/vocabulary
+msgid "Mail User Agent"
+msgstr "郵件使用者代理"
+
+#. Tag: mail::user-agent, long desc
+#: files/debtags/vocabulary
+msgid "Software that allows users to access e-mail."
+msgstr "使用者用來存取郵件的程式。"
+
+#. Facet: office, short desc
+#: files/debtags/vocabulary
+msgid "Office and business"
+msgstr "辦公室與商務"
+
+#. Tag: office::finance, short desc
+#: files/debtags/vocabulary
+msgid "Finance"
+msgstr "財政"
+
+#. Tag: office::groupware, short desc
+#: files/debtags/vocabulary
+msgid "Groupware"
+msgstr "群組體軟體"
+
+#. Tag: office::presentation, short desc
+#: files/debtags/vocabulary
+msgid "Presentation"
+msgstr "簡報"
+
+#. Tag: office::project-management, short desc
+#: files/debtags/vocabulary
+msgid "Project Management"
+msgstr "專案管理"
+
+#. Tag: office::spreadsheet, short desc
+#. Tag: works-with::spreadsheet, short desc
+#: files/debtags/vocabulary
+msgid "Spreadsheet"
+msgstr "報表"
+
+#. Facet: works-with, short desc
+#: files/debtags/vocabulary
+msgid "Works with"
+msgstr "處理"
+
+#. Facet: works-with, long desc
+#: files/debtags/vocabulary
+msgid ""
+"These tags describe what is the kind of data (or even processes, or people) "
+"that the package can work with."
+msgstr "這些標籤描述了套件可以處理的資料 (或程序或人物)。"
+
+#. Tag: works-with::3dmodel, short desc
+#: files/debtags/vocabulary
+msgid "3D Model"
+msgstr "3D 模型"
+
+#. Tag: works-with::archive, short desc
+#: files/debtags/vocabulary
+msgid "Archive"
+msgstr "壓縮檔"
+
+#. Tag: works-with::biological-sequence, short desc
+#: files/debtags/vocabulary
+msgid "Biological Sequence"
+msgstr ""
+
+#. Tag: works-with::bugs, short desc
+#: files/debtags/vocabulary
+msgid "Bugs or Issues"
+msgstr "臭蟲或問題"
+
+#. Tag: works-with::db, short desc
+#: files/debtags/vocabulary
+msgid "Databases"
+msgstr "資料庫"
+
+#. Tag: works-with::dictionary, short desc
+#: files/debtags/vocabulary
+msgid "Dictionaries"
+msgstr "字典"
+
+#. Tag: works-with::dtp, short desc
+#: files/debtags/vocabulary
+msgid "Desktop Publishing (DTP)"
+msgstr "桌面出版 (DTP)"
+
+#. Tag: works-with::fax, short desc
+#: files/debtags/vocabulary
+msgid "Faxes"
+msgstr "傳真"
+
+#. Tag: works-with::file, short desc
+#: files/debtags/vocabulary
+msgid "Files"
+msgstr "檔案"
+
+#. Tag: works-with::font, short desc
+#: files/debtags/vocabulary
+msgid "Fonts"
+msgstr "字型"
+
+#. Tag: works-with::graphs, short desc
+#: files/debtags/vocabulary
+msgid "Trees and Graphs"
+msgstr ""
+
+#. Tag: works-with::im, short desc
+#: files/debtags/vocabulary
+msgid "Instant Messages"
+msgstr "即時訊息"
+
+#. Tag: works-with::im, long desc
+#: files/debtags/vocabulary
+msgid "The package can connect to some IM network (or networks)."
+msgstr "此套件可以連接至某些 IM 網路。"
+
+#. Tag: works-with::logfile, short desc
+#: files/debtags/vocabulary
+msgid "System Logs"
+msgstr "系統日誌"
+
+#. Tag: works-with::mail, short desc
+#: files/debtags/vocabulary
+msgid "Email"
+msgstr "電子郵件"
+
+#. Tag: works-with::music-notation, short desc
+#: files/debtags/vocabulary
+msgid "Music Notation"
+msgstr "樂譜"
+
+#. Tag: works-with::network-traffic, short desc
+#: files/debtags/vocabulary
+msgid "Network Traffic"
+msgstr "網路流量"
+
+#. Tag: works-with::network-traffic, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Routers, shapers, sniffers, firewalls and other tools that work with a "
+"stream of network packets."
+msgstr "Routers, shapers, sniffers, firewalls 和其他可以分析封包的程式。."
+
+#. Tag: works-with::people, short desc
+#: files/debtags/vocabulary
+msgid "People"
+msgstr "人"
+
+#. Tag: works-with::pim, short desc
+#: files/debtags/vocabulary
+msgid "Personal Information"
+msgstr "個人資訊"
+
+#. Tag: works-with::image, short desc
+#: files/debtags/vocabulary
+msgid "Image"
+msgstr "影像"
+
+#. Tag: works-with::image:raster, short desc
+#: files/debtags/vocabulary
+msgid "Raster Image"
+msgstr "光柵影像"
+
+#. Tag: works-with::image:raster, long desc
+#: files/debtags/vocabulary
+msgid "Images made of dots, such as photos and scans"
+msgstr "由像素組成的影像，如像片和掃描結果"
+
+#. Tag: works-with::image:vector, short desc
+#: files/debtags/vocabulary
+msgid "Vector Image"
+msgstr "向量影像"
+
+#. Tag: works-with::image:vector, long desc
+#: files/debtags/vocabulary
+msgid "Images made of lines, such as graphs or most clipart"
+msgstr "由線組成的影像，如曲線圖或大多數 clipart"
+
+#. Tag: works-with::software:package, short desc
+#: files/debtags/vocabulary
+msgid "Packaged Software"
+msgstr "已打包的軟體"
+
+#. Tag: works-with::software:running, short desc
+#: files/debtags/vocabulary
+msgid "Running Programs"
+msgstr "執行中的程式"
+
+#. Tag: works-with::software:source, short desc
+#. Tag: role::source, short desc
+#: files/debtags/vocabulary
+msgid "Source Code"
+msgstr "原始碼"
+
+#. Tag: works-with::text, short desc
+#: files/debtags/vocabulary
+msgid "Text"
+msgstr "文字"
+
+#. Tag: works-with::unicode, short desc
+#: files/debtags/vocabulary
+msgid "Unicode"
+msgstr "Unicode"
+
+#. Tag: works-with::unicode, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Please do not tag programs with simple unicode support, doing so would make "
+"this tag useless. Ultimately all applications should have unicode support."
+msgstr ""
+"請不要替只支援簡單 unicode 的程式標記此標籤，這會使得此標籤顯得無用。最終所有"
+"程式都應該要支援 unicode。"
+
+#. Tag: works-with::vcs, short desc
+#: files/debtags/vocabulary
+msgid "Version control system"
+msgstr "版本控制系統"
+
+#. Tag: works-with::video, short desc
+#: files/debtags/vocabulary
+msgid "Video and Animation"
+msgstr "影像和動畫"
+
+#. Facet: works-with-format, short desc
+#: files/debtags/vocabulary
+msgid "Supports Format"
+msgstr "支援的格式"
+
+#. Tag: works-with-format::bib, short desc
+#: files/debtags/vocabulary
+msgid "BibTeX"
+msgstr "BibTeX"
+
+#. Tag: works-with-format::bib, long desc
+#: files/debtags/vocabulary
+msgid "BibTeX list of references"
+msgstr "BibTeX 參考清單"
+
+#. Tag: works-with-format::djvu, short desc
+#: files/debtags/vocabulary
+msgid "DjVu"
+msgstr "DjVu"
+
+#. Tag: works-with-format::djvu, long desc
+#: files/debtags/vocabulary
+msgid ""
+"File format to store scanned documents.\n"
+"Link: http://en.wikipedia.org/wiki/Djvu"
+msgstr ""
+"用來存放掃描近來的文件。\n"
+"連結： http://en.wikipedia.org/wiki/Djvu"
+
+#. Tag: works-with-format::docbook, short desc
+#: files/debtags/vocabulary
+msgid "DocBook"
+msgstr "DocBook"
+
+#. Tag: works-with-format::dvi, short desc
+#: files/debtags/vocabulary
+msgid "TeX DVI"
+msgstr "TeX DVI"
+
+#. Tag: works-with-format::dvi, long desc
+#: files/debtags/vocabulary
+msgid ""
+"DeVice Independent page description file, usually generated by TeX or LaTeX."
+msgstr "設備無關的頁面描述檔，通常由 TeX 或 LaTeX 生成。"
+
+#. Tag: works-with-format::gif, short desc
+#: files/debtags/vocabulary
+msgid "GIF, Graphics Interchange Format"
+msgstr "GIF, Graphics Interchange Format"
+
+#. Tag: works-with-format::xml:gpx, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "GPX, GPS eXchange Format"
+msgstr "GIF, Graphics Interchange Format"
+
+#. Tag: works-with-format::iso9660, short desc
+#: files/debtags/vocabulary
+msgid "ISO 9660 CD Filesystem"
+msgstr "ISO 9660 CD 檔案系統"
+
+#. Tag: works-with-format::jpg, short desc
+#: files/debtags/vocabulary
+msgid "JPEG, Joint Photographic Experts Group"
+msgstr "JPEG, Joint Photographic Experts Group"
+
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr ""
+
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr ""
+
+#. Tag: works-with-format::ldif, short desc
+#: files/debtags/vocabulary
+msgid "LDIF"
+msgstr "LDIF"
+
+#. Tag: works-with-format::ldif, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight Directory Interchange Format"
+msgstr "輕量目錄交換格式"
+
+#. Tag: works-with-format::man, short desc
+#: files/debtags/vocabulary
+msgid "Manpages"
+msgstr "Manpages"
+
+#. Tag: works-with-format::mp3, short desc
+#: files/debtags/vocabulary
+msgid "MP3 Audio"
+msgstr "MP3 音樂"
+
+#. Tag: works-with-format::mpc, short desc
+#: files/debtags/vocabulary
+msgid "Musepack Audio"
+msgstr "Musepack 音樂"
+
+#. Tag: works-with-format::odf, short desc
+#: files/debtags/vocabulary
+msgid "ODF, Open Document Format"
+msgstr "ODF, Open Document Format"
+
+#. Tag: works-with-format::oggtheora, short desc
+#: files/debtags/vocabulary
+msgid "Ogg Theora Video"
+msgstr "Ogg Theora Video"
+
+#. Tag: works-with-format::oggvorbis, short desc
+#: files/debtags/vocabulary
+msgid "Ogg Vorbis Audio"
+msgstr "Ogg Vorbis 音樂"
+
+#. Tag: works-with-format::plaintext, short desc
+#: files/debtags/vocabulary
+msgid "Plain Text"
+msgstr "純文字"
+
+#. Tag: works-with-format::png, short desc
+#: files/debtags/vocabulary
+msgid "PNG, Portable Network Graphics"
+msgstr "PNG, Portable Network Graphics"
+
+#. Tag: works-with-format::swf, short desc
+#: files/debtags/vocabulary
+msgid "SWF, ShockWave Flash"
+msgstr "SWF, ShockWave Flash"
+
+#. Tag: works-with-format::tar, short desc
+#: files/debtags/vocabulary
+msgid "Tar Archives"
+msgstr "Tar 壓縮檔"
+
+#. Tag: works-with-format::tex, short desc
+#: files/debtags/vocabulary
+msgid "TeX and LaTeX"
+msgstr "TeX 與 LaTeX"
+
+#. Tag: works-with-format::tiff, short desc
+#: files/debtags/vocabulary
+msgid "TIFF, Tagged Image File Format"
+msgstr "TIFF, Tagged Image File Format"
+
+#. Tag: works-with-format::vrml, short desc
+#: files/debtags/vocabulary
+msgid "VRML 3D Model"
+msgstr "VRML 3D 模型"
+
+#. Tag: works-with-format::vrml, long desc
+#: files/debtags/vocabulary
+msgid "Virtual Reality Markup Language"
+msgstr "虛擬實境標記語言"
+
+#. Tag: works-with-format::wav, short desc
+#: files/debtags/vocabulary
+msgid "MS RIFF Audio"
+msgstr "MS RIFF 音樂"
+
+#. Tag: works-with-format::wav, long desc
+#: files/debtags/vocabulary
+msgid "Wave uncompressed audio format"
+msgstr "Wave 未壓縮音樂格式"
+
+#. Tag: works-with-format::xml:rss, short desc
+#: files/debtags/vocabulary
+msgid "RSS Rich Site Summary"
+msgstr "RSS Rich Site Summary"
+
+#. Tag: works-with-format::xml:rss, long desc
+#: files/debtags/vocabulary
+msgid "XML dialect used to describe resources and websites."
+msgstr "XML 格式用來描述資源與網站。."
+
+#. Tag: works-with-format::xml:xslt, short desc
+#: files/debtags/vocabulary
+msgid "XSL Transformations (XSLT)"
+msgstr "XSL Transformations (XSLT)"
+
+#. Tag: works-with-format::zip, short desc
+#: files/debtags/vocabulary
+msgid "Zip Archives"
+msgstr "Zip 壓縮檔"
+
+#. Facet: scope, short desc
+#: files/debtags/vocabulary
+msgid "Scope"
+msgstr "範圍"
+
+#. Tag: scope::utility, short desc
+#: files/debtags/vocabulary
+msgid "Utility"
+msgstr "實用程式"
+
+#. Tag: scope::utility, long desc
+#: files/debtags/vocabulary
+msgid ""
+"A narrow-scoped program for particular use case or few use cases. It only "
+"does something 10-20% of users in the field will need. Often has "
+"functionality missing from related applications."
+msgstr ""
+"較小使用範圍的程式。通常只有 10-20% 的使用者會需要，通常擁有其相關程式缺少的"
+"功能。"
+
+#. Tag: scope::application, short desc
+#. Tag: web::application, short desc
+#. Tag: x11::application, short desc
+#: files/debtags/vocabulary
+msgid "Application"
+msgstr "應用程式"
+
+#. Tag: scope::application, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Broad-scoped program for general use. It probably has functionality for 80-"
+"90% of use cases. The pieces that remain are usually to be found as "
+"utilities."
+msgstr ""
+"較大使用範圍的程式。通常包含了 80-90% 的需求，其他部份通常由實用程式涵蓋。"
+
+#. Tag: scope::suite, short desc
+#: files/debtags/vocabulary
+msgid "Suite"
+msgstr "套裝軟體"
+
+#. Tag: scope::suite, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Comprehensive suite of applications and utilities on the scale of desktop "
+"environment or base operating system."
+msgstr "一整套的應用程式和實用程式，涵蓋桌面環境或基礎作業系統環境。"
+
+#. Facet: role, short desc
+#: files/debtags/vocabulary
+msgid "Role"
+msgstr "角色"
+
+#. Tag: role::app-data, short desc
+#: files/debtags/vocabulary
+msgid "Application Data"
+msgstr "應用程式資料"
+
+#. Tag: role::data, short desc
+#: files/debtags/vocabulary
+msgid "Standalone Data"
+msgstr "一般資料"
+
+#. Tag: role::debug-symbols, short desc
+#: files/debtags/vocabulary
+msgid "Debugging symbols"
+msgstr "除錯資訊"
+
+#. Tag: role::debug-symbols, long desc
+#: files/debtags/vocabulary
+msgid "Debugging symbols."
+msgstr "除錯資訊"
+
+#. Tag: role::devel-lib, short desc
+#: files/debtags/vocabulary
+msgid "Development Library"
+msgstr "開發用函式庫"
+
+#. Tag: role::devel-lib, long desc
+#: files/debtags/vocabulary
+msgid "Library and header files used in software development or building."
+msgstr "軟體開發中需要的函式庫與定義檔。"
+
+#. Tag: role::dummy, short desc
+#: files/debtags/vocabulary
+msgid "Dummy Package"
+msgstr "空殼套件"
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid "Packages used for upgrades and transitions."
+msgstr "用來升級或過渡的空殼套件。"
+
+#. Tag: role::kernel, short desc
+#: files/debtags/vocabulary
+msgid "Kernel and Modules"
+msgstr "核心與模組"
+
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid "Packages that contain only operating system kernels and kernel modules."
+msgstr "只包含作業系統核心與核心模組的套件。"
+
+#. Tag: role::metapackage, short desc
+#: files/debtags/vocabulary
+msgid "Metapackage"
+msgstr "元套件"
+
+#. Tag: role::metapackage, long desc
+#: files/debtags/vocabulary
+msgid "Packages that install suites of other packages."
+msgstr "可以一次安裝一整套的軟體。"
+
+#. Tag: role::plugin, short desc
+#: files/debtags/vocabulary
+msgid "Plugin"
+msgstr "插件"
+
+#. Tag: role::plugin, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Add-on, pluggable program fragments enhancing functionality of some program "
+"or system."
+msgstr "Add-on, 可抽換的程式片斷，可以增加應用程式的功能。"
+
+#. Tag: role::program, short desc
+#: files/debtags/vocabulary
+msgid "Program"
+msgstr "程式"
+
+#. Tag: role::program, long desc
+#: files/debtags/vocabulary
+msgid "Executable computer program."
+msgstr "可以執行的電腦程式。"
+
+#. Tag: role::shared-lib, short desc
+#: files/debtags/vocabulary
+msgid "Shared Library"
+msgstr "共用函式庫"
+
+#. Tag: role::shared-lib, long desc
+#: files/debtags/vocabulary
+msgid "Shared libraries used by one or more programs."
+msgstr "共用函式庫由多個程式共用。"
+
+#. Tag: role::source, long desc
+#: files/debtags/vocabulary
+msgid "Human-readable code of a program, library or a part thereof."
+msgstr "人類可閱讀的程式碼。"
+
+#. Facet: security, short desc
+#: files/debtags/vocabulary
+msgid "Security"
+msgstr "安全性"
+
+#. Facet: security, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to system security"
+msgstr "說明此套件如何與系統安全相關"
+
+#. Tag: security::antivirus, short desc
+#: files/debtags/vocabulary
+msgid "Anti-Virus"
+msgstr "防毒軟體"
+
+#. Tag: security::authentication, short desc
+#: files/debtags/vocabulary
+msgid "Authentication"
+msgstr "帳號認證"
+
+#. Tag: security::cryptography, short desc
+#: files/debtags/vocabulary
+msgid "Cryptography"
+msgstr "加密"
+
+#. Tag: security::cryptography, long desc
+#: files/debtags/vocabulary
+msgid "Cryptographic and privacy-oriented tools."
+msgstr "密碼以及隱私相關工具。"
+
+#. Tag: security::firewall, short desc
+#. Tag: network::firewall, short desc
+#: files/debtags/vocabulary
+msgid "Firewall"
+msgstr "防火牆"
+
+#. Tag: security::forensics, short desc
+#: files/debtags/vocabulary
+msgid "Forensics"
+msgstr ""
+
+#. Tag: security::forensics, long desc
+#: files/debtags/vocabulary
+msgid "Post-mortem analysis of intrusions."
+msgstr ""
+
+#. Tag: security::ids, short desc
+#: files/debtags/vocabulary
+msgid "Intrusion Detection"
+msgstr ""
+
+#. Tag: security::integrity, short desc
+#: files/debtags/vocabulary
+msgid "File Integrity"
+msgstr "檔案完整性"
+
+#. Tag: security::integrity, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Tools to monitor system for changes in filesystem and report changes or "
+"tools providing other means to check system integrity."
+msgstr ""
+
+#. Tag: security::log-analyzer, short desc
+#: files/debtags/vocabulary
+msgid "Log Analyzer"
+msgstr "日誌分析"
+
+#. Tag: security::privacy, short desc
+#: files/debtags/vocabulary
+msgid "Privacy"
+msgstr "隱私"
+
+#. Facet: sound, short desc
+#: files/debtags/vocabulary
+msgid "Sound and Music"
+msgstr "聲音與音樂"
+
+#. Tag: sound::compression, short desc
+#: files/debtags/vocabulary
+msgid "Compression"
+msgstr "壓縮"
+
+#. Tag: sound::midi, short desc
+#: files/debtags/vocabulary
+msgid "MIDI Software"
+msgstr "MIDI 軟體"
+
+#. Tag: sound::mixer, short desc
+#: files/debtags/vocabulary
+msgid "Mixing"
+msgstr "混音"
+
+#. Tag: sound::player, short desc
+#: files/debtags/vocabulary
+msgid "Playback"
+msgstr ""
+
+#. Tag: sound::recorder, short desc
+#: files/debtags/vocabulary
+msgid "Recording"
+msgstr "錄製"
+
+#. Tag: sound::sequencer, short desc
+#: files/debtags/vocabulary
+msgid "MIDI Sequencing"
+msgstr ""
+
+#. Facet: special, short desc
+#: files/debtags/vocabulary
+msgid "Service tags"
+msgstr "特殊標籤"
+
+#. Tag: special::auto-inst-parts, short desc
+#: files/debtags/vocabulary
+msgid "Secondary packages users won't install directly"
+msgstr "此套件通常會自動安裝"
+
+#. Tag: special::ipv6-nosupport, short desc
+#: files/debtags/vocabulary
+msgid "NO IPv6 support"
+msgstr "無 IPv6 支援"
+
+#. Tag: special::ipv6-nosupport, long desc
+#: files/debtags/vocabulary
+msgid "Use this for packages that cannot yet or will never support IPv6."
+msgstr ""
+
+#. Tag: special::obsolete, short desc
+#: files/debtags/vocabulary
+msgid "Obsolete Packages"
+msgstr "過期套件"
+
+#. Tag: special::obsolete, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Packages that are not used any longer, also packages only left for upgrade "
+"purposes (merged / split packages)"
+msgstr ""
+
+#. Tag: special::invalid-tag, short desc
+#: files/debtags/vocabulary
+msgid "Invalid tag"
+msgstr "無效的標籤"
+
+#. Tag: special::invalid-tag, long desc
+#: files/debtags/vocabulary
+msgid ""
+"This tag means that the tag database contains a tag which is not present in "
+"the tag vocabulary.  The presence of this tag indicates a software bug: this "
+"should never show up."
+msgstr ""
+
+#. Tag: special::not-yet-tagged, short desc
+#: files/debtags/vocabulary
+msgid "!Not yet tagged packages!"
+msgstr "！還沒標籤的套件！"
+
+#. Tag: special::not-yet-tagged::a, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with a"
+msgstr "還沒標籤的套件 a"
+
+#. Tag: special::not-yet-tagged::b, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with b"
+msgstr "還沒標籤的套件 b"
+
+#. Tag: special::not-yet-tagged::c, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with c"
+msgstr "還沒標籤的套件 c"
+
+#. Tag: special::not-yet-tagged::d, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with d"
+msgstr "還沒標籤的套件 d"
+
+#. Tag: special::not-yet-tagged::e, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with e"
+msgstr "還沒標籤的套件 e"
+
+#. Tag: special::not-yet-tagged::f, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with f"
+msgstr "還沒標籤的套件 f"
+
+#. Tag: special::not-yet-tagged::g, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with g"
+msgstr "還沒標籤的套件 g"
+
+#. Tag: special::not-yet-tagged::h, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with h"
+msgstr "還沒標籤的套件 h"
+
+#. Tag: special::not-yet-tagged::i, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with i"
+msgstr "還沒標籤的套件 i"
+
+#. Tag: special::not-yet-tagged::j, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with j"
+msgstr "還沒標籤的套件 j"
+
+#. Tag: special::not-yet-tagged::k, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with k"
+msgstr "還沒標籤的套件 k"
+
+#. Tag: special::not-yet-tagged::l, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with l"
+msgstr "還沒標籤的套件 l"
+
+#. Tag: special::not-yet-tagged::m, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with m"
+msgstr "還沒標籤的套件 m"
+
+#. Tag: special::not-yet-tagged::n, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with n"
+msgstr "還沒標籤的套件 n"
+
+#. Tag: special::not-yet-tagged::o, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with o"
+msgstr "還沒標籤的套件 o"
+
+#. Tag: special::not-yet-tagged::p, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with p"
+msgstr "還沒標籤的套件 p"
+
+#. Tag: special::not-yet-tagged::q, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with q"
+msgstr "還沒標籤的套件 q"
+
+#. Tag: special::not-yet-tagged::r, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with r"
+msgstr "還沒標籤的套件 r"
+
+#. Tag: special::not-yet-tagged::s, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with s"
+msgstr "還沒標籤的套件 s"
+
+#. Tag: special::not-yet-tagged::t, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with t"
+msgstr "還沒標籤的套件 t"
+
+#. Tag: special::not-yet-tagged::u, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with u"
+msgstr "還沒標籤的套件 u"
+
+#. Tag: special::not-yet-tagged::v, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with v"
+msgstr "還沒標籤的套件 v"
+
+#. Tag: special::not-yet-tagged::w, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with w"
+msgstr "還沒標籤的套件 w"
+
+#. Tag: special::not-yet-tagged::x, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with x"
+msgstr "還沒標籤的套件 x"
+
+#. Tag: special::not-yet-tagged::y, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with y"
+msgstr "還沒標籤的套件 y"
+
+#. Tag: special::not-yet-tagged::z, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with z"
+msgstr "還沒標籤的套件 z"
+
+#. Facet: suite, short desc
+#: files/debtags/vocabulary
+msgid "Application Suite"
+msgstr "應用程式集"
+
+#. Tag: suite::apache, short desc
+#: files/debtags/vocabulary
+msgid "Apache"
+msgstr "Apache"
+
+#. Tag: suite::bsd, short desc
+#: files/debtags/vocabulary
+msgid "BSD"
+msgstr "BSD"
+
+#. Tag: suite::bsd, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Berkeley Software Distribution, sometimes called Berkeley Unix or BSD Unix, "
+"and its family of descendants: FreeBSD, NetBSD or OpenBSD.\n"
+"Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
+msgstr ""
+
+#. Tag: suite::eclipse, short desc
+#: files/debtags/vocabulary
+msgid "Eclipse"
+msgstr "Eclipse"
+
+#. Tag: suite::eclipse, long desc
+#: files/debtags/vocabulary
+msgid "Eclipse tool platform and plugins."
+msgstr ""
+
+#. Tag: suite::emacs, short desc
+#: files/debtags/vocabulary
+msgid "Emacs"
+msgstr "Emacs"
+
+#. Tag: suite::gforge, short desc
+#: files/debtags/vocabulary
+msgid "GForge"
+msgstr "GForge"
+
+#. Tag: suite::gforge, long desc
+#: files/debtags/vocabulary
+msgid "A collaborative development platform."
+msgstr ""
+
+#. Tag: suite::gimp, short desc
+#: files/debtags/vocabulary
+msgid "The GIMP"
+msgstr "The GIMP"
+
+#. Tag: suite::gkrellm, short desc
+#: files/debtags/vocabulary
+msgid "GKrellM Monitors"
+msgstr "GKrellM Monitors"
+
+#. Tag: suite::gnome, short desc
+#: files/debtags/vocabulary
+msgid "GNOME"
+msgstr "GNOME"
+
+#. Tag: suite::gnu, short desc
+#: files/debtags/vocabulary
+msgid "GNU"
+msgstr "GNU"
+
+#. Tag: suite::gnu, long desc
+#: files/debtags/vocabulary
+msgid "Gnu's Not Unix. The package is part of the official GNU project"
+msgstr ""
+
+#. Tag: suite::gnustep, short desc
+#. Tag: uitoolkit::gnustep, short desc
+#: files/debtags/vocabulary
+msgid "GNUstep"
+msgstr "GNUstep"
+
+#. Tag: suite::gnustep, long desc
+#: files/debtags/vocabulary
+msgid "GNUstep Desktop and WindowMaker"
+msgstr ""
+
+#. Tag: suite::gpe, short desc
+#: files/debtags/vocabulary
+msgid "GPE"
+msgstr "GPE"
+
+#. Tag: suite::gpe, long desc
+#: files/debtags/vocabulary
+msgid "GPE Palmtop Environment"
+msgstr ""
+
+#. Tag: suite::kde, short desc
+#: files/debtags/vocabulary
+msgid "KDE"
+msgstr "KDE"
+
+#. Tag: suite::mozilla, short desc
+#: files/debtags/vocabulary
+msgid "Mozilla"
+msgstr "Mozilla"
+
+#. Tag: suite::mozilla, long desc
+#: files/debtags/vocabulary
+msgid "Mozilla Browser and extensions"
+msgstr ""
+
+#. Tag: suite::netscape, short desc
+#: files/debtags/vocabulary
+msgid "Netscape Navigator"
+msgstr "Netscape Navigator"
+
+#. Tag: suite::netscape, long desc
+#: files/debtags/vocabulary
+msgid "The pre-6.0 versions of netscape browser"
+msgstr ""
+
+#. Tag: suite::openoffice, short desc
+#: files/debtags/vocabulary
+msgid "OpenOffice.org"
+msgstr "OpenOffice.org"
+
+#. Tag: suite::opie, short desc
+#: files/debtags/vocabulary
+msgid "Open Palmtop (OPIE)"
+msgstr "Open Palmtop (OPIE)"
+
+#. Tag: suite::roxen, short desc
+#: files/debtags/vocabulary
+msgid "Roxen"
+msgstr "Roxen"
+
+#. Tag: suite::samba, short desc
+#: files/debtags/vocabulary
+msgid "Samba"
+msgstr "Samba"
+
+#. Tag: suite::webmin, short desc
+#: files/debtags/vocabulary
+msgid "Webmin"
+msgstr "Webmin"
+
+#. Tag: suite::xfce, short desc
+#: files/debtags/vocabulary
+msgid "XFce"
+msgstr "XFce"
+
+#. Tag: suite::xfce, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight desktop environment for X11."
+msgstr ""
+
+#. Tag: suite::xmms, short desc
+#: files/debtags/vocabulary
+msgid "XMMS"
+msgstr "XMMS"
+
+#. Tag: suite::xmms2, short desc
+#: files/debtags/vocabulary
+msgid "XMMS 2"
+msgstr "XMMS 2"
+
+#. Tag: suite::zope, short desc
+#: files/debtags/vocabulary
+msgid "Zope"
+msgstr "Zope"
+
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+msgid "The Zope (web) publishing platform."
+msgstr ""
+
+#. Facet: protocol, short desc
+#: files/debtags/vocabulary
+msgid "Network Protocol"
+msgstr ""
+
+#. Tag: protocol::atm, short desc
+#: files/debtags/vocabulary
+msgid "ATM"
+msgstr "ATM"
+
+#. Tag: protocol::atm, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Asynchronous Transfer Mode, a high speed protocol for communication between "
+"computers in a network.\n"
+"While ATM is used to implement *DSL networks, it has never gained widespread "
+"use as a technology for building local area networks (LANs), for which it "
+"was originally intended.\n"
+"Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
+msgstr ""
+
+#. Tag: protocol::bittorrent, short desc
+#: files/debtags/vocabulary
+msgid "BitTorrent"
+msgstr "BitTorrent"
+
+#. Tag: protocol::bittorrent, long desc
+#: files/debtags/vocabulary
+msgid ""
+"BitTorrent is a protocol for peer-to-peer based file distribution over "
+"network.\n"
+"Although the actual data transport happens between BitTorrent clients, one "
+"central node, the so-called trackers, is needed to keep a list of all "
+"clients that download or provide the same file.\n"
+"Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/"
+"BitTorrent"
+msgstr ""
+
+#. Tag: protocol::corba, short desc
+#: files/debtags/vocabulary
+msgid "CORBA"
+msgstr "CORBA"
+
+#. Tag: protocol::corba, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Common Object Request Broker Architecture, a standard for interoperability "
+"between programs written in different languages and running on different "
+"hardware platforms. CORBA includes a client-server network protocol for "
+"distributed computing.\n"
+"With this network protocol, CORBA clients on different computers and written "
+"in different languages can exchange objects over a CORBA server such as "
+"orbit2 or omniORB.\n"
+"Link: http://www.corba.org/"
+msgstr ""
+
+#. Tag: protocol::db:mysql, short desc
+#: files/debtags/vocabulary
+msgid "MySQL"
+msgstr "MySQL"
+
+#. Tag: protocol::db:mysql, long desc
+#: files/debtags/vocabulary
+msgid "Protocol for accessing MySQL database server."
+msgstr ""
+
+#. Tag: protocol::db:psql, short desc
+#: files/debtags/vocabulary
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#. Tag: protocol::db:psql, long desc
+#: files/debtags/vocabulary
+msgid "Protocol for accessing PostgreSQL database server."
+msgstr ""
+
+#. Tag: protocol::dcc, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "DCC"
+msgstr "IRC DCC"
+
+#. Tag: protocol::dcc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers "
+"to interconnect using an IRC server for handshaking in order to exchange "
+"files or perform non-relayed chats.\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
+msgstr ""
+
+#. Tag: protocol::dhcp, short desc
+#: files/debtags/vocabulary
+msgid "DHCP"
+msgstr "DHCP"
+
+#. Tag: protocol::dhcp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Dynamic Host Configuration Protocol, a client-server network protocol for "
+"automatic assignment of dynamic IP addresses to computers in a TCP/IP "
+"network, rather than giving each computer a static IP address.\n"
+"Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2131.txt"
+msgstr ""
+
+#. Tag: protocol::dns, short desc
+#: files/debtags/vocabulary
+msgid "DNS"
+msgstr "DNS"
+
+#. Tag: protocol::dns, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Domain Name System, a protocol to request information associated with domain "
+"names (like \"www.debian.org\"), most prominently the IP address. The "
+"protocol is used in communication with a DNS server (like BIND).\n"
+"For the Internet, there are 13 root DNS servers around the world that keep "
+"the addresses of all registered domain names and provide this information to "
+"the DNS servers of Internet service providers.\n"
+"Link: http://en.wikipedia.org/wiki/Domain_Name_System"
+msgstr ""
+
+#. Tag: protocol::ethernet, short desc
+#: files/debtags/vocabulary
+msgid "Ethernet"
+msgstr "Ethernet"
+
+#. Tag: protocol::ethernet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Ethernet is the most popular networking technology for creating local area "
+"networks (LANs).\n"
+"The computers in an Ethernet network communicate over twisted-pair or fibre "
+"cables and are identified by their MAC address. Several different types of "
+"Ethernet exist, distinguishable by the maximum connection speed. The most "
+"widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
+"Link: http://en.wikipedia.org/wiki/Ethernet"
+msgstr ""
+
+#. Tag: protocol::fidonet, short desc
+#: files/debtags/vocabulary
+msgid "FidoNet"
+msgstr "FidoNet"
+
+#. Tag: protocol::fidonet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
+"1990s.\n"
+"The communication between the clients and FidoNet servers was usually "
+"carried out over the telephone network using modems and could be used for "
+"transferring messages (comparable to email) and files.\n"
+"Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
+msgstr ""
+
+#. Tag: protocol::finger, short desc
+#: files/debtags/vocabulary
+msgid "Finger"
+msgstr "Finger"
+
+#. Tag: protocol::finger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Name/Finger protocol is a simple network protocol to provide extensive, "
+"public information about users of a computer, such as email address, "
+"telephone numbers, full names etc.\n"
+"Due to privacy concerns, the Finger protocol is not widely used any more, "
+"while it widespread distribution in the early 1990s.\n"
+"Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
+"rfc/rfc1288.txt"
+msgstr ""
+
+#. Tag: protocol::ftp, short desc
+#: files/debtags/vocabulary
+msgid "FTP"
+msgstr "FTP"
+
+#. Tag: protocol::ftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"File Transfer Protocol, a protocol for exchanging and manipulation files "
+"over networks and extensively used on the Internet.\n"
+"The communication between FTP servers and clients uses two channels, the "
+"control and the data channel. While FTP was originally used with "
+"authentication only, most FTP servers on the Internet provide anonymous, "
+"passwordless access. Since FTP does not support encryption, sensitive data "
+"transfer is carried out over SFTP today.\n"
+"Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
+"ietf.org/rfc/rfc0959.txt"
+msgstr ""
+
+#. Tag: protocol::gadu-gadu, short desc
+#: files/debtags/vocabulary
+msgid "Gadu-Gadu"
+msgstr "Gadu-Gadu"
+
+#. Tag: protocol::gadu-gadu, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Gadu-Gadu protocol is a proprietary protocol that is used by a Polish "
+"instant messaging network of the same name.\n"
+"Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
+msgstr ""
+
+#. Tag: protocol::http, short desc
+#: files/debtags/vocabulary
+msgid "HTTP"
+msgstr "HTTP"
+
+#. Tag: protocol::http, long desc
+#: files/debtags/vocabulary
+msgid ""
+"HyperText Transfer Protocol, one of the most important protocols for the "
+"World Wide Web.\n"
+"It controls the data transfer between HTTP servers such as Apache and HTTP "
+"clients, which are web browsers in most cases. HTTP resources are requested "
+"via URLs (Universal Resource Locators). While HTTP normally only supports "
+"file transfer from server to client, the protocol supports sending "
+"information to HTTP servers, most prominently used in HTML forms.\n"
+"Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
+"rfc2616.txt"
+msgstr ""
+
+#. Tag: protocol::ident, short desc
+#: files/debtags/vocabulary
+msgid "Ident"
+msgstr "Ident"
+
+#. Tag: protocol::ident, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Ident Internet protocol helps to identify or authenticate the user of a "
+"network connection.\n"
+"Link: http://en.wikipedia.org/wiki/Ident"
+msgstr ""
+
+#. Tag: protocol::imap, short desc
+#: files/debtags/vocabulary
+msgid "IMAP"
+msgstr "IMAP"
+
+#. Tag: protocol::imap, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Message Access Protocol, a protocol used for accessing email on a "
+"server from a email client such as KMail or Evolution.\n"
+"When using IMAP, emails stay on the server and can be categorized, edited, "
+"deleted etc. there, instead of having the user download all messages onto "
+"the local computer, as POP3 does.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
+msgstr ""
+
+#. Tag: protocol::ip, short desc
+#: files/debtags/vocabulary
+msgid "IP"
+msgstr "IP"
+
+#. Tag: protocol::ip, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Protocol (v4), a core protocol of the Internet protocol suite and "
+"the very basis of the Internet.\n"
+"Every computer that is connected to the Internet has an IP address (a 4-byte "
+"number, typically represented in dotted notation like 192.25.206.10). "
+"Internet IP addresses are given out by the Internet Corporation for Assigned "
+"Names and Numbers (ICANN). Normally, computers on the Internet are not "
+"accessed by their IP address, but by their domain name.\n"
+"Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
+"txt"
+msgstr ""
+
+#. Tag: protocol::ipv6, short desc
+#: files/debtags/vocabulary
+msgid "IPv6"
+msgstr "IPv6"
+
+#. Tag: protocol::ipv6, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Protocol (v6), the next-generation Internet protocol, which "
+"overcomes the restrictions of IP (v4), like shortage of IP addresses, and is "
+"supposed to form the new basis of the Internet in the future, replacing IP "
+"(v4).\n"
+"Many programs already support IPv6 along with IP (v4), although it is still "
+"seldomly used.\n"
+"Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
+msgstr ""
+
+#. Tag: protocol::irc, short desc
+#: files/debtags/vocabulary
+msgid "IRC"
+msgstr "IRC"
+
+#. Tag: protocol::irc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Relay Chat, a protocol for text chatting over network, extensively "
+"used on the Internet. It supports chat rooms, so-called channels, as well as "
+"private, one-to-one communication.\n"
+"IRC servers are organized in networks, so that a client can connect to a "
+"geographically near IRC server, that itself is connected to other IRC "
+"servers spread over the whole world.\n"
+"The official Debian channel is #debian on the freenode network.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
+msgstr ""
+
+#. Tag: protocol::jabber, short desc
+#: files/debtags/vocabulary
+msgid "Jabber"
+msgstr "Jabber"
+
+#. Tag: protocol::jabber, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Jabber protocol is an instant messaging protocol on the basis of the "
+"XMPP protocol. Additionally to private one-to-one communication, it also "
+"supports chat rooms, and it is used in the Jabber IM network as well as for "
+"the IM capabilities for the new GoogleTalk network.\n"
+"In contrast to other IM networks like MSN, ICQ or AIM, the Jabber servers "
+"are free software and can be used to create a private chat platform or have "
+"an own server to connect to the Jabber network.\n"
+"Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
+msgstr ""
+
+#. Tag: protocol::kerberos, short desc
+#: files/debtags/vocabulary
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#. Tag: protocol::kerberos, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Kerberos is an authentication protocol for computer networks for secure "
+"authentication over an otherwise insecure network, using symmetric "
+"cryptography and a third party service provider, that is trusted both by "
+"client and server.\n"
+"The authentication mechanism provided by Kerberos is mutual, so that not "
+"only a server can be sure of a client's identity, but also a client can be "
+"sure a connection to a server is not intercepted.\n"
+"Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
+"ietf.org/rfc/rfc4120.txt"
+msgstr ""
+
+#. Tag: protocol::ldap, short desc
+#: files/debtags/vocabulary
+msgid "LDAP"
+msgstr "LDAP"
+
+#. Tag: protocol::ldap, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight Directory Access Protocol"
+msgstr ""
+
+#. Tag: protocol::lpr, short desc
+#: files/debtags/vocabulary
+msgid "LPR"
+msgstr "LPR"
+
+#. Tag: protocol::lpr, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Line Printer Daemon protocol, a protocol used for accessing or providing "
+"network print services in a Unix network, but also used for local setups.\n"
+"CUPS, the Common Unix Printing System, was developed to replace the old LPD/"
+"LPR system, while maintaining backwards compatibility.\n"
+"Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://"
+"www.ietf.org/rfc/rfc1179.txt"
+msgstr ""
+
+#. Tag: protocol::msn-messenger, short desc
+#: files/debtags/vocabulary
+msgid "MSN Messenger"
+msgstr "MSN Messenger"
+
+#. Tag: protocol::msn-messenger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The MSN messenger protocol is the protocol that is used by Microsoft's own "
+"instant messaging network.\n"
+"The protocol is a proprietary protocol. Although Microsoft once send a draft "
+"of the protocol specification to the IETF, it has since dated out and "
+"clients that connect to the MSN Messenger network have to rely on reverse-"
+"engineered information.\n"
+"Link: http://www.hypothetic.org/docs/msn/"
+msgstr ""
+
+#. Tag: protocol::nfs, short desc
+#: files/debtags/vocabulary
+msgid "NFS"
+msgstr "NFS"
+
+#. Tag: protocol::nfs, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Network File System, a protocol originally developed by Sun Microsystems in "
+"1984 and defined in RFCs 1094, 1813, and 3530 (obsoletes 3010) as a "
+"distributed file system, allows a user on a client computer to access files "
+"over a network as easily as if attached to its local disks.\n"
+"Link: http://en.wikipedia.org/wiki/Network_File_System"
+msgstr ""
+
+#. Tag: protocol::nntp, short desc
+#: files/debtags/vocabulary
+msgid "NNTP"
+msgstr "NNTP"
+
+#. Tag: protocol::nntp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Network News Transfer Protocol, a protocol for reading and writing Usenet "
+"articles (a Usenet article is comparable with an email), but also used among "
+"NNTP servers to transfer articles.\n"
+"Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc977.txt"
+msgstr ""
+
+#. Tag: protocol::oscar, short desc
+#: files/debtags/vocabulary
+msgid "OSCAR (AIM/ICQ)"
+msgstr "OSCAR (AIM/ICQ)"
+
+#. Tag: protocol::oscar, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Open System for CommunicAtion in Realtime, an instant messaging used by "
+"AOL's instant messaging network (AIM). The protocol versions 7, 8 and 9 of "
+"the ICQ IM network are also instances of the OSCAR protocol.\n"
+"OSCAR is a binary proprietary protocol. Since there is no official "
+"documentation, clients that connect to AIM or ICQ have to rely on "
+"information that has been reverse-engineered.\n"
+"Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
+"org/oscar/"
+msgstr ""
+
+#. Tag: protocol::pop3, short desc
+#: files/debtags/vocabulary
+msgid "POP3"
+msgstr "POP3"
+
+#. Tag: protocol::pop3, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Post Office Protocol, a protocol to download emails from a mail server, "
+"designed for users that have only intermittent connection to the Internet.\n"
+"In contrast to IMAP server, messages that are downloaded via POP3 are not "
+"supposed to stay on the server afterwards, since POP3 does not support "
+"multiple mailboxes for one account on the server.\n"
+"Link: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www."
+"ietf.org/rfc/rfc1939.txt"
+msgstr ""
+
+#. Tag: protocol::radius, short desc
+#: files/debtags/vocabulary
+msgid "RADIUS"
+msgstr "RADIUS"
+
+#. Tag: protocol::radius, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Remote Authentication Dial In User Service, a protocol for authentication, "
+"authorization and accounting of network access, mostly used by Internet "
+"service providers to handle dial-up Internet connections.\n"
+"Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
+"rfc2865.txt"
+msgstr ""
+
+#. Tag: protocol::sftp, short desc
+#: files/debtags/vocabulary
+msgid "SFTP"
+msgstr "SFTP"
+
+#. Tag: protocol::sftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"SSH File Transfer Protocol, a protocol for secure, encrypting file exchange "
+"and manipulation over insecure networks, using the SSH protocol.\n"
+"SFTP provides a complete set of file system operations, different from its "
+"predecessor SCP, which only allows file transfer. It is not, other than the "
+"name might suggest, a version of the FTP protocol executed through an SSH "
+"channel.\n"
+"Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
+msgstr ""
+
+#. Tag: protocol::smb, short desc
+#: files/debtags/vocabulary
+msgid "SMB"
+msgstr "SMB"
+
+#. Tag: protocol::smb, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Server Message Block, a protocol for providing file access and printer "
+"sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
+"Internet File System) is a synonym for SMB.\n"
+"Although SMB is a proprietary protocol, the Samba project reverse-engineered "
+"the protocol and developed both client and server programs for better "
+"interoperability in mixed Unix/Windows networks.\n"
+"Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
+"samba.org/"
+msgstr ""
+
+#. Tag: protocol::smtp, short desc
+#: files/debtags/vocabulary
+msgid "SMTP"
+msgstr "SMTP"
+
+#. Tag: protocol::smtp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
+"Internet.\n"
+"Every SMTP server utilizes SMTP to hand on emails to the next mail server "
+"until an email arrives at its destination, from where it is usually "
+"retrieved via POP3 or IMAP.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2821.txt"
+msgstr ""
+
+#. Tag: protocol::snmp, short desc
+#: files/debtags/vocabulary
+msgid "SNMP"
+msgstr "SNMP"
+
+#. Tag: protocol::snmp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Network Management Protocol, a member of the Internet protocol suite "
+"and used for monitoring or configuring network devices.\n"
+"SNMP servers normally run on network equipment like routers.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: "
+"http://www.ietf.org/rfc/rfc3411.txt"
+msgstr ""
+
+#. Tag: protocol::soap, short desc
+#: files/debtags/vocabulary
+msgid "SOAP"
+msgstr "SOAP"
+
+#. Tag: protocol::soap, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Object Access Protocol, a protocol for exchanging messages between "
+"different computers in a network. The messages are encoded in XML and "
+"usually sent over HTTP.\n"
+"SOAP is used to provide APIs to web services, such as the Google API to "
+"utilize Google's searching engine from client applications.\n"
+"Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
+msgstr ""
+
+#. Tag: protocol::ssh, short desc
+#: files/debtags/vocabulary
+msgid "SSH"
+msgstr "SSH"
+
+#. Tag: protocol::ssh, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Secure Shell, a protocol for secure, encrypted network connections. SSH can "
+"be used to execute programs on a remote host with an SSH server over "
+"otherwise insecure protocols through an SSH channel. The main use is, as the "
+"name suggest, to provide encrypted login and shell access on remote "
+"servers.\n"
+"SSH authentication can be done with password or, which is the preferred "
+"mechanism, via asymmetric public/private key cryptography.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Shell"
+msgstr ""
+
+#. Tag: protocol::ssl, short desc
+#: files/debtags/vocabulary
+msgid "SSL/TLS"
+msgstr "SSL/TLS"
+
+#. Tag: protocol::ssl, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Secure Socket Layer/Transport Layer Security, a protocol that provides "
+"secure encrypted communication on the Internet. It is used to authenticate "
+"the identity of a service provider (such as a Internet banking server) and "
+"to secure the communications channel.\n"
+"Otherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be "
+"transmitted over SSL/TLS to secure the transmitted data. In this case, an \"S"
+"\" is added to the protocol name, like HTTPS, FTPS etc.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
+msgstr ""
+
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+msgid "Telnet"
+msgstr "Telnet"
+
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+"Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+
+#. Tag: protocol::tcp, short desc
+#: files/debtags/vocabulary
+msgid "TCP"
+msgstr "TCP"
+
+#. Tag: protocol::tcp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Transport Control Protocol, a core protocol of the Internet protocol suite "
+"and used for data transport.\n"
+"TCP is used as the transport protocol for many services on the Internet, "
+"such as FTP, HTTP, SMTP, POP3, IMAP, NNTP etc.\n"
+"Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
+"http://www.ietf.org/rfc/rfc793.txt"
+msgstr ""
+
+#. Tag: protocol::tftp, short desc
+#: files/debtags/vocabulary
+msgid "TFTP"
+msgstr "TFTP"
+
+#. Tag: protocol::tftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
+"allows a client to get or put a file onto a remote host.  One of its primary "
+"uses is the network booting of diskless nodes on a Local Area Network.  It "
+"is designed to be easy to implement so it fits on ROM.\n"
+"Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc1350.txt"
+msgstr ""
+
+#. Tag: protocol::udp, short desc
+#: files/debtags/vocabulary
+msgid "UDP"
+msgstr "UDP"
+
+#. Tag: protocol::udp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"User Datagram Protocol, a core protocol of the Internet protocol suite and "
+"used for data transport.\n"
+"UDP is not as reliable as TCP, but faster and thus better fit for time-"
+"sensitive purposes, like the DNS protocol and VoIP.\n"
+"Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
+"ietf.org/rfc/rfc768.txt"
+msgstr ""
+
+#. Tag: protocol::voip, short desc
+#: files/debtags/vocabulary
+msgid "VoIP"
+msgstr "VoIP"
+
+#. Tag: protocol::voip, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Voice over IP, a general term for protocols that route voice conversations "
+"over the Internet.\n"
+"Popular VoIP protocols are SIP, H.323 and IAX.\n"
+"Link: http://en.wikipedia.org/wiki/Voice_over_IP"
+msgstr ""
+
+#. Tag: protocol::webdav, short desc
+#: files/debtags/vocabulary
+msgid "WebDAV"
+msgstr "WebDAV"
+
+#. Tag: protocol::webdav, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Web-based Distributed Authoring and Versioning, a extension of the HTTP "
+"protocol to support creating and changing documents on an HTTP server. Thus, "
+"the client can access the documents on an HTTP server as it would those on "
+"the local file system.\n"
+"Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
+"rfc2518.txt"
+msgstr ""
+
+#. Tag: protocol::xmlrpc, short desc
+#: files/debtags/vocabulary
+msgid "XML-RPC"
+msgstr "XML-RPC"
+
+#. Tag: protocol::xmlrpc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"XML Remote Procedure Call, a simple protocol for remote procedure calls that "
+"uses XML for encoding and the HTTP protocol for transport.\n"
+"SOAP, which is a considerably more sophisticated protocol, was developed "
+"from XML-RPC.\n"
+"Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
+msgstr ""
+
+#. Tag: protocol::yahoo-messenger, short desc
+#: files/debtags/vocabulary
+msgid "Yahoo! Messenger"
+msgstr "Yahoo! Messenger"
+
+#. Tag: protocol::yahoo-messenger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Yahoo! Messenger protocol is used to connect to Yahoo!'s instant "
+"messaging network.\n"
+"This a proprietary binary protocol without any official documentation. "
+"Clients that connect to the Yahoo! Messenger network have to rely on reverse-"
+"engineered information.\n"
+"Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
+msgstr ""
+
+#. Tag: protocol::zeroconf, short desc
+#: files/debtags/vocabulary
+msgid "Zeroconf"
+msgstr ""
+
+#. Tag: protocol::zeroconf, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Zero Configuration Networking (Zeroconfig), is a set of techniques that "
+"automatically creates a usable IP network without configuration or special "
+"servers.\n"
+"This tag is used for packages that implement one or more of:\n"
+"* IPv4LL for choosing addresses\n"
+"* mDNS for name resolution\n"
+"* DNS-SD for service discovery\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
+msgstr ""
+
+#. Facet: uitoolkit, short desc
+#: files/debtags/vocabulary
+msgid "Interface Toolkit"
+msgstr ""
+
+#. Tag: uitoolkit::athena, short desc
+#: files/debtags/vocabulary
+msgid "Athena Widgets"
+msgstr ""
+
+#. Tag: uitoolkit::fltk, short desc
+#: files/debtags/vocabulary
+msgid "FLTK"
+msgstr "FLTK"
+
+#. Tag: uitoolkit::glut, short desc
+#: files/debtags/vocabulary
+msgid "GLUT"
+msgstr "GLUT"
+
+#. Tag: uitoolkit::gtk, short desc
+#: files/debtags/vocabulary
+msgid "GTK"
+msgstr "GTK"
+
+#. Tag: uitoolkit::motif, short desc
+#: files/debtags/vocabulary
+msgid "Lesstif/Motif"
+msgstr "Lesstif/Motif"
+
+#. Tag: uitoolkit::ncurses, short desc
+#: files/debtags/vocabulary
+msgid "Ncurses TUI"
+msgstr "Ncurses TUI"
+
+#. Tag: uitoolkit::qt, short desc
+#: files/debtags/vocabulary
+msgid "Qt"
+msgstr "Qt"
+
+#. Tag: uitoolkit::sdl, short desc
+#: files/debtags/vocabulary
+msgid "SDL"
+msgstr "SDL"
+
+#. Tag: uitoolkit::tk, short desc
+#: files/debtags/vocabulary
+msgid "Tk"
+msgstr "Tk"
+
+#. Tag: uitoolkit::wxwidgets, short desc
+#: files/debtags/vocabulary
+msgid "wxWidgets"
+msgstr "wxWidgets"
+
+#. Tag: uitoolkit::xlib, short desc
+#: files/debtags/vocabulary
+msgid "X library"
+msgstr ""
+
+#. Facet: use, short desc
+#: files/debtags/vocabulary
+msgid "Purpose"
+msgstr ""
+
+#. Tag: use::analysing, short desc
+#: files/debtags/vocabulary
+msgid "Analysing"
+msgstr ""
+
+#. Tag: use::analysing, long desc
+#: files/debtags/vocabulary
+msgid "Software for turning data into knowledge."
+msgstr ""
+
+#. Tag: use::browsing, short desc
+#: files/debtags/vocabulary
+msgid "Browsing"
+msgstr "瀏覽"
+
+#. Tag: use::calculating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Calculating"
+msgstr "分散式計算"
+
+#. Tag: use::chatting, short desc
+#: files/debtags/vocabulary
+msgid "Chatting"
+msgstr "聊天"
+
+#. Tag: use::checking, short desc
+#: files/debtags/vocabulary
+msgid "Checking"
+msgstr ""
+
+#. Tag: use::checking, long desc
+#: files/debtags/vocabulary
+msgid ""
+"All sorts of checking, checking a filesystem for validity, checking a "
+"document for incorrectly spelled words, checking a network for routing "
+"problems. Verifying."
+msgstr ""
+
+#. Tag: use::comparing, short desc
+#: files/debtags/vocabulary
+msgid "Comparing"
+msgstr ""
+
+#. Tag: use::comparing, long desc
+#: files/debtags/vocabulary
+msgid "To find what relates or differs in two or more objects."
+msgstr ""
+
+#. Tag: use::compressing, short desc
+#: files/debtags/vocabulary
+msgid "Compressing"
+msgstr "壓縮"
+
+#. Tag: use::configuring, short desc
+#. Tag: network::configuration, short desc
+#: files/debtags/vocabulary
+msgid "Configuration"
+msgstr "設定"
+
+#. Tag: use::converting, short desc
+#: files/debtags/vocabulary
+msgid "Data Conversion"
+msgstr "資料轉換"
+
+#. Tag: use::dialing, short desc
+#: files/debtags/vocabulary
+msgid "Dialup Access"
+msgstr "撥號"
+
+#. Tag: use::downloading, short desc
+#: files/debtags/vocabulary
+msgid "Downloading"
+msgstr "下載"
+
+#. Tag: use::driver, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Driver"
+msgstr "硬體驅動程式"
+
+#. Tag: use::editing, short desc
+#: files/debtags/vocabulary
+msgid "Editing"
+msgstr "編輯"
+
+#. Tag: use::entertaining, short desc
+#: files/debtags/vocabulary
+msgid "Entertaining"
+msgstr ""
+
+#. Tag: use::filtering, short desc
+#: files/debtags/vocabulary
+msgid "Filtering"
+msgstr ""
+
+#. Tag: use::gameplaying, short desc
+#: files/debtags/vocabulary
+msgid "Game Playing"
+msgstr ""
+
+#. Tag: use::learning, short desc
+#: files/debtags/vocabulary
+msgid "Learning"
+msgstr "學習"
+
+#. Tag: use::measuring, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Measuring"
+msgstr "學習"
+
+#. Tag: use::organizing, short desc
+#: files/debtags/vocabulary
+msgid "Data Organisation"
+msgstr "資料整理"
+
+#. Tag: use::playing, short desc
+#: files/debtags/vocabulary
+msgid "Playing Media"
+msgstr ""
+
+#. Tag: use::printing, short desc
+#: files/debtags/vocabulary
+msgid "Printing"
+msgstr "列印"
+
+#. Tag: use::proxying, short desc
+#: files/debtags/vocabulary
+msgid "Proxying"
+msgstr ""
+
+#. Tag: use::routing, short desc
+#. Tag: network::routing, short desc
+#: files/debtags/vocabulary
+msgid "Routing"
+msgstr ""
+
+#. Tag: use::searching, short desc
+#: files/debtags/vocabulary
+msgid "Searching"
+msgstr "搜尋"
+
+#. Tag: use::scanning, short desc
+#. Tag: network::scanner, short desc
+#: files/debtags/vocabulary
+msgid "Scanning"
+msgstr "掃描"
+
+#. Tag: use::simulating, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Simulating"
+msgstr "模擬"
+
+#. Tag: use::storing, short desc
+#: files/debtags/vocabulary
+msgid "Storing"
+msgstr "儲存"
+
+#. Tag: use::synchronizing, short desc
+#: files/debtags/vocabulary
+msgid "Synchronisation"
+msgstr "同步"
+
+#. Tag: use::timekeeping, short desc
+#: files/debtags/vocabulary
+msgid "Time and Clock"
+msgstr ""
+
+#. Tag: use::transmission, short desc
+#: files/debtags/vocabulary
+msgid "Transmission"
+msgstr ""
+
+#. Tag: use::typesetting, short desc
+#: files/debtags/vocabulary
+msgid "Typesetting"
+msgstr "排版"
+
+#. Tag: use::viewing, short desc
+#: files/debtags/vocabulary
+msgid "Data Visualization"
+msgstr ""
+
+#. Tag: use::text-formatting, short desc
+#: files/debtags/vocabulary
+msgid "Text Formatting"
+msgstr ""
+
+#. Tag: web::appserver, short desc
+#: files/debtags/vocabulary
+msgid "Application Server"
+msgstr ""
+
+#. Tag: web::blog, short desc
+#: files/debtags/vocabulary
+msgid "Blog Software"
+msgstr "Blog 軟體"
+
+#. Tag: web::browser, short desc
+#: files/debtags/vocabulary
+msgid "Browser"
+msgstr "瀏覽器"
+
+#. Tag: web::cms, short desc
+#: files/debtags/vocabulary
+msgid "Content Management (CMS)"
+msgstr "內容管理 (CMS)"
+
+#. Tag: web::cgi, short desc
+#: files/debtags/vocabulary
+msgid "CGI"
+msgstr "CGI"
+
+#. Tag: web::commerce, short desc
+#: files/debtags/vocabulary
+msgid "E-commerce"
+msgstr ""
+
+#. Tag: web::forum, short desc
+#: files/debtags/vocabulary
+msgid "Forum"
+msgstr "討論區"
+
+#. Tag: web::portal, short desc
+#: files/debtags/vocabulary
+msgid "Portal"
+msgstr "入口"
+
+#. Tag: web::scripting, short desc
+#: files/debtags/vocabulary
+msgid "Scripting"
+msgstr ""
+
+#. Tag: web::search-engine, short desc
+#: files/debtags/vocabulary
+msgid "Search Engine"
+msgstr "搜尋引擎"
+
+#. Tag: web::server, short desc
+#. Tag: network::server, short desc
+#: files/debtags/vocabulary
+msgid "Server"
+msgstr "Server"
+
+#. Tag: web::wiki, short desc
+#: files/debtags/vocabulary
+msgid "Wiki Software"
+msgstr "Wiki 軟體"
+
+#. Tag: web::wiki, long desc
+#: files/debtags/vocabulary
+msgid "Wiki software, servers, utilities and plug-ins."
+msgstr ""
+
+#. Facet: network, short desc
+#: files/debtags/vocabulary
+msgid "Networking"
+msgstr "網路"
+
+#. Tag: network::client, short desc
+#: files/debtags/vocabulary
+msgid "Client"
+msgstr "客戶端"
+
+#. Tag: network::hiavailability, short desc
+#: files/debtags/vocabulary
+msgid "High Availability"
+msgstr ""
+
+#. Tag: network::load-balancing, short desc
+#: files/debtags/vocabulary
+msgid "Load Balancing"
+msgstr ""
+
+#. Tag: network::service, short desc
+#: files/debtags/vocabulary
+msgid "Service"
+msgstr ""
+
+#. Tag: network::vpn, short desc
+#: files/debtags/vocabulary
+msgid "VPN or Tunneling"
+msgstr ""
+
+#. Tag: x11::applet, short desc
+#: files/debtags/vocabulary
+msgid "Applet"
+msgstr "Applet"
+
+#. Tag: x11::display-manager, short desc
+#: files/debtags/vocabulary
+msgid "Login Manager"
+msgstr "登入管理"
+
+#. Tag: x11::display-manager, long desc
+#: files/debtags/vocabulary
+msgid "Display managers (graphical login screens)"
+msgstr ""
+
+#. Tag: x11::library, short desc
+#: files/debtags/vocabulary
+msgid "Library"
+msgstr "函式庫"
+
+#. Tag: x11::screensaver, short desc
+#: files/debtags/vocabulary
+msgid "Screen Saver"
+msgstr "螢幕保護"
+
+#. Tag: x11::terminal, short desc
+#: files/debtags/vocabulary
+msgid "Terminal Emulator"
+msgstr "終端模擬器"
+
+#. Tag: x11::theme, short desc
+#: files/debtags/vocabulary
+msgid "Theme"
+msgstr "佈景主題"
+
+#. Tag: x11::window-manager, short desc
+#: files/debtags/vocabulary
+msgid "Window Manager"
+msgstr "視窗管理器"
+
+#. Tag: x11::xserver, short desc
+#: files/debtags/vocabulary
+msgid "X Server and Drivers"
+msgstr ""
+
+#. Tag: x11::xserver, long desc
+#: files/debtags/vocabulary
+msgid " X servers and drivers for the X server (input and video)"
+msgstr ""
+
+#. Tag: bbs, short desc
+#: files/debtags/vocabulary
+msgid "Bulletin Board Systems"
+msgstr "佈告欄系統 (BBS)"
+
+#. Tag: data-exchange, short desc
+#: files/debtags/vocabulary
+msgid "Data Exchange"
+msgstr ""
+
+#. Tag: desktop, short desc
+#: files/debtags/vocabulary
+msgid "Desktop Environment"
+msgstr "桌面環境"
+
+#. Tag: file-formats, short desc
+#: files/debtags/vocabulary
+msgid "File Formats"
+msgstr "檔案格式"
+
+#. Tag: foreignos, short desc
+#: files/debtags/vocabulary
+msgid "Foreign OS and Hardware"
+msgstr ""
+
+#. Tag: net, short desc
+#: files/debtags/vocabulary
+msgid "IP Networking"
+msgstr "IP 網路"
+
+#. Tag: netcomm, short desc
+#: files/debtags/vocabulary
+msgid "Network and Communication"
+msgstr "網路與通訊"
+
+#. Tag: numerical, short desc
+#: files/debtags/vocabulary
+msgid "Calculation and Numerical Computation"
+msgstr ""
+
+#. Tag: office, short desc
+#: files/debtags/vocabulary
+msgid "Office Software"
+msgstr "辦公室軟體"
+
+#. Tag: protocols, short desc
+#: files/debtags/vocabulary
+msgid "IP protocol support"
+msgstr "IP 協定支援"
+
+#. Tag: science, short desc
+#. Facet: science, short desc
+#: files/debtags/vocabulary
+msgid "Science"
+msgstr "科學"
+
+#. Tag: system, short desc
+#: files/debtags/vocabulary
+msgid "System Software and Maintainance"
+msgstr ""
+
+#. Tag: vi, short desc
+#: files/debtags/vocabulary
+msgid "VI Editor"
+msgstr "VI 編輯器"
+
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Calculation"
+msgstr "模擬"
+
+#. Tag: science::data-acquisition, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Data acquisition"
+msgstr "資料整理"
+
+#. Tag: science::plotting, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Plotting"
+msgstr "蛋白質"
+
+#. Tag: science::bibliography, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Bibliography"
+msgstr "地理學"
+
+#. Tag: science::publishing, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Publishing"
+msgstr "波蘭語"
+
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Visualization"
+msgstr "虛擬化"
+
+#. Facet: iso15924, short desc
+#: files/debtags/vocabulary
+msgid "Writing script"
+msgstr ""
+
+#. Tag: iso15924::armn, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Armenian"
+msgstr "羅馬尼亞語"
+
+#. Tag: iso15924::bopo, short desc
+#: files/debtags/vocabulary
+msgid "Bopomofo"
+msgstr ""
+
+#. Tag: iso15924::brai, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Braille"
+msgstr "巴西語"
+
+#. Tag: iso15924::cans, short desc
+#: files/debtags/vocabulary
+msgid "Unified Canadian Aboriginal Syllabics"
+msgstr ""
+
+#. Tag: iso15924::cyrl, short desc
+#: files/debtags/vocabulary
+msgid "Cyrillic"
+msgstr ""
+
+#. Tag: iso15924::deva, short desc
+#: files/debtags/vocabulary
+msgid "Devanagari (Nagari)"
+msgstr ""
+
+#. Tag: iso15924::ethi, short desc
+#: files/debtags/vocabulary
+msgid "Ethiopic (Geʻez)"
+msgstr ""
+
+#. Tag: iso15924::geor, short desc
+#: files/debtags/vocabulary
+msgid "Georgian (Mkhedruli)"
+msgstr ""
+
+#. Tag: iso15924::gujr, short desc
+#: files/debtags/vocabulary
+msgid "Gujarati"
+msgstr ""
+
+#. Tag: iso15924::guru, short desc
+#: files/debtags/vocabulary
+msgid "Gurmukhi"
+msgstr ""
+
+#. Tag: iso15924::hang, short desc
+#: files/debtags/vocabulary
+msgid "Hangul (Hangŭl, Hangeul)"
+msgstr ""
+
+#. Tag: iso15924::hani, short desc
+#: files/debtags/vocabulary
+msgid "Han (Hanzi, Kanji, Hanja)"
+msgstr ""
+
+#. Tag: iso15924::hans, short desc
+#: files/debtags/vocabulary
+msgid "Han (Simplified variant)"
+msgstr ""
+
+#. Tag: iso15924::hant, short desc
+#: files/debtags/vocabulary
+msgid "Han (Traditional variant)"
+msgstr ""
+
+#. Tag: iso15924::hira, short desc
+#: files/debtags/vocabulary
+msgid "Hiragana"
+msgstr ""
+
+#. Tag: iso15924::jpan, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Han + Hiragana + Katakana."
+msgstr ""
+
+#. Tag: iso15924::kana, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Katakana"
+msgstr "卡達隆尼亞語"
+
+#. Tag: iso15924::khmr, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Khmer"
+msgstr "佈景主題"
+
+#. Tag: iso15924::knda, short desc
+#: files/debtags/vocabulary
+msgid "Kannada"
+msgstr ""
+
+#. Tag: iso15924::kore, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Hangul + Han"
+msgstr ""
+
+#. Tag: iso15924::laoo, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Lao"
+msgstr "筆記型電腦"
+
+#. Tag: iso15924::latn, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Latin"
+msgstr "拉脫維亞"
+
+#. Tag: iso15924::mlym, short desc
+#: files/debtags/vocabulary
+msgid "Malayalam"
+msgstr ""
+
+#. Tag: iso15924::mymr, short desc
+#: files/debtags/vocabulary
+msgid "Myanmar (Burmese)"
+msgstr ""
+
+#. Tag: iso15924::orya, short desc
+#: files/debtags/vocabulary
+msgid "Oriya"
+msgstr ""
+
+#. Tag: iso15924::sinh, short desc
+#: files/debtags/vocabulary
+msgid "Sinhala"
+msgstr ""
+
+#. Tag: iso15924::syrc, short desc
+#: files/debtags/vocabulary
+#, fuzzy
+msgid "Syriac"
+msgstr "塞爾維亞語"
+
+#. Tag: iso15924::tavt, short desc
+#: files/debtags/vocabulary
+msgid "Tai Viet"
+msgstr ""
+
+#. Tag: iso15924::telu, short desc
+#: files/debtags/vocabulary
+msgid "Telugu"
+msgstr ""
+
+#. Tag: iso15924::tibt, short desc
+#: files/debtags/vocabulary
+msgid "Tibetan"
+msgstr ""
+
+#. Tag: iso15924::yiii, short desc
+#: files/debtags/vocabulary
+msgid "Yi"
+msgstr ""
+
+#. Tag: iso15924::zsym, short desc
+#: files/debtags/vocabulary
+msgid "Symbols"
+msgstr ""
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB and CIFS"
+
+#~ msgid "X Server"
+#~ msgstr "X Server"
