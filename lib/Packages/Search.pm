@@ -107,6 +107,7 @@ my %fallback_suites = (
 		       'etch-volatile' => 'etch',
 		       'lenny-backports' => 'lenny',
 		       'lenny-volatile' => 'lenny',
+		       'squeeze-backports' => 'squeeze',
 		       experimental => 'sid' );
 
 sub read_entry_simple {
