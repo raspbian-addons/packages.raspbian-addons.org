@@ -8,15 +8,15 @@ This guide assumes you are working on a Debian etch system. If that is not the
 case, you might have to adjust some of the steps.
 
 1) Install git (package git-core). You will get a much more pleasant user
-   experience if you use a version from backports.org or a self-compiled one
+   experience if you use a version from backports.debian.org or a self-compiled one
    instead of etch's version.
 2) Download the code from git://source.djpig.de/git/packages.git
    (Something like `git clone git://source.djpig.de/git/packages.git')
 3) Install the needed dependencies. A list can be found in debian/control.
    One dependency can't be fulfilled directly from etch and is therefor not listed
    there: the Search::Xapian perl module. You can either compile that yourself against
-   libxapian from etch, use the backport on backports.org, or install the 0.9.9-1 deb
-   from snapshots.debian.net.
+   libxapian from etch, use the backport on backports.debian.org, or install the
+   0.9.9-1 deb from snapshot.debian.org.
 4) Install apache2 (apache2-mpm-worker) and mod_perl (libapache2-mod-perl2)
 5) Adjust the configuration to your needs. You should at least edit the following
    files before starting to test (don't touch %TOPDIR% and %SITE%, as you will 

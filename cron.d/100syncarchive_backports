@@ -1,0 +1,41 @@
+#!/bin/bash
+
+. `dirname $0`/../config.sh
+
+test -d ${archivedir} || mkdir -p ${archivedir}
+cd ${archivedir}
+
+# backports archive
+#
+for dist in etch lenny squeeze
+do
+  echo "retrieve Release(.gpg) $dist-backports"
+  test -d backports/${dist}-backports || mkdir -p backports/${dist}-backports
+  (cd backports/${dist}-backports &&
+	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}-backports/Release &&
+	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}-backports/Release.gpg )
+
+    foo=\$arch_${dist//-/_}
+    for arch in `eval echo $foo`
+    do
+      for part in ${parts}
+      do
+	echo retrieve Packages $dist-backports/$part/$arch
+	test -d backports/${dist}-backports/${part}/binary-${arch} || mkdir -p backports/${dist}-backports/${part}/binary-${arch}
+	(cd backports/${dist}-backports/${part}/binary-${arch} &&
+	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}-backports/${part}/binary-${arch}/Packages.gz)
+      done
+      echo retrieve Contents $dist-backports/$arch
+      (cd backports/${dist}-backports &&
+	  $wget_cmd -N ${backports_ftpsite}/dists/${dist}-backports/Contents-${arch}.gz)
+    done
+    for part in ${parts}
+    do
+        echo retrieve Sources $dist-backports/$part
+        test -d backports/${dist}-backports/${part}/source || mkdir -p backports/${dist}-backports/${part}/source
+        (cd backports/${dist}-backports/${part}/source &&
+            $wget_cmd -N ${backports_ftpsite}/dists/${dist}-backports/${part}/source/Sources.gz)
+    done
+
+    $check_release_cmd $archivedir/backports/${dist}-backports/Release
+done
