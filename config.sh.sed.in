@@ -27,8 +27,9 @@ localdir=/srv/archive.debian.org/ftp
 ftpsite=http://archive.debian.org/debian
 security_ftpsite=http://archive.debian.org/debian-security
 volatile_ftpsite=http://archive.debian.org/debian-volatile
-backports_ftpsite=http://archive.debian.org/backports.org
+backports_ftpsite=http://archive.debian.org/debian-backports
 ddtp_ftpsite=http://ftp.de.debian.org/debian
+debports_ftpsite=http://ftp.debian-ports.org/debian
 
 wget_cmd="wget --no-verbose --tries=2 --timeout=60"
 check_release_cmd="perl -I${libdir} ${bindir}/check-release --verbose --ignoremissing --keyring ${configdir}/trusted.gpg"

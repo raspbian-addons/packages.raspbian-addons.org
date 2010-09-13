@@ -1,0 +1,35 @@
+#! /bin/bash
+
+. `dirname $0`/../config.sh
+
+test -d ${archivedir} || mkdir -p ${archivedir}
+cd ${archivedir}
+
+# Main archive
+#
+architectures="avr32 powerpcspe sh4 m68k sparc64"
+
+for dist in sid experimental
+  do
+  echo "retrieve Release(.gpg) $dist"
+  test -d debports/${dist} || mkdir -p debports/${dist}
+  (cd debports/${dist} &&
+	    $wget_cmd -N ${debports_ftpsite}/dists/${dist}/Release &&
+	    $wget_cmd -N ${debports_ftpsite}/dists/${dist}/Release.gpg )
+
+  for arch in $architectures
+    do
+    for part in ${parts} main/debian-installer
+      do
+      echo retrieve Packages $dist/$part/$arch
+      test -d debports/${dist}/${part}/binary-${arch} || mkdir -p debports/${dist}/${part}/binary-${arch}
+      (cd debports/${dist}/${part}/binary-${arch} &&
+	  $wget_cmd -N ${debports_ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+    done
+    echo retrieve Contents $dist/$arch
+    (cd debports/${dist} &&
+	$wget_cmd -N ${debports_ftpsite}/dists/${dist}/Contents-${arch}.gz)
+  done
+
+  $check_release_cmd $archivedir/debports/${dist}/Release
+done
