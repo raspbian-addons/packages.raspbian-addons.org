@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # Main archive
 #
-architectures="avr32 m68k"
+architectures="avr32 powerpcspe sh4 m68k sparc64"
 
 for dist in sid experimental
   do
