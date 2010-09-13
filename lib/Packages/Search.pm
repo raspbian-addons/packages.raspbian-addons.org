@@ -101,14 +101,16 @@ sub read_entry {
     read_entry_all( $hash, $key, $results, \@non_results, $opts );
 }
 
-#FIXME: make configurable
-my %fallback_suites = (
-		       'etch-backports' => 'etch',
-		       'etch-volatile' => 'etch',
-		       'lenny-backports' => 'lenny',
-		       'lenny-volatile' => 'lenny',
-		       'squeeze-backports' => 'squeeze',
-		       experimental => 'sid' );
+sub fallback_suite {
+    my $suite = shift;
+    if ($suite =~ /^(\S+)-(?:updates|backports|volatile)/) {
+	return $1;
+    } elsif ($suite eq 'experimental') {
+	return 'sid';
+    } else {
+	return undef;
+    }
+}
 
 sub read_entry_simple {
     my ($hash, $key, $archives, $suite) = @_;
@@ -128,7 +130,7 @@ sub read_entry_simple {
 	debug( "use entry: @data", 2 ) if DEBUG && $data[1] eq $suite;
 	return [ $virt{$suite}, @data ] if $data[1] eq $suite;
     }
-    if (my $fb_suite = $fallback_suites{$suite}) {
+    if (my $fb_suite = fallback_suite($suite)) {
 	my $fb_result = read_entry_simple( $hash, $key, $archives, $fb_suite );
 	my $fb_virt = shift(@$fb_result);
 	$virt{$suite} .= $virt{$suite} ? " $fb_virt" : $fb_virt if $fb_virt;
