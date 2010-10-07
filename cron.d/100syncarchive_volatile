@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # volatile archive
 #
-for dist in sarge
+for dist in sarge etch
 do
   echo "retrieve Release(.gpg) $dist-volatile"
   test -d volatile/${dist}-volatile || mkdir -p volatile/${dist}-volatile
