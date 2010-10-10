@@ -10,14 +10,15 @@
 		   'jaunty', 'jaunty-updates', 'jaunty-backports',
 		   'karmic', 'karmic-updates', 'karmic-backports',
 		   'lucid', 'lucid-updates', 'lucid-backports',
-		   'maverick' ]
+		   'maverick', 'maverick-updates', 'maverick-backports',
+		   'natty' ]
     version_numbers = { dapper => '6.06LTS',
 			hardy  => '8.04LTS',
-			jaunty => '9.04',
 			karmic => '9.10',
-			lucid => '10.04LTS',
+			lucid  => '10.04LTS',
+			maverick => '10.10',
 		      }
-    current_release = 'lucid'
+    current_release = 'maverick'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -126,6 +127,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2010-10-10</dt>
+<dd>Reflect maverick release, add maverick, remove jaunty.</dd>
 <dt>2010-05-05</dt>
 <dd>Reflect lucid release, add maverick, remove intrepid.</dd>
 <dt>2009-10-30</dt>
@@ -339,4 +342,4 @@ may be missing for some packages since I can only mirror the
 i386 and powerpc debs due to space constraints)</dd>
 </dl>
 
-[% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2009' %]
+[% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2010' %]
