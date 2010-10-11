@@ -15,7 +15,7 @@ do
 	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}/Release &&
 	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}/Release.gpg )
 
-    foo=\$arch_${dist//-/_}
+    foo=\$arch_${dist%-*}
     for arch in `eval echo $foo`
     do
       for part in ${parts}
