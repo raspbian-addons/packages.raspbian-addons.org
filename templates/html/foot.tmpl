@@ -8,8 +8,10 @@ Total page evaluation took [% benchmark %]<br>
 [% IF langs && langs.size > 0 %]
 <hr class="hidecss">
 <!--UdmComment-->
+<div id="pageLang">
+<div id="langSelector">
 <p>[% g('This page is also available in the following languages (How to set <a href="%s">the default document language</a>):', cn_help_url) %]</p>
-<p class="navpara">
+<div id="langContainer">
 [% FOREACH l IN langs %]
 <a href="[% IF keyword_esc;
 		make_search_url('',"keywords=$keyword_esc",'lang',l.lang);
@@ -18,7 +20,9 @@ Total page evaluation took [% benchmark %]<br>
 	    END %]" title="[% l.tooltip %]" hreflang="[% l.lang %]" lang="[% l.lang %]" rel="alternate">[% l.selfname %]
 [%- IF l.transliteration %] ([% l.transliteration %])[% END %]</a>
 [% END %]
-</p>
+</div>
+</div>
+</div>
 <!--/UdmComment-->
 [% END %]
 
@@ -43,6 +47,5 @@ Total page evaluation took [% benchmark %]<br>
 [% END %]
 </div> <!-- end fineprint -->
 </div> <!-- end footer -->
-</div> <!-- end outer -->
 </body>
 </html>

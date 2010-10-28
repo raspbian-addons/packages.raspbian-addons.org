@@ -55,7 +55,7 @@
 [% END %]
 
 [% UNLESS search_architectures.size == 1 || all_architectures.size == 1 %]
-<p>[% g('Limit search to a specific architecture:') %]
+<p>[% g('Limit to a architecture:') %]
 [% FOREACH a IN all_architectures %] [<a href="[% make_search_url('',"keywords=$keyword_esc",'arch',a) %]">[% a %]</a>][% END %]
 [% END %]
 
@@ -85,7 +85,9 @@
 [% g('Found <strong>%u results</strong>.', results.size) %]
 
 [% IF too_many_hits %]
-<p id="psearchtoomanyhits">[% g('Note: Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords.') %]</p>
+<div class="note">
+<p>[% g('Note: Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords.') %]</p>
+</div>
 [% END %]
 
 <table>
