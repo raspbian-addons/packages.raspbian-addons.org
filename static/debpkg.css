@@ -1,0 +1,267 @@
+/*
+ *      packages.debian.org stylesheet proposal
+ *
+ *      Kalle Soderman, 2009 debpkg.css
+ *
+ *      Copyleft : This work is free, you can copy, spread, and modify it under
+ *      the terms of the Free Art License http://artlibre.org/licence/lal/en/
+ *
+ *
+ *      Font size table
+ *      ---------------
+ *      Browser default 16px
+ *
+ *      14px	87.5%		body	
+ *      24px	1.714em
+ *      18px	1.286em
+ *      16px	1.143em
+ *      12px	0.857em
+ *      11px	0.786em
+ *      8px 	0.57em
+ */
+
+@import url("debian.css");
+
+#header {
+	background-image:url('./Pics/gradient.png');
+}
+
+#footer {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#pnavbar {
+	font-size: 0.786em;
+	background-color: transparent;
+	background-color: #f5f6f7;
+	margin:0;	
+	padding: 6px 0.25em 7px  0.25em;
+	border-bottom: 1px solid #d2d3d7 ;
+	text-transform:lowercase;
+	line-height: 1;
+}
+
+
+#pmoreinfo {
+	width: 20em;
+	float:right;
+	padding:0 0 0 1em;
+	margin: 1em 0 10px 1em;
+	border-left:1px solid #d3d6df;
+	font-size: 0.786em;
+	line-height: 1.5;
+}
+
+#pmoreinfo ul {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+
+#pmoreinfo ul ul {
+	margin-left: 1em;
+}
+
+#pmoreinfo li {
+	font-weight: normal;
+	margin-top:0.5em;
+}
+
+#pmoreinfo p {
+	line-height: 1;
+	font-weight: bold;
+}
+
+#pmoreinfo h2 {
+	margin:0;
+}
+
+
+#packagesearch #breadcrumbs {
+	margin-bottom: 0;
+}
+	
+#hpacketsearch form {
+	margin:0; padding:0;
+}
+
+#hpacketsearch {
+	background:#f7f8fc;
+	border-bottom: 1px solid #e2e3e7;
+	display:block;
+	padding:0;
+
+	font-size: 0.786em;
+}
+
+#psearchtoomanyhits {
+	padding:10px;
+	border: 1px solid #cccca3;
+	margin:0;
+	margin-top:10px;
+	background-color:#ffffcb;
+}
+
+#psearchres {
+	margin: 0 0 2em 0;
+}
+
+#psearchres h2{
+	margin:0;
+	padding:0;
+}
+
+#psearchres h3{
+	margin:0;
+	padding:0;
+}
+
+#psearchres ul li{
+	margin:0 0 0.5em 0;
+	padding:0;
+}
+
+#pothers {
+	margin-top:0.25em;	
+	float: right;
+}
+
+#psource {
+	margin-top:0.25em;
+}
+
+/*
+ * 	Package sidebar
+ */
+#ptablist {
+
+}
+
+/*
+ * 	Package dependencies
+ */
+
+#pdeplegend {
+	margin-bottom:2em;
+	font-weight:bold;
+	padding: 0 0.5em 0 0;
+	border:1px solid #d3d6df;
+}
+
+#pdeplegend img {
+	margin-left: 1em;
+}
+
+#pdeplegend tr,#pdeplegend ul,#pdeplegend li {
+	margin:0; padding:0;
+}
+
+#pdeplegend td {
+	padding-left: 1.5em;
+	padding-right: 1em;
+}
+
+#pdeps dd {
+	margin:0;
+	padding:0;
+}
+
+#pdeps dt {
+	margin-top:0.5em;
+}
+
+#pdeps ul.uldep, #pdeps ul.uladep {
+	list-style-type: disc;
+	list-style-image: url(Pics/dep.png);
+}
+
+.uldep dt {
+
+}
+
+#pdeps ul.ulrec, #pdeps ul.ulidep {
+	list-style-type: square;
+	list-style-image: url(Pics/rec.png);
+}
+
+#pdeps ul.ulsug {
+	list-style-type: circle;
+	list-style-image: url(Pics/sug.png);
+}
+
+#pdownload {
+	margin-bottom:1em;
+	text-align: left;
+}
+
+#pdownload table {
+	text-align:left;
+}
+
+#pdeplegend td li {
+	padding-left:0;
+}
+
+#pdeplegend td,#pdeplegend tr,#pdeplegend table,#pdeplegend ul,#pdeplegend li,#pdeplegend tbody {
+	margin:0;
+	paddding:0;
+}
+
+.pkgreport #pdeplegend td li {
+	margin:0.25em 0 0 2em;
+}
+
+#ptags {
+	font-size: 0.786em;
+	padding: 1em;
+	margin-right: 22em;
+}
+
+.card {
+	clear:both;
+	margin:2em 0 2em 0;
+	background-position: 0 -50px;
+	background-repeat: repeat-x;
+	padding:8px 0 8px 0;
+}
+
+.card ul {
+	margin:0.5em 0 1em 0;
+}
+
+.card ul li {
+	list-style:none;
+}
+
+.card h2 {
+	margin:0;
+}
+
+#lefthalfcol {
+	float:left;
+	width: 50%;
+	padding-right: 1em;
+	margin:0;
+}
+
+#righthalfcol {
+	margin:0;
+	margin-left:50%;
+	padding-left: 1em;
+}
+
+#lefthalfcol dl
+, #righthalfcol dl {
+	margin-top: 0;
+}
+#lefthalfcol dd
+, #righthalfcol dd {
+	margin-bottom: 1em;
+}	
+
+.lefthalf ul {
+	margin-top:0;
+}
+
+
