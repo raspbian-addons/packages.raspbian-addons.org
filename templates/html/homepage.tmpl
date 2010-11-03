@@ -47,6 +47,7 @@
 <h3>[% g('Search package directories') %]</h3>
 
 <form method="GET" action="/search">
+<p>
 <label for="kw">[% g('Keyword:') %]</label>
 <input type="text" size="30" name="keywords" id="kw">
 <input type="submit" value="[% g('Search') %]"> <input type="reset" value="[% g('Reset') %]">
@@ -76,6 +77,7 @@ Distribution:
 [% END %]
   <option value="all" selected="selected">[% g('any') %]</option>
 </select>
+</p>
 </form>
 <p>[% g('There are shortcuts for some searches available:') %]</p>
 <ul>
@@ -89,6 +91,7 @@ Distribution:
 
 <p>[% g('This search engine allows you to search the contents of %s distributions for any files (or just parts of file names) that are part of packages. You can also get a full list of files in a given package.', organisation) %]<br>
 <form method="GET" action="/search">
+<p>
 <input type="hidden" name="searchon" value="contents">
 
 <label for="keyword">[% g('Keyword:') %]</label>
@@ -122,6 +125,7 @@ Distribution:
 [% END %]
   <option value="any" selected="selected">[% g('any') %]</option>
 </select>
+</p>
 </form>
 
 <hr>
@@ -148,7 +152,7 @@ Distribution:
 <dt>2008-04-28</dt>
 <dd>
 <p>Added intrepid</p>
-</dt>
+</dd>
 <dt>2008-04-26</dt>
 <dd>
 <p>Adapted for hardy release. Removed the obsolete powerpc data for hardy. I'm currently evaluation if and how I should
