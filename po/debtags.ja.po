@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: debian-www@lists.debian.org\n"
 "POT-Creation-Date: 2007-10-21 18:33+0200\n"
-"PO-Revision-Date: 2010-01-02 17:08+0900\n"
+"PO-Revision-Date: 2010-10-03 14:56+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
 "MIME-Version: 1.0\n"
@@ -362,6 +362,13 @@ msgid ""
 "Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/"
 "BitTorrent"
 msgstr ""
+"BitTorrent は、ネットワーク上で Peer to Peer ベースでファイルを配布するための"
+"プロトコルです。\n"
+"実際のデータの送受信は BitTorrent クライアント間で行われますが、同じファイル"
+"のダウンロードや提供を行っている全クライアントのリストを保持するのに、トラッ"
+"カーと呼ばれる中心ノードが必要となります。\n"
+"Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/"
+"BitTorrent"
 
 #. Tag: web::blog, short desc
 #: files/debtags/vocabulary
@@ -1089,6 +1096,12 @@ msgid ""
 "transferring messages (comparable to email) and files.\n"
 "Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
 msgstr ""
+"FidoNet は、1980 年代や 1990 年代に非常に人気があったメールボックスシステムで"
+"す。\n"
+"クライアントと FidoNet サーバの間の通信は、通常、モデムを用いて電話回線網経由"
+"で行われ、メッセージ (メールのようなもの) やファイルの送信に利用できまし"
+"た。\n"
+"Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
 
 #. Facet: field, short desc
 #: files/debtags/vocabulary
@@ -2300,6 +2313,11 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: "
 "http://www.ietf.org/rfc/rfc977.txt"
 msgstr ""
+"Network News Transfer Protocol は、Usenet の記事 (メールのようなもの) を読み"
+"書きするためのプロトコルですが、NNTP サーバ間での記事の配送にも用いられていま"
+"す。\n"
+"Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc977.txt"
 
 #. Facet: protocol, short desc
 #: files/debtags/vocabulary
@@ -3366,6 +3384,11 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: "
 "http://www.ietf.org/rfc/rfc3411.txt"
 msgstr ""
+"Simple Network Management Protocol はインターネットプロトコルスイートの 1 つ"
+"で、ネットワークデバイスの監視や設定に用いられます。\n"
+"SNMP サーバは、通常、ルータなどのネットワーク装置の上で動作します。\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: "
+"http://www.ietf.org/rfc/rfc3411.txt"
 
 #. Tag: protocol::soap, long desc
 #: files/debtags/vocabulary
@@ -3605,6 +3628,9 @@ msgid ""
 "TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
 "Link: http://en.wikipedia.org/wiki/TELNET"
 msgstr ""
+"TELecommunication NETwork は、ほとんど使われなくなった、リモートログインのた"
+"めのプロトコルです。\n"
+"Link: http://en.wikipedia.org/wiki/TELNET"
 
 #. Tag: protocol::tftp, short desc
 #: files/debtags/vocabulary
@@ -3776,6 +3802,13 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://"
 "www.ietf.org/rfc/rfc1179.txt"
 msgstr ""
+"Line Printer Daemon プロトコルは、Unix ネットワークにおいてネットワーク印刷"
+"サービスのアクセスや提供に使われるほか、ローカルでのセットアップにも使われる"
+"プロトコルです。\n"
+"Common Unix Printing System (CUPS) は、後方互換性を保ちながら古い LPD/LPR シ"
+"ステムを置き換えるために開発されました。\n"
+"Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://"
+"www.ietf.org/rfc/rfc1179.txt"
 
 #. Tag: protocol::msn-messenger, long desc
 #: files/debtags/vocabulary
@@ -4225,6 +4258,10 @@ msgid ""
 "Popular VoIP protocols are SIP, H.323 and IAX.\n"
 "Link: http://en.wikipedia.org/wiki/Voice_over_IP"
 msgstr ""
+"Voice over IP は、音声での会話をインターネット経由で届けるプロトコルの一般名"
+"称です。\n"
+"よく使われる VoIP プロトコルとしては、SIP や H.323、IAX があります。\n"
+"Link: http://en.wikipedia.org/wiki/Voice_over_IP"
 
 #. Tag: works-with-format::wav, long desc
 #: files/debtags/vocabulary
@@ -4383,6 +4420,7 @@ msgstr "Yahoo! Messenger"
 msgid "Yi"
 msgstr "ロロ文字"
 
+# FIXME: "Zeroconfig" -> "Zeroconf"?
 #. Tag: protocol::zeroconf, long desc
 #: files/debtags/vocabulary
 msgid ""
@@ -4395,6 +4433,14 @@ msgid ""
 "* DNS-SD for service discovery\n"
 "Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
 msgstr ""
+"Zero Configuration Networking (Zeroconfig) は、設定や特殊なサーバを使わず、利"
+"用可能な IP ネットワークを自動的に構築する一連の技術です。\n"
+"このタグは、以下の技術のうち1つ以上を実装しているパッケージに対して用いられま"
+"す:\n"
+"* IPv4LL (アドレス割り当て)\n"
+"* mDNS (名前解決)\n"
+"* DNS-SD (サービス検出)\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
 
 #. Tag: protocol::zeroconf, short desc
 #: files/debtags/vocabulary
