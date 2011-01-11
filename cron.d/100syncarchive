@@ -81,7 +81,7 @@ fi
 
 # security archive
 #
-for dist in slink potato woody sarge
+for dist in slink potato woody sarge etch
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}
