@@ -1,27 +1,27 @@
 # Bulgarian translation of templates.pot
 # This file is put in the public domain.
-# Damyan Ivanov <dmn@debian.org>, 2010.
+# Damyan Ivanov <dmn@debian.org>, 2010, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2010-07-13 08:20+0300\n"
+"PO-Revision-Date: 2011-01-28 16:41+0200\n"
 "Last-Translator: Damyan Ivanov <dmn@debian.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: binary\n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: templates/config.tmpl:44
 msgid "Debian Web Mailinglist"
-msgstr ""
+msgstr "Пощенския списък debian-www"
 
 #: templates/config.tmpl:49
 msgid "%s Webmaster"
-msgstr ""
+msgstr "Отговорниците за уебсайта"
 
 #: templates/config.tmpl:52
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
@@ -182,7 +182,7 @@ msgstr "Дистрибуция:"
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Overview over this suite"
-msgstr ""
+msgstr "Преглед на дистрибуцията"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
@@ -356,12 +356,16 @@ msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
 msgstr ""
+"При проблеми със сайта, пишете на <a href=\"mailto:%s\">%s</a>. За други "
+"контакти вижте страницата %s <a href=\"%s\">контакти</a>."
 
 #: templates/html/foot.tmpl:32
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
 msgstr ""
+"Авторски права върху съдържанието &copy; <a href=\"%s\">%s</a>; <a href=\"%s"
+"\">лицензни условия</a>."
 
 #: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
@@ -481,7 +485,7 @@ msgstr "Показване само на точните съвпадения:"
 #: templates/html/homepage.tmpl:63 templates/html/homepage.tmpl:70
 #: templates/html/homepage.tmpl:116
 msgid "any"
-msgstr ""
+msgstr "без значение"
 
 #: templates/html/homepage.tmpl:65 templates/html/show.tmpl:16
 msgid "Section:"
@@ -762,11 +766,11 @@ msgstr "Двоични пакети:"
 
 #: templates/html/search.tmpl:149
 msgid "show %u binary packages"
-msgstr "Показване на двоичните пакети на %u"
+msgstr "Показване на %u двоичните пакета"
 
 #: templates/html/search.tmpl:149
 msgid "hide %u binary packages"
-msgstr "Скриване на двоичните пакети на %u"
+msgstr "Скриване на %u двоични пакета"
 
 #: templates/html/search.tmpl:159
 msgid ""
@@ -928,7 +932,7 @@ msgstr "Изтегляне на пакет-източник <a href=\"%s\">%s</a
 
 #: templates/html/show.tmpl:117
 msgid "Not found"
-msgstr ""
+msgstr "Няма съвпадения"
 
 #: templates/html/show.tmpl:122
 msgid "Maintainer:"
@@ -940,7 +944,7 @@ msgstr "Отговорници:"
 
 #: templates/html/show.tmpl:137
 msgid "An overview over the maintainer's packages and uploads"
-msgstr ""
+msgstr "Преглед на пакетите на отговорника"
 
 #: templates/html/show.tmpl:137
 msgid "QA&nbsp;Page"
@@ -984,6 +988,9 @@ msgid ""
 "for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
 "packages</a>."
 msgstr ""
+"Това е <em>виртуален пакет</em>. Вижте <a href=\"%s\">Политиката на Дебиан</"
+"a> за <a href=\"%sch-binary.html#s-virtual_pkg\">дефиницията на виртуален "
+"пакет</a>."
 
 #: templates/html/show.tmpl:202
 msgid "Tags"
@@ -1055,6 +1062,9 @@ msgid ""
 "In addition it gives information about the package size and the installed "
 "size."
 msgstr ""
+"Таблицата съдържа връзки за изтегляне на пакетите и списъци на съдържаните "
+"файлове. Добавена е и информация за размера на пакета и заеманото дисково "
+"пространство след инсталиране."
 
 #: templates/html/show.tmpl:298
 msgid "Download for all available architectures"
@@ -1109,10 +1119,12 @@ msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 msgstr ""
+"Хранилище на изходния код на пакета (<acronym title=\"Система за контрол на "
+"промените\">СКП</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:371
 msgid "Debian Package Source Repository (Browsable)"
-msgstr ""
+msgstr "Хранилище на изходния код на пакета (за разглеждане през браузър)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
@@ -1136,15 +1148,15 @@ msgstr "Преглед на наличните етикети"
 
 #: templates/html/tag_index.tmpl:4
 msgid "About"
-msgstr ""
+msgstr "За сайта"
 
 #: templates/html/tag_index.tmpl:5
 msgid "Debtags"
-msgstr ""
+msgstr "Етикети"
 
 #: templates/html/tag_index.tmpl:10
 msgid "Facet: %s"
-msgstr ""
+msgstr "Аспект: %s"
 
 #: templates/rss/newpkg.tmpl:16
 msgid "New %s Packages"
@@ -1168,7 +1180,7 @@ msgstr ""
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
-msgstr ""
+msgstr "Авторски права ©"
 
 #: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
@@ -1176,7 +1188,7 @@ msgstr "Всички пакети %s в „%s“"
 
 #: templates/txt/index_head.tmpl:3
 msgid "Generated:"
-msgstr ""
+msgstr "Генерирано на"
 
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
