@@ -104,16 +104,23 @@
 
 .perror
 , #psearchtoomanyhits {
-	padding:1em;
-	border: 1px solid #cccca3;
-	margin:1em 0 1em 0;
-	background-color:#ffffcb;
+	padding:0 2em 0 4em;
+	margin: 1.85em 0 1.85em 0;
+	background-repeat: no-repeat;
+	background-position: 0.5em 1em;
 	font-size: 0.75em;
-	line-height: 2;
+	line-height: 2em;
+	background-color:#FFFFCB;
+	border:0.15em solid #CCCCA3;
 }
 
+#psearchtoomanyhits {
+	background-image: url('Pics/admon-note.png');
+}
 .perror p {
 	margin-bottom: 0;
+div.warning {
+	background-image: url('Pics/admon-warning.png');
 }
 
 #psearchres h2 {
