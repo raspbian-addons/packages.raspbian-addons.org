@@ -13,10 +13,6 @@ then
     for dist in ${dists}
     do
 
-      if [ $dist = experimental ]; then
-	  continue
-      fi
-
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
 	do
@@ -36,10 +32,6 @@ else
     echo using local mirror
     for dist in ${dists}
     do
-
-      if [ $dist = experimental ]; then
-	  continue
-      fi
 
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
