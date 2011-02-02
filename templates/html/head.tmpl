@@ -37,15 +37,14 @@
 </div> <!-- end navbar -->
 
 <div id="pnavbar">
- &lsaquo;&nbsp;&nbsp;<a href="[% packages_homepage %]" title="[% g('%s Packages Homepage', organisation) %]">[% g('Packages') %]</a>
+ &nbsp;&#x2F; <a href="[% packages_homepage %]" title="[% g('%s Packages Homepage', organisation) %]">[% g('Packages') %]</a>
 [% FOREACH n IN navigation %]
- &lsaquo;&nbsp;&nbsp;[% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 
+ &#x2F; [% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 
 [% END %]
 </div> <!-- end navbar -->
 
 </div> <!-- end header -->
-<div id="outer">
-<div id="inner">
+<div id="content">
 
 [%- IF print_search_field %]
 [% checked = 'checked="checked"'

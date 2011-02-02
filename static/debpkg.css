@@ -22,8 +22,8 @@
 @import url("debian.css");
 
 #footer {
-	padding-left: 52px;
 	padding-right: 10px;
+	margin-left: 52px;
 }
 #pnavbar {
 	font-size: 0.75em;
@@ -85,7 +85,6 @@
 	background: transparent;
 	display:block;
 	padding: 1px 3px 1px 0;
-	font-size: 0.75em;
 	text-align: right;
 }
 .perror
@@ -104,6 +103,7 @@
 }
 .perror p {
 	margin-bottom: 0;
+}
 div.warning {
 	background-image: url('Pics/admon-warning.png');
 }
@@ -134,12 +134,11 @@ div.warning {
 .file {
 	font-family: monospace;
 }
-#pothers {
-	margin-top:0.25em;	
+div#pothers {
+	margin-top:0.25em;
 	float: right;
 }
 #pothers a, #pothers strong {
-	margin-left: 1.5em;
 }
 #psearchsug {
 	font-size: 	0.75em;
@@ -156,15 +155,11 @@ div.warning {
 	margin: 1em 0 1em 0;
 	}
 
-/*
- * 	Package sidebar
- */
+/* Package sidebar */
 #ptablist {
 }
 
-/*
- * 	Package dependencies
- */
+/* 	Package dependencies */
 
 #pdeplegend {
 	font-weight:bold;
@@ -187,11 +182,19 @@ div.warning {
 }
 #pdeps dt {
 }
+
+#pdeplegend ul.uldep
+, #pdeplegend ul.uladep
+, #pdeplegend ul.ulrec
+, #pdeplegend ul.ulidep
+, #pdeplegend ul.ulsug {
+	margin-left: 0.5em;
+	list-style-position: inside;
+}
+
 #pdeps ul.uldep, #pdeps ul.uladep {
 	list-style-type: disc;
 	list-style-image: url(Pics/dep.png);
-}
-.uldep dt {
 }
 #pdeps ul.ulrec, #pdeps ul.ulidep {
 	list-style-type: square;
@@ -218,9 +221,14 @@ div.warning {
 #pdeplegend td li {
 	padding-left:0;
 }
-#pdeplegend td,#pdeplegend tr,#pdeplegend table,#pdeplegend ul,#pdeplegend li,#pdeplegend tbody {
+#pdeplegend td
+ ,#pdeplegend tr
+ ,#pdeplegend table
+ ,#pdeplegend ul
+ ,#pdeplegend li
+ ,#pdeplegend tbody {
 	margin:0;
-	paddding:0;
+	padding:0;
 }
 .pkgreport #pdeplegend td li {
 	margin:0.25em 0 0 2em;
