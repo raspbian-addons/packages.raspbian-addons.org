@@ -110,7 +110,7 @@
 </ul>
 
 [% IF src %]
-  <h3>[% g('Download Source Package <a href="%s">%s</a>:', src.url, src.pkg) %]
+  <h3>[% g('Download Source Package <a href="%s">%s</a>:', src.url, src.pkg) %]</h3>
   [% FOREACH src.downloads %]
     [% '<ul>' IF loop.first %]
     <li><a href="[% server _ path %]">[[% name %]]</a></li>
