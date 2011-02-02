@@ -97,7 +97,7 @@
 	background-repeat: no-repeat;
 	background-position: 0.5em 1em;
 	font-size: 0.75em;
-	line-height: 2;
+	line-height: 2em;
 	background-color:#FFFFCB;
 	border:0.15em solid #CCCCA3;
 }
@@ -144,7 +144,7 @@ div#pothers {
 #pothers a, #pothers strong {
 }
 #psearchsug {
-	font-size: 	0.75em;
+	font-size: 0.75em;
 	margin: 0;
 	line-height: 2;
 	background-image: url('Pics/reddot.png');
@@ -218,9 +218,6 @@ div#pothers {
 	border-top: 1px solid #a9abb3;
 	width: 100%;
 }
-#pdownload td{
-	border-top: 1px solid #a9abb3;
-}
 #pdeplegend td li {
 	padding-left:0;
 }
@@ -292,4 +289,16 @@ h1 strong.pmarker {
 }
 .psearch-other-hits {
 		margin-top: 1em;
+}
+table {
+	border-bottom: 1px solid #a9abb3;
+	border-top: 1px solid #a9abb3;
+	}
+
+td {
+		background-image: url(Pics/greydot.png);
+		background-position: top left;
+		background-repeat: repeat-x;
+}
+th {
 }
