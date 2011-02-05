@@ -38,7 +38,7 @@
 	[% END %]
 [% END %]
 
-<p>[% g('Search in specific suite:') %]
+<p>[% g('Limit to suite:') %]
 [% FOREACH s IN all_suites %]
 	[% IF s != suite_str %]
 	[<a href="[% make_search_url('',"keywords=$keyword_esc",'suite',s) %]">[% s %]</a>]
@@ -51,7 +51,7 @@
 	make_search_url('',"keywords=$keyword_esc",'suite','all')) %]
 [% END %]
 
-<p>[% g('Limit search to a specific architecture:') %]
+<p>[% g('Limit to a architecture:') %]
 [% FOREACH a IN all_architectures %]
    [% IF a != arch_str %]
    [<a href="[% make_search_url('',"keywords=$keyword_esc",'arch',a) %]">[% a %]</a>]
@@ -70,7 +70,6 @@
 <p>[% g('<a href="%s">Some</a> results have not been displayed due to the search parameters.',
 	"$search_url?keywords=$keyword_esc") %]</p>
 [% END %]
-</div>
 
 [%- PROCESS 'html/messages.tmpl' -%]
 
@@ -97,15 +96,19 @@
 
 [% IF too_many_hits %]
 [% IF opts.searchon != "names" %]
-<p id="psearchtoomanyhits">[% g("Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords.") %]</p>
+<div class="note">
+<p>[% g("Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords.") %]</p>
+</div>
 [% ELSE %]
-<p id="psearchtoomanyhits">
+<div class="note">
+<p>
 [%- IF results %]
 [% g("Your keyword was too generic, for optimizing reasons some results might have been suppressed.<br>Please consider using a longer keyword or more keywords.") %]
 [%- ELSE -%]
 [% g("Your keyword was too generic.<br>Please consider using a longer keyword or more keywords.") %]
 [% END -%]
 </p>
+</div>
 [% END; END %]
 
 [% UNLESS results || too_many_hits %]
