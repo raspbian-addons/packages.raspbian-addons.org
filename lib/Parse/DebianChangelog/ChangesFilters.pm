@@ -102,7 +102,7 @@ sub cve_to_mitre {
     my ($text, $cgi) = @_;
 
     $text =~ s!\b(?:CVE|CAN)-\d{4}-\d{4}\b
-        !$cgi->a({ -href=>"http://cve.mitre.org/cgi-bin/cvename.cgi?name=$&" }, $&)
+        !$cgi->a({ -href=>"http://security-tracker.debian.org/tracker/$&" }, $&)
 	!xego;
     return $text;
 }

@@ -4,11 +4,12 @@
 	keywords = g('Packages')
 -%]
 [%-
-    all_suites = [ 'lenny', 'lenny-volatile', 'lenny-backports', 'lenny-backports-sloppy', 'squeeze', 'squeeze-backports', 'sid' ]
+    all_suites = [ 'lenny', 'lenny-volatile', 'lenny-backports', 'lenny-backports-sloppy', 'squeeze', 'squeeze-backports', 'wheezy', 'sid' ]
     version_numbers = { sarge => '3.1',
 			etch  => '4.0',
-			lenny => '5.0' }
-    current_release = 'lenny'
+			lenny => '5.0',
+			squeeze => '6.0' }
+    current_release = 'squeeze'
     all_sections = [ 'main', 'contrib', 'non-free' ]
     all_architectures = [   'alpha', 'arm', 'armel', 'amd64', 'avr32', 'hppa', 'i386',
                             'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
@@ -40,6 +41,7 @@
 <h3>[% g('Search package directories') %]</h3>
 
 <form method="GET" action="/search">
+<p>
 <label for="kw">[% g('Keyword:') %]</label>
 <input type="text" size="30" name="keywords" id="kw">
 <input type="submit" value="[% g('Search') %]"> <input type="reset" value="[% g('Reset') %]">
@@ -69,6 +71,7 @@ Distribution:
 [% END %]
   <option value="all" selected="selected">[% g('any') %]</option>
 </select>
+</p>
 </form>
 <p>[% g('There are shortcuts for some searches available:') %]</p>
 <ul>
@@ -82,6 +85,7 @@ Distribution:
 
 <p>[% g('This search engine allows you to search the contents of %s distributions for any files (or just parts of file names) that are part of packages. You can also get a full list of files in a given package.', organisation) %]<br>
 <form method="GET" action="/search">
+<p>
 <input type="hidden" name="searchon" value="contents">
 
 <label for="keyword">[% g('Keyword:') %]</label>
@@ -115,6 +119,7 @@ Distribution:
 [% END %]
   <option value="any" selected="selected">[% g('any') %]</option>
 </select>
+</p>
 </form>
 
 [% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2010' %]
