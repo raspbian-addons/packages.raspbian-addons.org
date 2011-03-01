@@ -832,15 +832,16 @@ div.tabular table > td:fist-child, table.tabular  > td:fist-child, table.vendors
 }
 
 #langSelector {
-        color: #0035c7;
-        text-decoration: underline;
+/*      color: #0035c7;
+        text-decoration: underline; */
 }
 #langSelector:hover {
-        cursor: pointer;
-        text-decoration: none;
+/*      cursor: pointer;
+        text-decoration: none; */
 }
 #langContainer {
-        #background-color: #f5f6f7;
+	padding-top: 0.5em;
+/*	#background-color: #f5f6f7;
         background-color: white;
         background-image:url('Pics/gradient-flipped.png');
         background-position: bottom;
@@ -850,15 +851,11 @@ div.tabular table > td:fist-child, table.tabular  > td:fist-child, table.vendors
         left: -1em;
         border-bottom: 1px solid #dfdfe0;
         margin-right: -1em;
-        min-width: 100%;        /* make it reach the right edge if only a few
+        min-width: 100%; */    /* make it reach the right edge if only a few
                                    languages are available */
-        padding: 0.5em 1em 1em 1em;
-}
+       }
 #langContainer a {
         margin-right: 1em;
-}
-#pageLang {
-    position: relative;
 }
 #pageLang:hover #langContainer {
     display: block;
