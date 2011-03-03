@@ -61,6 +61,13 @@ msgstr ""
 msgid "Accessibility Support"
 msgstr "Hjälpmedelsfunktioner"
 
+#. Facet: accessibility, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Accessibility Support"
+msgid "Accessibility support provided by the package"
+msgstr "Hjälpmedelsfunktioner"
+
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
 msgid "Accounting"
@@ -166,6 +173,11 @@ msgstr ""
 #. Facet: junior, long desc
 #: files/debtags/vocabulary
 msgid "Applications recommended for younger users"
+msgstr ""
+
+#. Facet: office, long desc
+#: files/debtags/vocabulary
+msgid "Applications related to office and business activities"
 msgstr ""
 
 #. Tag: accessibility::input, long desc
@@ -419,11 +431,6 @@ msgstr ""
 msgid "Bulgarian"
 msgstr "Bulgariska"
 
-#. Tag: bbs, short desc
-#: files/debtags/vocabulary
-msgid "Bulletin Board Systems"
-msgstr ""
-
 #. Tag: implemented-in::c, short desc
 #: files/debtags/vocabulary
 msgid "C"
@@ -483,11 +490,6 @@ msgstr "Klustring"
 msgid "Calculation"
 msgstr "Klustring"
 
-#. Tag: numerical, short desc
-#: files/debtags/vocabulary
-msgid "Calculation and Numerical Computation"
-msgstr ""
-
 #. Tag: game::card, short desc
 #: files/debtags/vocabulary
 msgid "Card"
@@ -497,6 +499,11 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Catalan"
 msgstr "Katalanska"
+
+#. Facet: scope, long desc
+#: files/debtags/vocabulary
+msgid "Characterization by scale of coverage "
+msgstr ""
 
 #. Tag: use::chatting, short desc
 #: files/debtags/vocabulary
@@ -553,6 +560,11 @@ msgstr ""
 #. Tag: devel::prettyprint, long desc
 #: files/debtags/vocabulary
 msgid "Code pretty-printing and indentation/reformatting."
+msgstr ""
+
+#. Facet: iso15924, long desc
+#: files/debtags/vocabulary
+msgid "Codes for representating writing systems "
 msgstr ""
 
 #. Tag: interface::commandline, short desc
@@ -632,6 +644,16 @@ msgstr ""
 msgid "Content Management (CMS)"
 msgstr ""
 
+#. Tag: accessibility::speech-recognition, long desc
+#: files/debtags/vocabulary
+msgid "Converts speech into text."
+msgstr ""
+
+#. Tag: accessibility::screen-reader, long desc
+#: files/debtags/vocabulary
+msgid "Converts text into speech."
+msgstr ""
+
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
 msgid "Creation, maintenance, and use of filesystems"
@@ -702,11 +724,6 @@ msgstr "Danska"
 msgid "Data Conversion"
 msgstr ""
 
-#. Tag: data-exchange, short desc
-#: files/debtags/vocabulary
-msgid "Data Exchange"
-msgstr ""
-
 #. Tag: use::organizing, short desc
 #: files/debtags/vocabulary
 msgid "Data Organisation"
@@ -767,11 +784,6 @@ msgstr ""
 msgid "Demo"
 msgstr ""
 
-#. Tag: desktop, short desc
-#: files/debtags/vocabulary
-msgid "Desktop Environment"
-msgstr ""
-
 #. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
@@ -824,6 +836,11 @@ msgstr ""
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
 msgid "Display managers (graphical login screens)"
+msgstr ""
+
+#. Tag: accessibility::screen-magnify, long desc
+#: files/debtags/vocabulary
+msgid "Displays enlarged screen content."
 msgstr ""
 
 #. Tag: works-with-format::djvu, short desc
@@ -1057,11 +1074,6 @@ msgstr ""
 msgid "File Distribution"
 msgstr "Fildistribution"
 
-#. Tag: file-formats, short desc
-#: files/debtags/vocabulary
-msgid "File Formats"
-msgstr ""
-
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
@@ -1155,11 +1167,6 @@ msgstr ""
 #. Tag: works-with::font, short desc
 #: files/debtags/vocabulary
 msgid "Fonts"
-msgstr ""
-
-#. Tag: foreignos, short desc
-#: files/debtags/vocabulary
-msgid "Foreign OS and Hardware"
 msgstr ""
 
 #. Tag: security::forensics, short desc
@@ -1346,6 +1353,16 @@ msgstr ""
 msgid "Greek"
 msgstr "Grekiska"
 
+#. Facet: special, long desc
+#: files/debtags/vocabulary
+msgid "Group of special tags"
+msgstr ""
+
+#. Facet: suite, long desc
+#: files/debtags/vocabulary
+msgid "Groups together related packages"
+msgstr ""
+
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
 msgid "Groupware"
@@ -1452,15 +1469,59 @@ msgstr "Hindi"
 msgid "Hiragana"
 msgstr ""
 
-#. Facet: biology, long desc
+#. Facet: mail, long desc
 #: files/debtags/vocabulary
-msgid "How is the package related to the field of biology."
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to eletronic mail transmission "
+msgstr "Hur paketet är relaterat till biologifältet."
+
+#. Facet: hardware, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to hardware enablement "
 msgstr "Hur paketet är relaterat till biologifältet."
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to system security"
 msgstr ""
+
+#. Facet: x11, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the X Window System"
+msgstr "Hur paketet är relaterat till biologifältet."
+
+#. Facet: biology, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of biology"
+msgstr "Hur paketet är relaterat till biologifältet."
+
+#. Facet: science, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of science"
+msgstr "Hur paketet är relaterat till biologifältet."
+
+#. Facet: devel, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of software development"
+msgstr "Hur paketet är relaterat till biologifältet."
+
+#. Facet: sound, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of sound and music"
+msgstr "Hur paketet är relaterat till biologifältet."
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
@@ -1504,16 +1565,6 @@ msgstr ""
 #. Tag: protocol::ip, short desc
 #: files/debtags/vocabulary
 msgid "IP"
-msgstr ""
-
-#. Tag: net, short desc
-#: files/debtags/vocabulary
-msgid "IP Networking"
-msgstr ""
-
-#. Tag: protocols, short desc
-#: files/debtags/vocabulary
-msgid "IP protocol support"
 msgstr ""
 
 #. Tag: protocol::ipv6, short desc
@@ -1790,6 +1841,11 @@ msgstr ""
 #. Tag: iso15924::khmr, short desc
 #: files/debtags/vocabulary
 msgid "Khmer"
+msgstr ""
+
+#. Facet: game, long desc
+#: files/debtags/vocabulary
+msgid "Kind of games provided by the package"
 msgstr ""
 
 #. Tag: culture::korean, short desc
@@ -2219,11 +2275,6 @@ msgstr ""
 msgid "Network Traffic"
 msgstr ""
 
-#. Tag: netcomm, short desc
-#: files/debtags/vocabulary
-msgid "Network and Communication"
-msgstr ""
-
 #. Facet: network, short desc
 #: files/debtags/vocabulary
 msgid "Networking"
@@ -2427,11 +2478,6 @@ msgstr ""
 msgid "Obsolete Packages"
 msgstr ""
 
-#. Tag: office, short desc
-#: files/debtags/vocabulary
-msgid "Office Software"
-msgstr ""
-
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
@@ -2469,11 +2515,6 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "OpenOffice.org"
 msgstr ""
-
-#. Tag: accessibility::ocr, long desc
-#: files/debtags/vocabulary
-msgid "Optical Character Recognition"
-msgstr "Optisk teckenigenkänning"
 
 #. Tag: iso15924::orya, short desc
 #: files/debtags/vocabulary
@@ -2530,6 +2571,13 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Packages related to the European Molecular Biology Open Software Suite."
 msgstr "Paket relaterade till European Molecular Biology Open Software Suite."
+
+#. Tag: suite::debian, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Packages specific to Debian - look into \"Software Development::Debian\" "
+"for  Debian Development."
+msgstr ""
 
 #. Tag: special::obsolete, long desc
 #: files/debtags/vocabulary
@@ -2895,6 +2943,16 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
+#. Facet: role, long desc
+#: files/debtags/vocabulary
+msgid "Role performed by the package"
+msgstr ""
+
+#. Facet: network, long desc
+#: files/debtags/vocabulary
+msgid "Role performed concerning computer networks"
+msgstr ""
+
 #. Tag: game::rpg, short desc
 #: files/debtags/vocabulary
 msgid "Role-playing"
@@ -3060,7 +3118,6 @@ msgstr ""
 msgid "Scheme Development"
 msgstr ""
 
-#. Tag: science, short desc
 #. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
@@ -3426,11 +3483,6 @@ msgstr "Systeminstallation"
 msgid "System Logs"
 msgstr ""
 
-#. Tag: system, short desc
-#: files/debtags/vocabulary
-msgid "System Software and Maintainance"
-msgstr ""
-
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3641,10 +3693,20 @@ msgstr ""
 msgid "The Zope (web) publishing platform."
 msgstr ""
 
+#. Tag: accessibility::speech, long desc
+#: files/debtags/vocabulary
+msgid "The artificial production of human speech."
+msgstr ""
+
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid "The culture for which the package provides special support"
 msgstr "Vilken kultur paketet ger specialstöd för"
+
+#. Facet: use, long desc
+#: files/debtags/vocabulary
+msgid "The general purpose of the software"
+msgstr ""
 
 #. Facet: made-of, long desc
 #: files/debtags/vocabulary
@@ -3699,16 +3761,16 @@ msgstr ""
 msgid "The pre-6.0 versions of netscape browser"
 msgstr ""
 
+#. Tag: accessibility::ocr, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The translation of text images into machine-editable text by means of "
+"Optical Character Recognition (OCR)."
+msgstr ""
+
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
 msgid "Theme"
-msgstr ""
-
-#. Facet: works-with, long desc
-#: files/debtags/vocabulary
-msgid ""
-"These tags describe what is the kind of data (or even processes, or people) "
-"that the package can work with."
 msgstr ""
 
 #. Tag: admin::virtualization, long desc
@@ -3926,11 +3988,6 @@ msgstr ""
 msgid "Uzbek"
 msgstr "Uzbekiska"
 
-#. Tag: vi, short desc
-#: files/debtags/vocabulary
-msgid "VI Editor"
-msgstr ""
-
 #. Tag: network::vpn, short desc
 #: files/debtags/vocabulary
 msgid "VPN or Tunneling"
@@ -4035,6 +4092,52 @@ msgstr "serbiska"
 #: files/debtags/vocabulary
 msgid "Welsh"
 msgstr "Walesiska"
+
+#. Facet: works-with, long desc
+#: files/debtags/vocabulary
+msgid ""
+"What kind of data (or even processes, or people) the package can work with"
+msgstr ""
+
+#. Facet: web, long desc
+#: files/debtags/vocabulary
+msgid "What kind of tools for the World Wide Web the package provides"
+msgstr ""
+
+#. Facet: interface, long desc
+#: files/debtags/vocabulary
+msgid "What kind of user interface the package provides"
+msgstr ""
+
+#. Facet: implemented-in, long desc
+#: files/debtags/vocabulary
+msgid "What language the software is implemented in"
+msgstr ""
+
+#. Facet: field, long desc
+#: files/debtags/vocabulary
+msgid "Which branch of knowledge is the package related to"
+msgstr ""
+
+#. Facet: works-with-format, long desc
+#: files/debtags/vocabulary
+msgid "Which data formats are supported by the package"
+msgstr ""
+
+#. Facet: uitoolkit, long desc
+#: files/debtags/vocabulary
+msgid "Which interface toolkit the package provides"
+msgstr ""
+
+#. Facet: protocol, long desc
+#: files/debtags/vocabulary
+msgid "Which network protocols the package can understand"
+msgstr ""
+
+#. Facet: admin, long desc
+#: files/debtags/vocabulary
+msgid "Which system administration activities the package may perform"
+msgstr ""
 
 #. Tag: web::wiki, short desc
 #: files/debtags/vocabulary
@@ -4167,11 +4270,6 @@ msgstr ""
 msgid "Zope"
 msgstr ""
 
-#. Tag: educational, short desc
-#: files/debtags/vocabulary
-msgid "[Edu] Educational Software"
-msgstr ""
-
 #. Tag: implemented-in::shell, short desc
 #: files/debtags/vocabulary
 msgid "sh, bash, ksh, tcsh and other shells"
@@ -4187,101 +4285,104 @@ msgstr ""
 msgid "xDSL Modem"
 msgstr ""
 
-#~ msgid "Gallegan"
-#~ msgstr "galiciska"
-
-#~ msgid "Zulu"
-#~ msgstr "zulu"
-
-#~ msgid "Yiddish"
-#~ msgstr "jiddisch"
-
-#~ msgid "Xhosa"
-#~ msgstr "xhosa"
-
-#~ msgid "Vietnamese"
-#~ msgstr "vietnamesiska"
-
-#~ msgid "Twi"
-#~ msgstr "twi"
-
-#~ msgid "Tonga"
-#~ msgstr "tonga"
-
-#~ msgid "Slovenian"
-#~ msgstr "slovenska"
-
-#~ msgid "Persian"
-#~ msgstr "persiska"
-
-#~ msgid "Occitan (post 1500)"
-#~ msgstr "occitanska (efter 1500)"
-
-#~ msgid "Maori"
-#~ msgstr "maori"
-
-#~ msgid "Manx"
-#~ msgstr "manx"
-
-#~ msgid "Maltese"
-#~ msgstr "maltesiska"
-
-#~ msgid "Malay"
-#~ msgstr "malajiska"
-
-#~ msgid "Macedonian"
-#~ msgstr "makedoniska"
-
-#~ msgid "Kurdish"
-#~ msgstr "kurdiska"
-
-#~ msgid "Kalaallisut"
-#~ msgstr "grÃ¶nlÃ¤ndska"
-
-#~ msgid "Galician"
-#~ msgstr "galiciska"
-
-#~ msgid "Gaelic (Scots)"
-#~ msgstr "skotska"
-
-#~ msgid "Cornish"
-#~ msgstr "corniska"
-
-#~ msgid "Breton"
-#~ msgstr "bretonska"
-
-#~ msgid "Belarusian"
-#~ msgstr "vitryska"
-
-#~ msgid "Azerbaijani"
-#~ msgstr "azerbajdzjanska"
-
-#~ msgid "Amharic"
-#~ msgstr "amhariska"
-
-#~ msgid "Albanian"
-#~ msgstr "albaniska"
-
-#~ msgid "Slovene"
-#~ msgstr "slovenska"
-
-#~ msgid "Lithuanian"
-#~ msgstr "litauiska"
-
-#~ msgid "Indonesian"
-#~ msgstr "indonesiska"
-
-#~ msgid "Chinese (Taiwan)"
-#~ msgstr "kinesiska (Taiwan)"
-
-#~ msgid "Chinese (Hong Kong)"
-#~ msgstr "kinesiska (Hongkong)"
-
-#~ msgid "Chinese (China)"
-#~ msgstr "kinesiska (Kina)"
+#~ msgid "English"
+#~ msgstr "engelska"
 
 #~ msgid "Portuguese (Brazilian)"
 #~ msgstr "portugisiska (Brasilien)"
 
-#~ msgid "English"
-#~ msgstr "engelska"
+#~ msgid "Chinese (China)"
+#~ msgstr "kinesiska (Kina)"
+
+#~ msgid "Chinese (Hong Kong)"
+#~ msgstr "kinesiska (Hongkong)"
+
+#~ msgid "Chinese (Taiwan)"
+#~ msgstr "kinesiska (Taiwan)"
+
+#~ msgid "Indonesian"
+#~ msgstr "indonesiska"
+
+#~ msgid "Lithuanian"
+#~ msgstr "litauiska"
+
+#~ msgid "Slovene"
+#~ msgstr "slovenska"
+
+#~ msgid "Albanian"
+#~ msgstr "albaniska"
+
+#~ msgid "Amharic"
+#~ msgstr "amhariska"
+
+#~ msgid "Azerbaijani"
+#~ msgstr "azerbajdzjanska"
+
+#~ msgid "Belarusian"
+#~ msgstr "vitryska"
+
+#~ msgid "Breton"
+#~ msgstr "bretonska"
+
+#~ msgid "Cornish"
+#~ msgstr "corniska"
+
+#~ msgid "Gaelic (Scots)"
+#~ msgstr "skotska"
+
+#~ msgid "Galician"
+#~ msgstr "galiciska"
+
+#~ msgid "Kalaallisut"
+#~ msgstr "grÃ¶nlÃ¤ndska"
+
+#~ msgid "Kurdish"
+#~ msgstr "kurdiska"
+
+#~ msgid "Macedonian"
+#~ msgstr "makedoniska"
+
+#~ msgid "Malay"
+#~ msgstr "malajiska"
+
+#~ msgid "Maltese"
+#~ msgstr "maltesiska"
+
+#~ msgid "Manx"
+#~ msgstr "manx"
+
+#~ msgid "Maori"
+#~ msgstr "maori"
+
+#~ msgid "Occitan (post 1500)"
+#~ msgstr "occitanska (efter 1500)"
+
+#~ msgid "Persian"
+#~ msgstr "persiska"
+
+#~ msgid "Slovenian"
+#~ msgstr "slovenska"
+
+#~ msgid "Tonga"
+#~ msgstr "tonga"
+
+#~ msgid "Twi"
+#~ msgstr "twi"
+
+#~ msgid "Vietnamese"
+#~ msgstr "vietnamesiska"
+
+#~ msgid "Xhosa"
+#~ msgstr "xhosa"
+
+#~ msgid "Yiddish"
+#~ msgstr "jiddisch"
+
+#~ msgid "Zulu"
+#~ msgstr "zulu"
+
+#~ msgid "Gallegan"
+#~ msgstr "galiciska"
+
+#~ msgid "Optical Character Recognition"
+#~ msgstr "Optisk teckenigenkänning"
