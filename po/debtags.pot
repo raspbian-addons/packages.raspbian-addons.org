@@ -8,6 +8,11 @@ msgstr ""
 msgid "Accessibility Support"
 msgstr ""
 
+#. Facet: accessibility, long desc
+#: files/debtags/vocabulary
+msgid "Accessibility support provided by the package"
+msgstr ""
+
 #. Tag: accessibility::input, short desc
 #: files/debtags/vocabulary
 msgid "Input Systems"
@@ -25,7 +30,7 @@ msgstr ""
 
 #. Tag: accessibility::ocr, long desc
 #: files/debtags/vocabulary
-msgid "Optical Character Recognition"
+msgid "The translation of text images into machine-editable text by means of Optical Character Recognition (OCR)."
 msgstr ""
 
 #. Tag: accessibility::screen-magnify, short desc
@@ -33,9 +38,19 @@ msgstr ""
 msgid "Screen Magnification"
 msgstr ""
 
+#. Tag: accessibility::screen-magnify, long desc
+#: files/debtags/vocabulary
+msgid "Displays enlarged screen content."
+msgstr ""
+
 #. Tag: accessibility::screen-reader, short desc
 #: files/debtags/vocabulary
 msgid "Screen Reading"
+msgstr ""
+
+#. Tag: accessibility::screen-reader, long desc
+#: files/debtags/vocabulary
+msgid "Converts text into speech."
 msgstr ""
 
 #. Tag: accessibility::speech, short desc
@@ -45,9 +60,19 @@ msgstr ""
 msgid "Speech Synthesis"
 msgstr ""
 
+#. Tag: accessibility::speech, long desc
+#: files/debtags/vocabulary
+msgid "The artificial production of human speech."
+msgstr ""
+
 #. Tag: accessibility::speech-recognition, short desc
 #: files/debtags/vocabulary
 msgid "Speech Recognition"
+msgstr ""
+
+#. Tag: accessibility::speech-recognition, long desc
+#: files/debtags/vocabulary
+msgid "Converts speech into text."
 msgstr ""
 
 #. Tag: accessibility::TODO, short desc
@@ -167,6 +192,11 @@ msgstr ""
 #. Facet: admin, short desc
 #: files/debtags/vocabulary
 msgid "System Administration"
+msgstr ""
+
+#. Facet: admin, long desc
+#: files/debtags/vocabulary
+msgid "Which system administration activities the package may perform"
 msgstr ""
 
 #. Tag: admin::accounting, short desc
@@ -319,7 +349,7 @@ msgstr ""
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
-msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of biology"
 msgstr ""
 
 #. Tag: biology::emboss, short desc
@@ -663,6 +693,11 @@ msgstr ""
 #. Facet: devel, short desc
 #: files/debtags/vocabulary
 msgid "Software Development"
+msgstr ""
+
+#. Facet: devel, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the field of software development"
 msgstr ""
 
 #. Tag: devel::bugtracker, short desc
@@ -1015,14 +1050,14 @@ msgstr ""
 msgid "Web-centric frameworks, CGI libraries and other web-specific development tools."
 msgstr ""
 
-#. Tag: educational, short desc
-#: files/debtags/vocabulary
-msgid "[Edu] Educational Software"
-msgstr ""
-
 #. Facet: field, short desc
 #: files/debtags/vocabulary
 msgid "Field"
+msgstr ""
+
+#. Facet: field, long desc
+#: files/debtags/vocabulary
+msgid "Which branch of knowledge is the package related to"
 msgstr ""
 
 #. Tag: field::arts, short desc
@@ -1155,6 +1190,11 @@ msgstr ""
 msgid "Games and Amusement"
 msgstr ""
 
+#. Facet: game, long desc
+#: files/debtags/vocabulary
+msgid "Kind of games provided by the package"
+msgstr ""
+
 #. Tag: game::adventure, short desc
 #: files/debtags/vocabulary
 msgid "Adventure"
@@ -1263,6 +1303,11 @@ msgstr ""
 #. Facet: hardware, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Enablement"
+msgstr ""
+
+#. Facet: hardware, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to hardware enablement "
 msgstr ""
 
 #. Tag: hardware::camera, short desc
@@ -1518,6 +1563,11 @@ msgstr ""
 msgid "XML"
 msgstr ""
 
+#. Facet: interface, long desc
+#: files/debtags/vocabulary
+msgid "What kind of user interface the package provides"
+msgstr ""
+
 #. Tag: interface::3d, short desc
 #: files/debtags/vocabulary
 msgid "Three-Dimensional"
@@ -1575,6 +1625,11 @@ msgstr ""
 #. Facet: implemented-in, short desc
 #: files/debtags/vocabulary
 msgid "Implemented in"
+msgstr ""
+
+#. Facet: implemented-in, long desc
+#: files/debtags/vocabulary
+msgid "What language the software is implemented in"
 msgstr ""
 
 #. Tag: implemented-in::ada, short desc
@@ -1717,6 +1772,11 @@ msgstr ""
 msgid "Electronic Mail"
 msgstr ""
 
+#. Facet: mail, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to eletronic mail transmission "
+msgstr ""
+
 #. Tag: mail::filters, short desc
 #: files/debtags/vocabulary
 msgid "Filters"
@@ -1787,6 +1847,11 @@ msgstr ""
 msgid "Office and business"
 msgstr ""
 
+#. Facet: office, long desc
+#: files/debtags/vocabulary
+msgid "Applications related to office and business activities"
+msgstr ""
+
 #. Tag: office::finance, short desc
 #: files/debtags/vocabulary
 msgid "Finance"
@@ -1821,7 +1886,7 @@ msgstr ""
 
 #. Facet: works-with, long desc
 #: files/debtags/vocabulary
-msgid "These tags describe what is the kind of data (or even processes, or people) that the package can work with."
+msgid "What kind of data (or even processes, or people) the package can work with"
 msgstr ""
 
 #. Tag: works-with::3dmodel, short desc
@@ -1994,6 +2059,11 @@ msgstr ""
 #. Facet: works-with-format, short desc
 #: files/debtags/vocabulary
 msgid "Supports Format"
+msgstr ""
+
+#. Facet: works-with-format, long desc
+#: files/debtags/vocabulary
+msgid "Which data formats are supported by the package"
 msgstr ""
 
 #. Tag: works-with-format::bib, short desc
@@ -2176,6 +2246,11 @@ msgstr ""
 msgid "Scope"
 msgstr ""
 
+#. Facet: scope, long desc
+#: files/debtags/vocabulary
+msgid "Characterization by scale of coverage "
+msgstr ""
+
 #. Tag: scope::utility, short desc
 #: files/debtags/vocabulary
 msgid "Utility"
@@ -2213,6 +2288,11 @@ msgstr ""
 #. Facet: role, short desc
 #: files/debtags/vocabulary
 msgid "Role"
+msgstr ""
+
+#. Facet: role, long desc
+#: files/debtags/vocabulary
+msgid "Role performed by the package"
 msgstr ""
 
 #. Tag: role::app-data, short desc
@@ -2387,6 +2467,11 @@ msgstr ""
 msgid "Sound and Music"
 msgstr ""
 
+#. Facet: sound, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the field of sound and music"
+msgstr ""
+
 #. Tag: sound::compression, short desc
 #: files/debtags/vocabulary
 msgid "Compression"
@@ -2420,6 +2505,11 @@ msgstr ""
 #. Facet: special, short desc
 #: files/debtags/vocabulary
 msgid "Service tags"
+msgstr ""
+
+#. Facet: special, long desc
+#: files/debtags/vocabulary
+msgid "Group of special tags"
 msgstr ""
 
 #. Tag: special::auto-inst-parts, short desc
@@ -2597,6 +2687,11 @@ msgstr ""
 msgid "Application Suite"
 msgstr ""
 
+#. Facet: suite, long desc
+#: files/debtags/vocabulary
+msgid "Groups together related packages"
+msgstr ""
+
 #. Tag: suite::apache, short desc
 #: files/debtags/vocabulary
 msgid "Apache"
@@ -2610,6 +2705,11 @@ msgstr ""
 #. Tag: suite::bsd, long desc
 #: files/debtags/vocabulary
 msgid "Berkeley Software Distribution, sometimes called Berkeley Unix or BSD Unix, and its family of descendants: FreeBSD, NetBSD or OpenBSD.\nLink: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
+msgstr ""
+
+#. Tag: suite::debian, long desc
+#: files/debtags/vocabulary
+msgid "Packages specific to Debian - look into \"Software Development::Debian\" for  Debian Development."
 msgstr ""
 
 #. Tag: suite::eclipse, short desc
@@ -2767,6 +2867,11 @@ msgstr ""
 #. Facet: protocol, short desc
 #: files/debtags/vocabulary
 msgid "Network Protocol"
+msgstr ""
+
+#. Facet: protocol, long desc
+#: files/debtags/vocabulary
+msgid "Which network protocols the package can understand"
 msgstr ""
 
 #. Tag: protocol::atm, short desc
@@ -3224,6 +3329,11 @@ msgstr ""
 msgid "Interface Toolkit"
 msgstr ""
 
+#. Facet: uitoolkit, long desc
+#: files/debtags/vocabulary
+msgid "Which interface toolkit the package provides"
+msgstr ""
+
 #. Tag: uitoolkit::athena, short desc
 #: files/debtags/vocabulary
 msgid "Athena Widgets"
@@ -3282,6 +3392,11 @@ msgstr ""
 #. Facet: use, short desc
 #: files/debtags/vocabulary
 msgid "Purpose"
+msgstr ""
+
+#. Facet: use, long desc
+#: files/debtags/vocabulary
+msgid "The general purpose of the software"
 msgstr ""
 
 #. Tag: use::analysing, short desc
@@ -3470,6 +3585,11 @@ msgstr ""
 msgid "Text Formatting"
 msgstr ""
 
+#. Facet: web, long desc
+#: files/debtags/vocabulary
+msgid "What kind of tools for the World Wide Web the package provides"
+msgstr ""
+
 #. Tag: web::appserver, short desc
 #: files/debtags/vocabulary
 msgid "Application Server"
@@ -3542,6 +3662,11 @@ msgstr ""
 msgid "Networking"
 msgstr ""
 
+#. Facet: network, long desc
+#: files/debtags/vocabulary
+msgid "Role performed concerning computer networks"
+msgstr ""
+
 #. Tag: network::client, short desc
 #: files/debtags/vocabulary
 msgid "Client"
@@ -3565,6 +3690,11 @@ msgstr ""
 #. Tag: network::vpn, short desc
 #: files/debtags/vocabulary
 msgid "VPN or Tunneling"
+msgstr ""
+
+#. Facet: x11, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the X Window System"
 msgstr ""
 
 #. Tag: x11::applet, short desc
@@ -3617,71 +3747,14 @@ msgstr ""
 msgid " X servers and drivers for the X server (input and video)"
 msgstr ""
 
-#. Tag: bbs, short desc
-#: files/debtags/vocabulary
-msgid "Bulletin Board Systems"
-msgstr ""
-
-#. Tag: data-exchange, short desc
-#: files/debtags/vocabulary
-msgid "Data Exchange"
-msgstr ""
-
-#. Tag: desktop, short desc
-#: files/debtags/vocabulary
-msgid "Desktop Environment"
-msgstr ""
-
-#. Tag: file-formats, short desc
-#: files/debtags/vocabulary
-msgid "File Formats"
-msgstr ""
-
-#. Tag: foreignos, short desc
-#: files/debtags/vocabulary
-msgid "Foreign OS and Hardware"
-msgstr ""
-
-#. Tag: net, short desc
-#: files/debtags/vocabulary
-msgid "IP Networking"
-msgstr ""
-
-#. Tag: netcomm, short desc
-#: files/debtags/vocabulary
-msgid "Network and Communication"
-msgstr ""
-
-#. Tag: numerical, short desc
-#: files/debtags/vocabulary
-msgid "Calculation and Numerical Computation"
-msgstr ""
-
-#. Tag: office, short desc
-#: files/debtags/vocabulary
-msgid "Office Software"
-msgstr ""
-
-#. Tag: protocols, short desc
-#: files/debtags/vocabulary
-msgid "IP protocol support"
-msgstr ""
-
-#. Tag: science, short desc
-#: files/debtags/vocabulary
 #. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
 msgstr ""
 
-#. Tag: system, short desc
+#. Facet: science, long desc
 #: files/debtags/vocabulary
-msgid "System Software and Maintainance"
-msgstr ""
-
-#. Tag: vi, short desc
-#: files/debtags/vocabulary
-msgid "VI Editor"
+msgid "How the package is related to the field of science"
 msgstr ""
 
 #. Tag: science::calculation, short desc
@@ -3717,6 +3790,11 @@ msgstr ""
 #. Facet: iso15924, short desc
 #: files/debtags/vocabulary
 msgid "Writing script"
+msgstr ""
+
+#. Facet: iso15924, long desc
+#: files/debtags/vocabulary
+msgid "Codes for representating writing systems "
 msgstr ""
 
 #. Tag: iso15924::armn, short desc

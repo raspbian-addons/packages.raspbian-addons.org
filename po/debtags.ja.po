@@ -70,6 +70,13 @@ msgstr "ATM"
 msgid "Accessibility Support"
 msgstr "アクセシビリティサポート"
 
+#. Facet: accessibility, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "Accessibility Support"
+msgid "Accessibility support provided by the package"
+msgstr "アクセシビリティサポート"
+
 # TRANSLATION-FIXME: Is this correct? How different is this from "User Management"?
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
@@ -184,6 +191,11 @@ msgstr "アプリケーションスイート"
 #: files/debtags/vocabulary
 msgid "Applications recommended for younger users"
 msgstr "低年齢のユーザに推奨されるアプリケーション"
+
+#. Facet: office, long desc
+#: files/debtags/vocabulary
+msgid "Applications related to office and business activities"
+msgstr ""
 
 #. Tag: accessibility::input, long desc
 #: files/debtags/vocabulary
@@ -446,11 +458,6 @@ msgstr "ビルドツール"
 msgid "Bulgarian"
 msgstr "ブルガリア語"
 
-#. Tag: bbs, short desc
-#: files/debtags/vocabulary
-msgid "Bulletin Board Systems"
-msgstr "電子掲示板"
-
 #. Tag: implemented-in::c, short desc
 #: files/debtags/vocabulary
 msgid "C"
@@ -506,11 +513,6 @@ msgstr "計算"
 msgid "Calculation"
 msgstr "計算"
 
-#. Tag: numerical, short desc
-#: files/debtags/vocabulary
-msgid "Calculation and Numerical Computation"
-msgstr "演算や数値計算"
-
 #. Tag: game::card, short desc
 #: files/debtags/vocabulary
 msgid "Card"
@@ -520,6 +522,11 @@ msgstr "カードゲーム"
 #: files/debtags/vocabulary
 msgid "Catalan"
 msgstr "カタルーニャ語"
+
+#. Facet: scope, long desc
+#: files/debtags/vocabulary
+msgid "Characterization by scale of coverage "
+msgstr ""
 
 #. Tag: use::chatting, short desc
 #: files/debtags/vocabulary
@@ -575,6 +582,11 @@ msgstr "コード生成"
 #: files/debtags/vocabulary
 msgid "Code pretty-printing and indentation/reformatting."
 msgstr "コードをきれいに印刷したりインデントや整形を行うツール。"
+
+#. Facet: iso15924, long desc
+#: files/debtags/vocabulary
+msgid "Codes for representating writing systems "
+msgstr ""
 
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
@@ -662,6 +674,16 @@ msgstr "コンソール SVGA"
 msgid "Content Management (CMS)"
 msgstr "コンテンツ管理 (CMS)"
 
+#. Tag: accessibility::speech-recognition, long desc
+#: files/debtags/vocabulary
+msgid "Converts speech into text."
+msgstr ""
+
+#. Tag: accessibility::screen-reader, long desc
+#: files/debtags/vocabulary
+msgid "Converts text into speech."
+msgstr ""
+
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
 msgid "Creation, maintenance, and use of filesystems"
@@ -732,11 +754,6 @@ msgstr "デンマーク語"
 msgid "Data Conversion"
 msgstr "データの変換"
 
-#. Tag: data-exchange, short desc
-#: files/debtags/vocabulary
-msgid "Data Exchange"
-msgstr "データ交換"
-
 #. Tag: use::organizing, short desc
 #: files/debtags/vocabulary
 msgid "Data Organisation"
@@ -796,11 +813,6 @@ msgstr "デバッグ用のシンボル。"
 msgid "Demo"
 msgstr "デモ"
 
-#. Tag: desktop, short desc
-#: files/debtags/vocabulary
-msgid "Desktop Environment"
-msgstr "デスクトップ環境"
-
 #. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
@@ -859,6 +871,11 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "Display managers (graphical login screens)"
 msgstr "ディスプレイマネージャ (グラフィカルなログイン画面)"
+
+#. Tag: accessibility::screen-magnify, long desc
+#: files/debtags/vocabulary
+msgid "Displays enlarged screen content."
+msgstr ""
 
 #. Tag: works-with-format::djvu, short desc
 #: files/debtags/vocabulary
@@ -1113,11 +1130,6 @@ msgstr "分野"
 msgid "File Distribution"
 msgstr "ファイル配布"
 
-#. Tag: file-formats, short desc
-#: files/debtags/vocabulary
-msgid "File Formats"
-msgstr "ファイル形式"
-
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
@@ -1222,11 +1234,6 @@ msgstr "フォント"
 #: files/debtags/vocabulary
 msgid "Fonts"
 msgstr "フォント"
-
-#. Tag: foreignos, short desc
-#: files/debtags/vocabulary
-msgid "Foreign OS and Hardware"
-msgstr "他の OS やハードウェア"
 
 #. Tag: security::forensics, short desc
 #: files/debtags/vocabulary
@@ -1412,6 +1419,16 @@ msgstr "画像・映像"
 msgid "Greek"
 msgstr "ギリシャ語・ギリシャ文字"
 
+#. Facet: special, long desc
+#: files/debtags/vocabulary
+msgid "Group of special tags"
+msgstr ""
+
+#. Facet: suite, long desc
+#: files/debtags/vocabulary
+msgid "Groups together related packages"
+msgstr ""
+
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
 msgid "Groupware"
@@ -1514,15 +1531,59 @@ msgstr "ヒンディー語"
 msgid "Hiragana"
 msgstr "平仮名"
 
-#. Facet: biology, long desc
+#. Facet: mail, long desc
 #: files/debtags/vocabulary
-msgid "How is the package related to the field of biology."
-msgstr "パッケージと生物学の分野との関連性"
+#, fuzzy
+#| msgid "How the package is related to system security"
+msgid "How the package is related to eletronic mail transmission "
+msgstr "パッケージとシステムセキュリティとの関連性"
+
+#. Facet: hardware, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How the package is related to system security"
+msgid "How the package is related to hardware enablement "
+msgstr "パッケージとシステムセキュリティとの関連性"
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to system security"
 msgstr "パッケージとシステムセキュリティとの関連性"
+
+#. Facet: x11, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How the package is related to system security"
+msgid "How the package is related to the X Window System"
+msgstr "パッケージとシステムセキュリティとの関連性"
+
+#. Facet: biology, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of biology"
+msgstr "パッケージと生物学の分野との関連性"
+
+#. Facet: science, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of science"
+msgstr "パッケージと生物学の分野との関連性"
+
+#. Facet: devel, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of software development"
+msgstr "パッケージと生物学の分野との関連性"
+
+#. Facet: sound, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "How is the package related to the field of biology."
+msgid "How the package is related to the field of sound and music"
+msgstr "パッケージと生物学の分野との関連性"
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
@@ -1576,16 +1637,6 @@ msgstr "IMAP プロトコル"
 #: files/debtags/vocabulary
 msgid "IP"
 msgstr "IP"
-
-#. Tag: net, short desc
-#: files/debtags/vocabulary
-msgid "IP Networking"
-msgstr "IP ネットワーク"
-
-#. Tag: protocols, short desc
-#: files/debtags/vocabulary
-msgid "IP protocol support"
-msgstr "IP プロトコルサポート"
 
 #. Tag: protocol::ipv6, short desc
 #: files/debtags/vocabulary
@@ -1895,6 +1946,11 @@ msgstr "キーボード"
 #: files/debtags/vocabulary
 msgid "Khmer"
 msgstr "クメール文字"
+
+#. Facet: game, long desc
+#: files/debtags/vocabulary
+msgid "Kind of games provided by the package"
+msgstr ""
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
@@ -2329,11 +2385,6 @@ msgstr "ネットワークプロトコル"
 msgid "Network Traffic"
 msgstr "ネットワークトラフィック"
 
-#. Tag: netcomm, short desc
-#: files/debtags/vocabulary
-msgid "Network and Communication"
-msgstr "ネットワークや通信"
-
 #. Facet: network, short desc
 #: files/debtags/vocabulary
 msgid "Networking"
@@ -2534,11 +2585,6 @@ msgstr "Objective C での開発"
 msgid "Obsolete Packages"
 msgstr "廃止されたパッケージ"
 
-#. Tag: office, short desc
-#: files/debtags/vocabulary
-msgid "Office Software"
-msgstr "オフィス用ソフトウェア"
-
 #. Facet: office, short desc
 #: files/debtags/vocabulary
 msgid "Office and business"
@@ -2585,11 +2631,6 @@ msgstr ""
 #: files/debtags/vocabulary
 msgid "OpenOffice.org"
 msgstr "OpenOffice.org"
-
-#. Tag: accessibility::ocr, long desc
-#: files/debtags/vocabulary
-msgid "Optical Character Recognition"
-msgstr "光学文字認識"
 
 #. Tag: iso15924::orya, short desc
 #: files/debtags/vocabulary
@@ -2647,6 +2688,13 @@ msgstr "パッケージ化されたソフトウェア"
 msgid "Packages related to the European Molecular Biology Open Software Suite."
 msgstr ""
 "European Molecular Biology Open Software Suite (EMBOSS) 関連のパッケージ。"
+
+#. Tag: suite::debian, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Packages specific to Debian - look into \"Software Development::Debian\" "
+"for  Debian Development."
+msgstr ""
 
 #. Tag: special::obsolete, long desc
 #: files/debtags/vocabulary
@@ -3028,6 +3076,16 @@ msgstr "Rogue 風 RPG"
 msgid "Role"
 msgstr "役割"
 
+#. Facet: role, long desc
+#: files/debtags/vocabulary
+msgid "Role performed by the package"
+msgstr ""
+
+#. Facet: network, long desc
+#: files/debtags/vocabulary
+msgid "Role performed concerning computer networks"
+msgstr ""
+
 #. Tag: game::rpg, short desc
 #: files/debtags/vocabulary
 msgid "Role-playing"
@@ -3205,7 +3263,6 @@ msgstr "Scheme"
 msgid "Scheme Development"
 msgstr "Scheme での開発"
 
-#. Tag: science, short desc
 #. Facet: science, short desc
 #: files/debtags/vocabulary
 msgid "Science"
@@ -3612,11 +3669,6 @@ msgstr "システムのインストール"
 msgid "System Logs"
 msgstr "システムログ"
 
-#. Tag: system, short desc
-#: files/debtags/vocabulary
-msgid "System Software and Maintainance"
-msgstr "システムソフトウェアやシステム保守"
-
 #. Tag: protocol::tcp, short desc
 #: files/debtags/vocabulary
 msgid "TCP"
@@ -3875,10 +3927,20 @@ msgstr ""
 msgid "The Zope (web) publishing platform."
 msgstr "Zope (ウェブ) パブリッシングプラットフォーム。"
 
+#. Tag: accessibility::speech, long desc
+#: files/debtags/vocabulary
+msgid "The artificial production of human speech."
+msgstr ""
+
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
 msgid "The culture for which the package provides special support"
 msgstr "パッケージが特殊なサポートを提供する文化"
+
+#. Facet: use, long desc
+#: files/debtags/vocabulary
+msgid "The general purpose of the software"
+msgstr ""
 
 #. Facet: made-of, long desc
 #: files/debtags/vocabulary
@@ -3936,19 +3998,17 @@ msgstr ""
 msgid "The pre-6.0 versions of netscape browser"
 msgstr "バージョン 6.0 より前の Netscape ウェブブラウザ"
 
+#. Tag: accessibility::ocr, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The translation of text images into machine-editable text by means of "
+"Optical Character Recognition (OCR)."
+msgstr ""
+
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
 msgid "Theme"
 msgstr "テーマ"
-
-#. Facet: works-with, long desc
-#: files/debtags/vocabulary
-msgid ""
-"These tags describe what is the kind of data (or even processes, or people) "
-"that the package can work with."
-msgstr ""
-"これらのタグはパッケージが取り扱うことのできるデータ種別 (またはプロセスや"
-"人々) を説明しています。"
 
 #. Tag: admin::virtualization, long desc
 #: files/debtags/vocabulary
@@ -4195,11 +4255,6 @@ msgstr "ユーティリティ"
 msgid "Uzbek"
 msgstr "ウズベク語"
 
-#. Tag: vi, short desc
-#: files/debtags/vocabulary
-msgid "VI Editor"
-msgstr "vi エディタ"
-
 #. Tag: network::vpn, short desc
 #: files/debtags/vocabulary
 msgid "VPN or Tunneling"
@@ -4312,6 +4367,60 @@ msgstr "Webmin"
 #: files/debtags/vocabulary
 msgid "Welsh"
 msgstr "ウェールズ語"
+
+#. Facet: works-with, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid ""
+#| "These tags describe what is the kind of data (or even processes, or "
+#| "people) that the package can work with."
+msgid ""
+"What kind of data (or even processes, or people) the package can work with"
+msgstr ""
+"これらのタグはパッケージが取り扱うことのできるデータ種別 (またはプロセスや"
+"人々) を説明しています。"
+
+#. Facet: web, long desc
+#: files/debtags/vocabulary
+msgid "What kind of tools for the World Wide Web the package provides"
+msgstr ""
+
+#. Facet: interface, long desc
+#: files/debtags/vocabulary
+msgid "What kind of user interface the package provides"
+msgstr ""
+
+#. Facet: implemented-in, long desc
+#: files/debtags/vocabulary
+msgid "What language the software is implemented in"
+msgstr ""
+
+#. Facet: field, long desc
+#: files/debtags/vocabulary
+msgid "Which branch of knowledge is the package related to"
+msgstr ""
+
+#. Facet: works-with-format, long desc
+#: files/debtags/vocabulary
+#, fuzzy
+#| msgid "The languages or data formats used to make the package"
+msgid "Which data formats are supported by the package"
+msgstr "パッケージの作成に用いられている言語やデータ形式"
+
+#. Facet: uitoolkit, long desc
+#: files/debtags/vocabulary
+msgid "Which interface toolkit the package provides"
+msgstr ""
+
+#. Facet: protocol, long desc
+#: files/debtags/vocabulary
+msgid "Which network protocols the package can understand"
+msgstr ""
+
+#. Facet: admin, long desc
+#: files/debtags/vocabulary
+msgid "Which system administration activities the package may perform"
+msgstr ""
 
 #. Tag: web::wiki, short desc
 #: files/debtags/vocabulary
@@ -4457,11 +4566,6 @@ msgstr "Zip アーカイブ"
 msgid "Zope"
 msgstr "Zope"
 
-#. Tag: educational, short desc
-#: files/debtags/vocabulary
-msgid "[Edu] Educational Software"
-msgstr "[Edu] 教育用ソフトウェア"
-
 #. Tag: implemented-in::shell, short desc
 #: files/debtags/vocabulary
 msgid "sh, bash, ksh, tcsh and other shells"
@@ -4477,54 +4581,96 @@ msgstr "wxWidgets"
 msgid "xDSL Modem"
 msgstr "xDSL モデム"
 
+#~ msgid "X Server"
+#~ msgstr "X サーバ"
+
+#~ msgid "Audrio"
+#~ msgstr "音声"
+
+#~ msgid "ZOPE"
+#~ msgstr "Zope"
+
+# TRANSLATION-FIXME: Why "Windowing"?
+#~ msgid "X Windowing System"
+#~ msgstr "X ウィンドウシステム"
+
+#~ msgid "SAMBA"
+#~ msgstr "Samba"
+
+#~ msgid "GNUStep"
+#~ msgstr "GNUstep"
+
+#~ msgid "TK"
+#~ msgstr "TK"
+
+#~ msgid "Source code"
+#~ msgstr "ソースコード"
+
+#~ msgid "QT"
+#~ msgstr "QT"
+
+#~ msgid "Windows file and printer sharing (SMB)"
+#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
+
+#~ msgid "Secure File Transfer Protocol"
+#~ msgstr "Secure File Transfer Protocol"
+
+#~ msgid "SMB and CIFS"
+#~ msgstr "SMB や CIFS"
+
+#~ msgid "HyperText Transfer Protocol"
+#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
+
+#~ msgid "File Transfer Protocol"
+#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
+
+#~ msgid "File Transfer"
+#~ msgstr "ファイル転送"
+
 #~ msgid ""
 #~ "Direct Client to Client protocol used by Internet Relay Chat clients."
 #~ msgstr ""
 #~ "インターネット・リレー・チャット (IRC) クライアントが使用する Direct "
 #~ "Client-to-Client プロトコル。"
 
-#~ msgid "File Transfer"
-#~ msgstr "ファイル転送"
+#~ msgid "[Edu] Educational Software"
+#~ msgstr "[Edu] 教育用ソフトウェア"
 
-#~ msgid "File Transfer Protocol"
-#~ msgstr "ファイル転送プロトコル (File Transfer Protocol)"
+#~ msgid "VI Editor"
+#~ msgstr "vi エディタ"
 
-#~ msgid "HyperText Transfer Protocol"
-#~ msgstr "ハイパーテキスト転送プロトコル (HyperText Transfer Protocol)"
+#~ msgid "System Software and Maintainance"
+#~ msgstr "システムソフトウェアやシステム保守"
 
-#~ msgid "SMB and CIFS"
-#~ msgstr "SMB や CIFS"
+#~ msgid "Optical Character Recognition"
+#~ msgstr "光学文字認識"
 
-#~ msgid "Secure File Transfer Protocol"
-#~ msgstr "Secure File Transfer Protocol"
+#~ msgid "Office Software"
+#~ msgstr "オフィス用ソフトウェア"
 
-#~ msgid "Windows file and printer sharing (SMB)"
-#~ msgstr "Windows ファイル・プリンタ共有 (SMB)"
+#~ msgid "Network and Communication"
+#~ msgstr "ネットワークや通信"
 
-#~ msgid "QT"
-#~ msgstr "QT"
+#~ msgid "IP protocol support"
+#~ msgstr "IP プロトコルサポート"
 
-#~ msgid "Source code"
-#~ msgstr "ソースコード"
+#~ msgid "IP Networking"
+#~ msgstr "IP ネットワーク"
 
-#~ msgid "TK"
-#~ msgstr "TK"
+#~ msgid "Foreign OS and Hardware"
+#~ msgstr "他の OS やハードウェア"
 
-#~ msgid "GNUStep"
-#~ msgstr "GNUstep"
+#~ msgid "File Formats"
+#~ msgstr "ファイル形式"
 
-#~ msgid "SAMBA"
-#~ msgstr "Samba"
+#~ msgid "Desktop Environment"
+#~ msgstr "デスクトップ環境"
 
-# TRANSLATION-FIXME: Why "Windowing"?
-#~ msgid "X Windowing System"
-#~ msgstr "X ウィンドウシステム"
+#~ msgid "Data Exchange"
+#~ msgstr "データ交換"
 
-#~ msgid "ZOPE"
-#~ msgstr "Zope"
+#~ msgid "Calculation and Numerical Computation"
+#~ msgstr "演算や数値計算"
 
-#~ msgid "Audrio"
-#~ msgstr "音声"
-
-#~ msgid "X Server"
-#~ msgstr "X サーバ"
+#~ msgid "Bulletin Board Systems"
+#~ msgstr "電子掲示板"
