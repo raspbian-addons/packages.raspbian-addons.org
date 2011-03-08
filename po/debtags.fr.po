@@ -2,11 +2,11 @@
 # Copyright (C) 2010 Debian French l10n team <debian-l10n-french@lists.debian.org>
 # This file is distributed under the same license as the package.debian.org website.
 #
-# David Prévot <david@tilapin.org>, 2010.
+# David Prévot <david@tilapin.org>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: debtags\n"
-"PO-Revision-Date: 2010-08-22 13:06-0400\n"
+"PO-Revision-Date: 2011-03-07 22:43-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -74,10 +74,9 @@ msgstr "Prise en charge de l'accessibilité"
 
 #. Facet: accessibility, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "Accessibility Support"
 msgid "Accessibility support provided by the package"
-msgstr "Prise en charge de l'accessibilité"
+msgstr "Prise en charge de l'accessibilité fournie par le paquet."
 
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
@@ -194,7 +193,7 @@ msgstr "Applications recommandées pour les plus jeunes utilisateurs."
 #. Facet: office, long desc
 #: files/debtags/vocabulary
 msgid "Applications related to office and business activities"
-msgstr ""
+msgstr "Applications liées aux activités d'entreprise."
 
 #. Tag: accessibility::input, long desc
 #: files/debtags/vocabulary
@@ -418,8 +417,8 @@ msgstr "Anglais britannique"
 #. Tag: scope::application, long desc
 #: files/debtags/vocabulary
 msgid ""
-"Broad-scoped program for general use. It probably has functionality for 80-"
-"90% of use cases. The pieces that remain are usually to be found as "
+"Broad-scoped program for general use. It probably has functionality for "
+"80-90% of use cases. The pieces that remain are usually to be found as "
 "utilities."
 msgstr ""
 "Programme au champ d'application large. Ses fonctionnalités couvrent sans "
@@ -524,7 +523,7 @@ msgstr "Catalan"
 #. Facet: scope, long desc
 #: files/debtags/vocabulary
 msgid "Characterization by scale of coverage "
-msgstr ""
+msgstr "Caractérisation suivant le niveau de la portée."
 
 #. Tag: use::chatting, short desc
 #: files/debtags/vocabulary
@@ -584,7 +583,7 @@ msgstr "Rendu élégant, indentation et reformatage de code."
 #. Facet: iso15924, long desc
 #: files/debtags/vocabulary
 msgid "Codes for representating writing systems "
-msgstr ""
+msgstr "Codes de représentation des systèmes d'écriture."
 
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
@@ -675,12 +674,12 @@ msgstr "Système de gestion de contenu (CMS)"
 #. Tag: accessibility::speech-recognition, long desc
 #: files/debtags/vocabulary
 msgid "Converts speech into text."
-msgstr ""
+msgstr "Conversion de voix en texte."
 
 #. Tag: accessibility::screen-reader, long desc
 #: files/debtags/vocabulary
 msgid "Converts text into speech."
-msgstr ""
+msgstr "Conversion de texte en voix."
 
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
@@ -873,7 +872,7 @@ msgstr "Gestionnaire d'affichage (écran de connexion graphique)."
 #. Tag: accessibility::screen-magnify, long desc
 #: files/debtags/vocabulary
 msgid "Displays enlarged screen content."
-msgstr ""
+msgstr "Affichage de contenu d'écran agrandi."
 
 #. Tag: works-with-format::djvu, short desc
 #: files/debtags/vocabulary
@@ -1422,12 +1421,12 @@ msgstr "Grec"
 #. Facet: special, long desc
 #: files/debtags/vocabulary
 msgid "Group of special tags"
-msgstr ""
+msgstr "Groupe d'étiquettes spécifiques."
 
 #. Facet: suite, long desc
 #: files/debtags/vocabulary
 msgid "Groups together related packages"
-msgstr ""
+msgstr "Groupement de paquets apparentés."
 
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
@@ -1533,17 +1532,16 @@ msgstr "Hiragana"
 
 #. Facet: mail, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How the package is related to system security"
 msgid "How the package is related to eletronic mail transmission "
-msgstr "Comment le paquet est apparenté à la sécurité du système."
+msgstr ""
+"Comment le paquet est apparenté à l'émission de messages électroniques."
 
 #. Facet: hardware, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How the package is related to system security"
 msgid "How the package is related to hardware enablement "
-msgstr "Comment le paquet est apparenté à la sécurité du système."
+msgstr "Comment le paquet est apparenté à l'activation du matériel."
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
@@ -1552,38 +1550,34 @@ msgstr "Comment le paquet est apparenté à la sécurité du système."
 
 #. Facet: x11, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How the package is related to system security"
 msgid "How the package is related to the X Window System"
-msgstr "Comment le paquet est apparenté à la sécurité du système."
+msgstr "Comment le paquet est apparenté au système X Window."
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of biology"
 msgstr "Comment le paquet est apparenté au domaine de la biologie."
 
 #. Facet: science, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of science"
-msgstr "Comment le paquet est apparenté au domaine de la biologie."
+msgstr "Comment le paquet est apparenté au domaine de la science."
 
 #. Facet: devel, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of software development"
-msgstr "Comment le paquet est apparenté au domaine de la biologie."
+msgstr ""
+"Comment le paquet est apparenté au domaine du développement de logiciel."
 
 #. Facet: sound, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of sound and music"
-msgstr "Comment le paquet est apparenté au domaine de la biologie."
+msgstr "Comment le paquet est apparenté au domaine du son et de la musique."
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
@@ -1956,7 +1950,7 @@ msgstr "Khmer"
 #. Facet: game, long desc
 #: files/debtags/vocabulary
 msgid "Kind of games provided by the package"
-msgstr ""
+msgstr "Genre de jeu fourni par le paquet."
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
@@ -2695,8 +2689,8 @@ msgstr "Logiciel empaqueté"
 #: files/debtags/vocabulary
 msgid "Packages related to the European Molecular Biology Open Software Suite."
 msgstr ""
-"Paquets apparentés à la suite logicielle EMBOSS (« European Molecular Biology "
-"Open Software Suite »)."
+"Paquets apparentés à la suite logicielle EMBOSS (« European Molecular "
+"Biology Open Software Suite »)."
 
 #. Tag: suite::debian, long desc
 #: files/debtags/vocabulary
@@ -2704,6 +2698,8 @@ msgid ""
 "Packages specific to Debian - look into \"Software Development::Debian\" "
 "for  Debian Development."
 msgstr ""
+"Paquets spécifiques à Debian - consultez « Logiciels Development::Debian » "
+"pour le développement de Debian."
 
 #. Tag: special::obsolete, long desc
 #: files/debtags/vocabulary
@@ -3092,12 +3088,12 @@ msgstr "Rôle"
 #. Facet: role, long desc
 #: files/debtags/vocabulary
 msgid "Role performed by the package"
-msgstr ""
+msgstr "Rôle rempli par le paquet"
 
 #. Facet: network, long desc
 #: files/debtags/vocabulary
 msgid "Role performed concerning computer networks"
-msgstr ""
+msgstr "Rôle rempli dans le cadre des réseaux informatiques."
 
 #. Tag: game::rpg, short desc
 #: files/debtags/vocabulary
@@ -3284,7 +3280,7 @@ msgstr "Sciences"
 #. Facet: scope, short desc
 #: files/debtags/vocabulary
 msgid "Scope"
-msgstr "Portée"
+msgstr "Champ d'application"
 
 #. Tag: accessibility::screen-magnify, short desc
 #: files/debtags/vocabulary
@@ -3948,7 +3944,7 @@ msgstr "Zope, plate-forme de publication (web)."
 #. Tag: accessibility::speech, long desc
 #: files/debtags/vocabulary
 msgid "The artificial production of human speech."
-msgstr ""
+msgstr "La production artificielle de voix humaine."
 
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
@@ -3960,7 +3956,7 @@ msgstr ""
 #. Facet: use, long desc
 #: files/debtags/vocabulary
 msgid "The general purpose of the software"
-msgstr ""
+msgstr "Le but global du logiciel."
 
 #. Facet: made-of, long desc
 #: files/debtags/vocabulary
@@ -4024,6 +4020,8 @@ msgid ""
 "The translation of text images into machine-editable text by means of "
 "Optical Character Recognition (OCR)."
 msgstr ""
+"La transformation d'images de texte en texte éditable en utilisant la "
+"reconnaissance optique de texte (OCR)."
 
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
@@ -4396,57 +4394,55 @@ msgstr "Gallois"
 
 #. Facet: works-with, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid ""
 #| "These tags describe what is the kind of data (or even processes, or "
 #| "people) that the package can work with."
 msgid ""
 "What kind of data (or even processes, or people) the package can work with"
 msgstr ""
-"Ces étiquettes décrivent le type de données (ou encore de processus, ou de "
-"personnes) avec lequel le paquet peut fonctionner."
+"Le type de données (ou encore de processus, ou de personnes) avec lequel le "
+"paquet peut fonctionner."
 
 #. Facet: web, long desc
 #: files/debtags/vocabulary
 msgid "What kind of tools for the World Wide Web the package provides"
-msgstr ""
+msgstr "Le type d'outils pour le web fournis par le paquet."
 
 #. Facet: interface, long desc
 #: files/debtags/vocabulary
 msgid "What kind of user interface the package provides"
-msgstr ""
+msgstr "Le type d'interface utilisateur fournie par le paquet."
 
 #. Facet: implemented-in, long desc
 #: files/debtags/vocabulary
 msgid "What language the software is implemented in"
-msgstr ""
+msgstr "Le langage dans lequel le logiciel est réalisé."
 
 #. Facet: field, long desc
 #: files/debtags/vocabulary
 msgid "Which branch of knowledge is the package related to"
-msgstr ""
+msgstr "Le type de connaissance auquel le paquet est apparenté."
 
 #. Facet: works-with-format, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "The languages or data formats used to make the package"
 msgid "Which data formats are supported by the package"
-msgstr "Les langages ou formats de données utilisés pour faire le programme."
+msgstr "Les formats de données pris en charge par le programme."
 
 #. Facet: uitoolkit, long desc
 #: files/debtags/vocabulary
 msgid "Which interface toolkit the package provides"
-msgstr ""
+msgstr "L'interface de boîte à outils fournie par le paquet."
 
 #. Facet: protocol, long desc
 #: files/debtags/vocabulary
 msgid "Which network protocols the package can understand"
-msgstr ""
+msgstr "Les protocoles réseau que le paquet peut comprendre."
 
 #. Facet: admin, long desc
 #: files/debtags/vocabulary
 msgid "Which system administration activities the package may perform"
-msgstr ""
+msgstr "Les activités d'administration système que le paquet peut réaliser."
 
 #. Tag: web::wiki, short desc
 #: files/debtags/vocabulary

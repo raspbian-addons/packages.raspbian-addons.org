@@ -4,13 +4,13 @@
 #
 # Guilhelm Panaget <guilhelm.panaget@free.fr>, 2009.
 # Gabriel Sbodio <sbogab@laposte.net>, 2009.
-# David Prévot <david@tilapin.org>, 2010.
+# David Prévot <david@tilapin.org>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2010-08-26 12:39-0400\n"
+"PO-Revision-Date: 2011-03-07 16:05-0400\n"
 "Last-Translator: David Prévot <david@tilapin.org>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "%s est une <a href=\"%s\">marque</a> de %s"
 
 #. possible values for importance: high, normal, low
 #. sitewidemsg = { importance => "high",
-#. txt => 
+#. txt =>
 #: templates/config.tmpl:77
 msgid ""
 "Please note that this is an experimental version of <a href=\"http://%s/\">%"
@@ -43,7 +43,7 @@ msgstr ""
 "packages.debian.org/\">packages.debian.org</a>. Attendez-vous à des erreurs "
 "et des informations obsolètes."
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:81
 msgid "."
 msgstr ","
@@ -122,17 +122,16 @@ msgstr "AVR32"
 
 #: templates/config/architectures.tmpl:21
 msgid "PowerPC SPE (e500 core)"
-msgstr ""
+msgstr "PowerPC SPE (e500 core)"
 
 #: templates/config/architectures.tmpl:22
 msgid "SH4"
-msgstr ""
+msgstr "SH4"
 
 #: templates/config/architectures.tmpl:23
-#, fuzzy
 #| msgid "Search"
 msgid "Sparc64"
-msgstr "Recherche"
+msgstr "Sparc64"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
@@ -680,17 +679,16 @@ msgstr ""
 
 #: templates/html/search.tmpl:41
 msgid "Limit to suite:"
-msgstr ""
+msgstr "Limiter à la suite :"
 
 #: templates/html/search.tmpl:50
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Chercher dans <a href=\"%s\">toutes les suites</a>"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
-#, fuzzy
 #| msgid "Limit search to a specific architecture:"
 msgid "Limit to a architecture:"
-msgstr "Limiter la recherche à une architecture particulière :"
+msgstr "Limiter à l'architecture :"
 
 #: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
@@ -863,7 +861,7 @@ msgstr "noms de fichiers contenant"
 msgid "files named"
 msgstr "fichiers nommés"
 
-#. @translators: I'm really sorry :/ 
+#. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
