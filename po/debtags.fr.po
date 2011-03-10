@@ -47,10 +47,10 @@ msgid ""
 "does something 10-20% of users in the field will need. Often has "
 "functionality missing from related applications."
 msgstr ""
-"Programme au champ d'application restreint à un cas utilisation particulier "
-"ou peu de cas d'utilisation. Il réalise seulement une tâche que dix à vingt "
+"Programme au champ d'application restreint à un cas d'utilisation particulier "
+"ou à peu de cas d'utilisation. Il réalise seulement une tâche que dix à vingt "
 "pour cent des utilisateurs de ce domaine auront besoin. Il fournit "
-"généralement une fonctionnalité manquante aux applications relatives."
+"généralement une fonctionnalité manquante aux applications similaires."
 
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
@@ -86,7 +86,7 @@ msgstr "Gestion des comptes"
 #. Tag: field::finance, long desc
 #: files/debtags/vocabulary
 msgid "Accounting and financial software"
-msgstr "Comptabilité et gestion financière."
+msgstr "Gestion comptable et financière."
 
 #. Tag: game::arcade, short desc
 #: files/debtags/vocabulary
@@ -260,7 +260,7 @@ msgstr ""
 #. Tag: uitoolkit::athena, short desc
 #: files/debtags/vocabulary
 msgid "Athena Widgets"
-msgstr "Composant d'interface graphique Athena"
+msgstr "Composants d'interface graphique Athena"
 
 #. Tag: made-of::audio, short desc
 #. Tag: works-with::audio, short desc
@@ -333,7 +333,7 @@ msgstr "BibTeX"
 #. Tag: works-with-format::bib, long desc
 #: files/debtags/vocabulary
 msgid "BibTeX list of references"
-msgstr "Liste de référence BibTeX."
+msgstr "Liste de références BibTeX."
 
 #. Tag: science::bibliography, short desc
 #: files/debtags/vocabulary
@@ -1604,7 +1604,7 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
 "rfc2616.txt"
 msgstr ""
-"HyperText Transfer Protocol, protocole parmi les plus important de la "
+"HyperText Transfer Protocol, protocole parmi les plus importants de la "
 "Toile.\n"
 "Il contrôle le transfert de données entre les serveurs HTTP comme Apache et "
 "les clients HTTP, qui sont généralement des navigateurs. Les ressources HTTP "
@@ -1715,7 +1715,7 @@ msgstr "Environnement de développement intégré."
 #. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
 msgid "Interface Toolkit"
-msgstr "Boîte à outil d'interface utilisateur"
+msgstr "Boîte à outils d'interface utilisateur"
 
 #. Tag: devel::i18n, short desc
 #: files/debtags/vocabulary
@@ -1755,7 +1755,7 @@ msgstr ""
 "Internet Protocol version 4, protocole au cœur de l'ensemble des protocoles "
 "Internet et le fondement même d'Internet.\n"
 "Chaque ordinateur relié à Internet possède une adresse IP (un nombre de "
-"quatre octets, habituellement représenté sous forme décimale séparé par des "
+"quatre octets, habituellement représenté sous forme décimale séparés par des "
 "points, par exemple 192.25.206.10). Les adresses IP sont distribuées par "
 "l'Internet Corporation for Assigned Names and Numbers (ICANN). Normalement, "
 "on accède aux ordinateurs sur Internet en utilisant leur nom de domaine "
@@ -1806,7 +1806,7 @@ msgstr ""
 #. Tag: devel::interpreter, short desc
 #: files/debtags/vocabulary
 msgid "Interpreter"
-msgstr "Interprèteur"
+msgstr "Interpréteur"
 
 #. Tag: security::ids, short desc
 #: files/debtags/vocabulary
@@ -2735,7 +2735,7 @@ msgstr "Empaquetage"
 #. Tag: devel::code-generator, long desc
 #: files/debtags/vocabulary
 msgid "Parser, lexer and other code generators"
-msgstr "Analyseur syntaxique, analyseur lexical et générateur de code."
+msgstr "Analyseur syntaxique, analyseur lexical et autres générateurs de code."
 
 #. Tag: devel::lang:pascal, short desc
 #: files/debtags/vocabulary
@@ -2803,7 +2803,7 @@ msgid ""
 "Please do not tag programs with simple unicode support, doing so would make "
 "this tag useless. Ultimately all applications should have unicode support."
 msgstr ""
-"Veuillez ne pas étiqueter les programme prenant seulement en charge Unicode, "
+"Veuillez ne pas étiqueter les programmes prenant seulement en charge Unicode, "
 "sinon cette étiquette serait inutile. En fin de compte, toutes les "
 "applications devraient prendre en charge Unicode."
 
@@ -2860,7 +2860,7 @@ msgstr ""
 #. Tag: security::forensics, long desc
 #: files/debtags/vocabulary
 msgid "Post-mortem analysis of intrusions."
-msgstr "Analyse d'intrusion post mortem."
+msgstr "Analyse d'intrusions post mortem."
 
 #. Tag: made-of::postscript, short desc
 #. Tag: works-with-format::postscript, short desc
@@ -2887,7 +2887,7 @@ msgstr "Présentation"
 #. Tag: devel::prettyprint, short desc
 #: files/debtags/vocabulary
 msgid "Prettyprint"
-msgstr "Rendu élégant"
+msgstr "Enjolivement de texte"
 
 #. Tag: hardware::printer, short desc
 #: files/debtags/vocabulary
@@ -3002,7 +3002,7 @@ msgstr "RADIUS"
 #: files/debtags/vocabulary
 msgid "RCS (Revision Control System) and SCM (Software Configuration Manager)"
 msgstr ""
-"Logiciel de gestion de versions et gestion de configuration logicielle."
+"Logiciel de gestion de versions (RCS) et gestion de configuration logicielle (SCM)."
 
 #. Tag: devel::rpc, short desc
 #: files/debtags/vocabulary
@@ -3146,7 +3146,7 @@ msgid ""
 "Runs in background, only a control interface is provided, usually on "
 "commandline."
 msgstr ""
-"Fonctionne en arrière plan, seule une interface de contrôle est fournie, "
+"Fonctionne en arrière-plan, seule une interface de contrôle est fournie, "
 "généralement en ligne de commande."
 
 #. Tag: devel::runtime, short desc
@@ -3330,10 +3330,10 @@ msgid ""
 "mechanism, via asymmetric public/private key cryptography.\n"
 "Link: http://en.wikipedia.org/wiki/Secure_Shell"
 msgstr ""
-"Secure Shell, protocole de communication sécurisé et chiffré. SSH peut être "
+"Secure Shell, protocole de communications sécurisées et chiffrées. SSH peut être "
 "utilisé pour exécuter des programmes sur un hôte distant avec un serveur SSH "
-"à travers un tunnel SSH dans un réseau non sécurisé. L'utilisation "
-"principale est, comme son nom le suggère, de fournir connexion et accès à un "
+"dans un réseau non sécurisé à travers un tunnel SSH . L'utilisation "
+"principale est, comme son nom le suggère, de fournir une connexion chiffrée et un accès à un "
 "interpréteur de commandes sur des serveurs distants.\n"
 "L'authentification SSH peut être réalisée avec un mot de passe ou, ce qui "
 "est préférable, en utilisant la cryptographie asymétrique avec clefs "
@@ -3595,7 +3595,7 @@ msgstr "Synthèse vocale"
 #. Tag: game::sport, short desc
 #: files/debtags/vocabulary
 msgid "Sport Games"
-msgstr "Sport"
+msgstr "Jeu de sport"
 
 #. Tag: office::spreadsheet, short desc
 #. Tag: works-with::spreadsheet, short desc
@@ -3796,7 +3796,7 @@ msgstr "Formatage du texte"
 #. Tag: accessibility::ocr, short desc
 #: files/debtags/vocabulary
 msgid "Text Recognition (OCR)"
-msgstr "Reconnaissance de texte (OCR)"
+msgstr "Reconnaissance de caractères (OCR)"
 
 #. Tag: interface::text-mode, short desc
 #: files/debtags/vocabulary
@@ -3853,10 +3853,10 @@ msgstr ""
 "salons de discussion, et est utilisé par le réseau de messagerie instantanée "
 "Jabber ainsi que par les fonctionnalités de messagerie instantanée du "
 "nouveau réseau GoogleTalk.\n"
-"Contrairement aux autres réseaux de messagerie instantanées comme MSN, ICQ "
-"ou AIM, les serveurs sont des logiciels libres et peuvent être utilisés pour "
-"créer une plate-forme de discussion privée ou avoir son propre serveur de "
-"connexion au réseau Jabber.\n"
+"Contrairement aux autres réseaux de messagerie instantanée comme MSN, ICQ "
+"ou AIM, les serveurs Jabber sont des logiciels libres et peuvent être utilisés pour "
+"créer une plate-forme de discussion privée ou se connecter avec "
+"son propre serveur au réseau Jabber.\n"
 "Lien : http://www.jabber.org Lien : http://fr.wikipedia.org/wiki/"
 "Extensible_Messaging_and_Presence_Protocol"
 
@@ -3908,8 +3908,8 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
 "rfc/rfc1288.txt"
 msgstr ""
-"Name/Finger protocol, simple protocole réseau pour fournir des "
-"renseignements publics étendus sur les utilisateurs d'un ordinateur, comme "
+"Name/Finger protocol, simple protocole réseau pour fournir de "
+"nombreux renseignements publics sur les utilisateurs d'un ordinateur, comme "
 "leurs adresses électroniques, numéros téléphoniques, noms complets, etc.\n"
 "Par souci de respect de la vie privée, le protocole Finger n'est plus "
 "beaucoup utilisé, alors qu'il était particulièrement répandu au début des "
@@ -3944,7 +3944,7 @@ msgstr "Zope, plate-forme de publication (web)."
 #. Tag: accessibility::speech, long desc
 #: files/debtags/vocabulary
 msgid "The artificial production of human speech."
-msgstr "La production artificielle de voix humaine."
+msgstr "La synthétisation de voix humaine."
 
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
@@ -3999,8 +3999,8 @@ msgid ""
 msgstr ""
 "Le paquet peut être classé dans cette catégorie, mais l'étiquette appropriée "
 "n'existe pas.\n"
-"Utilisez cette étiquette pour indiquer aux responsables du vocabulaire des "
-"cas où la configuration actuelle d'étiquette est manquante."
+"Estampiller le paquet avec cette étiquette pour indiquer aux responsables du lexique des "
+"cas où la définition de la présente étiquette est manquante."
 
 #. Tag: works-with::im, long desc
 #: files/debtags/vocabulary
@@ -4021,7 +4021,7 @@ msgid ""
 "Optical Character Recognition (OCR)."
 msgstr ""
 "La transformation d'images de texte en texte éditable en utilisant la "
-"reconnaissance optique de texte (OCR)."
+"reconnaissance optique de caractères (OCR)."
 
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
@@ -4034,7 +4034,7 @@ msgid ""
 "This is not hardware emulation, but rather those facilities that allow to "
 "create many isolated compartments inside the same system."
 msgstr ""
-"Ce n'est pas une émulation matérielle, mais plutôt l'infrastructure qui "
+"Ce n'est pas une émulation matérielle, mais plutôt une infrastructure qui "
 "permet de créer plusieurs compartiments isolés au sein d'un même système."
 
 #. Tag: special::invalid-tag, long desc
@@ -4045,7 +4045,7 @@ msgid ""
 "should never show up."
 msgstr ""
 "Cette étiquette indique que la base de données d'étiquettes contient une "
-"étiquette non présente dans le vocabulaire d'étiquettes. La présence de "
+"étiquette non présente dans le lexique des étiquettes. La présence de "
 "cette étiquette indique un bogue du logiciel : elle ne devrait jamais "
 "apparaître."
 
@@ -4073,7 +4073,7 @@ msgstr "Tk"
 #: files/debtags/vocabulary
 msgid "To find what relates or differs in two or more objects."
 msgstr ""
-"Pour trouver les points communs ou les différences entre aux moins deux "
+"Pour trouver les points communs ou les différences entre au moins deux "
 "objets."
 
 #. Tag: devel::docsystem, long desc
@@ -4104,7 +4104,7 @@ msgstr "Outils d'empaquetage de logiciel."
 #. Tag: devel::testing-qa, long desc
 #: files/debtags/vocabulary
 msgid "Tools for software testing and quality assurance."
-msgstr "Outils pour essayer les logiciels et l'assurance qualité."
+msgstr "Outils pour les essais et l'assurance qualité de logiciels ."
 
 #. Tag: security::integrity, long desc
 #: files/debtags/vocabulary
@@ -4168,7 +4168,7 @@ msgstr ""
 "fichiers. TFTP permet à un client d'envoyer ou récupérer un fichier sur un "
 "hôte distant. Une de ses utilisations principales réside dans le démarrage "
 "sur le réseau de nœuds sans disque sur un réseau local. Il est conçu pour "
-"être facilement mis en place et adapté aux ROM.\n"
+"être facilement mis en place, donc adapté aux ROM.\n"
 "Lien : http://fr.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Lien : "
 "http://www.ietf.org/rfc/rfc1350.txt"
 
@@ -4220,7 +4220,7 @@ msgstr "Syllabaire autochtone canadien unifié"
 #. Tag: hardware::power:ups, long desc
 #: files/debtags/vocabulary
 msgid "Uninterruptible Power Supply"
-msgstr "Alimentation sans interruption."
+msgstr "Alimentation ininterruptible."
 
 #. Tag: hardware::usb, long desc
 #: files/debtags/vocabulary
@@ -4231,7 +4231,7 @@ msgstr "Universal Serial Bus."
 #: files/debtags/vocabulary
 msgid "Use this for packages that cannot yet or will never support IPv6."
 msgstr ""
-"Utiliser cette étiquette pour les paquet qui ne peuvent pas encore ou ne "
+"Utiliser cette étiquette pour les paquets qui ne peuvent pas encore ou ne "
 "pourrons jamais prendre en charge IPv6."
 
 #. Tag: biology::format:aln, long desc
@@ -4281,7 +4281,7 @@ msgstr "Ouzbek"
 #. Tag: network::vpn, short desc
 #: files/debtags/vocabulary
 msgid "VPN or Tunneling"
-msgstr "VPN ou tunnel"
+msgstr "VPN ou « tunneling »"
 
 #. Tag: works-with-format::vrml, short desc
 #: files/debtags/vocabulary
@@ -4337,7 +4337,7 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Voice_over_IP"
 msgstr ""
 "Voix sur réseau IP, terme générique pour les protocoles qui acheminent les "
-"conversation vocales à travers Internet.\n"
+"conversations vocales à travers Internet.\n"
 "Les protocoles VoIP célèbres sont SIP, H.323 et IAX.\n"
 "Lien : http://fr.wikipedia.org/wiki/Voix_sur_réseau_IP"
 
@@ -4363,7 +4363,7 @@ msgid ""
 msgstr ""
 "Web-based Distributed Authoring and Versioning, extension du protocole HTTP "
 "pour permettre la création et la modification de documents sur un serveur "
-"HTTP, permettant au client d'y accéder comme s'ils étaient sur le système de "
+"HTTP, permettant au client d'y accéder comme s'il était sur le système de "
 "fichier local.\n"
 "Lien : http://fr.wikipedia.org/wiki/WebDAV Lien : http://www.ietf.org/rfc/"
 "rfc2518.txt"
@@ -4442,7 +4442,7 @@ msgstr "Les protocoles réseau que le paquet peut comprendre."
 #. Facet: admin, long desc
 #: files/debtags/vocabulary
 msgid "Which system administration activities the package may perform"
-msgstr "Les activités d'administration système que le paquet peut réaliser."
+msgstr "Les tâches d'administration système que le paquet peut réaliser."
 
 #. Tag: web::wiki, short desc
 #: files/debtags/vocabulary
@@ -4520,7 +4520,7 @@ msgstr ""
 #. Tag: works-with-format::xml:rss, long desc
 #: files/debtags/vocabulary
 msgid "XML dialect used to describe resources and websites."
-msgstr "Formats XML utilisés pour la syndication de contenu web."
+msgstr "Formats XML utilisés pour la description de contenus web."
 
 #. Tag: protocol::xmlrpc, short desc
 #: files/debtags/vocabulary
@@ -4571,7 +4571,7 @@ msgstr ""
 "ou plusieurs des protocoles suivants :\n"
 "- IPv4LL pour l'allocation automatique d'adresses ;\n"
 "- mDNS pour la résolution de noms ;\n"
-"- DNS-SD pour localiser les services.\n"
+"- DNS-SD pour rechercher des services.\n"
 "Lien : http://www.zeroconf.org Lien : http://fr.wikipedia.org/wiki/Zeroconf"
 
 #. Tag: protocol::zeroconf, short desc
