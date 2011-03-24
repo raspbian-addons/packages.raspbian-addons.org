@@ -81,7 +81,7 @@ fi
 
 # security archive
 #
-for dist in etch lenny squeeze
+for dist in lenny squeeze
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}
