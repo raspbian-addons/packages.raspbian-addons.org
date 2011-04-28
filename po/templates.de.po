@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2010-08-17 21:57+0200\n"
+"PO-Revision-Date: 2011-03-05 13:27+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -113,17 +113,15 @@ msgstr "AVR32"
 
 #: templates/config/architectures.tmpl:21
 msgid "PowerPC SPE (e500 core)"
-msgstr ""
+msgstr "PowerPC SPE (e500-Kern)"
 
 #: templates/config/architectures.tmpl:22
 msgid "SH4"
-msgstr ""
+msgstr "SH4"
 
 #: templates/config/architectures.tmpl:23
-#, fuzzy
-#| msgid "Search"
 msgid "Sparc64"
-msgstr "Suchen"
+msgstr "Sparc64"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
@@ -667,17 +665,15 @@ msgstr ""
 
 #: templates/html/search.tmpl:41
 msgid "Limit to suite:"
-msgstr ""
+msgstr "Begrenzen auf Suite:"
 
 #: templates/html/search.tmpl:50
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Suchen in <a href=\"%s\">allen Suites</a>"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
-#, fuzzy
-#| msgid "Limit search to a specific architecture:"
 msgid "Limit to a architecture:"
-msgstr "Suche auf bestimmte Architekturen einschränken:"
+msgstr "Auf bestimmte Architekturen einschränken:"
 
 #: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"

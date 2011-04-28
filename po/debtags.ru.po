@@ -2,21 +2,21 @@
 # This file is put in the public domain.
 #
 # Yuri Kozlov <kozlov.y@gmail.com>, 2007.
-# Yuri Kozlov <yuray@komyakino.ru>, 2009.
+# Yuri Kozlov <yuray@komyakino.ru>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-11-17 21:01+0100\n"
-"PO-Revision-Date: 2009-11-07 08:52+0300\n"
+"PO-Revision-Date: 2011-03-13 11:28+0300\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Tag: x11::xserver, long desc
 #: files/debtags/vocabulary
@@ -77,10 +77,9 @@ msgstr "Поддержка общедоступности"
 
 #. Facet: accessibility, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "Accessibility Support"
 msgid "Accessibility support provided by the package"
-msgstr "Поддержка общедоступности"
+msgstr "Поддержка общедоступности, представляемая пакетом"
 
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
@@ -197,7 +196,7 @@ msgstr "Программы, рекомендуемые маленьким пол
 #. Facet: office, long desc
 #: files/debtags/vocabulary
 msgid "Applications related to office and business activities"
-msgstr ""
+msgstr "Приложения для нужно офиса и бизнеса"
 
 #. Tag: accessibility::input, long desc
 #: files/debtags/vocabulary
@@ -527,7 +526,7 @@ msgstr "Каталонская"
 #. Facet: scope, long desc
 #: files/debtags/vocabulary
 msgid "Characterization by scale of coverage "
-msgstr ""
+msgstr "Характеристика по масштабу охвата "
 
 #. Tag: use::chatting, short desc
 #: files/debtags/vocabulary
@@ -588,7 +587,7 @@ msgstr ""
 #. Facet: iso15924, long desc
 #: files/debtags/vocabulary
 msgid "Codes for representating writing systems "
-msgstr ""
+msgstr "Коды для представления систем письма"
 
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
@@ -679,12 +678,12 @@ msgstr "Управление содержимым (CMS)"
 #. Tag: accessibility::speech-recognition, long desc
 #: files/debtags/vocabulary
 msgid "Converts speech into text."
-msgstr ""
+msgstr "Преобразует речь в текст."
 
 #. Tag: accessibility::screen-reader, long desc
 #: files/debtags/vocabulary
 msgid "Converts text into speech."
-msgstr ""
+msgstr "Преобразует текст в речь."
 
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
@@ -877,7 +876,7 @@ msgstr "Менеджер экрана (графическое приглашен
 #. Tag: accessibility::screen-magnify, long desc
 #: files/debtags/vocabulary
 msgid "Displays enlarged screen content."
-msgstr ""
+msgstr "Отображение содержимого экрана в увеличенном виде."
 
 #. Tag: works-with-format::djvu, short desc
 #: files/debtags/vocabulary
@@ -944,7 +943,7 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
 "http://www.ietf.org/rfc/rfc2131.txt"
 msgstr ""
-"Протокол динамической конфигурации хоста, клиент-серверный протокол для "
+"Протокол динамической конфигурации узла, клиент-серверный протокол для "
 "автоматического назначения динамических IP-адресов компьютерам в сети TCP/"
 "IP, вместо присваивания компьютеру статического IP-адреса.\n"
 "Ссылка: http://ru.wikipedia.org/wiki/DHCP Ссылка: http://www.ietf.org/rfc/"
@@ -1422,12 +1421,12 @@ msgstr "Греческая"
 #. Facet: special, long desc
 #: files/debtags/vocabulary
 msgid "Group of special tags"
-msgstr ""
+msgstr "Группа специальных меток"
 
 #. Facet: suite, long desc
 #: files/debtags/vocabulary
 msgid "Groups together related packages"
-msgstr ""
+msgstr "Группировать связанные пакеты"
 
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
@@ -1533,57 +1532,50 @@ msgstr "Хирагана"
 
 #. Facet: mail, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How the package is related to system security"
 msgid "How the package is related to eletronic mail transmission "
-msgstr "Как пакет относится к безопасности системы."
+msgstr "Как пакет относится к передаче электронных писем "
 
 #. Facet: hardware, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How the package is related to system security"
 msgid "How the package is related to hardware enablement "
-msgstr "Как пакет относится к безопасности системы."
+msgstr "Как пакет относится к поддержке аппаратного обеспечения "
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to system security"
-msgstr "Как пакет относится к безопасности системы."
+msgstr "Как пакет относится к безопасности системы"
 
 #. Facet: x11, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How the package is related to system security"
 msgid "How the package is related to the X Window System"
-msgstr "Как пакет относится к безопасности системы."
+msgstr "Как пакет относится к X Window System"
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of biology"
-msgstr "Как этот пакет, связан с областью биологии."
+msgstr "Как этот пакет связан с биологией"
 
 #. Facet: science, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of science"
-msgstr "Как этот пакет, связан с областью биологии."
+msgstr "Как этот пакет связан с наукой"
 
 #. Facet: devel, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of software development"
-msgstr "Как этот пакет, связан с областью биологии."
+msgstr "Как этот пакет связан с областью разработки ПО"
 
 #. Facet: sound, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "How is the package related to the field of biology."
 msgid "How the package is related to the field of sound and music"
-msgstr "Как этот пакет, связан с областью биологии."
+msgstr "Как этот пакет относится к музыке и звуку"
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
@@ -1953,7 +1945,7 @@ msgstr "Кхмерская"
 #. Facet: game, long desc
 #: files/debtags/vocabulary
 msgid "Kind of games provided by the package"
-msgstr ""
+msgstr "Жанр игр, предоставляемых пакетом"
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
@@ -2696,6 +2688,8 @@ msgid ""
 "Packages specific to Debian - look into \"Software Development::Debian\" "
 "for  Debian Development."
 msgstr ""
+"Специальные пакеты для Debian - см. «Software Development::Debian» "
+"для разработки Debian."
 
 #. Tag: special::obsolete, long desc
 #: files/debtags/vocabulary
@@ -3080,12 +3074,12 @@ msgstr "Роль"
 #. Facet: role, long desc
 #: files/debtags/vocabulary
 msgid "Role performed by the package"
-msgstr ""
+msgstr "Роль пакета"
 
 #. Facet: network, long desc
 #: files/debtags/vocabulary
 msgid "Role performed concerning computer networks"
-msgstr ""
+msgstr "Роль в компьютерной сети"
 
 #. Tag: game::rpg, short desc
 #: files/debtags/vocabulary
@@ -3323,7 +3317,7 @@ msgid ""
 msgstr ""
 "Безопасная оболочка -- это протокол для безопасных, зашифрованных сетевых "
 "соединений. SSH может быть использован для запуска программ на удалённом "
-"хосте, имеющим сервер SSH, или по небезопасным протоколам в туннеле SSH. "
+"узле, имеющим сервер SSH, или по небезопасным протоколам в туннеле SSH. "
 "Основным предназначением, как следует из названия, является предоставление "
 "шифрованного входа и доступа через оболочку на удалённые серверы.\n"
 "Аутентификация в SSH может выполняться по паролю или, что предпочтительней, "
@@ -3924,7 +3918,7 @@ msgstr "Платформа Zope (web) для публикации."
 #. Tag: accessibility::speech, long desc
 #: files/debtags/vocabulary
 msgid "The artificial production of human speech."
-msgstr ""
+msgstr "Искусственное создание человеческой речи."
 
 #. Facet: culture, long desc
 #: files/debtags/vocabulary
@@ -3934,7 +3928,7 @@ msgstr "Культура, для которой пакет предоставл�
 #. Facet: use, long desc
 #: files/debtags/vocabulary
 msgid "The general purpose of the software"
-msgstr ""
+msgstr "ПО общего назначения"
 
 #. Facet: made-of, long desc
 #: files/debtags/vocabulary
@@ -3996,6 +3990,8 @@ msgid ""
 "The translation of text images into machine-editable text by means of "
 "Optical Character Recognition (OCR)."
 msgstr ""
+"Преобразование изображений с текстом в машинно-читаемый текст "
+"посредством оптического распознавания символов (OCR)."
 
 #. Tag: x11::theme, short desc
 #: files/debtags/vocabulary
@@ -4136,7 +4132,7 @@ msgid ""
 "http://www.ietf.org/rfc/rfc1350.txt"
 msgstr ""
 "Простой протокол передач файлов служит для передачи файлов. TFTP позволяет "
-"клиенту читать и записывать файл на удалённый хост. Основным применением "
+"клиенту читать и записывать файл на удалённый узел. Основным применением "
 "является сетевая загрузка бездисковых станций в локальной сети. "
 "Разрабатывался для достижения простоты в реализации, чтобы мог уместиться в "
 "ROM.\n"
@@ -4363,57 +4359,55 @@ msgstr "Уэльская"
 
 #. Facet: works-with, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid ""
 #| "These tags describe what is the kind of data (or even processes, or "
 #| "people) that the package can work with."
 msgid ""
 "What kind of data (or even processes, or people) the package can work with"
 msgstr ""
-"Эти теги описывают, с какими видами данных (или даже процессов или людей) "
-"может работать данный пакет."
+"С какими видами данных (или даже процессов или людей) может работать данный "
+"пакет"
 
 #. Facet: web, long desc
 #: files/debtags/vocabulary
 msgid "What kind of tools for the World Wide Web the package provides"
-msgstr ""
+msgstr "Какой тип инструментов данный пакет предоставляет для веб"
 
 #. Facet: interface, long desc
 #: files/debtags/vocabulary
 msgid "What kind of user interface the package provides"
-msgstr ""
+msgstr "Какой тип пользовательского интерфейса предоставляет данный пакет"
 
 #. Facet: implemented-in, long desc
 #: files/debtags/vocabulary
 msgid "What language the software is implemented in"
-msgstr ""
+msgstr "На каком языке написано ПО"
 
 #. Facet: field, long desc
 #: files/debtags/vocabulary
 msgid "Which branch of knowledge is the package related to"
-msgstr ""
+msgstr "К какому направлению знаний относится пакет"
 
 #. Facet: works-with-format, long desc
 #: files/debtags/vocabulary
-#, fuzzy
 #| msgid "The languages or data formats used to make the package"
 msgid "Which data formats are supported by the package"
-msgstr "Языки или форматы данных, использованные при создании пакета"
+msgstr "Какие форматы данных поддерживаются пакетом"
 
 #. Facet: uitoolkit, long desc
 #: files/debtags/vocabulary
 msgid "Which interface toolkit the package provides"
-msgstr ""
+msgstr "Какой инструментарий интерфейса предоставляет пакет"
 
 #. Facet: protocol, long desc
 #: files/debtags/vocabulary
 msgid "Which network protocols the package can understand"
-msgstr ""
+msgstr "Какие сетевые протоколы понимает пакет"
 
 #. Facet: admin, long desc
 #: files/debtags/vocabulary
 msgid "Which system administration activities the package may perform"
-msgstr ""
+msgstr "Какие задачи администрирования может выполнять пакет"
 
 #. Tag: web::wiki, short desc
 #: files/debtags/vocabulary
