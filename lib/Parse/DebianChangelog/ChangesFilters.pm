@@ -90,7 +90,7 @@ sub email_to_ddpo {
 }
 
 sub bugs_to_bts {
-    (my $text = $_[0]) =~ s|Closes:\s*(?:Bug)?\#\d+(?:\s*,\s*(?:Bug)?\#\d+)*
+    (my $text = $_[0]) =~ s|closes:\s*(?:bug)?\#?\s?\d+(?:\s*,\s*(?:bug)?\#?\s?\d+)*
 	|my $tmp = $&; { no warnings;
 			 $tmp =~ s@(Bug)?\#(\d+)@<a class="buglink" href="http://bugs.debian.org/$2">$1\#$2</a>@ig; }
     "$tmp"
