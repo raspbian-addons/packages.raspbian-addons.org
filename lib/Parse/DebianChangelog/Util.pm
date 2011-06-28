@@ -67,7 +67,7 @@ sub find_closes {
     my $changes = shift;
     my @closes = ();
 
-    while ($changes && ($changes =~ /closes:\s*(?:bug)?\#?\s?\d+(?:,\s*(?:bug)?\#?\s?\d+)*/ig)) {
+    while ($changes && ($changes =~ /closes:\s*(?:bug)?\#?\s?\d+(?:\s*,\s*(?:bug)?\#?\s?\d+)*/ig)) {
 	push(@closes, $& =~ /\#?\s?(\d+)/g);
     }
 
