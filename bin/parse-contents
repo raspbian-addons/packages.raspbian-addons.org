@@ -47,7 +47,7 @@ my @archives = @ARCHIVES;
 my @suites = @SUITES;
 my @archs = @ARCHITECTURES;
 my %deborts_hash;
-@deborts_hash{qw( alpha avr32 hppa m68k powerpcspe sh4 sparc64 )} = ();
+@deborts_hash{qw( alpha avr32 armhf hppa m68k powerpcspe sh4 sparc64 )} = ();
 
 $DBDIR .= "/contents";
 mkdirp( $DBDIR );
