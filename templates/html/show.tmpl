@@ -322,7 +322,7 @@
 	version_class = 'vold';
    END %]
 [% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
-<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', d.instsize) %]</td>
+<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', num.format_number(d.instsize,1)) %]</td>
 <td>
 [% IF d.contents_avail %]
   [<a href="[% make_url(filelist_url,'','arch',d.arch) %]">[% g('list of files') %]</a>]
