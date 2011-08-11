@@ -95,13 +95,13 @@
 
 [% IF patch_tracking_url && src %]
   [% FOREACH src.downloads %]
-    [% IF name.match('\.(debian\.tar|diff)\.(gz|bz2|lzma)$') %]
+    [% IF name.match('\.(debian\.tar|diff)\.(gz|xz|bz2|lzma)$') %]
     <li><a href="[% "$patch_tracking_url/$src.pkg/$src.version" %]">[% g("%s Patch Tracker", organisation) %]</a></li>
     [% END -%]
   [% END -%]
 [% ELSIF patch_tracking_url && is_source %]
   [% FOREACH srcfiles %]
-    [% IF filename.match('\.(debian\.tar|diff)\.(gz|bz2|lzma)$') %]
+    [% IF filename.match('\.(debian\.tar|diff)\.(gz|xz|bz2|lzma)$') %]
     <li><a href="[% "$patch_tracking_url/$pkg/$version" %]">[% g("%s Patch Tracker", organisation) %]</a></li>
     [% END -%]
   [% END -%]
