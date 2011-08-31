@@ -45,11 +45,17 @@ $/ = "";
 
 my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
 
+# FIXME: one database per dist
+# http://lists.debian.org/4E42E104.90201@deb-support.de
+# FIXME: unhardcode dists name
+my @dists = ('sid', 'wheezy', 'squeeze', 'lenny');
+
 foreach my $lang (@DDTP_LANGUAGES) {
     (my $locale = $lang) =~ s/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e;
     print "Reading Translations for $lang ($locale)...";
-    open PKG, "bzcat $TOPDIR/archive/*/*/*/i18n/Translation-$locale.bz2|";
     my $count = 0;
+    foreach my $dist (@dists) {
+    open PKG, "bzcat $TOPDIR/archive/*/$dist/*/i18n/Translation-$locale.bz2|";
     while (<PKG>) {
 	next if /^\s*$/;
 	my $data = "";
@@ -73,6 +79,7 @@ foreach my $lang (@DDTP_LANGUAGES) {
 	$descriptions{$data{"description-md5"}}{$lang} =
 	    $data{"description-".lc($locale)};
 	$count++;
+    }
     }
     print "($count)\n";
 }
