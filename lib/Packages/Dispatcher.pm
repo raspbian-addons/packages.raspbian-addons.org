@@ -68,8 +68,11 @@ sub do_dispatch {
 			 stable => 'squeeze',
 			 testing => 'wheezy',
 			 unstable => 'sid',
+			 'rc-buggy' => 'experimental',
 			 '5.0' => 'lenny',
-		 	 '6.0' => 'squeeze' );
+			 '6.0' => 'squeeze',
+			 'oldstable-backports' => 'lenny-backports',
+			 'stable-backports' => 'squeeze-backports' );
 
     # Read in all the variables set by the form
     my $input;
