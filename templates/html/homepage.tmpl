@@ -5,19 +5,20 @@
 	html_meta = '<meta name="verify-v1" content="Rg2bDR1kWPGd8k8v9NOgnmtUQHO6UaKX2glZWVDptok=">'
 -%]
 [%-
-    all_suites = [ 'dapper', 'dapper-updates', 'dapper-backports',
-		   'hardy', 'hardy-updates', 'hardy-backports',
+    all_suites = [ 'hardy', 'hardy-updates', 'hardy-backports',
 		   'lucid', 'lucid-updates', 'lucid-backports',
 		   'maverick', 'maverick-updates', 'maverick-backports',
 		   'natty', 'natty-updates', 'natty-backports',
-		   'oneiric' ]
+		   'oneiric', 'oneiric-updates', 'oneiric-backports',
+		   'precise' ]
     version_numbers = { dapper => '6.06LTS',
 			hardy  => '8.04LTS',
 			lucid  => '10.04LTS',
 			maverick => '10.10',
 			natty => '11.04',
+			oneiric => '11.10',
 		      }
-    current_release = 'natty'
+    current_release = 'oneiric'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -130,6 +131,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2011-10-14</dt>
+<dd>Reflect oneiric release, add oneiric, remove dapper.</dd>
 <dt>2011-04-28</dt>
 <dd>Reflect natty release, add natty, remove karmic.</dd>
 <dt>2010-10-10</dt>
