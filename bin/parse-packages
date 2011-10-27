@@ -72,7 +72,8 @@ for my $suite (@SUITES) {
                 print "\tseems not to exist, skipping...\n";
                 next;
         }
-	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
+	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/binary-*/Packages.gz"
+	        .     " $TOPDIR/archive/$archive/$suite/$what/debian-installer/binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
