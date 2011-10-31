@@ -102,7 +102,7 @@ sub do_dispatch {
 
     if ($input->http('If-Modified-Since') and
 	(my $client_timestamp = str2time($input->http('If-Modified-Since'), 'UTC'))) {
-	if ($client_timestamp > $last_modified) {
+	if ($client_timestamp >= $last_modified) {
 	    # we are not modified since asked -> return "304 Not Modified"
 	    print $input->header(-status => 304);
 	    exit;
