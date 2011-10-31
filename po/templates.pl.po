@@ -41,7 +41,7 @@ msgstr ","
 
 #: templates/config.tmpl:82
 msgid ","
-msgstr "&nbsp;"
+msgstr " "
 
 #: templates/config/architectures.tmpl:4
 msgid "Intel x86"
@@ -261,7 +261,7 @@ msgstr "Jeśli żadna z powyższych stron nie jest wystarczająco szybka, prosz�
 #: templates/html/download.tmpl:97
 msgid "Note that %s is not officially included in the %s archive, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"Proszę zauważyć że %s nie jest oficjalnie zawarte w archiwum %s, ale grupa portująca %s utrzymuje swoje archiwa w synchronizacji z archiwami oficjalnymi, na ile to tylko możliwe. Proszę zapoznać się z <a href=\"%s\"> stroną dotyczącą portu %s</a> aby uzyskać aktualne "
+"Proszę zauważyć że %s nie jest oficjalnie zawarte w archiwum %s, ale grupa portująca %s utrzymuje swoje archiwa w synchronizacji z archiwami oficjalnymi, na ile to tylko możliwe. Proszę zapoznać się ze <a href=\"%s\">stroną dotyczącą portu %s</a> aby uzyskać aktualne "
 "informacje."
 
 #: templates/html/download.tmpl:101
@@ -523,11 +523,11 @@ msgstr "Następujące pakiety zostały dodane do gałęzi <em>%s</em> w archiwum
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr "Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg nazwy</a>."
+msgstr " Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg nazwy</a>."
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr "Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg wieku</a>."
+msgstr " Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg wieku</a>."
 
 #: templates/html/newpkg.tmpl:22
 msgid "This information is also available as an <a href=\"newpkg?format=rss\">RSS feed</a>"
@@ -539,7 +539,7 @@ msgstr "[Kanał RSS 1.0]"
 
 #: templates/html/newpkg.tmpl:28
 msgid " <em>(%u days old)</em>"
-msgstr " <em>(%u dni)</em>"
+msgstr " <em>(%u dni temu)</em>"
 
 #: templates/html/newpkg.tmpl:32
 #: templates/html/suite_index.tmpl:39
@@ -961,7 +961,7 @@ msgstr "Pobieranie %s"
 
 #: templates/html/show.tmpl:302
 msgid "The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size."
-msgstr "Tabela pobierania linkuje do pobierania pakietu i przeglądu pliku. Dodatkowo zapewnia informacje o rozmiarze pakietu i rozmiarze zainstalowanego pakietu."
+msgstr "Tabela pobierania odsyła do pobierania pakietu i przeglądu pliku. Dodatkowo zapewnia informacje o rozmiarze pakietu i rozmiarze zainstalowanego pakietu."
 
 #: templates/html/show.tmpl:303
 msgid "Download for all available architectures"
@@ -1015,7 +1015,7 @@ msgstr "Rozmiar (w kiB)"
 
 #: templates/html/show.tmpl:371
 msgid "Debian Package Source Repository (<acronym title=\"Version Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
-msgstr "Repozytorium kodu źródłowego Debiana (<acronym title=ang. \"Version Control System\" - system kontroli wersji>VCS</acronym>: <a href=\"%s\">%s</a>)"
+msgstr "Repozytorium kodu źródłowego Debiana (<acronym title=\"ang. Version Control System - system kontroli wersji\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:376
 msgid "Debian Package Source Repository (Browsable)"
