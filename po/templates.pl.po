@@ -1,19 +1,21 @@
 # Translation of templates to Polish
 # This file is distributed under the same license as the package.debian.org website.
 #
-# Michał Kułach <michal.kulach@gmail.com>, 2011.
+# Michał Kułach <michal.kulach@gmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
 "POT-Creation-Date: 2011-03-03 14:22+0000\n"
-"PO-Revision-Date: 2011-10-23 17:15+0200\n"
+"PO-Revision-Date: 2012-01-03 14:00+0100\n"
 "Project-Id-Version: \n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.2\n"
 "MIME-Version: 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"Language: pl\n"
 
 #: templates/config.tmpl:46
 msgid "Debian Web Mailinglist"
@@ -31,8 +33,12 @@ msgstr "%s jest <a href=\"%s\">znakiem towarowym</a> %s"
 #. sitewidemsg = { importance => "high",
 #. txt =>
 #: templates/config.tmpl:77
-msgid "Please note that this is an experimental version of <a href=\"http://%s/\">%s</a>. Errors and obsolete information should be expected"
-msgstr "Proszę zauważyć, że jest to eksperymentalna wersja <a href=\"http://%s/\">%s</a>. Proszę spodziewać się błędów i nieaktualnych informacji."
+msgid ""
+"Please note that this is an experimental version of <a href=\"http://%s/\">%"
+"s</a>. Errors and obsolete information should be expected"
+msgstr ""
+"Proszę zauważyć, że jest to eksperymentalna wersja <a href=\"http://%s/\">%s<"
+"/a>. Proszę spodziewać się błędów i nieaktualnych informacji."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:81
@@ -125,27 +131,39 @@ msgstr "Sparc64"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
-msgstr "Pakiety, które spełniają Wytyczne Debiana dotyczące Wolnego Oprogramowania"
+msgstr ""
+"Pakiety, które spełniają Wytyczne Debiana dotyczące Wolnego Oprogramowania"
 
 #: templates/config/archive_layout.tmpl:15
-msgid "packages that meet the Debian Free Software Guidelines but need software not in Debian main"
-msgstr "Pakiety, które spełniają Wytyczne Debiana dotyczące Wolnego Oprogramowania, ale wymagają programów niebędących w sekcji main Debiana"
+msgid ""
+"packages that meet the Debian Free Software Guidelines but need software not "
+"in Debian main"
+msgstr ""
+"Pakiety, które spełniają Wytyczne Debiana dotyczące Wolnego Oprogramowania, "
+"ale wymagają programów niebędących w sekcji main Debiana"
 
 #: templates/config/archive_layout.tmpl:16
 msgid "packages that do not meet the Debian Free Software Guidelines"
-msgstr "Pakiety, które nie spełniają Wytycznych Debiana dotyczących Wolnego Oprogramowania"
+msgstr ""
+"Pakiety, które nie spełniają Wytycznych Debiana dotyczących Wolnego "
+"Oprogramowania"
 
 #: templates/config/mirrors.tmpl:95
-msgid "volatile packages that need major changes during the life of a stable release"
-msgstr "Szybko zmieniające się pakiety, wymagające dużych zmian w czasie wspierania wydania stabilnego"
+msgid ""
+"volatile packages that need major changes during the life of a stable release"
+msgstr ""
+"Szybko zmieniające się pakiety, wymagające dużych zmian w czasie wspierania "
+"wydania stabilnego"
 
 #: templates/config/mirrors.tmpl:136
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr "Nowsze pakiety, dostosowane do wydania stabilnego Debiana"
 
 #: templates/config/mirrors.tmpl:163
-msgid "ports of packages to architectures not yet or not anymore available in Debian"
-msgstr "Porty pakietów na architektury jeszcze, lub już niedostępne w Debianie"
+msgid ""
+"ports of packages to architectures not yet or not anymore available in Debian"
+msgstr ""
+"Porty pakietów na architektury jeszcze (lub już) niedostępne w Debianie"
 
 #: templates/config/mirrors.tmpl:204
 msgid "North America"
@@ -188,7 +206,7 @@ msgstr "Dystrybucja:"
 #: templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Overview over this suite"
-msgstr "Przeglądaj tą gałąź"
+msgstr "Przeglądaj tę gałąź"
 
 #: templates/html/download.tmpl:6
 #: templates/html/filelist.tmpl:6
@@ -209,12 +227,23 @@ msgid "Download Page for <kbd>%s</kbd>"
 msgstr "Strona pobierania dla <kbd>%s</kbd>"
 
 #: templates/html/download.tmpl:23
-msgid "If you are running %s, it is strongly suggested to use a package manager like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download and install packages, instead of doing so manually via this website."
-msgstr "Jeśli korzystasz z systemu %s, jest wysoce zalecane, aby użyć menedżera pakietów takiego jak <a href=\"%s\">aptitude</a> lub <a href=\"%s\">synaptic</a> do pobrania i zainstalowania pakietów, zamiast robić to ręcznie poprzez tę stronę."
+msgid ""
+"If you are running %s, it is strongly suggested to use a package manager like "
+"<a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download and "
+"install packages, instead of doing so manually via this website."
+msgstr ""
+"Jeśli korzystasz z systemu %s, jest wysoce zalecane, aby użyć menedżera "
+"pakietów takiego jak <a href=\"%s\">aptitude</a> lub <a href=\"%s\">synaptic<"
+"/a> do pobrania i zainstalowania pakietów, zamiast robić to ręcznie poprzez "
+"tę stronę."
 
 #: templates/html/download.tmpl:25
-msgid "You should be able to use any of the listed mirrors by adding a line to your <kbd>/etc/apt/sources.list</kbd> like this:"
-msgstr "Powinno być możliwe użycie dowolnego z podanych serwerów lustrzanych, przez dodanie odpowiedniego wiersza do <kbd>/etc/apt/sources.list</kbd> np.:"
+msgid ""
+"You should be able to use any of the listed mirrors by adding a line to your "
+"<kbd>/etc/apt/sources.list</kbd> like this:"
+msgstr ""
+"Powinno być możliwe użycie dowolnego z podanych serwerów lustrzanych, przez "
+"dodanie odpowiedniego wiersza do <kbd>/etc/apt/sources.list</kbd> np.:"
 
 #: templates/html/download.tmpl:30
 #: templates/html/download.tmpl:39
@@ -227,9 +256,16 @@ msgid "Experimental package"
 msgstr "Pakiet eksperymentalny"
 
 #: templates/html/download.tmpl:43
-msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the changelog and other possible documentation before using it."
+msgid ""
+"Warning: This package is from the <strong>experimental</strong> distribution. "
+"That means it is likely unstable or buggy, and it may even cause data loss. "
+"Please be sure to consult the changelog and other possible documentation "
+"before using it."
 msgstr ""
-"Ostrzeżenie: Pakiet pochodzi z dystrybucji <strong>eksperymentalnej</strong>. Oznacza to, że prawdopodobnie jest niestabilny lub zawiera błędy i może nawet spowodować utratę danych. Przed użyciem pakietu proszę koniecznie zapoznać się z dziennikiem zmian i inną "
+"Ostrzeżenie: Pakiet pochodzi z dystrybucji <strong>eksperymentalnej</strong>. "
+"Oznacza to, że prawdopodobnie jest niestabilny lub zawiera błędy i może nawet "
+"spowodować utratę danych. Przed użyciem pakietu proszę koniecznie zapoznać "
+"się z dziennikiem zmian i inną "
 "dostępną dokumentacją."
 
 #: templates/html/download.tmpl:46
@@ -239,34 +275,63 @@ msgstr "Pakiet udeb do instalatora Debiana"
 
 #: templates/html/download.tmpl:47
 #: templates/html/show.tmpl:180
-msgid "Warning: This package is intended for the use in building <a href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do not install it on a normal %s system."
-msgstr "Ostrzeżenie: Pakiet został przygotowany wyłącznie do budowania obrazów <a href=\"http://www.debian.org/devel/debian-installer\">instalatora Debiana</a>. Nie należy go instalować w normalnym systemie %s."
+msgid ""
+"Warning: This package is intended for the use in building <a "
+"href=\"http://www.debian.org/devel/debian-installer\">debian-installer</a> "
+"images only. Do not install it on a normal %s system."
+msgstr ""
+"Ostrzeżenie: Pakiet został przygotowany wyłącznie do budowania obrazów <a "
+"href=\"http://www.debian.org/devel/debian-installer\">instalatora Debiana</a>."
+" Nie należy go instalować w normalnym systemie %s."
 
 #: templates/html/download.tmpl:54
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at any of these sites:"
-msgstr "Można pobrać żądany plik z podkatalogu <tt>%s</tt> z dowolnej z poniższych stron:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at any "
+"of these sites:"
+msgstr ""
+"Można pobrać żądany plik z podkatalogu <tt>%s</tt> z dowolnej z poniższych "
+"stron:"
 
 #: templates/html/download.tmpl:80
-msgid "You can download the requested file from the <tt>%s</tt> subdirectory at:"
+msgid ""
+"You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr "Można pobrać żądany plik z podkatalogu <tt>%s</tt> z:"
 
 #: templates/html/download.tmpl:82
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
-msgstr "Aktualizacje bezpieczeństwa dla %s są rozprowadzane oficjalnie wyłącznie przez <tt>%s</tt>"
+msgstr ""
+"Aktualizacje bezpieczeństwa do %s są rozprowadzane oficjalnie wyłącznie przez "
+"<tt>%s</tt>"
 
 #: templates/html/download.tmpl:89
-msgid "If none of the above sites are fast enough for you, please see our <a href=\"%s\">complete mirror list</a>."
-msgstr "Jeśli żadna z powyższych stron nie jest wystarczająco szybka, proszę zapoznać się z naszą <a href=\"%s\">kompletną listą serwerów lustrzanych</a>."
+msgid ""
+"If none of the above sites are fast enough for you, please see our <a href=\"%"
+"s\">complete mirror list</a>."
+msgstr ""
+"Jeśli żadna z powyższych stron nie jest wystarczająco szybka, proszę zapoznać "
+"się z naszą <a href=\"%s\">kompletną listą serwerów lustrzanych</a>."
 
 #: templates/html/download.tmpl:97
-msgid "Note that %s is not officially included in the %s archive, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href=\"%s\">%s ports page</a> for current information."
+msgid ""
+"Note that %s is not officially included in the %s archive, but the %s porter "
+"group keeps their archive in sync with the official archive as close as "
+"possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
-"Proszę zauważyć że %s nie jest oficjalnie zawarte w archiwum %s, ale grupa portująca %s utrzymuje swoje archiwa w synchronizacji z archiwami oficjalnymi, na ile to tylko możliwe. Proszę zapoznać się ze <a href=\"%s\">stroną dotyczącą portu %s</a> aby uzyskać aktualne "
+"Proszę zauważyć że %s nie jest oficjalnie zawarte w archiwum %s, ale grupa "
+"portująca %s utrzymuje swoje archiwa w synchronizacji z archiwami "
+"oficjalnymi, na ile to tylko możliwe. Proszę zapoznać się ze <a href=\"%s\">"
+"stroną dotyczącą portu %s</a> aby uzyskać aktualne "
 "informacje."
 
 #: templates/html/download.tmpl:101
-msgid "Note that in some browsers you will need to tell your browser you want the file saved to a file. For example, in Firefox or Mozilla, you should hold the Shift key when you click on the URL."
-msgstr "Niektórym przeglądarkom internetowym należy przekazać informację o potrzebie zapisania pliku do pliku. Przykładowo, w Firefoksie i Mozilli, klikając na URL, należy przytrzymać klawisz Shift."
+msgid ""
+"Note that in some browsers you will need to tell your browser you want the "
+"file saved to a file. For example, in Firefox or Mozilla, you should hold the "
+"Shift key when you click on the URL."
+msgstr ""
+"Niektórym przeglądarkom internetowym należy przekazać informację o potrzebie "
+"zapisania pliku do pliku. Przykładowo, w Firefoksie i Mozilli, klikając na "
+"URL, należy przytrzymać klawisz Shift."
 
 #: templates/html/download.tmpl:105
 msgid "More information on <kbd>%s</kbd>:"
@@ -303,24 +368,40 @@ msgid "Filelist of package %s/%s/%s"
 msgstr "Lista plików pakietu %s/%s/%s"
 
 #: templates/html/filelist.tmpl:3
-msgid "Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "Lista plików pakietu <em>%s</em> z gałęzi <em>%s</em> na architekturę <em>%s</em>"
+msgid ""
+"Filelist of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
+msgstr ""
+"Lista plików pakietu <em>%s</em> z gałęzi <em>%s</em> na architekturę <em>%s<"
+"/em>"
 
 #: templates/html/filelist.tmpl:8
 msgid "Filelist"
 msgstr "Lista plików"
 
 #: templates/html/foot.tmpl:11
-msgid "This page is also available in the following languages (How to set <a href=\"%s\">the default document language</a>):"
-msgstr "Ta strona jest również dostępna w następujących językach (sprawdź jak ustawić <a href=\"%s\">domyślny język dokumentu</a>):"
+msgid ""
+"This page is also available in the following languages (How to set <a href=\"%"
+"s\">the default document language</a>):"
+msgstr ""
+"Ta strona jest również dostępna w następujących językach (sprawdź jak ustawić "
+"<a href=\"%s\">domyślny język dokumentu</a>):"
 
 #: templates/html/foot.tmpl:28
-msgid "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. For other contact information, see the %s <a href=\"%s\">contact page</a>."
-msgstr "Aby poinformować o problemach ze stroną, należy wysłać e-mail na <a href=\"mailto:%s\">%s</a>. Pozostałe informacje kontaktowe znajdują się na stronie systemu %s <a href=\"%s\">z informacjami kontaktowymi</a>."
+msgid ""
+"To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
+"For other contact information, see the %s <a href=\"%s\">contact page</a>."
+msgstr ""
+"Aby poinformować o problemach ze stroną, należy wysłać e-mail na <a "
+"href=\"mailto:%s\">%s</a>. Pozostałe informacje kontaktowe znajdują się na "
+"stronie systemu %s <a href=\"%s\">z informacjami kontaktowymi</a>."
 
 #: templates/html/foot.tmpl:32
-msgid "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s\">license terms</a>."
-msgstr "Zawartość: Copyright &copy; %s <a href=\"%s\">%s</a>; Zobacz <a href=\"%s\">warunki licencji</a>."
+msgid ""
+"Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s\">license "
+"terms</a>."
+msgstr ""
+"Zawartość: Copyright &copy; %s <a href=\"%s\">%s</a>; Zobacz <a href=\"%s\">"
+"warunki licencji</a>."
 
 #: templates/html/foot.tmpl:35
 msgid "Learn more about this site"
@@ -336,7 +417,7 @@ msgstr "pomiń nawigację"
 
 #: templates/html/head.tmpl:40
 msgid "%s Packages Homepage"
-msgstr "Strona internetowa pakietów %s"
+msgstr "Strona internetowa pakietów systemu %s"
 
 #: templates/html/head.tmpl:40
 #: templates/html/homepage.tmpl:4
@@ -378,20 +459,31 @@ msgid "%s Packages Search"
 msgstr "Wyszukiwanie pakietów dystrybucji %s"
 
 #: templates/html/homepage.tmpl:20
-msgid "This site provides you with information about all the packages available in the <a href=\"%s\">%s</a> Package archive."
-msgstr "Ta strona dostarcza informacje o wszystkich pakietach dostępnych w archiwum pakietów systemu <a href=\"%s\">%s</a>"
+msgid ""
+"This site provides you with information about all the packages available in "
+"the <a href=\"%s\">%s</a> Package archive."
+msgstr ""
+"Ta strona dostarcza informacje o wszystkich pakietach dostępnych w archiwum "
+"pakietów systemu <a href=\"%s\">%s</a>"
 
 #: templates/html/homepage.tmpl:22
-msgid "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
-msgstr "<a href=\"mailto:%s\">%s</a> powinien zostać poinformowany w przypadku jakichkolwiek problemów!"
+msgid ""
+"Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
+msgstr ""
+"<a href=\"mailto:%s\">%s</a> powinien zostać poinformowany w przypadku "
+"jakichkolwiek problemów!"
 
 #: templates/html/homepage.tmpl:24
 msgid "Browse through the lists of packages:"
 msgstr "Przeglądaj listy pakietów:"
 
 #: templates/html/homepage.tmpl:33
-msgid "There is also a list of <a href=\"%s/main/newpkg\">packages recently added to %s</a>."
-msgstr "Istnieje również lista <a href=\"%s/main/newpkg\">pakietów ostatnio dodanych do dystrybucji %s</a>."
+msgid ""
+"There is also a list of <a href=\"%s/main/newpkg\">packages recently added to "
+"%s</a>."
+msgstr ""
+"Istnieje również lista <a href=\"%s/main/newpkg\">pakietów ostatnio dodanych "
+"do dystrybucji %s</a>."
 
 #: templates/html/homepage.tmpl:36
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
@@ -451,16 +543,25 @@ msgid "<code>%s<var>name</var></code> for the search on package names."
 msgstr "<code>%s<var>nazwa</var></code> wyszukiwanie pośród nazw pakietów."
 
 #: templates/html/homepage.tmpl:80
-msgid "<code>%ssrc:<var>name</var></code> for the search on source package names."
-msgstr "<code>%ssrc:<var>nazwa</var></code> wyszukiwanie pośród nazw pakietów źródłowych"
+msgid ""
+"<code>%ssrc:<var>name</var></code> for the search on source package names."
+msgstr ""
+"<code>%ssrc:<var>nazwa</var></code> wyszukiwanie pośród nazw pakietów "
+"źródłowych"
 
 #: templates/html/homepage.tmpl:84
 msgid "Search the contents of packages"
 msgstr "Przeszukaj zawartość pakietów"
 
 #: templates/html/homepage.tmpl:86
-msgid "This search engine allows you to search the contents of %s distributions for any files (or just parts of file names) that are part of packages. You can also get a full list of files in a given package."
-msgstr "Silnik wyszukiwania pozwala na przeszukiwanie zawartość dystrybucji %s pod kątem dowolnego pliku (lub części nazwy pliku), będącego częścią pakietu. Można również otrzymać pełną listę plików danego pakietu."
+msgid ""
+"This search engine allows you to search the contents of %s distributions for "
+"any files (or just parts of file names) that are part of packages. You can "
+"also get a full list of files in a given package."
+msgstr ""
+"Silnik wyszukiwania pozwala na przeszukiwanie zawartość dystrybucji %s pod "
+"kątem dowolnego pliku (lub części nazwy pliku), będącego częścią pakietu. "
+"Można również otrzymać pełną listę plików danego pakietu."
 
 #: templates/html/homepage.tmpl:97
 msgid "Display:"
@@ -514,24 +615,38 @@ msgid "New Packages in \"%s\""
 msgstr "Nowe pakiety w gałęzi \"%s\""
 
 #: templates/html/newpkg.tmpl:11
-msgid "The following packages were added to suite <em>%s</em> (section %s) in the %s archive during the last 7 days."
-msgstr "Następujące pakiety zostały dodane do gałęzi <em>%s</em> (sekcja %s) w archiwum %s, podczas ostatnich 7 dni."
+msgid ""
+"The following packages were added to suite <em>%s</em> (section %s) in the %s "
+"archive during the last 7 days."
+msgstr ""
+"Następujące pakiety zostały dodane do gałęzi <em>%s</em> (sekcja %s) w "
+"archiwum %s, podczas ostatnich 7 dni."
 
 #: templates/html/newpkg.tmpl:14
-msgid "The following packages were added to suite <em>%s</em> in the %s archive during the last 7 days."
-msgstr "Następujące pakiety zostały dodane do gałęzi <em>%s</em> w archiwum %s, podczas ostatnich 7 dni."
+msgid ""
+"The following packages were added to suite <em>%s</em> in the %s archive "
+"during the last 7 days."
+msgstr ""
+"Następujące pakiety zostały dodane do gałęzi <em>%s</em> w archiwum %s, "
+"podczas ostatnich 7 dni."
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
-msgstr " Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg nazwy</a>."
+msgstr ""
+" Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg nazwy</a>."
 
 #: templates/html/newpkg.tmpl:20
 msgid " You can also display this list <a href=\"%s\">sorted by age</a>."
-msgstr " Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg wieku</a>."
+msgstr ""
+" Można również wyświetlić tę listę <a href=\"%s\">posortowaną wg wieku</a>."
 
 #: templates/html/newpkg.tmpl:22
-msgid "This information is also available as an <a href=\"newpkg?format=rss\">RSS feed</a>"
-msgstr "Te informacje są również dostępne jako <a href=\"newpkg?format=rss\">kanał RSS</a>"
+msgid ""
+"This information is also available as an <a href=\"newpkg?format=rss\">RSS "
+"feed</a>"
+msgstr ""
+"Te informacje są również dostępne jako <a href=\"newpkg?format=rss\">kanał "
+"RSS</a>"
 
 #: templates/html/newpkg.tmpl:23
 msgid "[RSS 1.0 Feed]"
@@ -569,8 +684,12 @@ msgid "Package Search Results"
 msgstr "Wyniki wyszukiwania pakietu"
 
 #: templates/html/search.tmpl:36
-msgid "You have searched only for words exactly matching your keywords. You can try to search <a href=\"%s\">allowing subword matching</a>."
-msgstr "Szukano tylko słów dokładnie pasujących do słowa kluczowego. Można spróbować wyszukiwania <a href=\"%s\">pozwalającego dopasowywać części wyrazu</a>."
+msgid ""
+"You have searched only for words exactly matching your keywords. You can try "
+"to search <a href=\"%s\">allowing subword matching</a>."
+msgstr ""
+"Szukano tylko słów dokładnie pasujących do słowa kluczowego. Można spróbować "
+"wyszukiwania <a href=\"%s\">pozwalającego dopasowywać części wyrazu</a>."
 
 #: templates/html/search.tmpl:41
 msgid "Limit to suite:"
@@ -591,8 +710,12 @@ msgid "Search in <a href=\"%s\">all architectures</a>"
 msgstr "Szukaj we <a href=\"%s\">wszystkich architekturach</a>"
 
 #: templates/html/search.tmpl:70
-msgid "<a href=\"%s\">Some</a> results have not been displayed due to the search parameters."
-msgstr "<a href=\"%s\">Niektóre</a> wyniki nie zostały wyświetlone w związku z parametrami wyszukiwania."
+msgid ""
+"<a href=\"%s\">Some</a> results have not been displayed due to the search "
+"parameters."
+msgstr ""
+"<a href=\"%s\">Niektóre</a> wyniki nie zostały wyświetlone w związku z "
+"parametrami wyszukiwania."
 
 #: templates/html/search.tmpl:79
 msgid "all suites"
@@ -600,7 +723,7 @@ msgstr "wszystkich gałęziach"
 
 #: templates/html/search.tmpl:79
 msgid "suite(s) <em>%s</em>"
-msgstr "gałąź (gałęzie) <em>%s</em>"
+msgstr "gałęzi: <em>%s</em>"
 
 #: templates/html/search.tmpl:80
 #: templates/html/search_contents.tmpl:72
@@ -610,7 +733,7 @@ msgstr "wszystkich sekcjach"
 #: templates/html/search.tmpl:80
 #: templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
-msgstr "sekcja(-e) <em>%s</em>"
+msgstr "sekcji: <em>%s</em>"
 
 #: templates/html/search.tmpl:81
 #: templates/html/search_contents.tmpl:73
@@ -620,19 +743,20 @@ msgstr "wszystkich architekturach"
 #: templates/html/search.tmpl:81
 #: templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
-msgstr "architektura(-y) <em>%s</em>"
+msgstr "architekturze: <em>%s</em>"
 
 #: templates/html/search.tmpl:83
 msgid "source packages"
-msgstr "pakiety źródłowe"
+msgstr "pakietów źródłowych"
 
 #: templates/html/search.tmpl:83
 msgid "packages"
 msgstr "pakietów"
 
 #: templates/html/search.tmpl:84
-msgid "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
-msgstr "Szukano %s których nazwy zawierają <em>%s</em> in %s, %s, and %s."
+msgid ""
+"You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
+msgstr "Szukano %s których nazwy zawierają <em>%s</em> w %s, %s i %s."
 
 #: templates/html/search.tmpl:87
 msgid " (including subword matching)"
@@ -640,24 +764,41 @@ msgstr " (obejmując dopasowywanie części wyrazów)"
 
 #. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:89
-msgid "You have searched for <em>%s</em> in packages names and descriptions in %s, %s, and %s%s."
+msgid ""
+"You have searched for <em>%s</em> in packages names and descriptions in %s, %"
+"s, and %s%s."
 msgstr "Szukano <em>%s</em> w nazwach pakietów i opisach w %s, %s, i %s%s."
 
 #: templates/html/search.tmpl:95
 msgid "Found <strong>%u</strong> matching packages."
-msgstr "Znaleziono <strong>%u</strong> pasujących pakietów."
+msgstr "Liczba pasujących pakietów: <strong>%u</strong>."
 
 #: templates/html/search.tmpl:101
-msgid "Note that this only shows the best matches, sorted by relevance. If the first few packages don't match what you searched for, try using more keywords or alternative keywords."
-msgstr "Proszę zauważyć, że pokazano tylko najlepsze wyniki, poczynając od najtrafniejszych. Jeśli kilka pierwszych pakietów nie pasuje do oczekiwanych rezultatów, proszę spróbować użyć więcej słów kluczowych lub zmienić je."
+msgid ""
+"Note that this only shows the best matches, sorted by relevance. If the first "
+"few packages don't match what you searched for, try using more keywords or "
+"alternative keywords."
+msgstr ""
+"Proszę zauważyć, że pokazano tylko najlepsze wyniki, poczynając od "
+"najtrafniejszych. Jeśli kilka pierwszych pakietów nie pasuje do oczekiwanych "
+"rezultatów, proszę spróbować użyć więcej słów kluczowych lub zmienić je."
 
 #: templates/html/search.tmpl:107
-msgid "Your keyword was too generic, for optimizing reasons some results might have been suppressed.<br>Please consider using a longer keyword or more keywords."
-msgstr "Słowo kluczowe jest zbyt ogólne; z powodów optymalizacyjnych niektóre wyniki mogły zostać pominięte.<br>Proszę spróbować użyć dłuższego słowa kluczowego lub większej ich liczby."
+msgid ""
+"Your keyword was too generic, for optimizing reasons some results might have "
+"been suppressed.<br>Please consider using a longer keyword or more keywords."
+msgstr ""
+"Słowo kluczowe jest zbyt ogólne; z powodów optymalizacyjnych niektóre wyniki "
+"mogły zostać pominięte.<br>Proszę spróbować użyć dłuższego słowa kluczowego "
+"lub większej ich liczby."
 
 #: templates/html/search.tmpl:109
-msgid "Your keyword was too generic.<br>Please consider using a longer keyword or more keywords."
-msgstr "Słowo kluczowe jest zbyt ogólne.<br>Proszę spróbować użyć dłuższego słowa kluczowego lub większej ich liczby."
+msgid ""
+"Your keyword was too generic.<br>Please consider using a longer keyword or "
+"more keywords."
+msgstr ""
+"Słowo kluczowe jest zbyt ogólne.<br>Proszę spróbować użyć dłuższego słowa "
+"kluczowego lub większej ich liczby."
 
 #: templates/html/search.tmpl:116
 #: templates/html/search_contents.tmpl:133
@@ -693,8 +834,12 @@ msgid "hide %u binary packages"
 msgstr "ukryj %u pakietów binarnych"
 
 #: templates/html/search.tmpl:163
-msgid "<a href=\"%s\">%u</a> results have not been displayed because you requested only exact matches."
-msgstr "<a href=\"%s\">%u</a> wyników nie zostało wyświetlone, ponieważ żądano tylko dokładnych dopasowań."
+msgid ""
+"<a href=\"%s\">%u</a> results have not been displayed because you requested "
+"only exact matches."
+msgstr ""
+"<a href=\"%s\">%u</a> wyników nie zostało wyświetlone, ponieważ żądano tylko "
+"dokładnych dopasowań."
 
 #: templates/html/search_contents.tmpl:14
 msgid "Package Contents Search Results -- %s"
@@ -710,11 +855,11 @@ msgstr "Szukaj <em>%s</em> wewnątrz nazw plików"
 
 #: templates/html/search_contents.tmpl:39
 msgid "Search exact filename <em>%s</em>"
-msgstr "Szukaj identycznych nazw plików <em>%s</em>"
+msgstr "Szukaj nazw plików brzmiących dokładnie: <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:44
 msgid "Search for paths ending with <em>%s</em>"
-msgstr "Szukaj ścieżek kończących się <em>%s</em>"
+msgstr "Szukaj ścieżek kończących się na <em>%s</em>"
 
 #: templates/html/search_contents.tmpl:48
 msgid "Search in other suite:"
@@ -722,15 +867,15 @@ msgstr "Szukaj w innej gałęzi:"
 
 #: templates/html/search_contents.tmpl:74
 msgid "paths that end with"
-msgstr "ścieżki kończące się"
+msgstr "ścieżek kończących się na"
 
 #: templates/html/search_contents.tmpl:76
 msgid "filenames that contain"
-msgstr "nazwy plików zawierające"
+msgstr "nazwy plików zawierających"
 
 #: templates/html/search_contents.tmpl:78
 msgid "files named"
-msgstr "pliki nazwane"
+msgstr "plików o nazwie"
 
 #. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
@@ -739,11 +884,16 @@ msgstr "Szukano %s <em>%s</em> w gałęzi <em>%s</em>, %s i %s."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
-msgstr "Znaleziono <strong>%u wyników</strong>."
+msgstr "Liczba znalezionych <strong>wyników: %u</strong>."
 
 #: templates/html/search_contents.tmpl:89
-msgid "Note: Your search was too wide so we will only display only the first about 100 matches. Please consider using a longer keyword or more keywords."
-msgstr "Uwaga: Wyszukiwanie było zbyt rozległe, więc wyświetlono tylko około 100 pierwszych wyników. Proszę spróbować użyć dłuższego słowa kluczowego lub większej ich liczby."
+msgid ""
+"Note: Your search was too wide so we will only display only the first about "
+"100 matches. Please consider using a longer keyword or more keywords."
+msgstr ""
+"Uwaga: Wyszukiwanie było zbyt rozległe, więc wyświetlono tylko około 100 "
+"pierwszych wyników. Proszę spróbować użyć dłuższego słowa kluczowego lub "
+"większej ich liczby."
 
 #: templates/html/search_contents.tmpl:99
 msgid "Sort results by filename"
@@ -773,11 +923,11 @@ msgstr "Wszystkie pakiety w tej sekcji"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
-msgstr "Szczegóły pakietu źródłowego %s w %s"
+msgstr "Szczegóły pakietu źródłowego %s w gałęzi %s"
 
 #: templates/html/show.tmpl:23
 msgid "Details of package %s in %s"
-msgstr "Szczegóły pakietu %s w %s"
+msgstr "Szczegóły pakietu %s w gałęzi %s"
 
 #: templates/html/show.tmpl:46
 msgid "Source:"
@@ -839,7 +989,7 @@ msgstr "Repozytorium kodu źródłowego Debiana"
 #: templates/html/show.tmpl:101
 #: templates/html/show.tmpl:107
 msgid "%s Patch Tracker"
-msgstr "System śledzenia błędów systemu %s"
+msgstr "Śledzenie łatek systemu %s"
 
 #: templates/html/show.tmpl:115
 msgid "Download Source Package <a href=\"%s\">%s</a>:"
@@ -886,14 +1036,27 @@ msgid "Similar packages:"
 msgstr "Podobne pakiety:"
 
 #: templates/html/show.tmpl:175
-msgid "Warning: This package is from the <strong>experimental</strong> distribution. That means it is likely unstable or buggy, and it may even cause data loss. Please be sure to consult the <a href=\"%s\">changelog</a> and other possible documentation before using it."
+msgid ""
+"Warning: This package is from the <strong>experimental</strong> distribution. "
+"That means it is likely unstable or buggy, and it may even cause data loss. "
+"Please be sure to consult the <a href=\"%s\">changelog</a> and other possible "
+"documentation before using it."
 msgstr ""
-"Ostrzeżenie: Pakiet pochodzi z dystrybucji <strong>eksperymentalnej</strong>. Oznacza to, że prawdopodobnie jest niestabilny lub zawiera błędy i może spowodować nawet utratę danych. Przed użyciem pakietu proszę koniecznie zapoznać się z <a href=\"%s\">dziennikiem "
+"Ostrzeżenie: Pakiet pochodzi z dystrybucji <strong>eksperymentalnej</strong>. "
+"Oznacza to, że prawdopodobnie jest niestabilny lub zawiera błędy i może "
+"spowodować nawet utratę danych. Przed użyciem pakietu proszę koniecznie "
+"zapoznać się z <a href=\"%s\">dziennikiem "
 "zmian</a> i inną dostępną dokumentacją."
 
 #: templates/html/show.tmpl:199
-msgid "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual packages</a>."
-msgstr "Jest to <em>pakiet wirtualny</em>. Proszę zapoznać się z <a href=\"%s\">polityką Debiana</a> aby uzyskać <a href=\"%sch-binary.html#s-virtual_pkg\">definicję pakietu wirtualnego</a>."
+msgid ""
+"This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
+"for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
+"packages</a>."
+msgstr ""
+"Jest to <em>pakiet wirtualny</em>. Proszę zapoznać się z <a href=\"%s\">"
+"polityką Debiana</a> aby uzyskać <a href=\"%sch-binary.html#s-virtual_pkg\">"
+"definicję pakietu wirtualnego</a>."
 
 #: templates/html/show.tmpl:207
 msgid "Tags"
@@ -960,8 +1123,13 @@ msgid "Download %s"
 msgstr "Pobieranie %s"
 
 #: templates/html/show.tmpl:302
-msgid "The download table links to the download of the package and a file overview. In addition it gives information about the package size and the installed size."
-msgstr "Tabela pobierania odsyła do pobierania pakietu i przeglądu pliku. Dodatkowo zapewnia informacje o rozmiarze pakietu i rozmiarze zainstalowanego pakietu."
+msgid ""
+"The download table links to the download of the package and a file overview. "
+"In addition it gives information about the package size and the installed "
+"size."
+msgstr ""
+"Tabela pobierania odsyła do pobierania pakietu i przeglądu pliku. Dodatkowo "
+"zapewnia informacje o rozmiarze pakietu i rozmiarze zainstalowanego pakietu."
 
 #: templates/html/show.tmpl:303
 msgid "Download for all available architectures"
@@ -981,7 +1149,7 @@ msgstr "Rozmiar pakietu"
 
 #: templates/html/show.tmpl:307
 msgid "Installed Size"
-msgstr "Rozmiar zainstalowanego pakietu"
+msgstr "Rozmiar po instalacji"
 
 #: templates/html/show.tmpl:308
 msgid "Files"
@@ -995,7 +1163,7 @@ msgstr "(port nieoficjalny)"
 #: templates/html/show.tmpl:327
 #: templates/html/show.tmpl:355
 msgid "%s&nbsp;kB"
-msgstr "%s&nbsp;kiB"
+msgstr "%s&nbsp;KiB"
 
 #: templates/html/show.tmpl:330
 msgid "list of files"
@@ -1011,11 +1179,15 @@ msgstr "Pobierz informacje dla plików tego pakietu źródłowego"
 
 #: templates/html/show.tmpl:350
 msgid "Size (in kB)"
-msgstr "Rozmiar (w kiB)"
+msgstr "Rozmiar (w KiB)"
 
 #: templates/html/show.tmpl:371
-msgid "Debian Package Source Repository (<acronym title=\"Version Control System\">VCS</acronym>: <a href=\"%s\">%s</a>)"
-msgstr "Repozytorium kodu źródłowego Debiana (<acronym title=\"ang. Version Control System - system kontroli wersji\">VCS</acronym>: <a href=\"%s\">%s</a>)"
+msgid ""
+"Debian Package Source Repository (<acronym title=\"Version Control System\">"
+"VCS</acronym>: <a href=\"%s\">%s</a>)"
+msgstr ""
+"Repozytorium kodu źródłowego Debiana (<acronym title=\"ang. Version Control "
+"System - system kontroli wersji\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
 #: templates/html/show.tmpl:376
 msgid "Debian Package Source Repository (Browsable)"
@@ -1023,12 +1195,12 @@ msgstr "Repozytorium kodu źródłowego Debiana (do przeglądania)"
 
 #: templates/html/suite_index.tmpl:3
 msgid "Index"
-msgstr "Indeks"
+msgstr "Zestawienie"
 
 #: templates/html/suite_index.tmpl:5
 #: templates/html/suite_index.tmpl:20
 msgid "List of sections in \"%s\""
-msgstr "Lista sekcji w \"%s\""
+msgstr "Lista sekcji w gałęzi \"%s\""
 
 #: templates/html/suite_index.tmpl:38
 msgid "List of all source packages"
@@ -1060,12 +1232,20 @@ msgid "New %s Packages"
 msgstr "Nowe pakiety systemu %s"
 
 #: templates/rss/newpkg.tmpl:20
-msgid "The following packages were added to suite %s (section %s) in the %s archive during the last 7 days."
-msgstr "Następujące pakiety zostały dodane do gałęzi %s (sekcja %s) w archiwum %s, podczas ostatnich 7 dni."
+msgid ""
+"The following packages were added to suite %s (section %s) in the %s archive "
+"during the last 7 days."
+msgstr ""
+"Następujące pakiety zostały dodane do gałęzi %s (sekcja %s) w archiwum %s, "
+"podczas ostatnich 7 dni."
 
 #: templates/rss/newpkg.tmpl:23
-msgid "The following packages were added to suite %s in the %s archive during the last 7 days."
-msgstr "Następujące pakiety zostały dodane do gałęzi %s w archiwum %s, podczas ostatnich 7 dni."
+msgid ""
+"The following packages were added to suite %s in the %s archive during the "
+"last 7 days."
+msgstr ""
+"Następujące pakiety zostały dodane do gałęzi %s w archiwum %s, podczas "
+"ostatnich 7 dni."
 
 #: templates/rss/newpkg.tmpl:28
 #: templates/txt/index_head.tmpl:4
