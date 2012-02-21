@@ -60,8 +60,8 @@ $/ = "";
 mkpath( "$DBDIR/xapian.new" );
 
 # Needed to compensate removal of long descriptions from Packages files:
-my %descriptions_translated_db;
-tie %descriptions_translated_db, "DB_File", "files/db/descriptions_translated.db", O_RDONLY, 0666, $DB_BTREE;
+my %descriptions_english_db;
+tie %descriptions_english_db, "DB_File", "files/db/descriptions_translated_english_only.db", O_RDONLY, 0666, $DB_BTREE;
 
 for my $suite (@SUITES) {
     my %package_names_suite = ();
@@ -139,11 +139,13 @@ for my $suite (@SUITES) {
 		if ($data{'description-md5'}) {
 		    # The short description is a nice fallback:
 		    my $description = $data{'description'};
-		    my $lookup = $descriptions_translated_db{$data{'description-md5'}};
+		    my $lookup = $descriptions_english_db{$data{'description-md5'}};
 		    if ($lookup) {
+			# There should only be an English translation
+			# in there, but let's make sure:
 			while ($lookup =~ /([^\001]*)\001([^\000]*)\000/g) {
-			    my ($language, $translated_description) = ($1, $2);
-			    $description = $translated_description
+			    my ($language, $english_description) = ($1, $2);
+			    $description = $english_description
 				if $language eq 'en';
 			}
 			$data{'description'} = $description;
@@ -215,7 +217,7 @@ for my $suite (@SUITES) {
     untie %packages_all_db;
 }
 
-untie %descriptions_translated_db;
+untie %descriptions_english_db;
 
 print "Writing databases...\n";
 my %packages_small_db;
