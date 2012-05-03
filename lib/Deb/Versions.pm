@@ -180,7 +180,8 @@ our @SUITES_SORT = qw(
 			squeeze
 			sid unstable experimental
 			warty hoary breezy dapper edgy feisty gutsy hardy
-			intrepid jaunty karmic lucid maverick natty oneiric precise);
+			intrepid jaunty karmic lucid maverick natty oneiric
+			precise quantal);
 our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
 our @PRIORITY_SORT = qw( required important standard optional extra );
 my $i = 1000;
