@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # backports archive
 #
-for dist in lenny-backports lenny-backports-sloppy squeeze-backports
+for dist in squeeze-backports
 do
   echo "retrieve Release(.gpg) $dist"
   test -d backports/${dist} || mkdir -p backports/${dist}
