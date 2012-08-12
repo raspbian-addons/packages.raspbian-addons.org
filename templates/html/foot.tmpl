@@ -1,13 +1,12 @@
 [%- IF benchmark && debug -%]
 Total page evaluation took [% benchmark %]<br>
 [%- END -%]
-</div></div></div>
+</div> <!-- content -->
+</div> <!-- wrapper -->
 
-<div class="clear mozclear"></div><div id="prefooter">
 <div id="footer">
 
 [% IF langs && langs.size > 0 %]
-<hr class="hidecss">
 <!--UdmComment-->
 <p>[% g('This page is also available in the following languages:') %]</p>
 <p class="navpara">
@@ -19,11 +18,11 @@ Total page evaluation took [% benchmark %]<br>
 	    END %]" title="[% l.tooltip %]" hreflang="[% l.lang %]" lang="[% l.lang %]" rel="alternate">[% l.selfname %]
 [%- IF l.transliteration %] ([% l.transliteration %])[% END %]</a>
 [% END %]
+<hr>
 </p>
 <!--/UdmComment-->
 [% END %]
 
-<hr class="hidecss">
 <div id="fineprint" class="bordertop">
 <div id="impressum">
 <p>[% g('To report a problem with the web site, e-mail <a href="mailto:%s">%s</a>. For other contact information, see the %s <a href="%s">contact page</a>.',
@@ -42,8 +41,6 @@ Total page evaluation took [% benchmark %]<br>
   g('This service is sponsored by <a href="%s">%s</a>.', sponsors.${random}.url, sponsors.${random}.name) -%]
 </p></div>
 [% END %]
-</div> <!-- end fineprint -->
 </div> <!-- end footer -->
-</div> <!-- end pageWrapper -->
 </body>
 </html>

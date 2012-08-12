@@ -1,0 +1,185 @@
+body {
+	background-image: url(background-dots.png);
+	color: #333;
+	font-family: Ubuntu, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #DD4814;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal;
+	line-height: normal;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+hr {
+	border: none;
+	border-top: 1px dotted #AEA79F;
+}
+
+#wrapper {
+	background-color: #FFF;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 2px 2px 0 #C2C2C2;
+	margin: 0 auto;
+	position: relative;
+	width: 960px;
+}
+
+#header {
+	background: url("header_b.png") repeat-x #DD4814;
+	border-radius: 0 0 4px 4px;
+	height: 64px;
+}
+
+.imageLink {
+	color: #FFF;
+	display: inline-block;
+	font-size: 18px;
+	margin: 14px 0 0 10px;
+	text-decoration: none;
+}
+
+.hidecss,
+.hiddenStructure,
+.nonvisual {
+	display: none;
+}
+
+#search {
+	float: right;
+	margin: 8px 10px 0 0;
+	max-width: 320px;
+}
+
+#search span a {
+	color: #333;
+	font-size: 9px;
+	text-decoration: underline;
+}
+
+#pnavbar {
+	background-color: #F7F7F7;
+	border-radius: 0 0 4px 4px;
+	margin: 0 15px;
+	padding: 13px 10px;
+}
+
+#content,
+#psearchres {
+	overflow: hidden;
+	padding: 20px;
+}
+
+#content > dl,
+#psearchres > dl {
+	margin-bottom: 0;
+}
+
+.documentFirstHeading {
+	margin-top: 0;
+}
+
+#footer {
+	background-color: #F7F6F5;
+	margin: 0 auto 20px auto;
+	width: 950px;
+}
+
+#footer p {
+	margin: 0;
+	padding: 5px 10px;
+}
+
+#pothers {
+	float: right;
+}
+
+#pmoreinfo {
+	border: 1px solid #CCC;
+	float: right;
+	max-width: 300px;
+	padding: 10px;
+}
+
+#pdeplegend {
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+}
+
+#pdeplegend ul {
+	margin: 0;
+	padding-right: 10px;
+}
+
+#pdownload table {
+	border: 1px solid #CCC;
+	border-collapse: collapse;
+}
+
+#pdownload td,
+#pdownload th {
+	border: 1px solid #CCC;
+	padding: 2px;
+}
+
+#pdownload .size {
+	text-align: right;
+}
+
+.uldep li {
+	list-style-color: red;
+}
+
+#pfilelist {
+	font-size: 9px;
+}
+
+.pconstantnag {
+	border: 1px solid #CCC;
+	padding: 0 5px;
+}
+
+.cardleft,
+.cardright {
+	width: 50%;
+}
+
+.cardleft {
+	float: left;
+}
+
+.cardright {
+	float: right;
+}
+
+#pdownloadnotes {
+	clear: both;
+}
+
+#pdownloadmeta th {
+	text-align: left;
+}

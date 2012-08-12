@@ -86,7 +86,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 <div id="pdownloadnotes">
 
 [% IF a.mirror_list %]
-<p style="clear:both">[% g('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.', a.mirror_list ) %]</p>
+<p>[% g('If none of the above sites are fast enough for you, please see our <a href="%s">complete mirror list</a>.', a.mirror_list ) %]</p>
 [% END %]
 
 [% IF a.unofficial_port %]
@@ -94,7 +94,7 @@ deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite %] main [% section 
 [% IF port.url_name;
    SET port.url = ports_url _ port.url_name _ '/';
    END -%]
-<p style="clear:both">[% g('Note that %s is not officially included in the %s archive, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href="%s">%s ports page</a> for current information.',
+<p>[% g('Note that %s is not officially included in the %s archive, but the %s porter group keeps their archive in sync with the official archive as close as possible. See the <a href="%s">%s ports page</a> for current information.',
 	port.name, organisation, port.name, port.url, port.name) %]</p>
 [% END %]
 
