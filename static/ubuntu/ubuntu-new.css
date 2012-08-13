@@ -1,5 +1,5 @@
 body {
-	background-image: url(background-dots.png);
+	background-image: url("background-dots.png");
 	color: #333;
 	font-family: Ubuntu, Arial, sans-serif;
 	font-size: 13px;
@@ -72,7 +72,7 @@ hr {
 #search {
 	float: right;
 	margin: 8px 10px 0 0;
-	max-width: 320px;
+	max-width: 400px;
 }
 
 #search span a {
@@ -94,6 +94,10 @@ hr {
 	padding: 20px;
 }
 
+#psearchres {
+	margin-top: -40px;
+}
+
 #content > dl,
 #psearchres > dl {
 	margin-bottom: 0;
@@ -106,6 +110,7 @@ hr {
 #footer {
 	background-color: #F7F6F5;
 	margin: 0 auto 20px auto;
+	padding: 10px 0;
 	width: 950px;
 }
 
@@ -119,14 +124,15 @@ hr {
 }
 
 #pmoreinfo {
-	border: 1px solid #CCC;
+	border: 1px solid #AEA79F;
 	float: right;
 	max-width: 300px;
 	padding: 10px;
 }
 
-#pdeplegend {
-	border: 1px solid #CCC;
+#pdeplegend,
+#pdownload table {
+	border: 1px solid #AEA79F;
 	border-collapse: collapse;
 }
 
@@ -135,14 +141,9 @@ hr {
 	padding-right: 10px;
 }
 
-#pdownload table {
-	border: 1px solid #CCC;
-	border-collapse: collapse;
-}
-
 #pdownload td,
 #pdownload th {
-	border: 1px solid #CCC;
+	border: 1px solid #AEA79F;
 	padding: 2px;
 }
 
@@ -159,7 +160,7 @@ hr {
 }
 
 .pconstantnag {
-	border: 1px solid #CCC;
+	border: 1px solid #AEA79F;
 	padding: 0 5px;
 }
 
@@ -182,4 +183,38 @@ hr {
 
 #pdownloadmeta th {
 	text-align: left;
+}
+
+input[type="text"],
+textarea {
+	border-radius: 2px;
+	background: #FFF;
+	border: 1px solid #999;
+	font-size: 13px;
+	padding: 4px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+	border-color: #000;
+}
+
+#psearchsug p {
+	margin: 0px;
+}
+
+.uldep {
+	list-style-image: url("dep.png");
+}
+
+.ulrec {
+	list-style-image: url("rec.png");
+}
+
+.ulsug {
+	list-style-image: url("sug.png");
+}
+
+.navpara a {
+	margin-right: 10px;
 }

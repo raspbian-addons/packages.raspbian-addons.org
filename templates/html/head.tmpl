@@ -43,7 +43,7 @@
 [% IF search_field_values.sections %]<input type="hidden" name="section" value="[% search_field_values.sections %]">[% END %]
 [% IF search_field_values.architectures %]<input type="hidden" name="arch" value="[% search_field_values.architectures %]">[% END %]
 [% IF opts.lang %]<input type="hidden" name="lang" value="[% opts.lang %]">[% END %]
-<input type="submit" value="[% g('Search') %]">
+<input type="text" size="30" name="keywords" value="[% search_field_values.keywords | html %]" id="kw">
 <select size="1" name="searchon">
 <option value="names" [% selected IF search_field_values.searchon == 'names' || search_field_values.searchon == 'default' %]>
 [% g('package names') %]</option>
@@ -51,7 +51,7 @@
 <option value="sourcenames" [% selected IF search_field_values.searchon == 'sourcenames' %]>[% g('source package names') %]</option>
 <option value="contents" [% selected IF search_field_values.searchon == 'contents' %]>[% g('package contents') %]</option>
 </select>
-<input type="text" size="30" name="keywords" value="[% search_field_values.keywords | html %]" id="kw">
+<input type="submit" value="[% g('Search') %]">
 <span><a href="[% searchformurl %]">[% g('all options') %]</a></span>
 </div> <!-- end hpacketsearch -->
 </form>
@@ -71,6 +71,6 @@
 <div id="content">
 
 [%- IF page_title %]
-  <h1 class="documentFirstHeading">[% page_title %]</h1>
+  <h1>[% page_title %]</h1>
   [%- PROCESS 'html/messages.tmpl' -%]
 [% END -%]
