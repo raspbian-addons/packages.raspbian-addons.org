@@ -1,3 +1,4 @@
+/* selector rules */
 body {
 	background-image: url("background-dots.png");
 	color: #333;
@@ -25,6 +26,7 @@ h6 {
 
 h1 {
 	font-size: 36px;
+	margin-top: 0;
 }
 
 h2 {
@@ -40,6 +42,21 @@ hr {
 	border-top: 1px dotted #AEA79F;
 }
 
+input[type="text"],
+textarea {
+	border-radius: 2px;
+	background: #FFF;
+	border: 1px solid #999;
+	font-size: 13px;
+	padding: 4px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+	border-color: #000;
+}
+
+/* head */
 #wrapper {
 	background-color: #FFF;
 	border-radius: 0 0 4px 4px;
@@ -94,19 +111,16 @@ hr {
 	padding: 20px;
 }
 
-#psearchres {
-	margin-top: -40px;
-}
-
 #content > dl,
 #psearchres > dl {
 	margin-bottom: 0;
 }
 
-.documentFirstHeading {
-	margin-top: 0;
+#psearchres {
+	margin-top: -40px;
 }
 
+/* foot */
 #footer {
 	background-color: #F7F6F5;
 	margin: 0 auto 20px auto;
@@ -119,6 +133,11 @@ hr {
 	padding: 5px 10px;
 }
 
+.navpara a {
+	margin-right: 10px;
+}
+
+/* search */
 #pothers {
 	float: right;
 }
@@ -151,12 +170,22 @@ hr {
 	text-align: right;
 }
 
-.uldep li {
-	list-style-color: red;
-}
-
 #pfilelist {
 	font-size: 9px;
+}
+
+.uldep,
+.uladep {
+	list-style-image: url("dep.png");
+}
+
+.ulrec,
+.ulidep {
+	list-style-image: url("rec.png");
+}
+
+.ulsug {
+	list-style-image: url("sug.png");
 }
 
 .pconstantnag {
@@ -164,6 +193,11 @@ hr {
 	padding: 0 5px;
 }
 
+#psearchsug p {
+	margin: 0;
+}
+
+/* download */
 .cardleft,
 .cardright {
 	width: 50%;
@@ -183,40 +217,4 @@ hr {
 
 #pdownloadmeta th {
 	text-align: left;
-}
-
-input[type="text"],
-textarea {
-	border-radius: 2px;
-	background: #FFF;
-	border: 1px solid #999;
-	font-size: 13px;
-	padding: 4px;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-	border-color: #000;
-}
-
-#psearchsug p {
-	margin: 0px;
-}
-
-.uldep,
-.uladep {
-	list-style-image: url("dep.png");
-}
-
-.ulrec,
-.ulidep {
-	list-style-image: url("rec.png");
-}
-
-.ulsug {
-	list-style-image: url("sug.png");
-}
-
-.navpara a {
-	margin-right: 10px;
 }
