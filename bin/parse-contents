@@ -162,7 +162,7 @@ for my $suite (@suites) {
 
     print "Merging reverse path lists for ${suite}...\n";
 
-    open MERGED, "-|", "sort -m $DBDIR/reverse_${suite}_*.txt"
+    open MERGED, "-|", "sort  -T $TOPDIR/tmp -m $DBDIR/reverse_${suite}_*.txt"
 	or die "Failed to open merged list";
     open FILENAMES, ">", "$DBDIR/filenames_$suite.txt.new"
 	or die "Failed to open filenames list";
