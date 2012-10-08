@@ -65,6 +65,7 @@ sub do_dispatch {
     delete $ENV{'LC_MESSAGES'};
 
     my %SUITES_ALIAS = (
+			 '5.0' => 'lenny',
 			 '4.0' => 'etch',
 			 '3.1' => 'sarge',
 			 '3.0' => 'woody',
