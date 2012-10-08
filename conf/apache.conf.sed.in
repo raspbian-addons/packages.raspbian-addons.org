@@ -66,7 +66,7 @@
    ServerAdmin webmaster@debian.org
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
-   ServerAlias packages-piatti.debian.org packages-powell.debian.org packages-rore.debian.org
+   ServerAlias archive.debian.lichtenheld.net
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
 
@@ -108,8 +108,8 @@
    RewriteRule ^/favicon.ico$ - [L]
    RewriteRule ^/robots.txt$ - [L]
 
-   RewriteRule ^/$ http://www.debian.org/distrib/packages
-#   RewriteRule ^/$ /index [L]
+#   RewriteRule ^/$ http://www.debian.org/distrib/packages
+   RewriteRule ^/$ /index [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$	"/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$	/changelogs/${changelog-url:$1} [R,L,NE]
    RewriteRule ^/src:([^/]+)$		/search?searchon=sourcenames&keywords=$1 [R,L,NE]
