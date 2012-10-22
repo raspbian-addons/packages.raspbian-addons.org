@@ -65,8 +65,8 @@
   AddEncoding x-gzip .gz
 </Directory>
 
-<VirtualHost 91.189.94.219:80>
-   ServerAdmin frank@lichtenheld.de
+<VirtualHost 91.189.94.203:80>
+   ServerAdmin rhonda@ubuntu.com
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
    ServerAlias packages.ubunut.com
@@ -142,8 +142,8 @@
 
 </VirtualHost>
 
-<VirtualHost 91.189.94.219:80>
-   ServerAdmin frank@lichtenheld.de
+<VirtualHost 91.189.94.203:80>
+   ServerAdmin rhonda@ubuntu.com
    DocumentRoot %TOPDIR%/www/
    ServerName packages.ubuntu.net
    ServerAlias packages.ubuntulinux.org
