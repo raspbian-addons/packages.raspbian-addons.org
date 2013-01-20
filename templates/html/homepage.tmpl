@@ -7,18 +7,18 @@
 [%-
     all_suites = [ 'hardy', 'hardy-updates', 'hardy-backports',
 		   'lucid', 'lucid-updates', 'lucid-backports',
-		   'natty', 'natty-updates', 'natty-backports',
 		   'oneiric', 'oneiric-updates', 'oneiric-backports',
 		   'precise', 'precise-updates', 'precise-backports',
-		   'quantal' ]
+		   'quantal', 'quantal-updates', 'quantal-backports',
+		   'raring' ]
     version_numbers = { dapper => '6.06LTS',
 			hardy  => '8.04LTS',
 			lucid  => '10.04LTS',
-			natty => '11.04',
 			oneiric => '11.10',
 			precise => '12.04',
+			quantal => '12.10',
 		      }
-    current_release = 'precise'
+    current_release = 'quantal'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -132,6 +132,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2012-10-22</dt>
+<dd>Reflect quantal release, add raring, remove natty.</dd>
 <dt>2012-05-03</dt>
 <dd>Reflect precise release, add quantal, remove maverick.</dd>
 <dt>2011-10-14</dt>
