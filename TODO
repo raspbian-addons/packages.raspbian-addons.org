@@ -77,3 +77,8 @@ Missing pieces from old code:
    reportbug in sarge is completly broken in this regard anyway AFAICT
    reportbug in etch works as long as there is the exact hit but
    breaks once there is more than one hit
+
+On DSA request:
+ - move away from BDB and use a real database
+   perhaps using projectb directly? udd?
+ - get away from mod_perl and use fcgid or similar technology
