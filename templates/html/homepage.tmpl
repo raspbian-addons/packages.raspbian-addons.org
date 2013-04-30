@@ -5,20 +5,17 @@
 	html_meta = '<meta name="verify-v1" content="Rg2bDR1kWPGd8k8v9NOgnmtUQHO6UaKX2glZWVDptok=">'
 -%]
 [%-
-    all_suites = [ 'hardy', 'hardy-updates', 'hardy-backports',
-		   'lucid', 'lucid-updates', 'lucid-backports',
-		   'oneiric', 'oneiric-updates', 'oneiric-backports',
+    all_suites = [ 'lucid', 'lucid-updates', 'lucid-backports',
 		   'precise', 'precise-updates', 'precise-backports',
 		   'quantal', 'quantal-updates', 'quantal-backports',
-		   'raring' ]
-    version_numbers = { dapper => '6.06LTS',
-			hardy  => '8.04LTS',
-			lucid  => '10.04LTS',
-			oneiric => '11.10',
+		   'raring', 'raring-updates', 'raring-backports',
+		   'saucy' ]
+    version_numbers = { lucid  => '10.04LTS',
 			precise => '12.04LTS',
 			quantal => '12.10',
+			raring => '13.04',
 		      }
-    current_release = 'quantal'
+    current_release = 'raring'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -132,6 +129,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2013-04-30</dt>
+<dd>Reflect raring release, add saucy, remove hardy and oneiric.</dd>
 <dt>2013-01-21</dt>
 <dd>Updated to new branding guideline, patch by Marco Biscaro.</dd>
 <dt>2012-10-22</dt>
@@ -357,4 +356,4 @@ may be missing for some packages since I can only mirror the
 i386 and powerpc debs due to space constraints)</dd>
 </dl>
 
-[% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2011' %]
+[% PROCESS 'html/foot.tmpl' page_name=packages_homepage copyright.years = '1997 - 2013' %]
