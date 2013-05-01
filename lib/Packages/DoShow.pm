@@ -378,8 +378,8 @@ sub moreinfo {
 	    $src_dir =~ s,pool/updates,pool,o;
 	    $src_dir =~ s,^pool,,o;
 
-	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename_changelog";
-	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename_copyright";
+	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename"."_changelog";
+	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename"."_copyright";
 	    # FIXME: we should restore per binary package copyright 
 	    # $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );
 	}
