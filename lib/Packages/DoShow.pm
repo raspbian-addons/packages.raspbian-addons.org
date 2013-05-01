@@ -376,9 +376,12 @@ sub moreinfo {
 	    (my $src_basename = $source_version) =~ s,^\d+:,,; # strip epoche
 	    $src_basename = "${source}_$src_basename";
 	    $src_dir =~ s,pool/updates,pool,o;
+	    $src_dir =~ s,^pool,,o;
 
-	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename/changelog";
-	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );
+	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename_changelog";
+	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename_copyright";
+	    # FIXME: we should restore per binary package copyright 
+	    # $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );
 	}
    }
 
