@@ -67,6 +67,8 @@ General:
   * filter on debtags: interface::3d interface::framebuffer interface::svga
     interface::text-mode interface::web interface::x11
   * filter on sections: libs, oldlibs, debug, ... Ask for input.
+- Centralize distributions configuration (too many changes on a stable release)
+  or even read it from dists/
 
 Cron:
 - Verify Release files
