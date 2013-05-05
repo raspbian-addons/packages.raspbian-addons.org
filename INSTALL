@@ -26,6 +26,8 @@ case, you might have to adjust some of the steps.
    - ./templates/config/*
      (especially if you have your own repositories)
    - ./conf/apache.conf.sed.in
+   - ./conf/trusted.gpg (that can be a link to
+     /usr/share/keyrings/debian-archive-keyring.gpg)
 6) run `./bin/setup-site <topdir> <site>'
    (e.g. `./bin/setup-site /srv/packages.debian.org packages.debian.org')
 7) create a cache directory for the compiled templates, it needs to be writable
