@@ -42,18 +42,26 @@ search_url="/search"
 # FIXME: unhardcode archs and suites
 polangs="bg de fi fr hu ja nl pl ru sk sv tr uk zh-cn zh-tw"
 ddtplangs="ca cs da de en eo es eu fi fr hu it ja km ko nl pl pt pt-br ru sk sv uk zh zh-cn zh-tw"
+
 archives="us security debports backports volatile"
 sections="main contrib non-free"
 parts="$sections"
-suites="squeeze squeeze-updates squeeze-backports wheezy sid experimental"
-priorities="required important standard optional extra"
+
+suites="squeeze squeeze-updates squeeze-backports wheezy jessie sid experimental"
+security_suites="squeeze wheezy jessie"
+backports_suites="squeeze-backports wheezy-backports"
 dists="$suites"
+
+priorities="required important standard optional extra"
+
 architectures="alpha amd64 arm armel armhf avr32 hppa hurd-i386 i386 ia64 kfreebsd-i386 kfreebsd-amd64 m68k mips mipsel powerpc powerpcspe s390 s390x sh4 sparc sparc64"
 arch_squeeze="amd64 armel i386 ia64 kfreebsd-i386 kfreebsd-amd64 mips mipsel powerpc s390 sparc"
 arch_wheezy="${arch_squeeze} armhf s390x"
+arch_jessie="${arch_wheezy}"
 arch_sid="${arch_wheezy} alpha avr32 hppa hurd-i386 m68k powerpcspe sh4 sparc64"
 arch_experimental="${arch_sid}"
 arch_squeeze_proposed_updates="${arch_squeeze}"
+arch_wheezy_proposed_updates="${arch_wheezy}"
 
 # Miscellaneous
 #

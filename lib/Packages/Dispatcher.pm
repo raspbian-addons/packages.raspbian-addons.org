@@ -64,12 +64,15 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
-    my %SUITES_ALIAS = ( stable => 'squeeze',
-			 testing => 'wheezy',
+    my %SUITES_ALIAS = ( oldtable => 'squeeze',
+			 stable => 'wheezy',
+			 testing => 'jessie',
 			 unstable => 'sid',
 			 'rc-buggy' => 'experimental',
 			 '6.0' => 'squeeze',
-			 'stable-backports' => 'squeeze-backports' );
+			 '7.0' => 'wheezy',
+			 'oldstable-backports' => 'squeeze-backports',
+			 'stable-backports' => 'wheezy-backports' );
 
     # Read in all the variables set by the form
     my $input;
