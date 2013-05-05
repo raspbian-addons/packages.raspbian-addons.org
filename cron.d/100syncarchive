@@ -83,7 +83,7 @@ fi
 
 # security archive
 #
-for dist in squeeze wheezy
+for dist in $security_suites
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}

@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # backports archive
 #
-for dist in squeeze-backports
+for dist in $backports_suites 
 do
   echo "retrieve Release(.gpg) $dist"
   test -d backports/${dist} || mkdir -p backports/${dist}
