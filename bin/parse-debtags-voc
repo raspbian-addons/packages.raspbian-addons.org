@@ -1,7 +1,8 @@
 #!/usr/bin/perl -w
-# Convert Debtags vocabulary.gz files into Sleepycat db files
+# Convert Debtags vocabulary.gz files into database
 #
 # Copyright (C) 2006  Frank Lichtenheld <djpig@debian.org>
+# Copyright (C) 2013  Damyan Ivanov <dmn@debian.org>
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -23,13 +24,14 @@ use lib './lib';
 $| = 1;
 
 use POSIX;
-use DB_File;
 use File::Path;
 use Data::Dumper;
 use HTML::Entities;
 use URI::Escape;
 
 use Deb::Versions;
+use Packages::DBI;
+use Packages::DBI::Debtags;
 use Packages::Template;
 use Packages::Config qw( $TOPDIR @LANGUAGES );
 use Packages::I18N::Locale;
@@ -37,7 +39,7 @@ use Packages::I18N::Locale;
 my $debtagsdir = "$TOPDIR/files/debtags";
 my $wwwdir = "$TOPDIR/www/about";
 my $voc_file = "$debtagsdir/vocabulary";
-my (%voc, %voc_db);
+my (%voc);
 
 $/ = "";
 
@@ -57,10 +59,10 @@ sub process_desc {
 }
 
 print "Parsing Vocabulary...\n";
-tie %voc_db, "DB_File", "$debtagsdir/vocabulary.db.new",
-    O_RDWR|O_CREAT, 0666, $DB_BTREE
-    or die "Error creating DB: $!";
 open VOC, '<', $voc_file or die "Error opening vocabulary: $!";
+
+Packages::DBI->connection( { rw => 1 } );
+Packages::DBI::Debtags->retrieve_all->delete_all;
 
 while (<VOC>) {
     next if /^\s*$/;
@@ -86,7 +88,8 @@ while (<VOC>) {
     my ($sdesc,$ldesc) = split /\n/, $data{description}, 2;
 
     $data{html_description} = [ encode_entities($sdesc), process_desc($ldesc)||"" ];
-    $voc_db{$voc_key} = $sdesc || "";
+    Packages::DBI::Debtags->insert(
+        { id => $voc_key, descr => $sdesc || '' } );
 
     foreach my $lang (@LANGUAGES) {
 	next if $lang eq 'en';
@@ -95,16 +98,15 @@ while (<VOC>) {
 	    or die "get_handle failed for $lang";
 
 	my $sdesc_trans = $cat->maketext($sdesc);
-	$voc_db{"$voc_key-$lang"} = $sdesc_trans
-	    if $sdesc_trans and $sdesc_trans ne $sdesc;
+        Packages::DBI::Debtags->insert(
+            { id => "$voc_key-$lang", descr => $sdesc_trans } )
+            if $sdesc_trans and $sdesc_trans ne $sdesc;
     }
 
     $voc{$voc_key} = \%data;
 }
 
 close VOC or warn "Couldn't close vocabulary: $!";
-
-#print Dumper(\%voc,\%voc_db);
 
 print "Creating tag list...\n";
 
@@ -133,6 +135,4 @@ close TAGLST or warn "Couldn't close tag list: $!";
 rename( "$wwwdir/debtags.en.html.new",
 	"$wwwdir/debtags.en.html" );
 
-untie %voc_db;
-rename( "$debtagsdir/vocabulary.db.new",
-	"$debtagsdir/vocabulary.db" );
+Packages::DBI->dbi_commit;
