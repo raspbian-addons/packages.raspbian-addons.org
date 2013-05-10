@@ -1,0 +1,121 @@
+#!/bin/sh
+#
+# Copyright (C) 2013  Damyan Ivanov <dmn@debian.org>
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+# apply all missing db revisions
+
+set -e
+
+. ./config.sh
+
+usage()
+{
+    if [ -n "${1:-}" ]; then
+        echo "$1"
+    fi
+
+    cat <<_EOF_ | pod2text
+
+=head1 NAME
+
+apply-db-revision - apply missing db revisions
+
+=head1 SYNOPSIS
+
+B<apply-db-revisions>
+
+=head1 OPTIONS
+
+=over
+
+=item --help
+=item --usage
+=item -h
+
+Display this help text.
+
+=cut
+_EOF_
+
+    if [ -n "${1:-}" ]; then
+        exit 2
+    else
+        exit 0
+    fi
+}
+
+while [ -n "${1:-}" ]; do
+    case "$1" in
+        --help|--usage|-h)
+        usage
+        ;;
+
+        *)
+        usage "Unknown option '$1'"
+        ;;
+    esac
+    shift
+done
+
+sql_dir=`dirname $0`/../sql
+
+tmp_dir_name=`basename $0`
+tmp_dir=`mktemp -d ${tmp_dir_name}.XXXXX` || exit 1
+
+trap "rm -rf $tmp_dir" INT EXIT
+
+init_done=`psql $db_name -t -c "select 1;" 2>/dev/null` || true
+
+if [ -z "$init_done" ]
+then
+    echo "Creating database $db_name... "
+
+    createdb --encoding=UNICODE $db_name
+    #createlang -d $db_name plpgsql
+
+fi
+
+ls -1 $sql_dir | sed "s,$sql_dir/,,; s/[^0-9]\+//" | sort -n > $tmp_dir/available
+
+if psql $db_name -c '\dt db_revisions' | grep -q db_revisions; then
+    psql $db_name -t -c 'select db_revision from db_revisions;' > $tmp_dir/applied
+else
+    cat /dev/null > $tmp_dir/applied
+fi
+
+cat $tmp_dir/available | while read r; do
+    if ! grep -q "$r" $tmp_dir/applied 2>&1 > /dev/null; then
+        echo $r >> $tmp_dir/missing
+    fi
+done
+
+if [ -s $tmp_dir/missing ]; then
+    #echo "Database \"$db_name\" is missing `wc -l $tmp_dir/missing` revision(s)"
+
+    cat $tmp_dir/missing | while read r; do
+        rev_file="$sql_dir/$r.sql"
+
+        echo "Applying $rev_file"
+        cat $rev_file | sed "s,\${CRON_USER},$db_cron_user,g; s,\${WEB_USER},$db_web_user,g" > $tmp_dir/$r.sql
+        if ! psql $db_name -f $tmp_dir/$r.sql > $tmp_dir/output 2>&1; then
+            echo "Error applying revision. psql output follows"
+            cat $tmp_dir/output
+            exit 1
+        fi
+    done
+else
+    echo Database \"$db_name\" is up to date
+fi
