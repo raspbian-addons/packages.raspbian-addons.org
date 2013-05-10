@@ -11,11 +11,15 @@ our @ISA = qw( Exporter );
 our ( $TOPDIR, $DBDIR, $TEMPLATEDIR, $CACHEDIR, $ROOT, $SEARCH_URL,
       @LANGUAGES, @DDTP_LANGUAGES,
       @SUITES, @SECTIONS, @ARCHIVES, @ARCHITECTURES,
-      @PRIORITIES, %FTP_SITES );
+      @PRIORITIES, %FTP_SITES,
+      $DB_NAME,
+  );
 our @EXPORT_OK = qw( $TOPDIR $DBDIR $TEMPLATEDIR $CACHEDIR $ROOT $SEARCH_URL
 		     @LANGUAGES @DDTP_LANGUAGES
 		     @SUITES @SECTIONS @ARCHIVES @ARCHITECTURES
-		     @PRIORITIES %FTP_SITES  );
+		     @PRIORITIES %FTP_SITES
+                     $DB_NAME
+                     );
 our %EXPORT_TAGS = ( all => [ @EXPORT_OK ] );
 
 our $config_read_time;
@@ -45,6 +49,7 @@ sub init {
 	    @ARCHIVES = split(/\s+/, $1) if /^\s*archives="?([^\"]*)"?\s*$/o;
 	    @ARCHITECTURES = split(/\s+/, $1) if /^\s*architectures="?([^\"]*)"?\s*$/o;
 	    @PRIORITIES = split(/\s+/, $1) if /^\s*priorities="?([^\"]*)"?\s*$/o;
+            $DB_NAME    = $1 if /^\s*db_name=['"]?([^"']*)["']?\s*$/o;
 	}
 	foreach (($TEMPLATEDIR, $CACHEDIR)) {
 	    s/\$\{?topdir\}?/$TOPDIR/g;
