@@ -38,6 +38,7 @@ use Packages::Config qw( $DBDIR $ROOT $TEMPLATEDIR $CACHEDIR
 			 @LANGUAGES @DDTP_LANGUAGES );
 use Packages::CGI qw( :DEFAULT error get_all_messages );
 use Packages::DB;
+use Packages::DBI;
 use Packages::Search qw( :all );
 use Packages::Template ();
 use Packages::Sections;
@@ -92,6 +93,7 @@ sub do_dispatch {
     my $homedir = dirname($ENV{SCRIPT_FILENAME}).'/../';
     &Packages::Config::init( $homedir );
     &Packages::DB::init();
+    Packages::DBI->connection;
     my $last_modified = $Packages::DB::db_read_time;
     my $now = time;
     my $expires = $last_modified + (12*3600);

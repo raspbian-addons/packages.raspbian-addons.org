@@ -53,6 +53,15 @@ sub new {
     $vars->{uri_escape} = sub { return URI::Escape::uri_escape(@_) };
     $vars->{quotemeta} = sub { return quotemeta($_[0]) };
     $vars->{string2id} = sub { return &Packages::CGI::string2id(@_) };
+    $vars->{db} = sub {
+        my ( $class, $id ) = @_;
+
+        local $@;
+        my $obj = eval "require Packages::DBI::$class;"
+            . " Packages::DBI::$class->retrieve('$id')";
+        die $@ if $@;
+        $obj;
+    };
 
     $self->{template} = Template->new( {
 	PRE_PROCESS => [ 'config.tmpl' ],
