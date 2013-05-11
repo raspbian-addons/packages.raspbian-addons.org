@@ -205,11 +205,11 @@
     <a href="[% tags_url %]edit.html?pkg=[% uri_escape(pkg) %]">[% g('Tags') %]</a>:
   [%- END %]
   [% facet = tag.0; lfacet = "$facet-$po_lang"; 
-     facet_name = debtags_voc.$lfacet;
-     SET facet_name = debtags_voc.$facet UNLESS facet_name;
+     facet_obj = db('Debtags',lfacet) || db('Debtags',facet);
+     facet_name = facet_obj.descr;
      tag_id = "$tag.0::$tag.1"; ltag = "$tag_id-$po_lang";
-     tag_name = debtags_voc.$ltag;
-     SET tag_name = debtags_voc.$tag_id UNLESS tag_name;
+     tag_obj = db('Debtags',ltag) || db('Debtags',tag_id);
+     tag_name = tag_obj.descr;
    %]
   [% facet_name _ ': ' UNLESS old_facet && facet == old_facet %]
   [% IF tag_name %]

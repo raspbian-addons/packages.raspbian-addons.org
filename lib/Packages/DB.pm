@@ -10,10 +10,10 @@ use Packages::Config qw( $TOPDIR $DBDIR );
 
 our @ISA = qw( Exporter );
 our ( %packages, %sources, %src2bin, %did2pkg, %descriptions,
-      %postf, %spostf, %debtags, %desctrans,
+      %postf, %spostf, %desctrans,
       $obj, $s_obj, $p_obj, $sp_obj );
 our @EXPORT = qw( %packages %sources %src2bin %did2pkg %descriptions
-		  %postf %spostf %debtags %desctrans
+		  %postf %spostf %desctrans
 		  $obj $s_obj $p_obj $sp_obj );
 our $db_read_time ||= 0;
 
@@ -46,10 +46,6 @@ sub init {
 	tie %did2pkg, 'DB_File', "$DBDIR/descriptions_packages.db",
 	O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie DB $DBDIR/descriptions_packages.db: $!";
-	untie %debtags;
-	tie %debtags, 'DB_File', "$TOPDIR/files/debtags/vocabulary.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $TOPDIR/files/debtags/vocabulary.db: $!";
 	undef $p_obj;
 	untie %postf;
 	$p_obj = tie %postf, 'DB_File', "$DBDIR/package_postfixes.db",

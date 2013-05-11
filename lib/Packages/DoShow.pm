@@ -138,7 +138,6 @@ sub do_show {
 			}
 
 			$contents{tags} = \@tags;
-			$contents{debtags_voc} = \%debtags;
 
 			$section = $page->get_newest( 'section' );
 			$contents{section} = $section;
