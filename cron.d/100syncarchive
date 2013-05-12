@@ -27,11 +27,11 @@ then
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		(cd us/${dist}/${part}/binary-${arch} &&
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+     	        #FIXME: no Contents files for p-u
+	        echo retrieve Contents $dist/${part}/$arch
+	        (cd us/${dist} &&
+		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/Contents-${arch}.gz)
 	    done
-	    #FIXME: no Contents files for p-u
-	    echo retrieve Contents $dist/$arch
-	    (cd us/${dist} &&
-		$wget_cmd -N ${ftpsite}/dists/${dist}/Contents-${arch}.gz)
 	done
 	for part in ${parts}
 	do
@@ -61,13 +61,14 @@ else
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		rsync -Lt ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
+
+    	        #FIXME: no Contents files for p-u
+	        #FIXME: the symlinks for wheezy/sid/experimental will go away
+	        #FIXME: this only pulls in the contents files for main in wheezy/sid/experimental
+	        echo retrieve Contents $dist/$arch
+	        rsync -Lt ${localdir}/dists/${dist}/${part}/Contents-${arch}.gz \
+		    us/${dist}/${parts}/Contents-${arch}.gz
 	    done
-	    #FIXME: no Contents files for p-u
-	    #FIXME: the symlinks for wheezy/sid/experimental will go away
-	    #FIXME: this only pulls in the contents files for main in wheezy/sid/experimental
-	    echo retrieve Contents $dist/$arch
-	    rsync -Lt ${localdir}/dists/${dist}/Contents-${arch}.gz \
-		us/${dist}/Contents-${arch}.gz
 	done
 	for part in ${parts}
         do
