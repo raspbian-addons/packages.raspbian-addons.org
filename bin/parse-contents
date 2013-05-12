@@ -40,7 +40,7 @@ use Storable;
 use File::Path;
 use File::Basename;
 use Packages::CommonCode qw(:all);
-use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
+use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES @SECTIONS);
 &Packages::Config::init( './' );
 
 my @archives = @ARCHIVES;
