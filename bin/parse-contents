@@ -46,6 +46,10 @@ use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 my @archives = @ARCHIVES;
 my @suites = @SUITES;
 my @archs = @ARCHITECTURES;
+my @sections = @SECTIONS;
+# Add empty section, need to search Contents directly at dist root, for debports compat
+push(@sections, "");
+
 my %debports_hash;
 @debports_hash{qw( alpha avr32 armhf hppa m68k powerpcspe sh4 sparc64 )} = ();
 
@@ -69,59 +73,62 @@ for my $suite (@suites) {
 
 	my $changed = 0;
 	for my $archive (@archives) {
+		for my $section (@sections) {
 
-	    my $filename = "$TOPDIR/archive/$archive/$suite/Contents-$arch.gz";
-	    next unless -f $filename;
-	    # Note: ctime, because mtime is set back via rsync
-	    my $ftime = (stat $filename)[10];
-	    next if defined $dbtime and $dbtime > $ftime;
-	    print "$archive/$suite/$arch needs update\n";
-	    $changed++;
+			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
+			next unless -f $filename;
+			# Note: ctime, because mtime is set back via rsync
+			my $ftime = (stat $filename)[10];
+			next if defined $dbtime and $dbtime > $ftime;
+			print "$archive/$suite/$section/$arch needs update\n";
+			$changed++;
+		}
 	}
 	if ($changed) {
 	    for my $archive (@archives) {
+			for my $section (@sections) {
 
-		my $filename = "$TOPDIR/archive/$archive/$suite/Contents-$arch.gz";
-		next unless -f $filename;
-		print "Reading $archive/$suite/$arch...\n";
+			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
+			next unless -f $filename;
+			print "Reading $archive/$suite/$section/$arch...\n";
 
-		open CONT, "zcat $filename|$what"
-		    or die $!;
-		while (<CONT>) { last if /^FILE/mo; }
-		if (eof(CONT)) { # no header found
-		    close CONT; # explicit close to reset $.
-		    open CONT, "zcat $filename|$what";
-		}
-		while (<CONT>) {
-		    my $data = "";
-		    my %data = ();
-		    chomp;
-		    print "Doing line ".($NR/1000)."k (out of approx 2.0M)\n"
-			if $NR % 250000 == 0;
-		    /^(.+?)\s+(\S+)$/o;
-		    my ($file, $value) = ($1, $2);
-		    $value =~ s#[^,/]+/##og;
-		    my @packages = split m/,/, $value;
-		    for (@packages) {
-			$packages_contents_nr{$_}++;
-			my $lw = $packages_contents_lastword{$_} || "\0";
-			my $i=0;
-			while (substr($file,$i,1) eq substr($lw,$i++,1)) {}
-			$i--;
-			$i = 255 if $i > 255;
-			$packages_contents{$_} .= pack "CC/a*", ($i, substr($file, $i));
-			$packages_contents_lastword{$_} = "$file\0";
-		    }
-		    # Searches are case-insensitive
-		    (my $nocase = $file) =~ tr [A-Z] [a-z];
-		    my $case = ($nocase eq $file) ? '-' : $file;
+			open CONT, "zcat $filename|$what"
+				or die $!;
+			while (<CONT>) { last if /^FILE/mo; }
+			if (eof(CONT)) { # no header found
+				close CONT; # explicit close to reset $.
+				open CONT, "zcat $filename|$what";
+			}
+			while (<CONT>) {
+				my $data = "";
+				my %data = ();
+				chomp;
+				print "Doing line ".($NR/1000)."k (out of approx 2.0M)\n"
+				if $NR % 250000 == 0;
+				/^(.+?)\s+(\S+)$/o;
+				my ($file, $value) = ($1, $2);
+				$value =~ s#[^,/]+/##og;
+				my @packages = split m/,/, $value;
+				for (@packages) {
+				$packages_contents_nr{$_}++;
+				my $lw = $packages_contents_lastword{$_} || "\0";
+				my $i=0;
+				while (substr($file,$i,1) eq substr($lw,$i++,1)) {}
+				$i--;
+				$i = 255 if $i > 255;
+				$packages_contents{$_} .= pack "CC/a*", ($i, substr($file, $i));
+				$packages_contents_lastword{$_} = "$file\0";
+				}
+				# Searches are case-insensitive
+				(my $nocase = $file) =~ tr [A-Z] [a-z];
+				my $case = ($nocase eq $file) ? '-' : $file;
 
-		    print REVERSED (reverse $nocase)."\0".$case."\0".
-			(join ":$arch\0", @packages).":$arch\n";
-		}
-		close CONT;
+				print REVERSED (reverse $nocase)."\0".$case."\0".
+				(join ":$arch\0", @packages).":$arch\n";
+			}
+			close CONT;
 
-	    }
+			}
 	    close REVERSED;
 
 	    print "Sorting reverse list if needed\n";
@@ -149,6 +156,7 @@ for my $suite (@suites) {
 		       "$DBDIR/filelists_${suite}_all.db") == 0
 			   or die "Oops";
 	    }
+	}
 	}
     }
 
