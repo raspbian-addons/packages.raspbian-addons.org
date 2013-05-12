@@ -29,7 +29,7 @@ then
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
      	        #FIXME: no Contents files for p-u
 	        echo retrieve Contents $dist/${part}/$arch
-	        (cd us/${dist} &&
+	        (cd us/${dist}/${part} &&
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/Contents-${arch}.gz)
 	    done
 	done
