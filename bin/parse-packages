@@ -37,6 +37,8 @@ use Deb::Versions;
 use Lingua::Stem v0.82;
 use Search::Xapian;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
+use Packages::DBI;
+use Packages::DBI::Descriptions;
 &Packages::Config::init( './' );
 my %packages_small = ();
 my %virtual_packages = ();
@@ -59,9 +61,7 @@ $/ = "";
 -d "$DBDIR/xapian.old" && rmtree("$DBDIR/xapian.old");
 mkpath( "$DBDIR/xapian.new" );
 
-# Needed to compensate removal of long descriptions from Packages files:
-my %descriptions_english_db;
-tie %descriptions_english_db, "DB_File", "files/db/descriptions_translated_english_only.db", O_RDONLY, 0666, $DB_BTREE;
+Packages::DBI->connection( { rw => 1 } );
 
 for my $suite (@SUITES) {
     my %package_names_suite = ();
@@ -139,17 +139,11 @@ for my $suite (@SUITES) {
 		if ($data{'description-md5'}) {
 		    # The short description is a nice fallback:
 		    my $description = $data{'description'};
-		    my $lookup = $descriptions_english_db{$data{'description-md5'}};
-		    if ($lookup) {
-			# There should only be an English translation
-			# in there, but let's make sure:
-			while ($lookup =~ /([^\001]*)\001([^\000]*)\000/g) {
-			    my ($language, $english_description) = ($1, $2);
-			    $description = $english_description
-				if $language eq 'en';
-			}
-			$data{'description'} = $description;
-		    }
+                    my $d = Packages::DBI::Descriptions->retrieve(
+                        md5  => $data{'description-md5'},
+                        lang => 'en',
+                    );
+                    $data{'description'} = $d->descr if $d;
 		}
 
 		# we add some additional data here
@@ -216,8 +210,6 @@ for my $suite (@SUITES) {
 
     untie %packages_all_db;
 }
-
-untie %descriptions_english_db;
 
 print "Writing databases...\n";
 my %packages_small_db;
@@ -394,3 +386,5 @@ rename("$DBDIR/descriptions_packages.db.new",
        "$DBDIR/descriptions_packages.db");
 rename("$DBDIR/descriptions.db.new", "$DBDIR/descriptions.db");
 rename("$DBDIR/package_postfixes.db.new", "$DBDIR/package_postfixes.db");
+
+Packages::DBI->dbi_commit;
