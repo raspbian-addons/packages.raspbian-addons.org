@@ -12,7 +12,8 @@ case, you might have to adjust some of the steps.
    one instead of lenny's version.
 2) Download the code from git://git.debian.org/git/webwml/packages.git
    (Something like `git clone git://git.debian.org/git/webwml/packages.git')
-3) Install the needed dependencies. A list can be found in debian/control.
+3) Install the needed dependencies. A list can be found in debian/control and
+   used with dpkg-checkbuilddeps to check for missing deps.
 4) Install apache2 (apache2-mpm-worker), mod_perl (libapache2-mod-perl2) and
    Apache2::Reload (libapache2-reload-perl)
 5) Adjust the configuration to your needs. You should at least edit the
