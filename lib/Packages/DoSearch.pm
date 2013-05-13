@@ -13,6 +13,8 @@ use Deb::Versions;
 use Packages::Search qw( :all );
 use Packages::CGI qw( :DEFAULT );
 use Packages::DB;
+use Packages::DBI;
+use Packages::DBI::Descriptions;
 use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @ARCHITECTURES $ROOT );
 
 sub do_search {
@@ -209,14 +211,14 @@ sub process_package {
 	    $suite{desc} = $desc->{$suite}{$versions[0]}[1];
 	    $suite{versions} = [];
 
-	    my $trans_desc = $desctrans{$desc_md5};
+            my @trans_desc = Packages::DBI::Descriptions->search( md5 => $desc_md5 );
 	    my %sdescs;
-	    if ($trans_desc) {
-		my %trans_desc = split /\000|\001/, $trans_desc;
-		while (my ($l, $d) = each %trans_desc) {
+	    if (@trans_desc) {
+		for (@trans_desc) {
+                    my $d = $_->descr;
 		    $d =~ s/\n.*//os;
 
-		    $sdescs{$l} = $d;
+		    $sdescs{$_->lang} = $d;
 		}
 		$suite{trans_desc} = \%sdescs;
 	    }

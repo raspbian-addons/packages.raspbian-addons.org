@@ -16,9 +16,11 @@ use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
 			 @LANGUAGES @DDTP_LANGUAGES);
 use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
+use Packages::DBI::Descriptions;
 use Packages::Search qw( :all );
 use Packages::Page ();
 use Packages::SrcPage ();
+
 
 our @ISA = qw( Exporter );
 our @EXPORT = qw( do_show );
@@ -177,19 +179,24 @@ sub do_show {
 
 			debug( "desc_md5=$desc_md5", 2)
 			    if DEBUG;
-			my $trans_desc = $desctrans{$desc_md5};
-			if ($trans_desc) {
-			    my %trans_desc = split /\000|\001/, $trans_desc;
-			    my %all_langs = map { $_ => 1 } (@LANGUAGES, keys %trans_desc);
+                        my @trans_desc = Packages::DBI::Descriptions->search(
+                            md5 => $desc_md5 );
+			if (@trans_desc) {
+                            my @trans_langs = map { $_->lang } @trans_desc;
+                            my %all_langs = map { $_ => 1 }
+                                ( @LANGUAGES, @trans_langs );
 			    $contents{used_langs} = [ keys %all_langs ];
-			    debug( "TRANSLATIONS: ".join(" ",keys %trans_desc), 2)
+			    debug( "TRANSLATIONS: ".join(" ",@trans_langs), 2)
 				if DEBUG;
-			    while (my ($l, $d) = each %trans_desc) {
-				my ($short_t, $long_t) = process_description($d);
+                            for (@trans_desc) {
+                                my ( $short_t, $long_t )
+                                    = process_description( $_->descr );
 
-				$contents{desc}{$l} = { short => $short_t,
-							long => $long_t, };
-			    }
+                                $contents{desc}{ $_->lang } = {
+                                    short => $short_t,
+                                    long  => $long_t,
+                                };
+                            }
 			}
 
 			my $v_str = $version;
@@ -450,15 +457,15 @@ sub build_deps {
 	    my $p_suite = $entry->[2];
 	    if ( $short_desc ) {
 		$rel_alt_out{desc} = $short_desc;
-		my $trans_desc = $desctrans{$desc_md5};
-		if ($trans_desc) {
-		    my %trans_desc = split /\000|\001/, $trans_desc;
+                my @trans_desc
+                    = Packages::DBI::Descriptions->search( md5 => $desc_md5 );
+		if (@trans_desc) {
 		    my %sdescs;
-		    while (my ($l, $d) = each %trans_desc) {
-			$d =~ s/\n.*//os;
+                    for (@trans_desc) {
+                        ( my $d = $_->descr ) =~ s/\n.*//os;
 
-			$sdescs{$l} = $d;
-		    }
+                        $sdescs{ $_->lang } = $d;
+                    }
 		    $rel_alt_out{trans_desc} = \%sdescs;
 		}
 		$rel_alt_out{suite} = $p_suite;
@@ -503,16 +510,16 @@ sub pkg_list {
 	my ($desc_md5, $short_desc) = ($data->[-2],$data->[-1]);
 
 	if ( $short_desc ) {
-	    my $trans_desc = $desctrans{$desc_md5};
+            my @trans_desc
+                = Packages::DBI::Descriptions->search( md5 => $desc_md5 );
 	    my %sdescs;
-	    if ($trans_desc) {
-		my %trans_desc = split /\000|\001/, $trans_desc;
-		while (my ($l, $d) = each %trans_desc) {
-		    $d =~ s/\n.*//os;
+            if (@trans_desc) {
+                for (@trans_desc) {
+                    ( my $d = $_->descr ) =~ s/\n.*//os;
 
-		    $sdescs{$l} = $d;
-		}
-	    }
+                    $sdescs{ $_->lang } = $d;
+                }
+            }
 	    push @$list, { name => $p, desc => $short_desc,
 			   trans_desc => \%sdescs, available => 1 };
 	} else {

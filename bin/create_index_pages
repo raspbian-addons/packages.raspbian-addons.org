@@ -22,6 +22,8 @@ use Packages::Page;
 use Packages::SrcPage;
 use Packages::Sections;
 &Packages::Config::init( './' );
+use Packages::DBI;
+use Packages::DBI::Descriptions;
 
 use constant DEBUG => 0;
 
@@ -36,9 +38,8 @@ tie my %src_packages, 'DB_File', "$DBDIR/sources_small.db",
 tie my %src2bin, 'DB_File', "$DBDIR/sources_packages.db",
     O_RDONLY, 0666, $DB_BTREE
     or die "couldn't open $DBDIR/sources_packages.db: $!";
-tie my %desctrans, 'DB_File', "$DBDIR/descriptions_translated.db",
-    O_RDONLY, 0666, $DB_BTREE
-    or die "couldn't tie DB $DBDIR/descriptions_translated.db: $!";
+
+Packages::DBI->connection( { rw => 1 } );
 
 my $sections = retrieve "$DBDIR/sections.info";
 my $subsections = retrieve "$DBDIR/subsections.info";
@@ -278,16 +279,16 @@ foreach my $pkg (@PACKAGES) {
 	    $p{archive} = $entry->get_newest( 'archive' );
 	    $p{desc} = $entry->get_newest( 'description' );
 	    my $desc_md5 = $entry->get_newest( 'description-md5' );
-	    my $trans_desc = $desctrans{$desc_md5};
-	    if ($trans_desc) {
+	    my @trans_desc = Packages::DBI::Descriptions->search( md5 => $desc_md5 );
+	    if (@trans_desc) {
 		my %sdescs;
-		my %trans_desc = split /\000|\001/, $trans_desc;
-		while (my ($l, $d) = each %trans_desc) {
+		for (@trans_desc) {
 		    # filter out non-po languages
-		    next unless exists $lang_vars{$l};
+		    next unless exists $lang_vars{ $_->lang };
 
+                    my $d = $_->descr;
 		    $d =~ s/\n.*//os;
-		    $sdescs{$l} = $d;
+		    $sdescs{$_->lang} = $d;
 		}
 		$p{trans_desc} = \%sdescs if %sdescs;
 	    }

@@ -1,9 +1,9 @@
 #!/usr/bin/perl -w
-# Convert Translation.gz files into Sleepycat db files for efficient usage of
-# data
+# Convert Translation.gz files into DB
 #
 # Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
 # Copyright (C) 2007  Frank Lichtenheld <frank@lichtenheld.de>
+# Copyright (C) 2013  Damyan Ivanov <dmn@debian.org>
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 2 of the License, or
@@ -27,7 +27,6 @@ $| = 1;
 # max. distinct results for a given package postfix
 my $MAX_PACKAGE_POSTFIXES = 100;
 
-use DB_File;
 use Storable;
 use File::Path;
 use Digest::MD5;
@@ -37,6 +36,8 @@ use Lingua::Stem v0.82;
 use Search::Xapian;
 use Packages::Config qw( $TOPDIR $DBDIR @DDTP_LANGUAGES );
 &Packages::Config::init( './' );
+use Packages::DBI;
+use Packages::DBI::Descriptions;
 my %descriptions = ();
 
 # Make it possible to deal with either only English translations (to
@@ -97,10 +98,9 @@ foreach my $lang (@langs) {
 close PKG;
 
 print "Writing database (".scalar(keys %descriptions)." unique descriptions)...\n";
-my %descriptions_db;
-tie %descriptions_db, "DB_File", "$DBDIR/$output.db.new",
-	O_RDWR|O_CREAT, 0666, $DB_BTREE
-	or die "Error creating DB: $!";
+Packages::DBI->connection( { rw => 1 } );
+Packages::DBI->db_Main->do('update descriptions set stale=true');
+
 while (my ($md5, $v) = each(%descriptions)) {
     my $str = "";
     while (my ($lang, $desc) = each %$v) {
@@ -108,12 +108,21 @@ while (my ($md5, $v) = each(%descriptions)) {
 	    warn "MD5: $md5 LANG: $lang DESC: $desc\n";
 	    exit;
 	}
-	$str .= "$lang\001$desc\000";
+
+        my $existing = Packages::DBI::Descriptions->retrieve(
+            md5  => $md5,
+            lang => $lang
+        );
+        if ($existing) {
+            $existing->descr($desc) unless $existing->descr eq $desc;
+            $existing->stale(0);
+            $existing->update;
+        }
+        else {
+            Packages::DBI::Descriptions->insert(
+                { md5 => $md5, lang => $lang, descr => $desc, stale => 0 } );
+        }
     }
-
-    $descriptions_db{$md5} = $str;
 }
-untie %descriptions_db;
-
-rename("$DBDIR/$output.db.new",
-       "$DBDIR/$output.db");
+Packages::DBI->db_Main->do('delete from descriptions where stale');
+Packages::DBI->dbi_commit;
