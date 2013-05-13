@@ -44,10 +44,8 @@ my %descriptions = ();
 # get long descriptions back), or all of them (the default). Since a
 # single option needs to be supported, don't bother with getopt:
 my @langs = @DDTP_LANGUAGES;
-my $output = 'descriptions_translated';
 my $argument = shift @ARGV;
 if ($argument and $argument eq '--english-only') {
-    $output = 'descriptions_translated_english_only';
     @langs = ('en');
 }
 
@@ -99,7 +97,10 @@ close PKG;
 
 print "Writing database (".scalar(keys %descriptions)." unique descriptions)...\n";
 Packages::DBI->connection( { rw => 1 } );
-Packages::DBI->db_Main->do('update descriptions set stale=true');
+Packages::DBI->db_Main->do(
+          'update descriptions set stale=true where lang in ('
+        . join( ',', map( "'$_'", @langs ) )
+        . ')' );
 
 while (my ($md5, $v) = each(%descriptions)) {
     my $str = "";
