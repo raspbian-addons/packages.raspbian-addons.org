@@ -1,0 +1,45 @@
+#!/usr/bin/perl -w
+#
+# create a template for a new SQL revision
+
+use strict;
+
+use DirHandle;
+use FileHandle;
+use Time::Piece qw(gmtime);
+
+STDOUT->autoflush(1);
+
+use constant dir => 'sql';
+
+my $d = DirHandle->new(dir) or die "opendir(" . dir . "): $!\n";
+
+my $last;
+while ( defined( $_ = $d->read ) ) {
+    next unless /^(\d+)\.sql$/;
+    $last = $1 unless $last and $last > $1;
+}
+$d->close;
+
+my $next = gmtime->strftime('%Y%m%d%H%M%S');
+
+my $fn = dir . "/$next.sql";
+
+my $f = FileHandle->new( $fn, '>' ) or die $!;
+
+$f->print( <<_NEW_REV );
+\\set ON_ERROR_STOP ON
+select require_sql_revision($last);
+begin transaction;
+--------------------------------------------
+
+
+
+--------------------------------------------
+select set_sql_revision($next);
+commit transaction;
+_NEW_REV
+
+$f->close;
+
+print "$fn ready.\n";
