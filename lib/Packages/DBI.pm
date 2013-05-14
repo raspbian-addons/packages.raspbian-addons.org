@@ -27,7 +27,7 @@ sub connection {
     confess 'Synopsis: Packages::DBI->connection( [ \%opts ] )' if @_;
 
     my ( $user, $password );
-    my %attr = ( AutoCommit => 1, RaiseError => 1 );
+    my %attr = ( AutoCommit => 1, RaiseError => 1, pg_enable_utf8 => 0 );
     $attr{AutoCommit} = 0 if $opts->{rw};
 
     $class->SUPER::connection( "dbi:Pg:db=$DB_NAME", undef, undef, \%attr );
