@@ -1,9 +1,9 @@
 #!/usr/bin/perl -w
-# Convert Packages.gz files into Sleepycat db files for efficient usage of
-# data
+# Pump Packages.gz files into DB
 #
 # Copyright (C) 2006  Jeroen van Wolffelaar <jeroen@wolffelaar.nl>
 # Copyright (C) 2006-2007 Frank Lichtenheld <frank@lichtenheld.de>
+# Copyright (C) 2006-2013 Damyan Ivanov <dmn@debian.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -39,6 +39,8 @@ use Search::Xapian;
 use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES );
 use Packages::DBI;
 use Packages::DBI::Descriptions;
+use Packages::DBI::Packages;
+use Packages::DBI::PackageProperties;
 &Packages::Config::init( './' );
 my %packages_small = ();
 my %virtual_packages = ();
@@ -63,12 +65,12 @@ mkpath( "$DBDIR/xapian.new" );
 
 Packages::DBI->connection( { rw => 1 } );
 
+# mark all packages/properties as stale
+Packages::DBI->db_Main->do('update packages set stale=true');
+Packages::DBI->db_Main->do('update package_properties set stale=true');
+
 for my $suite (@SUITES) {
     my %package_names_suite = ();
-    my %packages_all_db;
-    tie %packages_all_db, "DB_File", "$DBDIR/packages_all_$suite.db.new",
-	    O_RDWR|O_CREAT, 0666, $DB_BTREE
-	    or die "Error creating DB: $!";
 
     for my $archive (@ARCHIVES) {
 	print "Reading $archive/$suite...\n";
@@ -80,7 +82,6 @@ for my $suite (@SUITES) {
 	        .     " $TOPDIR/archive/$archive/$suite/$what/debian-installer/binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
-		my $data = "";
 		my %data = ();
 		chomp;
 		s/\n /\377/g;
@@ -90,8 +91,17 @@ for my $suite (@SUITES) {
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
-		# Skip double package
-		next if exists($packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"});
+
+                my $pkg = Packages::DBI::Packages->retrieve(
+                    suite        => $suite,
+                    package      => $data{package},
+                    architecture => $data{architecture},
+                    version      => $data{version},
+                );
+                # skip packages already processed (probably arch=all from
+                # another architecture's directory)
+                next if $pkg and not $pkg->stale;
+
 		# Skip arch:all for amd64 & debports, any non-redundancy is
 		# usually a bug anyway
 		next if ($archive eq 'amd64' or $archive eq 'debports')
@@ -137,13 +147,13 @@ for my $suite (@SUITES) {
 		# to the English translation which got processed right
 		# before:
 		if ($data{'description-md5'}) {
-		    # The short description is a nice fallback:
-		    my $description = $data{'description'};
                     my $d = Packages::DBI::Descriptions->retrieve(
                         md5  => $data{'description-md5'},
                         lang => 'en',
                     );
-                    $data{'description'} = $d->descr if $d;
+		    # The short description is a nice fallback:
+                    $data{'description'}
+                        = $d ? $d->descr : $data{description};
 		}
 
 		# we add some additional data here
@@ -189,15 +199,48 @@ for my $suite (@SUITES) {
 		$sources_packages{$src} .=
 			"$archive $suite $data{'package'} $data{'version'} $data{'architecture'}\000";
 		$data{archive} = $archive;
-		while (my ($key, $value) = each (%data)) {
-			next if $key eq 'package' or $key eq 'version' or $key eq 'architecture'
-				or $key eq 'maintainer';
-			print STDERR "WARN: $key ($suite/$archive/$data{package}/$data{architecture}\n" unless defined $value;
-			$data .= "$key\00$value\00";
-		}
-		$data =~ s/.$//s;
-		$packages_all_db{"$data{'package'} $data{'architecture'} $data{'version'}"}
-			= $data;
+
+                if ($pkg) {
+                    $pkg->stale(0);
+                    $pkg->update;
+                }
+                else {
+                    $pkg = Packages::DBI::Packages->insert(
+                        {   suite        => $suite,
+                            package      => $data{package},
+                            architecture => $data{architecture},
+                            version      => $data{version},
+                            stale        => 0
+                        }
+                    );
+                }
+
+                while ( my ( $key, $value ) = each(%data) ) {
+                    next if $key eq 'package';
+                    next if $key eq 'version';
+                    next if $key eq 'architecture';
+                    print STDERR
+                        "WARN: $key ($suite/$archive/$data{package}/$data{architecture}\n"
+                        unless defined $value;
+                    my $p = Packages::DBI::PackageProperties->retrieve(
+                        package => $pkg->id,
+                        name    => $key
+                    );
+                    if ($p) {
+                        $p->value($value) unless $p->value eq $value;
+                        $p->stale(0);
+                        $p->update;
+                    }
+                    else {
+                        Packages::DBI::PackageProperties->insert(
+                            {   package => $pkg->id,
+                                name    => $key,
+                                value   => $value,
+                                stale   => 0
+                            }
+                        );
+                    }
+                }
 	}
     }
 
@@ -207,9 +250,11 @@ for my $suite (@SUITES) {
 	print NAMES "$_\n";
     }
     close NAMES;
-
-    untie %packages_all_db;
 }
+
+# delete stale properties/packages
+Packages::DBI->db_Main->do('delete from package_properties where stale');
+Packages::DBI->db_Main->do('delete from packages where stale');
 
 print "Writing databases...\n";
 my %packages_small_db;
@@ -372,8 +417,6 @@ store \%priorities, "$DBDIR/priorities.info";
 rename("$DBDIR/packages_small.db.new", "$DBDIR/packages_small.db");
 rename("$DBDIR/sources_packages.db.new", "$DBDIR/sources_packages.db");
 for my $suite (@SUITES) {
-	rename("$DBDIR/packages_all_$suite.db.new",
-	       "$DBDIR/packages_all_$suite.db");
 	rename("$DBDIR/package_names_$suite.txt.new",
 	       "$DBDIR/package_names_$suite.txt");
 }

@@ -17,6 +17,7 @@ use Packages::Config qw( $DBDIR @SUITES @ARCHIVES @SECTIONS
 use Packages::CGI qw( :DEFAULT make_url make_search_url );
 use Packages::DB;
 use Packages::DBI::Descriptions;
+use Packages::DBI::Packages;
 use Packages::Search qw( :all );
 use Packages::Page ();
 use Packages::SrcPage ();
@@ -49,7 +50,7 @@ sub do_show {
     $contents{suite} = $suite;
     my $archive = $opts->{archive}[0] ||'';
     
-    our (%packages_all, %sources_all);
+    our (%sources_all);
     my (@results, @non_results);
     my $page = $opts->{source} ?
 	new Packages::SrcPage( $pkg ) :
@@ -58,9 +59,6 @@ sub do_show {
     
     my $st0 = new Benchmark;
     unless (@Packages::CGI::fatal_errors) {
-	tie %packages_all, 'DB_File', "$DBDIR/packages_all_$suite.db",
-	O_RDONLY, 0666, $DB_BTREE
-	    or die "couldn't tie DB $DBDIR/packages_all_$suite.db: $!";
 	tie %sources_all, 'DB_File', "$DBDIR/sources_all_$suite.db",
 	O_RDONLY, 0666, $DB_BTREE
 	    or die "couldn't tie DB $DBDIR/sources_all_$suite.db: $!";
@@ -95,11 +93,13 @@ sub do_show {
 			    $priority, $version, undef, $provided_by) = @$entry;
 			
 			if ($arch ne 'virtual') {
-			    my %data = split /\000/, $packages_all{"$pkg $arch $version"};
-			    $data{package} = $pkg;
-			    $data{architecture} = $arch;
-			    $data{version} = $version;
-			    $page->merge_package(\%data)
+                            my $pkg_obj = Packages::DBI::Packages->retrieve(
+                                suite        => $suite,
+                                package      => $pkg,
+                                architecture => $arch,
+                                version      => $version
+                            );
+			    $page->merge_package($pkg_obj)
 				or debug( "Merging $pkg $arch $version FAILED", 2 ) if DEBUG;
 			} else {
 			    $page->add_provided_by([split /\s+/, $provided_by]);

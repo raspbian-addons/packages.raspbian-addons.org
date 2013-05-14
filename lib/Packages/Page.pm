@@ -102,54 +102,53 @@ our @STORE_ALL = qw( version source source-version installed-size size
 our @DEP_FIELDS = qw( depends pre-depends recommends suggests enhances
 		      provides conflicts );
 sub merge_package {
-    my ($self, $data) = @_;
+    my ($self, $obj) = @_;
 
-    ($data->{package} && $data->{version} && $data->{architecture}) || return;
-    $self->{package} ||= $data->{package};
-    ($self->{package} eq $data->{package}) || return;
-    debug( "merge package $data->{package}/$data->{version}/$data->{architecture} into $self (".($self->{newest}||'').")", 2 ) if DEBUG;
+    $self->{package} ||= $obj->package;
+    ($self->{package} eq $obj->package) || return;
+    debug( "merge package $obj->as_string into $self (" . ( $self->{newest} || '' ) . ")", 2) if DEBUG;
 
-    (my $version = $data->{version}) =~ s/\+b\d+$//o; # strip binNMU number
+    (my $version = $obj->version) =~ s/\+b\d+$//o; # strip binNMU number
     unless ($self->{newest}) {
-	debug( "package $data->{package}/$data->{version}/$data->{architecture} is first to merge", 3 ) if DEBUG;
+	debug( "package $obj is first to merge", 3 ) if DEBUG;
 	foreach my $key (@TAKE_NEWEST) {
-	    $self->{data}{$key} = $data->{$key};
+	    $self->{data}{$key} = $obj->prop_value($key);
 	}
 	foreach my $key (@STORE_ALL) {
-	    $self->{versions}{$data->{architecture}}{$key}
-	    = $data->{$key};
+	    $self->{versions}{$obj->architecture}{$key}
+	    = $obj->prop_value($key);
 	}
 	foreach my $key (@DEP_FIELDS) {
-	    $self->normalize_dependencies($key, $data);
+	    $self->normalize_dependencies($key, $obj);
 	}
 	$self->{newest} = $version;
 	
         return 1;
     }
 
-    debug( "package $data->{package}/$data->{version}/$data->{architecture} is subsequent merge", 3 ) if DEBUG;
+    debug( "package $obj is subsequent merge", 3 ) if DEBUG;
     my $is_newest;
     my $cmp = version_cmp( $version, $self->{newest} );
     # packages from the central archive are preferred over all
     # others with the same version number but from other archives
     if ($is_newest = ($cmp > 0)
-    		|| (!$cmp && ($data->{archive} eq 'us') && ($self->{data}{archive} ne 'us'))) {
+    		|| (!$cmp && ($obj->prop_value('archive') eq 'us') && ($self->{data}{archive} ne 'us'))) {
 	$self->{newest} = $version;
 	foreach my $key (@TAKE_NEWEST) {
-	    $self->{data}{$key} = $data->{$key};
+	    $self->{data}{$key} = $obj->prop_value($key);
 	}
     }
     debug( "is_newest= ".($is_newest||0), 3 ) if DEBUG;
-    if (!$self->{versions}{$data->{architecture}}
+    if (!$self->{versions}{$obj->architecture}
 	|| $is_newest
-	|| (version_cmp( $data->{version},
-			 $self->{versions}{$data->{architecture}}{version} ) > 0)) {
+	|| (version_cmp( $obj->version,
+			 $self->{versions}{$obj->architecture}{version} ) > 0)) {
 	foreach my $key (@STORE_ALL) {
-	    $self->{versions}{$data->{architecture}}{$key}
-	    = $data->{$key};
+	    $self->{versions}{$obj->architecture}{$key}
+	    = $obj->prop_value($key);
 	}
 	foreach my $key (@DEP_FIELDS) {
-	    $self->normalize_dependencies($key, $data);
+	    $self->normalize_dependencies($key, $obj);
 	}
     }
     
@@ -157,10 +156,10 @@ sub merge_package {
 }
 
 sub normalize_dependencies {
-    my ($self, $dep_field, $data) = @_;
+    my ($self, $dep_field, $obj) = @_;
 
-    my ($deps_norm, $deps) = parse_deps( $data->{$dep_field}||'' );
-    $self->{dep_fields}{$data->{architecture}}{$dep_field} =
+    my ($deps_norm, $deps) = parse_deps( $obj->prop_value($dep_field)||'' );
+    $self->{dep_fields}{$obj->architecture}{$dep_field} =
 	[ $deps_norm, $deps ];
 }
 
