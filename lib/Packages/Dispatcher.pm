@@ -64,7 +64,7 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
-    my %SUITES_ALIAS = ( oldtable => 'squeeze',
+    my %SUITES_ALIAS = ( oldstable => 'squeeze',
 			 stable => 'wheezy',
 			 testing => 'jessie',
 			 unstable => 'sid',
