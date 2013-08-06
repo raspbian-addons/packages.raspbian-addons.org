@@ -218,6 +218,9 @@ sub do_show {
 			build_deps( \%packages, $opts, $pkg,
 				    $page->get_dep_field('suggests'),
 				    'suggests', \%contents );
+			build_deps( \%packages, $opts, $pkg,
+				    $page->get_dep_field('enhances'),
+				    'enhances', \%contents );
 
 			#
 			# Download package
@@ -407,7 +410,7 @@ sub providers {
 sub build_deps {
     my ( $packages, $opts, $pkg, $relations, $type, $contents) = @_;
     my %dep_type = ('depends' => 'dep', 'recommends' => 'rec', 
-		    'suggests' => 'sug', 'build-depends' => 'adep',
+		    'suggests' => 'sug', 'enhances' => 'enh', 'build-depends' => 'adep',
 		    'build-depends-indep' => 'idep' );
     my $suite = $opts->{suite}[0];
     my $cat = $opts->{cat};
