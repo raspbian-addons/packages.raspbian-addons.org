@@ -192,7 +192,8 @@ div#pothers {
 , #pdeplegend ul.uladep
 , #pdeplegend ul.ulrec
 , #pdeplegend ul.ulidep
-, #pdeplegend ul.ulsug {
+, #pdeplegend ul.ulsug
+, #pdeplegend ul.ulenh {
 	margin-left: 0.5em;
 	list-style-position: inside;
 }
@@ -208,6 +209,10 @@ div#pothers {
 #pdeps ul.ulsug {
 	list-style-type: circle;
 	list-style-image: url(Pics/sug.png);
+}
+#pdeps ul.ulenh {
+	list-style-type: circle;
+	list-style-image: url(Pics/enh.png);
 }
 #pdownload {
 	text-align: left;
