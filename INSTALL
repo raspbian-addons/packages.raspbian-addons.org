@@ -31,6 +31,7 @@ case, you might have to adjust some of the steps.
      /usr/share/keyrings/debian-archive-keyring.gpg)
 6) run `./bin/setup-site <topdir> <site>'
    (e.g. `./bin/setup-site /srv/packages.debian.org packages.debian.org')
+   (<topdir> is the directory where the sources were cloned)
 7) create a cache directory for the compiled templates, it needs to be writable
    by apache (i.e. on default lenny by www-data). Default location is
    <topdir>/cache. So
