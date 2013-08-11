@@ -51,7 +51,7 @@ for my $archive (@ARCHIVES) {
 		print "\tseems not to exist, skipping...\n";
 		next;
 	}
-	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/source/Sources.gz";
+	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/source/Sources.gz"
 	        .     " $TOPDIR/archive/$archive/$suite/updates/$what/source/Sources.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
