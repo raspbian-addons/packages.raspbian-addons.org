@@ -74,16 +74,8 @@
 
    Alias /cgi-bin/ %TOPDIR%/cgi-bin/
   
-   PerlModule ModPerl::Registry
-   PerlTaintCheck On
-   PerlRequire %TOPDIR%/bin/mod_perl-startup
-   PerlSwitches -T
    <Location /cgi-bin/>
-      SetHandler perl-script
-      PerlInitHandler Apache2::Reload
-      PerlHandler ModPerl::Registry
       Options +ExecCGI
-      PerlSendHeader On
       allow from all
    </Location>
 
@@ -101,7 +93,7 @@
    RewriteRule ^/unstable/newpkg_([a-z]+) /unstable/$1/newpkg [R=permanent,L]
 
    # we never want to rewrite those URLs
-   RewriteRule ^/cgi-bin/dispatcher.pl - [L]
+   RewriteRule ^/cgi-bin/dispatcher.fcgi - [L]
    RewriteRule ^/changelogs/ - [L]
    RewriteRule ^/Pics/ - [L]
    RewriteRule ^/about/ - [L]
@@ -128,7 +120,7 @@
    RewriteCond %{REQUEST_URI} !^/cgi-bin/search_(contents|packages)\.pl$
    RewriteRule ^/([^/]+)$		/search?keywords=$1 [R,L,NE]
 
-   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
+   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.fcgi/$1 [L,PT]
 
 #  In case we need to disable the site again
 # 
