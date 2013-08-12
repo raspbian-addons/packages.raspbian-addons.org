@@ -7,6 +7,6 @@ use warnings;
 use lib '../lib';
 use Packages::Dispatcher;
 
-&Packages::Dispatcher::do_dispatch();
+Packages::Dispatcher::fastcgi_dispatch();
 
 # vim: ts=8 sw=4
