@@ -22,7 +22,7 @@ package Packages::Dispatcher;
 use strict;
 use warnings;
 
-use CGI;
+use CGI::Fast;
 use POSIX;
 use File::Basename;
 use Template;
@@ -51,6 +51,11 @@ use Packages::DoNewPkg;
 use Packages::DoDownload;
 use Packages::DoFilelist;
 
+sub fastcgi_dispatch {
+    while (my $q = new CGI::Fast) {
+        do_dispatch( $q );
+    }
+}
 
 sub do_dispatch {
 
@@ -72,16 +77,7 @@ sub do_dispatch {
 			 '5.0' => 'lenny' );
 
     # Read in all the variables set by the form
-    my $input;
-    if ($ARGV[0] && ($ARGV[0] eq 'php')) {
-	$input = new CGI(\*STDIN);
-    } else {
-	$input = new CGI;
-    }
-    my $cgi_error = $input->cgi_error;
-    if ($cgi_error) {
-	fatal_error( "Error parsing the request", $cgi_error );
-    }
+    my $input = shift;
 
     my $pet0 = new Benchmark;
     my $tet0 = new Benchmark;
@@ -105,7 +101,7 @@ sub do_dispatch {
 	if ($client_timestamp >= $last_modified) {
 	    # we are not modified since asked -> return "304 Not Modified"
 	    print $input->header(-status => 304);
-	    exit;
+	    return;
 	}
     }
 
