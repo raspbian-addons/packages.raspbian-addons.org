@@ -80,6 +80,15 @@
       allow from all
    </Location>
 
+   <LocationMatch /stable/allpackages.*>
+      SetEnvIfNoCase User-Agent check_http keep_out                                                                                                                                                    ErrorDocument 403 "what are you doing here? - tell us webmaster@debian.org"
+      <limit GET>
+         Order Allow,Deny
+         Allow from all
+         Deny from env=keep_out
+      </limit>
+   </LocationMatch>
+
    BrowserMatch reportbug is_reportbug
 
    RewriteEngine on
