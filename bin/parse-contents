@@ -51,7 +51,8 @@ my @sections = @SECTIONS;
 push(@sections, "");
 
 my %debports_hash;
-@debports_hash{qw( alpha avr32 armhf hppa m68k powerpcspe sh4 sparc64 )} = ();
+# copy from config.sh ${arch_debports}
+@debports_hash{qw( alpha arm64 hppa m68k powerpcspe ppc64 sh4 sparc64 x32 )} = ();
 
 $DBDIR .= "/contents";
 mkdirp( $DBDIR );
