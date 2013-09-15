@@ -7,7 +7,7 @@ cd ${archivedir}
 
 # Main archive
 #
-architectures="alpha avr32 armhf hppa m68k powerpcspe sh4 sparc64"
+architectures=${arch_debports}
 
 for dist in sid experimental
   do
