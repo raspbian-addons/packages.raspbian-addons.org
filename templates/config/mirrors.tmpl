@@ -160,7 +160,7 @@ mirrors = {
 	debports => {
 		url => 'http://www.debian-ports.org/',
 		title => g('ports of packages to architectures not yet or not anymore available in Debian'),
-		mirror_list => 'http://wiki.debian.org/DebianPorts/Mirrors',
+		mirror_list => 'http://www.debian-ports.org/mirrors',
 		unofficial_port => {
 			alpha => {
 				url_name => 'alpha',
@@ -192,15 +192,19 @@ mirrors = {
 			},
 		},
 		north_america => [
-			"www.gtlib.gatech.edu/pub/gnuab/debian",
+			"opensource.exmeritus.com/mirror/debian-ports/",
+		],
+		south_america => [
+			"mirrors.fe.up.pt/debian-ports/",
 		],
 		europa => [
-			"ftp.debian-ports.org/debian",
-			"ftp.de.debian.org/debian-ports",
-			"ftp.ch.debian.org/debian-ports",
+		#	"ftp.debian-ports.org/debian",
+			"ftp.de.debian.org/debian-ports/",
+			"debian.advalem.net/debian-ports/",
 		],
 		asia => [
-			"debian.nctu.edu.tw/debian-ports",
+			"ftp.kr.debian.org/debian-ports/",
+			"debian.nctu.edu.tw/debian-ports/",
 		],
 	},
 }
