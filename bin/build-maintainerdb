@@ -36,8 +36,11 @@ if (!open (C, "../config.sh")) {
     exit 0;
 }
 my $topdir = "/org/packages.debian.org";
+my $localdir = "/srv/mirrors/debian/";
+
 while (<C>) {
     $topdir = $1 if (/^\s*topdir="?(.*)"?\s*$/);
+    $localdir = $1 if (/^\s*localdir="?(.*)"?\s*$/);
 }
 close (C);
 
@@ -45,7 +48,7 @@ close (C);
 my $ptsdomain = "packages.qa.debian.org";
 
 
-my $maintainerfile = "$topdir/../mirrors/ftp.debian.org/indices/Maintainers";
+my $maintainerfile = "$localdir/indices/Maintainers";
 my $maintainerdb = "$topdir/conf/maintainer";
 my $overridefile = "$topdir/conf/maintainerdb.override";
 my $rblfile = "$topdir/conf/rbllist";
