@@ -1,0 +1,4562 @@
+# Volkan Gezer <volkangezer@gmail.com>, 2013.
+# Mert Dirik <mertdirik@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
+"PO-Revision-Date: 2013-12-03 01:27+0200\n"
+"Project-Id-Version: \n"
+"Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.7\n"
+"POT-Creation-Date: \n"
+
+#. Facet: accessibility, short desc
+#: files/debtags/vocabulary
+msgid "Accessibility Support"
+msgstr "Erişilebilirlik Desteği"
+
+#. Facet: accessibility, long desc
+#: files/debtags/vocabulary
+msgid "Accessibility support provided by the package"
+msgstr "Paketin sağladığı erişilebilirlik desteği"
+
+#. Tag: accessibility::input, short desc
+#: files/debtags/vocabulary
+msgid "Input Systems"
+msgstr "Girdi Sistemleri"
+
+#. Tag: accessibility::input, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Applies to input methods for non-latin languages as well as special input "
+"systems."
+msgstr ""
+"Latin olmayan dillerin yanı sıra özel giriş sistemleri için giriş "
+"yöntemlerine uygulanır."
+
+#. Tag: accessibility::ocr, short desc
+#: files/debtags/vocabulary
+msgid "Text Recognition (OCR)"
+msgstr "Yazı Tanıma (OCR)"
+
+#. Tag: accessibility::ocr, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The translation of text images into machine-editable text by means of "
+"Optical Character Recognition (OCR)."
+msgstr ""
+"Optik Karakter Tanıma (OCR) metin resimlerinin makine ile düzenlenebilir "
+"metin çevrimi."
+
+#. Tag: accessibility::screen-magnify, short desc
+#: files/debtags/vocabulary
+msgid "Screen Magnification"
+msgstr "Ekran Büyütme"
+
+#. Tag: accessibility::screen-magnify, long desc
+#: files/debtags/vocabulary
+msgid "Displays enlarged screen content."
+msgstr "Büyütülmüş ekran içeriğini görüntüler."
+
+#. Tag: accessibility::screen-reader, short desc
+#: files/debtags/vocabulary
+msgid "Screen Reading"
+msgstr "Ekran Okuma"
+
+#. Tag: accessibility::screen-reader, long desc
+#: files/debtags/vocabulary
+msgid "Converts text into speech."
+msgstr "Konuşmayı metne dönüştürür."
+
+#. Tag: accessibility::speech, short desc
+#. Tag: sound::speech, short desc
+#: files/debtags/vocabulary
+msgid "Speech Synthesis"
+msgstr "Konuşma Sentezi"
+
+#. Tag: accessibility::speech, long desc
+#: files/debtags/vocabulary
+msgid "The artificial production of human speech."
+msgstr "İnsan konuşmasının yapay üretimi."
+
+#. Tag: accessibility::speech-recognition, short desc
+#: files/debtags/vocabulary
+msgid "Speech Recognition"
+msgstr "Konuşma Tanıma"
+
+#. Tag: accessibility::speech-recognition, long desc
+#: files/debtags/vocabulary
+msgid "Converts speech into text."
+msgstr "Konuşmayı metne dönüştürür."
+
+#. Tag: accessibility::TODO, short desc
+#. Tag: admin::TODO, short desc
+#. Tag: culture::TODO, short desc
+#. Tag: devel::TODO, short desc
+#. Tag: field::TODO, short desc
+#. Tag: game::TODO, short desc
+#. Tag: hardware::TODO, short desc
+#. Tag: made-of::TODO, short desc
+#. Tag: interface::TODO, short desc
+#. Tag: implemented-in::TODO, short desc
+#. Tag: junior::TODO, short desc
+#. Tag: mail::TODO, short desc
+#. Tag: office::TODO, short desc
+#. Tag: works-with::TODO, short desc
+#. Tag: works-with-format::TODO, short desc
+#. Tag: scope::TODO, short desc
+#. Tag: role::TODO, short desc
+#. Tag: security::TODO, short desc
+#. Tag: sound::TODO, short desc
+#. Tag: special::TODO, short desc
+#. Tag: suite::TODO, short desc
+#. Tag: protocol::TODO, short desc
+#. Tag: uitoolkit::TODO, short desc
+#. Tag: use::TODO, short desc
+#. Tag: web::TODO, short desc
+#. Tag: network::TODO, short desc
+#. Tag: x11::TODO, short desc
+#: files/debtags/vocabulary
+msgid "Need an extra tag"
+msgstr "Ek etiket gerektiriyor"
+
+#. Tag: accessibility::TODO, long desc
+#. Tag: admin::TODO, long desc
+#. Tag: culture::TODO, long desc
+#. Tag: devel::TODO, long desc
+#. Tag: field::TODO, long desc
+#. Tag: game::TODO, long desc
+#. Tag: hardware::TODO, long desc
+#. Tag: made-of::TODO, long desc
+#. Tag: interface::TODO, long desc
+#. Tag: implemented-in::TODO, long desc
+#. Tag: junior::TODO, long desc
+#. Tag: mail::TODO, long desc
+#. Tag: office::TODO, long desc
+#. Tag: works-with::TODO, long desc
+#. Tag: works-with-format::TODO, long desc
+#. Tag: scope::TODO, long desc
+#. Tag: role::TODO, long desc
+#. Tag: security::TODO, long desc
+#. Tag: sound::TODO, long desc
+#. Tag: special::TODO, long desc
+#. Tag: suite::TODO, long desc
+#. Tag: protocol::TODO, long desc
+#. Tag: uitoolkit::TODO, long desc
+#. Tag: use::TODO, long desc
+#. Tag: web::TODO, long desc
+#. Tag: network::TODO, long desc
+#. Tag: x11::TODO, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The package can be categorised along this facet, but the right tag for it is "
+"missing.\n"
+"Mark a package with this tag to signal the vocabulary maintainers of cases "
+"where the current tag set is lacking."
+msgstr ""
+"Paket bu model boyunca kategoriye konulabilir ancak bununla ilgili geçerli "
+"etiket eksik.\n"
+"Geçerli etiket kümesinin eksik olduğu durumlarda sözcük geliştiricilerine "
+"bildirmek için bu etiketle bir paket işaretleyin."
+
+#. Facet: admin, short desc
+#: files/debtags/vocabulary
+msgid "System Administration"
+msgstr "Sistem Yönetimi"
+
+#. Facet: admin, long desc
+#: files/debtags/vocabulary
+msgid "Which system administration activities the package may perform"
+msgstr "Paketin yapabileceği sistem yönetim etkinlikleri"
+
+#. Tag: admin::accounting, short desc
+#: files/debtags/vocabulary
+msgid "Accounting"
+msgstr "Muhasebe"
+
+#. Tag: admin::automation, short desc
+#: files/debtags/vocabulary
+msgid "Automation and Scheduling"
+msgstr "Otomasyon ve Zamanlama"
+
+#. Tag: admin::automation, long desc
+#: files/debtags/vocabulary
+msgid "Automating the execution of software in the system."
+msgstr "Sistemdeki yazılım çalıştırılmasını otomatikleştirme."
+
+#. Tag: admin::backup, short desc
+#: files/debtags/vocabulary
+msgid "Backup and Restoration"
+msgstr "Yedekleme ve Geri Yükleme"
+
+#. Tag: admin::benchmarking, short desc
+#: files/debtags/vocabulary
+msgid "Benchmarking"
+msgstr "Kıyaslama"
+
+#. Tag: admin::boot, short desc
+#: files/debtags/vocabulary
+msgid "System Boot"
+msgstr "Sistem Önyükleme"
+
+#. Tag: admin::cluster, short desc
+#: files/debtags/vocabulary
+msgid "Clustering"
+msgstr "Kümeleme"
+
+#. Tag: admin::configuring, short desc
+#: files/debtags/vocabulary
+msgid "Configuration Tool"
+msgstr "Yapılandırma Aracı"
+
+#. Tag: admin::file-distribution, short desc
+#: files/debtags/vocabulary
+msgid "File Distribution"
+msgstr "Dosya Dağıtımı"
+
+#. Tag: admin::filesystem, short desc
+#: files/debtags/vocabulary
+msgid "Filesystem Tool"
+msgstr "Dosya Sistemi Aracı"
+
+#. Tag: admin::filesystem, long desc
+#: files/debtags/vocabulary
+msgid "Creation, maintenance, and use of filesystems"
+msgstr "Dosya sistemi oluşturma, bakımı ve kullanımı"
+
+#. Tag: admin::forensics, short desc
+#: files/debtags/vocabulary
+msgid "Forensics and Recovery"
+msgstr "Adli Bilişim ve Kurtarma"
+
+#. Tag: admin::forensics, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Recovering lost or damaged data. This tag will be split into admin::recovery "
+"and security::forensics."
+msgstr ""
+"Kayıp veya hasarlı veriyi kurtarma. Bu etiket admin::recovery ve security::"
+"forensics olarak ayrılacaktır."
+
+#. Tag: admin::hardware, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Support"
+msgstr "Donanım Desteği"
+
+#. Tag: admin::install, short desc
+#: files/debtags/vocabulary
+msgid "System Installation"
+msgstr "Sistem Kurulumu"
+
+#. Tag: admin::issuetracker, short desc
+#: files/debtags/vocabulary
+msgid "Issue Tracker"
+msgstr "Sorun Takipçisi"
+
+#. Tag: admin::kernel, short desc
+#: files/debtags/vocabulary
+msgid "Kernel or Modules"
+msgstr "Çekirdek veya Modüller"
+
+#. Tag: admin::logging, short desc
+#: files/debtags/vocabulary
+msgid "Logging"
+msgstr "Günlük Tutma"
+
+#. Tag: admin::login, short desc
+#. Tag: use::login, short desc
+#: files/debtags/vocabulary
+msgid "Login"
+msgstr "Giriş"
+
+#. Tag: admin::login, long desc
+#: files/debtags/vocabulary
+msgid "Logging into the system"
+msgstr "Sisteme giriş"
+
+#. Tag: admin::monitoring, short desc
+#. Tag: use::monitor, short desc
+#: files/debtags/vocabulary
+msgid "Monitoring"
+msgstr "Gözlemleme"
+
+#. Tag: admin::package-management, short desc
+#: files/debtags/vocabulary
+msgid "Package Management"
+msgstr "Paket Yönetimi"
+
+#. Tag: admin::power-management, short desc
+#. Tag: hardware::power, short desc
+#: files/debtags/vocabulary
+msgid "Power Management"
+msgstr "Güç Yönetimi"
+
+#. Tag: admin::recovery, short desc
+#: files/debtags/vocabulary
+msgid "Data Recovery"
+msgstr "Veri Kurtarma"
+
+#. Tag: admin::user-management, short desc
+#: files/debtags/vocabulary
+msgid "User Management"
+msgstr "Kullanıcı Yönetimi"
+
+#. Tag: admin::virtualization, short desc
+#: files/debtags/vocabulary
+msgid "Virtualization"
+msgstr "Sanallaştırma"
+
+#. Tag: admin::virtualization, long desc
+#: files/debtags/vocabulary
+msgid ""
+"This is not hardware emulation, but rather those facilities that allow to "
+"create many isolated compartments inside the same system."
+msgstr ""
+"Bu donanım öykünmesi değildir, aynı sistem içerisinde birbirinden izole "
+"bölümler oluşturmaya izin veren araçlardır."
+
+#. Facet: biology, short desc
+#. Tag: field::biology, short desc
+#: files/debtags/vocabulary
+msgid "Biology"
+msgstr "Biyoloji"
+
+#. Facet: biology, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the field of biology"
+msgstr "Paketin biyoloji ile ilgisi"
+
+#. Tag: biology::emboss, short desc
+#: files/debtags/vocabulary
+msgid "EMBOSS"
+msgstr "EMBOSS"
+
+#. Tag: biology::emboss, long desc
+#: files/debtags/vocabulary
+msgid "Packages related to the European Molecular Biology Open Software Suite."
+msgstr "Avrupa Moleküler Biyoloji Açık Yazılım Seti ile ilgili paketler."
+
+#. Tag: biology::format:aln, short desc
+#: files/debtags/vocabulary
+msgid "Clustal/ALN"
+msgstr "Clustal/ALN"
+
+#. Tag: biology::format:aln, long desc
+#: files/debtags/vocabulary
+msgid "Used in multiple alignment of biological sequences."
+msgstr "Biyolojik dizilerin birden fazla hizalamasında kullanılır."
+
+#. Tag: biology::format:nexus, short desc
+#: files/debtags/vocabulary
+msgid "Nexus"
+msgstr "Bağ"
+
+#. Tag: biology::format:nexus, long desc
+#: files/debtags/vocabulary
+msgid "Popular format for phylogenetic trees."
+msgstr "Filogenetik ağaçlar için yaygın biçim."
+
+#. Tag: biology::nuceleic-acids, short desc
+#: files/debtags/vocabulary
+msgid "Nucleic Acids"
+msgstr "Nükleik Asitler"
+
+#. Tag: biology::nuceleic-acids, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that works with sequences of nucleic acids: DNA, RNA but also non-"
+"natural nucleic acids such as PNA or LNA."
+msgstr ""
+"Nükleik asit dizileri ile çalışan yazılımlar: DNA, RNA, fakat aynı zamanda "
+"LNA veya PNA gibi doğal olmayan nükleik asitler."
+
+#. Tag: biology::peptidic, short desc
+#: files/debtags/vocabulary
+msgid "Proteins"
+msgstr "Proteinler"
+
+#. Tag: biology::peptidic, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that works with sequences of aminoacids: peptides and proteins."
+msgstr ""
+"Aminoasitlerin dizilimleri ile çalışan yazılımlar: peptidler ve proteinler."
+
+#. Facet: culture, short desc
+#: files/debtags/vocabulary
+msgid "Culture"
+msgstr "Kültür"
+
+#. Facet: culture, long desc
+#: files/debtags/vocabulary
+msgid "The culture for which the package provides special support"
+msgstr "Paketin özel destek sağladığı kültür"
+
+#. Tag: culture::afrikaans, short desc
+#: files/debtags/vocabulary
+msgid "Afrikaans"
+msgstr "Afrika Dili"
+
+#. Tag: culture::arabic, short desc
+#. Tag: iso15924::arab, short desc
+#: files/debtags/vocabulary
+msgid "Arabic"
+msgstr "Arapça"
+
+#. Tag: culture::basque, short desc
+#: files/debtags/vocabulary
+msgid "Basque"
+msgstr "Bask Dili"
+
+#. Tag: culture::bengali, short desc
+#. Tag: iso15924::beng, short desc
+#: files/debtags/vocabulary
+msgid "Bengali"
+msgstr "Bengalce"
+
+#. Tag: culture::bokmaal, short desc
+#: files/debtags/vocabulary
+msgid "Norwegian Bokmaal"
+msgstr "Norveç Bokmaal"
+
+#. Tag: culture::bosnian, short desc
+#: files/debtags/vocabulary
+msgid "Bosnian"
+msgstr "Boşnakça"
+
+#. Tag: culture::brazilian, short desc
+#: files/debtags/vocabulary
+msgid "Brazilian"
+msgstr "Brezilya"
+
+#. Tag: culture::british, short desc
+#: files/debtags/vocabulary
+msgid "British"
+msgstr "İngiliz"
+
+#. Tag: culture::bulgarian, short desc
+#: files/debtags/vocabulary
+msgid "Bulgarian"
+msgstr "Bulgarca"
+
+#. Tag: culture::catalan, short desc
+#: files/debtags/vocabulary
+msgid "Catalan"
+msgstr "Katalanca"
+
+#. Tag: culture::chinese, short desc
+#: files/debtags/vocabulary
+msgid "Chinese"
+msgstr "Çince"
+
+#. Tag: culture::czech, short desc
+#: files/debtags/vocabulary
+msgid "Czech"
+msgstr "Çekçe"
+
+#. Tag: culture::croatian, short desc
+#: files/debtags/vocabulary
+msgid "Croatian"
+msgstr "Hırvatça"
+
+#. Tag: culture::danish, short desc
+#: files/debtags/vocabulary
+msgid "Danish"
+msgstr "Danimarka Dili"
+
+#. Tag: culture::dutch, short desc
+#: files/debtags/vocabulary
+msgid "Dutch"
+msgstr "Flamanca"
+
+#. Tag: culture::esperanto, short desc
+#: files/debtags/vocabulary
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#. Tag: culture::estonian, short desc
+#: files/debtags/vocabulary
+msgid "Estonian"
+msgstr "Estonya Dili"
+
+#. Tag: culture::faroese, short desc
+#: files/debtags/vocabulary
+msgid "Faroese"
+msgstr "Faroese"
+
+#. Tag: culture::farsi, short desc
+#: files/debtags/vocabulary
+msgid "Farsi"
+msgstr "Farsça"
+
+#. Tag: culture::finnish, short desc
+#: files/debtags/vocabulary
+msgid "Finnish"
+msgstr "Fince"
+
+#. Tag: culture::french, short desc
+#: files/debtags/vocabulary
+msgid "French"
+msgstr "Fransızca"
+
+#. Tag: culture::german, short desc
+#: files/debtags/vocabulary
+msgid "German"
+msgstr "Almanca"
+
+#. Tag: culture::greek, short desc
+#. Tag: iso15924::grek, short desc
+#: files/debtags/vocabulary
+msgid "Greek"
+msgstr "Yunanca"
+
+#. Tag: culture::hebrew, short desc
+#. Tag: iso15924::hebr, short desc
+#: files/debtags/vocabulary
+msgid "Hebrew"
+msgstr "İbranice"
+
+#. Tag: culture::hindi, short desc
+#: files/debtags/vocabulary
+msgid "Hindi"
+msgstr "Hintçe"
+
+#. Tag: culture::hungarian, short desc
+#: files/debtags/vocabulary
+msgid "Hungarian"
+msgstr "Macarca"
+
+#. Tag: culture::icelandic, short desc
+#: files/debtags/vocabulary
+msgid "Icelandic"
+msgstr "İzlanda Dili"
+
+#. Tag: culture::irish, short desc
+#: files/debtags/vocabulary
+msgid "Irish (Gaeilge)"
+msgstr "İrlanda (Gaeilge)"
+
+#. Tag: culture::italian, short desc
+#: files/debtags/vocabulary
+msgid "Italian"
+msgstr "İtalyanca"
+
+#. Tag: culture::japanese, short desc
+#. Tag: iso15924::jpan, short desc
+#: files/debtags/vocabulary
+msgid "Japanese"
+msgstr "Japonca"
+
+#. Tag: culture::korean, short desc
+#. Tag: iso15924::kore, short desc
+#: files/debtags/vocabulary
+msgid "Korean"
+msgstr "Korece"
+
+#. Tag: culture::latvian, short desc
+#: files/debtags/vocabulary
+msgid "Latvian"
+msgstr "Letonca"
+
+#. Tag: culture::mongolian, short desc
+#. Tag: iso15924::mong, short desc
+#: files/debtags/vocabulary
+msgid "Mongolian"
+msgstr "Moğolca"
+
+#. Tag: culture::nynorsk, short desc
+#: files/debtags/vocabulary
+msgid "Norwegian Nynorsk"
+msgstr "Norveççe Nynorsk"
+
+#. Tag: culture::norwegian, short desc
+#: files/debtags/vocabulary
+msgid "Norwegian"
+msgstr "Norveççe"
+
+#. Tag: culture::polish, short desc
+#: files/debtags/vocabulary
+msgid "Polish"
+msgstr "Lehçe"
+
+#. Tag: culture::portuguese, short desc
+#: files/debtags/vocabulary
+msgid "Portuguese"
+msgstr "Portekizce"
+
+#. Tag: culture::punjabi, short desc
+#: files/debtags/vocabulary
+msgid "Punjabi"
+msgstr "Punjabi"
+
+#. Tag: culture::romanian, short desc
+#: files/debtags/vocabulary
+msgid "Romanian"
+msgstr "Romence"
+
+#. Tag: culture::russian, short desc
+#: files/debtags/vocabulary
+msgid "Russian"
+msgstr "Rusça"
+
+#. Tag: culture::serbian, short desc
+#: files/debtags/vocabulary
+msgid "Serbian"
+msgstr "Sırpça"
+
+#. Tag: culture::slovak, short desc
+#: files/debtags/vocabulary
+msgid "Slovak"
+msgstr "Slovakça"
+
+#. Tag: culture::spanish, short desc
+#: files/debtags/vocabulary
+msgid "Spanish"
+msgstr "İspanyolca"
+
+#. Tag: culture::swedish, short desc
+#: files/debtags/vocabulary
+msgid "Swedish"
+msgstr "İsveççe"
+
+#. Tag: culture::taiwanese, short desc
+#: files/debtags/vocabulary
+msgid "Taiwanese"
+msgstr "Tayvanca"
+
+#. Tag: culture::tajik, short desc
+#: files/debtags/vocabulary
+msgid "Tajik"
+msgstr "Tacikçe"
+
+#. Tag: culture::tamil, short desc
+#. Tag: iso15924::taml, short desc
+#: files/debtags/vocabulary
+msgid "Tamil"
+msgstr "Tamil Dili"
+
+#. Tag: culture::thai, short desc
+#. Tag: iso15924::thai, short desc
+#: files/debtags/vocabulary
+msgid "Thai"
+msgstr "Tay Dili"
+
+#. Tag: culture::turkish, short desc
+#: files/debtags/vocabulary
+msgid "Turkish"
+msgstr "Türkçe"
+
+#. Tag: culture::ukrainian, short desc
+#: files/debtags/vocabulary
+msgid "Ukrainian"
+msgstr "Ukrayna Dili"
+
+#. Tag: culture::uzbek, short desc
+#: files/debtags/vocabulary
+msgid "Uzbek"
+msgstr "Özbekçe"
+
+#. Tag: culture::welsh, short desc
+#: files/debtags/vocabulary
+msgid "Welsh"
+msgstr "Galce"
+
+#. Facet: devel, short desc
+#: files/debtags/vocabulary
+msgid "Software Development"
+msgstr "Yazılım Geliştirme"
+
+#. Facet: devel, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the field of software development"
+msgstr "Paketin yazılım geliştirme ile ilgisi"
+
+#. Tag: devel::bugtracker, short desc
+#: files/debtags/vocabulary
+msgid "Bug Tracking"
+msgstr "Hata Takip"
+
+#. Tag: devel::buildtools, short desc
+#: files/debtags/vocabulary
+msgid "Build Tool"
+msgstr "İnşa Aracı"
+
+#. Tag: devel::code-generator, short desc
+#: files/debtags/vocabulary
+msgid "Code Generation"
+msgstr "Kod Oluşturma"
+
+#. Tag: devel::code-generator, long desc
+#: files/debtags/vocabulary
+msgid "Parser, lexer and other code generators"
+msgstr "Ayrıştırıcı, sözlük analizcisi ve diğer kod oluşturucular"
+
+#. Tag: devel::compiler, short desc
+#: files/debtags/vocabulary
+msgid "Compiler"
+msgstr "Derleyici"
+
+#. Tag: devel::debian, short desc
+#. Tag: suite::debian, short desc
+#: files/debtags/vocabulary
+msgid "Debian"
+msgstr "Debian"
+
+#. Tag: devel::debian, long desc
+#: files/debtags/vocabulary
+msgid "Tools, documentation, etc. of use primarily to Debian developers."
+msgstr ""
+"Özellikle Debian geliştiricilerinin kullanımı için araçlar, belgelendirme, "
+"vb."
+
+#. Tag: devel::debugger, short desc
+#: files/debtags/vocabulary
+msgid "Debugging"
+msgstr "Hata Ayıklama"
+
+#. Tag: devel::doc, short desc
+#. Tag: role::documentation, short desc
+#: files/debtags/vocabulary
+msgid "Documentation"
+msgstr "Belgelendirme"
+
+#. Tag: devel::docsystem, short desc
+#: files/debtags/vocabulary
+msgid "Literate Programming"
+msgstr "Okur Programlama"
+
+#. Tag: devel::docsystem, long desc
+#: files/debtags/vocabulary
+msgid "Tools and auto-documenters"
+msgstr "Araçlar ve otomatik belgelendiriciler"
+
+#. Tag: devel::ecma-cli, short desc
+#: files/debtags/vocabulary
+msgid "ECMA CLI"
+msgstr "ECMA CLI"
+
+#. Tag: devel::ecma-cli, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Tools and libraries for development with implementations of the ECMA CLI "
+"(Common Language Infrastructure), like Mono or DotGNU Portable.NET."
+msgstr ""
+"Mono veya DotGNU Portable.NET gibi ECMA CLI (Ortak Dil Altyapısı) "
+"gerçeklemeleri için geliştirme araçları ve kitaplıklar."
+
+#. Tag: devel::editor, short desc
+#: files/debtags/vocabulary
+msgid "Source Editor"
+msgstr "Kaynak Düzenleyici"
+
+#. Tag: devel::examples, short desc
+#. Tag: role::examples, short desc
+#: files/debtags/vocabulary
+msgid "Examples"
+msgstr "Örnekler"
+
+#. Tag: devel::ide, short desc
+#: files/debtags/vocabulary
+msgid "IDE"
+msgstr "IDE"
+
+#. Tag: devel::ide, long desc
+#: files/debtags/vocabulary
+msgid "Integrated Development Environment"
+msgstr "Bütünleşik Geliştirme Ortamı"
+
+#. Tag: devel::interpreter, short desc
+#: files/debtags/vocabulary
+msgid "Interpreter"
+msgstr "Yorumlayıcı"
+
+#. Tag: devel::i18n, short desc
+#: files/debtags/vocabulary
+msgid "Internationalization"
+msgstr "Uluslararasılaştırma"
+
+#. Tag: devel::lang:ada, short desc
+#: files/debtags/vocabulary
+msgid "Ada Development"
+msgstr "Ada Geliştirme"
+
+#. Tag: devel::lang:c, short desc
+#: files/debtags/vocabulary
+msgid "C Development"
+msgstr "C Geliştirme"
+
+#. Tag: devel::lang:c++, short desc
+#: files/debtags/vocabulary
+msgid "C++ Development"
+msgstr "C++ Geliştirme"
+
+#. Tag: devel::lang:c-sharp, short desc
+#: files/debtags/vocabulary
+msgid "C# Development"
+msgstr "C# Geliştirme"
+
+#. Tag: devel::lang:fortran, short desc
+#: files/debtags/vocabulary
+msgid "Fortran Development"
+msgstr "Fortran Geliştirme"
+
+#. Tag: devel::lang:haskell, short desc
+#: files/debtags/vocabulary
+msgid "Haskell Development"
+msgstr "Haskell Geliştirme"
+
+#. Tag: devel::lang:java, short desc
+#: files/debtags/vocabulary
+msgid "Java Development"
+msgstr "Java Development"
+
+#. Tag: devel::lang:ecmascript, short desc
+#: files/debtags/vocabulary
+msgid "Ecmascript/JavaScript Development"
+msgstr "ECMAScript/JavaScript Geliştirme"
+
+#. Tag: devel::lang:lisp, short desc
+#: files/debtags/vocabulary
+msgid "Lisp Development"
+msgstr "Lisp Geliştirme"
+
+#. Tag: devel::lang:lua, short desc
+#: files/debtags/vocabulary
+msgid "Lua Development"
+msgstr "Lua Geliştirme"
+
+#. Tag: devel::lang:ml, short desc
+#: files/debtags/vocabulary
+msgid "ML Development"
+msgstr "ML Geliştirme"
+
+#. Tag: devel::lang:objc, short desc
+#: files/debtags/vocabulary
+msgid "Objective-C Development"
+msgstr "Objective-C Geliştirme"
+
+#. Tag: devel::lang:ocaml, short desc
+#: files/debtags/vocabulary
+msgid "OCaml Development"
+msgstr "OCaml Geliştirme"
+
+#. Tag: devel::lang:octave, short desc
+#: files/debtags/vocabulary
+msgid "GNU Octave Development"
+msgstr "GNU Octave Geliştirme"
+
+#. Tag: devel::lang:pascal, short desc
+#: files/debtags/vocabulary
+msgid "Pascal Development"
+msgstr "Pascal Geliştirme"
+
+#. Tag: devel::lang:perl, short desc
+#: files/debtags/vocabulary
+msgid "Perl Development"
+msgstr "Perl Geliştirme"
+
+#. Tag: devel::lang:posix-shell, short desc
+#: files/debtags/vocabulary
+msgid "POSIX shell"
+msgstr "POSIX kabuk"
+
+#. Tag: devel::lang:php, short desc
+#: files/debtags/vocabulary
+msgid "PHP Development"
+msgstr "PHP Geliştirme"
+
+#. Tag: devel::lang:pike, short desc
+#: files/debtags/vocabulary
+msgid "Pike Development"
+msgstr "Pike Geliştirme"
+
+#. Tag: devel::lang:prolog, short desc
+#: files/debtags/vocabulary
+msgid "Prolog Development"
+msgstr "Prolog Geliştirme"
+
+#. Tag: devel::lang:python, short desc
+#: files/debtags/vocabulary
+msgid "Python Development"
+msgstr "Python Geliştirme"
+
+#. Tag: devel::lang:r, short desc
+#: files/debtags/vocabulary
+msgid "GNU R Development"
+msgstr "GNU R Geliştirme"
+
+#. Tag: devel::lang:ruby, short desc
+#: files/debtags/vocabulary
+msgid "Ruby Development"
+msgstr "Ruby Development"
+
+#. Tag: devel::lang:scheme, short desc
+#: files/debtags/vocabulary
+msgid "Scheme Development"
+msgstr "Scheme Geliştirme"
+
+#. Tag: devel::lang:sql, short desc
+#: files/debtags/vocabulary
+msgid "SQL"
+msgstr "SQL"
+
+#. Tag: devel::lang:tcl, short desc
+#: files/debtags/vocabulary
+msgid "Tcl Development"
+msgstr "Tcl Geliştirme"
+
+#. Tag: devel::library, short desc
+#: files/debtags/vocabulary
+msgid "Libraries"
+msgstr "Kitaplıklar"
+
+#. Tag: devel::machinecode, short desc
+#: files/debtags/vocabulary
+msgid "Machine Code"
+msgstr "Makine Kodu"
+
+#. Tag: devel::machinecode, long desc
+#: files/debtags/vocabulary
+msgid "Assemblers and other machine-code development tools."
+msgstr "Birleştirici ve diğer makine kodu geliştirme araçları."
+
+#. Tag: devel::modelling, short desc
+#. Tag: science::modelling, short desc
+#: files/debtags/vocabulary
+msgid "Modelling"
+msgstr "Modelleme"
+
+#. Tag: devel::modelling, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Programs and libraries that support creation of software models with "
+"modelling languages like UML or OCL."
+msgstr ""
+"UML veya OCL gibi modelleme dilleri ile yazılım modelleri oluşturma desteği "
+"program ve kitaplıkları."
+
+#. Tag: devel::packaging, short desc
+#: files/debtags/vocabulary
+msgid "Packaging"
+msgstr "Paketleme"
+
+#. Tag: devel::packaging, long desc
+#: files/debtags/vocabulary
+msgid "Tools for packaging software."
+msgstr "Yazılım paketleme için araçlar."
+
+#. Tag: devel::prettyprint, short desc
+#: files/debtags/vocabulary
+msgid "Prettyprint"
+msgstr "Prettyprint"
+
+#. Tag: devel::prettyprint, long desc
+#: files/debtags/vocabulary
+msgid "Code pretty-printing and indentation/reformatting."
+msgstr "Kodu güzel yazdırma, girdileme ve biçimlendirme"
+
+#. Tag: devel::profiler, short desc
+#: files/debtags/vocabulary
+msgid "Profiling"
+msgstr "Profil Çıkarma"
+
+#. Tag: devel::profiler, long desc
+#: files/debtags/vocabulary
+msgid "Profiling and optimization tools."
+msgstr "Profil çıkarma ve eniyileme araçları."
+
+#. Tag: devel::rcs, short desc
+#: files/debtags/vocabulary
+msgid "Revision Control"
+msgstr "Sürüm Denetimi"
+
+#. Tag: devel::rcs, long desc
+#: files/debtags/vocabulary
+msgid "RCS (Revision Control System) and SCM (Software Configuration Manager)"
+msgstr "RCS (Sürüm Denetim Sistemi) ve SCM (Yazılım Yapılandırma Yöneticisi)"
+
+#. Tag: devel::rpc, short desc
+#: files/debtags/vocabulary
+msgid "RPC"
+msgstr "RPC"
+
+#. Tag: devel::rpc, long desc
+#: files/debtags/vocabulary
+msgid "Remote Procedure Call, Network transparent programming"
+msgstr "Uzaktan Yordam Çağrısı, Ağdan bağımsız programlama"
+
+#. Tag: devel::runtime, short desc
+#: files/debtags/vocabulary
+msgid "Runtime Support"
+msgstr "Çalışma Zamanı Desteği"
+
+#. Tag: devel::runtime, long desc
+#: files/debtags/vocabulary
+msgid "Runtime environments of various languages and systems."
+msgstr "Çeşitli dil ve sistemlerin çalışma zamanı ortamları."
+
+#. Tag: devel::testing-qa, short desc
+#: files/debtags/vocabulary
+msgid "Testing and QA"
+msgstr "Test ve Kalite Güvencesi"
+
+#. Tag: devel::testing-qa, long desc
+#: files/debtags/vocabulary
+msgid "Tools for software testing and quality assurance."
+msgstr "Yazılım testi ve kalite güvencesi için araçlar."
+
+#. Tag: devel::ui-builder, short desc
+#. Facet: interface, short desc
+#: files/debtags/vocabulary
+msgid "User Interface"
+msgstr "Kullanıcı Arayüzü"
+
+#. Tag: devel::ui-builder, long desc
+#: files/debtags/vocabulary
+msgid "Tools for designing user interfaces."
+msgstr "Kullanıcı arayüzü tasarımı için araçlar."
+
+#. Tag: devel::web, short desc
+#: files/debtags/vocabulary
+msgid "Web"
+msgstr "Web"
+
+#. Tag: devel::web, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Web-centric frameworks, CGI libraries and other web-specific development "
+"tools."
+msgstr ""
+"Web merkezli çatılar, CGI kitaplıkları ve diğer web'e özgü geliştirme "
+"araçları."
+
+#. Facet: field, short desc
+#: files/debtags/vocabulary
+msgid "Field"
+msgstr "Alan"
+
+#. Facet: field, long desc
+#: files/debtags/vocabulary
+msgid "Which branch of knowledge is the package related to"
+msgstr "Paketin bilginin hangi dalı ile ilgili olduğu"
+
+#. Tag: field::arts, short desc
+#: files/debtags/vocabulary
+msgid "Arts"
+msgstr "Sanat"
+
+#. Tag: field::astronomy, short desc
+#: files/debtags/vocabulary
+msgid "Astronomy"
+msgstr "Astronomi"
+
+#. Tag: field::aviation, short desc
+#: files/debtags/vocabulary
+msgid "Aviation"
+msgstr "Havacılık"
+
+#. Tag: field::biology:bioinformatics, short desc
+#: files/debtags/vocabulary
+msgid "Bioinformatics"
+msgstr "Biyoinformatik"
+
+#. Tag: field::biology:bioinformatics, long desc
+#: files/debtags/vocabulary
+msgid "Sequence analysis software."
+msgstr "Dizi analizi yazılımı."
+
+#. Tag: field::biology:molecular, short desc
+#: files/debtags/vocabulary
+msgid "Molecular Biology"
+msgstr "Moleküler Biyoloji"
+
+#. Tag: field::biology:molecular, long desc
+#: files/debtags/vocabulary
+msgid "Software useful to molecular cloning and related wet biology."
+msgstr ""
+"Moleküler klonlama ve ilgili ıslak biyoloji için kullanışlı yazılımlar."
+
+#. Tag: field::biology:structural, short desc
+#: files/debtags/vocabulary
+msgid "Structural Biology"
+msgstr "Yapısal Biyoloji"
+
+#. Tag: field::biology:structural, long desc
+#: files/debtags/vocabulary
+msgid "Software useful to model tridimentional structures."
+msgstr "Üç boyutlu yapıları modellemek için yararlı yazılımlar."
+
+#. Tag: field::chemistry, short desc
+#: files/debtags/vocabulary
+msgid "Chemistry"
+msgstr "Kimya"
+
+#. Tag: field::electronics, short desc
+#: files/debtags/vocabulary
+msgid "Electronics"
+msgstr "Elektronik"
+
+#. Tag: field::electronics, long desc
+#: files/debtags/vocabulary
+msgid "Circuit editors and other electronics-related software"
+msgstr "Devre düzenleyicileri ve diğer elektronik ile ilgili yazılımlar"
+
+#. Tag: field::finance, short desc
+#: files/debtags/vocabulary
+msgid "Financial"
+msgstr "Finansal"
+
+#. Tag: field::finance, long desc
+#: files/debtags/vocabulary
+msgid "Accounting and financial software"
+msgstr "Muhasebe ve finansal yazılımlar"
+
+#. Tag: field::genealogy, short desc
+#: files/debtags/vocabulary
+msgid "Genealogy"
+msgstr "Şecere"
+
+#. Tag: field::geography, short desc
+#: files/debtags/vocabulary
+msgid "Geography"
+msgstr "Coğrafya"
+
+#. Tag: field::geology, short desc
+#: files/debtags/vocabulary
+msgid "Geology"
+msgstr "Jeoloji"
+
+#. Tag: field::linguistics, short desc
+#: files/debtags/vocabulary
+msgid "Linguistics"
+msgstr "Dilbilim"
+
+#. Tag: field::mathematics, short desc
+#: files/debtags/vocabulary
+msgid "Mathematics"
+msgstr "Matematik"
+
+#. Tag: field::medicine, short desc
+#: files/debtags/vocabulary
+msgid "Medicine"
+msgstr "Tıp"
+
+#. Tag: field::medicine:imaging, short desc
+#: files/debtags/vocabulary
+msgid "Medical Imaging"
+msgstr "Tıbbi Görüntüleme"
+
+#. Tag: field::meteorology, short desc
+#: files/debtags/vocabulary
+msgid "Meteorology"
+msgstr "Meteoroloji"
+
+#. Tag: field::physics, short desc
+#: files/debtags/vocabulary
+msgid "Physics"
+msgstr "Fizik"
+
+#. Tag: field::religion, short desc
+#: files/debtags/vocabulary
+msgid "Religion"
+msgstr "Din"
+
+#. Tag: field::statistics, short desc
+#: files/debtags/vocabulary
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#. Facet: game, short desc
+#: files/debtags/vocabulary
+msgid "Games and Amusement"
+msgstr "Oyunlar ve Eğlence"
+
+#. Facet: game, long desc
+#: files/debtags/vocabulary
+msgid "Kind of games provided by the package"
+msgstr "Paket tarafından sağlanan oyun türleri"
+
+#. Tag: game::adventure, short desc
+#: files/debtags/vocabulary
+msgid "Adventure"
+msgstr "Macera"
+
+#. Tag: game::arcade, short desc
+#: files/debtags/vocabulary
+msgid "Action and Arcade"
+msgstr "Aksiyon ve Atari"
+
+#. Tag: game::board, short desc
+#: files/debtags/vocabulary
+msgid "Board"
+msgstr "Masa"
+
+#. Tag: game::board:chess, short desc
+#: files/debtags/vocabulary
+msgid "Chess"
+msgstr "Satranç"
+
+#. Tag: game::card, short desc
+#: files/debtags/vocabulary
+msgid "Card"
+msgstr "Kart"
+
+#. Tag: game::demos, short desc
+#: files/debtags/vocabulary
+msgid "Demo"
+msgstr "Deneme"
+
+#. Tag: game::fps, short desc
+#: files/debtags/vocabulary
+msgid "First Person Shooter"
+msgstr "Birinci Şahıs Atış"
+
+#. Tag: game::mud, short desc
+#: files/debtags/vocabulary
+msgid "Multiplayer RPG"
+msgstr "Çok Oyunculu RPG (Rol Yapma)"
+
+#. Tag: game::mud, long desc
+#: files/debtags/vocabulary
+msgid "MUDs, MOOs, and other multiplayer RPGs"
+msgstr "MUD, MOO'lar ve diğer çok oyunculu RPG'ler"
+
+#. Tag: game::platform, short desc
+#: files/debtags/vocabulary
+msgid "Platform"
+msgstr "Platform"
+
+#. Tag: game::puzzle, short desc
+#: files/debtags/vocabulary
+msgid "Puzzle"
+msgstr "Bulmaca"
+
+#. Tag: game::rpg, short desc
+#: files/debtags/vocabulary
+msgid "Role-playing"
+msgstr "Rol yapma"
+
+#. Tag: game::rpg:rogue, short desc
+#: files/debtags/vocabulary
+msgid "Rogue-like RPG"
+msgstr "Rogue benzeri RPG"
+
+#. Tag: game::rpg:rogue, long desc
+#: files/debtags/vocabulary
+msgid "Games like Nethack, Angband etc."
+msgstr "Nethack, Angband vb. benzeri oyunlar"
+
+#. Tag: game::simulation, short desc
+#: files/debtags/vocabulary
+msgid "Simulation"
+msgstr "Benzetim"
+
+#. Tag: game::sport, short desc
+#: files/debtags/vocabulary
+msgid "Sport Games"
+msgstr "Spor Oyunları"
+
+#. Tag: game::sport:racing, short desc
+#: files/debtags/vocabulary
+msgid "Racing"
+msgstr "Yarış"
+
+#. Tag: game::strategy, short desc
+#: files/debtags/vocabulary
+msgid "Strategy"
+msgstr "Strateji"
+
+#. Tag: game::tetris, short desc
+#: files/debtags/vocabulary
+msgid "Tetris-like"
+msgstr "Tetris benzeri"
+
+#. Tag: game::toys, short desc
+#: files/debtags/vocabulary
+msgid "Toy or Gimmick"
+msgstr "Oyuncak veya Marifet"
+
+#. Tag: game::typing, short desc
+#: files/debtags/vocabulary
+msgid "Typing Tutor"
+msgstr "Yazım Öğretmeni"
+
+#. Facet: hardware, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Enablement"
+msgstr "Donanım Etkinleştirme"
+
+#. Facet: hardware, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to hardware enablement "
+msgstr "Paketin donanım etkinleştirme ilgisi "
+
+#. Tag: hardware::camera, short desc
+#: files/debtags/vocabulary
+msgid "Digital Camera"
+msgstr "Dijital Kamera"
+
+#. Tag: hardware::detection, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Detection"
+msgstr "Donanım Algılama"
+
+#. Tag: hardware::embedded, short desc
+#: files/debtags/vocabulary
+msgid "Embedded"
+msgstr "Gömülü"
+
+#. Tag: hardware::emulation, short desc
+#: files/debtags/vocabulary
+msgid "Emulation"
+msgstr "Öykünme"
+
+#. Tag: hardware::gps, short desc
+#: files/debtags/vocabulary
+msgid "GPS"
+msgstr "GPS"
+
+#. Tag: hardware::gps, long desc
+#: files/debtags/vocabulary
+msgid "Global Positioning System"
+msgstr "Genel Konumlandırma Sistemi"
+
+#. Tag: hardware::input, short desc
+#: files/debtags/vocabulary
+msgid "Input Devices"
+msgstr "Girdi Aygıtları"
+
+#. Tag: hardware::input:joystick, short desc
+#: files/debtags/vocabulary
+msgid "Joystick"
+msgstr "Oyun Çubuğu"
+
+#. Tag: hardware::input:keyboard, short desc
+#: files/debtags/vocabulary
+msgid "Keyboard"
+msgstr "Klavye"
+
+#. Tag: hardware::input:mouse, short desc
+#: files/debtags/vocabulary
+msgid "Mouse"
+msgstr "Fare"
+
+#. Tag: hardware::joystick, short desc
+#: files/debtags/vocabulary
+msgid "Joystick (legacy)"
+msgstr "Joystick (eski)"
+
+#. Tag: hardware::hamradio, short desc
+#: files/debtags/vocabulary
+msgid "Ham Radio"
+msgstr "Amatör Radyo"
+
+#. Tag: hardware::laptop, short desc
+#: files/debtags/vocabulary
+msgid "Laptop"
+msgstr "Dizüstü"
+
+#. Tag: hardware::modem, short desc
+#: files/debtags/vocabulary
+msgid "Modem"
+msgstr "Modem"
+
+#. Tag: hardware::modem:dsl, short desc
+#: files/debtags/vocabulary
+msgid "xDSL Modem"
+msgstr "xDSL Modem"
+
+#. Tag: hardware::opengl, short desc
+#: files/debtags/vocabulary
+msgid "Requires video hardware acceleration"
+msgstr "video donanımı hızlandırması gerektiren"
+
+#. Tag: hardware::power:ups, short desc
+#: files/debtags/vocabulary
+msgid "UPS"
+msgstr "Güç Kaynağı"
+
+#. Tag: hardware::power:ups, long desc
+#: files/debtags/vocabulary
+msgid "Uninterruptible Power Supply"
+msgstr "Kesintisiz Güç Kaynağı"
+
+#. Tag: hardware::power:acpi, short desc
+#: files/debtags/vocabulary
+msgid "ACPI Power Management"
+msgstr "ACPI Güç Yönetimi"
+
+#. Tag: hardware::power:apm, short desc
+#: files/debtags/vocabulary
+msgid "APM Power Management"
+msgstr "APM Güç Yönetimi"
+
+#. Tag: hardware::printer, short desc
+#: files/debtags/vocabulary
+msgid "Printer"
+msgstr "Yazıcı"
+
+#. Tag: hardware::scanner, short desc
+#: files/debtags/vocabulary
+msgid "Image-scanning Hardware"
+msgstr "Resim Tarama Donanımı"
+
+#. Tag: hardware::storage, short desc
+#: files/debtags/vocabulary
+msgid "Storage"
+msgstr "Depolama"
+
+#. Tag: hardware::storage:cd, short desc
+#: files/debtags/vocabulary
+msgid "CD"
+msgstr "CD"
+
+#. Tag: hardware::storage:cd, long desc
+#: files/debtags/vocabulary
+msgid "Compact Disc"
+msgstr "Compact Disc"
+
+#. Tag: hardware::storage:dvd, short desc
+#: files/debtags/vocabulary
+msgid "DVD"
+msgstr "DVD"
+
+#. Tag: hardware::storage:dvd, long desc
+#: files/debtags/vocabulary
+msgid "Digital Versatile Disc"
+msgstr "(DVD) Sayısal Çokyönlü Disk"
+
+#. Tag: hardware::storage:floppy, short desc
+#: files/debtags/vocabulary
+msgid "Floppy Disk"
+msgstr "Disket Sürücü"
+
+#. Tag: hardware::usb, short desc
+#: files/debtags/vocabulary
+msgid "USB"
+msgstr "USB"
+
+#. Tag: hardware::usb, long desc
+#: files/debtags/vocabulary
+msgid "Universal Serial Bus"
+msgstr "Evrensel Seri Veri Yolu"
+
+#. Tag: hardware::video, short desc
+#: files/debtags/vocabulary
+msgid "Graphics and Video"
+msgstr "Grafik ve Video"
+
+#. Facet: made-of, short desc
+#: files/debtags/vocabulary
+msgid "Made Of"
+msgstr "Yapıldığı"
+
+#. Facet: made-of, long desc
+#: files/debtags/vocabulary
+msgid "The languages or data formats used to make the package"
+msgstr "Paketi yapmakta kullanılan dil veya veri biçimleri"
+
+#. Tag: made-of::audio, short desc
+#. Tag: works-with::audio, short desc
+#: files/debtags/vocabulary
+msgid "Audio"
+msgstr "Ses"
+
+#. Tag: made-of::dictionary, short desc
+#: files/debtags/vocabulary
+msgid "Dictionary"
+msgstr "Sözlük"
+
+#. Tag: made-of::font, short desc
+#. Tag: x11::font, short desc
+#: files/debtags/vocabulary
+msgid "Font"
+msgstr "Yazı Tipi"
+
+#. Tag: made-of::html, short desc
+#. Tag: works-with-format::html, short desc
+#: files/debtags/vocabulary
+msgid "HTML, Hypertext Markup Language"
+msgstr "HTML, Hipermetin İşaretleme Dili"
+
+#. Tag: made-of::icons, short desc
+#: files/debtags/vocabulary
+msgid "Icons"
+msgstr "Simgeler"
+
+#. Tag: made-of::info, short desc
+#. Tag: works-with-format::info, short desc
+#: files/debtags/vocabulary
+msgid "Documentation in Info Format"
+msgstr "Info Biçiminde Belgelendirme"
+
+#. Tag: made-of::man, short desc
+#: files/debtags/vocabulary
+msgid "Manuals in Nroff Format"
+msgstr "Nroff Biçiminde Kılavuzlar"
+
+#. Tag: made-of::pdf, short desc
+#. Tag: works-with-format::pdf, short desc
+#: files/debtags/vocabulary
+msgid "PDF Documents"
+msgstr "PDF Belgeleri"
+
+#. Tag: made-of::postscript, short desc
+#. Tag: works-with-format::postscript, short desc
+#: files/debtags/vocabulary
+msgid "PostScript"
+msgstr "PostScript"
+
+#. Tag: made-of::sgml, short desc
+#. Tag: works-with-format::sgml, short desc
+#: files/debtags/vocabulary
+msgid "SGML, Standard Generalized Markup Language"
+msgstr "SGML, Standart Genelleştirilmiş İşaretleme Dili"
+
+#. Tag: made-of::svg, short desc
+#. Tag: works-with-format::svg, short desc
+#: files/debtags/vocabulary
+msgid "SVG, Scalable Vector Graphics"
+msgstr "SVG, Ölçeklenebilir Vektör Grafikleri"
+
+#. Tag: made-of::tex, short desc
+#: files/debtags/vocabulary
+msgid "TeX, LaTeX and DVI"
+msgstr "TeX, LaTeX ve DVI"
+
+#. Tag: made-of::vrml, short desc
+#: files/debtags/vocabulary
+msgid "VRML, Virtual Reality Markup Language"
+msgstr "VRML, Sanal Gerçeklik İşaretleme Dili"
+
+#. Tag: made-of::xml, short desc
+#. Tag: works-with-format::xml, short desc
+#: files/debtags/vocabulary
+msgid "XML"
+msgstr "XML"
+
+#. Facet: interface, long desc
+#: files/debtags/vocabulary
+msgid "What kind of user interface the package provides"
+msgstr "Paketin sağladığı kullanıcı arayüz türü"
+
+#. Tag: interface::3d, short desc
+#: files/debtags/vocabulary
+msgid "Three-Dimensional"
+msgstr "Üç Boyutlu"
+
+#. Tag: interface::commandline, short desc
+#: files/debtags/vocabulary
+msgid "Command Line"
+msgstr "Komut Satırı"
+
+#. Tag: interface::daemon, short desc
+#: files/debtags/vocabulary
+msgid "Daemon"
+msgstr "Artalan Süreci"
+
+#. Tag: interface::daemon, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Runs in background, only a control interface is provided, usually on "
+"commandline."
+msgstr ""
+"Arka planda çalışır, yalnızca denetim için bir arayüz sağlanır, bu arayüz "
+"genelde komut satırında çalışır."
+
+#. Tag: interface::framebuffer, short desc
+#: files/debtags/vocabulary
+msgid "Framebuffer"
+msgstr "Framebuffer"
+
+#. Tag: interface::shell, short desc
+#: files/debtags/vocabulary
+msgid "Command Shell"
+msgstr "Komut Kabuğu"
+
+#. Tag: interface::svga, short desc
+#: files/debtags/vocabulary
+msgid "Console SVGA"
+msgstr "Konsol SVGA"
+
+#. Tag: interface::text-mode, short desc
+#: files/debtags/vocabulary
+msgid "Text-based Interactive"
+msgstr "Metin Tabanlı Etkileşimli"
+
+#. Tag: interface::web, short desc
+#. Facet: web, short desc
+#: files/debtags/vocabulary
+msgid "World Wide Web"
+msgstr "Dünya Çapında Ağ"
+
+#. Tag: interface::x11, short desc
+#. Facet: x11, short desc
+#: files/debtags/vocabulary
+msgid "X Window System"
+msgstr "X Pencere Sistemi"
+
+#. Facet: implemented-in, short desc
+#: files/debtags/vocabulary
+msgid "Implemented in"
+msgstr "Geliştirildiği dil"
+
+#. Facet: implemented-in, long desc
+#: files/debtags/vocabulary
+msgid "What language the software is implemented in"
+msgstr "Yazılımın geliştirildiği dil"
+
+#. Tag: implemented-in::ada, short desc
+#: files/debtags/vocabulary
+msgid "Ada"
+msgstr "Ada"
+
+#. Tag: implemented-in::c, short desc
+#: files/debtags/vocabulary
+msgid "C"
+msgstr "C"
+
+#. Tag: implemented-in::c++, short desc
+#: files/debtags/vocabulary
+msgid "C++"
+msgstr "C++"
+
+#. Tag: implemented-in::c-sharp, short desc
+#: files/debtags/vocabulary
+msgid "C#"
+msgstr "C#"
+
+#. Tag: implemented-in::fortran, short desc
+#: files/debtags/vocabulary
+msgid "Fortran"
+msgstr "Fortran"
+
+#. Tag: implemented-in::haskell, short desc
+#: files/debtags/vocabulary
+msgid "Haskell"
+msgstr "Haskell"
+
+#. Tag: implemented-in::java, short desc
+#: files/debtags/vocabulary
+msgid "Java"
+msgstr "Java"
+
+#. Tag: implemented-in::ecmascript, short desc
+#: files/debtags/vocabulary
+msgid "Ecmascript/Javascript"
+msgstr "ECMAScript/Javascript"
+
+#. Tag: implemented-in::lisp, short desc
+#: files/debtags/vocabulary
+msgid "Lisp"
+msgstr "Lisp"
+
+#. Tag: implemented-in::lua, short desc
+#: files/debtags/vocabulary
+msgid "Lua"
+msgstr "Lua"
+
+#. Tag: implemented-in::ml, short desc
+#: files/debtags/vocabulary
+msgid "ML"
+msgstr "ML"
+
+#. Tag: implemented-in::objc, short desc
+#: files/debtags/vocabulary
+msgid "Objective C"
+msgstr "Objective C"
+
+#. Tag: implemented-in::ocaml, short desc
+#: files/debtags/vocabulary
+msgid "OCaml"
+msgstr "OCaml"
+
+#. Tag: implemented-in::perl, short desc
+#: files/debtags/vocabulary
+msgid "Perl"
+msgstr "Perl"
+
+#. Tag: implemented-in::php, short desc
+#: files/debtags/vocabulary
+msgid "PHP"
+msgstr "PHP"
+
+#. Tag: implemented-in::pike, short desc
+#: files/debtags/vocabulary
+msgid "Pike"
+msgstr "Pike"
+
+#. Tag: implemented-in::python, short desc
+#: files/debtags/vocabulary
+msgid "Python"
+msgstr "Python"
+
+#. Tag: implemented-in::r, short desc
+#: files/debtags/vocabulary
+msgid "GNU R"
+msgstr "GNU R"
+
+#. Tag: implemented-in::ruby, short desc
+#: files/debtags/vocabulary
+msgid "Ruby"
+msgstr "Ruby"
+
+#. Tag: implemented-in::scheme, short desc
+#: files/debtags/vocabulary
+msgid "Scheme"
+msgstr "Scheme"
+
+#. Tag: implemented-in::shell, short desc
+#: files/debtags/vocabulary
+msgid "sh, bash, ksh, tcsh and other shells"
+msgstr "sh, bash, ksh, tcsh ve diğer kabuklar"
+
+#. Tag: implemented-in::tcl, short desc
+#: files/debtags/vocabulary
+msgid "Tcl, Tool Command Language"
+msgstr "Tcl, Araç Komut Dili"
+
+#. Facet: junior, short desc
+#: files/debtags/vocabulary
+msgid "Junior Applications"
+msgstr "Gençlere Yönelik"
+
+#. Facet: junior, long desc
+#: files/debtags/vocabulary
+msgid "Applications recommended for younger users"
+msgstr "Daha genç kullanıcılar için önerilen uygulamalar"
+
+#. Tag: junior::arcade, short desc
+#: files/debtags/vocabulary
+msgid "Arcade Games"
+msgstr "Atari Oyunları"
+
+#. Tag: junior::games-gl, short desc
+#: files/debtags/vocabulary
+msgid "3D Games"
+msgstr "3B Oyunlar"
+
+#. Tag: junior::meta, short desc
+#: files/debtags/vocabulary
+msgid "Metapackages"
+msgstr "Meta Paketler"
+
+#. Facet: mail, short desc
+#: files/debtags/vocabulary
+msgid "Electronic Mail"
+msgstr "Elektronik Posta"
+
+#. Facet: mail, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to eletronic mail transmission "
+msgstr "Paketin elektronik posta aktarımına nasıl bağlı olduğu"
+
+#. Tag: mail::filters, short desc
+#: files/debtags/vocabulary
+msgid "Filters"
+msgstr "Filtreler"
+
+#. Tag: mail::imap, short desc
+#: files/debtags/vocabulary
+msgid "IMAP Protocol"
+msgstr "IMAP Protokolü"
+
+#. Tag: mail::list, short desc
+#: files/debtags/vocabulary
+msgid "Mailing Lists"
+msgstr "Posta Listeleri"
+
+#. Tag: mail::notification, short desc
+#: files/debtags/vocabulary
+msgid "Notification"
+msgstr "Bildirim"
+
+#. Tag: mail::notification, long desc
+#: files/debtags/vocabulary
+msgid "Software that notifies users about status of mailbox."
+msgstr "Posta kutusunun durumu hakkında kullanıcıları bilgilendiren yazılım."
+
+#. Tag: mail::pop, short desc
+#: files/debtags/vocabulary
+msgid "POP3 Protocol"
+msgstr "POP3 Protokolü"
+
+#. Tag: mail::smtp, short desc
+#: files/debtags/vocabulary
+msgid "SMTP Protocol"
+msgstr "SMTP Protokolü"
+
+#. Tag: mail::delivery-agent, short desc
+#: files/debtags/vocabulary
+msgid "Mail Delivery Agent"
+msgstr "Posta Teslim Aracı"
+
+#. Tag: mail::delivery-agent, long desc
+#: files/debtags/vocabulary
+msgid "Software that delivers mail to users' mailboxes."
+msgstr "Kullanıcıların posta kutularına posta teslim eden yazılımlar."
+
+#. Tag: mail::transport-agent, short desc
+#: files/debtags/vocabulary
+msgid "Mail Transport Agent"
+msgstr "Posta Aktarım Aracı"
+
+#. Tag: mail::transport-agent, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Software that routes and transmits mail accross the system and the network."
+msgstr "Sistem ve ağ genelinde postaları yönlendirip aktaran yazılımlar."
+
+#. Tag: mail::user-agent, short desc
+#: files/debtags/vocabulary
+msgid "Mail User Agent"
+msgstr "Posta Kullanıcı Aracı"
+
+#. Tag: mail::user-agent, long desc
+#: files/debtags/vocabulary
+msgid "Software that allows users to access e-mail."
+msgstr "Kullanıcılara e-posta erişimi sağlayan yazılımlar."
+
+#. Facet: office, short desc
+#: files/debtags/vocabulary
+msgid "Office and business"
+msgstr "Ofis ve İş"
+
+#. Facet: office, long desc
+#: files/debtags/vocabulary
+msgid "Applications related to office and business activities"
+msgstr "Ofis ve iş faaliyetleri ile ilgili uygulamalar"
+
+#. Tag: office::finance, short desc
+#: files/debtags/vocabulary
+msgid "Finance"
+msgstr "Finans"
+
+#. Tag: office::groupware, short desc
+#: files/debtags/vocabulary
+msgid "Groupware"
+msgstr "Grup Çalışması"
+
+#. Tag: office::presentation, short desc
+#: files/debtags/vocabulary
+msgid "Presentation"
+msgstr "Sunum"
+
+#. Tag: office::project-management, short desc
+#: files/debtags/vocabulary
+msgid "Project Management"
+msgstr "Proje Yönetimi"
+
+#. Tag: office::spreadsheet, short desc
+#. Tag: works-with::spreadsheet, short desc
+#: files/debtags/vocabulary
+msgid "Spreadsheet"
+msgstr "Hesap Tablosu"
+
+#. Facet: works-with, short desc
+#: files/debtags/vocabulary
+msgid "Works with"
+msgstr "Şununla çalışır"
+
+#. Facet: works-with, long desc
+#: files/debtags/vocabulary
+msgid ""
+"What kind of data (or even processes, or people) the package can work with"
+msgstr ""
+"Paketin birlikte çalışabileceği veri (veya hatta süreç, veya kişi) türü"
+
+#. Tag: works-with::3dmodel, short desc
+#: files/debtags/vocabulary
+msgid "3D Model"
+msgstr "3B Model"
+
+#. Tag: works-with::archive, short desc
+#: files/debtags/vocabulary
+msgid "Archive"
+msgstr "Arşiv"
+
+#. Tag: works-with::biological-sequence, short desc
+#: files/debtags/vocabulary
+msgid "Biological Sequence"
+msgstr "Biyolojik Dizi"
+
+#. Tag: works-with::bugs, short desc
+#: files/debtags/vocabulary
+msgid "Bugs or Issues"
+msgstr "Hata veya Sorunlar"
+
+#. Tag: works-with::db, short desc
+#: files/debtags/vocabulary
+msgid "Databases"
+msgstr "Veritabanları"
+
+#. Tag: works-with::dictionary, short desc
+#: files/debtags/vocabulary
+msgid "Dictionaries"
+msgstr "Sözlükler"
+
+#. Tag: works-with::dtp, short desc
+#: files/debtags/vocabulary
+msgid "Desktop Publishing (DTP)"
+msgstr "Masaüstü Yayıncılığı (DTP)"
+
+#. Tag: works-with::fax, short desc
+#: files/debtags/vocabulary
+msgid "Faxes"
+msgstr "Fakslar"
+
+#. Tag: works-with::file, short desc
+#: files/debtags/vocabulary
+msgid "Files"
+msgstr "Dosyalar"
+
+#. Tag: works-with::font, short desc
+#: files/debtags/vocabulary
+msgid "Fonts"
+msgstr "Yazı Tipleri"
+
+#. Tag: works-with::graphs, short desc
+#: files/debtags/vocabulary
+msgid "Trees and Graphs"
+msgstr "Ağaçlar ve Grafikler"
+
+#. Tag: works-with::im, short desc
+#: files/debtags/vocabulary
+msgid "Instant Messages"
+msgstr "Anlık İletiler"
+
+#. Tag: works-with::im, long desc
+#: files/debtags/vocabulary
+msgid "The package can connect to some IM network (or networks)."
+msgstr "Paket bazı IM ağı (veya ağlarına) bağlanabilir."
+
+#. Tag: works-with::logfile, short desc
+#: files/debtags/vocabulary
+msgid "System Logs"
+msgstr "Sistem Günlükleri"
+
+#. Tag: works-with::mail, short desc
+#: files/debtags/vocabulary
+msgid "Email"
+msgstr "E-posta"
+
+#. Tag: works-with::music-notation, short desc
+#: files/debtags/vocabulary
+msgid "Music Notation"
+msgstr "Müzik Gösterimi"
+
+#. Tag: works-with::network-traffic, short desc
+#: files/debtags/vocabulary
+msgid "Network Traffic"
+msgstr "Ağ Trafiği"
+
+#. Tag: works-with::network-traffic, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Routers, shapers, sniffers, firewalls and other tools that work with a "
+"stream of network packets."
+msgstr ""
+"Yönlendiriciler, şekillendiriciler, izleyiciler, güvenlik duvarları ve ağ "
+"paketleri ile çalışan diğer araçlar."
+
+#. Tag: works-with::people, short desc
+#: files/debtags/vocabulary
+msgid "People"
+msgstr "İnsanlar"
+
+#. Tag: works-with::pim, short desc
+#: files/debtags/vocabulary
+msgid "Personal Information"
+msgstr "Kişisel Bilgi"
+
+#. Tag: works-with::image, short desc
+#: files/debtags/vocabulary
+msgid "Image"
+msgstr "Resim"
+
+#. Tag: works-with::image:raster, short desc
+#: files/debtags/vocabulary
+msgid "Raster Image"
+msgstr "Hücresel Görüntü"
+
+#. Tag: works-with::image:raster, long desc
+#: files/debtags/vocabulary
+msgid "Images made of dots, such as photos and scans"
+msgstr "Fotoğraf veya taramalar gibi noktalardan yapılmış resimler"
+
+#. Tag: works-with::image:vector, short desc
+#: files/debtags/vocabulary
+msgid "Vector Image"
+msgstr "Vektör Görüntüsü"
+
+#. Tag: works-with::image:vector, long desc
+#: files/debtags/vocabulary
+msgid "Images made of lines, such as graphs or most clipart"
+msgstr "Grafik veya küçük resimler gibi çizgilerden yapılmış resimler"
+
+#. Tag: works-with::software:package, short desc
+#: files/debtags/vocabulary
+msgid "Packaged Software"
+msgstr "Paketlenmiş Yazılımlar"
+
+#. Tag: works-with::software:running, short desc
+#: files/debtags/vocabulary
+msgid "Running Programs"
+msgstr "Çalışan Programlar"
+
+#. Tag: works-with::software:source, short desc
+#. Tag: role::source, short desc
+#: files/debtags/vocabulary
+msgid "Source Code"
+msgstr "Kaynak Kod"
+
+#. Tag: works-with::text, short desc
+#: files/debtags/vocabulary
+msgid "Text"
+msgstr "Metin"
+
+#. Tag: works-with::unicode, short desc
+#: files/debtags/vocabulary
+msgid "Unicode"
+msgstr "Unicode"
+
+#. Tag: works-with::unicode, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Please do not tag programs with simple unicode support, doing so would make "
+"this tag useless. Ultimately all applications should have unicode support."
+msgstr ""
+"Lütfen basit Unicode desteğine sahip programları etiketlemeyin. Bunu yapmak "
+"bu etiketi işe yaramaz kılacaktır. İleride tüm uygulamalarda Unicode desteği "
+"olacaktır."
+
+#. Tag: works-with::vcs, short desc
+#: files/debtags/vocabulary
+msgid "Version control system"
+msgstr "Sürüm denetim sistemi"
+
+#. Tag: works-with::video, short desc
+#: files/debtags/vocabulary
+msgid "Video and Animation"
+msgstr "Video ve Animasyon"
+
+#. Facet: works-with-format, short desc
+#: files/debtags/vocabulary
+msgid "Supports Format"
+msgstr "Desteklenen Biçimler"
+
+#. Facet: works-with-format, long desc
+#: files/debtags/vocabulary
+msgid "Which data formats are supported by the package"
+msgstr "Paket tarafından desteklenen veri biçimleri"
+
+#. Tag: works-with-format::bib, short desc
+#: files/debtags/vocabulary
+msgid "BibTeX"
+msgstr "BibTeX"
+
+#. Tag: works-with-format::bib, long desc
+#: files/debtags/vocabulary
+msgid "BibTeX list of references"
+msgstr "BibTeX referans listesi"
+
+#. Tag: works-with-format::djvu, short desc
+#: files/debtags/vocabulary
+msgid "DjVu"
+msgstr "DjVu"
+
+#. Tag: works-with-format::djvu, long desc
+#: files/debtags/vocabulary
+msgid ""
+"File format to store scanned documents.\n"
+"Link: http://en.wikipedia.org/wiki/Djvu"
+msgstr ""
+"Taranmış belgeleri saklamak için dosya biçimi.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/Djvu"
+
+#. Tag: works-with-format::docbook, short desc
+#: files/debtags/vocabulary
+msgid "DocBook"
+msgstr "DocBook"
+
+#. Tag: works-with-format::dvi, short desc
+#: files/debtags/vocabulary
+msgid "TeX DVI"
+msgstr "TeX DVI"
+
+#. Tag: works-with-format::dvi, long desc
+#: files/debtags/vocabulary
+msgid ""
+"DeVice Independent page description file, usually generated by TeX or LaTeX."
+msgstr ""
+"Genellikle TeX veya LaTeX tarafından oluşturulan aygıttan bağımsız sayfa "
+"betimleme dosyası."
+
+#. Tag: works-with-format::gif, short desc
+#: files/debtags/vocabulary
+msgid "GIF, Graphics Interchange Format"
+msgstr "GIF, Görsel Değiştokuş Biçimi"
+
+#. Tag: works-with-format::xml:gpx, short desc
+#: files/debtags/vocabulary
+msgid "GPX, GPS eXchange Format"
+msgstr "GPX, GPS eXchange Biçimi"
+
+#. Tag: works-with-format::iso9660, short desc
+#: files/debtags/vocabulary
+msgid "ISO 9660 CD Filesystem"
+msgstr "ISO 9660 CD Dosya Sistemi"
+
+#. Tag: works-with-format::jpg, short desc
+#: files/debtags/vocabulary
+msgid "JPEG, Joint Photographic Experts Group"
+msgstr "JPEG, Birleşik Fotoğraf Uzmanları Grubu"
+
+#. Tag: works-with-format::json, short desc
+#: files/debtags/vocabulary
+msgid "JSON"
+msgstr "JSON"
+
+#. Tag: works-with-format::json, long desc
+#: files/debtags/vocabulary
+msgid "JavaScript Object Notation"
+msgstr "JavaScript Nesne Gösterimi"
+
+#. Tag: works-with-format::ldif, short desc
+#: files/debtags/vocabulary
+msgid "LDIF"
+msgstr "LDIF"
+
+#. Tag: works-with-format::ldif, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight Directory Interchange Format"
+msgstr "Hafif Dizin Değiştokuş Biçimi"
+
+#. Tag: works-with-format::man, short desc
+#: files/debtags/vocabulary
+msgid "Manpages"
+msgstr "Man sayfaları"
+
+#. Tag: works-with-format::mp3, short desc
+#: files/debtags/vocabulary
+msgid "MP3 Audio"
+msgstr "MP3 Sesi"
+
+#. Tag: works-with-format::mpc, short desc
+#: files/debtags/vocabulary
+msgid "Musepack Audio"
+msgstr "Musepack Sesi"
+
+#. Tag: works-with-format::odf, short desc
+#: files/debtags/vocabulary
+msgid "ODF, Open Document Format"
+msgstr "ODF, Açık Belge Biçimi"
+
+#. Tag: works-with-format::oggtheora, short desc
+#: files/debtags/vocabulary
+msgid "Ogg Theora Video"
+msgstr "Ogg Theora Video"
+
+#. Tag: works-with-format::oggvorbis, short desc
+#: files/debtags/vocabulary
+msgid "Ogg Vorbis Audio"
+msgstr "Ogg Vorbis Sesi"
+
+#. Tag: works-with-format::plaintext, short desc
+#: files/debtags/vocabulary
+msgid "Plain Text"
+msgstr "Düz Metin"
+
+#. Tag: works-with-format::png, short desc
+#: files/debtags/vocabulary
+msgid "PNG, Portable Network Graphics"
+msgstr "PNG, Taşınabilir Ağ Grafikleri"
+
+#. Tag: works-with-format::swf, short desc
+#: files/debtags/vocabulary
+msgid "SWF, ShockWave Flash"
+msgstr "SWF, ShockWave Flash"
+
+#. Tag: works-with-format::tar, short desc
+#: files/debtags/vocabulary
+msgid "Tar Archives"
+msgstr "Tar Arşivleri"
+
+#. Tag: works-with-format::tex, short desc
+#: files/debtags/vocabulary
+msgid "TeX and LaTeX"
+msgstr "TeX ve LaTeX"
+
+#. Tag: works-with-format::tiff, short desc
+#: files/debtags/vocabulary
+msgid "TIFF, Tagged Image File Format"
+msgstr "TIFF, Etiketli Görüntü Dosyası Biçimi"
+
+#. Tag: works-with-format::vrml, short desc
+#: files/debtags/vocabulary
+msgid "VRML 3D Model"
+msgstr "VRML 3B Modeli"
+
+#. Tag: works-with-format::vrml, long desc
+#: files/debtags/vocabulary
+msgid "Virtual Reality Markup Language"
+msgstr "Sanal Gerçeklik İşaretleme Dili"
+
+#. Tag: works-with-format::wav, short desc
+#: files/debtags/vocabulary
+msgid "MS RIFF Audio"
+msgstr "MS RIFF Sesi"
+
+#. Tag: works-with-format::wav, long desc
+#: files/debtags/vocabulary
+msgid "Wave uncompressed audio format"
+msgstr "Sıkıştırılmamış dalga ses biçimi"
+
+#. Tag: works-with-format::xml:rss, short desc
+#: files/debtags/vocabulary
+msgid "RSS Rich Site Summary"
+msgstr "RSS Zengin Site Özeti"
+
+#. Tag: works-with-format::xml:rss, long desc
+#: files/debtags/vocabulary
+msgid "XML dialect used to describe resources and websites."
+msgstr "Kaynak ve web sitelerini açıklamak için kullanılan XML lehçesi."
+
+#. Tag: works-with-format::xml:xslt, short desc
+#: files/debtags/vocabulary
+msgid "XSL Transformations (XSLT)"
+msgstr "XSL Dönüşümleri (XSLT)"
+
+#. Tag: works-with-format::zip, short desc
+#: files/debtags/vocabulary
+msgid "Zip Archives"
+msgstr "Zip Arşivleri"
+
+#. Facet: scope, short desc
+#: files/debtags/vocabulary
+msgid "Scope"
+msgstr "Kapsam"
+
+#. Facet: scope, long desc
+#: files/debtags/vocabulary
+msgid "Characterization by scale of coverage "
+msgstr "Kapsama ölçeği karakterizasyonu "
+
+#. Tag: scope::utility, short desc
+#: files/debtags/vocabulary
+msgid "Utility"
+msgstr "Yardımcı Araç"
+
+#. Tag: scope::utility, long desc
+#: files/debtags/vocabulary
+msgid ""
+"A narrow-scoped program for particular use case or few use cases. It only "
+"does something 10-20% of users in the field will need. Often has "
+"functionality missing from related applications."
+msgstr ""
+"Birkaç özel kullanım durumuna uygun dar kapsamlı program. Bu programlar, "
+"gereken alanda kullanıcıların yalnızca %10-20'si kadarı için yarar "
+"sağlayacaktır. Genellikle ilgili uygulamalardan daha az işlevselliğe "
+"sahiptirler."
+
+#. Tag: scope::application, short desc
+#. Tag: web::application, short desc
+#. Tag: x11::application, short desc
+#: files/debtags/vocabulary
+msgid "Application"
+msgstr "Uygulama"
+
+#. Tag: scope::application, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Broad-scoped program for general use. It probably has functionality for "
+"80-90% of use cases. The pieces that remain are usually to be found as "
+"utilities."
+msgstr ""
+"Genel kullanıma uygun geniş kapsamlı program. Muhtemelen kullanım "
+"durumlarının %80-90 kadarını kapsayan işlevselliğe sahiptirler. Geri kalan "
+"parçaları genellikle yardımcı araçlarda bulunabilir."
+
+#. Tag: scope::suite, short desc
+#: files/debtags/vocabulary
+msgid "Suite"
+msgstr "Takım"
+
+#. Tag: scope::suite, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Comprehensive suite of applications and utilities on the scale of desktop "
+"environment or base operating system."
+msgstr ""
+"Masaüstü ortamı veya temel işletim sistemi ölçeğinde uygulamalar ve yardımcı "
+"araçların kapsamlı bir takımı."
+
+#. Facet: role, short desc
+#: files/debtags/vocabulary
+msgid "Role"
+msgstr "Rol"
+
+#. Facet: role, long desc
+#: files/debtags/vocabulary
+msgid "Role performed by the package"
+msgstr "Paket tarafından gerçekleştirilen görev"
+
+#. Tag: role::app-data, short desc
+#: files/debtags/vocabulary
+msgid "Application Data"
+msgstr "Uygulama Verisi"
+
+#. Tag: role::data, short desc
+#: files/debtags/vocabulary
+msgid "Standalone Data"
+msgstr "Bağımsız Veri"
+
+#. Tag: role::debug-symbols, short desc
+#: files/debtags/vocabulary
+msgid "Debugging symbols"
+msgstr "Hata ayıklama sembolleri"
+
+#. Tag: role::debug-symbols, long desc
+#: files/debtags/vocabulary
+msgid "Debugging symbols."
+msgstr "Hata ayıklama sembolleri."
+
+#. Tag: role::devel-lib, short desc
+#: files/debtags/vocabulary
+msgid "Development Library"
+msgstr "Geliştirme Kitaplığı"
+
+#. Tag: role::devel-lib, long desc
+#: files/debtags/vocabulary
+msgid "Library and header files used in software development or building."
+msgstr ""
+"Yazılım geliştirme veya inşa etmede kullanılan kitaplık ve başlık dosyaları."
+
+#. Tag: role::dummy, short desc
+#: files/debtags/vocabulary
+msgid "Dummy Package"
+msgstr "Boş Paket"
+
+#. Tag: role::dummy, long desc
+#: files/debtags/vocabulary
+msgid "Packages used for upgrades and transitions."
+msgstr "Yükseltme ve geçişler için kullanılan paketler."
+
+#. Tag: role::kernel, short desc
+#: files/debtags/vocabulary
+msgid "Kernel and Modules"
+msgstr "Çekirdek ve Modülleri"
+
+#. Tag: role::kernel, long desc
+#: files/debtags/vocabulary
+msgid "Packages that contain only operating system kernels and kernel modules."
+msgstr ""
+"Yalnızca işletim sistemi çekirdekleri ve çekirdek modüllerini içeren "
+"paketler."
+
+#. Tag: role::metapackage, short desc
+#: files/debtags/vocabulary
+msgid "Metapackage"
+msgstr "Metapaket"
+
+#. Tag: role::metapackage, long desc
+#: files/debtags/vocabulary
+msgid "Packages that install suites of other packages."
+msgstr "Diğer paket takımlarını kuran paketler."
+
+#. Tag: role::plugin, short desc
+#: files/debtags/vocabulary
+msgid "Plugin"
+msgstr "Eklenti"
+
+#. Tag: role::plugin, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Add-on, pluggable program fragments enhancing functionality of some program "
+"or system."
+msgstr ""
+"Eklenti, bazı program veya sistemin işlevselliğini arttırmak eklenebilir "
+"programı parçaları."
+
+#. Tag: role::program, short desc
+#: files/debtags/vocabulary
+msgid "Program"
+msgstr "Program"
+
+#. Tag: role::program, long desc
+#: files/debtags/vocabulary
+msgid "Executable computer program."
+msgstr "Çalıştırılabilir bilgisayar programı."
+
+#. Tag: role::shared-lib, short desc
+#: files/debtags/vocabulary
+msgid "Shared Library"
+msgstr "Paylaşılan Kitaplık"
+
+#. Tag: role::shared-lib, long desc
+#: files/debtags/vocabulary
+msgid "Shared libraries used by one or more programs."
+msgstr ""
+"Bir veya daha fazla program tarafından kullanılan paylaşılan kitaplıklar."
+
+#. Tag: role::source, long desc
+#: files/debtags/vocabulary
+msgid "Human-readable code of a program, library or a part thereof."
+msgstr ""
+"İnsan tarafından okunabilir program, kitaplık veya bir parçasının kodu."
+
+#. Facet: security, short desc
+#: files/debtags/vocabulary
+msgid "Security"
+msgstr "Güvenlik"
+
+#. Facet: security, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to system security"
+msgstr "Paketin sistem güvenliği ile ilgisi"
+
+#. Tag: security::antivirus, short desc
+#: files/debtags/vocabulary
+msgid "Anti-Virus"
+msgstr "Anti-Virüs"
+
+#. Tag: security::authentication, short desc
+#: files/debtags/vocabulary
+msgid "Authentication"
+msgstr "Kimlik Doğrulama"
+
+#. Tag: security::cryptography, short desc
+#: files/debtags/vocabulary
+msgid "Cryptography"
+msgstr "Şifreleme"
+
+#. Tag: security::cryptography, long desc
+#: files/debtags/vocabulary
+msgid "Cryptographic and privacy-oriented tools."
+msgstr "Şifreleme ve gizlilik odaklı araçlar."
+
+#. Tag: security::firewall, short desc
+#. Tag: network::firewall, short desc
+#: files/debtags/vocabulary
+msgid "Firewall"
+msgstr "Güvenlik Duvarı"
+
+#. Tag: security::forensics, short desc
+#: files/debtags/vocabulary
+msgid "Forensics"
+msgstr "Adli"
+
+#. Tag: security::forensics, long desc
+#: files/debtags/vocabulary
+msgid "Post-mortem analysis of intrusions."
+msgstr "İzinsiz girişlerin olay sonrası analizi."
+
+#. Tag: security::ids, short desc
+#: files/debtags/vocabulary
+msgid "Intrusion Detection"
+msgstr "Saldırı Tespiti"
+
+#. Tag: security::integrity, short desc
+#: files/debtags/vocabulary
+msgid "File Integrity"
+msgstr "Dosya Bütünlüğü"
+
+#. Tag: security::integrity, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Tools to monitor system for changes in filesystem and report changes or "
+"tools providing other means to check system integrity."
+msgstr ""
+"Dosya sistemindeki değişiklikleri gözlemlemek ve raporlamak, ya da dosya "
+"sistemi bütünlüğünü başka yollarla denetlemek için araçlar."
+
+#. Tag: security::log-analyzer, short desc
+#: files/debtags/vocabulary
+msgid "Log Analyzer"
+msgstr "Günlük Çözümleyici"
+
+#. Tag: security::privacy, short desc
+#: files/debtags/vocabulary
+msgid "Privacy"
+msgstr "Gizlilik"
+
+#. Facet: sound, short desc
+#: files/debtags/vocabulary
+msgid "Sound and Music"
+msgstr "Ses ve Müzik"
+
+#. Facet: sound, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the field of sound and music"
+msgstr "Paketin ses ve müzik ile ilgisi"
+
+#. Tag: sound::compression, short desc
+#: files/debtags/vocabulary
+msgid "Compression"
+msgstr "Sıkıştırma"
+
+#. Tag: sound::midi, short desc
+#: files/debtags/vocabulary
+msgid "MIDI Software"
+msgstr "MIDI Yazılımı"
+
+#. Tag: sound::mixer, short desc
+#: files/debtags/vocabulary
+msgid "Mixing"
+msgstr "Karıştırma"
+
+#. Tag: sound::player, short desc
+#: files/debtags/vocabulary
+msgid "Playback"
+msgstr "Oynatma"
+
+#. Tag: sound::recorder, short desc
+#: files/debtags/vocabulary
+msgid "Recording"
+msgstr "Kayıt"
+
+#. Tag: sound::sequencer, short desc
+#: files/debtags/vocabulary
+msgid "MIDI Sequencing"
+msgstr "MIDI Dizisi"
+
+#. Facet: special, short desc
+#: files/debtags/vocabulary
+msgid "Service tags"
+msgstr "Hizmet etiketleri"
+
+#. Facet: special, long desc
+#: files/debtags/vocabulary
+msgid "Group of special tags"
+msgstr "Özel etiketler grubu"
+
+#. Tag: special::auto-inst-parts, short desc
+#: files/debtags/vocabulary
+msgid "Secondary packages users won't install directly"
+msgstr "Kullanıcıların doğrudan kurmayacağı ikincil paketler"
+
+#. Tag: special::ipv6-nosupport, short desc
+#: files/debtags/vocabulary
+msgid "NO IPv6 support"
+msgstr "IPv6 desteği yok"
+
+#. Tag: special::ipv6-nosupport, long desc
+#: files/debtags/vocabulary
+msgid "Use this for packages that cannot yet or will never support IPv6."
+msgstr ""
+"IPv6 desteğini henüz desteklemeyen veya asla desteklemeyecek paketler için "
+"bunu kullanın."
+
+#. Tag: special::obsolete, short desc
+#: files/debtags/vocabulary
+msgid "Obsolete Packages"
+msgstr "Eski Paketler"
+
+#. Tag: special::obsolete, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Packages that are not used any longer, also packages only left for upgrade "
+"purposes (merged / split packages)"
+msgstr ""
+"Artık kullanılmayan ya da yalnızca yükseltme amaçlı bırakılan "
+"(birleştirilmiş/bölünmüş) paketler"
+
+#. Tag: special::invalid-tag, short desc
+#: files/debtags/vocabulary
+msgid "Invalid tag"
+msgstr "Geçersiz etiket"
+
+#. Tag: special::invalid-tag, long desc
+#: files/debtags/vocabulary
+msgid ""
+"This tag means that the tag database contains a tag which is not present in "
+"the tag vocabulary.  The presence of this tag indicates a software bug: this "
+"should never show up."
+msgstr ""
+"Bu etiket, etiket veritabanının etiket sözlüğünde mevcut olmayan bir etiket "
+"içerdiği anlamına gelir. Bu etiketin varlığı bir yazılım hatası olduğunu "
+"gösterir: bu asla görülmemeli."
+
+#. Tag: special::not-yet-tagged, short desc
+#: files/debtags/vocabulary
+msgid "!Not yet tagged packages!"
+msgstr "!Henüz etiketlenmeyen paketler!"
+
+#. Tag: special::not-yet-tagged::a, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with a"
+msgstr "Henüz paketler a ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::b, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with b"
+msgstr "Henüz paketler b ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::c, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with c"
+msgstr "Henüz paketler c ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::d, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with d"
+msgstr "Henüz paketler d ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::e, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with e"
+msgstr "Henüz paketler e ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::f, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with f"
+msgstr "Henüz paketler f ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::g, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with g"
+msgstr "Henüz paketler g ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::h, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with h"
+msgstr "Henüz paketler h ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::i, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with i"
+msgstr "Henüz paketler i ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::j, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with j"
+msgstr "Henüz paketler j ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::k, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with k"
+msgstr "Henüz paketler k ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::l, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with l"
+msgstr "Henüz paketler l ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::m, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with m"
+msgstr "Henüz paketler m ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::n, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with n"
+msgstr "Henüz paketler n ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::o, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with o"
+msgstr "Henüz paketler o ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::p, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with p"
+msgstr "Henüz paketler p ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::q, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with q"
+msgstr "Henüz paketler q ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::r, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with r"
+msgstr "Henüz paketler r ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::s, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with s"
+msgstr "Henüz paketler s ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::t, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with t"
+msgstr "Henüz paketler t ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::u, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with u"
+msgstr "Henüz paketler u ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::v, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with v"
+msgstr "Henüz paketler v ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::w, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with w"
+msgstr "Henüz paketler w ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::x, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with x"
+msgstr "Henüz paketler x ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::y, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with y"
+msgstr "Henüz paketler y ile etiketlenmedi"
+
+#. Tag: special::not-yet-tagged::z, short desc
+#: files/debtags/vocabulary
+msgid "Not yet tagged packages with z"
+msgstr "Henüz paketler z ile etiketlenmedi"
+
+#. Facet: suite, short desc
+#: files/debtags/vocabulary
+msgid "Application Suite"
+msgstr "Uygulama Takımı"
+
+#. Facet: suite, long desc
+#: files/debtags/vocabulary
+msgid "Groups together related packages"
+msgstr "İlgili paketleri gruplandırır"
+
+#. Tag: suite::apache, short desc
+#: files/debtags/vocabulary
+msgid "Apache"
+msgstr "Apache"
+
+#. Tag: suite::bsd, short desc
+#: files/debtags/vocabulary
+msgid "BSD"
+msgstr "BSD"
+
+#. Tag: suite::bsd, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Berkeley Software Distribution, sometimes called Berkeley Unix or BSD Unix, "
+"and its family of descendants: FreeBSD, NetBSD or OpenBSD.\n"
+"Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
+msgstr ""
+"Berkeley Yazılım Dağıtımı, bazen Berkeley Unix veya BSD Unix, ve aileden "
+"olan: FreeBSD, NetBSD veya OpenBSD olarak da adlandırılır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/BSD"
+
+#. Tag: suite::debian, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Packages specific to Debian - look into \"Software Development::Debian\" "
+"for  Debian Development."
+msgstr ""
+"Debian'a özgü paketler - Debian Geliştirme için \"Yazılım Geliştirme::Debian"
+"\"a bakın."
+
+#. Tag: suite::eclipse, short desc
+#: files/debtags/vocabulary
+msgid "Eclipse"
+msgstr "Eclipse"
+
+#. Tag: suite::eclipse, long desc
+#: files/debtags/vocabulary
+msgid "Eclipse tool platform and plugins."
+msgstr "Eclipse araç platformu ve eklentileri."
+
+#. Tag: suite::emacs, short desc
+#: files/debtags/vocabulary
+msgid "Emacs"
+msgstr "Emacs"
+
+#. Tag: suite::gforge, short desc
+#: files/debtags/vocabulary
+msgid "GForge"
+msgstr "GForge"
+
+#. Tag: suite::gforge, long desc
+#: files/debtags/vocabulary
+msgid "A collaborative development platform."
+msgstr "Ortak bir geliştirme platformu."
+
+#. Tag: suite::gimp, short desc
+#: files/debtags/vocabulary
+msgid "The GIMP"
+msgstr "GIMP"
+
+#. Tag: suite::gkrellm, short desc
+#: files/debtags/vocabulary
+msgid "GKrellM Monitors"
+msgstr "GKrellM İzleyicileri"
+
+#. Tag: suite::gnome, short desc
+#: files/debtags/vocabulary
+msgid "GNOME"
+msgstr "GNOME"
+
+#. Tag: suite::gnu, short desc
+#: files/debtags/vocabulary
+msgid "GNU"
+msgstr "GNU"
+
+#. Tag: suite::gnu, long desc
+#: files/debtags/vocabulary
+msgid "Gnu's Not Unix. The package is part of the official GNU project"
+msgstr "GNU Unix değildir. Paket resmi GNU projesinin bir parçasıdır"
+
+#. Tag: suite::gnustep, short desc
+#. Tag: uitoolkit::gnustep, short desc
+#: files/debtags/vocabulary
+msgid "GNUstep"
+msgstr "GNUstep"
+
+#. Tag: suite::gnustep, long desc
+#: files/debtags/vocabulary
+msgid "GNUstep Desktop and WindowMaker"
+msgstr "GNUstep Masaüstü ve WindowMaker"
+
+#. Tag: suite::gpe, short desc
+#: files/debtags/vocabulary
+msgid "GPE"
+msgstr "GPE"
+
+#. Tag: suite::gpe, long desc
+#: files/debtags/vocabulary
+msgid "GPE Palmtop Environment"
+msgstr "GPE Palmtop Ortamı"
+
+#. Tag: suite::kde, short desc
+#: files/debtags/vocabulary
+msgid "KDE"
+msgstr "KDE"
+
+#. Tag: suite::mozilla, short desc
+#: files/debtags/vocabulary
+msgid "Mozilla"
+msgstr "Mozilla"
+
+#. Tag: suite::mozilla, long desc
+#: files/debtags/vocabulary
+msgid "Mozilla Browser and extensions"
+msgstr "Mozilla Tarayıcı ve uzantıları"
+
+#. Tag: suite::netscape, short desc
+#: files/debtags/vocabulary
+msgid "Netscape Navigator"
+msgstr "Netscape Navigator"
+
+#. Tag: suite::netscape, long desc
+#: files/debtags/vocabulary
+msgid "The pre-6.0 versions of netscape browser"
+msgstr "Netscape tarayıcı 6.0 sürümleri öncesi"
+
+#. Tag: suite::openoffice, short desc
+#: files/debtags/vocabulary
+msgid "OpenOffice.org"
+msgstr "OpenOffice.org"
+
+#. Tag: suite::opie, short desc
+#: files/debtags/vocabulary
+msgid "Open Palmtop (OPIE)"
+msgstr "Open Palmtop (OPIE)"
+
+#. Tag: suite::roxen, short desc
+#: files/debtags/vocabulary
+msgid "Roxen"
+msgstr "Roxen"
+
+#. Tag: suite::samba, short desc
+#: files/debtags/vocabulary
+msgid "Samba"
+msgstr "Samba"
+
+#. Tag: suite::webmin, short desc
+#: files/debtags/vocabulary
+msgid "Webmin"
+msgstr "Webmin"
+
+#. Tag: suite::xfce, short desc
+#: files/debtags/vocabulary
+msgid "XFce"
+msgstr "XFce"
+
+#. Tag: suite::xfce, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight desktop environment for X11."
+msgstr "X11 için hafif bir masaüstü ortamı."
+
+#. Tag: suite::xmms, short desc
+#: files/debtags/vocabulary
+msgid "XMMS"
+msgstr "XMMS"
+
+#. Tag: suite::xmms2, short desc
+#: files/debtags/vocabulary
+msgid "XMMS 2"
+msgstr "XMMS 2"
+
+#. Tag: suite::zope, short desc
+#: files/debtags/vocabulary
+msgid "Zope"
+msgstr "Zope"
+
+#. Tag: suite::zope, long desc
+#: files/debtags/vocabulary
+msgid "The Zope (web) publishing platform."
+msgstr "Zope (web) yayın platformu."
+
+#. Facet: protocol, short desc
+#: files/debtags/vocabulary
+msgid "Network Protocol"
+msgstr "Ağ Protokolü"
+
+#. Facet: protocol, long desc
+#: files/debtags/vocabulary
+msgid "Which network protocols the package can understand"
+msgstr "Paketin anlayabileceği ağ protokolleri"
+
+#. Tag: protocol::atm, short desc
+#: files/debtags/vocabulary
+msgid "ATM"
+msgstr "ATM"
+
+#. Tag: protocol::atm, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Asynchronous Transfer Mode, a high speed protocol for communication between "
+"computers in a network.\n"
+"While ATM is used to implement *DSL networks, it has never gained widespread "
+"use as a technology for building local area networks (LANs), for which it "
+"was originally intended.\n"
+"Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
+msgstr ""
+"Eşzamansız Aktarım Kipi, bir ağdaki bilgisayarlar arasında iletişim için "
+"yüksek hızlı bir protokoldür.\n"
+"ATM *DSL ağlarını gerçeklemek için kullanıldığından, asıl amacı olan yerel "
+"ağları (LAN'lar) inşa etmek üzere bir teknoloji olarak asla yaygın kullanıma "
+"sahip olamadı.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/E%C5%9Fzamans%C4%B1z_Aktar"
+"%C4%B1m_Modu"
+
+#. Tag: protocol::bittorrent, short desc
+#: files/debtags/vocabulary
+msgid "BitTorrent"
+msgstr "BitTorrent"
+
+#. Tag: protocol::bittorrent, long desc
+#: files/debtags/vocabulary
+msgid ""
+"BitTorrent is a protocol for peer-to-peer based file distribution over "
+"network.\n"
+"Although the actual data transport happens between BitTorrent clients, one "
+"central node, the so-called trackers, is needed to keep a list of all "
+"clients that download or provide the same file.\n"
+"Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/"
+"BitTorrent"
+msgstr ""
+"BitTorrent, ağ üzerinden eşten eşe (P2P) dosya dağıtımı için bir "
+"protokoldür.\n"
+"Gerçek veri aktarımı BitTorrent istemcileri arasında olmasına rağmen, tek "
+"bir merkezi düğüm (takipçi olarak adlandırılır) aynı dosyayı indiren veya "
+"sağlayan tüm istemci listesini tutmak için gereklidir.\n"
+"Bağlantı: http://www.bittorrent.com/ Bağlantı: https://tr.wikipedia.org/wiki/"
+"BitTorrent"
+
+#. Tag: protocol::corba, short desc
+#: files/debtags/vocabulary
+msgid "CORBA"
+msgstr "CORBA"
+
+#. Tag: protocol::corba, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Common Object Request Broker Architecture, a standard for interoperability "
+"between programs written in different languages and running on different "
+"hardware platforms. CORBA includes a client-server network protocol for "
+"distributed computing.\n"
+"With this network protocol, CORBA clients on different computers and written "
+"in different languages can exchange objects over a CORBA server such as "
+"orbit2 or omniORB.\n"
+"Link: http://www.corba.org/"
+msgstr ""
+"Common Object Request Broker Architecture (Ortak Nesne İstem Aracısı "
+"Mimarisi), farklı dillerde yazılmış ve farklı donanım platformları üzerinde "
+"çalışan programlar arasında birlikte çalışabilirlik için bir standarttır. "
+"CORBA, dağıtılmış bilgi işlem için bir istemci-sunucu ağ protokolü içerir.\n"
+"Bu ağ protokolü ile, farklı bilgisayarlarda ve farklı dillerde yazılmış "
+"CORBA istemcileri nesneleri orbit2 veya omniORB gibi bir CORBA sunucu "
+"üzerinden karşılıklı alıp verebilir.\n"
+"Bağlantı: http://www.corba.org/"
+
+#. Tag: protocol::db:mysql, short desc
+#: files/debtags/vocabulary
+msgid "MySQL"
+msgstr "MySQL"
+
+#. Tag: protocol::db:mysql, long desc
+#: files/debtags/vocabulary
+msgid "Protocol for accessing MySQL database server."
+msgstr "MySQL veritabanı sunucusuna erişmek için protokol."
+
+#. Tag: protocol::db:psql, short desc
+#: files/debtags/vocabulary
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#. Tag: protocol::db:psql, long desc
+#: files/debtags/vocabulary
+msgid "Protocol for accessing PostgreSQL database server."
+msgstr "PostgreSQL veritabanı sunucusuna erişmek için protokol."
+
+#. Tag: protocol::dcc, short desc
+#: files/debtags/vocabulary
+msgid "DCC"
+msgstr "DCC"
+
+#. Tag: protocol::dcc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Direct Client-to-Client (DCC) is an IRC-related sub-protocol enabling peers "
+"to interconnect using an IRC server for handshaking in order to exchange "
+"files or perform non-relayed chats.\n"
+"Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
+msgstr ""
+"Direct Client-to-Client (DCC) (Doğrudan İstemciden İstemciye), dosya "
+"değişimi veya aktarımsız sohbetler gerçekleştirmek için el sıkışmak için bir "
+"IRC sunucusu kullanarak eşleri bağlamayı olanaklı kılan bir IRC ile ilgili "
+"bir alt protokoldür.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
+
+#. Tag: protocol::dhcp, short desc
+#: files/debtags/vocabulary
+msgid "DHCP"
+msgstr "DHCP"
+
+#. Tag: protocol::dhcp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Dynamic Host Configuration Protocol, a client-server network protocol for "
+"automatic assignment of dynamic IP addresses to computers in a TCP/IP "
+"network, rather than giving each computer a static IP address.\n"
+"Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2131.txt"
+msgstr ""
+"Dynamic Host Configuration Protocol (Dinamik Ana Makine Yapılandırma "
+"Protokolü), her bilgisayara statik bir IP adresi vermek yerine, TCP/IP "
+"ağındaki bilgisayarlara otomatik olarak dinamik IP adresi ataması yapan bir "
+"istemci-sunucu ağ protokolüdür.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/DHCP Bağlantı: http://www.ietf.org/"
+"rfc/rfc2131.txt"
+
+#. Tag: protocol::dns, short desc
+#: files/debtags/vocabulary
+msgid "DNS"
+msgstr "DNS"
+
+#. Tag: protocol::dns, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Domain Name System, a protocol to request information associated with domain "
+"names (like \"www.debian.org\"), most prominently the IP address. The "
+"protocol is used in communication with a DNS server (like BIND).\n"
+"For the Internet, there are 13 root DNS servers around the world that keep "
+"the addresses of all registered domain names and provide this information to "
+"the DNS servers of Internet service providers.\n"
+"Link: http://en.wikipedia.org/wiki/Domain_Name_System"
+msgstr ""
+"Domain Name System (Alan Adı Sistemi), alan adları (\"www.debian.org\" gibi) "
+"ile ilişkilendirilmiş bilgiyi - en belirgini IP adresi - talep etmek için "
+"bir protokoldür. Protokol, bir DNS sunucusuyla (BIND gibi) iletişimde "
+"kullanılır.\n"
+"İnternet ile iletişimde kullanılan, tüm kayıtlı alan adlarının adreslerini "
+"tutan ve İnternet servis sağlayıcıların DNS sunucularına bu bilgileri "
+"sağlayan dünya çapında 13 kök DNS sunucusu bulunmaktadır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/DNS"
+
+#. Tag: protocol::ethernet, short desc
+#: files/debtags/vocabulary
+msgid "Ethernet"
+msgstr "Ethernet"
+
+#. Tag: protocol::ethernet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Ethernet is the most popular networking technology for creating local area "
+"networks (LANs).\n"
+"The computers in an Ethernet network communicate over twisted-pair or fibre "
+"cables and are identified by their MAC address. Several different types of "
+"Ethernet exist, distinguishable by the maximum connection speed. The most "
+"widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
+"Link: http://en.wikipedia.org/wiki/Ethernet"
+msgstr ""
+"Ethernet, yerel ağları (LAN'lar) oluşturmak için en yaygın ağ "
+"teknolojisidir.\n"
+"Bir Ethernet ağı içerisindeki bilgisayarlar, kıvrımlı çift veya fiber optik "
+"kablolar üzerinden haberleşir ve MAC adresleri ile tanımlanırlar. Azami "
+"bağlantı hızlarından ayırt edilebilen, birkaç farklı Ethernet türü "
+"mevcuttur. Günümüzde en yaygın türler: 100MBit/s (100BASE-*) veya 1GBit/s "
+"(1000BASE-*).\n"
+"Link: https://tr.wikipedia.org/wiki/Ethernet"
+
+#. Tag: protocol::fidonet, short desc
+#: files/debtags/vocabulary
+msgid "FidoNet"
+msgstr "FidoNet"
+
+#. Tag: protocol::fidonet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
+"1990s.\n"
+"The communication between the clients and FidoNet servers was usually "
+"carried out over the telephone network using modems and could be used for "
+"transferring messages (comparable to email) and files.\n"
+"Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
+msgstr ""
+"FidoNet, 1980'li ve 1990'lı yıllarda yaygın olarak kullanılmış bir posta "
+"kutusu sistemidir.\n"
+"İstemciler ve FidoNet sunucular arasında iletişim genellikle modem "
+"kullanarak telefon şebekesi üzerinden gerçekleştirildi ve ileti (e-posta ile "
+"karşılaştırılabilir) ve dosya aktarma için kullanılabilirdi.\n"
+"Bağlantı: http://www.fidonet.org/ Bağlantı: http://en.wikipedia.org/wiki/"
+"Fidonet"
+
+#. Tag: protocol::finger, short desc
+#: files/debtags/vocabulary
+msgid "Finger"
+msgstr "Parmak"
+
+#. Tag: protocol::finger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Name/Finger protocol is a simple network protocol to provide extensive, "
+"public information about users of a computer, such as email address, "
+"telephone numbers, full names etc.\n"
+"Due to privacy concerns, the Finger protocol is not widely used any more, "
+"while it widespread distribution in the early 1990s.\n"
+"Link: http://en.wikipedia.org/wiki/Finger_protocol Link: http://www.ietf.org/"
+"rfc/rfc1288.txt"
+msgstr ""
+"Name/Finger (Ad/İşaretleme) protokolü, bir bilgisayarın kullanıcıları "
+"hakkında e-posta adresi, telefon numaraları, tam adları vb. gibi kapsamlı "
+"açık bilgileri sağlamak için basit bir ağ protokolüdür.\n"
+"Gizlilik endişeleri nedeniyle Finger protokolü, 1990'ın başlarında yaygın "
+"olarak kullanılmasına rağmen artık rağbet görmemektedir.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Finger Bağlantı: http://www.ietf.org/"
+"rfc/rfc1288.txt"
+
+#. Tag: protocol::ftp, short desc
+#: files/debtags/vocabulary
+msgid "FTP"
+msgstr "FTP"
+
+#. Tag: protocol::ftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"File Transfer Protocol, a protocol for exchanging and manipulation files "
+"over networks and extensively used on the Internet.\n"
+"The communication between FTP servers and clients uses two channels, the "
+"control and the data channel. While FTP was originally used with "
+"authentication only, most FTP servers on the Internet provide anonymous, "
+"passwordless access. Since FTP does not support encryption, sensitive data "
+"transfer is carried out over SFTP today.\n"
+"Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
+"ietf.org/rfc/rfc0959.txt"
+msgstr ""
+"File Transfer Protocol (Dosya Aktarım Protokolü), ağ üzerinde dosya "
+"alışverişi ve düzenleme protokolü olup İnternet'te yaygınca kullanılır.\n"
+"FTP sunucuları ve istemciler arasında kontrol ve veri kanalı olmak üzere "
+"iletişim iki kanalı kullanılır. FTP aslında yalnızca kimlik doğrulaması ile "
+"kullanılırken, İnternetteki çoğu FTP sunucusu anonim, şifresiz erişim "
+"sağlar. FTP şifrelemeyi desteklemediğinden, hassas veri transferi günümüzde "
+"SFTP üzerinden gerçekleştirilir.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Dosya_aktar%C4%B1m_ileti"
+"%C5%9Fim_kural%C4%B1 Bağlantı: http://www.ietf.org/rfc/rfc0959.txt"
+
+#. Tag: protocol::gadu-gadu, short desc
+#: files/debtags/vocabulary
+msgid "Gadu-Gadu"
+msgstr "Gadu-Gadu"
+
+#. Tag: protocol::gadu-gadu, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Gadu-Gadu protocol is a proprietary protocol that is used by a Polish "
+"instant messaging network of the same name.\n"
+"Link: http://pl.wikipedia.org/wiki/Gadu-Gadu"
+msgstr ""
+"Gadu-Gadu protokolü aynı adlı Polonya anlık mesajlaşma ağı tarafından "
+"kullanılan sahipli bir protokoldür.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Gadu-Gadu"
+
+#. Tag: protocol::http, short desc
+#: files/debtags/vocabulary
+msgid "HTTP"
+msgstr "HTTP"
+
+#. Tag: protocol::http, long desc
+#: files/debtags/vocabulary
+msgid ""
+"HyperText Transfer Protocol, one of the most important protocols for the "
+"World Wide Web.\n"
+"It controls the data transfer between HTTP servers such as Apache and HTTP "
+"clients, which are web browsers in most cases. HTTP resources are requested "
+"via URLs (Universal Resource Locators). While HTTP normally only supports "
+"file transfer from server to client, the protocol supports sending "
+"information to HTTP servers, most prominently used in HTML forms.\n"
+"Link: http://en.wikipedia.org/wiki/Http Link: http://www.ietf.org/rfc/"
+"rfc2616.txt"
+msgstr ""
+"HyperText Transfer Protocol (HiperMetin Aktarım Protokolü), WWW için en "
+"önemli protokollerden biridir.\n"
+"Apache gibi HTTP sunucuları ile (çoğu durumda web tarayıcıları olan) HTTP "
+"istemcileri arasındaki veri aktarımını denetler. HTTP kaynakları URL'ler "
+"(Universal Resource Locators - Evrensel Kaynak Konumlandırıcı) ile talep "
+"edilmektedir. HTTP normalde yalnızca sunucudan istemciye dosya transferi "
+"desteklerken, protokol en belirgin olarak HTML formlarında kullanılan, HTTP "
+"sunucularına bilgi göndermeyi de destekler.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/HTTP"
+
+#. Tag: protocol::ident, short desc
+#: files/debtags/vocabulary
+msgid "Ident"
+msgstr "Ident"
+
+#. Tag: protocol::ident, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Ident Internet protocol helps to identify or authenticate the user of a "
+"network connection.\n"
+"Link: http://en.wikipedia.org/wiki/Ident"
+msgstr ""
+"Ident protokolü, bir ağ bağlantısında kullanıcıyı tanımlama ve kimlik "
+"doğrulamada yardımcı olur.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/Ident"
+
+#. Tag: protocol::imap, short desc
+#: files/debtags/vocabulary
+msgid "IMAP"
+msgstr "IMAP"
+
+#. Tag: protocol::imap, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Message Access Protocol, a protocol used for accessing email on a "
+"server from a email client such as KMail or Evolution.\n"
+"When using IMAP, emails stay on the server and can be categorized, edited, "
+"deleted etc. there, instead of having the user download all messages onto "
+"the local computer, as POP3 does.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol"
+msgstr ""
+"İnternet İleti Erişim Protokolü (IMAP), KMail veya Evolution gibi bir e-"
+"posta istemcisinden bir sunucu üzerindeki e-postalara erişim için kullanılan "
+"bir protokoldür.\n"
+"IMAP kullanarak, e-postalar sunucu üzerinde kalır ve e-postalar kategorize "
+"edilebilir, düzenlenebilir, silinebilir, vb. ve böylece kullanıcının POP3'te "
+"olduğu gibi, yerel bilgisayar üzerine tüm iletileri indirme zorunluluğu "
+"bulunmaz.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/IMAP"
+
+#. Tag: protocol::ip, short desc
+#: files/debtags/vocabulary
+msgid "IP"
+msgstr "IP"
+
+#. Tag: protocol::ip, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Protocol (v4), a core protocol of the Internet protocol suite and "
+"the very basis of the Internet.\n"
+"Every computer that is connected to the Internet has an IP address (a 4-byte "
+"number, typically represented in dotted notation like 192.25.206.10). "
+"Internet IP addresses are given out by the Internet Corporation for Assigned "
+"Names and Numbers (ICANN). Normally, computers on the Internet are not "
+"accessed by their IP address, but by their domain name.\n"
+"Link: http://en.wikipedia.org/wiki/IPv4 Link: http://www.ietf.org/rfc/rfc791."
+"txt"
+msgstr ""
+"İnternet Protokolü (v4), İnternet protokol takımının bir çekirdek protokolü "
+"olup, İnternetin en temellerindendir.\n"
+"İnternet'e bağlı her bilgisayar bir IP adresine sahiptir (genellikle "
+"192.25.206.10 şeklinde ifade edilen 4 baytlık bir sayı). İnternet IP "
+"adresleri Internet Corporation for Assigned Names and Numbers (ICANN) "
+"tarafından sağlanır. Normal olarak, İnternet'teki bilgisayarlar IP adresleri "
+"üzerinden erişilmezler ancak alan adlarıyla erişilebilirler.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/IPv4 Bağlantı: http://www.ietf.org/"
+"rfc/rfc791.txt"
+
+#. Tag: protocol::ipv6, short desc
+#: files/debtags/vocabulary
+msgid "IPv6"
+msgstr "IPv6"
+
+#. Tag: protocol::ipv6, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Protocol (v6), the next-generation Internet protocol, which "
+"overcomes the restrictions of IP (v4), like shortage of IP addresses, and is "
+"supposed to form the new basis of the Internet in the future, replacing IP "
+"(v4).\n"
+"Many programs already support IPv6 along with IP (v4), although it is still "
+"seldomly used.\n"
+"Link: http://en.wikipedia.org/wiki/IPv6 Link: http://www.ipv6.org/"
+msgstr ""
+"İnternet Protokolü (v6), IP adresi kıtlığı gibi IP (v4) kısıtlamalarının "
+"üstesinden gelen ve gelecekte internetin yeni temelini oluşturarak IP "
+"(v4)'ün yerini alacak yeni nesil İnternet protokolüdür.\n"
+"Hala nadiren kullanılmasına rağmen çoğu program şimdiden IP (v4) ile "
+"birlikte IPv6 desteğini sağlamaktadırlar.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/IPv6 Bağlantı: http://www.ipv6.org/"
+
+#. Tag: protocol::irc, short desc
+#: files/debtags/vocabulary
+msgid "IRC"
+msgstr "IRC"
+
+#. Tag: protocol::irc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Internet Relay Chat, a protocol for text chatting over network, extensively "
+"used on the Internet. It supports chat rooms, so-called channels, as well as "
+"private, one-to-one communication.\n"
+"IRC servers are organized in networks, so that a client can connect to a "
+"geographically near IRC server, that itself is connected to other IRC "
+"servers spread over the whole world.\n"
+"The official Debian channel is #debian on the freenode network.\n"
+"Link: http://en.wikipedia.org/wiki/Internet_Relay_Chat"
+msgstr ""
+"İnternet Aktarımlı Sohbet (IRC), İnternet üzerinde yoğun olarak kullanılan "
+"ağ üzerinden metin sohbet protokolüdür. Kanal adı verilen sohbet odaları "
+"yanı sıra özel, bire bir iletişimi de destekler.\n"
+"IRC sunucuları ağlarda düzenlenir, böylecek bir istemci coğrafi konumuna "
+"yakın bir IRC sunucusuna bağlansa da, bu IRC kanalları tüm dünyada bulunan "
+"diğer sunuculara bağlanır.\n"
+"Resmi Debian kanalı, freenode ağındaki #debian'dır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Internet_Relay_Chat"
+
+#. Tag: protocol::jabber, short desc
+#: files/debtags/vocabulary
+msgid "Jabber"
+msgstr "Jabber"
+
+#. Tag: protocol::jabber, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Jabber protocol is an instant messaging protocol on the basis of the "
+"XMPP protocol. Additionally to private one-to-one communication, it also "
+"supports chat rooms, and it is used in the Jabber IM network as well as for "
+"the IM capabilities for the new GoogleTalk network.\n"
+"In contrast to other IM networks like MSN, ICQ or AIM, the Jabber servers "
+"are free software and can be used to create a private chat platform or have "
+"an own server to connect to the Jabber network.\n"
+"Link: http://www.jabber.org Link: http://en.wikipedia.org/wiki/Jabber"
+msgstr ""
+"Jabber protokolü XMPP protokolünü temel alan bir anlık ileti protokolüdür. "
+"Özel birebir iletişime ek olarak sohbet odalarını da destekler. GoogleTalk "
+"ağının anlık ileti özellikleri için kullanıldığı gibi Jabber IM ağında da "
+"kullanılır.\n"
+"MSN, ICQ, AIM ve benzeri diğer IM ağlarının aksine, Jabber sunucuları özgür "
+"yazılımlardır ve özel bir sohbet platformu oluşturmak ya da Jabber ağına "
+"bağlanma amaçlı kendi sunucunuza sahip olmak için kullanılabilir.\n"
+"Bağlantı: http://www.jabber.org Bağlantı: https://tr.wikipedia.org/wiki/"
+"Jabber"
+
+#. Tag: protocol::kerberos, short desc
+#: files/debtags/vocabulary
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#. Tag: protocol::kerberos, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Kerberos is an authentication protocol for computer networks for secure "
+"authentication over an otherwise insecure network, using symmetric "
+"cryptography and a third party service provider, that is trusted both by "
+"client and server.\n"
+"The authentication mechanism provided by Kerberos is mutual, so that not "
+"only a server can be sure of a client's identity, but also a client can be "
+"sure a connection to a server is not intercepted.\n"
+"Link: http://en.wikipedia.org/wiki/Kerberos_%28protocol%29 Link: http://www."
+"ietf.org/rfc/rfc4120.txt"
+msgstr ""
+"Kerberos, güvensiz bilgisayar ağları üzerinde güvenli kimlik doğrulama "
+"yapmayı sağlayan bir protokolüdür. Simetrik şifreleme ve hem istemci hem de "
+"sunucu tarafından güvenilen bir üçüncü şahıs hizmet sağlayıcı kullanır.\n"
+"Kerberos'un sağladığı kimlik doğrulama mekanizması iki taraflıdır. Böylece; "
+"yalnızca sunucunun istemcinin kimliğinden emin olmasını değil, istemcinin de "
+"sunucuyla kurduğu bağlantının arasına kimsenin girmediğinden emin olmasını "
+"sağlar.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Kerberos_(ileti%C5%9Fim_kural%C4%B1) "
+"Bağlantı: http://www.ietf.org/rfc/rfc4120.txt"
+
+#. Tag: protocol::ldap, short desc
+#: files/debtags/vocabulary
+msgid "LDAP"
+msgstr "LDAP"
+
+#. Tag: protocol::ldap, long desc
+#: files/debtags/vocabulary
+msgid "Lightweight Directory Access Protocol"
+msgstr "Hafif Dizin Erişim Protokolü"
+
+#. Tag: protocol::lpr, short desc
+#: files/debtags/vocabulary
+msgid "LPR"
+msgstr "LPR"
+
+#. Tag: protocol::lpr, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Line Printer Daemon protocol, a protocol used for accessing or providing "
+"network print services in a Unix network, but also used for local setups.\n"
+"CUPS, the Common Unix Printing System, was developed to replace the old LPD/"
+"LPR system, while maintaining backwards compatibility.\n"
+"Link: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol Link: http://"
+"www.ietf.org/rfc/rfc1179.txt"
+msgstr ""
+"Line Printer Daemon protokolü, bir Unix ağında ağ baskı hizmetlerine erişim "
+"veya hizmet sağlamak için kullanılan bir protokoldür. Yerel kurulumlar için "
+"de kullanılır.\n"
+"CUPS (Ortak Unix Yazdırma Sistemi), geriye dönük uyumluluğu koruyarak eski "
+"LPD/LPR sisteminin yerini alması için geliştirilmiştir.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/Line_Printer_Daemon_protocol "
+"Bağlantı: http://www.ietf.org/rfc/rfc1179.txt"
+
+#. Tag: protocol::msn-messenger, short desc
+#: files/debtags/vocabulary
+msgid "MSN Messenger"
+msgstr "MSN Messenger"
+
+#. Tag: protocol::msn-messenger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The MSN messenger protocol is the protocol that is used by Microsoft's own "
+"instant messaging network.\n"
+"The protocol is a proprietary protocol. Although Microsoft once send a draft "
+"of the protocol specification to the IETF, it has since dated out and "
+"clients that connect to the MSN Messenger network have to rely on reverse-"
+"engineered information.\n"
+"Link: http://www.hypothetic.org/docs/msn/"
+msgstr ""
+"MSN Messenger protokolü Microsoft'un kendi anlık ileti ağı tarafından "
+"kullanılan protokoldür.\n"
+"Sahipli bir protokoldür. Microsoft bir kez IETF için protokol şartname "
+"taslağı göndermesine rağmen, bu taslak bir daha güncellenmemiş ve geçersiz "
+"hale gelmiştir. MSN Messenger ağına bağlanan istemciler ters mühendislikle "
+"elde edilen protokol bilgisine bağımlı durumdadır.\n"
+"Bağlantı: http://www.hypothetic.org/docs/msn/"
+
+#. Tag: protocol::nfs, short desc
+#: files/debtags/vocabulary
+msgid "NFS"
+msgstr "NFS"
+
+#. Tag: protocol::nfs, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Network File System, a protocol originally developed by Sun Microsystems in "
+"1984 and defined in RFCs 1094, 1813, and 3530 (obsoletes 3010) as a "
+"distributed file system, allows a user on a client computer to access files "
+"over a network as easily as if attached to its local disks.\n"
+"Link: http://en.wikipedia.org/wiki/Network_File_System"
+msgstr ""
+"Ağ Dosya Sistemi (NFS), ilk olarak 1984 yılında Sun Microsystems tarafından "
+"geliştirilmiş ve RFC 1094, 1813, 3530 (3010'u hükümsüz bırakır) belgeleri "
+"ile tanımlanmış bir dağıtık dosya sistemi protokoldür. İstemci "
+"bilgisayarlardaki kullanıcıların ağdaki dosyalara kendi yerel "
+"disklerindeymiş gibi kolaylıkla erişebilmelerini sağlar.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/A%C4%9F_Dosya_Sistemi"
+
+#. Tag: protocol::nntp, short desc
+#: files/debtags/vocabulary
+msgid "NNTP"
+msgstr "NNTP"
+
+#. Tag: protocol::nntp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Network News Transfer Protocol, a protocol for reading and writing Usenet "
+"articles (a Usenet article is comparable with an email), but also used among "
+"NNTP servers to transfer articles.\n"
+"Link: http://en.wikipedia.org/wiki/Network_News_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc977.txt"
+msgstr ""
+"Ağ Haber Aktarım Protokolü (NNTP), Usenet makalelerini (bir Usenet makalesi, "
+"e-posta ile karşılaştırılabilir) okuma ve yazma için bir protokoldür ve aynı "
+"zamanda NNTP sunucuları arasında makaleleri aktarmak için de kullanılır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Network_News_Transfer_Protocol "
+"Bağlantı: http://www.ietf.org/rfc/rfc977.txt"
+
+#. Tag: protocol::oscar, short desc
+#: files/debtags/vocabulary
+msgid "OSCAR (AIM/ICQ)"
+msgstr "OSCAR (AIM/ICQ)"
+
+#. Tag: protocol::oscar, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Open System for CommunicAtion in Realtime, an instant messaging used by "
+"AOL's instant messaging network (AIM). The protocol versions 7, 8 and 9 of "
+"the ICQ IM network are also instances of the OSCAR protocol.\n"
+"OSCAR is a binary proprietary protocol. Since there is no official "
+"documentation, clients that connect to AIM or ICQ have to rely on "
+"information that has been reverse-engineered.\n"
+"Link: http://en.wikipedia.org/wiki/OSCAR_protocol Link: http://www.oilcan."
+"org/oscar/"
+msgstr ""
+"Open System for CommunicAtion in Realtime (Gerçek Zamanlı iletişim için Açık "
+"Sistem), AOL anlık ileti ağı (AIM) tarafından kullanılan bir anlık ileti "
+"sistemidir. ICQ IM ağının 7, 8 ve 9. protokol sürümleri de OSCAR "
+"protokolünün örnekleridir.\n"
+"OSCAR ikili bir sahipli protokoldür. Hakkında resmi bir belge olmadığından, "
+"AIM veya ICQ ağına bağlanan istemciler ters mühendislik yöntemi ile elde "
+"edilen bilgilere bağımlı haldedir.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/OSCAR_protocol Bağlantı: http://www."
+"oilcan.org/oscar/"
+
+#. Tag: protocol::pop3, short desc
+#: files/debtags/vocabulary
+msgid "POP3"
+msgstr "POP3"
+
+#. Tag: protocol::pop3, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Post Office Protocol, a protocol to download emails from a mail server, "
+"designed for users that have only intermittent connection to the Internet.\n"
+"In contrast to IMAP server, messages that are downloaded via POP3 are not "
+"supposed to stay on the server afterwards, since POP3 does not support "
+"multiple mailboxes for one account on the server.\n"
+"Link: http://en.wikipedia.org/wiki/Post_Office_Protocol Link: http://www."
+"ietf.org/rfc/rfc1939.txt"
+msgstr ""
+"Postane Protokolü (POP3), Internet'e ara ara bağlanan kullanıcılar için "
+"tasarlanmış bir e-posta protokolüdür. E-postaları bir mail sunucusundan "
+"indirmeyi sağlar.\n"
+"IMAP sunucularının aksine, POP3 üzerinden indirilen mesajlar daha sonra "
+"sunucuda kalmak durumunda değildir, çünkü POP3, sunucuda bir hesap için "
+"birden fazla posta kutusunu desteklemez.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/POP3 Bağlantı: http://www.ietf.org/"
+"rfc/rfc1939.txt"
+
+#. Tag: protocol::radius, short desc
+#: files/debtags/vocabulary
+msgid "RADIUS"
+msgstr "RADIUS"
+
+#. Tag: protocol::radius, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Remote Authentication Dial In User Service, a protocol for authentication, "
+"authorization and accounting of network access, mostly used by Internet "
+"service providers to handle dial-up Internet connections.\n"
+"Link: http://en.wikipedia.org/wiki/RADIUS Link: http://www.ietf.org/rfc/"
+"rfc2865.txt"
+msgstr ""
+"Remote Authentication Dial In User Service (RADIUS) (Arayan Kullanıcı "
+"Uzaktan Kimlik Doğrulama Hizmeti), çoğunlukla çevirmeli İnternet "
+"bağlantılarını yönetmek için İnternet sağlayıcıları tarafından kullanılan "
+"kimlik doğrulama, yetkilendirme ve ağ erişiminin hesabını tutmak için "
+"kullanılan bir protokoldür.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/RADIUS Bağlantı : http://www.ietf."
+"org/rfc/rfc2865.txt"
+
+#. Tag: protocol::sftp, short desc
+#: files/debtags/vocabulary
+msgid "SFTP"
+msgstr "SFTP"
+
+#. Tag: protocol::sftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"SSH File Transfer Protocol, a protocol for secure, encrypting file exchange "
+"and manipulation over insecure networks, using the SSH protocol.\n"
+"SFTP provides a complete set of file system operations, different from its "
+"predecessor SCP, which only allows file transfer. It is not, other than the "
+"name might suggest, a version of the FTP protocol executed through an SSH "
+"channel.\n"
+"Link: http://en.wikipedia.org/wiki/SSH_file_transfer_protocol"
+msgstr ""
+"SSH Dosya Aktarım Protokolü (SFTP), SSH protokolü kullanılarak güvensiz "
+"ağlar üzerinde dosya aktarımı ve düzenlemeyi güvenli kılmak ve şifrelemek "
+"için bir protokoldür.\n"
+"Atası olan ve yalnızca dosya aktarımına izin veren SCP'den farklı olarak "
+"SFTP, tüm dosya sistemi işlemlerini sunar. Bu, isminden de anlaşılabileceği "
+"gibi SSH kanalından çalıştırılan FTP protokolünün bir sürümüdür.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/SFTP"
+
+#. Tag: protocol::smb, short desc
+#: files/debtags/vocabulary
+msgid "SMB"
+msgstr "SMB"
+
+#. Tag: protocol::smb, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Server Message Block, a protocol for providing file access and printer "
+"sharing over network, mainly used by Microsoft Windows(tm). CIFS (Common "
+"Internet File System) is a synonym for SMB.\n"
+"Although SMB is a proprietary protocol, the Samba project reverse-engineered "
+"the protocol and developed both client and server programs for better "
+"interoperability in mixed Unix/Windows networks.\n"
+"Link: http://en.wikipedia.org/wiki/Server_Message_Block Link: http://www."
+"samba.org/"
+msgstr ""
+"Sunucu İleti Bloğu (SMB), özellikle Microsoft Windows(tm) tarafından "
+"kullanılan, ağ üzerinden dosya erişimi ve yazıcı paylaşımı sağlamak için bir "
+"protokoldür. CIFS (Ortak Internet Dosya Sistemi) SMB ile eş anlamlıdır.\n"
+"SMB sahipli bir protokol olmasına rağmen, Samba projesi, protokolü ters "
+"mühendislik yaparak karışık Unix/Windows ağlarında daha iyi birlikte "
+"işlevsellik için istemci ve sunucu programları geliştirmiştir.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/Server_Message_Block Bağlantı: http://"
+"www.samba.org/"
+
+#. Tag: protocol::smtp, short desc
+#: files/debtags/vocabulary
+msgid "SMTP"
+msgstr "SMTP"
+
+#. Tag: protocol::smtp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Mail Transfer Protocol, a protocol for transmitting emails over the "
+"Internet.\n"
+"Every SMTP server utilizes SMTP to hand on emails to the next mail server "
+"until an email arrives at its destination, from where it is usually "
+"retrieved via POP3 or IMAP.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc2821.txt"
+msgstr ""
+"Basit Posta Aktarım Protokolü (SMTP), e-postaları İnternet üzerinden "
+"aktarmak için bir protokoldür.\n"
+"Her SMTP sunucusu, e-postaları hedefine ulaşıncaya kadar bir sonraki posta "
+"sunucusuna teslim eder. E-postalar hedef sunucudan POP3 veya IMAP yoluyla "
+"indirilir.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/SMTP Bağlantı: http://www.ietf.org/"
+"rfc/rfc2821.txt"
+
+#. Tag: protocol::snmp, short desc
+#: files/debtags/vocabulary
+msgid "SNMP"
+msgstr "SNMP"
+
+#. Tag: protocol::snmp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Network Management Protocol, a member of the Internet protocol suite "
+"and used for monitoring or configuring network devices.\n"
+"SNMP servers normally run on network equipment like routers.\n"
+"Link: http://en.wikipedia.org/wiki/Simple_Network_Management_Protocol Link: "
+"http://www.ietf.org/rfc/rfc3411.txt"
+msgstr ""
+"Basit Ağ Yönetimi Protokolü (SNMP), İnternet protokolü paketinin bir "
+"üyesidir ve ağ cihazlarını izlemek veya yapılandırmak için kullanılır.\n"
+"SNMP sunucuları normalde yönlendirici benzeri ağ cihazlarında çalışırlar.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/SNMP Bağlantı: http://www.ietf.org/"
+"rfc/rfc3411.txt"
+
+#. Tag: protocol::soap, short desc
+#: files/debtags/vocabulary
+msgid "SOAP"
+msgstr "SOAP"
+
+#. Tag: protocol::soap, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Simple Object Access Protocol, a protocol for exchanging messages between "
+"different computers in a network. The messages are encoded in XML and "
+"usually sent over HTTP.\n"
+"SOAP is used to provide APIs to web services, such as the Google API to "
+"utilize Google's searching engine from client applications.\n"
+"Link: http://en.wikipedia.org/wiki/SOAP Link: http://www.w3.org/TR/soap/"
+msgstr ""
+"Basit Nesne Erişim Protokolü (SOAP), bir ağdaki farklı bilgisayarlar "
+"arasında mesaj alışverişi için bir protokoldür. Mesajları XML olarak "
+"kodlanır ve genellikle HTTP üzerinden gönderilir.\n"
+"SOAP, Google'ın arama motoruna istemci uygulamalarından erişmek gibi web "
+"hizmetlerine API'ler sağlamada kullanılır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/SOAP Bağlantı: http://www.w3.org/TR/"
+"soap/"
+
+#. Tag: protocol::ssh, short desc
+#: files/debtags/vocabulary
+msgid "SSH"
+msgstr "SSH"
+
+#. Tag: protocol::ssh, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Secure Shell, a protocol for secure, encrypted network connections. SSH can "
+"be used to execute programs on a remote host with an SSH server over "
+"otherwise insecure protocols through an SSH channel. The main use is, as the "
+"name suggest, to provide encrypted login and shell access on remote "
+"servers.\n"
+"SSH authentication can be done with password or, which is the preferred "
+"mechanism, via asymmetric public/private key cryptography.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Shell"
+msgstr ""
+"Secure Shell (Güvenli Kabuk, SSH); güvenli, şifreli ağ bağlantıları için bir "
+"protokoldür. SSH, uzak bilgisayarlarda, güvensiz protokoller üzerinden SSH "
+"kanalıyla program çalıştırmak için kullanılabilir. Temel kullanımı, adından "
+"da anlaşılabileceği gibi uzak sunucularda şifreli oturum açma ve kabuk "
+"erişimi sağlamaktır.\n"
+"SSH kimlik doğrulaması, parolayla veya -tercil edilen mekanizma- asimetrik "
+"genel/özel anahtar şifrelemesi ile yapılabilir.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/SSH"
+
+#. Tag: protocol::ssl, short desc
+#: files/debtags/vocabulary
+msgid "SSL/TLS"
+msgstr "SSL/TLS"
+
+#. Tag: protocol::ssl, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Secure Socket Layer/Transport Layer Security, a protocol that provides "
+"secure encrypted communication on the Internet. It is used to authenticate "
+"the identity of a service provider (such as a Internet banking server) and "
+"to secure the communications channel.\n"
+"Otherwise insecure protocols such as FTP, HTTP, IMAP or SMTP can be "
+"transmitted over SSL/TLS to secure the transmitted data. In this case, an \"S"
+"\" is added to the protocol name, like HTTPS, FTPS etc.\n"
+"Link: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
+msgstr ""
+"Güvenli Yuva Katmanı/Aktarım Katmanı Güvenliği (SSL/TLS), internette güvenli "
+"şifreli iletişimi sağlayan bir protokoldür. Bir hizmet sağlayıcının (örneğin "
+"bir internet bankacılığı sunucusu gibi) kimliğini doğrulamak ve iletişim "
+"kanalı güvenliğini sağlamak için kullanılır.\n"
+"Normalde güvensiz olan FTP, HTTP, IMAP veya SMTP gibi protokoller de SSL/TLS "
+"üzerinden güvenli veri aktarımı yapabilir. Bu durumda protokol adına \"S\" "
+"eklenir. Örn: HTTPS, FTPS, vb.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/Secure_Sockets_Layer"
+
+#. Tag: protocol::telnet, short desc
+#: files/debtags/vocabulary
+msgid "Telnet"
+msgstr "Telnet"
+
+#. Tag: protocol::telnet, long desc
+#: files/debtags/vocabulary
+msgid ""
+"TELecommunication NETwork, a mostly superseded protocol for remote logins.\n"
+"Link: http://en.wikipedia.org/wiki/TELNET"
+msgstr ""
+"TELecommunication NETwork (Haberleşme Ağı), uzak oturum açmada artık pek "
+"kullanılmayan bir protokoldür.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Telnet"
+
+#. Tag: protocol::tcp, short desc
+#: files/debtags/vocabulary
+msgid "TCP"
+msgstr "TCP"
+
+#. Tag: protocol::tcp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Transport Control Protocol, a core protocol of the Internet protocol suite "
+"and used for data transport.\n"
+"TCP is used as the transport protocol for many services on the Internet, "
+"such as FTP, HTTP, SMTP, POP3, IMAP, NNTP etc.\n"
+"Link: http://en.wikipedia.org/wiki/Transmission_Control_Protocol Link: "
+"http://www.ietf.org/rfc/rfc793.txt"
+msgstr ""
+"Taşıma Denetim Protokolü (TCP), İnternet protokol takımının bir çekirdek "
+"protokolüdür ve veri taşıma için kullanılır.\n"
+"İnternette TCP, FTP, HTTP, SMTP, POP3, IMAP, NNTP vb. birçok hizmet için "
+"taşıma protokolü olarak kullanılır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/TCP Bağlantı: http://www.ietf.org/"
+"rfc/rfc793.txt"
+
+#. Tag: protocol::tftp, short desc
+#: files/debtags/vocabulary
+msgid "TFTP"
+msgstr "TFTP"
+
+#. Tag: protocol::tftp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Trivial File Transfer Protocol, a simple file transfer protocol.  TFTP "
+"allows a client to get or put a file onto a remote host.  One of its primary "
+"uses is the network booting of diskless nodes on a Local Area Network.  It "
+"is designed to be easy to implement so it fits on ROM.\n"
+"Link: http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol Link: "
+"http://www.ietf.org/rfc/rfc1350.txt"
+msgstr ""
+"Önemsiz Dosya Aktarım Protokolü (TFTP), basit bir dosya aktarım "
+"protokolüdür. TFTP, bir istemcinin uzak bir makine üzerinden bir dosya "
+"almasını veya uzak makineye bir dosya koymasını sağlar. Temel "
+"kullanımlarından biri, bir yerel ağda disksiz düğümlerin ağdan "
+"önyüklenmesidir. Kolayca gerçeklenebilecek şekilde tasarlandığı için ROM "
+"içerisine sığmaktadır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/TFTP Bağlantı: http://www.ietf.org/"
+"rfc/rfc1350.txt"
+
+#. Tag: protocol::udp, short desc
+#: files/debtags/vocabulary
+msgid "UDP"
+msgstr "UDP"
+
+#. Tag: protocol::udp, long desc
+#: files/debtags/vocabulary
+msgid ""
+"User Datagram Protocol, a core protocol of the Internet protocol suite and "
+"used for data transport.\n"
+"UDP is not as reliable as TCP, but faster and thus better fit for time-"
+"sensitive purposes, like the DNS protocol and VoIP.\n"
+"Link: http://en.wikipedia.org/wiki/User_Datagram_Protocol Link: http://www."
+"ietf.org/rfc/rfc768.txt"
+msgstr ""
+"Kullanıcı Veri Birimi Protokolü (UDP), İnternet protokol takımının bir "
+"çekirdek protokolüdür ve veri aktarımı için kullanılır.\n"
+"UDP, TCP protokolü gibi güvenilir değildir ancak DNS protokolü ve VoIP gibi "
+"zaman açısından hassas uygulamalar için daha uygundur.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/UDP Bağlantı: http://www.ietf.org/"
+"rfc/rfc768.txt"
+
+#. Tag: protocol::voip, short desc
+#: files/debtags/vocabulary
+msgid "VoIP"
+msgstr "VoIP"
+
+#. Tag: protocol::voip, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Voice over IP, a general term for protocols that route voice conversations "
+"over the Internet.\n"
+"Popular VoIP protocols are SIP, H.323 and IAX.\n"
+"Link: http://en.wikipedia.org/wiki/Voice_over_IP"
+msgstr ""
+"IP üzerinden Ses (VoIP), İnternet üzerinden sesli görüşmeleri yönlendiren "
+"protokoller için kullanılan genel bir terimdir.\n"
+"Yaygın VoIP protokolleri SIP, H.323 ve IAX'dir.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/VoIP"
+
+#. Tag: protocol::webdav, short desc
+#: files/debtags/vocabulary
+msgid "WebDAV"
+msgstr "WebDAV"
+
+#. Tag: protocol::webdav, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Web-based Distributed Authoring and Versioning, a extension of the HTTP "
+"protocol to support creating and changing documents on an HTTP server. Thus, "
+"the client can access the documents on an HTTP server as it would those on "
+"the local file system.\n"
+"Link: http://en.wikipedia.org/wiki/WebDAV Link: http://www.ietf.org/rfc/"
+"rfc2518.txt"
+msgstr ""
+"Web Tabanlı Dağıtılmış Yayın ve Sürümleme (WebDAV), HTTP sunucuları üzerinde "
+"belge oluşturma ve değiştirme desteği sağlayan bir HTTP protokolü "
+"uzantısıdır. Böylece bir istemci HTTP sunucusu üzerindeki belgelerine, yerel "
+"dosya sistemindeymiş gibi erişebilir.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/WebDAV Bağlantı: http://www.ietf.org/"
+"rfc/rfc2518.txt"
+
+#. Tag: protocol::xmlrpc, short desc
+#: files/debtags/vocabulary
+msgid "XML-RPC"
+msgstr "XML-RPC"
+
+#. Tag: protocol::xmlrpc, long desc
+#: files/debtags/vocabulary
+msgid ""
+"XML Remote Procedure Call, a simple protocol for remote procedure calls that "
+"uses XML for encoding and the HTTP protocol for transport.\n"
+"SOAP, which is a considerably more sophisticated protocol, was developed "
+"from XML-RPC.\n"
+"Link: http://en.wikipedia.org/wiki/XML-RPC Link: http://www.xmlrpc.com/"
+msgstr ""
+"XML Uzaktan Yordam Çağrısı (XML-RPC), kodlama için XML ve taşıma için HTTP "
+"protokolünü kullanan basit bir uzaktan yordam çağrısı protokolüdür.\n"
+"Daha karmaşık bir protokol olan SOAP, XML-RPC üzerinden geliştirilmiştir.\n"
+"Bağlantı: http://en.wikipedia.org/wiki/XML-RPC Bağlantı: http://www.xmlrpc."
+"com/"
+
+#. Tag: protocol::yahoo-messenger, short desc
+#: files/debtags/vocabulary
+msgid "Yahoo! Messenger"
+msgstr "Yahoo! Messenger"
+
+#. Tag: protocol::yahoo-messenger, long desc
+#: files/debtags/vocabulary
+msgid ""
+"The Yahoo! Messenger protocol is used to connect to Yahoo!'s instant "
+"messaging network.\n"
+"This a proprietary binary protocol without any official documentation. "
+"Clients that connect to the Yahoo! Messenger network have to rely on reverse-"
+"engineered information.\n"
+"Link: http://en.wikipedia.org/wiki/Yahoo%21_Messenger Link: http://www."
+"venkydude.com/articles/yahoo.htm"
+msgstr ""
+"Yahoo! Messenger protokolü, Yahoo!'nun anlık mesajlaşma ağına bağlanmak için "
+"kullanılır.\n"
+"Bu, resmi belgelendirmesi olmayan sahipli bir protokoldür. Yahoo! Messenger "
+"ağına bağlanan istemciler ters mühendislik bilgisine bağlı kalmalıdır.\n"
+"Bağlantı: https://tr.wikipedia.org/wiki/Yahoo!_Messenger Bağlantı: http://"
+"www.venkydude.com/articles/yahoo.htm"
+
+#. Tag: protocol::zeroconf, short desc
+#: files/debtags/vocabulary
+msgid "Zeroconf"
+msgstr "Zeroconf"
+
+#. Tag: protocol::zeroconf, long desc
+#: files/debtags/vocabulary
+msgid ""
+"Zero Configuration Networking (Zeroconfig), is a set of techniques that "
+"automatically creates a usable IP network without configuration or special "
+"servers.\n"
+"This tag is used for packages that implement one or more of:\n"
+"* IPv4LL for choosing addresses\n"
+"* mDNS for name resolution\n"
+"* DNS-SD for service discovery\n"
+"Link: http://www.zeroconf.org Link: http://en.wikipedia.org/wiki/Zeroconf"
+msgstr ""
+"Zero Configuration Networking (Sıfır Yapılandırmalı Ağ - Zeroconfig), "
+"herhangi bir yapılandırma veya özel sunucular gerektirmeden otomatik olarak "
+"kullanılabilir bir IP ağı oluşturan tekniklerin bir kümesidir.\n"
+"Bu etiket şunlardan biri veya daha fazlasını gerçekleyen paketler için "
+"kullanılır:\n"
+"* Adres seçimi için IPv4LL\n"
+"* Ad çözümleme için mDNS\n"
+"* Hizmet keşfi için DNS-SD\n"
+"Bağlantı: http://www.zeroconf.org Bağlantı: https://tr.wikipedia.org/wiki/"
+"Zeroconf"
+
+#. Facet: uitoolkit, short desc
+#: files/debtags/vocabulary
+msgid "Interface Toolkit"
+msgstr "Arayüz Araç Takımı"
+
+#. Facet: uitoolkit, long desc
+#: files/debtags/vocabulary
+msgid "Which interface toolkit the package provides"
+msgstr "Paketin sağladığı arayüz araç takımları"
+
+#. Tag: uitoolkit::athena, short desc
+#: files/debtags/vocabulary
+msgid "Athena Widgets"
+msgstr "Athena Gereçleri"
+
+#. Tag: uitoolkit::fltk, short desc
+#: files/debtags/vocabulary
+msgid "FLTK"
+msgstr "FLTK"
+
+#. Tag: uitoolkit::glut, short desc
+#: files/debtags/vocabulary
+msgid "GLUT"
+msgstr "GLUT"
+
+#. Tag: uitoolkit::gtk, short desc
+#: files/debtags/vocabulary
+msgid "GTK"
+msgstr "GTK"
+
+#. Tag: uitoolkit::motif, short desc
+#: files/debtags/vocabulary
+msgid "Lesstif/Motif"
+msgstr "Lesstif/Motif"
+
+#. Tag: uitoolkit::ncurses, short desc
+#: files/debtags/vocabulary
+msgid "Ncurses TUI"
+msgstr "Ncurses TUI"
+
+#. Tag: uitoolkit::qt, short desc
+#: files/debtags/vocabulary
+msgid "Qt"
+msgstr "Qt"
+
+#. Tag: uitoolkit::sdl, short desc
+#: files/debtags/vocabulary
+msgid "SDL"
+msgstr "SDL"
+
+#. Tag: uitoolkit::tk, short desc
+#: files/debtags/vocabulary
+msgid "Tk"
+msgstr "Tk"
+
+#. Tag: uitoolkit::wxwidgets, short desc
+#: files/debtags/vocabulary
+msgid "wxWidgets"
+msgstr "wxWidgets"
+
+#. Tag: uitoolkit::xlib, short desc
+#: files/debtags/vocabulary
+msgid "X library"
+msgstr "X kitaplığı"
+
+#. Facet: use, short desc
+#: files/debtags/vocabulary
+msgid "Purpose"
+msgstr "Amaç"
+
+#. Facet: use, long desc
+#: files/debtags/vocabulary
+msgid "The general purpose of the software"
+msgstr "Yazılımın genel amacı"
+
+#. Tag: use::analysing, short desc
+#: files/debtags/vocabulary
+msgid "Analysing"
+msgstr "Analiz"
+
+#. Tag: use::analysing, long desc
+#: files/debtags/vocabulary
+msgid "Software for turning data into knowledge."
+msgstr "Veriyi bilgiye dönüştürme yazılımı."
+
+#. Tag: use::browsing, short desc
+#: files/debtags/vocabulary
+msgid "Browsing"
+msgstr "Tarama"
+
+#. Tag: use::calculating, short desc
+#: files/debtags/vocabulary
+msgid "Calculating"
+msgstr "Hesaplama"
+
+#. Tag: use::chatting, short desc
+#: files/debtags/vocabulary
+msgid "Chatting"
+msgstr "Sohbet"
+
+#. Tag: use::checking, short desc
+#: files/debtags/vocabulary
+msgid "Checking"
+msgstr "Denetleme"
+
+#. Tag: use::checking, long desc
+#: files/debtags/vocabulary
+msgid ""
+"All sorts of checking, checking a filesystem for validity, checking a "
+"document for incorrectly spelled words, checking a network for routing "
+"problems. Verifying."
+msgstr ""
+"Her türlü denetim: dosya sistem geçerliliği, belgedeki yazım yanlışı olan "
+"sözcükler, ağdaki yönlendirme sorunlarını denetleme. Doğrulama."
+
+#. Tag: use::comparing, short desc
+#: files/debtags/vocabulary
+msgid "Comparing"
+msgstr "Karşılaştırma"
+
+#. Tag: use::comparing, long desc
+#: files/debtags/vocabulary
+msgid "To find what relates or differs in two or more objects."
+msgstr ""
+"İki veya daha fazla nesnenin birbiriyle ilişkisi veya farkını bulmak için."
+
+#. Tag: use::compressing, short desc
+#: files/debtags/vocabulary
+msgid "Compressing"
+msgstr "Sıkıştırma"
+
+#. Tag: use::configuring, short desc
+#. Tag: network::configuration, short desc
+#: files/debtags/vocabulary
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+#. Tag: use::converting, short desc
+#: files/debtags/vocabulary
+msgid "Data Conversion"
+msgstr "Veri Dönüştürme"
+
+#. Tag: use::dialing, short desc
+#: files/debtags/vocabulary
+msgid "Dialup Access"
+msgstr "Çevirmeli Erişim"
+
+#. Tag: use::downloading, short desc
+#: files/debtags/vocabulary
+msgid "Downloading"
+msgstr "İndirme"
+
+#. Tag: use::driver, short desc
+#: files/debtags/vocabulary
+msgid "Hardware Driver"
+msgstr "Donanım Sürücüsü"
+
+#. Tag: use::editing, short desc
+#: files/debtags/vocabulary
+msgid "Editing"
+msgstr "Düzenleme"
+
+#. Tag: use::entertaining, short desc
+#: files/debtags/vocabulary
+msgid "Entertaining"
+msgstr "Eğlence"
+
+#. Tag: use::filtering, short desc
+#: files/debtags/vocabulary
+msgid "Filtering"
+msgstr "Filtreleme"
+
+#. Tag: use::gameplaying, short desc
+#: files/debtags/vocabulary
+msgid "Game Playing"
+msgstr "Oyun Oynama"
+
+#. Tag: use::learning, short desc
+#: files/debtags/vocabulary
+msgid "Learning"
+msgstr "Öğrenme"
+
+#. Tag: use::measuring, short desc
+#: files/debtags/vocabulary
+msgid "Measuring"
+msgstr "Ölçme"
+
+#. Tag: use::organizing, short desc
+#: files/debtags/vocabulary
+msgid "Data Organisation"
+msgstr "Veri Düzenleme"
+
+#. Tag: use::playing, short desc
+#: files/debtags/vocabulary
+msgid "Playing Media"
+msgstr "Ortam Oynatma"
+
+#. Tag: use::printing, short desc
+#: files/debtags/vocabulary
+msgid "Printing"
+msgstr "Yazdırma"
+
+#. Tag: use::proxying, short desc
+#: files/debtags/vocabulary
+msgid "Proxying"
+msgstr "Vekil Sunucu"
+
+#. Tag: use::routing, short desc
+#. Tag: network::routing, short desc
+#: files/debtags/vocabulary
+msgid "Routing"
+msgstr "Yönlendirme"
+
+#. Tag: use::searching, short desc
+#: files/debtags/vocabulary
+msgid "Searching"
+msgstr "Arama"
+
+#. Tag: use::scanning, short desc
+#. Tag: network::scanner, short desc
+#: files/debtags/vocabulary
+msgid "Scanning"
+msgstr "Tarama"
+
+#. Tag: use::simulating, short desc
+#: files/debtags/vocabulary
+msgid "Simulating"
+msgstr "Simülasyon"
+
+#. Tag: use::storing, short desc
+#: files/debtags/vocabulary
+msgid "Storing"
+msgstr "Depolama"
+
+#. Tag: use::synchronizing, short desc
+#: files/debtags/vocabulary
+msgid "Synchronisation"
+msgstr "Eşitleme"
+
+#. Tag: use::timekeeping, short desc
+#: files/debtags/vocabulary
+msgid "Time and Clock"
+msgstr "Tarih ve Saat"
+
+#. Tag: use::transmission, short desc
+#: files/debtags/vocabulary
+msgid "Transmission"
+msgstr "Aktarım"
+
+#. Tag: use::typesetting, short desc
+#: files/debtags/vocabulary
+msgid "Typesetting"
+msgstr "Dizgi"
+
+#. Tag: use::viewing, short desc
+#: files/debtags/vocabulary
+msgid "Data Visualization"
+msgstr "Veri Görselleştirme"
+
+#. Tag: use::text-formatting, short desc
+#: files/debtags/vocabulary
+msgid "Text Formatting"
+msgstr "Metin Biçimlendirme"
+
+#. Facet: web, long desc
+#: files/debtags/vocabulary
+msgid "What kind of tools for the World Wide Web the package provides"
+msgstr "Paketin WWW için sağladığı araç türleri"
+
+#. Tag: web::appserver, short desc
+#: files/debtags/vocabulary
+msgid "Application Server"
+msgstr "Uygulama Sunucusu"
+
+#. Tag: web::blog, short desc
+#: files/debtags/vocabulary
+msgid "Blog Software"
+msgstr "Blog Yazılımı"
+
+#. Tag: web::browser, short desc
+#: files/debtags/vocabulary
+msgid "Browser"
+msgstr "Tarayıcı"
+
+#. Tag: web::cms, short desc
+#: files/debtags/vocabulary
+msgid "Content Management (CMS)"
+msgstr "İçerik Yönetimi (CMS)"
+
+#. Tag: web::cgi, short desc
+#: files/debtags/vocabulary
+msgid "CGI"
+msgstr "CGI"
+
+#. Tag: web::commerce, short desc
+#: files/debtags/vocabulary
+msgid "E-commerce"
+msgstr "E-ticaret"
+
+#. Tag: web::forum, short desc
+#: files/debtags/vocabulary
+msgid "Forum"
+msgstr "Forum"
+
+#. Tag: web::portal, short desc
+#: files/debtags/vocabulary
+msgid "Portal"
+msgstr "Portal"
+
+#. Tag: web::scripting, short desc
+#: files/debtags/vocabulary
+msgid "Scripting"
+msgstr "Betik"
+
+#. Tag: web::search-engine, short desc
+#: files/debtags/vocabulary
+msgid "Search Engine"
+msgstr "Arama Motoru"
+
+#. Tag: web::server, short desc
+#. Tag: network::server, short desc
+#: files/debtags/vocabulary
+msgid "Server"
+msgstr "Sunucu"
+
+#. Tag: web::wiki, short desc
+#: files/debtags/vocabulary
+msgid "Wiki Software"
+msgstr "Wiki Yazılımı"
+
+#. Tag: web::wiki, long desc
+#: files/debtags/vocabulary
+msgid "Wiki software, servers, utilities and plug-ins."
+msgstr "Wiki yazılımları, sunucuları, yardımcı araçları ve eklentileri."
+
+#. Facet: network, short desc
+#: files/debtags/vocabulary
+msgid "Networking"
+msgstr "Ağ"
+
+#. Facet: network, long desc
+#: files/debtags/vocabulary
+msgid "Role performed concerning computer networks"
+msgstr "Bilgisayar ağları ile alakalı görevler"
+
+#. Tag: network::client, short desc
+#: files/debtags/vocabulary
+msgid "Client"
+msgstr "İstemci"
+
+#. Tag: network::hiavailability, short desc
+#: files/debtags/vocabulary
+msgid "High Availability"
+msgstr "Yüksek Kullanılabilirlik"
+
+#. Tag: network::load-balancing, short desc
+#: files/debtags/vocabulary
+msgid "Load Balancing"
+msgstr "Yük Dengeleme"
+
+#. Tag: network::service, short desc
+#: files/debtags/vocabulary
+msgid "Service"
+msgstr "Hizmet"
+
+#. Tag: network::vpn, short desc
+#: files/debtags/vocabulary
+msgid "VPN or Tunneling"
+msgstr "VPN veya Tünel"
+
+#. Facet: x11, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the X Window System"
+msgstr "Paketin X Pencere Sistemi ile ilgisi"
+
+#. Tag: x11::applet, short desc
+#: files/debtags/vocabulary
+msgid "Applet"
+msgstr "Gereç"
+
+#. Tag: x11::display-manager, short desc
+#: files/debtags/vocabulary
+msgid "Login Manager"
+msgstr "Oturum Yöneticisi"
+
+#. Tag: x11::display-manager, long desc
+#: files/debtags/vocabulary
+msgid "Display managers (graphical login screens)"
+msgstr "Görüntü yöneticileri (görsel giriş ekranları)"
+
+#. Tag: x11::library, short desc
+#: files/debtags/vocabulary
+msgid "Library"
+msgstr "Kitaplık"
+
+#. Tag: x11::screensaver, short desc
+#: files/debtags/vocabulary
+msgid "Screen Saver"
+msgstr "Ekran Koruyucu"
+
+#. Tag: x11::terminal, short desc
+#: files/debtags/vocabulary
+msgid "Terminal Emulator"
+msgstr "Uçbirim Öykünücü"
+
+#. Tag: x11::theme, short desc
+#: files/debtags/vocabulary
+msgid "Theme"
+msgstr "Tema"
+
+#. Tag: x11::window-manager, short desc
+#: files/debtags/vocabulary
+msgid "Window Manager"
+msgstr "Pencere Yöneticisi"
+
+#. Tag: x11::xserver, short desc
+#: files/debtags/vocabulary
+msgid "X Server and Drivers"
+msgstr "X Sunucu ve Sürücüler"
+
+#. Tag: x11::xserver, long desc
+#: files/debtags/vocabulary
+msgid " X servers and drivers for the X server (input and video)"
+msgstr " X sunucuları ve X sunucusu için sürücüler (giriş ve video)"
+
+#. Facet: science, short desc
+#: files/debtags/vocabulary
+msgid "Science"
+msgstr "Bilim"
+
+#. Facet: science, long desc
+#: files/debtags/vocabulary
+msgid "How the package is related to the field of science"
+msgstr "Paketin bilim ile ilgisi"
+
+#. Tag: science::calculation, short desc
+#: files/debtags/vocabulary
+msgid "Calculation"
+msgstr "Hesaplama"
+
+#. Tag: science::data-acquisition, short desc
+#: files/debtags/vocabulary
+msgid "Data acquisition"
+msgstr "Veri toplama"
+
+#. Tag: science::plotting, short desc
+#: files/debtags/vocabulary
+msgid "Plotting"
+msgstr "Çizme"
+
+#. Tag: science::bibliography, short desc
+#: files/debtags/vocabulary
+msgid "Bibliography"
+msgstr "Kaynakça"
+
+#. Tag: science::publishing, short desc
+#: files/debtags/vocabulary
+msgid "Publishing"
+msgstr "Yayıncılık"
+
+#. Tag: science::visualisation, short desc
+#: files/debtags/vocabulary
+msgid "Visualization"
+msgstr "Görselleştirme"
+
+#. Facet: iso15924, short desc
+#: files/debtags/vocabulary
+msgid "Writing script"
+msgstr "Betik yazma"
+
+#. Facet: iso15924, long desc
+#: files/debtags/vocabulary
+msgid "Codes for representating writing systems "
+msgstr "Yazı sistemlerini temsil eden kodlar"
+
+#. Tag: iso15924::armn, short desc
+#: files/debtags/vocabulary
+msgid "Armenian"
+msgstr "Ermenice"
+
+#. Tag: iso15924::bopo, short desc
+#: files/debtags/vocabulary
+msgid "Bopomofo"
+msgstr "Bopomofo"
+
+#. Tag: iso15924::brai, short desc
+#: files/debtags/vocabulary
+msgid "Braille"
+msgstr "Kabartma Yazı"
+
+#. Tag: iso15924::cans, short desc
+#: files/debtags/vocabulary
+msgid "Unified Canadian Aboriginal Syllabics"
+msgstr "Birleşik Kanada Aborijin Syllabic"
+
+#. Tag: iso15924::cyrl, short desc
+#: files/debtags/vocabulary
+msgid "Cyrillic"
+msgstr "Kiril Alfabesi"
+
+#. Tag: iso15924::deva, short desc
+#: files/debtags/vocabulary
+msgid "Devanagari (Nagari)"
+msgstr "Devanagari (Nagari)"
+
+#. Tag: iso15924::ethi, short desc
+#: files/debtags/vocabulary
+msgid "Ethiopic (Geʻez)"
+msgstr "Etiyopya (Ge'ez)"
+
+#. Tag: iso15924::geor, short desc
+#: files/debtags/vocabulary
+msgid "Georgian (Mkhedruli)"
+msgstr "Gürcistan (Mkhedruli)"
+
+#. Tag: iso15924::gujr, short desc
+#: files/debtags/vocabulary
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#. Tag: iso15924::guru, short desc
+#: files/debtags/vocabulary
+msgid "Gurmukhi"
+msgstr "Gurmukhi"
+
+#. Tag: iso15924::hang, short desc
+#: files/debtags/vocabulary
+msgid "Hangul (Hangŭl, Hangeul)"
+msgstr "Hangul (Hangul, Hangeul)"
+
+#. Tag: iso15924::hani, short desc
+#: files/debtags/vocabulary
+msgid "Han (Hanzi, Kanji, Hanja)"
+msgstr "Han (Hanzi, Kanji, Hanja)"
+
+#. Tag: iso15924::hans, short desc
+#: files/debtags/vocabulary
+msgid "Han (Simplified variant)"
+msgstr "Han (Basitleştirilmiş çeşit)"
+
+#. Tag: iso15924::hant, short desc
+#: files/debtags/vocabulary
+msgid "Han (Traditional variant)"
+msgstr "Han (Geleneksel çeşit)"
+
+#. Tag: iso15924::hira, short desc
+#: files/debtags/vocabulary
+msgid "Hiragana"
+msgstr "Hiragana"
+
+#. Tag: iso15924::jpan, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Han + Hiragana + Katakana."
+msgstr "Han + Hiragana + Katakana için diğer ad."
+
+#. Tag: iso15924::kana, short desc
+#: files/debtags/vocabulary
+msgid "Katakana"
+msgstr "Katakana"
+
+#. Tag: iso15924::khmr, short desc
+#: files/debtags/vocabulary
+msgid "Khmer"
+msgstr "Kimerce"
+
+#. Tag: iso15924::knda, short desc
+#: files/debtags/vocabulary
+msgid "Kannada"
+msgstr "Kannada Dili"
+
+#. Tag: iso15924::kore, long desc
+#: files/debtags/vocabulary
+msgid "Alias for Hangul + Han"
+msgstr "Hangul + Han için diğer ad"
+
+#. Tag: iso15924::laoo, short desc
+#: files/debtags/vocabulary
+msgid "Lao"
+msgstr "Lao"
+
+#. Tag: iso15924::latn, short desc
+#: files/debtags/vocabulary
+msgid "Latin"
+msgstr "Latin"
+
+#. Tag: iso15924::mlym, short desc
+#: files/debtags/vocabulary
+msgid "Malayalam"
+msgstr "Malaya dili"
+
+#. Tag: iso15924::mymr, short desc
+#: files/debtags/vocabulary
+msgid "Myanmar (Burmese)"
+msgstr "Myanmar (Birmanya)"
+
+#. Tag: iso15924::orya, short desc
+#: files/debtags/vocabulary
+msgid "Oriya"
+msgstr "Oriya Dili"
+
+#. Tag: iso15924::sinh, short desc
+#: files/debtags/vocabulary
+msgid "Sinhala"
+msgstr "Sinhala"
+
+#. Tag: iso15924::syrc, short desc
+#: files/debtags/vocabulary
+msgid "Syriac"
+msgstr "Syriac"
+
+#. Tag: iso15924::tavt, short desc
+#: files/debtags/vocabulary
+msgid "Tai Viet"
+msgstr "Tai Viet"
+
+#. Tag: iso15924::telu, short desc
+#: files/debtags/vocabulary
+msgid "Telugu"
+msgstr "Telugu"
+
+#. Tag: iso15924::tibt, short desc
+#: files/debtags/vocabulary
+msgid "Tibetan"
+msgstr "Tibetçe"
+
+#. Tag: iso15924::yiii, short desc
+#: files/debtags/vocabulary
+msgid "Yi"
+msgstr "Yi"
+
+#. Tag: iso15924::zsym, short desc
+#: files/debtags/vocabulary
+msgid "Symbols"
+msgstr "Semboller"
