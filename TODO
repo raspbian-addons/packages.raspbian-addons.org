@@ -67,6 +67,8 @@ General:
   * filter on debtags: interface::3d interface::framebuffer interface::svga
     interface::text-mode interface::web interface::x11
   * filter on sections: libs, oldlibs, debug, ... Ask for input.
+- Centralize distributions configuration (too many changes on a stable release)
+  or even read it from dists/
 
 Cron:
 - Verify Release files
@@ -77,3 +79,10 @@ Missing pieces from old code:
    reportbug in sarge is completly broken in this regard anyway AFAICT
    reportbug in etch works as long as there is the exact hit but
    breaks once there is more than one hit
+
+On DSA request:
+ - move away from BDB and use a real database
+   perhaps using projectb directly? udd?
+ - get away from mod_perl and use fcgid or similar technology
+ - drop aggregating information available elsewhere
+   if something is missing, ask ftp-master/UDD maintainer/whoever to provide it
