@@ -350,7 +350,7 @@ msgstr "%s/%s/%s paketinin dosya listesi"
 #: templates/html/filelist.tmpl:3
 msgid ""
 "File list of package <em>%s</em> in <em>%s</em> of architecture <em>%s</em>"
-msgstr "<em>%1$s</em> paketinin <em>%3$s</em> <em>%2$s</em> dosya listesi"
+msgstr "<em>%1</em> paketinin <em>%3</em> <em>%2</em> dosya listesi"
 
 #: templates/html/filelist.tmpl:8
 msgid "File list"
@@ -586,7 +586,7 @@ msgid ""
 "The following packages were added to suite <em>%s</em> (section %s) in the "
 "%s archive during the last 7 days."
 msgstr ""
-"Aşağıdaki paketler son 7 gün içerisinde %3$s arşivindeki %1$s takımının %2$s "
+"Aşağıdaki paketler son 7 gün içerisinde %3 arşivindeki %1 takımının %2 "
 "bölümüne eklendi."
 
 #: templates/html/newpkg.tmpl:14
@@ -594,7 +594,7 @@ msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Aşağıdaki paketler son 7 gün içerisinde %2$s arşivindeki %1$s takımına "
+"Aşağıdaki paketler son 7 gün içerisinde %2 arşivindeki %1 takımına "
 "eklendi."
 
 #: templates/html/newpkg.tmpl:18
@@ -715,8 +715,8 @@ msgstr "paketler"
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
-"%3$s takımının %4$s bölümlerinde ve  %5$s mimarilerinde, %2$s sözünü "
-"barındıran %1$s aradınız"
+"%3 takımının %4 bölümlerinde ve  %5 mimarilerinde, %2 sözünü "
+"barındıran %1 aradınız"
 
 #: templates/html/search.tmpl:87
 msgid " (including subword matching)"
@@ -728,7 +728,7 @@ msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, "
 "%s, and %s%s."
 msgstr ""
-"%2$s, %3$s, %4$s%5$s içinde <em>%1$s</em> sözünü barındıran paket adı ve "
+"%2, %3, %4%5 içinde <em>%1</em> sözünü barındıran paket adı ve "
 "açıklamalarını aradınız."
 
 #: templates/html/search.tmpl:95
@@ -842,8 +842,8 @@ msgstr "ismindeki dosyalar"
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
-"<em>%3$s</em> takımı, %4$s ve %5$s içerisinde, içinde <em>%2$s</em> sözünü "
-"barındıran %1$s aradınız."
+"<em>%3</em> takımı, %4 ve %5 içerisinde, içinde <em>%2</em> sözünü "
+"barındıran %1 aradınız."
 
 #: templates/html/search_contents.tmpl:85
 msgid "Found <strong>%u results</strong>."
@@ -885,7 +885,7 @@ msgstr "Bu bölümdeki tüm paketler"
 
 #: templates/html/show.tmpl:22
 msgid "Details of source package %s in %s"
-msgstr "%2$s içindeki %1$s kaynak paketinin ayrıntıları"
+msgstr "%2 içindeki %1 kaynak paketinin ayrıntıları"
 
 #: templates/html/show.tmpl:23
 msgid "Details of package %s in %s"
@@ -1191,7 +1191,7 @@ msgid ""
 "The following packages were added to suite %s (section %s) in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Aşağıdaki paketler son 7 gün içerisinde %3$s arşivindeki %1$s takımının %2$s "
+"Aşağıdaki paketler son 7 gün içerisinde %3 arşivindeki %1 takımının %2 "
 "bölümüne eklendi."
 
 #: templates/rss/newpkg.tmpl:23
@@ -1199,7 +1199,7 @@ msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"Aşağıdaki paketler son 7 gün içerisinde %2$s arşivindeki %1$s takımına "
+"Aşağıdaki paketler son 7 gün içerisinde %2 arşivindeki %1 takımına "
 "eklendi."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
@@ -1208,7 +1208,7 @@ msgstr "Telif Hakkı ©"
 
 #: templates/txt/index_head.tmpl:1
 msgid "All %s Packages in \"%s\""
-msgstr "\"%2$s\" içerisindeki tüm %1$s paketleri"
+msgstr "\"%2\" içerisindeki tüm %1 paketleri"
 
 #: templates/txt/index_head.tmpl:3
 msgid "Generated:"
