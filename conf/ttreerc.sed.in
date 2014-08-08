@@ -6,6 +6,8 @@ ignore = ^#
 ignore = ~$
 ignore = \.sed\.in$
 
+# copy works only for accepted files
+accept = \.(gif|png|jpg|pdf|css|js|txt)$
 copy   = \.(gif|png|jpg|pdf|css|js|txt)$
 accept = \.tmpl$
 accept = robots.txt
