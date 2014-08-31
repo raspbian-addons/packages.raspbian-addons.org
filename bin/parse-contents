@@ -46,8 +46,8 @@ use Packages::Config qw( $TOPDIR $DBDIR @ARCHIVES @SUITES @ARCHITECTURES );
 my @archives = @ARCHIVES;
 my @suites = @SUITES;
 my @archs = @ARCHITECTURES;
-my %deborts_hash;
-@deborts_hash{qw( alpha avr32 hppa m68k powerpcspe sh4 sparc64 )} = ();
+my %debports_hash;
+@debports_hash{qw( alpha avr32 hppa m68k powerpcspe sh4 sparc64 )} = ();
 
 $DBDIR .= "/contents";
 mkdirp( $DBDIR );
@@ -144,7 +144,7 @@ for my $suite (@suites) {
 
 	    activate($filelist_db);
 	    #FIXME: hardcoded archs. (debports has no contrib/non-free)
-	    if (not exists $deborts_hash{$arch}) {
+	    if (not exists $debports_hash{$arch}) {
 		system("ln", "-sf", basename($filelist_db),
 		       "$DBDIR/filelists_${suite}_all.db") == 0
 			   or die "Oops";
