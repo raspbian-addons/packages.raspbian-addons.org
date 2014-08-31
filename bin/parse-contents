@@ -50,9 +50,9 @@ my @sections = @SECTIONS;
 # Add empty section, need to search Contents directly at dist root, for debports compat
 push(@sections, "");
 
-my %deborts_hash;
+my %debports_hash;
 # copy from config.sh ${arch_debports}
-@deborts_hash{qw( alpha arm64 hppa m68k powerpcspe ppc64 sh4 sparc64 x32 )} = ();
+@debports_hash{qw( alpha arm64 hppa m68k powerpcspe ppc64 sh4 sparc64 x32 )} = ();
 
 $DBDIR .= "/contents";
 mkdirp( $DBDIR );
@@ -164,7 +164,7 @@ for my $suite (@suites) {
 
 	    activate($filelist_db);
 	    #FIXME: hardcoded archs. (debports has no contrib/non-free)
-	    if (not exists $deborts_hash{$arch}) {
+	    if (not exists $debports_hash{$arch}) {
 		system("ln", "-sf", basename($filelist_db),
 		       "$DBDIR/filelists_${suite}_all.db") == 0
 			   or die "Oops";
