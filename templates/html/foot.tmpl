@@ -25,8 +25,6 @@ Total page evaluation took [% benchmark %]<br>
 
 <div id="fineprint" class="bordertop">
 <div id="impressum">
-<p>[% g('To report a problem with the web site, e-mail <a href="mailto:%s">%s</a>. For other contact information, see the %s <a href="%s">contact page</a>.',
-	contact.mail, contact.mail, organisation, contact.url) %]</p>
 [% UNLESS footer.doNotDisplayCopyright %]
 <p>
 [%	g('Content Copyright &copy; %s <a href="%s">%s</a>; See <a href="%s">license terms</a>.',
@@ -34,6 +32,7 @@ Total page evaluation took [% benchmark %]<br>
 	' ' _ trademarknotes IF trademarknotes %]
  <a href="/about/">[% g('Learn more about this site') %]</a>.</p>
 [% END %]
+<p>[% g('<a href="%s">Report a bug on this site</a>.', report_bugs_url) %]</p>
 </div> <!-- end impressum -->
 [% IF sponsors.size %]
 <div id="sponsorfooter"><p>
