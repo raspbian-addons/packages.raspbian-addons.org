@@ -142,7 +142,6 @@ for my $suite (@suites) {
 			close CONT;
 
 			}
-	    close REVERSED;
 
 	    print "Sorting reverse list if needed\n";
 	    system("cd $DBDIR && sort reverse.tmp > reverse.sorted &&".
@@ -171,6 +170,7 @@ for my $suite (@suites) {
 	    }
 	}
 	}
+	close REVERSED;
     }
 
     my $go = 0;
