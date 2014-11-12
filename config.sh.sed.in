@@ -42,7 +42,7 @@ ddtplangs="ca cs da de en eo es eu fi fr hu it ja km ko nl pl pt pt-br ru sk sv 
 archives="us security"
 sections="main multiverse restricted universe"
 parts="$sections"
-suites="lucid lucid-updates lucid-backports precise precise-updates precise-backports trusty trusty-updates trusty-backports utopic"
+suites="lucid lucid-updates lucid-backports precise precise-updates precise-backports trusty trusty-updates trusty-backports utopic-updates utopic-backports vivid"
 priorities="required important standard optional extra"
 dists="$suites"
 architectures="i386 amd64 powerpc armel"
@@ -58,6 +58,9 @@ arch_trusty_backports="${arch_trusty}"
 arch_utopic="${arch_trusty}"
 arch_utopic_updates="${arch_utopic}"
 arch_utopic_backports="${arch_utopic}"
+arch_vivid="${arch_vivid}"
+arch_vivid_updates="${arch_vivid}"
+arch_vivid_backports="${arch_vivid}"
 
 # Miscellaneous
 #
