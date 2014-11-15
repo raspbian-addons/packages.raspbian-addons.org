@@ -382,7 +382,7 @@ sub moreinfo {
 	    $src_dir =~ s,^pool,,o;
 
 	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename/changelog";
-	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename"."_copyright";
+	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename/copyright";
 	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );
 	}
    }
