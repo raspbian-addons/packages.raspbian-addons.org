@@ -59,7 +59,7 @@ my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
 # FIXME: one database per dist
 # http://lists.debian.org/4E42E104.90201@deb-support.de
 # FIXME: unhardcode dists name
-my @dists = ('unstable', 'testing', 'stable', 'oldstable');
+my @dists = ('unstable', 'testing', 'stable', 'oldstable', 'oldoldstable');
 
 foreach my $lang (@langs) {
     (my $locale = $lang) =~ s/^([a-z]{2})-([a-z]{2})$/"$1_".uc($2)/e;

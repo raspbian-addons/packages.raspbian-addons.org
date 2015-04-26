@@ -4,13 +4,14 @@
 	keywords = g('Packages')
 -%]
 [%-
-    all_suites = [ 'squeeze', 'squeeze-updates', 'squeeze-backports', 'wheezy', 'wheezy-updates', 'wheezy-backports', 'jessie', 'sid' ]
+    all_suites = [ 'squeeze', 'squeeze-updates', 'squeeze-backports', 'wheezy', 'wheezy-updates', 'wheezy-backports', 'wheezy-backports-sloppy', 'jessie', 'jessie-backports', 'stretch', 'sid' ]
     version_numbers = { sarge => '3.1',
 			etch  => '4.0',
 			lenny => '5.0',
 			squeeze => '6.0',
-			wheezy => '7.0' }
-    current_release = 'wheezy'
+			wheezy => '7.0',
+			jessie => '8.0' }
+    current_release = 'jessie'
     all_sections = [ 'main', 'contrib', 'non-free' ]
     all_architectures = [   'alpha', 'amd64', 'arm', 'arm64', 'armel', 'armhf', 'amd64', 'avr32', 'hppa', 'hurd-i386', 'i386',
                             'ia64', 'kfreebsd-amd64', 'kfreebsd-i386', 'mips',
