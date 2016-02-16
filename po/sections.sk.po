@@ -1,19 +1,20 @@
 # Slovak translations of packages.debian.org
 # This file is put in the public domain.
-# Ivan Masár <helix84@centrum.sk>, 2009.
-#
+# Ivan Masár <helix84@centrum.sk>, 2009, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: sections\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-10-27 22:41+0100\n"
-"PO-Revision-Date: 2009-06-09 14:32+0100\n"
+"PO-Revision-Date: 2016-02-17 00:20+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
@@ -157,7 +158,7 @@ msgstr "Grafika"
 
 #: lib/Packages/Sections.pm:43
 msgid "Editors, viewers, converters... Everything to become an artist."
-msgstr "Editort, prehliadače, konvertory... Všetky nástroje umelcov."
+msgstr "Editory, prehliadače, konvertory... Všetky nástroje umelcov."
 
 #: lib/Packages/Sections.pm:44
 msgid "Ham Radio"
@@ -294,13 +295,10 @@ msgid "Network"
 msgstr "Počítačové siete"
 
 #: lib/Packages/Sections.pm:75
-#, fuzzy
 #| msgid ""
 #| "Daemons and clients to connect your Debian GNU/Linux system to the world."
 msgid "Daemons and clients to connect your system to the world."
-msgstr ""
-"Démoni a klienti na pripojenie vášho systému Debian GNU/Linux k okolnému "
-"svetu."
+msgstr "Démoni a klienti na pripojenie vášho systému k okolitému svetu."
 
 #: lib/Packages/Sections.pm:76
 msgid "Newsgroups"
@@ -336,7 +334,6 @@ msgid "Other OS's and file systems"
 msgstr "Iné OS a súborové systémy"
 
 #: lib/Packages/Sections.pm:83
-#, fuzzy
 #| msgid ""
 #| "Software to run programs compiled for other operating system, and to use "
 #| "their filesystems."
@@ -510,7 +507,7 @@ msgstr "Aplikačný server Zope a systém na správu obsahu Zope"
 
 #: lib/Packages/Sections.pm:120
 msgid "debian-installer udeb packages"
-msgstr "udeb balíky inštalátora Debianu"
+msgstr "balíky udeb inštalátora Debianu"
 
 #: lib/Packages/Sections.pm:121
 msgid ""
