@@ -69,16 +69,13 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
-    my %SUITES_ALIAS = ( oldoldstable => 'squeeze',
-			 oldstable => 'wheezy',
+    my %SUITES_ALIAS = ( oldstable => 'wheezy',
 			 stable => 'jessie',
 			 testing => 'stretch',
 			 unstable => 'sid',
 			 'rc-buggy' => 'experimental',
-			 '6.0' => 'squeeze',
 			 '7.0' => 'wheezy',
 			 '8.0' => 'jessie',
-			 'oldoldstable-backports' => 'squeeze-backports',
 			 'oldstable-backports' => 'wheezy-backports',
 			 'stable-backports' => 'jessie-backports' );
 
