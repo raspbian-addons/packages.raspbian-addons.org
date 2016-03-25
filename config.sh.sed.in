@@ -47,21 +47,19 @@ archives="us security debports backports volatile"
 sections="main contrib non-free"
 parts="$sections"
 
-suites="squeeze squeeze-updates squeeze-backports squeeze-backports-sloppy squeeze-lts wheezy wheezy-updates wheezy-backports wheezy-backports-sloppy jessie jessie-updates jessie-backports stretch sid experimental"
-security_suites="squeeze wheezy jessie"
-backports_suites="squeeze-backports squeeze-backports-sloppy wheezy-backports wheezy-backports-sloppy jessie-backports"
+suites="wheezy wheezy-updates wheezy-backports wheezy-backports-sloppy jessie jessie-updates jessie-backports stretch sid experimental"
+security_suites="wheezy jessie"
+backports_suites="wheezy-backports wheezy-backports-sloppy jessie-backports"
 dists="$suites"
 
 priorities="required important standard optional extra"
 
 architectures="alpha amd64 arm arm64 armel armhf avr32 hppa hurd-i386 i386 ia64 kfreebsd-amd64 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe ppc64 ppc64el s390 s390x sh4 sparc sparc64 x32"
-arch_squeeze="amd64 armel i386 ia64 kfreebsd-i386 kfreebsd-amd64 mips mipsel powerpc s390 sparc"
-arch_wheezy="${arch_squeeze} armhf s390x"
+arch_wheezy="$amd64 armel i386 ia64 kfreebsd-i386 kfreebsd-amd64 mips mipsel powerpc s390 sparc armhf s390x"
 arch_jessie="${arch_wheezy} arm64"
 arch_stretch="${arch_jessie}"
 arch_sid="${arch_stretch} alpha avr32 hppa hurd-i386 m68k powerpcspe ppc64el sh4 sparc64"
 arch_experimental="${arch_sid}"
-arch_squeeze_proposed_updates="${arch_squeeze}"
 arch_wheezy_proposed_updates="${arch_wheezy}"
 
 # from http://ftp.de.debian.org/debian-ports/dists/{sid,experimental}/Release
