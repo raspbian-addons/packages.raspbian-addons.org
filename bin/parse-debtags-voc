@@ -36,7 +36,7 @@ use Packages::I18N::Locale;
 &Packages::Config::init( './' );
 my $debtagsdir = "$TOPDIR/files/debtags";
 my $wwwdir = "$TOPDIR/www/about";
-my $voc_file = "$debtagsdir/vocabulary";
+my $voc_file = "$debtagsdir/debian-packages";
 my (%voc, %voc_db);
 
 $/ = "";
