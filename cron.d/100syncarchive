@@ -27,11 +27,11 @@ then
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		(cd us/${dist}/${part}/binary-${arch} &&
 		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+     	        #FIXME: no Contents files for p-u
+	        echo retrieve Contents $dist/${part}/$arch
+	        (cd us/${dist}/${part} &&
+		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/Contents-${arch}.gz)
 	    done
-	    #FIXME: no Contents files for p-u
-	    echo retrieve Contents $dist/$arch
-	    (cd us/${dist} &&
-		$wget_cmd -N ${ftpsite}/dists/${dist}/Contents-${arch}.gz)
 	done
 	for part in ${parts}
 	do
@@ -49,8 +49,8 @@ else
     do
         echo "retrieve Releases(.gpg) $dist"
 	test -d us/${dist} || mkdir -p us/${dist}
-	rsync -t ${localdir}/dists/${dist}/Release us/${dist}/Release
-	rsync -t ${localdir}/dists/${dist}/Release.gpg us/${dist}/Release.gpg
+	rsync -Lt ${localdir}/dists/${dist}/Release us/${dist}/Release
+	rsync -Lt ${localdir}/dists/${dist}/Release.gpg us/${dist}/Release.gpg
 
 	foo=\$arch_${dist//-/_}
 	for arch in `eval echo $foo`
@@ -59,19 +59,22 @@ else
 	    do
 	        echo retrieve Packages $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
-		rsync -t ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \
+		rsync -Lt ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \
 		    us/${dist}/${part}/binary-${arch}/Packages.gz
+
+    	        #FIXME: no Contents files for p-u
+	        #FIXME: the symlinks for wheezy/sid/experimental will go away
+	        #FIXME: this only pulls in the contents files for main in wheezy/sid/experimental
+	        echo retrieve Contents $dist/$arch
+	        rsync -Lt ${localdir}/dists/${dist}/${part}/Contents-${arch}.gz \
+		    us/${dist}/${parts}/Contents-${arch}.gz
 	    done
-	    #FIXME: no Contents files for p-u
-	    echo retrieve Contents $dist/$arch
-	    rsync -t ${localdir}/dists/${dist}/Contents-${arch}.gz \
-		us/${dist}/Contents-${arch}.gz
 	done
 	for part in ${parts}
         do
 	    echo retrieve Sources $dist/$part
             test -d us/${dist}/${part}/source || mkdir -p us/${dist}/${part}/source
-            rsync -t ${localdir}/dists/${dist}/${part}/source/Sources.gz \
+            rsync -Lt ${localdir}/dists/${dist}/${part}/source/Sources.gz \
 	    	us/${dist}/${part}/source/Sources.gz
 	done
 
@@ -81,7 +84,7 @@ fi
 
 # security archive
 #
-for dist in slink potato woody sarge etch lenny
+for dist in $security_suites
 do
     echo "retrieve Release(.gpg) $dist"
     test -d security/${dist} || mkdir -p security/${dist}

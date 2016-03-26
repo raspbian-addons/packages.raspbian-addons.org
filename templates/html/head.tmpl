@@ -10,29 +10,42 @@
 <meta name="google-site-verification" content="zCMV8x2ETovx6L0EPRZN24gQGkMMco_IZBJV5ch12x0">
 [% html_meta %]
 
-<link href="/debian.css" rel="stylesheet" type="text/css" media="all">
-<link href="/packages.css" rel="stylesheet" type="text/css" media="all">
-<link href="/packages-site.css" rel="stylesheet" type="text/css" media="all">
+<link href="/debpkg.css" rel="stylesheet" type="text/css" media="all">
 [% IF rss_alternate %]
 <link rel="alternate" type="application/rss+xml" title="RSS" href="[% rss_alternate %]">
 [% END %]
 <script src="/packages.js" type="text/javascript"></script>
 </head>
 <body>
-[%- IF sitewidemsg -%]
-<div id="psitewidemsg" class="[% sitewidemsg.importance %]">
-[%- IF sitewidemsg.title -%]<h2>[% sitewidemsg.title %]</h2>[% END %]
-[% sitewidemsg.txt %]
-</div>
-[%- END -%]
 <div id="header">
    <div id="upperheader">
 
    <div id="logo">
   <!-- very Debian specific use of the logo stuff -->
-  <a href="[% logo.url %]"><img src="[% logo.src %]" alt=""></a>
-  <a href="[% logo.url %]"><img src="/Pics/debian-small.png" alt="[% logo.alt %]" width="90" height="31"></a>
+<a href="[% logo.url %]"><img src="[% logo.src %]" alt="Debian" with="50" height="61"></a>
 </div> <!-- end logo -->
+<p class="hidecss"><a href="#inner">[% g('skip the navigation') %]</a></p>
+<p class="section"><a href="/">Packages</a></p>
+</div> <!-- end upperheader -->
+<!-- navbar -->
+<div id="navbar">
+<ul>
+   <li><a href="http://www.debian.org/intro/about">About Debian</a></li>
+   <li><a href="http://www.debian.org/distrib/">Getting Debian</a></li>
+   <li><a href="http://www.debian.org/support">Support</a></li>
+   <li><a href="http://www.debian.org/devel/">Developers'&nbsp;Corner</a></li>
+</ul>
+</div> <!-- end navbar -->
+
+<div id="pnavbar">
+ &nbsp;&#x2F; <a href="[% packages_homepage %]" title="[% g('%s Packages Homepage', organisation) %]">[% g('Packages') %]</a>
+[% FOREACH n IN navigation %]
+ &#x2F; [% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 
+[% END %]
+</div> <!-- end navbar -->
+
+</div> <!-- end header -->
+<div id="content">
 
 [%- IF print_search_field %]
 [% checked = 'checked="checked"'
@@ -58,21 +71,13 @@
 </div> <!-- end hpacketsearch -->
 </form>
 [% END %]
+[%- IF sitewidemsg -%]
+<div id="psitewidemsg" class="[% sitewidemsg.importance %]">
+[%- IF sitewidemsg.title -%]<h2>[% sitewidemsg.title %]</h2>[% END %]
+[% sitewidemsg.txt %]
+</div>
+[%- END -%]
 
-</div> <!-- end upperheader -->
-
-<p class="hidecss"><a href="#inner">[% g('skip the navigation') %]</a></p>
-<div id="pnavbar">
- &gt;&gt; <a href="[% project_homepage %]" title="[% g('%s Homepage', organisation) %]">[% organisation %]</a>
- &gt;&gt; <a href="[% packages_homepage %]" title="[% g('%s Packages Homepage', organisation) %]">[% g('Packages') %]</a>
-[% FOREACH n IN navigation %]
- &gt;&gt; [% IF n.url %]<a href="[% n.url %]" [% IF n.title %]title="[% n.title %]"[% END %]>[% n.name %]</a>[% ELSE %][% n.name %][% END %] 
-[% END %]
-</div> <!-- end navbar -->
-
-</div> <!-- end header -->
-<div id="outer">
-<div id="inner">
 
 [%- IF page_title %]
   <h1>[% page_title %]</h1>
