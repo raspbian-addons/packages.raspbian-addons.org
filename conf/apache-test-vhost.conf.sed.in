@@ -6,6 +6,8 @@
   AddDefaultCharSet utf-8
   AllowOverride AuthConfig FileInfo
 
+  Require all granted
+
   # Nice caching..
   ExpiresActive On
   ExpiresDefault "access plus 1 day"
@@ -84,14 +86,12 @@
       PerlHandler ModPerl::Registry
       Options +ExecCGI
       PerlSendHeader On
-      allow from all
+      Require all granted
    </Location>
 
    BrowserMatch reportbug is_reportbug
 
    RewriteEngine on
-   RewriteLog %TOPDIR%/files/logs/%SITE-rewrite.log
-   RewriteLogLevel 0
 
    RewriteMap changelog-url txt:%TOPDIR%/files/changelogs-map
 
