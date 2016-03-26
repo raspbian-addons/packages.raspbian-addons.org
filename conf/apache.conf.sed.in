@@ -65,18 +65,19 @@
 </Directory>
 
 <VirtualHost *:80>
-   ServerAdmin webmaster@debian.org
+   ServerAdmin djpig@debian.org
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
 
    RewriteEngine On
    RewriteCond %{HTTPS} off
    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
 </VirtualHost>
 
 <IfModule mod_ssl.c>
 <VirtualHost *:443>
-   ServerAdmin webmaster@debian.org
+   ServerAdmin djpig@debian.org
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
    ErrorLog /var/log/apache2/%SITE%-error.log
