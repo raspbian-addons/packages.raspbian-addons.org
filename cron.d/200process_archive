@@ -5,6 +5,8 @@
 cd "$topdir"
 
 date
+./bin/parse-translations --english-only
+date
 ./bin/parse-packages
 date
 ./bin/parse-sources

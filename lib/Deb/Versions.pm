@@ -112,6 +112,7 @@ eval {
     $AptPkg::Config::_config->init;
     $AptPkg::System::_system = $AptPkg::Config::_config->system;
     my $apt_ver = $AptPkg::System::_system->versioning;
+    undef(*version_cmp);
     *version_cmp = sub { return $apt_ver->compare(@_) };
 };
 

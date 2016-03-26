@@ -1,0 +1,141 @@
+# Need to turn on negotiation_module
+<Directory %TOPDIR%/www/>
+  Options +MultiViews +FollowSymLinks +Indexes
+  AddHandler type-map var
+  # Make sure that the srm.conf directive is commented out.
+  AddDefaultCharSet utf-8
+  AllowOverride AuthConfig FileInfo
+
+  # Nice caching..
+  ExpiresActive On
+  ExpiresDefault "access plus 1 day"
+  ExpiresByType image/gif  "modification plus 1 year"
+  ExpiresByType image/jpeg "modification plus 1 year"
+  ExpiresByType image/png  "modification plus 1 year"
+
+  # language stuff
+  # you need to keep this in sync with lib/Packages/I18N/Locale.pm
+  # %lang2charset
+  AddLanguage en .en
+  AddLanguage en-us .en-us
+  AddLanguage en-gb .en-gb
+  AddLanguage ar .ar
+  AddLanguage bg .bg
+  AddLanguage ca .ca
+  AddLanguage cs .cs
+  AddLanguage da .da
+  AddLanguage de .de
+  AddLanguage el .el
+  AddLanguage eo .eo
+  AddLanguage es .es
+  AddLanguage fi .fi
+  AddLanguage fr .fr
+  AddLanguage hr .hr
+  AddLanguage hu .hu
+  AddLanguage id .id
+  AddLanguage it .it
+  AddLanguage ja .ja
+  AddLanguage ko .ko
+  AddLanguage lt .lt
+  AddLanguage nl .nl
+  AddLanguage no .no
+  AddLanguage nb .nb
+  AddLanguage pl .pl
+  AddLanguage pt .pt
+  AddLanguage pt-pt .pt_PT
+  AddLanguage pt-br .pt_BR
+  AddLanguage ro .ro
+  AddLanguage ru .ru
+  AddLanguage sk .sk
+  AddLanguage sl .sl
+  AddLanguage sv .sv_SE
+  AddLanguage tr .tr
+  AddLanguage uk .uk
+  AddLanguage zh-CN .zh-cn
+  AddLanguage zh-HK .zh-hk
+  AddLanguage zh-TW .zh-tw
+  LanguagePriority en fr de it es ja pl hr da pt pt-pt pt-br fi zh-cn zh-hk zh-tw cs sv sv-se ko no nb ru tr uk eo ar nl hu ro sk el ca en-us en-gb id lt sl bg
+
+  DirectoryIndex index
+
+  # RSS stuff
+  AddType application/rss+xml .rdf .xml
+
+  RemoveType .gz
+  AddEncoding x-gzip .gz
+</Directory>
+
+<VirtualHost %SITE%:44345>
+   ServerAdmin webmaster@%SITE%
+   DocumentRoot %TOPDIR%/www/
+   ServerName %SITE%
+   ErrorLog %TOPDIR%/files/logs/%SITE%-error.log
+   CustomLog %TOPDIR%/files/logs/%SITE%-access.log combined
+
+   Alias /cgi-bin/ %TOPDIR%/cgi-bin/
+
+   PerlModule ModPerl::Registry
+   PerlTaintCheck On
+   PerlRequire %TOPDIR%/bin/mod_perl-startup
+   PerlSwitches -T
+   <Location /cgi-bin/>
+      SetHandler perl-script
+      PerlInitHandler Apache2::Reload
+      PerlHandler ModPerl::Registry
+      Options +ExecCGI
+      PerlSendHeader On
+      allow from all
+   </Location>
+
+   BrowserMatch reportbug is_reportbug
+
+   RewriteEngine on
+   RewriteLog %TOPDIR%/files/logs/%SITE-rewrite.log
+   RewriteLogLevel 0
+
+   RewriteMap changelog-url txt:%TOPDIR%/files/changelogs-map
+
+   RewriteRule ^/cgi-bin/search_packages.pl(.*)$ /search$1
+   RewriteRule ^/cgi-bin/search_contents.pl(.*)$ /search$1
+   RewriteRule ^/unstable/newpkg_([a-z]+)\.[a-z]+\.rdf /unstable/$1/newpkg?format=rss [R=permanent,L]
+   RewriteRule ^/unstable/newpkg_([a-z]+) /unstable/$1/newpkg [R=permanent,L]
+
+   # we never want to rewrite those URLs
+   RewriteRule ^/cgi-bin/dispatcher.pl - [L]
+   RewriteRule ^/changelogs/ - [L]
+   RewriteRule ^/Pics/ - [L]
+   RewriteRule ^/about/ - [L]
+   RewriteRule ^/[^/]+\.css - [L]
+   RewriteRule ^/[^/]+\.js - [L]
+   RewriteRule ^/favicon.ico$ - [L]
+   RewriteRule ^/robots.txt$ - [L]
+
+#   RewriteRule ^/$ http://www.debian.org/distrib/packages
+   RewriteRule ^/$			/index [L]
+   RewriteRule ^/([^/+]*)([+])([^/]*)$	"/$1%%{%}2B$3" [N]
+   RewriteRule ^/changelog:(.+)$	/changelogs/${changelog-url:$1} [R,L,NE]
+   RewriteRule ^/src:([^/]+)$		/search?searchon=sourcenames&keywords=$1 [R,L,NE]
+   RewriteRule ^/file:(.+)$		/search?searchon=contents&keywords=$1 [R,L,NE]
+   
+   RewriteCond %{QUERY_STRING} =""
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -f [OR]
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME}.en.html -f [OR]
+   RewriteCond %TOPDIR%/www%{REQUEST_FILENAME} -l
+   RewriteRule . - [L]
+
+   RewriteCond %{QUERY_STRING} ^$ [OR]
+   RewriteCond %{REQUEST_URI} !^/search$
+   RewriteCond %{REQUEST_URI} !^/cgi-bin/search_(contents|packages)\.pl$
+   RewriteRule ^/([^/]+)$		/search?keywords=$1 [R,L,NE]
+
+   RewriteRule ^/(.+)$ /cgi-bin/dispatcher.pl/$1 [L,PT]
+
+#  In case we need to disable the site again
+# 
+#   ErrorDocument 404 /index.html
+#   RewriteCond %{SCRIPT_FILENAME} !^/(sbin|cgi-bin|Pics|test)/
+#   RewriteCond %{SCRIPT_FILENAME} !^/favicon.ico
+#   RewriteCond %{SCRIPT_FILENAME} !^/(stable|testing|unstable|experimental)/
+#   RewriteRule . /index.html
+
+</VirtualHost>

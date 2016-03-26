@@ -1,0 +1,25 @@
+include /etc/apache2/mods-available/rewrite.load
+include /etc/apache2/mods-available/negotiation.load
+include /etc/apache2/mods-available/perl.load
+include /etc/apache2/mods-available/mime.load
+include /etc/apache2/mods-available/expires.load
+include /etc/apache2/mods-available/dir.load
+include /etc/apache2/mods-available/alias.load
+include /etc/apache2/mods-available/authz_host.load
+include /etc/apache2/mods-available/setenvif.load
+
+LogFormat "%v:%p %h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" vhost_combined
+LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\" %P" combined
+LogFormat "%h %l %u %t \"%r\" %>s %O" common
+LogFormat "%{Referer}i -> %U" referer
+LogFormat "%{User-agent}i" agent
+
+MaxClients 4
+
+TypesConfig /etc/mime.types
+Listen %SITE%:44345
+
+ErrorLog files/logs/%SITE%-error.log
+PidFile files/logs/apache.pid
+
+include conf/apache-test-vhost.conf

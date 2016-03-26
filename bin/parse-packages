@@ -59,6 +59,10 @@ $/ = "";
 -d "$DBDIR/xapian.old" && rmtree("$DBDIR/xapian.old");
 mkpath( "$DBDIR/xapian.new" );
 
+# Needed to compensate removal of long descriptions from Packages files:
+my %descriptions_english_db;
+tie %descriptions_english_db, "DB_File", "files/db/descriptions_translated_english_only.db", O_RDONLY, 0666, $DB_BTREE;
+
 for my $suite (@SUITES) {
     my %package_names_suite = ();
     my %packages_all_db;
@@ -72,7 +76,9 @@ for my $suite (@SUITES) {
                 print "\tseems not to exist, skipping...\n";
                 next;
         }
-	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/{,debian-installer/}binary-*/Packages.gz|";
+	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/binary-*/Packages.gz"
+	        .     " $TOPDIR/archive/$archive/$suite/updates/$what/binary-*/Packages.gz"
+	        .     " $TOPDIR/archive/$archive/$suite/$what/debian-installer/binary-*/Packages.gz|";
 	while (<PKG>) {
 		next if /^\s*$/;
 		my $data = "";
@@ -128,6 +134,25 @@ for my $suite (@SUITES) {
 		    }
 		    my $old = $data{tag};
 		    $data{'tag'} = join ", ", @tags;
+		}
+
+		# If description-md5 is present, use a lookup, thanks
+		# to the English translation which got processed right
+		# before:
+		if ($data{'description-md5'}) {
+		    # The short description is a nice fallback:
+		    my $description = $data{'description'};
+		    my $lookup = $descriptions_english_db{$data{'description-md5'}};
+		    if ($lookup) {
+			# There should only be an English translation
+			# in there, but let's make sure:
+			while ($lookup =~ /([^\001]*)\001([^\000]*)\000/g) {
+			    my ($language, $english_description) = ($1, $2);
+			    $description = $english_description
+				if $language eq 'en';
+			}
+			$data{'description'} = $description;
+		    }
 		}
 
 		# we add some additional data here
@@ -194,6 +219,8 @@ for my $suite (@SUITES) {
 
     untie %packages_all_db;
 }
+
+untie %descriptions_english_db;
 
 print "Writing databases...\n";
 my %packages_small_db;

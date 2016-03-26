@@ -4,43 +4,54 @@ INSTALL
 This should give you an idea about the basic steps. It is probably very rough
 around the edges, feel free to ask for clarifications so we can improve it.
 
-This guide assumes you are working on a Debian etch system. If that is not the
+This guide assumes you are working on a Debian lenny system. If that is not the
 case, you might have to adjust some of the steps.
 
 1) Install git (package git-core). You will get a much more pleasant user
-   experience if you use a version from backports.debian.org or a self-compiled one
-   instead of etch's version.
-2) Download the code from git://source.djpig.de/git/packages.git
-   (Something like `git clone git://source.djpig.de/git/packages.git')
-3) Install the needed dependencies. A list can be found in debian/control.
-   One dependency can't be fulfilled directly from etch and is therefor not listed
-   there: the Search::Xapian perl module. You can either compile that yourself against
-   libxapian from etch, use the backport on backports.debian.org, or install the
-   0.9.9-1 deb from snapshot.debian.org.
-4) Install apache2 (apache2-mpm-worker) and mod_perl (libapache2-mod-perl2)
-5) Adjust the configuration to your needs. You should at least edit the following
-   files before starting to test (don't touch %TOPDIR% and %SITE%, as you will 
-   specify it later):
+   experience if you use a version from backports.debian.org or a self-compiled
+   one instead of lenny's version.
+2) Download the code from git://git.debian.org/git/webwml/packages.git
+   (Something like `git clone git://git.debian.org/git/webwml/packages.git')
+3) Install the needed dependencies. A list can be found in debian/control and
+   used with dpkg-checkbuilddeps to check for missing deps.
+4) Install apache2 (apache2-mpm-worker), mod_perl (libapache2-mod-perl2) and
+   Apache2::Reload (libapache2-reload-perl)
+5) Adjust the configuration to your needs. You should at least edit the
+   following files before starting to test (don't touch %TOPDIR% and %SITE%, as
+   you will specify it later):
    - ./config.sh.sed.in
-     (especially : admin_email, and localdir and/or ftproot if you have local caches)
+     (especially : admin_email, and localdir and/or ftproot if you have local
+     caches)
    - ./templates/config.tmpl
      (especially : packages_homepage)
    - ./templates/config/*
      (especially if you have your own repositories)
    - ./conf/apache.conf.sed.in
+   - ./conf/trusted.gpg (that can be a link to
+     /usr/share/keyrings/debian-archive-keyring.gpg)
 6) run `./bin/setup-site <topdir> <site>'
-   (e.g. `./bin/setup-site /org/packages.debian.org packages.debian.org')
-7) create a cache directory for the compiled templates, it needs to be writable by
-   apache (i.e. on default etch by www-data). Default location is
+   (e.g. `./bin/setup-site /srv/packages.debian.org packages.debian.org')
+   (<topdir> is the directory where the sources were cloned)
+7) create a cache directory for the compiled templates, it needs to be writable
+   by apache (i.e. on default lenny by www-data). Default location is
    <topdir>/cache. So
    chown www-data <topdir>/cache
    chmod 2770 <topdir>/cache
-7) Include ./conf/apache.conf in apache's configuration, e.g. by symlinking it from
-   /etc/apache2/sites-available/ and then using a2ensite
-8) Run ./bin/daily
-   (this takes a while, especially the first time, as it downloads a lot of data,
-   [at the time of this writing approx. 900 MB], creates databases, pre-builds heavy
-   pages, etc.)
-9) Set up ./bin/daily to be run regulary. In ./conf/crontab you can find an example crontab
-   to do this. Actually preferable is to trigger the script by archive updates, but you
-   will know best if and how to implement that in your setup.
+8) Include ./conf/apache.conf in apache's configuration, e.g. by symlinking it
+   from /etc/apache2/sites-available/ and then using a2ensite
+9) Enable at least the following apache modules: `a2enmod expires rewrite'
+10) Run ./bin/daily
+   (this takes a while, especially the first time, as it downloads a lot of
+   data, [at the time of this writing approx. 900 MB], creates databases,
+   pre-builds heavy pages, etc.)
+11) Set up ./bin/daily to be run regulary. In ./conf/crontab you can find an
+   example crontab to do this. Actually preferable is to trigger the script by
+   archive updates, but you will know best if and how to implement that in your
+   setup.
+12) Local testing
+   Special variants of the apache configuration files are available to help
+   testing the setup locally.
+   - /usr/sbin/apache2 -d $PWD -f conf/apache-test.conf
+     should start a test apache server listening on port 44345
+   - /usr/sbin/apache2 -d $PWD -f conf/apache-test.conf -k stop
+     can be used to stop the test server

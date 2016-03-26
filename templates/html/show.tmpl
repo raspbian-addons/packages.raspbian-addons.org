@@ -95,13 +95,13 @@
 
 [% IF patch_tracking_url && src %]
   [% FOREACH src.downloads %]
-    [% IF name.match('\.(debian\.tar|diff)\.(gz|bz2|lzma)$') %]
+    [% IF name.match('\.(debian\.tar|diff)\.(gz|xz|bz2|lzma)$') %]
     <li><a href="[% "$patch_tracking_url/$src.pkg/$src.version" %]">[% g("%s Patch Tracker", organisation) %]</a></li>
     [% END -%]
   [% END -%]
 [% ELSIF patch_tracking_url && is_source %]
   [% FOREACH srcfiles %]
-    [% IF filename.match('\.(debian\.tar|diff)\.(gz|bz2|lzma)$') %]
+    [% IF filename.match('\.(debian\.tar|diff)\.(gz|xz|bz2|lzma)$') %]
     <li><a href="[% "$patch_tracking_url/$pkg/$version" %]">[% g("%s Patch Tracker", organisation) %]</a></li>
     [% END -%]
   [% END -%]
@@ -253,6 +253,7 @@
     <td><ul class="uldep"><li>[% g('depends') %]</li></ul></td>
     <td><ul class="ulrec"><li>[% g('recommends') %]</li></ul></td>
     <td><ul class="ulsug"><li>[% g('suggests') %]</li></ul></td>
+    <td><ul class="ulenh"><li>[% g('enhances') %]</li></ul></td>
     [% END %]
     </tr></table>
   [%- END %]
@@ -322,7 +323,7 @@
 	version_class = 'vold';
    END %]
 [% "<td class='$version_class'>$d.version</td>" IF versions.multiple %]
-<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', d.instsize) %]</td>
+<td class="size">[% g('%s&nbsp;kB', num.format_number(d.pkgsize,1)) %]</td><td class="size">[% g('%s&nbsp;kB', num.format_number(d.instsize,1)) %]</td>
 <td>
 [% IF d.contents_avail %]
   [<a href="[% make_url(filelist_url,'','arch',d.arch) %]">[% g('list of files') %]</a>]

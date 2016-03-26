@@ -218,6 +218,9 @@ sub do_show {
 			build_deps( \%packages, $opts, $pkg,
 				    $page->get_dep_field('suggests'),
 				    'suggests', \%contents );
+			build_deps( \%packages, $opts, $pkg,
+				    $page->get_dep_field('enhances'),
+				    'enhances', \%contents );
 
 			#
 			# Download package
@@ -381,9 +384,12 @@ sub moreinfo {
 	    (my $src_basename = $source_version) =~ s,^\d+:,,; # strip epoche
 	    $src_basename = "${source}_$src_basename";
 	    $src_dir =~ s,pool/updates,pool,o;
+	    $src_dir =~ s,^pool,,o;
 
-	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename/changelog";
-	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );
+	    $contents->{files}{changelog}{path} = "$src_dir/$src_basename"."_changelog";
+	    $contents->{files}{copyright}{path} = "$src_dir/$src_basename"."_copyright";
+	    # FIXME: we should restore per binary package copyright 
+	    # $contents->{files}{copyright}{path} = "$src_dir/$src_basename/".( $is_source ? 'copyright' : "$name.copyright" );
 	}
    }
 
@@ -409,7 +415,7 @@ sub providers {
 sub build_deps {
     my ( $packages, $opts, $pkg, $relations, $type, $contents) = @_;
     my %dep_type = ('depends' => 'dep', 'recommends' => 'rec', 
-		    'suggests' => 'sug', 'build-depends' => 'adep',
+		    'suggests' => 'sug', 'enhances' => 'enh', 'build-depends' => 'adep',
 		    'build-depends-indep' => 'idep' );
     my $suite = $opts->{suite}[0];
     my $cat = $opts->{cat};
