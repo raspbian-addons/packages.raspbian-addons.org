@@ -18,7 +18,7 @@ then
 	    $wget_cmd -N ${ftpsite}/dists/${dist}/Release &&
 	    $wget_cmd -N ${ftpsite}/dists/${dist}/Release.gpg )
         
-	foo=\$arch_${dist//-/_}
+	foo=\$arch_${dist%-*}
 	for arch in `eval echo $foo`
 	do
 	    for part in ${parts}
@@ -52,7 +52,7 @@ else
 	rsync -Lt ${localdir}/dists/${dist}/Release us/${dist}/Release
 	rsync -Lt ${localdir}/dists/${dist}/Release.gpg us/${dist}/Release.gpg
 
-	foo=\$arch_${dist//-/_}
+	foo=\$arch_${dist%-*}
 	for arch in `eval echo $foo`
 	do
 	    for part in ${parts}
@@ -91,7 +91,7 @@ do
 	$wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/Release &&
 	$wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/Release.gpg )
         
-    foo=\$arch_${dist//-/_}
+    foo=\$arch_${dist%-*}
     for arch in `eval echo $foo`
     do
       for part in ${parts}
