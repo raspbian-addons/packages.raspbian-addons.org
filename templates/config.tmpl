@@ -4,26 +4,26 @@
    ddtp_lang = 'en'
 
    organisation = 'Debian'
-   project_homepage = 'http://www.debian.org/'
+   project_homepage = 'https://www.debian.org/'
    packages_homepage = '/'
-   packages_homepage_abs = 'http://archive.debian.net/'
+   packages_homepage_abs = 'https://archive.debian.net/'
    searchformurl = packages_homepage
    search_url = '/search'
    tags_url = 'http://debtags.alioth.debian.org/'
-   bugs_url = 'http://bugs.debian.org/'
-   pts_url = 'http://packages.qa.debian.org/'
-   ddpo_url = 'http://qa.debian.org/developer.php?login='
+   bugs_url = 'https://bugs.debian.org/'
+   pts_url = 'https://packages.qa.debian.org/'
+   ddpo_url = 'https://qa.debian.org/developer.php?login='
    src_bugs_url = bugs_url _ 'src:'
    mirror_url = 'http://ftp.debian.org/'
    security_mirror = 'archive.debian.org'
    security_mirror_url = security_mirror _ '/debian-security'
    security_suite_suffix = '/updates'
-   changelogs_url = 'http://archive.debian.net/changelogs/'
-   policy_url = 'http://www.debian.org/doc/debian-policy/'
+   changelogs_url = 'https://archive.debian.net/changelogs/'
+   policy_url = 'https://www.debian.org/doc/debian-policy/'
    cn_help_url = project_homepage _ 'intro/cn'
 #   patch_tracking_url = 'http://sources.debian.net/patches/summary'
-   screenshots_url = '//screenshots.debian.net/package/'
-   screenshots_thumb_url = '//screenshots.debian.net/thumbnail-with-version/'
+   screenshots_url = 'https://screenshots.debian.net/package/'
+   screenshots_thumb_url = 'https://screenshots.debian.net/thumbnail-with-version/'
    logo = {
 	url => project_homepage,
         src => '/Pics/openlogo-50.png',
@@ -65,9 +65,9 @@
 [%-
    # possible values for importance: high, normal, low
    #sitewidemsg = { importance => "high",
-   #		   txt => g('Please note that this is an experimental version of <a href="http://%s/">%s</a>. Errors and obsolete information should be expected', 'packages.debian.org', 'packages.debian.org') }
+   #		   txt => g('Please note that this is an experimental version of <a href="https://%s/">%s</a>. Errors and obsolete information should be expected', 'packages.debian.org', 'packages.debian.org') }
    sitewidemsg = { importance => "high",
-   		   txt => g('Please note that this site contains information about obsolete %s releases; if you search for current data, please use <a href="http://%s/">%s</a>.', organisation, 'packages.debian.org', 'packages.debian.org') }
+   		   txt => g('Please note that this site contains information about obsolete %s releases; if you search for current data, please use <a href="https://%s/">%s</a>.', organisation, 'packages.debian.org', 'packages.debian.org') }
 -%]
 [%# @translators: . = decimal_point , = thousands_sep, see Number::Format %]
 [%- USE num = Number.Format( decimal_point => g('.'),
