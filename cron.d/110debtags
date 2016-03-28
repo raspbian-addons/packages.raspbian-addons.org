@@ -7,8 +7,7 @@ debtagsdir="$filesdir/debtags"
 test -d ${debtagsdir} || mkdir -p ${debtagsdir}
 cd ${debtagsdir}
 
-$wget_cmd -N http://debtags.alioth.debian.org/tags/vocabulary.gz &&
-	gunzip -f vocabulary.gz
+$wget_cmd -N http://anonscm.debian.org/cgit/debtags/vocabulary.git/plain/debian-packages
 
 cd "$topdir"
 

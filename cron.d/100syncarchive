@@ -17,8 +17,11 @@ then
 	(cd us/${dist} &&
 	    $wget_cmd -N ${ftpsite}/dists/${dist}/Release &&
 	    $wget_cmd -N ${ftpsite}/dists/${dist}/Release.gpg )
-        
-	foo=\$arch_${dist//-/_}
+
+	ext=$(eval echo \$ext_${dist%-*})
+	if [ -z "$ext" ]; then ext=xz; fi
+	echo "using $ext as file extension"
+	foo=\$arch_${dist%-*}
 	for arch in `eval echo $foo`
 	do
 	    for part in ${parts}
@@ -26,7 +29,7 @@ then
 	        echo retrieve Packages $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
 		(cd us/${dist}/${part}/binary-${arch} &&
-		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+		    $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.$ext)
      	        #FIXME: no Contents files for p-u
 	        echo retrieve Contents $dist/${part}/$arch
 	        (cd us/${dist}/${part} &&
@@ -38,7 +41,7 @@ then
 	    echo retrieve Sources $dist/$part
 	    test -d us/${dist}/${part}/source || mkdir -p us/${dist}/${part}/source
             (cd us/${dist}/${part}/source &&
-                $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/source/Sources.gz)
+                $wget_cmd -N ${ftpsite}/dists/${dist}/${part}/source/Sources.$ext)
 	done
 
 	$check_release_cmd $archivedir/us/${dist}/Release
@@ -52,15 +55,18 @@ else
 	rsync -Lt ${localdir}/dists/${dist}/Release us/${dist}/Release
 	rsync -Lt ${localdir}/dists/${dist}/Release.gpg us/${dist}/Release.gpg
 
-	foo=\$arch_${dist//-/_}
+	ext=$(eval echo \$ext_${dist%-*})
+	if [ -z "$ext" ]; then ext=xz; fi
+	echo "using $ext as file extension"
+	foo=\$arch_${dist%-*}
 	for arch in `eval echo $foo`
 	do
 	    for part in ${parts}
 	    do
 	        echo retrieve Packages $dist/$part/$arch
 		test -d us/${dist}/${part}/binary-${arch} || mkdir -p us/${dist}/${part}/binary-${arch}
-		rsync -Lt ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.gz \
-		    us/${dist}/${part}/binary-${arch}/Packages.gz
+		rsync -Lt ${localdir}/dists/${dist}/${part}/binary-${arch}/Packages.$ext \
+		    us/${dist}/${part}/binary-${arch}/Packages.$ext
 
     	        #FIXME: no Contents files for p-u
 	        #FIXME: the symlinks for wheezy/sid/experimental will go away
@@ -74,8 +80,8 @@ else
         do
 	    echo retrieve Sources $dist/$part
             test -d us/${dist}/${part}/source || mkdir -p us/${dist}/${part}/source
-            rsync -Lt ${localdir}/dists/${dist}/${part}/source/Sources.gz \
-	    	us/${dist}/${part}/source/Sources.gz
+            rsync -Lt ${localdir}/dists/${dist}/${part}/source/Sources.$ext \
+	    	us/${dist}/${part}/source/Sources.$ext
 	done
 
 	$check_release_cmd $archivedir/us/${dist}/Release
@@ -92,7 +98,10 @@ do
 	$wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/Release &&
 	$wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/Release.gpg )
         
-    foo=\$arch_${dist//-/_}
+    ext=$(eval echo \$ext_${dist%-*})
+    if [ -z "$ext" ]; then ext=xz; fi
+    echo "using $ext as file extension"
+    foo=\$arch_${dist%-*}
     for arch in `eval echo $foo`
     do
       for part in ${parts}
@@ -100,7 +109,7 @@ do
 	echo retrieve Packages $dist/$part/security/$arch
 	test -d security/${dist}/${part}/binary-${arch} || mkdir -p security/${dist}/${part}/binary-${arch}
 	(cd  security/${dist}/${part}/binary-${arch} &&
-	    $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/binary-${arch}/Packages.gz)
+	    $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/binary-${arch}/Packages.$ext)
       done
     done
     for part in ${parts}
@@ -108,7 +117,7 @@ do
         echo retrieve Sources $dist/$part/security
         test -d security/${dist}/${part}/source || mkdir -p security/${dist}/${part}/source
         (cd security/${dist}/${part}/source &&
-            $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/source/Sources.gz)
+            $wget_cmd -N ${security_ftpsite}/dists/${dist}/updates/${part}/source/Sources.$ext)
     done
 
     $check_release_cmd $archivedir/security/${dist}/Release

@@ -4,12 +4,10 @@ INSTALL
 This should give you an idea about the basic steps. It is probably very rough
 around the edges, feel free to ask for clarifications so we can improve it.
 
-This guide assumes you are working on a Debian lenny system. If that is not the
+This guide assumes you are working on a Debian jessie system. If that is not the
 case, you might have to adjust some of the steps.
 
-1) Install git (package git-core). You will get a much more pleasant user
-   experience if you use a version from backports.debian.org or a self-compiled
-   one instead of lenny's version.
+1) Install git (package git-core)
 2) Download the code from git://git.debian.org/git/webwml/packages.git
    (Something like `git clone git://git.debian.org/git/webwml/packages.git')
 3) Install the needed dependencies. A list can be found in debian/control and
@@ -33,7 +31,7 @@ case, you might have to adjust some of the steps.
    (e.g. `./bin/setup-site /srv/packages.debian.org packages.debian.org')
    (<topdir> is the directory where the sources were cloned)
 7) create a cache directory for the compiled templates, it needs to be writable
-   by apache (i.e. on default lenny by www-data). Default location is
+   by apache (i.e. on default jessie by www-data). Default location is
    <topdir>/cache. So
    chown www-data <topdir>/cache
    chmod 2770 <topdir>/cache

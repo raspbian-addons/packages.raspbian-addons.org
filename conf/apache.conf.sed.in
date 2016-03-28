@@ -6,6 +6,8 @@
   AddDefaultCharSet utf-8
   AllowOverride AuthConfig FileInfo
 
+  Require all granted
+
   # Nice caching..
   ExpiresActive On
   ExpiresDefault "access plus 1 day"
@@ -70,14 +72,35 @@
    DocumentRoot %TOPDIR%/www/
    ServerName %SITE%
    ServerAlias packages-piatti.debian.org packages-powell.debian.org packages-rore.debian.org
+
+   RewriteEngine On
+   RewriteCond %{HTTPS} off
+   RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+</VirtualHost>
+
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+   ServerAdmin webmaster@debian.org
+   DocumentRoot %TOPDIR%/www/
+   ServerName %SITE%
+   ServerAlias packages-piatti.debian.org packages-powell.debian.org packages-rore.debian.org
    ErrorLog /var/log/apache2/%SITE%-error.log
    CustomLog /var/log/apache2/%SITE%-access.log combined
+
+   SSLEngine on
+   SSLProtocol +TLSv1 +TLSv1.1 +TLSv1.2
+   SSLHonorCipherOrder on
+   SSLCipherSuite "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH EDH+aRSA !aNULL !eNULL !MEDIUM !LOW !3DES !RC4 !MD5 !EXP !PSK !SRP !DSS"
+   SSLCertificateFile    /etc/letsencrypt/live/%SITE%/fullchain.pem
+   SSLCertificateKeyFile /etc/letsencrypt/live/%SITE%/privkey.pem
+   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+   Header always set X-Frame-Options DENY
 
    Alias /cgi-bin/ %TOPDIR%/cgi-bin/
   
    <Location /cgi-bin/>
       Options +ExecCGI
-      allow from all
+      Require all granted
    </Location>
 
    <LocationMatch /stable/allpackages.*>
@@ -92,8 +115,6 @@
    BrowserMatch reportbug is_reportbug
 
    RewriteEngine on
-   RewriteLog /var/log/apache2/rewrite.log
-   RewriteLogLevel 0
 
    RewriteMap changelog-url txt:%TOPDIR%/files/changelogs-map
 
@@ -148,3 +169,4 @@
 #   RewriteRule . /index.html
 
 </VirtualHost>
+</IfModule>

@@ -2,17 +2,17 @@
 # Mert Dirik <mertdirik@gmail.com>, 2013.
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
-"PO-Revision-Date: 2013-12-03 01:28+0200\n"
 "Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-12-03 01:28+0200\n"
+"Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
 "Language-Team: Turkish <debian-l10n-turkish@lists.debian.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.5.7\n"
-"POT-Creation-Date: \n"
 
 #: templates/config.tmpl:46
 msgid "Debian Web Mailinglist"
@@ -26,18 +26,19 @@ msgstr "%s Webmaster"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s bir %s <a href=\"%s\">tescilli markasıdır</a>"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt =>
 #: templates/config.tmpl:77
+#, fuzzy
+#| msgid ""
+#| "Please note that this is an experimental version of <a href=\"http://%s/"
+#| "\">%s</a>. Errors and obsolete information should be expected"
 msgid ""
-"Please note that this is an experimental version of <a href=\"http://%s/\">"
+"Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
 "Bunun <a href=\"http://%s/\">%s</a> deneysel sürümü olduğunu unutmayın. "
 "Hatalar ve eski bilgiler beklenebilir."
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:81
 msgid "."
 msgstr ","
@@ -47,90 +48,106 @@ msgid ","
 msgstr "."
 
 #: templates/config/architectures.tmpl:4
-msgid "Intel x86"
-msgstr "Intel x86"
-
-#: templates/config/architectures.tmpl:5
-msgid "Motorola 680x0"
-msgstr "Motorola 680x0"
-
-#: templates/config/architectures.tmpl:6
-msgid "SPARC"
-msgstr "SPARC"
-
-#: templates/config/architectures.tmpl:7
 msgid "Alpha"
 msgstr "Alpha"
 
-#: templates/config/architectures.tmpl:8
-msgid "PowerPC"
-msgstr "PowerPC"
-
-#: templates/config/architectures.tmpl:9
-msgid "ARM"
-msgstr "ARM"
-
-#: templates/config/architectures.tmpl:10
-msgid "HP PA-RISC"
-msgstr "HP PA-RISC"
-
-#: templates/config/architectures.tmpl:11
-msgid "Intel IA-64"
-msgstr "Intel IA-64"
-
-#: templates/config/architectures.tmpl:12
-msgid "MIPS (big-endian)"
-msgstr "MIPS (big-endian)"
-
-#: templates/config/architectures.tmpl:13
-msgid "MIPS (little-endian)"
-msgstr "MIPS (little-endian)"
-
-#: templates/config/architectures.tmpl:14
-msgid "IBM S/390"
-msgstr "IBM S/390"
-
-#: templates/config/architectures.tmpl:15
-msgid "Hurd (i386)"
-msgstr "Hurd (i386)"
-
-#: templates/config/architectures.tmpl:16
+#: templates/config/architectures.tmpl:5
 msgid "AMD64"
 msgstr "AMD64"
 
-#: templates/config/architectures.tmpl:17
+#: templates/config/architectures.tmpl:6
 msgid "EABI ARM"
 msgstr "EABI ARM"
 
-#: templates/config/architectures.tmpl:18
-msgid "GNU/kFreeBSD (i386)"
-msgstr "GNU/kFreeBSD (i386)"
+#: templates/config/architectures.tmpl:7
+msgid "ARM"
+msgstr "ARM"
 
-#: templates/config/architectures.tmpl:19
+#: templates/config/architectures.tmpl:8
+msgid "64-bit ARMv8"
+msgstr ""
+
+#: templates/config/architectures.tmpl:9
+msgid "ARM Hard Float"
+msgstr ""
+
+#: templates/config/architectures.tmpl:10
+msgid "AVR32"
+msgstr "AVR32"
+
+#: templates/config/architectures.tmpl:11
+msgid "HP PA-RISC"
+msgstr "HP PA-RISC"
+
+#: templates/config/architectures.tmpl:12
+msgid "Hurd (i386)"
+msgstr "Hurd (i386)"
+
+#: templates/config/architectures.tmpl:13
+msgid "Intel x86"
+msgstr "Intel x86"
+
+#: templates/config/architectures.tmpl:14
+msgid "Intel IA-64"
+msgstr "Intel IA-64"
+
+#: templates/config/architectures.tmpl:15
 msgid "GNU/kFreeBSD (amd64)"
 msgstr "GNU/kFreeBSD (amd64)"
 
+#: templates/config/architectures.tmpl:16
+msgid "GNU/kFreeBSD (i386)"
+msgstr "GNU/kFreeBSD (i386)"
+
+#: templates/config/architectures.tmpl:17
+msgid "Motorola 680x0"
+msgstr "Motorola 680x0"
+
+#: templates/config/architectures.tmpl:18
+msgid "MIPS (little-endian)"
+msgstr "MIPS (little-endian)"
+
+#: templates/config/architectures.tmpl:19
+msgid "MIPS (big-endian)"
+msgstr "MIPS (big-endian)"
+
 #: templates/config/architectures.tmpl:20
-msgid "AVR32"
-msgstr "AVR32"
+msgid "PowerPC"
+msgstr "PowerPC"
 
 #: templates/config/architectures.tmpl:21
 msgid "PowerPC SPE (e500 core)"
 msgstr "PowerPC SPE (e500 core)"
 
 #: templates/config/architectures.tmpl:22
+msgid "Little-endian 64-bit PowerPC"
+msgstr ""
+
+#: templates/config/architectures.tmpl:23
+msgid "IBM S/390"
+msgstr "IBM S/390"
+
+#: templates/config/architectures.tmpl:24
+msgid "IBM System z"
+msgstr ""
+
+#: templates/config/architectures.tmpl:25
 msgid "SH4"
 msgstr "SH4"
 
-#: templates/config/architectures.tmpl:23
+#: templates/config/architectures.tmpl:26
 msgid "Sparc64"
 msgstr "Sparc64"
 
-#: templates/config/archive_layout.tmpl:14
+#: templates/config/architectures.tmpl:27
+msgid "SPARC"
+msgstr "SPARC"
+
+#: templates/config/archive_layout.tmpl:15
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr "Debian Özgür Yazılım Yönergelerine uyan paketler"
 
-#: templates/config/archive_layout.tmpl:15
+#: templates/config/archive_layout.tmpl:16
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
@@ -138,48 +155,48 @@ msgstr ""
 "Debian Özgür Yazılım Yönergelerine uyan fakat Debian main'de bulunmayan "
 "yazılımlara gereksinim duyan paketler"
 
-#: templates/config/archive_layout.tmpl:16
+#: templates/config/archive_layout.tmpl:17
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr "Debian Özgür Yazılım Yönergelerine uymayan paketler"
 
-#: templates/config/mirrors.tmpl:95
+#: templates/config/mirrors.tmpl:77
 msgid ""
 "volatile packages that need major changes during the life of a stable release"
 msgstr ""
 "kararlı sürümün yaşamı boyunca önemli değişiklikler gerektiren uçucu "
 "(volatile) paketler"
 
-#: templates/config/mirrors.tmpl:136
+#: templates/config/mirrors.tmpl:116
 msgid "newer packages that have been adapted to stable releases of Debian"
 msgstr "Debian'ın kararlı sürümüne uyarlanmış daha yeni paketler"
 
-#: templates/config/mirrors.tmpl:163
+#: templates/config/mirrors.tmpl:142
 msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 "Debian'da henüz (ya da artık) kullanılamayan mimarilere uyarlanan paketler"
 
-#: templates/config/mirrors.tmpl:204
+#: templates/config/mirrors.tmpl:211
 msgid "North America"
 msgstr "Kuzey Amerika"
 
-#: templates/config/mirrors.tmpl:205
+#: templates/config/mirrors.tmpl:212
 msgid "South America"
 msgstr "Güney Amerika"
 
-#: templates/config/mirrors.tmpl:206
+#: templates/config/mirrors.tmpl:213
 msgid "Asia"
 msgstr "Asya"
 
-#: templates/config/mirrors.tmpl:207
+#: templates/config/mirrors.tmpl:214
 msgid "Oceania"
 msgstr "Okyanusya"
 
-#: templates/config/mirrors.tmpl:208
+#: templates/config/mirrors.tmpl:215
 msgid "Europe"
 msgstr "Avrupa"
 
-#: templates/config/mirrors.tmpl:209
+#: templates/config/mirrors.tmpl:216
 msgid "Africa"
 msgstr "Afrika"
 
@@ -188,7 +205,7 @@ msgid "Package Download Selection -- %s"
 msgstr "Paket İndirme Seçimi -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/homepage.tmpl:108 templates/html/index_head.tmpl:9
+#: templates/html/homepage.tmpl:110 templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Dağıtım:"
@@ -320,24 +337,24 @@ msgid "More information on <kbd>%s</kbd>:"
 msgstr "<kbd>%s</kbd> hakkında daha fazla bilgi:"
 
 #: templates/html/download.tmpl:107
-msgid "Exact Size"
-msgstr "Tam Boyut"
-
-#: templates/html/download.tmpl:107
 msgid "%s Byte (%s %s)"
 msgstr "%s Bayt (%s %s)"
 
-#: templates/html/download.tmpl:108 templates/html/show.tmpl:350
+#: templates/html/download.tmpl:107
+msgid "Exact Size"
+msgstr "Tam Boyut"
+
+#: templates/html/download.tmpl:108 templates/html/show.tmpl:351
 msgid "MD5 checksum"
 msgstr "MD5 sağlama toplamı"
-
-#: templates/html/download.tmpl:109
-msgid "SHA1 checksum"
-msgstr "SHA1 sağlama toplamı"
 
 #: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
 msgstr "Kullanılamıyor"
+
+#: templates/html/download.tmpl:109
+msgid "SHA1 checksum"
+msgstr "SHA1 sağlama toplamı"
 
 #: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
@@ -356,7 +373,7 @@ msgstr "<em>%1</em> paketinin <em>%3</em> <em>%2</em> dosya listesi"
 msgid "File list"
 msgstr "Dosya listesi"
 
-#: templates/html/foot.tmpl:11
+#: templates/html/foot.tmpl:13
 msgid ""
 "This page is also available in the following languages (How to set <a href="
 "\"%s\">the default document language</a>):"
@@ -364,7 +381,7 @@ msgstr ""
 "Bu sayfa aynı zamanda aşağıdaki dillerde de kullanılabilir (<a href=\"%s"
 "\">Öntanımlı belge dili</a> nasıl ayarlanır):"
 
-#: templates/html/foot.tmpl:28
+#: templates/html/foot.tmpl:32
 msgid ""
 "To report a problem with the web site, e-mail <a href=\"mailto:%s\">%s</a>. "
 "For other contact information, see the %s <a href=\"%s\">contact page</a>."
@@ -373,7 +390,7 @@ msgstr ""
 "a> adresine e-posta gönderin. Diğer iletişim bilgileri için %s <a href=\"%s"
 "\">iletişim sayfasına</a> bakın."
 
-#: templates/html/foot.tmpl:32
+#: templates/html/foot.tmpl:36
 msgid ""
 "Content Copyright &copy; %s <a href=\"%s\">%s</a>; See <a href=\"%s"
 "\">license terms</a>."
@@ -381,11 +398,11 @@ msgstr ""
 "İçerik Telif Hakkı &copy; %s <a href=\"%s\">%s</a>; <a href=\"%s\">Lisans "
 "koşulları</a>na bakın."
 
-#: templates/html/foot.tmpl:35
+#: templates/html/foot.tmpl:39
 msgid "Learn more about this site"
 msgstr "Bu site hakkında daha fazlasını öğrenin"
 
-#: templates/html/foot.tmpl:41
+#: templates/html/foot.tmpl:45
 msgid "This service is sponsored by <a href=\"%s\">%s</a>."
 msgstr "Bu hizmet, <a href=\"%s\">%s</a> sponsorluğundadır."
 
@@ -403,8 +420,8 @@ msgstr "%s Paket Ana Sayfası"
 msgid "Packages"
 msgstr "Paketler"
 
-#: templates/html/head.tmpl:60 templates/html/homepage.tmpl:39
-#: templates/html/homepage.tmpl:47 templates/html/homepage.tmpl:94
+#: templates/html/head.tmpl:60 templates/html/homepage.tmpl:41
+#: templates/html/homepage.tmpl:49 templates/html/homepage.tmpl:96
 msgid "Search"
 msgstr "Ara"
 
@@ -432,7 +449,7 @@ msgstr "tüm seçenekler"
 msgid "%s Packages Search"
 msgstr "%s Paket Araması"
 
-#: templates/html/homepage.tmpl:20
+#: templates/html/homepage.tmpl:22
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
@@ -440,18 +457,18 @@ msgstr ""
 "Bu site, <a href=\"%s\">%s</a> paket arşivindeki tüm mevcut paketler "
 "hakkında bilgi sağlar."
 
-#: templates/html/homepage.tmpl:22
+#: templates/html/homepage.tmpl:24
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
 msgstr ""
 "Herhangi bir sorunla karşılaştığınızda lütfen <a href=\"mailto:%s\">%s</a> "
 "ile iletişime geçin!"
 
-#: templates/html/homepage.tmpl:24
+#: templates/html/homepage.tmpl:26
 msgid "Browse through the lists of packages:"
 msgstr "Paket listesinde gezin:"
 
-#: templates/html/homepage.tmpl:33
+#: templates/html/homepage.tmpl:35
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
@@ -459,70 +476,70 @@ msgstr ""
 "Ayrıca <a href=\"%s/main/newpkg\">%s içine yakın zamanda eklenmiş "
 "paketlerin</a> listesi de bulunmaktadır."
 
-#: templates/html/homepage.tmpl:36
+#: templates/html/homepage.tmpl:38
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
 msgstr "Eski sürümler <a href=\"%s\">%s</a> sitesinde bulunabilir."
 
-#: templates/html/homepage.tmpl:41
+#: templates/html/homepage.tmpl:43
 msgid "Search package directories"
 msgstr "Paket dizinlerini ara"
 
-#: templates/html/homepage.tmpl:45 templates/html/homepage.tmpl:91
+#: templates/html/homepage.tmpl:47 templates/html/homepage.tmpl:93
 msgid "Keyword:"
 msgstr "Anahtar Sözcük:"
 
-#: templates/html/homepage.tmpl:47 templates/html/homepage.tmpl:95
+#: templates/html/homepage.tmpl:49 templates/html/homepage.tmpl:97
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: templates/html/homepage.tmpl:49
+#: templates/html/homepage.tmpl:51
 msgid "Search on:"
 msgstr "Şurada ara:"
 
-#: templates/html/homepage.tmpl:51
+#: templates/html/homepage.tmpl:53
 msgid "Package names only"
 msgstr "Yalnız paket adları"
 
-#: templates/html/homepage.tmpl:53
+#: templates/html/homepage.tmpl:55
 msgid "Descriptions"
 msgstr "Açıklamalar"
 
-#: templates/html/homepage.tmpl:55
+#: templates/html/homepage.tmpl:57
 msgid "Source package names"
 msgstr "Kaynak paket adları"
 
-#: templates/html/homepage.tmpl:57
+#: templates/html/homepage.tmpl:59
 msgid "Only show exact matches:"
 msgstr "Yalnızca tam eşleşmeleri göster:"
 
-#: templates/html/homepage.tmpl:65 templates/html/homepage.tmpl:72
-#: templates/html/homepage.tmpl:120
+#: templates/html/homepage.tmpl:67 templates/html/homepage.tmpl:74
+#: templates/html/homepage.tmpl:122
 msgid "any"
 msgstr "herhangi biri"
 
-#: templates/html/homepage.tmpl:67 templates/html/show.tmpl:16
+#: templates/html/homepage.tmpl:69 templates/html/show.tmpl:16
 msgid "Section:"
 msgstr "Bölüm:"
 
-#: templates/html/homepage.tmpl:76
+#: templates/html/homepage.tmpl:78
 msgid "There are shortcuts for some searches available:"
 msgstr "Bazı aramalar için kısayollar mevcuttur:"
 
-#: templates/html/homepage.tmpl:78
+#: templates/html/homepage.tmpl:80
 msgid "<code>%s<var>name</var></code> for the search on package names."
 msgstr "<code>%s<var>ad</var></code> - paket adlarında aramalar için."
 
-#: templates/html/homepage.tmpl:80
+#: templates/html/homepage.tmpl:82
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
 msgstr ""
 "<code>%ssrc:<var>isim</var></code> - kaynak paket adlarında aramak için."
 
-#: templates/html/homepage.tmpl:84
+#: templates/html/homepage.tmpl:86
 msgid "Search the contents of packages"
 msgstr "Paket içeriklerinde ara"
 
-#: templates/html/homepage.tmpl:86
+#: templates/html/homepage.tmpl:88
 msgid ""
 "This search engine allows you to search the contents of %s distributions for "
 "any files (or just parts of file names) that are part of packages. You can "
@@ -532,23 +549,23 @@ msgstr ""
 "kısmı) aramanızı sağlar. İsterseniz belirtilen paketin içindeki dosyaların "
 "tam listesini de görebilirsiniz."
 
-#: templates/html/homepage.tmpl:97
+#: templates/html/homepage.tmpl:99
 msgid "Display:"
 msgstr "Görüntüle:"
 
-#: templates/html/homepage.tmpl:100
+#: templates/html/homepage.tmpl:102
 msgid "packages that contain files named like this"
 msgstr "benzer adlı dosyaları içeren paketleri"
 
-#: templates/html/homepage.tmpl:103
+#: templates/html/homepage.tmpl:105
 msgid "packages that contain files whose names end with the keyword"
 msgstr "adları anahtar sözcükle biten dosyaları içeren paketleri"
 
-#: templates/html/homepage.tmpl:106
+#: templates/html/homepage.tmpl:108
 msgid "packages that contain files whose names contain the keyword"
 msgstr "adları anahtar sözcükleri içeren dosyaları içeren paketleri"
 
-#: templates/html/homepage.tmpl:115
+#: templates/html/homepage.tmpl:117
 msgid "Architecture:"
 msgstr "Mimari:"
 
@@ -594,8 +611,7 @@ msgid ""
 "The following packages were added to suite <em>%s</em> in the %s archive "
 "during the last 7 days."
 msgstr ""
-"Aşağıdaki paketler son 7 gün içerisinde %2 arşivindeki %1 takımına "
-"eklendi."
+"Aşağıdaki paketler son 7 gün içerisinde %2 arşivindeki %1 takımına eklendi."
 
 #: templates/html/newpkg.tmpl:18
 msgid " You can also display this list <a href=\"%s\">sorted by name</a>."
@@ -623,13 +639,13 @@ msgstr "[RSS 1.0 Beslemesi]"
 msgid " <em>(%u days old)</em>"
 msgstr " <em>(%u günlük)</em>"
 
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
-msgid "List of all packages"
-msgstr "Tüm paketlerin listesi"
-
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
 msgid "All packages"
 msgstr "Tüm paketler"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
+msgid "List of all packages"
+msgstr "Tüm paketlerin listesi"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
@@ -679,51 +695,51 @@ msgstr ""
 "<a href=\"%s\">Bazı</a> sonuçlar arama parametrelerinden dolayı "
 "görüntülenemedi."
 
-#: templates/html/search.tmpl:79
+#: templates/html/search.tmpl:78
 msgid "all suites"
 msgstr "tüm takımlar"
 
-#: templates/html/search.tmpl:79
+#: templates/html/search.tmpl:78
 msgid "suite(s) <em>%s</em>"
 msgstr "<em>%s</em> takımı"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "all sections"
 msgstr "tüm bölümler"
 
-#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:72
+#: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "section(s) <em>%s</em>"
 msgstr "bölüm(ler) <em>%s</em>"
 
-#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "all architectures"
 msgstr "tüm mimariler"
 
-#: templates/html/search.tmpl:81 templates/html/search_contents.tmpl:73
+#: templates/html/search.tmpl:80 templates/html/search_contents.tmpl:73
 msgid "architecture(s) <em>%s</em>"
 msgstr "mimari(ler) <em>%s</em>"
 
-#: templates/html/search.tmpl:83
+#: templates/html/search.tmpl:82
+msgid "packages"
+msgstr "paketler"
+
+#: templates/html/search.tmpl:82
 msgid "source packages"
 msgstr "kaynak paketler"
 
 #: templates/html/search.tmpl:83
-msgid "packages"
-msgstr "paketler"
-
-#: templates/html/search.tmpl:84
 msgid ""
 "You have searched for %s that names contain <em>%s</em> in %s, %s, and %s."
 msgstr ""
-"%3 takımının %4 bölümlerinde ve  %5 mimarilerinde, %2 sözünü "
-"barındıran %1 aradınız"
+"%3 takımının %4 bölümlerinde ve  %5 mimarilerinde, %2 sözünü barındıran %1 "
+"aradınız"
 
-#: templates/html/search.tmpl:87
+#: templates/html/search.tmpl:86
 msgid " (including subword matching)"
 msgstr " (alt sözcük eşleme dahil)"
 
 #. @translators: I'm really sorry :/
-#: templates/html/search.tmpl:89
+#: templates/html/search.tmpl:88
 msgid ""
 "You have searched for <em>%s</em> in packages names and descriptions in %s, "
 "%s, and %s%s."
@@ -731,11 +747,11 @@ msgstr ""
 "%2, %3, %4%5 içinde <em>%1</em> sözünü barındıran paket adı ve "
 "açıklamalarını aradınız."
 
-#: templates/html/search.tmpl:95
+#: templates/html/search.tmpl:94
 msgid "Found <strong>%u</strong> matching packages."
 msgstr "<strong>%u</strong> eşleşen paket bulundu."
 
-#: templates/html/search.tmpl:101
+#: templates/html/search.tmpl:100
 msgid ""
 "Note that this only shows the best matches, sorted by relevance. If the "
 "first few packages don't match what you searched for, try using more "
@@ -745,7 +761,7 @@ msgstr ""
 "Eğer ilk paketler aradığınız paketler değilse daha fazla anahtar sözcük "
 "belirtin veya alternatif anahtar sözcükler kullanmayı deneyin."
 
-#: templates/html/search.tmpl:107
+#: templates/html/search.tmpl:106
 msgid ""
 "Your keyword was too generic, for optimizing reasons some results might have "
 "been suppressed.<br>Please consider using a longer keyword or more keywords."
@@ -754,7 +770,7 @@ msgstr ""
 "bazı sonuçlar gizlenmiş olabilir.<br>Lütfen daha uzun bir anahtar sözcük "
 "belirtin veya daha fazla anahtar sözcük kullanın."
 
-#: templates/html/search.tmpl:109
+#: templates/html/search.tmpl:108
 msgid ""
 "Your keyword was too generic.<br>Please consider using a longer keyword or "
 "more keywords."
@@ -762,39 +778,39 @@ msgstr ""
 "Kullandığınız anahtar sözcük çok genel.<br>Lütfen daha uzun bir anahtar "
 "sözcük belirtin veya daha fazla anahtar sözcük kullanın."
 
-#: templates/html/search.tmpl:116 templates/html/search_contents.tmpl:133
+#: templates/html/search.tmpl:115 templates/html/search_contents.tmpl:133
 msgid "Sorry, your search gave no results"
 msgstr "Üzgünüz, aramanız sonuç vermedi"
 
-#: templates/html/search.tmpl:123
+#: templates/html/search.tmpl:122
 msgid "Package %s"
 msgstr "%s Paketi"
 
-#: templates/html/search.tmpl:135
+#: templates/html/search.tmpl:134
 msgid "also provided by:"
 msgstr "ayrıca sağlayan:"
 
-#: templates/html/search.tmpl:135
+#: templates/html/search.tmpl:134
 msgid "provided by:"
 msgstr "sağlayan:"
 
-#: templates/html/search.tmpl:144
+#: templates/html/search.tmpl:143
 msgid "Source Package %s"
 msgstr "%s Kaynak Paketi"
 
-#: templates/html/search.tmpl:151
+#: templates/html/search.tmpl:150
 msgid "Binary packages:"
 msgstr "İkilik paketler:"
 
-#: templates/html/search.tmpl:153
-msgid "show %u binary packages"
-msgstr "%u ikili paketi göster"
-
-#: templates/html/search.tmpl:153
+#: templates/html/search.tmpl:152
 msgid "hide %u binary packages"
 msgstr "%u ikili paketi gizle"
 
-#: templates/html/search.tmpl:163
+#: templates/html/search.tmpl:152
+msgid "show %u binary packages"
+msgstr "%u ikili paketi göster"
+
+#: templates/html/search.tmpl:162
 msgid ""
 "<a href=\"%s\">%u</a> results have not been displayed because you requested "
 "only exact matches."
@@ -838,7 +854,7 @@ msgstr "şunu içeren dosya adları"
 msgid "files named"
 msgstr "ismindeki dosyalar"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr ""
@@ -863,7 +879,7 @@ msgid "Sort results by filename"
 msgstr "Sonuçları dosya adına göre sırala"
 
 #: templates/html/search_contents.tmpl:100
-#: templates/html/search_contents.tmpl:126 templates/html/show.tmpl:350
+#: templates/html/search_contents.tmpl:126 templates/html/show.tmpl:351
 msgid "File"
 msgstr "Dosya"
 
@@ -892,12 +908,12 @@ msgid "Details of package %s in %s"
 msgstr "%s paketinin %s içerisinde ayrıntıları"
 
 #: templates/html/show.tmpl:46
-msgid "Source:"
-msgstr "Kaynak:"
-
-#: templates/html/show.tmpl:46
 msgid "Source package building this package"
 msgstr "Bu paketi inşa eden kaynak paket"
+
+#: templates/html/show.tmpl:46
+msgid "Source:"
+msgstr "Kaynak:"
 
 #: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
@@ -1056,31 +1072,35 @@ msgstr "tavsiye edilen"
 msgid "suggests"
 msgstr "önerilen"
 
-#: templates/html/show.tmpl:267
+#: templates/html/show.tmpl:258
+msgid "enhances"
+msgstr ""
+
+#: templates/html/show.tmpl:268
 msgid "or "
 msgstr "ya da "
 
-#: templates/html/show.tmpl:275
+#: templates/html/show.tmpl:276
 msgid "also a virtual package provided by"
 msgstr "ayrıca şunun tarafından sağlanan bir sanal paket"
 
-#: templates/html/show.tmpl:277
+#: templates/html/show.tmpl:278
 msgid "virtual package provided by"
 msgstr "sanal paketi sağlayan"
 
-#: templates/html/show.tmpl:282
-msgid "show %u providing packages"
-msgstr "%u sağlayan paketleri göster"
-
-#: templates/html/show.tmpl:282
+#: templates/html/show.tmpl:283
 msgid "hide %u providing packages"
 msgstr "%u sağlayan paketleri gizle"
 
-#: templates/html/show.tmpl:300
+#: templates/html/show.tmpl:283
+msgid "show %u providing packages"
+msgstr "%u sağlayan paketleri göster"
+
+#: templates/html/show.tmpl:301
 msgid "Download %s"
 msgstr "%s indir"
 
-#: templates/html/show.tmpl:302
+#: templates/html/show.tmpl:303
 msgid ""
 "The download table links to the download of the package and a file overview. "
 "In addition it gives information about the package size and the installed "
@@ -1090,55 +1110,55 @@ msgstr ""
 "verir. Ek olarak paketin boyutunu ve paketin kurulduktan sonra kapladığı "
 "alan bilgisini de verir."
 
-#: templates/html/show.tmpl:303
+#: templates/html/show.tmpl:304
 msgid "Download for all available architectures"
 msgstr "Tüm mevcut mimariler için indir"
 
-#: templates/html/show.tmpl:304
+#: templates/html/show.tmpl:305
 msgid "Architecture"
 msgstr "Mimari"
 
-#: templates/html/show.tmpl:305
+#: templates/html/show.tmpl:306
 msgid "Version"
 msgstr "Sürüm"
 
-#: templates/html/show.tmpl:306
+#: templates/html/show.tmpl:307
 msgid "Package Size"
 msgstr "Paket Boyutu"
 
-#: templates/html/show.tmpl:307
+#: templates/html/show.tmpl:308
 msgid "Installed Size"
 msgstr "Kurulu Boyut"
 
-#: templates/html/show.tmpl:308
+#: templates/html/show.tmpl:309
 msgid "Files"
 msgstr "Dosyalar"
 
-#: templates/html/show.tmpl:316
+#: templates/html/show.tmpl:317
 msgid "(unofficial port)"
 msgstr "(resmi olmayan port)"
 
-#: templates/html/show.tmpl:327 templates/html/show.tmpl:355
+#: templates/html/show.tmpl:328 templates/html/show.tmpl:356
 msgid "%s&nbsp;kB"
 msgstr "%s&nbsp;kB"
 
-#: templates/html/show.tmpl:330
+#: templates/html/show.tmpl:331
 msgid "list of files"
 msgstr "dosya listesi"
 
-#: templates/html/show.tmpl:332
+#: templates/html/show.tmpl:333
 msgid "no current information"
 msgstr "bilgi mevcut değil"
 
-#: templates/html/show.tmpl:349
+#: templates/html/show.tmpl:350
 msgid "Download information for the files of this source package"
 msgstr "Bu kaynak paketin dosyaları için indirme bilgisi"
 
-#: templates/html/show.tmpl:350
+#: templates/html/show.tmpl:351
 msgid "Size (in kB)"
 msgstr "Boyut (kB cinsinden)"
 
-#: templates/html/show.tmpl:371
+#: templates/html/show.tmpl:372
 msgid ""
 "Debian Package Source Repository (<acronym title=\"Version Control System"
 "\">VCS</acronym>: <a href=\"%s\">%s</a>)"
@@ -1146,7 +1166,7 @@ msgstr ""
 "Debian Paket Kaynak Deposu (<acronym title=\" Sürüm Denetim Sistemi (Version "
 "Control System)\">VCS</acronym>: <a href=\"%s\">%s</a>)"
 
-#: templates/html/show.tmpl:376
+#: templates/html/show.tmpl:377
 msgid "Debian Package Source Repository (Browsable)"
 msgstr "Debian Paket Kaynak Deposu (Gezinilebilir)"
 
@@ -1199,8 +1219,7 @@ msgid ""
 "The following packages were added to suite %s in the %s archive during the "
 "last 7 days."
 msgstr ""
-"Aşağıdaki paketler son 7 gün içerisinde %2 arşivindeki %1 takımına "
-"eklendi."
+"Aşağıdaki paketler son 7 gün içerisinde %2 arşivindeki %1 takımına eklendi."
 
 #: templates/rss/newpkg.tmpl:28 templates/txt/index_head.tmpl:4
 msgid "Copyright ©"
