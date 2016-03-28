@@ -62,6 +62,10 @@ arch_sid="${arch_stretch} alpha avr32 hppa hurd-i386 m68k powerpcspe ppc64el sh4
 arch_experimental="${arch_sid}"
 arch_wheezy_proposed_updates="${arch_wheezy}"
 
+ext_wheezy=gz
+#for security Sources
+ext_jessie=gz
+
 # from http://ftp.de.debian.org/debian-ports/dists/{sid,experimental}/Release
 arch_debports="alpha hppa m68k powerpcspe ppc64 sh4 sparc64 x32"
 

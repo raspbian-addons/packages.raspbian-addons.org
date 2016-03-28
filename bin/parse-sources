@@ -38,6 +38,36 @@ $/ = "";
 
 -d $DBDIR || mkpath( $DBDIR );
 
+my %ext_to_prog = (
+    xz => 'xzcat',
+    gz => 'zcat',
+    );
+sub open_sources_files {
+    my( $suite_dir, $component) = @_;
+
+    my (@files, $prog);
+    for my $ext (qw(xz gz)){
+	my $sources_match = "source/Sources.$ext";
+	@files = ();
+	push @files, <"$suite_dir/$component/$sources_match">;
+	push @files, <"$suite_dir/updates/$component/$sources_match">;
+
+	if( @files ){
+	    $prog = $ext_to_prog{$ext};
+	    last;
+	}
+    }
+
+    if( @files && $prog ){
+	print "\tprog=$prog\n";
+	print "\tfiles=@files\n";
+	open my $fh, '-|', $prog, @files;
+	return $fh;
+    }
+    print "\tno files found, skipping...\n";
+    return;
+}
+
 for my $archive (@ARCHIVES) {
     for my $suite (@SUITES) {
 
@@ -51,9 +81,8 @@ for my $archive (@ARCHIVES) {
 		print "\tseems not to exist, skipping...\n";
 		next;
 	}
-	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/source/Sources.gz"
-	        .     " $TOPDIR/archive/$archive/$suite/updates/$what/source/Sources.gz|";
-	while (<PKG>) {
+	my $fh = open_sources_files("$TOPDIR/archive/$archive/$suite/", $what) || next;
+	while (<$fh>) {
 		next if /^\s*$/;
 		my $data = "";
 		my %data = ();

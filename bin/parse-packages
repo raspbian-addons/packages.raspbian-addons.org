@@ -63,6 +63,37 @@ mkpath( "$DBDIR/xapian.new" );
 my %descriptions_english_db;
 tie %descriptions_english_db, "DB_File", "files/db/descriptions_translated_english_only.db", O_RDONLY, 0666, $DB_BTREE;
 
+my %ext_to_prog = (
+    xz => 'xzcat',
+    gz => 'zcat',
+    );
+sub open_packages_files {
+    my( $suite_dir, $component) = @_;
+
+    my (@files, $prog);
+    for my $ext (qw(xz gz)){
+	my $packages_match = "binary-*/Packages.$ext";
+	@files = ();
+	push @files, <"$suite_dir/$component/$packages_match">;
+	push @files, <"$suite_dir/updates/$component/$packages_match">;
+	push @files, <"$suite_dir/$component/debian-installer/$packages_match">;
+
+	if( @files ){
+	    $prog = $ext_to_prog{$ext};
+	    last;
+	}
+    }
+
+    if( @files && $prog ){
+	print "\tprog=$prog\n";
+	print "\tfiles=@files\n";
+	open my $fh, '-|', $prog, @files;
+	return $fh;
+    }
+    print "\tno files found, skipping...\n";
+    return;
+}
+
 for my $suite (@SUITES) {
     my %package_names_suite = ();
     my %packages_all_db;
@@ -76,10 +107,9 @@ for my $suite (@SUITES) {
                 print "\tseems not to exist, skipping...\n";
                 next;
         }
-	open PKG, "zcat $TOPDIR/archive/$archive/$suite/$what/binary-*/Packages.gz"
-	        .     " $TOPDIR/archive/$archive/$suite/updates/$what/binary-*/Packages.gz"
-	        .     " $TOPDIR/archive/$archive/$suite/$what/debian-installer/binary-*/Packages.gz|";
-	while (<PKG>) {
+
+	my $fh = open_packages_files("$TOPDIR/archive/$archive/$suite/", $what) || next;
+	while (<$fh>) {
 		next if /^\s*$/;
 		my $data = "";
 		my %data = ();
