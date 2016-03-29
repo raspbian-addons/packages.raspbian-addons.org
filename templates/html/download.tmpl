@@ -23,12 +23,7 @@
 <p>[% g('If you are running %s, it is strongly suggested to use a package manager like <a href="%s">aptitude</a> or <a href="%s">synaptic</a> to download and install packages, instead of doing so manually via this website.',
 	organisation, make_url('aptitude','','arch',''), make_url('synaptic','','arch','')) %]</p>
 <p>[% g('You should be able to use any of the listed mirrors by adding a line to your <kbd>/etc/apt/sources.list</kbd> like this:') %]</p>
-[% IF archive == "volatile" %]
-<pre>
-deb http://<em>[% mirrors.$archive.europa.0 %]</em> [% suite.replace('-','/') %] main [% section IF section != main_section %]
-</pre>
-<p>[% g('Replacing <em>%s</em> with the mirror in question.', mirrors.$archive.europa.0) %]
-[% ELSIF archive == "security" %]
+[% IF archive == "security" %]
 <pre>
 deb [% 'http://' _ security_mirror_url %] [% suite _ security_suite_suffix %] main [% section IF section != main_section %]
 </pre>
