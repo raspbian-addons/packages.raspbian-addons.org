@@ -94,6 +94,11 @@ for my $archive (@ARCHIVES) {
 			$key =~ tr [A-Z] [a-z];
 			$data{$key} = $value;
 		}
+		if($data{'extra-source-only'}
+		   && $data{'extra-source-only'} eq 'yes'){
+		    warn "skipping extra source $data{package}/$data{version}\n";
+		    next;
+		}
 		$source_names{$data{'package'}} = 1;
 		$source_names_suite{$data{'package'}} = 1;
 		delete $data{'binary'};
