@@ -60,8 +60,7 @@ sub do_download {
 
 	@results = grep { $_->[7] ne 'v' } @results;
 	unless (@results) {
-#	    fatal_error( _g( "No such package." )."<br>".
-#			 sprintf( _g( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) );
+	    fatal_error( $cat->g( "No such package." ) );
 	} else {
 	    my $final_result = shift @results;
 	    foreach (@results) {
@@ -77,8 +76,6 @@ sub do_download {
 		%data = split /\000/, $packages_all{"$pkg all $final_result->[7]"};
 		debug( "choosing arch 'all' instead of requested arch $arch", 1 );
 		$arch = 'all';
-#		fatal_error( _g( "No such package." )."<br>".
-#			     sprintf( _g( '<a href="%s">Search for the package</a>' ), "$SEARCH_URL/$pkg" ) ) unless %data;
 	    }
 	    @file_components = split('/', $data{filename});
 	    $filename = pop(@file_components);
