@@ -106,7 +106,7 @@
    FOREACH k IN search_keywords;
    k_enc = html_encode(k);
    k_quo = quotemeta(k);
-   file = file.replace(k_quo, "<span class=\"keyword\">$k_enc</span>");
+   file = file.replace("((?i)$k_quo)", '<span class="keyword">$1</span>');
    END %]
 <tr>
 	<td class="file">[% file %]</td>
