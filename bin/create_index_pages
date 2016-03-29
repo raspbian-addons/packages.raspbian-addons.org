@@ -356,6 +356,10 @@ foreach my $pkg (@PACKAGES) {
 	    warn "\t\t$suite/$p{$key}\n" if DEBUG;
 	    print {$fh{"$suite/$p{$key}"}} $html;
 	}
+	if (@{$p{providers}} && $fh{"$suite/virtual"}) {
+	    warn "\t\t$suite/virtual\n" if DEBUG;
+	    print {$fh{"$suite/virtual"}} $html;
+	}
     }
 }
 

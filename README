@@ -43,11 +43,9 @@ Cron
 010git                     -- pull changes from git
 050checkinst               -- check if all needed packages are installed
 100syncarchive             -- retrieve data from main Debian archive
-100syncarchive_backports   -- retrieve data from backports.debian.org
 100syncarchive_debports    -- retrieve data from debian-ports.org (m68k)
 100syncarchive_installer   -- retrieve d-i data
 100syncarchive_maintainers -- retrieve maintainer index
-100syncarchive_volatile    -- retrieve data from volatile.d.o
 110debtags                 -- retrieve debtags vocabular
 120synctrans               -- retrieve DDTP translations
 200process_archive         -- convert all retrieved data to databases

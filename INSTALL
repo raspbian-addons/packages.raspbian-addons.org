@@ -12,8 +12,7 @@ case, you might have to adjust some of the steps.
    (Something like `git clone git://git.debian.org/git/webwml/packages.git')
 3) Install the needed dependencies. A list can be found in debian/control and
    used with dpkg-checkbuilddeps to check for missing deps.
-4) Install apache2 (apache2-mpm-worker), mod_perl (libapache2-mod-perl2) and
-   Apache2::Reload (libapache2-reload-perl)
+4) Install apache2 (apache2-mpm-worker), fcgid (libapache2-mod-fcgid)
 5) Adjust the configuration to your needs. You should at least edit the
    following files before starting to test (don't touch %TOPDIR% and %SITE%, as
    you will specify it later):
@@ -40,7 +39,7 @@ case, you might have to adjust some of the steps.
 9) Enable at least the following apache modules: `a2enmod expires rewrite'
 10) Run ./bin/daily
    (this takes a while, especially the first time, as it downloads a lot of
-   data, [at the time of this writing approx. 900 MB], creates databases,
+   data, [at the time of this writing approx. 2.4 GB], creates databases,
    pre-builds heavy pages, etc.)
 11) Set up ./bin/daily to be run regulary. In ./conf/crontab you can find an
    example crontab to do this. Actually preferable is to trigger the script by

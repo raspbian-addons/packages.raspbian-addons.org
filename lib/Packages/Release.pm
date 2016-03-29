@@ -75,7 +75,7 @@ sub read_files_field {
 	my ($checksum, $size, $name) = split /\s+/, $_, 3;
 #	warn "($checksum, $size, $name)\n";
 
-	(my $basename = $name) =~ s/\.(gz|bz2)$//o;
+	(my $basename = $name) =~ s/\.(gz|bz2|xz)$//o;
 	my $ext = 'uncompressed';
 	if ($basename ne $name) {
 	    $ext = $1;
@@ -126,6 +126,7 @@ sub check {
 	$self->_check_file($f);
 	$self->_check_file($f, 'gz');
 	$self->_check_file($f, 'bz2');
+	$self->_check_file($f, 'xz');
     }
 }
 

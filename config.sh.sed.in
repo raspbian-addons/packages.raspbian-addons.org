@@ -26,8 +26,6 @@ localdir=/srv/mirrors/ftp.debian.org
 
 ftpsite=http://http.debian.net/debian
 security_ftpsite=http://security.debian.org/debian-security
-volatile_ftpsite=http://volatile.debian.org/debian-volatile
-backports_ftpsite=http://http.debian.net/debian-backports
 debports_ftpsite=http://ftp.debian-ports.org/debian
 ddtp_ftpsite=
 
@@ -43,24 +41,22 @@ search_url="/search"
 polangs="bg de fi fr hu ja nl pl ru sk sv tr uk zh-cn zh-tw"
 ddtplangs="ca cs da de en eo es eu fi fr hu it ja km ko nl pl pt pt-br ru sk sv uk zh zh-cn zh-tw"
 
-archives="us security debports backports volatile"
+archives="us security debports"
 sections="main contrib non-free"
 parts="$sections"
 
 suites="wheezy wheezy-updates wheezy-backports wheezy-backports-sloppy jessie jessie-updates jessie-backports stretch sid experimental"
 security_suites="wheezy jessie"
-backports_suites="wheezy-backports wheezy-backports-sloppy jessie-backports"
 dists="$suites"
 
 priorities="required important standard optional extra"
 
-architectures="alpha amd64 arm arm64 armel armhf avr32 hppa hurd-i386 i386 ia64 kfreebsd-amd64 kfreebsd-i386 m68k mips mipsel powerpc powerpcspe ppc64 ppc64el s390 s390x sh4 sparc sparc64 x32"
-arch_wheezy="$amd64 armel i386 ia64 kfreebsd-i386 kfreebsd-amd64 mips mipsel powerpc s390 sparc armhf s390x"
-arch_jessie="${arch_wheezy} arm64"
+architectures="alpha amd64 arm arm64 armel armhf avr32 hppa hurd-i386 i386 ia64 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390 s390x sh4 sparc sparc64 x32"
+arch_wheezy="amd64 armel armhf i386 ia64 kfreebsd-i386 kfreebsd-amd64 mips mipsel powerpc s390 s390x sparc"
+arch_jessie="amd64 arm64 armel armhf i386 mips mipsel powerpc ppc64el s390x"
 arch_stretch="${arch_jessie}"
-arch_sid="${arch_stretch} alpha avr32 hppa hurd-i386 m68k powerpcspe ppc64el sh4 sparc64"
+arch_sid="${arch_stretch} alpha avr32 hppa hurd-i386 ia64 kfreebsd-i386 kfreebsd-amd64 m68k mips64el powerpcspe ppc64 s390 sh4 sparc sparc64 x32"
 arch_experimental="${arch_sid}"
-arch_wheezy_proposed_updates="${arch_wheezy}"
 
 ext_wheezy=gz
 #for security Sources
