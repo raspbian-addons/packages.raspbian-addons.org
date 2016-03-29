@@ -116,7 +116,7 @@ for my $suite (@suites) {
 				my $data = "";
 				my %data = ();
 				chomp;
-				print "Doing line ".($NR/1000)."k (out of approx 2.0M)\n"
+				print "Doing line ".($NR/1000)."k (out of approx 5.0M)\n"
 				if $NR % 250000 == 0;
 				/^(.+?)\s+(\S+)$/o;
 				my ($file, $value) = ($1, $2);
@@ -194,7 +194,7 @@ for my $suite (@suites) {
     my $lastpath = my $lastcasepath = my $lastfile = "";
     my %matches = ();
     while (<MERGED>) {
-	print "Doing line ".($NR/1000000)."M (out of approx. 20M)\n"
+	print "Doing line ".($NR/1000000)."M (out of approx. 45M)\n"
 	    if $NR % 1000000 == 0;
 	chomp;
 	my @line = split m/\0/o, $_;

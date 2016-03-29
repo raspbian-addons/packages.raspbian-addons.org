@@ -39,7 +39,7 @@ case, you might have to adjust some of the steps.
 9) Enable at least the following apache modules: `a2enmod expires rewrite'
 10) Run ./bin/daily
    (this takes a while, especially the first time, as it downloads a lot of
-   data, [at the time of this writing approx. 900 MB], creates databases,
+   data, [at the time of this writing approx. 2.4 GB], creates databases,
    pre-builds heavy pages, etc.)
 11) Set up ./bin/daily to be run regulary. In ./conf/crontab you can find an
    example crontab to do this. Actually preferable is to trigger the script by
