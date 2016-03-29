@@ -30,7 +30,7 @@ do
 	newfile="$wdir/"$(basename "$file" .sed.in)
 	echo -e "processing\t$file"
 	[ -n "$verbose" ] && echo -e "->\t$newfile"
-	cp -p "$file" "$newfile"
+	cp -b -p "$file" "$newfile"
 	sed -i -e "s#%SITE%#$site#g;s#%TOPDIR%#$topdir#g" "$newfile"
 	[ -n "$verbose" ] && diff -u "$file" "$newfile"
 done
