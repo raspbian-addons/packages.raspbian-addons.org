@@ -7,9 +7,9 @@ cd ${archivedir}
 
 # Main archive
 #
-architectures="alpha avr32 hppa m68k powerpcspe sh4 sparc64"
+architectures=${arch_debports}
 
-for dist in sid experimental
+for dist in ${suites}
   do
   echo "retrieve Release(.gpg) $dist"
   test -d debports/${dist} || mkdir -p debports/${dist}
