@@ -9,13 +9,14 @@
 		   'trusty', 'trusty-updates', 'trusty-backports',
 		   'vivid', 'vivid-updates', 'vivid-backports',
 		   'wily', 'wily-updates', 'wily-backports',
-		   'xenial' ]
+		   'xenial', 'xenial-updates', 'xenial-backports',
+		   'yakkety' ]
     version_numbers = { precise => '12.04LTS',
 			trusty => '14.04LTS',
-			vivid => '15.04',
-			wily => '15.10'
+			wily => '15.10',
+			xenial => '16.04LTS'
 		      }
-    current_release = 'wily'
+    current_release = 'xenial'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -127,6 +128,10 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2016-04-22</dt>
+<dd>Reflect xenial release, add yakkety, remove vivid.</dd>
+<dt>2016-04-19</dt>
+<dd>Add ports.ubuntu.com to package list and show those architectures, too.</dd>
 <dt>2015-10-27</dt>
 <dd>Reflect wily release, add xenial, remove utopic.</dd>
 <dt>2015-06-02</dt>
