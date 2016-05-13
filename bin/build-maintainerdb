@@ -35,7 +35,7 @@ if (!open (C, "../config.sh")) {
     print "\nInternal Error: Cannot open configuration file.\n\n";
     exit 0;
 }
-my $topdir = "/org/packages.debian.org";
+my $topdir = "/srv/packages.debian.org";
 my $localdir = "/srv/mirrors/debian/";
 
 while (<C>) {
@@ -44,8 +44,8 @@ while (<C>) {
 }
 close (C);
 
-#my $maildomain = "packages.debian.org";
-my $ptsdomain = "packages.qa.debian.org";
+my $maildomain = "packages.debian.org";
+my $trackerdomain = "tracker.debian.org";
 
 
 my $maintainerfile = "$localdir/indices/Maintainers";
@@ -119,6 +119,22 @@ sub package_maintainer
     return $addr;
 }
 
+sub add_maintainer
+{
+    my $package = shift;
+    my $email = shift;
+
+    $maint{$package} //= "";
+
+    if ($email =~ /\@\Q$maildomain\E$/ or $email =~ /\@\Q$trackerdomain\E$/) {
+	return;  # Ignore maintainer emails in @packages.d.o or @tracker.d.o
+    }
+
+    $maint{$package} .= " " if ($maint{$package});
+    $maint{$package} .= $email;
+    printf "  ADD (%s, %s)\n", $package, $email if ($opt_verbose > 2);
+}
+
 sub read_maintainer
 {
     my $file = shift;
@@ -136,20 +152,13 @@ sub read_maintainer
 	if (! exists $maint{$package}) {
 	    printf "  EVAL (%s, \"%s\")\n", $package, $maint if ($opt_verbose > 2);
 
-		if (exists $maint{$package}) {
-		    $maint{$package} .= " ";
-		    printf "  EXPAND (%s)\n", $package if ($opt_verbose > 2);
-		}
-		if ($maint =~ /.*<(.*)>/) {
-		    $maint{$package} .= $1;
-		    printf "  ADD (%s, %s)\n", $package, $1 if ($opt_verbose > 2);
-		} elsif ($maint =~ /\s*(\S+)\s+\(.*\)/) {
-		    $maint{$package} .= $1;
-		    printf "  ADD (%s, %s)\n", $package, $1 if ($opt_verbose > 2);
-		} else {
-		    $maint{$package} .= $maint;
-		    printf "  ADD (%s, %s)\n", $package, $maint if ($opt_verbose > 2);
-		}
+	    if ($maint =~ /.*<(.*)>/) {
+		add_maintainer($package, $1);
+	    } elsif ($maint =~ /\s*(\S+)\s+\(.*\)/) {
+		add_maintainer($package, $1);
+	    } else {
+		add_maintainer($package, $maint);
+	    }
 
 	    printf "  %s: %s\n", $package, $maint{$package} if ($opt_verbose > 1);
 
@@ -191,13 +200,12 @@ sub write_maintainer
     open (CALLOUT, ">$calloutfile.new") || die "Can't open $file.new, $!";
     my $forward;
     foreach my $package (sort(keys(%maint))) {
-# It is possible that we do not know a source package -> in that case fall back to old behaviour
-# and only mail the maintainer. Can happen when pdo doesnt know the suite the source is in, like
-# it doesnt know oldstable-proposed-updates at date of writing this code.
-	$forward = "$maint{$package}";
 	if ($binsrc{$package}) {
-	    $forward .= ", $binsrc{$package}_contact\@$ptsdomain";
+	    $forward = "dispatch+$binsrc{$package}_contact\@$trackerdomain";
+	} else {
+	    $forward = "dispatch+${package}_contact\@$trackerdomain";
 	}
+	$forward .= ", $maint{$package}" if $maint{$package};
 	printf "%s -> %s\n", $package, $forward if ($opt_verbose);
 	printf CONF "%s:\t%s\n", $package, $forward;
 	printf WRITE "+%d,%d:%s->%s\n", length($package), length($forward), $package, $forward;
