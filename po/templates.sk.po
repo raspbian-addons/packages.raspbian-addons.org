@@ -1,14 +1,14 @@
 # Slovak translations of packages.debian.org
 # This file is put in the public domain.
-# Ivan Masár <helix84@centrum.sk>, 2009, 2016.
+# Ivan Masár <helix84@centrum.sk>, 2009, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-03 12:09+0200\n"
-"PO-Revision-Date: 2016-02-17 00:22+0200\n"
+"PO-Revision-Date: 2017-01-16 17:45+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language-Team: x\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,16 +29,12 @@ msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s je <a href=\"%s\">obchodná značka</a> %s"
 
 #: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
 msgid ""
-"Please note that this is an experimental version of <a href=\"https://%s/\">"
-"%s</a>. Errors and obsolete information should be expected"
+"Please note that this is an experimental version of <a href=\"https://%s/\">%"
+"s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Všimnite si prosím, že toto je experimentálna verzia <a href=\"http://%s/\">"
-"%s</a>. Mali by ste očakávať chyby a zastaralé informácie"
+"Všimnite si prosím, že toto je experimentálna verzia <a href=\"https://%s/\""
+">%s</a>. Mali by ste očakávať chyby a zastaralé informácie"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:81
@@ -67,11 +63,11 @@ msgstr "ARM"
 
 #: templates/config/architectures.tmpl:8
 msgid "64-bit ARMv8"
-msgstr ""
+msgstr "64-bitový ARMv8"
 
 #: templates/config/architectures.tmpl:9
 msgid "ARM Hard Float"
-msgstr ""
+msgstr "ARM Hard Float"
 
 #: templates/config/architectures.tmpl:10
 msgid "AVR32"
@@ -123,7 +119,7 @@ msgstr "PowerPC SPE (jadro e500)"
 
 #: templates/config/architectures.tmpl:22
 msgid "Little-endian 64-bit PowerPC"
-msgstr ""
+msgstr "64-bitový PowerPC (little-endian)"
 
 #: templates/config/architectures.tmpl:23
 msgid "IBM S/390"
@@ -131,7 +127,7 @@ msgstr "IBM S/390"
 
 #: templates/config/architectures.tmpl:24
 msgid "IBM System z"
-msgstr ""
+msgstr "IBM System z"
 
 #: templates/config/architectures.tmpl:25
 msgid "SH4"
@@ -240,8 +236,8 @@ msgid ""
 "like <a href=\"%s\">aptitude</a> or <a href=\"%s\">synaptic</a> to download "
 "and install packages, instead of doing so manually via this website."
 msgstr ""
-"Ak používate %s, dôrazne sa odporúča používať správcu balíkov ako <a href="
-"\"%s\">aptitude</a> alebo <a href=\"%s\">synaptic</a> na sťahovanie a "
+"Ak používate %s, dôrazne sa odporúča používať správcu balíkov ako <a href=\"%"
+"s\">aptitude</a> alebo <a href=\"%s\">synaptic</a> na sťahovanie a "
 "inštaláciu balíkov namiesto manuálneho sťahovania z tejto webstránky."
 
 #: templates/html/download.tmpl:25
@@ -339,24 +335,24 @@ msgid "More information on <kbd>%s</kbd>:"
 msgstr "Ďalšie informácie o <kbd>%s</kbd>:"
 
 #: templates/html/download.tmpl:107
-msgid "%s Byte (%s %s)"
-msgstr "%s bajtov (%s %s)"
-
-#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "Presná veľkosť"
+
+#: templates/html/download.tmpl:107
+msgid "%s Byte (%s %s)"
+msgstr "%s bajtov (%s %s)"
 
 #: templates/html/download.tmpl:108 templates/html/show.tmpl:351
 msgid "MD5 checksum"
 msgstr "kontrolný súčet MD5"
 
-#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
-msgid "Not Available"
-msgstr "Nedostupné"
-
 #: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "kontrolný súčet SHA1"
+
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
+msgid "Not Available"
+msgstr "Nedostupné"
 
 #: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
@@ -464,8 +460,8 @@ msgstr ""
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
 msgstr ""
-"Ak narazíte na akýkoľvek problém, kontaktujte prosím <a href=\"mailto:%s\">"
-"%s</a>."
+"Ak narazíte na akýkoľvek problém, kontaktujte prosím <a href=\"mailto:%s\">%"
+"s</a>."
 
 #: templates/html/homepage.tmpl:26
 msgid "Browse through the lists of packages:"
@@ -476,8 +472,8 @@ msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
 msgstr ""
-"Existuje tiež zoznam <a href=\"%s/main/newpkg\">balíkov novo pridaných do "
-"%s</a>."
+"Existuje tiež zoznam <a href=\"%s/main/newpkg\">balíkov novo pridaných do %"
+"s</a>."
 
 #: templates/html/homepage.tmpl:38
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
@@ -602,8 +598,8 @@ msgstr "Nové balíky v „%s“"
 
 #: templates/html/newpkg.tmpl:11
 msgid ""
-"The following packages were added to suite <em>%s</em> (section %s) in the "
-"%s archive during the last 7 days."
+"The following packages were added to suite <em>%s</em> (section %s) in the %"
+"s archive during the last 7 days."
 msgstr ""
 "Nasledovné balíky boli pridané do sady  <em>%s</em> (sekcia %s) v archíve %s "
 "za posledných 7 dní."
@@ -642,13 +638,13 @@ msgstr "[kanál RSS 1.0]"
 msgid " <em>(%u days old)</em>"
 msgstr " <em>(%u dní starý)</em>"
 
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
-msgid "All packages"
-msgstr "Všetky balíky"
-
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
 msgid "List of all packages"
 msgstr "Zoznam všetkých balíkov"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
+msgid "All packages"
+msgstr "Všetky balíky"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
@@ -723,12 +719,12 @@ msgid "architecture(s) <em>%s</em>"
 msgstr "architektúry <em>%s</em>"
 
 #: templates/html/search.tmpl:82
-msgid "packages"
-msgstr "balíky"
-
-#: templates/html/search.tmpl:82
 msgid "source packages"
 msgstr "zdrojové balíky"
+
+#: templates/html/search.tmpl:82
+msgid "packages"
+msgstr "balíky"
 
 #: templates/html/search.tmpl:83
 msgid ""
@@ -742,8 +738,8 @@ msgstr " (vrátane častí slov)"
 #. @translators: I'm really sorry :/
 #: templates/html/search.tmpl:88
 msgid ""
-"You have searched for <em>%s</em> in packages names and descriptions in %s, "
-"%s, and %s%s."
+"You have searched for <em>%s</em> in packages names and descriptions in %s, %"
+"s, and %s%s."
 msgstr "Hľadali ste <em>%s</em> v názvoch a popisoch balíkov %s, %s a %s%s."
 
 #: templates/html/search.tmpl:94
@@ -802,12 +798,12 @@ msgid "Binary packages:"
 msgstr "Binárne balíky:"
 
 #: templates/html/search.tmpl:152
-msgid "hide %u binary packages"
-msgstr "skryť %u binárnych balíkov"
-
-#: templates/html/search.tmpl:152
 msgid "show %u binary packages"
 msgstr "zobraziť %u binárnych balíkov"
+
+#: templates/html/search.tmpl:152
+msgid "hide %u binary packages"
+msgstr "skryť %u binárnych balíkov"
 
 #: templates/html/search.tmpl:162
 msgid ""
@@ -905,12 +901,12 @@ msgid "Details of package %s in %s"
 msgstr "Podrobnosti balíka %s v %s"
 
 #: templates/html/show.tmpl:46
-msgid "Source package building this package"
-msgstr "Zdrojový balík, z ktorého sa zostavuje tento balík"
-
-#: templates/html/show.tmpl:46
 msgid "Source:"
 msgstr "Zdroj:"
+
+#: templates/html/show.tmpl:46
+msgid "Source package building this package"
+msgstr "Zdrojový balík, z ktorého sa zostavuje tento balík"
 
 #: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
@@ -1072,7 +1068,7 @@ msgstr "navrhuje"
 
 #: templates/html/show.tmpl:258
 msgid "enhances"
-msgstr ""
+msgstr "vylepšuje"
 
 #: templates/html/show.tmpl:268
 msgid "or "
@@ -1087,12 +1083,12 @@ msgid "virtual package provided by"
 msgstr "virtuálny balík poskytovaný balíkom"
 
 #: templates/html/show.tmpl:283
-msgid "hide %u providing packages"
-msgstr "skryť %u poskytujúciich balíkov"
-
-#: templates/html/show.tmpl:283
 msgid "show %u providing packages"
 msgstr "zobraziť %u poskytujúciich balíkov"
+
+#: templates/html/show.tmpl:283
+msgid "hide %u providing packages"
+msgstr "skryť %u poskytujúciich balíkov"
 
 #: templates/html/show.tmpl:301
 msgid "Download %s"
