@@ -1,19 +1,20 @@
 # Slovak translations of packages.debian.org
 # This file is put in the public domain.
-# Ivan Masár <helix84@centrum.sk>, 2009.
-#
+# Ivan Masár <helix84@centrum.sk>, 2009, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: templates\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-03 12:09+0200\n"
-"PO-Revision-Date: 2009-07-06 09:03+0100\n"
+"PO-Revision-Date: 2017-01-16 17:37+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language-Team: x\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: templates/config.tmpl:46
 msgid "Debian Web Mailinglist"
@@ -117,17 +118,15 @@ msgstr "AVR32"
 
 #: templates/config/architectures.tmpl:21
 msgid "PowerPC SPE (e500 core)"
-msgstr ""
+msgstr "PowerPC SPE (jadro e500)"
 
 #: templates/config/architectures.tmpl:22
 msgid "SH4"
-msgstr ""
+msgstr "SH4"
 
 #: templates/config/architectures.tmpl:23
-#, fuzzy
-#| msgid "Search"
 msgid "Sparc64"
-msgstr "Hľadať"
+msgstr "Sparc64"
 
 #: templates/config/archive_layout.tmpl:14
 msgid "packages that meet the Debian Free Software Guidelines"
@@ -175,10 +174,8 @@ msgid "Asia"
 msgstr "Ázia"
 
 #: templates/config/mirrors.tmpl:207
-#, fuzzy
-#| msgid "Icelandic"
 msgid "Oceania"
-msgstr "islandčina"
+msgstr "Oceánia"
 
 #: templates/config/mirrors.tmpl:208
 msgid "Europe"
@@ -325,24 +322,24 @@ msgid "More information on <kbd>%s</kbd>:"
 msgstr "Ďalšie informácie o <kbd>%s</kbd>:"
 
 #: templates/html/download.tmpl:107
-msgid "%s Byte (%s %s)"
-msgstr "%s bajtov (%s %s)"
-
-#: templates/html/download.tmpl:107
 msgid "Exact Size"
 msgstr "Presná veľkosť"
+
+#: templates/html/download.tmpl:107
+msgid "%s Byte (%s %s)"
+msgstr "%s bajtov (%s %s)"
 
 #: templates/html/download.tmpl:108 templates/html/show.tmpl:350
 msgid "MD5 checksum"
 msgstr "kontrolný súčet MD5"
 
-#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
-msgid "Not Available"
-msgstr "Nedostupné"
-
 #: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
 msgstr "kontrolný súčet SHA1"
+
+#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
+msgid "Not Available"
+msgstr "Nedostupné"
 
 #: templates/html/download.tmpl:110
 msgid "SHA256 checksum"
@@ -628,13 +625,13 @@ msgstr "[kanál RSS 1.0]"
 msgid " <em>(%u days old)</em>"
 msgstr " <em>(%u dní starý)</em>"
 
-#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
-msgid "All packages"
-msgstr "Všetky balíky"
-
 #: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:39
 msgid "List of all packages"
 msgstr "Zoznam všetkých balíkov"
+
+#: templates/html/newpkg.tmpl:32 templates/html/suite_index.tmpl:41
+msgid "All packages"
+msgstr "Všetky balíky"
 
 #: templates/html/newpkg.tmpl:33 templates/html/suite_index.tmpl:45
 msgid "compact compressed textlist"
@@ -662,17 +659,15 @@ msgstr ""
 
 #: templates/html/search.tmpl:41
 msgid "Limit to suite:"
-msgstr ""
+msgstr "Obmedziť balík:"
 
 #: templates/html/search.tmpl:50
 msgid "Search in <a href=\"%s\">all suites</a>"
 msgstr "Hľadať <a href=\"%s\">vo všetkých sadách</a>"
 
 #: templates/html/search.tmpl:54 templates/html/search_contents.tmpl:58
-#, fuzzy
-#| msgid "Limit search to a specific architecture:"
 msgid "Limit to a architecture:"
-msgstr "Obmedziť hľadanie na konkrétnu architektúru:"
+msgstr "Obmedziť na architektúru:"
 
 #: templates/html/search.tmpl:63 templates/html/search_contents.tmpl:63
 msgid "Search in <a href=\"%s\">all architectures</a>"
@@ -711,12 +706,12 @@ msgid "architecture(s) <em>%s</em>"
 msgstr "architektúry <em>%s</em>"
 
 #: templates/html/search.tmpl:83
-msgid "packages"
-msgstr "balíky"
-
-#: templates/html/search.tmpl:83
 msgid "source packages"
 msgstr "zdrojové balíky"
+
+#: templates/html/search.tmpl:83
+msgid "packages"
+msgstr "balíky"
 
 #: templates/html/search.tmpl:84
 msgid ""
@@ -790,12 +785,12 @@ msgid "Binary packages:"
 msgstr "Binárne balíky:"
 
 #: templates/html/search.tmpl:153
-msgid "hide %u binary packages"
-msgstr "skryť %u binárnych balíkov"
-
-#: templates/html/search.tmpl:153
 msgid "show %u binary packages"
 msgstr "zobraziť %u binárnych balíkov"
+
+#: templates/html/search.tmpl:153
+msgid "hide %u binary packages"
+msgstr "skryť %u binárnych balíkov"
 
 #: templates/html/search.tmpl:163
 msgid ""
@@ -893,12 +888,12 @@ msgid "Details of package %s in %s"
 msgstr "Podrobnosti balíka %s v %s"
 
 #: templates/html/show.tmpl:46
-msgid "Source package building this package"
-msgstr "Zdrojový balík, z ktorého sa zostavuje tento balík"
-
-#: templates/html/show.tmpl:46
 msgid "Source:"
 msgstr "Zdroj:"
+
+#: templates/html/show.tmpl:46
+msgid "Source package building this package"
+msgstr "Zdrojový balík, z ktorého sa zostavuje tento balík"
 
 #: templates/html/show.tmpl:53
 msgid "Virtual Package: %s"
@@ -949,8 +944,6 @@ msgid "Debian Source Repository"
 msgstr "Zdrojové úložisko Debianu"
 
 #: templates/html/show.tmpl:101 templates/html/show.tmpl:107
-#, fuzzy
-#| msgid "%s Patch Tracking"
 msgid "%s Patch Tracker"
 msgstr "Sledovanie záplat %s"
 
@@ -1073,12 +1066,12 @@ msgid "virtual package provided by"
 msgstr "virtuálny balík poskytovaný balíkom"
 
 #: templates/html/show.tmpl:282
-msgid "hide %u providing packages"
-msgstr "skryť %u poskytujúciich balíkov"
-
-#: templates/html/show.tmpl:282
 msgid "show %u providing packages"
 msgstr "zobraziť %u poskytujúciich balíkov"
+
+#: templates/html/show.tmpl:282
+msgid "hide %u providing packages"
+msgstr "skryť %u poskytujúciich balíkov"
 
 #: templates/html/show.tmpl:300
 msgid "Download %s"
