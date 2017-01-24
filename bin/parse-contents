@@ -35,6 +35,7 @@ my $what = $ARGV[0] ? "head -10000|" : "";
 my $SORT_REVERSE_CONCURRENTLY = 1;
 
 use English;
+use File::stat;
 use DB_File;
 use Storable;
 use File::Path;
@@ -56,6 +57,12 @@ my %debports_hash;
 
 $DBDIR .= "/contents";
 mkdirp( $DBDIR );
+
+# Small helper to display where we're at:
+sub display_progress {
+    my ($position, $total) = @_;
+    printf "Progress: %d/%dMB (%d%%)\n", $position/(1024**2), $total/(1024**2), 100*$position/$total;
+}
 
 for my $suite (@suites) {
     for my $arch (@archs) {
@@ -105,6 +112,9 @@ for my $suite (@suites) {
 
 			print "Reading $archive/$suite/$section/$arch...\n";
 
+			# Note: a possible $what parameter isn't taken into account here:
+			my $uncompressed_size = (split /\s+/, `gzip --quiet -l $filename`)[2];
+
 			open CONT, "zcat $filename|$what"
 				or die $!;
 			while (<CONT>) { last if /^FILE/mo; }
@@ -116,7 +126,7 @@ for my $suite (@suites) {
 				my $data = "";
 				my %data = ();
 				chomp;
-				print "Doing line ".($NR/1000)."k (out of approx 5.0M)\n"
+				display_progress(tell(CONT), $uncompressed_size)
 				if $NR % 250000 == 0;
 				/^(.+?)\s+(\S+)$/o;
 				my ($file, $value) = ($1, $2);
@@ -181,9 +191,15 @@ for my $suite (@suites) {
     }
     next unless $go;
 
+    # Piping from sort's output doesn't really scale with 16 GB worth
+    # of input, so let's store in a temporary file:
+    my $rev_path_file = "$TOPDIR/tmp/${suite}.sorted";
     print "Merging reverse path lists for ${suite}...\n";
+    system("sort -T $TOPDIR/tmp -m $DBDIR/reverse_${suite}_*.txt -o ${rev_path_file}") == 0
+	or die "Failed to build merged list";
+    my $rev_path_size = stat($rev_path_file)->size;
 
-    open MERGED, "-|", "sort  -T $TOPDIR/tmp -m $DBDIR/reverse_${suite}_*.txt"
+    open MERGED, "<", $rev_path_file
 	or die "Failed to open merged list";
     open FILENAMES, ">", "$DBDIR/filenames_$suite.txt.new"
 	or die "Failed to open filenames list";
@@ -194,7 +210,7 @@ for my $suite (@suites) {
     my $lastpath = my $lastcasepath = my $lastfile = "";
     my %matches = ();
     while (<MERGED>) {
-	print "Doing line ".($NR/1000000)."M (out of approx. 45M)\n"
+	display_progress(tell(MERGED), $rev_path_size)
 	    if $NR % 1000000 == 0;
 	chomp;
 	my @line = split m/\0/o, $_;
@@ -238,6 +254,9 @@ for my $suite (@suites) {
     untie %reverse_path_db;
     close FILENAMES;
     close MERGED;
+
+    unlink $rev_path_file
+        or die "unable to remove reverse path lists for ${suite}: ${rev_path_file}";
 
     activate("$DBDIR/filenames_$suite.txt");
     activate("$DBDIR/reverse_$suite.db");
