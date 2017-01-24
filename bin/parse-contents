@@ -181,9 +181,14 @@ for my $suite (@suites) {
     }
     next unless $go;
 
+    # Piping from sort's output doesn't really scale with 16 GB worth
+    # of input, so let's store in a temporary file:
+    my $rev_path_file = "$TOPDIR/tmp/${suite}.sorted";
     print "Merging reverse path lists for ${suite}...\n";
+    system("sort -T $TOPDIR/tmp -m $DBDIR/reverse_${suite}_*.txt -o ${rev_path_file}") == 0
+	or die "Failed to build merged list";
 
-    open MERGED, "-|", "sort  -T $TOPDIR/tmp -m $DBDIR/reverse_${suite}_*.txt"
+    open MERGED, "<", $rev_path_file
 	or die "Failed to open merged list";
     open FILENAMES, ">", "$DBDIR/filenames_$suite.txt.new"
 	or die "Failed to open filenames list";
@@ -238,6 +243,9 @@ for my $suite (@suites) {
     untie %reverse_path_db;
     close FILENAMES;
     close MERGED;
+
+    unlink $rev_path_file
+        or die "unable to remove reverse path lists for ${suite}: ${rev_path_file}";
 
     activate("$DBDIR/filenames_$suite.txt");
     activate("$DBDIR/reverse_$suite.db");
