@@ -73,9 +73,9 @@ mirrors = {
 	},
 
 	debports => {
-		url => 'http://www.debian-ports.org/',
+		url => 'https://www.ports.debian.org/',
 		title => g('ports of packages to architectures not yet or not anymore available in Debian'),
-		mirror_list => 'http://www.debian-ports.org/mirrors',
+		mirror_list => 'https://www.ports.debian.org/mirrors',
 		unofficial_port => {
 			alpha => {
 				url_name => 'alpha',
@@ -122,16 +122,9 @@ mirrors = {
 				name => 'X32',
 			},
 		},
-		north_america => [
-			"opensource.exmeritus.com/mirror/debian-ports/",
-		],
-		south_america => [
-			"mirrors.fe.up.pt/debian-ports/",
-		],
 		europa => [
-		#	"ftp.debian-ports.org/debian",
+			"ftp.ports.debian.org/debian-ports/",
 			"ftp.de.debian.org/debian-ports/",
-			"debian.advalem.net/debian-ports/",
 		],
 		asia => [
 			"ftp.kr.debian.org/debian-ports/",
