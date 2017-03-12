@@ -1,44 +1,45 @@
 # Slovak translations of packages.debian.org
 # This file is put in the public domain.
-# Ivan Masár <helix84@centrum.sk>, 2009.
-#
+# Ivan Masár <helix84@centrum.sk>, 2009, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: debtags\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-03 12:09+0200\n"
-"PO-Revision-Date: 2009-06-09 14:32+0100\n"
+"PO-Revision-Date: 2017-03-12 23:38+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language-Team: x\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. Tag: x11::xserver, long desc
 #: files/debtags/vocabulary
 msgid " X servers and drivers for the X server (input and video)"
-msgstr ""
+msgstr " X servery a ovládače pre X server (vstup a video)"
 
 #. Tag: special::not-yet-tagged, short desc
 #: files/debtags/vocabulary
 msgid "!Not yet tagged packages!"
-msgstr ""
+msgstr "!Zatiaľ neoznačené balíky!"
 
 #. Tag: junior::games-gl, short desc
 #: files/debtags/vocabulary
 msgid "3D Games"
-msgstr ""
+msgstr "3D hry"
 
 #. Tag: works-with::3dmodel, short desc
 #: files/debtags/vocabulary
 msgid "3D Model"
-msgstr ""
+msgstr "3D model"
 
 #. Tag: suite::gforge, long desc
 #: files/debtags/vocabulary
 msgid "A collaborative development platform."
-msgstr ""
+msgstr "Vývojová platforma umožňujúca spoluprácu."
 
 #. Tag: scope::utility, long desc
 #: files/debtags/vocabulary
@@ -47,56 +48,60 @@ msgid ""
 "does something 10-20% of users in the field will need. Often has "
 "functionality missing from related applications."
 msgstr ""
+"Program s úzkym zameraním na konkrétny prípad použitia alebo niekoľko málo "
+"prípadov použitia. Robí niečo, čo bude potrebovať oba 10-20 % používateľov v "
+"danej oblasti. Často mu chýbajú funkcie v porovnaní so súvisiacimi "
+"aplikáciami."
 
 #. Tag: hardware::power:acpi, short desc
 #: files/debtags/vocabulary
 msgid "ACPI Power Management"
-msgstr ""
+msgstr "Správa napájania ACPI"
 
 #. Tag: hardware::power:apm, short desc
 #: files/debtags/vocabulary
 msgid "APM Power Management"
-msgstr ""
+msgstr "Správa napájania APM"
 
 #. Tag: protocol::atm, short desc
 #: files/debtags/vocabulary
 msgid "ATM"
-msgstr ""
+msgstr "ATM"
 
 #. Facet: accessibility, short desc
 #: files/debtags/vocabulary
 msgid "Accessibility Support"
-msgstr ""
+msgstr "Podpora prístupnosti"
 
 #. Facet: accessibility, long desc
 #: files/debtags/vocabulary
 msgid "Accessibility support provided by the package"
-msgstr ""
+msgstr "Balík poskytuje podporu prístupnosti"
 
 #. Tag: admin::accounting, short desc
 #: files/debtags/vocabulary
 msgid "Accounting"
-msgstr ""
+msgstr "Účtovníctvo"
 
 #. Tag: field::finance, long desc
 #: files/debtags/vocabulary
 msgid "Accounting and financial software"
-msgstr ""
+msgstr "Účtovnícky a finančný softvér"
 
 #. Tag: game::arcade, short desc
 #: files/debtags/vocabulary
 msgid "Action and Arcade"
-msgstr ""
+msgstr "Akčné a arkádové hry"
 
 #. Tag: implemented-in::ada, short desc
 #: files/debtags/vocabulary
 msgid "Ada"
-msgstr ""
+msgstr "Ada"
 
 #. Tag: devel::lang:ada, short desc
 #: files/debtags/vocabulary
 msgid "Ada Development"
-msgstr ""
+msgstr "Vývoj v Ada"
 
 #. Tag: role::plugin, long desc
 #: files/debtags/vocabulary
@@ -104,11 +109,13 @@ msgid ""
 "Add-on, pluggable program fragments enhancing functionality of some program "
 "or system."
 msgstr ""
+"Doplnkové, zásuvné moduly programu rozširujúce funkcie niektorého programu "
+"alebo systému."
 
 #. Tag: game::adventure, short desc
 #: files/debtags/vocabulary
 msgid "Adventure"
-msgstr ""
+msgstr "Dobrodružné hry"
 
 #. Tag: culture::afrikaans, short desc
 #: files/debtags/vocabulary
@@ -118,12 +125,12 @@ msgstr "afrikánčina"
 #. Tag: iso15924::jpan, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Han + Hiragana + Katakana."
-msgstr ""
+msgstr "Alias pre han + hiragana + katakana."
 
 #. Tag: iso15924::kore, long desc
 #: files/debtags/vocabulary
 msgid "Alias for Hangul + Han"
-msgstr ""
+msgstr "Alias pre hangul + han"
 
 #. Tag: use::checking, long desc
 #: files/debtags/vocabulary
@@ -132,58 +139,61 @@ msgid ""
 "document for incorrectly spelled words, checking a network for routing "
 "problems. Verifying."
 msgstr ""
+"Rôzne kontroly - kontrola správnosti súborového systému, kontrola "
+"nesprávneho pravopisu v dokumente, kontrola problémov so smerovaním v sieti. "
+"Overovanie."
 
 #. Tag: use::analysing, short desc
 #: files/debtags/vocabulary
 msgid "Analysing"
-msgstr ""
+msgstr "Analyzovanie"
 
 #. Tag: security::antivirus, short desc
 #: files/debtags/vocabulary
 msgid "Anti-Virus"
-msgstr ""
+msgstr "Antivírus"
 
 #. Tag: suite::apache, short desc
 #: files/debtags/vocabulary
 msgid "Apache"
-msgstr ""
+msgstr "Apache"
 
 #. Tag: x11::applet, short desc
 #: files/debtags/vocabulary
 msgid "Applet"
-msgstr ""
+msgstr "Applet"
 
 #. Tag: scope::application, short desc
 #. Tag: web::application, short desc
 #. Tag: x11::application, short desc
 #: files/debtags/vocabulary
 msgid "Application"
-msgstr ""
+msgstr "Aplikácia"
 
 #. Tag: role::app-data, short desc
 #: files/debtags/vocabulary
 msgid "Application Data"
-msgstr ""
+msgstr "Dáta aplikácie"
 
 #. Tag: web::appserver, short desc
 #: files/debtags/vocabulary
 msgid "Application Server"
-msgstr ""
+msgstr "Aplikačný server"
 
 #. Facet: suite, short desc
 #: files/debtags/vocabulary
 msgid "Application Suite"
-msgstr ""
+msgstr "Balík aplikácií"
 
 #. Facet: junior, long desc
 #: files/debtags/vocabulary
 msgid "Applications recommended for younger users"
-msgstr ""
+msgstr "Aplikácie odporúčané pre mladých"
 
 #. Facet: office, long desc
 #: files/debtags/vocabulary
 msgid "Applications related to office and business activities"
-msgstr ""
+msgstr "Aplikácie súvisiace s kancelárskymi a obchodnými činnosťami"
 
 #. Tag: accessibility::input, long desc
 #: files/debtags/vocabulary
@@ -191,6 +201,8 @@ msgid ""
 "Applies to input methods for non-latin languages as well as special input "
 "systems."
 msgstr ""
+"Týka sa metód vstupu písiem iných ako latinka a tiež špeciálnych systémov "
+"vstupu."
 
 #. Tag: culture::arabic, short desc
 #. Tag: iso15924::arab, short desc
@@ -201,12 +213,12 @@ msgstr "arabčina"
 #. Tag: junior::arcade, short desc
 #: files/debtags/vocabulary
 msgid "Arcade Games"
-msgstr ""
+msgstr "Arkádové hry"
 
 #. Tag: works-with::archive, short desc
 #: files/debtags/vocabulary
 msgid "Archive"
-msgstr ""
+msgstr "Archív"
 
 #. Tag: iso15924::armn, short desc
 #: files/debtags/vocabulary
@@ -216,17 +228,17 @@ msgstr "arménčina"
 #. Tag: field::arts, short desc
 #: files/debtags/vocabulary
 msgid "Arts"
-msgstr ""
+msgstr "Umenie"
 
 #. Tag: devel::machinecode, long desc
 #: files/debtags/vocabulary
 msgid "Assemblers and other machine-code development tools."
-msgstr ""
+msgstr "Asemblery a iné nástroje na vývoj strojového kódu."
 
 #. Tag: field::astronomy, short desc
 #: files/debtags/vocabulary
 msgid "Astronomy"
-msgstr ""
+msgstr "Astronómia"
 
 #. Tag: protocol::atm, long desc
 #: files/debtags/vocabulary
@@ -238,47 +250,53 @@ msgid ""
 "was originally intended.\n"
 "Link: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 msgstr ""
+"Asynchronous Transfer Mode (asynchrónny režim prenosu), vysokorýchlostný "
+"protokol na komunikáciu medzi počítačmi v sieti.\n"
+"Hoci sa ATM používa na tvorbu sietí *DSL, nikdy získal široké využitie ako "
+"technológia na budovanie lokálnych sietí (LAN), pre ktoré bol pôvodne "
+"určený.\n"
+"Odkaz: http://en.wikipedia.org/wiki/Asynchronous_Transfer_Mode"
 
 #. Tag: uitoolkit::athena, short desc
 #: files/debtags/vocabulary
 msgid "Athena Widgets"
-msgstr ""
+msgstr "Ovládacie prvky Athena"
 
 #. Tag: made-of::audio, short desc
 #. Tag: works-with::audio, short desc
 #: files/debtags/vocabulary
 msgid "Audio"
-msgstr ""
+msgstr "Zvuk"
 
 #. Tag: security::authentication, short desc
 #: files/debtags/vocabulary
 msgid "Authentication"
-msgstr ""
+msgstr "Autentifikácia"
 
 #. Tag: admin::automation, long desc
 #: files/debtags/vocabulary
 msgid "Automating the execution of software in the system."
-msgstr ""
+msgstr "Automatizácia behu softvéru v systéme."
 
 #. Tag: admin::automation, short desc
 #: files/debtags/vocabulary
 msgid "Automation and Scheduling"
-msgstr ""
+msgstr "Automatizácia a plánovanie"
 
 #. Tag: field::aviation, short desc
 #: files/debtags/vocabulary
 msgid "Aviation"
-msgstr ""
+msgstr "Letectvo"
 
 #. Tag: suite::bsd, short desc
 #: files/debtags/vocabulary
 msgid "BSD"
-msgstr ""
+msgstr "BSD"
 
 #. Tag: admin::backup, short desc
 #: files/debtags/vocabulary
 msgid "Backup and Restoration"
-msgstr ""
+msgstr "Zálohovanie a obnova"
 
 #. Tag: culture::basque, short desc
 #: files/debtags/vocabulary
@@ -288,7 +306,7 @@ msgstr "baskičtina"
 #. Tag: admin::benchmarking, short desc
 #: files/debtags/vocabulary
 msgid "Benchmarking"
-msgstr ""
+msgstr "Benchmarking"
 
 #. Tag: culture::bengali, short desc
 #. Tag: iso15924::beng, short desc
@@ -303,42 +321,45 @@ msgid ""
 "and its family of descendants: FreeBSD, NetBSD or OpenBSD.\n"
 "Link: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
 msgstr ""
+"Berkeley Software Distribution, niekedy nazývaný Berkeley Unix alebo BSD "
+"Unix a rodina jeho potomkov: FreeBSD, NetBSD a OpenBSD.\n"
+"Odkaz: http://en.wikipedia.org/wiki/Berkeley_Software_Distribution"
 
 #. Tag: works-with-format::bib, short desc
 #: files/debtags/vocabulary
 msgid "BibTeX"
-msgstr ""
+msgstr "BibTeX"
 
 #. Tag: works-with-format::bib, long desc
 #: files/debtags/vocabulary
 msgid "BibTeX list of references"
-msgstr ""
+msgstr "Zoznam odkazov BibTeX"
 
 #. Tag: science::bibliography, short desc
 #: files/debtags/vocabulary
 msgid "Bibliography"
-msgstr ""
+msgstr "Bibliografia"
 
 #. Tag: field::biology:bioinformatics, short desc
 #: files/debtags/vocabulary
 msgid "Bioinformatics"
-msgstr ""
+msgstr "Bioinformatika"
 
 #. Tag: works-with::biological-sequence, short desc
 #: files/debtags/vocabulary
 msgid "Biological Sequence"
-msgstr ""
+msgstr "Biologické sekvencie"
 
 #. Facet: biology, short desc
 #. Tag: field::biology, short desc
 #: files/debtags/vocabulary
 msgid "Biology"
-msgstr ""
+msgstr "Biológia"
 
 #. Tag: protocol::bittorrent, short desc
 #: files/debtags/vocabulary
 msgid "BitTorrent"
-msgstr ""
+msgstr "BitTorrent"
 
 #. Tag: protocol::bittorrent, long desc
 #: files/debtags/vocabulary
@@ -351,21 +372,27 @@ msgid ""
 "Link: http://www.bittorrent.com/ Link: http://en.wikipedia.org/wiki/"
 "BitTorrent"
 msgstr ""
+"BitTorrent je protokol na distribúciu súborov cez sieť na báze peer-to-peer.\n"
+"Hoci samotný transport prebieha medzi klientmi siete BitTorrent, jeden "
+"centrálny uzol, takzvaný tracker, je potrebný na udržiavanie zoznamu "
+"všetkých klientov, ktorí sťahujú alebo nahrávajú rovnaký súbor.\n"
+"Odkaz: http://www.bittorrent.com/ odkaz: "
+"http://en.wikipedia.org/wiki/BitTorrent"
 
 #. Tag: web::blog, short desc
 #: files/debtags/vocabulary
 msgid "Blog Software"
-msgstr ""
+msgstr "Softvér na blogovanie"
 
 #. Tag: game::board, short desc
 #: files/debtags/vocabulary
 msgid "Board"
-msgstr ""
+msgstr "Doskové hry"
 
 #. Tag: iso15924::bopo, short desc
 #: files/debtags/vocabulary
 msgid "Bopomofo"
-msgstr ""
+msgstr "Bopomofo"
 
 #. Tag: culture::bosnian, short desc
 #: files/debtags/vocabulary
@@ -374,9 +401,8 @@ msgstr "bosniačtina"
 
 #. Tag: iso15924::brai, short desc
 #: files/debtags/vocabulary
-#, fuzzy
 msgid "Braille"
-msgstr "brazílska portugalčina"
+msgstr "Braillovo písmo"
 
 #. Tag: culture::brazilian, short desc
 #: files/debtags/vocabulary
@@ -395,31 +421,34 @@ msgid ""
 "90% of use cases. The pieces that remain are usually to be found as "
 "utilities."
 msgstr ""
+"Program so širokým záberom na všeobecné použitie. Pravdepodobne má funkcie "
+"pre 80-90 % prípadov použitia. Ostatné časti sú zvyčajne dostupné ako "
+"pomocné nástroje."
 
 #. Tag: web::browser, short desc
 #: files/debtags/vocabulary
 msgid "Browser"
-msgstr ""
+msgstr "Prehliadač"
 
 #. Tag: use::browsing, short desc
 #: files/debtags/vocabulary
 msgid "Browsing"
-msgstr ""
+msgstr "Prehliadanie"
 
 #. Tag: devel::bugtracker, short desc
 #: files/debtags/vocabulary
 msgid "Bug Tracking"
-msgstr ""
+msgstr "Sledovanie chýb"
 
 #. Tag: works-with::bugs, short desc
 #: files/debtags/vocabulary
 msgid "Bugs or Issues"
-msgstr ""
+msgstr "Chyby alebo problémy"
 
 #. Tag: devel::buildtools, short desc
 #: files/debtags/vocabulary
 msgid "Build Tool"
-msgstr ""
+msgstr "Nástroj na zostavovanie"
 
 #. Tag: culture::bulgarian, short desc
 #: files/debtags/vocabulary
@@ -429,62 +458,62 @@ msgstr "bulharčina"
 #. Tag: implemented-in::c, short desc
 #: files/debtags/vocabulary
 msgid "C"
-msgstr ""
+msgstr "C"
 
 #. Tag: devel::lang:c, short desc
 #: files/debtags/vocabulary
 msgid "C Development"
-msgstr ""
+msgstr "Vývoj v C"
 
 #. Tag: implemented-in::c-sharp, short desc
 #: files/debtags/vocabulary
 msgid "C#"
-msgstr ""
+msgstr "C#"
 
 #. Tag: devel::lang:c-sharp, short desc
 #: files/debtags/vocabulary
 msgid "C# Development"
-msgstr ""
+msgstr "Vývoj v C#"
 
 #. Tag: implemented-in::c++, short desc
 #: files/debtags/vocabulary
 msgid "C++"
-msgstr ""
+msgstr "C++"
 
 #. Tag: devel::lang:c++, short desc
 #: files/debtags/vocabulary
 msgid "C++ Development"
-msgstr ""
+msgstr "Vývoj v C++"
 
 #. Tag: hardware::storage:cd, short desc
 #: files/debtags/vocabulary
 msgid "CD"
-msgstr ""
+msgstr "CD"
 
 #. Tag: web::cgi, short desc
 #: files/debtags/vocabulary
 msgid "CGI"
-msgstr ""
+msgstr "CGI"
 
 #. Tag: protocol::corba, short desc
 #: files/debtags/vocabulary
 msgid "CORBA"
-msgstr ""
+msgstr "CORBA"
 
 #. Tag: use::calculating, short desc
 #: files/debtags/vocabulary
 msgid "Calculating"
-msgstr ""
+msgstr "Výpočet"
 
 #. Tag: science::calculation, short desc
 #: files/debtags/vocabulary
 msgid "Calculation"
-msgstr ""
+msgstr "Výpočty"
 
 #. Tag: game::card, short desc
 #: files/debtags/vocabulary
 msgid "Card"
-msgstr ""
+msgstr "Kartové hry"
 
 #. Tag: culture::catalan, short desc
 #: files/debtags/vocabulary
@@ -494,27 +523,27 @@ msgstr "katalánčina"
 #. Facet: scope, long desc
 #: files/debtags/vocabulary
 msgid "Characterization by scale of coverage "
-msgstr ""
+msgstr "Charakterizácie podľa rozsahu krytia"
 
 #. Tag: use::chatting, short desc
 #: files/debtags/vocabulary
 msgid "Chatting"
-msgstr ""
+msgstr "Četovanie"
 
 #. Tag: use::checking, short desc
 #: files/debtags/vocabulary
 msgid "Checking"
-msgstr ""
+msgstr "Kontrola"
 
 #. Tag: field::chemistry, short desc
 #: files/debtags/vocabulary
 msgid "Chemistry"
-msgstr ""
+msgstr "Chémia"
 
 #. Tag: game::board:chess, short desc
 #: files/debtags/vocabulary
 msgid "Chess"
-msgstr ""
+msgstr "Šach"
 
 #. Tag: culture::chinese, short desc
 #: files/debtags/vocabulary
@@ -524,47 +553,48 @@ msgstr "čínština"
 #. Tag: field::electronics, long desc
 #: files/debtags/vocabulary
 msgid "Circuit editors and other electronics-related software"
-msgstr ""
+msgstr "Editory obvodov a ďalší softvér súvisiaci s elektronikou"
 
 #. Tag: network::client, short desc
 #: files/debtags/vocabulary
 msgid "Client"
-msgstr ""
+msgstr "Klient"
 
 #. Tag: biology::format:aln, short desc
 #: files/debtags/vocabulary
 msgid "Clustal/ALN"
-msgstr ""
+msgstr "Clustal/ALN"
 
 #. Tag: admin::cluster, short desc
 #: files/debtags/vocabulary
 msgid "Clustering"
-msgstr ""
+msgstr "Klastrovanie"
 
 #. Tag: devel::code-generator, short desc
 #: files/debtags/vocabulary
 msgid "Code Generation"
-msgstr ""
+msgstr "Generovanie kódu"
 
 #. Tag: devel::prettyprint, long desc
 #: files/debtags/vocabulary
 msgid "Code pretty-printing and indentation/reformatting."
-msgstr ""
+msgstr "Pekné formátovanie kódu, zmena formátu a odsadzovanie."
 
 #. Facet: iso15924, long desc
 #: files/debtags/vocabulary
+#, fuzzy
 msgid "Codes for representating writing systems "
-msgstr ""
+msgstr "Kódy na reprezentáciu systémov písania"
 
 #. Tag: interface::commandline, short desc
 #: files/debtags/vocabulary
 msgid "Command Line"
-msgstr ""
+msgstr "Príkazový riadok"
 
 #. Tag: interface::shell, short desc
 #: files/debtags/vocabulary
 msgid "Command Shell"
-msgstr ""
+msgstr "Príkazový shell"
 
 #. Tag: protocol::corba, long desc
 #: files/debtags/vocabulary
@@ -578,21 +608,29 @@ msgid ""
 "orbit2 or omniORB.\n"
 "Link: http://www.corba.org/"
 msgstr ""
+"Common Object Request Broker Architecture, štandard interoperability medzi "
+"programami napísanými v rôznych jazykoch a bežiaci na rôznych hardvérových "
+"platformách. CORBA zahŕňa sieťový protokol typu klient/server na "
+"distribuované výpočty.\n"
+"Pomocou tohto sieťového protokolu si klienti CORBA na rôznych počítačoch a "
+"napísané v rôznych jazykoch môžu vymieňať objekty prostredníctvom servera "
+"CORBA ako napríklad orbit2 alebo omniORB.\n"
+"Odkaz: http://www.corba.org/"
 
 #. Tag: hardware::storage:cd, long desc
 #: files/debtags/vocabulary
 msgid "Compact Disc"
-msgstr ""
+msgstr "Compact Disc"
 
 #. Tag: use::comparing, short desc
 #: files/debtags/vocabulary
 msgid "Comparing"
-msgstr ""
+msgstr "Porovnávanie"
 
 #. Tag: devel::compiler, short desc
 #: files/debtags/vocabulary
 msgid "Compiler"
-msgstr ""
+msgstr "Kompilátor"
 
 #. Tag: scope::suite, long desc
 #: files/debtags/vocabulary
@@ -600,52 +638,54 @@ msgid ""
 "Comprehensive suite of applications and utilities on the scale of desktop "
 "environment or base operating system."
 msgstr ""
+"Komplexná sada aplikácií a nástrojov na úrovni pracovného prostredia alebo "
+"základu operačného systému."
 
 #. Tag: use::compressing, short desc
 #: files/debtags/vocabulary
 msgid "Compressing"
-msgstr ""
+msgstr "Komprimácia"
 
 #. Tag: sound::compression, short desc
 #: files/debtags/vocabulary
 msgid "Compression"
-msgstr ""
+msgstr "Komprimácia"
 
 #. Tag: use::configuring, short desc
 #. Tag: network::configuration, short desc
 #: files/debtags/vocabulary
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigurácia"
 
 #. Tag: admin::configuring, short desc
 #: files/debtags/vocabulary
 msgid "Configuration Tool"
-msgstr ""
+msgstr "Konfiguračný nástroj"
 
 #. Tag: interface::svga, short desc
 #: files/debtags/vocabulary
 msgid "Console SVGA"
-msgstr ""
+msgstr "Konzola SVGA"
 
 #. Tag: web::cms, short desc
 #: files/debtags/vocabulary
 msgid "Content Management (CMS)"
-msgstr ""
+msgstr "Správa obsahu (CMS)"
 
 #. Tag: accessibility::speech-recognition, long desc
 #: files/debtags/vocabulary
 msgid "Converts speech into text."
-msgstr ""
+msgstr "Konverzia reči na text."
 
 #. Tag: accessibility::screen-reader, long desc
 #: files/debtags/vocabulary
 msgid "Converts text into speech."
-msgstr ""
+msgstr "Konvertuje text na reč."
 
 #. Tag: admin::filesystem, long desc
 #: files/debtags/vocabulary
 msgid "Creation, maintenance, and use of filesystems"
-msgstr ""
+msgstr "Tvorba, údržba a používanie súborových systémov"
 
 #. Tag: culture::croatian, short desc
 #: files/debtags/vocabulary
@@ -655,22 +695,22 @@ msgstr "chorvátčina"
 #. Tag: security::cryptography, long desc
 #: files/debtags/vocabulary
 msgid "Cryptographic and privacy-oriented tools."
-msgstr ""
+msgstr "Kryptografické nástroje a nástroje orientované na súkromie."
 
 #. Tag: security::cryptography, short desc
 #: files/debtags/vocabulary
 msgid "Cryptography"
-msgstr ""
+msgstr "Kryptografia"
 
 #. Facet: culture, short desc
 #: files/debtags/vocabulary
 msgid "Culture"
-msgstr ""
+msgstr "Kultúra"
 
 #. Tag: iso15924::cyrl, short desc
 #: files/debtags/vocabulary
 msgid "Cyrillic"
-msgstr ""
+msgstr "Azbuka"
 
 #. Tag: culture::czech, short desc
 #: files/debtags/vocabulary
@@ -680,27 +720,27 @@ msgstr "čeština"
 #. Tag: protocol::dcc, short desc
 #: files/debtags/vocabulary
 msgid "DCC"
-msgstr ""
+msgstr "DCC"
 
 #. Tag: protocol::dhcp, short desc
 #: files/debtags/vocabulary
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 #. Tag: protocol::dns, short desc
 #: files/debtags/vocabulary
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #. Tag: hardware::storage:dvd, short desc
 #: files/debtags/vocabulary
 msgid "DVD"
-msgstr ""
+msgstr "DVD"
 
 #. Tag: interface::daemon, short desc
 #: files/debtags/vocabulary
 msgid "Daemon"
-msgstr ""
+msgstr "Démon"
 
 #. Tag: culture::danish, short desc
 #: files/debtags/vocabulary
@@ -710,104 +750,106 @@ msgstr "dánčina"
 #. Tag: use::converting, short desc
 #: files/debtags/vocabulary
 msgid "Data Conversion"
-msgstr ""
+msgstr "Konverzia dát"
 
 #. Tag: use::organizing, short desc
 #: files/debtags/vocabulary
 msgid "Data Organisation"
-msgstr ""
+msgstr "Organizácia dát"
 
 #. Tag: admin::recovery, short desc
 #: files/debtags/vocabulary
 msgid "Data Recovery"
-msgstr ""
+msgstr "Obnova dát"
 
 #. Tag: use::viewing, short desc
 #: files/debtags/vocabulary
 msgid "Data Visualization"
-msgstr ""
+msgstr "Vizualizácia dát"
 
 #. Tag: science::data-acquisition, short desc
 #: files/debtags/vocabulary
 msgid "Data acquisition"
-msgstr ""
+msgstr "Získavanie dát"
 
 #. Tag: works-with::db, short desc
 #: files/debtags/vocabulary
 msgid "Databases"
-msgstr ""
+msgstr "Databázy"
 
 #. Tag: works-with-format::dvi, long desc
 #: files/debtags/vocabulary
 msgid ""
 "DeVice Independent page description file, usually generated by TeX or LaTeX."
 msgstr ""
+"Súbor na popis stránky nezávislý od zariadenia (DeVice Independent), obvykle "
+"ho vytvára TeX alebo LaTeX."
 
 #. Tag: devel::debian, short desc
 #. Tag: suite::debian, short desc
 #: files/debtags/vocabulary
 msgid "Debian"
-msgstr ""
+msgstr "Debian"
 
 #. Tag: devel::debugger, short desc
 #: files/debtags/vocabulary
 msgid "Debugging"
-msgstr ""
+msgstr "Ladenie"
 
 #. Tag: role::debug-symbols, short desc
 #: files/debtags/vocabulary
 msgid "Debugging symbols"
-msgstr ""
+msgstr "Ladiace symboly"
 
 #. Tag: role::debug-symbols, long desc
 #: files/debtags/vocabulary
 msgid "Debugging symbols."
-msgstr ""
+msgstr "Ladiace symboly."
 
 #. Tag: game::demos, short desc
 #: files/debtags/vocabulary
 msgid "Demo"
-msgstr ""
+msgstr "Demo"
 
 #. Tag: works-with::dtp, short desc
 #: files/debtags/vocabulary
 msgid "Desktop Publishing (DTP)"
-msgstr ""
+msgstr "Desktop Publishing (DTP)"
 
 #. Tag: iso15924::deva, short desc
 #: files/debtags/vocabulary
 msgid "Devanagari (Nagari)"
-msgstr ""
+msgstr "Devanagari (Nagari)"
 
 #. Tag: role::devel-lib, short desc
 #: files/debtags/vocabulary
 msgid "Development Library"
-msgstr ""
+msgstr "Vývojová knižnica"
 
 #. Tag: use::dialing, short desc
 #: files/debtags/vocabulary
 msgid "Dialup Access"
-msgstr ""
+msgstr "Vytáčané pripojenie"
 
 #. Tag: works-with::dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionaries"
-msgstr ""
+msgstr "Slovníky"
 
 #. Tag: made-of::dictionary, short desc
 #: files/debtags/vocabulary
 msgid "Dictionary"
-msgstr ""
+msgstr "Slovník"
 
 #. Tag: hardware::camera, short desc
 #: files/debtags/vocabulary
 msgid "Digital Camera"
-msgstr ""
+msgstr "Digitálny fotoaparát"
 
 #. Tag: hardware::storage:dvd, long desc
 #: files/debtags/vocabulary
 msgid "Digital Versatile Disc"
-msgstr ""
+msgstr "Digital Versatile Disc"
 
 #. Tag: protocol::dcc, long desc
 #: files/debtags/vocabulary
@@ -817,38 +859,42 @@ msgid ""
 "files or perform non-relayed chats.\n"
 "Link: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 msgstr ""
+"DCC (Direct Client-to-Client) je subprotokol súvisiaci s IRC umožňujúci "
+"rovesníkom spojiť sa za pomoci IRC s cieľom priamej výmeny súborov alebo "
+"priameho četovania.\n"
+"Odkaz: http://en.wikipedia.org/wiki/Direct_Client-to-Client"
 
 #. Tag: x11::display-manager, long desc
 #: files/debtags/vocabulary
 msgid "Display managers (graphical login screens)"
-msgstr ""
+msgstr "Správcovia displeja (grafická prihlasovacia obrazovka)"
 
 #. Tag: accessibility::screen-magnify, long desc
 #: files/debtags/vocabulary
 msgid "Displays enlarged screen content."
-msgstr ""
+msgstr "Zobrazuje zväčšený obsah obrazovky."
 
 #. Tag: works-with-format::djvu, short desc
 #: files/debtags/vocabulary
 msgid "DjVu"
-msgstr ""
+msgstr "DjVu"
 
 #. Tag: works-with-format::docbook, short desc
 #: files/debtags/vocabulary
 msgid "DocBook"
-msgstr ""
+msgstr "DocBook"
 
 #. Tag: devel::doc, short desc
 #. Tag: role::documentation, short desc
 #: files/debtags/vocabulary
 msgid "Documentation"
-msgstr ""
+msgstr "Dokumentácia"
 
 #. Tag: made-of::info, short desc
 #. Tag: works-with-format::info, short desc
 #: files/debtags/vocabulary
 msgid "Documentation in Info Format"
-msgstr ""
+msgstr "Dokumentácie vo formáte Info"
 
 #. Tag: protocol::dns, long desc
 #: files/debtags/vocabulary
@@ -861,16 +907,23 @@ msgid ""
 "the DNS servers of Internet service providers.\n"
 "Link: http://en.wikipedia.org/wiki/Domain_Name_System"
 msgstr ""
+"Domain Name System, protokol na žiadanie o informácie súvisiace s názvami "
+"domén (napr. „www.debian.org“), najmä o IP adresu. Protokol sa používa pri "
+"komunikácii so serverom DNS (napr. BIND).\n"
+"Na internete existuje 13 koreňových serverov DNS po celom svete, ktoré "
+"udržujú adresy registrovaných domén a tieto informácie poskytujú DNS "
+"serverom poskytovateľov služieb siete internet.\n"
+"Odkaz: http://en.wikipedia.org/wiki/Domain_Name_System"
 
 #. Tag: use::downloading, short desc
 #: files/debtags/vocabulary
 msgid "Downloading"
-msgstr ""
+msgstr "Sťahovanie"
 
 #. Tag: role::dummy, short desc
 #: files/debtags/vocabulary
 msgid "Dummy Package"
-msgstr ""
+msgstr "Fiktívny balík"
 
 #. Tag: culture::dutch, short desc
 #: files/debtags/vocabulary
@@ -886,81 +939,86 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol Link: "
 "http://www.ietf.org/rfc/rfc2131.txt"
 msgstr ""
+"Dynamic Host Configuration Protocol, sieťový protokol typu klient/server na "
+"automatické priraďovanie dynamických IP adries k počítačom v sieti TCP/IP, "
+"namiesto statického priraďovania IP adresy každému počítaču.\n"
+"Odkaz: http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol "
+"Odkaz: http://www.ietf.org/rfc/rfc2131.txt"
 
 #. Tag: web::commerce, short desc
 #: files/debtags/vocabulary
 msgid "E-commerce"
-msgstr ""
+msgstr "E-obchod"
 
 #. Tag: devel::ecma-cli, short desc
 #: files/debtags/vocabulary
 msgid "ECMA CLI"
-msgstr ""
+msgstr "ECMA CLI"
 
 #. Tag: biology::emboss, short desc
 #: files/debtags/vocabulary
 msgid "EMBOSS"
-msgstr ""
+msgstr "EMBOSS"
 
 #. Tag: suite::eclipse, short desc
 #: files/debtags/vocabulary
 msgid "Eclipse"
-msgstr ""
+msgstr "Eclipse"
 
 #. Tag: suite::eclipse, long desc
 #: files/debtags/vocabulary
 msgid "Eclipse tool platform and plugins."
-msgstr ""
+msgstr "Platforma a zásuvné moduly Eclipse."
 
 #. Tag: devel::lang:ecmascript, short desc
 #: files/debtags/vocabulary
 msgid "Ecmascript/JavaScript Development"
-msgstr ""
+msgstr "Vývoj v ECMAScript/JavaScript"
 
 #. Tag: implemented-in::ecmascript, short desc
 #: files/debtags/vocabulary
 msgid "Ecmascript/Javascript"
-msgstr ""
+msgstr "ECMAScript/Javascript"
 
 #. Tag: use::editing, short desc
 #: files/debtags/vocabulary
 msgid "Editing"
-msgstr ""
+msgstr "Editory"
 
 #. Facet: mail, short desc
 #: files/debtags/vocabulary
 msgid "Electronic Mail"
-msgstr ""
+msgstr "Elektronická pošta"
 
 #. Tag: field::electronics, short desc
 #: files/debtags/vocabulary
 msgid "Electronics"
-msgstr ""
+msgstr "Elektronika"
 
 #. Tag: suite::emacs, short desc
 #: files/debtags/vocabulary
 msgid "Emacs"
-msgstr ""
+msgstr "Emacs"
 
 #. Tag: works-with::mail, short desc
 #: files/debtags/vocabulary
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. Tag: hardware::embedded, short desc
 #: files/debtags/vocabulary
 msgid "Embedded"
-msgstr ""
+msgstr "Vnorené"
 
 #. Tag: hardware::emulation, short desc
 #: files/debtags/vocabulary
 msgid "Emulation"
-msgstr ""
+msgstr "Emulácia"
 
 #. Tag: use::entertaining, short desc
 #: files/debtags/vocabulary
 msgid "Entertaining"
-msgstr ""
+msgstr "Zábava"
 
 #. Tag: culture::esperanto, short desc
 #: files/debtags/vocabulary
@@ -975,7 +1033,7 @@ msgstr "estónčina"
 #. Tag: protocol::ethernet, short desc
 #: files/debtags/vocabulary
 msgid "Ethernet"
-msgstr ""
+msgstr "Ethernet"
 
 #. Tag: protocol::ethernet, long desc
 #: files/debtags/vocabulary
@@ -988,32 +1046,39 @@ msgid ""
 "widespread types today are 100MBit/s (100BASE-*) or 1GBit/s (1000BASE-*).\n"
 "Link: http://en.wikipedia.org/wiki/Ethernet"
 msgstr ""
+"Ethernet je najpopulárnejšia sieťová technológia na tvorbu lokálnych sietí "
+"(LAN).\n"
+"Počítače v sieti Ethernet komunikujú cez krútenú dvojlinku alebo optické "
+"vlákna a sú identifikované svojou MAC adresou. Existuje niekoľko rôznych "
+"typov Ethernetu, ktoré sa líšia maximálnou rýchlosťou pripojenia. Dnes sú "
+"najrozšírenejšie typy 100Mbit/s (100BASE-*) alebo 1Gbit/s (1000BASE-*).\n"
+"Odkaz: http://en.wikipedia.org/wiki/Ethernet"
 
 #. Tag: iso15924::ethi, short desc
 #: files/debtags/vocabulary
 msgid "Ethiopic (Geʻez)"
-msgstr ""
+msgstr "etiópske (Geʻez)"
 
 #. Tag: devel::examples, short desc
 #. Tag: role::examples, short desc
 #: files/debtags/vocabulary
 msgid "Examples"
-msgstr ""
+msgstr "Príklady"
 
 #. Tag: role::program, long desc
 #: files/debtags/vocabulary
 msgid "Executable computer program."
-msgstr ""
+msgstr "Spustiteľný počítačový program."
 
 #. Tag: uitoolkit::fltk, short desc
 #: files/debtags/vocabulary
 msgid "FLTK"
-msgstr ""
+msgstr "FLTK"
 
 #. Tag: protocol::ftp, short desc
 #: files/debtags/vocabulary
 msgid "FTP"
-msgstr ""
+msgstr "FTP"
 
 #. Tag: culture::faroese, short desc
 #: files/debtags/vocabulary
@@ -1028,15 +1093,16 @@ msgstr "perzština"
 #. Tag: works-with::fax, short desc
 #: files/debtags/vocabulary
 msgid "Faxes"
-msgstr ""
+msgstr "Faxy"
 
 #. Tag: protocol::fidonet, short desc
 #: files/debtags/vocabulary
 msgid "FidoNet"
-msgstr ""
+msgstr "FidoNet"
 
 #. Tag: protocol::fidonet, long desc
 #: files/debtags/vocabulary
+#, fuzzy
 msgid ""
 "FidoNet is a mailbox system that enjoyed large popularity in the 1980s and "
 "1990s.\n"
@@ -1045,24 +1111,31 @@ msgid ""
 "transferring messages (comparable to email) and files.\n"
 "Link: http://www.fidonet.org/ Link: http://en.wikipedia.org/wiki/Fidonet"
 msgstr ""
+"FidoNet je poštovej schránky systému, ktorý sa teší veľkej popularite v roku "
+"1980 a 1990.\n"
+"Komunikáciu medzi klientmi a servermi FidoNet bola zvyčajne vykonáva cez "
+"telefónnu sieť pomocou modemov a mohli byť použité pre prenos správ "
+"(porovnateľné s e-mailom) a súbory.\n"
+"Odkaz: http://www.fidonet.org/ odkaz: http://en.wikipedia.org/wiki/Fidonet"
 
 #. Facet: field, short desc
 #: files/debtags/vocabulary
 msgid "Field"
-msgstr ""
+msgstr "Pole"
 
 #. Tag: admin::file-distribution, short desc
 #: files/debtags/vocabulary
 msgid "File Distribution"
-msgstr ""
+msgstr "Distribúcia súborov"
 
 #. Tag: security::integrity, short desc
 #: files/debtags/vocabulary
 msgid "File Integrity"
-msgstr ""
+msgstr "Integrita súborov"
 
 #. Tag: protocol::ftp, long desc
 #: files/debtags/vocabulary
+#, fuzzy
 msgid ""
 "File Transfer Protocol, a protocol for exchanging and manipulation files "
 "over networks and extensively used on the Internet.\n"
@@ -1074,6 +1147,14 @@ msgid ""
 "Link: http://en.wikipedia.org/wiki/File_Transfer_Protocol Link: http://www."
 "ietf.org/rfc/rfc0959.txt"
 msgstr ""
+"File Transfer Protocol, protokol na výmenu a manipulácie súborov v sieťach a "
+"široko používané na internete.\n"
+"Komunikáciu medzi klientmi a servermi FTP používa dva kanály, kontrola a "
+"údajový kanál. Kým FTP bol pôvodne použitý s overovanie len, väčšina "
+"serverov FTP na internete poskytovať anonymné, passwordless prístup. Pretože "
+"FTP nepodporuje šifrovanie citlivých údajov prevod realizuje cez SFTP dnes.\n"
+"Odkaz: http://en.wikipedia.org/wiki/File_Transfer_Protocol odkaz: "
+"http://www.ietf.org/rfc/rfc0959.txt"
 
 #. Tag: works-with-format::djvu, long desc
 #: files/debtags/vocabulary
@@ -1081,41 +1162,43 @@ msgid ""
 "File format to store scanned documents.\n"
 "Link: http://en.wikipedia.org/wiki/Djvu"
 msgstr ""
+"Formát súboru na ukladanie naskenovaných dokumentov.\n"
+"Odkaz: http://en.wikipedia.org/wiki/Djvu"
 
 #. Tag: works-with::file, short desc
 #: files/debtags/vocabulary
 msgid "Files"
-msgstr ""
+msgstr "Súbory"
 
 #. Tag: admin::filesystem, short desc
 #: files/debtags/vocabulary
 msgid "Filesystem Tool"
-msgstr ""
+msgstr "Nástroj súborového systému"
 
 #. Tag: use::filtering, short desc
 #: files/debtags/vocabulary
 msgid "Filtering"
-msgstr ""
+msgstr "Filtrovanie"
 
 #. Tag: mail::filters, short desc
 #: files/debtags/vocabulary
 msgid "Filters"
-msgstr ""
+msgstr "Filtre"
 
 #. Tag: office::finance, short desc
 #: files/debtags/vocabulary
 msgid "Finance"
-msgstr ""
+msgstr "Financie"
 
 #. Tag: field::finance, short desc
 #: files/debtags/vocabulary
 msgid "Financial"
-msgstr ""
+msgstr "Finančné"
 
 #. Tag: protocol::finger, short desc
 #: files/debtags/vocabulary
 msgid "Finger"
-msgstr ""
+msgstr "Finger"
 
 #. Tag: culture::finnish, short desc
 #: files/debtags/vocabulary
@@ -1126,58 +1209,58 @@ msgstr "fínčina"
 #. Tag: network::firewall, short desc
 #: files/debtags/vocabulary
 msgid "Firewall"
-msgstr ""
+msgstr "Firewall"
 
 #. Tag: game::fps, short desc
 #: files/debtags/vocabulary
 msgid "First Person Shooter"
-msgstr ""
+msgstr "Strieľačka z pohľadu prvej osoby"
 
 #. Tag: hardware::storage:floppy, short desc
 #: files/debtags/vocabulary
 msgid "Floppy Disk"
-msgstr ""
+msgstr "Disketa"
 
 #. Tag: made-of::font, short desc
 #. Tag: x11::font, short desc
 #: files/debtags/vocabulary
 msgid "Font"
-msgstr ""
+msgstr "Písmo"
 
 #. Tag: works-with::font, short desc
 #: files/debtags/vocabulary
 msgid "Fonts"
-msgstr ""
+msgstr "Písma"
 
 #. Tag: security::forensics, short desc
 #: files/debtags/vocabulary
 msgid "Forensics"
-msgstr ""
+msgstr "Forenzná veda"
 
 #. Tag: admin::forensics, short desc
 #: files/debtags/vocabulary
 msgid "Forensics and Recovery"
-msgstr ""
+msgstr "Forenzná veda a obnova"
 
 #. Tag: implemented-in::fortran, short desc
 #: files/debtags/vocabulary
 msgid "Fortran"
-msgstr ""
+msgstr "Fortran"
 
 #. Tag: devel::lang:fortran, short desc
 #: files/debtags/vocabulary
 msgid "Fortran Development"
-msgstr ""
+msgstr "Vývoj vo Fortrane"
 
 #. Tag: web::forum, short desc
 #: files/debtags/vocabulary
 msgid "Forum"
-msgstr ""
+msgstr "Fórum"
 
 #. Tag: interface::framebuffer, short desc
 #: files/debtags/vocabulary
 msgid "Framebuffer"
-msgstr ""
+msgstr "Framebuffer"
 
 #. Tag: culture::french, short desc
 #: files/debtags/vocabulary
@@ -1187,124 +1270,123 @@ msgstr "francúzština"
 #. Tag: suite::gforge, short desc
 #: files/debtags/vocabulary
 msgid "GForge"
-msgstr ""
+msgstr "GForge"
 
 #. Tag: works-with-format::gif, short desc
 #: files/debtags/vocabulary
 msgid "GIF, Graphics Interchange Format"
-msgstr ""
+msgstr "GIF, Graphics Interchange Format"
 
 #. Tag: suite::gkrellm, short desc
 #: files/debtags/vocabulary
 msgid "GKrellM Monitors"
-msgstr ""
+msgstr "Monitory GKrellM"
 
 #. Tag: uitoolkit::glut, short desc
 #: files/debtags/vocabulary
 msgid "GLUT"
-msgstr ""
+msgstr "GLUT"
 
 #. Tag: suite::gnome, short desc
 #: files/debtags/vocabulary
 msgid "GNOME"
-msgstr ""
+msgstr "GNOME"
 
 #. Tag: suite::gnu, short desc
 #: files/debtags/vocabulary
 msgid "GNU"
-msgstr ""
+msgstr "GNU"
 
 #. Tag: devel::lang:octave, short desc
 #: files/debtags/vocabulary
 msgid "GNU Octave Development"
-msgstr ""
+msgstr "Vývoj v GNU Octave"
 
 #. Tag: implemented-in::r, short desc
 #: files/debtags/vocabulary
 msgid "GNU R"
-msgstr ""
+msgstr "GNU R"
 
 #. Tag: devel::lang:r, short desc
 #: files/debtags/vocabulary
 msgid "GNU R Development"
-msgstr ""
+msgstr "Vývoj v GNU R"
 
 #. Tag: suite::gnustep, short desc
 #. Tag: uitoolkit::gnustep, short desc
 #: files/debtags/vocabulary
 msgid "GNUstep"
-msgstr ""
+msgstr "GNUstep"
 
 #. Tag: suite::gnustep, long desc
 #: files/debtags/vocabulary
 msgid "GNUstep Desktop and WindowMaker"
-msgstr ""
+msgstr "Pracovné prostredie GNUstep a WindowMaker"
 
 #. Tag: suite::gpe, short desc
 #: files/debtags/vocabulary
 msgid "GPE"
-msgstr ""
+msgstr "GPE"
 
 #. Tag: suite::gpe, long desc
 #: files/debtags/vocabulary
 msgid "GPE Palmtop Environment"
-msgstr ""
+msgstr "Prostredie GPE Palmtop"
 
 #. Tag: hardware::gps, short desc
 #: files/debtags/vocabulary
 msgid "GPS"
-msgstr ""
+msgstr "GPS"
 
 #. Tag: works-with-format::xml:gpx, short desc
 #: files/debtags/vocabulary
 msgid "GPX, GPS eXchange Format"
-msgstr ""
+msgstr "GPX, GPS eXchange Format"
 
 #. Tag: uitoolkit::gtk, short desc
 #: files/debtags/vocabulary
 msgid "GTK"
-msgstr ""
+msgstr "GTK"
 
 #. Tag: protocol::gadu-gadu, short desc
 #: files/debtags/vocabulary
 msgid "Gadu-Gadu"
-msgstr ""
+msgstr "Gadu-Gadu"
 
 #. Tag: use::gameplaying, short desc
 #: files/debtags/vocabulary
 msgid "Game Playing"
-msgstr ""
+msgstr "Hranie hier"
 
 #. Facet: game, short desc
 #: files/debtags/vocabulary
 msgid "Games and Amusement"
-msgstr ""
+msgstr "Hry a zábava"
 
 #. Tag: game::rpg:rogue, long desc
 #: files/debtags/vocabulary
 msgid "Games like Nethack, Angband etc."
-msgstr ""
+msgstr "Hry ako Nethack, Angband atď."
 
 #. Tag: field::genealogy, short desc
 #: files/debtags/vocabulary
 msgid "Genealogy"
-msgstr ""
+msgstr "Genealógia"
 
 #. Tag: field::geography, short desc
 #: files/debtags/vocabulary
 msgid "Geography"
-msgstr ""
+msgstr "Geografia"
 
 #. Tag: field::geology, short desc
 #: files/debtags/vocabulary
 msgid "Geology"
-msgstr ""
+msgstr "Geológia"
 
 #. Tag: iso15924::geor, short desc
 #: files/debtags/vocabulary
-#, fuzzy
 msgid "Georgian (Mkhedruli)"
-msgstr "germánske jazyky (iné)"
+msgstr "gruzínčina (mkhedruli)"
 
 #. Tag: culture::german, short desc
 #: files/debtags/vocabulary
@@ -1314,17 +1396,17 @@ msgstr "nemčina"
 #. Tag: hardware::gps, long desc
 #: files/debtags/vocabulary
 msgid "Global Positioning System"
-msgstr ""
+msgstr "Global Positioning System"
 
 #. Tag: suite::gnu, long desc
 #: files/debtags/vocabulary
 msgid "Gnu's Not Unix. The package is part of the official GNU project"
-msgstr ""
+msgstr "„GNU nie je Unix“. Balík je súčasťou oficiálneho projektu GNU"
 
 #. Tag: hardware::video, short desc
 #: files/debtags/vocabulary
 msgid "Graphics and Video"
-msgstr ""
+msgstr "Grafika a video"
 
 #. Tag: culture::greek, short desc
 #. Tag: iso15924::grek, short desc
@@ -1335,17 +1417,17 @@ msgstr "gréčtina"
 #. Facet: special, long desc
 #: files/debtags/vocabulary
 msgid "Group of special tags"
-msgstr ""
+msgstr "Skupina špeciálnych značiek"
 
 #. Facet: suite, long desc
 #: files/debtags/vocabulary
 msgid "Groups together related packages"
-msgstr ""
+msgstr "Zoskupuje súvisiace balíky"
 
 #. Tag: office::groupware, short desc
 #: files/debtags/vocabulary
 msgid "Groupware"
-msgstr ""
+msgstr "Skupinový softvér"
 
 # http://209.85.129.104/search?q=cache:VS8RqjDUI34J:https://www.kis3g.sk/kodovniky/Kody_jazykovM04def.doc+afar%C4%8Dina&hl=sk&ct=clnk&cd=1&gl=sk&client=firefox-a
 # http://www.ethnologue.com/14/iso639/codes.asp
@@ -1357,75 +1439,74 @@ msgstr "gudžarátčina"
 
 #. Tag: iso15924::guru, short desc
 #: files/debtags/vocabulary
-#, fuzzy
 msgid "Gurmukhi"
-msgstr "kurukhčina"
+msgstr "gurmukhí"
 
 #. Tag: made-of::html, short desc
 #. Tag: works-with-format::html, short desc
 #: files/debtags/vocabulary
 msgid "HTML, Hypertext Markup Language"
-msgstr ""
+msgstr "HTML, Hypertext Markup Language"
 
 #. Tag: protocol::http, short desc
 #: files/debtags/vocabulary
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #. Tag: hardware::hamradio, short desc
 #: files/debtags/vocabulary
 msgid "Ham Radio"
-msgstr ""
+msgstr "Amatérske rádio"
 
 #. Tag: iso15924::hani, short desc
 #: files/debtags/vocabulary
 msgid "Han (Hanzi, Kanji, Hanja)"
-msgstr ""
+msgstr "han (hanzi, kanji, hanja)"
 
 #. Tag: iso15924::hans, short desc
 #: files/debtags/vocabulary
 msgid "Han (Simplified variant)"
-msgstr ""
+msgstr "han (zjednodušený variant)"
 
 #. Tag: iso15924::hant, short desc
 #: files/debtags/vocabulary
 msgid "Han (Traditional variant)"
-msgstr ""
+msgstr "han (tradičný variant)"
 
 #. Tag: iso15924::hang, short desc
 #: files/debtags/vocabulary
 msgid "Hangul (Hangŭl, Hangeul)"
-msgstr ""
+msgstr "hangul (hangŭl, hangeul)"
 
 #. Tag: hardware::detection, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Detection"
-msgstr ""
+msgstr "Zisťovanie hardvéru"
 
 #. Tag: use::driver, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Driver"
-msgstr ""
+msgstr "Ovládač hardvéru"
 
 #. Facet: hardware, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Enablement"
-msgstr ""
+msgstr "Sfunkčnenie hardvéru"
 
 #. Tag: admin::hardware, short desc
 #: files/debtags/vocabulary
 msgid "Hardware Support"
-msgstr ""
+msgstr "Podpora hardvéru"
 
 #. Tag: implemented-in::haskell, short desc
 #: files/debtags/vocabulary
 msgid "Haskell"
-msgstr ""
+msgstr "Haskell"
 
 #. Tag: devel::lang:haskell, short desc
 #: files/debtags/vocabulary
 msgid "Haskell Development"
-msgstr ""
+msgstr "Vývoj v Haskelli"
 
 #. Tag: culture::hebrew, short desc
 #. Tag: iso15924::hebr, short desc
@@ -1436,7 +1517,7 @@ msgstr "hebrejčina"
 #. Tag: network::hiavailability, short desc
 #: files/debtags/vocabulary
 msgid "High Availability"
-msgstr ""
+msgstr "Vysoká dostupnosť"
 
 #. Tag: culture::hindi, short desc
 #: files/debtags/vocabulary
@@ -1446,47 +1527,48 @@ msgstr "hindčina"
 #. Tag: iso15924::hira, short desc
 #: files/debtags/vocabulary
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 #. Facet: mail, long desc
 #: files/debtags/vocabulary
+#, fuzzy
 msgid "How the package is related to eletronic mail transmission "
-msgstr ""
+msgstr "Ako balík súvisí s elektronickým prenosom pošty"
 
 #. Facet: hardware, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to hardware enablement "
-msgstr ""
+msgstr "Ako balík súvisí so sfunkčnením hardvéru"
 
 #. Facet: security, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to system security"
-msgstr ""
+msgstr "Ako balík súvisí so zabezpečením systému"
 
 #. Facet: x11, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to the X Window System"
-msgstr ""
+msgstr "Ako balík súvisí s X Window System"
 
 #. Facet: biology, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to the field of biology"
-msgstr ""
+msgstr "Ako balík súvisí s oblasťou biológie"
 
 #. Facet: science, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to the field of science"
-msgstr ""
+msgstr "Ako balík súvisí s oblasťou vedy"
 
 #. Facet: devel, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to the field of software development"
-msgstr ""
+msgstr "Ako balík súvisí s oblasťou vývoja softvéru"
 
 #. Facet: sound, long desc
 #: files/debtags/vocabulary
 msgid "How the package is related to the field of sound and music"
-msgstr ""
+msgstr "Ako balík súvisí s oblasťou zvuku a hudby"
 
 #. Tag: role::source, long desc
 #: files/debtags/vocabulary
@@ -1515,37 +1597,37 @@ msgstr ""
 #. Tag: devel::ide, short desc
 #: files/debtags/vocabulary
 msgid "IDE"
-msgstr ""
+msgstr "IDE"
 
 #. Tag: protocol::imap, short desc
 #: files/debtags/vocabulary
 msgid "IMAP"
-msgstr ""
+msgstr "IMAP"
 
 #. Tag: mail::imap, short desc
 #: files/debtags/vocabulary
 msgid "IMAP Protocol"
-msgstr ""
+msgstr "Protokol IMAP"
 
 #. Tag: protocol::ip, short desc
 #: files/debtags/vocabulary
 msgid "IP"
-msgstr ""
+msgstr "IP"
 
 #. Tag: protocol::ipv6, short desc
 #: files/debtags/vocabulary
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #. Tag: protocol::irc, short desc
 #: files/debtags/vocabulary
 msgid "IRC"
-msgstr ""
+msgstr "IRC"
 
 #. Tag: works-with-format::iso9660, short desc
 #: files/debtags/vocabulary
 msgid "ISO 9660 CD Filesystem"
-msgstr ""
+msgstr "Súborový systém CD ISO 9660"
 
 #. Tag: culture::icelandic, short desc
 #: files/debtags/vocabulary
@@ -1555,22 +1637,22 @@ msgstr "islandčina"
 #. Tag: made-of::icons, short desc
 #: files/debtags/vocabulary
 msgid "Icons"
-msgstr ""
+msgstr "Ikony"
 
 #. Tag: protocol::ident, short desc
 #: files/debtags/vocabulary
 msgid "Ident"
-msgstr ""
+msgstr "Ident"
 
 #. Tag: works-with::image, short desc
 #: files/debtags/vocabulary
 msgid "Image"
-msgstr ""
+msgstr "Obraz"
 
 #. Tag: hardware::scanner, short desc
 #: files/debtags/vocabulary
 msgid "Image-scanning Hardware"
-msgstr ""
+msgstr "Hardvér na skenovanie obrázkov"
 
 #. Tag: works-with::image:raster, long desc
 #: files/debtags/vocabulary
@@ -1585,37 +1667,37 @@ msgstr ""
 #. Facet: implemented-in, short desc
 #: files/debtags/vocabulary
 msgid "Implemented in"
-msgstr ""
+msgstr "Implementované v"
 
 #. Tag: hardware::input, short desc
 #: files/debtags/vocabulary
 msgid "Input Devices"
-msgstr ""
+msgstr "Vstupné zariadenia"
 
 #. Tag: accessibility::input, short desc
 #: files/debtags/vocabulary
 msgid "Input Systems"
-msgstr ""
+msgstr "Systému vstupu"
 
 #. Tag: works-with::im, short desc
 #: files/debtags/vocabulary
 msgid "Instant Messages"
-msgstr ""
+msgstr "Okamžité správy (IM)"
 
 #. Tag: devel::ide, long desc
 #: files/debtags/vocabulary
 msgid "Integrated Development Environment"
-msgstr ""
+msgstr "Integrované vývojové prostredie"
 
 #. Facet: uitoolkit, short desc
 #: files/debtags/vocabulary
 msgid "Interface Toolkit"
-msgstr ""
+msgstr "Sada nástrojov používateľského rozhrania"
 
 #. Tag: devel::i18n, short desc
 #: files/debtags/vocabulary
 msgid "Internationalization"
-msgstr ""
+msgstr "Internacionalizácia"
 
 #. Tag: protocol::imap, long desc
 #: files/debtags/vocabulary
@@ -1670,17 +1752,17 @@ msgstr ""
 #. Tag: devel::interpreter, short desc
 #: files/debtags/vocabulary
 msgid "Interpreter"
-msgstr ""
+msgstr "Interpreter"
 
 #. Tag: security::ids, short desc
 #: files/debtags/vocabulary
 msgid "Intrusion Detection"
-msgstr ""
+msgstr "Detekcia vniknutia"
 
 #. Tag: special::invalid-tag, short desc
 #: files/debtags/vocabulary
 msgid "Invalid tag"
-msgstr ""
+msgstr "Neplatná značka"
 
 #. Tag: culture::irish, short desc
 #: files/debtags/vocabulary
@@ -1690,7 +1772,7 @@ msgstr "írska gaelčina"
 #. Tag: admin::issuetracker, short desc
 #: files/debtags/vocabulary
 msgid "Issue Tracker"
-msgstr ""
+msgstr "Sledovanie chýb"
 
 #. Tag: culture::italian, short desc
 #: files/debtags/vocabulary
@@ -1700,17 +1782,17 @@ msgstr "taliančina"
 #. Tag: works-with-format::jpg, short desc
 #: files/debtags/vocabulary
 msgid "JPEG, Joint Photographic Experts Group"
-msgstr ""
+msgstr "JPEG, Joint Photographic Experts Group"
 
 #. Tag: works-with-format::json, short desc
 #: files/debtags/vocabulary
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #. Tag: protocol::jabber, short desc
 #: files/debtags/vocabulary
 msgid "Jabber"
-msgstr ""
+msgstr "Jabber"
 
 #. Tag: culture::japanese, short desc
 #. Tag: iso15924::jpan, short desc
@@ -1721,37 +1803,37 @@ msgstr "japončina"
 #. Tag: implemented-in::java, short desc
 #: files/debtags/vocabulary
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #. Tag: devel::lang:java, short desc
 #: files/debtags/vocabulary
 msgid "Java Development"
-msgstr ""
+msgstr "Vývoj v Jave"
 
 #. Tag: works-with-format::json, long desc
 #: files/debtags/vocabulary
 msgid "JavaScript Object Notation"
-msgstr ""
+msgstr "JavaScript Object Notation"
 
 #. Tag: hardware::input:joystick, short desc
 #: files/debtags/vocabulary
 msgid "Joystick"
-msgstr ""
+msgstr "Joystick"
 
 #. Tag: hardware::joystick, short desc
 #: files/debtags/vocabulary
 msgid "Joystick (legacy)"
-msgstr ""
+msgstr "Joystick (kompatibilita)"
 
 #. Facet: junior, short desc
 #: files/debtags/vocabulary
 msgid "Junior Applications"
-msgstr ""
+msgstr "Aplikácie pre mladých"
 
 #. Tag: suite::kde, short desc
 #: files/debtags/vocabulary
 msgid "KDE"
-msgstr ""
+msgstr "KDE"
 
 #. Tag: iso15924::knda, short desc
 #: files/debtags/vocabulary
@@ -1760,14 +1842,13 @@ msgstr "kannadčina"
 
 #. Tag: iso15924::kana, short desc
 #: files/debtags/vocabulary
-#, fuzzy
 msgid "Katakana"
-msgstr "katalánčina"
+msgstr "katakana"
 
 #. Tag: protocol::kerberos, short desc
 #: files/debtags/vocabulary
 msgid "Kerberos"
-msgstr ""
+msgstr "Kerberos"
 
 #. Tag: protocol::kerberos, long desc
 #: files/debtags/vocabulary
@@ -1786,28 +1867,27 @@ msgstr ""
 #. Tag: role::kernel, short desc
 #: files/debtags/vocabulary
 msgid "Kernel and Modules"
-msgstr ""
+msgstr "Jadro a moduly"
 
 #. Tag: admin::kernel, short desc
 #: files/debtags/vocabulary
 msgid "Kernel or Modules"
-msgstr ""
+msgstr "Jadro alebo moduly"
 
 #. Tag: hardware::input:keyboard, short desc
 #: files/debtags/vocabulary
 msgid "Keyboard"
-msgstr ""
+msgstr "Klávesnica"
 
 #. Tag: iso15924::khmr, short desc
 #: files/debtags/vocabulary
-#, fuzzy
 msgid "Khmer"
-msgstr "kašmírčina"
+msgstr "khmérčina"
 
 #. Facet: game, long desc
 #: files/debtags/vocabulary
 msgid "Kind of games provided by the package"
-msgstr ""
+msgstr "Druhy hier, ktoré poskytuje tento balík"
 
 #. Tag: culture::korean, short desc
 #. Tag: iso15924::kore, short desc
@@ -1818,17 +1898,17 @@ msgstr "kórejčina"
 #. Tag: protocol::ldap, short desc
 #: files/debtags/vocabulary
 msgid "LDAP"
-msgstr ""
+msgstr "LDAP"
 
 #. Tag: works-with-format::ldif, short desc
 #: files/debtags/vocabulary
 msgid "LDIF"
-msgstr ""
+msgstr "LDIF"
 
 #. Tag: protocol::lpr, short desc
 #: files/debtags/vocabulary
 msgid "LPR"
-msgstr ""
+msgstr "LPR"
 
 #. Tag: iso15924::laoo, short desc
 #: files/debtags/vocabulary
@@ -1838,7 +1918,7 @@ msgstr "laoština"
 #. Tag: hardware::laptop, short desc
 #: files/debtags/vocabulary
 msgid "Laptop"
-msgstr ""
+msgstr "Notebook"
 
 #. Tag: iso15924::latn, short desc
 #: files/debtags/vocabulary
@@ -1853,22 +1933,22 @@ msgstr "lotyština"
 #. Tag: use::learning, short desc
 #: files/debtags/vocabulary
 msgid "Learning"
-msgstr ""
+msgstr "Výuka"
 
 #. Tag: uitoolkit::motif, short desc
 #: files/debtags/vocabulary
 msgid "Lesstif/Motif"
-msgstr ""
+msgstr "Lesstif/Motif"
 
 #. Tag: devel::library, short desc
 #: files/debtags/vocabulary
 msgid "Libraries"
-msgstr ""
+msgstr "Knižnice"
 
 #. Tag: x11::library, short desc
 #: files/debtags/vocabulary
 msgid "Library"
-msgstr ""
+msgstr "Knižnica"
 
 #. Tag: role::devel-lib, long desc
 #: files/debtags/vocabulary
