@@ -12,128 +12,42 @@
 mirrors = {
 	us => {
 		url => 'http://www.debian.org/',
-		mirror_list => 'http://www.debian.org/mirror/list',
+		mirror_list => 'http://www.debian.org/distrib/archive',
 		north_america => [
-			"ftp.us.debian.org/debian",
-			"http.us.debian.org/debian",
-			"ftp.debian.org/debian",
-			"ftp.ca.debian.org/debian",
-			"ftp.mx.debian.org/debian",
+			"ftp.egr.msu.edu/debian-archive",
+			"ftp3.nrc.ca/debian-archive",
 		],
 		europa => [
-			"ftp.de.debian.org/debian",
-			"ftp.at.debian.org/debian",
-			"ftp.bg.debian.org/debian",
-			"ftp.ch.debian.org/debian",
-			"ftp.cz.debian.org/debian",
-			"ftp.dk.debian.org/debian",
-			"ftp.ee.debian.org/debian",
-			"ftp.es.debian.org/debian",
-			"ftp.fi.debian.org/debian",
-			"ftp.fr.debian.org/debian",
-			"ftp.hr.debian.org/debian",
-			"ftp.hu.debian.org/debian",
-			"ftp.ie.debian.org/debian",
-			"ftp.is.debian.org/debian",
-			"ftp.it.debian.org/debian",
-			"ftp.lt.debian.org/debian",
-			"ftp.nl.debian.org/debian",
-			"ftp.no.debian.org/debian",
-			"ftp.pl.debian.org/debian",
-			"ftp.ro.debian.org/debian",
-			"ftp.ru.debian.org/debian",
-			"ftp.se.debian.org/debian",
-			"ftp.si.debian.org/debian",
-			"ftp.tr.debian.org/debian",
-			"ftp.uk.debian.org/debian",
-		],
-		south_america => [
-			"ftp.br.debian.org/debian",
-			"ftp.cl.debian.org/debian",
-			"download.unesp.br/linux/debian",
-			"sft.if.usp.br/debian",
-#not reachable		"debian.unesr.edu.ve/debian",
-			"debian.torredehanoi.org/debian",
-		],
-		oceania => [
-			"ftp.au.debian.org/debian",
-			"ftp.wa.au.debian.org/debian",
-			"ftp.nz.debian.org/debian",
+			"archive.debian.org/debian",
+			"ftp.de.debian.org/archive/debian",
+			"ftp.ch.debian.org/debian-archive",
+			"ftp.nl.debian.org/debian-archive",
+			"debian.dynamica.it/debian-archive",
+			"debian.org.ua/debian-archive",
+			"ftp2.debian.org.ua/debian-archive",
+#			"ftp.irb.hr/debian-archive",
+			"webb.ens-cachan.fr/ftp/debian-archive",
 		],
 		asia => [
-			"ftp.cn.debian.org/debian",
-			"ftp.jp.debian.org/debian",
-			"ftp.kr.debian.org/debian",
-			"ftp.hk.debian.org/debian",
-			"ftp.tw.debian.org/debian",
-		],
-		africa => [
-			"debian.mirror.ac.za/debian",
+			"ftp.kr.debian.org/debian-archive",
+#			"ftp.twaren.net/Linux/Debian/debian-archive",
 		],
 	},
-
-	debports => {
-		url => 'https://www.ports.debian.org/',
-		title => g('ports of packages to architectures not yet or not anymore available in Debian'),
-		mirror_list => 'https://www.ports.debian.org/mirrors',
-		unofficial_port => {
-			alpha => {
-				url_name => 'alpha',
-				name => 'Alpha',
-			},
-			avr32 => {
-				url => 'http://avr32.debian.net/',
-				name => 'AVR32',
-			},
-			armhf => {
-				url => 'http://wiki.debian.org/ArmHardFloatPort',
-				name => 'ARMHF',
-			},
-			arm64 => {
-				url => 'https://wiki.debian.org/Arm64Port',
-				name => 'Arm64',
-			},
-			hppa => {
-				url_name => 'hppa',
-				name => 'HPPA',
-			},
-			m68k => {
-				url_name => 'm68k',
-				name => 'M68K',
-			},
-			powerpcspe => {
-				url => 'http://wiki.debian.org/PowerPCSPEPort',
-				name => 'PowerPCSPE',
-			},
-			ppc64 => {
-				url => 'https://wiki.debian.org/PPC64',
-				name => 'PowerPC64',
-			},
-			sh4 => {
-				url => 'http://wiki.debian.org/SH4',
-				name => 'SH4',
-			},
-			sparc64 => {
-				url => 'http://wiki.debian.org/Sparc64',
-				name => 'Sparc64',
-			},
-			x32 => {
-				url => 'https://wiki.debian.org/X32Port',
-				name => 'X32',
-			},
-		},
+	volatile => {
+		url => 'http://www.debian.org/volatile/',
+		title => g('volatile packages that need major changes during the life of a stable release'),
 		europa => [
-			"ftp.ports.debian.org/debian-ports/",
-			"ftp.de.debian.org/debian-ports/",
+			"archive.debian.org/debian-volatile",
 		],
-		asia => [
-			"ftp.kr.debian.org/debian-ports/",
-			"debian.nctu.edu.tw/debian-ports/",
+	},
+	backports => {
+		url => 'http://backports.debian.org/',
+		title => g('newer packages that have been adapted to stable releases of Debian'),
+		europa => [
+			"archive.debian.org/backports.org",
 		],
 	},
 }
-
-ports_url = 'http://www.debian.org/ports/'
 
 continents = {
 		north_america => g('North America'),
