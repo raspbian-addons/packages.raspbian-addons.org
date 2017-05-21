@@ -1,0 +1,41 @@
+#!/bin/bash
+
+. `dirname $0`/../config.sh
+
+test -d ${archivedir} || mkdir -p ${archivedir}
+cd ${archivedir}
+
+# backports archive
+#
+for dist in $backports_suites 
+do
+  echo "retrieve Release(.gpg) $dist"
+  test -d backports/${dist} || mkdir -p backports/${dist}
+  (cd backports/${dist} &&
+	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}/Release &&
+	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}/Release.gpg )
+
+    foo=\$arch_${dist%-*}
+    for arch in `eval echo $foo`
+    do
+      for part in ${parts}
+      do
+	echo retrieve Packages $dist/$part/$arch
+	test -d backports/${dist}/${part}/binary-${arch} || mkdir -p backports/${dist}/${part}/binary-${arch}
+	(cd backports/${dist}/${part}/binary-${arch} &&
+	    $wget_cmd -N ${backports_ftpsite}/dists/${dist}/${part}/binary-${arch}/Packages.gz)
+      done
+      echo retrieve Contents $dist/$arch
+      (cd backports/${dist} &&
+	  $wget_cmd -N ${backports_ftpsite}/dists/${dist}/Contents-${arch}.gz)
+    done
+    for part in ${parts}
+    do
+        echo retrieve Sources $dist/$part
+        test -d backports/${dist}/${part}/source || mkdir -p backports/${dist}/${part}/source
+        (cd backports/${dist}/${part}/source &&
+            $wget_cmd -N ${backports_ftpsite}/dists/${dist}/${part}/source/Sources.gz)
+    done
+
+    $check_release_cmd $archivedir/backports/${dist}/Release
+done
