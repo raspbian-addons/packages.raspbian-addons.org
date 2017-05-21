@@ -6,7 +6,7 @@
    organisation = 'Debian'
    project_homepage = 'https://www.debian.org/'
    packages_homepage = '/'
-   packages_homepage_abs = 'http://packages.debian.net/'
+   packages_homepage_abs = 'https://historical.packages.debian.org/'
    old_releases = 'https://archive.debian.net/'
    searchformurl = packages_homepage
    search_url = '/search'
@@ -16,7 +16,7 @@
    ddpo_url = 'https://qa.debian.org/developer.php?login='
    src_bugs_url = bugs_url _ 'src:'
    mirror_url = 'http://ftp.debian.org/'
-   security_mirror = 'security.debian.org'
+   security_mirror = 'archive.debian.org'
    security_mirror_url = security_mirror _ '/debian-security'
    security_suite_suffix = '/updates'
    changelogs_url = 'http://ftp-master.metadata.debian.org/changelogs/'
@@ -66,7 +66,7 @@
 [%-
    # possible values for importance: high, normal, low
    sitewidemsg = { importance => "high",
-		   txt => g('Please note that this is an experimental version of <a href="https://%s/">%s</a>. Errors and obsolete information should be expected', 'packages.debian.org', 'packages.debian.org') }
+		txt => g('Please note that this site contains information about obsolete %s releases; if you search for current data, please use <a href="https://%s/">%s</a>.', organisation, 'packages.debian.org', 'packages.debian.org') }
 -%]
 [%# @translators: . = decimal_point , = thousands_sep, see Number::Format %]
 [%- USE num = Number.Format( decimal_point => g('.'),
