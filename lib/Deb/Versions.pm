@@ -177,12 +177,13 @@ our @SUITES_SORT = qw(
 			etch etch-m68k
 			lenny
 			squeeze
-			oldoldstable oldoldstable-proposed-updates
 			wheezy
-			oldstable oldstable-proposed-updates
+			oldoldstable oldoldstable-proposed-updates
 			jessie
-			stable stable-proposed-updates
+			oldstable oldstable-proposed-updates
 			stretch
+			stable stable-proposed-updates
+			buster
 			testing testing-proposed-updates
 			sid unstable experimental
 			warty hoary breezy dapper edgy feisty gutsy hardy
