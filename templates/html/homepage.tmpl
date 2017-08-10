@@ -7,15 +7,13 @@
 [%-
     all_suites = [ 'trusty', 'trusty-updates', 'trusty-backports',
 		   'xenial', 'xenial-updates', 'xenial-backports',
-		   'yakkety', 'yakkety-updates', 'yakkety-backports',
 		   'zesty', 'zesty-updates', 'zesty-backports',
 		   'artful' ]
     version_numbers = { trusty => '14.04LTS',
 			xenial => '16.04LTS',
-			yakkety => '16.10',
 			zesty => '17.04',
 		      }
-    current_release = 'yakkety'
+    current_release = 'zesty'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -127,6 +125,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2017-08-10</dt>
+<dd>Remove EOLed yakkety, set zesty as default.</dd>
 <dt>2017-05-17</dt>
 <dd>Reflect zesty release, add artful, remove precise.</dd>
 <dt>2016-10-27</dt>
