@@ -1,20 +1,22 @@
 # sections.pot translation of pdo
 # This file is put in the public domain.
 # Kanru Chen <koster@debian.org.tw>, 2008.
+# Yangfl <mmyangfl@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo master\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-28 14:18+0200\n"
-"PO-Revision-Date: 2008-11-29 11:53+0800\n"
-"Last-Translator: Kanru Chen <koster@debian.org.tw>\n"
-"Language-Team: Debian-user in Chinese [Big5] <debian-chinese-big5@lists."
-"debian.org>\n"
+"PO-Revision-Date: 2017-09-25 21:30+0800\n"
+"Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
+"Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: lib/Packages/Sections.pm:12
 msgid "Administration Utilities"
@@ -22,7 +24,7 @@ msgstr "實用管理工具"
 
 #: lib/Packages/Sections.pm:13
 msgid "Utilities to administer system resources, manage user accounts, etc."
-msgstr "管理系統資源，維護用戶帳號等實用工具。"
+msgstr "管理系統資源，維護使用者賬號等實用工具。"
 
 #: lib/Packages/Sections.pm:14
 msgid "Base Utilities"
@@ -34,11 +36,11 @@ msgstr "任何 Debian 系統必備的實用工具。"
 
 #: lib/Packages/Sections.pm:16
 msgid "Mono/CLI"
-msgstr ""
+msgstr "Mono/CLI"
 
 #: lib/Packages/Sections.pm:17
 msgid "Everything about Mono and the Common Language Infrastructure."
-msgstr ""
+msgstr "一切有關 Mono 和 Common Language Infrastructure 的內容。"
 
 #: lib/Packages/Sections.pm:18
 msgid "Communication Programs"
@@ -46,26 +48,26 @@ msgstr "通訊程式"
 
 #: lib/Packages/Sections.pm:19
 msgid "Software to use your modem in the old fashioned style."
-msgstr "用於您老式數據機的軟體。"
+msgstr "用於您老式調變解調器的軟體。"
 
 #: lib/Packages/Sections.pm:20
 msgid "Databases"
-msgstr ""
+msgstr "資料庫"
 
 #: lib/Packages/Sections.pm:21
 msgid "Database Servers and Clients."
-msgstr ""
+msgstr "資料庫伺服器和客戶端。"
 
 #: lib/Packages/Sections.pm:22
-#, fuzzy
+#| msgid "Virtual packages"
 msgid "Debug packages"
-msgstr "虛擬套件"
+msgstr "除錯套件"
 
 #: lib/Packages/Sections.pm:23
 msgid ""
 "Packages providing debugging information for executables and shared "
 "libraries."
-msgstr ""
+msgstr "提供可執行檔案和共享庫除錯資訊的軟體套件。"
 
 #: lib/Packages/Sections.pm:24
 msgid "Development"
@@ -74,7 +76,7 @@ msgstr "開發"
 #: lib/Packages/Sections.pm:25
 msgid ""
 "Development utilities, compilers, development environments, libraries, etc."
-msgstr "實用開發工具，編譯器，開發環境，函式庫，等等。"
+msgstr "實用開發工具，編譯器，開發環境，連結庫，等等。"
 
 #: lib/Packages/Sections.pm:26
 msgid "Documentation"
@@ -85,7 +87,7 @@ msgid ""
 "FAQs, HOWTOs and other documents trying to explain everything related to "
 "Debian, and software needed to browse documentation (man, info, etc)."
 msgstr ""
-"FAQs，HOWTOs 以及其他的、嘗試講解有關 Debian 一切的文件，以及閱讀文件時所需的"
+"FAQ，HOWTO，以及其他的、嘗試講解有關 Debian 一切的文件，以及閱讀文件時所需的"
 "軟體(man，info，等)。"
 
 #: lib/Packages/Sections.pm:28
@@ -94,7 +96,7 @@ msgstr "編輯器"
 
 #: lib/Packages/Sections.pm:29
 msgid "Software to edit files. Programming environments."
-msgstr "編輯文件的軟體。程式編寫環境。"
+msgstr "編輯檔案的軟體。程式編寫環境。"
 
 #: lib/Packages/Sections.pm:30
 msgid "Electronics"
@@ -128,23 +130,23 @@ msgstr "GNOME"
 msgid ""
 "The GNOME desktop environment, a powerful, easy to use set of integrated "
 "applications."
-msgstr "GNOME 桌面環境，一組強大的、易用的、集成的應用程式。"
+msgstr "GNOME 桌面環境，一組強大的、易用的、整合的應用程式。"
 
 #: lib/Packages/Sections.pm:38
 msgid "GNU R"
-msgstr ""
+msgstr "GNU R"
 
 #: lib/Packages/Sections.pm:39
 msgid "Everything about GNU R, a statistical computation and graphics system."
-msgstr ""
+msgstr "一切有關 GNU R 的內容，一個統計計算和圖形系統。"
 
 #: lib/Packages/Sections.pm:40
 msgid "GNUstep"
-msgstr ""
+msgstr "GNUstep"
 
 #: lib/Packages/Sections.pm:41
 msgid "The GNUstep environment."
-msgstr ""
+msgstr "GNUstep 環境。"
 
 #: lib/Packages/Sections.pm:42
 msgid "Graphics"
@@ -164,53 +166,53 @@ msgstr "業餘無線電軟體。"
 
 #: lib/Packages/Sections.pm:46
 msgid "Fonts"
-msgstr ""
+msgstr "字型"
 
 #: lib/Packages/Sections.pm:47
-#, fuzzy
+#| msgid "Virtual packages."
 msgid "Font packages."
-msgstr "虛擬的、邏輯的、概念上的軟體套件。"
+msgstr "字型軟體套件。"
 
 #: lib/Packages/Sections.pm:48
 msgid "Haskell"
-msgstr ""
+msgstr "Haskell"
 
 #: lib/Packages/Sections.pm:49
 msgid "Everything about Haskell."
-msgstr ""
+msgstr "一切有關 Haskell 的內容。"
 
 #: lib/Packages/Sections.pm:50
-#, fuzzy
+#| msgid "Web Software"
 msgid "Web Servers"
-msgstr "網頁軟體"
+msgstr "網頁伺服器"
 
 #: lib/Packages/Sections.pm:51
 msgid "Web servers and their modules."
-msgstr ""
+msgstr "網頁伺服器及其模組。"
 
 #: lib/Packages/Sections.pm:52
 msgid "Interpreters"
-msgstr "解譯器"
+msgstr "直譯器"
 
 #: lib/Packages/Sections.pm:53
 msgid "All kind of interpreters for interpreted languages. Macro processors."
-msgstr "各種解譯型語言的解譯器。巨集處理器。"
+msgstr "各種解釋型語言的直譯器。巨集處理器。"
 
 #: lib/Packages/Sections.pm:54
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: lib/Packages/Sections.pm:55
 msgid "Everything about Java."
-msgstr ""
+msgstr "一切有關 Java 的內容。"
 
 #: lib/Packages/Sections.pm:56
 msgid "Kernels"
-msgstr ""
+msgstr "核心"
 
 #: lib/Packages/Sections.pm:57
 msgid "Operating System Kernels and related modules."
-msgstr ""
+msgstr "作業系統核心和相關模組。"
 
 #: lib/Packages/Sections.pm:58
 msgid "KDE"
@@ -220,41 +222,41 @@ msgstr "KDE"
 msgid ""
 "The K Desktop Environment, a powerful, easy to use set of integrated "
 "applications."
-msgstr "KDE 桌面環境。一組強大的、易用的、集成的應用程式。"
+msgstr "KDE 桌面環境。一組強大的、易用的、整合的應用程式。"
 
 #: lib/Packages/Sections.pm:60
 msgid "Libraries"
-msgstr "函式庫"
+msgstr "連結庫"
 
 #: lib/Packages/Sections.pm:61
 msgid ""
 "Libraries to make other programs work. They provide special features to "
 "developers."
-msgstr "使其他程式工作的函式庫。它們提供開發者豐富的功能。"
+msgstr "提供其他程式工作的連結庫。是它們讓開發者富有特色。"
 
 #: lib/Packages/Sections.pm:62
 msgid "Library development"
-msgstr "函式庫開發"
+msgstr "連結庫開發"
 
 #: lib/Packages/Sections.pm:63
 msgid "Libraries necessary for developers to write programs that use them."
-msgstr "當開發者要編寫一些使用函式庫的程式時所必需的函式庫"
+msgstr "當開發者要編寫一些呼叫連結庫的程式時所必需的連結庫"
 
 #: lib/Packages/Sections.pm:64
 msgid "Lisp"
-msgstr ""
+msgstr "Lisp"
 
 #: lib/Packages/Sections.pm:65
 msgid "Everything about Lisp."
-msgstr ""
+msgstr "一切有關 Lisp 的內容。"
 
 #: lib/Packages/Sections.pm:66
 msgid "Language packs"
-msgstr ""
+msgstr "語言套件"
 
 #: lib/Packages/Sections.pm:67
 msgid "Localization support for big software packages."
-msgstr ""
+msgstr "大型軟體套件的本地化支援。"
 
 #: lib/Packages/Sections.pm:68
 msgid "Mail"
@@ -282,12 +284,13 @@ msgstr "放在其他地方都不合適的各式各樣的實用程式。"
 
 #: lib/Packages/Sections.pm:74
 msgid "Network"
-msgstr "網絡"
+msgstr "網路"
 
 #: lib/Packages/Sections.pm:75
-#, fuzzy
+#| msgid ""
+#| "Daemons and clients to connect your Debian GNU/Linux system to the world."
 msgid "Daemons and clients to connect your system to the world."
-msgstr "服務端程式和客戶端程式使您的 Debian GNU/Linux 系統與世界相連接。"
+msgstr "服務端程式和客戶端程式，使您的系統與世界相連線。"
 
 #: lib/Packages/Sections.pm:76
 msgid "Newsgroups"
@@ -295,36 +298,38 @@ msgstr "新聞組"
 
 #: lib/Packages/Sections.pm:77
 msgid "Software to access Usenet, to set up news servers, etc."
-msgstr "訪問新聞網，設置新聞服務器等軟體。"
+msgstr "訪問新聞網，設定新聞伺服器等軟體。"
 
 #: lib/Packages/Sections.pm:78
 msgid "Old Libraries"
-msgstr "舊的函式庫"
+msgstr "舊的連結庫"
 
 #: lib/Packages/Sections.pm:79
 msgid ""
 "Old versions of libraries, kept for backward compatibility with old "
 "applications."
-msgstr "老版本的函式庫，為了向後兼容舊程式而繼續保留。"
+msgstr "老版本的連結庫，為了向後相容舊程式而繼續保留。"
 
 #: lib/Packages/Sections.pm:80
 msgid "OCaml"
-msgstr ""
+msgstr "OCaml"
 
 #: lib/Packages/Sections.pm:81
 msgid "Everything about OCaml, an ML language implementation."
-msgstr ""
+msgstr "一切有關 OCaml 的內容，一個 ML 語言的實現。"
 
 #: lib/Packages/Sections.pm:82
 msgid "Other OS's and file systems"
-msgstr "其他作業系統和文件系統"
+msgstr "其他作業系統和檔案系統"
 
 #: lib/Packages/Sections.pm:83
-#, fuzzy
+#| msgid ""
+#| "Software to run programs compiled for other operating system, and to use "
+#| "their filesystems."
 msgid ""
 "Software to run programs compiled for other operating systems, and to use "
 "their filesystems."
-msgstr "使得在其他作業系統上編譯的軟體得以運行，以及使用它們的文件系統。"
+msgstr "使得在其他作業系統上編譯的軟體得以執行，以及使用它們的檔案系統。"
 
 #: lib/Packages/Sections.pm:84
 msgid "Perl"
@@ -332,15 +337,15 @@ msgstr "Perl"
 
 #: lib/Packages/Sections.pm:85
 msgid "Everything about Perl, an interpreted scripting language."
-msgstr "一切有關 Perl 的內容，一種解譯型的腳本語言。"
+msgstr "一切有關 Perl 的內容，一種解釋型的指令碼語言。"
 
 #: lib/Packages/Sections.pm:86
 msgid "PHP"
-msgstr ""
+msgstr "PHP"
 
 #: lib/Packages/Sections.pm:87
 msgid "Everything about PHP."
-msgstr ""
+msgstr "一切有關 PHP 的內容。"
 
 #: lib/Packages/Sections.pm:88
 msgid "Python"
@@ -350,16 +355,18 @@ msgstr "Python"
 msgid ""
 "Everything about Python, an interpreted, interactive object oriented "
 "language."
-msgstr "一切有關 Python 的內容，一種解譯型、物件導向的語言"
+msgstr "一切有關 Python 的內容，一種解釋型、面向物件的語言"
 
 #: lib/Packages/Sections.pm:90
 msgid "Ruby"
-msgstr ""
+msgstr "Ruby"
 
 #: lib/Packages/Sections.pm:91
-#, fuzzy
+#| msgid ""
+#| "Everything about Python, an interpreted, interactive object oriented "
+#| "language."
 msgid "Everything about Ruby, an interpreted object oriented language."
-msgstr "一切有關 Python 的內容，一種解譯型、物件導向的語言"
+msgstr "一切有關 Ruby 的內容，一種解釋型、面向物件的語言"
 
 #: lib/Packages/Sections.pm:92
 msgid "Science"
@@ -375,7 +382,7 @@ msgstr "Shells"
 
 #: lib/Packages/Sections.pm:95
 msgid "Command shells. Friendly user interfaces for beginners."
-msgstr "命令行。友好的用戶和電腦的交互界面。"
+msgstr "命令列。友好的使用者和計算機的互動介面。"
 
 #: lib/Packages/Sections.pm:96
 msgid "Sound"
@@ -384,7 +391,7 @@ msgstr "聲音"
 #: lib/Packages/Sections.pm:97
 msgid ""
 "Utilities to deal with sound: mixers, players, recorders, CD players, etc."
-msgstr "處理聲音的實用程式: 混音器，播放器，錄音器，CD 播放器，等等。"
+msgstr "處理聲音的實用程式: 混頻器，播放器，錄音器，CD 播放器，等等。"
 
 #: lib/Packages/Sections.pm:98
 msgid "TeX"
@@ -396,11 +403,11 @@ msgstr "流行的文件排版及相關處理程式"
 
 #: lib/Packages/Sections.pm:100
 msgid "Text Processing"
-msgstr "文本處理"
+msgstr "文字處理"
 
 #: lib/Packages/Sections.pm:101
 msgid "Utilities to format and print text documents."
-msgstr "格式化和列印文本文件的實用工具。"
+msgstr "格式化和列印文字文件的實用工具。"
 
 #: lib/Packages/Sections.pm:102
 msgid "Translations"
@@ -408,7 +415,7 @@ msgstr "翻譯"
 
 #: lib/Packages/Sections.pm:103
 msgid "Translation packages and language support meta packages."
-msgstr "一些提供翻譯支持或語言支持的，自身不含內容但卻依賴其他軟體套件的元套件"
+msgstr "一些提供翻譯支援或語言支援的，自身不含內容但卻依賴其他軟體套件的元套件"
 
 #: lib/Packages/Sections.pm:104
 msgid "Utilities"
@@ -418,27 +425,27 @@ msgstr "實用工具"
 msgid ""
 "Utilities for file/disk manipulation, backup and archive tools, system "
 "monitoring, input systems, etc."
-msgstr "文件/磁盤操作，備份和打包工具，系統監控，輸入系統，等等。"
+msgstr "檔案/磁碟操作，備份和打套件工具，系統監控，輸入系統，等等。"
 
 #: lib/Packages/Sections.pm:106
 msgid "Version Control Systems"
-msgstr ""
+msgstr "版本控制系統"
 
 #: lib/Packages/Sections.pm:107
 msgid "Version control systems and related utilities."
-msgstr ""
+msgstr "版本控制系統和相關實用程式。"
 
 #: lib/Packages/Sections.pm:108
 msgid "Video"
-msgstr ""
+msgstr "視訊"
 
 #: lib/Packages/Sections.pm:109
 msgid "Video viewers, editors, recording, streaming."
-msgstr ""
+msgstr "檢視、編輯、錄製、推流視訊。"
 
 #: lib/Packages/Sections.pm:110
 msgid "Virtual packages"
-msgstr "虛擬套件"
+msgstr "虛套件"
 
 #: lib/Packages/Sections.pm:111
 msgid "Virtual packages."
@@ -450,7 +457,7 @@ msgstr "網頁軟體"
 
 #: lib/Packages/Sections.pm:113
 msgid "Web servers, browsers, proxies, download tools etc."
-msgstr "網頁服務器，瀏覽器，代理，下載工具等。"
+msgstr "網頁伺服器，瀏覽器，代理，下載工具等。"
 
 #: lib/Packages/Sections.pm:114
 msgid "X Window System software"
@@ -460,27 +467,27 @@ msgstr "X 視窗系統軟體"
 msgid ""
 "X servers, libraries, fonts, window managers, terminal emulators and many "
 "related applications."
-msgstr "X 服務器，函式庫，字體，視窗管理器，虛擬終端以及許多有關的應用程式。"
+msgstr "X 伺服器，連結庫，字型，視窗管理器，虛擬終端以及許多有關的應用程式。"
 
 #: lib/Packages/Sections.pm:116
 msgid "Xfce"
-msgstr ""
+msgstr "Xfce"
 
 #: lib/Packages/Sections.pm:117
 msgid "Xfce, a fast and lightweight Desktop Environment."
-msgstr ""
+msgstr "Xfce，一個快速輕量的桌面環境。"
 
 #: lib/Packages/Sections.pm:118
 msgid "Zope/Plone Framework"
-msgstr ""
+msgstr "Zope/Plone 框架"
 
 #: lib/Packages/Sections.pm:119
 msgid "Zope Application Server and Plone Content Managment System."
-msgstr ""
+msgstr "Zope 應用伺服器和 Plone 內容管理系統。"
 
 #: lib/Packages/Sections.pm:120
 msgid "debian-installer udeb packages"
-msgstr "Debian 安裝程式 udeb 包"
+msgstr "Debian 安裝程式 udeb 套件"
 
 #: lib/Packages/Sections.pm:121
 msgid ""
