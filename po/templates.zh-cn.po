@@ -1,20 +1,21 @@
 #
 # Yangfl <mmyangfl@gmail.com>, 2017.
+# Boyuan Yang <073plan@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2017-09-25 22:35+0800\n"
-"Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
-"Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-10-12 19:08+0800\n"
+"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
+"Language-Team: Chinese (Simplified) <debian-l10n-chinese@lists.debian.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: templates/config.tmpl:46
 msgid "Debian Web Mailinglist"
@@ -22,7 +23,7 @@ msgstr "Debian 邮件列表"
 
 #: templates/config.tmpl:51
 msgid "%s Webmaster"
-msgstr "%s 网管"
+msgstr "%s 网络管理员"
 
 #: templates/config.tmpl:54
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
@@ -210,7 +211,7 @@ msgstr "发行版："
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
 #: templates/html/index_head.tmpl:9 templates/html/show.tmpl:14
 msgid "Overview over this suite"
-msgstr "该发行版一览"
+msgstr "该发行版套件一览"
 
 #: templates/html/download.tmpl:6 templates/html/filelist.tmpl:6
 #: templates/html/show.tmpl:17
@@ -345,7 +346,7 @@ msgstr "MD5 校验码"
 
 #: templates/html/download.tmpl:109 templates/html/download.tmpl:110
 msgid "Not Available"
-msgstr "不存在"
+msgstr "不可用"
 
 #: templates/html/download.tmpl:109
 msgid "SHA1 checksum"
@@ -449,11 +450,12 @@ msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
 msgstr ""
+"本站点向您提供有关 <a href=\"%s\">%s</a> 软件包仓库中所有可用软件包的信息。"
 
 #: templates/html/homepage.tmpl:24
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
-msgstr ""
+msgstr "如果您遇到了任何问题，请联系 <a href=\"mailto:%s\">%s</a>！"
 
 #: templates/html/homepage.tmpl:26
 msgid "Browse through the lists of packages:"
@@ -517,7 +519,7 @@ msgstr "版面："
 
 #: templates/html/homepage.tmpl:78
 msgid "There are shortcuts for some searches available:"
-msgstr ""
+msgstr "对某些搜索，有数个快捷方式可用："
 
 #: templates/html/homepage.tmpl:80
 msgid "<code>%s<var>name</var></code> for the search on package names."
@@ -545,15 +547,15 @@ msgstr "显示："
 
 #: templates/html/homepage.tmpl:102
 msgid "packages that contain files named like this"
-msgstr ""
+msgstr "含有名字中带类似这样关键字的文件的软件包"
 
 #: templates/html/homepage.tmpl:105
 msgid "packages that contain files whose names end with the keyword"
-msgstr ""
+msgstr "含有名字以这样的关键字结尾的文件的软件包"
 
 #: templates/html/homepage.tmpl:108
 msgid "packages that contain files whose names contain the keyword"
-msgstr ""
+msgstr "含有名字中包含这样关键字的文件的软件包"
 
 #: templates/html/homepage.tmpl:117
 #| msgid "Architecture"
