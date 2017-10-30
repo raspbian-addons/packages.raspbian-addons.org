@@ -7,13 +7,15 @@
 [%-
     all_suites = [ 'trusty', 'trusty-updates', 'trusty-backports',
 		   'xenial', 'xenial-updates', 'xenial-backports',
-		   'zesty', 'zesty-updates', 'zesty-backports',
-		   'artful' ]
+		   'zesty',  'zesty-updates',  'zesty-backports',
+		   'artful', 'artful-updates', 'artful-backports',
+		   'bionic' ]
     version_numbers = { trusty => '14.04LTS',
 			xenial => '16.04LTS',
-			zesty => '17.04',
+			zesty  => '17.04',
+			artful => '17.10',
 		      }
-    current_release = 'zesty'
+    current_release = 'artful'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -125,6 +127,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2017-10-30</dt>
+<dd>Reflect artful release, add bionic.</dd>
 <dt>2017-08-10</dt>
 <dd>Remove EOLed yakkety, set zesty as default.</dd>
 <dt>2017-05-17</dt>
