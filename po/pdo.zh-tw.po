@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-28 14:18+0200\n"
+"POT-Creation-Date: 2017-12-11 15:50+0800\n"
 "PO-Revision-Date: 2017-09-25 21:24+0800\n"
 "Last-Translator: Yangfl <mmyangfl@gmail.com>\n"
 "Language-Team:  <debian-l10n-chinese@lists.debian.org>\n"
@@ -34,7 +34,7 @@ msgstr "子區域"
 msgid "Priority"
 msgstr "優先級"
 
-#: lib/Packages/Dispatcher.pm:340
+#: lib/Packages/Dispatcher.pm:347
 msgid "requested format not available for this document"
 msgstr "要求的格式在此文檔中暫時不可用"
 
@@ -63,11 +63,15 @@ msgstr "不止一套發行版被指定下載(%s)"
 msgid "more than one architecture specified for download (%s)"
 msgstr "不止一種硬體架構被指定下載(%s)"
 
-#: lib/Packages/DoDownload.pm:93
+#: lib/Packages/DoDownload.pm:63 lib/Packages/DoShow.pm:73
+msgid "No such package."
+msgstr "沒有這樣的套件。"
+
+#: lib/Packages/DoDownload.pm:90
 msgid "kByte"
 msgstr "kB"
 
-#: lib/Packages/DoDownload.pm:96
+#: lib/Packages/DoDownload.pm:93
 msgid "MByte"
 msgstr "MB"
 
@@ -142,10 +146,6 @@ msgstr "您選擇的搜尋模式不支持多個關鍵字。"
 msgid "more than one suite specified for show (%s)"
 msgstr "不止一套發行版被指定顯示(%s)"
 
-#: lib/Packages/DoShow.pm:73
-msgid "No such package."
-msgstr "沒有這樣的套件。"
-
 #: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr "套件在當前發行版中暫時不可用。"
@@ -155,7 +155,6 @@ msgid " and others"
 msgstr " 以及其他的"
 
 #: lib/Packages/DoShow.pm:254
-#| msgid "Virtual package"
 msgid "virtual package"
 msgstr "虛擬套件"
 
