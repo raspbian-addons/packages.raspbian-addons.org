@@ -30,18 +30,18 @@ msgstr ""
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr ""
 
-#: templates/config.tmpl:77
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:81
+#: templates/config.tmpl:72
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:82
+#: templates/config.tmpl:73
 msgid ","
 msgstr ""
 
@@ -143,55 +143,46 @@ msgstr "Пошук"
 msgid "SPARC"
 msgstr ""
 
-#: templates/config/archive_layout.tmpl:15
+#: templates/config/archive_layout.tmpl:16
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr ""
 
-#: templates/config/archive_layout.tmpl:16
+#: templates/config/archive_layout.tmpl:17
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
 msgstr ""
 
-#: templates/config/archive_layout.tmpl:17
+#: templates/config/archive_layout.tmpl:18
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr ""
 
 #: templates/config/mirrors.tmpl:77
 msgid ""
-"volatile packages that need major changes during the life of a stable release"
-msgstr ""
-
-#: templates/config/mirrors.tmpl:116
-msgid "newer packages that have been adapted to stable releases of Debian"
-msgstr ""
-
-#: templates/config/mirrors.tmpl:142
-msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:211
+#: templates/config/mirrors.tmpl:139
 msgid "North America"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:212
+#: templates/config/mirrors.tmpl:140
 msgid "South America"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:213
+#: templates/config/mirrors.tmpl:141
 msgid "Asia"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:214
+#: templates/config/mirrors.tmpl:142
 msgid "Oceania"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:215
+#: templates/config/mirrors.tmpl:143
 msgid "Europe"
 msgstr ""
 
-#: templates/config/mirrors.tmpl:216
+#: templates/config/mirrors.tmpl:144
 msgid "Africa"
 msgstr ""
 
@@ -200,7 +191,7 @@ msgid "Package Download Selection -- %s"
 msgstr ""
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/homepage.tmpl:110 templates/html/index_head.tmpl:9
+#: templates/html/homepage.tmpl:111 templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Дистрибутив"
@@ -242,15 +233,15 @@ msgid ""
 "<kbd>/etc/apt/sources.list</kbd> like this:"
 msgstr ""
 
-#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
+#: templates/html/download.tmpl:34
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr ""
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:174
+#: templates/html/download.tmpl:39 templates/html/show.tmpl:174
 msgid "Experimental package"
 msgstr "Експериментальний пакунок"
 
-#: templates/html/download.tmpl:43
+#: templates/html/download.tmpl:40
 #, fuzzy
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
@@ -263,11 +254,11 @@ msgstr ""
 "і він навіть може призвести до втрати даних. Якщо ви проігноруєте це "
 "попередження і встановите його, то робіть це на ваш ризик."
 
-#: templates/html/download.tmpl:46 templates/html/show.tmpl:179
+#: templates/html/download.tmpl:45 templates/html/show.tmpl:179
 msgid "debian-installer udeb package"
 msgstr "udeb-пакунок встановлювача"
 
-#: templates/html/download.tmpl:47 templates/html/show.tmpl:180
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 #, fuzzy
 #| msgid ""
 #| "Warning: This package is intended for the use in building <a href="
@@ -282,72 +273,72 @@ msgstr ""
 "<a href=\"http://www.debian.org/devel/debian-installer\">встановлювача "
 "Debian</a>. Не встановлюйте його на звичайній системі Debian."
 
-#: templates/html/download.tmpl:54
+#: templates/html/download.tmpl:53
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
 msgstr ""
 
-#: templates/html/download.tmpl:80
+#: templates/html/download.tmpl:79
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 
-#: templates/html/download.tmpl:82
+#: templates/html/download.tmpl:81
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 
-#: templates/html/download.tmpl:89
+#: templates/html/download.tmpl:88
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
 msgstr ""
 
-#: templates/html/download.tmpl:97
+#: templates/html/download.tmpl:96
 msgid ""
 "Note that %s is not officially included in the %s archive, but the %s porter "
 "group keeps their archive in sync with the official archive as close as "
 "possible. See the <a href=\"%s\">%s ports page</a> for current information."
 msgstr ""
 
-#: templates/html/download.tmpl:101
+#: templates/html/download.tmpl:100
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
 "the Shift key when you click on the URL."
 msgstr ""
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:104
 #, fuzzy
 #| msgid "More Information on %s"
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "Додаткова інформація про %s"
 
-#: templates/html/download.tmpl:107
+#: templates/html/download.tmpl:106
 msgid "%s Byte (%s %s)"
 msgstr ""
 
-#: templates/html/download.tmpl:107
+#: templates/html/download.tmpl:106
 #, fuzzy
 #| msgid "Package Size"
 msgid "Exact Size"
 msgstr "Розмір пакунка"
 
-#: templates/html/download.tmpl:108 templates/html/show.tmpl:351
+#: templates/html/download.tmpl:107 templates/html/show.tmpl:351
 msgid "MD5 checksum"
 msgstr ""
 
-#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
+#: templates/html/download.tmpl:108 templates/html/download.tmpl:109
 #, fuzzy
 #| msgid "Not available"
 msgid "Not Available"
 msgstr "Не доступний"
 
-#: templates/html/download.tmpl:109
+#: templates/html/download.tmpl:108
 msgid "SHA1 checksum"
 msgstr ""
 
-#: templates/html/download.tmpl:110
+#: templates/html/download.tmpl:109
 msgid "SHA256 checksum"
 msgstr ""
 
@@ -415,6 +406,28 @@ msgstr ""
 msgid "skip the navigation"
 msgstr "Пропустити меню"
 
+#: templates/html/head.tmpl:32
+#, fuzzy
+#| msgid "About&nbsp;Debian"
+msgid "About Debian"
+msgstr "Про&nbsp;Debian"
+
+#: templates/html/head.tmpl:33
+#, fuzzy
+#| msgid "Getting&nbsp;Debian"
+msgid "Getting Debian"
+msgstr "Отримання&nbsp;Debian"
+
+#: templates/html/head.tmpl:34
+msgid "Support"
+msgstr "Підтримка"
+
+#: templates/html/head.tmpl:35
+#, fuzzy
+#| msgid "Development"
+msgid "Developers\\"
+msgstr "Розробка"
+
 #: templates/html/head.tmpl:40
 #, fuzzy
 msgid "%s Packages Homepage"
@@ -427,8 +440,8 @@ msgstr "Розмір пакунка"
 msgid "Packages"
 msgstr "Пакунок: %s (%s)"
 
-#: templates/html/head.tmpl:60 templates/html/homepage.tmpl:41
-#: templates/html/homepage.tmpl:49 templates/html/homepage.tmpl:96
+#: templates/html/head.tmpl:60 templates/html/homepage.tmpl:42
+#: templates/html/homepage.tmpl:50 templates/html/homepage.tmpl:97
 msgid "Search"
 msgstr "Пошук"
 
@@ -462,118 +475,118 @@ msgstr "Розділ"
 msgid "%s Packages Search"
 msgstr "Розмір пакунка"
 
-#: templates/html/homepage.tmpl:22
+#: templates/html/homepage.tmpl:23
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
 msgstr ""
 
-#: templates/html/homepage.tmpl:24
+#: templates/html/homepage.tmpl:25
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
 msgstr ""
 
-#: templates/html/homepage.tmpl:26
+#: templates/html/homepage.tmpl:27
 msgid "Browse through the lists of packages:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:35
+#: templates/html/homepage.tmpl:36
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
 msgstr ""
 
-#: templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:39
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
 msgstr ""
 
-#: templates/html/homepage.tmpl:43
+#: templates/html/homepage.tmpl:44
 msgid "Search package directories"
 msgstr ""
 
-#: templates/html/homepage.tmpl:47 templates/html/homepage.tmpl:93
+#: templates/html/homepage.tmpl:48 templates/html/homepage.tmpl:94
 msgid "Keyword:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:49 templates/html/homepage.tmpl:97
+#: templates/html/homepage.tmpl:50 templates/html/homepage.tmpl:98
 msgid "Reset"
 msgstr ""
 
-#: templates/html/homepage.tmpl:51
+#: templates/html/homepage.tmpl:52
 #, fuzzy
 msgid "Search on:"
 msgstr "Пошук"
 
-#: templates/html/homepage.tmpl:53
+#: templates/html/homepage.tmpl:54
 #, fuzzy
 msgid "Package names only"
 msgstr "Розмір пакунка"
 
-#: templates/html/homepage.tmpl:55
+#: templates/html/homepage.tmpl:56
 #, fuzzy
 msgid "Descriptions"
 msgstr "Дистрибутив"
 
-#: templates/html/homepage.tmpl:57
+#: templates/html/homepage.tmpl:58
 #, fuzzy
 msgid "Source package names"
 msgstr "Джерельний пакунок"
 
-#: templates/html/homepage.tmpl:59
+#: templates/html/homepage.tmpl:60
 msgid "Only show exact matches:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:67 templates/html/homepage.tmpl:74
-#: templates/html/homepage.tmpl:122
+#: templates/html/homepage.tmpl:68 templates/html/homepage.tmpl:75
+#: templates/html/homepage.tmpl:123
 msgid "any"
 msgstr ""
 
-#: templates/html/homepage.tmpl:69 templates/html/show.tmpl:16
+#: templates/html/homepage.tmpl:70 templates/html/show.tmpl:16
 msgid "Section:"
 msgstr "Розділ:"
 
-#: templates/html/homepage.tmpl:78
+#: templates/html/homepage.tmpl:79
 msgid "There are shortcuts for some searches available:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:80
+#: templates/html/homepage.tmpl:81
 msgid "<code>%s<var>name</var></code> for the search on package names."
 msgstr ""
 
-#: templates/html/homepage.tmpl:82
+#: templates/html/homepage.tmpl:83
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
 msgstr ""
 
-#: templates/html/homepage.tmpl:86
+#: templates/html/homepage.tmpl:87
 #, fuzzy
 msgid "Search the contents of packages"
 msgstr "Список всіх пакунків"
 
-#: templates/html/homepage.tmpl:88
+#: templates/html/homepage.tmpl:89
 msgid ""
 "This search engine allows you to search the contents of %s distributions for "
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
 
-#: templates/html/homepage.tmpl:99
+#: templates/html/homepage.tmpl:100
 msgid "Display:"
 msgstr ""
 
-#: templates/html/homepage.tmpl:102
+#: templates/html/homepage.tmpl:103
 msgid "packages that contain files named like this"
 msgstr ""
 
-#: templates/html/homepage.tmpl:105
+#: templates/html/homepage.tmpl:106
 msgid "packages that contain files whose names end with the keyword"
 msgstr ""
 
-#: templates/html/homepage.tmpl:108
+#: templates/html/homepage.tmpl:109
 msgid "packages that contain files whose names contain the keyword"
 msgstr ""
 
-#: templates/html/homepage.tmpl:117
+#: templates/html/homepage.tmpl:118
 #, fuzzy
 #| msgid "Architecture"
 msgid "Architecture:"
@@ -982,7 +995,7 @@ msgstr ""
 #: templates/html/show.tmpl:76 templates/html/show.tmpl:78
 #, fuzzy
 #| msgid "More Information on %s"
-msgid "Developer Information (PTS)"
+msgid "Developer Information"
 msgstr "Додаткова інформація про %s"
 
 #: templates/html/show.tmpl:82
@@ -1066,10 +1079,14 @@ msgstr ""
 "попередження і встановите його, то робіть це на ваш ризик."
 
 #: templates/html/show.tmpl:199
+#, fuzzy
+#| msgid ""
+#| "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</"
+#| "a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
+#| "packages</a>."
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
-"for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
-"packages</a>."
+"for a <a href=\"%s#s-virtual-pkg\">definition of virtual packages</a>."
 msgstr ""
 "Це&nbsp;&mdash; <em>віртуальний пакунок</em>. Перегляньте <a href=\"%s"
 "\">Політику Debian</a> щоб дізнатись про <a href=\"%sch-binary.html#s-"
@@ -1299,108 +1316,116 @@ msgid "See <URL:%s> for the license terms."
 msgstr ""
 
 #, fuzzy
-#~ msgid "%s Homepage"
-#~ msgstr "Розмір пакунка"
+#~| msgid "This page is also available in the following languages:\n"
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Ця сторінка також доступна наступними мовами:\n"
+
+#, fuzzy
+#~ msgid "Packages search page"
+#~ msgstr "Всі пакунки Debian в дистрибутиві „%s“"
+
+#, fuzzy
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "Джерельний пакунок: %s (%s)"
+
+#, fuzzy
+#~ msgid "No such package in this suite on this architecture."
+#~ msgstr "Немає пакунків в цій секції цього дистрибутиву"
+
+#~ msgid "Virtual package"
+#~ msgstr "Віртуальний пакунок"
+
+#, fuzzy
+#~ msgid "No such package."
+#~ msgstr "Джерельний пакунок"
+
+#, fuzzy
+#~ msgid "Package not available in this suite."
+#~ msgstr "Пакунок недоступний"
+
+#~ msgid "Package not available"
+#~ msgstr "Пакунок недоступний"
+
+#, fuzzy
+#~ msgid "Software Packages in \"%s\", subsection %s"
+#~ msgstr "Пакунки в дистрибутиві „%s“, розділі %s"
+
+#~ msgid "Software Packages in \"%s\", priority %s"
+#~ msgstr "Пакунки в дистрибутиві „%s“, пріоритет %s"
+
+#, fuzzy
+#~ msgid " (section %s)"
+#~ msgstr "Розділ"
 
 #, fuzzy
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
+#~ "The following packages were added to suite %s%s in the Debian archive "
+#~ "during the last 7 days."
+#~ msgstr ""
+#~ "Наступні пакунки було додано до нестабільного архіву Debian протягом "
+#~ "останніх семи днів."
+
+#, fuzzy
+#~ msgid "Nothing found"
+#~ msgstr "Не знайдено"
+
+#~ msgid "Download %s\n"
+#~ msgstr "Завантажити %s\n"
+
+#~ msgid "virtual package"
+#~ msgstr "віртуальний пакунок"
+
+#~ msgid "Overview over this distribution"
+#~ msgstr "Огляд цього дистрибутива"
+
+#~ msgid "md5sum"
+#~ msgstr "сума MD5"
+
+#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+#~ msgstr "Перегляньте <a href=\"%s\">повідомлення про помилки</a> про %s."
+
+#~ msgid "Source Package:"
+#~ msgstr "Джерельний пакунок:"
+
+#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
+#~ msgstr "Переглянути <a href=\"%s\">журнал змін Debian</a>"
+
+#~ msgid "View the <a href=\"%s\">copyright file</a>"
+#~ msgstr "Переглянути <a href=\"%s\">файл з авторськими правами</a>"
+
+#~ msgid "%s is responsible for this Debian package."
+#~ msgstr "%s відповідає за цей пакунок Debian"
+
+#~ msgid " and %s are responsible for this Debian package."
+#~ msgstr " і %s відповідають з цей пакунок Debian."
+
+#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
+#~ msgstr "Перегляньте <a href=\"%s\">інформацію для розробників про %s</a>."
+
+#~ msgid "Debian Project"
+#~ msgstr "Проект Debian"
+
+#~ msgid "News"
+#~ msgstr "Новини"
+
+#~ msgid "Site map"
+#~ msgstr "Карта сайту"
+
+#~ msgid ""
+#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+#~ "\">Packages search page</a>"
 #~ msgstr ""
 #~ "Повернутися до: <a href=\"%s/\">головної сторінки проекту Debian</a> || "
 #~ "<a href=\"%s/\">сторінки пошуку пакунків</a>"
 
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
-#~ "last 7 days."
-#~ msgstr ""
-#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
-#~ "7 днів."
-
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr ""
-#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
-#~ "7 днів."
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the <strong>experimental</strong> distribution is not self-"
-#~ "contained; missing dependencies are likely found in the <a href=\"%s"
-#~ "\">unstable</a> distribution."
-#~ msgstr ""
-#~ "Майте на увазі, що „<span class=\"pred\">експериментальний</span>“ "
-#~ "дистрибутив не є самодостатнім; відсутні залежності скоріше за все є „<a "
-#~ "href=\"../../unstable/\">нестабільному</a>“ дистрибутиві."
-
-#~ msgid "Versions:"
-#~ msgstr "Версії:"
+#~ msgid "Last Modified: "
+#~ msgstr "Остання зміна:"
 
 #~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
+#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
 #~ msgstr ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "Перегляньте <URL:http://www.debian.org/license> щодо умов ліцензії.\n"
-#~ "\n"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Немає необхідних пакунків в цьому дистрибутиві"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Пакунки в дистрибутиві „%s“, необхідні пакунки"
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Немає пакунків з цим пріоритетом в цьому розділі"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Увага: Ці пакунки призначені для використання тільки при побудові образів "
-#~ "<a href=\"http://www.debian.org/devel/debian-installer/\">встановлювача "
-#~ "Debian</a>. Не встановлюйте їх на нормальній системі Debian."
-
-#~ msgid "yes"
-#~ msgstr "так"
-
-#~ msgid "Priority"
-#~ msgstr "Приоритет"
-
-#~ msgid "Uploaders"
-#~ msgstr "Завантажувачі"
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "Розмір даний в кілобайтах."
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Користувачам експериментальних пакунків у випадку виникнення проблем "
-#~ "рекомендується зв'язуватись зі супроводжуючими пакунків напряму."
-
-#~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Пакунки які було додано до компоненту „%s“ впродовж останніх 7 днів."
-
-#~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Наступні пакунки було додано до компоненту „%s“ впродовж останніх 7 днів."
+#~ "Debian є зареєстрованою торговою маркою Software in the Public Interest, "
+#~ "Inc."
 
 #~ msgid ""
 #~ "Warning: The <span class=\"pred\">experimental</span> distribution "
@@ -1414,125 +1439,105 @@ msgstr ""
 #~ "встановите його, то робіть це на ваш ризик."
 
 #~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
 #~ msgstr ""
-#~ "Debian є зареєстрованою торговою маркою Software in the Public Interest, "
-#~ "Inc."
-
-#~ msgid "Last Modified: "
-#~ msgstr "Остання зміна:"
+#~ "Наступні пакунки було додано до компоненту „%s“ впродовж останніх 7 днів."
 
 #~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Пакунки які було додано до компоненту „%s“ впродовж останніх 7 днів."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Користувачам експериментальних пакунків у випадку виникнення проблем "
+#~ "рекомендується зв'язуватись зі супроводжуючими пакунків напряму."
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Розмір даний в кілобайтах."
+
+#~ msgid "Uploaders"
+#~ msgstr "Завантажувачі"
+
+#~ msgid "Priority"
+#~ msgstr "Приоритет"
+
+#~ msgid "yes"
+#~ msgstr "так"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Увага: Ці пакунки призначені для використання тільки при побудові образів "
+#~ "<a href=\"http://www.debian.org/devel/debian-installer/\">встановлювача "
+#~ "Debian</a>. Не встановлюйте їх на нормальній системі Debian."
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Немає пакунків з цим пріоритетом в цьому розділі"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Пакунки в дистрибутиві „%s“, необхідні пакунки"
+
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Немає необхідних пакунків в цьому дистрибутиві"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "Перегляньте <URL:http://www.debian.org/license> щодо умов ліцензії.\n"
+#~ "\n"
+
+#~ msgid "Versions:"
+#~ msgstr "Версії:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Note that the <strong>experimental</strong> distribution is not self-"
+#~ "contained; missing dependencies are likely found in the <a href=\"%s"
+#~ "\">unstable</a> distribution."
+#~ msgstr ""
+#~ "Майте на увазі, що „<span class=\"pred\">експериментальний</span>“ "
+#~ "дистрибутив не є самодостатнім; відсутні залежності скоріше за все є „<a "
+#~ "href=\"../../unstable/\">нестабільному</a>“ дистрибутиві."
+
+#, fuzzy
+#~| msgid ""
+#~| "Packages that were added to the unstable Debian archive during the last "
+#~| "7 days."
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr ""
+#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
+#~ "7 днів."
+
+#, fuzzy
+#~| msgid ""
+#~| "Packages that were added to the unstable Debian archive during the last "
+#~| "7 days."
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
+#~ "last 7 days."
+#~ msgstr ""
+#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
+#~ "7 днів."
+
+#, fuzzy
+#~ msgid ""
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Повернутися до: <a href=\"%s/\">головної сторінки проекту Debian</a> || "
 #~ "<a href=\"%s/\">сторінки пошуку пакунків</a>"
 
-#~ msgid "Site map"
-#~ msgstr "Карта сайту"
-
-#~ msgid "Development"
-#~ msgstr "Розробка"
-
-#~ msgid "Support"
-#~ msgstr "Підтримка"
-
-#~ msgid "Getting&nbsp;Debian"
-#~ msgstr "Отримання&nbsp;Debian"
-
-#~ msgid "News"
-#~ msgstr "Новини"
-
-#~ msgid "About&nbsp;Debian"
-#~ msgstr "Про&nbsp;Debian"
-
-#~ msgid "Debian Project"
-#~ msgstr "Проект Debian"
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr "Перегляньте <a href=\"%s\">інформацію для розробників про %s</a>."
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " і %s відповідають з цей пакунок Debian."
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s відповідає за цей пакунок Debian"
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Переглянути <a href=\"%s\">файл з авторськими правами</a>"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Переглянути <a href=\"%s\">журнал змін Debian</a>"
-
-#~ msgid "Source Package:"
-#~ msgstr "Джерельний пакунок:"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Перегляньте <a href=\"%s\">повідомлення про помилки</a> про %s."
-
-#~ msgid "md5sum"
-#~ msgstr "сума MD5"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Огляд цього дистрибутива"
-
-#~ msgid "virtual package"
-#~ msgstr "віртуальний пакунок"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Завантажити %s\n"
-
 #, fuzzy
-#~ msgid "Nothing found"
-#~ msgstr "Не знайдено"
-
-#, fuzzy
-#~ msgid ""
-#~ "The following packages were added to suite %s%s in the Debian archive "
-#~ "during the last 7 days."
-#~ msgstr ""
-#~ "Наступні пакунки було додано до нестабільного архіву Debian протягом "
-#~ "останніх семи днів."
-
-#, fuzzy
-#~ msgid " (section %s)"
-#~ msgstr "Розділ"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Пакунки в дистрибутиві „%s“, пріоритет %s"
-
-#, fuzzy
-#~ msgid "Software Packages in \"%s\", subsection %s"
-#~ msgstr "Пакунки в дистрибутиві „%s“, розділі %s"
-
-#~ msgid "Package not available"
-#~ msgstr "Пакунок недоступний"
-
-#, fuzzy
-#~ msgid "Package not available in this suite."
-#~ msgstr "Пакунок недоступний"
-
-#, fuzzy
-#~ msgid "No such package."
-#~ msgstr "Джерельний пакунок"
-
-#~ msgid "Virtual package"
-#~ msgstr "Віртуальний пакунок"
-
-#, fuzzy
-#~ msgid "No such package in this suite on this architecture."
-#~ msgstr "Немає пакунків в цій секції цього дистрибутиву"
-
-#, fuzzy
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "Джерельний пакунок: %s (%s)"
-
-#, fuzzy
-#~ msgid "Packages search page"
-#~ msgstr "Всі пакунки Debian в дистрибутиві „%s“"
-
-#, fuzzy
-#~| msgid "This page is also available in the following languages:\n"
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Ця сторінка також доступна наступними мовами:\n"
+#~ msgid "%s Homepage"
+#~ msgstr "Розмір пакунка"

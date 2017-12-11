@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.debian.org trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-28 14:18+0200\n"
+"POT-Creation-Date: 2017-12-11 15:50+0800\n"
 "PO-Revision-Date: 2008-03-04 18:56+0900\n"
 "Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
 "Language-Team: Japanese <debian-www@debian.or.jp>\n"
@@ -31,7 +31,7 @@ msgstr "サブセクション"
 msgid "Priority"
 msgstr "優先度"
 
-#: lib/Packages/Dispatcher.pm:340
+#: lib/Packages/Dispatcher.pm:347
 msgid "requested format not available for this document"
 msgstr "この文書は要求された形式では利用できません"
 
@@ -60,11 +60,15 @@ msgstr "download に複数のスイートが指定されています (%s)"
 msgid "more than one architecture specified for download (%s)"
 msgstr "download に複数のアーキテクチャが指定されています (%s)"
 
-#: lib/Packages/DoDownload.pm:93
+#: lib/Packages/DoDownload.pm:63 lib/Packages/DoShow.pm:73
+msgid "No such package."
+msgstr "そのようなパッケージはありません。"
+
+#: lib/Packages/DoDownload.pm:90
 msgid "kByte"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:96
+#: lib/Packages/DoDownload.pm:93
 msgid "MByte"
 msgstr ""
 
@@ -139,10 +143,6 @@ msgstr "選択した検索モードでは複数のキーワード指定はサポ
 msgid "more than one suite specified for show (%s)"
 msgstr "show に複数のスイートが指定されています (%s)"
 
-#: lib/Packages/DoShow.pm:73
-msgid "No such package."
-msgstr "そのようなパッケージはありません。"
-
 #: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr "パッケージはこのスイートでは利用できません。"
@@ -174,8 +174,14 @@ msgstr "入手不能"
 msgid "package has bad maintainer field"
 msgstr "パッケージのメンテナ (Maintainer) フィールドが不正です"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "search の場合は後ろにパスを追加できません"
+#~ msgid "Initialization of Template Engine failed: %s"
+#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"
+
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s がパスに複数入っています"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -184,11 +190,5 @@ msgstr "パッケージのメンテナ (Maintainer) フィールドが不正で�
 #~ "ここには、dispatch.pl を取得するのではなくホームページを表示することになっ"
 #~ "ています。"
 
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s がパスに複数入っています"
-
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "2 つ以上のパッケージが指定されています (%s)"
-
-#~ msgid "Initialization of Template Engine failed: %s"
-#~ msgstr "テンプレートエンジンの初期化に失敗しました: %s"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "search の場合は後ろにパスを追加できません"

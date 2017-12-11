@@ -26,7 +26,7 @@ msgstr "%s Webmaster"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s bir %s <a href=\"%s\">tescilli markasıdır</a>"
 
-#: templates/config.tmpl:77
+#: templates/config.tmpl:69
 #, fuzzy
 #| msgid ""
 #| "Please note that this is an experimental version of <a href=\"http://%s/"
@@ -39,11 +39,11 @@ msgstr ""
 "Hatalar ve eski bilgiler beklenebilir."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:81
+#: templates/config.tmpl:72
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:82
+#: templates/config.tmpl:73
 msgid ","
 msgstr "."
 
@@ -143,11 +143,11 @@ msgstr "Sparc64"
 msgid "SPARC"
 msgstr "SPARC"
 
-#: templates/config/archive_layout.tmpl:15
+#: templates/config/archive_layout.tmpl:16
 msgid "packages that meet the Debian Free Software Guidelines"
 msgstr "Debian Özgür Yazılım Yönergelerine uyan paketler"
 
-#: templates/config/archive_layout.tmpl:16
+#: templates/config/archive_layout.tmpl:17
 msgid ""
 "packages that meet the Debian Free Software Guidelines but need software not "
 "in Debian main"
@@ -155,48 +155,37 @@ msgstr ""
 "Debian Özgür Yazılım Yönergelerine uyan fakat Debian main'de bulunmayan "
 "yazılımlara gereksinim duyan paketler"
 
-#: templates/config/archive_layout.tmpl:17
+#: templates/config/archive_layout.tmpl:18
 msgid "packages that do not meet the Debian Free Software Guidelines"
 msgstr "Debian Özgür Yazılım Yönergelerine uymayan paketler"
 
 #: templates/config/mirrors.tmpl:77
 msgid ""
-"volatile packages that need major changes during the life of a stable release"
-msgstr ""
-"kararlı sürümün yaşamı boyunca önemli değişiklikler gerektiren uçucu "
-"(volatile) paketler"
-
-#: templates/config/mirrors.tmpl:116
-msgid "newer packages that have been adapted to stable releases of Debian"
-msgstr "Debian'ın kararlı sürümüne uyarlanmış daha yeni paketler"
-
-#: templates/config/mirrors.tmpl:142
-msgid ""
 "ports of packages to architectures not yet or not anymore available in Debian"
 msgstr ""
 "Debian'da henüz (ya da artık) kullanılamayan mimarilere uyarlanan paketler"
 
-#: templates/config/mirrors.tmpl:211
+#: templates/config/mirrors.tmpl:139
 msgid "North America"
 msgstr "Kuzey Amerika"
 
-#: templates/config/mirrors.tmpl:212
+#: templates/config/mirrors.tmpl:140
 msgid "South America"
 msgstr "Güney Amerika"
 
-#: templates/config/mirrors.tmpl:213
+#: templates/config/mirrors.tmpl:141
 msgid "Asia"
 msgstr "Asya"
 
-#: templates/config/mirrors.tmpl:214
+#: templates/config/mirrors.tmpl:142
 msgid "Oceania"
 msgstr "Okyanusya"
 
-#: templates/config/mirrors.tmpl:215
+#: templates/config/mirrors.tmpl:143
 msgid "Europe"
 msgstr "Avrupa"
 
-#: templates/config/mirrors.tmpl:216
+#: templates/config/mirrors.tmpl:144
 msgid "Africa"
 msgstr "Afrika"
 
@@ -205,7 +194,7 @@ msgid "Package Download Selection -- %s"
 msgstr "Paket İndirme Seçimi -- %s"
 
 #: templates/html/download.tmpl:5 templates/html/filelist.tmpl:5
-#: templates/html/homepage.tmpl:110 templates/html/index_head.tmpl:9
+#: templates/html/homepage.tmpl:111 templates/html/index_head.tmpl:9
 #: templates/html/show.tmpl:14
 msgid "Distribution:"
 msgstr "Dağıtım:"
@@ -250,15 +239,15 @@ msgstr ""
 "Listelenmiş yansılardan herhangi birini kullanmak için <kbd>/etc/apt/sources."
 "list</kbd> dosyanıza şu şekilde bir satır ekleyebilirsiniz:"
 
-#: templates/html/download.tmpl:30 templates/html/download.tmpl:39
+#: templates/html/download.tmpl:34
 msgid "Replacing <em>%s</em> with the mirror in question."
 msgstr "<em>%s</em> yerine kullanmak istediğiniz yansının adresini yazın."
 
-#: templates/html/download.tmpl:42 templates/html/show.tmpl:174
+#: templates/html/download.tmpl:39 templates/html/show.tmpl:174
 msgid "Experimental package"
 msgstr "Deneysel paket"
 
-#: templates/html/download.tmpl:43
+#: templates/html/download.tmpl:40
 msgid ""
 "Warning: This package is from the <strong>experimental</strong> "
 "distribution. That means it is likely unstable or buggy, and it may even "
@@ -270,11 +259,11 @@ msgstr ""
 "gelmektedir. Lütfen kullanmadan önce değişim günlüğüne ve muhtemel diğer "
 "belgelendirmeye danıştığınızdan emin olun."
 
-#: templates/html/download.tmpl:46 templates/html/show.tmpl:179
+#: templates/html/download.tmpl:45 templates/html/show.tmpl:179
 msgid "debian-installer udeb package"
 msgstr "debian-installer udeb paketi"
 
-#: templates/html/download.tmpl:47 templates/html/show.tmpl:180
+#: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
 "Warning: This package is intended for the use in building <a href=\"http://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
@@ -284,7 +273,7 @@ msgstr ""
 "installer\">debian-installer</a> kalıplarının inşasında kullanılmak içindir. "
 "Normal %s sistemine bu paketi kurmayın."
 
-#: templates/html/download.tmpl:54
+#: templates/html/download.tmpl:53
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at any "
 "of these sites:"
@@ -292,19 +281,19 @@ msgstr ""
 "İstenilen dosyayı aşağıdaki sitelerin herhangi birindeki <tt>%s</tt> alt "
 "dizininden indirebilirsiniz:"
 
-#: templates/html/download.tmpl:80
+#: templates/html/download.tmpl:79
 msgid ""
 "You can download the requested file from the <tt>%s</tt> subdirectory at:"
 msgstr ""
 "İstenilen dosyayı şu sitedeki <tt>%s</tt> alt dizininden indirebilirsiniz:"
 
-#: templates/html/download.tmpl:82
+#: templates/html/download.tmpl:81
 msgid "%s security updates are officially distributed only via <tt>%s</tt>."
 msgstr ""
 "%s güvenlik güncellemeleri resmi olarak yalnızca <tt>%s</tt> aracılığıyla "
 "dağıtılmaktadır."
 
-#: templates/html/download.tmpl:89
+#: templates/html/download.tmpl:88
 msgid ""
 "If none of the above sites are fast enough for you, please see our <a href="
 "\"%s\">complete mirror list</a>."
@@ -312,7 +301,7 @@ msgstr ""
 "Eğer yukarıdaki sitelerden hiçbiri sizin için yeterince hızlı değilse, "
 "lütfen <a href=\"%s\">tam yansı listemize</a> bakın."
 
-#: templates/html/download.tmpl:97
+#: templates/html/download.tmpl:96
 msgid ""
 "Note that %s is not officially included in the %s archive, but the %s porter "
 "group keeps their archive in sync with the official archive as close as "
@@ -322,7 +311,7 @@ msgstr ""
 "arşivlerini resmi arşiv ile mümkün olduğunca uyumlu tutmaya gayret ediyor. "
 "Güncel bilgi için <a href=\"%s\">%s uyarlama sayfasına</a> bakın."
 
-#: templates/html/download.tmpl:101
+#: templates/html/download.tmpl:100
 msgid ""
 "Note that in some browsers you will need to tell your browser you want the "
 "file saved to a file. For example, in Firefox or Mozilla, you should hold "
@@ -332,31 +321,31 @@ msgstr ""
 "gerekir. Örneğin Firefox veya Mozilla içerisinde adrese tıkladığınızda "
 "ÜstKarakter (Shift) tuşunu basılı tutmalısınız."
 
-#: templates/html/download.tmpl:105
+#: templates/html/download.tmpl:104
 msgid "More information on <kbd>%s</kbd>:"
 msgstr "<kbd>%s</kbd> hakkında daha fazla bilgi:"
 
-#: templates/html/download.tmpl:107
+#: templates/html/download.tmpl:106
 msgid "%s Byte (%s %s)"
 msgstr "%s Bayt (%s %s)"
 
-#: templates/html/download.tmpl:107
+#: templates/html/download.tmpl:106
 msgid "Exact Size"
 msgstr "Tam Boyut"
 
-#: templates/html/download.tmpl:108 templates/html/show.tmpl:351
+#: templates/html/download.tmpl:107 templates/html/show.tmpl:351
 msgid "MD5 checksum"
 msgstr "MD5 sağlama toplamı"
 
-#: templates/html/download.tmpl:109 templates/html/download.tmpl:110
+#: templates/html/download.tmpl:108 templates/html/download.tmpl:109
 msgid "Not Available"
 msgstr "Kullanılamıyor"
 
-#: templates/html/download.tmpl:109
+#: templates/html/download.tmpl:108
 msgid "SHA1 checksum"
 msgstr "SHA1 sağlama toplamı"
 
-#: templates/html/download.tmpl:110
+#: templates/html/download.tmpl:109
 msgid "SHA256 checksum"
 msgstr "SHA256 sağlama toplamı"
 
@@ -410,6 +399,22 @@ msgstr "Bu hizmet, <a href=\"%s\">%s</a> sponsorluğundadır."
 msgid "skip the navigation"
 msgstr "gezinmeyi atla"
 
+#: templates/html/head.tmpl:32
+msgid "About Debian"
+msgstr ""
+
+#: templates/html/head.tmpl:33
+msgid "Getting Debian"
+msgstr ""
+
+#: templates/html/head.tmpl:34
+msgid "Support"
+msgstr ""
+
+#: templates/html/head.tmpl:35
+msgid "Developers\\"
+msgstr ""
+
 #: templates/html/head.tmpl:40
 msgid "%s Packages Homepage"
 msgstr "%s Paket Ana Sayfası"
@@ -420,8 +425,8 @@ msgstr "%s Paket Ana Sayfası"
 msgid "Packages"
 msgstr "Paketler"
 
-#: templates/html/head.tmpl:60 templates/html/homepage.tmpl:41
-#: templates/html/homepage.tmpl:49 templates/html/homepage.tmpl:96
+#: templates/html/head.tmpl:60 templates/html/homepage.tmpl:42
+#: templates/html/homepage.tmpl:50 templates/html/homepage.tmpl:97
 msgid "Search"
 msgstr "Ara"
 
@@ -449,7 +454,7 @@ msgstr "tüm seçenekler"
 msgid "%s Packages Search"
 msgstr "%s Paket Araması"
 
-#: templates/html/homepage.tmpl:22
+#: templates/html/homepage.tmpl:23
 msgid ""
 "This site provides you with information about all the packages available in "
 "the <a href=\"%s\">%s</a> Package archive."
@@ -457,18 +462,18 @@ msgstr ""
 "Bu site, <a href=\"%s\">%s</a> paket arşivindeki tüm mevcut paketler "
 "hakkında bilgi sağlar."
 
-#: templates/html/homepage.tmpl:24
+#: templates/html/homepage.tmpl:25
 msgid ""
 "Please contact <a href=\"mailto:%s\">%s</a> if you encounter any problems!"
 msgstr ""
 "Herhangi bir sorunla karşılaştığınızda lütfen <a href=\"mailto:%s\">%s</a> "
 "ile iletişime geçin!"
 
-#: templates/html/homepage.tmpl:26
+#: templates/html/homepage.tmpl:27
 msgid "Browse through the lists of packages:"
 msgstr "Paket listesinde gezin:"
 
-#: templates/html/homepage.tmpl:35
+#: templates/html/homepage.tmpl:36
 msgid ""
 "There is also a list of <a href=\"%s/main/newpkg\">packages recently added "
 "to %s</a>."
@@ -476,70 +481,70 @@ msgstr ""
 "Ayrıca <a href=\"%s/main/newpkg\">%s içine yakın zamanda eklenmiş "
 "paketlerin</a> listesi de bulunmaktadır."
 
-#: templates/html/homepage.tmpl:38
+#: templates/html/homepage.tmpl:39
 msgid "Old releases can be found at <a href=\"%s\">%s</a>."
 msgstr "Eski sürümler <a href=\"%s\">%s</a> sitesinde bulunabilir."
 
-#: templates/html/homepage.tmpl:43
+#: templates/html/homepage.tmpl:44
 msgid "Search package directories"
 msgstr "Paket dizinlerini ara"
 
-#: templates/html/homepage.tmpl:47 templates/html/homepage.tmpl:93
+#: templates/html/homepage.tmpl:48 templates/html/homepage.tmpl:94
 msgid "Keyword:"
 msgstr "Anahtar Sözcük:"
 
-#: templates/html/homepage.tmpl:49 templates/html/homepage.tmpl:97
+#: templates/html/homepage.tmpl:50 templates/html/homepage.tmpl:98
 msgid "Reset"
 msgstr "Sıfırla"
 
-#: templates/html/homepage.tmpl:51
+#: templates/html/homepage.tmpl:52
 msgid "Search on:"
 msgstr "Şurada ara:"
 
-#: templates/html/homepage.tmpl:53
+#: templates/html/homepage.tmpl:54
 msgid "Package names only"
 msgstr "Yalnız paket adları"
 
-#: templates/html/homepage.tmpl:55
+#: templates/html/homepage.tmpl:56
 msgid "Descriptions"
 msgstr "Açıklamalar"
 
-#: templates/html/homepage.tmpl:57
+#: templates/html/homepage.tmpl:58
 msgid "Source package names"
 msgstr "Kaynak paket adları"
 
-#: templates/html/homepage.tmpl:59
+#: templates/html/homepage.tmpl:60
 msgid "Only show exact matches:"
 msgstr "Yalnızca tam eşleşmeleri göster:"
 
-#: templates/html/homepage.tmpl:67 templates/html/homepage.tmpl:74
-#: templates/html/homepage.tmpl:122
+#: templates/html/homepage.tmpl:68 templates/html/homepage.tmpl:75
+#: templates/html/homepage.tmpl:123
 msgid "any"
 msgstr "herhangi biri"
 
-#: templates/html/homepage.tmpl:69 templates/html/show.tmpl:16
+#: templates/html/homepage.tmpl:70 templates/html/show.tmpl:16
 msgid "Section:"
 msgstr "Bölüm:"
 
-#: templates/html/homepage.tmpl:78
+#: templates/html/homepage.tmpl:79
 msgid "There are shortcuts for some searches available:"
 msgstr "Bazı aramalar için kısayollar mevcuttur:"
 
-#: templates/html/homepage.tmpl:80
+#: templates/html/homepage.tmpl:81
 msgid "<code>%s<var>name</var></code> for the search on package names."
 msgstr "<code>%s<var>ad</var></code> - paket adlarında aramalar için."
 
-#: templates/html/homepage.tmpl:82
+#: templates/html/homepage.tmpl:83
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
 msgstr ""
 "<code>%ssrc:<var>isim</var></code> - kaynak paket adlarında aramak için."
 
-#: templates/html/homepage.tmpl:86
+#: templates/html/homepage.tmpl:87
 msgid "Search the contents of packages"
 msgstr "Paket içeriklerinde ara"
 
-#: templates/html/homepage.tmpl:88
+#: templates/html/homepage.tmpl:89
 msgid ""
 "This search engine allows you to search the contents of %s distributions for "
 "any files (or just parts of file names) that are part of packages. You can "
@@ -549,23 +554,23 @@ msgstr ""
 "kısmı) aramanızı sağlar. İsterseniz belirtilen paketin içindeki dosyaların "
 "tam listesini de görebilirsiniz."
 
-#: templates/html/homepage.tmpl:99
+#: templates/html/homepage.tmpl:100
 msgid "Display:"
 msgstr "Görüntüle:"
 
-#: templates/html/homepage.tmpl:102
+#: templates/html/homepage.tmpl:103
 msgid "packages that contain files named like this"
 msgstr "benzer adlı dosyaları içeren paketleri"
 
-#: templates/html/homepage.tmpl:105
+#: templates/html/homepage.tmpl:106
 msgid "packages that contain files whose names end with the keyword"
 msgstr "adları anahtar sözcükle biten dosyaları içeren paketleri"
 
-#: templates/html/homepage.tmpl:108
+#: templates/html/homepage.tmpl:109
 msgid "packages that contain files whose names contain the keyword"
 msgstr "adları anahtar sözcükleri içeren dosyaları içeren paketleri"
 
-#: templates/html/homepage.tmpl:117
+#: templates/html/homepage.tmpl:118
 msgid "Architecture:"
 msgstr "Mimari:"
 
@@ -948,7 +953,9 @@ msgid "Bug Reports"
 msgstr "Hata Raporları"
 
 #: templates/html/show.tmpl:76 templates/html/show.tmpl:78
-msgid "Developer Information (PTS)"
+#, fuzzy
+#| msgid "Developer Information (PTS)"
+msgid "Developer Information"
 msgstr "Geliştirici Bilgisi (PTS)"
 
 #: templates/html/show.tmpl:82
@@ -1024,10 +1031,14 @@ msgstr ""
 "günlüğüne</a> ve muhtemel diğer belgelendirmeye danıştığınızdan emin olun."
 
 #: templates/html/show.tmpl:199
+#, fuzzy
+#| msgid ""
+#| "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</"
+#| "a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
+#| "packages</a>."
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
-"for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
-"packages</a>."
+"for a <a href=\"%s#s-virtual-pkg\">definition of virtual packages</a>."
 msgstr ""
 "Bu bir <em>sanal pakettir</em>. <a href=\"%sch-binary.html#s-virtual_pkg"
 "\">Sanal paketlerin tanımı</a> için <a href=\"%s\">Debian ilkesine</a> bakın."
@@ -1236,3 +1247,13 @@ msgstr "Oluşturulma:"
 #: templates/txt/index_head.tmpl:5
 msgid "See <URL:%s> for the license terms."
 msgstr "Lisans koşulları için <URL:%s> adresine bakın."
+
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr "Debian'ın kararlı sürümüne uyarlanmış daha yeni paketler"
+
+#~ msgid ""
+#~ "volatile packages that need major changes during the life of a stable "
+#~ "release"
+#~ msgstr ""
+#~ "kararlı sürümün yaşamı boyunca önemli değişiklikler gerektiren uçucu "
+#~ "(volatile) paketler"

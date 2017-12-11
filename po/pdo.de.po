@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-28 14:18+0200\n"
+"POT-Creation-Date: 2017-12-11 15:50+0800\n"
 "PO-Revision-Date: 2008-03-14 18:08+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
@@ -27,7 +27,7 @@ msgstr "Unterbereich"
 msgid "Priority"
 msgstr "Priorität"
 
-#: lib/Packages/Dispatcher.pm:340
+#: lib/Packages/Dispatcher.pm:347
 msgid "requested format not available for this document"
 msgstr "angefordertes Format für dieses Dokument nicht verfügbar"
 
@@ -56,11 +56,15 @@ msgstr "mehr als eine Suite zum Download angegeben (%s)"
 msgid "more than one architecture specified for download (%s)"
 msgstr "mehr als eine Architektur zum Download angegeben (%s)"
 
-#: lib/Packages/DoDownload.pm:93
+#: lib/Packages/DoDownload.pm:63 lib/Packages/DoShow.pm:73
+msgid "No such package."
+msgstr "Kein passendes Paket gefunden."
+
+#: lib/Packages/DoDownload.pm:90
 msgid "kByte"
 msgstr ""
 
-#: lib/Packages/DoDownload.pm:96
+#: lib/Packages/DoDownload.pm:93
 msgid "MByte"
 msgstr ""
 
@@ -138,10 +142,6 @@ msgstr ""
 msgid "more than one suite specified for show (%s)"
 msgstr "mehr als eine Suite zum Anzeigen angegeben (%s)"
 
-#: lib/Packages/DoShow.pm:73
-msgid "No such package."
-msgstr "Kein passendes Paket gefunden."
-
 #: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr "Paket in dieser Suite nicht verfügbar"
@@ -173,8 +173,11 @@ msgstr "Nicht verfügbar"
 msgid "package has bad maintainer field"
 msgstr "Paket hat ungültiges Betreuer-Feld"
 
-#~ msgid "search doesn't take any more path elements"
-#~ msgstr "Suche nimmt keine Pfadelemente mehr an"
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
+
+#~ msgid "%s set more than once in path"
+#~ msgstr "%s mehr als einmal im Pfad angegeben"
 
 #~ msgid ""
 #~ "We're supposed to display the homepage here, instead of getting dispatch."
@@ -182,8 +185,5 @@ msgstr "Paket hat ungültiges Betreuer-Feld"
 #~ msgstr ""
 #~ "Wir sollten die Homepage hier anzeigen statt dispatch.pl zu erhalten"
 
-#~ msgid "%s set more than once in path"
-#~ msgstr "%s mehr als einmal im Pfad angegeben"
-
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "zwei oder mehr Pakete angegeben (%s)"
+#~ msgid "search doesn't take any more path elements"
+#~ msgstr "Suche nimmt keine Pfadelemente mehr an"

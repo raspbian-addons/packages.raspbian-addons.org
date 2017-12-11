@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-28 14:18+0200\n"
+"POT-Creation-Date: 2017-12-11 15:50+0800\n"
 "PO-Revision-Date: 2017-01-16 17:34+0200\n"
 "Last-Translator: Ivan Masár <helix84@centrum.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -32,7 +32,7 @@ msgstr "Subsekcia"
 msgid "Priority"
 msgstr "Priorita"
 
-#: lib/Packages/Dispatcher.pm:340
+#: lib/Packages/Dispatcher.pm:347
 msgid "requested format not available for this document"
 msgstr "dokument nie je dostupný v požadovanom formáte"
 
@@ -61,11 +61,15 @@ msgstr "bola zadaná viac ako jedna sada na stiahnutie (%s)"
 msgid "more than one architecture specified for download (%s)"
 msgstr "bola zadaná viac ako jedna architektúra na stiahnutie (%s)"
 
-#: lib/Packages/DoDownload.pm:93
+#: lib/Packages/DoDownload.pm:63 lib/Packages/DoShow.pm:73
+msgid "No such package."
+msgstr "Taký balík neexistuje."
+
+#: lib/Packages/DoDownload.pm:90
 msgid "kByte"
 msgstr "kBajtov"
 
-#: lib/Packages/DoDownload.pm:96
+#: lib/Packages/DoDownload.pm:93
 msgid "MByte"
 msgstr "MBajtov"
 
@@ -143,10 +147,6 @@ msgstr ""
 msgid "more than one suite specified for show (%s)"
 msgstr "pre show bola uvedená viac ako jedna sada (%s)"
 
-#: lib/Packages/DoShow.pm:73
-msgid "No such package."
-msgstr "Taký balík neexistuje."
-
 #: lib/Packages/DoShow.pm:85
 msgid "Package not available in this suite."
 msgstr "Balík nie je dostupný v tejto sade."
@@ -156,7 +156,6 @@ msgid " and others"
 msgstr " a iné"
 
 #: lib/Packages/DoShow.pm:254
-#| msgid "Virtual package"
 msgid "virtual package"
 msgstr "virtuálny balík"
 
