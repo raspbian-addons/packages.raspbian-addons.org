@@ -47,7 +47,7 @@ templates/rss/newpkg.tmpl
 templates/txt/index_head.tmpl
 templates/txt/index_foot.tmpl
 "
-podomains="pdo templates sections langs debtags"
+podomains="pdo templates sections langs" # debtags"
 
 # Update pot
 #
@@ -61,9 +61,13 @@ xgettext $xgettext_opts -d sections -o ${podir}/sections.pot.new ${libdir}/Packa
 xgettext $xgettext_opts -d langs -o ${podir}/langs.pot.new ${libdir}/Packages/I18N/LanguageNames.pm
 $topdir/bin/ttxgettext templates ${templatefiles} >${podir}/templates.pot.new
 if [ -f files/debtags/vocabulary ]; then
+    podomains="${podomains} debtags"
     $topdir/bin/debtags-xgettext files/debtags/vocabulary >${podir}/debtags.pot.new
+else
+    printf "%s\n" "W: files/debtags/vocabulary not found, wont update debtags.pot"
 fi
 
+(
 cd $podir
 
 # Create missing po files
@@ -79,25 +83,27 @@ done
 # normalize paths in .pot files
 for domain in ${podomains}
 do
-  perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot.new
-  if [ ! -f ${domain}.pot.new ] || diff -I"POT-Creation-Date" -I"^#: " -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
-  then
-      echo "${domain}.pot unchanged"
-      rm ${domain}.pot.new
-  else
-      echo "${domain}.pot changed"
-      mv ${domain}.pot.new ${domain}.pot
-      # Update po
-      for lang in ${polangs} 
-      do
-	echo "  update ${domain}.${lang}.po"
-	cp ${domain}.${lang}.po ${domain}.${lang}.po.tmp
-	msgmerge --previous --quiet --sort-by-file -o ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
-	rm ${domain}.${lang}.po.tmp
-        # normalize paths in .po files
-	perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
-      done
-  fi
+    perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.pot.new
+    if [ ! -f ${domain}.pot.new ] || diff -I"POT-Creation-Date" -I"^#: " -q ${domain}.pot.new ${domain}.pot >/dev/null 2>&1
+    then
+        echo "${domain}.pot unchanged"
+        rm ${domain}.pot.new
+    else
+        echo "${domain}.pot changed"
+        mv ${domain}.pot.new ${domain}.pot
+
+        # Update po
+        for lang in ${polangs}
+        do
+            echo "  update ${domain}.${lang}.po"
+            cp ${domain}.${lang}.po ${domain}.${lang}.po.tmp
+            msgmerge --previous --quiet --sort-by-file -o \
+                    ${domain}.${lang}.po ${domain}.${lang}.po.tmp ${domain}.pot
+            rm ${domain}.${lang}.po.tmp
+            # normalize paths in .po files
+            perl -p -i -e "s,^#:\s*\Q${topdir}\E,#: .,go" ${domain}.${lang}.po
+        done
+    fi
 done
 
 # print statistics
@@ -111,3 +117,4 @@ do
     LANG=C msgfmt --statistics --check-format -o- $po >/dev/null
   done
 done
+)
