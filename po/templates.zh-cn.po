@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2017-10-12 19:08+0800\n"
+"PO-Revision-Date: 2017-12-11 16:27+0800\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <debian-l10n-chinese@lists.debian.org>\n"
 "Language: zh_CN\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: templates/config.tmpl:46
 msgid "Debian Web Mailinglist"
@@ -37,7 +37,7 @@ msgstr ""
 "注意：这是 <a href=\"http://%s/\">%s</a> 的一个试制版本。错误的以及过时的信息"
 "有时难以避免"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format
 #: templates/config.tmpl:72
 msgid "."
 msgstr "。"
@@ -387,19 +387,19 @@ msgstr "略过导航栏"
 
 #: templates/html/head.tmpl:32
 msgid "About Debian"
-msgstr ""
+msgstr "关于 Debian"
 
 #: templates/html/head.tmpl:33
 msgid "Getting Debian"
-msgstr ""
+msgstr "获取 Debian"
 
 #: templates/html/head.tmpl:34
 msgid "Support"
-msgstr ""
+msgstr "支持"
 
 #: templates/html/head.tmpl:35
 msgid "Developers\\"
-msgstr ""
+msgstr "开发者天地"
 
 #: templates/html/head.tmpl:40
 msgid "%s Packages Homepage"
@@ -513,12 +513,12 @@ msgstr "对某些搜索，有数个快捷方式可用："
 
 #: templates/html/homepage.tmpl:81
 msgid "<code>%s<var>name</var></code> for the search on package names."
-msgstr ""
+msgstr "<code>%s<var>软件包名称</var></code> 来使用软件包名称进行搜索。"
 
 #: templates/html/homepage.tmpl:83
 msgid ""
 "<code>%ssrc:<var>name</var></code> for the search on source package names."
-msgstr ""
+msgstr "<code>%ssrc:<var>源码包名称</var></code> 来使用源码包名称进行搜索。"
 
 #: templates/html/homepage.tmpl:87
 msgid "Search the contents of packages"
@@ -530,6 +530,8 @@ msgid ""
 "any files (or just parts of file names) that are part of packages. You can "
 "also get a full list of files in a given package."
 msgstr ""
+"本搜索引擎能帮助您搜索 %s 发行版中软件包包含的的任意文件（或者文件名的一部"
+"分）。您也可以获取指定软件包的一个完整文件列表。"
 
 #: templates/html/homepage.tmpl:100
 msgid "Display:"
@@ -675,7 +677,7 @@ msgstr "所有发行版"
 
 #: templates/html/search.tmpl:78
 msgid "suite(s) <em>%s</em>"
-msgstr " <em>%s</em> 版面"
+msgstr " <em>%s</em> 套件"
 
 #: templates/html/search.tmpl:79 templates/html/search_contents.tmpl:72
 msgid "all sections"
@@ -824,7 +826,7 @@ msgstr "文件名含有"
 msgid "files named"
 msgstr "文件名称为"
 
-#. @translators: I'm really sorry :/ 
+#. @translators: I'm really sorry :/
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr "您在 <em>%3</em> 发行版中%5下%4里，搜索了%1 <em>%2</em> 的内容。"
@@ -915,10 +917,8 @@ msgid "Bug Reports"
 msgstr "报告问题"
 
 #: templates/html/show.tmpl:76 templates/html/show.tmpl:78
-#, fuzzy
-#| msgid "Developer Information (PTS)"
 msgid "Developer Information"
-msgstr "开发者信息（PTS）"
+msgstr "开发者信息"
 
 #: templates/html/show.tmpl:82
 msgid "%s Changelog"
@@ -992,17 +992,12 @@ msgstr ""
 "\"%s\">changelog</a> 以及其他潜在的文档。"
 
 #: templates/html/show.tmpl:199
-#, fuzzy
-#| msgid ""
-#| "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</"
-#| "a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
-#| "packages</a>."
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%s#s-virtual-pkg\">definition of virtual packages</a>."
 msgstr ""
-"这是一个<em>虚包</em>。查看<a href=\"%s\">Debian 政策</a>了解<a href=\"%sch-"
-"binary.html#s-virtual_pkg\">虚包的定义</a>。"
+"这是一个<em>虚包</em>。查看<a href=\"%s\">Debian 政策</a>了解<a href=\"%s#s-"
+"virtual-pkg\">虚包的定义</a>。"
 
 #: templates/html/show.tmpl:207
 msgid "Tags"
