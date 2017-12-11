@@ -1,12 +1,12 @@
 # Copyright (C) 2007 Frank Lichtenheld
-# Copyright (C) 2007,2009 Helge Kreutzmann
+# Copyright (C) 2007,2009,2017 Helge Kreutzmann
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 2cd81017ac27717adcda738074294c4f5cd9e4cd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-11 15:50+0800\n"
-"PO-Revision-Date: 2009-11-10 19:38+0100\n"
+"PO-Revision-Date: 2017-12-11 11:08+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "Language: \n"
@@ -101,13 +101,11 @@ msgstr "Software, um Dateien zu editieren. Programmierumgebungen."
 
 #: lib/Packages/Sections.pm:30
 msgid "Education"
-msgstr ""
+msgstr "Ausbildung"
 
 #: lib/Packages/Sections.pm:31
-#, fuzzy
-#| msgid "Software for ham radio."
 msgid "Software for learning and teaching."
-msgstr "Software für Amateurfunker."
+msgstr "Software zum Lernen und Lehren."
 
 #: lib/Packages/Sections.pm:32
 msgid "Electronics"
@@ -218,11 +216,12 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:56
 msgid "Introspection"
-msgstr ""
+msgstr "Selbstprüfung"
 
 #: lib/Packages/Sections.pm:57
 msgid "Machine readable introspection data for use by development tools."
 msgstr ""
+"Maschinenlesbare Selbstprüfungsdaten zum Einsatz durch Entwicklungswerkzeuge."
 
 #: lib/Packages/Sections.pm:58
 msgid "Java"
@@ -234,11 +233,11 @@ msgstr "Alles rund um Java."
 
 #: lib/Packages/Sections.pm:60
 msgid "JavaScript"
-msgstr ""
+msgstr "JavaScript"
 
 #: lib/Packages/Sections.pm:61
 msgid "JavaScript programming language, libraries, and development tools."
-msgstr ""
+msgstr "JavaScript-Programmiersprache, -Bibliotheken und -Entwicklungswerkzeuge."
 
 #: lib/Packages/Sections.pm:62
 msgid "KDE"
@@ -313,14 +312,13 @@ msgid "Math software."
 msgstr "Mathematische Software."
 
 #: lib/Packages/Sections.pm:78
-#, fuzzy
-#| msgid "Virtual packages"
 msgid "Meta packages"
-msgstr "Virtuelle Pakete"
+msgstr "Metapakete"
 
 #: lib/Packages/Sections.pm:79
 msgid "Packages that mainly provide dependencies on other packages."
 msgstr ""
+"Pakete, die hauptsächlich Abhängigkeiten auf andere Pakete bereitstellen."
 
 #: lib/Packages/Sections.pm:80
 msgid "Miscellaneous"
@@ -420,7 +418,7 @@ msgstr ""
 
 #: lib/Packages/Sections.pm:100
 msgid "Rust"
-msgstr ""
+msgstr "Rust"
 
 #: lib/Packages/Sections.pm:101
 msgid "Rust programming language, library crates, and development tools"
@@ -462,6 +460,9 @@ msgid ""
 "Packages that are used by 'tasksel', a simple interface for users who want "
 "to configure their system to perform a specific task."
 msgstr ""
+"Pakete, die von »tasksel«, einer einfachen Schnittstelle für Benutzer zur "
+"Konfiguration Ihres Systems zur Erfüllung einer bestimmten Aufgabe, verwandt "
+"werden."
 
 #: lib/Packages/Sections.pm:110
 msgid "TeX"

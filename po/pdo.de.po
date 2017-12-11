@@ -1,9 +1,12 @@
+# Copyright (C) 2006-2008 Frank Lichtenheld
+# Copyright (C) 2007,2008,2017 Helge Kreutzmann
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.git 944e9ffd2b\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-11 15:50+0800\n"
-"PO-Revision-Date: 2008-03-14 18:08+0100\n"
+"PO-Revision-Date: 2017-12-11 11:10+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "Language: \n"
@@ -62,11 +65,11 @@ msgstr "Kein passendes Paket gefunden."
 
 #: lib/Packages/DoDownload.pm:90
 msgid "kByte"
-msgstr ""
+msgstr "kB"
 
 #: lib/Packages/DoDownload.pm:93
 msgid "MByte"
-msgstr ""
+msgstr "MB"
 
 #: lib/Packages/DoFilelist.pm:48
 msgid "No such package in this suite on this architecture."
@@ -151,10 +154,8 @@ msgid " and others"
 msgstr " und andere"
 
 #: lib/Packages/DoShow.pm:254
-#, fuzzy
-#| msgid "Virtual package"
 msgid "virtual package"
-msgstr "Virtuelles Paket"
+msgstr "virtuelles Paket"
 
 #: lib/Packages/DoShow.pm:435
 #, perl-format
