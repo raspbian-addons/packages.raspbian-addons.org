@@ -29,7 +29,10 @@ msgstr "Webmaster strony systemu %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s jest <a href=\"%s\">znakiem towarowym</a> %s"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 #, fuzzy
 #| msgid ""
 #| "Please note that this is an experimental version of <a href=\"http://%s/"
@@ -42,11 +45,11 @@ msgstr ""
 "%s</a>. Proszę spodziewać się błędów i nieaktualnych informacji."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr " "
 
@@ -1255,12 +1258,12 @@ msgstr "Wygenerowano:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Zobacz <URL:%s> aby uzyskać warunki licencji."
 
-#~ msgid "newer packages that have been adapted to stable releases of Debian"
-#~ msgstr "Nowsze pakiety, dostosowane do wydania stabilnego Debiana"
-
 #~ msgid ""
 #~ "volatile packages that need major changes during the life of a stable "
 #~ "release"
 #~ msgstr ""
 #~ "Szybko zmieniające się pakiety, wymagające dużych zmian w czasie "
 #~ "wspierania wydania stabilnego"
+
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr "Nowsze pakiety, dostosowane do wydania stabilnego Debiana"

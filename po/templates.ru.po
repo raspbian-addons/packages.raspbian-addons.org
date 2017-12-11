@@ -28,7 +28,10 @@ msgstr "веб-мастер %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s это <a href=\"%s\">торговый знак</a> компании %s"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 #, fuzzy
 #| msgid ""
 #| "Please note that this is an experimental version of <a href=\"http://%s/"
@@ -41,11 +44,11 @@ msgstr ""
 "и устаревшая информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr " "
 
@@ -1254,22 +1257,22 @@ msgstr "Сгенерирована:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Об условиях лицензии смотрите <URL:%s>."
 
-#~ msgid "Australia and New Zealand"
-#~ msgstr "Австралия и Новая Зеландия"
-
-#~ msgid "Search in specific suite:"
-#~ msgstr "Поиск в заданном комплекте:"
-
-#~ msgid "%s Homepage"
-#~ msgstr "Домашняя страница %s"
-
-#~ msgid "newer packages that have been adapted to stable releases of Debian"
-#~ msgstr ""
-#~ "новейшие пакеты, которые были адаптированы для стабильных выпусков Debian"
-
 #~ msgid ""
 #~ "volatile packages that need major changes during the life of a stable "
 #~ "release"
 #~ msgstr ""
 #~ "изменчивые пакеты, для работы в них нужно вносить значительные изменения "
 #~ "на всём времени существования стабильного выпуска"
+
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr ""
+#~ "новейшие пакеты, которые были адаптированы для стабильных выпусков Debian"
+
+#~ msgid "%s Homepage"
+#~ msgstr "Домашняя страница %s"
+
+#~ msgid "Search in specific suite:"
+#~ msgstr "Поиск в заданном комплекте:"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "Австралия и Новая Зеландия"

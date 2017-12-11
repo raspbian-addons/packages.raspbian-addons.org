@@ -30,18 +30,21 @@ msgstr ""
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr ""
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr ""
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr ""
 
@@ -1316,208 +1319,16 @@ msgid "See <URL:%s> for the license terms."
 msgstr ""
 
 #, fuzzy
-#~| msgid "This page is also available in the following languages:\n"
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Ця сторінка також доступна наступними мовами:\n"
-
-#, fuzzy
-#~ msgid "Packages search page"
-#~ msgstr "Всі пакунки Debian в дистрибутиві „%s“"
-
-#, fuzzy
-#~ msgid "two or more packages specified (%s)"
-#~ msgstr "Джерельний пакунок: %s (%s)"
-
-#, fuzzy
-#~ msgid "No such package in this suite on this architecture."
-#~ msgstr "Немає пакунків в цій секції цього дистрибутиву"
-
-#~ msgid "Virtual package"
-#~ msgstr "Віртуальний пакунок"
-
-#, fuzzy
-#~ msgid "No such package."
-#~ msgstr "Джерельний пакунок"
-
-#, fuzzy
-#~ msgid "Package not available in this suite."
-#~ msgstr "Пакунок недоступний"
-
-#~ msgid "Package not available"
-#~ msgstr "Пакунок недоступний"
-
-#, fuzzy
-#~ msgid "Software Packages in \"%s\", subsection %s"
-#~ msgstr "Пакунки в дистрибутиві „%s“, розділі %s"
-
-#~ msgid "Software Packages in \"%s\", priority %s"
-#~ msgstr "Пакунки в дистрибутиві „%s“, пріоритет %s"
-
-#, fuzzy
-#~ msgid " (section %s)"
-#~ msgstr "Розділ"
+#~ msgid "%s Homepage"
+#~ msgstr "Розмір пакунка"
 
 #, fuzzy
 #~ msgid ""
-#~ "The following packages were added to suite %s%s in the Debian archive "
-#~ "during the last 7 days."
-#~ msgstr ""
-#~ "Наступні пакунки було додано до нестабільного архіву Debian протягом "
-#~ "останніх семи днів."
-
-#, fuzzy
-#~ msgid "Nothing found"
-#~ msgstr "Не знайдено"
-
-#~ msgid "Download %s\n"
-#~ msgstr "Завантажити %s\n"
-
-#~ msgid "virtual package"
-#~ msgstr "віртуальний пакунок"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Огляд цього дистрибутива"
-
-#~ msgid "md5sum"
-#~ msgstr "сума MD5"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Перегляньте <a href=\"%s\">повідомлення про помилки</a> про %s."
-
-#~ msgid "Source Package:"
-#~ msgstr "Джерельний пакунок:"
-
-#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
-#~ msgstr "Переглянути <a href=\"%s\">журнал змін Debian</a>"
-
-#~ msgid "View the <a href=\"%s\">copyright file</a>"
-#~ msgstr "Переглянути <a href=\"%s\">файл з авторськими правами</a>"
-
-#~ msgid "%s is responsible for this Debian package."
-#~ msgstr "%s відповідає за цей пакунок Debian"
-
-#~ msgid " and %s are responsible for this Debian package."
-#~ msgstr " і %s відповідають з цей пакунок Debian."
-
-#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
-#~ msgstr "Перегляньте <a href=\"%s\">інформацію для розробників про %s</a>."
-
-#~ msgid "Debian Project"
-#~ msgstr "Проект Debian"
-
-#~ msgid "News"
-#~ msgstr "Новини"
-
-#~ msgid "Site map"
-#~ msgstr "Карта сайту"
-
-#~ msgid ""
-#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
-#~ "\">Packages search page</a>"
+#~ "You can try a different search on the <a href=\"%s#search_packages"
+#~ "\">Packages search page</a>."
 #~ msgstr ""
 #~ "Повернутися до: <a href=\"%s/\">головної сторінки проекту Debian</a> || "
 #~ "<a href=\"%s/\">сторінки пошуку пакунків</a>"
-
-#~ msgid "Last Modified: "
-#~ msgstr "Остання зміна:"
-
-#~ msgid ""
-#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
-#~ msgstr ""
-#~ "Debian є зареєстрованою торговою маркою Software in the Public Interest, "
-#~ "Inc."
-
-#~ msgid ""
-#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
-#~ "contains software that is likely unstable or buggy and may even cause "
-#~ "data loss. If you ignore this warning and install it nevertheless, you do "
-#~ "it on your own risk."
-#~ msgstr ""
-#~ "Увага: „<span class=\"pred\">Експериментальний</span>“ містить програмне "
-#~ "забезпечення, яке напевне є нестабільним або містить помилки і навіть "
-#~ "може спричинити втрату даних. Якщо ви проігноруєте це попередження і "
-#~ "встановите його, то робіть це на ваш ризик."
-
-#~ msgid ""
-#~ "The following packages were added to the \"%s\" component next to the "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Наступні пакунки було додано до компоненту „%s“ впродовж останніх 7 днів."
-
-#~ msgid ""
-#~ "Packages that were added to the \"%s\" component next to the unstable "
-#~ "Debian archive during the last 7 days."
-#~ msgstr ""
-#~ "Пакунки які було додано до компоненту „%s“ впродовж останніх 7 днів."
-
-#~ msgid ""
-#~ "Users of experimental packages are encouraged to contact the package "
-#~ "maintainers directly in case of problems."
-#~ msgstr ""
-#~ "Користувачам експериментальних пакунків у випадку виникнення проблем "
-#~ "рекомендується зв'язуватись зі супроводжуючими пакунків напряму."
-
-#~ msgid "Size is measured in kBytes."
-#~ msgstr "Розмір даний в кілобайтах."
-
-#~ msgid "Uploaders"
-#~ msgstr "Завантажувачі"
-
-#~ msgid "Priority"
-#~ msgstr "Приоритет"
-
-#~ msgid "yes"
-#~ msgstr "так"
-
-#~ msgid ""
-#~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
-#~ "images only. Do not install them on a normal Debian system."
-#~ msgstr ""
-#~ "Увага: Ці пакунки призначені для використання тільки при побудові образів "
-#~ "<a href=\"http://www.debian.org/devel/debian-installer/\">встановлювача "
-#~ "Debian</a>. Не встановлюйте їх на нормальній системі Debian."
-
-#~ msgid "No packages with this priority in this suite"
-#~ msgstr "Немає пакунків з цим пріоритетом в цьому розділі"
-
-#~ msgid "Software Packages in \"%s\", essential packages"
-#~ msgstr "Пакунки в дистрибутиві „%s“, необхідні пакунки"
-
-#~ msgid "No essential packages in this suite"
-#~ msgstr "Немає необхідних пакунків в цьому дистрибутиві"
-
-#~ msgid ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "Перегляньте <URL:http://www.debian.org/license> щодо умов ліцензії.\n"
-#~ "\n"
-
-#~ msgid "Versions:"
-#~ msgstr "Версії:"
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that the <strong>experimental</strong> distribution is not self-"
-#~ "contained; missing dependencies are likely found in the <a href=\"%s"
-#~ "\">unstable</a> distribution."
-#~ msgstr ""
-#~ "Майте на увазі, що „<span class=\"pred\">експериментальний</span>“ "
-#~ "дистрибутив не є самодостатнім; відсутні залежності скоріше за все є „<a "
-#~ "href=\"../../unstable/\">нестабільному</a>“ дистрибутиві."
-
-#, fuzzy
-#~| msgid ""
-#~| "Packages that were added to the unstable Debian archive during the last "
-#~| "7 days."
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr ""
-#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
-#~ "7 днів."
 
 #, fuzzy
 #~| msgid ""
@@ -1531,13 +1342,205 @@ msgstr ""
 #~ "7 днів."
 
 #, fuzzy
+#~| msgid ""
+#~| "Packages that were added to the unstable Debian archive during the last "
+#~| "7 days."
 #~ msgid ""
-#~ "You can try a different search on the <a href=\"%s#search_packages"
-#~ "\">Packages search page</a>."
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr ""
+#~ "Пакунки які біли додані до нестабільного архіву Debian впродовж останніх "
+#~ "7 днів."
+
+#, fuzzy
+#~ msgid ""
+#~ "Note that the <strong>experimental</strong> distribution is not self-"
+#~ "contained; missing dependencies are likely found in the <a href=\"%s"
+#~ "\">unstable</a> distribution."
+#~ msgstr ""
+#~ "Майте на увазі, що „<span class=\"pred\">експериментальний</span>“ "
+#~ "дистрибутив не є самодостатнім; відсутні залежності скоріше за все є „<a "
+#~ "href=\"../../unstable/\">нестабільному</a>“ дистрибутиві."
+
+#~ msgid "Versions:"
+#~ msgstr "Версії:"
+
+#~ msgid ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Copyright (C) 1997-2005 SPI;\n"
+#~ "Перегляньте <URL:http://www.debian.org/license> щодо умов ліцензії.\n"
+#~ "\n"
+
+#~ msgid "No essential packages in this suite"
+#~ msgstr "Немає необхідних пакунків в цьому дистрибутиві"
+
+#~ msgid "Software Packages in \"%s\", essential packages"
+#~ msgstr "Пакунки в дистрибутиві „%s“, необхідні пакунки"
+
+#~ msgid "No packages with this priority in this suite"
+#~ msgstr "Немає пакунків з цим пріоритетом в цьому розділі"
+
+#~ msgid ""
+#~ "Warning: These packages are intended for the use in building <a href="
+#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "images only. Do not install them on a normal Debian system."
+#~ msgstr ""
+#~ "Увага: Ці пакунки призначені для використання тільки при побудові образів "
+#~ "<a href=\"http://www.debian.org/devel/debian-installer/\">встановлювача "
+#~ "Debian</a>. Не встановлюйте їх на нормальній системі Debian."
+
+#~ msgid "yes"
+#~ msgstr "так"
+
+#~ msgid "Priority"
+#~ msgstr "Приоритет"
+
+#~ msgid "Uploaders"
+#~ msgstr "Завантажувачі"
+
+#~ msgid "Size is measured in kBytes."
+#~ msgstr "Розмір даний в кілобайтах."
+
+#~ msgid ""
+#~ "Users of experimental packages are encouraged to contact the package "
+#~ "maintainers directly in case of problems."
+#~ msgstr ""
+#~ "Користувачам експериментальних пакунків у випадку виникнення проблем "
+#~ "рекомендується зв'язуватись зі супроводжуючими пакунків напряму."
+
+#~ msgid ""
+#~ "Packages that were added to the \"%s\" component next to the unstable "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Пакунки які було додано до компоненту „%s“ впродовж останніх 7 днів."
+
+#~ msgid ""
+#~ "The following packages were added to the \"%s\" component next to the "
+#~ "Debian archive during the last 7 days."
+#~ msgstr ""
+#~ "Наступні пакунки було додано до компоненту „%s“ впродовж останніх 7 днів."
+
+#~ msgid ""
+#~ "Warning: The <span class=\"pred\">experimental</span> distribution "
+#~ "contains software that is likely unstable or buggy and may even cause "
+#~ "data loss. If you ignore this warning and install it nevertheless, you do "
+#~ "it on your own risk."
+#~ msgstr ""
+#~ "Увага: „<span class=\"pred\">Експериментальний</span>“ містить програмне "
+#~ "забезпечення, яке напевне є нестабільним або містить помилки і навіть "
+#~ "може спричинити втрату даних. Якщо ви проігноруєте це попередження і "
+#~ "встановите його, то робіть це на ваш ризик."
+
+#~ msgid ""
+#~ "Debian is a registered trademark of Software in the Public Interest, Inc."
+#~ msgstr ""
+#~ "Debian є зареєстрованою торговою маркою Software in the Public Interest, "
+#~ "Inc."
+
+#~ msgid "Last Modified: "
+#~ msgstr "Остання зміна:"
+
+#~ msgid ""
+#~ "Back to: <a href=\"%s/\">Debian Project homepage</a> || <a href=\"%s/"
+#~ "\">Packages search page</a>"
 #~ msgstr ""
 #~ "Повернутися до: <a href=\"%s/\">головної сторінки проекту Debian</a> || "
 #~ "<a href=\"%s/\">сторінки пошуку пакунків</a>"
 
+#~ msgid "Site map"
+#~ msgstr "Карта сайту"
+
+#~ msgid "News"
+#~ msgstr "Новини"
+
+#~ msgid "Debian Project"
+#~ msgstr "Проект Debian"
+
+#~ msgid "See the <a href=\"%s\">developer information for %s</a>."
+#~ msgstr "Перегляньте <a href=\"%s\">інформацію для розробників про %s</a>."
+
+#~ msgid " and %s are responsible for this Debian package."
+#~ msgstr " і %s відповідають з цей пакунок Debian."
+
+#~ msgid "%s is responsible for this Debian package."
+#~ msgstr "%s відповідає за цей пакунок Debian"
+
+#~ msgid "View the <a href=\"%s\">copyright file</a>"
+#~ msgstr "Переглянути <a href=\"%s\">файл з авторськими правами</a>"
+
+#~ msgid "View the <a href=\"%s\">Debian changelog</a>"
+#~ msgstr "Переглянути <a href=\"%s\">журнал змін Debian</a>"
+
+#~ msgid "Source Package:"
+#~ msgstr "Джерельний пакунок:"
+
+#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
+#~ msgstr "Перегляньте <a href=\"%s\">повідомлення про помилки</a> про %s."
+
+#~ msgid "md5sum"
+#~ msgstr "сума MD5"
+
+#~ msgid "Overview over this distribution"
+#~ msgstr "Огляд цього дистрибутива"
+
+#~ msgid "virtual package"
+#~ msgstr "віртуальний пакунок"
+
+#~ msgid "Download %s\n"
+#~ msgstr "Завантажити %s\n"
+
 #, fuzzy
-#~ msgid "%s Homepage"
-#~ msgstr "Розмір пакунка"
+#~ msgid "Nothing found"
+#~ msgstr "Не знайдено"
+
+#, fuzzy
+#~ msgid ""
+#~ "The following packages were added to suite %s%s in the Debian archive "
+#~ "during the last 7 days."
+#~ msgstr ""
+#~ "Наступні пакунки було додано до нестабільного архіву Debian протягом "
+#~ "останніх семи днів."
+
+#, fuzzy
+#~ msgid " (section %s)"
+#~ msgstr "Розділ"
+
+#~ msgid "Software Packages in \"%s\", priority %s"
+#~ msgstr "Пакунки в дистрибутиві „%s“, пріоритет %s"
+
+#, fuzzy
+#~ msgid "Software Packages in \"%s\", subsection %s"
+#~ msgstr "Пакунки в дистрибутиві „%s“, розділі %s"
+
+#~ msgid "Package not available"
+#~ msgstr "Пакунок недоступний"
+
+#, fuzzy
+#~ msgid "Package not available in this suite."
+#~ msgstr "Пакунок недоступний"
+
+#, fuzzy
+#~ msgid "No such package."
+#~ msgstr "Джерельний пакунок"
+
+#~ msgid "Virtual package"
+#~ msgstr "Віртуальний пакунок"
+
+#, fuzzy
+#~ msgid "No such package in this suite on this architecture."
+#~ msgstr "Немає пакунків в цій секції цього дистрибутиву"
+
+#, fuzzy
+#~ msgid "two or more packages specified (%s)"
+#~ msgstr "Джерельний пакунок: %s (%s)"
+
+#, fuzzy
+#~ msgid "Packages search page"
+#~ msgstr "Всі пакунки Debian в дистрибутиві „%s“"
+
+#, fuzzy
+#~| msgid "This page is also available in the following languages:\n"
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Ця сторінка також доступна наступними мовами:\n"

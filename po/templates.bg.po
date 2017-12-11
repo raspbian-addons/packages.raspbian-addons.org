@@ -28,7 +28,10 @@ msgstr "Отговорниците за уебсайта"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s е <a href=\"%s\">търговска марка</a> на %s"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 #, fuzzy
 #| msgid ""
 #| "Please note that this is an experimental version of <a href=\"http://%s/"
@@ -41,11 +44,11 @@ msgstr ""
 "да има грешки и остаряла информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr " "
 
@@ -1242,18 +1245,18 @@ msgstr "Генерирано на"
 msgid "See <URL:%s> for the license terms."
 msgstr "Вижте <URL:%s> за лицензните условия."
 
-#~ msgid "Search in specific suite:"
-#~ msgstr "Търсене в конкретна дистрибуция:"
-
-#~ msgid "%s Homepage"
-#~ msgstr "Начална страница на %s"
-
-#~ msgid "newer packages that have been adapted to stable releases of Debian"
-#~ msgstr "осъвременени пакети, адаптирани за стабилните издания на Дебиан"
-
 #~ msgid ""
 #~ "volatile packages that need major changes during the life of a stable "
 #~ "release"
 #~ msgstr ""
 #~ "капризни пакети, които имат нужда от големи промени в рамките на "
 #~ "стабилните издания"
+
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr "осъвременени пакети, адаптирани за стабилните издания на Дебиан"
+
+#~ msgid "%s Homepage"
+#~ msgstr "Начална страница на %s"
+
+#~ msgid "Search in specific suite:"
+#~ msgstr "Търсене в конкретна дистрибуция:"

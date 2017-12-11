@@ -29,7 +29,10 @@ msgstr "%s 网络管理员"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 是 %3 的一个<a href=\"%3\">注册商标</a>"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
@@ -37,12 +40,12 @@ msgstr ""
 "注意：这是 <a href=\"http://%s/\">%s</a> 的一个试制版本。错误的以及过时的信息"
 "有时难以避免"
 
-#. @translators: . = decimal_point , = thousands_sep, see Number::Format
-#: templates/config.tmpl:72
+#. @translators: . = decimal_point , = thousands_sep, see Number::Format 
+#: templates/config.tmpl:81
 msgid "."
 msgstr "。"
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr "，"
 
@@ -826,7 +829,7 @@ msgstr "文件名含有"
 msgid "files named"
 msgstr "文件名称为"
 
-#. @translators: I'm really sorry :/
+#. @translators: I'm really sorry :/ 
 #: templates/html/search_contents.tmpl:81
 msgid "You have searched for %s <em>%s</em> in suite <em>%s</em>, %s, and %s."
 msgstr "您在 <em>%3</em> 发行版中%5下%4里，搜索了%1 <em>%2</em> 的内容。"
@@ -1200,26 +1203,21 @@ msgstr "最近修订日期："
 msgid "See <URL:%s> for the license terms."
 msgstr "查看 <URL:%s> 了解许可证的各项条款。"
 
-#~ msgid "Australia and New Zealand"
-#~ msgstr "澳大利亚和新西兰"
+#~ msgid ""
+#~ "volatile packages that need major changes during the life of a stable "
+#~ "release"
+#~ msgstr "挥发性包，在稳定版支持周期会有重大变化"
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "本页面还能应用以下各种语言浏览:"
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr "适用于 Debian 稳定版的较新软件包"
 
-#~ msgid "Back to:"
-#~ msgstr "返回到:"
+#~ msgid "%s Homepage"
+#~ msgstr "%s 首页"
 
-#~ msgid "Packages search page"
-#~ msgstr "软件包搜索页面"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr " <em>$suite_enc</em> 发行版"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr " <em>$section_enc</em> 版面"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr " <em>$architectures_enc</em> 硬件架构"
+#, fuzzy
+#~| msgid "Search in other suite:"
+#~ msgid "Search in specific suite:"
+#~ msgstr "在其他的发行版中搜索:"
 
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1227,18 +1225,23 @@ msgstr "查看 <URL:%s> 了解许可证的各项条款。"
 #~ msgstr ""
 #~ "您可以在<a href=\"%s#search_packages\">软件包搜索页面</a>重新搜索一次。"
 
-#, fuzzy
-#~| msgid "Search in other suite:"
-#~ msgid "Search in specific suite:"
-#~ msgstr "在其他的发行版中搜索:"
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr " <em>$architectures_enc</em> 硬件架构"
 
-#~ msgid "%s Homepage"
-#~ msgstr "%s 首页"
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr " <em>$section_enc</em> 版面"
 
-#~ msgid "newer packages that have been adapted to stable releases of Debian"
-#~ msgstr "适用于 Debian 稳定版的较新软件包"
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr " <em>$suite_enc</em> 发行版"
 
-#~ msgid ""
-#~ "volatile packages that need major changes during the life of a stable "
-#~ "release"
-#~ msgstr "挥发性包，在稳定版支持周期会有重大变化"
+#~ msgid "Packages search page"
+#~ msgstr "软件包搜索页面"
+
+#~ msgid "Back to:"
+#~ msgstr "返回到:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "本页面还能应用以下各种语言浏览:"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "澳大利亚和新西兰"

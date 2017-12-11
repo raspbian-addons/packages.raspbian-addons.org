@@ -28,7 +28,10 @@ msgstr "%s 網管"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 是 %3 的一個<a href=\"%3\">註冊商標</a>"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
@@ -37,11 +40,11 @@ msgstr ""
 "有時難以避免"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr "。"
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr "，"
 
@@ -1202,26 +1205,21 @@ msgstr "最近修訂日期："
 msgid "See <URL:%s> for the license terms."
 msgstr "檢視 <URL:%s> 瞭解許可證的各項條款。"
 
-#~ msgid "Australia and New Zealand"
-#~ msgstr "澳大利亞和紐西蘭"
+#~ msgid ""
+#~ "volatile packages that need major changes during the life of a stable "
+#~ "release"
+#~ msgstr "揮發性包，在穩定版支援週期會有重大變化"
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "本頁面還能應用以下各種語言瀏覽:"
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr "適用於 Debian 穩定版的較新套件"
 
-#~ msgid "Back to:"
-#~ msgstr "返回到:"
+#~ msgid "%s Homepage"
+#~ msgstr "%s 首頁"
 
-#~ msgid "Packages search page"
-#~ msgstr "套件搜尋頁面"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr " <em>$suite_enc</em> 發行版"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr " <em>$section_enc</em> 版面"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr " <em>$architectures_enc</em> 硬體架構"
+#, fuzzy
+#~| msgid "Search in other suite:"
+#~ msgid "Search in specific suite:"
+#~ msgstr "在其他的發行版中搜索:"
 
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1229,18 +1227,23 @@ msgstr "檢視 <URL:%s> 瞭解許可證的各項條款。"
 #~ msgstr ""
 #~ "您可以在<a href=\"%s#search_packages\">套件搜尋頁面</a>重新搜尋一次。"
 
-#, fuzzy
-#~| msgid "Search in other suite:"
-#~ msgid "Search in specific suite:"
-#~ msgstr "在其他的發行版中搜索:"
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr " <em>$architectures_enc</em> 硬體架構"
 
-#~ msgid "%s Homepage"
-#~ msgstr "%s 首頁"
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr " <em>$section_enc</em> 版面"
 
-#~ msgid "newer packages that have been adapted to stable releases of Debian"
-#~ msgstr "適用於 Debian 穩定版的較新套件"
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr " <em>$suite_enc</em> 發行版"
 
-#~ msgid ""
-#~ "volatile packages that need major changes during the life of a stable "
-#~ "release"
-#~ msgstr "揮發性包，在穩定版支援週期會有重大變化"
+#~ msgid "Packages search page"
+#~ msgstr "套件搜尋頁面"
+
+#~ msgid "Back to:"
+#~ msgstr "返回到:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "本頁面還能應用以下各種語言瀏覽:"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "澳大利亞和紐西蘭"

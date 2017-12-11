@@ -27,7 +27,10 @@ msgstr "%s ウェブマスター"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 #, fuzzy
 #| msgid ""
 #| "Please note that this is an experimental version of <a href=\"http://%s/"
@@ -40,11 +43,11 @@ msgstr ""
 "報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr "."
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr ","
 
@@ -1260,37 +1263,23 @@ msgstr "生成:"
 msgid "See <URL:%s> for the license terms."
 msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 
-#~ msgid "Australia and New Zealand"
-#~ msgstr "オーストラリア・ニュージーランド"
-
-# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "このページは以下の言語でもご覧になれます。"
-
-#~ msgid "Back to:"
-#~ msgstr "戻る:"
-
-#~ msgid "Packages search page"
-#~ msgstr "パッケージ検索ページ"
-
-#~ msgid "suite(s) <em>$suite_enc</em>"
-#~ msgstr "<em>$suite_enc</em> スイート"
-
-#~ msgid "section(s) <em>$section_enc</em>"
-#~ msgstr "<em>$section_enc</em> セクション"
-
-#~ msgid "architecture(s) <em>$architectures_enc</em>"
-#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
-
 #~ msgid ""
-#~ "Packages that were added to the %s %s archive during the last 7 days."
-#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
-
-#~ msgid ""
-#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
-#~ "last 7 days."
+#~ "volatile packages that need major changes during the life of a stable "
+#~ "release"
 #~ msgstr ""
-#~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
+#~ "安定版 (stable) リリースのサポート期間内に大きな変更が必要となる、時代遅れ"
+#~ "になりやすいパッケージ"
+
+#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgstr ""
+#~ "Debian の安定版 (stable) リリースに合うように作られた、新しいバージョンの"
+#~ "パッケージ"
+
+#~ msgid "%s Homepage"
+#~ msgstr "%s ホームページ"
+
+#~ msgid "Search in specific suite:"
+#~ msgstr "特定のスイートに絞って検索:"
 
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1299,20 +1288,34 @@ msgstr "ライセンス条項については <URL:%s> をご覧ください。"
 #~ "<a href=\"%s#search_packages\">パッケージ検索ページ</a>で別の検索を実行で"
 #~ "きます。"
 
-#~ msgid "Search in specific suite:"
-#~ msgstr "特定のスイートに絞って検索:"
-
-#~ msgid "%s Homepage"
-#~ msgstr "%s ホームページ"
-
-#~ msgid "newer packages that have been adapted to stable releases of Debian"
+#~ msgid ""
+#~ "Packages that were added to the %s %s archive (section \"%s\") during the "
+#~ "last 7 days."
 #~ msgstr ""
-#~ "Debian の安定版 (stable) リリースに合うように作られた、新しいバージョンの"
-#~ "パッケージ"
+#~ "%s %s アーカイブ (\"%s\" セクション) に最近 7 日間に追加されたパッケージ。"
 
 #~ msgid ""
-#~ "volatile packages that need major changes during the life of a stable "
-#~ "release"
-#~ msgstr ""
-#~ "安定版 (stable) リリースのサポート期間内に大きな変更が必要となる、時代遅れ"
-#~ "になりやすいパッケージ"
+#~ "Packages that were added to the %s %s archive during the last 7 days."
+#~ msgstr "%s %s アーカイブに最近 7 日間に追加されたパッケージ。"
+
+#~ msgid "architecture(s) <em>$architectures_enc</em>"
+#~ msgstr "<em>$architectures_enc</em> アーキテクチャ"
+
+#~ msgid "section(s) <em>$section_enc</em>"
+#~ msgstr "<em>$section_enc</em> セクション"
+
+#~ msgid "suite(s) <em>$suite_enc</em>"
+#~ msgstr "<em>$suite_enc</em> スイート"
+
+#~ msgid "Packages search page"
+#~ msgstr "パッケージ検索ページ"
+
+#~ msgid "Back to:"
+#~ msgstr "戻る:"
+
+# See webwml/japanese/po/templates.ja.po in the web site CVS repository.
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "このページは以下の言語でもご覧になれます。"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "オーストラリア・ニュージーランド"

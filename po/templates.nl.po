@@ -30,18 +30,21 @@ msgstr "%s Webmaster"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s is een <a href=\"%s\">handelsmerk</a> van %s"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr "."
 
@@ -1223,20 +1226,20 @@ msgstr "Gegenereerd:"
 msgid "See <URL:%s> for the license terms."
 msgstr ""
 
-#~ msgid "Australia and New Zealand"
-#~ msgstr "Australië en Nieuw Zeeland"
-
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
-
-#~ msgid "Back to:"
-#~ msgstr "Terug naar:"
-
-#~ msgid "Packages search page"
-#~ msgstr "Pakketten zoekpagina"
+#~ msgid "%s Homepage"
+#~ msgstr "%s Homepage"
 
 #~ msgid "Search in specific suite:"
 #~ msgstr "IN een specifieke suite zoeken:"
 
-#~ msgid "%s Homepage"
-#~ msgstr "%s Homepage"
+#~ msgid "Packages search page"
+#~ msgstr "Pakketten zoekpagina"
+
+#~ msgid "Back to:"
+#~ msgstr "Terug naar:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Deze pagina is ook beschikbaar in de volgende talen:"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "Australië en Nieuw Zeeland"

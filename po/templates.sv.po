@@ -25,7 +25,10 @@ msgstr "Webbansvarig för %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s är ett <a href=\"%s\">varumärke</a> hos %s"
 
-#: templates/config.tmpl:69
+#. possible values for importance: high, normal, low
+#. sitewidemsg = { importance => "high",
+#. txt => 
+#: templates/config.tmpl:77
 #, fuzzy
 #| msgid ""
 #| "Please note that this is an experimental version of <a href=\"http://%s/"
@@ -38,11 +41,11 @@ msgstr ""
 "%s</a>. Fel och föråldrad information kan förväntas"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
-#: templates/config.tmpl:72
+#: templates/config.tmpl:81
 msgid "."
 msgstr ","
 
-#: templates/config.tmpl:73
+#: templates/config.tmpl:82
 msgid ","
 msgstr "."
 
@@ -1260,17 +1263,11 @@ msgstr "Skapad:"
 msgid "See <URL:%s> for the license terms."
 msgstr "Se <URL:%s> för licensvillkor."
 
-#~ msgid "Australia and New Zealand"
-#~ msgstr "Australien och Nya Zeeland"
+#~ msgid "%s Homepage"
+#~ msgstr "%ss startsida"
 
-#~ msgid "This page is also available in the following languages:"
-#~ msgstr "Denna sida finns även på följande språk:"
-
-#~ msgid "Back to:"
-#~ msgstr "Återgå till:"
-
-#~ msgid "Packages search page"
-#~ msgstr "Paketsöksida"
+#~ msgid "Search in specific suite:"
+#~ msgstr "Sök i specifik svit:"
 
 #~ msgid ""
 #~ "You can try a different search on the <a href=\"%s#search_packages"
@@ -1279,8 +1276,14 @@ msgstr "Se <URL:%s> för licensvillkor."
 #~ "Du kan prova en annan sökning på <a href=\"%s#search_packages"
 #~ "\">paketsöksidan</a>."
 
-#~ msgid "Search in specific suite:"
-#~ msgstr "Sök i specifik svit:"
+#~ msgid "Packages search page"
+#~ msgstr "Paketsöksida"
 
-#~ msgid "%s Homepage"
-#~ msgstr "%ss startsida"
+#~ msgid "Back to:"
+#~ msgstr "Återgå till:"
+
+#~ msgid "This page is also available in the following languages:"
+#~ msgstr "Denna sida finns även på följande språk:"
+
+#~ msgid "Australia and New Zealand"
+#~ msgstr "Australien och Nya Zeeland"
