@@ -29,15 +29,11 @@ msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 on %3'n <a href=\"%2\">tavaramerkki</a>"
 
 #: templates/config.tmpl:69
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Huomaattehan, että tämä on kokeellinen versio <a href=\"http://%s/\">%s</a>-"
+"Huomaattehan, että tämä on kokeellinen versio <a href=\"https://%s/\">%s</a>-"
 "palvelusta. Varauduttehan virheisiin ja vanhentuneeseen tietoon"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -262,12 +258,12 @@ msgstr "debian-asentimen udeb-paketti"
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 #, fuzzy
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
 "Varoitus: Tämä paketti on tarkoitettu käytettäväksi vain rakennettaessa <a "
-"href=\"http://www.debian.org/devel/debian-installer\">debian-asentimen</a> "
+"href=\"https://www.debian.org/devel/debian-installer\">debian-asentimen</a> "
 "vedoksia. Älä asenna normaaliin %s-järjestelmään."
 
 #: templates/html/download.tmpl:53
@@ -1287,11 +1283,11 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 
 #~ msgid ""
 #~ "Copyright (C) 1997-2005 SPI;\n"
-#~ "See <URL:http://www.debian.org/license> for the license terms.\n"
+#~ "See <URL:https://www.debian.org/license> for the license terms.\n"
 #~ "\n"
 #~ msgstr ""
 #~ "Copyright © 1997-2005 SPI;\n"
-#~ "Katso lisenssiehdot sivulta <URL:http://www.debian.org/license>.\n"
+#~ "Katso lisenssiehdot sivulta <URL:https://www.debian.org/license>.\n"
 #~ "\n"
 
 #~ msgid "No essential packages in this suite"
@@ -1305,11 +1301,11 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 
 #~ msgid ""
 #~ "Warning: These packages are intended for the use in building <a href="
-#~ "\"http://www.debian.org/devel/debian-installer/\">debian-installer</a> "
+#~ "\"https://www.debian.org/devel/debian-installer/\">debian-installer</a> "
 #~ "images only. Do not install them on a normal Debian system."
 #~ msgstr ""
 #~ "Varoitus: Nämä paketit on tarkoitettu käytettäväksi vain rakennettaessa "
-#~ "<a href=\"http://www.debian.org/devel/debian-installer\">debian-"
+#~ "<a href=\"https://www.debian.org/devel/debian-installer\">debian-"
 #~ "asentimen</a> vedoksia. Älä asenna normaaliin Debian-järjestelmään."
 
 #~ msgid "yes"

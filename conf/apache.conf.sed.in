@@ -137,7 +137,7 @@
    RewriteRule ^/favicon.ico$ - [L]
    RewriteRule ^/robots.txt$ - [L]
 
-#   RewriteRule ^/$ http://www.debian.org/distrib/packages
+#   RewriteRule ^/$ https://www.debian.org/distrib/packages
    RewriteRule ^/$			/index [L]
    RewriteRule ^/([^/+]*)([+])([^/]*)$	"/$1%%{%}2B$3" [N]
    RewriteRule ^/changelog:(.+)$	/changelogs/${changelog-url:$1} [R,L,NE]

@@ -82,7 +82,7 @@ change. Comments and Improvements welcome.
 The changelog is converted to a somewhat nice looking HTML file with
 some nice features as a quick-link bar with direct links to every entry.
 NOTE: This is not very configurable yet and was specifically designed
-to be used on L<http://packages.debian.org/>. This is planned to be
+to be used on L<https://packages.debian.org/>. This is planned to be
 changed until version 1.0.
 
 =back
@@ -1255,7 +1255,7 @@ with only one of the options specified.
 Parse::DebianChangelog::Entry, Parse::DebianChangelog::ChangesFilters
 
 Description of the Debian changelog format in the Debian policy:
-L<http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgchangelog>.
+L<https://www.debian.org/doc/debian-policy/#debian-changelog-debian-changelog>.
 
 =head1 AUTHOR
 

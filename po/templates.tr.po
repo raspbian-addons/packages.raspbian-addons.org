@@ -27,15 +27,11 @@ msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s bir %s <a href=\"%s\">tescilli markasıdır</a>"
 
 #: templates/config.tmpl:69
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Bunun <a href=\"http://%s/\">%s</a> deneysel sürümü olduğunu unutmayın. "
+"Bunun <a href=\"https://%s/\">%s</a> deneysel sürümü olduğunu unutmayın. "
 "Hatalar ve eski bilgiler beklenebilir."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -265,11 +261,11 @@ msgstr "debian-installer udeb paketi"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"Uyarı: Bu paket yalnızca <a href=\"http://www.debian.org/devel/debian-"
+"Uyarı: Bu paket yalnızca <a href=\"https://www.debian.org/devel/debian-"
 "installer\">debian-installer</a> kalıplarının inşasında kullanılmak içindir. "
 "Normal %s sistemine bu paketi kurmayın."
 

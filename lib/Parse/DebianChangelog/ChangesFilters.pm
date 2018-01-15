@@ -84,7 +84,7 @@ sub email_to_ddpo {
     my ($text, $cgi) = @_;
 
     $text =~ s|[a-zA-Z0-9_\+\-\.]+\@([a-zA-Z0-9][\w\.+\-]+\.[a-zA-Z]{2,})
-	|$cgi->a({ -href=>"http://qa.debian.org/developer.php?login=$&" }, $&)
+	|$cgi->a({ -href=>"https://qa.debian.org/developer.php?login=$&" }, $&)
 	|xego;
     return $text;
 }
@@ -92,7 +92,7 @@ sub email_to_ddpo {
 sub bugs_to_bts {
     (my $text = $_[0]) =~ s|closes:\s*(?:bug)?\#?\s?\d+(?:\s*,\s*(?:bug)?\#?\s?\d+)*
 	|my $tmp = $&; { no warnings;
-			 $tmp =~ s@(Bug)?\#(\d+)@<a class="buglink" href="http://bugs.debian.org/$2">$1\#$2</a>@ig; }
+			 $tmp =~ s@(Bug)?\#(\d+)@<a class="buglink" href="https://bugs.debian.org/$2">$1\#$2</a>@ig; }
     "$tmp"
 	|xiego;
     return $text;
@@ -102,7 +102,7 @@ sub cve_to_mitre {
     my ($text, $cgi) = @_;
 
     $text =~ s!\b(?:CVE|CAN)-\d{4}-\d{4}\b
-        !$cgi->a({ -href=>"http://security-tracker.debian.org/tracker/$&" }, $&)
+        !$cgi->a({ -href=>"https://security-tracker.debian.org/tracker/$&" }, $&)
 	!xego;
     return $text;
 }
@@ -130,16 +130,16 @@ sub common_licenses {
     my ($text, $cgi) = @_;
 
     $text=~ s|/usr/share/common-licenses/GPL(?:-2)?
-	|$cgi->a({ -href=>"http://www.gnu.org/copyleft/gpl.html" }, $&)
+	|$cgi->a({ -href=>"https://www.gnu.org/copyleft/gpl.html" }, $&)
 	|xego;
     $text=~ s|/usr/share/common-licenses/LGPL(?:-2(?:\.1)?)?
-	|$cgi->a({ -href=>"http://www.gnu.org/copyleft/lgpl.html" }, $&)
+	|$cgi->a({ -href=>"https://www.gnu.org/copyleft/lgpl.html" }, $&)
 	|xego;
     $text=~ s|/usr/share/common-licenses/Artistic
-	|$cgi->a({ -href=>"http://www.opensource.org/licenses/artistic-license.php" }, $&)
+	|$cgi->a({ -href=>"https://opensource.org/licenses/artistic-license.php" }, $&)
 	|xego;
     $text=~ s|/usr/share/common-licenses/BSD
-	|$cgi->a({ -href=>"http://www.debian.org/misc/bsd.license" }, $&)
+	|$cgi->a({ -href=>"https://www.debian.org/misc/bsd.license" }, $&)
 	|xego;
 
     return $text;

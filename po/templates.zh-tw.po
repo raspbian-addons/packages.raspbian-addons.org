@@ -33,7 +33,7 @@ msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"注意：這是 <a href=\"http://%s/\">%s</a> 的一個試製版本。錯誤的以及過時的資訊"
+"注意：這是 <a href=\"https://%s/\">%s</a> 的一個試製版本。錯誤的以及過時的資訊"
 "有時難以避免"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -259,11 +259,11 @@ msgstr "Debian 安裝程式 udeb 包"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"警告：這個套件專門用於構建 <a href=\"http://www.debian.org/devel/debian-"
+"警告：這個套件專門用於構建 <a href=\"https://www.debian.org/devel/debian-"
 "installer\"> Debian 安裝程式</a>（debian-installer）映象。不要在一個普通的 "
 "%s 系統上安裝它。"
 
