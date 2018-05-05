@@ -7,15 +7,15 @@
 [%-
     all_suites = [ 'trusty', 'trusty-updates', 'trusty-backports',
 		   'xenial', 'xenial-updates', 'xenial-backports',
-		   'zesty',  'zesty-updates',  'zesty-backports',
 		   'artful', 'artful-updates', 'artful-backports',
-		   'bionic' ]
+		   'bionic', 'bionic-updates', 'bionic-backports',
+		   'cosmic' ]
     version_numbers = { trusty => '14.04LTS',
 			xenial => '16.04LTS',
-			zesty  => '17.04',
 			artful => '17.10',
+			bionic => '18.04LTS',
 		      }
-    current_release = 'artful'
+    current_release = 'bionic'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -127,6 +127,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2018-05-05</dt>
+<dd>Really remove zesty, reflect bionic release, add cosmic.</dd>
 <dt>2018-02-27</dt>
 <dd>Remove EOLed zesty.</dd>
 <dt>2017-10-30</dt>
