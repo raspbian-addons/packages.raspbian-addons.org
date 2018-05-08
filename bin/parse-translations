@@ -66,7 +66,7 @@ foreach my $lang (@langs) {
     print "Reading Translations for $lang ($locale)...";
     my $count = 0;
     foreach my $dist (@dists) {
-    open PKG, "bzcat $TOPDIR/archive/*/$dist/*/i18n/Translation-$locale.bz2|";
+    open PKG, "zcat $TOPDIR/archive/*/$dist/*/i18n/Translation-$locale.gz|";
     while (<PKG>) {
 	next if /^\s*$/;
 	my $data = "";
