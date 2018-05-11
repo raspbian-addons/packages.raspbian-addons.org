@@ -29,19 +29,12 @@ msgstr "Webmaster strony systemu %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s jest <a href=\"%s\">znakiem towarowym</a> %s"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Proszę zauważyć, że jest to eksperymentalna wersja <a href=\"http://%s/\">"
+"Proszę zauważyć, że jest to eksperymentalna wersja <a href=\"https://%s/\">"
 "%s</a>. Proszę spodziewać się błędów i nieaktualnych informacji."
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -275,12 +268,12 @@ msgstr "Pakiet udeb do instalatora Debiana"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
 "Ostrzeżenie: Pakiet został przygotowany wyłącznie do budowania obrazów <a "
-"href=\"http://www.debian.org/devel/debian-installer\">instalatora Debiana</"
+"href=\"https://www.debian.org/devel/debian-installer\">instalatora Debiana</"
 "a>. Nie należy go instalować w normalnym systemie %s."
 
 #: templates/html/download.tmpl:53

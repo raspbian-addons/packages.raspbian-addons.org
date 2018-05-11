@@ -58,7 +58,7 @@
 [% END %]
 [%- PROCESS marker text=archive title=mirrors.$archive.title url=mirrors.$archive.url IF archive && archive != main_archive %]
 [%- PROCESS marker text=section title=section_titles.$section url=section_urls.$section IF section && section != main_section %]
-[%- PROCESS marker text=g('essential') title=g('package manager will refuse to remove this package by default') url='http://www.debian.org/doc/debian-policy/#essential-packages' IF page.get_newest('essential') == 'yes' %]</h1>
+[%- PROCESS marker text=g('essential') title=g('package manager will refuse to remove this package by default') url='https://www.debian.org/doc/debian-policy/#essential-packages' IF page.get_newest('essential') == 'yes' %]</h1>
 
 [% UNLESS is_virtual %]
 <div id="pmoreinfo">
@@ -131,11 +131,11 @@
 [%- FOREACH maintainers;
   mailarchiveurl = '';
   IF (matches = mail.match('^(.*)@lists\.debian\.org$'));
-	mailarchiveurl = 'http://lists.debian.org/' _ uri_escape(matches.0) _ '/';
+	mailarchiveurl = 'https://lists.debian.org/' _ uri_escape(matches.0) _ '/';
   ELSIF (matches = mail.match('^(.*)@lists\.alioth\.debian\.org$'));
-	mailarchiveurl = 'http://lists.alioth.debian.org/pipermail/' _ uri_escape(matches.0) _ '/';
+	mailarchiveurl = 'https://lists.alioth.debian.org/pipermail/' _ uri_escape(matches.0) _ '/';
   ELSIF (matches = mail.match('^(.*)@lists\.ubuntu\.com$'));
-  	mailarchiveurl = 'http://lists.ubuntu.com/archives/' _ uri_escape(matches.0) _ '/';
+	mailarchiveurl = 'https://lists.ubuntu.com/archives/' _ uri_escape(matches.0) _ '/';
   END -%]
   [%- '<ul>' IF loop.first -%]
 	<li><a href="mailto:[% mail | html %]">[% name | html %]</a>
@@ -177,7 +177,7 @@
 [% END %]
 [% IF subsection == "debian-installer" %]
 <h2>[% g('debian-installer udeb package') %]</h2>
-<p>[% g('Warning: This package is intended for the use in building <a href="http://www.debian.org/devel/debian-installer">debian-installer</a> images only. Do not install it on a normal %s system.',
+<p>[% g('Warning: This package is intended for the use in building <a href="https://www.debian.org/devel/debian-installer">debian-installer</a> images only. Do not install it on a normal %s system.',
 	organisation ) %]</p>
 [% END %]
 </div>

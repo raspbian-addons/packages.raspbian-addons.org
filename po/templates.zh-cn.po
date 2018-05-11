@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pdo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-14 00:02+0200\n"
-"PO-Revision-Date: 2017-12-11 16:27+0800\n"
+"PO-Revision-Date: 2018-01-21 01:04+0800\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <debian-l10n-chinese@lists.debian.org>\n"
 "Language: zh_CN\n"
@@ -37,17 +37,17 @@ msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"注意：这是 <a href=\"http://%s/\">%s</a> 的一个试制版本。错误的以及过时的信息"
-"有时难以避免"
+"注意：这是 <a href=\"https://%s/\">%s</a> 的一个试制版本。错误的以及过时的信"
+"息有时难以避免"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
 #: templates/config.tmpl:81
 msgid "."
-msgstr "。"
+msgstr "."
 
 #: templates/config.tmpl:82
 msgid ","
-msgstr "，"
+msgstr ","
 
 #: templates/config/architectures.tmpl:4
 msgid "Alpha"
@@ -263,11 +263,11 @@ msgstr "Debian 安装程序 udeb 包"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"警告：这个软件包专门用于构建 <a href=\"http://www.debian.org/devel/debian-"
+"警告：这个软件包专门用于构建 <a href=\"https://www.debian.org/devel/debian-"
 "installer\"> Debian 安装程序</a>（debian-installer）镜像。不要在一个普通的 "
 "%s 系统上安装它。"
 

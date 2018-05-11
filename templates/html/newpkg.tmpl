@@ -20,7 +20,7 @@
 	g(' You can also display this list <a href="%s">sorted by age</a>.', make_url('newpkg','mode=byage'));
    END %]</p>
 <p>[% g('This information is also available as an <a href="newpkg?format=rss">RSS feed</a>') %]
-<a href="newpkg?format=rss"><img src="http://planet.debian.org/common/rss10.png" alt="[% g('[RSS 1.0 Feed]') %]"></a></p>
+<a href="newpkg?format=rss"><img src="https://planet.debian.org/common/rss10.png" alt="[% g('[RSS 1.0 Feed]') %]"></a></p>
 
 [% FOREACH pkg IN new_packages %]
 	[% '<ul>' IF loop.first %]

@@ -236,4 +236,4 @@ License, Version 2. See the source code for more details.
 
 =head1 SEE ALSO
 
-Debian policy <URL:http://www.debian.org/doc/debian-policy/>
+Debian policy <URL:https://www.debian.org/doc/debian-policy/>

@@ -4,12 +4,12 @@ INSTALL
 This should give you an idea about the basic steps. It is probably very rough
 around the edges, feel free to ask for clarifications so we can improve it.
 
-This guide assumes you are working on a Debian jessie system. If that is not the
+This guide assumes you are working on a Debian stretch system. If that is not the
 case, you might have to adjust some of the steps.
 
-1) Install git (package git-core)
-2) Download the code from git://git.debian.org/git/webwml/packages.git
-   (Something like `git clone git://git.debian.org/git/webwml/packages.git')
+1) Install git
+2) Download the code from https://anonscm.debian.org/git/webwml/packages.git
+   (Something like `git clone https://anonscm.debian.org/git/webwml/packages.git')
 3) Install the needed dependencies. A list can be found in debian/control and
    used with dpkg-checkbuilddeps to check for missing deps.
 4) Install apache2 (apache2-mpm-worker), fcgid (libapache2-mod-fcgid)

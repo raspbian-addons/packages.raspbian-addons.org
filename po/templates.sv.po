@@ -25,19 +25,12 @@ msgstr "Webbansvarig för %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s är ett <a href=\"%s\">varumärke</a> hos %s"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Observera att detta är en experimentell version av <a href=\"http://%s/\">"
+"Observera att detta är en experimentell version av <a href=\"https://%s/\">"
 "%s</a>. Fel och föråldrad information kan förväntas"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -267,11 +260,11 @@ msgstr "udeb-paket för debian-installer"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"Varning: Paketet är enbart tänkt att användas för att bygga <a href=\"http://"
+"Varning: Paketet är enbart tänkt att användas för att bygga <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a>-avbildningar. "
 "Installera det inte på ett normalt %ssystem."
 

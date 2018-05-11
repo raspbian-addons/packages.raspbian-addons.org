@@ -27,19 +27,12 @@ msgstr "%s ウェブマスター"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 は %3 の<a href=\"%2\">登録商標</a>です。"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"注意: このサイトは <a href=\"http://%s/\">%s</a> の試験版です。エラーや古い情"
+"注意: このサイトは <a href=\"https://%s/\">%s</a> の試験版です。エラーや古い情"
 "報があると思ってください。"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -273,11 +266,11 @@ msgstr "debian-installer 用の udeb パッケージ"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"警告: このパッケージは、<a href=\"http://www.debian.org/devel/debian-"
+"警告: このパッケージは、<a href=\"https://www.debian.org/devel/debian-"
 "installer\">debian-installer</a> イメージのビルド時における使用のみを意図して"
 "います。通常の %s システムにはインストールしないでください。"
 

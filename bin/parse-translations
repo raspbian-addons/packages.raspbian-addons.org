@@ -57,7 +57,7 @@ $/ = "";
 my $fixja = Text::Iconv->new("EUC-JP", "UTF-8");
 
 # FIXME: one database per dist
-# http://lists.debian.org/4E42E104.90201@deb-support.de
+# https://lists.debian.org/4E42E104.90201@deb-support.de
 # FIXME: unhardcode dists name
 my @dists = ('unstable', 'testing', 'stable', 'oldstable', 'oldoldstable');
 

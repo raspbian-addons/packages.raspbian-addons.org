@@ -32,19 +32,12 @@ msgstr "Responsable du site %s"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s est une <a href=\"%s\">marque</a> de %s"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Veuillez noter qu'il s'agit d'une version expérimentale de <a href=\"http://"
+"Veuillez noter qu'il s'agit d'une version expérimentale de <a href=\"https://"
 "packages.debian.org/\">packages.debian.org</a>. Attendez-vous à des erreurs "
 "et des renseignements obsolètes."
 
@@ -279,12 +272,12 @@ msgstr "paquet udeb de l'installateur Debian"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
 "Avertissement : ce paquet est réservé à la construction des images de l'<a "
-"href=\"http://www.debian.org/devel/debian-installer\">installateur Debian</"
+"href=\"https://www.debian.org/devel/debian-installer\">installateur Debian</"
 "a>. Il ne doit pas être installé sur un système %s classique."
 
 #: templates/html/download.tmpl:53
@@ -1451,17 +1444,12 @@ msgstr "Consultez <URL:%s> pour obtenir les termes de la licence."
 #~ msgid "View the <a href=\"%s\">Debian changelog</a>"
 #~ msgstr "Consulter le <a href=\"%s\">journal des modifications Debian</a>"
 
-#~ msgid "Source Package:"
-#~ msgstr "Paquet source&nbsp;:"
 
 #~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
 #~ msgstr "Consulter les <a href=\"%s\">rapports de bogues</a> de %s."
 
 #~ msgid "md5sum"
 #~ msgstr "code de contrôle MD5"
-
-#~ msgid "Overview over this distribution"
-#~ msgstr "Vue d'ensemble de cette distribution"
 
 #~ msgid "virtual package"
 #~ msgstr "paquet virtuel"

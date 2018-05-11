@@ -28,19 +28,12 @@ msgstr "Отговорниците за уебсайта"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s е <a href=\"%s\">търговска марка</a> на %s"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Това е експериментална версия на <a href=\"http://%s/\">%s</a>. Нормално е "
+"Това е експериментална версия на <a href=\"https://%s/\">%s</a>. Нормално е "
 "да има грешки и остаряла информация"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -272,12 +265,12 @@ msgstr "пакет за инсталатора на Дебиан"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
 "Предупреждение: Този пакет е предназначен за използване единствено за "
-"компилиране на <a href=\"http://www.debian.org/devel/debian-installer"
+"компилиране на <a href=\"https://www.debian.org/devel/debian-installer"
 "\">инсталатора на Дебиан</a>. Не го инсталирайте на нормална система %s."
 
 #: templates/html/download.tmpl:53

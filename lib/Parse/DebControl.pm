@@ -382,7 +382,7 @@ Parse::DebControl - Easy OO parsing of debian control-like files
 	the cache files used by dpkg.
 
 	For basic format information see:
-	http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-controlsyntax
+	https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-controlsyntax
 
 	This module does not actually do any intelligence with the file content
 	(because there are a lot of files in this format), but merely handles

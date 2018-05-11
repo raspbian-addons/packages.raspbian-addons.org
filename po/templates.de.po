@@ -1,9 +1,13 @@
+# Copyright (C) 2007-2009 Frank Lichtenheld
+# Copyright (C) 2010 Holger Wansing
+# Copyright (C) 2007-2012,2015,2017 Helge Kreutzmann
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: packages.git c82c758c8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-10-13 19:05+0200\n"
-"PO-Revision-Date: 2016-04-18 13:21+0200\n"
+"PO-Revision-Date: 2017-12-11 11:14+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: debian-l10n-german <debian-l10n-german@lists.debian.org>\n"
 "Language: \n"
@@ -23,20 +27,13 @@ msgstr "%s-Webmaster"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%s ist ein eingetragenes <a href=\"%s\">Warenzeichen</a> von %s"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
 "Bitte beachten Sie, dass es sich bei dieser Seite um eine experimentelle "
-"Version von <a href=\"http://%s/\">%s</a> handelt. Mit Fehlern und "
+"Version von <a href=\"https://%s/\">%s</a> handelt. Mit Fehlern und "
 "veralteten Informationen muss gerechnet werden"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -66,11 +63,11 @@ msgstr "ARM"
 
 #: templates/config/architectures.tmpl:8
 msgid "64-bit ARMv8"
-msgstr ""
+msgstr "64-Bit ARMv8"
 
 #: templates/config/architectures.tmpl:9
 msgid "ARM Hard Float"
-msgstr ""
+msgstr "ARM Hard Float"
 
 #: templates/config/architectures.tmpl:10
 msgid "AVR32"
@@ -122,7 +119,7 @@ msgstr "PowerPC SPE (e500-Kern)"
 
 #: templates/config/architectures.tmpl:22
 msgid "Little-endian 64-bit PowerPC"
-msgstr ""
+msgstr "Little-Endian 64-Bit PowerPC"
 
 #: templates/config/architectures.tmpl:23
 msgid "IBM S/390"
@@ -130,7 +127,7 @@ msgstr "IBM S/390"
 
 #: templates/config/architectures.tmpl:24
 msgid "IBM System z"
-msgstr ""
+msgstr "IBM System z"
 
 #: templates/config/architectures.tmpl:25
 msgid "SH4"
@@ -269,11 +266,11 @@ msgstr "udeb-Paket des Debian-Installers"
 
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
-"Warnung: Dieses Paket ist nur dazu gedacht, um <a href=\"http://www.debian."
+"Warnung: Dieses Paket ist nur dazu gedacht, um <a href=\"https://www.debian."
 "org/devel/debian-installer\">debian-installer</a>-Images zu erzeugen. "
 "Installieren Sie es nicht auf einem normalen %s-System."
 
@@ -410,19 +407,19 @@ msgstr "Überspringen der Navigation"
 
 #: templates/html/head.tmpl:32
 msgid "About Debian"
-msgstr ""
+msgstr "Über Debian"
 
 #: templates/html/head.tmpl:33
 msgid "Getting Debian"
-msgstr ""
+msgstr "Debian erhalten"
 
 #: templates/html/head.tmpl:34
 msgid "Support"
-msgstr ""
+msgstr "Unterstützung"
 
 #: templates/html/head.tmpl:35
 msgid "Developers\\"
-msgstr ""
+msgstr "Entwickler\\"
 
 #: templates/html/head.tmpl:40
 msgid "%s Packages Homepage"
@@ -962,10 +959,8 @@ msgid "Bug Reports"
 msgstr "Fehlerberichte"
 
 #: templates/html/show.tmpl:76 templates/html/show.tmpl:78
-#, fuzzy
-#| msgid "Developer Information (PTS)"
 msgid "Developer Information"
-msgstr "Entwicklerinformationen (PTS)"
+msgstr "Entwicklerinformationen"
 
 #: templates/html/show.tmpl:82
 msgid "%s Changelog"
@@ -1041,18 +1036,13 @@ msgstr ""
 "Dokumentation, bevor Sie es benutzen."
 
 #: templates/html/show.tmpl:199
-#, fuzzy
-#| msgid ""
-#| "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</"
-#| "a> for a <a href=\"%sch-binary.html#s-virtual_pkg\">definition of virtual "
-#| "packages</a>."
 msgid ""
 "This is a <em>virtual package</em>. See the <a href=\"%s\">Debian policy</a> "
 "for a <a href=\"%s#s-virtual-pkg\">definition of virtual packages</a>."
 msgstr ""
 "Dies ist ein <em>virtuelles Paket</em>. Sehen Sie in die <a href=\"%s"
-"\">Debian-Richtlinien</a> bezüglich einer <a href=\"%sch-binary.html#s-"
-"virtual_pkg\">Definition von virtuellen Paketen</a>."
+"\">Debian-Richtlinien</a> bezüglich einer <a href=\"%s#s-virtual-pkg\">"
+"Definition von virtuellen Paketen</a>."
 
 #: templates/html/show.tmpl:207
 msgid "Tags"
@@ -1096,7 +1086,7 @@ msgstr "schlägt vor"
 
 #: templates/html/show.tmpl:258
 msgid "enhances"
-msgstr ""
+msgstr "erweitert"
 
 #: templates/html/show.tmpl:268
 msgid "or "

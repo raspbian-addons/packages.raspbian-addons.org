@@ -28,19 +28,12 @@ msgstr "%s-seittimestari"
 msgid "%s is a <a href=\"%s\">trademark</a> of %s"
 msgstr "%1 on %3'n <a href=\"%2\">tavaramerkki</a>"
 
-#. possible values for importance: high, normal, low
-#. sitewidemsg = { importance => "high",
-#. txt => 
-#: templates/config.tmpl:77
-#, fuzzy
-#| msgid ""
-#| "Please note that this is an experimental version of <a href=\"http://%s/"
-#| "\">%s</a>. Errors and obsolete information should be expected"
+#: templates/config.tmpl:69
 msgid ""
 "Please note that this is an experimental version of <a href=\"https://%s/\">"
 "%s</a>. Errors and obsolete information should be expected"
 msgstr ""
-"Huomaattehan, että tämä on kokeellinen versio <a href=\"http://%s/\">%s</a>-"
+"Huomaattehan, että tämä on kokeellinen versio <a href=\"https://%s/\">%s</a>-"
 "palvelusta. Varauduttehan virheisiin ja vanhentuneeseen tietoon"
 
 #. @translators: . = decimal_point , = thousands_sep, see Number::Format 
@@ -265,12 +258,12 @@ msgstr "debian-asentimen udeb-paketti"
 #: templates/html/download.tmpl:46 templates/html/show.tmpl:180
 #, fuzzy
 msgid ""
-"Warning: This package is intended for the use in building <a href=\"http://"
+"Warning: This package is intended for the use in building <a href=\"https://"
 "www.debian.org/devel/debian-installer\">debian-installer</a> images only. Do "
 "not install it on a normal %s system."
 msgstr ""
 "Varoitus: Tämä paketti on tarkoitettu käytettäväksi vain rakennettaessa <a "
-"href=\"http://www.debian.org/devel/debian-installer\">debian-asentimen</a> "
+"href=\"https://www.debian.org/devel/debian-installer\">debian-asentimen</a> "
 "vedoksia. Älä asenna normaaliin %s-järjestelmään."
 
 #: templates/html/download.tmpl:53
@@ -1292,9 +1285,6 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 #~ msgid "Software Packages in \"%s\", priority %s"
 #~ msgstr "Ohjelmistopaketit jakelussa \"%s\" tärkeysasteella %s"
 
-#~ msgid "Download %s\n"
-#~ msgstr "Imuroi %s\n"
-
 #~ msgid "virtual package"
 #~ msgstr "näennäispaketti"
 
@@ -1303,9 +1293,6 @@ msgstr "Lisenssiehdot sivulla <URL:%s>."
 
 #~ msgid "md5sum"
 #~ msgstr "MD5-summa"
-
-#~ msgid "Check for <a href=\"%s\">Bug Reports</a> about %s."
-#~ msgstr "Tarkista paketin %s <a href=\"%s\">vikailmoitukset</a>."
 
 #~ msgid "Source Package:"
 #~ msgstr "Lähdepaketti:"
