@@ -7,7 +7,7 @@ debtagsdir="$filesdir/debtags"
 test -d ${debtagsdir} || mkdir -p ${debtagsdir}
 cd ${debtagsdir}
 
-$wget_cmd -N https://anonscm.debian.org/git/debtags/vocabulary.git/plain/debian-packages
+$wget_cmd -N https://salsa.debian.org/debtags-team/debtags-vocabulary/raw/master/debian-packages
 
 cd "$topdir"
 
