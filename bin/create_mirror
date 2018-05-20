@@ -35,7 +35,7 @@ ln -f "$topdir/conf/apache.conf"
 
 mkdir -p "$new/cgi-bin"
 cd "$new/cgi-bin"
-ln -f "$topdir/cgi-bin/dispatcher.pl"
+ln -f "$topdir/cgi-bin/dispatcher.fcgi"
 
 for d in lib files templates po www
 do
