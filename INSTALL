@@ -8,8 +8,8 @@ This guide assumes you are working on a Debian stretch system. If that is not th
 case, you might have to adjust some of the steps.
 
 1) Install git
-2) Download the code from https://anonscm.debian.org/git/webwml/packages.git
-   (Something like `git clone https://anonscm.debian.org/git/webwml/packages.git')
+2) Download the code from https://salsa.debian.org/webmaster-team/packages
+   (Something like `git clone https://salsa.debian.org/webmaster-team/packages')
 3) Install the needed dependencies. A list can be found in debian/control and
    used with dpkg-checkbuilddeps to check for missing deps.
 4) Install apache2 (apache2-mpm-worker), fcgid (libapache2-mod-fcgid)
