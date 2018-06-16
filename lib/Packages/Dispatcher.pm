@@ -74,7 +74,7 @@ sub do_dispatch {
 			 stable => 'stretch',
 			 testing => 'buster',
 			 unstable => 'sid',
-			 'experimental' => 'rc-buggy',
+			 'rc-buggy' => 'experimental',
 			 '7.0' => 'wheezy',
 			 '8.0' => 'jessie',
 			 '9.0' => 'stretch',
