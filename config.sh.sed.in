@@ -45,21 +45,19 @@ archives="us security debports"
 sections="main contrib non-free"
 parts="$sections"
 
-suites="wheezy wheezy-updates wheezy-backports wheezy-backports-sloppy jessie jessie-updates jessie-backports jessie-backports-sloppy stretch stretch-updates stretch-backports buster sid experimental"
-security_suites="wheezy jessie stretch"
+suites="jessie jessie-updates jessie-backports jessie-backports-sloppy stretch stretch-updates stretch-backports buster sid experimental"
+security_suites="jessie stretch"
 dists="$suites"
 
 priorities="required important standard optional extra"
 
 architectures="alpha amd64 arm arm64 armel armhf avr32 hppa hurd-i386 i386 ia64 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el s390 s390x sh4 sparc sparc64 x32"
-arch_wheezy="amd64 armel armhf i386 ia64 kfreebsd-i386 kfreebsd-amd64 mips mipsel powerpc s390 s390x sparc"
 arch_jessie="amd64 arm64 armel armhf i386 mips mipsel powerpc ppc64el s390x"
 arch_stretch="amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x"
 arch_buster="${arch_stretch}"
 arch_sid="${arch_stretch} alpha avr32 hppa hurd-i386 ia64 kfreebsd-i386 kfreebsd-amd64 m68k mips64el powerpcspe ppc64 s390 sh4 sparc sparc64 x32"
 arch_experimental="${arch_sid}"
 
-ext_wheezy=gz
 #for security Sources
 ext_jessie=gz
 ext_stretch=gz
