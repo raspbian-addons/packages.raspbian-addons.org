@@ -124,11 +124,11 @@
    RewriteRule ^/unstable/newpkg_([a-z]+) /unstable/$1/newpkg [R=permanent,L]
 
    # changelogs moved to ftp-master.metadata
-   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/(current)/(changelog)$ http://ftp-master.metadata.debian.org/changelogs/$1/$2/$3/unstable_$5 [R,L]
-   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(changelog)$ http://ftp-master.metadata.debian.org/changelogs/$1/$2/$3/$4_$5 [R,L]
-   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/(current)/[^/]+(copyright)$ http://ftp-master.metadata.debian.org/changelogs/$1/$2/$3/unstable_$5 [R,L]
-   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/([^/]+)/[^/]+(copyright)$ http://ftp-master.metadata.debian.org/changelogs/$1/$2/$3/$4_$5 [R,L]
-   RewriteRule ^/changelogs/pool/(.+)/$ http://ftp-master.metadata.debian.org/changelogs/$1 [R,L]
+   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/(current)/(changelog)$ https://metadata.ftp-master.debian.org/changelogs/$1/$2/$3/unstable_$5 [R,L]
+   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(changelog)$ https://metadata.ftp-master.debian.org/changelogs/$1/$2/$3/$4_$5 [R,L]
+   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/(current)/[^/]+(copyright)$ https://metadata.ftp-master.debian.org/changelogs/$1/$2/$3/unstable_$5 [R,L]
+   RewriteRule ^/changelogs/pool/([^/]+)/([^/]+)/([^/]+)/([^/]+)/[^/]+(copyright)$ https://metadata.ftp-master.debian.org/changelogs/$1/$2/$3/$4_$5 [R,L]
+   RewriteRule ^/changelogs/pool/(.+)/$ https://metadata.ftp-master.debian.org/changelogs/$1 [R,L]
 
    # we never want to rewrite those URLs
    RewriteRule ^/cgi-bin/dispatcher.fcgi - [L]
