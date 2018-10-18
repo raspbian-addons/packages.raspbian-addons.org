@@ -86,11 +86,6 @@ for my $suite (@suites) {
 			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
 			next unless -f $filename;
 
-			if (-l $filename) {
-			print "Skipping link $archive/$suite/$section/Contents-$arch.gz\n";
-			next ; # do not process symlinks, or we will have double data
-			}
-
 			# Note: ctime, because mtime is set back via rsync
 			my $ftime = (stat $filename)[10];
 			next if defined $dbtime and $dbtime > $ftime;
@@ -104,11 +99,6 @@ for my $suite (@suites) {
 
 			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
 			next unless -f $filename;
-
-			if (-l $filename) {
-			print "Skipping link $archive/$suite/$section/Contents-$arch.gz\n";
-			next ; # do not process symlinks, or we will have double data
-			}
 
 			print "Reading $archive/$suite/$section/$arch...\n";
 
