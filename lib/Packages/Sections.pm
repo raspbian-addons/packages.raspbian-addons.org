@@ -43,6 +43,8 @@ our %sections_descs = (
 				     N_("Everything about GNU R, a statistical computation and graphics system.") ],
 		      gnustep	=> [ N_("GNUstep"),
 				     N_("The GNUstep environment.") ],
+		      golang	=> [ N_("Go"),
+				     N_("Go programming language, libraries, and development tools.") ],
 		      graphics	=> [ N_("Graphics"),
 				     N_("Editors, viewers, converters... Everything to become an artist.") ],
 		      hamradio	=> [ N_("Ham Radio"),
