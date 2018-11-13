@@ -124,7 +124,7 @@ our %sections_descs = (
 		      web	=> [ N_("Web Software"),
 				     N_("Web servers, browsers, proxies, download tools etc.") ],
 		      x11	=> [ N_("X Window System software"),
-				     N_("X servers, libraries, fonts, window managers, terminal emulators and many related applications.") ],
+				     N_("X servers, libraries, window managers, terminal emulators and many related applications.") ],
 		      xfce	=> [ N_("Xfce"),
 				     N_("Xfce, a fast and lightweight Desktop Environment.") ],
 		      zope	=> [ N_("Zope/Plone Framework"),
