@@ -43,7 +43,7 @@ ddtplangs="ca cs da de en eo es eu fi fr hu it ja km ko nl pl pt pt-br ru sk sv 
 archives="us security ports"
 sections="main multiverse restricted universe"
 parts="$sections"
-suites="trusty trusty-updates trusty-backports xenial xenial-updates xenial-backports artful artful-updates artful-backports bionic bionic-updates bionic-backports cosmic"
+suites="trusty trusty-updates trusty-backports xenial xenial-updates xenial-backports bionic bionic-updates bionic-backports cosmic cosmic-updates cosmic-backports disco"
 priorities="required important standard optional extra"
 dists="$suites"
 architectures="i386 amd64 powerpc arm64 armhf ppc64el s390x"
@@ -60,6 +60,9 @@ arch_bionic_backports="${arch_bionic}"
 arch_cosmic="${arch_bionic}"
 arch_cosmic_updates="${arch_cosmic}"
 arch_cosmic_backports="${arch_cosmic}"
+arch_disco="${arch_cosmic}"
+arch_disco_updates="${arch_disco}"
+arch_disco_backports="${arch_disco}"
 
 # Miscellaneous
 #
