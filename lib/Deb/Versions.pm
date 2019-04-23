@@ -184,7 +184,7 @@ our @SUITES_SORT = qw(
 			intrepid jaunty karmic lucid maverick natty oneiric
 			precise quantal raring saucy trusty utopic vivid
 			wily xenial yakkety zesty artful bionic cosmic
-			disco);
+			disco eoan);
 our @ARCHIVE_SORT = qw( non-US security updates volatile backports );
 our @PRIORITY_SORT = qw( required important standard optional extra );
 my $i = 1000;

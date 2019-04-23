@@ -5,17 +5,17 @@
 	html_meta = '<meta name="verify-v1" content="Rg2bDR1kWPGd8k8v9NOgnmtUQHO6UaKX2glZWVDptok=">'
 -%]
 [%-
-    all_suites = [ 'trusty', 'trusty-updates', 'trusty-backports',
-		   'xenial', 'xenial-updates', 'xenial-backports',
+    all_suites = [ 'xenial', 'xenial-updates', 'xenial-backports',
 		   'bionic', 'bionic-updates', 'bionic-backports',
 		   'cosmic', 'cosmic-updates', 'cosmic-backports',
-		   'disco' ]
-    version_numbers = { trusty => '14.04LTS',
-			xenial => '16.04LTS',
+		   'disco',  'disco-updates',  'disco-backports',
+		   'eoan' ]
+    version_numbers = { xenial => '16.04LTS',
 			bionic => '18.04LTS',
 			cosmic => '18.10',
+			disco  => '19.04',
 		      }
-    current_release = 'cosmic'
+    current_release = 'disco'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -127,6 +127,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2019-04-23</dt>
+<dd>Reflect disco release, add eoan, remove trusty.</dd>
 <dt>2018-11-15</dt>
 <dd>Really remove artful, reflect comsic release, add disco.</dd>
 <dt>2018-08-11</dt>
