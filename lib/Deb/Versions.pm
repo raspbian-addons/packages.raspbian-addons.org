@@ -178,12 +178,13 @@ our @SUITES_SORT = qw(
 			lenny
 			squeeze
 			wheezy
-			oldoldstable oldoldstable-proposed-updates
 			jessie
-			oldstable oldstable-proposed-updates
+			oldoldstable oldoldstable-proposed-updates
 			stretch
-			stable stable-proposed-updates
+			oldstable oldstable-proposed-updates
 			buster
+			stable stable-proposed-updates
+			bullseye
 			testing testing-proposed-updates
 			sid unstable experimental
 			warty hoary breezy dapper edgy feisty gutsy hardy
