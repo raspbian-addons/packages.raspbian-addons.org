@@ -7,15 +7,15 @@
 [%-
     all_suites = [ 'xenial', 'xenial-updates', 'xenial-backports',
 		   'bionic', 'bionic-updates', 'bionic-backports',
-		   'cosmic', 'cosmic-updates', 'cosmic-backports',
 		   'disco',  'disco-updates',  'disco-backports',
-		   'eoan' ]
+		   'eoan',  'eoan-updates',  'eoan-backports',
+		   'focal' ]
     version_numbers = { xenial => '16.04LTS',
 			bionic => '18.04LTS',
-			cosmic => '18.10',
 			disco  => '19.04',
+			focal  => '19.10',
 		      }
-    current_release = 'disco'
+    current_release = 'eoan'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -127,6 +127,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2019-12-10</dt>
+<dd>Reflect eoan release, add focal, remove cosmic.</dd>
 <dt>2019-04-23</dt>
 <dd>Reflect disco release, add eoan, remove trusty.</dd>
 <dt>2018-11-15</dt>
