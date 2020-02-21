@@ -67,7 +67,7 @@ ext_buster=gz
 # Refresh this architecture list using this command:
 # wget -qO - http://ftp.ports.debian.org/debian-ports/dists/{sid,experimental}/Release | sed -n 's/Architectures: //p' | tr ' ' '\n' | sort -u
 # Please remember to also update the architecture list in bin/parse-contents
-arch_debports="alpha hppa m68k powerpcspe ppc64 riscv64 sh4 sparc64 x32"
+arch_debports="alpha hppa ia64 m68k powerpcspe ppc64 riscv64 sh4 sparc64 x32"
 
 # Miscellaneous
 #

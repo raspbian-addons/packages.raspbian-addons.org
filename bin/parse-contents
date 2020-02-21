@@ -53,7 +53,7 @@ push(@sections, "");
 
 my %debports_hash;
 # copy from config.sh ${arch_debports}
-@debports_hash{qw( alpha hppa m68k powerpcspe ppc64 riscv64 sh4 sparc64 x32 )} = ();
+@debports_hash{qw( alpha hppa ia64 m68k powerpcspe ppc64 riscv64 sh4 sparc64 x32 )} = ();
 
 $DBDIR .= "/contents";
 mkdirp( $DBDIR );
