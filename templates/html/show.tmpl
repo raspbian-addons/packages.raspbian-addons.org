@@ -204,7 +204,7 @@
 [% FOREACH tag IN tags %]
   [% IF loop.first -%]
     <div id="ptags"><p>
-    <a href="[% tags_url %]edit.html?pkg=[% uri_escape(pkg) %]">[% g('Tags') %]</a>:
+    <a href="[% tags_url %]search/?wl=&q=[% uri_escape(pkg) %]&qf=default">[% g('Tags') %]</a>:
   [%- END %]
   [% facet = tag.0; lfacet = "$facet-$po_lang"; 
      facet_name = debtags_voc.$lfacet;
