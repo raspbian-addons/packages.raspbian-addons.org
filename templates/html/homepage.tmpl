@@ -8,12 +8,14 @@
     all_suites = [ 'xenial', 'xenial-updates', 'xenial-backports',
 		   'bionic', 'bionic-updates', 'bionic-backports',
 		   'focal',  'focal-updates',  'focal-backports',
-		   'groovy' ]
+		   'groovy', 'groovy-updates', 'groovy-backports',
+		   'hirsute' ]
     version_numbers = { xenial => '16.04LTS',
 			bionic => '18.04LTS',
 			focal  => '20.04LTS',
+			groovy => '20.10',
 		      }
-    current_release = 'focal'
+    current_release = 'groovy'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -125,6 +127,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2020-11-17</dt>
+<dd>Reflect groovy release, add hirsute.</dd>
 <dt>2020-09-04</dt>
 <dd>Remove eoan, set focal as default release.</dd>
 <dt>2020-05-04</dt>
