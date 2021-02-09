@@ -1255,7 +1255,7 @@ with only one of the options specified.
 Parse::DebianChangelog::Entry, Parse::DebianChangelog::ChangesFilters
 
 Description of the Debian changelog format in the Debian policy:
-L<https://www.debian.org/doc/debian-policy/#debian-changelog-debian-changelog>.
+L<https://www.debian.org/doc/debian-policy/ch-source.html#debian-changelog-debian-changelog>.
 
 =head1 AUTHOR
 
