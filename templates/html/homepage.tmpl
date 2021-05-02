@@ -9,13 +9,15 @@
 		   'bionic', 'bionic-updates', 'bionic-backports',
 		   'focal',  'focal-updates',  'focal-backports',
 		   'groovy', 'groovy-updates', 'groovy-backports',
-		   'hirsute' ]
+		   'hirsute', 'hirsute-updates', 'hirsute-backports',
+		   'impish' ]
     version_numbers = { xenial => '16.04LTS',
 			bionic => '18.04LTS',
 			focal  => '20.04LTS',
 			groovy => '20.10',
+			hirsute => '21.04',
 		      }
-    current_release = 'groovy'
+    current_release = 'hirsute'
     all_sections = [ 'main', 'multiverse', 'restricted', 'universe' ]
     all_architectures = [ 'i386', 'amd64', 'powerpc' ]
 -%]
@@ -127,6 +129,8 @@ Distribution:
 <hr>
 <h2>News</h2>
 <dl>
+<dt>2021-05-02</dt>
+<dd>Reflect hirsute release, add impish, remove xenial.</dd>
 <dt>2020-11-17</dt>
 <dd>Reflect groovy release, add hirsute.</dd>
 <dt>2020-09-04</dt>
