@@ -83,11 +83,12 @@ for my $suite (@suites) {
 	for my $archive (@archives) {
 		for my $section (@sections) {
 
-			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
+                        my $folder = "$TOPDIR/archive/$archive/$suite";
+			my $filename = "$folder/$section/Contents-$arch.gz";
 			next unless -f $filename;
 
-			if (-l $filename) {
-			print "Skipping link $archive/$suite/$section/Contents-$arch.gz\n";
+			if (-l $folder) {
+			print "Skipping linked suite $archive/$suite for $section/$arch\n";
 			next ; # do not process symlinks, or we will have double data
 			}
 
@@ -110,8 +111,8 @@ for my $suite (@suites) {
 			my $filename_all = "$folder/$section/Contents-all.gz";
 			next unless -f $filename;
 
-			if (-l $filename) {
-			print "Skipping link $archive/$suite/$section/Contents-$arch.gz\n";
+			if (-l $folder) {
+			print "Skipping linked suite $archive/$suite for $section/$arch\n";
 			next ; # do not process symlinks, or we will have double data
 			}
 
