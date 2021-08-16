@@ -69,18 +69,18 @@ sub do_dispatch {
     delete $ENV{'LC_ALL'};
     delete $ENV{'LC_MESSAGES'};
 
-    my %SUITES_ALIAS = ( oldoldstable => 'jessie',
-			 oldstable => 'stretch',
-			 stable => 'buster',
-			 testing => 'bullseye',
+    my %SUITES_ALIAS = ( oldoldstable => 'stretch',
+			 oldstable => 'buster',
+			 stable => 'bullseye',
+			 testing => 'bookworm',
 			 unstable => 'sid',
 			 'rc-buggy' => 'experimental',
-			 '8.0' => 'jessie',
 			 '9.0' => 'stretch',
 			 '10.0' => 'buster',
-			 'oldoldstable-backports' => 'jessie-backports',
-			 'oldstable-backports' => 'stretch-backports',
-			 'stable-backports' => 'buster-backports');
+			 '11.0' => 'bullseye',
+			 'oldoldstable-backports' => 'stretch-backports',
+			 'oldstable-backports' => 'buster-backports',
+			 'stable-backports' => 'bullseye-backports');
 
     # Read in all the variables set by the form
     my $input = shift;

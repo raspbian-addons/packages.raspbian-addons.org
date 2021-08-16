@@ -45,24 +45,24 @@ archives="us security debports"
 sections="main contrib non-free"
 parts="$sections"
 
-suites="jessie jessie-updates stretch stretch-updates stretch-backports stretch-backports-sloppy buster buster-updates buster-backports bullseye sid experimental"
-security_suites="jessie stretch buster"
+suites="stretch stretch-updates stretch-backports stretch-backports-sloppy buster buster-updates buster-backports bullseye bullseye-updates bullseye-backports bookworm sid experimental"
+security_suites="stretch buster bullseye"
 dists="$suites"
 
 priorities="required important standard optional extra"
 
 architectures="alpha amd64 arm arm64 armel armhf avr32 hppa hurd-i386 i386 ia64 kfreebsd-amd64 kfreebsd-i386 m68k mips mips64el mipsel powerpc powerpcspe ppc64 ppc64el riscv64 s390 s390x sh4 sparc sparc64 x32"
-arch_jessie="amd64 arm64 armel armhf i386 mips mipsel powerpc ppc64el s390x"
 arch_stretch="amd64 arm64 armel armhf i386 mips mipsel mips64el ppc64el s390x"
 arch_buster="${arch_stretch}"
-arch_bullseye="${arch_buster}"
-arch_sid="${arch_buster} alpha avr32 hppa hurd-i386 ia64 kfreebsd-i386 kfreebsd-amd64 m68k mips64el powerpcspe ppc64 riscv64 s390 sh4 sparc sparc64 x32"
+arch_bullseye="amd64 arm64 armel armhf i386 mipsel mips64el ppc64el s390x"
+arch_bookworm="${arch_bullseye}"
+arch_sid="${arch_bookworm} alpha avr32 hppa hurd-i386 ia64 kfreebsd-i386 kfreebsd-amd64 m68k mips64el powerpcspe ppc64 riscv64 s390 sh4 sparc sparc64 x32"
 arch_experimental="${arch_sid}"
 
 #for security Sources
-ext_jessie=gz
 ext_stretch=gz
 ext_buster=gz
+ext_bullseye=gz
 
 # Refresh this architecture list using this command:
 # wget -qO - http://ftp.ports.debian.org/debian-ports/dists/{sid,experimental}/Release | sed -n 's/Architectures: //p' | tr ' ' '\n' | sort -u
