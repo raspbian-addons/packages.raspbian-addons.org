@@ -76,18 +76,19 @@ for my $suite (@suites) {
 	my $extra = "";
 	$extra = "|sort" if $SORT_REVERSE_CONCURRENTLY;
 
-	open REVERSED, "$extra>$DBDIR/reverse.tmp"
+	open my $REVERSED, "$extra>$DBDIR/reverse.tmp"
 	    or die "Failed to open output reverse file: $!";
 
 	my $changed = 0;
 	for my $archive (@archives) {
 		for my $section (@sections) {
 
-			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
+                        my $folder = "$TOPDIR/archive/$archive/$suite";
+			my $filename = "$folder/$section/Contents-$arch.gz";
 			next unless -f $filename;
 
-			if (-l $filename) {
-			print "Skipping link $archive/$suite/$section/Contents-$arch.gz\n";
+			if (-l $folder) {
+			print "Skipping linked suite $archive/$suite for $section/$arch\n";
 			next ; # do not process symlinks, or we will have double data
 			}
 
@@ -102,55 +103,27 @@ for my $suite (@suites) {
 	    for my $archive (@archives) {
 			for my $section (@sections) {
 
-			my $filename = "$TOPDIR/archive/$archive/$suite/$section/Contents-$arch.gz";
+# since commit 81824d23 in daklib, the archive provides separate Contents
+# with Arch:all for some suites; see also merged bugs #977006 and #977743
+# https://salsa.debian.org/ftp-team/dak/-/commit/81824d2326f5cc50fdcb95c81f9f26864aebaa15
+                        my $folder = "$TOPDIR/archive/$archive/$suite";
+			my $filename = "$folder/$section/Contents-$arch.gz";
+			my $filename_all = "$folder/$section/Contents-all.gz";
 			next unless -f $filename;
 
-			if (-l $filename) {
-			print "Skipping link $archive/$suite/$section/Contents-$arch.gz\n";
+			if (-l $folder) {
+			print "Skipping linked suite $archive/$suite for $section/$arch\n";
 			next ; # do not process symlinks, or we will have double data
 			}
 
 			print "Reading $archive/$suite/$section/$arch...\n";
 
-			# Note: a possible $what parameter isn't taken into account here:
-			my $uncompressed_size = (split /\s+/, `gzip --quiet -l $filename`)[2];
+                        read_contents($filename, $arch, $REVERSED, \%packages_contents,
+                                      \%packages_contents_nr, \%packages_contents_lastword);
 
-			open CONT, "zcat $filename|$what"
-				or die $!;
-			while (<CONT>) { last if /^FILE/mo; }
-			if (eof(CONT)) { # no header found
-				close CONT; # explicit close to reset $.
-				open CONT, "zcat $filename|$what";
-			}
-			while (<CONT>) {
-				my $data = "";
-				my %data = ();
-				chomp;
-				display_progress(tell(CONT), $uncompressed_size)
-				if $NR % 250000 == 0;
-				/^(.+?)\s+(\S+)$/o;
-				my ($file, $value) = ($1, $2);
-				$value =~ s#[^,/]+/##og;
-				my @packages = split m/,/, $value;
-				for (@packages) {
-				$packages_contents_nr{$_}++;
-				my $lw = $packages_contents_lastword{$_} || "\0";
-				my $i=0;
-				while (substr($file,$i,1) eq substr($lw,$i++,1)) {}
-				$i--;
-				$i = 255 if $i > 255;
-				$packages_contents{$_} .= pack "CC/a*", ($i, substr($file, $i));
-				$packages_contents_lastword{$_} = "$file\0";
-				}
-				# Searches are case-insensitive
-				(my $nocase = $file) =~ tr [A-Z] [a-z];
-				my $case = ($nocase eq $file) ? '-' : $file;
-
-				print REVERSED (reverse $nocase)."\0".$case."\0".
-				(join ":$arch\0", @packages).":$arch\n";
-			}
-			close CONT;
-
+                        read_contents($filename_all, $arch, $REVERSED, \%packages_contents,
+                                      \%packages_contents_nr, \%packages_contents_lastword)
+                          if -e $filename_all;
 			}
 
 	    print "Sorting reverse list if needed\n";
@@ -180,7 +153,7 @@ for my $suite (@suites) {
 	    }
 	}
 	}
-	close REVERSED;
+	close $REVERSED;
     }
 
     my $go = 0;
@@ -261,5 +234,50 @@ for my $suite (@suites) {
     activate("$DBDIR/filenames_$suite.txt");
     activate("$DBDIR/reverse_$suite.db");
 }
+
+sub read_contents {
+  my ($filename, $arch, $reversed_fh, $packages_contents, $packages_contents_nr,
+      $packages_contents_lastword) = @_;
+
+  # Note: a possible $what parameter isn't taken into account here:
+  my $uncompressed_size = (split /\s+/, `gzip --quiet -l $filename`)[2];
+
+  open CONT, "zcat $filename|$what"
+    or die $!;
+  while (<CONT>) { last if /^FILE/mo; }
+  if (eof(CONT)) { # no header found
+    close CONT; # explicit close to reset $.
+    open CONT, "zcat $filename|$what";
+  }
+  while (<CONT>) {
+    chomp;
+    display_progress(tell(CONT), $uncompressed_size)
+      if $NR % 250000 == 0;
+    /^(.+?)\s+(\S+)$/o;
+    my ($file, $value) = ($1, $2);
+    $value =~ s#[^,/]+/##og;
+    my @packages = split m/,/, $value;
+    for (@packages) {
+      $packages_contents_nr->{$_}++;
+      my $lw = $packages_contents_lastword->{$_} || "\0";
+      my $i=0;
+      while (substr($file,$i,1) eq substr($lw,$i++,1)) {}
+      $i--;
+      $i = 255 if $i > 255;
+      $packages_contents->{$_} .= pack "CC/a*", ($i, substr($file, $i));
+      $packages_contents_lastword->{$_} = "$file\0";
+    }
+    # Searches are case-insensitive
+    (my $nocase = $file) =~ tr [A-Z] [a-z];
+    my $case = ($nocase eq $file) ? '-' : $file;
+
+    print $reversed_fh (reverse $nocase)."\0".$case."\0".
+      (join ":$arch\0", @packages).":$arch\n";
+  }
+  close CONT;
+
+  return;
+}
+
 
 # vim: set ts=4
