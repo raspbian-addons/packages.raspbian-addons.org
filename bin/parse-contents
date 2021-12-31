@@ -61,7 +61,11 @@ mkdirp( $DBDIR );
 # Small helper to display where we're at:
 sub display_progress {
     my ($position, $total) = @_;
-    printf "Progress: %d/%dMB (%d%%)\n", $position/(1024**2), $total/(1024**2), 100*$position/$total;
+	if ($total == 0) {
+		printf "Progress: %d/??MB\n", $position/(1024**2);
+	} else {
+		printf "Progress: %d/%dMB (%d%%)\n", $position/(1024**2), $total/(1024**2), 100*$position/$total;
+	}
 }
 
 for my $suite (@suites) {
